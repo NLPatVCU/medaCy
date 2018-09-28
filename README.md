@@ -1,7 +1,7 @@
 # medaCy
 :hospital: Medical Natural Language Processing with spaCy :hospital:
 
-MedaCy is a medical text processing and learning framework built over spaCy to support the lightning fast prototyping, building, and application of highly predictive named entity recognition and relationship extraction systems for medical text.
+MedaCy is a text processing and learning framework built over spaCy to support the lightning fast prototyping, building, and application of highly predictive named entity recognition and relationship extraction systems for medical text.
 
 ![alt text](https://nlp.cs.vcu.edu/images/Edit_NanomedicineDatabase.png "Nanoinformatics")
 
@@ -16,6 +16,11 @@ Features
 License
 =======
 This package is licensed under the GNU General Public License
+
+
+Authors
+=======
+Andriy Mulyar, Bobby Best, Steele Farnsworth, Yadunandan Pillai, Corey Sutphin, Nathan West, Bridget McInnes
 
 Acknowledgments
 ===============
