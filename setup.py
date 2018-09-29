@@ -27,7 +27,8 @@ setup(
     install_requires=[
         'spacy>=2.0.12',
         'scikit-learn>=0.20.0',
-        'sklearn-crfsuite'
+        'sklearn-crfsuite',
+        'xmltodict>=0.11.0'
     ],
     test_suite='nose.collector',
     tests_require=['nose'],

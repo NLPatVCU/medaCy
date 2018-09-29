@@ -9,7 +9,7 @@ Features
 ========
 - Highly predictive out-of-the-box trained models for clinical named entity recognition and relationship extraction.
 - Customizable feature extraction pipelines for custom model building.
-- Integrated converters for common text annotation formats (Prodigy, BRAT, etc)
+- Integrated converters for common text annotation formats (Prodigy, BRAT, etc).
 - Pre-compiled medical terminology and abbreviation lexicons.
 
 
@@ -20,7 +20,7 @@ This package is licensed under the GNU General Public License
 
 Authors
 =======
-Andriy Mulyar, Bobby Best, Steele Farnsworth, Yadunandan Pillai, Corey Sutphin, Nathan West, Bridget McInnes
+Andriy Mulyar, Bobby Best, Steele Farnsworth, Yadunandan Pillai, Corey Sutphin, Bridget McInnes
 
 Acknowledgments
 ===============
