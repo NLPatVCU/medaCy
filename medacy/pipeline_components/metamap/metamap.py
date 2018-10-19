@@ -6,38 +6,78 @@ Metamap a file  and utilize it the output or manipulate stored metamap output
 import subprocess
 import xmltodict
 import json
+import tempfile, os
+
 
 class MetaMap:
 
-    def __init__(self,metamap_path=None):
+    def __init__(self, metamap_path=None, cache_output = True, cache_directory = None):
         """
 
+        A python wrapper with metamap that includes built in caching of metamapped files.
+
+        :param cache_output: Whether to cache output as it run through metamap, will by default store in a
+                             temp directory tmp/medacy*/
+        :param cache_directory: alternatively, specify a directory to cache metamapped files to
         :param metamap_path: The location of the metamap executable.
                             (ex. /home/share/programs/metamap/2016/public_mm/bin/metamap)
         """
         if metamap_path is None:
             raise ValueError("metamap_path is not set. Insure Metamap is running and a path to the metamap executable is being given (ex. metamap/2016/public_mm/bin/metamap)")
+
+        if cache_output:
+            if cache_directory is None: #set cache directory to tmp directory, creating if not exists
+                tmp = tempfile.gettempdir()
+                files = [filename for filename in os.listdir(tmp) if filename.startswith("medacy")]
+
+                if files:
+                    cache_directory = os.path.join(tmp,files[0])
+                else:
+                    tmp_dir = tempfile.mkdtemp(prefix="medacy")
+                    cache_directory = os.path.join(tmp, tmp_dir.path)
+
+        self.cache_directory = cache_directory
         self.metamap_path = metamap_path
 
-    def map_file(self, file_to_map, max_prune_depth=10, cache_output=False):
+    def map_file(self, file_to_map, max_prune_depth=10):
         """
         Maps a given document from a file_path and returns a formatted dict
-        :param file_path:
+        :param file_to_map: the path of the file that will be metamapped
+        :param max_prune_depth: set to larger if you know what you are doing. See metamap specs about pruning depth.
         :return:
         """
+
         file = open(file_to_map, 'r')
         if not file:
-            raise Exception("Error opening file while attempting to map: %s" % file_to_map)
+            raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
-        #--prune command prevents out of memory errors
+        if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
+            file_name = file_to_map.split(os.path.sep)[-1]
+            file_name+=".metamapped"
+            files = [file for file in os.listdir(self.cache_directory) if file == file_name]
+            print("Detected existing file", files)
+
+            if len(files) == 1:
+                existing_cached_file = os.path.join(self.cache_directory, files[0])
+                print(existing_cached_file)
+                return self.load(existing_cached_file)
+
+
         contents = file.read()
-        self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
+        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
 
-        if self.metamap_dict and cache_output:
-            pass #TODO use mkdtemp (https://pymotw.com/2/tempfile/) to cache output
-        return self.metamap_dict
+        if self.cache_directory is not None:
+            mapped_file = open(os.path.join(self.cache_directory, file_name), 'w')
+            try:
+                print("Writing to", os.path.join(self.cache_directory, file_name))
+                mapped_file.write(json.dumps(metamap_dict))
+            except Exception as e:
+                mapped_file.write(str(e))
+
+        return metamap_dict
 
     def map_text(self, text, max_prune_depth=10):
+        #TODO add caching here as in map_file
         self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, text)
         return self.metamap_dict
 
@@ -54,7 +94,8 @@ class MetaMap:
         :return:
         """
 
-        pass #TODO implement utilizing code for parallel process mapper from n2c2
+
+        raise NotImplementedError() #TODO implement utilizing code for parallel process mapper from n2c2
 
 
     def _run_metamap(self, args, document):
@@ -65,9 +106,10 @@ class MetaMap:
         :return:
         """
         bashCommand = 'bash %s %s' % (self.metamap_path, args)
-        process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+        process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = process.communicate(input=bytes(document, 'UTF-8'))
         output = str(output.decode('utf-8'))
+
 
         #remove first line
         #xml = "\n".join(output.split("\n")[1:])
@@ -78,12 +120,11 @@ class MetaMap:
         xml = "<metamap>\n" + xml + "</metamap>"  # surround in single root tag - hacky.
         xml = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE MMOs PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://metamap.nlm.nih.gov/DTD/MMOtoXML_v5.dtd">\n'+xml
 
-
         if output is None:
             raise Exception("An error occured while using metamap: %s" % error)
 
-        dict = xmltodict.parse(xml)
 
+        dict = xmltodict.parse(xml)
         return dict
 
     def _item_generator(self, json_input, lookup_key):
@@ -181,7 +222,6 @@ class MetaMap:
             if int(term['SemTypes']['@Count']) > 1:
                 found_types = term['SemTypes']['SemType']
 
-            #print(found_types)
 
             if exclude is not None and set(exclude).issubset(set(found_types)):
                 continue
