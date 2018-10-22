@@ -14,7 +14,7 @@ class MetaMap:
     def __init__(self, metamap_path=None, cache_output = True, cache_directory = None):
         """
 
-        A python wrapper with metamap that includes built in caching of metamapped files.
+        A python wrapper for metamap that includes built in caching of metamap output.
 
         :param cache_output: Whether to cache output as it run through metamap, will by default store in a
                              temp directory tmp/medacy*/
@@ -55,7 +55,7 @@ class MetaMap:
             file_name = file_to_map.split(os.path.sep)[-1]
             file_name+=".metamapped"
             files = [file for file in os.listdir(self.cache_directory) if file == file_name]
-            print("Detected existing file", files)
+            #print("Detected existing file", files)
 
             if len(files) == 1:
                 existing_cached_file = os.path.join(self.cache_directory, files[0])
@@ -69,7 +69,7 @@ class MetaMap:
         if self.cache_directory is not None:
             mapped_file = open(os.path.join(self.cache_directory, file_name), 'w')
             try:
-                print("Writing to", os.path.join(self.cache_directory, file_name))
+                #print("Writing to", os.path.join(self.cache_directory, file_name))
                 mapped_file.write(json.dumps(metamap_dict))
             except Exception as e:
                 mapped_file.write(str(e))

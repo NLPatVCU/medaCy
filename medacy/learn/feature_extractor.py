@@ -12,7 +12,9 @@ class FeatureExtractor:
     name = "feature_extractor"
 
 
-    def __init__(self):
+    def __init__(self, window_size=5):
+        #TODO this should have options for window_wize, features to exclude, and anything else.
+        self.window_size = window_size
         pass
 
     def __call__(self, doc):

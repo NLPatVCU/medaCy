@@ -1,10 +1,10 @@
-
 from ..metamap.metamap import MetaMap
 from spacy.tokens import Token
 
-class MetaMapAnnotatorComponent():
+
+class MetaMapComponent():
     """
-    A pipeline component for SpaCy that overlays metamap output as token attributes
+    A pipeline component for SpaCy that overlays Metamap output as token attributes
     """
     name = "metamap_annotator"
 
@@ -36,7 +36,7 @@ class MetaMapAnnotatorComponent():
         spans = [] #for displaying NER output with displacy
 
 
-        #Overlays if the given semantic type is set.
+        #Overlays semantic type presence if the given semantic type is set in metamap span.
         for semantic_type_label in semantic_type_labels:
             Token.set_extension('feature_is_' + semantic_type_label, default=False, force=True)  # register extension to token
 

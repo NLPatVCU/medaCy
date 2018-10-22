@@ -28,8 +28,12 @@ setup(
         'spacy>=2.0.12',
         'scikit-learn>=0.20.0',
         'sklearn-crfsuite',
-        'xmltodict>=0.11.0'
+        'xmltodict>=0.11.0',
+        'en_core_web_sm>=2.0.0'
     ],
+    # dependency_links=[
+    #     'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz'
+    # ],
     test_suite='nose.collector',
     tests_require=['nose'],
     include_package_data=True,

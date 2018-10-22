@@ -1,4 +1,4 @@
-from spacy.pipeline import Pipe
+from spacy.language import Language
 from spacy.tokenizer import Tokenizer
 from spacy.util import compile_infix_regex, compile_prefix_regex, compile_suffix_regex
 import re
@@ -11,17 +11,15 @@ class ClinicalTokenizer():
     """
     def __init__(self, nlp):
 
-        if not isinstance(nlp, Pipe):
-            raise ValueError("NLP must be an instance of spacy.pipeline.Pipe")
-        self.nlp = nlp;
-        nlp.tokenizer = Tokenizer(nlp.vocab, nlp.Defaults.tokenizer_exceptions,
+        if not isinstance(nlp, Language):
+            raise ValueError("NLP must be an instance of spacy.lang")
+        self.nlp = nlp
+        self.tokenizer = Tokenizer(nlp.vocab, nlp.Defaults.tokenizer_exceptions,
                                 prefix_search=self._get_prefix_regex().search,
                                 infix_finditer=self._get_infix_regex().finditer,
                                 suffix_search=self._get_suffix_regex().search,
                                 token_match=None
                      )
-
-
 
     def add_exceptions(self, exceptions):
         """

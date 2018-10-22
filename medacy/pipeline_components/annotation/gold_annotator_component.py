@@ -1,28 +1,31 @@
-
+from ..base import BaseComponent
 from medacy.tools.ann_to_json import ann_to_json
 from spacy.tokens import Token
 
-class GoldAnnotator():
+class GoldAnnotatorComponent(BaseComponent):
     #TODO CLEAN ME
+    #TODO Look into spacy GoldParse
     """
     A pipeline component that overlays gold annotations. This pipeline component
     sets the attribute 'gold_label' to all tokens to be used as the class value of the token
     when fed into a supervised learning algorithm.
 
     """
-    name = "gold_annotator"
 
-    def __init__(self, nlp, labels = []):
+    name = "gold_annotator"
+    dependencies = []
+
+    def __init__(self, spacy_pipeline, labels = []):
         """
-        :param nlp:
+        :param spacy_pipeline: An exisiting spacy Language processing pipeline
         :param labels: The subset of labels from the gold annotations to restrict labeling to.
         """
-        self.nlp = nlp
+        self.nlp = spacy_pipeline
         self.labels = labels
         self.none_count = 0
 
     def find_span(self, start, end, label, span, doc):
-        #TODO REALLY clean this up asap - this method will find valid spans with annotation boundaries
+        #TODO REALLY clean this up asap - this method will find valid spans with annotation boundaries that
         #TODO do not line up with tokenization boundaries.
 
         span1 = None
