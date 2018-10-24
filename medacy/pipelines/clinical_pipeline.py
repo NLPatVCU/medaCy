@@ -15,6 +15,8 @@ class ClinicalPipeline(BasePipeline):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
+
+        :param metamap: an instance of MetaMap
         """
         super().__init__("clinical_pipeline", spacy.load("en_core_web_sm"))
 
@@ -56,7 +58,7 @@ class ClinicalPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size = 5)
+        extractor = FeatureExtractor(window_size = 2, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num'])
         return extractor
 
 

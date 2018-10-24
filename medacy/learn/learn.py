@@ -4,7 +4,6 @@ Builds a model with a given medacy pipeline and dataset
 from ..pipelines.base import BasePipeline
 from ..tools import DataLoader
 from ..pipeline_components import MetaMap
-from ..learn import FeatureExtractor
 
 class Learner:
     def __init__(self, medacy_pipeline, data_loader, metamap=None):
@@ -25,9 +24,8 @@ class Learner:
         if metamap is not None and isinstance(metamap, MetaMap):
             data_loader.metamap(metamap)
 
-
         nlp = medacy_pipeline.spacy_pipeline
-        feature_extractor = FeatureExtractor()
+        feature_extractor = medacy_pipeline.get_feature_extractor()
         X_data = []
         y_data = []
 
@@ -51,6 +49,11 @@ class Learner:
             """
 
             features, labels = feature_extractor(doc)
+
+            X_data += features
+            y_data += labels
+
+        print(y_data)
 
 
     def train(self):
