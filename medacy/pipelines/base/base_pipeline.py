@@ -42,7 +42,7 @@ class BasePipeline(ABC):
         """
         return self.spacy_pipeline
 
-    def add_component(self, component):
+    def add_component(self, component, *argv):
         """
         Adds a given component to pipeline
         :param component: a subclass of BaseComponent
@@ -60,7 +60,7 @@ class BasePipeline(ABC):
 
 
 
-        self.spacy_pipeline.add_pipe(component(self.spacy_pipeline))
+        self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv))
 
 
 

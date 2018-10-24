@@ -1,4 +1,4 @@
-
+from spacy.tokens.underscore import Underscore
 
 class FeatureExtractor:
     """
@@ -12,10 +12,11 @@ class FeatureExtractor:
     name = "feature_extractor"
 
 
-    def __init__(self, window_size=5):
+    def __init__(self, window_size=2):
         #TODO this should have options for window_wize, features to exclude, and anything else.
         self.window_size = window_size
-        pass
+        self.all_custom_features = list(Underscore.token_extensions.keys()) #do not ask how long this took to find.
+        self.spacy_features = ['pos']
 
     def __call__(self, doc):
 
@@ -61,22 +62,48 @@ class FeatureExtractor:
     def _token_to_feature_dict(self, index, sentence):
         """
 
-        :param index: the index of the token in the sentence
-        :param sentence: an array of tokens corresponding to a sentence
+        :param index: the index of the token in the sequence
+        :param sentence: an array of tokens corresponding to a sequence
         :return:
         """
 
         #This should automatically gather features that are set on tokens
-        #by looping over all attributes set on sentence[index] that beging with 'feature'
+        #by looping over all attributes set on sentence[index] that begin with 'feature'
 
+        features = {
+            'bias': 1.0
+        }
+        for i in range(-self.window_size, self.window_size+1): #loop through our window
+            if 0 <= (index + i) and  (index + i) < len(sentence): #for each index in the window size
+                token = sentence[index+i]
+
+                current = {'%i:%s' % (i, feature) : token._.get(feature) for feature in self.all_custom_features}
+                current.update({'%i:%s' % (i, feature) : token.feature for feature in self.spacy_features})
+
+                print(current)
+
+
+                features.update(current)
+
+
+
+                # features.update(
+                #     '%i:'
+                # )
+
+        return features
+
+
+
+        return
         raise NotImplementedError();
 
         features = {
             'bias': 1.0,
-            '0:text': self.mapper_for_crf_wrapper(sentence[index].text),
+            '0:text': sentence[index].text,
             '0:space_count': sentence[index].text.count(" "),
-            '0:suffix': self.mapper_for_crf_wrapper(sentence[index].text[-3:]),
-            '0:prefix': self.mapper_for_crf_wrapper(sentence[index].text[:3]),
+            '0:suffix': sentence[index].text[-3:],
+            '0:prefix': sentence[index].text[:3],
             '0:pos': str(sentence[index].pos_),
             '0:cui': str(sentence[index]._.cui),
             '0:shape': str(sentence[index].shape),

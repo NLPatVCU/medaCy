@@ -15,7 +15,7 @@ class GoldAnnotatorComponent(BaseComponent):
     name = "gold_annotator"
     dependencies = []
 
-    def __init__(self, spacy_pipeline, labels = []):
+    def __init__(self, spacy_pipeline, labels):
         """
         :param spacy_pipeline: An exisiting spacy Language processing pipeline
         :param labels: The subset of labels from the gold annotations to restrict labeling to.
@@ -68,7 +68,8 @@ class GoldAnnotatorComponent(BaseComponent):
         if not hasattr(doc._, 'gold_annotation_file'):
             raise ValueError("No extension doc._.gold_annotation_file is present.")
 
-        gold_annotations = ann_to_json(open(doc._.gold_annotation_file, 'r').read())
+        with open(doc._.gold_annotation_file, 'r') as gold_annotations:
+            gold_annotations = ann_to_json(gold_annotations.read())
 
         # for label in set([label for _,_,label in [gold['entities'][key] for key in gold['entities']]]):
         Token.set_extension('gold_label', default="O", force=True)

@@ -6,7 +6,7 @@ Metamap a file  and utilize it the output or manipulate stored metamap output
 import subprocess
 import xmltodict
 import json
-import tempfile, os
+import tempfile, os, warnings
 
 
 class MetaMap:
@@ -34,7 +34,7 @@ class MetaMap:
                     cache_directory = os.path.join(tmp,files[0])
                 else:
                     tmp_dir = tempfile.mkdtemp(prefix="medacy")
-                    cache_directory = os.path.join(tmp, tmp_dir.path)
+                    cache_directory = os.path.join(tmp, tmp_dir)
 
         self.cache_directory = cache_directory
         self.metamap_path = metamap_path
@@ -46,6 +46,7 @@ class MetaMap:
         :param max_prune_depth: set to larger if you know what you are doing. See metamap specs about pruning depth.
         :return:
         """
+        self.recent_file = file_to_map
 
         file = open(file_to_map, 'r')
         if not file:
@@ -67,12 +68,12 @@ class MetaMap:
         metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
 
         if self.cache_directory is not None:
-            mapped_file = open(os.path.join(self.cache_directory, file_name), 'w')
-            try:
-                #print("Writing to", os.path.join(self.cache_directory, file_name))
-                mapped_file.write(json.dumps(metamap_dict))
-            except Exception as e:
-                mapped_file.write(str(e))
+            with open(os.path.join(self.cache_directory, file_name), 'w') as mapped_file:
+                try:
+                    #print("Writing to", os.path.join(self.cache_directory, file_name))
+                    mapped_file.write(json.dumps(metamap_dict))
+                except Exception as e:
+                    mapped_file.write(str(e))
 
         return metamap_dict
 
@@ -82,7 +83,8 @@ class MetaMap:
         return self.metamap_dict
 
     def load(self, file_to_load):
-        return json.load(open(file_to_load, 'r'))
+        with open(file_to_load, 'r') as f:
+            return json.load(f)
 
     def map_corpus(self, documents, directory=None, n_job=-1):
         """
@@ -100,19 +102,17 @@ class MetaMap:
 
     def _run_metamap(self, args, document):
         """
-        Runs metamap through bash and feeds in appropraite
+        Runs metamap through bash and feeds in appropriate arguments
         :param args: arguments to feed into metamap
         :param document: the raw text to be metamapped
         :return:
         """
+
         bashCommand = 'bash %s %s' % (self.metamap_path, args)
         process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = process.communicate(input=bytes(document, 'UTF-8'))
         output = str(output.decode('utf-8'))
 
-
-        #remove first line
-        #xml = "\n".join(output.split("\n")[1:])
         xml = ""
         for line in output.split("\n")[1:]:
             if 'DOCTYPE' not in line and 'xml' not in line:
@@ -147,6 +147,10 @@ class MetaMap:
         :param metamap_dict: A dictionary containing the metamap output
         :return: an array of mapped_terms
         """
+        if metamap_dict['metamap'] is None:
+            warnings.warn("Metamap output is none for a file in the pipeline. Breaking")
+            return
+
 
         utterances = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']
         mapped_terms = []

@@ -4,5 +4,5 @@ metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/
 
 
 file_to_map = "/home/aymulyar/development/medaCy/medacy/tests/pipeline_components/metamap/test.txt"
-file = metamap.map_file(file_to_map, cache_output=True)
+file = metamap.map_file(file_to_map)
 print(file)

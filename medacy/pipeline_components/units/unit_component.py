@@ -18,32 +18,32 @@ class UnitComponent(BaseComponent):
 
     def __init__(self, nlp):
         self.nlp = nlp
-        Token.set_extension('is_mass_unit', default=False)
+        Token.set_extension('feature_is_mass_unit', default=False)
         nlp.entity.add_label('mass_unit')
 
-        Token.set_extension('is_volume_unit', default=False)
+        Token.set_extension('feature_is_volume_unit', default=False)
         nlp.entity.add_label('volume_unit')
 
-        Token.set_extension('is_time_unit', default=False)
+        Token.set_extension('feature_is_time_unit', default=False)
         nlp.entity.add_label('time_unit')
 
-        Token.set_extension('is_route_type', default=False)
+        Token.set_extension('feature_is_route_type', default=False)
         nlp.entity.add_label('route_type')
 
-        Token.set_extension('is_form_unit', default=False)
+        Token.set_extension('feature_is_form_unit', default=False)
         nlp.entity.add_label('form_unit')
 
-        Token.set_extension('is_frequency_indicator', default=False)
+        Token.set_extension('feature_is_frequency_indicator', default=False)
         nlp.entity.add_label('frequency_indicator')
 
 
-        Token.set_extension('is_measurement_unit', default=False)
+        Token.set_extension('feature_is_measurement_unit', default=False)
         nlp.entity.add_label('measurement_unit')
 
-        Token.set_extension('is_measurement', default=False)
+        Token.set_extension('feature_is_measurement', default=False)
         nlp.entity.add_label('measurement')
 
-        Token.set_extension('is_duration_pattern', default=False)
+        Token.set_extension('feature_is_duration_pattern', default=False)
         nlp.entity.add_label('duration_pattern')
 
 
@@ -183,7 +183,7 @@ class UnitComponent(BaseComponent):
                 if span is None:
                     raise BaseException("Span is none")
                 for token in span:
-                    token._.is_mass_unit = True
+                    token._.feature_is_mass_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -194,7 +194,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['volume_unit'])
                 for token in span:
-                    token._.is_volume_unit = True
+                    token._.feature_is_volume_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -206,7 +206,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['time_unit'])
                 for token in span:
-                    token._.is_time_unit = True
+                    token._.feature_is_time_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -217,7 +217,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['duration_pattern'])
                 for token in span:
-                    token._.is_duration_pattern = True
+                    token._.feature_is_duration_pattern = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -229,7 +229,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['frequency_indicator'])
                 for token in span:
-                    token._.is_frequency_indicator = True
+                    token._.feature_is_frequency_indicator = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -241,7 +241,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['form_unit'])
                 for token in span:
-                    token._.is_form_unit = True
+                    token._.feature_is_form_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -252,7 +252,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['route_type'])
                 for token in span:
-                    token._.is_route_type = True
+                    token._.feature_is_route_type = True
                     if len(span) > 1:
                         retokenizer.merge(span)
                     doc.ents = list(doc.ents) + [span]
@@ -263,7 +263,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['measurement_unit'])
                 for token in span:
-                    token._.is_measurement_unit = True
+                    token._.feature_is_measurement_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
@@ -275,7 +275,7 @@ class UnitComponent(BaseComponent):
             for match_id, start, end in matches:
                 span = Span(doc, start, end, label=nlp.vocab.strings['measurement'])
                 for token in span:
-                    token._.is_measurement = True
+                    token._.feature_is_measurement = True
                 retokenizer.merge(span)
                 doc.ents = list(doc.ents) + [span]
 

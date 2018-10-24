@@ -1,5 +1,6 @@
 from ..metamap.metamap import MetaMap
 from spacy.tokens import Token
+import warnings
 
 
 class MetaMapComponent():
@@ -7,10 +8,11 @@ class MetaMapComponent():
     A pipeline component for SpaCy that overlays Metamap output as token attributes
     """
     name = "metamap_annotator"
-
-    def __init__(self, nlp):
+    dependencies = []
+    def __init__(self, nlp, metamap):
         self.nlp = nlp
-        self.metamap = MetaMap()
+        assert isinstance(metamap, MetaMap), "MetamapComponent requires a MetaMap instance as an argument."
+        self.metamap = metamap
 
 
     def __call__(self, doc):
@@ -24,6 +26,12 @@ class MetaMapComponent():
         else:
             metamap_dict = metamap.map_text(doc.text)
 
+        if metamap_dict['metamap'] is None:
+            if hasattr(doc._, 'metamapped_file'):
+                warnings.warn("This metamap file is invalid and cannot be parsed in MetaMapComponent: %s \n Ignore this warning if this is a unittest - all may be fine." % doc._.metamapped_file)
+            else:
+                warnings.warn("Metamapping text on the fly failed - aborting. Try to pre-metamap with DataLoader.")
+            return doc
 
         mapped_terms = metamap.extract_mapped_terms(metamap_dict) #parse terms out of mappings dictionary
 
@@ -61,7 +69,6 @@ class MetaMapComponent():
         #adds labels for displaying NER output with displacy.
         for span in spans:
             doc.ents = list(doc.ents) + [span]
-
 
         #Overlays CUI of each term
         Token.set_extension('feature_cui', default="-1", force=True)
