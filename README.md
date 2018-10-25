@@ -77,6 +77,38 @@ predictor.predict()
 #prediction appear in a /predictions sub-directory of your data.
 ```
 
+An example combined pipeline script:
+```python
+from medacy.learn import Learner
+from medacy.predict import Predictor
+from medacy.pipelines import ClinicalPipeline
+from medacy.tools import DataLoader
+from medacy.pipeline_components import MetaMap
+import logging, sys
+
+#See what medaCy is doing at any part of the learning or prediction process
+logging.basicConfig(stream=sys.stdout,level=logging.INFO) #set level=logging.DEBUG for more information
+
+train_loader = DataLoader("/home/aymulyar/development/testing/spacy_testing/train_files")
+test_loader = DataLoader("/home/aymulyar/development/testing/spacy_testing/test_files")
+metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
+
+train_loader.metamap(metamap)
+test_loader.metamap(metamap)
+
+pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
+
+learner = Learner(pipeline, train_loader)
+
+model = learner.train()
+
+predictor = Predictor(pipeline, test_loader, model=model)
+
+predictor.predict()
+
+#prediction appear in a /predictions sub-directory of your data.
+```
+
 Note, the ClinicalPipeline requires spaCy's small model - install it with pip:
 ```python
 pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
