@@ -24,6 +24,7 @@ Training a Named Entity Recognition model for Clinical Text using medaCy:
 from medacy.pipelines import ClinicalPipeline
 from medacy.tools import DataLoader
 from medacy.pipeline_component import MetaMap
+import joblib
 
 from medacy.learn import Learner
 
@@ -52,6 +53,7 @@ Prediction utilizing medaCy:
 from medacy.pipelines import ClinicalPipeline
 from medacy.tools import DataLoader
 from medacy.pipeline_component import MetaMap
+import joblib
 
 from medacy.predict import Predictor
 
@@ -79,6 +81,33 @@ Note, the ClinicalPipeline requires spaCy's small model - install it with pip:
 ```python
 pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
 ```
+
+
+Set-up
+======
+To install this repository from source do the following:
+1) Enter into a python3 virtual envirorment, once inside make sure to upgrade pip to the latest version.
+2) Run the following instruction - this should take a bit and may throw some non-fatal warnings.
+```python
+pip install git+https://github.com/NanoNLP/medaCy.git
+```
+3) Install spaCy's small model.
+```python
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
+```
+
+Contribution
+============
+To contribute do the following:
+1) Enter into a python3 virtual envirorment, once inside make sure to upgrade pip to the latest version.
+2) Fork and clone this repository, enter into the cloned repo and run:
+```python
+pip install -e .
+```
+This will install medaCy in editable mode. Any changes you make to medaCy sources code will be reflected immediately when used.
+
+3) Insure you are developing in the development branch or your own branch of the development branch.
+
 
 License
 =======
