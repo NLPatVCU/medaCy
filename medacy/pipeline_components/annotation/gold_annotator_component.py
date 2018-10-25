@@ -1,10 +1,12 @@
 from ..base import BaseComponent
 from medacy.tools.ann_to_json import ann_to_json
 from spacy.tokens import Token
+import logging
 
 class GoldAnnotatorComponent(BaseComponent):
     #TODO CLEAN ME
     #TODO Look into spacy GoldParse
+    #TODO This code really needs a fixing but it is bootstrapped to work from development
     """
     A pipeline component that overlays gold annotations. This pipeline component
     sets the attribute 'gold_label' to all tokens to be used as the class value of the token
@@ -22,11 +24,13 @@ class GoldAnnotatorComponent(BaseComponent):
         """
         self.nlp = spacy_pipeline
         self.labels = labels
-        self.none_count = 0
+        self.failed_overlay_count = 0
+        self.failed_identifying_span_count = 0
 
     def find_span(self, start, end, label, span, doc):
         #TODO REALLY clean this up asap - this method will find valid spans with annotation boundaries that
         #TODO do not line up with tokenization boundaries.
+        #TODO I hacked this together and never looked at it again - please don't judge :) -Andriy.
 
         span1 = None
         span2 = None
@@ -51,7 +55,7 @@ class GoldAnnotatorComponent(BaseComponent):
                                 # span_sent = str(span.sent).split()
                             if z == 20:
                                 if span2 is None:
-                                    print(start, end, label, span2)
+                                    logging.warning("Could not overlay span: %s %s %s %s", str(start), str(end), str(label), str(span2))
                                 break
                             z = z + 1
 
@@ -79,15 +83,21 @@ class GoldAnnotatorComponent(BaseComponent):
 
             span = doc.char_span(e_start, e_end)
             if span is None:
-                self.none_count += 1
-                print(self.none_count)
+                self.failed_overlay_count += 1
+                self.failed_identifying_span_count += 1
+                logging.warning("Number of failed annotation overlays with current tokenizer: %i (%i,%i,%s)", self.failed_overlay_count, e_start, e_end, e_label)
             fixed_span = self.find_span(e_start, e_end, e_label, span, doc)
             if fixed_span is not None:
                 if span is None:
-                    print(fixed_span.text)
+                    logging.warning("Fixed span (%i,%i,%s) into: %s", e_start, e_end, e_label,fixed_span.text)
+                    self.failed_identifying_span_count -= 1
                 for token in fixed_span:
                     if e_label in self.labels or not self.labels:
                         token._.set('gold_label', e_label)
+
+            else: #annotation was not able to be fixed, it will be ignored - this is bad in evaluation.
+                logging.warning("Could not fix annotation: (%i,%i,%s)", e_start, e_end, e_label)
+                logging.warning("Total Failed Annotations: %i", self.failed_identifying_span_count)
 
         return doc
 

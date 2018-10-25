@@ -1,4 +1,4 @@
-from nlp.clinical_pipeline.feature_extractor import FeatureExtractor
+import logging
 """
 Takes a CRF model and a document to annotate
 Outputs a string containing a proper.ann file with the models tags
@@ -6,7 +6,7 @@ Outputs a string containing a proper.ann file with the models tags
 
 
 #TODO refactor completely. This should take a Pipeline and output the build ann file using that pipeline
-def model_to_ann(crf_model, doc):
+def model_to_ann(model, medacy_pipeline, doc):
     """
 
     :param crf_model: a built model
@@ -14,11 +14,11 @@ def model_to_ann(crf_model, doc):
     :return: a string containing a valid .ann file
     """
 
-    extract = FeatureExtractor()
+    extract = medacy_pipeline.get_feature_extractor()
 
     features, indices = extract.get_features_with_span_indices(doc)
 
-    predictions = crf_model.predict(features)
+    predictions = model.predict(features)
 
     predictions = [element for sentence in predictions for element in sentence] #flatten 2d list
 
@@ -28,7 +28,7 @@ def model_to_ann(crf_model, doc):
     num = 1
 
     i=0
-    #print(predictions)
+
     while i < len(predictions):
         if predictions[i] == "O":
             i+=1
@@ -49,7 +49,7 @@ def model_to_ann(crf_model, doc):
 
         labeled_text = doc.text[first_start:last_end]
 
-        print(entity, labeled_text, doc._.metamapped_file.split('/')[-1] )
+        logging.info("Writing prediction: ", entity, labeled_text)
 
         ann_file += "T%i\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
         num+=1

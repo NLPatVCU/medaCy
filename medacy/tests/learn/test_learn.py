@@ -15,7 +15,7 @@ class TestLearn(TestCase):
             f.write("I took 5 mg")
 
         with open(os.path.join(cls.test_dir, 'test.ann'), 'w') as f:
-            f.write("Example Ann File")
+            f.write("T1	Strength 8 11	5 mg")
 
     @classmethod
     def tearDownClass(cls):
@@ -28,10 +28,13 @@ class TestLearn(TestCase):
         metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap",
                           cache_output=False)
 
-        pipeline = ClinicalPipeline(metamap, entities=['Drug'])
+        loader.metamap(metamap) #pre-cache metamap files
+
+        pipeline = ClinicalPipeline(metamap, entities=['Strength'])
 
 
-        learner = Learner(pipeline, loader, metamap)
+        learner = Learner(pipeline, loader)
 
+        model = learner.train()
 
         self.assertIsInstance(learner, Learner)

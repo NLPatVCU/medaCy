@@ -20,6 +20,7 @@ class ClinicalPipeline(BasePipeline):
         """
         super().__init__("clinical_pipeline", spacy.load("en_core_web_sm"))
 
+        self.entities = entities
 
         self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
 
@@ -47,11 +48,12 @@ class ClinicalPipeline(BasePipeline):
 
 
     def get_learner(self):
-        return sklearn_crfsuite.CRF(
-            algorithm='lbfgs',
+        return ("CRF_l2sgd", sklearn_crfsuite.CRF(
+            algorithm='l2sgd',
+            c2=0.1,
             max_iterations=100,
             all_possible_transitions=True
-        )
+        ))
 
     def get_tokenizer(self):
         tokenizer = ClinicalTokenizer(self.spacy_pipeline)
