@@ -25,8 +25,7 @@ class TestLearn(TestCase):
     def test_with_metamap(self):
 
         loader = DataLoader(self.test_dir)
-        metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap",
-                          cache_output=False)
+        metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
 
         loader.metamap(metamap) #pre-cache metamap files
 

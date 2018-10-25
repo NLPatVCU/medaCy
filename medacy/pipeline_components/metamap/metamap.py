@@ -11,7 +11,7 @@ import tempfile, os, warnings
 
 class MetaMap:
 
-    def __init__(self, metamap_path=None, cache_output = True, cache_directory = None):
+    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None):
         """
 
         A python wrapper for metamap that includes built in caching of metamap output.

@@ -14,6 +14,38 @@ Features
 - Pre-compiled medical terminology and abbreviation lexicons.
 
 
+User Guide
+==========
+Using medaCy is simple: all one needs is to select a pipeline and provide it with training data to learn from.
+
+A learning script utilizing Metamap
+```python
+from medacy.pipelines import ClinicalPipeline
+from medacy.tools import DataLoader
+from medacy.pipeline_component import MetaMap
+
+from medacy.learn import Learner
+
+#Some more powerful pipelines require an outside knowledge source such as MetaMap.
+metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
+
+#Automatically organizes your training files.
+train_loader = DataLoader("/directory/containing/your/training/data/")
+
+#Pre-metamap our training data to speed up building models.
+train_loader.metamap(metamap)
+
+#Create pipeline and specify entities to learn.
+pipeline = ClinicalPipeline(metamap, entities=['Strength'])
+
+#create a Learner using our pipeline and data
+learner = Learner(pipeline, loader)
+
+#Build a model (defaults to Conditional Random Field)
+model = learner.train()
+
+```
+
 License
 =======
 This package is licensed under the GNU General Public License
