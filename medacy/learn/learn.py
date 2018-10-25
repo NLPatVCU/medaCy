@@ -63,9 +63,8 @@ class Learner:
             doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
 
             #Link metamapped file to doc for use in MetamapComponent if exists
-            if data_file.metamapped_path is not None:
+            if data_loader.is_metamapped():
                 doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
-
             #run 'er through
             doc = medacy_pipeline(doc)
 

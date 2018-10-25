@@ -49,6 +49,12 @@ class DataLoader():
                     ann_path = None
                 self.all_files.append(DataFile(file_name, raw_text_path, ann_path))
 
+        if self.is_metamapped():
+            for file in self.all_files:
+                file.metamapped_path = os.path.join(self.data_directory + "/metamapped",
+                                                    file.raw_path.split(os.path.sep)[-1].replace(
+                                                        ".%s" % self.raw_text_file_extension, ".metamapped"))
+
     def get_files(self):
         return self.all_files
 
@@ -83,7 +89,7 @@ class DataLoader():
         self.metamap = metamap
         metamapped_files_directory = self.data_directory+"/metamapped/"
 
-        if os.path.isdir(metamapped_files_directory):
+        if self.is_metamapped():
             logging.warning("Metamap directory already exists, please delete if you are attempting to re-map. Exiting mapping.")
             return
         os.makedirs(metamapped_files_directory)

@@ -24,6 +24,7 @@ class MetaMapComponent():
         if hasattr(doc._, 'metamapped_file'):
             metamap_dict = metamap.load(doc._.metamapped_file)
         else:
+            logging.debug("Could not find metamap file for document.")
             metamap_dict = metamap.map_text(doc.text)
 
         if metamap_dict['metamap'] is None:

@@ -186,8 +186,11 @@ class UnitComponent(BaseComponent):
                     raise BaseException("Span is none")
                 for token in span:
                     token._.feature_is_mass_unit = True
-                if len(span) > 1:
-                    retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
                 doc.ents = list(doc.ents) + [span]
 
         with doc.retokenize() as retokenizer:
@@ -197,8 +200,11 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['volume_unit'])
                 for token in span:
                     token._.feature_is_volume_unit = True
-                if len(span) > 1:
-                    retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
                 doc.ents = list(doc.ents) + [span]
 
 
@@ -220,8 +226,12 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['duration_pattern'])
                 for token in span:
                     token._.feature_is_duration_pattern = True
-                if len(span) > 1:
-                    retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
+
                 doc.ents = list(doc.ents) + [span]
 
         with doc.retokenize() as retokenizer:
@@ -232,8 +242,11 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['frequency_indicator'])
                 for token in span:
                     token._.feature_is_frequency_indicator = True
-                if len(span) > 1:
-                    retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
                 doc.ents = list(doc.ents) + [span]
 
         with doc.retokenize() as retokenizer:
@@ -244,8 +257,11 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['form_unit'])
                 for token in span:
                     token._.feature_is_form_unit = True
-                if len(span) > 1:
-                    retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
                 doc.ents = list(doc.ents) + [span]
 
         with doc.retokenize() as retokenizer:
@@ -255,8 +271,11 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['route_type'])
                 for token in span:
                     token._.feature_is_route_type = True
-                    if len(span) > 1:
-                        retokenizer.merge(span)
+                    try:
+                        if len(span) > 1:
+                            retokenizer.merge(span)
+                    except ValueError:
+                        pass
                     doc.ents = list(doc.ents) + [span]
 
         with doc.retokenize() as retokenizer:
@@ -266,8 +285,11 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['measurement_unit'])
                 for token in span:
                     token._.feature_is_measurement_unit = True
-                if len(span) > 1:
-                    retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
                 doc.ents = list(doc.ents) + [span]
 
         with doc.retokenize() as retokenizer:
@@ -278,7 +300,11 @@ class UnitComponent(BaseComponent):
                 span = Span(doc, start, end, label=nlp.vocab.strings['measurement'])
                 for token in span:
                     token._.feature_is_measurement = True
-                retokenizer.merge(span)
+                try:
+                    if len(span) > 1:
+                        retokenizer.merge(span)
+                except ValueError:
+                    pass
                 doc.ents = list(doc.ents) + [span]
 
         return doc
