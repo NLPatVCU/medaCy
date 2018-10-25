@@ -29,7 +29,6 @@ setup(
         'scikit-learn>=0.20.0',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
-        'en_core_web_sm>=2.0.0',
         'joblib>=0.12.5'
     ],
     # dependency_links=[
