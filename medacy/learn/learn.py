@@ -87,6 +87,7 @@ class Learner:
         return self.model
 
     def cross_validate(self):
+        #TODO untested
         """
         Performs cross validation on trained mode.
 
