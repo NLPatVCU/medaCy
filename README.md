@@ -89,8 +89,8 @@ import logging, sys
 #See what medaCy is doing at any part of the learning or prediction process
 logging.basicConfig(stream=sys.stdout,level=logging.INFO) #set level=logging.DEBUG for more information
 
-train_loader = DataLoader("/home/aymulyar/development/testing/spacy_testing/train_files")
-test_loader = DataLoader("/home/aymulyar/development/testing/spacy_testing/test_files")
+train_loader = DataLoader("/training/directory")
+test_loader = DataLoader("/evaluation/directory")
 metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
 
 train_loader.metamap(metamap)
@@ -101,6 +101,8 @@ pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', '
 learner = Learner(pipeline, train_loader)
 
 model = learner.train()
+
+learner.cross_validate() #perform 10 fold cross validation on predicted model, this takes time.
 
 predictor = Predictor(pipeline, test_loader, model=model)
 
