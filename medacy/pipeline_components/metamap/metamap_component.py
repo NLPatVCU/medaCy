@@ -1,6 +1,6 @@
 from ..metamap.metamap import MetaMap
 from spacy.tokens import Token
-import warnings
+import warnings, logging
 
 
 class MetaMapComponent():
@@ -16,11 +16,11 @@ class MetaMapComponent():
 
 
     def __call__(self, doc):
+        logging.debug("Called MetaMap Component")
         metamap = self.metamap
         nlp = self.nlp
 
         #check if pre-metamapped file is associated with the doc
-        #TODO Should this raise an exception instead? Metamapping should be preprocessing possibly
         if hasattr(doc._, 'metamapped_file'):
             metamap_dict = metamap.load(doc._.metamapped_file)
         else:
@@ -37,8 +37,8 @@ class MetaMapComponent():
 
 
 
-        semantic_type_labels = ['orch', 'phsu', 'inch', 'bacs', 'patf' ]
-        semantic_type_labels += ['aapp', 'antb', 'sosy', 'dsyn', 'fndg','qlco', 'patf']
+        semantic_type_labels = ['orch', 'phsu']
+        # semantic_type_labels += ['inch', 'bacs', 'patf' ,'aapp', 'antb', 'sosy', 'dsyn', 'fndg','qlco', 'patf']
 
 
         spans = [] #for displaying NER output with displacy

@@ -148,7 +148,7 @@ class MetaMap:
         :return: an array of mapped_terms
         """
         if metamap_dict['metamap'] is None:
-            warnings.warn("Metamap output is none for a file in the pipeline. Breaking")
+            warnings.warn("Metamap output is none for a file in the pipeline. Exiting.")
             return
 
 

@@ -2,7 +2,6 @@
 Manages training data
 """
 import os, json, logging
-from medacy.pipeline_components import MetaMap
 
 import multiprocessing, warnings
 from joblib import Parallel, delayed
@@ -58,12 +57,14 @@ class DataLoader():
         file = files[i].split(os.path.sep)[-1]
         file_path = files[i]
         logging.info("Attempting to Metamap: %s", file_path)
+        print("Attempting to Metamap: %s" % file_path)
         mapped_file_location =  os.path.join(self.data_directory+"/metamapped", file.replace(self.raw_text_file_extension, "metamapped"))
         if not os.path.isfile(mapped_file_location):
             mapped_file = open(mapped_file_location, 'w')
             try:
                 mapped_file.write(json.dumps(self.metamap.map_file(file_path)))
                 logging.info("Successfully Metamapped: %s", file_path)
+                print("Successfully Metamapped: %s" % file_path)
             except Exception as e:
                 logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
                 mapped_file.write(str(e))
@@ -83,7 +84,7 @@ class DataLoader():
         metamapped_files_directory = self.data_directory+"/metamapped/"
 
         if os.path.isdir(metamapped_files_directory):
-            warnings.warn("Metamap directory already exists, please delete if you are attempting to re-map. Exiting mapping.")
+            logging.warning("Metamap directory already exists, please delete if you are attempting to re-map. Exiting mapping.")
             return
         os.makedirs(metamapped_files_directory)
 

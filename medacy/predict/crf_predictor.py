@@ -18,6 +18,7 @@ def model_to_ann(model, medacy_pipeline, doc):
 
     features, indices = extract.get_features_with_span_indices(doc)
 
+
     predictions = model.predict(features)
 
     predictions = [element for sentence in predictions for element in sentence] #flatten 2d list
@@ -49,7 +50,7 @@ def model_to_ann(model, medacy_pipeline, doc):
 
         labeled_text = doc.text[first_start:last_end]
 
-        logging.info("Writing prediction: ", entity, labeled_text)
+        logging.info("Writing prediction: %s %s", entity, labeled_text.replace('\n', ' '))
 
         ann_file += "T%i\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
         num+=1

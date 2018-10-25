@@ -3,6 +3,7 @@ from spacy.tokens import Token
 from spacy.matcher import Matcher
 from spacy.tokens import Span
 from ..base import BaseComponent
+import logging
 
 class UnitComponent(BaseComponent):
     """
@@ -173,6 +174,7 @@ class UnitComponent(BaseComponent):
 
 
     def __call__(self, doc):
+        logging.debug("Called UnitAnnotator Component")
         nlp = self.nlp
 
         with doc.retokenize() as retokenizer:

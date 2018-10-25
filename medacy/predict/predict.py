@@ -12,7 +12,11 @@ class Predictor():
         assert isinstance(model, CRF), "MedaCy currently only supports CRF models - model was not an instance of CRF from sklearn_crfsuite."
         self.model = model
         self.prediction_directory = data_loader.data_directory + "/predictions/"
-        os.makedirs(self.prediction_directory)
+
+        if os.path.isdir(self.prediction_directory):
+            logging.warning("Overwritting existing predictions")
+        else:
+            os.makedirs(self.prediction_directory)
 
 
     def predict(self, model=None):

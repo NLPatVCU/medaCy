@@ -19,6 +19,7 @@ User Guide
 Using medaCy is simple: all one needs is to select a pipeline and provide it with training data to learn from.
 
 Training a Named Entity Recognition model for Clinical Text using medaCy:
+
 ```python
 from medacy.pipelines import ClinicalPipeline
 from medacy.tools import DataLoader
@@ -67,15 +68,17 @@ data_loader.metamap(metamap)
 pipeline = ClinicalPipeline(metamap, entities=['Strength'])
 
 #create a Learner using our pipeline and data
-predictor = Predictor(pipeline, loader, model=model)
+predictor = Predictor(pipeline, data_loader, model=model)
 
 predictor.predict()
 
 #prediction appear in a /predictions sub-directory of your data.
 ```
 
-
-
+Note, the ClinicalPipeline requires spaCy's small model - install it with pip:
+```python
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
+```
 
 License
 =======

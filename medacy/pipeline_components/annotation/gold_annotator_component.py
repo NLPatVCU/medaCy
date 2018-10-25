@@ -30,7 +30,6 @@ class GoldAnnotatorComponent(BaseComponent):
     def find_span(self, start, end, label, span, doc):
         #TODO REALLY clean this up asap - this method will find valid spans with annotation boundaries that
         #TODO do not line up with tokenization boundaries.
-        #TODO I hacked this together and never looked at it again - please don't judge :) -Andriy.
 
         span1 = None
         span2 = None
@@ -67,6 +66,7 @@ class GoldAnnotatorComponent(BaseComponent):
 
     def __call__(self, doc):
         nlp = self.nlp
+        logging.debug("Called GoldAnnotator Component")
 
         #check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
