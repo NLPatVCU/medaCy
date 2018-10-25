@@ -65,6 +65,7 @@ class Learner:
             #Link metamapped file to doc for use in MetamapComponent if exists
             if data_loader.is_metamapped():
                 doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+
             #run 'er through
             doc = medacy_pipeline(doc)
 
@@ -86,7 +87,7 @@ class Learner:
         return self.model
 
     def cross_validate(self):
-        #TODO untested
+        #TODO untested after transfer from experimental codebase, should work though.
         """
         Performs cross validation on trained mode.
 

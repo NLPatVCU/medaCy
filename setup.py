@@ -11,7 +11,7 @@ setup(
     license='GNU GENERAL PUBLIC LICENSE',
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
-    packages=['medacy'],
+    packages=['medacy', 'medacy.tools', 'medacy.learn', 'medacy.predict', 'medacy.pipelines', 'medacy.pipeline_components'],
     url='https://github.com/NanoNLP/medaCy',
     author=__authors__,
     author_email='contact@andriymulyar.com', #TODO general nlp lab email?
