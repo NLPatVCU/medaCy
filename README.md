@@ -41,7 +41,7 @@ train_loader.metamap(metamap)
 pipeline = ClinicalPipeline(metamap, entities=['Strength'])
 
 #create a Learner using our pipeline and data
-learner = Learner(pipeline, loader)
+learner = Learner(pipeline, train_loader)
 
 #Build a model (defaults to Conditional Random Field)
 model = learner.train()
@@ -84,7 +84,7 @@ from medacy.predict import Predictor
 from medacy.pipelines import ClinicalPipeline
 from medacy.tools import DataLoader
 from medacy.pipeline_components import MetaMap
-import logging, sys
+import logging, sys, joblib
 
 #See what medaCy is doing at any part of the learning or prediction process
 logging.basicConfig(stream=sys.stdout,level=logging.INFO) #set level=logging.DEBUG for more information
@@ -101,6 +101,7 @@ pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', '
 learner = Learner(pipeline, train_loader)
 
 model = learner.train()
+joblib.dump(model,'medacy_model')
 
 learner.cross_validate() #perform 10 fold cross validation on predicted model, this takes time.
 
@@ -130,6 +131,19 @@ pip install git+https://github.com/NanoNLP/medaCy.git
 pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
 ```
 
+How medaCy works
+================
+MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
+MedaCy consists of a set of lightning-fast pipelines that are specialized for learning specific types of medical entities. A pipeline consists
+of a stackable and interchangeable set of PipelineComponents - these are bite-sized code blocks that each overlay a feature onto the text being processed.
+
+Components
+==========
+You can write your own PipelineComponents to utilize in custom pipelines by interfacing the BasePipeline and BaseComponent classes. Alternatively
+use the components already included with medaCy. Some more powerful components require outside software - an example is the MetaMapComponent which interfaces with MetaMap
+to overlay rich medical concept information onto text. Components are chained or stacked in pipelines and can themselves depend on the outputs of previous components to function.
+
+
 Contribution
 ============
 To contribute do the following:
@@ -141,6 +155,7 @@ pip install -e .
 This will install medaCy in editable mode. Any changes you make to medaCy sources code will be reflected immediately when used.
 
 3) Insure you are developing in the development branch or your own branch of the development branch.
+
 
 
 License
