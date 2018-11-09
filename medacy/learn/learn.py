@@ -69,7 +69,7 @@ class Learner:
             #run 'er through
             doc = medacy_pipeline(doc)
 
-            #The document has now be run through the pipeline. All annotations are overlayed - pull features.
+            #The document has now been run through the pipeline. All annotations are overlayed - pull features.
             features, labels = self.feature_extractor(doc)
 
             self.X_data += features
@@ -86,18 +86,19 @@ class Learner:
         self.model = learner
         return self.model
 
-    def cross_validate(self):
+    def cross_validate(self, num_folds=10,):
         #TODO untested after transfer from experimental codebase, should work though.
         """
-        Performs cross validation on trained mode.
+        Performs cross validation on trained model.
 
         This should really go in another class.
         :return: prints out cross validation metrics.
         """
 
         assert self.model is not None, "Model is not yet trained, cannot cross validate."
+        assert num_folds > 0, "Number of folds for cross validation must be greater than 0"
 
-        cv = SequenceStratifiedKFold(folds=10)
+        cv = SequenceStratifiedKFold(folds=num_folds)
         X_data = self.X_data
         y_data = self.y_data
 
