@@ -8,6 +8,8 @@ Without stratification, under-representated labels may not appear in some folds.
 """
 import numpy as np
 from itertools import cycle
+from pylatex import Document, Tabular
+import datetime
 
 class SequenceStratifiedKFold:
     """
@@ -57,3 +59,38 @@ class SequenceStratifiedKFold:
             train_test_array.append((X,y))
 
         return train_test_array
+
+    def make_table(self, scores):
+        doc = Document(str(datetime.datetime.now()))
+
+        def __table_spec():
+            spec = ''
+            for _ in scores:
+                spec += '|c'
+            return spec + '|c|'
+
+        def __build_rows(k, keys_order):
+            rows = []
+            index = 0
+            while index < k:
+                row = [index]
+                for key in keys_order:
+                    row.append(scores[key][index])
+                index += 1
+                rows.append(row)
+            return rows
+
+        with doc.create(Tabular(__table_spec())) as table:
+            table.add_hline()
+            k_order = list(scores.keys())
+            print(k_order)
+            table.add_row(['k'] + k_order)
+            rows = __build_rows(len(scores[k_order[0]]), k_order)
+
+            for row in rows:
+                table.add_hline()
+                table.add_row(row)
+            table.add_hline()
+
+        doc.generate_pdf(clean_tex=False)
+        doc.generate_tex()
