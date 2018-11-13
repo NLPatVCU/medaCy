@@ -53,13 +53,10 @@ class MetaMap:
             raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
         if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
-            file_name = file_to_map.split(os.path.sep)[-1]
-            file_name+=".metamapped"
-            files = [file for file in os.listdir(self.cache_directory) if file == file_name]
-            #print("Detected existing file", files)
+            cached_file_name = os.path.splitext(file_to_map)[0] + ".metamapped"
 
-            if len(files) == 1:
-                existing_cached_file = os.path.join(self.cache_directory, files[0])
+            if os.path.exists(file_to_map):
+                existing_cached_file = os.path.join(self.cache_directory, cached_file_name)
                 print(existing_cached_file)
                 return self.load(existing_cached_file)
 
@@ -68,7 +65,7 @@ class MetaMap:
         metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
 
         if self.cache_directory is not None:
-            with open(os.path.join(self.cache_directory, file_name), 'w') as mapped_file:
+            with open(os.path.join(self.cache_directory, cached_file_name), 'w') as mapped_file:
                 try:
                     #print("Writing to", os.path.join(self.cache_directory, file_name))
                     mapped_file.write(json.dumps(metamap_dict))
