@@ -16,101 +16,59 @@ Features
 
 User Guide
 ==========
-Using medaCy is simple: all one needs is to select a pipeline and provide it with training data to learn from.
+Using medaCy is simple: 
+1. Select a pipeline 
+2. Load training/testing data(In BRAT annotation format)
+3. Utilize the Model class with your chosen pipeline to fit and predict with your NLP models! 
 
-Training a Named Entity Recognition model for Clinical Text using medaCy:
+Training and using a Named Entity Recognition model for Clinical Text using medaCy:
 
 ```python
-from medacy.pipelines import ClinicalPipeline
-from medacy.tools import DataLoader
-from medacy.pipeline_component import MetaMap
-import joblib
-
-from medacy.learn import Learner
-
-#Some more powerful pipelines require an outside knowledge source such as MetaMap.
-metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
-
-#Automatically organizes your training files.
-train_loader = DataLoader("/directory/containing/your/training/data/")
-
-#Pre-metamap our training data to speed up building models.
-train_loader.metamap(metamap)
-
-#Create pipeline and specify entities to learn.
-pipeline = ClinicalPipeline(metamap, entities=['Strength'])
-
-#create a Learner using our pipeline and data
-learner = Learner(pipeline, train_loader)
-
-#Build a model (defaults to Conditional Random Field)
-model = learner.train()
-joblib.dump(model,'/location/to/save/model')
-```
-
-Prediction utilizing medaCy:
-```python
-from medacy.pipelines import ClinicalPipeline
-from medacy.tools import DataLoader
-from medacy.pipeline_component import MetaMap
-import joblib
-
-from medacy.predict import Predictor
-
-model = joblib.load('/location/containing/saved/model')
-
-#Some more powerful pipelines require an outside knowledge source such as MetaMap.
-metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
-
-data_loader = DataLoader("/directory/containing/your/text/to/label")
-
-#Pre-metamap our data we wish to label to speed up prediction. Not necessary.
-data_loader.metamap(metamap)
-
-pipeline = ClinicalPipeline(metamap, entities=['Strength'])
-
-#create a Learner using our pipeline and data
-predictor = Predictor(pipeline, data_loader, model=model)
-
-predictor.predict()
-
-#prediction appear in a /predictions sub-directory of your data.
-```
-
-An example combined pipeline script:
-```python
-from medacy.learn import Learner
-from medacy.predict import Predictor
+from medacy.model import Model
 from medacy.pipelines import ClinicalPipeline
 from medacy.tools import DataLoader
 from medacy.pipeline_components import MetaMap
-import logging, sys, joblib
+import logging, sys
 
-#See what medaCy is doing at any part of the learning or prediction process
+# See what medaCy is doing at any part of the learning or prediction process
 logging.basicConfig(stream=sys.stdout,level=logging.INFO) #set level=logging.DEBUG for more information
 
+# Load in and organize traiing and testing files
 train_loader = DataLoader("/training/directory")
 test_loader = DataLoader("/evaluation/directory")
+
+# MetaMap is required for powerful ClinicalPipeline performance, configure to your MetaMap path
 metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
 
+# Optionally pre-MetaMap data to speed up performance
 train_loader.metamap(metamap)
 test_loader.metamap(metamap)
 
+# Choose which pipeline to use and what entities to classify
 pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
 
-learner = Learner(pipeline, train_loader)
+# Initialize a Model with the pipeline it will use to preprocess the data
+# The algorithm used for prediction is specified in the pipeline - ClinicalPipeline uses CRF(Conditional Random Field)
+model = Model(pipeline)
 
-model = learner.train()
-joblib.dump(model,'medacy_model')
+#  Run training docs through pipeline and fit the model
+model.fit(train_loader) 
 
-learner.cross_validate() #perform 10 fold cross validation on predicted model, this takes time.
+# Perform 10-fold stratified cross-validation on the data used to fit the model
+# Can also pass in a DataLoader instance to instead cross validate on new data
+model.cross_validate(num_folds=10) 
 
-predictor = Predictor(pipeline, test_loader, model=model)
+# Predictions appear in a /predictions subdirectory of your test data
+model.predict(test_loader) 
 
-predictor.predict()
-
-#prediction appear in a /predictions sub-directory of your data.
 ```
+
+One can also dump fitted models into a specified directory.
+```python
+model.fit(train_loader)
+model.dump('/path/to/dump/to') # Trained model is now stored at specified directory
+
+``` 
 
 Note, the ClinicalPipeline requires spaCy's small model - install it with pip:
 ```python
