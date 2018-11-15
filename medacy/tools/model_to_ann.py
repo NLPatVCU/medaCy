@@ -1,7 +1,7 @@
 import logging
 """
 Takes a model and a document to annotate
-Outputs a string containing a proper.ann file with the models tags
+Outputs a string containing a proper.ann file with the model tags
 """
 
 def model_to_ann(model, medacy_pipeline, doc):

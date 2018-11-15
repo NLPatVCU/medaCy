@@ -1,7 +1,7 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from ..pipeline_components import ClinicalTokenizer
-from ..learn.feature_extractor import FeatureExtractor
+from ..model import FeatureExtractor
 
 from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent
 

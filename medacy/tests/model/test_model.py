@@ -1,13 +1,12 @@
 from unittest import TestCase
-from medacy.learn import Learner
-from medacy.predict import Predictor
+from medacy.model import Model
 from medacy.pipelines import ClinicalPipeline
 from medacy.tools import DataLoader
 from medacy.pipeline_components import MetaMap
 import tempfile, shutil, os
 
 
-class TestPredict(TestCase):
+class TestModel(TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -27,8 +26,26 @@ class TestPredict(TestCase):
         shutil.rmtree(cls.train_dir)
         shutil.rmtree(cls.test_dir)
 
+    def test_fit_with_clinical_pipeline(self):
+        """
+        Loads in training data and uses it to fit a model using the Clinical Pipeline
+        :return:
+        """
+        train_loader = DataLoader(self.train_dir)
+        metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap",
+                          cache_output=False)
 
-    def test_with_metamap(self):
+        train_loader.metamap(metamap)
+
+        pipeline = ClinicalPipeline(metamap, entities=['Strength'])
+
+        model = Model(pipeline)
+        model.fit(train_loader)
+
+        self.assertIsInstance(model, Model)
+        self.assertIsNot(model.model, None)
+
+    def test_prediction_with_clinical_pipeline(self):
         """
         Constructs a model that memorizes an entity, predicts it on same file, writes to ann
         :return:
@@ -44,13 +61,9 @@ class TestPredict(TestCase):
 
         pipeline = ClinicalPipeline(metamap, entities=['Strength'])
 
-        learner = Learner(pipeline, train_loader)
+        model = Model(pipeline)
+        model.fit(train_loader)
+        model.predict(test_loader)
 
-        model = learner.train()
-
-        predictor = Predictor(pipeline, test_loader, model=model)
-
-        predictor.predict()
-
-        with open(predictor.prediction_directory+"predict_test.ann") as f:
+        with open(self.test_dir + "/predictions/" + "predict_test.ann") as f:
             self.assertEqual(f.read(), "T1	Strength 7 11	5 mg\n")

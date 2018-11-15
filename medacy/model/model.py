@@ -1,18 +1,25 @@
-import logging, os
+import logging, os, joblib
 from tabulate import tabulate
 from statistics import mean
 from sklearn_crfsuite import metrics
-from ..learn.stratified_k_fold import SequenceStratifiedKFold
+from .stratified_k_fold import SequenceStratifiedKFold
 
-from .base.base_model import BaseModel
+from medacy.pipelines.base.base_pipeline import BasePipeline
 from ..tools import DataLoader
 from ..tools import model_to_ann
 
-class CRFModel(BaseModel):
+class Model():
 
+    def __init__(self, medacy_pipeline=None, model=None):
 
-    def __init__(self, medacy_pipeline):
-        super().__init__('CRF', medacy_pipeline)
+        assert isinstance(medacy_pipeline, BasePipeline), "Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline"
+
+        self.pipeline = medacy_pipeline
+        self.model = model
+
+        # These arrays will store the sequences of features and sequences of corresponding labels
+        self.x_data = []
+        self.y_data = []
 
 
     def fit(self, training_data_loader):
@@ -23,49 +30,18 @@ class CRFModel(BaseModel):
         """
 
         assert isinstance(training_data_loader, DataLoader), "Must pass in an instance of DataLoader containing your training files"
+        assert isinstance(self.pipeline, BasePipeline), "Model object must contain a medacy pipeline to pre-process data"
 
-        medacy_pipeline = self.pipeline
-        nlp = medacy_pipeline.spacy_pipeline
-        feature_extractor = medacy_pipeline.get_feature_extractor()
+        self.__extract_features(training_data_loader)
 
-        # These arrays will store the sequences of features and sequences of corresponding labels
-        X_data = []
-        Y_data = []
-
-        # Look into parallelizing as discussed in spacy.
-        for data_file in training_data_loader.get_files():
-            logging.info("Processing file: %s", data_file.file_name)
-
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = nlp.make_doc(raw_text.read())
-
-            # Link ann_path to doc
-            doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
-
-            # Link metamapped file to doc for use in MetamapComponent if exists
-            if training_data_loader.is_metamapped():
-                doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
-
-            # run 'er through
-            doc = medacy_pipeline(doc)
-
-            # The document has now been run through the pipeline. All annotations are overlayed - pull features.
-            features, labels = feature_extractor(doc)
-
-            X_data += features
-            Y_data += labels
-
-        logging.info("Feature Extraction Completed")
-        # TODO Have the model defined in the Model class, not the pipeline. Have a pipeline store a list of models it supports.
-        learner_name, learner = medacy_pipeline.get_learner()
+        learner_name, learner = self.pipeline.get_learner()
         logging.info("Training: %s", learner_name)
 
-        learner.fit(X_data, Y_data)
+        learner.fit(self.x_data, self.y_data)
         logging.info("Successfully Trained: %s", learner_name)
 
         self.model = learner
         return self.model
-
 
     def predict(self, new_data_loader):
         """
@@ -107,50 +83,30 @@ class CRFModel(BaseModel):
             with open(prediction_directory+data_file.file_name+".ann", "a+") as f:
                 f.write(ann_file_contents)
 
+
     # TODO untested after transfer from experimental codebase, should work though.
-    def cross_validate(self, training_data_loader, num_folds=10):
+    def cross_validate(self, training_data_loader=None, num_folds=10):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
-        :param training_data_loader:
+        :param training_data_loader: Optional parameter for data to cross validate, if ommited cross validation will be
+                performed on the data that was used to previously fit the model.
         :param num_folds:
         :return: Prints out performance metrics
         """
 
-        assert isinstance(training_data_loader, DataLoader), "Must pass in an instance of DataLoader containing your training files"
-        assert self.model is not None, "Model is not yet trained, cannot cross validate."
-        assert num_folds > 0, "Number of folds for cross validation must be greater than 0"
+        assert num_folds > 1, "Number of folds for cross validation must be greater than 1"
+
+        # If a new data loader has been passed in, extract features.  Else use the already extracted features
+        # from previously fitting the model.
+        if training_data_loader is not None:
+            assert isinstance(training_data_loader,
+                              DataLoader), "Must pass in an instance of DataLoader containing your training files"
+            self.__extract_features(training_data_loader)
+
+        X_data = self.x_data
+        Y_data = self.y_data
 
         medacy_pipeline = self.pipeline
-        nlp = medacy_pipeline.spacy_pipeline
-        feature_extractor = medacy_pipeline.get_feature_extractor()
-
-        # These arrays will store the sequences of features and sequences of corresponding labels
-        X_data = []
-        Y_data = []
-
-        # Look into parallelizing as discussed in spacy.
-        # Run data through our pipeline and extract features
-        for data_file in training_data_loader.get_files():
-            logging.info("Processing file: %s", data_file.file_name)
-
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = nlp.make_doc(raw_text.read())
-
-            # Link ann_path to doc
-            doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
-
-            # Link metamapped file to doc for use in MetamapComponent if exists
-            if training_data_loader.is_metamapped():
-                doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
-
-            # run 'er through
-            doc = medacy_pipeline(doc)
-
-            # The document has now been run through the pipeline. All annotations are overlayed - pull features.
-            features, labels = feature_extractor(doc)
-
-            X_data += features
-            Y_data += labels
 
         cv = SequenceStratifiedKFold(folds=num_folds)
 
@@ -159,7 +115,6 @@ class CRFModel(BaseModel):
         evaluation_statistics = {}
         fold = 1
         for train_indices, test_indices in cv(X_data, Y_data):
-            # TODO Have the model defined in the Model class, not the pipeline. Have a pipeline store a list of models it supports.
             fold_statistics = {}
             learner_name, learner = medacy_pipeline.get_learner()
 
@@ -229,3 +184,48 @@ class CRFModel(BaseModel):
 
         print(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
+
+    def __extract_features(self, training_data_loader):
+        """
+        Runs a set of training examples through the pipeline to layer annotations, and then extracts the features
+        from these annotations
+        :param training_data_loader: DataLoader instance containing training data
+        :return:
+        """
+        medacy_pipeline = self.pipeline
+        nlp = medacy_pipeline.spacy_pipeline
+        feature_extractor = medacy_pipeline.get_feature_extractor()
+        logging.info("Beginning Feature Extraction")
+
+        # Run data through our pipeline and extract features
+        for data_file in training_data_loader.get_files():
+            logging.info("Processing file: %s", data_file.file_name)
+
+            with open(data_file.raw_path, 'r') as raw_text:
+                doc = nlp.make_doc(raw_text.read())
+
+            # Link ann_path to doc
+            doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
+
+            # Link metamapped file to doc for use in MetamapComponent if exists
+            if training_data_loader.is_metamapped():
+                doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+
+            # run 'er through
+            doc = medacy_pipeline(doc)
+
+            # The document has now been run through the pipeline. All annotations are overlayed - pull features.
+            features, labels = feature_extractor(doc)
+            logging.info("Feature Extraction Completed")
+
+            self.x_data += features
+            self.y_data += labels
+
+    def dump(self, path):
+        """
+        Dumps the fitted model this class contains into the specified directory
+        :param path: File path to directory where fitted model should be dumped
+        :return:
+        """
+        assert self.model is not None, "Must fit model before dumping"
+        joblib.dump(self.model, path)
