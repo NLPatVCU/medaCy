@@ -11,10 +11,10 @@ setup(
     license='GNU GENERAL PUBLIC LICENSE',
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
-    packages=['medacy', 'medacy.tools', 'medacy.learn', 'medacy.predict', 'medacy.pipelines', 'medacy.pipeline_components'],
+    packages=['medacy', 'medacy.tools', 'medacy.model', 'medacy.pipelines', 'medacy.pipeline_components'],
     url='https://github.com/NanoNLP/medaCy',
     author=__authors__,
-    author_email='contact@andriymulyar.com', #TODO general nlp lab email?
+    author_email='contact@andriymulyar.com',
     keywords='natural-language-processing medical-natural-language-processing machine-learning nlp-library metamap clinical-text-processing',
     classifiers=[
         '( Status :: 4 - Beta',
@@ -32,9 +32,6 @@ setup(
         'joblib>=0.12.5',
         'tabulate>=0.8.2'
     ],
-    # dependency_links=[
-    #     'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz'
-    # ],
     test_suite='nose.collector',
     tests_require=['nose'],
     include_package_data=True,

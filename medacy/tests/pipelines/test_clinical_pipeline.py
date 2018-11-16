@@ -7,7 +7,7 @@ class TestClinicalPipeline(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.pipeline = ClinicalPipeline()
+        cls.pipeline = ClinicalPipeline() # Will fail as MetaMap isn't installed
 
 
 

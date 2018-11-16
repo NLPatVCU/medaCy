@@ -3,7 +3,7 @@ from medacy.tools import DataLoader
 import shutil, tempfile, os
 from medacy.pipeline_components import MetaMap
 
-class TestClinicalPipeline(TestCase):
+class TestDataManager(TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -32,11 +32,6 @@ class TestClinicalPipeline(TestCase):
 
         self.assertIsInstance( DataLoader(self.test_dir) , DataLoader)
 
-    def test_error_no_corresponding_ann(self):
-        with open(os.path.join(self.test_dir, 'test.txt'), 'w') as f:
-            f.write("Contents of test file")
-        with self.assertRaises(AssertionError):
-            DataLoader(self.test_dir)
 
     def test_metamapping(self):
         with open(os.path.join(self.test_dir, 'test.txt'), 'w') as f:
