@@ -1,11 +1,9 @@
 import logging
 """
-Takes a CRF model and a document to annotate
-Outputs a string containing a proper.ann file with the models tags
+Takes a model and a document to annotate
+Outputs a string containing a proper.ann file with the model tags
 """
 
-
-#TODO refactor completely. This should take a Pipeline and output the build ann file using that pipeline
 def model_to_ann(model, medacy_pipeline, doc):
     """
 
@@ -58,7 +56,3 @@ def model_to_ann(model, medacy_pipeline, doc):
 
 
     return ann_file
-
-
-
-
