@@ -123,7 +123,7 @@ This package is licensed under the GNU General Public License
 
 Authors
 =======
-Andriy Mulyar, Bobby Best, Steele Farnsworth, Yadunandan Pillai, Corey Sutphin, Bridget McInnes
+Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Yadunandan Pillai, Bridget McInnes
 
 Acknowledgments
 ===============
