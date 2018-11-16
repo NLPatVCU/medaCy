@@ -17,9 +17,9 @@ Features
 User Guide
 ==========
 Using medaCy is simple: 
-1. Select a pipeline 
-2. Load training/testing data(In BRAT annotation format)
-3. Utilize the Model class with your chosen pipeline to fit and predict with your NLP models! 
+1. Select a pipeline or build your own.
+2. Load training/testing data (currently only BRAT annotation format is support - help us write converters!)
+3. Instantiate a Model with your chosen pipeline, train on your annotated data, and retrieve a model for prediction! 
 
 Training and using a Named Entity Recognition model for Clinical Text using medaCy:
 
