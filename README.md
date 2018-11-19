@@ -114,7 +114,17 @@ This will install medaCy in editable mode. Any changes you make to medaCy source
 
 3) Insure you are developing in the development branch or your own branch of the development branch.
 
-
+Citation
+========
+'''
+@ARTICLE {,
+    author  = "Andriy Mulyar, Natassja Lewinski and Bridget McInnes",
+    title   = "TAC SRIE 2018: Extracting Systematic Review Information with MedaCy",
+    journal = "National Institute of Standards and Technology (NIST) 2018 Systematic Review Information Extraction (SRIE) Text Analysis Conference",
+    year    = "2018",
+    month   = "nov"
+}
+'''
 
 License
 =======
