@@ -18,7 +18,7 @@ class Model():
         self.model = model
 
         # These arrays will store the sequences of features and sequences of corresponding labels
-        self.x_data = []
+        self.X_data = []
         self.y_data = []
 
 
@@ -37,7 +37,7 @@ class Model():
         learner_name, learner = self.pipeline.get_learner()
         logging.info("Training: %s", learner_name)
 
-        learner.fit(self.x_data, self.y_data)
+        learner.fit(self.X_data, self.y_data)
         logging.info("Successfully Trained: %s", learner_name)
 
         self.model = learner
@@ -90,7 +90,7 @@ class Model():
         Performs k-fold stratified cross-validation using our model and pipeline.
         :param training_data_loader: Optional parameter for data to cross validate, if ommited cross validation will be
                 performed on the data that was used to previously fit the model.
-        :param num_folds:
+        :param num_folds: number of folds to split training data into for cross validation
         :return: Prints out performance metrics
         """
 
@@ -103,7 +103,7 @@ class Model():
                               DataLoader), "Must pass in an instance of DataLoader containing your training files"
             self.__extract_features(training_data_loader)
 
-        X_data = self.x_data
+        X_data = self.X_data
         Y_data = self.y_data
 
         medacy_pipeline = self.pipeline
@@ -187,7 +187,7 @@ class Model():
 
     def __extract_features(self, training_data_loader):
         """
-        Runs a set of training examples through the pipeline to layer annotations, and then extracts the features
+        Runs a set of training examples through the pipeline to layer annotations, and then extracts features
         from these annotations
         :param training_data_loader: DataLoader instance containing training data
         :return:
@@ -218,7 +218,7 @@ class Model():
             features, labels = feature_extractor(doc)
             logging.info("Feature Extraction Completed")
 
-            self.x_data += features
+            self.X_data += features
             self.y_data += labels
 
     def dump(self, path):
