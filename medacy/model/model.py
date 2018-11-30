@@ -1,4 +1,4 @@
-import logging, os, joblib
+import logging, os, joblib, time
 from tabulate import tabulate
 from statistics import mean
 from sklearn_crfsuite import metrics
@@ -7,8 +7,11 @@ from .stratified_k_fold import SequenceStratifiedKFold
 from medacy.pipelines.base.base_pipeline import BasePipeline
 from ..tools import DataLoader
 from ..tools import model_to_ann
+from pathos.multiprocessing import ProcessingPool as Pool
 
-class Model():
+
+
+class Model:
 
     def __init__(self, medacy_pipeline=None, model=None):
 
@@ -22,26 +25,69 @@ class Model():
         self.y_data = []
 
 
-    def fit(self, training_data_loader):
+    def fit(self, training_data_loader, n_jobs=10):
         """
             Runs training data through our pipeline and fits it using the CRF algorithm
             :param training_data_loader: Instance of DataLoader containing training files
+            :param n_jobs
             :return model: Trained model
         """
 
         assert isinstance(training_data_loader, DataLoader), "Must pass in an instance of DataLoader containing your training files"
         assert isinstance(self.pipeline, BasePipeline), "Model object must contain a medacy pipeline to pre-process data"
 
-        self.__extract_features(training_data_loader)
+
+
+
+        #logging.info("Here")
+        pool = Pool( nodes = n_jobs)
+
+        # for data_file in training_data_loader.get_files():
+        #     # parent_conn, child_conn = Pipe()
+        #     print(data_file)
+
+
+
+
+        results = [pool.apipe(self._extract_features, data_file, self.pipeline, training_data_loader.is_metamapped())
+                   for data_file in training_data_loader.get_files()]
+
+        # for data_file in training_data_loader.get_files():
+        #     # res = pool.apply_async(_extract_features, args=(data_file, self.pipeline, training_data_loader.is_metamapped(),))
+        #     res = pool.apipe(_extract_features,
+        #                      data_file, self.pipeline, training_data_loader.is_metamapped())
+        #     logging.info(res.get())
+
+
+        while any([i.ready() == False for i in results]):
+            print([i.ready() for i in results])
+            time.sleep(1)
+
+
+
+        for idx, i in enumerate(results):
+            X,y = i.get()
+            #print(X)
+            self.X_data+=X
+            self.y_data+=y
+
+        logging.info("Currently Waiting")
+
+
+        #print(self.X_data)
 
         learner_name, learner = self.pipeline.get_learner()
         logging.info("Training: %s", learner_name)
+
+        assert self.X_data, "Training data is empty."
 
         learner.fit(self.X_data, self.y_data)
         logging.info("Successfully Trained: %s", learner_name)
 
         self.model = learner
         return self.model
+
+
 
     def predict(self, new_data_loader):
         """
@@ -77,7 +123,7 @@ class Model():
                 doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
             # run through the pipeline
-            doc = medacy_pipeline(doc)
+            doc = medacy_pipeline(doc, predict=True)
 
             ann_file_contents = model_to_ann(model, medacy_pipeline, doc)
             with open(prediction_directory+data_file.file_name+".ann", "a+") as f:
@@ -185,41 +231,37 @@ class Model():
         print(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
 
-    def __extract_features(self, training_data_loader):
+
+
+
+    def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
-        Runs a set of training examples through the pipeline to layer annotations, and then extracts features
-        from these annotations
-        :param training_data_loader: DataLoader instance containing training data
-        :return:
+        A multi-processed method for extracting features from a given DataFile instance.
+        :param conn: pipe to pass back data to parent process
+        :param data_file: an instance of DataFile
+        :return: Updates queue with features for this given file.
         """
-        medacy_pipeline = self.pipeline
         nlp = medacy_pipeline.spacy_pipeline
         feature_extractor = medacy_pipeline.get_feature_extractor()
-        logging.info("Beginning Feature Extraction")
+        logging.info("Processing file: %s", data_file.file_name)
 
-        # Run data through our pipeline and extract features
-        for data_file in training_data_loader.get_files():
-            logging.info("Processing file: %s", data_file.file_name)
+        with open(data_file.raw_path, 'r') as raw_text:
+            doc = nlp.make_doc(raw_text.read())
+        # Link ann_path to doc
+        doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
 
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = nlp.make_doc(raw_text.read())
+        # Link metamapped file to doc for use in MetamapComponent if exists
+        if is_metamapped:
+            doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
-            # Link ann_path to doc
-            doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
+        # run 'er through
+        doc = medacy_pipeline(doc)
 
-            # Link metamapped file to doc for use in MetamapComponent if exists
-            if training_data_loader.is_metamapped():
-                doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+        # The document has now been run through the pipeline. All annotations are overlayed - pull features.
+        features, labels = feature_extractor(doc)
 
-            # run 'er through
-            doc = medacy_pipeline(doc)
-
-            # The document has now been run through the pipeline. All annotations are overlayed - pull features.
-            features, labels = feature_extractor(doc)
-            logging.info("Feature Extraction Completed")
-
-            self.X_data += features
-            self.y_data += labels
+        logging.info("Feature Extraction Completed")
+        return (features, labels)
 
     def dump(self, path):
         """
