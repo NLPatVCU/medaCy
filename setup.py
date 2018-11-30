@@ -1,5 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from medacy import __version__, __authors__
+
+packages = find_packages()
 
 def readme():
     with open('README.md') as f:
@@ -11,7 +13,7 @@ setup(
     license='GNU GENERAL PUBLIC LICENSE',
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
-    packages=['medacy', 'medacy.tools', 'medacy.model', 'medacy.pipelines', 'medacy.pipeline_components'],
+    packages=packages,
     url='https://github.com/NanoNLP/medaCy',
     author=__authors__,
     author_email='contact@andriymulyar.com',
