@@ -1,6 +1,6 @@
-from ..metamap.metamap import MetaMap
+from medacy.pipeline_components.metamap.metamap import MetaMap
 from spacy.tokens import Token
-import warnings, logging
+import warnings,logging
 
 
 class MetaMapComponent():

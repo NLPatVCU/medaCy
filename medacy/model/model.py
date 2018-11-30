@@ -13,7 +13,7 @@ from pathos.multiprocessing import ProcessingPool as Pool
 
 class Model:
 
-    def __init__(self, medacy_pipeline=None, model=None):
+    def __init__(self, medacy_pipeline=None, model=None, n_jobs=-1):
 
         assert isinstance(medacy_pipeline, BasePipeline), "Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline"
 
@@ -23,13 +23,13 @@ class Model:
         # These arrays will store the sequences of features and sequences of corresponding labels
         self.X_data = []
         self.y_data = []
+        self.n_jobs = n_jobs
 
 
-    def fit(self, training_data_loader, n_jobs=10):
+    def fit(self, training_data_loader):
         """
             Runs training data through our pipeline and fits it using the CRF algorithm
             :param training_data_loader: Instance of DataLoader containing training files
-            :param n_jobs
             :return model: Trained model
         """
 
@@ -40,7 +40,7 @@ class Model:
 
 
         #logging.info("Here")
-        pool = Pool( nodes = n_jobs)
+        pool = Pool( nodes = self.n_jobs)
 
         # for data_file in training_data_loader.get_files():
         #     # parent_conn, child_conn = Pipe()
@@ -147,7 +147,7 @@ class Model:
         if training_data_loader is not None:
             assert isinstance(training_data_loader,
                               DataLoader), "Must pass in an instance of DataLoader containing your training files"
-            self.__extract_features(training_data_loader)
+            self._extract_features(self.pipeline, training_data_loader.is_metamapped())
 
         X_data = self.X_data
         Y_data = self.y_data

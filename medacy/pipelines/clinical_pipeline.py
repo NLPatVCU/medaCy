@@ -39,7 +39,7 @@ class ClinicalPipeline(BasePipeline):
         ))
 
     def get_tokenizer(self):
-        tokenizer = CharacterTokenizer(self.spacy_pipeline)
+        tokenizer = ClinicalTokenizer(self.spacy_pipeline)
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
