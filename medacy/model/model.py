@@ -147,7 +147,7 @@ class Model:
         if training_data_loader is not None:
             assert isinstance(training_data_loader,
                               DataLoader), "Must pass in an instance of DataLoader containing your training files"
-            self.__extract_features(training_data_loader)
+            self._extract_features(self.pipeline, training_data_loader.is_metamapped())
 
         X_data = self.X_data
         Y_data = self.y_data
