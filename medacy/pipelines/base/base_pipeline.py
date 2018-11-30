@@ -62,6 +62,25 @@ class BasePipeline(ABC):
 
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv))
 
+    def __call__(self, doc, predict=False):
+        """
+        Passes a single document through the pipeline.
+        All relevant document attributes should be set prior to this call.
+        :param self:
+        :param doc:
+        :return:
+        """
+
+        for component_name, proc in self.spacy_pipeline.pipeline:
+            if predict and component_name == "gold_annotator":
+                continue
+            doc = proc(doc)
+            if component_name == 'ner':
+                # remove labeled default entities
+                doc.ents = []
+
+        return doc
+
 
 
 
