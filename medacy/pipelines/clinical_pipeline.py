@@ -1,7 +1,7 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from ..pipeline_components import ClinicalTokenizer
-from ..model import FeatureExtractor
+from ..pipeline_components import ClinicalTokenizer, CharacterTokenizer
+from medacy.model.feature_extractor import FeatureExtractor
 
 from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent
 
@@ -27,23 +27,6 @@ class ClinicalPipeline(BasePipeline):
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
         self.add_component(MetaMapComponent, metamap)
         self.add_component(UnitComponent)
-
-    def __call__(self, doc):
-        """
-        Passes a single document through the pipeline.
-        All relevant document attributes should be set prior to this call.
-        :param self:
-        :param doc:
-        :return:
-        """
-
-        for component_name, proc in self.spacy_pipeline.pipeline:
-            doc = proc(doc)
-            if component_name == 'ner':
-                # remove labeled default entities
-                doc.ents = []
-
-        return doc
             
 
 
@@ -56,7 +39,7 @@ class ClinicalPipeline(BasePipeline):
         ))
 
     def get_tokenizer(self):
-        tokenizer = ClinicalTokenizer(self.spacy_pipeline)
+        tokenizer = CharacterTokenizer(self.spacy_pipeline)
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):

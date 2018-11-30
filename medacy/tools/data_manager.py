@@ -64,7 +64,7 @@ class DataLoader():
         file_path = files[i]
         logging.info("Attempting to Metamap: %s", file_path)
         print("Attempting to Metamap: %s" % file_path)
-        mapped_file_location =  os.path.join(self.data_directory+"/metamapped", file.replace(self.raw_text_file_extension, "metamapped"))
+        mapped_file_location = os.path.join(self.data_directory+"/metamapped", file.replace(self.raw_text_file_extension, "metamapped"))
         if not os.path.isfile(mapped_file_location):
             mapped_file = open(mapped_file_location, 'w')
             try:
