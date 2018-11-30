@@ -7,13 +7,15 @@ from .stratified_k_fold import SequenceStratifiedKFold
 from medacy.pipelines.base.base_pipeline import BasePipeline
 from ..tools import DataLoader
 from ..tools import model_to_ann
-from pathos.multiprocessing import ProcessingPool as Pool
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
+
+
 
 
 
 class Model:
 
-    def __init__(self, medacy_pipeline=None, model=None, n_jobs=-1):
+    def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
 
         assert isinstance(medacy_pipeline, BasePipeline), "Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline"
 
@@ -37,14 +39,8 @@ class Model:
         assert isinstance(self.pipeline, BasePipeline), "Model object must contain a medacy pipeline to pre-process data"
 
 
-
-
-        #logging.info("Here")
         pool = Pool( nodes = self.n_jobs)
 
-        # for data_file in training_data_loader.get_files():
-        #     # parent_conn, child_conn = Pipe()
-        #     print(data_file)
 
 
 
@@ -52,22 +48,15 @@ class Model:
         results = [pool.apipe(self._extract_features, data_file, self.pipeline, training_data_loader.is_metamapped())
                    for data_file in training_data_loader.get_files()]
 
-        # for data_file in training_data_loader.get_files():
-        #     # res = pool.apply_async(_extract_features, args=(data_file, self.pipeline, training_data_loader.is_metamapped(),))
-        #     res = pool.apipe(_extract_features,
-        #                      data_file, self.pipeline, training_data_loader.is_metamapped())
-        #     logging.info(res.get())
 
 
         while any([i.ready() == False for i in results]):
-            print([i.ready() for i in results])
             time.sleep(1)
 
 
 
         for idx, i in enumerate(results):
             X,y = i.get()
-            #print(X)
             self.X_data+=X
             self.y_data+=y
 
