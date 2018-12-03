@@ -63,7 +63,7 @@ class MetaMap:
             with open(file_to_map, 'r') as file:
                 contents = file.read()
         except:
-            print("Error opening file while attempting to map: %s" % file_to_map)
+            raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
         metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
 
