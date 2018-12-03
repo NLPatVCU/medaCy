@@ -3,11 +3,9 @@ from spacy.tokenizer import Tokenizer
 from spacy.util import compile_infix_regex, compile_prefix_regex, compile_suffix_regex
 import re
 
-#TODO I simply transferred my exploratory code - it is a mess and needs to be cleaned.
-
-class ClinicalTokenizer():
+class CharacterTokenizer():
     """
-    A tokenizer for clinical text
+    A tokenizer that tokenizes on every character
     """
     def __init__(self, nlp):
 
@@ -34,7 +32,7 @@ class ClinicalTokenizer():
         Custom prefix tokenization rules
         :return:
         """
-        prefix = r"""^[\[\("'\\/@]"""
+        prefix = r"""."""
         all_prefixes_re = compile_prefix_regex(tuple(list(self.nlp.Defaults.prefixes) + [prefix]))
         return all_prefixes_re
 
@@ -43,7 +41,7 @@ class ClinicalTokenizer():
         Custom infix tokenization rules
         :return:
         """
-        custom_infixes = ['\[', '(?<=[0-9])-(?=[0-9])', '[!&:,()\*/-><]']
+        custom_infixes = ['.']
         infix_re = compile_infix_regex(tuple(list(self.nlp.Defaults.infixes) + custom_infixes))
 
         return infix_re
@@ -53,5 +51,5 @@ class ClinicalTokenizer():
         Custom suffix tokenization rules
         :return:
         """
-        suffix_re = re.compile(r'''[\]\)"',x\-%\?\\n]|\*|(mg$)|(mcg$)|(mL$)|(cap$)|(-+$)$''')
+        suffix_re = re.compile(r'''.''')
         return suffix_re
