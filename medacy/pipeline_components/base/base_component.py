@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from ...pipeline_components.tokenization.clinical_tokenizer import ClinicalTokenizer
+
 class BaseComponent(ABC):
     """
     A base medacy pipeline component that wraps over a spacy component

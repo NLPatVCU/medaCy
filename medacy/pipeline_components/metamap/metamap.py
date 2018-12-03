@@ -56,7 +56,7 @@ class MetaMap:
 
             if len(files) == 1:
                 existing_cached_file = os.path.join(self.cache_directory, files[0])
-                print(existing_cached_file)
+                #print(existing_cached_file)
                 return self.load(existing_cached_file)
 
         try:
@@ -79,6 +79,7 @@ class MetaMap:
 
     def map_text(self, text, max_prune_depth=10):
         #TODO add caching here as in map_file
+        #An example of this cachine is available in the map_file
         self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, text)
         return self.metamap_dict
 
