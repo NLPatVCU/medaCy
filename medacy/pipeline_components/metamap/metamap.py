@@ -48,10 +48,6 @@ class MetaMap:
         """
         self.recent_file = file_to_map
 
-        file = open(file_to_map, 'r')
-        if not file:
-            raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
-
         if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
             cached_file_path = os.path.join(
                 self.cache_directory,
@@ -62,8 +58,12 @@ class MetaMap:
                 print(cached_file_path)
                 return self.load(cached_file_path)
 
+        try:
+            with open(file_to_map, 'r') as file:
+                contents = file.read()
+        except:
+            raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
-        contents = file.read()
         metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
 
         if self.cache_directory is not None:
