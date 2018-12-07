@@ -1,6 +1,6 @@
 import json
 
-from unic2ascii import UNICODE_TO_ASCII
+from .unic2ascii import UNICODE_TO_ASCII
 
 
 def convert(text):
@@ -35,8 +35,7 @@ def convert(text):
 
 
 def restore(text, diff, metamap_dict):
-    # metamap_dict = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']
-    print(text, metamap_dict)
+    metamap_dict = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']
 
     offset = 0
     for conv in diff:
@@ -48,19 +47,19 @@ def restore(text, diff, metamap_dict):
         offset += delta
 
         for mapping in metamap_dict:
-            for candidate in mapping:#['MappingCandidates']['Candidate']:
+            for candidate in mapping['MappingCandidates']['Candidate']:
                 match_start = int(candidate['ConceptPIs']['ConceptPI']['StartPos'])
                 match_length = int(candidate['ConceptPIs']['ConceptPI']['Length'])
                 match_end = match_start + match_length-1
 
                 if match_start == conv_start and match_end == conv_end: # If match is equal to conversion (a [conversion] and some text)
-                    print("Perfect match")
+                    # print("Perfect match")
                     match_length += delta
                 elif match_start < conv_start and match_end < conv_end: # If match intersects conversion on left ([a con]version and some text)
-                    print("Left intersect")
+                    # print("Left intersect")
                     match_length += delta + conv_start
                 elif conv_start < match_start and conv_end < match_end: # If match intersects conversion on right (a conver[sion and som]e text)
-                    print("Right intersect ")
+                    # print("Right intersect ")
                     if conv_end + delta < match_start:
                         print(match_end, conv_end)
                         match_start = conv_end + delta + 1
@@ -68,10 +67,11 @@ def restore(text, diff, metamap_dict):
                     else:
                         match_length += delta
                 elif conv_end < match_start: # If match is totally to the right of the conversion (a conversion and a [match])
-                    print("Full right")
+                    # print("Full right")
                     match_start += delta
                 else: # If match is totally to right of conversion, no action needed (a [match] and a conversion)
-                    print("Full left")
+                    # print("Full left")
+                    pass
 
                 # Update old values in dict
                 candidate['MatchedWords']['MatchedWord'] = text[match_start:match_end+1]
@@ -79,21 +79,3 @@ def restore(text, diff, metamap_dict):
                 candidate['ConceptPIs']['ConceptPI']['Length'] = str(match_length)
         print(text, metamap_dict)
     return text, metamap_dict
-
-
-print();print()
-text, diff = convert("oneαtwo"); MATCH = "phatwo"
-metamap_dict = [
-    [
-        {
-            "MatchedWords": {
-                "MatchedWord": MATCH
-            },
-            "ConceptPIs": {"ConceptPI": {
-                "StartPos": str(text.index(MATCH)),
-                "Length": len(MATCH)
-            }},
-        }
-    ]
-]
-new_text, new_metamap_dict = restore(text, diff, metamap_dict)

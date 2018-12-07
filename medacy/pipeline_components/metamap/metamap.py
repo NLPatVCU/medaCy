@@ -8,7 +8,7 @@ import xmltodict
 import json
 import tempfile, os, warnings
 
-from converter import convert, restore
+from .converter import convert, restore
 
 
 class MetaMap:
