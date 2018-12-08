@@ -1,5 +1,5 @@
 """
-Converts data from made to brat. Enter input and output directories as command line arguments.
+Converts data from ade to brat. Enter input and output directories as command line arguments.
 The associated txt file is not needed to perform any calculations.
 
 :date: 23 November, 2018
