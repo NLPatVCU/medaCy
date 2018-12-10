@@ -8,10 +8,12 @@ import xmltodict
 import json
 import tempfile, os, warnings
 
+from .converter import convert, restore
+
 
 class MetaMap:
 
-    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None):
+    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None, convert_ascii=True):
         """
 
         A python wrapper for metamap that includes built in caching of metamap output.
@@ -38,6 +40,7 @@ class MetaMap:
 
         self.cache_directory = cache_directory
         self.metamap_path = metamap_path
+        self.convert_ascii = convert_ascii
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
@@ -48,27 +51,26 @@ class MetaMap:
         """
         self.recent_file = file_to_map
 
-        file = open(file_to_map, 'r')
-        if not file:
+        if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
+            cached_file_path = os.path.join(
+                self.cache_directory,
+                os.path.splitext(os.path.basename(file_to_map))[0] + ".metamapped"
+            )
+
+            if os.path.exists(cached_file_path):
+                print(cached_file_path)
+                return self.load(cached_file_path)
+
+        try:
+            with open(file_to_map, 'r') as file:
+                contents = file.read()
+        except:
             raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
-        if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
-            file_name = file_to_map.split(os.path.sep)[-1]
-            file_name+=".metamapped"
-            files = [file for file in os.listdir(self.cache_directory) if file == file_name]
-            #print("Detected existing file", files)
-
-            if len(files) == 1:
-                existing_cached_file = os.path.join(self.cache_directory, files[0])
-                #print(existing_cached_file)
-                return self.load(existing_cached_file)
-
-
-        contents = file.read()
         metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
 
         if self.cache_directory is not None:
-            with open(os.path.join(self.cache_directory, file_name), 'w') as mapped_file:
+            with open(cached_file_path, 'w') as mapped_file:
                 try:
                     #print("Writing to", os.path.join(self.cache_directory, file_name))
                     mapped_file.write(json.dumps(metamap_dict))
@@ -108,6 +110,8 @@ class MetaMap:
         :param document: the raw text to be metamapped
         :return:
         """
+        if self.convert_ascii:
+            document, ascii_diff = convert(document)
 
         bashCommand = 'bash %s %s' % (self.metamap_path, args)
         process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -125,8 +129,12 @@ class MetaMap:
             raise Exception("An error occured while using metamap: %s" % error)
 
 
-        dict = xmltodict.parse(xml)
-        return dict
+        metamap_dict = xmltodict.parse(xml)
+
+        if self.convert_ascii:
+            document, metamap_dict = restore(document, ascii_diff, metamap_dict)
+
+        return metamap_dict
 
     def _item_generator(self, json_input, lookup_key):
         if isinstance(json_input, dict):
