@@ -1,1 +1,2 @@
 from .clinical_pipeline import ClinicalPipeline
+from .systematic_review_pipeline import SystematicReviewPipeline

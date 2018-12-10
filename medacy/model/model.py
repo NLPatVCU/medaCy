@@ -39,21 +39,13 @@ class Model:
         assert isinstance(self.pipeline, BasePipeline), "Model object must contain a medacy pipeline to pre-process data"
 
 
-        pool = Pool( nodes = self.n_jobs)
-
-
-
-
+        pool = Pool(nodes = self.n_jobs)
 
         results = [pool.apipe(self._extract_features, data_file, self.pipeline, training_data_loader.is_metamapped())
                    for data_file in training_data_loader.get_files()]
 
-
-
         while any([i.ready() == False for i in results]):
             time.sleep(1)
-
-
 
         for idx, i in enumerate(results):
             X,y = i.get()
@@ -62,8 +54,6 @@ class Model:
 
         logging.info("Currently Waiting")
 
-
-        #print(self.X_data)
 
         learner_name, learner = self.pipeline.get_learner()
         logging.info("Training: %s", learner_name)
@@ -119,7 +109,6 @@ class Model:
                 f.write(ann_file_contents)
 
 
-    # TODO untested after transfer from experimental codebase, should work though.
     def cross_validate(self, training_data_loader=None, num_folds=10):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
@@ -238,6 +227,7 @@ class Model:
             doc = nlp.make_doc(raw_text.read())
         # Link ann_path to doc
         doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
+        doc.set_extension('file_name', default=data_file.file_name, force=True)
 
         # Link metamapped file to doc for use in MetamapComponent if exists
         if is_metamapped:
@@ -249,7 +239,7 @@ class Model:
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc)
 
-        logging.info("Feature Extraction Completed")
+        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
         return (features, labels)
 
     def dump(self, path):
