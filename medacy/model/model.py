@@ -238,6 +238,7 @@ class Model:
             doc = nlp.make_doc(raw_text.read())
         # Link ann_path to doc
         doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
+        doc.set_extension('file_name', default=data_file.file_name, force=True)
 
         # Link metamapped file to doc for use in MetamapComponent if exists
         if is_metamapped:
@@ -249,7 +250,7 @@ class Model:
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc)
 
-        logging.info("Feature Extraction Completed")
+        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
         return (features, labels)
 
     def dump(self, path):

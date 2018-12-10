@@ -32,7 +32,8 @@ setup(
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
-        'tabulate>=0.8.2'
+        'tabulate>=0.8.2',
+        'pathos>=0.2.2.1'
     ],
     test_suite='nose.collector',
     tests_require=['nose'],
