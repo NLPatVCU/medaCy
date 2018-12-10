@@ -39,7 +39,7 @@ class MetaMapComponent():
 
 
         semantic_type_labels = ['orch', 'phsu']
-        # semantic_type_labels += ['inch', 'bacs', 'patf' ,'aapp', 'antb', 'sosy', 'dsyn', 'fndg','qlco', 'patf']
+        semantic_type_labels += ['inch', 'bacs', 'patf' ,'aapp', 'antb', 'sosy', 'dsyn', 'fndg','qlco', 'patf']
 
 
         spans = [] #for displaying NER output with displacy
@@ -49,7 +49,7 @@ class MetaMapComponent():
         for semantic_type_label in semantic_type_labels:
             Token.set_extension('feature_is_' + semantic_type_label, default=False, force=True)  # register extension to token
 
-            entity_name = 'Drug'
+            entity_name = semantic_type_label
             nlp.entity.add_label(entity_name) #register entity label
 
             entity_tags = metamap.get_term_by_semantic_type(mapped_terms, include=[semantic_type_label])
@@ -59,17 +59,23 @@ class MetaMapComponent():
             for start, end, label in [entity_annotations['entities'][key] for key in entity_annotations['entities'].keys()]:
                 span = doc.char_span(start, end, label=nlp.vocab.strings[entity_name])
 
-                #TODO spans are none when indices and token boundaries don't line up. This shouldn't happen here
-                #TODO but needs to be investigated.
-
-                if span is not None:
-                    spans.append(span)
-                    for token in span:
-                        token._.set('feature_is_' + label, True)
+                #TODO spans are none when indices and token boundaries don't line up.
+                if span not in spans:
+                    if span is not None:
+                        logging.debug("Found from metamap: (label=%s,raw_text=\"%s\",location=(%i, %i))" % (label,span.text, start, end ) )
+                        spans.append(span)
+                        for token in span:
+                            token._.set('feature_is_' + label, True)
+                    else:
+                        logging.debug("Metamap span could not be overlayed due to tokenization mis-match: (%i, %i)" % (start, end))
 
         #adds labels for displaying NER output with displacy.
+
         for span in spans:
-            doc.ents = list(doc.ents) + [span]
+            try:
+                doc.ents = list(doc.ents) + [span]
+            except ValueError as error:
+                logging.warning(str(error)) #This gets called when the same token may match multiple semantic types
 
         #Overlays CUI of each term
         Token.set_extension('feature_cui', default="-1", force=True)

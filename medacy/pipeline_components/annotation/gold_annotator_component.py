@@ -28,45 +28,36 @@ class GoldAnnotatorComponent(BaseComponent):
         self.failed_identifying_span_count = 0
 
     def find_span(self, start, end, label, span, doc):
-        #TODO REALLY clean this up asap - this method will find valid spans with annotation boundaries that
-        #TODO do not line up with tokenization boundaries.
+        """
+        Greedily searches characters around word to find a valid set of tokens the annotation likely corresponds to.
+        :param start: index of token start
+        :param end: index of token end
+        :param label:
+        :param span:
+        :param doc:
+        :return:
+        """
+        greedy_searched_span = doc.char_span(start, end)
+        if greedy_searched_span is not None:
+            return greedy_searched_span
 
-        span1 = None
-        span2 = None
-        span_new = None
-        if span is None:
-            w = 1
-            while span1 is None:
-                s1 = start - w
-                span1 = doc.char_span(s1, end)
-                if span1 is not None:
-                    span_new = span1
-                    # span_sent = str(span.sent).split()
-                if w == 10:
-                    if span1 is None:
-                        z = 1
+        #increase boundaries incrementally until a valid span is found
+        i = 0
+        while greedy_searched_span is None and i <= 20:
+            if i % 2 == 0:
+                end += 1
+            else:
+                start-=1
+            i+=1
+            greedy_searched_span = doc.char_span(start, end)
 
-                        while span2 is None:
-                            e1 = end + z
-                            span2 = doc.char_span(start, e1)
-                            if span2 is not None:
-                                span_new = span2
-                                # span_sent = str(span.sent).split()
-                            if z == 20:
-                                if span2 is None:
-                                    logging.warning("Could not overlay span: %s %s %s %s", str(start), str(end), str(label), str(span2))
-                                break
-                            z = z + 1
+        return greedy_searched_span
 
-                    break
-                w = w + 1
-        else:
-            span_new = span
-        return span_new
+
 
     def __call__(self, doc):
         nlp = self.nlp
-        logging.debug("Called GoldAnnotator Component")
+        logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
 
         #check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
@@ -80,25 +71,29 @@ class GoldAnnotatorComponent(BaseComponent):
         # for token in doc:
         #     print(token.text, token.idx)
         for e_start, e_end, e_label in [gold_annotations['entities'][key] for key in gold_annotations['entities']]:
-
+            if e_start > e_end:
+                logging.critical("%s: Broken annotation - start is greater than end: (%i,%i,%s)",doc._.file_name, e_start, e_end, e_label)
+                continue
             span = doc.char_span(e_start, e_end)
             if span is None:
                 self.failed_overlay_count += 1
                 self.failed_identifying_span_count += 1
-                logging.warning("Number of failed annotation overlays with current tokenizer: %i (%i,%i,%s)", self.failed_overlay_count, e_start, e_end, e_label)
+                logging.warning("%s: Number of failed annotation overlays with current tokenizer: %i (%i,%i,%s)", doc._.file_name, self.failed_overlay_count, e_start, e_end, e_label)
             fixed_span = self.find_span(e_start, e_end, e_label, span, doc)
             if fixed_span is not None:
                 if span is None:
-                    logging.warning("Fixed span (%i,%i,%s) into: %s", e_start, e_end, e_label,fixed_span.text)
+                    logging.warning("%s: Fixed span (%i,%i,%s) into: %s", doc._.file_name, e_start, e_end, e_label,fixed_span.text)
                     self.failed_identifying_span_count -= 1
                 for token in fixed_span:
                     if e_label in self.labels or not self.labels:
                         token._.set('gold_label', e_label)
 
             else: #annotation was not able to be fixed, it will be ignored - this is bad in evaluation.
-                logging.warning("Could not fix annotation: (%i,%i,%s)", e_start, e_end, e_label)
-                logging.warning("Total Failed Annotations: %i", self.failed_identifying_span_count)
+                logging.warning("%s: Could not fix annotation: (%i,%i,%s)",doc._.file_name, e_start, e_end, e_label)
+                logging.warning("%s: Total Failed Annotations: %i", doc._.file_name, self.failed_identifying_span_count)
 
+        if self.failed_overlay_count > .3*len(gold_annotations['entities']) :
+            logging.warning("%s: Annotations may mis-aligned as more than 30 percent failed to overlay: %s", doc._.file_name, doc._.gold_annotation_file)
         return doc
 
 
