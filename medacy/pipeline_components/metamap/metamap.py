@@ -8,10 +8,12 @@ import xmltodict
 import json
 import tempfile, os, warnings
 
+from .converter import convert, restore
+
 
 class MetaMap:
 
-    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None):
+    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None, convert_ascii=True):
         """
 
         A python wrapper for metamap that includes built in caching of metamap output.
@@ -38,6 +40,7 @@ class MetaMap:
 
         self.cache_directory = cache_directory
         self.metamap_path = metamap_path
+        self.convert_ascii = convert_ascii
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
@@ -107,6 +110,8 @@ class MetaMap:
         :param document: the raw text to be metamapped
         :return:
         """
+        if self.convert_ascii:
+            document, ascii_diff = convert(document)
 
         bashCommand = 'bash %s %s' % (self.metamap_path, args)
         process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -124,8 +129,12 @@ class MetaMap:
             raise Exception("An error occured while using metamap: %s" % error)
 
 
-        dict = xmltodict.parse(xml)
-        return dict
+        metamap_dict = xmltodict.parse(xml)
+
+        if self.convert_ascii:
+            document, metamap_dict = restore(document, ascii_diff, metamap_dict)
+
+        return metamap_dict
 
     def _item_generator(self, json_input, lookup_key):
         if isinstance(json_input, dict):
