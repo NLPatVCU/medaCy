@@ -242,6 +242,14 @@ class Model:
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
         return (features, labels)
 
+    def load(self, path):
+        """
+        Loads a pickled model
+        :param path: File path to directory where fitted model should be dumped
+        :return:
+        """
+        self.model = joblib.load(path)
+
     def dump(self, path):
         """
         Dumps the fitted model this class contains into the specified directory
