@@ -35,8 +35,6 @@ def convert(text):
 
 
 def restore(text, diff, metamap_dict):
-    metamap_dict = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']
-
     offset = 0
     for conv in diff:
         conv_start = conv['start'] + offset
@@ -46,7 +44,7 @@ def restore(text, diff, metamap_dict):
         delta = len(conv['original']) - conv['length']
         offset += delta
 
-        for mapping in metamap_dict:
+        for mapping in metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']:
             for candidate in mapping['MappingCandidates']['Candidate']:
                 match_start = int(candidate['ConceptPIs']['ConceptPI']['StartPos'])
                 match_length = int(candidate['ConceptPIs']['ConceptPI']['Length'])
