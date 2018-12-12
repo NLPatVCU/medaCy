@@ -59,6 +59,10 @@ class GoldAnnotatorComponent(BaseComponent):
         nlp = self.nlp
         logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
 
+        if logging.getLogger().getEffectiveLevel() == logging.DEBUG: #print document tokenization
+            for token in doc:
+                logging.debug(str(token))
+
         #check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
             raise ValueError("No extension doc._.gold_annotation_file is present.")
