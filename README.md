@@ -132,7 +132,7 @@ This package is licensed under the GNU General Public License
 
 Authors
 =======
-Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Yadunandan Pillai, Bridget McInnes
+Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes
 
 Acknowledgments
 ===============

@@ -20,16 +20,20 @@ class DataFile():
 
 class DataLoader():
 
-    def __init__(self, data_directory, raw_text_file_extension="txt"):
+    def __init__(self, data_directory, raw_text_file_extension="txt", limit=None):
         """
         Manages directory of training data along with other relevant files.
         A directory must consist of at-least A.txt , A.ann file pairs
         :param data_directory: Directory containing training data consisting of raw and annotated text pairs
+        :param raw_text_file_extension: extension of annotated text files
+        :param limit: number of documents to utilize (defaults to all in directory)
         """
         self.data_directory = data_directory
         self.raw_text_file_extension = raw_text_file_extension
         self.all_files = []
         files = os.listdir(data_directory)
+        if limit is not None and 0 < limit and limit <= len(files):
+            files = files[:limit]
         assert any(File.endswith(".%s" % raw_text_file_extension) for File in os.listdir(data_directory)), "Directory contains no %s files" % raw_text_file_extension
 
         is_training_directory = any(File.endswith(".ann") for File in os.listdir(data_directory))
@@ -80,7 +84,7 @@ class DataLoader():
         return os.path.isdir(self.data_directory+"/metamapped/")
 
 
-    def metamap(self, metamap, num_cores = multiprocessing.cpu_count()):
+    def metamap(self, metamap, num_cores = multiprocessing.cpu_count()-1):
         """
         Metamaps training data and places it in a new sub_directory 'metamapped'
         :param num_cores: number of cores to spawn metamap processes on. Default is to use all cores.
