@@ -18,7 +18,8 @@ class ClinicalPipeline(BasePipeline):
 
         :param metamap: an instance of MetaMap
         """
-        super().__init__("clinical_pipeline", spacy.load("en_core_web_sm"))
+        description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
+        super().__init__("clinical_pipeline", spacy_pipeline=spacy.load("en_core_web_sm"), description=description)
 
         self.entities = entities
 

@@ -1,1 +1,0 @@
-from ..metamap.metamap import MetaMap

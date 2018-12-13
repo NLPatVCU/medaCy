@@ -6,9 +6,10 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self,pipeline_name, spacy_pipeline=None):
+    def __init__(self,pipeline_name, spacy_pipeline=None, description=None):
         self.pipeline_name = pipeline_name
         self.spacy_pipeline = spacy_pipeline
+        self.description = description
 
 
     @abstractmethod
