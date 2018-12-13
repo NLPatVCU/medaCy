@@ -6,10 +6,21 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self,pipeline_name, spacy_pipeline=None, description=None):
+    def __init__(self,pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
+        """
+        Initializes a pipeline
+        :param pipeline_name: The name of the pipeline
+        :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
+        :param description: a description of the pipeline
+        :param creator: the creator of the pipeline
+        :param organization: the organization the pipeline creator belongs to
+        """
         self.pipeline_name = pipeline_name
         self.spacy_pipeline = spacy_pipeline
         self.description = description
+        self.creators = creators
+        self.organization = organization
+
 
 
     @abstractmethod
@@ -34,6 +45,7 @@ class BasePipeline(ABC):
         Returns an instant of FeatureExtractor with all configs set.
         :return: An instant of FeatureExtractor
         """
+        pass
 
 
     def get_language_pipeline(self):
@@ -60,7 +72,6 @@ class BasePipeline(ABC):
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
 
 
-
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv))
 
     def __call__(self, doc, predict=False):
@@ -68,8 +79,8 @@ class BasePipeline(ABC):
         Passes a single document through the pipeline.
         All relevant document attributes should be set prior to this call.
         :param self:
-        :param doc:
-        :return:
+        :param doc: the document to annotate over
+        :return: the annotated document
         """
 
         for component_name, proc in self.spacy_pipeline.pipeline:
@@ -81,6 +92,27 @@ class BasePipeline(ABC):
                 doc.ents = []
 
         return doc
+
+    def get_pipeline_information(self):
+        """
+        Retrieves information about the current pipeline in a structured dictionary
+        :return: a json dictionary containing information
+        """
+        information = {
+            'components': [component_name for component_name, _ in self.spacy_pipeline.pipeline
+                           if component_name != 'ner'], #ner is the default ner component of spacy that is not utilized.
+            'learner_name': self.get_learner()[0],
+            'description': self.description,
+            'pipeline_name': self.pipeline_name,
+            'pipeline_creators': self.creators,
+            'pipeline_creator_organization': self.organization
+        }
+
+        return information
+
+
+
+
 
 
 

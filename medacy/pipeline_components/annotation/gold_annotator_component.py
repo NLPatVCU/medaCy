@@ -57,7 +57,9 @@ class GoldAnnotatorComponent(BaseComponent):
 
     def __call__(self, doc):
         nlp = self.nlp
-        logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+
+        if hasattr(doc._, 'file_name'):
+            logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
 
         if logging.getLogger().getEffectiveLevel() == logging.DEBUG: #print document tokenization
             for token in doc:

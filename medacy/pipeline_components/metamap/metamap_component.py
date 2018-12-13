@@ -1,53 +1,85 @@
 from medacy.pipeline_components.metamap.metamap import MetaMap
 from spacy.tokens import Token
+from ..base import BaseComponent
 import warnings,logging
 
 
-class MetaMapComponent():
+class MetaMapComponent(BaseComponent):
     """
     A pipeline component for SpaCy that overlays Metamap output as token attributes
     """
     name = "metamap_annotator"
     dependencies = []
-    def __init__(self, nlp, metamap):
-        self.nlp = nlp
+
+
+    def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels = ['orch', 'phsu']):
+        """
+        Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
+        :param spacy_pipeline: an instance of a spacy language pipeline
+        :param metamap: an instance of MetaMap
+        :param cuis: Overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis
+        :param semantic_type_labels: Semantic type labels to check for- generates a feature for each semantic type label
+        """
+        super().__init__(self.name, self.dependencies)
+        self.nlp = spacy_pipeline
         assert isinstance(metamap, MetaMap), "MetamapComponent requires a MetaMap instance as an argument."
         self.metamap = metamap
+        self.cuis = cuis
+        self.semantic_type_labels = semantic_type_labels
+
 
 
     def __call__(self, doc):
+        """
+        Runs a document to the metamap_annotator pipeline component. This overlays rich medical features by utilizing
+        MetaMap output and aligning it with a passed spacy Doc object. By medaCy conventions, each overlayed feature
+        is available as a token extension starting with 'feature_'. This component overlays 'feature_cui' and a
+        separate boolean feature for each semantic type to detect available under 'feature_is_{type}". This component
+        was originally designed to increase recall on Drug entities hence by default 'feature_is_orch' and
+        'feature_is_phsu' where orch and phsu are semantic types corresponding to organic chemicals and pharmalogical
+        substances respectively.
+        :param doc: document to run through pipeline
+        :return:
+        """
         logging.debug("Called MetaMap Component")
         metamap = self.metamap
         nlp = self.nlp
+        semantic_type_labels = self.semantic_type_labels
 
-        #check if pre-metamapped file is associated with the doc
+        semantic_type_labels += ['inch', 'bacs', 'patf', 'aapp', 'antb', 'sosy', 'dsyn', 'fndg', 'qlco', 'patf']
+
+        #register all extensions
+        if self.cuis:
+            Token.set_extension('feature_cui', default="-1", force=True) #cui feature
+        for semantic_type_label in semantic_type_labels: #is_semantic type features
+            Token.set_extension('feature_is_' + semantic_type_label, default=False, force=True)
+
+
+        #check if pre-metamapped file has been assigned to the document
         if hasattr(doc._, 'metamapped_file'):
             metamap_dict = metamap.load(doc._.metamapped_file)
         else:
-            logging.debug("Could not find metamap file for document.")
-            metamap_dict = metamap.map_text(doc.text)
+            if hasattr(doc._, 'file_name'):
+                logging.debug("%s: Could not find metamap file for document." % doc._.file_name)
+            metamap_dict = metamap.map_text(doc.text) #TODO metamap.map_text is broken currently
 
+        if not hasattr(doc._, 'file_name'): #TODO REMOVE when implemnting live model prediction
+            return doc
+
+        # TODO refactor second part of if statement when implementing live model prediction
         if metamap_dict['metamap'] is None:
             if hasattr(doc._, 'metamapped_file'):
-                warnings.warn("This metamap file is invalid and cannot be parsed in MetaMapComponent: %s \n Ignore this warning if this is a unittest - all may be fine." % doc._.metamapped_file)
+                warnings.warn("%s: This metamap file is invalid and cannot be parsed in MetaMapComponent: %s \n Ignore this warning if this is a unittest - all may be fine." % (doc._.file_name,doc._.metamapped_file))
             else:
                 warnings.warn("Metamapping text on the fly failed - aborting. Try to pre-metamap with DataLoader.")
             return doc
 
         mapped_terms = metamap.extract_mapped_terms(metamap_dict) #parse terms out of mappings dictionary
 
-
-
-        semantic_type_labels = ['orch', 'phsu']
-        semantic_type_labels += ['inch', 'bacs', 'patf' ,'aapp', 'antb', 'sosy', 'dsyn', 'fndg','qlco', 'patf']
-
-
         spans = [] #for displaying NER output with displacy
-
 
         #Overlays semantic type presence if the given semantic type is set in metamap span.
         for semantic_type_label in semantic_type_labels:
-            Token.set_extension('feature_is_' + semantic_type_label, default=False, force=True)  # register extension to token
 
             entity_name = semantic_type_label
             nlp.entity.add_label(entity_name) #register entity label
@@ -78,14 +110,14 @@ class MetaMapComponent():
                 logging.warning(str(error)) #This gets called when the same token may match multiple semantic types
 
         #Overlays CUI of each term
-        Token.set_extension('feature_cui', default="-1", force=True)
-        for term in mapped_terms:
-            cui = term['CandidateCUI']
-            start, end = metamap.get_span_by_term(term)[0]
-            span = doc.char_span(start, end)
-            if span is not None:
-                for token in span:
-                    token._.set('feature_cui', cui)
+        if Token.has_extension('feature_cui'):
+            for term in mapped_terms:
+                cui = term['CandidateCUI']
+                start, end = metamap.get_span_by_term(term)[0]
+                span = doc.char_span(start, end)
+                if span is not None:
+                    for token in span:
+                        token._.set('feature_cui', cui)
 
 
 

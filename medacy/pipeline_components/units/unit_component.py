@@ -191,7 +191,11 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                doc.ents = list(doc.ents) + [span]
+
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             #match and tag volume units
@@ -205,7 +209,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
 
         with doc.retokenize() as retokenizer:
@@ -217,7 +224,10 @@ class UnitComponent(BaseComponent):
                     token._.feature_is_time_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             # durations
@@ -232,7 +242,10 @@ class UnitComponent(BaseComponent):
                 except ValueError:
                     pass
 
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
 
@@ -247,7 +260,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             #match and tag form units
@@ -262,7 +278,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             # match and tag route types
@@ -276,7 +295,10 @@ class UnitComponent(BaseComponent):
                             retokenizer.merge(span)
                     except ValueError:
                         pass
-                    doc.ents = list(doc.ents) + [span]
+                    try:
+                        doc.ents = list(doc.ents) + [span]
+                    except ValueError as error:
+                        logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             # match units of measurement (x/y, , etc)
@@ -290,7 +312,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
 
@@ -305,6 +330,9 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                doc.ents = list(doc.ents) + [span]
+                try:
+                    doc.ents = list(doc.ents) + [span]
+                except ValueError as error:
+                    logging.warning(str(error))
 
         return doc
