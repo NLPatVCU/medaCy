@@ -1,7 +1,7 @@
 """
 Manages training data
 """
-import os, json, logging
+import os, json, logging, math
 
 import multiprocessing, warnings
 from joblib import Parallel, delayed
@@ -82,7 +82,12 @@ class DataLoader:
         if not os.path.isfile(mapped_file_location):
             mapped_file = open(mapped_file_location, 'w')
             try:
-                mapped_file.write(json.dumps(self.metamap.map_file(file_path)))
+                max_prune_depth = 25 #this is the maximum prune depth metamap utilizes when concept mapping
+                metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth)
+                while metamap_dict['metamap'] is None: #while current prune depth causes out of memory on document
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - 1)) #decrease prune depth by an order of magnitude
+                    metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth)#and try again
+                mapped_file.write(json.dumps(metamap_dict))
                 logging.info("Successfully Metamapped: %s", file_path)
                 logging.info("Successfully Metamapped: %s" % file_path)
             except Exception as e:
