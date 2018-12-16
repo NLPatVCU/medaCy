@@ -81,18 +81,22 @@ class DataLoader:
         mapped_file_location = os.path.join(self.data_directory+"/metamapped", file.replace(self.raw_text_file_extension, "metamapped"))
         if not os.path.isfile(mapped_file_location):
             mapped_file = open(mapped_file_location, 'w')
-            try:
-                max_prune_depth = 25 #this is the maximum prune depth metamap utilizes when concept mapping
-                metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth)
-                while metamap_dict['metamap'] is None: #while current prune depth causes out of memory on document
-                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - 1)) #decrease prune depth by an order of magnitude
-                    metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth)#and try again
-                mapped_file.write(json.dumps(metamap_dict))
-                logging.info("Successfully Metamapped: %s", file_path)
-                logging.info("Successfully Metamapped: %s" % file_path)
-            except Exception as e:
-                logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
-                mapped_file.write(str(e))
+            max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
+
+            metamap_dict = None
+            while metamap_dict is None or metamap_dict['metamap'] is None: #while current prune depth causes out of memory on document
+                try:
+                    metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth) #attempt to metamap
+                    if metamap_dict['metamap'] is not None: #if successful
+                        break
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
+                except BaseException as e:
+                    metamap_dict = None
+                    logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+            mapped_file.write(json.dumps(metamap_dict))
+            logging.info("Successfully Metamapped: %s", file_path)
+            logging.info("Successfully Metamapped: %s" % file_path)
+
 
 
     def is_metamapped(self):
