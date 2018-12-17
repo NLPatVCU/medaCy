@@ -3,8 +3,6 @@ from spacy.tokenizer import Tokenizer
 from spacy.util import compile_infix_regex, compile_prefix_regex, compile_suffix_regex
 import re
 
-#TODO I simply transferred my exploratory code - it is a mess and needs to be cleaned.
-
 class ClinicalTokenizer():
     """
     A tokenizer for clinical text
@@ -34,8 +32,8 @@ class ClinicalTokenizer():
         Custom prefix tokenization rules
         :return:
         """
-        prefix = r"""^[\[\("'\\/@]"""
-        all_prefixes_re = compile_prefix_regex(tuple(list(self.nlp.Defaults.prefixes) + [prefix]))
+        custom_prefixes = [r"""^[\[\(\.\\]""", r"""^[/@]"'"""]
+        all_prefixes_re = compile_prefix_regex(tuple(list(self.nlp.Defaults.prefixes) + custom_prefixes))
         return all_prefixes_re
 
     def _get_infix_regex(self):
@@ -43,7 +41,7 @@ class ClinicalTokenizer():
         Custom infix tokenization rules
         :return:
         """
-        custom_infixes = ['\[', '(?<=[0-9])-(?=[0-9])', '[!&:,()\*/-><]']
+        custom_infixes = [r'\[', r'(?<=[0-9])-(?=[0-9])', r'[!&:,()\*/\-><]']
         infix_re = compile_infix_regex(tuple(list(self.nlp.Defaults.infixes) + custom_infixes))
 
         return infix_re
@@ -53,5 +51,5 @@ class ClinicalTokenizer():
         Custom suffix tokenization rules
         :return:
         """
-        suffix_re = re.compile(r'''[\]\)"',x\-%\?\\n]|\*|(mg$)|(mcg$)|(mL$)|(cap$)|(-+$)$''')
+        suffix_re = re.compile(r'''[\]\)\-\?\n\+\.]$|["',]$|(mg$)|(mcg$)|(mL$)|(cap$)''')
         return suffix_re

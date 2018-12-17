@@ -1,2 +1,3 @@
 from .clinical_pipeline import ClinicalPipeline
 from .systematic_review_pipeline import SystematicReviewPipeline
+from .fda_nano_drug_label_pipeline import FDANanoDrugLabelPipeline
