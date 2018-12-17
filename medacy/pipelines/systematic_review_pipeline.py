@@ -21,7 +21,11 @@ class SystematicReviewPipeline(BasePipeline):
         """
         description="""Pipeline tuned for the recognition of systematic review related entities from the TAC 2018 SRIE track"""
 
-        super().__init__("systematic_review_pipeline", spacy_pipeline=spacy.load("en_core_web_sm"),  description=description)
+        super().__init__("systematic_review_pipeline",
+                         spacy_pipeline=spacy.load("en_core_web_sm"),
+                         description=description,
+                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
+                         organization="NLP@VCU")
 
 
         self.entities = entities

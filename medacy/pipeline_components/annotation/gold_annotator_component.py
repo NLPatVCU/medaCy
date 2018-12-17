@@ -41,7 +41,11 @@ class GoldAnnotatorComponent(BaseComponent):
         if greedy_searched_span is not None:
             return greedy_searched_span
 
-        #increase boundaries incrementally until a valid span is found
+        greedy_searched_span = doc.char_span(start, end-1) #annotation may have extended over an ending blank space
+        if greedy_searched_span is not None:
+            return greedy_searched_span
+
+        #No clue - increase boundaries incrementally until a valid span is found.
         i = 0
         while greedy_searched_span is None and i <= 20:
             if i % 2 == 0:
@@ -57,7 +61,9 @@ class GoldAnnotatorComponent(BaseComponent):
 
     def __call__(self, doc):
         nlp = self.nlp
-        logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+
+        if hasattr(doc._, 'file_name'):
+            logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
 
         if logging.getLogger().getEffectiveLevel() == logging.DEBUG: #print document tokenization
             for token in doc:
