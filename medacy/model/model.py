@@ -28,6 +28,7 @@ class Model:
         self.n_jobs = n_jobs
 
         #Run an initializing document through the pipeline to register all token extensions.
+        #This allows the gathering of pipeline information prior to fitting with live data.
         doc = self.pipeline(medacy_pipeline.spacy_pipeline.make_doc("Initialize"), predict=True)
         assert doc is not None, "Model could not be initialized with the set pipeline"
 
@@ -71,7 +72,7 @@ class Model:
 
 
 
-    def predict(self, new_data_loader):
+    def predict(self, new_data_loader, prediction_directory = None):
         """
         Predicts on the new data using the trained model, if model is not yet trained will return none.
         Outputs predictions to a /predictions directory where new example data is located.
@@ -89,7 +90,10 @@ class Model:
         medacy_pipeline = self.pipeline
 
         # create directory to write predictions to
-        prediction_directory = new_data_loader.data_directory + "/predictions/"
+        if prediction_directory is None:
+            prediction_directory = new_data_loader.data_directory + "/predictions/"
+
+
         if os.path.isdir(prediction_directory):
             logging.warning("Overwritting existing predictions")
         else:
@@ -234,6 +238,8 @@ class Model:
         # run 'er through
         doc = medacy_pipeline(doc)
 
+        doc
+
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc)
 
@@ -267,6 +273,7 @@ class Model:
         """
         pipeline_information = self.pipeline.get_pipeline_information()
         feature_extractor = self.pipeline.get_feature_extractor()
+        #TODO include tokenizer
         pipeline_information['feature_extraction'] = {}
         pipeline_information['feature_extraction']['medacy_features'] = feature_extractor.all_custom_features
         pipeline_information['feature_extraction']['spacy_features'] = feature_extractor.spacy_features

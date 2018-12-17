@@ -55,7 +55,7 @@ class BasePipeline(ABC):
         """
         return self.spacy_pipeline
 
-    def add_component(self, component, *argv):
+    def add_component(self, component, *argv, **kwargs):
         """
         Adds a given component to pipeline
         :param component: a subclass of BaseComponent
@@ -72,7 +72,7 @@ class BasePipeline(ABC):
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
 
 
-        self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv))
+        self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
     def __call__(self, doc, predict=False):
         """
