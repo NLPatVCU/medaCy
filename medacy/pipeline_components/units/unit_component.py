@@ -151,24 +151,24 @@ class UnitComponent(BaseComponent):
 
 
         self.unit_of_measurement_matcher.add('UNIT_OF_MEASUREMENT', None,
-                         [{'ENT_TYPE': 'mass_unit'}, {'ORTH': '/'}, {'ENT_TYPE': 'volume_unit'}],
-                         [{'ENT_TYPE': 'volume_unit'}, {'ORTH': '/'}, {'ENT_TYPE': 'time_unit'}],
-                         [{'ENT_TYPE': 'form_unit'}, {'ORTH': '/'}, {'ENT_TYPE': 'volume_unit'}]
+                         [{'_': {'feature_is_mass_unit'}}, {'ORTH': '/'}, {'_': {'feature_is_volume_unit'}}],
+                         [{'_': {'feature_is_volume_unit'}}, {'ORTH': '/'}, {'_': {'feature_is_time_unit'}}],
+                         [{'_': {'feature_is_form_unit'}}, {'ORTH': '/'}, {'_': {'feature_is_volume_unit'}}]
                          )
         self.measurement_matcher.add('MEASUREMENT', None,
                          [{'LIKE_NUM': True}, {'ORTH': '%'}],
-                         [{'LIKE_NUM': True}, {'ENT_TYPE': 'measurement_unit'}],
-                         [{'LIKE_NUM': True}, {'ENT_TYPE': 'mass_unit'}],
-                         [{'LIKE_NUM': True}, {'ENT_TYPE': 'volume_unit'}],
-                         [{'LIKE_NUM': True}, {'ENT_TYPE': 'form_unit'}],
-                         [{'LIKE_NUM': True},{'LOWER': 'x'}, {'ENT_TYPE': 'form_unit'}]
+                         [{'LIKE_NUM': True}, {'_': {'feature_is_measurement_unit'}}],
+                         [{'LIKE_NUM': True}, {'_': {'feature_is_mass_unit'}}],
+                         [{'LIKE_NUM': True}, {'_': {'feature_is_volume_unit'}}],
+                         [{'LIKE_NUM': True}, {'_': {'feature_is_form_unit'}}],
+                         [{'LIKE_NUM': True},{'LOWER': 'x'}, {'_': {'feature_is_form_unit'}}]
 
                          )
 
         self.duration_matcher.add('DURATION', None,
-                                  [{'POS': 'PREP'}, {'LIKE_NUM': True}, {'ENT_TYPE': 'time_unit'}],
-                                  [{'LIKE_NUM': True}, {'ENT_TYPE': 'time_unit'}],
-                                  [{'LOWER': 'in'}, {'LIKE_NUM': True},{'ENT_TYPE': 'time_unit'}],
+                                  [{'POS': 'PREP'}, {'LIKE_NUM': True}, {'_': {'feature_is_time_unit'}}],
+                                  [{'LIKE_NUM': True}, {'_': {'feature_is_time_unit'}}],
+                                  [{'LOWER': 'in'}, {'LIKE_NUM': True},{'_': {'feature_is_time_unit'}}],
                                   [{'LOWER': 'prn'}]
                                   )
 
@@ -192,10 +192,10 @@ class UnitComponent(BaseComponent):
                 except ValueError:
                     pass
 
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             #match and tag volume units
@@ -209,10 +209,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
 
         with doc.retokenize() as retokenizer:
@@ -224,10 +224,10 @@ class UnitComponent(BaseComponent):
                     token._.feature_is_time_unit = True
                 if len(span) > 1:
                     retokenizer.merge(span)
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             # durations
@@ -242,10 +242,10 @@ class UnitComponent(BaseComponent):
                 except ValueError:
                     pass
 
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
 
@@ -260,10 +260,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             #match and tag form units
@@ -278,10 +278,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             # match and tag route types
@@ -295,10 +295,10 @@ class UnitComponent(BaseComponent):
                             retokenizer.merge(span)
                     except ValueError:
                         pass
-                    try:
-                        doc.ents = list(doc.ents) + [span]
-                    except ValueError as error:
-                        logging.warning(str(error))
+                    # try:
+                    #     doc.ents = list(doc.ents) + [span]
+                    # except ValueError as error:
+                    #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
             # match units of measurement (x/y, , etc)
@@ -312,10 +312,10 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         with doc.retokenize() as retokenizer:
 
@@ -330,9 +330,9 @@ class UnitComponent(BaseComponent):
                         retokenizer.merge(span)
                 except ValueError:
                     pass
-                try:
-                    doc.ents = list(doc.ents) + [span]
-                except ValueError as error:
-                    logging.warning(str(error))
+                # try:
+                #     doc.ents = list(doc.ents) + [span]
+                # except ValueError as error:
+                #     logging.warning(str(error))
 
         return doc
