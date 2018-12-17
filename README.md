@@ -2,7 +2,7 @@
 # medaCy
 :hospital: Medical Natural Language Processing with spaCy :hospital:
 
-MedaCy is a text processing and learning framework built over [spaCy](https://spacy.io/) to support the lightning fast prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems
+MedaCy is a text processing and learning framework built over [spaCy](https://spacy.io/) to support the lightning fast prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems.
 
 ![alt text](https://nlp.cs.vcu.edu/images/Edit_NanomedicineDatabase.png "Nanoinformatics")
 
