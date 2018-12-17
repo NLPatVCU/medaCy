@@ -35,18 +35,35 @@ def convert(text):
 
 
 def restore(text, diff, metamap_dict):
-    metamap_dict = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']
+    """Takes in non-ascii text and the list of changes made to it from the `convert()` function,
+    as well as a dictionary of metamap taggings, converts the text back to its original state
+    and updates the character spans in the metamap dict to match
 
+    Arguments:
+        text, diff: string, list of dicts with keys 'start', 'length', 'original'
+            - Outputs of `convert()` function
+        metamap_dict: dictionary
+            - Dictionary of metamap information obtained from text
+    
+    Returns:
+        text: string
+            - The input text with all of the changes listed in diff undone
+        metamap_dict: dictionary
+            - The input metamap_dict with all of its character spans updated to
+                match the changes to the text
+    """
     offset = 0
-    for conv in diff:
+    for conv in diff: # Go through each recorded change to undo it & update metamap character spans accordingly
         conv_start = conv['start'] + offset
         conv_end = conv_start + conv['length']-1 # Ending index of converted span, INCLUSIVE
 
+        # Undo the change to the text (restore ascii characters)
         text = text[:conv_start] + conv['original'] + text[conv_end+1:]
         delta = len(conv['original']) - conv['length']
         offset += delta
 
-        for mapping in metamap_dict:
+        # Check each metamap entry and update its character spans to reflect this change
+        for mapping in metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']:
             for candidate in mapping['MappingCandidates']['Candidate']:
                 match_start = int(candidate['ConceptPIs']['ConceptPI']['StartPos'])
                 match_length = int(candidate['ConceptPIs']['ConceptPI']['Length'])
@@ -73,9 +90,8 @@ def restore(text, diff, metamap_dict):
                     # print("Full left")
                     pass
 
-                # Update old values in dict
+                # Update metamap entry with new indices
                 candidate['MatchedWords']['MatchedWord'] = text[match_start:match_end+1]
                 candidate['ConceptPIs']['ConceptPI']['StartPos'] = str(match_start)
                 candidate['ConceptPIs']['ConceptPI']['Length'] = str(match_length)
-        print(text, metamap_dict)
     return text, metamap_dict
