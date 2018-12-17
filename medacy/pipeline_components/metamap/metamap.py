@@ -46,7 +46,7 @@ class MetaMap:
         """
         Maps a given document from a file_path and returns a formatted dict
         :param file_to_map: the path of the file that will be metamapped
-        :param max_prune_depth: set to larger if you know what you are doing. See metamap specs about pruning depth.
+        :param max_prune_depth: set to larger for better results. See metamap specs about pruning depth.
         :return:
         """
         self.recent_file = file_to_map

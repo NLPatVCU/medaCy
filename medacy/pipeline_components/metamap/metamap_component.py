@@ -15,10 +15,10 @@ class MetaMapComponent(BaseComponent):
     def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels = ['orch', 'phsu']):
         """
         Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
-        :param spacy_pipeline: an instance of a spacy language pipeline
-        :param metamap: an instance of MetaMap
-        :param cuis: Overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis
-        :param semantic_type_labels: Semantic type labels to check for- generates a feature for each semantic type label
+        :param spacy_pipeline: an instance of a spacy language pipeline.
+        :param metamap: an instance of MetaMap.
+        :param cuis: Overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis.
+        :param semantic_type_labels: Semantic type labels to check for- generates a feature for each semantic type label.
         """
         super().__init__(self.name, self.dependencies)
         self.nlp = spacy_pipeline
@@ -45,8 +45,6 @@ class MetaMapComponent(BaseComponent):
         metamap = self.metamap
         nlp = self.nlp
         semantic_type_labels = self.semantic_type_labels
-
-        semantic_type_labels += ['inch', 'bacs', 'patf', 'aapp', 'antb', 'sosy', 'dsyn', 'fndg', 'qlco', 'patf']
 
         #register all extensions
         if self.cuis:
