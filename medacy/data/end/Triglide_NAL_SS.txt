@@ -1,0 +1,483 @@
+label
+  HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use TRIGLIDE safely and effectively.
+ See full prescribing information for TRIGLIDE.
+ TRIGLIDE (fenofibrate) Tablets, for oral use Initial U.S. Approval: 1993 ----------------------------INDICATIONS AND USAGE---------------------------
+ Triglide is a peroxisome proliferator receptor alpha (PPAR) activator indicated as an adjunct to diet: &#x2022;  to reduce elevated LDL-C, Total-C, TG, and Apo B, and to increase HDL-C in
+ adult patients with primary hypercholesterolemia or mixed dyslipidemia.
+(UU1.1)
+ &#x2022;  to reduce triglyceride (TG) levels in adult patients with severe hypertriglyceridemia.
+ Important Limitations of Use: Fenofibrate was not shown to reduce coronary heart disease morbidity and mortality in patients with type 2 diabetes mellitus.
+(5.1)
+ ----------------------DOSAGE AND ADMINISTRATION----------------------- &#x2022; May be taken without regard to meals (2.1)
+ &#x2022; Primary hypertriglyceridemia and mixed dyslipidemia: 160 mg per day (2.2)
+ &#x2022; Severe Hypertriglyceridemia:50 to 160 mg per day; the dose should be adjusted
+ according to patient response (2.3) &#x2022; Renally impaired patients: Initial dose of 50 mg per day (2.4) &#x2022; Geriatric patients: Select the dose on the basis of renal function (2.5) ----------------------DOSAGE FORMS AND STRENGTHS---------------------- Oral tablets: 50 mg and 160 mg (3)
+ ----------------------------CONTRAINDICATIONS-------------------------------- &#x2022; Severe renal dysfunction, including patients receiving dialysis  (4, 12.3)
+ &#x2022; Active liver disease (4, 5.3)
+ &#x2022; Gallbladder disease (4, 5.5)
+ &#x2022; Nursing mothers (4, 8.3)
+ &#x2022; Known hypersensitivity to fenofibrate (4)
+ -----------------------WARNINGS AND PRECAUTIONS------------------------ &#x2022;  Myopathy and rhabdomyolysis have been reported in patients taking fenofibrate.
+ The risk for serious muscle toxicity appears to be increased in elderly patients and in patients with diabetes, renal failure, or hypothyroidism.
+(5.2)
+ &#x2022; Fenofibrate can increase serum transaminases.
+ Monitor liver tests, including ALT, periodically during therapy.
+(5.3)
+ &#x2022; Fenofibrate reversibly increases serum creatinine levels.
+Monitor renal function periodically in patients with renal impairment (5.4)
+ &#x2022; Fenofibrate increases cholesterol excretion into the bile, leading to risk of cholelithiasis.
+If cholelithiasis is suspected, gallbladder studies are indicated.
+(5.5)
+ &#x2022; Exercise caution in concomitant treatment with coumarin anticoagulants.
+Reduce the dosage of coumarin to maintain the PT/INR at the desired level to prevent bleeding complications.
+(5.6)
+ -------------------------------ADVERSE REACTIONS------------------------------- The most common adverse reactions (&gt; 2% and at least 1% greater than placebo) are abnormal liver tests, increased AST, increased ALT, increased CPK, and rhinitis.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Shionogi Drug Safety Department at 1-800-849-9707 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ ------------------------------DRUG INTERACTIONS------------------------------- &#x2022; Coumarin Anticoagulants (7.1) &#x2022; Immunosuppressants (7.2) &#x2022; Bile-Acid Binding Resins (7.3) -----------------------USE IN SPECIFIC POPULATIONS------------------------ &#x2022; Geriatric Use: Determine dose based on renal function.
+(8.5) &#x2022; Renal impairment: Avoid use in patients with severe renal impairment.
+Dose
+ reduction is required in patients with mild to moderate renal impairment.
+(8.6)
+ See 17 for PATIENT COUNSELING INFORMATION
+ Revised: 01/2013
+ FULL PRESCRIBING INFORMATION: CONTENTS&#x20ac; 1  INDICATIONS AND USAGE
+ 1.1  Primary Hypercholesterolemia or Mixed Dyslipidemia 1.2  Severe Hypertriglyceridemia 1.3  Important Limitations of Use
+ 2  DOSAGE AND ADMINISTRATION 2.1  General Considerations 2.2  Primary Hypercholesterolemia or Mixed Dyslipidemia 2.3  Severe Hypertriglyceridemia 2.4  Impaired Renal Function 2.5  Geriatric Patients
+ 3 DOSAGE FORMS AND STENGTHS
+ 4 CONTRAINDICATIONS
+ 5 WARNINGS AND PRECAUTIONS
+  5.1  Mortality and Coronary Heart Disease Morbidity 5.2  Skeletal Muscle 5.3  Liver Function 5.4  Serum Creatinine 5.5  Cholelithiasis 5.6  Coumarin Anticoagulants 5.7  Pancreatitis 5.8  Hematologic Changes 5.9  Hypersensitivity Reactions 5.10 Venothromboembolic Disease 5.11 Paradoxical Decrease in HDL Cholesterol Levels
+ 6  ADVERSE REACTIONS 6.1  Clinical Trials Experience 6.2  Postmarketing Experience
+ 7  DRUG INTERACTIONS 7.1  Coumarin Anticoagulants 7.2  Immunosuppressants 7.3  Bile-Acid Binding Resins 7.4  Colchicine
+ 8  USE IN SPECIFIC POPULATIONS 8.1  Pregnancy
+ Reference ID: 3245094
+ 8.3  Nursing Mothers 8.4  Pediatric Use 8.5  Geriatric Use 8.6  Renal Impairment 8.7  Hepatic Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action 12.2 Pharmacodynamics 12.3 Pharmacokinetics
+ 13  NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14  CLINICAL STUDIES 14.1 Primary Hypercholesterolemia (Heterozygous Familial and Nonfamilial)
+ and Mixed Dyslipidemia 14.2 Severe Hypertriglyceridemia
+ 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing information are not listed
+                                                                    FULL PRESCRIBING INFORMATION
+  1 INDICATIONS AND USAGE 1.1 Primary Hypercholesterolemia or Mixed Dyslipidemia
+ Triglide is indicated as adjunctive therapy to diet to reduce elevated low-density lipoprotein cholesterol (LDL-C), total cholesterol (Total-C), Triglycerides, and apolipoprotein B (Apo B), and to increase high-density lipoprotein cholesterol (HDL-C) in adult patients with primary hypercholesterolemia or mixed dyslipidemia.
+  1.2 Severe Hypertriglyceridemia Triglide is also indicated as adjunctive therapy to diet for treatment of adult patients with severe
+ hypertriglyceridemia.
+ Improving glycemic control in diabetic patients showing fasting chylomicronemia will usually reduce fasting triglycerides and eliminate chylomicronemia thereby obviating the need for pharmacologic intervention.
+ Markedly elevated levels of serum triglycerides (e.g., &gt;2,000 mg/dL) may increase the risk of developing pancreatitis.
+ The effect of fenofibrate therapy on reducing this risk has not been adequately studied.
+ 1.3 Important Limitations of Use Fenofibrate was not shown to reduce coronary heart disease morbidity and mortality in a large, randomized
+ controlled trial of patients with type 2 diabetes mellitus [see Warnings and Precautions (5.1)].
+ 2 DOSAGE AND ADMINISTRATION 2.1 General Considerations
+ Patients should be placed on an appropriate lipid-lowering diet before receiving Triglide, and should continue this diet during treatment with Triglide.
+Triglide tablets can be given without regard to meals.
+Patients should be advised to swallow Triglide tablets whole.
+Do not crush, dissolve or chew tablets.
+ The initial treatment for dyslipidemia is dietary therapy specific for the type of lipoprotein abnormality.
+Excess body weight and excess alcoholic intake may be important factors in hypertriglyceridemia and should be addressed prior to any drug therapy.
+Physical exercise can be an important ancillary measure.
+Diseases contributory to hypercholesterolemia, such as hypothyroidism or diabetes mellitus should be looked for and adequately treated.
+Estrogen therapy, thiazide diuretics and beta-blockers, are sometimes associated with massive rises in plasma triglycerides, especially in subjects with familial hypertriglyceridemia.
+In such cases, discontinuation of the specific etiologic agent may obviate the need for specific drug therapy of hypertriglyceridemia.
+ Lipid levels should be monitored periodically and consideration should be given to reducing the dosage of Triglide if lipid levels fall significantly below the targeted range.
+Therapy should be withdrawn in patients who do not have an adequate response after two months of treatment with the maximum recommended dose of 160 mg once daily.
+  2.2 Primary Hypercholesterolemia or Mixed Dyslipidemia The dose of Triglide is 160 mg once daily.
+ 2.3 Severe Hypertriglyceridemia The initial dose is 50 to 160 mg per day.
+Dosage should be individualized according to patient response,
+ and should be adjusted if necessary following repeat lipid determinations at 4 to 8 week intervals.
+The maximum dose is 160 mg once daily.
+ 2.4 Impaired Renal Function Treatment with Triglide should be initiated at a dose of 50 mg per day in patients with mild to moderately
+ impaired renal function, and increased only after evaluation of the effects on renal function and lipid levels at this
+ Reference ID: 3245094
+                                                                         dose.
+The use of Triglide should be avoided in patients with severe renal impairment [see Use in Special Populations (8.6) and Clinical Pharmacology (12.3)].
+ 2.5 Geriatric Patients Dose selection for the elderly should be made on the basis of renal function [See Use in Specific
+ Populations (8.5)and Clinical Pharmacology (12.3)].
+ 3 DOSAGE FORMS AND STENGTHS &#x2022; 50 mg: Round off-white tablets.
+Debossed &#x20ac;&#x153;FH 50&#x20ac;&#xfffd;
+ &#x2022; 160 mg: Round off-white tablets.
+Debossed &#x20ac;&#x153;FH 160&#x20ac;&#xfffd;
+ 4 CONTRAINDICATIONS Triglide is contraindicated in:
+ &#x2022; patients with severe renal impairment, including those receiving dialysis [see Clinical Pharmacology (12.3)].
+ &#x2022; patients with active liver disease, including those with primary biliary cirrhosis and unexplained persistent liver function abnormalities [see Warnings and Precautions (5.3)].
+ &#x2022; patients with preexisting gallbladder disease [see Warnings and Precautions (5.5)].
+&#x2022; patients who have a known hypersensitivity to fenofibrate or fenofibric acid [see Warnings and
+ Precautions (5.9)].
+ &#x2022; nursing mothers [see Use in Specific Populations (8.3)].
+  5 WARNINGS AND PRECAUTIONS 5.1 Mortality and Coronary Heart Disease Morbidity
+ The effect of Triglide on coronary heart disease morbidity and mortality and non-cardiovascular mortality has not been established.
+ The Action to Control Cardiovascular Risk in Diabetes Lipid (ACCORD Lipid) trial was a randomized placebo-controlled study of 5518 patients with type 2 diabetes mellitus on background statin therapy treated with fenofibrate.
+The mean duration of follow-up was 4.7 years.
+Fenofibrate plus statin combination therapy showed a non-significant 8% relative risk reduction in the primary outcome of major adverse cardiovascular events (MACE), a composite of non-fatal myocardial infarction, non-fatal stroke, and cardiovascular disease death (hazard ratio [HR] 0.92, 95% CI 0.79-1.08) (p=0.32) as compared to statin monotherapy.
+ In a gender subgroup analysis, the hazard ratio for MACE in men receiving combination therapy versus statin monotherapy was 0.82 (95% CI 0.69-0.99), and the hazard ratio for MACE in women receiving combination therapy versus statin monotherapy was 1.38 (95% CI 0.98-1.94) (interaction p=0.01).
+The clinical significance of this subgroup finding is unclear.
+  The Fenofibrate Intervention and Event Lowering in Diabetes (FIELD) study was a 5-year randomized, placebo-controlled study of 9,795 patients with type 2 diabetes mellitus treated with fenofibrate.
+Fenofibrate demonstrated a non-significant 11% relative reduction in the primary outcome of coronary heart disease events (hazard ratio [HR] 0.89, 95% CI 0.75-1.05, p=0.16) and a significant 11% reduction in the secondary outcome of total cardiovascular disease events (HR 0.89 [0.80-0.99], p=0.04).
+There was a non-significant 11% (HR 1.11 [0.95, 1.29], p=0.18) and 19% (HR 1.19 [0.90, 1.57],  p=0.22) increase in total and coronary heart disease mortality, respectively, with fenofibrate as compared to placebo.
+ Because of chemical, pharmacological, and clinical similarities between Triglide (fenofibrate tablets), clofibrate, and gemfibrozil, the adverse findings in 4 large randomized, placebo-controlled clinical studies with these other fibrate drugs may also apply to Triglide.
+ In the Coronary Drug Project, a large study of post myocardial infarction of patients treated for 5 years with clofibrate, there was no difference in mortality seen between the clofibrate group and the placebo group.
+ There was
+ Reference ID: 3245094
+                                                                                            however, a difference in the rate of cholelithiasis and cholecystitis requiring surgery between the two groups (3.0% vs. 1.8%).
+ In a study conducted by the World Health Organization (WHO), 5000 subjects without known coronary artery disease were treated with placebo or clofibrate for 5 years and followed for an additional one year.
+There was a statistically significant, higher age-adjusted all-cause mortality in the clofibrate group compared with the placebo group (5.70% vs. 3.96%, p=&lt;0.01).
+Excess mortality was due to a 33% increase in non-cardiovascular causes, including malignancy, post-cholecystectomy complications, and pancreatitis.
+This appeared to confirm the higher risk of gallbladder disease seen in clofibrate-treated patients studied in the Coronary Drug Project.
+ The Helsinki Heart Study was a large (n=4,081) study of middle-aged men without a history of coronary artery disease.
+Subjects received either placebo or gemfibrozil for 5 years, with a 3.5 year open extension afterward.
+Total mortality was numerically higher in the gemfibrozil randomization group but did not achieve statistical significance (p=0.19, 95% confidence interval for relative risk G:P=0.91-1.64).
+Although cancer deaths trended higher in the gemfibrozil group (p=0.11), cancers (excluding basal cell carcinoma) were diagnosed with equal frequency in both study groups.
+Due to the limited size of the study, the relative risk of death from any cause was not shown to be different than that seen in the 9 year follow-up data from the WHO study (RR=1.29).
+ A secondary prevention component of the Helsinki Heart Study enrolled middle-aged men excluded from the primary prevention study because of known or suspected coronary heart disease.
+Subjects received gemfibrozil or placebo for 5 years.
+Although cardiac deaths trended higher in the gemfibrozil group, this was not statistically significant (hazard ratio 2.2, 95% confidence interval: 0.94-5.05).
+ 5.2 Skeletal Muscle Fenofibrates increase the risk of myopathy and have been associated with rhabdomyolysis.
+The risk for
+ serious muscle toxicity appears to be increased in elderly patients and in patients with diabetes, renal insufficiency, or hypothyroidism.
+ Data from observational studies indicate that the risk for rhabdomyolysis is increased when fibrates, in particular gemfibrozil, are co-administered with an HMG-CoA reductase inhibitor (statin).
+The combination should be avoided unless the benefit of further alterations in lipid levels is likely to outweigh the increased risk of this drug combination [see Clinical Pharmacology (12.3)].
+ Myopathy should be considered in any patient with diffuse myalgias, muscle tenderness or weakness, and/or marked elevations of creatine phosphokinase (CPK) levels.
+ Patients should be advised to report promptly unexplained muscle pain, tenderness or weakness, particularly if accompanied by malaise or fever.
+CPK levels should be assessed in patients reporting these symptoms, and Triglide therapy should be discontinued if markedly elevated CPK levels occur or myopathy/myositis is suspected.
+ Cases of myopathy, including rhabdomyolysis, have been reported with fenofibrates coadministered with colchicine, and caution should be exercised when prescribing fenofibrate with colchicine [see Drug Interactions (7.4)].
+  5.3 Liver Function Fenofibrate can increase serum  transaminases [AST (SGOT)  or ALT (SGPT)].
+   In a pooled analysis of 10 placebo-controlled trials, increases to &gt;3 times the upper limit of normal occurred in  5.3% of  patients taking  fenofibrate versus 1.1%  of patients treated with placebo.
+ When transaminase determinations were followed either after discontinuation of treatment or during continued treatment, a return to normal limits was usually observed.
+The incidence of increases in transaminases related to fenofibrate therapy appear to be dose related.
+In an 8-week dose-ranging study, the incidence of ALT or AST elevations to at least three times the upper limit of normal was 13% in patients receiving dosages equivalent to 134 mg to 200 mg fenofibrate per day (the high dose equivalent to 160 mg Triglide) and was 0% in those receiving dosages equivalent to 34 mg or 67 mg micronized fenofibrate per day, or placebo.
+ Reference ID: 3245094
+                                                                    Hepatocellular, chronic active and cholestatic hepatitis associated with fenofibrate therapy have been reported after exposures of weeks to several years.
+In extremely rare cases, cirrhosis has been reported in association with chronic active hepatitis.
+ Baseline and regular periodic monitoring of liver tests, including serum ALT (SGPT) should be performed for the duration of Triglide therapy and therapy should be discontinued if enzyme levels persist above three times the normal limit.
+ 5.4 Serum Creatinine Elevations in serum creatinine have been reported in patients on fenofibrate.
+These elevations tend to return
+ to baseline following discontinuation of fenofibrate.
+The clinical significance of these observations is unknown.
+Monitor renal function in patients with renal impairment taking Triglide.
+ Renal monitoring should also be considered for patients taking Triglide at risk for renal insufficiency such as the elderly and patients with diabetes.
+ 5.5 Cholelithiasis Fenofibrate, like clofibrate and gemfibrozil, may increase cholesterol excretion into the bile, leading to
+ cholelithiasis.
+If cholelithiasis is suspected, gallbladder studies are indicated.
+Triglide therapy should be discontinued if gallstones are found.
+ 5.6 Coumarin Anticoagulants Caution should be exercised when anticoagulants are given in conjunction with Triglide because of the
+ potentiation of coumarin-type anti-coagulant effects in prolonging the prothrombin time/International Normalized Ration (PT/INR).
+The dosage of the anticoagulant should be reduced to maintain the PT/INR at the desired level to prevent bleeding complications.
+Frequent PT/INR determinations are advisable until it has been definitely determined that the PT/INR has stabilized [See Drug Interactions (7.1)].
+ 5.7 Pancreatitis Pancreatitis has been reported in patients taking fenofibrate, gemfibrozil, and clofibrate.
+This occurrence
+ may represent a failure of efficacy in patients with severe hypertriglyceridemia, a direct drug effect, or a secondary phenomenon mediated through biliary tract stone or sludge formation with obstruction of the common bile duct.
+ 5.8 Hematologic Changes Mild to moderate hemoglobin, hematocrit, and white blood cell decreases have been observed in patients
+ following initiation of fenofibrate therapy.
+However, these levels stabilize during long-term administration.
+Thrombocytopenia and agranulocytosis have been reported in individuals treated with fenofibrate.
+Periodic monitoring of red and white cell counts is recommended during the first 12 months of Triglide administration.
+ 5.9 Hypersensitivity Reactions Acute hypersensitivity reactions such as Stevens-Johnson syndrome, and toxic epidermal necrolysis
+ requiring patient hospitalization and treatment with steroids have been reported in individuals treated with fenofibrates.
+ Urticaria was seen in 1.1 vs. 0%, and rash in 1.4 vs. 0.8% of fenofibrate and placebo patients respectively in controlled trials.
+ 5.10 Venothromboembolic Disease In the FIELD trial, pulmonary embolus (PE) and deep vein thrombosis (DVT) were observed at higher
+ rates in the fenofibrate- than the placebo-treated group.
+Of 9,795 patients enrolled in FIELD, there were 4,900 in the placebo group and 4,895 in the fenofibrate group.
+For DVT, there were 48 events (1%) in the placebo group and 67 (1%) in the fenofibrate group (p = 0.074); and for PE, there were 32 (0.7%) events in the placebo group and 53 (1%) in the fenofibrate group (p = 0.022).
+ In the Coronary Drug Project, a higher proportion of the clofibrate group experienced definite or suspected fatal or nonfatal pulmonary embolism or thrombophlebitis than the placebo group (5.2% vs. 3.3% at five years; p &lt; 0.01).
+ 5.11 Paradoxical Decrease in HDL Cholesterol Levels
+ Reference ID: 3245094
+                                                                        There have been postmarketing and clinical trial reports of severe decreases in HDL cholesterol levels (as low as 2 mg/dL) occurring in diabetic and non-diabetic patients initiated on fibrate therapy.
+ The decrease in HDL-C is mirrored by a decrease in apolipoprotein A1.
+ This decrease has been reported to occur within 2 weeks to years after initiation of fibrate therapy.
+ The HDL-C levels remain depressed until fibrate therapy has been withdrawn; the response to withdrawal of fibrate therapy is rapid and sustained.
+  The clinical significance of this decrease in HDLC is unknown.
+It is recommended that the HDL-C levels be checked within the first few months after initiation of fibrate therapy.
+ If a severely depressed HDL-C level is detected, fibrate therapy should be withdrawn, and the HDLC level monitored until it has returned to baseline,  and fibrate therapy should not be re-initiated.
+ 6 ADVERSE REACTIONS 6.1 Clinical Trials Experience
+ Because clinical studies are conducted under widely varying conditions, adverse reaction rates observed in the clinical studies of a drug cannot be directly compared to rates in the clinical studies of another drug and may not reflect rates observed in clinical practice.
+ Adverse reactions reported by 2% or more of patients treated with fenofibrate (and greater than placebo) during double-blind, placebo-controlled trials are listed in Table 1.
+Adverse reactions led to discontinuation of treatment in 5.0% of patients treated with fenofibrate and in 3.0% treated with placebo.
+Increases in liver function tests were the most frequent events, causing discontinuation of fenofibrate treatment in 1.6% of patients in double-blind trials.
+ Table 1.
+Adverse Reactions Reported by 2% or More of Patients Treated with Fenofibrate and Greater than Placebo During the Double-Blind, Placebo-Controlled Trials
+ BODY SYSTEM Adverse Reaction
+ Fenofibrate* (N=439)
+ Placebo (N=365)
+ BODY AS A WHOLE
+   Abdominal Pain 4.6% 4.4%
+   Back Pain 3.4% 2.5%
+   Headache 3.2% 2.7%
+ DIGESTIVE
+   Nausea 2.3% 1.9%
+   Constipation 2.1% 1.4%
+ METABOLIC AND NUTRITIONAL DISORDERS
+   Abnormal Liver Tests 7.5%** 1.4%
+   Increased AST 3.4%** 0.5%
+   Increased ALT 3.0% 1.6%
+   Increased Creatine Phosphokinase 3.0% 1.4%
+ RESPIRATORY
+  Respiratory Disorder 6.2% 5.5%
+   Rhinitis 2.3 % 1.1 % * Dosage equivalent to 200 mg fenofibrate capsules, micronized.
+Dosage comparable to 160 mg Triglide.
+** Significantly different from placebo.
+ 6.2 Postmarketing Experience The following adverse reactions have been identified during postapproval use of fenofibrate: myalgia,
+ rhabdomyolysis, pancreatitis, muscle spasms, acute renal failure, hepatitis, cirrhosis, anemia, arthralgia, asthenia, and severely depressed HDL-cholesterol levels.
+Because these reactions are reported voluntarily from a population
+ Reference ID: 3245094
+                                                                            of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ 7 DRUG INTERACTIONS 7.1 Coumarin Anticoagulants
+ Potentiation of coumarin-type anticoagulant effects has been observed with prolongation of the PT/INR.
+ Caution should be exercised when coumarin anticoagulants are given in conjunction with Triglide.
+The dosage of the anticoagulants should be reduced to maintain the PT/INR at the desired level to prevent bleeding complications.
+Frequent PT/INR determinations are advisable until it has been definitely determined that the PT/INR has stabilized [see Warnings and Precautions (5.6)].
+ 7.2 Immunosuppressants Immunosuppressants such as cyclosporine and tacrolimus can produce nephrotoxicity with decreases in
+ creatinine clearance and rises in serum creatinine, and because renal excretion is the primary elimination route of fibrate drugs including Triglide, there is a risk that an interaction will lead to deterioration of renal function.
+The benefits and risks of using Triglide with immunosuppressants and other potentially nephrotoxic agents should be carefully considered, and the lowest effective dose employed and renal function monitored.
+ 7.3 Bile-Acid Binding Resins Since bile acid binding resins may bind other drugs given concurrently, patients should take Triglide at
+ least 1 hour before or 4 to 6 hours after a bile acid binding resin to avoid impeding its absorption.
+ 7.4 Colchicine
+ Cases of myopathy, including rhabdomyolysis, have been reported with fenofibrates co-administered with colchicine, and caution should be exercised when prescribing fenofibrate with colchicine.
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ Pregnancy Category C  Safety in pregnant women has not been established.
+There are no adequate and well controlled studies of
+ fenofibrate in pregnant women.
+Fenofibrate should be used during pregnancy only if the potential benefit justifies the potential risk to the fetus.
+ In female rats given oral dietary doses of 15, 75, and 300 mg/kg/day of fenofibrate from 15 days prior to mating through weaning, maternal toxicity was observed at 0.3 times the maximum recommended human dose (MRHD), based on body surface area comparisons; mg/m2.
+  In pregnant rats given oral dietary doses of 14, 127, and 361 mg/kg/day from gestation day 6-15 during the period of organogenesis, adverse developmental findings were not observed at 14 mg/kg/day (less than 1 times the MRHD, based on body surface area comparisons; mg/m2).
+At higher multiples of human doses evidence of maternal toxicity was observed.
+ In pregnant rabbits given oral gavage doses of 15, 150, and 300 mg/kg/day from gestation day 6-18 during the period of organogenesis and allowed to deliver, aborted litters were observed at 150 mg/kg/day (10 times the MRHD, based on body surface area comparisons: mg/m2).
+No developmental findings were observed at 15 mg/kg/day (at less than 1 times the MRHD, based on body surface area comparisons; mg/m2).
+ In pregnant rats given oral dietary doses of 15, 75, and 300 mg/kg/day from gestation day 15 through lactation day 21 (weaning), maternal toxicity was observed at less than 1 times the MRHD, based on body surface area comparisons; mg/m2.
+ Reference ID: 3245094
+                                                         8.3 Nursing Mothers Fenofibrate should not be used in nursing mothers.
+A decision should be made whether to discontinue
+ nursing or to discontinue the drug, taking into account the importance of the drug to the mother.
+ 8.4 Pediatric Use Safety and effectiveness have not been established in pediatric patients.
+ 8.5 Geriatric Use Fenofibric acid is known to be substantially excreted by the kidney, and the risk of adverse reactions to this
+ drug may be greater in patients with impaired renal function.
+Fenofibric acid exposure is not influenced by age.
+Since elderly patients have a higher incidence of renal impairment, dose selection for the elderly should be made on the basis of renal function [see Dosage and Administration (2.5) and Clinical Pharmacology (12.3)].
+ Elderly patients with normal renal function should require no dose modifications.
+ Consider monitoring renal function in elderly patients taking Triglide.
+ 8.6 Renal Impairment The use of Triglide should be avoided in patients with severe renal impairment [see Contraindications (4)].
+ Dose reduction is required in patients with mild to moderate renal impairment [See Dosage and Administration (2.4) and Clinical Pharmacology (12.3)].
+Monitoring renal function in patients with renal impairment is recommended.
+ 8.7 Hepatic Impairment
+ The use of Triglide has not been evaluated in subjects with hepatic impairment [see Contraindications (4) and Clinical Pharmacology (12.3).]
+ 10 OVERDOSAGE
+ There is no specific treatment for overdose with Triglide.
+General supportive care of the patient is indicated, including monitoring of vital signs and observation of clinical status, should an overdose occur.
+If indicated, elimination of unabsorbed drug should be achieved by emesis or gastric lavage; usual precautions should be observed to maintain the airway.
+Because fenofibrate is highly bound to plasma proteins, hemodialysis should not be considered.
+ 11 DESCRIPTION
+ Triglide (fenofibrate) Tablets, is a lipid regulating agent available as tablets for oral administration.
+Each tablet contains 50 mg or 160 mg of fenofibrate.
+The chemical name for fenofibrate is 2-[4-(4-chlorobenzoyl) phenoxy] 2-methyl-propanoic acid, 1-methylethyl ester with the following structural formula:
+ The empirical formula is C20H21O4Cl and the molecular weight is 360.83; fenofibrate is insoluble in water.
+The melting point is 79 to 82C. Fenofibrate is a white solid which is stable under ordinary conditions.
+ Reference ID: 3245094
+                                                                             Inactive Ingredients: Each tablet contains crospovidone, lactose monohydrate, mannitol, maltodextrin, carboxymethylcellulose sodium, egg lecithin, croscarmellose sodium, sodium lauryl sulfate, colloidal silicon dioxide, magnesium stearate, and monobasic sodium phosphate.
+ 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action
+ The active moiety of Triglide is fenofibric acid.
+The pharmacological effects of fenofibric acid in both animals and humans have been extensively studied through oral administration of fenofibrate.
+  The lipid-modifying effects of fenofibric acid seen in clinical practice have been explained in vivo in transgenic mice and in vitro in human hepatocyte cultures by the activation of perxisome proliferators activated receptor  (PPAR).
+ Through this mechanism, fenofibrate increases lipolysis and elimination of triglyceride-rich particles from plasma by activating lipoprotein lipase and reducing production of apoprotein C-III (an inhibitor of lipoprotein lipase activity).
+The resulting decrease in TG produces an alteration in the size and composition of LDL from small, dense particles (which are thought to be artherogenic due to their susceptibility to oxidation), to large buoyant particles.
+ These larger particles have a greater affinity for cholesterol receptors and are catabolized rapidly.
+Activation of PPAR also induces an increase in the synthesis of apoproteins A-I, A-II and HDL-cholesterol.
+ Fenofibrate also reduces serum uric acid levels in hyperuricemic and normal individuals by increasing the urinary excretion of uric acid.
+ 12.2 Pharmacodynamics A variety of clinical studies have demonstrated that elevated levels of TC, LDL-C, and apo B, an LDL
+ membrane complex, are associated with human atherosclerosis.
+ Similarly, decreased levels of HDL-C and its transport complex, apolipoprotein A (apo AI and apo AII) are associated with the development of atherosclerosis.
+Epidemiologic investigations have established that cardiovascular morbidity and mortality vary directly with the level of TC, LDL-C, and triglycerides (TG), and inversely with the level of HDL-C.
+ The independent effect of raising HDL-C or lowering TG on the risk of cardiovascular morbidity and mortality has not been determined.
+ Fenofibric acid, the active metabolite of fenofibrate, produces reductions in total cholesterol, LDL cholesterol, apolipoprotein B, total triglycerides and triglyceride rich lipoprotein (VLDL) in treated patients.
+In addition, treatment with fenofibrate results in increases in high density lipoprotein (HDL) and apoproteins apo AI and apo AII.
+ 12.3 Pharmacokinetics Triglide 160 mg tablet was shown to have comparable bioavailability to a single dose of 200 mg fenofibrate
+ capsule, micronized.
+Fenofibrate is a pro-drug of the active chemical moiety fenofibric acid.
+ Fenofibrate is converted by ester hydrolysis in the body to fenofibric acid which is the active constituent measurable in the circulation.
+ Absorption: The absolute bioavailability of fenofibrate cannot be determined as the compound is virtually insoluble in aqueous media suitable for injection.
+Fenofibrate is insoluble in water and its bioavailability is optimized when taken with meals.
+However, after fenofibrate is dissolved, fenofibrate is well absorbed from the gastrointestinal tract.
+ Following oral administration in healthy volunteers, approximately 60% of a single dose of radiolabelled fenofibrate appeared in urine, primarily as fenofibric acid and its glucuronate conjugate, and 25% was excreted in the feces.
+Peak plasma levels of fenofibric acid occur an average of 3 hours after administration.
+ The extent of absorption of Triglide (AUC) is comparable between fed and fasted conditions.
+ Food increases the rate of absorption of Triglide approximately 55%.
+ Distribution: In healthy volunteers, steady-state plasma levels of fenofibric acid were shown to be achieved within a week of dosing and did not demonstrate accumulation across time following multiple dose administration.
+Serum protein binding was approximately 99% in normal and hyperlipidemic subjects.
+  Reference ID: 3245094
+                                                                              Co-Administered    Dosage Regimen of  Dosage Regimen of   Changes in Fenofibric Drug Co-Administered Drug  Fenofibrate  Acid Exposure
+     AUC  Cmax
+  Lipid-lowering agents
+  Atorvastatin   20 mg once daily for 10 days 1  Fenofibrate 160 mg  &#x2020;&#x201c;2% &#x2020;&#x201c;4%
+   Metabolism: Following oral administration, fenofibrate is rapidly hydrolyzed by esterases to the active metabolite, fenofibric acid; no unchanged fenofibrate is detected in plasma.
+Fenofibric acid is primarily conjugated with glucuronic acid and then excreted in urine.
+A small amount of fenofibric acid is reduced at the carbonyl moiety to a benzhydrol metabolite which is, in turn, conjugated with glucuronic acid and excreted in urine.
+In vivo metabolism data indicate that neither fenofibrate nor fenofibric acid undergo oxidative metabolism (e.g., cytochrome P450) to a significant extent.
+  Elimination: After absorption, fenofibrate is mainly excreted in the urine in the form of metabolites, primarily fenofibric acid and fenofibric acid glucuronide.
+After administration of radiolabelled fenofibrate, approximately 60% of the dose appeared in the urine and 25% was excreted in the feces.
+ Fenofibric acid is eliminated with a half-life of approximately 16 hours, allowing once daily dosing.
+ Geriatrics: In elderly volunteers 77 to 87 years of age, the oral clearance of fenofibric acid following a single oral dose of fenofibrate was 1.2 L/h, which compares to 1.1 L/h in young adults.
+This indicates that a similar dosage regimen can be used in the elderly, without increasing accumulation of the drug or metabolites.
+[See Dosage and Administration (2.4) and Use in Specific Populations (8.5).]
+ Pediatrics: Pharmacokinetics of Triglide has not been studied in pediatric patients.
+ Gender: No pharmacokinetic difference between males and females has been observed for fenofibrate.
+  Race: The influence of race on the pharmacokinetics of fenofibrate has not been studied; however, fenofibrate is not metabolized by enzymes known for exhibiting inter-ethnic variability.
+  Renal Impairment: The pharmacokinetics of fenofibric acid was examined in patients with mild, moderate, and severe renal impairment.
+Patients with severe renal impairment (creatinine clearance [CrCl &#x2264; 30 mL/min] &lt; 30 mL/min or estimated glomerular filtration rate [eGFR] &lt;30 mL/min/1.73m2) showed 2.7-fold increase in exposure for fenofibric acid and increased accumulation of fenofibric acid during chronic dosing compared to that of healthy subjects.
+Patients with mild to moderate renal impairment (CrCl 30-80 mL/min or eGFR 30-59 mL/min/1.73m2) had similar exposure but an increase in the half-life for fenofibric acid compared to that of healthy subjects.
+ Based on these findings, the use of Triglide should be avoided in patients who have severe renal impairment and dose reduction is required in patients having mild to moderate renal impairment [see Dosage and Administration (2.4).]
+ Hepatic Impairment: No pharmacokinetic studies have been conducted in patients having hepatic impairment.
+  Drug-Drug Interactions: In vitro studies using human liver microsomes indicate that fenofibrate and fenofibric acid are not inhibitors of cytochrome (CYP) P450 isoforms CYP3A4, CYP2D6, CYP2E1, or CYP1A2.
+They are weak inhibitors of CYP2C8, CYP2C19 and CYP2A6, and mild-to-moderate inhibitors of CYP2C9 at therapeutic concentrations.
+ Table 2 describes the effects of co-administered drugs on fenofibric acid systemic exposure.
+   Table 3 describes the effects of fenofibrate on co-administered drugs.
+ Table 2.
+Effects of Co-Administered Drugs on Fenofibric Acid Systemic Exposure from Fenofibrate
+ Administration
+ Reference ID: 3245094
+                                                                                                                               Pravastatin 40 mg as a single dose
+ Fluvastatin 40 mg as a single dose
+ Anti-diabetic agents
+ Glimepiride 1 mg as a single dose
+ Metformin 850 mg three times daily for 10 days
+ Rosiglitazone 8 mg once daily for 5 days
+ 1 TriCor (fenofibrate) oral tablet
+ 2 TriCor (fenofibrate) oral micronized capsule
+  once daily for 10 days
+ Fenofibrate 3 x 67 mg2
+ as a single dose  &#x2020;&#x201c;1% &#x2020;&#x201c;2%
+ Fenofibrate 160 mg1 as a single dose
+  &#x2020;&#x201c;2% &#x2020;&#x201c;10%
+ Fenofibrate 145 mg1
+ once daily for 10 days &#x2020;&#x2018;1% &#x2020;&#x201c;1%
+ Fenofibrate 54 mg1
+ three times daily for 10 days
+ &#x2020;&#x201c;9% &#x2020;&#x201c;6%
+ Fenofibrate 145 mg1
+ once daily for 14 days &#x2020;&#x2018;10% &#x2020;&#x2018;3%
+ Table 3.
+Effects of Fenofibrate on Systemic Exposure of  Co-Administered Drugs Dosage Regimen of Dosage Regimen of Change in Co-Administered Drug Exposure
+ Fenofibrate Co-Administered Drug Analyte AUC Cmax
+ Lipid-lowering agents
+ Fenofibrate 160 mg1 once daily for 10 days
+ Fenofibrate 3 x 67 mg2 as a single dose
+  Fenofibrate 160 mg1 as a single dose
+  Anti-diabetic agents
+ Fenofibrate 145 mg1 once daily for 10 days
+ Fenofibrate 54 mg1 three times daily for  10 days
+ Fenofibrate 145 mg1 once daily for 14 days
+ Atorvastatin, 20 mg once daily for 10 days
+ Pravastatin, 40 mg as a single dose
+ Fluvastatin, 40 mg as a single dose
+ Glimepiride, 1 mg as a single dose
+ Metformin, 850 mg three times daily for 10 days
+ Rosiglitazone, 8 mg once daily for 5 days
+ Atorvastatin &#x2020;&#x201c;17% 0%
+ Pravastatin &#x2020;&#x2018;13% &#x2020;&#x2018;13%
+ 3-Hydroxyl-iso-pravastatin &#x2020;&#x2018;26% &#x2020;&#x2018;29% (+)-3R, 5S-Fluvastatin &#x2020;&#x2018;15% &#x2020;&#x2018;16%
+ Glimepiride &#x2020;&#x2018;35% &#x2020;&#x2018;18%
+ Metformin &#x2020;&#x2018;3% &#x2020;&#x2018;6%
+ Rosiglitazone &#x2020;&#x2018;6% &#x2020;&#x201c;1% 1 TriCor (fenofibrate) oral tablet 2 TriCor (fenofibrate) oral micronized capsule
+  Reference ID: 3245094
+                              13  NONCLINICAL TOXICOLOGY 13.1   Carcinogenesis, Mutagenesis, Impairment of Fertility
+ Carcinogenesis: Two dietary carcinogenicity studies have been conducted in rats with fenofibrate.
+ In the first 24-month study, Wistar rats were dosed with fenofibrate at 10, 45 and 200 mg/kg/day, approximately 0.3, 1, and 6 times the maximum recommended human dose (MRHD), based on body surface area comparisons (mg/m2).
+At a dose of 200 mg/kg/day (at 6 times MRHD), the incidence of liver carcinoma was significantly increased in both sexes.
+ A statistically significant increase in pancreatic carcinomas was observed in males at 1 and 6 times the MRHD; an increase in pancreatic adenomas and benign testicular interstitial cell tumors was observed in males at 6 times the MRHD.
+ In a second 24-month study in a different strain of rats (Sprague-Dawley), doses of 10 and 60 mg/kg/day (0.3 and 2 times the MRHD) produced significant increases in the incidence of pancreatic acinar adenomas in both sexes and increases in testicular interstitial cell tumors in males at 2 times the MRHD.
+ A 117-week carcinogenicity study was conducted in rats comparing three drugs: fenofibrate 10 and 60 mg/kg/day (0.3 and 2 times the MRHD), clofibrate (400 mg/kg; 2 times the human dose), and gemfibrozil (250 mg/kg; 2 times the human dose, based on mg/m2 surface area).
+ Fenofibrate increased pancreatic acinar adenomas in both sexes.
+Clofibrate increased hepatocellular carcinomas in males and hepatic neoplastic nodules in females.
+Gemfibrozil increased hepatic neoplastic nodules in males and females, while all three drugs increased testicular interstitial cell tumors in males.
+ In a 21-month study in CF-1 mice, fenofibrate 10, 45 and 200 mg/kg/day (approximately 0.2, 1, and 3 times the MRHD on the basis of mg/m2 surface area) significantly increased the liver carcinomas in both sexes at 3 times the MRHD.
+ In a second 18 month study at 10, 60 and 200 mg/kg/day, fenofibrate significantly increased the liver carcinomas in male mice and liver adenomas in female mice at 3 times the MRHD.
+ Electron microscopy studies have demonstrated peroxisomal proliferation following fenofibrate administration to the rat.
+ An adequate study to test for peroxisome proliferation in humans has not been done, but changes in peroxisome morphology and numbers have been observed in humans after treatment with other members of the fibrate class when liver biopsies were compared before and after treatment in the same individual.
+ Mutagenesis: Fenofibrate has been demonstrated to be devoid of mutagenic potential in the following tests: Ames, mouse lymphoma, chromosomal aberration and unscheduled DNA synthesis in primary rat hepatocytes.
+ Impairment of Fertility: In fertility studies rats were given oral dietary doses of fenofibrate, males received 61 days prior to mating and females 15 days prior to mating through weaning which resulted in no adverse effect on fertility at doses up to 300 mg/kg/day (approximately 10 times the MRHD, based on mg/m2 surface area comparisons).
+ 14  CLINICAL STUDIES 14.1   Primary Hypercholesterolemia (Heterozygous Familial and Nonfamilial) and Mixed
+ Dyslipidemia
+ The effects of fenofibrate at a dose comparable to Triglide 160 mg per day were assessed from four randomized, placebo-controlled, double-blind, parallel-group studies including patients with the following mean baseline lipid values: total-C 306.9 mg/dL; LDL-C 213.8 mg/dL; HDL-C 52.3 mg/dL; triglycerides 191.0 mg/dL.
+Fenofibrate therapy lowered LDL-C, Total-C, and the LDL-C/HDL-C ratio.
+Fenofibrate therapy also lowered triglycerides and raised HDL-C (see Table 4).
+ Reference ID: 3245094
+                                        Table 4.
+ Mean Percent Change in Lipid Parameters at End of Treatment*   Treatment Group Total-C LDL-C HDL-C TG Pooled Cohort
+  Mean baseline lipid values (n=646) 306.9 mg/dL 213.8 mg/dL 52.3 mg/dL 191.0 mg/dL
+   All FEN (n=361) -18.7%&#x20ac; -20.6%&#x20ac; +11.0%&#x20ac; -28.9%&#x20ac;    Placebo (n=285) -0.4% -2.2% +0.7% +7.7%
+ Baseline LDL-C &gt;160 mg/dL and TG &lt;150 mg/dL
+    Mean baseline lipid values (n=334) 307.7 mg/dL 227.7 mg/dL 58.1 mg/dL 101.7 mg/dL
+   All FEN (n=193) -22.4%&#x20ac; -31.4%&#x20ac; +9.8%&#x20ac; -23.5%&#x20ac;    Placebo (n=141) +0.2% -2.2% +2.6% +11.7%
+ Baseline LDL-C &gt;160 mg/dL and TG &#x2264;150 mg/dL   Mean baseline lipid values (n=242) 312.8 mg/dL 219.8 mg/dL 46.7 mg/dL 231.9 mg/dL
+   All FEN (n=126) -16.8%&#x20ac; -20.1%&#x20ac; +14.6%&#x20ac; -35.9%&#x20ac;    Placebo (n=116) -3.0% -6.6% +2.3% +0.9% * Duration of study treatment was 3 to 6 months.
+&#x20ac; p=&lt;0.05 vs. placebo
+ In a subset of the subjects, measurements of apo B were conducted.
+Fenofibrate treatment significantly reduced apo B from baseline to endpoint as compared with placebo (-25.1% vs. 2.4%, p&lt;0.0001, n=213 and 143 respectively).
+ 14.2 Severe Hypertriglyceridemia The effects of fenofibrate on serum triglycerides were studied in two randomized, double-blind, placebo-
+controlled clinical trials of 147 hypertriglyceridemic patients.
+Patients were treated for eight weeks under protocols that differed only in that one entered patients with baseline triglyceride (TG) levels of 500 to 1500 mg/dL, and the other TG levels of 350 to 500 mg/dL.
+In patients with hypertriglyceridemia and normal cholesterolemia with or without hyperchylomicronemia, treatment with fenofibrate at dosages equivalent to 160 mg Triglide per day decreased primarily very low density lipoprotein (VLDL) triglycerides and VLDL cholesterol.
+Treatment of patients with elevated triglycerides often results in an increase of low density lipoprotein (LDL) cholesterol (see Table 5).
+ Reference ID: 3245094
+                                               Table 5.
+ Effects of Fenofibrate in Patients With Severe Hypertriglyceridemia Study 1 Placebo Fenofibrate** Baseline TG levels 350 to 499 mg/dL
+ N Baselin e
+ (Mean)
+ Endpoint (Mean)
+ % Change (Mean)
+ N Baseline (Mean)
+ Endpoint (Mean)
+ % Change (Mean)
+ Triglycerides 28 449 450 -0.5 27 432 223 -46.2* VLDL Triglycerides
+ 19 367 350 2.7 19 350 178 -44.1*
+ Total Cholesterol
+ 28 255 261 2.8 27 252 227 -9.1*
+ HDL Cholesterol
+ 28 35 36 4 27 34 40 19.6*
+ LDL Cholesterol
+ 28 120 129 12 27 128 137 14.5
+ VLDL Cholesterol
+ 27 99 99 5.8 27 92 46 -44.7*
+ Study 2 Placebo Fenofibrate** Baseline TG levels 500 to 1500 mg/dL
+ N Baseline (Mean) Endpoint (Mean)
+ % Change (Mean) N
+ Baseline (Mean)
+ Endpoint (Mean)
+ % Change (Mean)
+ Triglycerides 44 710 750 7.2 48 726 308 -54.5* VLDL Triglycerides 29 537 571 18.7 33 543 205 -50.6*
+ Total Cholesterol 44 272 271 0.4 48 261 223 -13.8*
+ HDL Cholesterol 44 27 28 5.0 48 30 36 22.9*
+ LDL Cholesterol 42 100 90 -4.2 45 103 131 45.0*
+ VLDL Cholesterol 42 137 142 11.0 45 126 54 -49.4*
+ * =p&lt;0.05 vs. placebo ** Dosage comparable to 160 mg Triglide
+ The effect of Triglide on cardiovascular morbidity and mortality has not been determined.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING &#x2022; NDC 59630-480-30: bottles of 30 tablets.
+50 mg, off-white round tablets, debossed "FH 50".
+&#x2022; NDC 59630-485-30: bottles of 30 tablets.
+160 mg, off-white round tablets, debossed "FH 160".
+Store at 20-25C (68-77F); excursions permitted to 15-30C (59-86F) [See USP Controlled Room
+ Temperature].
+ Protect from light and moisture.
+ Store tablets only in the moisture protective container.
+ 17 PATIENT COUNSELING INFORMATION Patients should be advised:
+  &#x2022; of the potential benefits and risks of Triglide.
+ &#x2022; not to use Triglide if there is a known hypersensitivity to fenofibrate or fenofibric acid.
+ &#x2022; of medications that should not be taken in combination with Triglide.
+ Reference ID: 3245094
+                      &#x2022; that if they are taking coumarin anticoagulants, Triglide may increase their anti-coagulant effect, and increased monitoring may be necessary.
+ &#x2022; to inform their physician of all medications, supplements, and herbal preparations they are taking and any change in their medical condition.
+  &#x2022; to inform a physician prescribing a new medication, that they are taking Triglide.
+&#x2022; to continue to follow an appropriate lipid-modifying diet while taking Triglide.
+&#x2022; to take Triglide once daily at the prescribed dose, swallowing each tablet whole.
+&#x2022; to inform their physician of any muscle pain, tenderness, or weakness; onset of abdominal pain; or any
+ other new symptoms.
+ &#x2022; to return to their physician's office for routine monitoring.
+ Distributed by:
+ Shionogi Inc.
+ Florham Park, NJ 07932
+ TRI-PI
+ Rev.
+XX/2012
+  Shionogi Inc.
+All rights reserved.
+ Reference ID: 3245094
+  

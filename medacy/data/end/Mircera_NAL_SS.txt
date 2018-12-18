@@ -1,0 +1,793 @@
+label
+ HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use Mircera safely and effectively.
+See full prescribing information for Mircera.
+  Mircera (methoxy polyethylene glycol-epoetin beta)   Solution for Injection: Intravenous [IV] or Subcutaneous [SC] use Initial U.S. Approval: 2007
+  WARNINGS: ESAs INCREASE THE RISK OF DEATH, MYOCARDIAL INFARCTION, STROKE, VENOUS  THROMBOEMBOLISM, THROMBOSIS OF VASCULAR ACCESS AND TUMOR PROGRESSION OR RECURRENCE
+ See full prescribing information for complete boxed warning
+ Chronic Kidney Disease: &#x2022; In controlled trials, patients experienced greater risks for death,
+ serious adverse cardiovascular reactions, and stroke when administered erythropoiesis-stimulating agents (ESAs) to target a hemoglobin level of greater than 11 g/dL (5.1).
+  rget level, ES&#x2022; No trial has identified a hemoglobin ta A dose, or dosing strategy that does not increase these risks (5.1).
+  &#x2022; Use the lowest Mircera dose sufficient to reduce the need for red blood cell (RBC) transfusions (5.1).
+  Cancer: &#x2022; Mircera is not indicated and is not recommended for the treatment of
+ anemia due to cancer chemotherapy.
+ A dose-ranging study of Mircera was terminated early because of more deaths among patients receiving Mircera than another ESA (5.2).
+ &#x2022; ESAs shortened overall survival and/or increased the risk of tumor progression or recurrence in clinical studies in patients with breast, non-small cell lung, head and neck, lymphoid, and cervical cancers (5.2).
+   --------------------------- RECENT MAJOR CHANGES ---------------------------  Boxed Warning                      10/2014 Indications and Usage (1.2)                     10/2014 Dosage and Administration (2.1, 2.2)     10/2014   Contraindications (4)   10/2014 Warnings and Precautions  (5.1, 5.2, 5.3, 5.4, , 5.6, 5.7, 5.8, 5.9)                                          10/2014  --------------------------- INDICATIONS AND USAGE ----------------------------  Mircera is an erythropoiesis-stimulating agent (ESA) indicated for the treatment of anemia associated with chronic kidney disease (CKD in adult patients on dialysis and patients not on dialysis (1.1).
+ Limitations of Use  Mircera is not indicated and is not recommended for use: &#x2022; In the treatment of anemia due to cancer chemotherapy (1.2).
+&#x2022; As a substitute for RBC transfusions in patients who require immediate
+ correction of anemia (1.2)
+  Mircera has not been shown to improve quality of life, fatigue, or patient well-being.
+  ----------------------- DOSAGE AND ADMINISTRATION -----------------------  Mircera is administered by subcutaneous (SC) or intravenous (IV) injection (2.2).
+&#x2022; Initial Treatment: 0.6 mcg/kg body weight administered once every two  weeks (2.2).
+&#x2022; Conversion from Another ESA: dosed once monthly or once every two  weeks based on total weekly epoetin alfa or darbepoetin alfa dose at time of conversion (2.2).
+   --------------------- DOSAGE FORMS AND STRENGTHS----------------------  &#x2022; Injection:  50, 75, 100, 150, 200, or 250 mcg in 0.3 mL solution of
+ Mircera in single-use  prefilled syringes (3).
+   ------------------------------ CONTRAINDICATIONS ------------------------------  &#x2022; Uncontrolled hypertension (4).
+&#x2022; Pure red cell aplasia (PRCA) that begins after treatment with Mircera or
+ other erythropoietin protein drugs (4) &#x2022; History of serious allergic reactions to Mircera, including anaphylaxis (4).
+   ----------------------- WARNINGS AND PRECAUTIONS -----------------------  &#x2022; Increased Mortality, Myocardial Infarction, Stroke, and
+ Thromboembolism:  Using ESAs to target a hemoglobin level of greater than 11 g/dL increases the risk of serious adverse cardiovascular reactions and has not been shown to provide additional benefits (5.1 and 14).
+Use caution in patients with coexistent cardiovascular disease and stroke (5.1).
+ &#x2022; Hypertension: Control hypertension prior to initiating and during treatment with Mircera (5.3).
+ &#x2022; Seizures: Seizures have occurred in CKD patients participating in Mircera clinical studies.
+Increase monitoring of these patients for changes in seizure frequency or premonitory symptoms (5.4).
+ &#x2022; PRCA: If severe anemia and low reticulocyte count develop during Mircera treatment, withhold Mircera and evaluate for PRCA (5.6).
+   ------------------------------ ADVERSE REACTIONS ------------------------------  The most common adverse reactions (&#x2265; 10%) are hypertension, diarrhea, nasopharyngitis.
+(6).
+ To report SUSPECTED ADVERSE REACTIONS, contact FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ See 17   PATIENT COUNSELING INFORMATION AND MEDICATION GUIDE
+ Revised: 10/2014  ____________________________________________________________________________________________________________________________________
+   FULL PRESCRIBING INFORMATION: CONTENTS*  WARNING: ESAs INCREASE THE RISK OF DEATH, MYOCARDIAL INFARCTION, STROKE, VENOUS THROMBOEMBOLISM, THROMBOSIS OF VASCULAR ACCESS  AND TUMOR PROGRESSION OR RECURRENCE  1 INDICATIONS AND USAGE
+ 1.1 Anemia Due to Chronic Kidney Disease 1.2 Limitations of Use
+ 2 DOSAGE AND ADMINISTRATION 2.1 Evaluation of Iron Stores and Nutritional Factors 2.2 Patients with Chronic Kidney Disease 2.3 Preparation and Administration of Mircera
+ 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 Increased Mortality, Myocardial Infarction, Stroke, and Thromboembolism
+ 5.2 Increased Mortality and/or Increased Risk of Tumor Progression or Recurrence in Patients With Cancer
+ 5.3 Hypertension 5.4 Seizures
+ 5.5 Lack or Loss of Hemoglobin Response to Mircera 5.6 Pure Red Cell Aplasia 5.7    Serious Allergic Reactions 5.8 Dialysis Management 5.9 Laboratory Monitoring
+ 6 ADVERSE REACTIONS 6.1 Clinical Trials Experience 6.2 Immunogenicity
+ 7 DRUG INTERACTIONS 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy: Category C 8.3 Nursing Mothers 8.4 Pediatric Use 8.5 Geriatric Use 8.6 Hepatic Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action 12.2 Pharmacodynamics 12.3 Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+    2
+ 14 CLINICAL STUDIES 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied 16.2 Stability and Storage
+ 17 PATIENT COUNSELING INFORMATION
+    *Sections or subsections omitted from the full prescribing information are not listed.
+ 1  ____________________________________________________________________________________________________________________________________  2 FULL PRESCRIBING INFORMATION 3  4 WARNINGS: ESAs INCREASE THE RISK OF DEATH, MYOCARDIAL INFARCTION, STROKE, VENOUS THROMBOEMBOLISM, THROMBOSIS OF VASCULAR ACCESS,  AND TUMOR PROGRESSION OR RECURRENCE
+ Chronic Kidney Disease [see Warnings and Precautions (5.1)]  &#x2022; In controlled trials, patients experienced greater risks for death, serious adverse cardiovascular  reactions, and stroke when administered erythropoiesis-stimulating agents (ESAs) to target a hemoglobin level of greater than 11 g/dL.
+ &#x2022; No trial has identified a hemoglobin target level, ESA dose, or dosing strategy that does not increase these risks.
+ &#x2022; Use the lowest Mircera dose sufficient to reduce the need for red blood cell (RBC) transfusions.
+  Cancer [see Warnings and Precautions (5.2)]  &#x2022; Mircera is not indicated and is not recommended for the treatment of anemia due to cancer
+ chemotherapy.
+A dose-ranging study of Mircera was terminated early because of more deaths among patients receiving Mircera than another ESA.
+  &#x2022; ESAs have shown shortened overall survival and/or increased the risk of tumor progression or recurrence in clinical studies in patients with breast, non-small cell lung, head and neck, lymphoid, and cervical cancers.
+ 5  6 1 INDICATIONS AND USAGE
+ 1.1  Anemia Due to Chronic Kidney Disease 7
+ Mircera is indicated for the treatment of anemia associated with chronic kidney disease (CKD) in adult patients 8 on dialysis and patients not on dialysis.
+9
+ 1.2 Limitations of Use 10
+ Mircera is not indicated and is not recommended:  11
+ &#x2022; In the treatment of anemia due to cancer chemotherapy [see Warnings and Precautions (5.2)] 12
+ &#x2022; As a substitute for RBC transfusions in patients who require immediate correction of anemia [see Clinical 13 Pharmacology (12.2)] 14
+ Mircera has not been shown to improve symptoms, physical functioning or health-related quality of life.
+15
+  16
+ 2 DOSAGE AND ADMINISTRATION 17 2.1 Evaluation of Iron Stores and Nutritional Factors 18
+ Evaluate the iron status in all patients before and during treatment and maintain iron repletion.
+Correct or 19 exclude other causes of anemia (e.g., vitamin deficiency, metabolic or chronic inflammatory conditions, 20 bleeding, etc.) before initiating Mircera [see Warnings and Precautions (5.9)].
+21
+ 2.2 Patients with Chronic Kidney Disease 22
+    3
+ Individualize dosing and use the lowest dose of Mircera sufficient to reduce the need for RBC transfusions [see 23 Warnings and Precautions (5.1)].
+In controlled trials, patients experienced greater risks for death, serious 24 adverse cardiovascular reactions, and stroke when administered erythropoiesis-stimulating agents (ESAs) to 25 target a hemoglobin level of greater than 11 g/dL.
+No trial has identified a hemoglobin target level, ESA dose, 26 or dosing strategy that does not increase these risks.
+Physicians and patients should weigh the possible benefits 27 of decreasing transfusions against the increased risks of death and other serious cardiovascular adverse events 28 [see Boxed Warning and Clinical Studies (14)].
+29
+ For all patients with CKD: 30
+ When initiating or adjusting therapy, monitor hemoglobin levels at least weekly until stable, then monitor at 31 least monthly.
+When adjusting therapy consider hemoglobin rate of rise, rate of decline, ESA responsiveness 32 and hemoglobin variability.
+A single hemoglobin excursion may not require a dosing change.
+33
+ &#x2022; Do not increase the dose more frequently than once every 4 weeks.
+Decreases in dose can occur more 34 frequently.
+Avoid frequent dose adjustments.
+35
+ &#x2022; If the hemoglobin rises rapidly (e.g., more than 1 g/dL in any 2-week period), reduce the dose of Mircera by 36 25% or more as needed to reduce rapid responses.
+37
+ &#x2022; For patients who do not respond adequately, if the hemoglobin has not increased by more than 1 g/dL after 4 38 weeks of therapy, increase the dose by 25%.
+39
+ &#x2022; For patients who do not respond adequately over a 12-week escalation period, increasing the Mircera dose 40 further is unlikely to improve response and may increase risks.
+Use the lowest dose that will maintain a 41 hemoglobin level sufficient to reduce the need for RBC transfusions.
+Evaluate other causes of anemia.
+42 Discontinue Mircera if responsiveness does not improve.
+43
+ Mircera is administered either intravenously (IV) or subcutaneously (SC).
+When administered SC, Mircera 44 should be injected in the abdomen, arm or thigh.
+ 45
+ For Patients with CKD on dialysis: 46
+ &#x2022; Initiate Mircera treatment when the hemoglobin level is less than 10 g/dL.
+47
+ &#x2022; If the hemoglobin level approaches or exceeds 11 g/dL, reduce or interrupt the dose of Mircera.
+48
+ &#x2022; The recommended starting dose of Mircera for the treatment of anemia in adult CKD patients who are not 49 currently treated with an ESA is 0.6 mcg/kg body weight administered as a single IV or SC injection once 50 every two weeks.
+The IV route is recommended for patients receiving hemodialysis because the IV route 51 may be less immunogenic [see Adverse Reactions (6.2)].
+52  53
+ &#x2022; Once the hemoglobin has been stabilized, Mircera may be administered once monthly using a dose that is 54 twice that of the every-two-week dose and subsequently titrated as necessary.
+ 55
+ For Patients with CKD not on dialysis: 56
+ &#x2022; Consider initiating Mircera treatment only when the hemoglobin level is less than 10 g/dL and the following 57 considerations apply: 58
+ o The rate of hemoglobin decline indicates the likelihood of requiring a RBC transfusion and, 59 o Reducing the risk of alloimmunization and/or other RBC transfusion-related risks is a goal 60
+  61 &#x2022; If the hemoglobin level exceeds 10 g/dL, reduce or interrupt the dose of Mircera, and use the lowest dose of 62
+ Mircera sufficient to reduce the need for RBC transfusions.
+63
+    4
+ &#x2022; The recommended starting dose of Mircera for the treatment of anemia in adult CKD patients who are not 64 currently treated with an ESA is 0.6 mcg/kg body weight administered as a single IV or SC injection once 65 every two weeks.
+66
+ &#x2022; Once the hemoglobin has been stabilized, Mircera may be administered once monthly using a dose that is 67 twice that of the every-two-week dose and subsequently titrated as necessary.
+68
+ Refer patients who self-administer Mircera to the Instructions for Use [see Patient Counseling Information 69 (17)].
+70  71
+ Conversion from Epoetin alfa or Darbepoetin alfa to Mircera in Patients with CKD 72
+ Mircera can be administered once every two weeks or once monthly to patients whose hemoglobin has been 73 stabilized by treatment with an ESA (see Table 1).
+The dose of Mircera, given as a single IV or SC injection, 74 should be based on the total weekly ESA dose at the time of conversion.
+75
+ Table 1 Mircera Starting Doses for Patients Currently Receiving an ESA 76
+ Previous Weekly Epoetin alfa
+ Dose (units/week)
+ Previous Weekly Darbepoetin alfa Dose
+ (mcg/week)
+ Mircera Dose
+ Once Monthly (mcg/month) Once Every Two Weeks (mcg/every two weeks)
+ &lt; 8000 &lt; 40 120 60
+ 8000 - 16000 40 - 80 200 100
+ &gt; 16000 &gt; 80 360 180
+  77
+ 2.3 Preparation and Administration of Mircera 78 Mircera is packaged as single-use prefilled syringes.
+Mircera contains no preservatives.
+Discard any unused 79 portion.
+Do not pool unused portions from the prefilled syringes.
+Do not use the prefilled syringe more than one 80 time.
+81
+ Always store Mircera prefilled syringes in their original cartons.
+Vigorous shaking or prolonged exposure to 82 light should be avoided.
+83
+ Do not mix Mircera with any parenteral solution.
+84
+ Parenteral drug products should be inspected visually for particulate matter and discoloration prior to 85 administration.
+Do not use any prefilled syringes exhibiting particulate matter or a coloration other than 86 colorless to slightly yellowish.
+87
+ For administration using the prefilled syringe, the plunger must be fully depressed during injection in order for 88 the needle guard to activate.
+Following administration, remove the needle from the injection site and then 89 release the plunger to allow the needle guard to move up until the entire needle is covered.
+90
+ See &#x20ac;&#x153;Instructions for Use&#x20ac;&#xfffd; for complete instructions on the preparation and administration of Mircera.
+Examine 91 each prefilled syringe for the expiration date.
+Do not use Mircera after the expiration date.
+92
+ 3 DOSAGE FORMS AND STRENGTHS 93 Injection: 50, 75, 100, 150, 200, or 250 mcg of Mircera in 0.3 mL solution in single-use prefilled syringes  94
+    5
+ 4 CONTRAINDICATIONS Mircera is contraindicated in patients with:
+ &#x2022; Uncontrolled hypertension [see Warnings and Precautions (5.3)]
+ &#x2022; Pure red cell aplasia (PRCA) that begins after treatment with Mircera or other erythropoietin protein drugs [see Warnings and Precautions (5.6)]
+ &#x2022; History of serious or severe allergic reactions to Mircera (e.g. anaphylactic reactions, angioedema, bronchospasm, skin rash, and urticaria).
+   5 WARNINGS AND PRECAUTIONS 5.1 Increased Mortality, Myocardial Infarction, Stroke, and Thromboembolism   &#x2022; In controlled clinical trials of patients with CKD comparing higher hemoglobin targets (13 - 14 g/dL) to
+ lower targets (9 - 11.3 g/dL), ESAs increased the risk of death, myocardial infarction, stroke, congestive heart failure, thrombosis of hemodialysis vascular access, and other thromboembolic events in the higher target groups.
+  &#x2022; Using ESAs to target a hemoglobin level of greater than 11 g/dL increases the risk of serious adverse cardiovascular reactions and has not been shown to provide additional benefit [see Clinical Studies (14)].
+Use caution in patients with coexistent cardiovascular disease and stroke [see Dosage and Administration (2.2)].
+Patients with CKD and an insufficient hemoglobin response to ESA therapy may be at even greater risk for cardiovascular reactions and mortality than other patients.
+A rate of hemoglobin rise of greater than 1 g/dL over 2 weeks may contribute to these risks.
+  &#x2022; In controlled clinical trials of patients with cancer, ESAs increased the risks for death and serious adverse
+ cardiovascular reactions.
+These adverse reactions included myocardial infarction and stroke.
+  &#x2022; In controlled clinical trials, ESAs increased the risk of death in patients undergoing coronary artery bypass graft surgery (CABG) and the risk of deep venous thrombosis (DVT) in patients undergoing orthopedic procedures.
+   The design and overall results of the 3 large trials comparing higher and lower hemoglobin targets are shown in Table 2 (Normal Hematocrit Study (NHS), Correction of Hemoglobin Outcomes in Renal Insufficiency (CHOIR) and Trial to Reduce Cardiovascular Events with Aranesp Therapy (TREAT)).
+ Table 2: Randomized Controlled Trials Showing Adverse Cardiovascular Outcomes in Patients With CKD
+  95 96
+ 97
+ 98 99
+ 100 101
+ 102
+ 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130
+  NHS  (N = 1265) CHOIR
+  (N = 1432) TREAT
+  (N = 4038) Time Period of Trial 1993 to 1996  2003 to 2006  2004 to 2009
+  Population
+ CKD patients on hemodialysis with coexisting CHF or CAD, hematocrit 30  3% on epoetin
+ alfa
+  CKD patients not on dialysis with hemoglobin &lt; 11 g/dL not previously administered
+ epoetin alfa
+  CKD patients not on dialysis with type II diabetes,
+ hemoglobin &#x2264; 11 g/dL
+  Hemoglobin Target; Higher vs. Lower (g/dL) 14.0 vs. 10.0  13.5 vs. 11.3  13.0 vs. &#x2265; 9.0
+  Median (Q1, Q3) Achieved Hemoglobin level
+ (g/dL)
+ 12.6 (11.6, 13.3) vs.  10.3 (10.0, 10.7)
+  13.0 (12.2, 13.4) vs.  11.4 (11.1, 11.6)
+  12.5 (12.0, 12.8) vs.  10.6 (9.9, 11.3)
+     6
+ Primary Endpoint All-cause mortality  or nonfatal MI
+  All-cause mortality,  MI, hospitalization for CHF,
+ or stroke
+  All-cause mortality,  MI, myocardial ischemia, heart failure, and stroke
+  Hazard Ratio or Relative Risk (95% CI) 1.28 (1.06 - 1.56)  1.34 (1.03 - 1.74)  1.05 (0.94 - 1.17)
+  Adverse Outcome for Higher Target Group All-cause mortality  All-cause mortality  Stroke
+  Hazard Ratio or Relative Risk (95% CI) 1.27 (1.04 - 1.54)  1.48 (0.97 - 2.27)  1.92 (1.38 - 2.68)
+   131 Patients with Chronic Kidney Disease  132  133 NHS: A prospective, randomized, open-label study of 1265 patients with chronic kidney disease on dialysis 134 with documented evidence of congestive heart failure or ischemic heart disease was designed to test the 135 hypothesis that a higher target hematocrit (Hct) would result in improved outcomes compared with a lower 136 target Hct.
+In this study, patients were randomized to epoetin alfa treatment targeted to a maintenance 137 hemoglobin of either 14  1 g/dL or 10  1 g/dL.
+The trial was terminated early with adverse safety findings of 138 higher mortality in the high hematocrit target group.
+Higher mortality (35% vs. 29%) was observed for the 139 patients randomized to a target hemoglobin of 14 g/dL than for the patients randomized to a target hemoglobin 140 of 10 g/dL.
+For all-cause mortality, the HR=1.27; 95% CI (1.04, 1.54); p=0.018.
+The incidence of nonfatal 141 myocardial infarction, vascular access thrombosis, and other thrombotic events was also higher in the group 142 randomized to a target hemoglobin of 14 g/dL.
+143  144 CHOIR: In a randomized prospective trial, 1432 patients with anemia due to CKD who were not undergoing 145 dialysis were assigned to epoetin alfa treatment targeting a maintenance hemoglobin concentration of 13.5 g/dL 146 or 11.3 g/dL.
+The trial was terminated early with adverse safety findings.
+A major cardiovascular event (death, 147 myocardial infarction, stroke, or hospitalization for congestive heart failure) occurred among 125 (18%) of the 148 715 patients in the higher hemoglobin group compared to 97 (14%) among the 717 patients in the lower 149 hemoglobin group (HR 1.3, 95% CI: 1.0, 1.7 p=0.03).
+150  151 TREAT: A randomized, double-blind, placebo-controlled, prospective trial of 4038 patients with: CKD not on 152 dialysis (eGFR of 20 - 60 mL/min), anemia (hemoglobin levels &#x2264; 11 g/dL), and type 2 diabetes mellitus, 153 patients were randomized to receive either darbepoetin alfa treatment or a matching placebo.
+Placebo group 154 patients also received darbepoetin alfa when their hemoglobin levels were below 9 g/dL.
+The trial objectives 155 were to demonstrate the benefit of darbepoetin alfa treatment of the anemia to a target hemoglobin level of 13 156 g/dL, when compared to a "placebo" group, by reducing the occurrence of either of two primary endpoints: (1) a 157 composite cardiovascular endpoint of all-cause mortality or a specified cardiovascular event (myocardial 158 ischemia, CHF, MI, and CVA) or (2) a composite renal endpoint of all-cause mortality or progression to end 159 stage renal disease.
+The overall risks for each of the two primary endpoints (the cardiovascular composite and 160 the renal composite) were not reduced with darbepoetin alfa treatment (see Table 2), but the risk of stroke was 161 increased nearly two-fold in the darbepoetin alfa -treated group versus the placebo group:  annualized stroke 162 rate 2.1% vs. 1.1%, respectively, HR 1.92; 95% CI:  1.38, 2.68; p &lt; 0.001.
+The relative risk of stroke was 163 particularly high in patients with a prior stroke:  annualized stroke rate 5.2% in the darbepoetin alfa-treated 164 group and 1.9% in the placebo group, HR 3.07; 95% CI: 1.44, 6.54.
+Also, among darbepoetin alfa-treated 165 subjects with a past history of cancer, there were more deaths due to all causes and more deaths adjudicated as 166 due to cancer, in comparison with the control group.
+167  168 Patients with Cancer 169  170 An increased incidence of thromboembolic reactions, some serious and life-threatening, occurred in patients 171 with cancer treated with ESAs.
+172  173
+    7
+ In a randomized, placebo-controlled study (Study 1 in Table 3 [see Warnings and Precautions (5.2)]) of 939 174 women with metastatic breast cancer receiving chemotherapy, patients received either weekly epoetin alfa or 175 placebo for up to a year.
+This study was designed to show that survival was superior when epoetin alfa was 176 administered to prevent anemia (maintain hemoglobin levels between 12 and 14 g/dL or hematocrit between 177 36% and 42%).
+This study was terminated prematurely when interim results demonstrated a higher mortality at 178 4 months (8.7% vs. 3.4%) and a higher rate of fatal thrombotic reactions (1.1% vs. 0.2%) in the first 4 months 179 of the study among patients treated with epoetin alfa.
+Based on Kaplan-Meier estimates, at the time of study 180 termination, the 12-month survival was lower in the epoetin alfa group than in the placebo group (70% vs. 76%; 181 HR 1.37, 95% CI: 1.07, 1.75; p = 0.012).
+182  183
+ Patients Having Surgery 184
+ Mircera is not approved for reduction of RBC transfusions in patients scheduled for surgical procedures.
+185
+ An increased incidence of deep vein thrombosis (DVT) in patients receiving epoetin alfa undergoing surgical 186 orthopedic procedures has been observed.
+In a randomized controlled study (referred to as the "SPINE" study), 187 681 adult patients, not receiving prophylactic anticoagulation and undergoing spinal surgery, received epoetin 188 alfa and standard of care (SOC) treatment, or SOC treatment alone.
+Preliminary analysis showed a higher 189 incidence of DVT, determined by either Color Flow Duplex Imaging or by clinical symptoms, in the epoetin 190 alfa group [16 patients (4.7%)] compared to the SOC group [7 patients (2.1%)].
+In addition, 12 patients in the 191 epoetin alfa group and 7 patients in the SOC group had other thrombotic vascular events.
+ 192
+ Increased mortality was observed in a randomized placebo-controlled study of epoetin alfa in adult patients who 193 were undergoing coronary artery bypass surgery (7 deaths in 126 patients randomized to epoetin alfa versus no 194 deaths among 56 patients receiving placebo).
+Four of these deaths occurred during the period of study drug 195 administration and all four deaths were associated with thrombotic events.
+ 196
+ 5.2 Increased Mortality and/or Increased Risk of Tumor Progression or Recurrence in Patients with 197 Cancer 198
+ Mircera is not indicated and is not recommended for use in the treatment of anemia due to cancer 199 chemotherapy.
+A dose-ranging trial of Mircera in 153 patients who were undergoing chemotherapy for non-200 small cell lung cancer was terminated prematurely because more deaths occurred among patients receiving 201 Mircera than another ESA.
+202
+ ESAs resulted in decreased locoregional control/progression-free survival and/or overall survival (see Table 3).
+203 These findings were observed in studies of patients with advanced head and neck cancer receiving radiation 204 therapy (Studies 5 and 6), in patients receiving chemotherapy for metastatic breast cancer (Study 1) or lymphoid 205 malignancy (Study 2), and in patients with non-small cell lung cancer or various malignancies who were not 206 receiving chemotherapy or radiotherapy (Studies 7 and 8).
+207
+ Table 3 Randomized, Controlled Trials with Decreased Survival and/or Decreased Locoregional 208 Control 209
+ Study/Tumor (n)
+ Hemoglobin Target
+ Achieved Hemoglobin
+ (Median Q1,Q3*)
+ Primary Endpoint Adverse Outcome for ESA-containing Arm
+ Chemotherapy Cancer Study 1 Metastatic breast cancer  (n=939)
+ 12-14 g/dL 12.9 g/dL 12.2, 13.3 g/dL 12-month overall
+ survival Decreased 12-month survival
+ Cancer Study 2 Lymphoid
+ 13-15 g/dL (M) 13-14 g/dL (F)
+ 11.0 g/dL 9.8, 12.1 g/dL
+ Proportion of patients achieving a Decreased overall survival
+    8
+ malignancy  (n=344)
+ hemoglobin response
+ Cancer Study 3 Early breast cancer (n=733)
+ 12.5-13 g/dL 13.1 g/dL 12.5, 13.7 g/dL Relapse-free and overall survival
+ Decreased 3-year relapse-free and overall survival
+ Cancer Study 4 Cervical cancer (n=114)
+ 12-14 g/dL 12.7 g/dL 12.1, 13.3 g/dL
+ Progression-free and overall survival
+ and locoregional control
+  Decreased 3-year progression-free and overall
+ survival and locoregional control
+ Radiotherapy Alone Cancer Study 5 Head and neck cancer  (n=351)
+ &gt;15 g/dL (M) &gt;14 g/dL (F) Not available
+ Locoregional progression-free
+ survival (LRPFS)
+ Decreased 5-year locoregional progression-free
+ survival Decreased overall survival
+ Cancer Study 6 Head and neck cancer  (n=522)
+ 14-15.5 g/dL Not available Locoregional
+ disease control (LRC)
+ Decreased locoregional disease control
+ No Chemotherapy or Radiotherapy Cancer Study 7 Non-small cell lung cancer  (n=70)
+ 12-14 g/dL Not available Quality of life Decreased overall survival
+ Cancer Study 8 Non-myeloid malignancy (n=989)
+ 12-13 g/dL 10.6 g/dL 9.4, 11.8 g/dL RBC transfusions Decreased overall survival
+ *Q1= 25th percentile; Q3= 75th percentile 210
+ Decreased overall survival: 211
+ Cancer Study 1 (the &#x20ac;&#x153;BEST&#x20ac;&#xfffd; study) was previously described [see Warnings and Precautions (5.1)].
+Mortality 212 at 4 months (8.7% vs. 3.4%) was significantly higher in the epoetin alfa arm.
+The most common investigator-213 attributed cause of death within the first 4 months was disease progression; 28 of 41 deaths in the epoetin alfa 214 arm and 13 of 16 deaths in the placebo arm were attributed to disease progression.
+Investigator assessed time to 215 tumor progression was not different between the two groups.
+Survival at 12 months was significantly lower in 216 the epoetin alfa arm (70% vs. 76%, HR 1.37, 95% CI: 1.07, 1.75; p=0.012).
+ 217
+ Cancer Study 2 was a Phase 3, double-blind, randomized (darbepoetin alfa vs. placebo) study conducted in 344 218 anemic patients with lymphoid malignancy receiving chemotherapy.
+With a median follow-up of 29 months, 219 overall mortality rates were significantly higher among patients randomized to darbepoetin alfa as compared to 220 placebo (HR 1.36, 95% CI: 1.02, 1.82).
+221
+ Cancer Study 7 was a Phase 3, multicenter, randomized (epoetin alfa vs. placebo), double-blind study, in which 222 patients with advanced non-small cell lung cancer receiving only palliative radiotherapy or no active therapy 223 were treated with epoetin alfa to achieve and maintain hemoglobin levels between 12 and 14 g/dL.
+Following an 224 interim analysis of 70 of 300 patients planned, a significant difference in survival in favor of the patients on the 225 placebo arm of the trial was observed (median survival 63 vs. 129 days; HR 1.84; p=0.04).
+226
+ Cancer Study 8 was a Phase 3, double-blind, randomized (darbepoetin alfa vs. placebo), 16-week study in 989 227 anemic patients with active malignant disease, neither receiving nor planning to receive chemotherapy or 228 radiation therapy.
+There was no evidence of a statistically significant reduction in proportion of patients 229 receiving RBC transfusions.
+The median survival was shorter in the darbepoetin alfa treatment group (8 230 months) compared with the placebo group (10.8 months); HR 1.30, 95% CI: 1.07, 1.57.
+231
+    9
+ Decreased progression-free survival and overall survival:  232
+ Cancer Study 3 (the &#x20ac;&#x153;PREPARE&#x20ac;&#xfffd; study) was a randomized controlled study in which darbepoetin alfa
+ was 233 administered to prevent anemia conducted in 733 women receiving neo-adjuvant breast cancer treatment.
+A 234 final analysis was performed after a median follow-up of approximately 3 years at which time the survival rate 235 was lower (86% vs. 90%, HR 1.42, 95% CI: 0.93, 2.18) and relapse-free survival rate was lower (72% vs. 78%, 236 HR 1.33, 95% CI: 0.99, 1.79) in the darbepoetin alfa-treated arm compared to the control arm.
+ 237
+ Cancer Study 4 (protocol GOG 191) was a randomized controlled study that enrolled 114 of a planned 460 238 cervical cancer patients receiving chemotherapy and radiotherapy.
+Patients were randomized to receive epoetin 239 alfa to maintain hemoglobin between 12 and 14 g/dL or to transfusion support as needed.
+The study was 240 terminated prematurely due to an increase in thromboembolic events in epoetin alfa-treated patients compared 241 to control (19% vs. 9%).
+Both local recurrence (21% vs. 20%) and distant recurrence (12% vs. 7%) were more 242 frequent in epoetin alfa-treated patients compared to control.
+Progression-free survival at 3 years was lower in 243 the epoetin alfa-treated group compared to control (59% vs. 62%, HR 1.06, 95% CI: 0.58, 1.91).
+Overall 244 survival at 3 years was lower in the epoetin alfa-treated group compared to control (61% vs. 71%, HR 1.28, 245 95% CI: 0.68, 2.42).
+246
+ Cancer Study 5 (the &#x20ac;&#x153;ENHANCE&#x20ac;&#xfffd; study) was a randomized controlled study in 351 head and neck cancer 247 patients where epoetin beta or placebo was administered to achieve target hemoglobins of 14 and 15 g/dL for 248 women and men, respectively.
+Locoregional progression-free survival was significantly shorter in patients 249 receiving epoetin beta (HR 1.62, 95% CI: 1.22, 2.14, p=0.0008) with a median of 406 days epoetin beta vs. 745 250 days placebo.
+Overall survival was significantly shorter in patients receiving epoetin beta (HR 1.39, 95% CI: 251 1.05, 1.84; p=0.02).
+252
+ Decreased locoregional control:  253
+ Cancer Study 6 (DAHANCA 10) was conducted in 522 patients with primary squamous cell carcinoma of the 254 head and neck receiving radiation therapy randomized to darbepoetin alfa with radiotherapy or radiotherapy 255 alone.
+An interim analysis on 484 patients demonstrated that locoregional control at 5 years was significantly 256 shorter in patients receiving darbepoetin alfa (RR 1.44, 95% CI: 1.06, 1.96; p=0.02).
+Overall survival was 257 shorter in patients receiving darbepoetin alfa (RR 1.28, 95% CI: 0.98, 1.68; p=0.08).
+258
+ 5.3 Hypertension 259 Mircera is contraindicated in patients with uncontrolled hypertension.
+ 260
+ In Mircera clinical studies, approximately 27% of patients with CKD, including patients on dialysis and patients 261 not on dialysis, required intensification of antihypertensive therapy.
+Hypertensive encephalopathy and/or 262 seizures have been observed in patients with CKD treated with Mircera [see Warnings and Precautions (5.4)].
+263
+ Appropriately control hypertension prior to initiation of and during treatment with Mircera.
+Reduce or withhold 264 Mircera if blood pressure becomes difficult to control.
+Advise patients of the importance of compliance with 265 antihypertensive therapy and dietary restrictions [see Patient Counseling Information (17)].
+266
+ 5.4 Seizures 267 Seizures have occurred in patients participating in Mircera clinical studies.
+During the first several months 268 following initiation of Mircera, monitor patients closely for premonitory neurologic symptoms.
+Advise patients 269 to contact their healthcare practitioner for new-onset seizures, premonitory symptoms, or change in seizure 270 frequency.
+ 271
+ 5.5 Lack or Loss of Hemoglobin Response to Mircera 272 For lack or loss of hemoglobin response to Mircera, initiate a search for causative factors (e.g., iron deficiency, 273 infection, inflammation, bleeding).
+  274
+    10
+ If typical causes of lack or loss of hemoglobin response are excluded, evaluate for PRCA [see Warnings and 275 Precautions (5.6)].
+In the absence of PRCA, follow dosing recommendations for management of patients with 276 an insufficient response to Mircera therapy [see Dosage and Administration (2.2)].
+277
+ 5.6 Pure Red Cell Aplasia 278 Cases of PRCA and of severe anemia, with or without other cytopenias that arise following the development of 279 neutralizing antibodies to erythropoietin have been reported in the postmarketing setting in patients treated with 280 Mircera.
+This has been reported predominantly in patients with CKD receiving ESAs by SC administration.
+281 PRCA was not observed in clinical studies of Mircera.
+ 282
+ PRCA has also been reported in patients receiving ESAs for anemia related to hepatitis C treatment (an 283 indication for which Mircera is not approved).
+284
+ If severe anemia and low reticulocyte count develop during treatment with Mircera, withhold Mircera and 285 evaluate patients for neutralizing antibodies to erythropoietin [see Warnings and Precautions (5.5)].
+Serum 286 samples should be obtained at least a month after the last Mircera administration to prevent interference of 287 Mircera with the assay.
+ Contact Roche at 1-888-835-2555 to perform assays for binding and neutralizing 288 antibodies.
+ Permanently discontinue Mircera in patients who develop PRCA following treatment with Mircera 289 or other erythropoietin protein drugs.
+Do not switch patients to other ESAs as antibodies may cross-react [see 290 Adverse Reactions (6.2)].
+291
+ 5.7 Serious Allergic Reactions 292 Serious allergic reactions, including anaphylactic reactions, angioedema, bronchospasm, tachycardia, pruritus 293 skin rash, and urticaria have been reported in patients treated with Mircera.
+If a serious allergic or anaphylactic 294 reaction occurs due to Mircera, immediately and permanently discontinue Mircera and administer appropriate 295 therapy.
+296
+ 5.8 Dialysis Management 297 Therapy with Mircera results in an increase in red blood cells and a decrease in plasma volume, which could 298 reduce dialysis efficiency; patients may require adjustments in their dialysis prescription after initiation of 299 Mircera.
+Patients receiving Mircera may require increased anticoagulation with heparin to prevent clotting of 300 the extracorporeal circuit during hemodialysis.
+ 301
+ 5.9 Laboratory Monitoring 302 Evaluate transferrin saturation and serum ferritin prior to and during Mircera treatment.
+Administer 303 supplemental iron therapy when serum ferritin is less than 100 mcg/L or when serum transferrin saturation is 304 less than 20% [see Dosage and Administration (2.1)].
+305
+ The majority of patients with CKD will require supplemental iron during the course of ESA therapy.
+Following 306 initiation of therapy and after each dose adjustment, monitor hemoglobin weekly until the hemoglobin is stable 307 and sufficient to minimize the need for RBC transfusion.
+Thereafter, hemoglobin should be monitored at least 308 monthly provided hemoglobin levels remain stable [see Dosage and Administration (2.2].
+309
+ 6 ADVERSE REACTIONS 310 The following serious adverse reactions are discussed in greater detail in other sections of the labeling: 311
+ &#x2022; Increased Mortality, Myocardial Infarction, Stroke, and Thromboembolism [see Warnings and 312 Precautions (5.1)] 313
+ &#x2022; Increased mortality and/or tumor progression in patients with cancer [see Warnings and Precautions 314 (5.2)] 315
+ &#x2022; Hypertension [see Warnings and Precautions (5.3)] 316
+    11
+ &#x2022; Seizures [see Warnings and Precautions (5.4)] 317 &#x2022; Pure red cell aplasia [see Warnings and Precautions (5.6)] 318 &#x2022; Serious allergic reactions [see Warnings and Precautions (5.7)] 319
+  320 The most commonly reported adverse reactions in &#x2265;10% of patients were hypertension [see Warnings and 321 Precautions (5.3)], diarrhea, and nasopharyngitis.
+ The most common adverse reactions that led to treatment 322 discontinuation in the Mircera clinical studies were: hypertension, coronary artery disease, anemia, concomitant 323 termination of other CKD therapy and septic shock.
+ 324
+ 6.1 Clinical Trials Experience 325 The data described below reflect exposure to Mircera in 2737 patients, including 1451 exposed for 6 months 326 and 1144 exposed for greater than one year.
+Mircera was studied primarily in active-controlled studies (n=1789 327 received Mircera, and n=948 received another ESA) and in long-term follow up studies.
+The population was 18 328 to 92 years of age, 58% male, and the percentage of Caucasian, Black (including African Americans), Asian 329 and Hispanic patients were 73%, 20%, 5%, and 9%, respectively.
+Approximately 85% of the patients were 330 receiving dialysis.
+Most patients received Mircera using dosing regimens of once every two or four weeks, 331 administered SC or IV.
+ 332
+ Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the 333 clinical studies of Mircera cannot be directly compared to rates in the clinical trials of other drugs and may not 334 reflect the rates observed in practice.
+335
+ Some of the adverse reactions reported are typically associated with CKD, or recognized complications of 336 dialysis, and may not necessarily be attributable to Mircera therapy.
+Adverse reaction rates did not importantly 337 differ between patients receiving Mircera or another ESA.
+ 338
+ Table 4 summarizes the most frequent adverse reactions (&#x2265; 5%) in patients treated with Mircera.
+339
+    12
+ Table 4  Adverse Reactions Occurring in &#x2265; 5% of CKD Patients 340
+ Adverse Reaction Patients Treated with
+ Mircera (n=1789)
+ VASCULAR Hypertension Hypotension
+  13% 5%
+ GASTROINTESTINAL Diarrhea Vomiting Constipation
+  11% 6% 5%
+ INFECTIONS AND INFESTATIONS Nasopharyngitis Upper Respiratory Tract Infection Urinary Tract Infection
+  11% 9% 5%
+ NERVOUS SYSTEM Headache
+  9%
+ MUSCULOSKELETAL AND CONNECTIVE TISSUE
+ Muscle Spasms Back Pain Pain in Extremity
+    8% 6% 5%
+ INJURY, POISONING AND PROCEDURAL COMPLICATIONS
+ Procedural Hypotension Arteriovenous Fistula Thrombosis Arteriovenous Fistula Site Complication
+    8% 5% 5%
+  METABOLISM AND NUTRITION
+ Fluid Overload
+  7% RESPIRATORY, THORACIC AND MEDIASTINAL
+ Cough
+    6%  341 In the controlled trials, the rates of serious adverse reactions did not importantly differ between patients 342 receiving Mircera and another ESA (38% vs. 42%) except for the occurrence of serious gastrointestinal 343 hemorrhage (1.2% vs. 0.2%).
+Serious hemorrhagic adverse reactions of all types occurred among 5% and 4% of 344 patients receiving Mircera or another ESA, respectively.
+ 345
+ 6.2 Immunogenicity 346 As with all therapeutic proteins, there is a potential for immunogenicity.
+Neutralizing antibodies to Mircera that 347 cross-react with endogenous erythropoietin and other ESAs can result in PRCA or severe anemia (with or 348 without other cytopenias) [see Warnings and Precautions (5.6)].
+Compared to SC administration, the IV route 349 of administration may lessen the risk for development of antibodies to Mircera.
+350
+ In 1789 patients treated with Mircera in clinical studies, antibody testing using an enzyme-linked 351 immunosorbent assay (ELISA) was conducted at baseline and during treatment.
+Antibody development was not 352 detected in any of the patients.
+353
+ The incidence of antibody formation is highly dependent on the sensitivity and specificity of the assay.
+354 Additionally, the observed incidence of antibody (including neutralizing antibody) positivity in an assay may be 355 influenced by several factors including assay methodology, sample handling, timing of sample collection, 356 concomitant medications, and underlying disease.
+For these reasons, comparison of the incidence of antibodies 357 to Mircera with the incidence of antibodies to other ESAs may be misleading.
+358
+    13
+ 7 DRUG INTERACTIONS 359 No formal drug/drug interaction studies have been performed.
+ 360
+ 8 USE IN SPECIFIC POPULATIONS 361
+ 8.1 Pregnancy: Category C 362 Risk Summary 363
+ There are no adequate and well-controlled studies in pregnant women.
+Mircera should be used during 364 pregnancy only if the potential benefit justifies the potential risk to the fetus.
+365
+ Animal Data 366
+ When methoxy polyethylene glycol-epoetin beta was administered subcutaneously to rats and rabbits during 367 gestation, bone malformation was observed in both species at 50 mcg/kg once every three days.
+This effect was 368 observed as missing caudal vertebrae resulting in a thread-like tail in one rat fetus, absent first digit metacarpal 369 and phalanx on each forelimb resulting in absent polex in one rabbit fetus, and fused fourth and fifth cervical 370 vertebrae centra in another rabbit fetus.
+Dose-related reduction in fetal weights was observed in both rats and 371 rabbits.
+At doses 5 mcg/kg once every three days and higher, methoxy polyethylene glycol-epoetin beta caused 372 exaggerated pharmacodynamic effects in dams.
+Once-weekly doses of methoxy polyethylene glycol-epoetin 373 beta up to 50 mcg/kg/dose given to pregnant rats did not adversely affect pregnancy parameters, natural 374 delivery or litter observations.
+Increased deaths and significant reduction in the growth rate of the F1 generation 375 were observed during lactation and early post weaning period.
+However, no remarkable effect on reflex, 376 physical and cognitive development or reproductive performance was observed in F1 generation of any dose 377 groups.
+378
+ 8.3 Nursing Mothers 379 It is not known whether Mircera is excreted into human breast milk.
+In one study in rats, methoxy polyethylene 380 glycol-epoetin beta was excreted into maternal milk.
+Because many drugs are excreted in human milk, caution 381 should be exercised when Mircera is administered to a nursing woman.
+382
+ 8.4 Pediatric Use 383 The safety and efficacy of Mircera in pediatric patients have not been established.
+384
+ 8.5 Geriatric Use 385 Clinical studies of Mircera did not include sufficient numbers of subjects aged 65 and over to determine 386 whether they respond differently from younger subjects.
+Other reported clinical experience has not identified 387 differences in responses between the elderly and younger patients.
+In general, dose selection for an elderly 388 patient should be cautious, usually starting at the low end of the dosing range, reflecting the greater frequency 389 of decreased hepatic, renal, or cardiac function and of concomitant disease or other drug therapy.
+ 390
+ 8.6 Hepatic Impairment 391 In a study comparing 12 patients with severe (Child-Pugh Classification Grade C) hepatic impairment to 12 392 healthy volunteers, the single-dose pharmacokinetic disposition of Mircera was not altered in patients with 393 hepatic impairment.
+No adjustment of the starting dose is necessary in patients with hepatic impairment.
+394
+ 10 OVERDOSAGE 395 Mircera overdosage can elevate hemoglobin levels above the desired level, which should be managed with 396 discontinuation or reduction of Mircera dosage and/or with phlebotomy, as clinically indicated [see 397 Pharmacodynamics (12.2)].
+ Cases of severe hypertension have been observed following overdose with ESAs 398 [see Warnings and Precautions (5.3)].
+399
+    14
+ 11 DESCRIPTION 400 Mircera, methoxy polyethylene glycol-epoetin beta, is an ESA which differs from erythropoietin through 401 formation of a chemical bond between either the N-terminal amino group or the -amino group of any lysine 402 present in erythropoietin, predominantly Lys52 and Lys45, and methoxy polyethylene glycol (PEG) butanoic acid 403 (approximately 30,000 daltons).
+This results in a total molecular weight of approximately 60,000 daltons.
+404 Mircera is formulated as a sterile, preservative-free protein solution for intravenous or subcutaneous 405 administration.
+406
+ Injectable solutions of Mircera in prefilled syringes are formulated in an aqueous solution containing sodium 407 phosphate, sodium sulphate, mannitol, methionine and poloxamer 188.
+The solution is clear, colorless to 408 slightly yellowish and the pH is 6.2  0.2.
+409
+ 12 CLINICAL PHARMACOLOGY 410
+ 12.1 Mechanism of Action 411 Mircera is an erythropoietin receptor activator with greater activity in vivo as well as increased half-life, in 412 contrast to erythropoietin.
+A primary growth factor for erythroid development, erythropoietin is produced in the 413 kidney and released into the bloodstream in response to hypoxia.
+In responding to hypoxia, erythropoietin 414 interacts with erythroid progenitor cells to increase red cell production.
+Production of endogenous 415 erythropoietin is impaired in patients with CKD and erythropoietin deficiency is the primary cause of their 416 anemia.
+417
+ 12.2 Pharmacodynamics 418 Following a single-dose of Mircera in CKD patients, the onset of hemoglobin increase (defined as an increase 419 &gt; 0.4 g/dL from baseline) was observed 7 to 15 days following initial dose administration [see Dosage and 420 Administration (2.2)].
+421
+ 12.3 Pharmacokinetics 422 The pharmacokinetics of Mircera were studied in anemic patients with CKD including patients on dialysis and 423 those not on dialysis.
+Mircera pharmacokinetics, based on population analyses, were not altered by age, gender, 424 race, or the use of dialysis.
+ 425
+ Following an IV administration of Mircera 0.4 mcg/kg body weight to CKD patients receiving peritoneal 426 dialysis, the observed terminal half-life was 134  65 hours (mean  SD), and the total systemic clearance was 427 0.49  0.18 mL/hr/kg.
+Following a SC administration of Mircera 0.8 mcg/kg to CKD patients receiving 428 peritoneal dialysis, the terminal half-life was 139  67 hours.
+The maximum serum concentrations of Mircera 429 were observed 72 hours (median value) following the SC administration.
+The absolute bioavailability of 430 Mircera after the SC administration was 62%.
+ 431
+ In CKD patients receiving multiple Mircera doses, pharmacokinetics were studied after the first dose and on 432 week 9 and week 19 or 21.
+Multiple dosing was found to have no effect on clearance, volume of distribution or 433 bioavailability of Mircera.
+Based on population analyses of the clinical studies, Mircera did not accumulate 434 following administration every four weeks.
+However, when Mircera was administered every 2 weeks, blood 435 concentrations at steady state increased by 12%.
+ 436
+ A comparison of serum concentrations of Mircera measured before and after hemodialysis in 41 patients 437 showed that hemodialysis did not alter serum concentrations.
+ 438
+ The single-dose pharmacokinetics of Mircera in patients with severe (Child-Pugh Classification Grade C) 439 hepatic impairment and healthy volunteers were similar.
+ 440
+ The site of SC injection (abdomen, arm or thigh) had no clinically important effects on the pharmacokinetics or 441 pharmacodynamics of Mircera in healthy volunteers.
+ 442
+    15
+ 13 NONCLINICAL TOXICOLOGY 443
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility 444 No carcinogenicity or genotoxicity studies have been conducted with Mircera.
+Methoxy polyethylene glycol-445 epoetin beta did not induce a proliferative response in either the erythropoietin receptor positive cell lines 446 HepG2 and K562 or the erythropoietin receptor negative cell line RT112 in vitro.
+In addition, using a panel of 447 human tissues, the in vitro binding of methoxy polyethylene glycol-epoetin beta was observed only in bone 448 marrow progenitor cells.
+449
+ When methoxy polyethylene glycol-epoetin beta was administered subcutaneously to male and female rats prior 450 to and during mating, reproductive performance, fertility, and sperm assessment parameters were not affected.
+451
+ 14 CLINICAL STUDIES 452 Patients with chronic kidney disease on dialysis:  ESA effects on rates of transfusion 453
+ In early clinical studies conducted in CKD patients on dialysis, ESAs have been shown to reduce the use of 454 RBC transfusions.
+These studies enrolled patients with mean baseline hemoglobin levels of approximately 7.5 455 g/dL and ESAs were generally titrated to achieve a hemoglobin level of approximately 12 g/dL.
+Fewer 456 transfusions were given during the ESA treatment period when compared to a pre-treatment interval.
+457
+ In NHS, the yearly transfusion rate was 51.5% in the lower hemoglobin group (10 g/dL) and 32.4% in the 458 higher hemoglobin group (14 g/dL).
+459
+ Patients with chronic kidney disease not on dialysis:  ESA effects on rates of transfusion 460
+ In TREAT, a randomized, double-blind trial of 4038 patients with CKD and type 2 diabetes not on dialysis, a 461 post-hoc analysis showed that the proportion of patients receiving RBC transfusions was lower in patients 462 administered an ESA to target a hemoglobin of 13 g/dL compared to the control arm in which the ESA was 463 administered intermittently if hemoglobin concentration decreased to less than 9 g/dL (15% versus 25%, 464 respectively).
+In CHOIR, a randomized open-label study of 1432 patients with CKD not on dialysis, use of an 465 ESA to target a higher (13.5 g/dL) versus lower (11.3 g/dL) hemoglobin goal did not reduce the use of RBC 466 transfusions.
+In each trial, no benefits occurred for the cardiovascular or end-stage renal disease outcomes.
+In 467 each trial, the potential benefit of ESA therapy was offset by worse cardiovascular safety outcomes resulting in 468 an unfavorable benefit-risk profile [see Warnings and Precautions (5.1)].
+469
+ ESA effects on quality of life 470
+ Mircera use has not been demonstrated in controlled clinical trials to improve quality of life, fatigue, or patient 471 well-being.
+472
+ ESA effects on rates of death and other serious cardiac adverse events 473
+ Three randomized outcome trials (NHS, CHOIR and TREAT) have been conducted in patients with CKD using 474 Epogen/PROCRIT/Aranesp to target higher vs. lower hemoglobin levels.
+Though these trials were designed to 475 establish a cardiovascular or renal benefit of targeting higher hemoglobin levels, in all 3 studies, patients 476 randomized to the higher hemoglobin target experienced worse cardiovascular outcomes and showed no 477 reduction in progression to ESRD.
+In each trial, the potential benefit of ESA therapy was offset by worse 478 cardiovascular safety outcomes resulting in an unfavorable benefit-risk profile [see Warnings and Precautions 479 (5.1)].
+480
+ Other ESA trials 481
+ The efficacy and safety of Mircera were assessed in six open-label, multi-center clinical studies that randomized 482 patients to either Mircera or a comparator ESA.
+Two studies evaluated anemic patients with CKD who were not 483 treated with an ESA at baseline and four studies evaluated patients who were receiving an ESA for treatment of 484
+    16
+ 485 the anemia of CKD.
+In all studies, patients were assessed as clinically stable at baseline and without evidence of 486 infection or inflammation as determined by history and laboratory data, including C-reactive protein (CRP &#x2264; 15 487 mg/L for study 1 and CRP &#x2264; 30 mg/L for studies 2 to 6).
+A CRP value above the threshold led to the exclusion 488 of no more than 3% of the screened patients.
+  489 In the clinical studies, ESAs were administered to achieve specific hemoglobin levels (see Table 5 and Table 6).
+490 Following stabilization of hemoglobin levels (12 g/dL), the median monthly Mircera dose was 150 mcg (range 491 of 97 mcg to 270 mcg).
+ 492 Patients Not Currently Treated with an ESA
+ 493 In Study 1 patients who were not receiving dialysis were randomized to Mircera or darbepoetin alfa, 494 administered for 28 weeks.
+The starting dose of Mircera was 0.6 mcg/kg administered SC once every two 495 weeks and the starting dose of darbepoetin alfa was 0.45 mcg/kg administered SC once a week.
+In Study 2, 496 patients who were receiving dialysis were randomized to Mircera or another ESA (epoetin alfa or epoetin beta), 497 administered for 24 weeks.
+The starting dose of Mircera was 0.4 mcg/kg administered IV once every two weeks 498 and the starting dose of the comparator was administered IV three times a week, consistent with the product's 499 recommended dose.
+In these studies, the observed median dose of Mircera once every two weeks over the 500 course of the correction/evaluation period was 0.6 mcg/kg.
+Table 5 provides the results of the two studies.
+  501 Table 5 Clinical Studies in Patients Not Currently Treated with an ESA Mean
+ Group Percent Achieving Hemoglobin RBC Transfusion, % (n) Goal* (95% CI) Change from Baseline (g/dL)
+ Study 1 Mircera  98 (94, 99) 2.1 2.5 (n=162) Darbepoetin alfa  96 (92, 99) 2.0 6.8 (n=162)
+ Study 2 Mircera  93 (88, 97) 2.7 5.2 (n=135) Epoetin alfa/beta  91 (79, 98) 2.6 4.3 (n=46)
+ 502 *Goal: hemoglobin increase of at least 1 g/dL and to a level of at least 11 g/dL without RBC transfusion;  503 hemoglobin levels were to be maintained within the range of 11 to 13 g/dL.
+504  505 Patients Currently Treated with an ESA
+ 506 Four studies assessed the ability of Mircera to maintain hemoglobin concentrations among patients currently 507 treated with other ESAs.
+Patients were randomized to receive Mircera administrations either once every two 508 weeks or once every four weeks, or to continue their current ESA dose and schedule.
+The initial Mircera dose 509 was determined based on the patient's previous weekly ESA dose.
+As shown in Table 6, treatment with Mircera 510 once every two weeks and once every four weeks maintained hemoglobin concentrations within the targeted 511 hemoglobin range (10 to 13.5 g/dL).
+  512 Table 6 Clinical Studies in Patients Currently Treated with an ESA Evaluation Between-group
+ Group Mean Baseline Period Difference *,  (n) Hemoglobin Hemoglobin g/dL (95% or 97.5%
+ (Mean) CI)
+    17
+ Study 3  Mircera IV every 2 weeks  (n=223) 12.0 11.9 0.0 (&#x2019;0.2, 0.2)
+ Mircera IV every 4 weeks  (n=224) 11.9 11.9 0.1 (&#x2019;0.2, 0.3)
+ Epoetin alfa/beta IV  (n=226) 12.0 11.9 n/a
+ Study 4 Mircera SC every 2 weeks  (n=190) 11.7 11.7 0.1 (&#x2019;0.1, 0.4)
+ Mircera SC every 4 weeks  (n=191) 11.6 11.5 &#x2019;0.0 (&#x2019;0.3, 0.2)
+ Epoetin beta SC (n=191) 11.6 11.5 n/a
+ Study 5 Mircera IV every 2 weeks  (n=157) 12.0 12.1 0.2 (&#x2019;0.0, 0.4)
+ Darbepoetin alfa IV  (n=156) 11.9 11.8 n/a
+ Study 6 Mircera IV/SC every 2 weeks  (n= 68)
+ 11.8 11.9 0.1 (&#x2019;0.1, 0.4)
+ Epoetin alfa IV/SC  (n=168) 11.9 11.8 0.1 (&#x2019;0.1, 0.4)
+ 513 *Mircera versus comparator mean hemoglobin difference in the evaluation period; 97.5% CI are shown for  514 studies that compared two Mircera groups to another ESA (Studies 3 and 4) and 95% CI are shown for the  515 other studies.
+516 n/a = not applicable 517  518 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 519 16.1 How Supplied 520 Mircera is available in single-use prefilled syringes.
+The syringe plungers are designated with unique colors for 521 each dosage strength.
+The prefilled syringes are supplied with a 27 gauge,  inch needle.
+To reduce the risk of 522 accidental needlesticks after application, each prefilled syringe is equipped with a needle guard that covers the 523 needle during disposal.
+  524 Mircera is available in the following pack sizes:
+ Single Use Prefilled Syringe (PFS) with a Needle Guard.
+ A 27 Gauge,  Inch Needle is also provided:
+   1 PFS/Pack   50 mcg/0.3 mL   (NDC 0004-0401-09)
+  75 mcg/0.3 mL   (NDC 0004-0402-09)
+  100 mcg/0.3 mL   (NDC 0004-0403-09)
+    18
+  150 mcg/0.3 mL   (NDC 0004-0404-09)
+  200 mcg/0.3 mL   (NDC 0004-0405-09)
+  250 mcg/0.3 mL   (NDC 0004-0406-09)
+               52516.2 Stability and Storage 526 The recommended storage temperature is at 2C to 8C (36F to 46F).
+Do not freeze or shake.
+Protect from 527 light.
+Keep Mircera in the original package until use.
+ 528
+ Storage of prefilled syringes over the recommended temperature (2C to 8C), when necessary, is permissible 529 only for temperatures up to 25C (77F) and for no more than 30 days.
+ 530
+ 17 PATIENT COUNSELING INFORMATION 531 See Medication Guide and Instructions for Use  532
+ Prior to treatment, inform patients of the risks and benefits of Mircera.
+533
+ Inform patients: 534
+ &#x2022; To read the Medication Guide and to review and discuss any questions or concerns with their healthcare  535 provider before starting Mircera and at regular intervals while receiving Mircera  536
+  537 &#x2022; Of the increased risks of mortality, serious cardiovascular reactions, thromboembolic reactions, stroke, 538
+ and tumor progression [see Warnings and Precautions (5.1, 5.2)] 539  540 &#x2022; To undergo regular blood pressure monitoring, adhere to prescribed anti-hypertensive regimen and 541
+ follow recommended dietary restrictions 542  543 &#x2022; To seek medical care immediately if they experience any symptoms of an allergic reaction with use of 544
+ Mircera [see Warnings and Precautions (5.7)] 545  546
+ &#x2022; To contact their healthcare provider for new-onset neurologic symptoms or change in seizure frequency 547  548
+ &#x2022; Of the need to have regular  laboratory tests for hemoglobin 549  550
+ Administer Mircera under the direct supervision of a healthcare provider or, in situations where a patient has 551 been trained to administer Mircera at home, provide instruction on the proper use of Mircera, including 552 instructions to: 553
+ &#x2022; Carefully review the Medication Guide and the Instructions for Use  554 &#x2022; Avoid the reuse of needles, syringes, or unused portions of the Mircera single-use prefilled syringes and 555
+ to properly dispose of these items 556 Always keep a puncture-proof disposal container available for the disposal of used syringes and needles  557
+ 558
+    19
+  559 MEDICATION GUIDE 560
+ MIRCERA (mir-SER-ah) 561 (methoxy polyethylene glycol-epoetin beta) 562
+  563 Read this Medication Guide:  564
+ &#x2022; before you start Mircera.
+ 565 &#x2022; if you are told by your healthcare provider that there is new information about Mircera.
+566 &#x2022; if you are told by your healthcare provider that you may inject Mircera at home, read this 567
+ Medication Guide each time you receive a new supply of medicine.
+568 This Medication Guide does not take the place of talking to your healthcare provider about your 569 medical condition or your treatment.
+Talk with your healthcare provider regularly about the use 570 of Mircera and ask if there is new information about Mircera.
+571  572 What is the most important information I should know about Mircera?
+573 Mircera may cause serious side effects that can lead to death, including: 574 For people with cancer: Mircera is not for use to treat anemia that is caused by cancer 575 chemotherapy.
+If you have certain cancers, your tumor may grow faster and you may die sooner 576 if you take Mircera.
+577 &#x2022; Serious heart problems, such as heart attack or heart failure, and stroke.
+You may 578
+ die sooner if you are treated with Mircera to increase red blood cells (RBCs) to near the same 579 level found in healthy people.
+ 580
+ &#x2022; Blood clots.
+ Blood clots may happen at any time while taking Mircera.
+If you are receiving 581 Mircera for any reason and you are going to have surgery, talk to your healthcare provider 582 about whether or not you need to take a blood thinner to lessen the chance of blood clots 583 during or following surgery.
+Clots can form in blood vessels (veins), especially in your leg 584 (deep venous thrombosis or DVT).
+Pieces of a blood clot may travel to the lungs and block 585 the blood circulation in the lungs (pulmonary embolus).
+ 586
+ &#x2022; Call your healthcare provider or get medical help right away if you have any of these 587 symptoms: 588 &#x2022; Chest pain  589 &#x2022; Trouble breathing or shortness of breath 590 &#x2022; Pain in your legs, with or without swelling 591 &#x2022; A cool or pale arm or leg 592 &#x2022; Sudden confusion, trouble speaking, or trouble understanding others' speech  593 &#x2022; Sudden numbness or weakness in your face, arm or leg, especially on one side of your 594
+ body 595 &#x2022; Sudden trouble seeing 596 &#x2022; Sudden trouble walking, dizziness, loss of balance or coordination 597 &#x2022; Loss of consciousness (fainting) 598 &#x2022; Hemodialysis vascular access stops working 599
+ See "What are the possible side effects of Mircera?" below for more information.
+600 If you decide to take Mircera, your healthcare provider should prescribe the smallest dose of 601 Mircera that is necessary to reduce your chance of needing red blood cell transfusions.
+602  603
+  604
+  605
+    20
+ What is Mircera?
+606 Mircera is a prescription medicine used to treat anemia.
+ People with anemia have a lower-than-607 normal number of RBCs.
+Mircera works like the human protein called erythropoietin to help your 608 body make more RBCs.
+Mircera is used to reduce or avoid the need for RBC transfusion.
+ 609 Mircera may be used to treat anemia if it is caused by chronic kidney disease (you may or may 610 not be on dialysis).
+ 611 If your hemoglobin level stays too high or if your hemoglobin goes up too quickly, this may lead 612 to serious health problems which may result in death.
+These serious health problems may 613 happen if you take Mircera, even if you do not have an increase in your hemoglobin level.
+614 Mircera is not for use for the treatment of anemia:  615 &#x2022; that is caused by cancer chemotherapy 616 &#x2022; in place of emergency treatment for anemia (red blood cell transfusions)  617 Mircera has not been proven to improve the quality of life, fatigue, or well-being.
+618 It is not known if Mircera is safe and effective in children.
+619  620 Who should not take Mircera?
+621 Do not take Mircera if you: 622 &#x2022; Have high blood pressure that is not controlled (uncontrolled hypertension)  623 &#x2022; Have been told by your healthcare provider that you have or have ever had a type of anemia 624
+ called Pure Red Cell Aplasia (PRCA) that starts after treatment with Mircera or other 625 erythropoietin protein medicines  626
+ &#x2022; Have had serious allergic reactions to Mircera 627  628 What should I tell my healthcare provider before taking Mircera?
+629 Mircera may not be right for you.
+Tell your healthcare provider about all of your medical 630 conditions, including if you:  631 &#x2022; Have heart disease 632 &#x2022; Have or develop cancer 633 &#x2022; Have high blood pressure  634 &#x2022; Have had a seizure (convulsion) or stroke 635 &#x2022; Have any other medical conditions 636 &#x2022; Are pregnant or plan to become pregnant.
+ It is not known if Mircera may harm your unborn 637
+ baby.
+ 638 &#x2022; Are breastfeeding or plan to breastfeed.
+It is not known if Mircera passes into your breast 639
+ milk.
+640
+ Tell your healthcare provider about all of the medicines you take, including prescription 641 and over-the-counter medicines, vitamins, and herbal supplements.
+ 642 Know the medicines you take.
+Keep a list of your medicines with you and show it to your 643 healthcare provider when you get a new medicine.
+644
+ How should I take Mircera?
+645 &#x2022; If you or your caregiver has been trained to give Mircera shots (injections) at home: 646
+ o  Be sure that you read, understand, and follow the "Instructions for Use: that come with 647 Mircera.
+ 648
+ o Take Mircera exactly as your healthcare provider tells you to.
+Do not change the dose of 649 Mircera unless told to by your healthcare provider.
+ 650
+    21
+ o Your healthcare provider will show you how much Mircera to use, how to inject it, how 651 often it should be injected, and how to safely throw away the used prefilled syringes and 652 needles.
+653
+ o If you take more than your prescribed dose of Mircera, call your healthcare provider right 654 away for instructions on what to do.
+655
+ &#x2022; During treatment with Mircera, continue to follow your healthcare provider's instructions for 656 diet, dialysis, and medicines, including medicines for high blood pressure.
+657
+ &#x2022; Have your blood pressure checked as instructed by your healthcare provider.
+658  659 What are possible side effects of Mircera?
+660 Mircera may cause serious side effects.
+ 661 &#x2022; See "What is the most important information I should know about Mircera?"  662 &#x2022; High blood pressure.
+High blood pressure is a common side effect of Mircera in patients 663
+ with chronic kidney disease.
+Your blood pressure may go up or be difficult to control with 664 blood pressure medicine while taking Mircera.
+This can happen even if you have never had 665 high blood pressure before.
+Your healthcare provider should check your blood pressure often.
+666 If your blood pressure does go up, your healthcare provider may prescribe new or more 667 blood pressure medicine.
+668
+ &#x2022; Seizures.
+If you have any seizures while taking Mircera, get medical help right away and tell 669 your healthcare provider.
+ 670
+ &#x2022; No response or loss of your hemoglobin response to Mircera.
+If your hemoglobin does 671 not increase, or if the increase cannot be maintained, your healthcare provider will look for 672 the cause of the problem.
+Your dose of Mircera or other medicines may need to be changed.
+ 673
+ &#x2022; Antibodies to Mircera.
+Your body may make antibodies to Mircera.
+These antibodies can 674 block or reduce your body's ability to make red blood cells, and cause you to have severe 675 anemia.
+Call your healthcare provider if you have unusual tiredness, lack of energy, dizziness 676 or fainting.
+You may need to stop taking Mircera.
+677
+ &#x2022; Serious allergic reaction.
+Serious allergic reactions can cause a rash over your whole body, 678 shortness of breath, wheezing, dizziness and fainting because of a drop in blood pressure, 679 swelling around your mouth or eyes, fast pulse, or sweating.
+If you have a serious allergic 680 reaction, stop using Mircera and call your healthcare provider or get emergency medical help 681 right away.
+ 682
+ Common side effects of Mircera include:  683 &#x2022; Diarrhea  684 &#x2022; Upper respiratory tract infections (cold, cough and sinus infections) 685
+  686 Tell your healthcare provider if you have any side effect that bothers you or that does not go 687 away.
+ 688 These are not all of the possible side effects of Mircera.
+Your healthcare provider can give you a 689 more complete list.
+Tell your healthcare provider about any side effects that bother you or that 690 do not go away.
+691 Call your doctor for medical advice about side effects.
+You may report side effects to FDA at 1-692 800-FDA-1088.
+ 693  694 How should I store Mircera?
+695 &#x2022; Store Mircera prefilled syringes in the refrigerator at 36F to 46F (2C to 8C).
+ 696
+    22
+ &#x2022; If a refrigerator is not available, Mircera prefilled syringes can be stored at room temperature 697 77F (25C) for no more than 30 days.
+ 698
+ &#x2022; Do not freeze Mircera.
+Do not use Mircera that has been frozen or improperly refrigerated.
+ 699 &#x2022; Keep Mircera in the original package.
+  700 &#x2022; Protect Mircera from light.
+ 701 &#x2022; Do not shake Mircera.
+702 Keep Mircera and all medicines out of the reach of children.
+703  704 General information about Mircera 705 Medicines are sometimes prescribed for purposes other than those listed in a Medication Guide.
+706 Do not use Mircera for a condition for which it was not prescribed.
+Do not give Mircera to other 707 people, even if they have the same symptoms that you have.
+It may harm them.
+708 This Medication Guide summarizes the most important information about Mircera.
+If you would 709 like more information about Mircera, talk with your healthcare provider.
+You can ask your 710 healthcare provider or pharmacist for information about Mircera that is written for health 711 professionals.
+ 712  713 What are the ingredients in Mircera?
+714 Active ingredient: methoxy polyethylene glycol-epoetin beta 715 Inactive ingredients: sodium phosphate, sodium sulphate, mannitol, methionine and 716 poloxamer 188 717  718 This Medication Guide has been approved by the U.S. Food and Drug Administration.
+719  720
+ Hoffmann-La Roche Inc.
+721 c/o Genentech USA, Inc.
+722 A Member of the Roche Group 723 1 DNA Way 724 South San Francisco, CA 94080-4990 725  726
+ U.S. Govt.
+Lic.
+No.
+0136 727 Revised: October 2014 728 Copyright &#x203a;&#x2122; 2014 Hoffmann-La Roche Inc.
+All rights reserved.
+729
+  1 INDICATIONS AND USAGE
+ 2 DOSAGE AND ADMINISTRATION
+ 2.3 Preparation and Administration of Mircera
+ 3 DOSAGE FORMS AND STRENGTHS
+ 4 CONTRAINDICATIONS
+ 5 WARNINGS AND PRECAUTIONS
+ 5.2 Increased Mortality and/or Increased Risk of Tumor Progression or Recurrence in Patients with Cancer
+ Table 3 Randomized, Controlled Trials with Decreased Survival and/or Decreased Locoregional Control
+ 5.3 Hypertension
+ 5.4 Seizures
+ 5.5 Lack or Loss of Hemoglobin Response to Mircera
+ 5.6 Pure Red Cell Aplasia
+ 5.7 Serious Allergic Reactions
+ 5.8 Dialysis Management
+ 5.9 Laboratory Monitoring
+ 6 ADVERSE REACTIONS
+ 6.1 Clinical Trials Experience
+ Table 4  Adverse Reactions Occurring in ( 5% of CKD Patients
+ 6.2 Immunogenicity
+ 7 DRUG INTERACTIONS
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy: Category C
+ 8.3 Nursing Mothers
+ 8.4 Pediatric Use
+ 8.5 Geriatric Use
+ 8.6 Hepatic Impairment
+ 10 OVERDOSAGE
+ 11 DESCRIPTION
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL studies
+ Table 5 Clinical Studies in Patients Not Currently Treated with an ESA
+ Table 6 Clinical Studies in Patients Currently Treated with an ESA
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied
+ 16.2 Stability and Storage
+ 17 PATIENT COUNSELING INFORMATION
+ 

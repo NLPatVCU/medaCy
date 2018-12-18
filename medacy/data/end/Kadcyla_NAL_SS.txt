@@ -1,0 +1,541 @@
+Microsoft Word - Kadcyla_USPI_MasterFile_29May2015.doc
+1 of 22
+ HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use KADCYLA safely and effectively.
+ See full prescribing information for KADCYLA.
+ KADCYLA (ado-trastuzumab emtansine) for injection, for intravenous use   Initial U.S. Approval:  2013
+     ----------------------------RECENT MAJOR CHANGES----------------------------  Dosage and Administration (2.3)                                                 05/2015 Warnings and Precautions (5.1, 5.6)                                                  07/2014 Warnings and Precautions (5.3)                                                         05/2015  ----------------------------INDICATIONS AND USAGE----------------------------  KADCYLA is a HER2-targeted antibody and microtubule inhibitor conjugate indicated, as a single agent, for the treatment of patients with HER2-positive, metastatic breast cancer who previously received trastuzumab and a taxane, separately or in combination.
+Patients should have either:
+  &#x2022; Received prior therapy for metastatic disease, or   &#x2022; Developed disease recurrence during or within six months of
+ completing adjuvant therapy.
+(1)
+  ----------------------------DOSAGE AND ADMINISTRATION----------------------------  &#x2022; For intravenous infusion only.
+Do not administer as an intravenous push
+ or bolus.
+Do not use Dextrose (5%) solution.
+(2.3) &#x2022; The recommended dose of KADCYLA is 3.6 mg/kg given as an
+ intravenous infusion every 3 weeks (21-day cycle) until disease progression or unacceptable toxicity.
+Do not administer KADCYLA at doses greater than 3.6 mg/kg.
+Do not substitute KADCYLA for or with trastuzumab.
+(2.1)
+ &#x2022; Management of adverse events (infusion-related reactions, hepatotoxicity, left ventricular cardiac dysfunction, thrombocytopenia, pulmonary toxicity or peripheral neuropathy) may require temporary
+      interruption, dose reduction, or treatment discontinuation of KADCYLA.
+(2.2)
+  ----------------------------DOSAGE FORMS AND STRENGTHS----------------------------  Lyophilized powder in single-use vials containing 100 mg per vial or 160 mg per vial.
+(3)  ----------------------------CONTRAINDICATIONS----------------------------
+  None.
+(4)  ----------------------------WARNINGS AND PRECAUTIONS----------------------------
+  &#x2022; Pulmonary Toxicity: Permanently discontinue KADCYLA in patients diagnosed with interstitial lung disease or pneumonitis.
+(2.2, 5.4)
+ &#x2022; Infusion-Related Reactions, Hypersensitivity Reactions: Monitor for signs and symptoms during and after infusion.
+ If significant infusion-related reactions or hypersensitivity reactions occur, slow or interrupt the infusion and administer appropriate medical therapies.
+ Permanently discontinue KADCYLA for life threatening infusion-related reaction.
+(2.1, 2.2, 5.5)
+ &#x2022; Hemorrhage: Fatal cases of hemorrhage occurred in clinical trials among patients with no known identified risk factors, as well as among patients with thrombocytopenia and those receiving anti-coagulation and antiplatelet therapy.
+Use caution with these agents and consider additional monitoring when concomitant use is medically necessary.
+(5.6)
+  &#x2022; Thrombocytopenia: Monitor platelet counts prior to each KADCYLA dose.
+Institute dose modifications as appropriate.
+(2.2, 5.7)
+ &#x2022; Neurotoxicity: Monitor for signs or symptoms.
+ Withhold dosing temporarily for patients experiencing Grade 3 or 4 peripheral neuropathy.
+(2.2, 5.8, 13.2)
+ &#x2022; HER2 Testing: Perform using FDA-approved tests by laboratories with demonstrated proficiency.
+(5.9)
+   ----------------------------ADVERSE REACTIONS----------------------------  The most common adverse drug reactions (frequency &gt; 25%) with KADCYLA (n=884 treated patients) were fatigue, nausea, musculoskeletal pain, hemorrhage, thrombocytopenia, headache, increased transaminases, constipation and epistaxis.
+(6.1)  To report SUSPECTED ADVERSE REACTIONS, contact Genentech at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ ----------------------------USE IN SPECIFIC POPULATIONS----------------------------
+  &#x2022; Nursing Mothers: Discontinue nursing or discontinue KADCYLA taking into consideration the importance of the drug to the mother.
+(8.3)
+ &#x2022; Females of Reproductive Potential: Counsel females on pregnancy prevention and planning.
+ Encourage patient participation in the MotHER Pregnancy Registry by contacting 1-800-690-6720).
+(5.3, 8.1, 8.6)
+  See 17 for PATIENT COUNSELING INFORMATION.
+Revised:  5/2015
+                                            WARNING: HEPATOTOXICITY, CARDIAC TOXICITY, EMBRYO-FETAL TOXICITY
+  See full prescribing information for complete boxed warning
+ &#x2022; Do not substitute KADCYLA for or with trastuzumab.
+(2.1)
+ &#x2022; Hepatotoxicity, liver failure and death have occurred in KADCYLA-treated patients.
+ Monitor hepatic function prior to initiation and prior to each dose.
+Institute dose modifications or permanently discontinue as appropriate.
+(2.2, 5.1)
+ &#x2022; KADCYLA may lead to reductions in left ventricular ejection fraction (LVEF).
+ Assess LVEF prior to initiation.
+ Monitor and withhold dosing or discontinue as appropriate.
+(2.2, 5.2)
+ &#x2022; Can cause fetal harm.
+Advise women of potential risk to the fetus.
+(5.3, 8.1, 8.6)
+ 2 of 22
+       FULL PRESCRIBING INFORMATION:  CONTENTS* 1 INDICATIONS AND USAGE 2 DOSAGE AND ADMINISTRATION
+ 2.1 Recommended Doses and Schedules 2.2  Dose Modifications 2.3 Preparation for Administration
+ 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 Hepatotoxicity 5.2      Left Ventricular Dysfunction 5.3 Embryo-Fetal Toxicity 5.4 Pulmonary Toxicity 5.5 Infusion Related Reactions, Hypersensitivity Reactions 5.6 Hemorrhage 5.7 Thrombocytopenia 5.8 Neurotoxicity 5.9 HER2 Testing 5.10    Extravasation
+ 6 ADVERSE REACTIONS 6.1  Clinical Trials Experience 6.2 Immunogenicity
+ 7 DRUG INTERACTIONS * Sections or subsections omitted from the Full Prescribing Information are  not listed.
+  8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy 8.3 Nursing Mothers 8.4 Pediatric Use 8.5 Geriatric Use  8.6      Females of Reproductive Potential 8.7      Renal Impairment 8.8      Hepatic Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action 12.3 Pharmacokinetics  12.6   Cardiac Electrophysiology
+ 13 NONCLINICAL TOXICOLOGY 13.1  Carcinogenesis, Mutagenesis, Impairment of Fertility
+        13.2    Animal Toxicology and/or Pharmacology 14 CLINICAL STUDIES
+ 14.1 Metastatic Breast Cancer 15   REFERENCES 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied/Storage 16.2 Special Handling
+ 17 PATIENT COUNSELING INFORMATION
+ 3 of 22
+ FULL PRESCRIBING INFORMATION
+                          1 INDICATIONS AND USAGE KADCYLA, as a single agent, is indicated for the treatment of patients with HER2-positive, metastatic breast cancer who previously received trastuzumab and a taxane, separately or in combination.
+ Patients should have either:
+ &#x2022; Received prior therapy for metastatic disease, or
+ &#x2022; Developed disease recurrence during or within six months of completing adjuvant therapy.
+ 2 DOSAGE AND ADMINISTRATION 2.1 Recommended Doses and Schedules The recommended dose of KADCYLA is 3.6 mg/kg given as an intravenous infusion every 3 weeks (21-day cycle) until disease progression or unacceptable toxicity.
+Do not administer KADCYLA at doses greater than 3.6 mg/kg.
+ Do not substitute KADCYLA for or with trastuzumab.
+Closely monitor the infusion site for possible subcutaneous infiltration during drug administration [see Warnings and Precautions (5.10)].
+ First infusion: Administer infusion over 90 minutes.
+ Patients should be observed during the infusion and for at least 90 minutes following the initial dose for fever, chills, or other infusion-related reactions [see Warnings and Precautions (5.5)].
+  Subsequent infusions: Administer over 30 minutes if prior infusions were well tolerated.
+ Patients should be observed during the infusion and for at least 30 minutes after infusion.
+ 2.2 Dose Modifications KADCYLA dose should not be re-escalated after a dose reduction is made.
+If a planned dose is delayed or missed, it should be administered as soon as possible; do not wait until the next planned cycle.
+ The schedule of administration should be adjusted to maintain a 3-
+Do Not Substitute KADCYLA for or with Trastuzumab
+  WARNING: HEPATOTOXICITY, CARDIAC TOXICITY, EMBRYO-FETAL TOXICITY
+   &#x2022; Hepatotoxicity:   Serious hepatotoxicity has been reported, including liver failure and
+ death in patients treated with KADCYLA.
+Monitor serum transaminases and bilirubin prior to initiation of KADCYLA treatment and prior to each KADCYLA dose.
+Reduce dose or discontinue KADCYLA as appropriate in cases of increased serum transaminases or total bilirubin.
+(2.2, 5.1)
+ &#x2022; Cardiac Toxicity:  KADCYLA administration may lead to reductions in left ventricular ejection fraction (LVEF).
+ Evaluate left ventricular function in all patients prior to and during treatment with KADCYLA.
+ Withhold treatment for clinically significant decrease in left ventricular function.
+(2.2, 5.2)
+ &#x2022; Embryo-Fetal Toxicity:  Exposure to KADCYLA can result in embryo-fetal death or birth defects.
+ Advise patients of these risks and the need for effective contraception.
+ (5.3, 8.1, 8.6)
+ 4 of 22
+ week interval between doses.
+ The infusion may be administered at the dose and rate the patient tolerated in the most recent infusion.
+ The infusion rate of KADCYLA should be slowed or interrupted if the patient develops an infusion-related reaction.
+ Permanently discontinue KADCYLA for life-threatening infusion-related reactions [see Warnings and Precautions (5.5)].
+  Management of increased serum transaminases, hyperbilirubinemia, left ventricular dysfunction, thrombocytopenia, pulmonary toxicity or peripheral neuropathy may require temporary interruption, dose reduction or treatment discontinuation of KADCYLA as per guidelines provided in Tables 1 to 5.
+Table 1     Recommended Dose Reduction Schedule for Adverse Events
+ Dose Reduction Schedule Dose Level Starting dose 3.6 mg/kg First dose reduction 3 mg/kg Second dose reduction 2.4 mg/kg Requirement for further dose reduction Discontinue treatment
+  Hepatotoxicity [see Warnings and Precautions (5.1)] A reduction in the dose of KADCYLA is recommended in the case of hepatotoxicity exhibited as increases in serum transaminases and/or hyperbilirubinemia (see Tables 2 and 3).
+Table 2 Dose Modification Guidelines for Increased Serum Transaminases (AST/ALT)
+ Grade 2                                                                   (&gt;  2.5 to &#x2264;  5 x  ULN)
+ Grade 3 (&gt;  5 to &#x2264;  20 x  ULN)
+ Grade 4 (&gt;  20 x  ULN)
+ Treat at same dose level.
+  Do not administer KADCYLA until AST/ALT recovers to Grade &#x2264; 2, and then reduce one dose level.
+ Permanently discontinue KADCYLA.
+ ALT = alanine transaminase; AST = aspartate transaminase; ULN = upper limit of normal.
+ Table 3 Dose Modification Guidelines for Hyperbilirubinemia
+ Grade 2 (&gt;  1.5 to &#x2264; 3 x  ULN)
+ Grade 3 (&gt;  3 to &#x2264; 10 x  ULN)
+ Grade 4 (&gt;  10 x  ULN)
+ Do not administer KADCYLA until total bilirubin recovers to Grade &#x2264; 1, and then treat at same dose level.
+ Do not administer KADCYLA until total bilirubin recovers to Grade &#x2264; 1, and then reduce one dose level.
+  Permanently discontinue KADCYLA.
+  Permanently discontinue KADCYLA treatment in patients with serum transaminases &gt; 3 x ULN and concomitant total bilirubin &gt; 2 x ULN.
+ Permanently discontinue KADCYLA in patients diagnosed with nodular regenerative hyperplasia (NRH).
+       5 of 22
+ Left Ventricular Dysfunction [see Warnings and Precautions (5.2)]  Table 4 Dose Modifications for Left Ventricular Dysfunction
+  Symptomatic CHF LVEF &lt; 40%
+ LVEF 40% to &#x2264; 45% and decrease is &#x2265; 10% points from baseline
+ LVEF 40% to &#x2264; 45% and decrease is
+ &lt; 10% points from baseline
+ LVEF &gt; 45%
+ Discontinue KADCYLA
+   Do not administer KADCYLA.
+  Repeat LVEF assessment within 3 weeks.
+If LVEF &lt; 40% is confirmed, discontinue KADCYLA.
+  Do not administer KADCYLA.
+ Repeat LVEF assessment within 3 weeks.
+If the LVEF has not recovered to within 10% points from baseline, discontinue KADCYLA.
+ Continue treatment with KADCYLA.
+ Repeat LVEF assessment within 3 weeks.
+ Continue treatment with KADCYLA.
+ CHF = Congestive Heart Failure; LVEF = Left Ventricular Ejection Fraction  Thrombocytopenia [see Warnings and Precautions (5.7)] A reduction in dose is recommended in the case of Grade 4 thrombocytopenia  (platelets &lt; 25,000/mm3) (see Table 5).
+Table 5 Dose Modification Guidelines for Thrombocytopenia
+ Grade 3 Grade 4 PLT 25,000/mm3 to &lt;  50,000/mm3 PLT &lt;  25,000/mm3
+ Do not administer KADCYLA until platelet count recovers to &#x2264; Grade 1 (&#x2265; 75,000/mm3), and then treat at same dose level.
+ Do not administer KADCYLA until platelet count recovers to &#x2264; Grade 1 (&#x2265; 75,000/mm3), and then reduce one dose level.
+ PLT = Platelets    Pulmonary Toxicity [see Warnings and Precautions (5.4)] KADCYLA should be permanently discontinued in patients diagnosed with interstitial lung disease (ILD) or pneumonitis.
+ Peripheral Neuropathy [see Warnings and Precautions (5.8)] KADCYLA should be temporarily discontinued in patients experiencing Grade 3 or 4 peripheral neuropathy until resolution to &#x2264; Grade 2.
+ 2.3 Preparation for Administration In order to prevent medication errors it is important to check the vial labels to ensure that the drug being prepared and administered is KADCYLA (ado-trastuzumab emtansine) and not trastuzumab.
+   6 of 22
+ Administration: &#x2022; Administer KADCYLA as an intravenous infusion only with a 0.2 or 0.22 micron in-line
+  polyethersulfone (PES) filter.
+ Do not administer as an intravenous push or bolus.
+   &#x2022; Do not mix KADCYLA, or administer as an infusion, with other medicinal products.
+ &#x2022; In order to improve traceability of biological medicinal products, the tradename of the
+ administered product should be clearly recorded (or stated) in the patient file.
+  Reconstitution: &#x2022; Use aseptic technique for reconstitution and preparation of dosing solution.
+Appropriate
+ procedures for the preparation of chemotherapeutic drugs should be used.
+ &#x2022; Using a sterile syringe, slowly inject 5 mL of Sterile Water for Injection into the 100 mg KADCYLA vial, or 8 mL of Sterile Water for Injection into the 160 mg KADCYLA vial to yield a solution containing 20 mg/mL.
+ Swirl the vial gently until completely dissolved.
+ Do not shake.
+ Inspect the reconstituted solution for particulates and discoloration.
+ &#x2022; The reconstituted solution should be clear to slightly opalescent and free of visible particulates.
+ The color of the reconstituted solution should be colorless to pale brown.
+ Do not use if the reconstituted solution contains visible particulates or is cloudy or discolored.
+ &#x2022; The reconstituted lyophilized vials should be used immediately following reconstitution with Sterile Water for Injection.
+ If not used immediately, the reconstituted KADCYLA vials can be stored for up to 24 hours in a refrigerator at 2C to 8C (36F to 46F); discard unused KADCYLA after 24 hours.
+ Do not freeze.
+ &#x2022; The reconstituted product contains no preservative and is intended for single-use only.
+  Dilution: Determine the correct dose (mg) of KADCYLA [see Dosage and Administration (2.1)].
+ &#x2022; Calculate the volume of the 20 mg/mL reconstituted KADCYLA solution needed.
+&#x2022; Withdraw this amount from the vial and add it to an infusion bag containing 250 mL of 0.9%
+ Sodium Chloride Injection.
+ Do not use Dextrose (5%) solution.
+ &#x2022; Gently invert the bag to mix the solution in order to avoid foaming.
+ &#x2022; The diluted KADCYLA infusion solution should be used immediately.
+ If not used
+ immediately, the solution may be stored in a refrigerator at 2C to 8C (36F to 46F) for up to 24 hours prior to use.
+ This storage time is additional to the time allowed for the reconstituted vials.
+ Do not freeze or shake.
+  3 DOSAGE FORMS AND STRENGTHS Lyophilized powder in single-use vials: 100 mg per vial or 160 mg per vial of ado-trastuzumab emtansine.
+  4 CONTRAINDICATIONS None.
+ 5 WARNINGS AND PRECAUTIONS 5.1     Hepatotoxicity Hepatotoxicity, predominantly in the form of asymptomatic, transient increases in the concentrations of serum transaminases, has been observed in clinical trials with KADCYLA [see Adverse Reactions (6.1)].
+ Serious hepatobiliary disorders, including at least two fatal cases of severe drug-induced liver injury and associated hepatic encephalopathy, have been reported in
+ 7 of 22
+ clinical trials with KADCYLA.
+ Some of the observed cases may have been confounded by comorbidities and/or concomitant medications with known hepatotoxic potential.
+    Monitor serum transaminases and bilirubin prior to initiation of KADCYLA treatment and prior to each KADCYLA dose.
+ Patients with known active hepatitis B virus or hepatitis C virus were excluded from Study 1 [see Clinical Studies (14.1)].
+ Reduce the dose or discontinue KADCYLA as appropriate in cases of increased serum transaminases and/or total bilirubin [see Dosage and Administration (2.2)].
+ Permanently discontinue KADCYLA treatment in patients with serum transaminases &gt; 3 x ULN and concomitant total bilirubin &gt; 2 x ULN.
+ KADCYLA has not been studied in patients with serum transaminases &gt; 2.5 x ULN or bilirubin &gt; 1.5 x ULN prior to the initiation of treatment.
+  In clinical trials of KADCYLA, cases of nodular regenerative hyperplasia (NRH) of the liver have been identified from liver biopsies (3 cases out of 884 treated patients, one of which was fatal).
+ Two of these three cases of NRH were observed in the randomized trial (Study 1) [see Adverse Reactions (6.1)].
+NRH is a rare liver condition characterized by widespread benign transformation of hepatic parenchyma into small regenerative nodules; NRH may lead to non-cirrhotic portal hypertension.
+The diagnosis of NRH can be confirmed only by histopathology.
+ NRH should be considered in all patients with clinical symptoms of portal hypertension and/or cirrhosis-like pattern seen on the computed tomography (CT) scan of the liver but with normal transaminases and no other manifestations of cirrhosis.
+ Upon diagnosis of NRH, KADCYLA treatment must be permanently discontinued.
+ 5.2 Left Ventricular Dysfunction Patients treated with KADCYLA are at increased risk of developing left ventricular dysfunction.
+ A decrease of LVEF to &lt; 40% has been observed in patients treated with KADCYLA.
+ In the randomized trial (Study 1), left ventricular dysfunction occurred in 1.8% of patients in the KADCYLA-treated group and 3.3% of patients in the lapatinib plus capecitabine-treated group [see Adverse Reactions (6.1)].
+ Assess LVEF prior to initiation of KADCYLA and at regular intervals (e.g. every three months) during treatment to ensure the LVEF is within the institution's normal limits.
+ Treatment with KADCYLA has not been studied in patients with LVEF &lt; 50% prior to initiation of treatment.
+ If, at routine monitoring, LVEF is &lt; 40%, or is 40% to 45% with a 10% or greater absolute decrease below the pretreatment value, withhold KADCYLA and repeat LVEF assessment within approximately 3 weeks.
+ Permanently discontinue KADCYLA if the LVEF has not improved or has declined further [see Dosage and Administration (2.2)].
+ Patients with a history of symptomatic congestive heart failure (CHF), serious cardiac arrhythmia, or history of myocardial infarction or unstable angina within 6 months were excluded from Study 1 [see Clinical Studies (14.1)].
+ 5.3 Embryo-Fetal Toxicity  KADCYLA can cause fetal harm when administered to a pregnant woman.
+ There are no adequate and well-controlled studies of KADCYLA in pregnant women and no reproductive and developmental toxicology studies have been conducted with ado-trastuzumab emtansine.
+Nevertheless, treatment with trastuzumab, the antibody component of KADCYLA, during pregnancy in the postmarketing setting has resulted in oligohydramnios, some associated with fatal pulmonary hypoplasia, skeletal abnormalities and neonatal death.
+DM1, the cytotoxic component of KADCYLA, can be expected to cause embryo-fetal toxicity based on its mechanism of action.
+  8 of 22
+ If KADCYLA is used during pregnancy, or if the patient becomes pregnant while receiving KADCYLA or within 7 months following the last dose of KADCYLA, apprise the patient of the potential hazard to the fetus [see Use in Specific Populations (8.1)].
+Verify pregnancy status prior to the initiation of KADCYLA.
+ Advise patients of the risks of embryo-fetal death and birth defects and the need for contraception during and after treatment.
+ Advise patients to contact their healthcare provider immediately if they suspect they may be pregnant.
+ If KADCYLA is administered during pregnancy or if a patient becomes pregnant while receiving KADCYLA or within 7 months following the last dose of KADCYLA, immediately report exposure to the Genentech Adverse Event Line at 1-888-835-2555.
+ Encourage women who may be exposed during pregnancy or within 7 months prior to conception, to enroll in the MotHER Pregnancy Registry by contacting 1-800-690-6720 [see Patient Counseling Information (17)].
+5.4 Pulmonary Toxicity Cases of interstitial lung disease (ILD), including pneumonitis, some leading to acute respiratory distress syndrome or fatal outcome have been reported in clinical trials with KADCYLA.
+ Pneumonitis at an incidence of 0.8% (7 out of 884 treated patients) has been reported, with one case of grade 3 pneumonitis.
+ Signs and symptoms include dyspnea, cough, fatigue, and pulmonary infiltrates.
+ These events may or may not occur as sequelae of infusion reactions.
+ In the randomized trial (Study 1), the overall frequency of pneumonitis was 1.2% [see Adverse Reactions (6.1)].
+ Permanently discontinue treatment with KADCYLA in patients diagnosed with ILD or pneumonitis.
+ Patients with dyspnea at rest due to complications of advanced malignancy and co-morbidities may be at increased risk of pulmonary toxicity.
+ 5.5 Infusion-Related Reactions, Hypersensitivity Reactions Treatment with KADCYLA has not been studied in patients who had trastuzumab permanently discontinued due to infusion-related reactions (IRR) and/or hypersensitivity; treatment with KADCYLA is not recommended for these patients.
+ Infusion-related reactions, characterized by one or more of the following symptoms - flushing, chills, pyrexia, dyspnea, hypotension, wheezing, bronchospasm, and tachycardia have been reported in clinical trials of KADCYLA.
+ In the randomized trial (Study 1), the overall frequency of IRRs in patients treated with KADCYLA was 1.4% [see Adverse Reactions (6.1)].
+ In most patients, these reactions resolved over the course of several hours to a day after the infusion was terminated.
+ KADCYLA treatment should be interrupted in patients with severe IRR.
+ KADCYLA treatment should be permanently discontinued in the event of a life-threatening IRR [see Dosage and Administration (2.2)].
+ Patients should be observed closely for IRR reactions, especially during the first infusion.
+   One case of a serious, allergic/anaphylactic-like reaction has been observed in clinical trials of single-agent KADCYLA.
+ Medications to treat such reactions, as well as emergency equipment, should be available for immediate use.
+ 5.6 Hemorrhage Cases of hemorrhagic events, including central nervous system, respiratory, and gastrointestinal hemorrhage, have been reported in clinical trials with Kadcyla.
+Some of these bleeding events resulted in fatal outcomes.
+In the randomized trial (Study 1), the overall frequency of hemorrhage was 32.2% in the KADCYLA-treated group and 16.4% in the lapatinib plus capecitabine-treated group.
+The incidence of &#x2265; Grade 3 hemorrhage was 1.8% in the
+ 9 of 22
+ KADCYLA-treated group and 0.8% in the lapatinib plus capecitabine-treated group [see Adverse Reactions (6.1)].
+   Although, in some of the observed cases the patients were also receiving anti-coagulation therapy, antiplatelet therapy, or had thrombocytopenia, in others there were no known additional risk factors.
+ Use caution with these agents and consider additional monitoring when concomitant use is medically necessary.
+5.7 Thrombocytopenia Thrombocytopenia, or decreased platelet count, was reported in clinical trials of KADCYLA (103 of 884 treated patients with &#x2265; Grade 3; 283 of 884 treated patients with any Grade).
+ The majority of these patients had Grade 1 or 2 events (&lt; LLN to &#x2265; 50,000/mm3) with the nadir occurring by day 8 and generally improving to Grade 0 or 1 (&#x2265; 75,000 /mm3) by the next scheduled dose.
+ In clinical trials of KADCYLA, the incidence and severity of thrombocytopenia were higher in Asian patients.
+    In the randomized trial (Study 1), the overall frequency of thrombocytopenia was 31.2% in the KADCYLA-treated group and 3.3% in the lapatinib plus capecitabine-treated group [see Adverse Reactions (6.1)].
+ The incidence of &#x2265; Grade 3 thrombocytopenia was 14.5% in the KADCYLA-treated group and 0.4% in the lapatinib plus capecitabine-treated group.
+ In Asian patients, the incidence of &gt; Grade 3 thrombocytopenia was 45.1% in the KADCYLA-treated group and 1.3% in the lapatinib plus capecitabine-treated group.
+ Monitor platelet counts prior to initiation of KADCYLA and prior to each KADCYLA dose [see Dosage and Administration (2.2)].
+ KADCYLA has not been studied in patients with platelet counts &lt;100,000/mm3 prior to initiation of treatment.
+ In the event of decreased platelet count to Grade 3 or greater (&lt; 50,000/mm3) do not administer KADCYLA until platelet counts recover to Grade 1 (&#x2265; 75,000/mm3) [see Dosage and Administration (2.2)].
+ Patients with thrombocytopenia (&lt; 100,000/mm3) and patients on anti-coagulant treatment should be closely monitored during treatment with KADCYLA.
+   5.8 Neurotoxicity Peripheral neuropathy, mainly as Grade 1 and predominantly sensory, was reported in clinical trials of KADCYLA (14 of 884 treated patients with &#x2265; Grade 3; 196 of 884 treated patients with any Grade).
+ In the randomized trial (Study 1), the overall frequency of peripheral neuropathy was 21.2% in the KADCYLA-treated group and 13.5% in the lapatinib plus capecitabine-treated group [see Adverse Reactions (6.1)].
+ The incidence of &#x2265; Grade 3 peripheral neuropathy was 2.2% in the KADCYLA-treated group and 0.2% in the lapatinib plus capecitabine-treated group.
+  KADCYLA should be temporarily discontinued in patients experiencing Grade 3 or 4 peripheral neuropathy until resolution to &#x2022; Grade 2.
+ Patients should be clinically monitored on an ongoing basis for signs or symptoms of neurotoxicity [see Nonclinical Toxicology (13.2)].
+  5.9 HER2 Testing Detection of HER2 protein overexpression or gene amplification is necessary for selection of patients appropriate for KADCYLA therapy because these are the only patients studied for whom benefit has been shown [see Indications and Usage (1), Clinical Studies (14.1)].
+ In the randomized study (Study 1), patients with breast cancer were required to have evidence of HER2 overexpression defined as 3+ IHC by Dako Herceptest or evidence of overexpression defined as FISH amplification ratio &#x2265; 2.0 by Dako HER2 FISH PharmDx test kit.
+ Only limited data were available for patients whose breast cancer was positive by FISH and 0 or 1+ by IHC.
+ Assessment of HER2 status should be performed by laboratories with demonstrated proficiency in the specific technology being utilized.
+ Improper assay performance, including use of sub- optimally fixed tissue, failure to utilize specified reagents, deviation from specific assay
+ 10 of 22
+ instructions, and failure to include appropriate controls for assay validation, can lead to unreliable results.
+   5.10 Extravasation  In KADCYLA clinical studies, reactions secondary to extravasation have been observed.
+ These reactions, observed more frequently within 24 hours of infusion, were usually mild and comprised erythema, tenderness, skin irritation, pain, or swelling at the infusion site.
+ Specific treatment for KADCYLA extravasation is unknown.
+The infusion site should be closely monitored for possible subcutaneous infiltration during drug administration.
+ 6 ADVERSE REACTIONS  The following adverse reactions are discussed in greater detail in other sections of the label:
+  &#x2022; Hepatotoxicity [See Warnings and Precautions (5.1)] &#x2022; Left Ventricular Dysfunction [See Warnings and Precautions (5.2)]
+ &#x2022; Embryo-Fetal Toxicity [See Warnings and Precautions (5.3)] &#x2022; Pulmonary Toxicity [See Warnings and Precautions (5.4)] &#x2022; Infusion-Related Reactions, Hypersensitivity Reactions [See Warnings and Precautions
+ (5.5)] &#x2022; Hemorrhage [See Warnings and Precautions (5.6)] &#x2022; Thrombocytopenia [See Warnings and Precautions (5.7)]
+ &#x2022; Neurotoxicity [See Warnings and Precautions (5.8)] 6.1    Clinical Trials Experience   Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.
+ In clinical trials, KADCYLA has been evaluated as single-agent in 884 patients with HER2-positive metastatic breast cancer.
+ The most common (frequency &#x2265; 25%) adverse drug reactions (ADRs) seen in 884 patients treated with KADCYLA were fatigue, nausea, musculoskeletal pain, hemorrhage, thrombocytopenia, headache, increased transaminases, constipation and epistaxis.
+ The ADRs described in Table 6 were identified in patients with HER2-positive metastatic breast cancer treated in a randomized trial (Study 1) [see Clinical Studies (14.1)].
+ Patients were randomized to receive KADCYLA or lapatinib plus capecitabine.
+ The median duration of study treatment was 7.6 months for patients in the KADCYLA-treated group and 5.5 months and 5.3 months for patients treated with lapatinib and capecitabine, respectively.
+Two hundred and eleven (43.1%) patients experienced &#x2265; Grade 3 adverse events in the KADCYLA-treated group compared with 289 (59.2%) patients in the lapatinib plus capecitabine-treated group.
+ Dose adjustments for KADCYLA were permitted [see Dosage and Administration (2.2)].
+ Thirty-two patients (6.5%) discontinued KADCYLA due to an adverse event, compared with 41 patients (8.4%) who discontinued lapatinib, and 51 patients (10.5%) who discontinued capecitabine due to an adverse event.
+ The most common adverse events leading to KADCYLA withdrawal were thrombocytopenia and increased transaminases.
+ Eighty patients (16.3%) treated with KADCYLA had adverse events leading to dose reductions.
+ The most frequent adverse events leading to dose reduction of KADCYLA (in &#x2265; 1% of patients) included thrombocytopenia, increased transaminases, and peripheral neuropathy.
+ Adverse events that led to dose delays occurred in 116 (23.7%) of KADCYLA treated patients.
+ The most frequent adverse events
+ 11 of 22
+ leading to a dose delay of KADCYLA (in &#x2265; 1% of patients) were neutropenia, thrombocytopenia, leukopenia, fatigue, increased transaminases and pyrexia.
+ Table 6 reports the ADRs that occurred in patients in the KADCYLA-treated group (n=490) of the randomized trial (Study 1).
+ Selected laboratory abnormalities are shown in Table 7.
+ The most common ADRs seen with KADCYLA in the randomized trial (frequency &gt; 25%) were nausea, fatigue, musculoskeletal pain, hemorrhage, thrombocytopenia, increased transaminases, headache, and constipation.
+ The most common NCI-CTCAE (version 3) &#x2265; Grade 3 ADRs (frequency &gt;2%) were thrombocytopenia, increased transaminases, anemia, hypokalemia, peripheral neuropathy and fatigue.
+ Table 6 Summary of Adverse Drug Reactions Occurring in Patients on the KADCYLA
+ Treatment Arm in the Randomized Trial (Study 1)
+ Adverse Drug Reactions (MedDRA)
+ System Organ Class
+ KADCYLA (3.6 mg/kg)
+ n=490 Frequency rate %
+ Lapatinib (1250 mg) + Capecitabine (2000  mg/m2) n=488
+ Frequency rate %  All grades
+ (%) Grade 3 - 4
+ (%) All grades
+ (%) Grade 3 - 4
+ (%) Blood and Lymphatic System  Disorders Neutropenia 6.7 2.0 9.0 4.3 Anemia 14.3 4.1 10.5 2.5 Thrombocytopenia 31.2 14.5 3.3 0.4 Cardiac Disorders Left ventricular dysfunction 1.8 0.2 3.3 0.4 Eye Disorders Lacrimation increased 3.3 0 2.5 0 Dry eye 3.9 0 3.1 0 Vision blurred 4.5 0 0.8 0 Conjunctivitis 3.9 0 2.3 0 Gastrointestinal Disorders Dyspepsia 9.2 0 11.5 0.4 Stomatitis 14.1 0.2 32.6 2.5 Dry Mouth 16.7 0 4.9 0.2 Abdominal pain 18.6 0.8 17.6 1.6 Vomiting 19.2 0.8 29.9 4.5 Diarrhea 24.1 1.6 79.7 20.7 Constipation 26.5 0.4 11.1 0 Nausea 39.8 0.8 45.1 2.5 General Disorders and  Administration Peripheral edema 7.1 0 8.2 0.2 Chills 7.6 0 3.1 0 Pyrexia 18.6 0.2 8.4 0.4 Asthenia 17.8 0.4 17.6 1.6 Fatigue 36.3 2.5 28.3 3.5 Hepatobiliary Disorders* Nodular regenerative hyperplasia* 0.4 ND 0 0
+ 12 of 22
+ Adverse Drug Reactions (MedDRA)
+ System Organ Class
+ KADCYLA (3.6 mg/kg)
+ n=490 Frequency rate %
+ Lapatinib (1250 mg) + Capecitabine (2000  mg/m2) n=488
+ Frequency rate %  All grades
+ (%) Grade 3 - 4
+ (%) All grades
+ (%) Grade 3 - 4
+ (%) Portal hypertension* 0.4 0.2 0 0 Immune System Disorders Drug hypersensitivity 2.2 0 0.8 0 Injury, Poisoning, and  Procedural Infusion-related reaction 1.4 0 0.2 0 Infections and Infestations Urinary tract infection 9.4 0.6 3.9 0 Investigations Blood alkaline phosphatase increased
+ 4.7 0.4 3.7 0.4
+ Increased transaminases  28.8 8.0 14.3 2.5 Metabolism and Nutrition  Disorders Hypokalemia 10.2 2.7 9.4 4.7 Musculoskeletal and Connective  Tissue Disorders Myalgia 14.1 0.6 3.7 0 Arthralgia 19.2 0.6 8.4 0 Musculoskeletal pain 36.1 1.8 30.5 1.4 Nervous System Disorders Dysgeusia 8.0 0 4.1 0.2
+ Dizziness 10.2 0.4 10.7 0.2 Peripheral neuropathy  21.2 2.2 13.5 0.2 Headache 28.2 0.8 14.5 0.8 Psychiatric Disorders Insomnia 12.0 0.4 8.6 0.2 Respiratory, Thoracic, and  Mediastinal Disorders Pneumonitis 1.2 0 0 0 Dyspnea 12.0 0.8 8.0 0.4 Cough 18.2 0.2 13.1 0.2 Epistaxis 22.5 0.2 8.4 0 Skin and Subcutaneous Tissue  Disorders Pruritus 5.5 0.2 9.2 0 Rash 11.6 0 27.5 1.8 Vascular Disorders Hemorrhage 32.2 1.8 16.4 0.8 Hypertension 5.1 1.2 2.3 0.4 * Nodular Regenerative Hyperplasia and Portal Hypertension occurred in the same patient.
+ ND = Not determined
+ 13 of 22
+   Table 7  Selected Laboratory Abnormalities
+ Parameter
+ KADCYLA (3.6 mg/kg)
+ Lapatinib (1250 mg) + Capecitabine (2000 mg/m2)
+ All Grade
+ % Grade 3
+ % Grade 4
+ %
+ All Grade
+ % Grade 3
+ % Grade 4
+ HER2-positive metastatic breast cancer in clinical trials (n=884) with KADCYLA as single-agent.
+ 6.2    Immunogenicity As with all therapeutic proteins, there is the potential for an immune response to KADCYLA.
+A total of 836 patients from six clinical studies were tested at multiple time points for anti-therapeutic antibody (ATA) responses to KADCYLA.
+ Following KADCYLA dosing, 5.3% (44/836) of patients tested positive for anti-KADCYLA antibodies at one or more post-dose time points.
+ The presence of KADCYLA in patient serum at the time of ATA sampling may interfere with the ability of this assay to detect anti-KADCYLA antibodies.
+ As a result, data may not accurately reflect the true incidence of anti-KADCYLA antibody development.
+ In addition, neutralizing activity of anti-KADCYLA antibodies has not been assessed.
+ Immunogenicity data are highly dependent on the sensitivity and specificity of the test methods used.
+ Additionally, the observed incidence of a positive result in a test method may be influenced by several factors, including sample handling, timing of sample collection, drug interference, concomitant medication and the underlying disease.
+ Therefore, comparison of the incidence of antibodies to KADCYLA with the incidence of antibodies to other products may be misleading.
+ Clinical significance of anti-KADCYLA antibodies is not yet known.
+ 7 DRUG INTERACTIONS No formal drug-drug interaction studies with KADCYLA have been conducted.
+ In vitro studies indicate that DM1, the cytotoxic component of KADCYLA, is metabolized mainly by CYP3A4 and to a lesser extent by CYP3A5.
+ Concomitant use of strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole, clarithromycin, atazanavir, indinavir, nefazodone, nelfinavir, ritonavir, saquinavir, telithromycin, and voriconazole) with KADCYLA should be avoided due to the potential for an increase in DM1 exposure and toxicity.
+ Consider an alternate medication with no or minimal potential to inhibit CYP3A4.
+ If concomitant use of strong CYP3A4 inhibitors is unavoidable, consider delaying KADCYLA treatment until the strong CYP3A4 inhibitors have cleared from the circulation (approximately 3 elimination half-lives of the inhibitors) when possible.
+ If a strong CYP3A4 inhibitor is coadministered and KADCYLA treatment cannot be delayed, patients should be closely monitored for adverse reactions.
+  14 of 22
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy Pregnancy Category D [see Warnings and Precautions (5.3)]
+   Risk Summary
+ KADCYLA can cause fetal harm when administered to a pregnant woman.
+ There are no adequate and well-controlled studies of KADCYLA in pregnant women.
+ No reproductive and developmental toxicology studies have been conducted with ado-trastuzumab emtansine.
+Nevertheless, two components of KADCYLA (trastuzumab and DM1) are known or suspected to cause fetal harm or death when administered to a pregnant woman.
+ If KADCYLA is administered during pregnancy, or if a patient becomes pregnant while receiving KADCYLA or within 7 months following the last dose of KADCYLA, apprise the patient of the potential hazard to the fetus.
+ Patients should be advised to use effective contraception during treatment with KADCYLA and for 7 months following the last dose of KADCYLA.
+If KADCYLA is administered during pregnancy or if a patient becomes pregnant while receiving KADCYLA or within 7 months following the last dose of KADCYLA, immediately report exposure to the Genentech Adverse Event Line at 1-888-835-2555.
+ Encourage women who may be exposed during pregnancy or within 7 months prior to conception, to enroll in the MotHER Pregnancy Registry by contacting 1-800-690-6720 [see Patient Counseling Information (17)].
+ Human Data
+ In the post-marketing setting, treatment with trastuzumab during pregnancy has resulted in cases of oligohydramnios, some associated with fatal pulmonary hypoplasia, skeletal abnormalities and neonatal death.
+ These case reports described oligohydramnios in pregnant women who received trastuzumab either alone or in combination with chemotherapy.
+ In some case reports, amniotic fluid index increased after trastuzumab was stopped.
+ In one case, trastuzumab therapy resumed after the amniotic fluid index improved, and oligohydramnios recurred.
+  Animal Data
+ There were no reproductive and developmental toxicology studies conducted with ado-trastuzumab emtansine.
+ DM1, the cytotoxic component of KADCYLA, disrupts microtubule function.
+ DM1 is toxic to rapidly dividing cells in animals and is genotoxic, suggesting it has the potential to cause embryotoxicity and teratogenicity.
+ In studies where trastuzumab was administered to pregnant monkeys at doses up to 25 mg/kg (about 7 times the clinical dose), trastuzumab crossed the placental barrier during the early and late phases of gestation.
+ The resulting concentrations of trastuzumab in fetal blood and amniotic fluid were approximately 33% and 25%, respectively, of those present in the maternal serum but were not associated with adverse findings.
+ 8.3 Nursing Mothers It is not known whether KADCYLA, specifically, is excreted in human milk, but IgG is known to be excreted in human milk.
+ In lactating monkeys, trastuzumab was excreted in small amounts (about 0.3% of maternal serum concentrations) in breast milk after post-partum doses of 25 mg/kg (about 7 times the clinical dose of KADCYLA).
+ Because many drugs are excreted in human milk and because of the potential for serious adverse reactions in nursing infants from KADCYLA, a decision should be made whether to discontinue nursing or discontinue KADCYLA, taking into account the wash-out period of trastuzumab and the importance of the drug to the mother.
+  15 of 22
+ 8.4 Pediatric Use Safety and effectiveness of KADCYLA have not been established in pediatric patients.
+ 8.5 Geriatric Use Of 495 patients who were randomized to KADCYLA in the randomized trial (Study 1) [see Clinical Studies (14.1)], 65 patients (13%) were &#x2265; 65 years of age and 11 patients (2%) were &#x2265; 75 years of age.
+ In patients &#x2265; 65 years old (n=138 across both treatment arms) the hazard ratios for progression-free survival (PFS) and Overall Survival (OS) were 1.06 (95% CI: 0.68, 1.66) and 1.05 (95% CI: 0.58, 1.91), respectively.
+   Population pharmacokinetic analysis indicates that age does not have a clinically meaningful effect on the pharmacokinetics of ado-trastuzumab emtansine [see Clinical Pharmacology (12.3)].
+8.6 Females of Reproductive Potential KADCYLA can cause embryo-fetal harm when administered during pregnancy.
+ Counsel patients regarding pregnancy prevention and planning.
+ Advise females of reproductive potential to use effective contraception while receiving KADCYLA and for 7 months following the last dose of KADCYLA [see Use in Specific Populations (8.1)].
+If KADCYLA is administered during pregnancy or if the patient becomes pregnant while receiving KADCYLA or within 7 months following the last dose of KADCYLA, immediately report exposure to the Genentech Adverse Event Line at 1-888-835-2555.
+ Encourage women who may be exposed during pregnancy or within 7 months prior to conception, to enroll in the MotHER Pregnancy Registry by contacting 1-800-690-6720 [see Patient Counseling Information (17)].
+8.7     Renal Impairment No dedicated renal impairment trial for KADCYLA has been conducted.
+ Based on the population pharmacokinetics, as well as analysis of Grade 3 or greater adverse drug reactions and dose modifications, dose adjustments of KADCYLA are not needed in patients with mild (creatinine clearance [CLcr] 60 to 89 mL/min) or moderate (CLcr 30 to 59 mL/min) renal impairment.
+ No dose adjustment can be recommended for patients with severe renal impairment (CLcr less than 30 mL/min) because of the limited data available [see Clinical Pharmacology (12.3)].
+8.8    Hepatic Impairment In vitro studies in human liver microsomes indicates that DM1 is metabolized by CYP3A4/5.
+ The influence of hepatic impairment on the pharmacokinetics of ado-trastuzumab emtansine conjugate has not been determined.
+ 10 OVERDOSAGE There is no known antidote for overdose of KADCYLA.
+ In clinical trials, overdose of KADCYLA has been reported at approximately two times the recommended dose which resulted in Grade 2 thrombocytopenia (resolved 4 days later) and one death.
+ In the fatal case, the patient incorrectly received KADCYLA at 6 mg/kg and died approximately 3 weeks following the overdose; a cause of death and a causal relationship to KADCYLA were not established.
+ 11 DESCRIPTION KADCYLA (ado-trastuzumab emtansine) is a HER2-targeted antibody-drug conjugate (ADC) which contains humanized anti-HER2 IgG1, trastuzumab, covalently linked to the microtubule inhibitory drug DM1 (a maytansine derivative) via the stable thioether linker MCC (4-[N-maleimidomethyl] cyclohexane-1-carboxylate).
+ Emtansine refers to the MCC-DM1 complex.
+  16 of 22
+ The antibody trastuzumab, is a well characterized recombinant monoclonal antibody product produced by mammalian (Chinese hamster ovary) cells, and the small molecule components (DM1 and MCC) are produced by chemical synthesis.
+Ado-trastuzumab emtansine contains an average of 3.5 DM1 molecules per antibody.
+ Ado-trastuzumab emtansine has the following chemical structure:
+  Note:  The bracketed structure is DM1 plus MCC which represents the emtansine component.
+ The n is, on average, 3.5 DM1 molecules per trastuzumab (Mab) molecule.
+ KADCYLA (ado-trastuzumab emtansine) is a sterile, white to off-white preservative free lyophilized powder in single-use vials.
+ Each vial contains 100 mg or 160 mg ado-trastuzumab emtansine.
+ Following reconstitution, each single-use vial contains ado-trastuzumab emtansine (20 mg/mL), polysorbate 20 [0.02% (w/v)], sodium succinate (10 mM), and sucrose [6% (w/v)] with a pH of 5.0 and density of 1.026 g/mL.
+ The resulting solution containing 20 mg/mL ado-trastuzumab emtansine is administered by intravenous infusion following dilution.
+  12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Ado-trastuzumab emtansine is a HER2-targeted antibody-drug conjugate.
+ The antibody is the humanized anti-HER2 IgG1, trastuzumab.
+ The small molecule cytotoxin, DM1, is a microtubule inhibitor.
+ Upon binding to sub-domain IV of the HER2 receptor, ado-trastuzumab emtansine undergoes receptor-mediated internalization and subsequent lysosomal degradation, resulting in intracellular release of DM1-containing cytotoxic catabolites.
+ Binding of DM1 to tubulin disrupts microtubule networks in the cell, which results in cell cycle arrest and apoptotic cell death.
+ In addition, in vitro studies have shown that similar to trastuzumab, ado-trastuzumab emtansine inhibits HER2 receptor signaling, mediates antibody-dependent cell-mediated cytotoxicity and inhibits shedding of the HER2 extracellular domain in human breast cancer cells that overexpress HER2.
+ 12.3 Pharmacokinetics The pharmacokinetics of KADCYLA was evaluated in a phase 1 study and in a population pharmacokinetic analysis for the ado-trastuzumab emtansine conjugate (ADC) using pooled data from 5 trials in patients with breast cancer.
+ A linear two-compartment model with first-order elimination from the central compartment adequately describes the ADC concentration-time profile.
+In addition to ADC, the pharmacokinetics of total antibody (conjugated and unconjugated trastuzumab), DM1 were also determined.
+ The pharmacokinetics of KADCYLA are summarized below.
+  17 of 22
+ Distribution Maximum concentrations (Cmax) of ADC and DM1 were observed close to the end of infusion.
+In Study 1, mean (SD) ADC and DM1 Cycle 1 Cmax following KADCYLA administration was 83.4 (16.5) g/mL and 4.61 (1.61) ng/mL, respectively.
+  In vitro, the mean binding of DM1 to human plasma proteins was 93%.
+In vitro, DM1 was a substrate of P-glycoprotein (P-gp).
+ Based on population pharmacokinetic analysis, the central volume of distribution of ADC was 3.13 L.
+ Metabolism In vitro studies indicate that DM1, the small molecule component of KADCYLA, undergoes metabolism by CYP3A4/5.
+ DM1 did not inhibit or induce major CYP450 enzymes in vitro.
+ In human plasma, ado-trastuzumab emtansine catabolites MCC-DM1, Lys-MCC-DM1, and DM1 were detected at low levels.
+  Elimination
+ Based on population pharmacokinetic analysis, following intravenous infusion of KADCYLA, the clearance of the ADC was 0.68 L/day and the elimination half-life (t1/2) was approximately 4 days.
+ No accumulation of KADCYLA was observed after repeated dosing of intravenous infusion every 3 weeks.
+ Based on population pharmacokinetic analysis (n=671), body weight, sum of longest diameter of target lesions by RECIST, HER2 extracellular domain (ECD) concentrations, AST, albumin, and baseline trastuzumab concentrations were identified as statistically significant covariates for ado-trastuzumab emtansine clearance.
+ However, the magnitude of effect of these covariates on ado-trastuzumab emtansine exposure suggests that, with the exception of body weight, these covariates are unlikely to have a clinically meaningful effect on KADCYLA exposure.
+ Therefore, the body weight based dose of 3.6 mg/kg every 3 weeks without correction for other covariates is considered appropriate.
+ Effect of Renal Impairment Based on population pharmacokinetic analysis in 668 patients, including moderate (CLcr 30 - 59 mL/min, n=53) and mild (CLcr 60 - 89 mL/min, n=254) renal impairment, indicate that pharmacokinetics of the ADC is not affected by mild to moderate renal impairment as compared to normal renal function (CLcr &#x2265; 90 mL/min, n=361).
+ Data from only one patient with severe renal impairment (CLcr &lt; 30 mL/min) is available [see Use in Specific Populations (8.7)].
+ Effects of Age and Race  Based on population pharmacokinetic analysis, age (&lt; 65 (n=577); 65 - 75 (n=78); &gt; 75 (n=16)) and race (Asian (n=73); non-Asian (n=598)) do not have a clinically meaningful effect on the pharmacokinetics of ado-trastuzumab emtansine.
+  12.6 Cardiac Electrophysiology The effect of multiple doses of KADCYLA (3.6 mg/kg every 3 weeks) on the QTc interval was evaluated in an open label, single arm study in 51 patients with HER2-positive metastatic breast cancer.
+ No large changes in the mean QT interval (i.e., &gt; 20 ms) were detected in the study.
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Carcinogenicity studies have not been conducted with ado-trastuzumab emtansine.
+ 18 of 22
+ DM1 was aneugenic or clastogenic in an in vivo single-dose rat bone marrow micronucleus assay at exposures that were comparable to mean maximum concentrations of DM1 measured in humans administered KADCYLA.
+ DM1 was not mutagenic in an in vitro bacterial reverse mutation (Ames) assay.
+   Based on results from animal toxicity studies, KADCYLA may impair fertility in humans.
+ In a single-dose toxicity study of ado-trastuzumab emtansine in rats, degeneration of seminiferous tubules with hemorrhage in the testes associated with increased weights of testes and epididymides at a severely toxic dose level (60 mg/kg; about 4 times the clinical exposure based on AUC) were observed.
+ The same dose in female rats resulted in signs of hemorrhage and necrosis of the corpus luteum in ovaries.
+ In monkeys dosed with ado-trastuzumab emtansine once every three weeks for 12 weeks (four doses), at up to 30 mg/kg (about 7 times the clinical exposure based on AUC), there were decreases in the weights of epididymides, prostate, testes, seminal vesicles and uterus, although the interpretation of these effects is unclear due to the varied sexual maturity of enrolled animals.
+  13.2 Animal Toxicology and/or Pharmacology In monkeys, treatment with doses of ado-trastuzumab emtansine up to 30 mg/kg (about 7 times the clinical exposure based on AUC) caused dose dependent axonal degeneration in the sciatic nerve with hypertrophy or hyperplasia of the Schwann cells, and axonal degeneration of the dorsal funiculus in the spinal cord.
+ Based on the mechanism of action of the cytotoxic component DM1, there is clinical potential for neurotoxicity [see Warnings and Precautions (5.8)].
+14 CLINICAL STUDIES 14.1 Metastatic Breast Cancer The efficacy of KADCYLA was evaluated in a randomized, multicenter, open-label trial of 991 patients with HER2-positive, unresectable locally advanced or metastatic breast cancer.
+Prior taxane and trastuzumab-based therapy was required before trial enrollment.
+ Patients with only prior adjuvant therapy were required to have disease recurrence during or within six months of completing adjuvant therapy.
+ Breast tumor samples were required to show HER2 overexpression defined as 3+ IHC or FISH amplification ratio &#x2265; 2.0 determined at a central laboratory.
+ Patients were randomly allocated (1:1) to receive lapatinib plus capecitabine or KADCYLA.
+ Randomization was stratified by world region (United States, Western Europe, other), number of prior chemotherapy regimens for unresectable locally advanced or metastatic disease (0-1, &gt;1) and visceral versus non-visceral disease as determined by the investigators.
+   KADCYLA was given intravenously at 3.6 mg/kg on Day 1 of a 21-day cycle.
+ Lapatinib was administered at 1250 mg/day orally once per day of a 21-day cycle and capecitabine was administered at 1000 mg/m2 orally twice daily on Days 1-14 of a 21-day cycle.
+ Patients were treated with KADCYLA or lapatinib plus capecitabine until progression of disease, withdrawal of consent, or unacceptable toxicity.
+ At the time of the primary analysis, median time on study drug was 5.7 months (range: 0-28.4) for KADCYLA, 4.9 months (range: 0-30.8) for lapatinib, and 4.8 months (range: 0-30.4) for capecitabine.
+ The co-primary efficacy endpoints of the study were progression-free survival (PFS) based on tumor response assessments by an independent review committee (IRC), and overall survival (OS).
+ PFS was defined as the time from the date of randomization to the date of disease progression or death from any cause (whichever occurred earlier).
+ Overall survival was defined as the time from the date of randomization to the date of death from any cause.
+ Additional endpoints included PFS (based on investigator tumor response assessments), objective response rate (ORR), duration of response and time to symptom progression.
+  19 of 22
+ Patient demographics and baseline tumor characteristics were balanced between treatment arms.
+All patients had metastatic disease at study entry.
+ The median age was approximately 53 years (range 24-84 years), 74% were White, 18% were Asian and 5% were Black.
+ All but 5 patients were women.
+ Twenty-seven percent of patients were enrolled in United States, 32% in Europe and 16% in Asia.
+ Tumor prognostic characteristics including hormone receptor status (positive: 55%, negative: 43%), presence of visceral disease (68%) and non-visceral disease only (33%) and the number of metastatic sites (&lt; 3: 61%, &#x2265; 3: 37%) were similar in the study arms.
+    The majority of patients (88%) had received prior systemic treatment in the metastatic setting.
+ Twelve percent of patients had prior treatment only in the neoadjuvant or adjuvant setting and had disease relapse within 6 months of treatment.
+ All but one patient received trastuzumab prior to study entry; approximately 85% of patients received prior trastuzumab in the metastatic setting.
+ Over 99% percent of patients had received a taxane, and 61% of patients had received an anthracycline prior to study entry.
+ Overall, patients received a median of 3 systemic agents in the metastatic setting.
+Among patients with hormone receptor-positive tumors, 44.4% received prior adjuvant hormonal therapy and 44.8% received hormonal therapy for locally advanced/metastatic disease.
+ The randomized trial demonstrated a statistically significant improvement in IRC-assessed PFS in the KADCYLA-treated group compared with the lapatinib plus capecitabine-treated group [hazard ratio (HR) = 0.65, 95% CI: 0.55, 0.77, p &lt; 0.0001], and an increase in median PFS of 3.2 months (median PFS of 9.6 months in the KADCYLA-treated group vs. 6.4 months in the lapatinib plus capecitabine group).
+ See Table 8 and Figure 1.
+ The results for investigator-assessed PFS were similar to those observed for IRC-assessed PFS.
+   At the time of PFS analysis, 223 patients had died.
+ More deaths occurred in the lapatinib plus capecitabine arm (26%) compared with the KADCYLA arm (19%), however the results of this interim OS analysis did not meet the pre-specified stopping boundary for statistical significance.
+At the time of the second interim OS analysis, 331 events had occurred.
+ The co-primary endpoint of OS was met; OS was significantly improved in patients receiving KADCYLA (HR = 0.68, 95% CI: 0.55, 0.85, p = 0.0006).
+ This result crossed the pre-specified efficacy stopping boundary (HR = 0.73 or p = 0.0037).
+ The median duration of survival was 30.9 months in the KADCYLA arm vs. 25.1 months in the lapatinib plus capecitabine arm.
+ See Table 8 and Figure 2.
+ A treatment benefit with KADCYLA in terms of PFS and OS was observed in patient subgroups based on stratification factors, key baseline demographic and disease characteristics, and prior treatments.
+ In the subgroup of patients with hormone receptor-negative disease (n=426), the hazard ratios for PFS and OS were 0.56 (95% CI: 0.44, 0.72) and 0.75 (95% CI: 0.54, 1.03), respectively.
+ In the subgroup of patients with hormone receptor-positive disease (n=545), the hazard ratios for PFS and OS were 0.72 (95% CI: 0.58, 0.91) and 0.62 (95% CI: 0.46, 0.85), respectively.
+ In the subgroup of patients with non-measurable disease (n=205), based on IRC assessments, the hazard ratios for PFS and OS were 0.91 (95% CI: 0.59, 1.42) and 0.96 (95% CI: 0.54, 1.68), respectively; in patients with measurable disease the hazard ratios were 0.62 (95% CI: 0.52, 0.75) and 0.65 (95% CI: 0.51, 0.82), respectively.
+ The PFS and OS hazard ratios in patients who were younger than 65 years old (n=853) were 0.62 (95% CI: 0.52, 0.74) and 0.66 (95% CI: 0.52, 0.83), respectively.
+ In patients &#x2265; 65 years old (n=138), the hazard ratios for PFS and OS were 1.06 (95% CI: 0.68, 1.66) and 1.05 (95% CI: 0.58, 1.91), respectively.
+      20 of 22
+     Table 8 Summary of Efficacy from Study 1
+  KADCYLA N= 495
+ Lapatinib +Capecitabine N= 496
+ Progression-Free Survival (independent review)
+       Number (%) of patients with event  265 (53.5%) 304 (61.3%)   Median duration of PFS (months)  9.6 6.4   Hazard Ratio (stratified*) 0.650   95% CI for Hazard Ratio (0.549, 0.771)   p-value (Log-Rank test, stratified*) &lt;0.0001 Overall Survival **     Number (%) of patients who died  149 (30.1%) 182 (36.7%)   Median duration of survival (months) 30.9 25.1   Hazard Ratio (stratified*) 0.682   95% CI for Hazard Ratio (0.548, 0.849)   p-value (Log-Rank test*) 0.0006 Objective Response Rate   (independent review)      Patients with measurable disease 397 389  Number of patients with OR (%) 173 (43.6%) 120 (30.8%)  Difference (95% CI) 12.7% (6.0, 19.4) Duration of Objective Response (months)   Number of patients with OR
+    173
+    120   Median duration (95% CI) 12.6 (8.4, 20.8)               6.5 (5.5, 7.2) PFS: progression-free survival; OR: objective response * Stratified by world region (United States, Western Europe, other), number of prior chemotherapeutic
+ regimens for locally advanced or metastatic disease (0-1 vs. &gt;1), and visceral vs. non-visceral disease.
+** The second interim analysis for OS was conducted when 331 events were observed and the results
+ are presented in this table.
+                 21 of 22
+   Figure 1 Kaplan-Meier Curve of IRC-Assessed Progression-Free Survival for Study 1
+             Figure 2 Kaplan-Meier Curve of Overall Survival for Study 1
+                     15 REFERENCES 1.
+OSHA Hazardous Drugs.
+ OSHA.
+ http://www.osha.gov/SLTC/hazardousdrugs/index.html
+   22 of 22
+ 16 HOW SUPPLIED/STORAGE AND HANDLING 16.1 How Supplied/Storage KADCYLA (ado-trastuzumab emtansine) is supplied as:
+  Carton Contents NDC One 100 mg vial, single use vial NDC 50242-088-01 One 160 mg vial, single use vial  NDC 50242-087-01  Store vials in a refrigerator at 2C to 8C (36F to 46F) until time of reconstitution.
+ Do not freeze or shake.
+16.2 Special Handling Follow procedures for proper handling and disposal of anticancer drugs1.
+ 17 PATIENT COUNSELING INFORMATION &#x2022; Inform patients of the possibility of severe liver injury and advise patients to immediately
+ seek medical attention if they experience symptoms of acute hepatitis such as nausea, vomiting, abdominal pain (especially RUQ abdominal pain), jaundice, dark urine, generalized pruritus, anorexia, etc. [see Warnings and Precautions (5.1)].
+ &#x2022; Advise patients to contact a health care professional immediately for any of the following: new onset or worsening shortness of breath, cough, swelling of the ankles/legs, palpitations, weight gain of more than 5 pounds in 24 hours, dizziness or loss of consciousness [see Warnings and Precautions (5.2)].
+ &#x2022; Advise pregnant women and females of reproductive potential that KADCYLA exposure can result in fetal harm, including embryo-fetal death or birth defects [see Use in Specific Populations (8.1)].
+ &#x2022; Advise females of reproductive potential to use effective contraception while receiving KADCYLA and for 7 months following the last dose of KADCYLA [see Use in Specific Populations (8.1, 8.6)].
+ &#x2022; Advise nursing mothers treated with KADCYLA to discontinue nursing or discontinue KADCYLA, taking into account the importance of the drug to the mother [see Use in Specific Populations (8.3)].
+ &#x2022; Advise women who are exposed to KADCYLA during pregnancy or become pregnant while receiving KADCYLA or within 7 months following the last dose of KADCYLA, to immediately report exposure to the Genentech Adverse Event Line at 1-888-835-2555.
+ Encourage women who are exposed to KADCYLA during pregnancy or within 7 months prior to conception, to enroll in the MotHER Pregnancy Registry by contacting 1-800-690-6720 [see Use in Specific Populations (8.1, 8.6)].
+  KADCYLA [ado-trastuzumab emtansine]
+  Manufactured by: Genentech, Inc.
+A Member of the Roche Group 1 DNA Way South San Francisco, CA  94080-4990 U.S. License No: 1048
+    Initial U.S. Approval: February 2013
+    KADCYLA is a trademark of Genentech, Inc.
+2015 Genentech, Inc.
+    

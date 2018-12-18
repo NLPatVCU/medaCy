@@ -1,0 +1,520 @@
+T1	tradename 172 180	COPAXONE
+T2	tradename 243 262	COPAXONE. COPAXONE
+T3	activeingredient 264 282	glatiramer acetate
+T4	routeofadministration 298 310	subcutaneous
+T5	fdaapprovaldate 338 342	1996
+T6	tradename 818 818	
+T7	indication 867 904	relapsing-forms of multiple sclerosis
+T8	routeofadministration 994 1006	subcutaneous
+T9	tradename 1069 1077	COPAXONE
+T10	dose 1078 1086	20 mg/mL
+T11	frequency 1087 1094	per day
+T12	tradename 1111 1119	COPAXONE
+T13	dose 1120 1128	40 mg/mL
+T14	frequency 1129 1149	three times per week
+T15	dose 1320 1328	20 mg/mL
+T16	dose 1410 1418	40 mg/mL
+T17	activeingredient 1584 1602	glatiramer acetate
+T18	inactiveingredient 1606 1614	mannitol
+T19	adversereaction 1735 1810	flushing, chest pain, palpitations, anxiety, dyspnea, throat constriction,
+T20	adversereaction 1818 1828	urticaria)
+T21	adversereaction 1885 1896	Chest pain,
+T22	adversereaction 1931 1942	Lipoatrophy
+T23	adversereaction 1947 1960	skin necrosis
+T24	tradename 2067 2075	COPAXONE
+T25	tradename 2221 2229	COPAXONE
+T26	dose 2230 2239	20 mg/mL,
+T27	adversereaction 2333 2389	injection site reactions, vasodilatation, rash, dyspnea,
+T28	adversereaction 2394 2404	chest pain
+T29	tradename 2447 2455	COPAXONE
+T30	dose 2456 2465	40 mg/mL,
+T31	adversereaction 2558 2582	injection site reactions
+T32	company 2637 2641	TEVA
+T33	tradename 2829 2837	COPAXONE
+T34	tradename 2928 2936	COPAXONE
+T35	adversereaction 3370 3380	Chest Pain
+T36	adversereaction 3386 3397	Lipoatrophy
+T37	adversereaction 3402 3415	Skin Necrosis
+T38	tradename 4259 4267	COPAXONE
+T39	activeingredient 4269 4287	glatiramer acetate
+T40	tradename 4326 4334	COPAXONE
+T41	indication 4383 4421	relapsing forms of multiple sclerosis.
+T42	tradename 4473 4481	COPAXONE
+T43	routeofadministration 4489 4501	subcutaneous
+T44	tradename 4652 4660	COPAXONE
+T45	dose 4661 4674	20 mg per mL:
+T46	frequency 4686 4698	once per day
+T47	tradename 4712 4720	COPAXONE
+T48	dose 4721 4734	40 mg per mL:
+T49	frequency 4746 4766	three times per week
+T50	tradename 4796 4804	COPAXONE
+T51	dose 4805 4817	20 mg per mL
+T52	tradename 4822 4830	COPAXONE
+T53	dose 4831 4843	40 mg per mL
+T54	routeofadministration 5349 5361	subcutaneous
+T55	dose 5543 5555	20 mg per mL
+T56	routeofadministration 5618 5630	subcutaneous
+T57	dose 5662 5674	40 mg per mL
+T58	routeofadministration 5736 5748	subcutaneous
+T59	tradename 5782 5790	COPAXONE
+T60	activeingredient 5853 5871	glatiramer acetate
+T61	inactiveingredient 5875 5884	mannitol.
+T62	tradename 6109 6117	COPAXONE
+T63	dose 6118 6130	20 mg per mL
+T64	tradename 6246 6254	COPAXONE
+T65	dose 6255 6267	40 mg per mL
+T66	adversereaction 6440 6521	flushing, chest pain, palpitations, anxiety, dyspnea, constriction of the throat,
+T67	adversereaction 6526 6536	urticaria.
+T68	adversereaction 7205 7215	Chest Pain
+T69	tradename 7238 7246	COPAXONE
+T70	dose 7247 7259	20 mg per mL
+T71	tradename 7385 7393	COPAXONE
+T72	dose 7394 7406	40 mg per mL
+T73	adversereaction 7519 7530	chest pain.
+T74	adversereaction 7690 7700	chest pain
+T75	adversereaction 8038 8049	Lipoatrophy
+T76	adversereaction 8054 8067	Skin Necrosis
+T77	adversereaction 8099 8110	lipoatrophy
+T78	adversereaction 8139 8152	skin necrosis
+T79	adversereaction 8164 8175	Lipoatrophy
+T80	tradename 8228 8236	COPAXONE
+T81	dose 8237 8249	20 mg per mL
+T82	tradename 8346 8354	COPAXONE
+T83	dose 8355 8367	40 mg per mL
+T84	adversereaction 8427 8440	Skin necrosis
+T85	adversereaction 8495 8506	Lipoatrophy
+T86	adversereaction 8651 8663	lipoatrophy.
+T87	tradename 9002 9010	COPAXONE
+T88	tradename 9107 9115	COPAXONE
+T89	tradename 9293 9301	COPAXONE
+T90	tradename 9382 9390	COPAXONE
+T91	tradename 9589 9597	COPAXONE
+T92	tradename 9759 9767	COPAXONE
+T93	activeingredient 9879 9898	glatiramer acetate.
+T94	tradename 10071 10079	COPAXONE
+T95	dose 10080 10093	20 mg per mL,
+T96	routeofadministration 10094 10108	subcutaneously
+T97	frequency 10109 10118	every day
+T98	duration 10123 10131	2 years,
+T99	tradename 11083 11091	COPAXONE
+T100	dose 11092 11104	20 mg per mL
+T101	frequency 11105 11112	per day
+T102	tradename 11146 11154	COPAXONE
+T103	adversereaction 11355 11416	injection site reactions, dyspnea, urticaria, vasodilatation,
+T104	adversereaction 11421 11438	hypersensitivity.
+T105	adversereaction 11680 11736	injection site reactions, vasodilatation, rash, dyspnea,
+T106	adversereaction 11741 11752	chest pain.
+T107	tradename 11860 11868	COPAXONE
+T108	dose 11869 11881	20 mg per mL
+T109	tradename 11995 12003	COPAXONE
+T110	tradename 12215 12223	COPAXONE
+T111	dose 12225 12237	20 mg per mL
+T112	frequency 12238 12244	daily)
+T113	tradename 12264 12272	COPAXONE
+T114	dose 12273 12281	20 mg/mL
+T115	adversereaction 12345 12360	Lymphadenopathy
+T116	adversereaction 12385 12397	Palpitations
+T117	adversereaction 12405 12416	Tachycardia
+T118	adversereaction 12437 12449	Eye Disorder
+T119	adversereaction 12457 12465	Diplopia
+T120	adversereaction 12499 12505	Nausea
+T121	adversereaction 12515 12523	Vomiting
+T122	adversereaction 12530 12539	Dysphagia
+T123	adversereaction 12601 12624	Injection Site Erythema
+T124	adversereaction 12633 12652	Injection Site Pain
+T125	adversereaction 12661 12684	Injection Site Pruritus
+T126	adversereaction 12692 12711	Injection Site Mass
+T127	adversereaction 12719 12727	Asthenia
+T128	adversereaction 12736 12740	Pain
+T129	adversereaction 12749 12769	Injection Site Edema
+T130	adversereaction 12777 12787	Chest Pain
+T131	adversereaction 12795 12822	Injection Site Inflammation
+T132	adversereaction 12829 12834	Edema
+T133	adversereaction 12841 12864	Injection Site Reaction
+T134	adversereaction 12871 12878	Pyrexia
+T135	adversereaction 12885 12916	Injection Site Hypersensitivity
+T136	adversereaction 12944 12950	Chills
+T137	adversereaction 12957 12967	Face Edema
+T138	adversereaction 12974 12990	Edema Peripheral
+T139	adversereaction 12997 13020	Injection Site Fibrosis
+T140	adversereaction 13027 13050	Injection Site Atrophy*
+T141	adversereaction 13082 13098	Hypersensitivity
+T142	adversereaction 13133 13142	Infection
+T143	adversereaction 13152 13161	Influenza
+T144	adversereaction 13170 13178	Rhinitis
+T145	adversereaction 13185 13195	Bronchitis
+T146	adversereaction 13202 13217	Gastroenteritis
+T147	adversereaction 13224 13243	Vaginal Candidiasis
+T148	adversereaction 13286 13302	Weight Increased
+T149	tradename 13496 13504	COPAXONE
+T150	dose 13505 13513	20 mg/mL
+T151	adversereaction 13589 13598	Back Pain
+T152	adversereaction 13677 13700	Benign Neoplasm of Skin
+T153	adversereaction 13733 13739	Tremor
+T154	adversereaction 13746 13754	Migraine
+T155	adversereaction 13761 13768	Syncope
+T156	adversereaction 13775 13790	Speech Disorder
+T157	adversereaction 13820 13827	Anxiety
+T158	adversereaction 13836 13847	Nervousness
+T159	adversereaction 13883 13902	Micturition Urgency
+T160	adversereaction 13958 13965	Dyspnea
+T161	adversereaction 13973 13978	Cough
+T162	adversereaction 13985 13997	Laryngospasm
+T163	adversereaction 14044 14048	Rash
+T164	adversereaction 14057 14070	Hyperhidrosis
+T165	adversereaction 14077 14085	Pruritus
+T166	adversereaction 14092 14101	Urticaria
+T167	adversereaction 14108 14121	Skin Disorder
+T168	adversereaction 14148 14162	Vasodilatation
+T169	adversereaction 14233 14244	lipoatrophy
+T170	tradename 14333 14341	COPAXONE
+T171	tradename 14433 14441	COPAXONE
+T172	adversereaction 14470 14480	arthralgia
+T173	adversereaction 14485 14500	herpes simplex.
+T174	tradename 14595 14604	COPAXONE.
+T175	tradename 14710 14718	COPAXONE
+T176	adversereaction 14829 14845	thrombocytopenia
+T177	tradename 14984 14992	COPAXONE
+T178	dose 14993 15005	20 mg per mL
+T179	tradename 15226 15234	COPAXONE
+T180	tradename 15665 15673	COPAXONE
+T181	tradename 16111 16119	COPAXONE
+T182	tradename 16195 16204	COPAXONE.
+T183	adversereaction 16731 16738	Abscess
+T184	adversereaction 16751 16925	Injection site hematoma, moon face, cellulitis, hernia, injection site abscess, serum sickness, suicide attempt, injection site hypertrophy, injection site melanosis, lipoma,
+T185	adversereaction 16930 16956	photosensitivity reaction.
+T186	adversereaction 16984 16997	Hypertension.
+T187	adversereaction 17010 17134	Hypotension, midsystolic click, systolic murmur, atrial fibrillation, bradycardia, fourth heart sound, postural hypotension,
+T188	adversereaction 17139 17154	varicose veins.
+T189	adversereaction 17179 17473	Dry mouth, stomatitis, burning sensation on tongue, cholecystitis, colitis, esophageal ulcer, esophagitis, gastrointestinal carcinoma, gum hemorrhage, hepatomegaly, increased appetite, melena, mouth ulceration, pancreas disorder, pancreatitis, rectal hemorrhage, tenesmus, tongue discoloration,
+T190	adversereaction 17478 17493	duodenal ulcer.
+T191	adversereaction 17518 17542	Goiter, hyperthyroidism,
+T192	adversereaction 17547 17562	hypothyroidism.
+T193	adversereaction 17592 17665	Bowel urgency, oral moniliasis, salivary gland enlargement, tooth caries,
+T194	adversereaction 17670 17692	ulcerative stomatitis.
+T195	adversereaction 17727 17809	Leukopenia, anemia, cyanosis, eosinophilia, hematemesis, lymphedema, pancytopenia,
+T196	adversereaction 17814 17827	splenomegaly.
+T197	adversereaction 17868 17945	Weight loss, alcohol intolerance, Cushing's syndrome, gout, abnormal healing,
+T198	adversereaction 17950 17959	xanthoma.
+T199	adversereaction 17990 18050	Arthritis, muscle atrophy, bone pain, bursitis, kidney pain,
+T200	adversereaction 18180 18217	myopathy, osteomyelitis, tendon pain,
+T201	adversereaction 18222 18236	tenosynovitis.
+T202	adversereaction 18257 18293	Abnormal dreams, emotional lability,
+T203	adversereaction 18298 18305	stupor.
+T204	adversereaction 18318 18605	Aphasia, ataxia, convulsion, circumoral paresthesia, depersonalization, hallucinations, hostility, hypokinesia, coma, concentration disorder, facial paralysis, decreased libido, manic reaction, memory impairment, myoclonus, neuralgia, paranoid reaction, paraplegia, psychotic depression,
+T205	adversereaction 18610 18627	transient stupor.
+T206	adversereaction 18652 18668	Hyperventilation
+T207	adversereaction 18673 18683	hay fever.
+T208	adversereaction 18696 18742	Asthma, pneumonia, epistaxis, hypoventilation,
+T209	adversereaction 18747 18764	voice alteration.
+T210	adversereaction 18797 18848	Eczema, herpes zoster, pustular rash, skin atrophy,
+T211	adversereaction 18853 18859	warts.
+T212	adversereaction 18872 19090	Dry skin, skin hypertrophy, dermatitis, furunculosis, psoriasis, angioedema, contact dermatitis, erythema nodosum, fungal dermatitis, maculopapular rash, pigmentation, benign skin neoplasm, skin carcinoma, skin striae,
+T213	adversereaction 19095 19116	vesiculobullous rash.
+T214	adversereaction 19144 19164	Visual field defect.
+T215	adversereaction 19177 19275	Dry eyes, otitis externa, ptosis, cataract, corneal ulcer, mydriasis, optic neuritis, photophobia,
+T216	adversereaction 19280 19291	taste loss.
+T217	adversereaction 19315 19411	Amenorrhea, hematuria, impotence, menorrhagia, suspicious papanicolaou smear, urinary frequency,
+T218	adversereaction 19416 19435	vaginal hemorrhage.
+T219	adversereaction 19448 19668	Vaginitis, flank pain (kidney), abortion, breast engorgement, breast enlargement, carcinoma in situ cervix, fibrocystic breast, kidney calculus, nocturia, ovarian cyst, priapism, pyelonephritis, abnormal sexual function,
+T220	adversereaction 19673 19684	urethritis.
+T221	tradename 19686 19694	COPAXONE
+T222	dose 19695 19707	40 mg per mL
+T223	frequency 19708 19728	three times per week
+T224	tradename 19761 19769	COPAXONE
+T225	dose 19770 19782	40 mg per mL
+T226	frequency 19783 19803	three times per week
+T227	adversereaction 19972 19997	injection site reactions,
+T228	tradename 20162 20170	COPAXONE
+T229	dose 20171 20183	40 mg per mL
+T230	tradename 20489 20497	COPAXONE
+T231	dose 20498 20510	40 mg per mL
+T232	tradename 20724 20732	COPAXONE
+T233	dose 20734 20746	40 mg per mL
+T234	frequency 20747 20768	three times per week)
+T235	tradename 20788 20796	COPAXONE
+T236	dose 20797 20805	40 mg/mL
+T237	adversereaction 20886 20909	Injection Site Erythema
+T238	adversereaction 20918 20937	Injection Site Pain
+T239	adversereaction 20946 20965	Injection Site Mass
+T240	adversereaction 20973 20996	Injection Site Pruritus
+T241	adversereaction 21004 21024	Injection Site Edema
+T242	adversereaction 21032 21039	Pyrexia
+T243	adversereaction 21047 21069	Influenza-like Illness
+T244	adversereaction 21077 21104	Injection Site Inflammation
+T245	adversereaction 21112 21118	Chills
+T246	adversereaction 21126 21136	Chest Pain
+T247	adversereaction 21172 21187	Nasopharyngitis
+T248	adversereaction 21224 21229	Viral
+T249	adversereaction 21286 21293	Dyspnea
+T250	adversereaction 21320 21334	Vasodilatation
+T251	adversereaction 21369 21375	Nausea
+T252	adversereaction 21423 21431	Erythema
+T253	adversereaction 21439 21443	Rash
+T254	tradename 21510 21518	COPAXONE
+T255	dose 21519 21531	40 mg per mL
+T256	frequency 21532 21552	three times per week
+T257	tradename 21590 21598	COPAXONE
+T258	dose 21599 21611	20 mg per mL
+T259	frequency 21612 21619	per day
+T260	tradename 21749 21757	COPAXONE
+T261	dose 21758 21770	40 mg per mL
+T262	tradename 22352 22360	COPAXONE
+T263	dose 22361 22373	20 mg per mL
+T264	tradename 22472 22481	COPAXONE.
+T265	adversereaction 22699 22795	sepsis; SLE syndrome; hydrocephalus; enlarged abdomen; allergic reaction; anaphylactoid reaction
+T266	adversereaction 22819 23028	thrombosis; peripheral vascular disease; pericardial effusion; myocardial infarct; deep thrombophlebitis; coronary occlusion; congestive heart failure; cardiomyopathy; cardiomegaly; arrhythmia; angina pectoris
+T267	adversereaction 23047 23191	tongue edema; stomach ulcer; hemorrhage; liver function abnormality; liver damage; hepatitis; eructation; cirrhosis of the liver; cholelithiasis
+T268	adversereaction 23220 23276	thrombocytopenia; lymphoma-like reaction; acute leukemia
+T269	adversereaction 23314 23334	hypercholesterolemia
+T270	adversereaction 23359 23398	rheumatoid arthritis; generalized spasm
+T271	adversereaction 23415 23537	myelitis; meningitis; CNS neoplasm; cerebrovascular accident; brain edema; abnormal dreams; aphasia; convulsion; neuralgia
+T272	adversereaction 23558 23612	pulmonary embolus; pleural effusion; carcinoma of lung
+T273	adversereaction 23629 23648	glaucoma; blindness
+T274	adversereaction 23668 23808	urogenital neoplasm; urine abnormality; ovarian carcinoma; nephrosis; kidney failure; breast carcinoma; bladder carcinoma; urinary frequency
+T275	tradename 23853 23861	COPAXONE
+T276	tradename 23995 24003	COPAXONE
+T277	tradename 24116 24124	COPAXONE
+T278	activeingredient 24282 24300	glatiramer acetate
+T279	routeofadministration 24304 24316	subcutaneous
+T280	tradename 24700 24708	COPAXONE
+T281	activeingredient 24795 24813	glatiramer acetate
+T282	routeofadministration 24817 24829	subcutaneous
+T283	dose 24952 24962	37.5 mg/kg
+T284	frequency 24962 24966	/day
+T285	dose 25029 25034	20 mg
+T286	frequency 25034 25038	/day
+T287	routeofadministration 25076 25088	subcutaneous
+T288	activeingredient 25089 25107	glatiramer acetate
+T289	dose 25126 25134	36 mg/kg
+T290	tradename 25311 25319	COPAXONE
+T291	activeingredient 25414 25432	glatiramer acetate
+T292	tradename 25540 25548	COPAXONE
+T293	tradename 25637 25645	COPAXONE
+T294	tradename 25727 25735	COPAXONE
+T295	activeingredient 25853 25871	glatiramer acetate
+T296	activeingredient 25956 25975	Glatiramer acetate,
+T297	tradename 26001 26010	COPAXONE,
+T298	nanoparticle 26044 26067	synthetic polypeptides,
+T299	activeingredient 26282 26300	glatiramer acetate
+T300	molecularweight 26304 26326	5,000 - 9,000 daltons.
+T301	activeingredient 26328 26346	Glatiramer acetate
+T302	activeingredient 26398 26416	glatiramer acetate
+T303	tradename 26803 26811	COPAXONE
+T304	routeofadministration 26889 26901	subcutaneous
+T305	tradename 26926 26934	COPAXONE
+T306	activeingredient 26971 26989	glatiramer acetate
+T307	inactiveingredient 27038 27047	mannitol.
+T308	activeingredient 27130 27148	glatiramer acetate
+T309	activeingredient 27340 27358	glatiramer acetate
+T310	activeingredient 27433 27451	glatiramer acetate
+T311	activeingredient 27967 27994	glatiramer acetate-specific
+T312	activeingredient 28067 28085	glatiramer acetate
+T313	activeingredient 28224 28242	glatiramer acetate
+T314	routeofadministration 28542 28556	subcutaneously
+T315	activeingredient 28601 28619	glatiramer acetate
+T316	dose 29183 29191	60 mg/kg
+T317	frequency 29191 29195	/day
+T318	activeingredient 29196 29214	glatiramer acetate
+T319	routeofadministration 29218 29230	subcutaneous
+T320	dose 29287 29292	20 mg
+T321	frequency 29292 29296	/day
+T322	dose 29388 29396	60-mg/kg
+T323	frequency 29396 29400	/day
+T324	dose 29674 29682	30 mg/kg
+T325	frequency 29682 29686	/day
+T326	activeingredient 29687 29705	glatiramer acetate
+T327	routeofadministration 29709 29721	subcutaneous
+T328	activeingredient 29835 29853	Glatiramer acetate
+T329	activeingredient 29923 29941	Glatiramer acetate
+T330	activeingredient 30121 30139	glatiramer acetate
+T331	routeofadministration 30160 30172	subcutaneous
+T332	dose 30294 30302	36 mg/kg
+T333	frequency 30302 30306	/day
+T334	tradename 30503 30511	COPAXONE
+T335	tradename 30578 30586	COPAXONE
+T336	dose 30595 30607	20 mg per mL
+T337	frequency 30608 30615	per day
+T338	tradename 30640 30648	COPAXONE
+T339	dose 30657 30669	40 mg per mL
+T340	frequency 30670 30691	three times per week.
+T341	tradename 30693 30701	COPAXONE
+T342	dose 30702 30714	20 mg per mL
+T343	frequency 30715 30722	per day
+T344	frequency 30822 30827	daily
+T345	tradename 30844 30853	COPAXONE,
+T346	dose 30854 30866	20 mg per mL
+T347	routeofadministration 30867 30882	subcutaneously,
+T348	tradename 30895 30904	COPAXONE:
+T349	tradename 32574 32582	COPAXONE
+T350	dose 32583 32591	20 mg/mL
+T351	tradename 33138 33147	COPAXONE:
+T352	tradename 33549 33557	COPAXONE
+T353	dose 33558 33566	20 mg/mL
+T354	tradename 33888 33896	COPAXONE
+T355	tradename 33988 33996	COPAXONE
+T356	tradename 34223 34231	COPAXONE
+T357	dose 34232 34244	20 mg per mL
+T358	tradename 34638 34646	COPAXONE
+T359	tradename 34882 34890	COPAXONE
+T360	tradename 35108 35116	COPAXONE
+T361	tradename 35352 35360	COPAXONE
+T362	tradename 35569 35578	COPAXONE:
+T363	tradename 36194 36202	COPAXONE
+T364	dose 36219 36227	20 mg/mL
+T365	tradename 36603 36611	COPAXONE
+T366	tradename 36710 36718	COPAXONE
+T367	dose 36719 36731	40 mg per mL
+T368	frequency 36732 36752	three times per week
+T369	tradename 36906 36914	COPAXONE
+T370	dose 36915 36927	40 mg per mL
+T371	frequency 36955 36973	three times a week
+T372	duration 36978 36988	12 months.
+T373	tradename 37458 37466	COPAXONE
+T374	tradename 37732 37740	COPAXONE
+T375	tradename 38190 38198	COPAXONE
+T376	dose 38199 38207	40 mg/mL
+T377	tradename 38772 38780	COPAXONE
+T378	activeingredient 38782 38800	glatiramer acetate
+T379	dose 38908 38920	20 mg per mL
+T380	dose 39069 39081	40 mg per mL
+T381	tradename 39226 39234	COPAXONE
+T382	tradename 39308 39316	COPAXONE
+T383	tradename 39487 39496	COPAXONE.
+T384	tradename 39503 39511	COPAXONE
+T385	tradename 40007 40015	COPAXONE
+T386	tradename 40109 40117	COPAXONE
+T387	adversereaction 40172 40253	flushing, chest pain, palpitations, anxiety, dyspnea, constriction of the throat,
+T388	adversereaction 40258 40268	urticaria.
+T389	tradename 41351 41359	COPAXONE
+T390	tradename 41400 41408	COPAXONE
+T391	dose 41409 41421	20 mg per mL
+T392	tradename 41426 41434	COPAXONE
+T393	dose 41435 41447	40 mg per mL
+T394	tradename 41473 41481	COPAXONE
+T395	dose 41482 41494	20 mg per mL
+T396	frequency 41511 41516	daily
+T397	tradename 41521 41529	COPAXONE
+T398	dose 41530 41542	40 mg per mL
+T399	frequency 41559 41580	three times per week.
+T400	tradename 42095 42103	COPAXONE
+T401	tradename 42184 42192	COPAXONE
+T402	tradename 42296 42304	COPAXONE
+T403	tradename 42382 42391	COPAXONE.
+T404	company 42432 42456	TEVA Neuroscience, Inc.,
+T405	company 42497 42528	TEVA Pharmaceuticals USA, Inc.,
+T406	tradename 42742 42750	COPAXONE
+T407	activeingredient 42765 42783	glatiramer acetate
+T408	routeofadministration 42800 42812	subcutaneous
+T409	tradename 42871 42879	COPAXONE
+T410	tradename 43069 43088	COPAXONE? COPAXONE
+T411	indication 43152 43195	relapsing forms of multiple sclerosis (MS).
+T412	tradename 43217 43225	COPAXONE
+T413	tradename 43303 43312	COPAXONE?
+T414	tradename 43335 43343	COPAXONE
+T415	activeingredient 43367 43386	glatiramer acetate,
+T416	tradename 43425 43434	COPAXONE.
+T417	tradename 43505 43514	COPAXONE.
+T418	tradename 43558 43567	COPAXONE?
+T419	tradename 43584 43593	COPAXONE,
+T420	tradename 43690 43698	COPAXONE
+T421	tradename 43801 43809	COPAXONE
+T422	tradename 43912 43921	COPAXONE.
+T423	tradename 44065 44073	COPAXONE
+T424	tradename 44150 44158	COPAXONE
+T425	tradename 44318 44327	COPAXONE?
+T426	tradename 44460 44469	COPAXONE.
+T427	tradename 44515 44523	COPAXONE
+T428	tradename 44560 44568	COPAXONE
+T429	routeofadministration 44608 44623	subcutaneously)
+T430	tradename 44817 44825	COPAXONE
+T431	tradename 45037 45045	COPAXONE
+T432	tradename 45192 45200	COPAXONE
+T433	tradename 45253 45272	COPAXONE? COPAXONE
+T434	tradename 45409 45417	COPAXONE
+T435	adversereaction 45622 45631	flushing)
+T436	adversereaction 45641 45651	chest pain
+T437	adversereaction 45661 45676	fast heart beat
+T438	adversereaction 45686 45693	anxiety
+T439	adversereaction 45703 45721	breathing problems
+T440	adversereaction 45725 45749	tightness in your throat
+T441	adversereaction 45759 45781	swelling, rash, hives,
+T442	adversereaction 45785 45792	itching
+T443	adversereaction 45922 45933	Chest Pain.
+T444	adversereaction 45947 45957	chest pain
+T445	adversereaction 46023 46033	chest pain
+T446	tradename 46113 46122	COPAXONE.
+T447	adversereaction 46164 46174	chest pain
+T448	tradename 46187 46196	COPAXONE.
+T449	adversereaction 46288 46300	lipoatrophy)
+T450	tradename 46375 46384	COPAXONE.
+T451	tradename 46615 46623	COPAXONE
+T452	tradename 46687 46696	COPAXONE.
+T453	tradename 46801 46809	COPAXONE
+T454	adversereaction 46880 46887	redness
+T455	adversereaction 46891 46895	pain
+T456	adversereaction 47055 47063	swelling
+T457	adversereaction 47068 47075	itching
+T458	adversereaction 47080 47085	lumps
+T459	adversereaction 47096 47100	rash
+T460	adversereaction 47112 47131	shortness of breath
+T461	adversereaction 47142 47150	flushing
+T462	adversereaction 47152 47165	vasodilation)
+T463	tradename 47304 47313	COPAXONE.
+T464	tradename 47502 47511	COPAXONE?
+T465	tradename 47529 47537	COPAXONE
+T466	tradename 47636 47645	COPAXONE,
+T467	tradename 47754 47762	COPAXONE
+T468	tradename 47819 47827	COPAXONE
+T469	tradename 47990 47998	COPAXONE
+T470	tradename 48104 48113	COPAXONE.
+T471	tradename 48233 48241	COPAXONE
+T472	tradename 48304 48312	COPAXONE
+T473	tradename 48479 48488	COPAXONE.
+T474	tradename 48610 48618	COPAXONE
+T475	tradename 48694 48703	copaxone.
+T476	tradename 48760 48769	COPAXONE?
+T477	activeingredient 48790 48808	glatiramer acetate
+T478	inactiveingredient 48832 48840	mannitol
+T479	tradename 49011 49019	COPAXONE
+T480	activeingredient 49035 49053	glatiramer acetate
+T481	routeofadministration 49071 49083	subcutaneous
+T482	routeofadministration 49093 49105	subcutaneous
+T483	tradename 49137 49145	COPAXONE
+T484	tradename 49197 49205	COPAXONE
+T485	tradename 49246 49254	COPAXONE
+T486	tradename 49407 49415	COPAXONE
+T487	tradename 49576 49584	COPAXONE
+T488	tradename 49859 49867	COPAXONE
+T489	tradename 49909 49917	COPAXONE
+T490	dose 49918 49923	20 mg
+T491	frequency 49936 49952	1 time each day,
+T492	routeofadministration 49989 50004	subcutaneously)
+T493	tradename 50022 50030	COPAXONE
+T494	tradename 50107 50115	COPAXONE
+T495	dose 50116 50121	20 mg
+T496	tradename 50196 50204	COPAXONE
+T497	dose 50205 50210	20 mg
+T498	tradename 50280 50288	COPAXONE
+T499	tradename 50327 50335	COPAXONE
+T500	dose 50336 50341	40 mg
+T501	frequency 50354 50371	3 times each week
+T502	routeofadministration 50408 50423	subcutaneously)
+T503	tradename 50436 50444	COPAXONE
+T504	dose 50445 50450	40 mg
+T505	frequency 50479 50496	3 days each week,
+T506	tradename 50563 50571	COPAXONE
+T507	tradename 50633 50641	COPAXONE
+T508	tradename 50718 50726	COPAXONE
+T509	dose 50727 50732	40 mg
+T510	tradename 50807 50815	COPAXONE
+T511	tradename 51073 51082	COPAXONE?
+T512	tradename 51136 51145	COPAXONE.
+T513	tradename 51193 51201	COPAXONE
+T514	tradename 51558 51566	COPAXONE
+T515	tradename 52205 52213	COPAXONE
+T516	tradename 53328 53336	COPAXONE
+T517	tradename 55321 55329	COPAXONE
+T518	company 57440 57457	TEVA NEUROSCIENCE
+T519	company 57479 57503	TEVA Neuroscience, Inc.,
+T520	company 57546 57577	TEVA Pharmaceuticals USA, Inc.,

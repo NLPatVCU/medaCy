@@ -1,0 +1,522 @@
+T1	tradename 17 25	Kadcyla_
+T2	tradename 168 175	KADCYLA
+T3	tradename 238 255	KADCYLA. KADCYLA
+T4	nanoparticle 257 283	ado-trastuzumab emtansine)
+T5	routeofadministration 303 314	intravenous
+T6	fdaapprovaldate 345 349	2013
+T7	tradename 789 796	KADCYLA
+T8	chemoclass 802 815	HER2-targeted
+T9	chemoclass 829 850	microtubule inhibitor
+T10	indication 926 965	HER2-positive, metastatic breast cancer
+T11	routeofadministration 1339 1350	intravenous
+T12	routeofadministration 1390 1401	intravenous
+T13	tradename 1492 1499	KADCYLA
+T14	dose 1503 1512	3.6 mg/kg
+T15	routeofadministration 1526 1537	intravenous
+T16	frequency 1547 1560	every 3 weeks
+T17	frequency 1562 1575	21-day cycle)
+T18	tradename 1646 1653	KADCYLA
+T19	dose 1676 1686	3.6 mg/kg.
+T20	tradename 1705 1712	KADCYLA
+T21	adversereaction 1784 1902	infusion-related reactions, hepatotoxicity, left ventricular cardiac dysfunction, thrombocytopenia, pulmonary toxicity
+T22	adversereaction 1906 1928	peripheral neuropathy)
+T23	tradename 2019 2027	KADCYLA.
+T24	adversereaction 2390 2409	Pulmonary Toxicity:
+T25	tradename 2434 2441	KADCYLA
+T26	adversereaction 2532 2587	Infusion-Related Reactions, Hypersensitivity Reactions:
+T27	adversereaction 2662 2688	infusion-related reactions
+T28	adversereaction 2692 2718	hypersensitivity reactions
+T29	tradename 2828 2835	KADCYLA
+T30	adversereaction 2857 2883	infusion-related reaction.
+T31	adversereaction 2910 2921	Hemorrhage:
+T32	adversereaction 2937 2947	hemorrhage
+T33	adversereaction 3268 3285	Thrombocytopenia:
+T34	tradename 3324 3331	KADCYLA
+T35	adversereaction 3404 3418	Neurotoxicity:
+T36	adversereaction 3505 3540	Grade 3 or 4 peripheral neuropathy.
+T37	tradename 3811 3818	KADCYLA
+T38	adversereaction 3849 3965	fatigue, nausea, musculoskeletal pain, hemorrhage, thrombocytopenia, headache, increased transaminases, constipation
+T39	adversereaction 3970 3980	epistaxis.
+T40	company 4035 4044	Genentech
+T41	tradename 4261 4268	KADCYLA
+T42	tradename 4816 4823	KADCYLA
+T43	adversereaction 4865 4894	Hepatotoxicity, liver failure
+T44	adversereaction 4899 4904	death
+T45	tradename 4922 4937	KADCYLA-treated
+T46	tradename 5111 5118	KADCYLA
+T47	adversereaction 5131 5187	reductions in left ventricular ejection fraction (LVEF).
+T48	adversereaction 5673 5687	Hepatotoxicity
+T49	adversereaction 5697 5725	Left Ventricular Dysfunction
+T50	adversereaction 5730 5751	Embryo-Fetal Toxicity
+T51	adversereaction 5756 5774	Pulmonary Toxicity
+T52	adversereaction 5779 5833	Infusion Related Reactions, Hypersensitivity Reactions
+T53	adversereaction 5838 5848	Hemorrhage
+T54	adversereaction 5853 5869	Thrombocytopenia
+T55	adversereaction 5874 5887	Neurotoxicity
+T56	indication 6613 6637	Metastatic Breast Cancer
+T57	tradename 6864 6871	KADCYLA
+T58	indication 6940 6979	HER2-positive, metastatic breast cancer
+T59	tradename 7338 7345	KADCYLA
+T60	dose 7349 7358	3.6 mg/kg
+T61	routeofadministration 7371 7382	intravenous
+T62	frequency 7392 7405	every 3 weeks
+T63	frequency 7407 7420	21-day cycle)
+T64	tradename 7491 7498	KADCYLA
+T65	dose 7521 7531	3.6 mg/kg.
+T66	tradename 7551 7558	KADCYLA
+T67	tradename 8182 8189	KADCYLA
+T68	tradename 8469 8476	KADCYLA
+T69	adversereaction 8512 8567	HEPATOTOXICITY, CARDIAC TOXICITY, EMBRYO-FETAL TOXICITY
+T70	adversereaction 8580 8620	Hepatotoxicity: Serious hepatotoxicity
+T71	adversereaction 8650 8663	liver failure
+T72	adversereaction 8669 8674	death
+T73	tradename 8700 8708	KADCYLA.
+T74	tradename 8774 8781	KADCYLA
+T75	tradename 8810 8817	KADCYLA
+T76	tradename 8851 8858	KADCYLA
+T77	adversereaction 8957 8974	Cardiac Toxicity:
+T78	tradename 8976 8983	KADCYLA
+T79	adversereaction 9011 9067	reductions in left ventricular ejection fraction (LVEF).
+T80	tradename 9155 9163	KADCYLA.
+T81	adversereaction 9271 9293	Embryo-Fetal Toxicity:
+T82	tradename 9307 9314	KADCYLA
+T83	adversereaction 9329 9347	embryo-fetal death
+T84	adversereaction 9351 9365	birth defects.
+T85	tradename 9624 9631	KADCYLA
+T86	adversereaction 9691 9717	infusion-related reaction.
+T87	tradename 9743 9750	KADCYLA
+T88	adversereaction 9772 9798	infusion-related reactions
+T89	adversereaction 9853 9970	increased serum transaminases, hyperbilirubinemia, left ventricular dysfunction, thrombocytopenia, pulmonary toxicity
+T90	adversereaction 9974 9995	peripheral neuropathy
+T91	tradename 10079 10086	KADCYLA
+T92	dose 10249 10258	3.6 mg/kg
+T93	dose 10280 10287	3 mg/kg
+T94	dose 10310 10319	2.4 mg/kg
+T95	adversereaction 10383 10397	Hepatotoxicity
+T96	tradename 10462 10469	KADCYLA
+T97	adversereaction 10500 10514	hepatotoxicity
+T98	adversereaction 10528 10560	increases in serum transaminases
+T99	adversereaction 10568 10586	hyperbilirubinemia
+T100	adversereaction 10650 10689	Increased Serum Transaminases (AST/ALT)
+T101	tradename 10915 10922	KADCYLA
+T102	tradename 11024 11032	KADCYLA.
+T103	adversereaction 11163 11181	Hyperbilirubinemia
+T104	tradename 11311 11318	KADCYLA
+T105	tradename 11425 11432	KADCYLA
+T106	tradename 11543 11551	KADCYLA.
+T107	tradename 11578 11585	KADCYLA
+T108	tradename 11717 11724	KADCYLA
+T109	tradename 12144 12151	KADCYLA
+T110	tradename 12173 12181	KADCYLA.
+T111	tradename 12266 12274	KADCYLA.
+T112	tradename 12295 12303	KADCYLA.
+T113	tradename 12422 12430	KADCYLA.
+T114	tradename 12456 12464	KADCYLA.
+T115	tradename 12530 12538	KADCYLA.
+T116	tradename 12938 12945	KADCYLA
+T117	tradename 13073 13080	KADCYLA
+T118	tradename 13262 13269	KADCYLA
+T119	tradename 13440 13447	KADCYLA
+T120	tradename 13755 13762	KADCYLA
+T121	nanoparticle 13764 13790	ado-trastuzumab emtansine)
+T122	tradename 13860 13867	KADCYLA
+T123	routeofadministration 13874 13885	intravenous
+T124	routeofadministration 13992 14003	intravenous
+T125	tradename 14042 14050	KADCYLA,
+T126	tradename 14583 14590	KADCYLA
+T127	tradename 14652 14659	KADCYLA
+T128	tradename 15306 15313	KADCYLA
+T129	tradename 15412 15419	KADCYLA
+T130	tradename 15597 15604	KADCYLA
+T131	tradename 15705 15712	KADCYLA
+T132	tradename 15995 16002	KADCYLA
+T133	nanoparticle 16395 16421	ado-trastuzumab emtansine.
+T134	tradename 16668 16675	KADCYLA
+T135	tradename 16904 16912	KADCYLA.
+T136	tradename 17117 17124	KADCYLA
+T137	tradename 17153 17160	KADCYLA
+T138	tradename 17324 17331	KADCYLA
+T139	tradename 17476 17483	KADCYLA
+T140	tradename 17591 17598	KADCYLA
+T141	tradename 17762 17770	KADCYLA,
+T142	tradename 18565 18572	KADCYLA
+T143	adversereaction 18622 18650	Left Ventricular Dysfunction
+T144	tradename 18673 18680	KADCYLA
+T145	adversereaction 18717 18746	left ventricular dysfunction.
+T146	tradename 18822 18830	KADCYLA.
+T147	tradename 18932 18947	KADCYLA-treated
+T148	tradename 19091 19098	KADCYLA
+T149	tradename 19245 19252	KADCYLA
+T150	tradename 19481 19488	KADCYLA
+T151	tradename 19571 19578	KADCYLA
+T152	adversereaction 19905 19926	Embryo-Fetal Toxicity
+T153	tradename 19928 19935	KADCYLA
+T154	tradename 20050 20057	KADCYLA
+T155	nanoparticle 20158 20184	ado-trastuzumab emtansine.
+T156	tradename 20253 20261	KADCYLA,
+T157	activeingredient 20433 20437	DM1,
+T158	tradename 20465 20473	KADCYLA,
+T159	adversereaction 20499 20520	embryo-fetal toxicity
+T160	tradename 20569 20576	KADCYLA
+T161	tradename 20654 20661	KADCYLA
+T162	tradename 20708 20716	KADCYLA,
+T163	tradename 20866 20874	KADCYLA.
+T164	adversereaction 20908 20926	embryo-fetal death
+T165	adversereaction 20931 20944	birth defects
+T166	tradename 21112 21119	KADCYLA
+T167	tradename 21202 21209	KADCYLA
+T168	tradename 21256 21264	KADCYLA,
+T169	adversereaction 21560 21578	Pulmonary Toxicity
+T170	adversereaction 21588 21620	interstitial lung disease (ILD),
+T171	adversereaction 21631 21643	pneumonitis,
+T172	adversereaction 21660 21695	acute respiratory distress syndrome
+T173	tradename 21756 21764	KADCYLA.
+T174	adversereaction 21766 21777	Pneumonitis
+T175	adversereaction 21870 21890	grade 3 pneumonitis.
+T176	adversereaction 21919 21943	dyspnea, cough, fatigue,
+T177	adversereaction 21948 21970	pulmonary infiltrates.
+T178	adversereaction 22102 22113	pneumonitis
+T179	tradename 22194 22201	KADCYLA
+T180	adversereaction 22229 22232	ILD
+T181	adversereaction 22236 22248	pneumonitis.
+T182	adversereaction 22371 22390	pulmonary toxicity.
+T183	tradename 22466 22473	KADCYLA
+T184	tradename 22632 22639	KADCYLA
+T185	adversereaction 22680 22707	Infusion-related reactions,
+T186	adversereaction 22765 22837	flushing, chills, pyrexia, dyspnea, hypotension, wheezing, bronchospasm,
+T187	adversereaction 22842 22853	tachycardia
+T188	tradename 22895 22903	KADCYLA.
+T189	tradename 22995 23002	KADCYLA
+T190	tradename 23165 23172	KADCYLA
+T191	tradename 23235 23242	KADCYLA
+T192	tradename 23575 23583	KADCYLA.
+T193	adversereaction 23698 23708	Hemorrhage
+T194	tradename 23861 23869	Kadcyla.
+T195	tradename 24016 24031	KADCYLA-treated
+T196	tradename 24169 24184	KADCYLA-treated
+T197	adversereaction 24599 24633	Thrombocytopenia Thrombocytopenia,
+T198	adversereaction 24637 24662	decreased platelet count,
+T199	tradename 24698 24705	KADCYLA
+T200	tradename 25041 25049	KADCYLA,
+T201	adversereaction 25192 25208	thrombocytopenia
+T202	tradename 25226 25241	KADCYLA-treated
+T203	adversereaction 25372 25388	thrombocytopenia
+T204	tradename 25406 25421	KADCYLA-treated
+T205	adversereaction 25537 25553	thrombocytopenia
+T206	tradename 25571 25586	KADCYLA-treated
+T207	tradename 25700 25707	KADCYLA
+T208	tradename 25726 25733	KADCYLA
+T209	tradename 25779 25786	KADCYLA
+T210	tradename 25991 25998	KADCYLA
+T211	adversereaction 26116 26132	thrombocytopenia
+T212	co-administereddrug 26168 26182	anti-coagulant
+T213	tradename 26243 26251	KADCYLA.
+T214	adversereaction 26259 26295	Neurotoxicity Peripheral neuropathy,
+T215	tradename 26376 26383	KADCYLA
+T216	adversereaction 26541 26562	peripheral neuropathy
+T217	tradename 26580 26595	KADCYLA-treated
+T218	tradename 26765 26780	KADCYLA-treated
+T219	tradename 26848 26855	KADCYLA
+T220	adversereaction 26929 26950	peripheral neuropathy
+T221	adversereaction 27075 27088	neurotoxicity
+T222	tradename 27263 27270	KADCYLA
+T223	company 27552 27556	Dako
+T224	company 27650 27654	Dako
+T225	tradename 28220 28227	KADCYLA
+T226	adversereaction 28407 28451	erythema, tenderness, skin irritation, pain,
+T227	adversereaction 28455 28485	swelling at the infusion site.
+T228	tradename 28510 28517	KADCYLA
+T229	adversereaction 28786 28800	Hepatotoxicity
+T230	adversereaction 28847 28875	Left Ventricular Dysfunction
+T231	adversereaction 28923 28944	Embryo-Fetal Toxicity
+T232	adversereaction 28991 29009	Pulmonary Toxicity
+T233	adversereaction 29056 29110	Infusion-Related Reactions, Hypersensitivity Reactions
+T234	adversereaction 29158 29168	Hemorrhage
+T235	adversereaction 29215 29231	Thrombocytopenia
+T236	adversereaction 29279 29292	Neurotoxicity
+T237	tradename 29651 29658	KADCYLA
+T238	indication 29715 29754	HER2-positive metastatic breast cancer.
+T239	tradename 29861 29868	KADCYLA
+T240	adversereaction 29874 29990	fatigue, nausea, musculoskeletal pain, hemorrhage, thrombocytopenia, headache, increased transaminases, constipation
+T241	adversereaction 29995 30005	epistaxis.
+T242	indication 30070 30108	HER2-positive metastatic breast cancer
+T243	tradename 30217 30224	KADCYLA
+T244	tradename 30332 30347	KADCYLA-treated
+T245	tradename 30543 30558	KADCYLA-treated
+T246	tradename 30672 30679	KADCYLA
+T247	tradename 30775 30782	KADCYLA
+T248	tradename 30991 30998	KADCYLA
+T249	adversereaction 31015 31031	thrombocytopenia
+T250	adversereaction 31036 31060	increased transaminases.
+T251	tradename 31099 31106	KADCYLA
+T252	tradename 31217 31224	KADCYLA
+T253	adversereaction 31263 31305	thrombocytopenia, increased transaminases,
+T254	adversereaction 31310 31332	peripheral neuropathy.
+T255	tradename 31400 31407	KADCYLA
+T256	tradename 31498 31505	KADCYLA
+T257	adversereaction 31540 31615	neutropenia, thrombocytopenia, leukopenia, fatigue, increased transaminases
+T258	adversereaction 31620 31628	pyrexia.
+T259	tradename 31688 31703	KADCYLA-treated
+T260	tradename 31842 31849	KADCYLA
+T261	adversereaction 31900 32003	nausea, fatigue, musculoskeletal pain, hemorrhage, thrombocytopenia, increased transaminases, headache,
+T262	adversereaction 32008 32021	constipation.
+T263	adversereaction 32107 32192	thrombocytopenia, increased transaminases, anemia, hypokalemia, peripheral neuropathy
+T264	adversereaction 32197 32205	fatigue.
+T265	tradename 32278 32285	KADCYLA
+T266	tradename 32389 32396	KADCYLA
+T267	dose 32398 32408	3.6 mg/kg)
+T268	dose 32445 32453	1250 mg)
+T269	dose 32470 32482	2000 mg/m2)
+T270	adversereaction 32612 32623	Neutropenia
+T271	adversereaction 32640 32646	Anemia
+T272	adversereaction 32665 32681	Thrombocytopenia
+T273	adversereaction 32718 32746	Left ventricular dysfunction
+T274	adversereaction 32777 32798	Lacrimation increased
+T275	adversereaction 32811 32818	Dry eye
+T276	adversereaction 32831 32845	Vision blurred
+T277	adversereaction 32858 32872	Conjunctivitis
+T278	adversereaction 32912 32921	Dyspepsia
+T279	adversereaction 32937 32947	Stomatitis
+T280	adversereaction 32966 32975	Dry Mouth
+T281	adversereaction 32991 33005	Abdominal pain
+T282	adversereaction 33024 33032	Vomiting
+T283	adversereaction 33051 33059	Diarrhea
+T284	adversereaction 33079 33091	Constipation
+T285	adversereaction 33108 33114	Nausea
+T286	adversereaction 33171 33187	Peripheral edema
+T287	adversereaction 33202 33208	Chills
+T288	adversereaction 33221 33228	Pyrexia
+T289	adversereaction 33246 33254	Asthenia
+T290	adversereaction 33273 33280	Fatigue
+T291	adversereaction 33324 33357	Nodular regenerative hyperplasia*
+T292	tradename 33433 33440	KADCYLA
+T293	dose 33442 33452	3.6 mg/kg)
+T294	dose 33489 33497	1250 mg)
+T295	dose 33514 33526	2000 mg/m2)
+T296	adversereaction 33675 33696	Drug hypersensitivity
+T297	adversereaction 33744 33769	Infusion-related reaction
+T298	adversereaction 33810 33833	Urinary tract infection
+T299	adversereaction 33863 33899	Blood alkaline phosphatase increased
+T300	adversereaction 33918 33941	Increased transaminases
+T301	adversereaction 33997 34008	Hypokalemia
+T302	adversereaction 34075 34082	Myalgia
+T303	adversereaction 34098 34108	Arthralgia
+T304	adversereaction 34124 34144	Musculoskeletal pain
+T305	adversereaction 34188 34197	Dysgeusia
+T306	adversereaction 34213 34222	Dizziness
+T307	adversereaction 34241 34262	Peripheral neuropathy
+T308	adversereaction 34282 34290	Headache
+T309	adversereaction 34331 34339	Insomnia
+T310	adversereaction 34407 34418	Pneumonitis
+T311	adversereaction 34429 34436	Dyspnea
+T312	adversereaction 34454 34459	Cough
+T313	adversereaction 34478 34487	Epistaxis
+T314	adversereaction 34543 34551	Pruritus
+T315	adversereaction 34566 34570	Rash
+T316	adversereaction 34606 34616	Hemorrhage
+T317	adversereaction 34635 34647	Hypertension
+T318	tradename 34842 34849	KADCYLA
+T319	dose 34851 34861	3.6 mg/kg)
+T320	dose 34874 34882	1250 mg)
+T321	dose 34899 34910	2000 mg/m2)
+T322	indication 34981 35019	HER2-positive metastatic breast cancer
+T323	tradename 35052 35059	KADCYLA
+T324	tradename 35183 35191	KADCYLA.
+T325	tradename 35327 35335	KADCYLA.
+T326	tradename 35347 35354	KADCYLA
+T327	tradename 35414 35421	KADCYLA
+T328	tradename 35488 35495	KADCYLA
+T329	tradename 35601 35608	KADCYLA
+T330	tradename 35694 35701	KADCYLA
+T331	tradename 35768 35775	KADCYLA
+T332	tradename 36210 36217	KADCYLA
+T333	tradename 36319 36326	KADCYLA
+T334	tradename 36422 36429	KADCYLA
+T335	activeingredient 36483 36487	DM1,
+T336	tradename 36515 36523	KADCYLA,
+T337	tradename 36794 36801	KADCYLA
+T338	activeingredient 36860 36863	DM1
+T339	tradename 37051 37058	KADCYLA
+T340	tradename 37264 37271	KADCYLA
+T341	tradename 37492 37499	KADCYLA
+T342	tradename 37614 37621	KADCYLA
+T343	nanoparticle 37720 37746	ado-trastuzumab emtansine.
+T344	tradename 37779 37786	KADCYLA
+T345	activeingredient 37804 37808	DM1)
+T346	tradename 37904 37911	KADCYLA
+T347	tradename 37995 38002	KADCYLA
+T348	tradename 38049 38057	KADCYLA,
+T349	tradename 38197 38204	KADCYLA
+T350	tradename 38249 38257	KADCYLA.
+T351	tradename 38261 38268	KADCYLA
+T352	tradename 38351 38358	KADCYLA
+T353	tradename 38405 38413	KADCYLA,
+T354	company 38449 38458	Genentech
+T355	nanoparticle 39358 39384	ado-trastuzumab emtansine.
+T356	activeingredient 39386 39390	DM1,
+T357	tradename 39418 39426	KADCYLA,
+T358	activeingredient 39459 39462	DM1
+T359	dose 39685 39693	25 mg/kg
+T360	tradename 40074 40082	KADCYLA,
+T361	dose 40324 40332	25 mg/kg
+T362	tradename 40369 40377	KADCYLA)
+T363	tradename 40509 40517	KADCYLA,
+T364	tradename 40590 40598	KADCYLA,
+T365	tradename 40758 40765	KADCYLA
+T366	tradename 40873 40880	KADCYLA
+T367	nanoparticle 41402 41427	ado-trastuzumab emtansine
+T368	tradename 41502 41509	KADCYLA
+T369	adversereaction 41520 41537	embryo-fetal harm
+T370	tradename 41726 41733	KADCYLA
+T371	tradename 41778 41785	KADCYLA
+T372	tradename 41830 41837	KADCYLA
+T373	tradename 41922 41929	KADCYLA
+T374	tradename 41976 41984	KADCYLA,
+T375	company 42020 42029	Genentech
+T376	tradename 42341 42348	KADCYLA
+T377	tradename 42521 42528	KADCYLA
+T378	activeingredient 42931 42934	DM1
+T379	nanoparticle 43027 43052	ado-trastuzumab emtansine
+T380	tradename 43146 43154	KADCYLA.
+T381	tradename 43188 43195	KADCYLA
+T382	tradename 43397 43404	KADCYLA
+T383	dose 43408 43415	6 mg/kg
+T384	tradename 43517 43524	KADCYLA
+T385	tradename 43563 43570	KADCYLA
+T386	nanoparticle 43572 43598	ado-trastuzumab emtansine)
+T387	chemoclass 43604 43617	HER2-targeted
+T388	nanoparticle 43618 43647	antibody-drug conjugate (ADC)
+T389	corecomposition 43663 43701	humanized anti-HER2 IgG1, trastuzumab,
+T390	chemoclass 43727 43749	microtubule inhibitory
+T391	activeingredient 43755 43784	DM1 (a maytansine derivative)
+T392	surfacecoating 43800 43871	thioether linker MCC (4-[N-maleimidomethyl] cyclohexane-1-carboxylate).
+T393	activeingredient 43903 43904	1
+T394	corecomposition 43939 43951	trastuzumab,
+T395	activeingredient 44104 44107	DM1
+T396	nanoparticle 44153 44178	Ado-trastuzumab emtansine
+T397	activeingredient 44206 44209	DM1
+T398	nanoparticle 44235 44260	Ado-trastuzumab emtansine
+T399	activeingredient 44335 44338	DM1
+T400	activeingredient 44417 44420	DM1
+T401	tradename 44464 44471	KADCYLA
+T402	nanoparticle 44473 44499	ado-trastuzumab emtansine)
+T403	nanoparticle 44628 44654	ado-trastuzumab emtansine.
+T404	nanoparticle 44712 44737	ado-trastuzumab emtansine
+T405	inactiveingredient 44750 44764	polysorbate 20
+T406	inactiveingredient 44780 44796	sodium succinate
+T407	inactiveingredient 44810 44817	sucrose
+T408	nanoparticle 44917 44942	ado-trastuzumab emtansine
+T409	routeofadministration 44962 44973	intravenous
+T410	nanoparticle 45055 45080	Ado-trastuzumab emtansine
+T411	chemoclass 45086 45099	HER2-targeted
+T412	nanoparticle 45100 45124	antibody-drug conjugate.
+T413	corecomposition 45146 45184	humanized anti-HER2 IgG1, trastuzumab.
+T414	activeingredient 45216 45220	DM1,
+T415	chemoclass 45226 45248	microtubule inhibitor.
+T416	nanoparticle 45302 45327	ado-trastuzumab emtansine
+T417	activeingredient 45448 45452	DM1-
+T418	activeingredient 45498 45501	DM1
+T419	nanoparticle 45688 45713	ado-trastuzumab emtansine
+T420	tradename 45957 45964	KADCYLA
+T421	nanoparticle 46051 46076	ado-trastuzumab emtansine
+T422	activeingredient 46406 46409	DM1
+T423	tradename 46457 46464	KADCYLA
+T424	activeingredient 46553 46556	DM1
+T425	activeingredient 46631 46634	DM1
+T426	tradename 46658 46665	KADCYLA
+T427	cmax 46685 46701	83.4 (16.5) g/mL
+T428	cmax 46706 46724	4.61 (1.61) ng/mL,
+T429	activeingredient 46771 46774	DM1
+T430	activeingredient 46819 46822	DM1
+T431	volumeofdistribution 46958 46965	3.13 L.
+T432	activeingredient 47009 47013	DM1,
+T433	tradename 47046 47054	KADCYLA,
+T434	activeingredient 47090 47093	DM1
+T435	nanoparticle 47169 47194	ado-trastuzumab emtansine
+T436	activeingredient 47213 47215	1,
+T437	activeingredient 47226 47228	1,
+T438	activeingredient 47233 47236	DM1
+T439	routeofadministration 47337 47348	intravenous
+T440	tradename 47361 47369	KADCYLA,
+T441	clearance 47399 47409	0.68 L/day
+T442	eliminationhalflife 47465 47472	4 days.
+T443	tradename 47493 47500	KADCYLA
+T444	routeofadministration 47539 47550	intravenous
+T445	frequency 47560 47574	every 3 weeks.
+T446	nanoparticle 47858 47883	ado-trastuzumab emtansine
+T447	nanoparticle 47952 47977	ado-trastuzumab emtansine
+T448	tradename 48109 48116	KADCYLA
+T449	dose 48169 48178	3.6 mg/kg
+T450	nanoparticle 48991 49017	ado-trastuzumab emtansine.
+T451	tradename 49083 49090	KADCYLA
+T452	dose 49092 49101	3.6 mg/kg
+T453	indication 49206 49245	HER2-positive metastatic breast cancer.
+T454	nanoparticle 49473 49499	ado-trastuzumab emtansine.
+T455	activeingredient 49511 49514	DM1
+T456	activeingredient 49673 49676	DM1
+T457	tradename 49709 49717	KADCYLA.
+T458	activeingredient 49719 49722	DM1
+T459	tradename 49847 49854	KADCYLA
+T460	nanoparticle 49923 49948	ado-trastuzumab emtansine
+T461	dose 50118 50127	60 mg/kg;
+T462	nanoparticle 50324 50349	ado-trastuzumab emtansine
+T463	frequency 50355 50372	every three weeks
+T464	duration 50377 50385	12 weeks
+T465	dose 50409 50417	30 mg/kg
+T466	nanoparticle 50762 50787	ado-trastuzumab emtansine
+T467	dose 50794 50802	30 mg/kg
+T468	activeingredient 51100 51104	DM1,
+T469	adversereaction 51137 51150	neurotoxicity
+T470	indication 51214 51238	Metastatic Breast Cancer
+T471	tradename 51255 51262	KADCYLA
+T472	indication 51345 51359	HER2-positive,
+T473	indication 51393 51418	metastatic breast cancer.
+T474	tradename 51885 51893	KADCYLA.
+T475	tradename 52167 52174	KADCYLA
+T476	routeofadministration 52185 52198	intravenously
+T477	dose 52202 52211	3.6 mg/kg
+T478	frequency 52226 52239	21-day cycle.
+T479	dose 52271 52278	1250 mg
+T480	frequency 52278 52282	/day
+T481	routeofadministration 52283 52289	orally
+T482	frequency 52290 52302	once per day
+T483	frequency 52308 52320	21-day cycle
+T484	dose 52358 52368	1000 mg/m2
+T485	routeofadministration 52369 52375	orally
+T486	frequency 52376 52387	twice daily
+T487	frequency 52406 52419	21-day cycle.
+T488	tradename 52448 52455	KADCYLA
+T489	tradename 52665 52673	KADCYLA,
+T490	tradename 54940 54955	KADCYLA-treated
+T491	tradename 55162 55177	KADCYLA-treated
+T492	tradename 55505 55512	KADCYLA
+T493	tradename 55815 55822	KADCYLA
+T494	tradename 56017 56024	KADCYLA
+T495	tradename 56138 56145	KADCYLA
+T496	tradename 57392 57399	KADCYLA
+T497	tradename 59081 59088	KADCYLA
+T498	nanoparticle 59090 59116	ado-trastuzumab emtansine)
+T499	adversereaction 59544 59563	severe liver injury
+T500	adversereaction 59654 59669	acute hepatitis
+T501	adversereaction 59678 59710	nausea, vomiting, abdominal pain
+T502	adversereaction 59723 59742	RUQ abdominal pain)
+T503	adversereaction 59744 59797	jaundice, dark urine, generalized pruritus, anorexia,
+T504	adversereaction 59943 60118	new onset or worsening shortness of breath, cough, swelling of the ankles/legs, palpitations, weight gain of more than 5 pounds in 24 hours, dizziness or loss of consciousness
+T505	tradename 60232 60239	KADCYLA
+T506	adversereaction 60285 60303	embryo-fetal death
+T507	adversereaction 60307 60320	birth defects
+T508	tradename 60460 60467	KADCYLA
+T509	tradename 60512 60519	KADCYLA
+T510	tradename 60612 60619	KADCYLA
+T511	tradename 60658 60666	KADCYLA,
+T512	tradename 60811 60818	KADCYLA
+T513	tradename 60871 60878	KADCYLA
+T514	tradename 60925 60933	KADCYLA,
+T515	tradename 61056 61063	KADCYLA
+T516	tradename 61241 61248	KADCYLA
+T517	nanoparticle 61250 61276	ado-trastuzumab emtansine]
+T518	company 61296 61311	Genentech, Inc.
+T519	company 61328 61339	Roche Group
+T520	fdaapprovaldate 61435 61448	February 2013
+T521	tradename 61453 61460	KADCYLA
+T522	company 61479 61494	Genentech, Inc.

@@ -1,0 +1,339 @@
+T1	tradename 112 121	Ferrlecit
+T2	tradename 184 206	Ferrlecit. Ferrlecit
+T3	nanoparticle 208 239	sodium ferric gluconate complex
+T4	routeofadministration 267 283	intravenous (IV)
+T5	fdaapprovaldate 312 316	1999
+T6	adversereaction 420 436	Hypersensitivity
+T7	adversereaction 477 500	Benzyl Alcohol Toxicity
+T8	tradename 594 603	Ferrlecit
+T9	indication 652 674	iron deficiency anemia
+T10	indication 746 768	chronic kidney disease
+T11	dose 982 988	125 mg
+T12	activeingredient 992 1007	elemental iron)
+T13	routeofadministration 1066 1077	intravenous
+T14	routeofadministration 1143 1154	intravenous
+T15	dose 1294 1304	0.12 mL/kg
+T16	dose 1306 1315	1.5 mg/kg
+T17	activeingredient 1319 1334	elemental iron)
+T18	routeofadministration 1393 1404	intravenous
+T19	tradename 1476 1485	Ferrlecit
+T20	routeofadministration 1554 1565	intravenous
+T21	tradename 1688 1697	Ferrlecit
+T22	activeingredient 1763 1777	elemental iron
+T23	corecomposition 1898 1921	sodium ferric gluconate
+T24	adversereaction 2045 2072	Hypersensitivity Reactions:
+T25	adversereaction 2117 2133	hypersensitivity
+T26	tradename 2151 2160	Ferrlecit
+T27	tradename 2282 2291	Ferrlecit
+T28	adversereaction 2435 2447	Hypotension:
+T29	tradename 2448 2457	Ferrlecit
+T30	adversereaction 2468 2480	hypotension.
+T31	adversereaction 2524 2535	hypotension
+T32	tradename 2562 2571	Ferrlecit
+T33	adversereaction 2595 2610	Iron Overload:
+T34	tradename 2658 2667	Ferrlecit
+T35	tradename 2695 2704	Ferrlecit
+T36	adversereaction 2722 2736	iron overload.
+T37	adversereaction 2754 2778	Benzyl Alcohol Toxicity:
+T38	adversereaction 3027 3043	nausea, vomiting
+T39	adversereaction 3051 3163	diarrhea, injection site reaction, hypotension, cramps, hypertension, dizziness, dyspnea, chest pain, leg cramps
+T40	adversereaction 3168 3173	pain.
+T41	adversereaction 3260 3308	hypotension, headache, hypertension, tachycardia
+T42	adversereaction 3313 3322	vomiting.
+T43	company 3377 3400	sanofi-aventis U.S. LLC
+T44	inactiveingredient 3602 3617	benzyl alcohol)
+T45	inactiveingredient 3728 3743	benzyl alcohol)
+T46	adversereaction 4201 4227	Hypersensitivity Reactions
+T47	adversereaction 4236 4247	Hypotension
+T48	adversereaction 4256 4269	Iron Overload
+T49	adversereaction 4277 4300	Benzyl Alcohol Toxicity
+T50	tradename 5003 5012	Ferrlecit
+T51	indication 5047 5069	iron deficiency anemia
+T52	indication 5141 5163	chronic kidney disease
+T53	tradename 5281 5290	Ferrlecit
+T54	activeingredient 5322 5337	elemental iron.
+T55	activeingredient 5403 5417	elemental iron
+T56	tradename 5445 5454	Ferrlecit
+T57	routeofadministration 5524 5535	intravenous
+T58	tradename 5567 5576	Ferrlecit
+T59	routeofadministration 5582 5593	intravenous
+T60	tradename 5860 5869	Ferrlecit
+T61	indication 5899 5914	iron deficiency
+T62	tradename 5988 5997	Ferrlecit
+T63	indication 6029 6044	iron deficiency
+T64	tradename 6082 6091	Ferrlecit
+T65	dose 6093 6099	125 mg
+T66	activeingredient 6103 6118	elemental iron)
+T67	tradename 6120 6129	Ferrlecit
+T68	routeofadministration 6195 6206	intravenous
+T69	tradename 6250 6259	Ferrlecit
+T70	routeofadministration 6305 6316	intravenous
+T71	activeingredient 6464 6478	elemental iron
+T72	tradename 6518 6527	Ferrlecit
+T73	routeofadministration 6605 6616	intravenous
+T74	tradename 6674 6683	Ferrlecit
+T75	dose 6759 6765	125 mg
+T76	tradename 6950 6959	Ferrlecit
+T77	tradename 7046 7055	Ferrlecit
+T78	activeingredient 7070 7085	elemental iron)
+T79	routeofadministration 7144 7155	intravenous
+T80	dose 7236 7242	125 mg
+T81	tradename 7284 7293	Ferrlecit
+T82	activeingredient 7361 7375	elemental iron
+T83	activeingredient 7507 7530	sodium ferric gluconate
+T84	adversereaction 7590 7652	Hypersensitivity Reactions Serious hypersensitivity reactions,
+T85	adversereaction 7663 7691	anaphylactic-type reactions,
+T86	tradename 7785 7794	Ferrlecit
+T87	adversereaction 7851 7857	shock,
+T88	adversereaction 7881 7916	hypotension, loss of consciousness,
+T89	adversereaction 7920 7929	collapse.
+T90	tradename 8008 8017	Ferrlecit
+T91	tradename 8139 8148	Ferrlecit
+T92	tradename 8526 8535	Ferrlecit
+T93	tradename 8586 8595	Ferrlecit
+T94	tradename 8725 8734	Ferrlecit
+T95	tradename 9086 9095	Ferrlecit
+T96	tradename 9130 9139	Ferrlecit
+T97	tradename 9607 9616	Ferrlecit
+T98	tradename 9701 9710	Ferrlecit
+T99	tradename 9831 9840	Ferrlecit
+T100	tradename 10049 10058	Ferrlecit
+T101	tradename 10295 10304	Ferrlecit
+T102	tradename 11832 11841	Ferrlecit
+T103	indication 13488 13502	iron-deficient
+T104	adversereaction 13726 13737	hypotension
+T105	adversereaction 13745 13753	headache
+T106	adversereaction 13761 13773	hypertension
+T107	adversereaction 13781 13792	tachycardia
+T108	adversereaction 13800 13808	vomiting
+T109	adversereaction 13816 13821	fever
+T110	adversereaction 13828 13834	nausea
+T111	adversereaction 13841 13855	abdominal pain
+T112	adversereaction 13862 13873	pharyngitis
+T113	adversereaction 13880 13888	diarrhea
+T114	adversereaction 13895 13904	infection
+T115	adversereaction 13911 13919	rhinitis
+T116	adversereaction 13930 13940	thrombosis
+T117	adversereaction 14081 14092	hypotension
+T118	adversereaction 14108 14119	tachycardia
+T119	adversereaction 14135 14140	fever
+T120	adversereaction 14155 14163	headache
+T121	adversereaction 14179 14193	abdominal pain
+T122	adversereaction 14208 14214	nausea
+T123	adversereaction 14229 14237	vomiting
+T124	adversereaction 14252 14263	pharyngitis
+T125	adversereaction 14282 14290	rhinitis
+T126	tradename 14412 14421	Ferrlecit
+T127	tradename 14538 14547	Ferrlecit
+T128	adversereaction 14554 14565	hypotension
+T129	adversereaction 14572 14588	nausea, vomiting
+T130	adversereaction 14596 14604	diarrhea
+T131	adversereaction 14611 14615	pain
+T132	adversereaction 14624 14636	hypertension
+T133	adversereaction 14645 14662	allergic reaction
+T134	adversereaction 14671 14681	chest pain
+T135	adversereaction 14690 14698	pruritus
+T136	adversereaction 14711 14720	back pain
+T137	adversereaction 14800 14835	hypertonia, nervousness, dry mouth,
+T138	adversereaction 14840 14851	hemorrhage.
+T139	tradename 15093 15102	Ferrlecit
+T140	adversereaction 15308 15323	facial flushing
+T141	tradename 15339 15348	Ferrlecit
+T142	tradename 15619 15628	Ferrlecit
+T143	adversereaction 15669 15789	anaphylactic-type reactions, shock, loss of consciousness, convulsion, skin discoloration, pallor, phlebitis, dysgeusia,
+T144	adversereaction 15794 15807	hypoesthesia.
+T145	dose 15836 15842	125 mg
+T146	adversereaction 16010 16122	hypotension, nausea, vomiting, abdominal pain, diarrhea, dizziness, dyspnea, urticaria, chest pain, paresthesia,
+T147	adversereaction 16127 16147	peripheral swelling.
+T148	tradename 16407 16416	Ferrlecit
+T149	tradename 16440 16449	Ferrlecit
+T150	routeofadministration 16506 16510	oral
+T151	tradename 16653 16662	Ferrlecit
+T152	dose 16746 16755	100 mg/kg
+T153	frequency 16755 16759	/day
+T154	dose 16761 16770	300 mg/m2
+T155	frequency 16770 16775	/day)
+T156	dose 16797 16805	20 mg/kg
+T157	frequency 16805 16809	/day
+T158	dose 16811 16820	120 mg/m2
+T159	frequency 16820 16825	/day)
+T160	dose 16892 16898	125 mg
+T161	frequency 16898 16902	/day
+T162	dose 16904 16912	77 mg/m2
+T163	frequency 16912 16917	/day)
+T164	tradename 17005 17015	Ferrlecit.
+T165	tradename 17164 17173	Ferrlecit
+T166	inactiveingredient 17183 17197	benzyl alcohol
+T167	inactiveingredient 17305 17319	benzyl alcohol
+T168	inactiveingredient 17384 17398	benzyl alcohol
+T169	routeofadministration 17460 17473	intravenously
+T170	tradename 17584 17593	Ferrlecit
+T171	tradename 17778 17787	Ferrlecit
+T172	tradename 17915 17924	Ferrlecit
+T173	adversereaction 18242 18265	Benzyl Alcohol Toxicity
+T174	inactiveingredient 18298 18312	benzyl alcohol
+T175	adversereaction 18399 18416	gasping syndrome"
+T176	adversereaction 18443 18511	nervous system depression, metabolic acidosis, gasping respirations,
+T177	dose 18644 18656	&gt;99 mg/kg
+T178	frequency 18656 18660	/day
+T179	adversereaction 18735 18901	gradual neurological deterioration, seizures, intracranial hemorrhage, hematologic abnormalities, skin breakdown, hepatic and renal failure, hypotension, bradycardia,
+T180	adversereaction 18906 18930	cardiovascular collapse.
+T181	adversereaction 19091 19109	gasping syndrome",
+T182	tradename 19520 19529	Ferrlecit
+T183	tradename 20060 20069	Ferrlecit
+T184	nanoparticle 20070 20082	iron complex
+T185	tradename 20147 20156	Ferrlecit
+T186	tradename 20189 20198	Ferrlecit
+T187	adversereaction 20272 20286	hemosiderosis.
+T188	tradename 20306 20315	Ferrlecit
+T189	adversereaction 20333 20346	iron overload
+T190	dose 20413 20419	125 mg
+T191	tradename 20537 20546	Ferrlecit
+T192	activeingredient 20550 20564	elemental iron
+T193	dose 20574 20607	125 mg/kg, 78.8 mg/kg, 62.5 mg/kg
+T194	dose 20612 20621	250 mg/kg
+T195	tradename 20842 20851	Ferrlecit
+T196	nanoparticle 20853 20884	sodium ferric gluconate complex
+T197	inactiveingredient 20888 20895	sucrose
+T198	nanoparticle 20949 20971	macromolecular complex
+T199	molecularweight 21087 21113	289,000 - 440,000 daltons.
+T200	nanoparticle 21118 21140	macromolecular complex
+T201	surfacecharge 21144 21162	negatively charged
+T202	corecomposition 21273 21285	ferric oxide
+T203	surfacecoating 21317 21333	D-Gluconic acid,
+T204	surfacecoating 21410 21418	C6H11O7)
+T205	tradename 21497 21506	Ferrlecit
+T206	routeofadministration 21511 21522	intravenous
+T207	dose 21542 21549	62.5 mg
+T208	activeingredient 21566 21580	elemental iron
+T209	nanoparticle 21588 21636	sodium salt of a ferric ion carbohydrate complex
+T210	inactiveingredient 21692 21699	sucrose
+T211	inactiveingredient 21780 21794	benzyl alcohol
+T212	tradename 21874 21883	Ferrlecit
+T213	routeofadministration 22144 22155	intravenous
+T214	indication 22209 22223	iron-deficient
+T215	tradename 22443 22452	Ferrlecit
+T216	tradename 22596 22605	Ferrlecit
+T217	dose 22817 22823	125 mg
+T218	cmax 22855 22865	19.0 mg/L)
+T219	plasmahalflife 22940 22947	1 hour.
+T220	plasmahalflife 23030 23049	0.85 and 1.45 hours
+T221	tradename 23132 23141	Ferrlecit
+T222	clearance 23146 23163	3.02 to 5.35 L/h.
+T223	tradename 23176 23185	Ferrlecit
+T224	auc 23217 23228	17.5 mg-h/L
+T225	dose 23230 23238	62.5 mg)
+T226	auc 23242 23253	35.6 mg-h/L
+T227	dose 23255 23262	125 mg)
+T228	tradename 23453 23462	Ferrlecit
+T229	routeofadministration 23637 23648	intravenous
+T230	indication 23695 23709	iron-deficient
+T231	dose 23772 23781	1.5 mg/kg
+T232	tradename 23782 23791	Ferrlecit
+T233	dose 23817 23826	3.0 mg/kg
+T234	tradename 23827 23836	Ferrlecit
+T235	dose 23851 23858	125 mg)
+T236	dose 23944 23953	1.5 mg/kg
+T237	cmax 23964 23974	12.9 mg/L,
+T238	auc 23975 23995	95.0 mg&#x2022;hr/L,
+T239	plasmahalflife 24000 24010	2.0 hours,
+T240	dose 24110 24119	3.0 mg/kg
+T241	cmax 24130 24140	22.8 mg/L,
+T242	auc 24141 24162	170.9 mg&#x2022;hr/L,
+T243	plasmahalflife 24167 24177	2.5 hours,
+T244	tradename 24328 24337	Ferrlecit
+T245	corecomposition 24691 24714	sodium ferric gluconate
+T246	corecomposition 24748 24771	Sodium ferric gluconate
+T247	corecomposition 24837 24860	Sodium ferric gluconate
+T248	corecomposition 25002 25025	sodium ferric gluconate
+T249	tradename 25251 25261	Ferrlecit.
+T250	tradename 25372 25381	Ferrlecit
+T251	routeofadministration 25395 25408	intravenously
+T252	indication 25412 25426	iron-deficient
+T253	tradename 25578 25587	Ferrlecit
+T254	dose 25589 25594	25 mg
+T255	activeingredient 25598 25613	elemental iron)
+T256	tradename 25657 25666	Ferrlecit
+T257	dose 25697 25703	500 mg
+T258	dose 25718 25725	1000 mg
+T259	activeingredient 25741 25756	elemental iron.
+T260	tradename 25757 25766	Ferrlecit
+T261	tradename 25951 25960	Ferrlecit
+T262	dose 25961 25968	62.5 mg
+T263	activeingredient 25972 25986	elemental iron
+T264	tradename 26046 26055	Ferrlecit
+T265	dose 26056 26062	125 mg
+T266	activeingredient 26066 26080	elemental iron
+T267	routeofadministration 26586 26596	Parenteral
+T268	routeofadministration 26677 26681	Oral
+T269	tradename 26750 26767	Ferrlecit-treated
+T270	routeofadministration 27065 27069	oral
+T271	tradename 27204 27213	Ferrlecit
+T272	nanoparticle 27215 27246	sodium ferric gluconate complex
+T273	tradename 27411 27420	Ferrlecit
+T274	tradename 27882 27899	Ferrlecit-treated
+T275	tradename 28272 28281	Ferrlecit
+T276	tradename 28387 28396	Ferrlecit
+T277	tradename 28547 28556	Ferrlecit
+T278	dose 28557 28564	1000 mg
+T279	routeofadministration 28565 28567	IV
+T280	tradename 28577 28586	Ferrlecit
+T281	dose 28587 28593	500 mg
+T282	routeofadministration 28594 28596	IV
+T283	routeofadministration 28625 28629	Oral
+T284	dose 28797 28803	500 mg
+T285	routeofadministration 28969 28980	intravenous
+T286	tradename 28981 28990	Ferrlecit
+T287	tradename 29032 29041	Ferrlecit
+T288	tradename 29378 29395	Ferrlecit-treated
+T289	tradename 29698 29715	Ferrlecit-treated
+T290	tradename 29814 29823	Ferrlecit
+T291	dose 29840 29847	62.5 mg
+T292	dose 29851 29857	125 mg
+T293	activeingredient 29861 29876	elemental iron.
+T294	tradename 29953 29970	Ferrlecit-treated
+T295	tradename 30114 30123	Ferrlecit
+T296	routeofadministration 30175 30179	oral
+T297	tradename 30215 30224	Ferrlecit
+T298	activeingredient 30237 30252	elemental iron)
+T299	tradename 30477 30494	Ferrlecit-treated
+T300	tradename 30696 30713	Ferrlecit-treated
+T301	tradename 30762 30779	Ferrlecit-treated
+T302	tradename 30978 30987	Ferrlecit
+T303	routeofadministration 30995 30999	Oral
+T304	tradename 31242 31251	Ferrlecit
+T305	dose 31267 31276	1.5 mg/kg
+T306	dose 31280 31289	3.0 mg/kg
+T307	activeingredient 31293 31308	elemental iron)
+T308	routeofadministration 31322 31335	intravenously
+T309	tradename 31554 31563	Ferrlecit
+T310	dose 31577 31586	1.5 mg/kg
+T311	dose 31590 31599	3.0 mg/kg
+T312	dose 31625 31631	125 mg
+T313	activeingredient 31635 31650	elemental iron)
+T314	routeofadministration 31693 31706	intravenously
+T315	dose 31825 31834	1.5 mg/kg
+T316	tradename 32274 32283	Ferrlecit
+T317	tradename 32542 32551	Ferrlecit
+T318	dose 32573 32582	1.5 mg/kg
+T319	dose 32587 32596	3.0 mg/kg
+T320	dose 32785 32794	1.5 mg/kg
+T321	tradename 32795 32804	Ferrlecit
+T322	dose 32813 32822	3.0 mg/kg
+T323	tradename 32823 32832	Ferrlecit
+T324	tradename 33086 33095	Ferrlecit
+T325	dose 33117 33126	1.5 mg/kg
+T326	dose 33135 33144	3.0 mg/kg
+T327	tradename 33145 33154	Ferrlecit
+T328	tradename 33287 33296	Ferrlecit
+T329	activeingredient 33406 33420	elemental iron
+T330	routeofadministration 33433 33444	intravenous
+T331	tradename 33715 33724	Ferrlecit
+T332	tradename 33892 33902	Ferrlecit.
+T333	tradename 34035 34045	Ferrlecit,
+T334	adversereaction 34056 34133	hypersensitivity, allergic reactions, dizziness, light-headedness, swelling,
+T335	adversereaction 34138 34156	breathing problems
+T336	tradename 34255 34264	Ferrlecit
+T337	routeofadministration 34321 34325	oral
+T338	company 34374 34397	sanofi-aventis U.S. LLC
+T339	company 34426 34449	sanofi-aventis U.S. LLC

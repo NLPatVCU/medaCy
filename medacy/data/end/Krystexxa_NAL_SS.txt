@@ -1,0 +1,397 @@
+Krystexxa (pegloticase) injection label
+  HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use KRYSTEXXA safely and effectively.
+ See full prescribing information for KRYSTEXXA
+ KRYSTEXXA (pegloticase) Injection, for intravenous infusion Initial U.S. Approval: 2010
+ WARNING: ANAPHYLAXIS and INFUSION REACTIONS  See full prescribing information for complete boxed warning.
+ &#x2022; Anaphylaxis and infusion reactions have been reported to occur
+ during and after administration of KRYSTEXXA (5.1, 5.2).
+&#x2022; KRYSTEXXA should be administered in healthcare settings and
+ by healthcare providers prepared to manage anaphylaxis and infusion reactions.
+  &#x2022; Patients should be pre-medicated with antihistamines and corticosteroids.
+ &#x2022; Patients should be closely monitored for an appropriate period of time for anaphylaxis after administration of KRYSTEXXA.
+  &#x2022; Monitor serum uric acid levels prior to infusions and consider discontinuing treatment if levels increase to above 6 mg/dL, particularly when 2 consecutive levels above 6 mg/dL are observed.
+ Recent major changes: o  Dosage and Administration, Administration (2.3) 4/2012 o  Warnings and Precautions, Anaphylaxis (5.1) 4/2012 o  Warnings and Precautions, Infusion Reaction (5.2) 4/2012
+ ----------------------------INDICATIONS AND USAGE--------------------- KRYSTEXXA (pegloticase) is a PEGylated uric acid specific enzyme
+ indicated for the treatment of chronic gout in adult patients refractory to
+ conventional therapy.
+(1)
+ Important Limitations of Use:
+ KRYSTEXXA is not recommended for the treatment of asymptomatic
+ hyperuricemia.
+(1)
+ ----------------------DOSAGE AND ADMINISTRATION----------------- &#x2022;  For adult patients 8 mg given as an intravenous infusion every two  weeks.
+(2.1) &#x2022;  Do not administer as an intravenous push or bolus.
+(2.3) &#x2022; Discontinue oral urate-lowering agents before starting
+ KRYSTEXXA (2.3)
+ &#x2022;  Monitor serum uric acid levels before each infusion.
+(2.3) &#x2022;  Patients should be pre-medicated with antihistamines and
+ corticosteroids.
+(2.3, 5.1, 5.2) &#x2022;  Administer in a healthcare setting by healthcare providers prepared
+ to manage anaphylaxis.
+(2.3, 5.1, 5.2) &#x2022;  The KRYSTEXXA admixture should only be administered by
+ intravenous infusion over no less than 120 minutes via gravity feed, syringe-type pump, or infusion pump.
+(2.3)
+ ---------------------DOSAGE FORMS AND STRENGTHS---------------&#x2022;  1 mL sterile concentrate for dilution containing 8 mg of
+ pegloticase protein, expressed in uricase protein amounts.
+(3)
+ -------------------------------CONTRAINDICATIONS----------------------- &#x2022; Glucose-6-phosphate dehydrogenase (G6PD) Deficiency:
+ Before starting KRYSTEXXA, patients at higher risk for G6PD deficiency (e.g., those of African and Mediterranean ancestry) should be screened due to the risk of hemolysis and methemoglobinemia.
+(4)
+ -----------------------WARNINGS AND PRECAUTIONS-----------------&#x2022;  Anaphylaxis: Anaphylaxis occurred in patients treated with
+ KRYSTEXXA.
+Anaphylaxis may occur with any infusion, including a first infusion, and generally manifests within 2 hours of the infusion.
+However, delayed-type hypersensitivity reactions have also been reported.
+ KRYSTEXXA should be administered in healthcare settings and by healthcare providers prepared to manage anaphylaxis.
+ Patients should be pre-medicated with antihistamines and corticosteroids.
+ Patients should be closely monitored for an appropriate period of time for anaphylaxis after administration of KRYSTEXXA.
+(5.1)
+ &#x2022;  Infusion Reactions:  Infusion reactions occurred in patients treated with KRYSTEXXA.
+ KRYSTEXXA should be administered in a healthcare setting and by healthcare providers prepared to manage infusion reactions.
+Patients should be pre-medicated with antihistamines and corticosteroids.
+ Monitor patients closely for signs and symptoms of infusion reactions.
+In the event of an infusion reaction, the infusion should be slowed, or stopped and restarted at a slower rate.
+If a severe infusion reaction occurs, discontinue infusion and institute treatment as needed.
+The risk of an infusion reaction is higher in patients who have lost therapeutic response.
+ (5.2)
+ &#x2022;  Gout Flares: An increase in gout flares is frequently observed upon initiation of anti-hyperuricemic therapy, including treatment with KRYSTEXXA.
+If a gout flare occurs during treatment, KRYSTEXXA need not be discontinued.
+Gout flare prophylaxis (i.e., non-steroidal anti-inflammatory drugs [NSAID] or colchicine upon initiation of treatment) is recommended for at least the first 6 months of therapy unless medically contraindicated or not tolerated.
+(5.3)
+ &#x2022;  Congestive Heart Failure: KRYSTEXXA has not been formally studied in patients with congestive heart failure, but some patients in clinical trials experienced exacerbation.
+ Exercise caution when using KRYSTEXXA in patients who have congestive heart failure and monitor patients closely following infusion.
+ (5.4)
+ ------------------------------ADVERSE REACTIONS------------------------ The most common adverse reactions (occurring in at least 5% of KRYSTEXXA-treated patients) are gout flares, infusion reactions, nausea, contusion or ecchymosis, nasopharyngitis, constipation, chest pain, anaphylaxis and vomiting.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Savient Pharmaceuticals, Inc.
+at 1-888-579-7839 (1-888-KRYSTEXXA) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ See 17 for PATIENT COUNSELING INFORMATION and Medication Guide
+ Revised:  04/2012
+ Reference ID: 3116893
+ 1
+               FULL PRESCRIBING INFORMATION: CONTENTS*
+ WARNING: ANAPHYLAXIS AND INFUSION REACTIONS 1 INDICATIONS AND USAGE 2 DOSAGE AND ADMINISTRATION
+ 2.1 Dosage
+ 2.2 Preparation
+ 2.3 Administration
+  3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS  5 WARNINGS AND PRECAUTIONS
+ 5.1 Anaphylaxis
+ 5.2 Infusion Reactions
+ 5.3 Gout Flares
+ 5.4 Congestive Heart Failure
+ 5.5 Re-treatment with KRYSTEXXA
+  6 ADVERSE REACTIONS  6.1 Clinical Trials Experience
+ 6.2 Immunogenicity
+ 7 DRUG INTERACTIONS 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy
+ 8.3 Nursing Mothers
+ 8.4 Pediatric Use
+ 8.5 Geriatric Use
+ 8.6 Renal Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 13.2 Animal Toxicology and/or Pharmacology
+ 14 CLINICAL STUDIES 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ 17.1 General Information
+  17.2 Anaphylaxis and Infusion Reactions
+ 17.3 Glucose-6-phosphate dehydrogenase
+ (G6PD) Deficiency
+  17.4 Gout Flares *Sections or subsections omitted from the full prescribing information are not listed
+ Reference ID: 3116893
+ 2
+                                              FULL PRESCRIBING INFORMATION
+  WARNING: ANAPHYLAXIS AND INFUSION REACTIONS &#x2022; Anaphylaxis and infusion reactions have been reported to occur during and after
+ administration of KRYSTEXXA.
+[see Warnings and Precautions (5.1, 5.2)] &#x2022; Anaphylaxis may occur with any infusion, including a first infusion, and generally
+ manifests within 2 hours of the infusion.
+ However, delayed-type hypersensitivity reactions have also been reported.
+ &#x2022; KRYSTEXXA should be administered in healthcare settings and by healthcare providers prepared to manage anaphylaxis and infusion reactions.
+ &#x2022; Patients should be premedicated with antihistamines and corticosteroids.
+&#x2022; Patients should be closely monitored for an appropriate period of time for
+ anaphylaxis after administration of KRYSTEXXA.
+ &#x2022; Monitor serum uric acid levels prior to infusions and consider discontinuing
+ treatment if levels increase to above 6 mg/dL, particularly when 2 consecutive levels above 6 mg/dL are observed.
+ 1 INDICATIONS AND USAGE KRYSTEXXA (pegloticase) is a PEGylated uric acid specific enzyme indicated for the
+ treatment of chronic gout in adult patients refractory to conventional therapy.
+  Gout refractory to conventional therapy occurs in patients who have failed to normalize
+ serum uric acid and whose signs and symptoms are inadequately controlled with xanthine
+ oxidase inhibitors at the maximum medically appropriate dose or for whom these drugs are
+ contraindicated.
+ Important Limitations of Use:
+ KRYSTEXXA is not recommended for the treatment of asymptomatic hyperuricemia.
+  2 DOSAGE AND ADMINISTRATION
+ 2.1 Dosage The recommended dose and regimen of KRYSTEXXA for adult patients is 8 mg (uricase protein) given as an intravenous infusion every two weeks.
+ The optimal treatment duration with KRYSTEXXA has not been established.
+  2.2 Preparation Visually inspect KRYSTEXXA for particulate matter and discoloration before administration, whenever solution and container permit.
+Do not use vials if either is present.
+[see Dosage Forms and Strengths (3)]
+ Use appropriate aseptic technique.
+Withdraw 1 mL of KRYSTEXXA from the vial into a sterile syringe.
+Discard any unused portion of product remaining in the 2 mL vial.
+ Inject into a single 250 mL bag of 0.9% Sodium Chloride Injection, USP or 0.45% Sodium Chloride Injection, USP for intravenous infusion.
+Do not mix or dilute with other drugs.
+  Reference ID: 3116893
+ 3
+                                     l
+Invert the infusion bag containing the dilute KRYSTEXXA solution a number of times to ensure thorough mixing.
+Do not shake.
+  KRYSTEXXA diluted in infusion bags is stable for 4 hours at 2 to 8C (36 to 46F) and at room temperature (20 to 25C, 68 to 77F).
+However it is recommended that diluted solutions be stored under refrigeration, not frozen, protected from light, and used within 4 hours of dilution.
+[see How Supplied/Storage and Handling (16)]
+ Before administration, allow the diluted solution of KRYSTEXXA to reach room temperature.
+ KRYSTEXXA in a vial or in an intravenous infusion fluid should never be subjected to artificial heating (e.g., hot water, microwave).
+ 2.3 Administration Do not administer as an intravenous push or bolus.
+ It is recommended that before starting KRYSTEXXA patients discontinue oral uratelowering medications and not institute therapy with oral urate-lowering agents while patients
+ are on KRYSTEXXA therapy.
+ Monitoring Therapy: The risk of anaphylaxis and infusion reactions is higher in patients who have lost therapeutic response.
+Monitor serum uric acid levels prior to infusions and consider discontinuing treatment if levels increase to above 6 mg/dL, particularly when 2 consecutive levels above 6 mg/dL are observed.
+[see Warnings and Precautions (5.1, 5.2)]
+ The KRYSTEXXA admixture should only be administered by intravenous infusion over no less than 120 minutes via gravity feed, syringe-type pump, or infusion pump.
+ Patients should receive pre-infusion medications (e.g. antihistamines, corticosteroids), to minimize the risk of anaphylaxis and infusion reactions.
+Administer KRYSTEXXA in a healthcare setting and by healthcare providers prepared to manage anaphylaxis and infusion reactions, and observe patients for an appropriate period of time after administration.
+[see Warnings and Precautions (5.1, 5.2)]
+ If an infusion reaction occurs during the administration of KRYSTEXXA, the infusion may be slowed, or stopped and restarted at a slower rate, at the discretion of the physician.
+Since infusion reactions can occur after completion of infusion, observation of patients for approximately an hour post-infusion should be considered.
+[see Warnings and Precautions (5.2), Adverse Reactions (6.1)]
+ 3 DOSAGE FORMS AND STRENGTHS KRYSTEXXA is a clear, colorless, sterile 8 mg/mL solution of pegloticase in a 2 mL single-use vial, expressed as amounts of uricase protein.
+ KRYSTEXXA must be diluted prior to use.
+ 4 CONTRAINDICATIONS Glucose-6-phosphate dehydrogenase (G6PD) deficiency: KRYSTEXXA is contraindicated in patients with G6PD deficiency due to the risk of hemolysis and methemoglobinemia.
+It is recommended that patients at higher risk for G6PD deficiency
+ Reference ID: 3116893
+ 4
+                      (e.g., patients of African or Mediterranean ancestry) be screened for G6PD deficiency before starting KRYSTEXXA.
+ 5 WARNINGS AND PRECAUTIONS
+  5.1 Anaphylaxis  During pre-marketing controlled clinical trials, anaphylaxis was reported with a frequency of 6.5% of patients treated with KRYSTEXXA every 2 weeks, compared to none with placebo.
+Manifestations included wheezing, peri-oral or lingual edema, or hemodynamic instability, with or without rash or urticaria.
+Cases occurred in patients being pre-treated with one or more doses of an oral antihistamine, an intravenous corticosteroid and/or acetaminophen.
+This pre-treatment may have blunted or obscured symptoms or signs of anaphylaxis and therefore the reported frequency may be an underestimate.
+[See Adverse Reactions (6)]
+ KRYSTEXXA should be administered in a healthcare setting by healthcare providers prepared to manage anaphylaxis.
+Patients should be pre-treated with antihistamines and corticosteroids.
+Anaphylaxis may occur with any infusion, including a first infusion, and generally manifests within 2 hours of the infusion.
+However, delayed type hypersensitivity reactions have also been reported.
+Patients should be closely monitored for an appropriate period of time for anaphylaxis after administration of KRYSTEXXA.
+ Patients should be informed of the symptoms and signs of anaphylaxis and instructed to seek immediate medical care should anaphylaxis occur after discharge from the healthcare setting.
+ The risk of anaphylaxis is higher in patients whose uric acid level increases to above 6 mg/dL, particularly when 2 consecutive levels above 6 mg/dL are observed.
+Monitor serum uric acid levels prior to infusions and consider discontinuing treatment if levels increase to above 6 mg/dL.
+Because of the possibility that concomitant use of oral urate-lowering therapy and KRYSTEXXA may potentially blunt the rise of serum uric acid levels, it is recommended that before starting KRYSTEXXA patients discontinue oral urate-lowering medications and not institute therapy with oral urate-lowering agents while taking KRYSTEXXA.
+ 5.2 Infusion Reactions During pre-marketing controlled clinical trials, infusion reactions were reported in 26% of patients treated with KRYSTEXXA 8 mg every 2 weeks, and 41% of patients treated with KRYSTEXXA 8 mg every 4 weeks, compared to 5% of patients treated with placebo.
+These infusion reactions occurred in patients being pre-treated with an oral antihistamine, intravenous corticosteroid and/or acetaminophen.
+This pre-treatment may have blunted or obscured symptoms or signs of infusion reactions and therefore the reported frequency may be an underestimate.
+[See Adverse Reactions (6)]
+ KRYSTEXXA should be administered in a healthcare setting by healthcare providers prepared to manage infusion reactions.
+Patients should be pre-treated with antihistamines and corticosteroids.
+KRYSTEXXA should be infused slowly over no less than 120 minutes.
+In the event of an infusion reaction, the infusion should be slowed, or stopped and restarted at a slower rate.
+ Reference ID: 3116893
+ 5
+                  The risk of infusion reaction is higher in patients whose uric acid level increases to above 6 mg/dL, particularly when 2 consecutive levels above 6 mg/dL are observed.
+Monitor serum uric acid levels prior to infusions and consider discontinuing treatment if levels increase to above 6 mg/dL.
+Because of the possibility that concomitant use of oral urate-lowering therapy and KRYSTEXXA may potentially blunt the rise of serum uric acid levels, it is recommended that before starting KRYSTEXXA patients discontinue oral urate-lowering medications and not institute therapy with oral urate-lowering agents while taking KRYSTEXXA.
+ 5.3 Gout Flares Gout flares may occur after initiation of KRYSTEXXA.
+[see Adverse Reactions (6.1)] An increase in gout flares is frequently observed upon initiation of anti-hyperuricemic therapy, due to changing serum uric acid levels resulting in mobilization of urate from tissue deposits.
+Gout flare prophylaxis with a non-steroidal anti-inflammatory drug (NSAID) or colchicine is recommended starting at least 1 week before initiation of KRYSTEXXA therapy and lasting at least 6 months, unless medically contraindicated or not tolerated.
+KRYSTEXXA does not need to be discontinued because of a gout flare.
+ The gout flare should be managed concurrently as appropriate for the individual patient.
+[see Dosage and Administration (2)]
+ 5.4 Congestive Heart Failure KRYSTEXXA has not been formally studied in patients with congestive heart failure, but some patients in the clinical trials experienced exacerbation.
+[see Adverse Reactions (6.1)] Exercise caution when using KRYSTEXXA in patients who have congestive heart failure and monitor patients closely following infusion.
+ 5.5 Re-treatment with KRYSTEXXA No controlled trial data are available on the safety and efficacy of re-treatment with KRYSTEXXA after stopping treatment for longer than 4 weeks.
+Due to the immunogenicity of KRYSTEXXA, patients receiving re-treatment may be at increased risk of anaphylaxis and infusion reactions.
+Therefore, patients receiving re-treatment after a drug-free interval should be monitored carefully.
+[see Adverse Reactions (6.2)]
+ 6 ADVERSE REACTIONS  The most commonly reported serious adverse reactions from pre-marketing controlled clinical trials were anaphylaxis, which occurred at a frequency of 6.5% in patients treated with KRYSTEXXA 8 mg every 2 weeks, compared to none with placebo; infusion reactions, which occurred at a frequency of 26% in patients treated with KRYSTEXXA 8 mg every 2 weeks, compared to 5% treated with placebo; and gout flares, which were more common during the first 3 months of treatment with KRYSTEXXA compared with placebo.
+All patients in pre-marketing controlled clinical trials were pre-treated with an oral antihistamine, intravenous corticosteroid and/or acetaminophen to prevent anaphylaxis and infusion reaction.
+Patients also received non-steroidal anti-inflammatory drugs or colchicine, or both, for at least 7 days as gout flare prophylaxis before beginning KRYSTEXXA treatment.
+[see Boxed Warning, Warnings and Precautions (5.1, 5.2, 5.3)]
+ 6.1 Clinical Trials Experience  The data described below reflect exposure to KRYSTEXXA in patients with chronic gout refractory to conventional therapy in two replicate randomized, placebo-controlled, double-
+Reference ID: 3116893
+ 6
+                   blind 6-month clinical trials: 85 patients were treated with KRYSTEXXA 8 mg every 2 weeks; 84 patients were treated with KRYSTEXXA 8 mg every 4 weeks; and 43 patients were treated with placebo.
+These patients were between the ages of 23 and 89 years (average 55 years); 173 patients were male and 39 were female; and 143 patients were White/Caucasian, 27 were Black/African American, 24 were Hispanic/Latino and 18 were all other ethnicities.
+Common co-morbid conditions among the enrolled patients included hypertension (72%), dyslipidemia (49%), chronic kidney disease (28%), diabetes (24%), coronary artery disease (18%), arrhythmia (16%), and cardiac failure/left ventricular dysfunction (12%).
+ Because clinical studies are conducted under widely varying and controlled conditions, adverse reaction rates observed in clinical studies of a drug cannot be directly compared to rates in the clinical studies of another drug, and may not predict the rates observed in a broader patient population in clinical practice.
+ Anaphylaxis: Diagnostic criteria of anaphylaxis were skin or mucosal tissue involvement, and, either airway compromise, and/or reduced blood pressure with or without associated symptoms, and a temporal relationship to KRYSTEXXA or placebo injection with no other identifiable cause.
+Using these clinical criteria, anaphylaxis was identified in 14 (5.1%) of 273 total patients studied in the clinical program of IV KRYSTEXXA.
+The frequency was 6.5% for the every 2-week dosing regimen (8 of 123 patients), and 4.8% for the 4-week dosing frequency (6 of 126) of KRYSTEXXA.
+There were no cases of anaphylaxis in patients receiving placebo.
+Anaphylaxis generally occurred within 2 hours after treatment.
+This occurred with patients being pre-treated with an oral antihistamine, intravenous corticosteroid, and acetaminophen.
+[see Boxed Warning, Warnings and Precautions (5.1, 5.2)]
+ Infusion Reactions: Infusion reactions occurred in 26% of patients in the 2 week dosing regimen group and 41% of patients in the 4 week dosing regimen group, compared to 5% of placebo-treated patients.
+Manifestations of these reactions included urticaria (frequency of 10.6%), dyspnea (frequency of 7.1%), chest discomfort (frequency of 9.5%), chest pain (frequency of 9.5%), erythema (frequency of 9.5%), and pruritus (frequency of 9.5%).
+These manifestations overlap with the symptoms of anaphylaxis, but in a given patient did not occur together to satisfy the clinical criteria for diagnosing anaphylaxis.
+Infusion reactions are thought to result from release of various mediators, such as cytokines.
+Infusion reactions occurred at any time during a course of treatment with approximately 3% occurring with the first infusion, and approximately 91% occurred during the time of infusion.
+Some infusion reaction manifestations were reduced with slowing the rate of infusion, or stopping the infusion and restarting the infusion at a slower rate.
+These infusion reactions occurred with all patients being pre-treated with an oral antihistamine, intravenous corticosteroid and acetaminophen.
+[see Boxed Warning, Warnings and Precautions (5.1, 5.2)]
+ Gout Flares: Gout flares were common in the study patients before randomization to treatment, with patients experiencing an average of 10 flares in the preceding 18 months prior to study entry.
+During the controlled treatment period with KRYSTEXXA or placebo, the frequencies of
+ Reference ID: 3116893
+ 7
+                                         gout flares were high in all treatment groups, but more so with KRYSTEXXA treatment during the first 3 months of treatment, which seemed to decrease in the subsequent 3 months of treatment.
+The percentages of patients with any flare for the first 3 months were 74%, 81%, and 51%, for KRYSTEXXA 8 mg every 2 weeks, KRYSTEXXA 8 mg every 4 weeks, and placebo, respectively.
+The percentages of patients with any flare for the subsequent 3 months were 41%, 57%, and 67%, for KRYSTEXXA 8 mg every 2 weeks, KRYSTEXXA 8 mg every 4 weeks, and placebo, respectively.
+Patients received gout flare prophylaxis with colchicine and/or nonsteroidal anti-inflammatory drugs (NSAIDs) starting at least one week before receiving KRYSTEXXA.
+[see Warnings and Precautions (5.3)]
+ Congestive Heart Failure: Two cases of congestive heart failure exacerbation occurred during the trials in patients receiving treatment with KRYSTEXXA 8 mg every 2 weeks.
+No cases were reported in placebo-treated patients.
+Four subjects had exacerbations of pre-existing congestive heart failure while receiving KRYSTEXXA 8 mg every 2 weeks during the open-label extension study.
+[see Warnings and Precautions (5.4)].
+ Other Adverse Reactions: The most commonly reported adverse reactions that occurred in greater than or equal to 5% of patients treated with KRYSTEXXA 8mg every 2 weeks are provided in Table 1.
+ Table 1.
+Adverse Reactions Occurring in 5% or More of Patients Treated with KRYSTEXXA Compared to Placebo
+  Adverse Reaction KRYSTEXXA Placebo (Preferred Term)
+ Gout flare
+ 8 mg every 2 weeks (N=85) Na (%)
+ 65 (77%)
+ (N=43) N (%)
+ 35 (81%) Infusion reaction 22 (26%) 2 (5%) Nausea Contusionb or Ecchymosisb
+ 10 (12%) 9 (11%)
+ 1 (2%) 2 (5%)
+ Nasopharyngitis 6 (7%) 1 (2%) Constipation 5 (6%) 2 (5%) Chest Pain 5 (6%) 1 (2%) Anaphylaxis 4 (5%) 0 (0%) Vomiting 4 (5%) 1 (2%) a If the same subject in a given group had more than one occurrence in the same preferred term event category, the subject was counted only once.
+ b Most did not occur on the day of infusion and could be related to other factors (e.g. concomitant medications
+ relevant to contusion or ecchymosis, insulin dependent diabetes mellitus).
+ 6.2 Immunogenicity Anti-pegloticase antibodies developed in 92% of patients treated with KRYSTEXXA every 2 weeks, and 28% for placebo.
+Anti-PEG antibodies were also detected in 42% of patients treated with KRYSTEXXA.
+High anti-pegloticase antibody titer was associated with a failure
+ Reference ID: 3116893
+ 8
+              to maintain pegloticase-induced normalization of uric acid.
+The impact of anti-PEG antibodies on patients' responses to other PEG-containing therapeutics is unknown.
+  There was a higher incidence of infusion reactions in patients with high anti-pegloticase antibody titer: 53% (16 of 30) in the KRYSTEXXA every 2 weeks group compared to 6% in patients who had undetectable or low antibody titers.
+   As with all therapeutic proteins, there is a potential for immunogenicity.
+The observed incidence of antibody positivity in an assay is highly dependent on several factors including assay sensitivity and specificity and assay methodology, sample handling, timing of sample collection, concomitant medications, and underlying disease.
+For these reasons, the comparison of the incidence of antibodies to pegloticase with the incidence of antibodies to other products may be misleading.
+  7 DRUG INTERACTIONS No studies of interactions of KRYSTEXXA with other drugs have been conducted.
+  Because anti-pegloticase antibodies appear to bind to the PEG portion of the drug, there may
+ be potential for binding with other PEGylated products.
+The impact of anti-PEG antibodies
+ on patients' responses to other PEG-containing therapeutics is unknown.
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy Pregnancy Category C A complete evaluation of the reproductive and developmental toxicity of pegloticase has not been completed.
+Adequate animal reproduction studies have not been conducted with KRYSTEXXA.
+It is not known whether KRYSTEXXA can cause fetal harm when administered to a pregnant woman or can affect reproductive capacity.
+ There are no adequate and well-controlled studies in pregnant women.
+ KRYSTEXXA should be used during pregnancy only if clearly needed.
+ Pegloticase was not teratogenic in rats administered 0, 5, 10, or 40 mg/kg twice weekly by the intravenous route on gestation days 6 through 16 (the doses are approximately 6-fold to 50-fold higher than the maximum recommended human dose (MRHD) of 8 mg (0.133 mg/kg based on a 60 kg person) every 2 weeks based on a mg/m2 comparison).
+ 8.3 Nursing Mothers It is not known whether this drug is excreted in human milk.
+Because many drugs are excreted in human milk and because of the potential for serious adverse reactions in nursing infants, it is not recommended to administer KRYSTEXXA to a nursing mother.
+  8.4 Pediatric Use The safety and effectiveness of KRYSTEXXA in pediatric patients less than 18 years of age have not been established.
+ 8.5 Geriatric Use Of the total number of patients treated with KRYSTEXXA 8 mg every 2 weeks in the controlled studies, 34% (29 of 85) were 65 years of age and older and 12% (10 of 85) were
+ Reference ID: 3116893
+ 9
+                            75 years of age and older.
+No overall differences in safety or effectiveness were observed between older and younger patients, but greater sensitivity of some older individuals cannot be ruled out.
+No dose adjustment is needed for patients 65 years of age and older.
+ 8.6 Renal Impairment No dose adjustment is required for patients with renal impairment.
+A total of 32% (27 of 85) of patients treated with KRYSTEXXA 8 mg every 2 weeks had a creatinine clearance of &#x2264;62.5 mL/min.
+No overall differences in efficacy were observed.
+10 OVERDOSAGE No reports of overdosage with KRYSTEXXA have been reported.
+The maximum dose that has been administered as a single intravenous dose is 12 mg as uricase protein.
+   Patients suspected of receiving an overdose should be monitored, and general supportive measures should be initiated as no specific antidote has been identified.
+  11 DESCRIPTION KRYSTEXXA (pegloticase) is a uric acid specific enzyme which is a PEGylated product that consists of recombinant modified mammalian urate oxidase (uricase) produced by a genetically modified strain of Escherichia coli.
+Uricase is covalently conjugated to monomethoxypoly(ethylene glycol) [mPEG] (10 kDa molecular weight).
+ The cDNA coding for uricase is based on mammalian sequences.
+  Each uricase subunit has a molecular weight of approximately 34 kDa per subunit.
+The average molecular weight of pegloticase (tetrameric enzyme conjugated to mPEG) is approximately 540 kDa.
+ KRYSTEXXA is intended for intravenous infusion.
+ KRYSTEXXA is a sterile, clear, colorless solution containing 8 mg/mL pegloticase in phosphate-buffered saline.
+ KRYSTEXXA (pegloticase) concentrations are expressed as concentrations of uricase protein.
+Each mL of KRYSTEXXA contains 8 mg of uricase protein (conjugated to 24 mg of 10 kDa mPEG), 2.18 mg Disodium Hydrogen Phosphate Dihydrate (Na2HPO4&#x2022;2H2O), 8.77 mg Sodium Chloride (NaCl), 0.43 mg Sodium Dihydrogen Phosphate Dihydrate (NaH2PO4&#x2022;2H2O), and Water for Injection to deliver 8 mg of pegloticase (as uricase protein).
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action KRYSTEXXA is a uric acid specific enzyme which is a recombinant uricase and achieves its therapeutic effect by catalyzing the oxidation of uric acid to allantoin, thereby lowering serum uric acid.
+ Allantoin is an inert and water soluble purine metabolite.
+ It is readily eliminated, primarily by renal excretion.
+ 12.2 Pharmacodynamics Approximately 24 hours following the first dose of KRYSTEXXA, mean plasma uric acid levels for subjects in the KRYSTEXXA groups were 0.7 mg/dL for the KRYSTEXXA 8 mg
+ Reference ID: 3116893
+ 10
+                               every 2 weeks group.
+In comparison, the mean plasma uric acid level for the placebo group was 8.2 mg/dL.
+ In a single-dose, dose-ranging trial, following 1-hour intravenous infusions of 0.5, 1, 2, 4, 8 or 12 mg of pegloticase in 24 patients with symptomatic gout (n=4 subjects/dose group), plasma uric acid decreased with increasing pegloticase dose or concentrations.
+The duration of suppression of plasma uric acid appeared to be positively associated with pegloticase dose.
+Sustained decrease in plasma uric acid below the solubility concentration of 6 mg/dL for more than 300 hours was observed with doses of 8 mg and 12 mg.
+   12.3 Pharmacokinetics Pegloticase levels were determined in serum based on measurements of uricase enzyme activity.
+ Following single intravenous infusions of 0.5 mg to 12 mg pegloticase in 23 patients with symptomatic gout, maximum serum concentrations of pegloticase increased in proportion to the dose administered.
+ The population pharmacokinetic analysis showed that age, sex, weight, and creatinine clearance did not influence the pharmacokinetics of pegloticase.
+Significant covariates included in the model for determining clearance and volume of distribution were found to be body surface area and anti-pegloticase antibodies.
+ The pharmacokinetics of pegloticase has not been studied in children and adolescents.
+  No formal studies were conducted to examine the effects of either renal or hepatic impairment on pegloticase pharmacokinetics.
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term animal studies have not been performed to evaluate the carcinogenic potential of pegloticase.
+ The genotoxic potential of pegloticase has not been evaluated.
+  Fertility studies in animals have not been performed.
+  13.2 Animal Toxicology and/or Pharmacology In a 12-week intravenous repeat-dose study in dogs, there was a dose-dependent increase in vacuolated macrophages in the spleen.
+The presence of vacuolated macrophages likely reflects accumulated removal of injected pegloticase (foreign) material from the circulation.
+ There was no evidence of degeneration, inflammation, or necrosis associated with the vacuoles findings, however there was evidence of decreased functional response to liposaccharides.
+ In a 39-week, repeat dose dog study, there was a dose dependent increase in vacuolated cells in several organs, including the spleen, adrenal gland, liver, heart, duodenum and jejunum.
+ Reference ID: 3116893
+ 11
+                   In the spleen, liver, duodenum and jejunum, these vacuoles were within macrophages and most likely represented phagocytic removal of pegloticase from the circulation.
+ However, the vacuolated cells in the heart and adrenal gland did not stain as macrophages.
+ In the aortic outflow tract of the heart, vacuoles were in the cytoplasm of endothelial cells in the intimal lining of the aorta.
+In the adrenal gland, vacuoles were located within cortical cells in the zona reticularis and zona fasciculata.
+The clinical significance of these findings and the functional consequences are unknown.
+ 14 CLINICAL STUDIES The efficacy of KRYSTEXXA was studied in adult patients with chronic gout refractory to conventional therapy in two replicate, multicenter, randomized, double-blind, placebo-controlled studies of six months duration: Trial 1 and Trial 2.
+  Patients were randomized to receive KRYSTEXXA 8 mg every 2 weeks or every 4 weeks or placebo in a 2:2:1 ratio.
+Studies were stratified for the presence of tophi.
+Seventy-one percent (71%) of patients had baseline tophi.
+All patients were prophylaxed with an oral antihistamine, intravenous corticosteroid and acetaminophen.
+Patients also received prophylaxis for gout flares with non-steroidal anti-inflammatory drugs (NSAIDs) or colchicine, or both, beginning at least one week before KRYSTEXXA treatment unless medically contraindicated or not tolerated.
+Patients who completed the randomized clinical trials were eligible to enroll in a 2-year open label extension study.
+ Entry criteria for patients to be eligible for the trials were: baseline serum uric acid (SUA) of at least 8 mg/dL; had symptomatic gout with at least 3 gout flares in the previous 18 months or at least 1 gout tophus or gouty arthritis; and had a self-reported medical contraindication to allopurinol or medical history of failure to normalize uric acid (to less than 6 mg/dL) with at least 3 months of allopurinol treatment at the maximum medically appropriate dose.
+  The mean age of study subjects was 55 years (23-89); 82% were male, mean body mass index (BMI) was 33 kg/m2, mean duration of gout was 15 years, and mean baseline SUA was 10 mg/dL.
+  To assess the efficacy of KRYSTEXXA in lowering uric acid, the primary endpoint in both trials was the proportion of patients who achieved plasma uric acid (PUA) less than 6 mg/dL for at least 80% of the time during Month 3 and Month 6.
+ As shown in Table 2, a greater proportion of patients treated with KRYSTEXXA every 2 weeks achieved urate lowering to below 6 mg/dL than patients receiving placebo.
+Although the 4 week regimen also demonstrated efficacy for the primary endpoint, this regimen was associated with increased frequency of anaphylaxis and infusion reactions and less efficacy with respect to tophi.
+ Reference ID: 3116893
+ 12
+                                                         Table 2 Plasma Uric Acid &lt; 6 mg/dL for at Least 80% of the Time During Months 3 and 6
+ Treatment Group N Number (%) of
+ Subjects Who Met Response Criteria
+ 95% Confidence Interval1 P-Value
+2
+ Trial 1   Pegloticase 8 mg every 2 weeks  43 20 (47%) [32%, 61%] &lt;0.001   Pegloticase 8 mg every 4 weeks 41 8 (20%) [7%, 32%] 0.044    Placebo 20 0 (0%) Trial 2  Pegloticase 8 mg every 2 weeks  42 16 (38%) [23%, 53%] &lt;0.001  Pegloticase 8 mg every 4 weeks 43 21 (49%) [34%, 64%] &lt;0.001  Placebo 23 0 (0%) 1 95% confidence interval for differences in responder rate between pegloticase group vs. placebo 2 P-value using Fisher's exact test to compare pegloticase group vs. placebo Note: Based on post-hoc analyses of the clinical trial data, if KRYSTEXXA had been stopped when a patient's uric acid level rose to greater than 6 mg/dL on a single occasion, the incidence of infusion reactions would have been reduced by approximately 67%, but the success rates for the primary efficacy endpoint would have been reduced by approximately 20%.
+ If KRYSTEXXA had been stopped after 2 consecutive uric acid levels greater than 6 mg/dL, the incidence of infusion reactions would have been half, and there would have been little change in the efficacy outcome.
+ The effect of treatment on tophi was a secondary efficacy endpoint and was assessed using standardized digital photography, image analysis, and a Central Reader blinded to treatment assignment.
+Approximately 70% of patients had tophi at baseline.
+A pooled analysis of data from Trial 1 and Trial 2 was performed as pre-specified in the protocols.
+At Month 6, the percentage of patients who achieved a complete response (defined as 100% resolution of at least one target tophus, no new tophi appear and no single tophus showing progression) was 45%, 26%, and 8%, with KRYSTEXXA 8 mg every 2 weeks, KRYSTEXXA 8 mg every 4 weeks, and placebo, respectively.
+The difference between KRYSTEXXA and placebo was statistically significant for the every 2 week dosing regimen, but not for the every 4 week dosing regimen.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING How Supplied  KRYSTEXXA is supplied as a clear, colorless, sterile solution in phosphate buffered saline intended for intravenous infusion after dilution.
+KRYSTEXXA is supplied in a single-use 2 mL glass vial with a Teflon coated (latex-free) rubber injection stopper to deliver KRYSTEXXA as 8 mg of uricase protein in 1 mL volume.
+ Storage and Handling Before the preparation for use, KRYSTEXXA must be stored in the carton and maintained at all times under refrigeration between 2 to 8C (36 to 46F).
+ Protect from light.
+Do not shake or freeze.
+ Do not use beyond the expiration date stamped.
+  NDC# 54396-801-01
+ Reference ID: 3116893
+ 13
+                      17 PATIENT COUNSELING INFORMATION See Medication Guide
+ 17.1 General Information Provide and instruct patients to read the accompanying Medication Guide before starting treatment and before each subsequent treatment.
+   17.2 Anaphylaxis and Infusion Reactions  &#x2022; Anaphylaxis and infusion reactions can occur at any infusion while on therapy.
+ Counsel patients on the importance of adhering to any prescribed medications to help prevent or lessen the severity of these reactions.
+  &#x2022; Educate patients on the signs and symptoms of anaphylaxis, including wheezing, peri-oral or lingual edema, hemodynamic instability, and rash or urticaria.
+ &#x2022; Educate patients on the most common signs and symptoms of an infusion reaction, including urticaria (skin rash), erythema (redness of the skin), dyspnea (difficulty breathing), flushing, chest discomfort, chest pain, and rash.
+  &#x2022; Advise patients to seek medical care immediately if they experience any symptoms of an allergic reaction during or at any time after the infusion of KRYSTEXXA.
+[see Warnings and Precautions (5.1, 5.2), Adverse Reactions (6.1)]
+ &#x2022; Advise patients to discontinue any oral urate-lowering agents before starting on KRYSTEXXA and not to take any oral urate-lowering agents while on KRYSTEXXA.
+ 17.3 Glucose-6-phosphate dehydrogenase (G6PD) Deficiency Inform patients not to take KRYSTEXXA if they have a condition known as G6PD deficiency.
+Explain to patients that G6PD deficiency is more frequently found in individuals of African or Mediterranean ancestry and that they may be tested to determine if they have G6PD deficiency, unless already known.
+[See Contraindications (4)]
+ 17.4 Gout Flares Explain to patients that gout flares may initially increase when starting treatment with
+ KRYSTEXXA, and that medications to help reduce flares may need to be taken regularly for
+ the first few months after KRYSTEXXA is started.
+[see Warnings and Precautions (5.3),
+ Adverse Reactions (6.1)] Advise patients that they should not stop KRYSTEXXA therapy if
+ they have a flare.
+ Manufactured by:
+ Savient Pharmaceuticals, Inc.
+ One Tower Center, 14th Floor
+ East Brunswick, NJ 08816
+ 14
+ Reference ID: 3116893
+  
