@@ -1,29 +1,36 @@
 """
 Manages training data
 """
-import os, json, logging
+import os, json, logging, math
 
 import multiprocessing, warnings
 from joblib import Parallel, delayed
 
-class DataFile():
+
+class DataFile:
     def __init__(self, file_name, raw_text_fp, ann_path):
         self.file_name = file_name
         self.raw_path = raw_text_fp
         self.ann_path = ann_path
         self.metamapped_path = None
+
     def __repr__(self):
         return self.file_name
+
     def __str__(self):
         return self.file_name
 
 
-class DataLoader():
+class DataLoader:
 
     def __init__(self, data_directory, raw_text_file_extension="txt", limit=None):
         """
         Manages directory of training data along with other relevant files.
-        A directory must consist of at-least A.txt , A.ann file pairs
+        A directory must consist of at-least A.txt , A.ann file pairs. Specifically, the DataLoader interfaces
+        with metamap to do pre-metamapping of files and associating the pre-mapped files with ann, txt pairs. By
+        default DataLoader will create a sub-directory of a directory of text files which contains associated metamapped
+        files for each text file in the parent directory.
+
         :param data_directory: Directory containing training data consisting of raw and annotated text pairs
         :param raw_text_file_extension: extension of annotated text files
         :param limit: number of documents to utilize (defaults to all in directory)
@@ -60,6 +67,10 @@ class DataLoader():
                                                         ".%s" % self.raw_text_file_extension, ".metamapped"))
 
     def get_files(self):
+        """
+        Returns a list of all files processed by DataLoader
+        :return:
+        """
         return self.all_files
 
     def _parallel_run(self, files, i):
@@ -67,17 +78,25 @@ class DataLoader():
         file = files[i].split(os.path.sep)[-1]
         file_path = files[i]
         logging.info("Attempting to Metamap: %s", file_path)
-        print("Attempting to Metamap: %s" % file_path)
         mapped_file_location = os.path.join(self.data_directory+"/metamapped", file.replace(self.raw_text_file_extension, "metamapped"))
         if not os.path.isfile(mapped_file_location):
             mapped_file = open(mapped_file_location, 'w')
-            try:
-                mapped_file.write(json.dumps(self.metamap.map_file(file_path)))
-                logging.info("Successfully Metamapped: %s", file_path)
-                print("Successfully Metamapped: %s" % file_path)
-            except Exception as e:
-                logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
-                mapped_file.write(str(e))
+            max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
+
+            metamap_dict = None
+            while metamap_dict is None or metamap_dict['metamap'] is None: #while current prune depth causes out of memory on document
+                try:
+                    metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth) #attempt to metamap
+                    if metamap_dict['metamap'] is not None: #if successful
+                        break
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
+                except BaseException as e:
+                    metamap_dict = None
+                    logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+            mapped_file.write(json.dumps(metamap_dict))
+            logging.info("Successfully Metamapped: %s", file_path)
+            logging.info("Successfully Metamapped: %s" % file_path)
+
 
 
     def is_metamapped(self):

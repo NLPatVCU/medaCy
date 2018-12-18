@@ -2,23 +2,43 @@
 # medaCy
 :hospital: Medical Natural Language Processing with spaCy :hospital:
 
-MedaCy is a text processing and learning framework built over spaCy to support the lightning fast prototyping, building, and application of highly predictive named entity recognition and relationship extraction systems in the medical domain.
+MedaCy is a text processing and learning framework built over [spaCy](https://spacy.io/) to support the lightning fast prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems.
 
 ![alt text](https://nlp.cs.vcu.edu/images/Edit_NanomedicineDatabase.png "Nanoinformatics")
 
-Features
-========
-- Highly predictive out-of-the-box trained models for clinical named entity recognition and relationship extraction.
-- Customizable feature extraction pipelines for custom model building.
-- Integrated converters for common text annotation formats (Prodigy, BRAT, etc).
-- Pre-compiled medical terminology and abbreviation lexicons.
+
+# :star2: Features
+- Highly predictive, shared-task dominating out-of-the-box trained models for medical named entity recognition.
+- Customizable pipelines with detailed development instructions and documentation.
+- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
+- Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
+
+## :thought_balloon: Where to ask questions
+
+MedaCy actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar>)
+and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
+receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](/CONTRIBUTING.md).
+
+## :computer: Installation Instructions
+Medacy can be installed for general use or for pipeline development / research purpose.
+
+| Application | Run           |
+| ----------- |:-------------:|
+| Prediction and Model Training (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
+| Prediction and Model Training (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
+| Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
-User Guide
-==========
+**Note:** Make sure you have at the least spaCy's small model installed.
+```python
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
+```
+
+
+# :books: User Guide
 Using medaCy is simple: 
 1. Select a pipeline or build your own.
-2. Load training/testing data (currently only BRAT annotation format is support - help us write converters!)
+2. Load training data (raw text and annotations)
 3. Instantiate a Model with your chosen pipeline, train on your annotated data, and retrieve a model for prediction! 
 
 Training and using a Named Entity Recognition model for Clinical Text using medaCy:
@@ -76,19 +96,6 @@ pip install https://github.com/explosion/spacy-models/releases/download/en_core_
 ```
 
 
-Set-up
-======
-To install this repository from source do the following:
-1) Enter into a python3 virtual envirorment, once inside make sure to upgrade pip to the latest version.
-2) Run the following instruction - this should take a bit and may throw some non-fatal warnings.
-```python
-pip install git+https://github.com/NanoNLP/medaCy.git
-```
-3) Install spaCy's small model.
-```python
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
-```
-
 How medaCy works
 ================
 MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
@@ -102,17 +109,7 @@ use the components already included with medaCy. Some more powerful components r
 to overlay rich medical concept information onto text. Components are chained or stacked in pipelines and can themselves depend on the outputs of previous components to function.
 
 
-Contribution
-============
-To contribute do the following:
-1) Enter into a python3 virtual envirorment, once inside make sure to upgrade pip to the latest version.
-2) Fork and clone this repository, enter into the cloned repo and run:
-```python
-pip install -e .
-```
-This will install medaCy in editable mode. Any changes you make to medaCy sources code will be reflected immediately when used.
 
-3) Insure you are developing in the development branch or your own branch of the development branch.
 
 Reference
 =========
@@ -132,7 +129,7 @@ This package is licensed under the GNU General Public License
 
 Authors
 =======
-Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes
+Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, and Bridget McInnes
 
 Acknowledgments
 ===============
