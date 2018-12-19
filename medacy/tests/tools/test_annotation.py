@@ -96,14 +96,34 @@ class TestAnnotation(TestCase):
         with self.assertRaises(AssertionError):
             annotations = Annotations(self.test_dir+os.path.sep+"broken_ann_file.ann", annotation_type='ann')
 
+    def test_ann_conversions(self):
+        """
+        Tests converting and un-converting a valid Annotations object to an ANN file.
+        :return:
+        """
+        annotations = Annotations(self.test_dir + os.path.sep + self.ann_files[0], annotation_type='ann')
+        annotations.to_ann(write_location=self.test_dir+os.path.sep+"intermediary.ann")
+        annotations2 = Annotations(self.test_dir+os.path.sep+"intermediary.ann", annotation_type='ann')
+        self.assertEqual(annotations.get_entity_annotations(return_dictionary=True),
+                          annotations2.get_entity_annotations(return_dictionary=True))
 
     def test_get_entity_annotations_dict(self):
+        """
+        Tests the validity of the annotation dict
+        :return:
+        """
         annotations = Annotations(self.test_dir + os.path.sep + self.ann_files[0], annotation_type='ann')
         self.assertIsInstance(annotations.get_entity_annotations(return_dictionary=True), dict)
 
     def test_get_entity_annotations_list(self):
+        """
+        Tests the validity of annotation list
+        :return:
+        """
         annotations = Annotations(self.test_dir + os.path.sep + self.ann_files[0], annotation_type='ann')
         self.assertIsInstance(annotations.get_entity_annotations(), list)
+
+
 
 
 
