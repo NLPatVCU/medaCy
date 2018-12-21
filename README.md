@@ -34,7 +34,7 @@ Medacy can be installed for general use or for pipeline development / research p
 
 
 # :books: User Guide
-Using medaCy is simple: 
+Using medaCy is simple and [detailed examples](/examples) are provided: 
 1. Select a pipeline or build your own.
 2. Load training data (raw text and annotations)
 3. Instantiate a Model with your chosen pipeline, train on your annotated data, and retrieve a model for prediction! 
@@ -88,21 +88,6 @@ model.dump('/path/to/dump/to') # Trained model is now stored at specified direct
 model.load('/path/to/dump/to') # Trained model is loaded back into medaCy
 
 ``` 
-
-
-How medaCy works
-================
-MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
-MedaCy consists of a set of lightning-fast pipelines that are specialized for learning specific types of medical entities. A pipeline consists
-of a stackable and interchangeable set of PipelineComponents - these are bite-sized code blocks that each overlay a feature onto the text being processed.
-
-Components
-==========
-You can write your own PipelineComponents to utilize in custom pipelines by interfacing the BasePipeline and BaseComponent classes. Alternatively
-use the components already included with medaCy. Some more powerful components require outside software - an example is the MetaMapComponent which interfaces with MetaMap
-to overlay rich medical concept information onto text. Components are chained or stacked in pipelines and can themselves depend on the outputs of previous components to function.
-
-
 
 
 Reference
