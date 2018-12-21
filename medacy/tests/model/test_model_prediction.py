@@ -1,6 +1,6 @@
 from unittest import TestCase
 from medacy.model import Model
-from medacy.pipelines import ClinicalPipeline
+from medacy.pipelines import TestingPipeline
 from medacy.tools import DataLoader, Annotations
 from medacy.pipeline_components import MetaMap
 from medacy.data import load_END
@@ -45,10 +45,8 @@ class TestModelBulk(TestCase):
 
         train_loader = DataLoader(self.train_dir, limit=1)
         test_loader = DataLoader(self.test_dir, limit=1)
-        metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap",
-                          cache_output=False)
 
-        pipeline = ClinicalPipeline(metamap, entities=['tradename'])
+        pipeline = TestingPipeline(entities=['tradename'])
 
         model = Model(pipeline, n_jobs=1)
         model.fit(train_loader)
