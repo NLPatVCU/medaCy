@@ -1,0 +1,457 @@
+T1	tradename 0 7	DEPOCYT
+T2	activeingredient 9 19	cytarabine
+T3	nanoparticle 20 28	liposome
+T4	tradename 155 162	DEPOCYT
+T5	tradename 225 242	DEPOCYT. DEPOCYT
+T6	activeingredient 244 254	cytarabine
+T7	nanoparticle 255 263	liposome
+T8	routeofadministration 280 291	Intrathecal
+T9	fdaapprovaldate 325 329	1999
+T10	adversereaction 443 466	Chemical arachnoiditis,
+T11	adversereaction 502 529	nausea, vomiting, headache
+T12	adversereaction 534 540	fever,
+T13	adversereaction 613 635	chemical arachnoiditis
+T14	tradename 670 677	DepoCyt
+T15	co-administereddrug 714 727	dexamethasone
+T16	adversereaction 757 780	chemical arachnoiditis.
+T17	tradename 871 878	DepoCyt
+T18	routeofadministration 900 911	intrathecal
+T19	indication 925 950	lymphomatous meningitis.
+T20	tradename 1027 1034	DepoCyt
+T21	routeofadministration 1042 1053	intrathecal
+T22	tradename 1099 1107	DepoCyt,
+T23	dose 1108 1114	50 mg,
+T24	routeofadministration 1126 1139	intrathecally
+T25	frequency 1178 1191	every 14 days
+T26	tradename 1260 1268	DepoCyt,
+T27	dose 1269 1275	50 mg,
+T28	routeofadministration 1287 1300	intrathecally
+T29	frequency 1339 1352	every 14 days
+T30	tradename 1454 1462	DepoCyt,
+T31	dose 1463 1469	50 mg,
+T32	routeofadministration 1481 1494	intrathecally
+T33	frequency 1533 1546	every 28 days
+T34	co-administereddrug 1601 1614	dexamethasone
+T35	dose 1615 1619	4 mg
+T36	frequency 1620 1631	twice a day
+T37	routeofadministration 1639 1647	by mouth
+T38	routeofadministration 1651 1664	intravenously
+T39	tradename 1701 1708	DepoCyt
+T40	tradename 1767 1774	DepoCyt
+T41	dose 1778 1784	25 mg.
+T42	tradename 1825 1833	DepoCyt.
+T43	activeingredient 1973 1983	cytarabine
+T44	nanoparticle 1984 1992	liposome
+T45	activeingredient 2114 2124	cytarabine
+T46	adversereaction 2294 2304	Myelopathy
+T47	tradename 2377 2385	DepoCyt.
+T48	tradename 2525 2533	DepoCyt.
+T49	adversereaction 2677 2726	headache, arachnoiditis, confusion, abnormal gait
+T50	adversereaction 2729 2787	convulsions, weakness, pyrexia, fatigue, nausea, vomiting
+T51	adversereaction 2790 2803	constipation,
+T52	adversereaction 2808 2818	back pain.
+T53	company 2873 2905	Sigma-Tau Pharmaceuticals, Inc.
+T54	adversereaction 3375 3397	Chemical Arachnoiditis
+T55	adversereaction 4684 4706	CHEMICAL ARACHNOIDITIS
+T56	adversereaction 4726 4749	Chemical arachnoiditis,
+T57	adversereaction 4785 4811	nausea, vomiting, headache
+T58	adversereaction 4816 4822	fever,
+T59	adversereaction 4895 4917	chemical arachnoiditis
+T60	tradename 4952 4959	DepoCyt
+T61	co-administereddrug 4996 5009	dexamethasone
+T62	adversereaction 5038 5062	chemical arachnoiditis.
+T63	tradename 5131 5138	DepoCyt
+T64	activeingredient 5141 5151	cytarabine
+T65	nanoparticle 5152 5160	liposome
+T66	routeofadministration 5193 5204	intrathecal
+T67	indication 5218 5244	lymphomatous meningitis.
+T68	tradename 5324 5331	DepoCyt
+T69	tradename 5447 5455	DepoCyt.
+T70	tradename 5493 5500	DepoCyt
+T71	tradename 5721 5728	DepoCyt
+T72	tradename 5786 5793	DepoCyt
+T73	tradename 5976 5983	DepoCyt
+T74	tradename 6053 6060	DepoCyt
+T75	tradename 6123 6130	DepoCyt
+T76	tradename 6366 6373	DepoCyt
+T77	tradename 6480 6496	DepoCyt. DepoCyt
+T78	routeofadministration 6598 6635	direct injection into the lumbar sac.
+T79	tradename 6637 6644	DepoCyt
+T80	indication 6929 6953	lymphomatous meningitis,
+T81	tradename 6954 6961	DepoCyt
+T82	dose 6962 6967	50 mg
+T83	tradename 6981 6989	DepoCyt)
+T84	tradename 7074 7082	DepoCyt,
+T85	dose 7083 7089	50 mg,
+T86	routeofadministration 7103 7116	intrathecally
+T87	routeofadministration 7138 7155	lumbar puncture)
+T88	frequency 7156 7169	every 14 days
+T89	tradename 7222 7230	DepoCyt,
+T90	dose 7231 7237	50 mg,
+T91	routeofadministration 7251 7264	intrathecally
+T92	routeofadministration 7286 7303	lumbar puncture)
+T93	frequency 7304 7317	every 14 days
+T94	tradename 7405 7413	DepoCyt,
+T95	dose 7414 7420	50 mg,
+T96	routeofadministration 7434 7447	intrathecally
+T97	routeofadministration 7469 7486	lumbar puncture)
+T98	frequency 7487 7500	every 28 days
+T99	co-administereddrug 7571 7584	dexamethasone
+T100	dose 7585 7589	4 mg
+T101	frequency 7590 7601	twice a day
+T102	routeofadministration 7609 7617	by mouth
+T103	routeofadministration 7621 7634	intravenously
+T104	duration 7639 7645	5 days
+T105	tradename 7671 7678	DepoCyt
+T106	dose 7761 7767	25 mg.
+T107	tradename 7800 7807	DepoCyt
+T108	activeingredient 8391 8401	cytarabine
+T109	nanoparticle 8402 8410	liposome
+T110	tradename 8445 8452	DepoCyt
+T111	activeingredient 8455 8465	cytarabine
+T112	nanoparticle 8466 8474	liposome
+T113	activeingredient 8543 8553	cytarabine
+T114	adversereaction 8674 8721	Chemical Arachnoiditis Chemical arachnoiditis,
+T115	adversereaction 8757 8783	nausea, vomiting, headache
+T116	adversereaction 8788 8794	fever,
+T117	adversereaction 8847 8869	chemical arachnoiditis
+T118	adversereaction 8970 8992	chemical arachnoiditis
+T119	adversereaction 9038 9060	chemical arachnoiditis
+T120	tradename 9134 9141	DepoCyt
+T121	co-administereddrug 9178 9191	dexamethasone
+T122	adversereaction 9221 9243	chemical arachnoiditis
+T123	routeofadministration 9520 9531	intrathecal
+T124	tradename 9545 9552	DepoCyt
+T125	adversereaction 9610 9624	neurotoxicity.
+T126	adversereaction 9645 9659	neurotoxicity,
+T127	tradename 9687 9695	DepoCyt.
+T128	tradename 9736 9743	DepoCyt
+T129	adversereaction 9782 9795	Hydrocephalus
+T130	adversereaction 9845 9874	arachnoiditis. Arachnoiditis
+T131	routeofadministration 9960 9971	intrathecal
+T132	adversereaction 10031 10044	arachnoiditis
+T133	tradename 10068 10075	DepoCyt
+T134	indication 10142 10166	lymphomatous meningitis.
+T135	adversereaction 10201 10223	chemical arachnoiditis
+T136	co-administereddrug 10263 10276	dexamethasone
+T137	co-administereddrug 10307 10320	dexamethasone
+T138	adversereaction 10339 10361	chemical arachnoiditis
+T139	adversereaction 10399 10412	Neurotoxicity
+T140	routeofadministration 10414 10425	Intrathecal
+T141	activeingredient 10444 10454	cytarabine
+T142	adversereaction 10465 10475	myelopathy
+T143	adversereaction 10486 10505	neurologic toxicity
+T144	routeofadministration 10580 10591	intrathecal
+T145	activeingredient 10592 10602	cytarabine
+T146	adversereaction 10715 10729	neurotoxicity.
+T147	activeingredient 10781 10791	cytarabine
+T148	adversereaction 10844 10858	neurotoxicity.
+T149	routeofadministration 10882 10893	intrathecal
+T150	routeofadministration 11023 11034	intrathecal
+T151	tradename 11053 11061	DepoCyt,
+T152	adversereaction 11062 11094	central nervous system toxicity,
+T153	adversereaction 11105 11168	persistent extreme somnolence, hemiplegia, visual disturbances
+T154	adversereaction 11179 11188	blindness
+T155	adversereaction 11224 11232	deafness
+T156	adversereaction 11237 11258	cranial nerve palsies
+T157	adversereaction 11301 11324	peripheral neuropathy,
+T158	adversereaction 11333 11371	pain, numbness, paresthesia, weakness,
+T159	adversereaction 11376 11410	impaired bowel and bladder control
+T160	adversereaction 11523 11545	Cauda Equina Syndrome.
+T161	adversereaction 11567 11581	neurotoxicity,
+T162	tradename 11609 11616	DepoCyt
+T163	tradename 11632 11639	DepoCyt
+T164	adversereaction 11640 11658	Headache, nausea,
+T165	adversereaction 11663 11668	fever
+T166	adversereaction 11700 11714	neurotoxicity.
+T167	tradename 11889 11896	DepoCyt
+T168	activeingredient 11941 11952	Cytarabine,
+T169	tradename 11977 11985	DepoCyt,
+T170	activeingredient 12090 12100	cytarabine
+T171	routeofadministration 12111 12122	intrathecal
+T172	tradename 12141 12148	DepoCyt
+T173	activeingredient 12648 12658	Cytarabine
+T174	activeingredient 12693 12703	Cytarabine
+T175	adversereaction 13127 13149	Chemical Arachnoiditis
+T176	adversereaction 13197 13210	Neurotoxicity
+T177	adversereaction 13258 13319	Transient elevations in CSF protein and CSF white blood cells
+T178	routeofadministration 13404 13415	intrathecal
+T179	activeingredient 13434 13444	cytarabine
+T180	adversereaction 13503 13511	headache
+T181	adversereaction 13517 13533	nausea, vomiting
+T182	adversereaction 13539 13632	arachnoiditis, weakness, confusion, pyrexia, fatigue, constipation, back pain, gait abnormal
+T183	adversereaction 13638 13649	convulsions
+T184	adversereaction 13655 13664	dizziness
+T185	adversereaction 13670 13728	lethargy, pain in limb, insomnia, urinary tract infection
+T186	adversereaction 13734 13750	neck pain, death
+T187	adversereaction 13756 13800	pain, memory impairment, dehydration, anemia
+T188	adversereaction 13806 13814	diarrhea
+T189	adversereaction 13821 13839	appetite decreased
+T190	adversereaction 13845 13980	thrombocytopenia, edema peripheral, arthralgia, neck stiffness, vision blurred, muscle weakness, neutropenia, hypoesthesia, agitation,
+T191	adversereaction 13985 13992	dyspnea
+T192	indication 14709 14732	lymphomatous meningitis
+T193	tradename 14743 14750	DepoCyt
+T194	dose 14751 14756	50 mg
+T195	tradename 14832 14839	DepoCyt
+T196	tradename 14850 14857	DepoCyt
+T197	adversereaction 14908 14916	Headache
+T198	adversereaction 14949 14962	Arachnoiditis
+T199	adversereaction 14992 15001	Confusion
+T200	adversereaction 15030 15043	Gait abnormal
+T201	adversereaction 15075 15086	Convulsions
+T202	adversereaction 15116 15125	Dizziness
+T203	adversereaction 15156 15173	Memory impairment
+T204	adversereaction 15199 15211	Hypoesthesia
+T205	adversereaction 15238 15244	Tremor
+T206	adversereaction 15270 15291	Peripheral neuropathy
+T207	adversereaction 15319 15326	Syncope
+T208	adversereaction 15351 15361	Neuropathy
+T209	adversereaction 15390 15419	Peripheral sensory neuropathy
+T210	adversereaction 15444 15461	Reflexes abnormal
+T211	adversereaction 15541 15549	Weakness
+T212	adversereaction 15579 15586	Pyrexia
+T213	adversereaction 15615 15622	Fatigue
+T214	adversereaction 15650 15658	Lethargy
+T215	adversereaction 15685 15690	Death
+T216	adversereaction 16193 16201	Lymphoma
+T217	tradename 16243 16250	DepoCyt
+T218	tradename 16261 16268	DepoCyt
+T219	adversereaction 16293 16297	Pain
+T220	adversereaction 16327 16343	Edema peripheral
+T221	adversereaction 16371 16375	Fall
+T222	adversereaction 16400 16420	Mucosal inflammation
+T223	adversereaction 16448 16453	Edema
+T224	adversereaction 16509 16515	Nausea
+T225	adversereaction 16545 16553	Vomiting
+T226	adversereaction 16586 16598	Constipation
+T227	adversereaction 16625 16633	Diarrhea
+T228	adversereaction 16664 16678	Abdominal pain
+T229	adversereaction 16708 16717	Dysphagia
+T230	adversereaction 16743 16754	Hemorrhoids
+T231	adversereaction 16829 16838	Back pain
+T232	adversereaction 16865 16877	Pain in limb
+T233	adversereaction 16904 16913	Neck pain
+T234	adversereaction 16940 16950	Arthralgia
+T235	adversereaction 16976 16990	Neck stiffness
+T236	adversereaction 17016 17031	Muscle weakness
+T237	adversereaction 17084 17092	Insomnia
+T238	adversereaction 17119 17128	Agitation
+T239	adversereaction 17154 17164	Depression
+T240	adversereaction 17190 17197	Anxiety
+T241	adversereaction 17251 17274	Urinary tract infection
+T242	adversereaction 17305 17314	Pneumonia
+T243	adversereaction 17379 17390	Dehydration
+T244	adversereaction 17417 17435	Appetite decreased
+T245	adversereaction 17466 17478	Hyponatremia
+T246	adversereaction 17503 17514	Hypokalemia
+T247	adversereaction 17539 17552	Hyperglycemia
+T248	adversereaction 17577 17585	Anorexia
+T249	adversereaction 17626 17650	Platelet count decreased
+T250	adversereaction 17704 17716	Incontinence
+T251	adversereaction 17745 17762	Urinary retention
+T252	adversereaction 17837 17844	Dyspnea
+T253	adversereaction 17875 17880	Cough
+T254	adversereaction 17920 17934	Vision blurred
+T255	adversereaction 17992 17998	Anemia
+T256	adversereaction 18029 18045	Thrombocytopenia
+T257	tradename 18567 18574	DepoCyt
+T258	tradename 18585 18592	DepoCyt
+T259	adversereaction 18617 18628	Neutropenia
+T260	adversereaction 18697 18706	Contusion
+T261	adversereaction 18731 18739	Pruritus
+T262	adversereaction 18767 18785	Sweating increased
+T263	adversereaction 18830 18841	Hypotension
+T264	adversereaction 18870 18882	Hypertension
+T265	adversereaction 18940 18949	Hypacusis
+T266	adversereaction 18994 19005	Tachycardia
+T267	adversereaction 19104 19133	Diffuse Large B-Cell Lymphoma
+T268	tradename 19305 19312	DepoCyt
+T269	dose 19313 19318	50 mg
+T270	tradename 19346 19353	DepoCyt
+T271	adversereaction 19450 19458	Headache
+T272	adversereaction 19491 19504	Arachnoiditis
+T273	adversereaction 19534 19545	Convulsions
+T274	adversereaction 19604 19620	Nausea Vomiting
+T275	adversereaction 19743 19779	Back pain Neck pain Neck stiffness
+T276	adversereaction 19836 19843	Pyrexia
+T277	tradename 20091 20098	DepoCyt
+T278	adversereaction 20155 20161	deaths
+T279	tradename 20173 20180	DepoCyt
+T280	dose 20215 20221	125 mg
+T281	adversereaction 20242 20256	encephalopathy
+T282	routeofadministration 20285 20301	intraventricular
+T283	tradename 20310 20318	DepoCyt.
+T284	tradename 20485 20493	DepoCyt,
+T285	dose 20494 20499	50 mg
+T286	routeofadministration 20507 20523	intraventricular
+T287	adversereaction 20544 20559	focal seizures
+T288	adversereaction 20575 20594	status epilepticus.
+T289	adversereaction 20736 20744	seizures
+T290	tradename 20763 20770	DepoCyt
+T291	activeingredient 20804 20814	cytarabine
+T292	adversereaction 20839 20844	death
+T293	tradename 20907 20915	DepoCyt.
+T294	tradename 21593 21601	DepoCyt.
+T295	tradename 21696 21703	DepoCyt
+T296	tradename 21773 21780	DepoCyt
+T297	routeofadministration 21835 21846	intrathecal
+T298	routeofadministration 21880 21891	intrathecal
+T299	activeingredient 21892 21902	cytarabine
+T300	routeofadministration 21944 21958	intrathecally,
+T301	adversereaction 21968 21981	neurotoxicity
+T302	tradename 22203 22211	DepoCyt.
+T303	activeingredient 22237 22247	cytarabine
+T304	routeofadministration 22259 22270	intrathecal
+T305	tradename 22289 22296	DepoCyt
+T306	activeingredient 22312 22322	Cytarabine
+T307	activeingredient 22524 22535	cytarabine,
+T308	tradename 22691 22699	DepoCyt.
+T309	activeingredient 22878 22888	Cytarabine
+T310	dose 22997 23012	&#x2265;2 mg/kg
+T311	frequency 23012 23016	/day
+T312	routeofadministration 23035 23037	IP
+T313	dose 23176 23184	20 mg/kg
+T314	routeofadministration 23215 23217	IP
+T315	routeofadministration 23316 23318	IP
+T316	dose 23328 23336	50 mg/kg
+T317	activeingredient 23523 23533	Cytarabine
+T318	dose 23676 23685	0.5 mg/kg
+T319	frequency 23685 23689	/day
+T320	dose 23831 23838	8 mg/kg
+T321	frequency 23838 23842	/day
+T322	activeingredient 23959 23969	cytarabine
+T323	routeofadministration 24006 24017	intrathecal
+T324	tradename 24018 24025	DepoCyt
+T325	activeingredient 24073 24083	cytarabine
+T326	routeofadministration 24094 24105	intrathecal
+T327	tradename 24121 24128	DepoCyt
+T328	tradename 24467 24474	DepoCyt
+T329	tradename 24628 24635	DepoCyt
+T330	tradename 24695 24702	DepoCyt
+T331	activeingredient 24705 24715	cytarabine
+T332	nanoparticle 24716 24724	liposome
+T333	tradename 24775 24782	DepoCyt
+T334	adversereaction 24813 24835	chemical arachnoiditis
+T335	adversereaction 24846 24861	encephalopathy.
+T336	co-administereddrug 24903 24916	dexamethasone
+T337	dose 24949 24955	125 mg
+T338	routeofadministration 25014 25025	intrathecal
+T339	tradename 25026 25033	DepoCyt
+T340	activeingredient 25052 25062	cytarabine
+T341	tradename 25077 25085	DepoCyt.
+T342	routeofadministration 25158 25169	intrathecal
+T343	activeingredient 25187 25198	cytarabine,
+T344	tradename 25255 25262	DepoCyt
+T345	tradename 25750 25757	DepoCyt
+T346	activeingredient 25760 25770	cytarabine
+T347	nanoparticle 25771 25779	liposome
+T348	chemoclass 25834 25848	antimetabolite
+T349	activeingredient 25849 25859	cytarabine
+T350	routeofadministration 25865 25876	intrathecal
+T351	activeingredient 25915 25925	cytarabine
+T352	molecularweight 26084 26097	243.22 g/mol.
+T353	activeingredient 26098 26108	Cytarabine
+T354	tradename 26148 26155	DepoCyt
+T355	activeingredient 26227 26238	cytarabine.
+T356	tradename 26239 26246	DepoCyt
+T357	activeingredient 26324 26334	cytarabine
+T358	nanoparticle 26335 26344	liposomes
+T359	inactiveingredient 26358 26373	sodium chloride
+T360	inactiveingredient 26377 26382	water
+T361	activeingredient 26422 26433	cytarabine,
+T362	corecomposition 26441 26453	cholesterol,
+T363	corecomposition 26479 26514	dioleoylphosphatidylcholine (DOPC),
+T364	corecomposition 26526 26565	dipalmitoylphosphatidylglycerol (DPPG).
+T365	tradename 26566 26573	DepoCyt
+T366	nanoparticle 26660 26668	Liposome
+T367	activeingredient 26748 26758	cytarabine
+T368	nanoparticle 26760 26768	liposome
+T369	activeingredient 26865 26876	cytarabine.
+T370	tradename 26930 26937	DepoCyt
+T371	activeingredient 26940 26950	cytarabine
+T372	nanoparticle 26951 26959	liposome
+T373	activeingredient 27032 27042	cytarabine
+T374	activeingredient 27114 27124	Cytarabine
+T375	activeingredient 27255 27265	cytarabine
+T376	activeingredient 27284 27295	cytarabine-
+T377	activeingredient 27545 27555	cytarabine
+T378	activeingredient 27571 27581	Cytarabine
+T379	routeofadministration 27674 27685	intrathecal
+T380	tradename 27704 27711	DepoCyt
+T381	dose 27712 27718	50 mg,
+T382	activeingredient 27743 27753	cytarabine
+T383	tmax 27769 27782	within 1 hour
+T384	cmax 27809 27825	30 to 50 mcg/mL.
+T385	activeingredient 27867 27877	cytarabine
+T386	plasmahalflife 27893 27911	5.9 to 82.4 hours.
+T387	activeingredient 27933 27943	cytarabine
+T388	routeofadministration 27970 27981	intrathecal
+T389	tradename 28000 28007	DepoCyt
+T390	dose 28008 28014	50 mg.
+T391	activeingredient 28080 28090	cytarabine
+T392	activeingredient 28219 28230	cytarabine,
+T393	routeofadministration 28322 28333	intrathecal
+T394	activeingredient 28468 28478	cytarabine
+T395	tradename 28712 28720	DepoCyt.
+T396	activeingredient 28722 28732	Cytarabine
+T397	activeingredient 29422 29432	Cytarabine
+T398	activeingredient 29548 29558	cytarabine
+T399	activeingredient 29605 29615	Cytarabine
+T400	routeofadministration 29757 29759	IP
+T401	activeingredient 29760 29771	cytarabine.
+T402	activeingredient 29810 29820	cytarabine
+T403	routeofadministration 29832 29843	intrathecal
+T404	tradename 29859 29866	DepoCyt
+T405	tradename 29933 29940	DepoCyt
+T406	tradename 29984 29991	DepoCyt
+T407	activeingredient 29993 30003	cytarabine
+T408	dose 30297 30302	50 mg
+T409	tradename 30306 30313	DepoCyt
+T410	frequency 30327 30340	every 2 weeks
+T411	routeofadministration 30353 30364	intrathecal
+T412	frequency 30392 30404	twice a week
+T413	dose 30518 30523	50 mg
+T414	activeingredient 30542 30552	cytarabine
+T415	frequency 30559 30572	twice a week.
+T416	tradename 30609 30617	DepoCyt,
+T417	activeingredient 30621 30632	cytarabine)
+T418	tradename 31482 31489	DepoCyt
+T419	tradename 31709 31716	DepoCyt
+T420	activeingredient 31743 31753	cytarabine
+T421	tradename 32117 32124	DepoCyt
+T422	activeingredient 32128 32139	cytarabine.
+T423	tradename 32189 32196	DepoCyt
+T424	duration 32197 32202	50 mg
+T425	frequency 32204 32217	every 2 weeks
+T426	activeingredient 32221 32231	cytarabine
+T427	dose 32232 32237	50 mg
+T428	frequency 32238 32251	twice weekly.
+T429	tradename 32303 32310	DepoCyt
+T430	dose 32311 32316	50 mg
+T431	frequency 32317 32331	every 4 weeks,
+T432	activeingredient 32335 32345	cytarabine
+T433	dose 32346 32351	50 mg
+T434	frequency 32352 32358	weekly
+T435	duration 32363 32371	4 weeks.
+T436	co-administereddrug 32434 32447	dexamethasone
+T437	adversereaction 32485 32507	chemical arachnoiditis
+T438	indication 32734 32757	lymphomatous meningitis
+T439	indication 32840 32863	Lymphomatous Meningitis
+T440	tradename 32866 32873	DepoCyt
+T441	activeingredient 32875 32885	Cytarabine
+T442	tradename 33393 33400	DepoCyt
+T443	activeingredient 33403 33413	cytarabine
+T444	nanoparticle 33414 33422	liposome
+T445	tradename 33770 33777	DepoCyt
+T446	adversereaction 33977 34004	headache, nausea, vomiting,
+T447	adversereaction 34009 34015	fever,
+T448	adversereaction 34058 34072	neurotoxicity.
+T449	co-administereddrug 34132 34145	dexamethasone
+T450	tradename 34217 34224	DepoCyt
+T451	co-administereddrug 34316 34329	neurotoxicity
+T452	routeofadministration 34345 34349	oral
+T453	co-administereddrug 34351 34364	dexamethasone
+T454	company 34426 34457	Sigma-Tau Pharmaceuticals, Inc.
+T455	company 34499 34528	Pacira Pharmaceuticals, Inc.,
+T456	company 34567 34599	Sigma-Tau Pharmaceuticals, Inc.,
+T457	u.s.patent 34643 34685	5,807,572 5,723,147 5,455,044 5,891,467

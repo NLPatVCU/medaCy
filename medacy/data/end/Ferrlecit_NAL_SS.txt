@@ -1,0 +1,317 @@
+label
+  HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use Ferrlecit safely and effectively.
+ See full prescribing information for Ferrlecit.
+  Ferrlecit (sodium ferric gluconate complex in sucrose injection), For intravenous (IV) use  Initial U.S. Approval: 1999
+ ----------------------------RECENT MAJOR CHANGES--------------------------
+ Warnings and Precautions, Hypersensitivity (5.1) 08/2011 Warnings and Precautions, Benzyl Alcohol Toxicity (5.4) 08/2011
+ ----------------------------INDICATIONS AND USAGE---------------------------
+ Ferrlecit is an iron replacement product for treatment of iron deficiency anemia in adult patients and in pediatric patients age 6 years and older with chronic kidney disease receiving hemodialysis who are receiving supplemental epoetin therapy.
+(1)
+ ----------------------DOSAGE AND ADMINISTRATION-----------------------
+ &#x2022;  Adult Patients - The recommended adult dosage is 10mL (125 mg of elemental iron) diluted in 100 mL of 0.9% sodium chloride administered by intravenous infusion over 1 hour per dialysis session or undiluted as a slow intravenous injection (at a rate of up to 12.5 mg/min) per dialysis session.
+(2.1)
+ &#x2022;  Pediatric Patients - The recommended pediatric dosage is 0.12 mL/kg (1.5 mg/kg of elemental iron) diluted in 25 mL 0.9% sodium chloride and administered by intravenous infusion over 1 hour per dialysis session.
+(2.2)
+ &#x2022;  Do not mix Ferrlecit with other medications or add to parenteral nutrition solutions for intravenous infusion.
+ &#x2022; Administer in 0.9% saline (2).
+---------------------DOSAGE FORMS AND STRENGTHS----------------------
+ Ferrlecit is supplied in a single use ampule or vial containing 62.5 mg of elemental iron in 5 mL.
+(3)
+ -------------------------------CONTRAINDICATIONS------------------------------
+ Known hypersensitivity to sodium ferric gluconate or any of its inactive components.
+(4)
+ ------------------------WARNINGS AND PRECAUTIONS-----------------------
+ &#x2022;  Hypersensitivity Reactions:  Monitor patients for signs and symptoms of hypersensitivity during and after Ferrlecit administration for at least 30 minutes and until clinically stable following completion of the infusion.
+Only administer Ferrlecit when personnel and therapies are immediately available for the treatment of anaphylaxis and other hypersensitivity reactions.
+(5.1)
+ &#x2022;  Hypotension: Ferrlecit may cause hypotension.
+Monitor patients for signs and symptoms of hypotension during and following each Ferrlecit dose.
+(5.2)
+ &#x2022;  Iron  Overload: Regularly monitor hematologic responses during Ferrlecit therapy.
+Do not administer Ferrlecit to patients with iron overload.
+(5.3)
+ &#x2022;  Benzyl Alcohol Toxicity:  Premature and low-birthweight infants may be more likely to develop toxicity.
+(5.4)
+ ------------------------------ADVERSE REACTIONS-------------------------------
+ The most commonly reported adverse reactions (&#x2265;10%) in adult patients were nausea, vomiting and/or diarrhea, injection site reaction, hypotension, cramps, hypertension, dizziness, dyspnea, chest pain, leg cramps and pain.
+In patients 6 to 15 years of age the most common adverse reactions (&#x2265;10%) were hypotension, headache, hypertension, tachycardia and vomiting.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact sanofi-aventis U.S. LLC at 1-800-633-1610 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch
+ -----------------------USE IN SPECIFIC POPULATIONS------------------------
+ &#x2022; Pregnancy: Use only if clearly needed (contains benzyl alcohol).
+(8.1) &#x2022; Nursing Mothers:  Caution should be exercised when administered to a
+ nursing woman (contains benzyl alcohol).
+(8.3) &#x2022; Pediatric Use:  Safety and effectiveness have not been established in
+ pediatric patients &lt;6 years of age.
+(8.4)
+ See 17 for PATIENT COUNSELING INFORMATION.
+    Revised: August 2011
+ FULL PRESCRIBING INFORMATION: CONTENTS*
+ 1 INDICATIONS AND USAGE 2 DOSAGE AND ADMINISTRATION
+ 2.1  Adult Dosage and Administration 2.2  Pediatric Dosage and Administration
+ 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1  Hypersensitivity Reactions  5.2    Hypotension  5.3    Iron Overload  5.4   Benzyl Alcohol Toxicity
+ 6 ADVERSE REACTIONS 6.1  Clinical Trials Experience 6.2  Post Marketing Experience
+ 7 DRUG INTERACTIONS 8 USE IN SPECIFIC POPULATIONS
+ 8.1  Pregnancy 8.3  Nursing Mothers 8.4  Pediatric Use 8.5  Geriatric Use
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action  12.3  Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL STUDIES 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing information are not listed.
+ 1
+  Reference ID: 3006450
+                                        FULL PRESCRIBING INFORMATION
+ 1 INDICATIONS AND USAGE
+ Ferrlecit is indicated for the treatment of iron deficiency anemia in adult patients and in pediatric patients age 6 years and older with chronic kidney disease receiving hemodialysis who are receiving supplemental epoetin therapy.
+   2 DOSAGE AND ADMINISTRATION
+ The dosage of Ferrlecit is expressed in terms of mg of elemental iron.
+Each 5 mL sterile, single-use ampule or vial contains 62.5 mg of elemental iron (12.5 mg/mL).
+  Do not mix Ferrlecit with other medications, or add to parenteral nutrition solutions for intravenous infusion.
+The compatibility of Ferrlecit with intravenous infusion vehicles other than 0.9% sodium chloride has not been evaluated.
+Parenteral drug products should be inspected visually for particulate matter and discoloration before administration, whenever the solution and container permit.
+If diluted, use immediately.
+ Ferrlecit treatment may be repeated if iron deficiency reoccurs.
+ 2.1 Adult Dosage and Administration The recommended dosage of Ferrlecit for the repletion treatment of iron deficiency in hemodialysis patients is 10 mL of Ferrlecit (125 mg of elemental iron).
+Ferrlecit may be diluted in 100 mL of 0.9% sodium chloride administered by intravenous infusion over 1 hour per dialysis session.
+Ferrlecit may also be administered undiluted as a slow intravenous injection (at a rate of up to 12.5 mg/min) per dialysis session.
+For repletion treatment most patients may require a cumulative dose of 1000 mg of elemental iron administered over 8 dialysis sessions.
+Ferrlecit has been administered at sequential dialysis sessions by infusion or by slow intravenous injection during the dialysis session itself.
+ Data from Ferrlecit postmarketing spontaneous reports indicate that individual doses exceeding 125 mg may be associated with a higher incidence and/or severity of adverse events [see Adverse Reactions (6.2)].
+ 2.2 Pediatric Dosage and Administration The recommended pediatric dosage of Ferrlecit for the repletion treatment of iron deficiency in hemodialysis patients is 0.12 mL/kg Ferrlecit (1.5 mg/kg of elemental iron) diluted in 25 mL 0.9% sodium chloride and administered by intravenous infusion over 1 hour per dialysis session.
+The maximum dosage should not exceed 125 mg per dose.
+ 3 DOSAGE FORMS AND STRENGTHS
+ Ferrlecit is available as a single use ampule or vial, containing 62.5 mg of elemental iron in 5 mL volume.
+ 2
+  Reference ID: 3006450
+                                4 CONTRAINDICATIONS
+ &#x2022; Known hypersensitivity to sodium ferric gluconate or any of its components.
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 Hypersensitivity Reactions Serious hypersensitivity reactions, including anaphylactic-type reactions, some of which have been life-threatening and fatal, have been reported in patients receiving Ferrlecit in post marketing experience.
+Patients may present with shock, clinically significant hypotension, loss of consciousness, or collapse.
+ Monitor patients for signs and symptoms of hypersensitivity during and after Ferrlecit administration for at least 30 minutes and until clinically stable following completion of the infusion.
+Only administer Ferrlecit when personnel and therapies are immediately available for the treatment of anaphylaxis and other hypersensitivity reactions [see Adverse Reactions (6)].
+ In the single-dose, post-marketing, safety study one patient experienced a life-threatening hypersensitivity reaction (diaphoresis, nausea, vomiting, severe lower back pain, dyspnea, and wheezing for 20 minutes) following Ferrlecit administration.
+Among 1,097 patients who received Ferrlecit in this study, there were 9 patients (0.8%) who had an adverse reaction that, in the view of the investigator, precluded further Ferrlecit administration.
+These included one life-threatening reaction, six allergic reactions (pruritus x2, facial flushing, chills, dyspnea/chest pain, and rash), and two other reactions (hypotension and nausea).
+Another 2 patients experienced (0.2%) allergic reactions not deemed to represent drug intolerance (nausea/malaise and nausea/dizziness) following Ferrlecit administration.
+  5.2 Hypotension Ferrlecit may cause clinically significant hypotension.
+Hypotension associated with lightheadedness, malaise, fatigue, weakness or severe pain in the chest, back, flanks, or groin has been reported.
+These hypotensive reactions may or may not be associated with signs and symptoms of hypersensitivity reactions and usually resolve within one to two hours.
+In the single dose safety study, post-administration hypotensive events were observed in 22/1,097 patients (2%) following Ferrlecit administration.
+Transient hypotension may occur during dialysis.
+ Administration of Ferrlecit may augment hypotension caused by dialysis.
+Monitor patients for signs and symptoms of hypotension during and following Ferrlecit administration [see Adverse Reactions (6.1)].
+ 5.3 Iron Overload Excessive therapy with parenteral iron can lead to excess storage of iron with the possibility of iatrogenic hemosiderosis.
+Patients receiving Ferrlecit require periodic monitoring of hematologic and iron parameters (hemoglobin, hematocrit, serum ferritin, and transferrin saturation).
+ 3
+  Reference ID: 3006450
+                                                5.4 Benzyl Alcohol Toxicity Ferrlecit contains benzyl alcohol as a preservative.
+ Benzyl alcohol has been associated with serious adverse events and death in pediatric patients.
+ The minimum amount of benzyl alcohol at which toxicity may occur is not known.
+ Premature and low-birth weight infants may be more likely to develop toxicity [see Use in Specific Populations (8.4)]
+ 6 ADVERSE REACTIONS
+ The following serious adverse reactions are discussed in greater detail in other sections of the labeling:
+ &#x2022; Hypersensitivity [see Contraindications (4) and Warnings and Precautions (5.1)] &#x2022; Hypotension [see Warnings and Precautions (5.2)]
+ 6.1 Clinical Trials Experience Because clinical studies are conducted under widely varying conditions, adverse reaction rates observed in the clinical studies of a drug cannot be directly compared to rates in the clinical studies of another drug and may not reflect the rates observed in practice.
+ The most commonly reported adverse reactions (&#x2265;10%) in adult patients were nausea, vomiting and/or diarrhea, injection site reaction, hypotension, cramps, hypertension, dizziness, abnormal erythrocytes (e.g., changes in morphology, color, or number of red blood cells), dyspnea, chest pain, leg cramps and pain.
+In patients 6 to 15 years of age the most common adverse reactions (&#x2265;10%) were hypotension, headache, hypertension, tachycardia and vomiting.
+Studies A and B
+ In multiple dose Studies A and B (total 126 adult patients), the most frequent treatment emergent adverse reactions following Ferrlecit were:
+ Body as a Whole: injection site reaction (33%), chest pain (10%), pain (10%), asthenia (7%), headache (7%), fatigue (6%), fever (5%), malaise, infection, abscess, chills, rigors, carcinoma, flu-like syndrome, sepsis, lightheadedness, weakness.
+  Nervous System: cramps (25%), dizziness (13%), paresthesias (6%), agitation, somnolence, decreased level of consciousness.
+ Respiratory System: dyspnea (11%), coughing (6%), upper respiratory infections (6%), rhinitis, pneumonia.
+  Cardiovascular System: hypotension (29%), hypertension (13%), syncope (6%), tachycardia (5%), bradycardia, vasodilatation, angina pectoris, myocardial infarction, pulmonary edema.
+  Gastrointestinal System: nausea, vomiting and/or diarrhea (35%), anorexia, abdominal pain (6%), rectal disorder, dyspepsia, eructation, flatulence, gastrointestinal disorder, melena.
+ Musculoskeletal System: leg cramps (10%), myalgia, arthralgia, back pain, arm pain.
+  4
+  Reference ID: 3006450
+                                    Skin and Appendages: pruritus (6%), rash, increased sweating.
+ Genitourinary System: urinary tract infection, and menorrahagia.
+ Special Senses: conjunctivitis, rolling of the eyes, watery eyes, puffy eye lids, arcus senilis, redness of the eye, diplopia, and deafness.
+ Metabolic and Nutritional Disorders: hyperkalemia (6%), generalized edema (5%), leg edema, peripheral edema, hypoglycemia, edema, hypervolemia, hypokalemia.
+  Hematologic System: abnormal erythrocytes (11%) (changes in morphology, color, or number of red blood cells), anemia, leukocytosis, lymphadenopathy.
+ Study C - Pediatric
+ Pediatric Patients: In a clinical trial of 66 iron-deficient pediatric hemodialysis patients, 6 to 15 years of age, inclusive, who were receiving a stable erythropoietin dosing regimen, the most common adverse reactions, occurring in &#x2265;5%, regardless of treatment dosage, were: hypotension (35%), headache (24%), hypertension (23%), tachycardia (17%), vomiting (11%), fever (9%), nausea (9%), abdominal pain (9%), pharyngitis (9%), diarrhea (8%), infection (8%), rhinitis (6%), and thrombosis (6%).
+More patients in the higher dose group (3.0 mg/kg) than in the lower dose group (1.5 mg/kg) experienced the following adverse events: hypotension (41% vs. 28%), tachycardia (21% vs. 13%), fever (15% vs. 3%), headache (29% vs. 19%), abdominal pain (15% vs. 3%), nausea (12% vs. 6%), vomiting (12% vs. 9%), pharyngitis (12% vs. 6%), and rhinitis (9% vs. 3%).
+ 6.2 Post Marketing Experience In the single-dose, postmarketing safety study, 11% of patients who received Ferrlecit and 9.4% of patients who received placebo reported adverse reactions.
+The most frequent adverse reactions following Ferrlecit were: hypotension (2%), nausea, vomiting and/or diarrhea (2%), pain (0.7%), hypertension (0.6%), allergic reaction (0.5%), chest pain (0.5%), pruritus (0.5%), and back pain (0.4%).
+The following additional events were reported in two or more patients: hypertonia, nervousness, dry mouth, and hemorrhage.
+ In the multiple-dose, open-label surveillance study, 28% of the patients received concomitant angiotensin converting enzyme inhibitor (ACEi) therapy.
+The incidences of both drug intolerance or suspected allergic events following first dose Ferrlecit administration were 1.6% in patients with concomitant ACEi use compared to 0.7% in patients without concomitant ACEi use.
+The patient with a life-threatening event was not on ACEi therapy.
+One patient had facial flushing immediately on Ferrlecit exposure.
+No hypotension occurred and the event resolved rapidly and spontaneously without intervention other than drug withdrawal.
+   5
+  Reference ID: 3006450
+                             The following additional adverse reactions have been identified with the use of Ferrlecit from postmarketing spontaneous reports: anaphylactic-type reactions, shock, loss of consciousness, convulsion, skin discoloration, pallor, phlebitis, dysgeusia, and hypoesthesia.
+ Individual doses exceeding 125 mg may be associated with a higher incidence and/or severity of adverse events based on information from postmarketing spontaneous reports.
+These adverse events included hypotension, nausea, vomiting, abdominal pain, diarrhea, dizziness, dyspnea, urticaria, chest pain, paresthesia, and peripheral swelling.
+  Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ 7 DRUG INTERACTIONS
+ Drug-drug interactions involving Ferrlecit have not been studied.
+Ferrlecit may reduce the absorption of concomitantly administered oral iron preparations.
+  8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy Pregnancy Category B There are no adequate and well-controlled studies with Ferrlecit in pregnant women.
+Reproduction studies have been performed in mice at doses up to 100 mg/kg/day (300 mg/m2/day) and in rats at up to 20 mg/kg/day (120 mg/m2/day).
+The doses in mice and rats are 4 and 1.5 times the human dose of 125 mg/day (77 mg/m2/day) on a body surface area basis and have revealed no evidence of harm to the fetus due to Ferrlecit.
+Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed.
+ Ferrlecit contains benzyl alcohol as a preservative.
+ There are no known adverse outcomes associated with fetal exposure to the preservative benzyl alcohol through maternal drug administration; however, the preservative benzyl alcohol can cause serious adverse events and death when administered intravenously to neonates and infants [see Use in Specific Populations (8.4)].
+ 8.3 Nursing Mothers It is not known whether Ferrlecit is excreted in human milk.
+Benzyl alcohol present in maternal serum is likely to cross into human milk and may be orally absorbed by a nursing infant.
+Caution should be exercised when Ferrlecit is administered to a nursing woman [see Use in Specific Populations (8.4)].
+ 8.4 Pediatric Use The safety and effectiveness of Ferrlecit have been established in pediatric patients 6 to 15 years of age [see Dosage and Administration (2.2), Clinical Pharmacology (12.3), and Clinical Studies
+ 6
+  Reference ID: 3006450
+                           (14).
+Safety and effectiveness in pediatric patients younger than 6 years of age have not been established.
+ Benzyl Alcohol Toxicity and Pediatrics The preservative benzyl alcohol has been associated with serious adverse events and death in pediatric patients.
+The "gasping syndrome" (characterized by central nervous system depression, metabolic acidosis, gasping respirations, and high levels of benzyl alcohol and its metabolites found in the blood and urine) has been associated with benzyl alcohol dosages &gt;99 mg/kg/day in neonates and low-birth weight infants.
+Additional symptoms may include gradual neurological deterioration, seizures, intracranial hemorrhage, hematologic abnormalities, skin breakdown, hepatic and renal failure, hypotension, bradycardia, and cardiovascular collapse.
+  Although normal therapeutic doses of this product deliver amounts of benzyl alcohol that are substantially lower than those reported in association with the "gasping syndrome", the minimum amount of benzyl alcohol at which toxicity may occur is not known.
+Premature and low-birth weight infants, as well as patients receiving high dosages, may be more likely to develop toxicity.
+Practitioners administering this and other medications containing benzyl alcohol should consider the combined daily metabolic load of benzyl alcohol from all sources.
+  8.5 Geriatric Use Clinical studies of Ferrlecit did not include sufficient numbers of subjects aged 65 and over to determine whether they respond differently from younger subjects.
+Other reported clinical experience has not identified differences in responses between the elderly and younger patients, In general, dose selection for an elderly patient should be cautious, usually starting at the low end of the dosing range, reflecting the greater frequency of decreased hepatic, renal, or cardiac function, and of concomitant disease or other drug therapy.
+ 10 OVERDOSAGE
+ The Ferrlecit iron complex is not dialyzable.
+  No data is available regarding overdose of Ferrlecit in humans.
+Excessive dosages of Ferrlecit may lead to accumulation of iron in storage sites potentially leading to hemosiderosis.
+ Do not administer Ferrlecit to patients with iron overload [see Warnings and Precautions (5.3)].
+ Individual doses exceeding 125 mg may be associated with a higher incidence and/or severity of adverse events [see Post Marketing Experiences (6.2)].
+ Ferrlecit at elemental iron doses of 125 mg/kg, 78.8 mg/kg, 62.5 mg/kg and 250 mg/kg caused deaths in mice, rats, rabbits, and dogs respectively.
+The major symptoms of acute toxicity were decreased activity, staggering, ataxia, increases in the respiratory rate, tremor, and convulsions.
+ 11 DESCRIPTION
+ Ferrlecit (sodium ferric gluconate complex in sucrose injection), an iron replacement product, is a stable macromolecular complex with an apparent molecular weight on gel chromatography of
+ 7
+  Reference ID: 3006450
+                             289,000 - 440,000 daltons.
+The macromolecular complex is negatively charged at alkaline pH and is present in solution with sodium cations.
+The product has a deep red color indicative of ferric oxide linkages.
+The chemical name is D-Gluconic acid, iron (3+) sodium salt.
+ The structural formula is considered to be [NaFe2O3(C6H11O7)(C12H22011)5]n~200&#x2022;
+ Each sterile, single-use ampule or vial of 5 mL of Ferrlecit for intravenous injection contains 62.5 mg (12.5 mg/mL) of elemental iron as the sodium salt of a ferric ion carbohydrate complex in an alkaline aqueous solution with approximately 20% sucrose w/v (195 mg/mL) in water for injection, pH 7.7 - 9.7.
+ Each mL contains 9 mg of benzyl alcohol as an inactive ingredient.
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action Ferrlecit is used to replete the body content of iron.
+Iron is critical for normal hemoglobin synthesis to maintain oxygen transport.
+Additionally, iron is necessary for metabolism and various enzymatic processes.
+  12.3 Pharmacokinetics Multiple sequential single dose intravenous pharmacokinetic studies were performed on 14 healthy iron-deficient volunteers.
+Entry criteria included hemoglobin &#x2265;10.5 gm/dL and transferrin saturation &#x2264;15% (TSAT) or serum ferritin value &#x2264;20 ng/mL.
+In the first stage, each subject was randomized 1:1 to undiluted Ferrlecit injection of either 125 mg/hr or 62.5 mg/0.5 hr (2.1 mg/min).
+Five days after the first stage, each subject was re-randomized 1:1 to undiluted Ferrlecit injection of either 125 mg/7 min or 62.5 mg/4 min (&gt;15.5 mg/min).
+  Peak drug levels (Cmax) varied significantly by dosage and by rate of administration with the highest Cmax observed in the regimen in which 125 mg was administered in 7 minutes (19.0 mg/L).
+The terminal elimination half-life for drug bound iron was approximately 1 hour.
+Half-life varied by dose but not by rate of administration.
+Half-life values were 0.85 and 1.45 hours for the 62.5 mg/4 min and 125 mg/7 min regimens, respectively.
+Total clearance of Ferrlecit was 3.02 to 5.35 L/h.
+The AUC for Ferrlecit bound iron varied by dose from 17.5 mg-h/L (62.5 mg) to 35.6 mg-h/L (125 mg).
+Approximately 80% of drug bound iron was delivered to transferrin as a mononuclear ionic iron species within 24 hours of administration in each dosage regimen.
+Direct movement of iron from Ferrlecit to transferrin was not observed.
+Mean peak transferrin saturation returned to near baseline by 40 hours after administration of each dosage regimen.
+ Pediatrics: Single dose intravenous pharmacokinetic analyses were performed on 48 iron-deficient pediatric hemodialysis patients.
+Twenty-two patients received 1.5 mg/kg Ferrlecit and 26 patients received 3.0 mg/kg Ferrlecit (maximum dose 125 mg).
+The mean Cmax, AUC0-&#x221e;, and terminal elimination half-life values following a 1.5 mg/kg dose were 12.9 mg/L, 95.0 mg&#x2022;hr/L, and 2.0 hours, respectively.
+The mean Cmax, AUC0-&#x221e; , and terminal elimination half-life values following a 3.0 mg/kg dose were 22.8 mg/L, 170.9 mg&#x2022;hr/L, and 2.5 hours, respectively.
+ 8
+  Reference ID: 3006450
+                                In vitro experiments have shown that less than 1% of the iron species within Ferrlecit can be dialyzed through membranes with pore sizes corresponding to 12,000 to 14,000 daltons over a period of up to 270 minutes.
+Human studies in renally competent patients suggest the clinical insignificance of urinary excretion.
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Long term carcinogenicity studies of sodium ferric gluconate in animals were not performed.
+  Sodium ferric gluconate was not genotoxic in the Ames test or the rat micronucleus test.
+Sodium ferric gluconate produced a clastogenic effect in an in vitro chromosomal aberration assay in Chinese hamster ovary cells.
+  Studies to assess the effects of sodium ferric gluconate on fertility were not conducted.
+ 14 CLINICAL STUDIES
+ Two clinical studies (Studies A and B) were conducted in adults and one clinical study was conducted in pediatric patients (Study C) to assess the efficacy and safety of Ferrlecit.
+ Study A
+ Study A was a three-center, randomized, open-label study of the safety and efficacy of two doses of Ferrlecit administered intravenously to iron-deficient hemodialysis patients.
+The study included both a dose-response concurrent control and an historical control.
+Enrolled patients received a test dose of Ferrlecit (25 mg of elemental iron) and were then randomly assigned to receive Ferrlecit at cumulative doses of either 500 mg (low dose) or 1000 mg (high dose) of elemental iron.
+Ferrlecit was given to both dose groups in eight divided doses during sequential dialysis sessions (a period of 16 to 17 days).
+At each dialysis session, patients in the low-dose group received Ferrlecit 62.5 mg of elemental iron over 30 minutes, and those in the high-dose group received Ferrlecit 125 mg of elemental iron over 60 minutes.
+The primary endpoint was the change in hemoglobin from baseline to the last available observation through Day 40.
+  Eligibility for this study included chronic hemodialysis patients with a hemoglobin below 10 g/dL (or hematocrit at or below 32%) and either serum ferritin below 100 ng/mL or transferrin saturation below 18%.
+Exclusion criteria included significant underlying disease or inflammatory conditions or an epoetin requirement of greater than 10,000 units three times per week.
+Parenteral iron and red cell transfusion were not allowed for two months before the study.
+Oral iron and red cell transfusion were not allowed during the study for Ferrlecit-treated patients.
+  The historical control population consisted of 25 chronic hemodialysis patients who received only oral iron supplementation for 14 months and did not receive red cell transfusion.
+All patients had stable epoetin doses and hematocrit values for at least two months before initiation of oral iron therapy.
+ 9
+  Reference ID: 3006450
+                           The evaluated population consisted of 39 patients in the low-dose Ferrlecit (sodium ferric gluconate complex in sucrose injection) group (50% female, 50% male; 74% white, 18% black, 5% Hispanic, 3% Asian; mean age 54 years, range 22-83 years), 44 patients in the high-dose Ferrlecit group (50% female, 48% male, 2% unknown; 75% white, 11% black, 5% Hispanic, 7% other, 2% unknown; mean age 56 years, range 20-87 years), and 25 historical control patients (68% female, 32% male; 40% white, 32% black, 20% Hispanic, 4% Asian, 4% unknown; mean age 52 years, range 25-84 years).
+ The mean baseline hemoglobin and hematocrit were similar between treatment and historical control patients: 9.8 g/dL and 29% and 9.6 g/dL and 29% in low- and high-dose Ferrlecit-treated patients, respectively, and 9.4 g/dL and 29% in historical control patients.
+Baseline serum transferrin saturation was 20% in the low-dose group, 16% in the high-dose group, and 14% in the historical control.
+Baseline serum ferritin was 106 ng/mL in the low-dose group, 88 ng/mL in the high-dose group, and 606 ng/mL in the historical control.
+  Patients in the high-dose Ferrlecit group achieved significantly higher increases in hemoglobin and hematocrit than patients in the low-dose Ferrlecit group.
+ See Table 1.
+ TABLE 1
+ Study A: Hemoglobin, Hematocrit, and Iron Studies
+  Mean Change from Baseline to Two Weeks After Cessation of Therapy
+ Ferrlecit 1000 mg IV
+ (N=44)
+ Ferrlecit 500 mg IV
+ (N=39)
+ Historical Control Oral Iron (N=25)
+ Hemoglobin (g/dL) 1.1* 0.3 0.4 Hematocrit (%) 3.6* 1.4 0.8 Transferrin Saturation (%) 8.5 2.8 6.1 Serum Ferritin (ng/mL) 199 132 NA *p&lt;0.01 versus the 500 mg group.
+ Study B
+ Study B was a single-center, non-randomized, open-label, historically-controlled, study of the safety and efficacy of variable, cumulative doses of intravenous Ferrlecit in iron-deficient hemodialysis patients.
+Ferrlecit administration was identical to Study A. The primary efficacy variable was the change in hemoglobin from baseline to the last available observation through Day 50.
+ Inclusion and exclusion criteria were identical to those of Study A as was the historical control population.
+Sixty-three patients were evaluated in this study: 38 in the Ferrlecit-treated group (37% female, 63% male; 95% white, 5% Asian; mean age 56 years, range 22- 84 years) and 25 in the historical control group (68% female, 32% male; 40% white, 32% black, 20% Hispanic, 4% Asian, 4% unknown; mean age 52 years, range 25-84 years).
+  10
+  Reference ID: 3006450
+                         Ferrlecit-treated patients were considered to have completed the study per protocol if they received at least eight Ferrlecit doses of either 62.5 mg or 125 mg of elemental iron.
+A total of 14 patients (37%) completed the study per protocol.
+Twelve (32%) Ferrlecit-treated patients received less than eight doses, and 12 (32%) patients had incomplete information on the sequence of dosing.
+Not all patients received Ferrlecit at consecutive dialysis sessions and many received oral iron during the study.
+ Cumulative Ferrlecit Dose (mg of elemental iron)
+ 62.5 250 375 562.5 625 750 1000 1125 1187.5
+ Patients (#) 1 1 2 1 10 4 12 6 1
+ Baseline hemoglobin and hematocrit values were similar between the treatment and control groups, and were 9.1 g/dL and 27.3%, respectively, for Ferrlecit-treated patients.
+Serum iron studies were also similar between treatment and control groups, with the exception of serum ferritin, which was 606 ng/mL for historical control patients, compared to 77 ng/mL for Ferrlecit-treated patients.
+ In this patient population, only the Ferrlecit-treated group achieved increase in hemoglobin and hematocrit from baseline.
+See Table 2.
+  TABLE 2
+ Study B: Hemoglobin, Hematocrit, and Iron Studies
+ Mean Change from Baseline to One Month After Treatment Ferrlecit (N=38) Oral Iron (N=25)
+ change change Hemoglobin (g/dL) 1.3 0.4 Hematocrit (%) 3.8 0.2 Transferrin Saturation (%) 6.7 1.7 Serum Ferritin (ng/dL) 73 -145
+ Study C
+ Study C was a multicenter, randomized, open-label study of the safety and efficacy of two Ferrlecit dose regimens (1.5 mg/kg or 3.0 mg/kg of elemental iron) administered intravenously to 66 iron-deficient (transferrin saturation &lt; 20% and/or serum ferritin &lt; 100 ng/mL) pediatric hemodialysis patients, 6 to 15 years of age, inclusive who were receiving a stable erythropoietin dosing regimen.
+  Ferrlecit at a dose of 1.5 mg/kg or 3.0 mg/kg (up to a maximum dose of 125 mg of elemental iron) in 25 mL 0.9% sodium chloride was infused intravenously over 1 hour during each hemodialysis session for eight sequential dialysis sessions.
+Thirty-two patients received the 1.5 mg/kg dosing regimen (47% male, 53% female; 66% Caucasian, 25% Hispanic, and 3% Black, Asian, or Other; mean age 12.3 years).
+Thirty-four patients received the 3.0 mg/kg dosing regimen (56% male, 44% female; 77% Caucasian, 12% Hispanic, 9% Black, and 3% Other; mean age 12.0 years).
+  11
+  Reference ID: 3006450
+                                 The primary endpoint was the change in hemoglobin concentration from baseline to 2 weeks after last Ferrlecit administration.
+There was no significant difference between the treatment groups.
+Improvements in hematocrit, transferrin saturation, serum ferritin, and reticulocyte hemoglobin concentrations compared to baseline values were observed 2 weeks after the last Ferrlecit infusion in both the 1.5 mg/kg and 3.0 mg/kg treatment groups (Table 3).
+ TABLE 3
+ Study C: Hemoglobin, Hematocrit, and Iron Status
+ Mean Change From Baseline to Two Weeks After Cessation of Therapy in Patients Completing Treatment
+ 1.5 mg/kg Ferrlecit (N=25)
+ 3.0 mg/kg Ferrlecit (N=32)
+ Hemoglobin (g/dL) 0.8 0.9 Hematocrit (%) 2.6 3.0 Transferrin Saturation (%) 5.5 10.5 Serum Ferritin (ng/mL) 192 314 Reticulocyte Hemoglobin Content (pg)
+ 1.3 1.2
+ The increased hemoglobin concentrations were maintained at 4 weeks after the last Ferrlecit infusion in both the 1.5 mg/kg and the 3.0 mg/kg Ferrlecit dose treatment groups.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ How Supplied NDC 0024-2791-50 for ampules NDC 0024-2792-10 for vials
+ Ferrlecit is supplied in colorless glass ampules or vials.
+Each sterile, single-use ampule or vial contains 62.5 mg of elemental iron in 5 mL for intravenous use, packaged in cartons of 10 ampules or 10 vials.
+  Storage Store at 20 - 25C (68 - 77F); excursions permitted to 15 - 30C (59 - 86F).
+See USP Controlled Room Temperature.
+Do not freeze.
+ Keep out of the reach of children.
+ 17 PATIENT COUNSELING INFORMATION
+ Prior to Ferrlecit administration: &#x2022; Question patients regarding any prior history of reactions to parenteral iron products.
+&#x2022; Advise patients of the risks associated with Ferrlecit.
+ 12
+  Reference ID: 3006450
+                       &#x2022;  Advise patients to report adverse reactions associated with the use of Ferrlecit, including hypersensitivity, allergic reactions, dizziness,  light-headedness, swelling, and breathing problems [see Warnings and Precautions (5.1, 5.2) and Adverse Reactions (6.1, 6.2)].
+ Advise patients that Ferrlecit may reduce the absorption of concomitantly administered oral iron preparations [see Drug Interactions (7)].
+ sanofi-aventis U.S. LLC Bridgewater, NJ 08807
+ 2011 sanofi-aventis U.S. LLC
+ 13
+  Reference ID: 3006450
+  

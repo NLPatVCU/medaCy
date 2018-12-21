@@ -1,0 +1,2464 @@
+label
+HIGHLIGHTS OF PRESCRIBING INFORMATION
+ These highlights do not include all the information needed to use
+ Rapamune safely and effectively.
+See full prescribing information for
+ Rapamune.
+ RAPAMUNE (sirolimus) ORAL SOLUTION AND TABLETS
+ Initial U.S. Approval: 1999
+ WARNING: IMMUNOSUPPRESSION, USE IS NOT
+ RECOMMENDED IN LIVER OR LUNG TRANSPLANT PATIENTS
+ See Full Prescribing Information for complete Boxed Warning.
+ &#x2022;  Increased susceptibility to infection and the possible development of lymphoma and other malignancies may result
+ from immunosuppression (5.1).
+Only physicians experienced in
+ immunosuppressive therapy and management of renal
+ transplant patients should use Rapamune.
+ &#x2022;  The safety and efficacy of Rapamune as immunosuppressive therapy have not been established in liver or lung transplant
+ patients, and therefore, such use is not recommended (5.2, 5.3).
+ &#x2022; Liver Transplantation - Excess mortality, graft loss, and
+ hepatic artery thrombosis (5.2).
+ &#x2022; Lung Transplantation - Bronchial anastomotic
+ dehiscence (5.3).
+ -------------------------------INDICATIONS AND USAGE-------------------------------
+Rapamune is an immunosuppressive agent indicated for the
+ prophylaxis of organ rejection in patients aged &#x2265;13 years receiving  renal transplants.
+ &#x2022;  Patients at low- to moderate-immunologic risk: Use initially with cyclosporine (CsA) and corticosteroids.
+CsA withdrawal is
+ recommended 2-4 months after transplantation (1.1).
+ &#x2022;  Patients at high-immunologic risk: Use in combination with cyclosporine and corticosteroids for the first 12 months following
+ transplantation (1.1).
+Safety and efficacy of CsA withdrawal has
+ not been established in high risk patients (1.1, 1.2, 14.3).
+ &#x2022;  Therapeutic drug monitoring is recommended for all patients (2.3, 5.15).
+ -------------------------------DOSAGE AND ADMINISTRATION-------------------------------
+&#x2022;  Take once daily by mouth, consistently with or without food.
+Take the initial dose as soon as possible after transplantation and
+ 4 hours after CsA (2, 7.1).
+Adjust the Rapamune maintenance
+ dose to achieve sirolimus trough concentrations within the target-
+range (2.3).
+ Patients at low- to moderate-immunologic risk
+ &#x2022;  Rapamune and Cyclosporine Combination Therapy: One loading dose of 6 mg on day 1, followed by daily maintenance doses of
+ 2 mg (2.1).
+ &#x2022;  Rapamune Following Cyclosporine Withdrawal: 2-4 months post-transplantation, withdraw CsA over 4-8 weeks (2.2).
+ Patients at high-immunologic risk
+ &#x2022;  Rapamune and Cyclosporine Combination Therapy (for the first 12 months post-transplantation): One loading dose of up to 15 mg
+ on day 1, followed by daily maintenance doses of 5 mg (2.2).
+ -------------------------------DOSAGE FORMS AND STRENGTHS-------------------------------
+&#x2022; Rapamune Oral Solution: 60 mg per 60 mL in amber glass bottle (3.1).
+ &#x2022; Rapamune Tablets: 0.5 mg, tan; 1 mg, white; 2 mg, yellow-to-beige (3.2).
+ -------------------------------CONTRAINDICATIONS-------------------------------
+Hypersensitivity to Rapamune (4).
+ -------------------------------WARNINGS AND PRECAUTIONS-------------------------------
+&#x2022; Hypersensitivity Reactions (5.4)
+ &#x2022; Angioedema (5.5)
+ &#x2022; Fluid Accumulation and Wound Healing (5.6)
+ &#x2022; Hyperlipidemia (5.7)
+ &#x2022; Renal Function (5.8)
+ &#x2022; Proteinuria (5.9)
+ &#x2022; Latent Viral Infections (5.10)
+  &#x2022; Interstitial Lung Disease (5.11)
+ &#x2022; De Novo Use Without Cyclosporine (5.12)
+ &#x2022; Increased Risk of Calcineurin Inhibitor-induced HUS/TTP/TMA
+ (5.13)
+ -------------------------------ADVERSE REACTIONS-------------------------------
+The most common (&gt; 30%) adverse reactions are: peripheral edema,
+ hypertriglyceridemia, hypertension, hypercholesterolemia, creatinine  increased, abdominal pain, diarrhea, headache, fever, urinary tract infection,
+ anemia, nausea, arthralgia, pain, and thrombocytopenia (6).
+ To report SUSPECTED ADVERSE REACTIONS, contact Wyeth  Pharmaceuticals Inc.
+at 1-800-934-5556 or FDA at 1-800-FDA-1088 or
+ www.fda.gov/medwatch
+ -------------------------------DRUG INTERACTIONS-------------------------------
+&#x2022;  Avoid concomitant use with strong CYP3A4/P-gp inducers or strong CYP3A4/P-gp inhibitors that decrease or increase
+ sirolimus concentrations (7.4, 12.3).
+ &#x2022;  Exercise caution when administering with drugs that are inhibitors/inducers of CYP3A4/P-gp (7.4, 12.3).
+ -------------------------------USE IN SPECIFIC POPULATIONS-------------------------------
+&#x2022; Pregnancy: Use only if the potential benefit outweighs the potential risk to the embryo/fetus (8.1).
+ &#x2022; Hepatic impairment: Reduce maintenance dose in patients with hepatic impairment (2.5, 8.6, 12.3).
+ See 17 for PATIENT COUNSELING INFORMATION and the
+ FDA-approved Medication Guide
+ Revised: 12/2012
+ Reference ID: 3272763  1
+ FULL PRESCRIBING INFORMATION: CONTENTS *
+ BOX WARNING: IMMUNOSUPPRESSION, USE IS NOT
+ RECOMMENDED IN LIVER OR LUNG TRANSPLANT PATIENTS
+ 1 INDICATIONS AND USAGE
+ 1.1 Prophylaxis of Organ Rejection in Renal Transplantation
+ 1.2 Limitations of Use
+ 2 DOSAGE AND ADMINISTRATION
+ 2.1 Patients at Low- to Moderate-Immunologic Risk
+ 2.2 Patients at High-Immunologic Risk
+ 2.3 Therapeutic Drug Monitoring
+ 2.4 Patients with Low Body Weight
+ 2.5 Patients with Hepatic Impairment
+ 2.6 Patients with Renal Impairment
+ 2.7 Instructions for Dilution and Administration of Rapamune Oral
+ Solution
+ 3 DOSAGE FORMS AND STRENGTHS
+ 3.1 Rapamune Oral Solution
+ 3.2 Rapamune Tablets
+ 4 CONTRAINDICATIONS
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 Increased Susceptibility to Infection and the Possible Development of
+ Lymphoma
+ 5.2 Liver Transplantation -&#x201c; Excess Mortality, Graft Loss, and Hepatic  Artery Thrombosis (HAT)
+ 5.3 Lung Transplantation - Bronchial Anastomotic Dehiscence
+ 5.4 Hypersensitivity Reactions
+ 5.5 Angioedema
+ 5.6 Fluid Accumulation and Wound Healing
+ 5.7 Hyperlipidemia
+ 5.8 Renal Function
+ 5.9 Proteinuria
+ 5.10 Latent Viral Infections
+  5.11 Interstitial Lung Disease
+ 5.12 De Novo Use Without Cyclosporine
+ 5.13 Increased Risk of Calcineurin Inhibitor-Induced Hemolytic Uremic  Syndrome/Thrombotic Thrombocytopenic Purpura/Thrombotic  Microangiopathy (HUS/TTP/TMA)
+ 5.14 Antimicrobial Prophylaxis
+ 5.15 Assay for Sirolimus Therapeutic Drug Monitoring
+ 5.16 Skin Cancer Events
+ 5.17 Interaction with Strong Inhibitors and Inducers of CYP3A4 and/or P-gp
+ 6 ADVERSE REACTIONS
+ 6.1 Clinical Studies Experience in Prophylaxis of Organ Rejection  Following Renal Transplantation
+ 6.2 Rapamune Following Cyclosporine Withdrawal
+ * Sections or subsections omitted from the full prescribing information are not listed
+ 6.3 High-Immunologic Risk Patients
+ 6.4 Conversion from Calcineurin Inhibitors to Rapamune in Maintenance
+ Renal Transplant Population
+ 6.5 Pediatrics
+ 6.6 Postmarketing Experience
+ 7 DRUG INTERACTIONS
+ 7.1 Use with Cyclosporine
+ 7.2 Strong Inducers and Strong Inhibitors of CYP3A4 and P-gp
+ 7.3 Grapefruit Juice
+ 7.4 Inducers or Inhibitors of CYP3A4 and P-gp
+ 7.5 Vaccination
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy
+ 8.3 Nursing Mothers
+ 8.4 Pediatric Use
+ 8.5 Geriatric Use
+ 8.6 Patients with Hepatic Impairment
+ 8.7 Patients with Renal Impairment
+ 10 OVERDOSAGE
+ 11 DESCRIPTION
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL STUDIES
+ 14.1 Prophylaxis of Organ Rejection
+ 14.2 Cyclosporine Withdrawal Study
+ 14.3 High-Immunologic Risk Patients
+ 14.4 Conversion from Calcineurin Inhibitors to Rapamune in Maintenance
+ Renal Transplant Patients
+ 14.5 Conversion from a CNI-based Regimen to a Sirolimus-based
+ Regimen in Liver Transplant Patients
+ 14.6 Pediatrics
+  15 REFERENCES
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 Rapamune Oral Solution
+ 16.2 Rapamune Tablets
+ 17 PATIENT COUNSELING INFORMATION
+ 17.1 Dosage
+ 17.2 Skin Cancer Events
+ 17.3 Pregnancy Risks
+ Reference ID: 3272763 2
+ FULL PRESCRIBING INFORMATION
+  BOX WARNING: IMMUNOSUPPRESSION, USE IS NOT RECOMMENDED IN LIVER
+ OR LUNG TRANSPLANT PATIENTS
+ &#x2022;  Increased susceptibility to infection and the possible development of lymphoma and
+ other malignancies may result from immunosuppression
+ Increased susceptibility to infection and the possible development of lymphoma may result
+ from immunosuppression.
+Only physicians experienced in immunosuppressive therapy and
+ management of renal transplant patients should use Rapamune.
+Patients receiving the
+ drug should be managed in facilities equipped and staffed with adequate laboratory and
+ supportive medical resources.
+The physician responsible for maintenance therapy should
+ have complete information requisite for the follow-up of the patient [see Warnings and
+ Precautions (5.1)].
+ &#x2022;  The safety and efficacy of Rapamune (sirolimus) as immunosuppressive therapy
+ have not been established in liver or lung transplant patients, and therefore, such
+ use is not recommended [see Warnings and Precautions (5.2, 5.3)].
+ &#x2022;  Liver Transplantation - Excess Mortality, Graft Loss, and Hepatic Artery  Thrombosis (HAT)
+ The use of Rapamune in combination with tacrolimus was associated with excess mortality
+ and graft loss in a study in de novo liver transplant patients.
+Many of these patients had
+ evidence of infection at or near the time of death.
+ In this and another study in de novo liver transplant patients, the use of Rapamune in
+ combination with cyclosporine or tacrolimus was associated with an increase in HAT; most
+ cases of HAT occurred within 30 days post-transplantation and most led to graft loss or
+ death [see Warnings and Precautions (5.2)].
+ &#x2022;  Lung Transplantation - Bronchial Anastomotic Dehiscence
+ Cases of bronchial anastomotic dehiscence, most fatal, have been reported in de novo lung
+ transplant patients when Rapamune has been used as part of an immunosuppressive
+ regimen [see Warnings and Precautions (5.3)].
+ 1 INDICATIONS AND USAGE
+ 1.1 Prophylaxis of Organ Rejection in Renal Transplantation
+ Rapamune (sirolimus) is indicated for the prophylaxis of organ rejection in patients aged 13  years or older receiving renal transplants.
+Therapeutic drug monitoring is recommended for all
+ Reference ID: 3272763  3
+ patients receiving Rapamune [see Dosage and Administration (2.3), Warnings and Precautions
+ (5.15)].
+ In patients at low- to moderate-immunologic risk, it is recommended that Rapamune be
+ used initially in a regimen with cyclosporine and corticosteroids; cyclosporine should be
+ withdrawn 2 to 4 months after transplantation [see Dosage and Administration (2.1)].
+ In patients at high-immunologic risk (defined as Black recipients and/or repeat renal
+ transplant recipients who lost a previous allograft for immunologic reason and/or patients with
+ high panel-reactive antibodies [PRA; peak PRA level &gt; 80%]), it is recommended that
+ Rapamune be used in combination with cyclosporine and corticosteroids for the first year
+ following transplantation [see Dosage and Administration (2.2), Clinical Studies (14.3)].
+ 1.2 Limitations of Use
+ Cyclosporine withdrawal has not been studied in patients with Banff Grade 3 acute rejection or
+ vascular rejection prior to cyclosporine withdrawal, those who are dialysis-dependent, those
+ with serum creatinine &gt; 4.5 mg/dL, Black patients, patients of multi-organ transplants,
+ secondary transplants, or those with high levels of panel-reactive antibodies [see Clinical
+ Studies (14.2)].
+ In patients at high-immunologic risk, the safety and efficacy of Rapamune used in
+ combination with cyclosporine and corticosteroids has not been studied beyond one year;
+ therefore after the first 12 months following transplantation, any adjustments to the
+ immunosuppressive regimen should be considered on the basis of the clinical status of the
+ patient [see Clinical Studies (14.3)].
+ In pediatric patients, the safety and efficacy of Rapamune have not been established in
+ patients &lt; 13 years old, or in pediatric (&lt; 18 years) renal transplant patients considered at high-
+immunologic risk [see Adverse Reactions (6.5), Clinical Studies (14.6)].
+The safety and
+ efficacy of de novo use of Rapamune without cyclosporine have not been established in renal
+ transplant patients [see Warnings and Precautions (5.12)].
+ The safety and efficacy of conversion from calcineurin inhibitors to Rapamune in
+ maintenance renal transplant patients have not been established [see Clinical Studies (14.4)].
+ 2 DOSAGE AND ADMINISTRATION
+ Rapamune is to be administered orally once daily, consistently with or without food [see
+ Dosage and Administration (2.4), Clinical Pharmacology (12.3)].
+ Tablets should not be crushed, chewed or split.
+Patients unable to take the tablets should be
+ prescribed the solution and instructed in its use.
+ The initial dose of Rapamune should be administered as soon as possible after transplantation.
+ It is recommended that Rapamune be taken 4 hours after administration of cyclosporine oral
+ solution (MODIFIED) and or/cyclosporine capsules (MODIFIED) [see Drug Interactions
+ (7.2)].
+ Reference ID: 3272763 4
+     Frequent Rapamune dose adjustments based on non-steady-state sirolimus concentrations can
+ lead to overdosing or underdosing because sirolimus has a long half-life.
+Once Rapamune
+ maintenance dose is adjusted, patients should continue on the new maintenance dose for at least
+ 7 to 14 days before further dosage adjustment with concentration monitoring.
+In most patients,
+ dose adjustments can be based on simple proportion: new Rapamune dose = current dose x
+ (target concentration/current concentration).
+A loading dose should be considered in addition to
+ a new maintenance dose when it is necessary to increase sirolimus trough concentrations:
+ Rapamune loading dose = 3 x (new maintenance dose - current maintenance dose).
+The
+ maximum Rapamune dose administered on any day should not exceed 40 mg.
+If an estimated
+ daily dose exceeds 40 mg due to the addition of a loading dose, the loading dose should be
+ administered over 2 days.
+Sirolimus trough concentrations should be monitored at least 3 to 4
+ days after a loading dose(s).
+ Two milligrams (2 mg) of Rapamune Oral Solution have been demonstrated to be clinically
+ equivalent to 2 mg Rapamune Tablets; hence, are interchangeable on a mg-to-mg basis.
+ However, it is not known if higher doses of Rapamune Oral Solution are clinically equivalent
+ to higher doses of Rapamune Tablets on a mg-to-mg basis [see Clinical Pharmacology (12.3)].
+ 2.1 Patients at Low- to Moderate-Immunologic Risk
+ Rapamune and Cyclosporine Combination Therapy
+ For de novo renal transplant patients, it is recommended that Rapamune Oral Solution and
+ Tablets be used initially in a regimen with cyclosporine and corticosteroids.
+A loading dose of
+ Rapamune equivalent to 3 times the maintenance dose should be given, i.e. a daily maintenance
+ dose of 2 mg should be preceded with a loading dose of 6 mg.
+Therapeutic drug monitoring
+ should be used to maintain sirolimus drug concentrations within the target-range [see Dosage
+ and Administration (2.3)].
+ Rapamune Following Cyclosporine Withdrawal
+ At 2 to 4 months following transplantation, cyclosporine should be progressively discontinued
+ over 4 to 8 weeks, and the Rapamune dose should be adjusted to obtain sirolimus whole blood
+ trough concentrations within the target-range [see Dosage and Administration (2.3)].
+Because
+ cyclosporine inhibits the metabolism and transport of sirolimus, sirolimus concentrations may
+ decrease when cyclosporine is discontinued, unless the Rapamune dose is increased [see
+ Clinical Pharmacology (12.3)].
+ 2.2 Patients at High-Immunologic Risk
+ In patients with high-immunologic risk, it is recommended that Rapamune be used in
+ combination with cyclosporine and corticosteroids for the first 12 months following
+ transplantation [see Clinical Studies (14.3)].
+The safety and efficacy of this combination in
+ high-immunologic risk patients has not been studied beyond the first 12 months.
+Therefore,
+ after the first 12 months following transplantation, any adjustments to the immunosuppressive
+ regimen should be considered on the basis of the clinical status of the patient.
+ Reference ID: 3272763 5
+ For patients receiving Rapamune with cyclosporine, Rapamune therapy should be initiated with
+ a loading dose of up to 15 mg on day 1 post-transplantation.
+Beginning on day 2, an initial
+ maintenance dose of 5 mg/day should be given.
+A trough level should be obtained between
+ days 5 and 7, and the daily dose of Rapamune should thereafter be adjusted [see Dosage and
+ Administration (2.3)].
+ The starting dose of cyclosporine should be up to 7 mg/kg/day in divided doses and the dose
+ should subsequently be adjusted to achieve target whole blood trough concentrations [see
+ Dosage and Administration (2.3)].
+Prednisone should be administered at a minimum of
+ 5 mg/day.
+ Antibody induction therapy may be used.
+ 2.3 Therapeutic Drug Monitoring
+ Monitoring of sirolimus trough concentrations is recommended for all patients, especially in
+ those patients likely to have altered drug metabolism, in patients &#x2265; 13 years who weigh less
+ than 40 kg, in patients with hepatic impairment, when a change in the Rapamune dosage form
+ is made, and during concurrent administration of strong CYP3A4 inducers and inhibitors [see
+ Drug Interactions (7)].
+ Therapeutic drug monitoring should not be the sole basis for adjusting Rapamune therapy.
+ Careful attention should be made to clinical signs/symptoms, tissue biopsy findings, and
+ laboratory parameters.
+ When used in combination with cyclosporine, sirolimus trough concentrations should be
+ maintained within the target-range [see Clinical Studies (14), Clinical Pharmacology (12.3)].
+ Following cyclosporine withdrawal in transplant patients at low- to moderate-immunologic
+ risk, the target sirolimus trough concentrations should be 16 to 24 ng/mL for the first year
+ following transplantation.
+Thereafter, the target sirolimus concentrations should be 12 to
+ 20 ng/mL.
+ The above recommended 24-hour trough concentration ranges for sirolimus are based on
+ chromatographic methods.
+Currently in clinical practice, sirolimus whole blood concentrations
+ are being measured by both chromatographic and immunoassay methodologies.
+Because the
+ measured sirolimus whole blood concentrations depend on the type of assay used, the
+ concentrations obtained by these different methodologies are not interchangeable [see
+ Warnings and Precautions (5.15), Clinical Pharmacology (12.3)].
+Adjustments to the targeted
+ range should be made according to the assay utilized to determine sirolimus trough
+ concentrations.
+Since results are assay and laboratory dependent, and the results may change
+ over time, adjustments to the targeted therapeutic range must be made with a detailed
+ knowledge of the site-specific assay used.
+Therefore, communication should be maintained
+ with the laboratory performing the assay.
+A discussion of different assay methods is contained
+ in Clinical Therapeutics, Volume 22, Supplement B, April 2000 [see References (15)].
+ Reference ID: 3272763 6
+ 2.4 Patients with Low Body Weight
+ The initial dosage in patients &#x2265; 13 years who weigh less than 40 kg should be adjusted, based
+ on body surface area, to 1 mg/m2/day.
+The loading dose should be 3 mg/m 2.
+ 2.5 Patients with Hepatic Impairment
+ It is recommended that the maintenance dose of Rapamune be reduced by approximately one
+ third in patients with mild or moderate hepatic impairment and by approximately one half in
+ patients with severe hepatic impairment.
+It is not necessary to modify the Rapamune loading
+ dose [see Clinical Pharmacology (12.3)].
+ 2.6 Patients with Renal Impairment
+ Dosage adjustment is not needed in patients with impaired renal function [see Use in Specific
+ Populations (8.7)].
+ 2.7 Instructions for Dilution and Administration of Rapamune Oral Solution
+ The amber oral dose syringe should be used to withdraw the prescribed amount of Rapamune
+ Oral Solution from the bottle.
+Empty the correct amount of Rapamune from the syringe into
+ only a glass or plastic container holding at least two (2) ounces (1/4 cup, 60 mL) of water or
+ orange juice.
+No other liquids, including grapefruit juice, should be used for dilution [see Drug
+ Interactions (7.3), Clinical Pharmacology (12.3)].
+Stir vigorously and drink at once.
+Refill the
+ container with an additional volume [minimum of four (4) ounces (1/2 cup, 120 mL)] of water
+ or orange juice, stir vigorously, and drink at once.
+ Rapamune Oral Solution contains polysorbate 80, which is known to increase the rate of
+ di-(2-ethylhexyl)phthalate (DEHP) extraction from polyvinyl chloride (PVC).
+This should be
+ considered during the preparation and administration of Rapamune Oral Solution.
+It is
+ important that these recommendations be followed closely.
+ 3 DOSAGE FORMS AND STRENGTHS
+ 3.1 Rapamune Oral Solution
+ &#x2022; 60 mg per 60 mL in amber glass bottle.
+ 3.2 Rapamune Tablets
+ &#x2022; 0.5 mg, tan, triangular-shaped tablets marked "RAPAMUNE 0.5 mg" on one side.
+ &#x2022; 1 mg, white, triangular-shaped tablets marked "RAPAMUNE 1 mg" on one side.
+ &#x2022; 2 mg, yellow-to-beige triangular-shaped tablets marked "RAPAMUNE 2 mg" on one
+ side.
+ Reference ID: 3272763 7
+ 4 CONTRAINDICATIONS
+ Rapamune is contraindicated in patients with a hypersensitivity to Rapamune [see Warnings
+ and Precautions (5.4)].
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 Increased Susceptibility to Infection and the Possible Development of Lymphoma
+ Increased susceptibility to infection and the possible development of lymphoma and other
+ malignancies, particularly of the skin, may result from immunosuppression.
+The rates of
+ lymphoma/lymphoproliferative disease observed in Studies 1 and 2 were 0.7-3.2% (for
+ Rapamune-treated patients) versus 0.6-0.8% (azathioprine and placebo control) [see Adverse
+ Reactions (6.1) and (6.2)].
+Oversuppression of the immune system can also increase
+ susceptibility to infection, including opportunistic infections such as tuberculosis, fatal
+ infections, and sepsis.
+Only physicians experienced in immunosuppressive therapy and
+ management of organ transplant patients should use Rapamune.
+Patients receiving the drug
+ should be managed in facilities equipped and staffed with adequate laboratory and supportive
+ medical resources.
+The physician responsible for maintenance therapy should have complete
+ information requisite for the follow-up of the patient.
+ 5.2 Liver Transplantation - Excess Mortality, Graft Loss, and Hepatic Artery  Thrombosis (HAT)
+ The safety and efficacy of Rapamune as immunosuppressive therapy have not been established
+ in liver transplant patients; therefore, such use is not recommended.
+The use of Rapamune has
+ been associated with adverse outcomes in patients following liver transplantation, including
+ excess mortality, graft loss and Hepatic Artery Thrombosis (HAT).
+ In a study in de novo liver transplant patients, the use of Rapamune in combination with
+ tacrolimus was associated with excess mortality and graft loss (22% in combination versus 9%
+ on tacrolimus alone).
+Many of these patients had evidence of infection at or near the time of
+ death.
+ In this and another study in de novo liver transplant patients, the use of Rapamune in
+ combination with cyclosporine or tacrolimus was associated with an increase in HAT (7% in
+ combination versus 2% in the control arm); most cases of HAT occurred within 30 days post-
+transplantation, and most led to graft loss or death.
+ In a clinical study in stable liver transplant patients 6-144 months post-liver transplantation and
+ receiving a CNI-based regimen, an increased number of deaths was observed in the group
+ converted to a Rapamune-based regimen compared to the group who was continued on a CNI-
+based regimen, although the difference was not statistically significant (3.8% versus 1.4%) [see
+ Clinical Studies (14.5)].
+ Reference ID: 3272763 8
+ 5.3 Lung Transplantation - Bronchial Anastomotic Dehiscence
+ Cases of bronchial anastomotic dehiscence, most fatal, have been reported in de novo lung
+ transplant patients when Rapamune has been used as part of an immunosuppressive regimen.
+ The safety and efficacy of Rapamune as immunosuppressive therapy have not been established
+ in lung transplant patients; therefore, such use is not recommended.
+ 5.4 Hypersensitivity Reactions
+ Hypersensitivity reactions, including anaphylactic/anaphylactoid reactions, angioedema,
+ exfoliative dermatitis and hypersensitivity vasculitis, have been associated with the
+ administration of Rapamune [see Adverse Reactions (6.6)].
+ 5.5 Angioedema
+ Rapamune has been associated with the development of angioedema.
+The concomitant use of
+ Rapamune with other drugs known to cause angioedema, such as ACE-inhibitors, may increase
+ the risk of developing angioedema.
+ 5.6 Fluid Accumulation and Wound Healing
+ There have been reports of impaired or delayed wound healing in patients receiving Rapamune,
+ including lymphocele and wound dehiscence [see Adverse Reactions (6.1)].
+mTOR inhibitors
+ such as sirolimus have been shown in vitro to inhibit production of certain growth factors that
+ may affect angiogenesis, fibroblast proliferation, and vascular permeability.
+Lymphocele, a
+ known surgical complication of renal transplantation, occurred significantly more often in a
+ dose-related fashion in patients treated with Rapamune [see Adverse Reactions (6.1)].
+ Appropriate measures should be considered to minimize such complications.
+Patients with a
+ body mass index (BMI) greater than 30 kg/m2
+ may be at increased risk of abnormal wound  healing based on data from the medical literature.
+ There have also been reports of fluid accumulation, including peripheral edema, lymphedema,
+ pleural effusion, ascites, and pericardial effusions (including hemodynamically significant  effusions and tamponade requiring intervention in children and adults), in patients receiving
+ Rapamune.
+ 5.7 Hyperlipidemia
+ Increased serum cholesterol and triglycerides requiring treatment occurred more frequently in
+ patients treated with Rapamune compared with azathioprine or placebo controls in Studies 1
+ and 2 [see Adverse Reactions (6.1)].
+There were increased incidences of hypercholesterolemia
+ (43-46%) and/or hypertriglyceridemia (45-57%) in patients receiving Rapamune compared
+ with placebo controls (each 23%).
+The risk/benefit should be carefully considered in patients
+ with established hyperlipidemia before initiating an immunosuppressive regimen including
+ Rapamune.
+ Reference ID: 3272763 9
+     Any patient who is administered Rapamune should be monitored for hyperlipidemia.
+If
+ detected, interventions such as diet, exercise, and lipid-lowering agents should be initiated as
+ outlined by the National Cholesterol Education Program guidelines.
+ In clinical trials of patients receiving Rapamune plus cyclosporine or Rapamune after
+ cyclosporine withdrawal, up to 90% of patients required treatment for hyperlipidemia and
+ hypercholesterolemia with anti-lipid therapy (e.g., statins, fibrates).
+Despite anti-lipid
+ management, up to 50% of patients had fasting serum cholesterol levels &gt;240 mg/dL and
+ triglycerides above recommended target levels.
+The concomitant administration of Rapamune
+ and HMG-CoA reductase inhibitors resulted in adverse events such as CPK elevations (3%),
+ myalgia (6.7%) and rhabdomyolysis (&lt;1%).
+In these trials, the number of patients was too
+ small and duration of follow-up too short to evaluate the long-term impact of Rapamune on
+ cardiovascular mortality.
+ During Rapamune therapy with or without cyclosporine, patients should be monitored for
+ elevated lipids, and patients administered an HMG-CoA reductase inhibitor and/or fibrate
+ should be monitored for the possible development of rhabdomyolysis and other adverse effects,
+ as described in the respective labeling for these agents.
+ 5.8 Renal Function
+ Renal function should be closely monitored during the co-administration of Rapamune with
+ cyclosporine, because long-term administration of the combination has been associated with
+ deterioration of renal function.
+Patients treated with cyclosporine and Rapamune were noted to
+ have higher serum creatinine levels and lower glomerular filtration rates compared with
+ patients treated with cyclosporine and placebo or azathioprine controls (Studies 1 and 2).
+The
+ rate of decline in renal function in these studies was greater in patients receiving Rapamune and
+ cyclosporine compared with control therapies.
+ Appropriate adjustment of the immunosuppressive regimen, including discontinuation of
+ Rapamune and/or cyclosporine, should be considered in patients with elevated or increasing
+ serum creatinine levels.
+In patients at low- to moderate-immunologic risk, continuation of
+ combination therapy with cyclosporine beyond 4 months following transplantation should only
+ be considered when the benefits outweigh the risks of this combination for the individual
+ patients.
+Caution should be exercised when using agents (e.g., aminoglycosides and
+ amphotericin B) that are known to have a deleterious effect on renal function.
+ In patients with delayed graft function, Rapamune may delay recovery of renal function.
+ 5.9 Proteinuria
+ Periodic quantitative monitoring of urinary protein excretion is recommended.
+In a study
+ evaluating conversion from calcineurin inhibitors (CNI) to Rapamune in maintenance renal
+ transplant patients 6-120 months post-transplant, increased urinary protein excretion was
+ commonly observed from 6 through 24 months after conversion to Rapamune compared with
+ CNI continuation [see Clinical Studies (14.4), Adverse Reactions (6.4)].
+Patients with the
+ greatest amount of urinary protein excretion prior to Rapamune conversion were those whose
+ protein excretion increased the most after conversion.
+New onset nephrosis (nephrotic
+ Reference ID: 3272763 10
+     syndrome) was also reported as a treatment-emergent adverse event in 2.2% of the Rapamune
+ conversion group patients in comparison to 0.4% in the CNI continuation group of patients.
+ Nephrotic range proteinuria (defined as urinary protein to creatinine ratio &gt; 3.5) was also
+ reported in 9.2% in the Rapamune conversion group of patients in comparison to 3.7% in the
+ CNI continuation group of patients.
+In some patients, reduction in the degree of urinary protein
+ excretion was observed for individual patients following discontinuation of Rapamune.
+The
+ safety and efficacy of conversion from calcineurin inhibitors to Rapamune in maintenance renal
+ transplant patients have not been established.
+ 5.10 Latent Viral Infections
+ Immunosuppressed patients are at increased risk for opportunistic infections, including
+ activation of latent viral infections.
+These include BK virus-associated nephropathy, which has
+ been observed in patients receiving immunosuppressants, including Rapamune.
+This infection
+ may be associated with serious outcomes, including deteriorating renal function and renal graft
+ loss [see Adverse Reactions (6.6)].
+Patient monitoring may help detect patients at risk for BK  virus-associated nephropathy.
+Reduction in immunosuppression should be considered for
+ patients who develop evidence of BK virus-associated nephropathy.
+ Cases of progressive multifocal leukoencephalopathy (PML), sometimes fatal have been
+ reported in patients treated with immunosuppressants, including Rapamune.
+PML commonly
+ presents with hemiparesis, apathy, confusion, cognitive deficiencies and ataxia.
+Risk factors for
+ PML include treatment with immunosuppressant therapies and impairment of immune
+ function.
+In immunosuppressed patients, physicians should consider PML in the differential
+ diagnosis in patients reporting neurological symptoms and consultation with a neurologist
+ should be considered as clinically indicated.
+Consideration should be given to reducing the
+ amount of immunosuppression in patients who develop PML.
+In transplant patients, physicians
+ should also consider the risk that reduced immunosuppression represents to the graft.
+ 5.11 Interstitial Lung Disease
+ Cases of interstitial lung disease (including pneumonitis, bronchiolitis obliterans organizing  pneumonia [BOOP], and pulmonary fibrosis), some fatal, with no identified infectious etiology
+ have occurred in patients receiving immunosuppressive regimens including Rapamune.
+In
+ some cases, the interstitial lung disease has resolved upon discontinuation or dose reduction of
+ Rapamune.
+The risk may be increased as the trough sirolimus concentration increases [see
+ Adverse Reactions (6.6)].
+ 5.12 De Novo Use Without Cyclosporine
+ The safety and efficacy of de novo use of Rapamune without cyclosporine is not established in
+ renal transplant patients.
+In a multicenter clinical study, de novo renal transplant patients
+ treated with Rapamune, mycophenolate mofetil (MMF), steroids, and an IL-2 receptor
+ antagonist had significantly higher acute rejection rates and numerically higher death rates
+ compared to patients treated with cyclosporine, MMF, steroids, and IL-2 receptor antagonist.
+A
+ benefit, in terms of better renal function, was not apparent in the treatment arm with de novo
+ Reference ID: 3272763 11
+ use of Rapamune without cyclosporine.
+These findings were also observed in a similar
+ treatment group of another clinical trial.
+ 5.13 Increased Risk of Calcineurin Inhibitor-Induced Hemolytic Uremic  Syndrome/Thrombotic Thrombocytopenic Purpura/Thrombotic Microangiopathy  (HUS/TTP/TMA)
+ The concomitant use of Rapamune with a calcineurin inhibitor may increase the risk of
+ calcineurin inhibitor-induced hemolytic uremic syndrome/thrombotic thrombocytopenic  purpura/thrombotic microangiopathy (HUS/TTP/TMA) [see Adverse Reactions (6.6)].
+ 5.14 Antimicrobial Prophylaxis
+ Cases of Pneumocystis carinii pneumonia have been reported in patients not receiving
+ antimicrobial prophylaxis.
+Therefore, antimicrobial prophylaxis for Pneumocystis carinii  pneumonia should be administered for 1 year following transplantation.
+ Cytomegalovirus (CMV) prophylaxis is recommended for 3 months after transplantation,
+ particularly for patients at increased risk for CMV disease.
+ 5.15 Assay for Sirolimus Therapeutic Drug Monitoring
+ Currently in clinical practice, sirolimus whole blood concentrations are being measured by
+ various chromatographic and immunoassay methodologies.
+Patient sample concentration
+ values from different assays may not be interchangeable [see Dosage and Administration
+ (2.3)].
+ 5.16 Skin Cancer Events
+ Patients on immunosuppressive therapy are at increased risk for skin cancer.
+Exposure to
+ sunlight and ultraviolet (UV) light should be limited by wearing protective clothing and using a
+ sunscreen with a high protection factor.
+ 5.17 Interaction with Strong Inhibitors and Inducers of CYP3A4 and/or P-gp
+ Co-administration of Rapamune with strong inhibitors of CYP3A4 and/or P-gp (such as
+ ketoconazole, voriconazole, itraconazole, erythromycin, telithromycin, or clarithromycin) or
+ strong inducers of CYP3A4 and/or P-gp (such as rifampin or rifabutin) is not recommended
+ [see Drug Interactions (7)].
+ 6 ADVERSE REACTIONS
+ The following adverse reactions are discussed in greater detail in other sections of the label.
+ &#x2022; Increased susceptibility to infection, lymphoma, and malignancy [see Boxed Warning,
+ Warnings and Precautions (5.1)]
+ &#x2022; Excess mortality, graft loss, and hepatic artery thrombosis in liver transplant patients
+ [see Boxed Warning, Warnings and Precautions (5.2)]
+ Reference ID: 3272763 12
+ &#x2022; Bronchial anastomotic dehiscence in lung transplant patients [see Boxed Warning,
+ Warnings and Precautions (5.3)]
+ &#x2022; Hypersensitivity reactions [see Warnings and Precautions (5.4)]
+ &#x2022; Exfoliative dermatitis [see Warnings and Precautions (5.4)]
+ &#x2022; Angioedema [see Warnings and Precautions (5.5)]
+ &#x2022; Fluid Accumulation and Wound Healing [see Warnings and Precautions (5.6)]
+ &#x2022; Hypertriglyceridemia, hypercholesterolemia [see Warnings and Precautions (5.7)]
+ &#x2022; Decline in renal function in long-term combination of cyclosporine with Rapamune [see
+ Warnings and Precautions (5.8)]
+ &#x2022; Proteinuria [see Warnings and Precautions (5.9)]
+ &#x2022; Interstitial lung disease [see Warnings and Precautions (5.11)]
+ &#x2022;  Increased risk of calcineurin inhibitor-induced hemolytic uremic syndrome/thrombotic  thrombocytopenic purpura/thrombotic microangiopathy (HUS/TTP/TMA) [see
+ Warnings and Precautions (5.13)].
+ The most common (&#x2265; 30%) adverse reactions observed with Rapamune in clinical studies are:
+ peripheral edema, hypertriglyceridemia, hypertension, hypercholesterolemia, creatinine  increased, constipation, abdominal pain, diarrhea, headache, fever, urinary tract infection,
+ anemia, nausea, arthralgia, pain, and thrombocytopenia.
+ The following adverse reactions resulted in a rate of discontinuation of &gt; 5% in clinical trials:
+ creatinine increased, hypertriglyceridemia, and thrombotic thrombocytopenic purpura (TTP).
+ 6.1 Clinical Studies Experience in Prophylaxis of Organ Rejection Following Renal  Transplantation
+ The safety and efficacy of Rapamune Oral Solution for the prevention of organ rejection  following renal transplantation were assessed in two randomized, double-blind, multicenter,
+ controlled trials [see Clinical Studies (14.1)].
+The safety profiles in the two studies were
+ similar.
+ The incidence of adverse reactions in the randomized, double-blind, multicenter, placebo-
+controlled trial (Study 2) in which 219 renal transplant patients received Rapamune Oral
+ Solution 2 mg/day, 208 received Rapamune Oral Solution 5 mg/day, and 124 received placebo
+ is presented in the table below.
+The study population had a mean age of 46 years (range 15 to
+ 71 years), the distribution was 67% male, and the composition by race was: White (78%),
+ Black (11%), Asian (3%), Hispanic (2%), and Other (5%).
+All patients were treated with
+ cyclosporine and corticosteroids.
+Data (&#x2265; 12 months post-transplant) presented in the following
+ table show the adverse reactions that occurred in at least one of the Rapamune treatment groups
+ with an incidence of &#x2265; 20%.
+ The safety profile of the tablet did not differ from that of the oral solution formulation [see
+ Clinical Studies (14.1)].
+ Reference ID: 3272763  13
+    In general, adverse reactions related to the administration of Rapamune were dependent on
+ dose/concentration.
+Although a daily maintenance dose of 5 mg, with a loading dose of 15 mg,
+ was shown to be safe and effective, no efficacy advantage over the 2 mg dose could be
+ established for renal transplant patients.
+Patients receiving 2 mg of Rapamune Oral Solution
+ per day demonstrated an overall better safety profile than did patients receiving 5 mg of
+ Rapamune Oral Solution per day.
+ Because clinical trials are conducted under widely varying conditions, adverse reaction rates
+ observed in one clinical trial of a drug cannot be directly compared with rates in the clinical
+ trials of the same or another drug and may not reflect the rates observed in practice.
+ ADVERSE REACTIONS OCCURRING AT A FREQUENCY OF &#x2265; 20% IN AT LEAST
+ ONE OF THE RAPAMUNE TREATMENT GROUPS IN A STUDY OF PROPHYLAXIS  OF ORGAN REJECTION FOLLOWING RENAL TRANSPLANTATION (%) AT &#x2265; 12
+ MONTHS POST-TRANSPLANTATION (STUDY 2)a
+  &#x20ac;&#x201c;&#x20ac;&#x201c;&#x20ac;&#x201c;Rapamune Oral Solution&#x20ac;&#x201c;&#x20ac;&#x201c;&#x20ac;&#x201c;
+ 2 mg/day 5 mg/day Placebo
+ Adverse Reaction (n = 218) (n = 208) (n = 124)
+ Peripheral edema 54 58 48
+ Hypertriglyceridemia 45 57 23
+ Hypertension 45 49 48
+ Hypercholesterolemia 43 46 23
+ Creatinine increased 39 40 38
+ Constipation 36 38 31
+ Abdominal pain 29 36 30
+ Diarrhea 25 35 27
+ Headache 34 34 31
+ Fever 23 34 35
+ Urinary tract infection 26 33 26
+ Anemia 23 33 21
+ Nausea 25 31 29
+ Arthralgia 25 31 18
+ Thrombocytopenia 14 30 9
+ Pain 33 29 25
+ Acne 22 22 19
+ Rash 10 20 6
+ Edema 20 18 15
+ a: Patients received cyclosporine and corticosteroids.
+ The following adverse reactions were reported less frequently (&#x2265; 3%, but &lt; 20%)
+ &#x2022; Body as a Whole - Sepsis, lymphocele, herpes zoster, herpes simplex.
+ &#x2022; Cardiovascular - Venous thromboembolism (including pulmonary embolism, deep  venous thrombosis), tachycardia.
+ Reference ID: 3272763 14
+ &#x2022; Digestive System - Stomatitis.
+ &#x2022; Hematologic and Lymphatic System - Thrombotic thrombocytopenic purpura/hemolytic uremic syndrome (TTP/HUS), leukopenia.
+ &#x2022; Metabolic/Nutritional - Abnormal healing, increased lactic dehydrogenase (LDH),
+ hypokalemia.
+ &#x2022; Musculoskeletal System - Bone necrosis.
+ &#x2022; Respiratory System - Pneumonia, epistaxis.
+ &#x2022; Skin - Melanoma, squamous cell carcinoma, basal cell carcinoma.
+ &#x2022; Urogenital System - Pyelonephritis, decline in renal function (creatinine increased) in
+ long-term combination of cyclosporine with Rapamune [see Warnings and Precautions
+ (5.8)], ovarian cysts, menstrual disorders (including amenorrhea and menorrhagia).
+ Less frequently (&lt; 3%) occurring adverse reactions included: lymphoma/post-transplant
+ lymphoproliferative disorder, mycobacterial infections (including M. tuberculosis),
+ pancreatitis, cytomegalovirus (CMV), and Epstein-Barr virus.
+ Increased Serum Cholesterol and Triglycerides
+ The use of Rapamune in renal transplant patients was associated with increased serum  cholesterol and triglycerides that may require treatment.
+ In Studies 1 and 2, in de novo renal transplant patients who began the study with fasting, total
+ serum cholesterol &lt; 200 mg/dL or fasting, total serum triglycerides &lt; 200 mg/dL, there was an
+ increased incidence of hypercholesterolemia (fasting serum cholesterol &gt; 240 mg/dL) or
+ hypertriglyceridemia (fasting serum triglycerides &gt; 500 mg/dL), respectively, in patients
+ receiving both Rapamune 2 mg and Rapamune 5 mg compared with azathioprine and placebo
+ controls.
+ Treatment of new-onset hypercholesterolemia with lipid-lowering agents was required in
+ 42-52% of patients enrolled in the Rapamune arms of Studies 1 and 2 compared with 16% of
+ patients in the placebo arm and 22% of patients in the azathioprine arm.
+In other Rapamune
+ renal transplant studies, up to 90% of patients required treatment for hyperlipidemia and
+ hypercholesterolemia with anti-lipid therapy (e.g., statins, fibrates).
+Despite anti-lipid
+ management, up to 50% of patients had fasting serum cholesterol levels &gt;240 mg/dL and
+ triglycerides above recommended target levels [see Warnings and Precautions (5.7)].
+ Abnormal Healing
+ Abnormal healing events following transplant surgery include fascial dehiscence, incisional  hernia, and anastomosis disruption (e.g., wound, vascular, airway, ureteral, biliary).
+ Malignancies
+ The table below summarizes the incidence of malignancies in the two controlled trials (Studies
+ 1 and 2) for the prevention of acute rejection [see Clinical Studies (14.1)].
+ Reference ID: 3272763 15
+         At 24 months (Study 1) and 36 months (Study 2), there were no significant differences among
+ treatment groups.
+ INCIDENCE (%) OF MALIGNANCIES IN STUDY 1 (24 MONTHS) AND STUDY 2 (36
+ MONTHS) POST-TRANSPLANTa,b
+ Rapamune Rapamune Azathioprine
+ Oral Solution Oral Solution 2-3
+ 2 mg/day 5 mg/day mg/kg/day Placebo
+ Study 1 Study 2 Study 1 Study 2
+ (n = (n = (n = (n = Study 1 Study 2
+ Malignancy 284) 227) 274) 219) (n = 161) (n = 130)
+ Lymphoma/ 0.7 1.8 1.1 3.2 0.6 0.8
+ lymphoproliferative disease
+ Skin Carcinoma
+ Any Squamous Cellc
+ 0.4 2.7 2.2 0.9 3.8 3.0
+ Any Basal Cellc
+ 0.7 2.2 1.5 1.8 2.5 5.3
+ Melanoma 0.0 0.4 0.0 1.4 0.0 0.0
+ Miscellaneous/Not 0.0 0.0 0.0 0.0 0.0 0.8
+ Specified
+ Total 1.1 4.4 3.3 4.1 4.3 7.7
+ Other Malignancy 1.1 2.2 1.5 1.4 0.6 2.3
+ a: Patients received cyclosporine and corticosteroids.
+ b: Includes patients who prematurely discontinued treatment.
+ c: Patients may be counted in more than one category.
+ 6.2 Rapamune Following Cyclosporine Withdrawal
+ The incidence of adverse reactions was determined through 36 months in a randomized,
+ multicenter, controlled trial (Study 3) in which 215 renal transplant patients received
+ Rapamune as a maintenance regimen following cyclosporine withdrawal, and 215 patients
+ received Rapamune with cyclosporine therapy [see Clinical Studies (14.2)].
+All patients were
+ treated with corticosteroids.
+The safety profile prior to randomization (start of cyclosporine
+ withdrawal) was similar to that of the 2 mg Rapamune groups in Studies 1 and 2.
+ Following randomization (at 3 months), patients who had cyclosporine eliminated from their
+ therapy experienced higher incidences of the following adverse reactions: abnormal liver  function tests (including increased AST/SGOT and increased ALT/SGPT), hypokalemia,
+ thrombocytopenia, and abnormal healing.
+Conversely, the incidence of the following adverse
+ events was higher in patients who remained on cyclosporine than those who had cyclosporine
+ withdrawn from therapy: hypertension, cyclosporine toxicity, increased creatinine, abnormal  kidney function, toxic nephropathy, edema, hyperkalemia, hyperuricemia, and gum  hyperplasia.
+Mean systolic and diastolic blood pressure improved significantly following
+ cyclosporine withdrawal.
+ Reference ID: 3272763 16
+         Malignancies
+ The incidence of malignancies in Study 3 [see Clinical Studies (14.2)] is presented in the table
+ following.
+ In Study 3, the incidence of lymphoma/lymphoproliferative disease was similar in all treatment
+ groups.
+The overall incidence of malignancy was higher in patients receiving Rapamune plus
+ cyclosporine compared with patients who had cyclosporine withdrawn.
+Conclusions regarding
+ these differences in the incidence of malignancy could not be made because Study 3 was not
+ designed to consider malignancy risk factors or systematically screen subjects for malignancy.
+ In addition, more patients in the Rapamune with cyclosporine group had a pretransplantation
+ history of skin carcinoma.
+ INCIDENCE (%) OF MALIGNANCIES IN STUDY 3 (CYCLOSPORINE
+ WITHDRAWAL STUDY) AT 36 MONTHS POST-TRANSPLANTa,b
+  Rapamune Rapamune
+ with Cyclosporine Following Cyclosporine
+ Nonrandomized Therapy Withdrawal
+ Malignancy (n = 95) (n = 215) (n = 215)
+ Lymphoma/ 1.1 1.4 0.5
+ lymphoproliferative disease
+ Skin Carcinoma
+ Any Squamous Cellc
+ 3.2 3.3 2.3
+ Any Basal Cellc
+ 3.2 6.5 2.3
+ Melanoma 0.0 0.5 0.0
+ Miscellaneous/Not 1.1 0.9 0.0
+ Specified
+ Total 4.2 7.9 3.7
+ Other Malignancy 3.2 3.3 1.9
+ a: Patients received cyclosporine and corticosteroids.
+ b: Includes patients who prematurely discontinued treatment.
+ c: Patients may be counted in more than one category.
+ 6.3 High-Immunologic Risk Patients
+ Safety was assessed in 224 patients who received at least one dose of sirolimus with
+ cyclosporine [see Clinical Studies (14.3)].
+Overall, the incidence and nature of adverse events
+ was similar to those seen in previous combination studies with Rapamune.
+The incidence of
+ malignancy was 1.3% at 12 months.
+ Reference ID: 3272763 17
+     6.4 Conversion from Calcineurin Inhibitors to Rapamune in Maintenance Renal
+ Transplant Population
+ The safety and efficacy of conversion from calcineurin inhibitors to Rapamune in maintenance
+ renal transplant population have not been established [see Clinical Studies (14.4)].
+In a study
+ evaluating the safety and efficacy of conversion from calcineurin inhibitors to Rapamune
+ (initial target sirolimus concentrations of 12-20 ng/mL, and then 8-20 ng/mL, by
+ chromatographic assay) in maintenance renal transplant patients, enrollment was stopped in the
+ subset of patients (n = 87) with a baseline glomerular filtration rate of less than 40 mL/min.
+ There was a higher rate of serious adverse events, including pneumonia, acute rejection, graft  loss and death, in this stratum of the Rapamune treatment arm.
+ The subset of patients with a baseline glomerular filtration rate of less than 40 mL/min had 2
+ years of follow-up after randomization.
+In this population, the rate of pneumonia was 15/58 vs.
+ 4/29, graft loss (excluding death with functioning graft loss) was 13/58 vs. 9/29, and death was
+ 9/58 vs. 1/29 in the sirolimus conversion group and CNI continuation group, respectively.
+ In the subset of patients with a baseline glomerular filtration rate of greater than 40 mL/min,
+ there was no benefit associated with conversion with regard to improvement in renal function
+ and a greater incidence of proteinuria in the Rapamune conversion arm.
+ Overall in this study, a 5-fold increase in the reports of tuberculosis among sirolimus (11/551)
+ and comparator (1/273) treatment groups was observed with 2:1 randomization scheme.
+ 6.5 Pediatrics
+ Safety was assessed in a controlled clinical trial in pediatric (&lt; 18 years of age) renal transplant
+ patients considered at high-immunologic risk, defined as a history of one or more acute
+ allograft rejection episodes and/or the presence of chronic allograft nephropathy on a renal
+ biopsy [see Clinical Studies (14.6)].
+The use of Rapamune in combination with calcineurin  inhibitors and corticosteroids was associated with a higher incidence of deterioration of renal  function (creatinine increased) compared to calcineurin inhibitor-based therapy, serum lipid  abnormalities (including, but not limited to, increased serum triglycerides and cholesterol), and
+ urinary tract infections.
+ 6.6 Postmarketing Experience
+ The following adverse reactions have been identified during post-approval use of Rapamune.
+ Because these reactions are reported voluntarily from a population of uncertain size, it is not
+ always possible to reliably estimate their frequency or establish a causal relationship to drug
+ exposure.
+ &#x2022; Body as a Whole - Lymphedema.
+ &#x2022; Cardiovascular - Pericardial effusion (including hemodynamically significant effusions
+ and tamponade requiring intervention in children and adults) and fluid accumulation.
+ &#x2022; Digestive System - Ascites.
+ Reference ID: 3272763 18
+ &#x2022;  Hematological/Lymphatic - The concomitant use of Rapamune with a calcineurin
+ inhibitor may increase the risk of calcineurin inhibitor-induced HUS/TTP/TMA [see
+ Warnings and Precautions (5.13)]; pancytopenia, neutropenia.
+ &#x2022;  Hepatobiliary Disorders - Hepatotoxicity, including fatal hepatic necrosis, with elevated
+ sirolimus trough concentrations.
+ &#x2022;  Immune System - Hypersensitivity reactions, including anaphylactic/anaphylactoid  reactions, angioedema, and hypersensitivity vasculitis [see Warnings and Precautions
+ (5.4)].
+ &#x2022;  Infections - Tuberculosis.
+BK virus associated nephropathy has been observed in
+ patients receiving immunosuppressants, including Rapamune.
+This infection may be
+ associated with serious outcomes, including deteriorating renal function and renal graft
+ loss.
+Cases of progressive multifocal leukoencephalopathy (PML), sometimes fatal, have
+ been reported in patients treated with immunosuppressants, including Rapamune [see
+ Warnings and Precautions (5.10)].
+Clostridium difficile enterocolitis.
+ &#x2022;  Metabolic/Nutritional - Liver function test abnormal, AST/SGOT increased,
+ ALT/SGPT increased, hypophosphatemia, hyperglycemia.
+ &#x2022;  Respiratory - Cases of interstitial lung disease (including pneumonitis, bronchiolitis  obliterans organizing pneumonia [BOOP], and pulmonary fibrosis), some fatal, with no
+ identified infectious etiology have occurred in patients receiving immunosuppressive
+ regimens including Rapamune.
+In some cases, the interstitial lung disease has resolved
+ upon discontinuation or dose reduction of Rapamune.
+The risk may be increased as the
+ sirolimus trough concentration increases [see Warnings and Precautions (5.11)];
+ pulmonary hemorrhage; pleural effusion; alveolar proteinosis.
+ &#x2022; Skin - Exfoliative dermatitis [see Warnings and Precautions (5.4)].
+ &#x2022; Urogenital - Nephrotic syndrome, proteinuria, focal segmental glomerulosclerosis,
+ ovarian cysts, menstrual disorders (including amenorrhea and menorrhagia).
+ Azoospermia has been reported with the use of Rapamune and has been reversible upon
+ discontinuation of Rapamune in most cases.
+ 7 DRUG INTERACTIONS
+ Sirolimus is known to be a substrate for both cytochrome P-450 3A4 (CYP3A4) and
+ p-glycoprotein (P-gp).
+Inducers of CYP3A4 and P-gp may decrease sirolimus concentrations
+ whereas inhibitors of CYP3A4 and P-gp may increase sirolimus concentrations.
+ 7.1 Use with Cyclosporine
+ Cyclosporine, a substrate and inhibitor of CYP3A4 and P-gp, was demonstrated to increase
+ sirolimus concentrations when co-administered with sirolimus.
+In order to diminish the effect
+ of this interaction with cyclosporine, it is recommended that Rapamune be taken 4 hours after
+ administration of cyclosporine oral solution (MODIFIED) and/or cyclosporine capsules
+ (MODIFIED).
+If cyclosporine is withdrawn from combination therapy with Rapamune, higher
+ doses of Rapamune are needed to maintain the recommended sirolimus trough concentration
+ ranges [see Dosage and Administration (2.1), Clinical Pharmacology (12.3)].
+ Reference ID: 3272763  19
+   7.2 Strong Inducers and Strong Inhibitors of CYP3A4 and P-gp
+ Avoid concomitant use of sirolimus with strong inducers (e.g., rifampin, rifabutin) and strong
+ inhibitors (e.g., ketoconazole, voriconazole, itraconazole, erythromycin, telithromycin,
+ clarithromycin) of CYP3A4 and P-gp.
+Alternative agents with lesser interaction potential with
+ sirolimus should be considered [see Warnings and Precautions (5.17), Clinical Pharmacology
+ (12.3)].
+ 7.3 Grapefruit Juice
+ Because grapefruit juice inhibits the CYP3A4-mediated metabolism of sirolimus, it must not be
+ taken with or be used for dilution of Rapamune [see Dosage and Administration (2.7), Drug
+ Interactions (7.3), Clinical Pharmacology (12.3)].
+ 7.4 Inducers or Inhibitors of CYP3A4 and P-gp
+ Exercise caution when using sirolimus with drugs or agents that are modulators of CYP3A4
+ and P-gp.
+The dosage of Rapamune and/or the co-administered drug may need to be adjusted
+ [see Clinical Pharmacology (12.3)].
+ &#x2022; Drugs that could increase sirolimus blood concentrations:
+ Bromocriptione, cimetidine, cisapride, clotrimazole, danazol, diltiazem, fluconazole,
+ protease inhibitors (e.g., HIV and hepatitis C that include drugs such as ritonavir,
+ indinavir, boceprevir, and telaprevir), metoclopramide, nicardipine, troleandomycin,
+ verapamil
+ &#x2022; Drugs and other agents that could decrease sirolimus concentrations:
+ Carbamazepine, phenobarbital, phenytoin, rifapentine, St. John's Wort (Hypericum
+ perforatum)
+ &#x2022; Drugs with concentrations that could increase when given with Rapamune:
+ Verapamil
+ 7.5 Vaccination
+ Immunosuppressants may affect response to vaccination.
+Therefore, during treatment with
+ Rapamune, vaccination may be less effective.
+The use of live vaccines should be avoided; live
+ vaccines may include, but are not limited to, the following: measles, mumps, rubella, oral
+ polio, BCG, yellow fever, varicella, and TY21a typhoid.
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy
+ Pregnancy Category C: Sirolimus was embryo/fetotoxic in rats when given in doses
+ approximately 0.2 to 0.5 the human doses (adjusted for body surface area).
+Embryo/fetotoxicity
+ was manifested as mortality and reduced fetal weights (with associated delays in skeletal
+ ossification).
+However, no teratogenesis was evident.
+In combination with cyclosporine, rats
+ had increased embryo/feto mortality compared with sirolimus alone.
+There were no effects on
+ Reference ID: 3272763 20
+ rabbit development at a maternally toxic dosage approximately 0.3 to 0.8 times the human
+ doses (adjusted for body surface area).
+There are no adequate and well-controlled studies in
+ pregnant women.
+Effective contraception must be initiated before Rapamune therapy, during
+ Rapamune therapy, and for 12 weeks after Rapamune therapy has been stopped.
+Rapamune
+ should be used during pregnancy only if the potential benefit outweighs the potential risk to the
+ embryo/fetus.
+ 8.3 Nursing Mothers
+ Sirolimus is excreted in trace amounts in milk of lactating rats.
+It is not known whether
+ sirolimus is excreted in human milk.
+The pharmacokinetic and safety profiles of sirolimus in
+ infants are not known.
+Because many drugs are excreted in human milk, and because of the
+ potential for adverse reactions in nursing infants from sirolimus, a decision should be made
+ whether to discontinue nursing or to discontinue the drug, taking into account the importance of
+ the drug to the mother.
+ 8.4 Pediatric Use
+ The safety and efficacy of Rapamune in pediatric patients &lt; 13 years have not been established.
+ The safety and efficacy of Rapamune Oral Solution and Rapamune Tablets have been
+ established in children &#x2265; 13 years judged to be at low- to moderate-immunologic risk.
+Use of
+ Rapamune Oral Solution and Rapamune Tablets in this subpopulation of children &#x2265; 13 years is
+ supported by evidence from adequate and well-controlled trials of Rapamune Oral Solution in
+ adults with additional pharmacokinetic data in pediatric renal transplantation patients [see
+ Clinical Pharmacology (12.3)].
+ Safety and efficacy information from a controlled clinical trial in pediatric and adolescent (&lt; 18
+ years of age) renal transplant patients judged to be at high-immunologic risk, defined as a
+ history of one or more acute rejection episodes and/or the presence of chronic allograft
+ nephropathy, do not support the chronic use of Rapamune Oral Solution or Tablets in
+ combination with calcineurin inhibitors and corticosteroids, due to the higher incidence of lipid
+ abnormalities and deterioration of renal function associated with these immunosuppressive
+ regimens compared to calcineurin inhibitors, without increased benefit with respect to acute
+ rejection, graft survival, or patient survival [see Clinical Studies (14.6)].
+ 8.5 Geriatric Use
+ Clinical studies of Rapamune Oral Solution or Tablets did not include sufficient numbers of
+ patients &#x2265; 65 years to determine whether they respond differently from younger patients.
+Data
+ pertaining to sirolimus trough concentrations suggest that dose adjustments based upon age in
+ geriatric renal patients are not necessary.
+Differences in responses between the elderly and
+ younger patients have not been identified.
+In general, dose selection for an elderly patient
+ should be cautious, usually starting at the low end of the dosing range, reflecting the greater
+ frequency of decreased hepatic, or cardiac function, and of concomitant disease or other drug
+ therapy.
+ Reference ID: 3272763 21
+ 8.6 Patients with Hepatic Impairment
+ The maintenance dose of Rapamune should be reduced in patients with hepatic impairment [see
+ Dosage and Administration (2.5), Clinical Pharmacology (12.3)].
+ 8.7 Patients with Renal Impairment
+ Dosage adjustment is not required in patients with renal impairment [see Dosage and
+ Administration (2.6), Clinical Pharmacology (12.3)].
+ 10 OVERDOSAGE
+ Reports of overdose with Rapamune have been received; however, experience has been limited.
+ In general, the adverse effects of overdose are consistent with those listed in the adverse
+ reactions section [see Adverse Reactions (6)].
+ General supportive measures should be followed in all cases of overdose.
+Based on the low
+ aqueous solubility and high erythrocyte and plasma protein binding of sirolimus, it is
+ anticipated that sirolimus is not dialyzable to any significant extent.
+In mice and rats, the acute
+ oral LD50 was greater than 800 mg/kg.
+ 11 DESCRIPTION
+ Rapamune (sirolimus) is an immunosuppressive agent.
+Sirolimus is a macrocyclic lactone
+ produced by Streptomyces hygroscopicus.
+The chemical name of sirolimus (also known as
+ rapamycin) is (3S,6R,7E,9R,10R,12R,14S,15E,17E,19E,21S,23S,26R,27R,34aS)-
+9,10,12,13,14,21,22,23,24,25,26,27,32,33,34, 34a-hexadecahydro-9,27-dihydroxy-3-[(1R)-2-
+[(1S,3R,4R)-4-hydroxy-3-methoxycyclohexyl]-1-methylethyl]-10,21-dimethoxy-
+6,8,12,14,20,26-hexamethyl-23,27-epoxy-3H-pyrido[2,1-c][1,4] oxaazacyclohentriacontine-
+1,5,11,28,29 (4H,6H,31H)-pentone.
+Its molecular formula is C51H79NO13 and its molecular
+ weight is 914.2.
+The structural formula of sirolimus is illustrated as follows.
+ Sirolimus is a white to off-white powder and is insoluble in water, but freely soluble in benzyl
+ alcohol, chloroform, acetone, and acetonitrile.
+ Rapamune is available for administration as an oral solution containing 1 mg/mL sirolimus.
+ Rapamune is also available as a tan, triangular-shaped tablet containing 0.5 mg sirolimus, as a
+ Reference ID: 3272763 22
+   white, triangular-shaped tablet containing 1 mg sirolimus, and as a yellow-to-beige triangular-
+shaped tablet containing 2 mg sirolimus.
+ The inactive ingredients in Rapamune Oral Solution are Phosal 50 PG
+ (phosphatidylcholine,
+ propylene glycol, mono- and di-glycerides, ethanol, soy fatty acids, and ascorbyl palmitate) and
+ polysorbate 80.
+Rapamune Oral Solution contains 1.5% - 2.5% ethanol.
+ The inactive ingredients in Rapamune Tablets include sucrose, lactose, polyethylene glycol  8000, calcium sulfate, microcrystalline cellulose, pharmaceutical glaze, talc, titanium dioxide,
+ magnesium stearate, povidone, poloxamer 188, polyethylene glycol 20,000, glyceryl  monooleate, carnauba wax, dl-alpha tocopherol, and other ingredients.
+The 0.5 mg and 2 mg
+ dosage strengths also contain yellow iron (ferric) oxide and brown iron (ferric) oxide.
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ Sirolimus inhibits T-lymphocyte activation and proliferation that occurs in response to
+ antigenic and cytokine (Interleukin [IL]-2, IL-4, and IL-15) stimulation by a mechanism that is
+ distinct from that of other immunosuppressants.
+Sirolimus also inhibits antibody production.
+In
+ cells, sirolimus binds to the immunophilin, FK Binding Protein-12 (FKBP-12), to generate an
+ immunosuppressive complex.
+The sirolimus:FKBP-12 complex has no effect on calcineurin
+ activity.
+This complex binds to and inhibits the activation of the mammalian Target Of
+ Rapamycin (mTOR), a key regulatory kinase.
+This inhibition suppresses cytokine-driven T-cell
+ proliferation, inhibiting the progression from the G1 to the S phase of the cell cycle.
+ Studies in experimental models show that sirolimus prolongs allograft (kidney, heart, skin,
+ islet, small bowel, pancreatico-duodenal, and bone marrow) survival in mice, rats, pigs, and/or
+ primates.
+Sirolimus reverses acute rejection of heart and kidney allografts in rats and prolongs
+ the graft survival in presensitized rats.
+In some studies, the immunosuppressive effect of
+ sirolimus lasts up to 6 months after discontinuation of therapy.
+This tolerization effect is
+ alloantigen-specific.
+ In rodent models of autoimmune disease, sirolimus suppresses immune-mediated events
+ associated with systemic lupus erythematosus, collagen-induced arthritis, autoimmune type I
+ diabetes, autoimmune myocarditis, experimental allergic encephalomyelitis, graft-versus-host
+ disease, and autoimmune uveoretinitis.
+ 12.2 Pharmacodynamics
+ Orally-administered Rapamune, at doses of 2 mg/day and 5 mg/day, significantly reduced the
+ incidence of organ rejection in low- to moderate-immunologic risk renal transplant patients at
+ 6 months following transplantation compared with either azathioprine or placebo [see Clinical
+ Studies (14.1)].
+There was no demonstrable efficacy advantage of a daily maintenance dose of
+ 5 mg with a loading dose of 15 mg over a daily maintenance dose of 2 mg with a loading dose
+ of 6 mg.
+Therapeutic drug monitoring should be used to maintain sirolimus drug levels within
+ the target-range [see Dosage and Administration (2.3)].
+ Reference ID: 3272763 23
+ 12.3 Pharmacokinetics
+ Sirolimus pharmacokinetics activity have been determined following oral administration in
+ healthy subjects, pediatric patients, hepatically impaired patients, and renal transplant patients.
+ The pharmacokinetic parameters of sirolimus in low- to moderate-immunologic risk adult renal
+ transplant patients following multiple dosing with Rapamune 2 mg daily, in combination with
+ cyclosporine and corticosteroids, is summarized in the following table.
+ MEAN  SD STEADY STATE SIROLIMUS PHARMACOKINETIC PARAMETERS IN
+ LOW- TO MODERATE-IMMUNOLOGIC RISK ADULT RENAL TRANSPLANT
+ PATIENTS FOLLOWING RAPAMUNE 2 MG DAILYa,b
+  Multiple
+ Dose (daily dose)
+ Solution Tablets
+ Cmax (ng/mL) 14.4  5.3 15.0  4.9
+ tmax (hr) 2.1  0.8 3.5  2.4
+ AUC (ng&#x2022;h/mL) 194  78 230  67
+ Cmin (ng/mL)c
+ 7.1  3.5 7.6  3.1
+ CL/F (mL/h/kg) 173  50 139  63
+ a: In presence of cyclosporine administered 4 hours before Rapamune dosing.
+ b: Based on data collected at months 1 and 3 post-transplantation.
+ c: Average Cmin over 6 months.
+ Whole blood trough sirolimus concentrations, as measured by LC/MS/MS in renal transplant
+ patients, were significantly correlated with AUC&#x201e;,ss.
+Upon repeated, twice-daily administration
+ without an initial loading dose in a multiple-dose study, the average trough concentration of
+ sirolimus increases approximately 2- to 3-fold over the initial 6 days of therapy, at which time
+ steady-state is reached.
+A loading dose of 3 times the maintenance dose will provide near
+ steady-state concentrations within 1 day in most patients [see Dosage and Administration (2.3),
+ Warning and Precautions (5.15)].
+ Absorption
+ Following administration of Rapamune Oral Solution, the mean times to peak concentration
+ (tmax) of sirolimus are approximately 1 hour and 2 hours in healthy subjects and renal transplant
+ patients, respectively.
+The systemic availability of sirolimus is low, and was estimated to be
+ approximately 14% after the administration of Rapamune Oral Solution.
+In healthy subjects,
+ the mean bioavailability of sirolimus after administration of the tablet is approximately 27%
+ higher relative to the solution.
+Sirolimus tablets are not bioequivalent to the solution; however,
+ clinical equivalence has been demonstrated at the 2 mg dose level.
+Sirolimus concentrations,
+ following the administration of Rapamune Oral Solution to stable renal transplant patients, are
+ dose-proportional between 3 and 12 mg/m2.
+ Reference ID: 3272763 24
+   Food Effects
+ To minimize variability in sirolimus concentrations, both Rapamune Oral Solution and Tablets
+ should be taken consistently with or without food [see Dosage and Administration (2)].
+In
+ healthy subjects, a high-fat meal (861.8 kcal, 54.9% kcal from fat) increased the mean total
+ exposure (AUC) of sirolimus by 23 to 35%, compared with fasting.
+The effect of food on the
+ mean sirolimus Cmax was inconsistent depending on the Rapamune dosage form evaluated.
+ Distribution
+ The mean ( SD) blood-to-plasma ratio of sirolimus was 36  18 in stable renal allograft
+ patients, indicating that sirolimus is extensively partitioned into formed blood elements.
+The
+ mean volume of distribution (Vss/F) of sirolimus is 12  8 L/kg.
+Sirolimus is extensively
+ bound (approximately 92%) to human plasma proteins, mainly serum albumin (97%), 1-acid
+ glycoprotein, and lipoproteins.
+ Metabolism
+ Sirolimus is a substrate for both CYP3A4 and P-gp.
+Sirolimus is extensively metabolized in the
+ intestinal wall and liver and undergoes counter-transport from enterocytes of the small intestine
+ into the gut lumen.
+Inhibitors of CYP3A4 and P-gp increase sirolimus concentrations.
+Inducers
+ of CYP3A4 and P-gp decrease sirolimus concentrations [see Warnings and Precautions (5.17)
+ and Drug Interactions (7)].
+Sirolimus is extensively metabolized by O-demethylation and/or
+ hydroxylation.
+Seven (7) major metabolites, including hydroxy, demethyl, and
+ hydroxydemethyl, are identifiable in whole blood.
+Some of these metabolites are also
+ detectable in plasma, fecal, and urine samples.
+Sirolimus is the major component in human
+ whole blood and contributes to more than 90% of the immunosuppressive activity.
+ Excretion
+ After a single dose of [14
+C] sirolimus oral solution in healthy volunteers, the majority (91%) of
+ radioactivity was recovered from the feces, and only a minor amount (2.2%) was excreted in
+ urine.
+The mean  SD terminal elimination half life (t) of sirolimus after multiple dosing in
+ stable renal transplant patients was estimated to be about 62  16 hours.
+ Sirolimus Concentrations (Chromatographic Equivalent) Observed in Phase 3 Clinical Studies
+ The following sirolimus concentrations (chromatographic equivalent) were observed in phase 3
+ clinical studies [see Clinical Studies (14)].
+ Reference ID: 3272763 25
+   SIROLIMUS WHOLE BLOOD TROUGH CONCENTRATIONS OBSERVED IN
+ RENAL TRANSPLANT PATIENTS ENROLLED IN PHASE 3 STUDIES
+ Year 1 Year 3
+ Patient
+ Population(Study
+ number)
+ Treatment Mean
+ (ng/mL)
+ 10th
+ - 90th
+ percentiles
+ (ng/mL)
+ Mean
+ (ng/mL)
+ 10th
+ - 90th
+ percentiles
+ (ng/mL)
+ Low-to-moderate
+ risk
+ (Studies 1 &amp; 2)
+ Rapamune
+ (2 mg/day) +
+ CsA
+ 7.2 3.6 - 11 &#x20ac;&#x201c; &#x20ac;&#x201c;
+ Rapamune
+ (5 mg/day) +
+ CsA
+ 14 8 - 22 &#x20ac;&#x201c; &#x20ac;&#x201c;
+ Low-to-moderate
+ risk
+ Rapamune +
+ CsA
+ 8.6 5 - 13a
+ 9.1 5.4 - 14
+ (Study 3) Rapamune
+ alone
+ 19 14 - 22a
+ 16 11 - 22
+ High risk
+ (Study 4)
+ Rapamune +
+ CsA
+ 15.7
+ 11.8
+ 11.5
+ 5.4 - 27.3b
+ 6.2 - 16.9c
+ 6.3 - 17.3d
+ &#x20ac;&#x201c; &#x20ac;&#x201c;
+ a: Months 4 through 12
+ b: Up to Week 2; observed CsA Cmin was 217 (56 - 432) ng/mL
+ c: Week 2 to Week 26; observed CsA Cmin range was 174 (71 - 288) ng/mL
+ d: Week 26 to Week 52; observed CsA Cmin was 136 (54.5 - 218) ng/mL
+ The withdrawal of cyclosporine and concurrent increases in sirolimus trough concentrations to
+ steady-state required approximately 6 weeks.
+Following cyclosporine withdrawal, larger
+ Rapamune doses were required due to the absence of the inhibition of sirolimus metabolism
+ and transport by cyclosporine and to achieve higher target sirolimus trough concentrations
+ during concentration-controlled administration [see Dosage and Administration (2.1), Drug
+ Interactions (7.1)].
+ Pharmacokinetics in Specific Populations
+ Hepatic Impairment
+ Rapamune was administered as a single, oral dose to subjects with normal hepatic function and
+ to patients with Child-Pugh classification A (mild), B (moderate), or C (severe) hepatic
+ impairment.
+Compared with the values in the normal hepatic function group, the patients with
+ mild, moderate, and severe hepatic impairment had 43%, 94%, and 189% higher mean values
+ for sirolimus AUC, respectively, with no statistically significant differences in mean Cmax.
+As
+ the severity of hepatic impairment increased, there were steady increases in mean sirolimus t1/2,
+ and decreases in the mean sirolimus clearance normalized for body weight (CL/F/kg).
+ The maintenance dose of Rapamune should be reduced by approximately one third in patients
+ with mild-to-moderate hepatic impairment and by approximately one half in patients with
+ severe hepatic impairment [see Dosage and Administration (2.5)].
+It is not necessary to modify
+ Reference ID: 3272763 26
+   the Rapamune loading dose in patients with mild, moderate, and severe hepatic impairment.
+ Therapeutic drug monitoring is necessary in all patients with hepatic impairment [see Dosage
+ and Administration (2.3)].
+ Renal Impairment
+ The effect of renal impairment on the pharmacokinetics of sirolimus is not known.
+However,
+ there is minimal (2.2%) renal excretion of the drug or its metabolites in healthy volunteers.
+The
+ loading and the maintenance doses of Rapamune need not be adjusted in patients with renal
+ impairment [see Dosage and Administration (2.6)].
+ Pediatric
+ Sirolimus pharmacokinetic data were collected in concentration-controlled trials of pediatric
+ renal transplant patients who were also receiving cyclosporine and corticosteroids.
+The target
+ ranges for trough concentrations were either 10-20 ng/mL for the 21 children receiving tablets,
+ or 5-15 ng/mL for the one child receiving oral solution.
+The children aged 6-11 years (n = 8)
+ received mean  SD doses of 1.75  0.71 mg/day (0.064  0.018 mg/kg, 1.65  0.43 mg/m2).
+ The children aged 12-18 years (n = 14) received mean  SD doses of 2.79  1.25 mg/day
+ (0.053  0.0150 mg/kg, 1.86  0.61 mg/m2).
+At the time of sirolimus blood sampling for
+ pharmacokinetic evaluation, the majority (80%) of these pediatric patients received the
+ Rapamune dose at 16 hours after the once-daily cyclosporine dose.
+ SIROLIMUS PHARMACOKINETIC PARAMETERS (MEAN  SD) IN PEDIATRIC
+ RENAL TRANSPLANT PATIENTS (MULTIPLE-DOSE CONCENTRATION
+ CONTROL)a,b
+  Body
+ Age n weight Cmax,ss tmax,ss Cmin,ss AUC&#x201a;,ss CL/Fc
+ CL/Fc
+ (y) (kg) (ng/mL) (h) (ng/ml) (ng&#x2022;h/mL) (mL/h/kg) (L/h/m2)
+ 6-11 8 27  10 22.1  8.9 5.88  10.6  4.3 356  127 214  129 5.4  2.8
+ 4.05
+ 12-18 14 52  15 34.5  12.2 2.7  1.5 14.7  8.6 466  236 136  57 4.7  1.9
+ a: Rapamune co-administered with cyclosporine oral solution [MODIFIED] (e.g., Neoral
+ Oral
+ Solution) and/or cyclosporine capsules [MODIFIED] (e.g., Neoral
+ Soft Gelatin Capsules).
+ b: As measured by Liquid Chromatographic/Tandem Mass Spectrometric Method (LC/MS/MS)
+ c: Oral-dose clearance adjusted by either body weight (kg) or body surface area (m2).
+ The table below summarizes pharmacokinetic data obtained in pediatric dialysis patients with
+ chronically impaired renal function.
+ Reference ID: 3272763 27
+ SIROLIMUS PHARMACOKINETIC PARAMETERS (MEAN  SD) IN PEDIATRIC
+ PATIENTS WITH END-STAGE KIDNEY DISEASE MAINTAINED ON
+ HEMODIALYSIS OR PERITONEAL DIALYSIS (1, 3, 9, 15 mg/m2
+ SINGLE DOSE)*
+ Age Group (y) n tmax (h) t1/2 (h) CL/F/WT (mL/h/kg)
+ 5-11 9 1.1  0.5 71  40 580  450
+  12-18 11 0.79  0.17 55  18 450  232
+  * All subjects received Rapamune Oral Solution.
+ Geriatric
+ Clinical studies of Rapamune did not include a sufficient number of patients &gt; 65 years of age
+ to determine whether they will respond differently than younger patients.
+After the
+ administration of Rapamune Oral Solution or Tablets, sirolimus trough concentration data in
+ renal transplant patients &gt; 65 years of age were similar to those in the adult population 18 to 65
+ years of age.
+ Gender
+ Sirolimus clearance in males was 12% lower than that in females; male subjects had a
+ significantly longer t1/2 than did female subjects (72.3 hours versus 61.3 hours).
+Dose
+ adjustments based on gender are not recommended.
+ Race
+ In the phase 3 trials using Rapamune solution or tablets and cyclosporine oral solution
+ [MODIFIED] (e.g., Neoral
+ Oral Solution) and/or cyclosporine capsules [MODIFIED] (e.g.,
+ Neoral
+ Soft Gelatin Capsules) [see Clinical Studies (14)], there were no significant differences
+ in mean trough sirolimus concentrations over time between Black (n = 190) and non-Black (n =
+ 852) patients during the first 6 months after transplantation.
+ Drug-Drug Interactions
+ Sirolimus is known to be a substrate for both cytochrome CYP3A4 and P-gp.
+The
+ pharmacokinetic interaction between sirolimus and concomitantly administered drugs is
+ discussed below.
+Drug interaction studies have not been conducted with drugs other than those
+ described below.
+ Cyclosporine: Cyclosporine is a substrate and inhibitor of CYP3A4 and P-gp.
+Sirolimus should
+ be taken 4 hours after administration of cyclosporine oral solution (MODIFIED) and/or
+ cyclosporine capsules (MODIFIED).
+Sirolimus concentrations may decrease when
+ cyclosporine is discontinued, unless the Rapamune dose is increased [see Dosage and
+ Administration (2.1), Drug Interactions (7.1)].
+ In a single-dose drug-drug interaction study, 24 healthy volunteers were administered 10 mg
+ Rapamune Tablets either simultaneously or 4 hours after a 300-mg dose of Neoral
+ Soft
+ Gelatin Capsules (cyclosporine capsules [MODIFIED]).
+For simultaneous administration,
+ mean Cmax and AUC were increased by 512% and 148%, respectively, relative to
+ Reference ID: 3272763 28
+   administration of sirolimus alone.
+However, when given 4 hours after cyclosporine
+ administration, sirolimus Cmax and AUC were both increased by only 33% compared with
+ administration of sirolimus alone.
+ In a single dose drug-drug interaction study, 24 healthy volunteers were administered 10 mg
+ Rapamune Oral Solution either simultaneously or 4 hours after a 300 mg dose of Neoral
+ Soft
+ Gelatin Capsules (cyclosporine capsules [MODIFIED]).
+For simultaneous administration, the
+ mean Cmax and AUC of sirolimus, following simultaneous administration were increased by
+ 116% and 230%, respectively, relative to administration of sirolimus alone.
+However, when
+ given 4 hours after Neoral
+ Soft Gelatin Capsules (cyclosporine capsules [MODIFIED])
+ administration, sirolimus Cmax and AUC were increased by only 37% and 80%, respectively,
+ compared with administration of Rapamune alone.
+ In a single-dose cross-over drug-drug interaction study, 33 healthy volunteers received 5 mg
+ Rapamune Oral Solution alone, 2 hours before, and 2 hours after a 300 mg dose of Neoral
+ Soft Gelatin Capsules (cyclosporine capsules [MODIFIED]).
+When given 2 hours before
+ Neoral
+ Soft Gelatin Capsules (cyclosporine capsules [MODIFIED]) administration, sirolimus
+ Cmax and AUC were comparable to those with administration of sirolimus alone.
+However,
+ when given 2 hours after, the mean Cmax and AUC of sirolimus were increased by 126% and
+ 141%, respectively, relative to administration of sirolimus alone.
+ Mean cyclosporine Cmax and AUC were not significantly affected when Rapamune Oral
+ Solution was given simultaneously or when administered 4 hours after Neoral
+ Soft Gelatin
+ Capsules (cyclosporine capsules [MODIFIED]).
+However, after multiple-dose administration
+ of sirolimus given 4 hours after Neoral
+ in renal post-transplant patients over 6 months,
+ cyclosporine oral-dose clearance was reduced, and lower doses of Neoral
+ Soft Gelatin
+ Capsules (cyclosporine capsules [MODIFIED]) were needed to maintain target cyclosporine
+ concentration.
+ In a multiple-dose study in 150 psoriasis patients, sirolimus 0.5, 1.5, and 3 mg/m2/day was
+ administered simultaneously with Sandimmune
+ Oral Solution (cyclosporine Oral Solution)
+ 1.25 mg/kg/day.
+The increase in average sirolimus trough concentrations ranged between 67%
+ to 86% relative to when Rapamune was administered without cyclosporine.
+The intersubject
+ variability (% CV) for sirolimus trough concentrations ranged from 39.7% to 68.7%.
+There was
+ no significant effect of multiple-dose sirolimus on cyclosporine trough concentrations
+ following Sandimmune
+ Oral Solution (cyclosporine oral solution) administration.
+However,
+ the % CV was higher (range 85.9% - 165%) than those from previous studies.
+ Diltiazem: Diltiazem is a substrate and inhibitor of CYP3A4 and P-gp; sirolimus
+ concentrations should be monitored and a dose adjustment may be necessary [see Drug
+ Interactions (7.4)].
+The simultaneous oral administration of 10 mg of sirolimus oral solution
+ and 120 mg of diltiazem to 18 healthy volunteers significantly affected the bioavailability of
+ sirolimus.
+Sirolimus Cmax, tmax, and AUC were increased 1.4-, 1.3-, and 1.6-fold, respectively.
+ Sirolimus did not affect the pharmacokinetics of either diltiazem or its metabolites
+ desacetyldiltiazem and desmethyldiltiazem.
+ Reference ID: 3272763 29
+   Erythromycin: Erythromycin is a substrate and inhibitor of CYP3A4 and P-gp; co-
+administration of sirolimus oral solution or tablets and erythromycin is not recommended [see
+ Warnings and Precautions (5.17), Drug Interactions (7.2)].
+The simultaneous oral
+ administration of 2 mg daily of sirolimus oral solution and 800 mg q 8h of erythromycin as
+ erythromycin ethylsuccinate tablets at steady state to 24 healthy volunteers significantly
+ affected the bioavailability of sirolimus and erythromycin.
+Sirolimus Cmax and AUC were
+ increased 4.4- and 4.2-fold respectively and tmax was increased by 0.4 hr.
+Erythromycin Cmax
+ and AUC were increased 1.6- and 1.7-fold, respectively, and tmax was increased by 0.3 hr.
+ Ketoconazole: Ketoconazole is a strong inhibitor of CYP3A4 and P-gp; co-administration of
+ sirolimus oral solution or tablets and ketoconazole is not recommended [see Warnings and
+ Precautions (5.17), Drug Interactions (7.2)].
+Multiple-dose ketoconazole administration
+ significantly affected the rate and extent of absorption and sirolimus exposure after
+ administration of Rapamune Oral Solution, as reflected by increases in sirolimus Cmax, tmax, and
+ AUC of 4.3-fold, 38%, and 10.9-fold, respectively.
+However, the terminal t of sirolimus was
+ not changed.
+Single-dose sirolimus did not affect steady-state 12-hour plasma ketoconazole
+ concentrations.
+ Rifampin: Rifampin is a strong inducer of CYP3A4 and P-gp; co-administration of Rapamune
+ oral solution or tablets and rifampin is not recommended.
+In patients where rifampin is
+ indicated, alternative therapeutic agents with less enzyme induction potential should be
+ considered [see Warnings and Precautions (5.17), Drug Interactions (7.2)].
+Pretreatment of 14
+ healthy volunteers with multiple doses of rifampin, 600 mg daily for 14 days, followed by a
+ single 20-mg dose of sirolimus oral solution, greatly decreased sirolimus AUC and Cmax by
+ about 82% and 71%, respectively.
+ Verapamil: Verapamil is a substrate and inhibitor of CYP3A4 and P-gp; sirolimus
+ concentrations should be monitored and a dose adjustment may be necessary; [see Drug
+ Interactions (7.4)].
+The simultaneous oral administration of 2 mg daily of sirolimus oral
+ solution and 180 mg q 12h of verapamil at steady state to 26 healthy volunteers significantly
+ affected the bioavailability of sirolimus and verapamil.
+Sirolimus Cmax and AUC were
+ increased 2.3- and 2.2-fold, respectively, without substantial change in tmax.
+The Cmax and AUC
+ of the pharmacologically active S(-) enantiomer of verapamil were both increased 1.5-fold and
+ tmax was decreased by 1.2 hr.
+ Drugs Which May Be Co-administered Without Dose Adjustment
+ Clinically significant pharmacokinetic drug-drug interactions were not observed in studies of
+ drugs listed below.
+Sirolimus and these drugs may be co-administered without dose
+ adjustments.
+ Acyclovir
+ Atorvastatin
+ Digoxin
+ Glyburide
+ Reference ID: 3272763 30
+ Nifedipine
+  Norgestrel/ethinyl estradiol (Lo/Ovral
+)
+  Prednisolone
+  Sulfamethoxazole/trimethoprim (Bactrim
+)
+  Other Drug-Drug Interactions
+ Co-administration of Rapamune with other known strong inhibitors of CYP3A4 and/or P-gp
+ (such as voriconazole, itraconazole, telithromycin, or clarithromycin) or other known strong
+ inducers of CYP3A4 and/or P-gp (such as rifabutin) is not recommended [see Warnings and
+ Precautions (5.17), Drug Interactions (7.2)].
+In patients in whom strong inhibitors or inducers
+ of CYP3A4 are indicated, alternative therapeutic agents with less potential for inhibition or
+ induction of CYP3A4 should be considered.
+ Care should be exercised when drugs or other substances that are substrates and/or inhibitors or
+ inducers of CYP3A4 are administered concomitantly with Rapamune.
+Other drugs that have
+ the potential to increase sirolimus blood concentrations include (but are not limited to):
+ Calcium channel blockers: nicardipine.
+  Antifungal agents: clotrimazole, fluconazole.
+  Antibiotics: troleandomycin.
+  Gastrointestinal prokinetic agents: cisapride, metoclopramide.
+  Other drugs: bromocriptine, cimetidine, danazol, protease inhibitors (e.g., for HIV and
+  hepatitis C that include drugs such as ritonavir, indinavir, boceprevir, and telaprevir).
+  Other drugs that have the potential to decrease sirolimus concentrations include (but are not
+ limited to):
+ Anticonvulsants: carbamazepine, phenobarbital, phenytoin.
+ Antibiotics: rifapentine.
+ Other Drug-Food Interactions
+ Grapefruit juice reduces CYP3A4-mediated drug metabolism.
+Grapefruit juice must not be
+ taken with or used for dilution of Rapamune [see Dosage and Administration (2.7), Drug
+ Interactions (7.3)].
+ Drug-Herb Interactions  St. John's Wort (hypericum perforatum) induces CYP3A4 and P-gp.
+Since sirolimus is a
+ substrate for both cytochrome CYP3A4 and P-gp, there is the potential that the use of St.
+ Reference ID: 3272763 31
+ John's Wort in patients receiving Rapamune could result in reduced sirolimus concentrations
+ [see Drug Interactions (7.4)].
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ Carcinogenicity studies were conducted in mice and rats.
+In an 86-week female mouse study at
+ sirolimus doses 30 to 120 times higher than the 2 mg daily clinical dose (adjusted for body
+ surface area), there was a statistically significant increase in malignant lymphoma at all dose
+ levels compared with controls.
+In a second mouse study at dosages that were approximately 3
+ to 16 times the clinical dose (adjusted for body surface area), hepatocellular adenoma and
+ carcinoma in males were considered sirolimus-related.
+In the 104-week rat study at dosages
+ equal to or lower than the clinical dose of 2 mg daily (adjusted for body surface area), there
+ were no significant findings.
+ Sirolimus was not genotoxic in the in vitro bacterial reverse mutation assay, the Chinese
+ hamster ovary cell chromosomal aberration assay, the mouse lymphoma cell forward mutation
+ assay, or the in vivo mouse micronucleus assay.
+ Fertility was diminished slightly in both male and female rats following oral administration of
+ sirolimus at doses approximately 10 times or 2 times, respectively, the clinical dose of 2 mg
+ daily (adjusted for body surface area).
+In male rats, atrophy of testes, epididymides, prostate,
+ seminiferous tubules and/or reduction in sperm counts were observed.
+In female rats, reduced
+ size of ovaries and uteri was observed.
+Reduction of sperm count in male rats was reversible
+ upon cessation of dosing in one study.
+Testicular tubular degeneration was also seen in a
+ 4-week intravenous study of sirolimus in monkeys at doses that were approximately equal to
+ the clinical dose (adjusted for body surface area).
+ 14 CLINICAL STUDIES
+ 14.1 Prophylaxis of Organ Rejection
+ Rapamune Oral Solution
+ The safety and efficacy of Rapamune Oral Solution for the prevention of organ rejection  following renal transplantation were assessed in two randomized, double-blind, multicenter,
+ controlled trials.
+These studies compared two dose levels of Rapamune Oral Solution (2 mg
+ and 5 mg, once daily) with azathioprine (Study 1) or placebo (Study 2) when administered in
+ combination with cyclosporine and corticosteroids.
+Study 1 was conducted in the United States
+ at 38 sites.
+Seven hundred nineteen (719) patients were enrolled in this trial and randomized
+ following transplantation; 284 were randomized to receive Rapamune Oral Solution 2 mg/day;
+ 274 were randomized to receive Rapamune Oral Solution 5 mg/day, and 161 to receive
+ azathioprine 2-3 mg/kg/day.
+Study 2 was conducted in Australia, Canada, Europe, and the
+ United States, at a total of 34 sites.
+Five hundred seventy-six (576) patients were enrolled in
+ this trial and randomized before transplantation; 227 were randomized to receive Rapamune
+ Oral Solution 2 mg/day; 219 were randomized to receive Rapamune Oral Solution 5 mg/day,
+ and 130 to receive placebo.
+In both studies, the use of antilymphocyte antibody induction
+ Reference ID: 3272763 32
+             therapy was prohibited.
+In both studies, the primary efficacy endpoint was the rate of efficacy
+ failure in the first 6 months after transplantation.
+Efficacy failure was defined as the first
+ occurrence of an acute rejection episode (confirmed by biopsy), graft loss, or death.
+ The tables below summarize the results of the primary efficacy analyses from these trials.
+ Rapamune Oral Solution, at doses of 2 mg/day and 5 mg/day, significantly reduced the
+ incidence of efficacy failure (statistically significant at the &lt; 0.025 level; nominal significance
+ level adjusted for multiple [2] dose comparisons) at 6 months following transplantation
+ compared with both azathioprine and placebo.
+ INCIDENCE (%) OF EFFICACY FAILURE AT 6 AND 24 MONTHS FOR STUDY 1a,b
+ Rapamune Rapamune Azathioprine
+ Oral Solution Oral Solution 2-3 mg/kg/day
+ 2 mg/day 5 mg/day (n = 161)
+ Parameter (n = 284) (n = 274)
+ Efficacy failure at 6 monthsc
+ 18.7 16.8 32.3
+ Components of efficacy failure
+ Biopsy-proven 16.5 11.3 29.2
+ acute rejection
+ Graft loss 1.1 2.9 2.5
+ Death 0.7 1.8 0
+ Lost to follow-up 0.4 0.7 0.6
+ Efficacy failure at 24 months 32.8 25.9 36.0
+ Components of efficacy failure
+ Biopsy-proven 23.6 17.5 32.3
+ acute rejection
+ Graft loss 3.9 4.7 3.1
+ Death 4.2 3.3 0
+ Lost to follow-up 1.1 0.4 0.6
+ a: Patients received cyclosporine and corticosteroids.
+ b: Includes patients who prematurely discontinued treatment.
+ c: Primary endpoint.
+ Reference ID: 3272763 33
+                  INCIDENCE (%) OF EFFICACY FAILURE AT 6 AND 36 MONTHS FOR STUDY 2a,b
+ Rapamune Rapamune Placebo
+ Oral Solution Oral Solution (n = 130)
+ 2 mg/day 5 mg/day
+ Parameter (n = 227) (n = 219)
+ Efficacy failure at 6 monthsc
+ 30.0 25.6 47.7
+ Components of efficacy failure
+ Biopsy-proven 24.7 19.2 41.5
+ acute rejection
+ Graft loss 3.1 3.7 3.9
+ Death 2.2 2.7 2.3
+ Lost to follow-up 0 0 0
+ Efficacy failure at 36 months 44.1 41.6 54.6
+ Components of efficacy failure
+ Biopsy-proven 32.2 27.4 43.9
+ acute rejection
+ Graft loss 6.2 7.3 4.6
+ Death 5.7 5.9 5.4
+ Lost to follow-up 0 0.9 0.8
+ a: Patients received cyclosporine and corticosteroids.
+ b: Includes patients who prematurely discontinued treatment.
+ c: Primary endpoint.
+ Patient and graft survival at 1 year were co-primary endpoints.
+The following table shows graft
+ and patient survival at 1 and 2 years in Study 1, and 1 and 3 years in Study 2.
+The graft and
+ patient survival rates were similar in patients treated with Rapamune and comparator-treated
+ patients.
+ GRAFT AND PATIENT SURVIVAL (%) FOR STUDY 1 (12 AND 24 MONTHS) AND
+ STUDY 2 (12 AND 36 MONTHS)a,b
+ Rapamune Rapamune Azathioprine Placebo
+ Oral Solution Oral Solution 2-3 mg/kg/day
+ Parameter 2 mg/day 5 mg/day
+ Study 1 (n = 284) (n = 274) (n = 161)
+ Graft survival
+ Month 12 94.7 92.7 93.8
+ Month 24 85.2 89.1 90.1
+ Patient survival
+ Month 12 97.2 96.0 98.1
+ Month 24 92.6 94.9 96.3
+ Reference ID: 3272763 34
+                        GRAFT AND PATIENT SURVIVAL (%) FOR STUDY 1 (12 AND 24 MONTHS) AND
+ STUDY 2 (12 AND 36 MONTHS)a,b
+ Rapamune Rapamune Azathioprine Placebo
+ Oral Solution Oral Solution 2-3 mg/kg/day
+ Parameter 2 mg/day 5 mg/day
+ Study 2 (n = 227) (n = 219) (n = 130)
+ Graft survival
+ Month 12 89.9 90.9 87.7
+ Month 36 81.1 79.9 80.8
+ Patient survival
+ Month 12 96.5 95.0 94.6
+ Month 36 90.3 89.5 90.8
+ a: Patients received cyclosporine and corticosteroids.
+ b: Includes patients who prematurely discontinued treatment.
+ The reduction in the incidence of first biopsy-confirmed acute rejection episodes in patients
+ treated with Rapamune compared with the control groups included a reduction in all grades of
+ rejection.
+ In Study 1, which was prospectively stratified by race within center, efficacy failure was
+ similar for Rapamune Oral Solution 2 mg/day and lower for Rapamune Oral Solution 5 mg/day
+ compared with azathioprine in Black patients.
+In Study 2, which was not prospectively
+ stratified by race, efficacy failure was similar for both Rapamune Oral Solution doses
+ compared with placebo in Black patients.
+The decision to use the higher dose of Rapamune
+ Oral Solution in Black patients must be weighed against the increased risk of dose-dependent
+ adverse events that were observed with the Rapamune Oral Solution 5-mg dose [see Adverse
+ Reactions (6.1)].
+ PERCENTAGE OF EFFICACY FAILURE BY RACE AT 6 MONTHSa,b
+ Parameter
+ Rapamune
+ Oral Solution
+ 2 mg/day
+ Rapamune
+ Oral Solution
+ 5 mg/day
+ Azathioprine
+ 2-3 mg/kg/day
+ Placebo
+ Study 1
+ Black (n = 166)
+ Non-Black
+ (n = 553)
+ 34.9 (n = 63)
+ 14.0 (n = 221)
+ 18.0 (n = 61)
+ 16.4 (n = 213)
+ 33.3 (n = 42)
+ 31.9 (n = 119)
+ Study 2
+ Black (n = 66)
+ Non-Black
+ (n = 510)
+ 30.8 (n = 26)
+ 29.9 (n = 201)
+ 33.7 (n = 27)
+ 24.5 (n = 192)
+ 38.5 (n = 13)
+ 48.7 (n = 117)
+ a: Patients received cyclosporine and corticosteroids.
+ b: Includes patients who prematurely discontinued treatment.
+ Reference ID: 3272763 35
+   Mean glomerular filtration rates (GFR) post-transplant were calculated by using the Nankivell
+ equation at 12 and 24 months for Study 1, and 12 and 36 months for Study 2.
+Mean GFR was
+ lower in patients treated with cyclosporine and Rapamune Oral Solution compared with those
+ treated with cyclosporine and the respective azathioprine or placebo control.
+ OVERALL CALCULATED GLOMERULAR FILTRATION RATES (Mean  SEM,
+ cc/min) BY NANKIVELL EQUATION POST-TRANSPLANTa,b
+ Rapamune Rapamune Azathioprine Placebo
+ Oral Solution Oral Solution 2-3 mg/kg/day
+ Parameter 2 mg/day 5 mg/day
+ Study 1
+ Month 12 57.4  1.3 54.6  1.3 64.1  1.6)
+ (n = 269) (n = 248) (n = 149)
+ Month 24 58.4  1.5 52.6  1.5 62.4  1.9
+ (n = 221) (n = 222) (n = 132)
+ Study 2
+ Month 12 52.4  1.5 51.5  1.5 58.0  2.1
+ (n = 211) (n = 199) (n = 117)
+ Month 36 48.1  1.8 46.1  2.0 53.4  2.7
+ (n = 183) (n = 177) (n = 102)
+ a: Includes patients who prematurely discontinued treatment.
+ b: Patients who had a graft loss were included in the analysis with GFR set to 0.0.
+ Within each treatment group in Studies 1 and 2, mean GFR at one-year post-transplant was
+ lower in patients who experienced at least one episode of biopsy-proven acute rejection,
+ compared with those who did not.
+ Renal function should be monitored, and appropriate adjustment of the immunosuppressive
+ regimen should be considered in patients with elevated or increasing serum creatinine levels
+ [see Warnings and Precautions (5.8)].
+ Rapamune Tablets
+ The safety and efficacy of Rapamune Oral Solution and Rapamune Tablets for the prevention
+ of organ rejection following renal transplantation were demonstrated to be clinically equivalent
+ in a randomized, multicenter, controlled trial [see Clinical Pharmacology (12.3)].
+ 14.2 Cyclosporine Withdrawal Study
+ The safety and efficacy of Rapamune as a maintenance regimen were assessed following
+ cyclosporine withdrawal at 3 to 4 months after renal transplantation.
+Study 3 was a
+ randomized, multicenter, controlled trial conducted at 57 centers in Australia, Canada, and
+ Europe.
+Five hundred twenty-five (525) patients were enrolled.
+All patients in this study
+ received the tablet formulation.
+This study compared patients who were administered
+ Rapamune, cyclosporine, and corticosteroids continuously with patients who received this
+ same standardized therapy for the first 3 months after transplantation (pre-randomization
+ Reference ID: 3272763 36
+   period) followed by the withdrawal of cyclosporine.
+During cyclosporine withdrawal, the
+ Rapamune dosages were adjusted to achieve targeted sirolimus whole blood trough
+ concentration ranges (16 to 24 ng/mL until month 12, then 12 to 20 ng/mL thereafter,
+ expressed as chromatographic assay values).
+At 3 months, 430 patients were equally
+ randomized to either continue Rapamune with cyclosporine therapy or to receive Rapamune as
+ a maintenance regimen following cyclosporine withdrawal.
+ Eligibility for randomization included no Banff Grade 3 acute rejection or vascular rejection
+ episode in the 4 weeks before random assignment, serum creatinine &#x2264; 4.5 mg/dL, and adequate
+ renal function to support cyclosporine withdrawal (in the opinion of the investigator).
+The
+ primary efficacy endpoint was graft survival at 12 months after transplantation.
+Secondary
+ efficacy endpoints were the rate of biopsy-confirmed acute rejection, patient survival, incidence
+ of efficacy failure (defined as the first occurrence of either biopsy-proven acute rejection, graft
+ loss, or death), and treatment failure (defined as the first occurrence of either discontinuation,
+ acute rejection, graft loss, or death).
+ The following table summarizes the resulting graft and patient survival at 12, 24, and 36
+ months for this trial.
+At 12, 24, and 36 months, graft and patient survival were similar for both
+ groups.
+ GRAFT AND PATIENT SURVIVAL (%): STUDY 3a
+ Rapamune Rapamune
+ with Following Cyclosporine
+ Cyclosporine Therapy Withdrawal
+ Parameter (n = 215) (n = 215)
+ Graft Survival
+ Month 12b
+ 95.3c
+ 97.2
+ Month 24 91.6 94.0
+ Month 36d
+ 87.0 91.6
+ Patient Survival
+ Month 12 97.2 98.1
+ Month 24 94.4 95.8
+ Month 36d
+ 91.6 94.0
+ a: Includes patients who prematurely discontinued treatment.
+ b: Primary efficacy endpoint.
+ c: Survival including loss to follow-up as an event.
+ d: Initial planned duration of the study.
+ The following table summarizes the results of first biopsy-proven acute rejection at 12 and 36
+ months.
+There was a significant difference in first biopsy-proven rejection rates between the
+ two groups after randomization and through 12 months.
+Most of the post-randomization acute
+ rejections occurred in the first 3 months following randomization.
+ Reference ID: 3272763 37
+ INCIDENCE OF FIRST BIOPSY-PROVEN ACUTE REJECTION (%) BY
+ TREATMENT GROUP AT 36 MONTHS: STUDY 3a,b
+  Rapamune with Rapamune Following
+ Cyclosporine Therapy Cyclosporine Withdrawal
+ Period (n = 215) (n = 215)
+ Pre-randomizationc
+ 9.3 10.2
+  Post-randomization through 12 monthsc
+ 4.2 9.8
+  Post-randomization from 12 to 36 months 1.4 0.5
+  Post-randomization through 36 months 5.6 10.2
+  Total at 36 months 14.9 20.5
+  a: Includes patients who prematurely discontinued treatment.
+ b: All patients received corticosteroids.
+ c: Randomization occurred at 3 months  2 weeks.
+ Patients receiving renal allografts with &#x2265; 4 HLA mismatches experienced significantly higher
+ rates of acute rejection following randomization to the cyclosporine withdrawal group,
+ compared with patients who continued cyclosporine (15.3% vs. 3.0%).
+Patients receiving renal
+ allografts with &#x2264; 3 HLA mismatches demonstrated similar rates of acute rejection between
+ treatment groups (6.8% vs. 7.7%) following randomization.
+ The following table summarizes the mean calculated GFR in Study 3 (cyclosporine withdrawal
+ study).
+ CALCULATED GLOMERULAR FILTRATION RATES (mL/min) BY NANKIVELL
+ EQUATION AT 12, 24, AND 36 MONTHS POST-TRANSPLANT: STUDY 3a,b,c
+ Rapamune with Rapamune Following
+ Parameter Cyclosporine Therapy Cyclosporine Withdrawal
+ Month 12
+ Mean  SEM 53.2  1.5 59.3  1.5
+ (n = 208) (n = 203)
+ Month 24
+ Mean  SEM 48.4  1.7 58.4  1.6
+ (n = 203) (n = 201)
+ Month 36
+ Mean  SEM 47.0  1.8 58.5  1.9
+ (n = 196) (n = 199)
+ a: Includes patients who prematurely discontinued treatment.
+ b: Patients who had a graft loss were included in the analysis and had their GFR set to 0.0.
+ c: All patients received corticosteroids.
+ The mean GFR at 12, 24, and 36 months, calculated by the Nankivell equation, was
+ significantly higher for patients receiving Rapamune as a maintenance regimen following
+ cyclosporine withdrawal than for those in the Rapamune with cyclosporine therapy group.
+ Patients who had an acute rejection prior to randomization had a significantly higher GFR
+ Reference ID: 3272763 38
+   following cyclosporine withdrawal compared to those in the Rapamune with cyclosporine
+ group.
+There was no significant difference in GFR between groups for patients who
+ experienced acute rejection post-randomization.
+ Although the initial protocol was designed for 36 months, there was a subsequent amendment
+ to extend this study.
+The results for the cyclosporine withdrawal group at months 48 and 60
+ were consistent with the results at month 36.
+Fifty-two percent (112/215) of the patients in the
+ Rapamune with cyclosporine withdrawal group remained on therapy to month 60 and showed
+ sustained GFR.
+ 14.3 High-Immunologic Risk Patients
+ Rapamune was studied in a one-year, clinical trial in high risk patients (Study 4) who were
+ defined as Black transplant recipients and/or repeat renal transplant recipients who lost a
+ previous allograft for immunologic reasons and/or patients with high panel-reactive antibodies
+ (PRA; peak PRA level &gt; 80%).
+Patients received concentration-controlled sirolimus and
+ cyclosporine (MODIFIED), and corticosteroids per local practice.
+The Rapamune dose was
+ adjusted to achieve target whole blood trough sirolimus concentrations of 10-15 ng/mL
+ (chromatographic method) throughout the 12-month study period.
+The cyclosporine dose was
+ adjusted to achieve target whole blood trough concentrations of 200-300 ng/mL through week
+ 2, 150-200 ng/mL from week 2 to week 26, and 100-150 ng/mL from week 26 to week 52 [see
+ Clinical Pharmacology (12.3)] for the observed trough concentrations ranges.
+Antibody
+ induction was allowed per protocol as prospectively defined at each transplant center, and was
+ used in 88.4% of patients.
+The study was conducted at 35 centers in the United States.
+A total
+ of 224 patients received a transplant and at least one dose of sirolimus and cyclosporine and
+ was comprised of 77.2% Black patients, 24.1% repeat renal transplant recipients, and 13.5%
+ patients with high PRA.
+Efficacy was assessed with the following endpoints, measured at 12
+ months: efficacy failure (defined as the first occurrence of biopsy-confirmed acute rejection,
+ graft loss, or death), first occurrence of graft loss or death, and renal function as measured by
+ the calculated GFR using the Nankivell formula.
+The table below summarizes the result of
+ these endpoints.
+ EFFICACY FAILURE, GRAFT LOSS OR DEATH AND CALCULATED
+ GLOMERULAR FUNCTION RATES (mL/min) BY NANKIVELL EQUATION AT 12
+ MONTHS POST-TRANSPLANT: STUDY 4
+ Rapamune
+ with Cyclosporine, Corticosteroids
+ Parameter (n = 224)
+ Efficacy Failure (%) 23.2
+ Graft Loss or Death (%) 9.8
+ Renal Function (mean  SEM)a,b
+ 52.6  1.6
+ (n = 222)
+ a: Calculated glomerular filtration rate by Nankivell equation.
+ b: Patients who had graft loss were included in this analysis with GFR set to 0.
+ Reference ID: 3272763 39
+ Patient survival at 12 months was 94.6%.
+The incidence of biopsy-confirmed acute rejection
+ was 17.4% and the majority of the episodes of acute rejection were mild in severity.
+ 14.4 Conversion from Calcineurin Inhibitors to Rapamune in Maintenance Renal
+ Transplant Patients
+ Conversion from calcineurin inhibitors (CNI) to Rapamune was assessed in maintenance renal
+ transplant patients 6 months to 10 years post-transplant (Study 5).
+This study was a
+ randomized, multicenter, controlled trial conducted at 111 centers globally, including US and
+ Europe, and was intended to show that renal function was improved by conversion from CNI to
+ Rapamune.
+Eight hundred thirty (830) patients were enrolled and stratified by baseline
+ calculated glomerular filtration rate (GFR, 20-40 mL/min vs. greater than 40 mL/min).
+In this
+ trial there was no benefit associated with conversion with regard to improvement in renal
+ function and a greater incidence of proteinuria in the Rapamune conversion arm.
+In addition,
+ enrollment of patients with baseline calculated GFR less than 40 mL/min was discontinued due
+ to a higher rate of serious adverse events, including pneumonia, acute rejection, graft loss and
+ death [see Adverse Reactions (6.4)].
+ This study compared renal transplant patients (6-120 months after transplantation) who were
+ converted from calcineurin inhibitors to Rapamune, with patients who continued to receive
+ calcineurin inhibitors.
+Concomitant immunosuppressive medications included mycophenolate
+ mofetil (MMF), azathioprine (AZA), and corticosteroids.
+Rapamune was initiated with a single
+ loading dose of 12-20 mg, after which dosing was adjusted to achieve a target sirolimus whole
+ blood trough concentration of 8-20 ng/mL (chromatographic method).
+The efficacy endpoint
+ was calculated GFR at 12 months post-randomization.
+Additional endpoints included biopsy-
+confirmed acute rejection, graft loss, and death.
+Findings in the patient stratum with baseline
+ calculated GFR greater than 40 mL/min (Rapamune conversion, n = 497; CNI continuation,
+ n = 246) are summarized below: There was no clinically or statistically significant
+ improvement in Nankivell GFR compared to baseline.
+ RENAL FUNCTION IN STABLE RENAL TRANSPLANT PATIENTS IN PATIENTS
+ WITH BASELINE GFR &gt; 40 mL/min THE RAPAMUNE CONVERSION STUDY
+ (STUDY 5)
+ Parameter Rapamune conversion
+ N=496
+ CNI continuation
+ N=245
+ Difference (95% CI)
+ GFR mL/min
+ (Nankivell) at 1 year
+ 59.0 57.7 1.3 (-1.1, 3.7)
+ GFR mL/min
+ (Nankivell) at 2 year
+ 53.7 52.1 1.6 (-1.4, 4.6)
+ The rates of acute rejection, graft loss, and death were similar at 1 and 2 years.
+Treatment-
+emergent adverse events occurred more frequently during the first 6 months after Rapamune
+ conversion.
+The rates of pneumonia were significantly higher for the sirolimus conversion
+ group.
+ Reference ID: 3272763 40
+   While the mean and median values for urinary protein to creatinine ratio were similar between
+ treatment groups at baseline, significantly higher mean and median levels of urinary protein
+ excretion were seen in the Rapamune conversion arm at 1 year and at 2 years, as shown in the
+ table below [see Warnings and Precautions (5.9)].
+In addition, when compared to patients who
+ continued to receive calcineurin inhibitors, a higher percentage of patients had urinary protein
+ to creatinine ratios &gt; 1 at 1 and 2 years after sirolimus conversion.
+This difference was seen in
+ both patients who had a urinary protein to creatinine ratio &#x2264; 1 and those who had a protein to
+ creatinine ratio &gt; 1 at baseline.
+More patients in the sirolimus conversion group developed
+ nephrotic range proteinuria, as defined by a urinary protein to creatinine ratio &gt; 3.5 (46/482
+ [9.5%] vs. 9/239 [3.8%]), even when the patients with baseline nephrotic range proteinuria
+ were excluded.
+The rate of nephrotic range proteinuria was significantly higher in the sirolimus
+ conversion group compared to the calcineurin inhibitor continuation group with baseline
+ urinary protein to creatinine ratio &gt; 1 (13/29 vs. 1/14), excluding patients with baseline
+ nephrotic range proteinuria.
+ MEAN AND MEDIAN VALUES FOR URINARY PROTEIN TO CREATININE RATIO
+ (mg/mg) BETWEEN TREATMENT GROUPS AT BASELINE, 1 AND 2 YEARS IN THE
+ STRATUM WITH BASELINE CALCULATED GFR &gt; 40 mL/min
+ Study
+ period Sirolimus Conversion CNI Continuation
+ N
+ Mean 
+ SD Median N
+ Mean 
+ SD Median p-value
+ Baseline 410 0.35  0.76 0.13 207 0.28  0.61 0.11 0.381
+ 1 year 423 0.88  1.61 0.31 203 0.37  0.88 0.14 &lt;0.001
+ 2 years 373 0.86  1.48 0.32 190 0.47  0.98 0.13 &lt;0.001
+ The above information should be taken into account when considering conversion from
+ calcineurin inhibitors to Rapamune in stable renal transplant patients due to the lack of
+ evidence showing that renal function improves following conversion, and the finding of a
+ greater increment in urinary protein excretion, and an increased incidence of treatment-
+emergent nephrotic range proteinuria following conversion to Rapamune.
+This was particularly
+ true among patients with existing abnormal urinary protein excretion prior to conversion.
+ 14.5 Conversion from a CNI-based Regimen to a Sirolimus-based Regimen in Liver
+ Transplant Patients
+ Conversion from a CNI-based regimen to a Rapamune-based regimen was assessed in stable
+ liver transplant patients 6-144 months post-transplant.
+The clinical study was a 2:1 randomized,
+ multi-center, controlled trial conducted at 82 centers globally, including the US and Europe,
+ and was intended to show that renal function was improved by conversion from a CNI to
+ Rapamune without adversely impacting efficacy or safety.
+A total of 607 patients were
+ enrolled.
+ The study failed to demonstrate superiority of conversion to a Rapamune-based regimen
+ compared to continuation of a CNI-based regimen in baseline-adjusted GFR, as estimated by
+ Cockcroft-Gault, at 12 months (62 mL/min in the Rapamune conversion group and 63 mL/min
+ Reference ID: 3272763 41
+   in the CNI continuation group).
+The study also failed to demonstrate non-inferiority, with
+ respect to the composite endpoint consisting of graft loss and death (including patients with
+ missing survival data) in the Rapamune conversion group compared to the CNI continuation
+ group (6.6% versus 5.6%).
+The number of deaths in the Rapamune conversion group (15/393,
+ 3.8%) was higher than in the CNI continuation group (3/214, 1.4%), although the difference
+ was not statistically significant.
+The rates of premature study discontinuation (primarily due to
+ adverse events or lack of efficacy), adverse events overall (infections, specifically), and biopsy-
+proven acute liver graft rejection at 12 months were all significantly greater in the Rapamune
+ conversion group compared to the CNI continuation group.
+ 14.6 Pediatrics
+ Rapamune was evaluated in a 36-month, open-label, randomized, controlled clinical trial at 14
+ North American centers in pediatric (aged 3 to &lt; 18 years) renal transplant patients considered
+ to be at high-immunologic risk for developing chronic allograft nephropathy, defined as a
+ history of one or more acute allograft rejection episodes and/or the presence of chronic allograft
+ nephropathy on a renal biopsy.
+Seventy-eight (78) subjects were randomized in a 2:1 ratio to
+ Rapamune (sirolimus target concentrations of 5 to 15 ng/mL, by chromatographic assay, n =
+ 53) in combination with a calcineurin inhibitor and corticosteroids or to continue calcineurin-
+inhibitor-based immunosuppressive therapy (n = 25).
+The primary endpoint of the study was
+ efficacy failure as defined by the first occurrence of biopsy-confirmed acute rejection, graft
+ loss, or death, and the trial was designed to show superiority of Rapamune added to a
+ calcineurin-inhibitor-based immunosuppressive regimen compared to a calcineurin-inhibitor-
+based regimen.
+The cumulative incidence of efficacy failure up to 36 months was 45.3% in the
+ Rapamune group compared to 44.0% in the control group, and did not demonstrate superiority.
+ There was one death in each group.
+The use of Rapamune in combination with calcineurin  inhibitors and corticosteroids was associated with an increased risk of deterioration of renal
+ function, serum lipid abnormalities (including, but not limited to, increased serum triglycerides
+ and cholesterol), and urinary tract infections [see Warnings and Precautions (5.8)].
+This study
+ does not support the addition of Rapamune to calcineurin-inhibitor-based immunosuppressive
+ therapy in this subpopulation of pediatric renal transplant patients.
+ 15 REFERENCES
+ Clinical Therapeutics, Volume 22, Supplement B, April 2000 [see Dosage and Administration
+ (2.3)].
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ Since Rapamune is not absorbed through the skin, there are no special precautions.
+However, if
+ direct contact of the oral solution occurs with the skin or eyes, wash skin thoroughly with soap
+ and water; rinse eyes with plain water.
+ Do not use RAPAMUNE after the expiration date that is located on the blister and carton.
+The
+ expiration date refers to the last day of that month.
+ Reference ID: 3272763 42
+ 16.1 Rapamune Oral Solution
+ Each Rapamune Oral Solution carton, NDC 0008-1030-06, contains one 2 oz (60 mL fill)
+ amber glass bottle of sirolimus (concentration of 1 mg/mL), one oral syringe adapter for fitting
+ into the neck of the bottle, sufficient disposable amber oral syringes and caps for daily dosing,
+ and a carrying case.
+ Rapamune Oral Solution bottles should be stored protected from light and refrigerated at 2C to
+ 8C (36F to 46F).
+Once the bottle is opened, the contents should be used within one month.
+If
+ necessary, the patient may store the bottles at room temperatures up to 25C (77F) for a short
+ period of time (e.g., not more than 15 days for the bottles).
+ An amber syringe and cap are provided for dosing, and the product may be kept in the syringe
+ for a maximum of 24 hours at room temperatures up to 25C (77F) or refrigerated at
+ 2C to 8C (36F to 46F).
+The syringe should be discarded after one use.
+After dilution, the
+ preparation should be used immediately.
+ Rapamune Oral Solution provided in bottles may develop a slight haze when refrigerated.
+If
+ such a haze occurs, allow the product to stand at room temperature and shake gently until the
+ haze disappears.
+The presence of this haze does not affect the quality of the product.
+ 16.2 Rapamune Tablets
+ Rapamune Tablets are available as follows:
+ &#x2022; NDC 0008-1040-05, 0.5 mg, tan, triangular-shaped tablets marked "RAPAMUNE 0.5
+ mg" on one side; bottle containing 100 tablets.
+ &#x2022; NDC 0008-1040-10, 0.5 mg, tan, triangular-shaped tablets marked "RAPAMUNE 0.5
+ mg" on one side; in Redipak
+ cartons of 100 tablets (10 blister cards of 10 tablets each).
+ &#x2022; NDC 0008-1041-05, 1 mg, white, triangular-shaped tablets marked "RAPAMUNE 1
+ mg" on one side; bottle containing 100 tablets.
+ &#x2022; NDC 0008-1041-10, 1 mg, white, triangular-shaped tablets marked "RAPAMUNE 1
+ mg" on one side; in Redipak
+ cartons of 100 tablets (10 blister cards of 10 tablets each).
+ &#x2022; NDC 0008-1042-05, 2 mg, yellow-to-beige triangular-shaped tablets marked
+ "RAPAMUNE 2 mg" on one side; bottle containing 100 tablets.
+ Rapamune Tablets should be stored at 20 to 25C [USP Controlled Room Temperature] (68
+ to 77F).
+Use cartons to protect blister cards and strips from light.
+Dispense in a tight, light-
+resistant container as defined in the USP.
+ 17 PATIENT COUNSELING INFORMATION
+ Advise patients, their families, and their caregivers to read the Medication Guide and assist
+ them in understanding its contents.
+The complete text of the Medication Guide is reprinted at
+ the end of the document.
+ See FDA-Approved Medication Guide.
+ Reference ID: 3272763 43
+     17.1 Dosage
+ Patients should be given complete dosage instructions [see FDA-Approved Medication Guide].
+ 17.2 Skin Cancer Events
+ Patients should be told that exposure to sunlight and ultraviolet (UV) light should be limited by
+ wearing protective clothing and using a sunscreen with a high protection factor because of the
+ increased risk for skin cancer [see Warnings and Precautions (5.16)].
+ 17.3 Pregnancy Risks
+ Women of childbearing potential should be informed of the potential risks during pregnancy
+ and told that they should use effective contraception prior to initiation of Rapamune therapy,
+ during Rapamune therapy, and for 12 weeks after Rapamune therapy has been stopped [see Use
+ in Specific Populations (8.1)].
+ This product's label may have been updated.
+For current full prescribing information, please
+ visit www.pfizer.com.
+ LAB-0473-3.0
+ MEDICATION GUIDE
+ RAPAMUNE
+ /RAAP-a-mune/
+  (sirolimus)
+  Tablets
+  RAPAMUNE
+ /RAAP-a-mune/
+  (sirolimus)
+  Oral Solution
+  Read this Medication Guide before you start taking Rapamune and each time you get a refill.
+ There may be new information.
+This information does not take the place of talking with your
+ doctor or other healthcare provider about your medical condition or your treatment.
+ What is the most important information I should know about RAPAMUNE?
+ Rapamune can cause serious side effects, including:
+ Reference ID: 3272763 44
+ 1.
+increased risk of getting infections
+ 2.
+increased risk of getting certain cancers
+ 1.
+Increased risk of getting infections.
+Serious infections can happen including infections
+ caused by viruses, bacteria, and fungi (yeast).
+Your doctor may put you on medicine to help
+ prevent some of these infections.
+ Call your doctor right away if you have symptoms of infection including fever or chills while
+ taking Rapamune.
+ 2.
+Increased risk of getting certain cancers.
+People who take Rapamune have a higher risk of
+ getting lymphoma, and other cancers, especially skin cancer.
+Talk with your doctor about your
+ risk for cancer.
+ RAPAMUNE has not been shown to be safe and effective in people who have had liver or
+ lung transplants.
+Serious complications and death may happen in people who take
+ RAPAMUNE after a liver or lung transplant.
+You should not take RAPAMUNE if you have
+ had a liver or lung transplant without talking with your doctor.
+ See the section "What are the possible side effects of RAPAMUNE?" for information
+ about other side effects of RAPAMUNE.
+ What is RAPAMUNE?
+ RAPAMUNE is a prescription medicine used to prevent rejection (anti-rejection medicine) in
+ people 13 years of age and older who have received a kidney transplant.
+Rejection is when your
+ body's immune system recognizes the new organ as a "foreign" threat and attacks it.
+ RAPAMUNE is used with other medicines called cyclosporine (Gengraf, Neoral,
+ Sandimmune), and corticosteroids.
+Your doctor will decide:
+ &#x2022; if RAPAMUNE is right for you, and
+ &#x2022; how to best use it with cyclosporine and corticosteroids after your transplant.
+ It is not known if RAPAMUNE is safe and effective in children 13 years or younger.
+ Who should not take RAPAMUNE?
+ Do not take RAPAMUNE if you are allergic to sirolimus or any of the other ingredients in
+ RAPAMUNE.
+See the end of this leaflet for a complete list of ingredients in RAPAMUNE.
+ What should I tell my doctor before taking RAPAMUNE?
+ Before taking RAPAMUNE, tell your doctor if you:
+ &#x2022; have liver problems
+ &#x2022; have skin cancer or it runs in your family
+ &#x2022; have high cholesterol or triglycerides (fat in your blood)
+ Reference ID: 3272763 45
+   &#x2022;  are pregnant or plan to become pregnant.
+You must use an effective method of birth
+ control during treatment and for 12 weeks after you stop treatment with RAPAMUNE.
+ Tell your doctor right away if you become pregnant or think you are pregnant while
+ taking RAPAMUNE.
+ &#x2022;  It is not known whether RAPAMUNE passes into breast milk.
+You and your doctor
+ should decide if you will take RAPAMUNE or breastfeed.
+You should not do both.
+ Tell your doctor about all the medicines you take, including prescription and non-
+prescription medicines, vitamins and herbal supplements.
+Using RAPAMUNE with certain
+ medicines may affect each other causing serious side effects.
+ RAPAMUNE may affect the way other medicines work, and other medicines may affect how
+ RAPAMUNE works.
+ Especially tell your doctor if you take:
+ &#x2022; a medicine to lower your cholesterol or triglycerides
+ &#x2022; cyclosporine (including Gengraf, Neoral, Sandimmune) or tacrolimus (Prograf) or other
+ medicines that suppress the immune system
+  &#x2022; an antibiotic
+  &#x2022; an antifungal medicine
+  &#x2022; a medicine for high blood pressure or heart problems
+  &#x2022; an anti-seizure medicine
+  &#x2022; medicines used to treat stomach acid, ulcers, or other gastrointestinal problems
+  &#x2022; bromocriptine mesylate (Parlodel, Cycloset)
+ &#x2022; danazol
+  &#x2022; medicines to treat HIV or hepatitis C
+  &#x2022; St. John's Wort
+  How should I take RAPAMUNE?
+ &#x2022; Take RAPAMUNE exactly as your doctor tells you to take it.
+ &#x2022; Your doctor will tell you how much RAPAMUNE to take and when to take it.
+Do not
+ change your dose of RAPAMUNE unless your doctor tells you to.
+ &#x2022; If you also take cyclosporine (Gengraf, Neoral, Sandimmune), you should take your
+ RAPAMUNE and cyclosporine about 4 hours apart.
+ &#x2022; Do not stop taking RAPAMUNE or your other anti-rejection medicines unless your
+ doctor tells you to.
+ &#x2022; Your doctor will check the levels of RAPAMUNE in your blood.
+Your doctor may
+ change your dose of RAPAMUNE depending on your blood test results.
+ &#x2022; RAPAMUNE is taken by mouth once a day.
+ &#x2022; Do not crush, chew, or split RAPAMUNE tablets.
+Tell your doctor if you cannot
+ swallow RAPAMUNE tablets.
+Your doctor can prescribe RAPAMUNE as a solution.
+ Reference ID: 3272763  46
+     &#x2022;  Take each dose of RAPAMUNE the same way, either with or without food.
+Food can
+ affect the amount of medicine that gets into your bloodstream.
+Taking each dose of
+ RAPAMUNE the same way helps keep your blood levels of RAPAMUNE more stable.
+ Do not take RAPAMUNE with grapefruit juice.
+ &#x2022;  RAPAMUNE oral solution can develop a slight haze when it is refrigerated.
+If this
+ happens, bring the RAPAMUNE Oral Solution to room temperature and then gently
+ shake the bottle until the haze goes away.
+ &#x2022; See the end of the package insert for detailed Instructions for Use about how to correctly
+ prepare and take a dose of RAPAMUNE oral solution.
+ &#x2022; If you get RAPAMUNE oral solution on your skin, wash the area with soap and water.
+ &#x2022; If you get RAPAMUNE oral solution in your eyes, rinse your eyes with water.
+ &#x2022; If you have taken more medicine than you were told, contact a doctor or go to the
+ nearest hospital emergency department right away.
+ What should I avoid while taking RAPAMUNE?
+ &#x2022;  Avoid receiving live vaccines while taking RAPAMUNE.
+Some vaccines may not work
+ as well while you are taking RAPAMUNE.
+ &#x2022;  Limit your time in sunlight and UV light.
+Cover your skin with clothing and use a
+ sunscreen with a high protection factor because of the increased risk for skin cancer with
+ RAPAMUNE.
+ What are the possible side effects of RAPAMUNE?
+ RAPAMUNE may cause serious side effects, including:
+ &#x2022; See "What is the most important information I should know about RAPAMUNE?"
+ &#x2022; Serious allergic reactions.
+Tell your doctor or get medical help right away if you get
+ any of following symptoms of an allergic reaction:
+  &#x2022; swelling of your face, eyes, or mouth
+  &#x2022; trouble breathing or wheezing
+  &#x2022; throat tightness
+  &#x2022; chest pain or tightness
+  &#x2022; feeling dizzy or faint
+  &#x2022; rash or peeling of your skin
+  &#x2022;  Swelling (edema).
+Fluid may collect in your hands and feet and in various tissues of
+ your body, including in the sac around your heart or lungs.
+Call your doctor if you have
+ trouble breathing.
+ &#x2022;  Poor wound healing.
+RAPAMUNE may cause your wounds to heal slowly or not heal
+ well.
+Tell your doctor if you have any redness or drainage, your wound does not heal, or
+ the wound opens up.
+ &#x2022;  Increased levels of cholesterol and triglycerides (lipids or fat) in your blood.
+Your
+ doctor should do blood tests to check your lipids during treatment with RAPAMUNE.
+ Your doctor may prescribe treatment with diet, exercise, or medicine if your lipid levels
+ Reference ID: 3272763  47
+ are too high.
+During treatment with RAPAMUNE, your blood levels of cholesterol and
+ triglycerides may remain high even if you follow your prescribed treatment plan.
+ &#x2022;  Effects on kidney function.
+When RAPAMUNE is taken with cyclosporine (Gengraf,
+ Neoral, Sandimmune), the function of your transplanted kidney may be affected.
+Your
+ doctor should regularly do tests to check your kidney function while you are taking
+ RAPAMUNE with cyclosporine (Gengraf, Neoral, Sandimmune).
+ &#x2022; Increased protein in your urine.
+Your doctor may regularly test your urine protein.
+ &#x2022; Increased risk for viral infections.
+ &#x2022;  Certain viruses can live in your body and cause active infections when your
+ immune system is weak.
+BK virus can affect how your kidney works and cause
+ your transplanted kidney to fail.
+ &#x2022;  A certain virus can cause a rare serious brain infection called Progressive
+ Multifocal Leukoencephalopathy (PML).
+PML usually causes death or severe
+ disability.
+Call your doctor right away if you notice any new or worsening
+ medical problems such as:
+ &#x2022; confusion
+ &#x2022; sudden change in thinking, walking, strength on one side of your body
+ &#x2022; other problems that have lasted over several days.
+ &#x2022;  Lung or breathing problems.
+This can sometimes lead to death.
+Tell your doctor if you
+ have a new or worsening cough, shortness of breath, difficulty breathing or any new
+ breathing problems.
+Your doctor may need to stop RAPAMUNE or lower your dose.
+ &#x2022;  Blood clotting problems.
+When RAPAMUNE is taken with cyclosporine or tacrolimus,
+ you may develop a blood clotting problem.
+Tell your doctor if you get any unexplained
+ bleeding or bruising.
+ Common side effects with RAPAMUNE include:
+ &#x2022; high blood pressure
+  &#x2022; pain (including stomach and joint pain)
+  &#x2022; diarrhea
+  &#x2022; headache
+  &#x2022; fever
+  &#x2022; urinary tract infection
+  &#x2022; low red blood cell count (anemia)
+  &#x2022; nausea
+  &#x2022; low platelet count (cells that help blood to clot)
+  Tell your doctor if you have any side effect that bothers you or that does not go away.
+ These are not all of the possible side effects of RAPAMUNE.
+For more information ask your
+ doctor or pharmacist.
+ Reference ID: 3272763  48
+ Call your doctor for medical advice about side effects.
+You may report side effects to FDA
+ at 1-800-FDA-1088.
+ How should I store RAPAMUNE?
+ RAPAMUNE tablets:
+ &#x2022; Store RAPAMUNE tablets at room temperature between 68F to 77F (20C to 25C).
+ &#x2022; Blister cards and strips:
+ &#x2022; Keep the tablets in the original blister container and use the outer carton to
+ protect blister cards and strips from light.
+ &#x2022; Bottles
+  &#x2022; Keep the bottle of RAPAMUNE tablets tightly closed.
+  RAPAMUNE oral solution:
+ &#x2022; Store bottles of RAPAMUNE oral solution in the refrigerator at 36F to 46F (2C to
+ 8C).
+Protect from light.
+ &#x2022; If necessary, bottles of RAPAMUNE oral solution can be stored at room temperature up
+ to 77F (25C) for up to 15 days.
+ &#x2022; When a bottle of RAPAMUNE oral solution is opened, it should be used within 1
+ month.
+ &#x2022; Use any diluted RAPAMUNE oral solution right away.
+ Do not use RAPAMUNE after the expiration date, which is located on the blister and carton.
+ The expiration date refers to the last day of that month.
+ Safely throw away medicine that is out of date or no longer needed.
+ Keep RAPAMUNE and all medicines out of the reach of children.
+ General Information about RAPAMUNE
+ Medicines are sometimes prescribed for purposes other than those listed in a Medication Guide.
+ Do not use RAPAMUNE for a condition for which it was not prescribed.
+Do not give
+ RAPAMUNE to other people even if they have the same symptoms that you have.
+It may harm
+ them.
+ This Medication Guide summarizes the most important information about RAPAMUNE.
+If you
+ would like more information talk to your doctor.
+You can ask your pharmacist or doctor for
+ information about RAPAMUNE that is written for health professionals.
+ For more information, go to www.rapamune.com or call 1-800-934-5556.
+ What are the ingredients in RAPAMUNE?
+ Reference ID: 3272763 49
+   Active ingredients: sirolimus.
+ Inactive ingredients in RAPAMUNE Oral Solution are: Phosal 50 PG
+ (phosphatidylcholine,
+ propylene glycol, mono- and di-glycerides, ethanol, soy fatty acids, and ascorbyl palmitate) and
+ polysorbate 80.
+RAPAMUNE Oral Solution contains 1.5%-2.5% ethanol.
+ The inactive ingredients in RAPAMUNE Tablets include: sucrose, lactose, polyethylene glycol  8000, calcium sulfate, microcrystalline cellulose, pharmaceutical glaze, talc, titanium dioxide,
+ magnesium stearate, povidone, poloxamer 188, polyethylene glycol 20,000, glyceryl  monooleate, carnauba wax, dl-alpha tocopherol, and other ingredients.
+The 0.5 mg and 2 mg
+ dosage strengths also contain yellow iron (ferric) oxide and brown iron (ferric) oxide.
+ For Rapamune Oral Tablets:
+ For Rapamune Oral Solution:
+ This Medication Guide has been approved by the U.S. Food and Drug Administration.
+ LAB-0578-2.0
+ Issued December 2012.
+ INSTRUCTIONS FOR USE
+ RAPAMUNE /RAAP-a-mune/
+ (sirolimus)
+ Oral Solution
+ Be sure that you read and understand the following instructions for the correct way to dilute
+ and take RAPAMUNE Oral Solution.
+Ask your pharmacist or doctor if you are not sure.
+ Important:
+ &#x2022;  Always keep the bottle in an upright position.
+ &#x2022;  You may store RAPAMUNE Oral Solution that is in a syringe at room temperature up to
+ 77F (25C) or in the refrigerator at 36F to 46F (2C to 8C) for up to 24 hours.
+See
+ "How should I store RAPAMUNE?" at the end of these Instructions for Use.
+ Reference ID: 3272763  50
+   &#x2022;  RAPAMUNE Oral Solution can develop a slight haze when it is refrigerated.
+If this
+ happens, bring the RAPAMUNE Oral Solution to room temperature and then gently
+ shake the bottle until the haze goes away.
+ &#x2022;  Only use a glass or plastic cup to dilute Rapamune Oral Solution.
+ Each Rapamune Oral Solution carton contains:
+ &#x2022;  a) a 2 oz.
+(60 mL fill) amber glass bottle of sirolimus
+ (concentration of 1 mg/mL)
+ &#x2022; b) 1 oral syringe adapter for fitting into the neck of the bottle
+ &#x2022; c) enough disposable amber oral syringes and caps for daily
+ dosing
+ &#x2022; d) 1 carrying case
+ You will also need:
+ &#x2022; glass or plastic cup
+ &#x2022; 6 oz.
+of water or orange juice only
+ Figure 1: Opening the bottle
+ Figure 2: Inserting adapter
+ Figure 3: Inserting syringe
+ 1.
+Open the solution bottle.
+ &#x2022;  Remove the safety cap by squeezing
+ the tabs on the cap and twisting
+ counterclockwise (Figure 1).
+ 2.
+The first time you use a bottle of
+ RAPAMUNE Oral Solution:
+ &#x2022;  Insert the oral syringe adapter (plastic
+ tube with stopper) tightly into the
+ bottle until it is even with the top of the
+ bottle.
+ &#x2022;  Do not remove the oral syringe adapter
+ from the bottle once inserted (Figure 2)
+ 3.
+Use a new disposable amber oral syringe for
+ each dose of RAPAMUNE Oral Solution.
+ &#x2022;  Fully push down (depress) on the
+ plunger of the disposable amber oral
+ syringe.
+ Then, tightly insert the oral syringe into the
+ opening in the adapter (Figure 3).
+ Reference ID: 3272763  51
+     Figure 4: Withdrawing solution
+ Figure 5: Capping syringe
+ 4.
+Withdraw the prescribed amount of
+ Rapamune Oral Solution:
+ &#x2022;  Gently pull back the plunger of the
+ syringe until the bottom of the black
+ line of the plunger is even with the
+ appropriate mark on the syringe.
+ &#x2022;  Always keep the bottle in an upright
+ position.
+ &#x2022;  If bubbles form in the syringe, empty
+ the syringe into the bottle and repeat
+ steps 3 and 4 (Figure 4).
+ 5.
+If your doctor tells you to carry your
+ medicine with you:
+ &#x2022;  If you need to carry your RAPAMUNE
+ Oral Solution in a filled syringe, place
+ a cap securely on the syringe.
+The cap
+ should snap into place
+ (Figure 5).
+ 6.
+Place the capped syringe in the enclosed
+ carrying case (Figure 6).
+ Figure 6: Placing syringe in carrying case
+ 7.
+Taking a dose of RAPAMUNE Oral
+ Solution:
+ &#x2022;  Empty the syringe into a glass or
+ plastic cup containing at least 2 ounces
+ (1/4 cup, 60 mL) of water or orange Figure 7: Emptying syringe into glass juice, stir vigorously for 1 minute and
+ drink right away.
+ &#x2022;  Refill the container with at least 4
+ ounces (1/2 cup, 120 mL) of water or
+ orange juice, stir vigorously again and
+ drink the rinse solution.
+Do not mix
+ RAPAMUNE Oral Solution with apple
+ juice, grapefruit juice, or other liquids.
+ Only glass or plastic cups should be
+ used to mix Rapamune Oral Solution.
+ Reference ID: 3272763  52
+ &#x2022;  The syringe and cap should be used
+ only one time and then thrown away
+ (Figure 7).
+ 8.
+Always store the bottles of medication in
+ the refrigerator.
+ How should I store RAPAMUNE?
+ &#x2022; Store bottles of RAPAMUNE Oral Solution in the refrigerator at 36F to 46F
+ (2C to 8C)
+ &#x2022; Protect from light
+ &#x2022; Store RAPAMUNE Oral Solution that is in a syringe at room temperature up to
+ 77F (25C) or in the refrigerator at 36F to 46F (2C to 8C) for up to 24 hours
+ &#x2022; If necessary, bottles of RAPAMUNE Oral Solution can be stored at room temperature
+ up to 77F (25C) for up to 15 days
+ &#x2022; When a bottle of RAPAMUNE Oral Solution is opened, it should be used within
+ 1 month
+ &#x2022; Use any diluted RAPAMUNE Oral Solution right away
+ Keep RAPAMUNE and all medicines out of the reach of children.
+ This Instructions for Use has been approved by the U.S. Food and Drug Administration.
+ Revised July 2011
+ LAB-0579-1.0
+  Reference ID: 3272763  53
+  

@@ -1,0 +1,176 @@
+T1	tradename 33 41	VISUDYNE
+T2	activeingredient 44 55	VERTEPORFIN
+T3	tradename 86 94	VISUDYNE
+T4	activeingredient 96 107	verteporfin
+T5	activeingredient 239 250	Verteporfin
+T6	activeingredient 369 380	verteporfin
+T7	molecularweight 635 641	718.8.
+T8	tradename 667 675	VISUDYNE
+T9	activeingredient 695 707	Verteporfin,
+T10	inactiveingredient 725 733	Lactose,
+T11	corecomposition 734 792	egg phosphatidylglycerol, dimyristoyl phosphatidylcholine,
+T12	inactiveingredient 793 811	ascorbyl palmitate
+T13	inactiveingredient 816 840	butylated hydroxytoluene
+T14	tradename 962 970	VISUDYNE
+T15	activeingredient 972 983	verteporfin
+T16	activeingredient 1063 1074	verteporfin
+T17	activeingredient 1116 1127	Verteporfin
+T18	activeingredient 1189 1200	verteporfin
+T19	activeingredient 1358 1369	verteporfin
+T20	activeingredient 1712 1723	Verteporfin
+T21	tradename 2146 2154	Visudyne
+T22	routeofadministration 2249 2260	intravenous
+T23	activeingredient 2271 2282	verteporfin
+T24	plasmahalflife 2376 2386	5-6 hours.
+T25	cmax 2484 2499	6 and 20 mg/m2.
+T26	activeingredient 2592 2603	Verteporfin
+T27	activeingredient 2821 2833	verteporfin.
+T28	tradename 3451 3459	VISUDYNE
+T29	routeofadministration 3774 3785	intravenous
+T30	tradename 3883 3891	Visudyne
+T31	tradename 3964 3972	VISUDYNE
+T32	tradename 4155 4163	VISUDYNE
+T33	tradename 4625 4633	VISUDYNE
+T34	tradename 4789 4805	VISUDYNE-treated
+T35	tradename 4886 4902	VISUDYNE-treated
+T36	tradename 5089 5097	VISUDYNE
+T37	tradename 5428 5436	Visudyne
+T38	tradename 5474 5482	VISUDYNE
+T39	tradename 5937 5945	VISUDYNE
+T40	tradename 6127 6135	VISUDYNE
+T41	tradename 6432 6440	VISUDYNE
+T42	tradename 6583 6591	VISUDYNE
+T43	tradename 7124 7132	VISUDYNE
+T44	tradename 7189 7197	VISUDYNE
+T45	tradename 7235 7251	Visudyne-treated
+T46	tradename 7649 7657	VISUDYNE
+T47	activeingredient 7659 7670	verteporfin
+T48	indication 7764 7843	subfoveal choroidal neovascularization due to age-related macular degeneration,
+T49	tradename 7942 7950	VISUDYNE
+T50	tradename 8053 8061	VISUDYNE
+T51	activeingredient 8063 8074	verteporfin
+T52	tradename 8239 8247	VISUDYNE
+T53	activeingredient 8249 8260	verteporfin
+T54	tradename 9198 9206	VISUDYNE
+T55	tradename 9359 9368	VISUDYNE,
+T56	tradename 9408 9417	VISUDYNE,
+T57	tradename 9537 9545	VISUDYNE
+T58	activeingredient 9547 9558	verteporfin
+T59	tradename 9750 9758	Visudyne
+T60	tradename 10088 10097	VISUDYNE,
+T61	routeofadministration 10573 10577	Oral
+T62	tradename 10628 10636	Visudyne
+T63	activeingredient 10797 10808	verteporfin
+T64	tradename 10876 10884	VISUDYNE
+T65	activeingredient 10998 11009	verteporfin
+T66	tradename 11240 11248	VISUDYNE
+T67	tradename 11693 11702	VISUDYNE.
+T68	tradename 11740 11748	VISUDYNE
+T69	tradename 11885 11893	VISUDYNE
+T70	tradename 12485 12493	VISUDYNE
+T71	tradename 13091 13099	Visudyne
+T72	tradename 13443 13452	VISUDYNE.
+T73	activeingredient 13454 13465	Verteporfin
+T74	activeingredient 13653 13664	verteporfin
+T75	activeingredient 13714 13726	verteporfin,
+T76	tradename 13787 13795	Visudyne
+T77	tradename 13932 13940	VISUDYNE
+T78	tradename 14362 14370	VISUDYNE
+T79	tradename 14522 14530	Visudyne
+T80	activeingredient 14748 14760	verteporfin.
+T81	activeingredient 15441 15452	Verteporfin
+T82	routeofadministration 15664 15675	intravenous
+T83	activeingredient 15694 15705	verteporfin
+T84	dose 15726 15734	10 mg/kg
+T85	frequency 15734 15738	/day
+T86	dose 15788 15795	6 mg/m2
+T87	activeingredient 15941 15952	verteporfin
+T88	routeofadministration 15967 15980	intravenously
+T89	dose 15992 16000	10 mg/kg
+T90	frequency 16000 16004	/day
+T91	dose 16067 16074	6 mg/m2
+T92	dose 16211 16219	25 mg/kg
+T93	frequency 16219 16223	/day
+T94	dose 16270 16277	6 mg/m2
+T95	activeingredient 16495 16506	verteporfin
+T96	routeofadministration 16521 16534	intravenously
+T97	dose 16546 16554	10 mg/kg
+T98	frequency 16554 16558	/day
+T99	dose 16652 16660	3 mg/kg/
+T100	frequency 16660 16663	day
+T101	dose 16704 16711	6 mg/m2
+T102	dose 16810 16819	10 mg/kg/
+T103	frequency 16819 16823	day.
+T104	tradename 16894 16902	VISUDYNE
+T105	activeingredient 17016 17027	Verteporfin
+T106	dose 17110 17117	6 mg/m2
+T107	activeingredient 17132 17143	verteporfin
+T108	tradename 17531 17540	VISUDYNE,
+T109	tradename 17841 17849	VISUDYNE
+T110	adversereaction 17991 18002	chest pain,
+T111	adversereaction 18018 18044	hypersensitivity reactions
+T112	adversereaction 18080 18106	hypersensitivity reactions
+T113	adversereaction 18168 18221	syncope, sweating, dizziness, rash, dyspnea, flushing
+T114	adversereaction 18226 18267	changes in blood pressure and heart rate.
+T115	adversereaction 18297 18326	headache, malaise, urticaria,
+T116	adversereaction 18331 18340	pruritus.
+T117	tradename 18389 18397	VISUDYNE
+T118	activeingredient 18399 18410	verteporfin
+T119	adversereaction 18430 18454	injection site reactions
+T120	adversereaction 18550 18569	visual disturbances
+T121	tradename 18825 18833	Visudyne
+T122	adversereaction 18929 19017	Blepharitis, cataracts, conjunctivitis/conjunctival injection, dry eyes, ocular itching,
+T123	adversereaction 19024 19098	 vision decrease with or without subretinal/retinal or vitreous hemorrhage
+T124	adversereaction 19119 19149	Asthenia, fever, flu syndrome,
+T125	adversereaction 19252 19331	Atrial fibrillation, hypertension, peripheral vascular disorder, varicose veins
+T126	adversereaction 19348 19354	Eczema
+T127	adversereaction 19369 19415	Constipation, gastrointestinal cancers, nausea
+T128	adversereaction 19440 19514	Anemia, white blood cell count decreased, white blood cell count increased
+T129	adversereaction 19584 19617	Albuminuria, creatinine increased
+T130	adversereaction 19638 19671	Arthralgia, arthrosis, myasthenia
+T131	adversereaction 19768 19804	Hypesthesia, sleep disorder, vertigo
+T132	adversereaction 19819 19848	Cough, pharyngitis, pneumonia
+T133	adversereaction 19866 19926	Cataracts, decreased hearing, diplopia, lacrimation disorder
+T134	adversereaction 19940 19958	Prostatic disorder
+T135	tradename 20288 20296	VISUDYNE
+T136	tradename 20479 20487	VISUDYNE
+T137	tradename 20776 20785	VISUDYNE,
+T138	adversereaction 20847 20865	Retinal detachment
+T139	adversereaction 20887 20928	retinal or choroidal vessel nonperfusion,
+T140	adversereaction 20936 20960	 pigment epithelial tear
+T141	adversereaction 20983 20993	Chest pain
+T142	tradename 21525 21533	VISUDYNE
+T143	activeingredient 21535 21546	verteporfin
+T144	routeofadministration 21664 21675	intravenous
+T145	tradename 21688 21697	VISUDYNE.
+T146	tradename 21735 21743	VISUDYNE
+T147	tradename 23059 23067	VISUDYNE
+T148	tradename 23110 23118	VISUDYNE
+T149	tradename 23212 23220	VISUDYNE
+T150	tradename 23312 23320	VISUDYNE
+T151	tradename 23423 23431	VISUDYNE
+T152	tradename 23466 23474	VISUDYNE
+T153	tradename 23636 23645	Visudyne.
+T154	tradename 23657 23665	VISUDYNE
+T155	tradename 23734 23742	VISUDYNE
+T156	dose 23783 23790	6 mg/m2
+T157	routeofadministration 24029 24042	intravenously
+T158	tradename 24521 24530	VISUDYNE.
+T159	tradename 24635 24643	VISUDYNE
+T160	tradename 25441 25449	VISUDYNE
+T161	tradename 26434 26442	Visudyne
+T162	tradename 26568 26577	VISUDYNE.
+T163	tradename 27047 27055	Visudyne
+T164	tradename 27310 27318	VISUDYNE
+T165	tradename 27427 27435	VISUDYNE
+T166	tradename 27619 27627	VISUDYNE
+T167	activeingredient 27629 27640	verteporfin
+T168	activeingredient 27806 27818	verteporfin.
+T169	routeofadministration 27847 27858	intravenous
+T170	tradename 27907 27915	VISUDYNE
+T171	tradename 28354 28363	VISUDYNE.
+T172	tradename 28461 28469	VISUDYNE
+T173	company 28561 28584	JHP Pharmaceuticals LLC
+T174	company 28611 28643	Hollister-Stier Laboratories LLC
+T175	company 28670 28678	QLT Inc.
+T176	company 28741 28777	Novartis Pharmaceuticals Corporation

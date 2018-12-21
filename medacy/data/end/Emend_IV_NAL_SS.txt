@@ -1,0 +1,879 @@
+label
+   HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use EMEND safely and effectively.
+See full prescribing information for EMEND.
+ EMEND (fosaprepitant dimeglumine) for Injection, for intravenous use Initial U.S. Approval: 2008
+ ----------------------------INDICATIONS AND USAGE ---------------------------EMEND for Injection is a substance P/neurokinin-1 (NK1) receptor antagonist, in combination with other antiemetic agents, is indicated in adults for the (1): &#x2022;  prevention of acute and delayed nausea and vomiting associated
+ with initial and repeat courses of highly emetogenic cancer chemotherapy (HEC) including high-dose cisplatin
+ &#x2022;  prevention of nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy (MEC)
+ Limitations of Use (1) &#x2022;  Chronic continuous administration is not recommended.
+ ----------------------- DOSAGE AND ADMINISTRATION-----------------------&#x2022;  HEC (Single Dose Regimen): EMEND for Injection (150 mg) is
+ administered on Day 1 only as an infusion over 20-30 minutes initiated approximately 30 minutes prior to chemotherapy.
+No capsules of EMEND are administered on Days 2 and 3.
+EMEND for Injection is part of a regimen to prevent nausea and vomiting induced by HEC that includes a corticosteroid and a 5-HT3 antagonist.
+(2.1)
+ &#x2022;  HEC and MEC (3-Day Dosing Regimen): EMEND for Injection (115 mg) is administered on Day 1 as an infusion over 15 minutes initiated approximately 30 minutes prior to chemotherapy.
+EMEND capsules (80 mg) are given orally on Days 2 and 3.
+EMEND for Injection and EMEND capsules are part of a regimen to prevent nausea and vomiting induced by HEC or MEC that includes a corticosteroid and a 5-HT3 antagonist.
+(2.1, 2.2)
+ --------------------- DOSAGE FORMS AND STRENGTHS --------------------One single dose glass vial supplied as sterile lyophilized powder for intravenous use only after reconstitution and dilution: 150 mg and 115 mg (3)
+ -------------------------------CONTRAINDICATIONS ------------------------------&#x2022;  Known hypersensitivity to any component of this drug.
+(4) &#x2022;  Do not use concurrently with pimozide or cisapride, since inhibition
+ of CYP3A4 by aprepitant may result in elevated plasma
+ concentrations of these drugs, potentially causing serious or life-threatening reactions.
+(4)
+ ------------------------WARNINGS AND PRECAUTIONS-----------------------&#x2022;  Fosaprepitant should be used with caution in patients receiving
+ concomitant medications that are primarily metabolized through CYP3A4.
+(5.1)
+ &#x2022;  Immediate hypersensitivity reactions may occur during infusion.
+Patients have generally responded to discontinuation.
+It is not recommended to reinitiate the infusion.
+(5.2)
+ &#x2022;  Coadministration of fosaprepitant or aprepitant with warfarin (a CYP2C9 substrate) may result in a clinically significant decrease in International Normalized Ratio (INR) of prothrombin time.
+(5.3)
+ &#x2022;  The efficacy of hormonal contraceptives during and for 28 days following the last dose of fosaprepitant or aprepitant may be reduced.
+Alternative or back-up methods of contraception should be used.
+(5.4)
+ ------------------------------ ADVERSE REACTIONS -----------------------------&#x2022;  Adverse reactions for the CINV oral aprepitant regimen in
+ conjunction with highly and moderately emetogenic chemotherapy (incidence &#x2265;1% and greater than standard therapy) are: hiccups, asthenia/fatigue, AST/ALT increased, headache, constipation, anorexia, dyspepsia, diarrhea, eructation.
+(6.1)
+ &#x2022;  Adverse reactions reported for EMEND for Injection were generally similar to that seen in prior HEC studies with oral aprepitant.
+In addition, infusion site reactions (3%) occurred with EMEND for Injection.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Merck Sharp &amp; Dohme Corp., a subsidiary of Merck &amp; Co., Inc., at 1-877888-4231 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ -------------------------------DRUG INTERACTIONS ------------------------------&#x2022;  Coadministration of fosaprepitant or aprepitant with drugs that
+ inhibit or induce CYP3A4 activity may result in increased or reduced plasma concentrations of aprepitant, respectively.
+(7.1, 7.2)
+ &#x2022;  Coadministration of EMEND for Injection with drugs that are metabolized by CYP2C9 (e.g., warfarin, tolbutamide), may result in lower plasma concentrations of these drugs.
+(7.1)
+ See 17 for PATIENT COUNSELING INFORMATION and FDA-approved patient labeling.
+ Revised: 8/2014
+ FULL PRESCRIBING INFORMATION: CONTENTS* 1 INDICATIONS AND USAGE 2 DOSAGE AND ADMINISTRATION
+ 2.1  Prevention of Nausea and Vomiting Associated with Highly Emetogenic Chemotherapy (HEC)
+ 2.2  Prevention of Nausea and Vomiting Associated with Moderately Emetogenic Chemotherapy (MEC)
+ 2.3  Preparation of EMEND for Injection 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS
+ 4.1  Hypersensitivity 4.2  Concomitant Use with Pimozide or Cisapride
+ 5 WARNINGS AND PRECAUTIONS 5.1  CYP3A4 Interactions 5.2  Hypersensitivity Reactions 5.3  Coadministration with Warfarin (a CYP2C9 substrate) 5.4  Coadministration with Hormonal Contraceptives 5.5  Chronic Continuous Use
+ 6 ADVERSE REACTIONS 6.1  Clinical Trials Experience 6.2  Postmarketing Experience
+ 7 DRUG INTERACTIONS 7.1  Effect of Fosaprepitant/Aprepitant on the Pharmacokinetics
+ of Other Agents 7.2  Effect of Other Agents on the Pharmacokinetics of Aprepitant
+ 7.3  Additional Interactions 8 USE IN SPECIFIC POPULATIONS
+ 8.1  Pregnancy 8.3  Nursing Mothers 8.4  Pediatric Use 8.5  Geriatric Use 8.6  Patients with Severe Hepatic Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1  Mechanism of Action 12.2  Pharmacodynamics 12.3  Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY 13.1  Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL STUDIES 14.1  Highly Emetogenic Chemotherapy (HEC) 14.2  Moderately Emetogenic Chemotherapy (MEC)
+ 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing information are not listed.
+ 1
+ Reference ID: 3608755
+                                                                                                                                                                              FULL PRESCRIBING INFORMATION
+ 1 INDICATIONS AND USAGE
+ EMEND for Injection is a substance P/neurokinin-1 (NK1) receptor antagonist indicated in adults for use in combination with other antiemetic agents for the:
+ &#x2022;  prevention of acute and delayed nausea and vomiting associated with initial and repeat courses of highly emetogenic cancer chemotherapy (HEC) including high-dose cisplatin [see Dosage and Administration (2.1)]
+ &#x2022;  prevention of nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy (MEC) [see Dosage and Administration (2.2)].
+ Limitations of Use EMEND for Injection has not been studied for the treatment of established nausea and vomiting.
+ Chronic continuous administration is not recommended [see Warnings and Precautions (5.5)].
+ 2  DOSAGE AND ADMINISTRATION
+ 2.1  Prevention of Nausea and Vomiting Associated with Highly Emetogenic Chemotherapy (HEC)
+ EMEND for Injection 150 mg (Single Dose Regimen of EMEND): EMEND for Injection 150 mg is administered intravenously on Day 1 only as an infusion over 20-30
+ minutes initiated approximately 30 minutes prior to chemotherapy.
+No capsules of EMEND are administered on Days 2 and 3.
+EMEND for Injection should be administered in conjunction with a corticosteroid and a 5-HT3 antagonist as specified in Table 1.
+The recommended dosage of dexamethasone with EMEND for Injection 150 mg differs from the recommended dosage of dexamethasone with EMEND for Injection 115 mg on Days 3 and 4.
+The package insert for the coadministered 5-HT3 antagonist must be consulted prior to initiation of treatment with EMEND for Injection.
+ Table 1 Recommended dosing (Single Dose Regimen of EMEND) for the prevention of nausea
+ and vomiting associated with highly emetogenic cancer chemotherapy Day 1 Day 2 Day 3 Day 4
+ EMEND 150 mg intravenous
+ none none none
+ Dexamethasone* 12 mg orally 8 mg orally 8 mg orally twice daily
+ 8 mg orally twice daily
+ 5-HT3 antagonist See the package insert for the
+ selected 5-HT3 antagonist for appropriate
+ dosing information.
+ none none none
+ *Dexamethasone should be administered 30 minutes prior to chemotherapy treatment on Day 1 and in the morning on Days 2
+ through 4.
+The dose of dexamethasone accounts for drug interactions.
+  EMEND for Injection 115 mg (3-Day Dosing Regimen of EMEND): EMEND for Injection 115 mg is administered on Day 1 only as an infusion over 15 minutes initiated
+ 30 minutes prior to chemotherapy.
+Capsules of EMEND 80 mg should be administered on Days 2 and 3.
+EMEND for Injection 115 mg should be administered in conjunction with a corticosteroid and a 5-HT3 antagonist as specified in Table 2.
+The recommended dosage of dexamethasone with EMEND for Injection 115 mg differs from the recommended dosage of dexamethasone with EMEND for Injection 150 mg on Days 3 and 4.
+The package insert for the co-administered 5-HT3 antagonist must be consulted prior to initiation of treatment with EMEND for Injection.
+ Capsules of EMEND 125 mg may be substituted for EMEND for Injection 115 mg on Day 1.
+ 2
+ Reference ID: 3608755
+                                                                                                                                                     Table 2 Recommended dosing (3-Day Dosing Regimen of EMEND) for the prevention of nausea  and vomiting associated with highly emetogenic cancer chemotherapy Day 1 Day 2 Day 3 Day 4
+ EMEND 115 mg intravenous
+ 80 mg orally 80 mg orally none
+ Dexamethasone* 12 mg orally 8 mg orally 8 mg orally once daily
+ 8 mg orally once daily
+ 5-HT3 antagonist See the package insert for the
+ selected 5-HT3 antagonist for appropriate
+ dosing information.
+ none none none
+ *Dexamethasone should be administered 30 minutes prior to chemotherapy treatment on Day 1 and in the morning on Days 2 through 4.
+The dose of dexamethasone accounts for drug interactions.
+ 2.2  Prevention of Nausea and Vomiting Associated with Moderately Emetogenic Chemotherapy (MEC)
+ EMEND for Injection 115 mg (3-Day Dosing Regimen of EMEND): EMEND for Injection 115 mg is administered on Day 1 only as an infusion over 15 minutes initiated
+ 30 minutes prior to chemotherapy.
+Capsules of EMEND 80 mg should be administered on Days 2 and 3.
+EMEND for Injection 115 mg should be administered in conjunction with a corticosteroid and a 5-HT3 antagonist as specified in Table 3.
+The recommended dosage of dexamethasone with EMEND for Injection 115 mg differs from the recommended dosage of dexamethasone with EMEND for Injection 150 mg on Days 3 and 4.
+The package insert for the co-administered 5-HT3 antagonist must be consulted prior to initiation of treatment with EMEND for Injection.
+ Capsules of EMEND 125 mg may be substituted for EMEND for Injection 115 mg on Day 1.
+Table 3
+ Recommended dosing (3-Day Dosing Regimen of EMEND) for the prevention of nausea and vomiting associated with moderately emetogenic cancer chemotherapy
+ Day 1 Day 2
+ Day 3
+ EMEND 115 mg intravenous 80 mg
+ orally
+ 80 mg
+ orally Dexamethasone* 12 mg orally none none 5-HT3 antagonist See the package insert for the selected 5-HT3
+ antagonist for appropriate dosing information.
+none none
+ *Dexamethasone should be administered 30 minutes prior to chemotherapy treatment on Day 1.
+The dose of dexamethasone accounts for drug interactions.
+ 2.3  Preparation of EMEND for Injection
+ 3
+ Reference ID: 3608755
+                                                                                                                                                                           Table 4 Preparation Instructions for EMEND for Injection (115 mg and 150 mg)
+ 115 mg 150 mg
+ Step 1
+ Aseptically inject 5 mL 0.9% Sodium Chloride for Injection (normal saline) into the vial.
+Assure that normal saline is added to the vial along the vial wall in order to prevent foaming.
+Swirl the vial gently.
+Avoid shaking and jetting saline into the vial.
+ Aseptically inject 5 mL 0.9% Sodium Chloride for Injection (normal saline) into the vial.
+Assure that normal saline is added to the vial along the vial wall in order to prevent foaming.
+Swirl the vial gently.
+Avoid shaking and jetting saline into the vial.
+ Step 2
+ Aseptically prepare an infusion bag filled with 110 mL of normal saline.
+ Aseptically prepare an infusion bag filled with 145 mL of normal saline.
+ Step 3
+ Aseptically withdraw the entire volume from the vial and transfer it into the infusion bag containing 110 mL of normal saline to yield a total volume of 115 mL and a final concentration of 1 mg/1 mL.
+ Aseptically withdraw the entire volume from the vial and transfer it into the infusion bag containing 145 mL of normal saline to yield a total volume of 150 mL and a final concentration of 1 mg/1 mL.
+ Step 4
+ Gently invert the bag 2-3 times.
+Gently invert the bag 2-3 times.
+ Note: The differences in preparation for each dose are displayed as bolded text.
+ The reconstituted final drug solution is stable for 24 hours at ambient room temperature (at or below 25C).
+ Parenteral drug products should be inspected visually for particulate matter and discoloration before administration whenever solution and container permit.
+ Caution: EMEND for Injection should not be mixed or reconstituted with solutions for which physical and chemical compatibility have not been established.
+EMEND for Injection is incompatible with any solutions containing divalent cations (e.g., Ca2+ , Mg2+), including Lactated Ringer's Solution and Hartmann's Solution.
+ 3 DOSAGE FORMS AND STRENGTHS
+ One 150-mg single dose glass vial: W hite to off-white lyophilized solid (Sterile lyophilized powder for intravenous use only after reconstitution and dilution).
+ One 115-mg single dose glass vial: W hite to off-white lyophilized solid (Sterile lyophilized powder for intravenous use only after reconstitution and dilution).
+ 4 CONTRAINDICATIONS
+ 4.1 Hypersensitivity EMEND for Injection is contraindicated in patients who are hypersensitive to EMEND for Injection,
+ aprepitant, polysorbate 80 or any other components of the product.
+Known hypersensitivity reactions include: flushing, erythema, dyspnea, and anaphylactic reactions [see Adverse Reactions (6.2)].
+ 4.2 Concomitant Use with Pimozide or Cisapride Aprepitant, when administered orally, is a moderate cytochrome P450 isoenzyme 3A4 (CYP3A4)
+ inhibitor following the 3-day antiemetic dosing regimen for CINV.
+Since fosaprepitant is rapidly converted to aprepitant, do not use fosaprepitant concurrently with pimozide or cisapride.
+Inhibition of CYP3A4 by
+ 4
+ Reference ID: 3608755
+                                                                                                                                                                                       aprepitant could result in elevated plasma concentrations of these drugs, potentially causing serious or life-threatening reactions [see Drug Interactions (7.1)].
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 CYP3A4 Interactions Fosaprepitant is rapidly converted to aprepitant, which is a moderate inhibitor of CYP3A4 when
+ administered as a 3-day antiemetic dosing regimen for CINV.
+Fosaprepitant should be used with caution in patients receiving concomitant medications that are primarily metabolized through CYP3A4.
+Inhibition of CYP3A4 by aprepitant or fosaprepitant could result in elevated plasma concentrations of these concomitant medications.
+W hen fosaprepitant is used concomitantly with another CYP3A4 inhibitor, aprepitant plasma concentrations could be elevated.
+W hen aprepitant is used concomitantly with medications that induce CYP3A4 activity, aprepitant plasma concentrations could be reduced, and this may result in decreased efficacy of aprepitant [see Drug Interactions (7.1)].
+ Chemotherapy agents that are known to be metabolized by CYP3A4 include docetaxel, paclitaxel, etoposide, irinotecan, ifosfamide, imatinib, vinorelbine, vinblastine and vincristine.
+In clinical studies, the oral aprepitant regimen was administered commonly with etoposide, vinorelbine, or paclitaxel.
+The doses of these agents were not adjusted to account for potential drug interactions.
+ In separate pharmacokinetic studies, no clinically significant change in docetaxel or vinorelbine pharmacokinetics was observed when the oral aprepitant regimen was coadministered.
+ Due to the small number of patients in clinical studies who received the CYP3A4 substrates vinblastine, vincristine, or ifosfamide, particular caution and careful monitoring are advised in patients receiving these agents or other chemotherapy agents metabolized primarily by CYP3A4 that were not studied [see Drug Interactions (7.1)].
+ 5.2 Hypersensitivity Reactions Isolated reports of immediate hypersensitivity reactions including flushing, erythema, dyspnea, and
+ anaphylaxis have occurred during infusion of fosaprepitant.
+These hypersensitivity reactions have generally responded to discontinuation of the infusion and administration of appropriate therapy.
+Reinitiation of the infusion is not recommended in patients who experience these symptoms during first-time use.
+ 5.3 Coadministration with Warfarin (a CYP2C9 substrate) Coadministration of fosaprepitant or aprepitant with warfarin may result in a clinically significant
+ decrease in International Normalized Ratio (INR) of prothrombin time.
+In patients on chronic warfarin therapy, the INR should be closely monitored in the 2-week period, particularly at 7 to 10 days, following initiation of fosaprepitant with each chemotherapy cycle [see Drug Interactions (7.1)].
+ 5.4 Coadministration with Hormonal Contraceptives Upon coadministration with fosaprepitant or aprepitant, the efficacy of hormonal contraceptives may
+ be reduced during and for 28 days following the last dose of either fosaprepitant or aprepitant.
+Alternative or back-up methods of contraception should be used during treatment with and for 1 month following the last dose of fosaprepitant or aprepitant [see Drug Interactions (7.1)].
+ 5.5 Chronic Continuous Use Chronic continuous use of EMEND for Injection for prevention of nausea and vomiting is not
+ recommended because it has not been studied; and because the drug interaction profile may change during chronic continuous use.
+ 6 ADVERSE REACTIONS
+ 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates
+ observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in clinical practice.
+ 5
+ Reference ID: 3608755
+                                                                                                                                                                                                                   Since EMEND for Injection is converted to aprepitant, those adverse reactions associated with aprepitant might also be expected to occur with EMEND for Injection.
+ The overall safety of fosaprepitant was evaluated in approximately 1100 individuals and the overall safety of aprepitant was evaluated in approximately 6500 individuals.
+ Oral Aprepitant
+ Highly Emetogenic Chemotherapy (HEC)
+  In 2 well-controlled clinical trials in patients receiving highly emetogenic cancer chemotherapy, 544 patients were treated with aprepitant during Cycle 1 of chemotherapy and 413 of these patients continued into the Multiple-Cycle extension for up to 6 cycles of chemotherapy.
+Oral aprepitant was given in combination with ondansetron and dexamethasone.
+ In Cycle 1, adverse reactions were reported in approximately 17% of patients treated with the aprepitant regimen compared with approximately 13% of patients treated with standard therapy.
+Treatment was discontinued due to adverse reactions in 0.6% of patients treated with the aprepitant regimen compared with 0.4% of patients treated with standard therapy.
+ The most common adverse reactions reported in patients treated with the aprepitant regimen with an incidence &#x2265;1% and greater than standard therapy are listed in Table 5.
+ Table 5 Adverse Reactions (incidence &#x2265;1%) in patients receiving HEC with a greater incidence
+ in the Aprepitant Regimen relative to Standard Therapy Aprepitant Regimen
+ (N=544) Standard Therapy
+ (N=550) Respiratory System hiccups 4.6 2.9 Body as a Whole/Site Unspecified asthenia/fatigue 2.9 1.6 Investigations ALT increased 2.8 1.5 AST increased 1.1 0.9 Digestive System constipation 2.2 2.0 dyspepsia 1.5 0.7 diarrhea 1.1 0.9 Nervous System headache 2.2 1.8 Metabolism and Nutrition anorexia 2.0 0.5
+ A listing of adverse reactions in the aprepitant regimen (incidence &lt;1%) that occurred at a greater incidence than standard therapy are presented in the Less Common Adverse Reactions subsection below.
+ In an additional active-controlled clinical study in 1169 patients receiving aprepitant and highly emetogenic chemotherapy, the adverse experience profile was generally similar to that seen in the other HEC studies with aprepitant.
+ Moderately Emetogenic Chemotherapy (MEC) In 2 well-controlled clinical trials in patients receiving moderately emetogenic cancer chemotherapy,
+ 868 patients were treated with the aprepitant regimen during Cycle 1 of chemotherapy and 686 of these patients continued into extensions for up to 4 cycles of chemotherapy.
+In both studies, oral aprepitant was given in combination with ondansetron and dexamethasone (aprepitant regimen).
+ In the combined analysis of Cycle 1 data for these 2 studies, adverse reactions were reported in approximately 14% of patients treated with the aprepitant regimen compared with approximately 15% of patients treated with standard therapy.
+Treatment was discontinued due to adverse reactions in 0.7% of patients treated with the aprepitant regimen compared with 0.2% of patients treated with standard therapy.
+ The most common adverse reactions reported in patients treated with the aprepitant regimen with an incidence &#x2265;1% and greater than standard therapy are listed in Table 6.
+ 6
+ Reference ID: 3608755
+                                                                                                                                                                          Table 6 Adverse Reactions (incidence &#x2265;1%) in patients receiving MEC with a greater incidence
+ in the Aprepitant Regimen relative to Standard Therapy Aprepitant Regimen (N=868)
+ Standard Therapy (N=846)
+ Gastrointestinal disorders eructation 1.0 0.1 General disorders and administration site conditions fatigue 1.4 0.9
+ A listing of adverse reactions in the aprepitant regimen (incidence &lt;1%) that occurred at a greater incidence than standard therapy are presented in the Less Common Adverse Reactions subsection below.
+ Less Common Adverse Reactions
+ Adverse reactions reported in either HEC or MEC studies in patients treated with the aprepitant regimen with an incidence &lt;1% and greater than standard therapy are listed in Table 7.
+ Table 7 Adverse Reactions (incidence &lt;1%) in patients observed in either HEC or MEC Studies
+ with a greater incidence in the Aprepitant Regimen relative to Standard Therapy Infection and infestations
+ candidiasis, staphylococcal infection
+ Blood and the lymphatic system disorders
+ anemia, febrile neutropenia
+ Metabolism and nutrition disorders
+ weight gain, polydipsia
+ Psychiatric disorders disorientation, euphoria, anxiety Nervous system disorders
+ dizziness, dream abnormality, cognitive disorder, lethargy, somnolence
+ Eye disorders conjunctivitis Ear and labyrinth disorders
+ tinnitus
+ Cardiac disorders bradycardia, cardiovascular disorder, palpitations Vascular disorders hot flush, flushing Respiratory, thoracic and mediastinal disorders
+ pharyngitis, sneezing, cough, postnasal drip, throat irritation
+ Gastrointestinal disorders
+ nausea, acid reflux, dysgeusia, epigastric discomfort, obstipation, gastroesophageal reflux disease, perforating duodenal ulcer, vomiting, abdominal pain, dry mouth, abdominal distension, faeces hard, neutropenic colitis, flatulence, stomatitis
+ Skin and subcutaneous tissue disorders
+ rash, acne, photosensitivity, hyperhidrosis, oily skin, pruritus, skin lesion
+ Musculoskeletal and connective tissue disorders
+ muscle cramp, myalgia, muscular weakness
+ Renal and urinary disorders
+ polyuria, dysuria, pollakiuria
+ General disorders and administration site condition
+ edema, chest discomfort, malaise, thirst, chills, gait disturbance
+ Investigations alkaline phosphatase increased, hyperglycemia, microscopic hematuria, hyponatremia, weight decreased, neutrophil count decreased
+ In another chemotherapy induced nausea and vomiting (CINV) study, Stevens-Johnson syndrome was reported as a serious adverse reaction in a patient receiving aprepitant with cancer chemotherapy.
+ 7
+ Reference ID: 3608755
+                                                                                                                                                                             The adverse experience profiles in the Multiple-Cycle extensions of HEC and MEC studies for up to 6 cycles of chemotherapy were similar to that observed in Cycle 1.
+ Fosaprepitant In an active-controlled clinical study in patients receiving highly emetogenic chemotherapy, safety
+ was evaluated for 1143 patients receiving the 1-day regimen of EMEND for Injection 150 mg compared to 1169 patients receiving the 3-day regimen of EMEND (aprepitant).
+The safety profile was generally similar to that seen in prior HEC studies with aprepitant.
+However, infusion-site reactions occurred at a higher incidence in patients in the fosaprepitant group (3.0%) compared to those in the aprepitant group (0.5%).
+The reported infusion-site reactions included infusion-site erythema, infusion-site pruritus, infusion-site pain, infusion-site induration, and infusion-site thrombophlebitis.
+ The following additional adverse reactions occurred with fosaprepitant 150 mg and were not reported with the oral aprepitant regimen in the corresponding section above.
+ Table 8 Adverse Reactions (incidence &gt;0.1%) in patients receiving Fosaprepitant 150 mg and
+ not reported above for the Oral Aprepitant Regimen General disorders and administration site conditions
+ infusion site erythema, infusion site pruritus, infusion site induration, infusion site pain
+ Investigations blood pressure increased Skin and subcutaneous tissue disorders
+ erythema
+ Vascular disorders thrombophlebitis (predominantly, infusion-site thrombophlebitis)
+ Other Studies with Postoperative Nausea and Vomiting In well-controlled clinical studies in patients receiving general balanced anesthesia, 564 patients
+ were administered 40-mg aprepitant orally and 538 patients were administered 4-mg ondansetron intravenously.
+ Adverse reactions were reported in approximately 4% of patients treated with 40-mg aprepitant compared with approximately 6% of patients treated with 4-mg ondansetron intravenously.
+ In patients treated with aprepitant, increased ALT (1.1%) was seen at a greater incidence than with ondansetron (1.0%).
+The following additional adverse reactions were observed in patients treated with aprepitant at an incidence &lt;1% and greater than with ondansetron.
+ Table 9 Adverse Reactions (incidence &lt;1%) in patients receiving Aprepitant 40 mg with a
+ greater incidence in the Aprepitant group relative to ondansetron Psychiatric disorders insomnia Nervous system disorders dysarthria, hypoesthesia, sensory disturbance Eye disorders miosis, visual acuity reduced Cardiac disorders bradycardia Respiratory, thoracic and mediastinal disorders
+ dyspnea, wheezing
+ Gastrointestinal disorders abdominal pain upper, bowel sounds abnormal, dry mouth, nausea, stomach discomfort
+ In addition, two serious adverse reactions were reported in postoperative nausea and vomiting (PONV) clinical studies in patients taking a higher dose of aprepitant: one case of constipation, and one case of subileus.
+ Other Studies Angioedema and urticaria were reported as serious adverse reactions in a patient receiving
+ aprepitant in a non-CINV/non-PONV study.
+ 6.2 Postmarketing Experience The following adverse reactions have been identified during post approval use of fosaprepitant and
+ aprepitant.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ 8
+ Reference ID: 3608755
+                                                                                                                                                                                                           Skin and subcutaneous tissue disorders: pruritus, rash, urticaria, rarely Stevens-Johnson syndrome/toxic epidermal necrolysis.
+ Immune system disorders: hypersensitivity reactions including anaphylactic reactions.
+Nervous system disorders: Events of ifosfamide-induced neurotoxicity have been reported after
+ aprepitant and ifosfamide coadministration.
+ 7 DRUG INTERACTIONS
+ Drug interactions following administration of fosaprepitant are likely to occur with drugs that interact with oral aprepitant.
+ Aprepitant is a substrate, a moderate inhibitor, and an inducer of CYP3A4 when administered as a 3-day antiemetic dosing regimen for CINV.
+Aprepitant is also an inducer of CYP2C9.
+ Fosaprepitant 150 mg, given as a single dose, is a weak inhibitor of CYP3A4, and does not induce CYP3A4.
+Fosaprepitant or aprepitant is unlikely to interact with drugs that are substrates for the Pglycoprotein transporter.
+ The following information was derived from data with oral aprepitant, two studies conducted with fosaprepitant and oral midazolam, and one study conducted with fosaprepitant and dexamethasone.
+ 7.1 Effect of Fosaprepitant/Aprepitant on the Pharmacokinetics of Other Agents CYP3A4 substrates:
+ Aprepitant, as a moderate inhibitor of CYP3A4, and fosaprepitant 150 mg, as a weak inhibitor of CYP3A4, can increase plasma concentrations of concomitantly coadministered oral medications that are metabolized through CYP3A4 [see Contraindications (4)].
+ 5-HT3 antagonists: In clinical drug interaction studies, aprepitant did not have clinically important effects on the
+ pharmacokinetics of ondansetron, granisetron, or hydrodolasetron (the active metabolite of dolasetron).
+ Corticosteroids: Dexamethasone: Fosaprepitant 150 mg administered as a single intravenous dose on Day 1
+ increased the AUC0-24hr of dexamethasone, administered as a single 8-mg oral dose on Days 1, 2, and 3, by approximately 2-fold on Days 1 and 2.
+The oral dexamethasone dose on Days 1 and 2 should be reduced by approximately 50% when coadministered with fosaprepitant 150-mg intravenous on Day 1.
+ An oral aprepitant regimen of 125 mg on Day 1, and 80 mg/day on Days 2 through 5, coadministered with 20-mg oral dexamethasone on Day 1 and 8-mg oral dexamethasone on Days 2 through 5, increased the AUC of dexamethasone by 2.2-fold on Days 1 and 5.
+The oral dexamethasone doses should be reduced by approximately 50% when coadministered with a regimen of fosaprepitant 115 mg followed by aprepitant.
+ Methylprednisolone: An oral aprepitant regimen of 125 mg on Day 1 and 80 mg/day on Days 2 and 3 increased the AUC of methylprednisolone by 1.34-fold on Day 1 and by 2.5-fold on Day 3, when methylprednisolone was coadministered intravenously as 125 mg on Day 1 and orally as 40 mg on Days 2 and 3.
+The intravenous methylprednisolone dose should be reduced by approximately 25%, and the oral methylprednisolone dose should be reduced by approximately 50% when coadministered with a regimen of fosaprepitant 115 mg followed by aprepitant.
+ Chemotherapeutic agents: Docetaxel: In a pharmacokinetic study, oral aprepitant (CINV regimen) did not influence the
+ pharmacokinetics of docetaxel.
+ Vinorelbine: In a pharmacokinetic study, oral aprepitant (CINV regimen) did not influence the pharmacokinetics of vinorelbine to a clinically significant degree.
+ Other Chemotherapeutic Agents: EMEND for Injection should be used with caution in patients receiving other chemotherapeutic agents that are primarily metabolized through CYP3A4 [see Warnings and Precautions (5.1) and Adverse Reactions (6.2)].
+ 9
+ Reference ID: 3608755
+                                                                                                                                                                                                                          Oral contraceptives: W hen oral aprepitant, ondansetron, and dexamethasone were coadministered with an oral
+ contraceptive containing ethinyl estradiol and norethindrone, the trough concentrations of both ethinyl estradiol and norethindrone were reduced by as much as 64% for 3 weeks post-treatment.
+ The coadministration of fosaprepitant or aprepitant may reduce the efficacy of hormonal contraceptives (these can include birth control pills, skin patches, implants, and certain IUDs) during and for 28 days after administration of the last dose of fosaprepitant or aprepitant.
+Alternative or back-up methods of contraception should be used during treatment with and for 1 month following the last dose of fosaprepitant or aprepitant.
+ Midazolam: Interactions between aprepitant or fosaprepitant and coadministered midazolam are listed in the
+ table below (increase is indicated as "-", decrease as "-", no change as "-").
+ Table 10 Pharmacokinetic Interaction Data for Fosaprepitant/Aprepitant and Coadministered
+ Midazolam Dose of fosaprepitant/ aprepitant
+ Dose of Midazolam Observed Drug Interactions
+ fosaprepitant 150 mg on Day 1
+ oral 2 mg on Days 1 and 4
+ AUC &#x2020;&#x2018; 1.8-fold on Day 1 and AUC &#x2020;' on Day 4
+ fosaprepitant 100 mg on Day 1
+ oral 2 mg oral midazolam AUC &#x2020;&#x2018; 1.6-fold
+ oral aprepitant 125 mg on Day 1 and 80 mg on Days 2 to 5
+ oral 2 mg SD on Days 1 and 5
+ oral midazolam AUC &#x2020;&#x2018; 2.3-fold on Day 1 and &#x2020;&#x2018; 3.3-fold on Day 5
+ oral aprepitant 125 mg on Day 1 and 80 mg on Days 2 and 3
+ intravenous 2 mg prior to 3-day regimen of aprepitant and on Days 4, 8 and 15
+ intravenous midazolam AUC &#x2020;&#x2018; 25% on Day 4, AUC &#x2020;&#x201c; 19% on Day 8 and AUC &#x2020;&#x201c; 4% on Day 15
+ oral aprepitant 125 mg intravenous 2 mg given 1 hour after aprepitant
+ intravenous midazolam AUC &#x2020;&#x2018; 1.5-fold
+ A difference of less than 2-fold increase of midazolam AUC was not considered clinically important.
+ The potential effects of increased plasma concentrations of midazolam or other benzodiazepines metabolized via CYP3A4 (alprazolam, triazolam) should be considered when coadministering these agents with fosaprepitant or aprepitant.
+ CYP2C9 substrates (W arfarin, Tolbutamide): Warfarin: A single 125-mg dose of oral aprepitant was administered on Day 1 and 80 mg/day on
+ Days 2 and 3 to healthy subjects who were stabilized on chronic warfarin therapy.
+Although there was no effect of oral aprepitant on the plasma AUC of R(+) or S(-) warfarin determined on Day 3, there was a 34% decrease in S(-) warfarin trough concentration accompanied by a 14% decrease in the prothrombin time (reported as International Normalized Ratio or INR) 5 days after completion of dosing with oral aprepitant.
+In patients on chronic warfarin therapy, the prothrombin time (INR) should be closely monitored in the 2-week period, particularly at 7 to 10 days, following initiation of fosaprepitant with each chemotherapy cycle.
+ Tolbutamide: Oral aprepitant, when given as 125 mg on Day 1 and 80 mg/day on Days 2 and 3, decreased the AUC of tolbutamide by 23% on Day 4, 28% on Day 8, and 15% on Day 15, when a single dose of tolbutamide 500 mg was administered orally prior to the administration of the 3-day regimen of oral aprepitant and on Days 4, 8, and 15.
+ 7.2 Effect of Other Agents on the Pharmacokinetics of Aprepitant Aprepitant is a substrate for CYP3A4; therefore, coadministration of fosaprepitant or aprepitant with
+ drugs that inhibit CYP3A4 activity may result in increased plasma concentrations of aprepitant.
+ 10
+ Reference ID: 3608755
+                                                                                                                                                                                                           Consequently, concomitant administration of fosaprepitant or aprepitant with strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole, nefazodone, troleandomycin, clarithromycin, ritonavir, nelfinavir) should be approached with caution.
+Because moderate CYP3A4 inhibitors (e.g., diltiazem) result in a 2-fold increase in plasma concentrations of aprepitant, concomitant administration should also be approached with caution.
+ Aprepitant is a substrate for CYP3A4; therefore, coadministration of fosaprepitant or aprepitant with drugs that strongly induce CYP3A4 activity (e.g., rifampin, carbamazepine, phenytoin) may result in reduced plasma concentrations and decreased efficacy.
+ Ketoconazole: W hen a single 125-mg dose of oral aprepitant was administered on Day 5 of a 10-day regimen of 400 mg/day of ketoconazole, a strong CYP3A4 inhibitor, the AUC of aprepitant increased approximately 5-fold and the mean terminal half-life of aprepitant increased approximately 3-fold.
+Concomitant administration of fosaprepitant or aprepitant with strong CYP3A4 inhibitors should be approached cautiously.
+ Rifampin: W hen a single 375-mg dose of oral aprepitant was administered on Day 9 of a 14-day regimen of 600 mg/day of rifampin, a strong CYP3A4 inducer, the AUC of aprepitant decreased approximately 11-fold and the mean terminal half-life decreased approximately 3-fold.
+ Coadministration of fosaprepitant or aprepitant with drugs that induce CYP3A4 activity may result in reduced plasma concentrations and decreased efficacy.
+ 7.3 Additional Interactions Diltiazem: In a study in 10 patients with mild to moderate hypertension, intravenous infusion of
+ 100 mg of fosaprepitant with diltiazem 120 mg 3 times daily, resulted in a 1.5-fold increase of aprepitant AUC and a 1.4-fold increase in diltiazem AUC.
+It also resulted in a small but clinically meaningful further maximum decrease in diastolic blood pressure [mean (SD) of 24.3 ( 10.2) mm Hg with fosaprepitant versus 15.6 ( 4.1) mm Hg without fosaprepitant] and resulted in a small further maximum decrease in systolic blood pressure [mean (SD) of 29.5 ( 7.9) mm Hg with fosaprepitant versus 23.8 ( 4.8) mm Hg without fosaprepitant], which may be clinically meaningful, but did not result in a clinically meaningful further change in heart rate or PR interval, beyond those changes induced by diltiazem alone.
+ In the same study, administration of aprepitant once daily, as a tablet formulation comparable to 230 mg of the capsule formulation, with diltiazem 120 mg 3 times daily for 5 days, resulted in a 2-fold increase of aprepitant AUC and a simultaneous 1.7-fold increase of diltiazem AUC.
+These pharmacokinetic effects did not result in clinically meaningful changes in ECG, heart rate or blood pressure beyond those changes induced by diltiazem alone.
+ Paroxetine: Coadministration of once daily doses of aprepitant, as a tablet formulation comparable to 85 mg or 170 mg of the capsule formulation, with paroxetine 20 mg once daily, resulted in a decrease in AUC by approximately 25% and Cmax by approximately 20% of both aprepitant and paroxetine.
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy Teratogenic effects Pregnancy Category B: In the reproduction studies conducted with fosaprepitant and aprepitant, the
+ highest systemic exposures to aprepitant were obtained following oral administration of aprepitant.
+Reproduction studies performed in rats at oral doses of aprepitant up to 1000 mg/kg twice daily (plasma AUC0-24hr of 31.3 mcg&#x2022;hr/mL, about 1.6 times the human exposure at the recommended dose) and in rabbits at oral doses up to 25 mg/kg/day (plasma AUC0-24hr of 26.9 mcg&#x2022;hr/mL, about 1.4 times the human exposure at the recommended dose) revealed no evidence of impaired fertility or harm to the fetus due to aprepitant.
+There are, however, no adequate and well-controlled studies in pregnant women.
+Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed.
+ 11
+ Reference ID: 3608755
+                                                                                                                                       O
+ N
+ O
+ O
+ CF3
+ CF3
+ F
+ N
+ NH CH3
+ O
+ P NHO
+ HO
+ H3C
+ H N
+ OH
+ OH
+ OH
+ OH
+ OH
+ 2
+ .
+                   8.3 Nursing Mothers Aprepitant is excreted in the milk of rats.
+It is not known whether this drug is excreted in human
+ milk.
+Because many drugs are excreted in human milk and because of the potential for possible serious adverse reactions in nursing infants from aprepitant and because of the potential for tumorigenicity shown for aprepitant in rodent carcinogenicity studies, a decision should be made whether to discontinue nursing or to discontinue the drug, taking into account the importance of the drug to the mother.
+ 8.4 Pediatric Use Safety and effectiveness of EMEND for Injection in pediatric patients have not been established.
+ 8.5 Geriatric Use In 2 well-controlled chemotherapy-induced nausea and vomiting clinical studies, of the total number
+ of patients (N=544) treated with oral aprepitant, 31% were 65 and over, while 5% were 75 and over.
+No overall differences in safety or effectiveness were observed between these subjects and younger subjects.
+Greater sensitivity of some older individuals cannot be ruled out.
+Dosage adjustment in the elderly is not necessary [see Clinical Pharmacology (12.3)].
+ 8.6 Patients with Severe Hepatic Impairment There are no clinical or pharmacokinetic data in patients with severe hepatic impairment (Child-Pugh
+ score &gt;9).
+Therefore, caution should be exercised when fosaprepitant or aprepitant is administered in these patients [see Clinical Pharmacology (12.3)].
+ 10 OVERDOSAGE
+ There is no specific information on the treatment of overdosage with fosaprepitant or aprepitant.
+In the event of overdose, fosaprepitant and/or oral aprepitant should be discontinued and general
+ supportive treatment and monitoring should be provided.
+Because of the antiemetic activity of aprepitant, drug-induced emesis may not be effective.
+ Aprepitant cannot be removed by hemodialysis.
+ Thirteen patients in the randomized controlled trial of EMEND for Injection received both fosaprepitant 150 mg and at least one dose of oral aprepitant, 125 mg or 80 mg.
+Three patients reported adverse reactions that were similar to those experienced by the total study population.
+ 11 DESCRIPTION
+ EMEND (fosaprepitant dimeglumine) for Injection is a sterile, lyophilized prodrug of aprepitant, a substance P/neurokinin-1 (NK1) receptor antagonist, and is chemically described as 1-Deoxy-1(methylamino)-D-glucitol[3-[[(2R,3S)-2-[(1R)-1-[3,5-bis(trifluoromethyl)phenyl]ethoxy]-3-(4-fluorophenyl)-4morpholinyl]methyl]-2,5-dihydro-5-oxo-1H-1,2,4-triazol-1-yl]phosphonate (2:1) (salt).
+ Its empirical formula is C23H22F7N4O6P &#x2022; 2(C7H17NO5) and its structural formula is:
+ Fosaprepitant dimeglumine is a white to off-white amorphous powder with a molecular weight of 1004.83.
+It is freely soluble in water.
+ EMEND for Injection is a lyophilized prodrug of aprepitant containing polysorbate 80 (PS80), to be administered intravenously as an infusion.
+ 12
+ Reference ID: 3608755
+                                                                                                                                                                                                                               Each vial of EMEND for Injection 115 mg for intravenous administration contains 188 mg of fosaprepitant dimeglumine equivalent to 115 mg of fosaprepitant free acid and the following inactive ingredients: edetate disodium (14.4 mg), polysorbate 80 (57.5 mg), lactose anhydrous (287.5 mg), sodium hydroxide and/or hydrochloric acid (for pH adjustment).
+Each vial of EMEND for Injection 150 mg for intravenous administration contains 245.3 mg of fosaprepitant dimeglumine equivalent to 150 mg of fosaprepitant free acid and the following inactive ingredients: edetate disodium (18.8 mg), polysorbate 80 (75 mg), lactose anhydrous (375 mg), sodium hydroxide and/or hydrochloric acid (for pH adjustment).
+Fosaprepitant dimeglumine hereafter will be referred to as fosaprepitant.
+ 12 CLINICAL PHARMACOLOGY
+ Fosaprepitant, a prodrug of aprepitant, when administered intravenously is rapidly converted to aprepitant, a substance P/neurokinin 1 (NK1) receptor antagonist.
+Plasma concentrations of fosaprepitant are below the limits of quantification (10 ng/mL) within 30 minutes of the completion of infusion [see Clinical Pharmacology (12.3)].
+Upon conversion of 188 mg of fosaprepitant dimeglumine (equivalent to 115-mg fosaprepitant free acid) to aprepitant, 18.3 mg of phosphoric acid and 73 mg of meglumine are liberated.
+Upon conversion of 245.3 mg of fosaprepitant dimeglumine (equivalent to 150-mg fosaprepitant free acid) to aprepitant, 23.9 mg of phosphoric acid and 95.3 mg of meglumine are liberated.
+ 12.1 Mechanism of Action Fosaprepitant is a prodrug of aprepitant and accordingly, its antiemetic effects are attributable to
+ aprepitant.
+Aprepitant is a selective high-affinity antagonist of human substance P/neurokinin 1 (NK1) receptors.
+ Aprepitant has little or no affinity for serotonin (5-HT3), dopamine, and corticosteroid receptors, the targets of existing therapies for chemotherapy-induced nausea and vomiting (CINV).
+Aprepitant has been shown in animal models to inhibit emesis induced by cytotoxic chemotherapeutic agents, such as cisplatin, via central actions.
+Animal and human Positron Emission Tomography (PET) studies with aprepitant have shown that it crosses the blood brain barrier and occupies brain NK1 receptors.
+Animal and human studies show that aprepitant augments the antiemetic activity of the 5-HT3-receptor antagonist ondansetron and the corticosteroid dexamethasone and inhibits both the acute and delayed phases of cisplatin-induced emesis.
+ 12.2 Pharmacodynamics NK1 Receptor Occupancy
+ In two single-blind, multiple-dose, randomized, and placebo control studies, healthy young men received oral aprepitant doses of 10 mg (N=2), 30 mg (N=3), 100 mg (N=3) or 300 mg (N=5) once daily for 14 days with 2 or 3 subjects on placebo.
+Both plasma aprepitant concentration and NK1 receptor occupancy in the corpus striatum by positron emission tomography were evaluated, at predose and 24 hours after the last dose.
+At aprepitant plasma concentrations of ~10 ng/mL and ~100 ng/mL, the NK1 receptor occupancies were ~50% and ~90%, respectively.
+The oral aprepitant regimen for CINV produces mean trough plasma aprepitant concentrations &gt;500 ng/mL, which would be expected to, based on the fitted curve with the Hill equation, result in &gt;95% brain NK1 receptor occupancy.
+However, the receptor occupancy for either CINV or PONV dosing regimen has not been determined.
+In addition, the relationship between NK1 receptor occupancy and the clinical efficacy of aprepitant has not been established.
+ Cardiac Electrophysiology In a randomized, double-blind, positive-controlled, thorough QTc study, a single 200-mg dose of
+ fosaprepitant had no effect on the QTc interval.
+ 12.3 Pharmacokinetics Aprepitant after Fosaprepitant Administration
+ Following a single intravenous 115-mg dose of fosaprepitant administered as a 15-minute infusion to healthy volunteers the mean AUC0-&#x221e; of aprepitant was 31.7 ( 14.3) mcg&#x2022;hr/mL and the mean maximal aprepitant concentration (Cmax) was 3.27 ( 1.16) mcg/mL.
+The mean aprepitant plasma concentration at 24 hours postdose was similar between the 125-mg oral aprepitant dose and the 115-mg intravenous fosaprepitant dose.
+(See Figure 1.)
+ 13
+ Reference ID: 3608755
+                                                                                                                                        Figure 1: Mean Plasma Concentration of Aprepitant Following 125-mg Oral Aprepitant and 115-mg Intravenous
+ Fosaprepitant
+  Mea
+n Pl
+asm
+a C
+once
+ntra
+tion
+ of A prep itant
+ (ng/
+mL)
+0
+ 500
+ 1000
+ 1500
+ 2000
+ 2500
+ 3000
+ 3500
+ 125-mg Oral Aprepitant 115-mg IV Fosaprepitant
+ 0 12 24 36 48 60 72
+ Time (hr)
+ Following a single, intravenous 150-mg dose of fosaprepitant administered as a 20-minute infusion to healthy volunteers, the mean AUC0-&#x221e; of aprepitant was 37.38 ( 14.75) mcg&#x2022;hr/mL and the mean maximal aprepitant concentration (Cmax) was 4.15 ( 1.15) mcg/mL.
+ Distribution Fosaprepitant is rapidly converted to aprepitant.
+Aprepitant is greater than 95% bound to plasma
+ proteins.
+The mean apparent volume of distribution at steady state (Vdss) is approximately 70 L in humans.
+ Aprepitant crosses the placenta in rats and rabbits and crosses the blood brain barrier in humans [see Clinical Pharmacology (12.1)].
+ Metabolism Fosaprepitant was rapidly converted to aprepitant in in vitro incubations with liver preparations from
+ nonclinical species (rat and dog) and humans.
+Furthermore, fosaprepitant underwent rapid and nearly complete conversion to aprepitant in S9 preparations from multiple other human tissues including kidney, lung and ileum.
+Thus, it appears that the conversion of fosaprepitant to aprepitant can occur in multiple extrahepatic tissues in addition to the liver.
+In humans, fosaprepitant administered intravenously was rapidly converted to aprepitant within 30 minutes following the end of infusion.
+ Aprepitant undergoes extensive metabolism.
+In vitro studies using human liver microsomes indicate that aprepitant is metabolized primarily by CYP3A4 with minor metabolism by CYP1A2 and CYP2C19.
+Metabolism is largely via oxidation at the morpholine ring and its side chains.
+No metabolism by CYP2D6, CYP2C9, or CYP2E1 was detected.
+In healthy young adults, aprepitant accounts for approximately 24% of the radioactivity in plasma over 72 hours following a single oral 300-mg dose of [14C]-aprepitant, indicating a substantial presence of metabolites in the plasma.
+Seven metabolites of aprepitant, which are only weakly active, have been identified in human plasma.
+ Excretion Following administration of a single intravenous 100-mg dose of [14C]-fosaprepitant to healthy
+ subjects, 57% of the radioactivity was recovered in urine and 45% in feces.
+Aprepitant is eliminated primarily by metabolism; aprepitant is not renally excreted.
+The apparent
+ terminal half-life ranged from approximately 9 to 13 hours.
+ 14
+ Reference ID: 3608755
+                                                                                                                                                                                                                                                    Specific Populations Gender
+ Following oral administration of a single dose of aprepitant, the AUC0-24hr and Cmax are 14% and 22% higher in females as compared with males.
+The half-life of aprepitant is 25% lower in females as compared with males and Tmax occurs at approximately the same time.
+These differences are not considered clinically meaningful.
+No dosage adjustment is necessary based on gender.
+ Geriatric Following oral administration of a single 125-mg dose of aprepitant on Day 1 and 80 mg once daily
+ on Days 2 through 5, the AUC0-24hr of aprepitant was 21% higher on Day 1 and 36% higher on Day 5 in elderly (&#x2265;65 years) relative to younger adults.
+The Cmax was 10% higher on Day 1 and 24% higher on Day 5 in elderly relative to younger adults.
+These differences are not considered clinically meaningful.
+No dosage adjustment is necessary in elderly patients.
+ Race Following oral administration of a single dose of aprepitant, the AUC0-24hr and Cmax are
+ approximately 42% and 29% higher in Hispanics as compared with Caucasians.
+The AUC0-24hr and Cmax are 62% and 41% higher in Asians as compared to Caucasians.
+There was no difference in AUC0-24hr or Cmax between Caucasians and Blacks.
+These differences are not considered clinically meaningful.
+No dosage adjustment is necessary based on race.
+ Body Mass Index (BMI) For every 5 kg/m2 increase in BMI, AUC0-24hr and Cmax of aprepitant decrease by 11%.
+BMI of
+ subjects in the analysis ranged from 18 kg/m2 to 36 kg/m2.
+This change is not considered clinically meaningful.
+No dosage adjustment is necessary based on BMI.
+ Hepatic Insufficiency Fosaprepitant is metabolized in various extrahepatic tissues; therefore hepatic impairment is not
+ expected to alter the conversion of fosaprepitant to aprepitant.
+Following administration of a single 125-mg dose of oral aprepitant on Day 1 and 80 mg once daily
+ on Days 2 and 3 to patients with mild hepatic impairment (Child-Pugh score 5 to 6), the AUC0-24hr of aprepitant was 11% lower on Day 1 and 36% lower on Day 3, as compared with healthy subjects given the same regimen.
+In patients with moderate hepatic impairment (Child-Pugh score 7 to 9), the AUC0-24hr of aprepitant was 10% higher on Day 1 and 18% higher on Day 3, as compared with healthy subjects given the same regimen.
+These differences in AUC0-24hr are not considered clinically meaningful; therefore, no dosage adjustment is necessary in patients with mild to moderate hepatic impairment.
+ There are no clinical or pharmacokinetic data in patients with severe hepatic impairment (Child-Pugh score &gt;9) [see Use in Specific Populations (8.6)].
+ Renal Insufficiency A single 240-mg dose of oral aprepitant was administered to patients with severe renal impairment
+ (creatinine clearance &lt;30 mL/min/1.73 m2 as measured by 24-hour urinary creatinine clearance) and to patients with end stage renal disease (ESRD) requiring hemodialysis.
+ In patients with severe renal impairment, the AUC0-&#x221e; of total aprepitant (unbound and protein bound) decreased by 21% and Cmax decreased by 32%, relative to healthy subjects (creatinine clearance &gt;80 mL/min estimated by Cockcroft-Gault method).
+In patients with ESRD undergoing hemodialysis, the AUC0-&#x221e; of total aprepitant decreased by 42% and Cmax decreased by 32%.
+Due to modest decreases in protein binding of aprepitant in patients with renal disease, the AUC of pharmacologically active unbound drug was not significantly affected in patients with renal impairment compared with healthy subjects.
+Hemodialysis conducted 4 or 48 hours after dosing had no significant effect on the pharmacokinetics of aprepitant; less than 0.2% of the dose was recovered in the dialysate.
+ No dosage adjustment is necessary for patients with renal impairment or for patients with ESRD undergoing hemodialysis.
+ 15
+ Reference ID: 3608755
+                                                                                                                                                                                  13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Carcinogenicity studies were conducted in Sprague-Dawley rats and in CD-1 mice for 2 years.
+In the
+ rat carcinogenicity studies, animals were treated with oral doses ranging from 0.05 to 1000 mg/kg twice daily.
+The highest dose produced a systemic exposure to aprepitant (plasma AUC0-24hr) of 0.7 to 1.6 times the human exposure (AUC0-24hr = 19.6 mcg&#x2022;hr/mL) at the recommended dose of 125 mg/day.
+Treatment with aprepitant at doses of 5 to 1000 mg/kg twice daily caused an increase in the incidences of thyroid follicular cell adenomas and carcinomas in male rats.
+In female rats, it produced hepatocellular adenomas at 5 to 1000 mg/kg twice daily and hepatocellular carcinomas and thyroid follicular cell adenomas at 125 to 1000 mg/kg twice daily.
+In the mouse carcinogenicity studies, the animals were treated with oral doses ranging from 2.5 to 2000 mg/kg/day.
+The highest dose produced a systemic exposure of about 2.8 to 3.6 times the human exposure at the recommended dose.
+Treatment with aprepitant produced skin fibrosarcomas at 125 and 500 mg/kg/day doses in male mice.
+Carcinogenicity studies were not conducted with fosaprepitant.
+ Aprepitant and fosaprepitant were not genotoxic in the Ames test, the human lymphoblastoid cell (TK6) mutagenesis test, the rat hepatocyte DNA strand break test, the Chinese hamster ovary (CHO) cell chromosome aberration test and the mouse micronucleus test.
+ Fosaprepitant, when administered intravenously, is rapidly converted to aprepitant.
+In the fertility studies conducted with fosaprepitant and aprepitant, the highest systemic exposures to aprepitant were obtained following oral administration of aprepitant.
+Oral aprepitant did not affect the fertility or general reproductive performance of male or female rats at doses up to the maximum feasible dose of 1000 mg/kg twice daily (providing exposure in male rats lower than the exposure at the recommended human dose and exposure in female rats at about 1.6 times the human exposure).
+ 14 CLINICAL STUDIES
+ Fosaprepitant, a prodrug of aprepitant, when administered intravenously is rapidly converted to aprepitant.
+ Oral administration of aprepitant in combination with ondansetron and dexamethasone (aprepitant regimen) has been shown to prevent acute and delayed nausea and vomiting associated with highly emetogenic chemotherapy including high-dose cisplatin, and nausea and vomiting associated with moderately emetogenic chemotherapy.
+ 14.1 Highly Emetogenic Chemotherapy (HEC) EMEND for Injection 115 mg (3-Day Dosing Regimen of EMEND)
+ Fosaprepitant 115 mg intravenous infused over 15 minutes can be substituted for 125 mg oral aprepitant on Day 1 of a 3-day regimen.
+Efficacy studies with the 3-day regimen were conducted with oral aprepitant.
+ In 2 multicenter, randomized, parallel, double-blind, controlled clinical studies, the aprepitant regimen (see Table 11) was compared with standard therapy in patients receiving a chemotherapy regimen that included cisplatin &gt;50 mg/m2 (mean cisplatin dose = 80.2 mg/m2).
+Of the 550 patients who were randomized to receive the aprepitant regimen, 42% were women, 58% men, 59% W hite, 3% Asian, 5% Black, 12% Hispanic American, and 21% Multi-Racial.
+The aprepitant-treated patients in these clinical studies ranged from 14 to 84 years of age, with a mean age of 56 years.
+170 patients were 65 years or older, with 29 patients being 75 years or older.
+ Patients (N = 1105) were randomized to either the aprepitant regimen (N = 550) or standard therapy (N = 555).
+The treatment regimens are defined in Table 11.
+ 16
+ Reference ID: 3608755
+                                                                                                                                                              Table 11 Treatment Regimens
+ Highly Emetogenic Chemotherapy Trials* Day 1 Day 2 Day 3 Day 4
+ CINV Aprepitant Regimen Aprepitant 125 mg
+ orally 80 mg orally 80 mg orally none
+ Dexamethasone 12 mg orally 8 mg orally 8 mg orally 8 mg orally 5-HT3 antagonist&#x2022; See package
+ insert none none none
+ CINV Standard Therapy Dexamethasone 20 mg orally 8 mg orally
+ twice daily 8 mg orally twice daily
+ 8 mg orally twice daily
+ 5-HT3 antagonist&#x2022; See package insert
+ none none none
+ *Aprepitant placebo and dexamethasone placebo were used to maintain blinding.Ondansetron 32 mg I.V. was used in the clinical trials of aprepitant.
+Although this dose was
+ used in clinical trials, this is no longer the currently recommended dose.
+Refer to the ondansetron package insert for the current dosing.
+ During these studies, 95% of the patients in the aprepitant group received a concomitant chemotherapeutic agent in addition to protocol-mandated cisplatin.
+The most common chemotherapeutic agents and the number of aprepitant patients exposed follow: etoposide (106), fluorouracil (100), gemcitabine (89), vinorelbine (82), paclitaxel (52), cyclophosphamide (50), doxorubicin (38), docetaxel (11).
+ The antiemetic activity of oral aprepitant was evaluated during the acute phase (0 to 24 hours postcisplatin treatment), the delayed phase (25 to 120 hours post-cisplatin treatment) and overall (0 to 120 hours post-cisplatin treatment) in Cycle 1.
+Efficacy was based on evaluation of the following endpoints in which emetic episodes included vomiting, retching, or dry heaves:
+ Primary endpoint: &#x2022;  complete response (defined as no emetic episodes and no use of rescue therapy as recorded in
+ patient diaries)
+ Other prespecified endpoints:
+ &#x2022;  complete protection (defined as no emetic episodes, no use of rescue therapy, and a maximum
+ nausea visual analogue scale [VAS] score &lt;25 mm on a 0 to 100 mm scale) &#x2022;  no emesis (defined as no emetic episodes regardless of use of rescue therapy) &#x2022;  no nausea (maximum VAS &lt;5 mm on a 0 to 100 mm scale) &#x2022;  no significant nausea (maximum VAS &lt;25 mm on a 0 to 100 mm scale)
+ A summary of the key study results from each individual study analysis is shown in Table 12 and in Table 13.
+ 17
+ Reference ID: 3608755
+                                                                                                                                                                                                                                                                                               Table 12 Percent of Patients Receiving Highly Emetogenic Chemotherapy Responding by
+ Treatment Group and Phase for Study 1 - Cycle 1 ENDPOINTS Aprepitant
+ Regimen (N = 260)&#x2022; %
+ Standard Therapy (N = 261)&#x2022;  %
+ p-Value
+ PRIMARY ENDPOINT Complete Response
+ Overall 73 52 &lt;0.001 OTHER PRESPECIFIED ENDPOINTS Complete Response
+ Acute phase Delayed phase||
+ 89 75
+ 78 56
+ &lt;0.001 &lt;0.001
+ Complete Protection Overall Acute phase Delayed phase
+ 63 85 66
+ 49 75 52
+ 0.001 NS*
+ &lt;0.001 No Emesis
+ Overall Acute phase Delayed phase
+ 78 90 81
+ 55 79 59
+ &lt;0.001 0.001
+ &lt;0.001 No Nausea
+ Overall Delayed phase
+ 48 51
+ 44 48
+ NS** NS**
+ No Significant Nausea
+ Overall Delayed phase
+ 73 75
+ 66 69
+ NS** NS**
+ &#x2022;N: Number of patients (older than 18 years of age) who received cisplatin, study drug, and had
+ at least one post-treatment efficacy evaluation.
+&#x2022;Overall: 0 to 120 hours post-cisplatin treatment.
+Acute phase: 0 to 24 hours post-cisplatin treatment.
+ ||Delayed phase: 25 to 120 hours post-cisplatin treatment.
+ *Not statistically significant when adjusted for multiple comparisons.
+ **Not statistically significant.
+ Visual analogue scale (VAS) score range: 0 mm = no nausea; 100 mm = nausea as bad as it could be.
+  Table 13 Percent of Patients Receiving Highly Emetogenic Chemotherapy Responding by
+ Treatment Group and Phase for Study 2 - Cycle 1 ENDPOINTS Aprepitant
+ Regimen (N = 261)&#x2022; %
+ Standard Therapy (N = 263)&#x2022;  %
+ p-Value
+ PRIMARY ENDPOINT Complete Response
+ Overall 63 43 &lt;0.001 OTHER PRESPECIFIED ENDPOINTS Complete Response
+ Acute phase Delayed phase||
+ 83 68
+ 68 47
+ &lt;0.001 &lt;0.001
+ Complete Protection Overall Acute phase Delayed phase
+ 56 80 61
+ 41 65 44
+ &lt;0.001 &lt;0.001 &lt;0.001
+ No Emesis Overall Acute phase Delayed phase
+ 66 84 72
+ 44 69 48
+ &lt;0.001 &lt;0.001 &lt;0.001
+ No Nausea
+ 18
+ Reference ID: 3608755
+                                                                                                                                                             Overall 49 39 NS* Delayed phase 53 40 NS*
+ No Significant Nausea
+ Overall 71 64 NS** Delayed phase 73 65 NS**
+ &#x2022;N: Number of patients (older than 18 years of age) who received cisplatin, study drug, and
+ had at least one post-treatment efficacy evaluation.
+&#x2022;Overall: 0 to 120 hours post-cisplatin treatment.
+Acute phase: 0 to 24 hours post-cisplatin treatment.
+ ||Delayed phase: 25 to 120 hours post-cisplatin treatment.
+ *Not statistically significant when adjusted for multiple comparisons.
+ **Not statistically significant.
+ Visual analogue scale (VAS) score range: 0 mm = no nausea; 100 mm = nausea as bad as it could be.
+  In both studies, a statistically significantly higher proportion of patients (both p&lt;0.001) receiving the aprepitant regimen in Cycle 1 had a complete response in the overall phase (primary endpoint), compared with patients receiving standard therapy.
+A statistically significant difference in complete response in favor of the aprepitant regimen was also observed when the acute phase and the delayed phase were analyzed separately.
+ In both studies, the estimated time to first emesis after initiation of cisplatin treatment was longer with the aprepitant regimen, and the incidence of first emesis was reduced in the aprepitant regimen group compared with standard therapy group as depicted in the Kaplan-Meier curves in Figure 2.
+ Figure 2: Percent of Patients Receiving Highly Emetogenic Chemotherapy Who Remain Emesis Free Over Time - Cycle 1
+ Study 1 Study 2 100 100Aprepitant Regimen
+Perc
+ent o
+f Pat
+ient
+s (N=260) Aprepitant Regimen80 80 (N=261)
+ 60 60 Standard Therapy
+ 40 Standard Therapy (N=263)
+ 20
+ (N=261) 40
+ 20
+ 0 0 0 24 48 72 96 120 0 24 48 72 96 120
+ Hours p-Value &lt;0.001 based on a log rank test for Study 1 and Study 2; nominal p-values not adjusted for multiplicity.
+ Additional Patient-Reported Outcomes: The impact of nausea and vomiting on patients' daily lives was assessed in Cycle 1 of both phase 3 studies using the Functional Living Index-Emesis (FLIE), a validated nausea- and vomiting-specific patient-reported outcome measure.
+Minimal or no impact of nausea and vomiting on patients' daily lives is defined as a FLIE total score &gt;108.
+In each of the 2 studies, a higher proportion of patients receiving the aprepitant regimen reported minimal or no impact of nausea and vomiting on daily life (Study 1: 74% versus 64%; Study 2: 75% versus 64%).
+ Multiple-Cycle Extension: In the same 2 clinical studies, patients continued into the Multiple-Cycle extension for up to 5 additional cycles of chemotherapy.
+The proportion of patients with no emesis and no significant nausea by treatment group at each cycle is depicted in Figure 3.
+ 19
+ Reference ID: 3608755
+                     Study 1 Study 2
+ 0
+ 20
+ 40
+ 60
+ 80
+ 100
+ Per
+cent
+ of P
+atie
+nts
+ Aprepitant Regimen Standard Therapy
+ 0
+ 20
+ 40
+ 60
+ 80
+ 100 Aprepitant Regimen Standard Therapy
+ Aprepitant (N)
+ 2 3 4 5 6 2 3 4 5 6 Chemotherapy Cycle
+ 158 122 81 54 40 191 148 103 63 43 Standard (N) 177 111 68 37 2929292929292929292929292929 216 167 112 74 4343434343434343434343434343
+                                                                                                                                                                               Figure 3: Proportion of Patients Receiving Highly Emetogenic Chemotherapy with No Emesis and No Significant Nausea by Treatment Group and Cycle
+ EMEND for Injection 150 mg (Single Dose Regimen of EMEND) EMEND for Injection 150 mg infused over 20-30 minutes is administered on Day 1 only and can be
+ substituted for the 3-day dosing regimen of EMEND for the prevention of nausea and vomiting induced by HEC.
+ In a randomized, parallel, double-blind, active-controlled study, EMEND for Injection 150 mg (N=1147) was compared with a 3-day oral aprepitant regimen (N=1175) (see Table 14 below) in patients receiving a highly emetogenic chemotherapy regimen that included cisplatin (&#x2265;70 mg/m2).
+Patient demographics were similar between the two treatment groups.
+Of the total 2322 patients receiving EMEND for Injection or oral aprepitant, 63% were men, 56% White, 26% Asian, 3% American Indian/Alaska Native, 2% Black, 13% Multi-Racial, and 33% Hispanic/Latino ethnicity.
+Patient ages ranged from 19 to 86 years of age, with a mean age of 56 years.
+Other concomitant chemotherapy agents were administered similar to those in prior HEC studies described above.
+ Table 14 Treatment Regimens
+ Highly Emetogenic Chemotherapy Trial* Day 1 Day 2 Day 3 Day 4
+ CINV Fosaprepitant Regimen
+ Fosaprepitant 150 mg intravenously
+ none none none
+ Dexamethasone 12 mg orally 8 mg orally
+ 8 mg orally twice daily
+ 8 mg orally twice daily
+ 5-HT3 antagonist See package insert
+ none none none
+ CINV Aprepitant Regimen
+ Aprepitant 125 mg orally 80 mg orally
+ 80 mg orally none
+ Dexamethasone 12 mg orally 8 mg orally
+ 8 mg orally 8 mg orally
+ 5-HT3 antagonist See package insert
+ none none none
+ *Fosaprepitant placebo, aprepitant placebo and dexamethasone placebo (in the evenings on Days 3 and 4) were used to maintain blinding.
+ &#x2022;Ondansetron 32 mg I.V. was used in the clinical trial of EMEND for Injection.
+Although this dose was used in the clinical trial, this is no longer the currently recommended dose.
+Refer to the ondansetron package insert for the current dosing.
+ The efficacy of fosaprepitant 150 mg was evaluated based on the primary and secondary endpoints listed in Table 15 below and was shown to be non-inferior to that of the 3-day oral aprepitant regimen with regard to complete response in each of the evaluated phases.
+The pre-specified non-inferiority margin for complete response in the overall phase was 7%.
+The pre-specified non-inferiority margin for complete
+ 20
+ Reference ID: 3608755
+                                                                                                                                                                       response in the delayed phase was 7.3%.
+The pre-specified non-inferiority margin for no vomiting in the overall phase was 8.2%.
+ Table 15 Percent of Patients Receiving Highly Emetogenic Chemotherapy Responding by
+ Treatment Group and Phase - Cycle 1
+ ENDPOINTS Fosaprepitant Regimen (N = 1106)**
+ %
+ Aprepitant Regimen (N = 1134)**
+ %
+ Difference (95% CI)
+ PRIMARY ENDPOINT
+ Complete Response
+ Overall 71.9 72.3 -0.4 (-4.1, 3.3) SECONDARY ENDPOINTS
+ Complete Response
+ Delayed phase 74.3 74.2 0.1 (-3.5, 3.7)
+ No Vomiting Overall 72.9 74.6 -1.7 (-5.3, 2.0)
+ **N: Number of patients included in the primary analysis of complete response.Difference and Confidence interval (CI) were calculated using the method proposed by Miettinen and Nurminen and adjusted for Gender.&#x2022;Complete Response = no vomiting and no use of rescue therapy.Overall = 0 to 120 hours post-initiation of cisplatin chemotherapy.Delayed phase = 25 to 120 hours post-initiation of cisplatin chemotherapy.
+ 14.2 Moderately Emetogenic Chemotherapy (MEC) In a multicenter, randomized, double-blind, parallel-group, clinical study in breast cancer patients,
+ the aprepitant regimen (see Table 16) was compared with a standard of care therapy in patients receiving a moderately emetogenic chemotherapy regimen that included cyclophosphamide 750-1500 mg/m2; or cyclophosphamide 500-1500 mg/m2 and doxorubicin (&#x2264;60 mg/m2) or epirubicin (&#x2264;100 mg/m2).
+ In this study, the most common combinations were cyclophosphamide + doxorubicin (60.6%); and cyclophosphamide + epirubicin + fluorouracil (21.6%).
+ Of the 438 patients who were randomized to receive the aprepitant regimen, 99.5% were women.
+Of these, approximately 80% were W hite, 8% Black, 8% Asian, 4% Hispanic, and &lt;1% Other.
+The aprepitant-treated patients in this clinical study ranged from 25 to 78 years of age, with a mean age of 53 years; 70 patients were 65 years or older, with 12 patients being over 74 years.
+ Patients (N = 866) were randomized to either the aprepitant regimen (N = 438) or standard therapy (N = 428).
+The treatment regimens are defined in Table 16.
+ 21
+ Reference ID: 3608755
+                                                                                                                                                                                                             Table 16 Treatment Regimens
+ Moderately Emetogenic Chemotherapy Trial* Day 1 Day 2 Day 3
+ CINV Aprepitant Regimen
+ Aprepitant 125 mg orally** 80 mg orally 80 mg orally Dexamethasone 12 mg orally&#x2022; none none Ondansetron 8 mg orally x 2
+ doses none none
+ CINV Standard Therapy Dexamethasone 20 mg orally none none Ondansetron 8 mg orally x 2 doses 8 mg orally twice  daily 8 mg orally twice  daily *Aprepitant placebo and dexamethasone placebo were used to maintain blinding.
+**1 hour prior to chemotherapy.&#x2022;Dexamethasone was administered 30 minutes prior to chemotherapy treatment on Day 1.Ondansetron was administered 30 to 60 minutes prior to chemotherapy treatment on Day 1 and 8 hours after first ondansetron dose.
+ The antiemetic activity of oral aprepitant was evaluated based on the following endpoints in which emetic episodes included vomiting, retching, or dry heaves:
+ Primary endpoint: &#x2022;  complete response (defined as no emetic episodes and no use of rescue therapy as recorded in
+ patient diaries) in the overall phase (0 to 120 hours post-chemotherapy)
+ Other prespecified endpoints:
+ &#x2022;  no emesis (defined as no emetic episodes regardless of use of rescue therapy) &#x2022;  no nausea (maximum VAS &lt;5 mm on a 0 to 100 mm scale) &#x2022;  no significant nausea (maximum VAS &lt;25 mm on a 0 to 100 mm scale) &#x2022;  complete protection (defined as no emetic episodes, no use of rescue therapy, and a maximum
+ nausea visual analogue scale [VAS] score &lt;25 mm on a 0 to 100 mm scale) &#x2022;  complete response during the acute and delayed phases.
+ A summary of the key results from this study is shown in Table 17.
+ Table 17 Percent of Patients Receiving Moderately Emetogenic Chemotherapy Responding by
+ Treatment Group and Phase - Cycle 1 ENDPOINTS Aprepitant Regimen
+ (N = 433)&#x2022; %
+ Standard Therapy (N = 424)&#x2022;
+ %
+ p-Value
+ PRIMARY ENDPOINT
+ Complete Response
+ 51 42 0.015
+ OTHER PRESPECIFIED ENDPOINTS
+ No Emesis 76 59 NS* No Nausea 33 33 NS No Significant Nausea
+ 61 56 NS
+ No Rescue Therapy
+ 59 56 NS
+ Complete Protection
+ 43 37 NS
+ &#x2022; N: Number of patients included in the primary analysis of complete response.&#x2022;Overall: 0 to 120 hours post-chemotherapy treatment.
+ *NS when adjusted for prespecified multiple comparisons rule; unadjusted p-value &lt;0.001.
+  In this study, a statistically significantly (p=0.015) higher proportion of patients receiving the aprepitant regimen in Cycle 1 had a complete response (primary endpoint) during the overall phase compared with patients receiving standard therapy.
+The difference between treatment groups was
+ 22
+ Reference ID: 3608755
+                                                                                                                                                                                                                                                    primarily driven by the "No Emesis Endpoint", a principal component of this composite primary endpoint.
+In addition, a higher proportion of patients receiving the aprepitant regimen in Cycle 1 had a complete response during the acute (0-24 hours) and delayed (25-120 hours) phases compared with patients receiving standard therapy; however, the treatment group differences failed to reach statistical significance, after multiplicity adjustments.
+ Additional Patient-Reported Outcomes: In a phase 3 study in patients receiving moderately emetogenic chemotherapy, the impact of nausea and vomiting on patients' daily lives was assessed in Cycle 1 using the FLIE.
+A higher proportion of patients receiving the aprepitant regimen reported minimal or no impact on daily life (64% versus 56%).
+This difference between treatment groups was primarily driven by the "No Vomiting Domain" of this composite endpoint.
+ Multiple-Cycle Extension: Patients receiving moderately emetogenic chemotherapy were permitted to continue into the Multiple-Cycle extension of the study for up to 3 additional cycles of chemotherapy.
+Antiemetic effect for patients receiving the aprepitant regimen is maintained during all cycles.
+ Postmarketing Trial: In a postmarketing, multicenter, randomized, double-blind, parallel-group, clinical study in 848 cancer patients, the aprepitant regimen (N=430) was compared with a standard of care therapy (N=418) in patients receiving a moderately emetogenic chemotherapy regimen that included any IV dose of oxaliplatin, carboplatin, epirubicin, idarubicin, ifosfamide, irinotecan, daunorubicin, doxorubicin; cyclophosphamide IV (&lt;1500 mg/m2); or cytarabine IV (&gt;1 g/m2).
+ Of the 430 patients who were randomized to receive the aprepitant regimen, 76% were women and 24% were men.
+The distribution by race was 67% White, 6% Black or African American, 11% Asian, and 12% multiracial.
+Classified by ethnicity, 36% were Hispanic and 64% were non-Hispanic.
+The aprepitanttreated patients in this clinical study ranged from 22 to 85 years of age, with a mean age of 57 years; approximately 59% of the patients were 55 years or older with 32 patients being over 74 years.
+Patients receiving the aprepitant regimen were receiving chemotherapy for a variety of tumor types including 50% with breast cancer, 21% with gastrointestinal cancers including colorectal cancer, 13% with lung cancer and 6% with gynecological cancers.
+ The antiemetic activity of EMEND was evaluated based on no vomiting (with or without rescue therapy) in the overall period (0 to 120 hours post-chemotherapy) and complete response (defined as no vomiting and no use of rescue therapy) in the overall period.
+ A summary of the key results from this study is shown in Table 18.
+ Table 18 Percent of Patients Receiving Moderately Emetogenic Chemotherapy Responding
+ by Treatment Group for Study 2 - Cycle 1 ENDPOINTS Aprepitant Regimen
+ (N = 430)&#x2022; %
+ Standard Therapy (N = 418)&#x2022;
+ %
+ p-Value
+ No Vomiting Overall 76 62 &lt;0.0001 Complete Response Overall
+ 69 56 0.0003
+ &#x2022;N = Number of patients who received chemotherapy treatment, study drug, and had at least one post-treatment efficacy evaluation.
+ In this study, a statistically significantly higher proportion of patients receiving the aprepitant regimen (76%) in Cycle 1 had no vomiting during the overall phase compared with patients receiving standard therapy (62%).
+In addition, a higher proportion of patients receiving the aprepitant regimen (69%) in Cycle 1 had a complete response in the overall phase (0-120 hours) compared with patients receiving standard therapy (56%).
+In the acute phase (0 to 24 hours following initiation of chemotherapy), a higher proportion of patients receiving aprepitant compared to patients receiving standard therapy were observed to have no vomiting (92% and 84%, respectively) and complete response (89% and 80%, respectively).
+In the delayed phase (25 to 120 hours following initiation of chemotherapy), a higher proportion of patients receiving aprepitant compared to patients receiving standard therapy were observed to have no vomiting (78% and 67%, respectively) and complete response (71% and 61%, respectively).
+ In a subgroup analysis by tumor type, a numerically higher proportion of patients receiving aprepitant were observed to have no vomiting and complete response compared to patients receiving
+ 23
+ Reference ID: 3608755
+                                                                                                                                                    standard therapy.
+For gender, the difference in complete response rates between the aprepitant and standard regimen groups was 14% in females (64.5% and 50.3%, respectively) and 4% in males (82.2% and 78.2%, respectively) during the overall phase.
+A similar difference for gender was observed for the no vomiting endpoint.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ No.
+3884 - One 115-mg single dose glass vial: W hite to off-white lyophilized solid.
+Supplied as follows:
+ NDC 0006-3884-32 1 vial per carton.
+No.
+3941 - One 150-mg single dose glass vial: W hite to off-white lyophilized solid.
+Supplied as
+ follows: NDC 0006-3941-32 1 vial per carton.
+ Storage Vials: Store at 2-8C (36-46F).
+ Sterile lyophilized powder for intravenous use only after reconstitution and dilution.
+ 17 PATIENT COUNSELING INFORMATION
+ "See FDA-Approved Patient Labeling (Patient Information)" Physicians should instruct their patients to read the patient package insert before starting therapy
+ with EMEND for Injection and to reread it each time the prescription is renewed.
+Patients should follow the physician's instructions for the EMEND for Injection regimen.
+Allergic reactions, which may be sudden and/or serious, and may include hives, rash, itching,
+ redness of the face/skin and may cause difficulty in breathing or swallowing, have been reported.
+Physicians should instruct their patients to stop using EMEND and call their doctor right away if they experience an allergic reaction.
+In addition, severe skin reactions may occur rarely.
+ Patients who develop an infusion site reaction such as erythema, edema, pain, or thrombophlebitis should be instructed on how to care for the local reaction and when to seek further evaluation.
+ EMEND for Injection may interact with some drugs including chemotherapy; therefore, patients should be advised to report to their doctor the use of any other prescription, non-prescription medication or herbal products.
+ Patients on chronic warfarin therapy should be instructed to have their clotting status closely monitored in the 2-week period, particularly at 7 to 10 days, following initiation of fosaprepitant with each chemotherapy cycle.
+ Administration of EMEND for Injection may reduce the efficacy of hormonal contraceptives.
+Patients should be advised to use alternative or back-up methods of contraception during treatment with and for 1 month following the last dose of fosaprepitant or aprepitant.
+ Manufactured for:
+ Merck Sharp &amp; Dohme Corp., a subsidiary of MERCK &amp; CO., INC., W hitehouse Station, NJ 08889, USA
+  Manufactured by:
+ DSM Pharmaceuticals, Inc., 5900 Martin Luther King Jr.
+Highway, Greenville, NC 27834, USA
+  U.S. Patent Nos.: 5,512,570; 5,691,336
+ Copyright  2008, 2009 Merck Sharp &amp; Dohme Corp., a subsidiary of Merck &amp; Co., Inc.
+ All rights reserved.
+  uspi-mk0517-iv-1407r011
+  24
+ Reference ID: 3608755
+  

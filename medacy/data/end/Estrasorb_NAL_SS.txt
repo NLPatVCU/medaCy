@@ -1,0 +1,750 @@
+label
+       HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use ESTRASORB safely and effectively.
+See full prescribing information for ESTRASORB .
+ ESTRASORB (estradiol topical emulsion) for topical use Initial U.S. Approval: 1975
+ WARNING: ENDOMETRIAL CANCER,
+ CARDIOVASCULAR DISORDERS, BREAST CANCER
+ AND PROBABLE DEMENTIA
+ See full prescribing information for complete boxed warning.
+ Estrogen-Alone Therapy &#x2022;  There is an increased risk of endometrial cancer in a
+ woman with a uterus who uses unopposed estrogens (5.2) &#x2022;  Estrogen-alone therapy should not be used for the
+ prevention of cardiovascular disease or dementia (5.1, 5.3) &#x2022;  The Women's Health Initiative (WHI) estrogen-alone
+ substudy reported increased risks of stroke and deep vein thrombosis (DVT) (5.1)
+ &#x2022;  The WHI Memory Study (WHIMS) estrogen-alone ancillary study of WHI reported an increased risk of probable dementia in postmenopausal women 65 years of age and older (5.3)
+ Estrogen Plus Progestin Therapy &#x2022;  Estrogen plus progestin therapy should not be used for the
+ prevention of cardiovascular disease or dementia (5.1, 5.3) &#x2022;  The WHI estrogen plus progestin substudy reported
+ increased risks of stroke, DVT, pulmonary embolism (PE), and myocardial infarction (MI) (5.1)
+ &#x2022;  The WHI estrogen plus progestin substudy reported an increased risk of invasive breast cancer (5.2)
+ &#x2022;  The WHIMS estrogen plus progestin ancillary study of WHI reported an increased risk of probable dementia in postmenopausal women 65 years of age and older (5.3)
+ ---------------------RECENT MAJOR CHANGES------------------Contraindications (4) 03/2015 Warnings and Precautions, Hereditary Angioedema 03/2015
+ ---------------------INDICATIONS AND USAGE-------------------&#x2022;  ESTRASORB is an estrogen indicated for the treatment of
+ moderate to severe vasomotor symptoms due to menopause (1.1)
+ ---------------DOSAGE AND ADMINISTRATION---------------
+&#x2022;  Apply one pouch to the left thigh and calf and one pouch to the right thigh and calf each morning (2.1)
+ --------------DOSAGE FORM AND STRENGTHS --------------&#x2022; Topical emulsion, 2.5 mg of estradiol hemihydrate per g of
+ ESTRASORB.
+Each pouch contains 1.74 grams of ESTRASORB.
+(3)
+ -----------------------CONTRAINDICATIONS---------------------&#x2022;  Undiagnosed abnormal genital bleeding (4) &#x2022;  Known, suspected, or history of cancer of the breast (4, 5.2) &#x2022;  Known or suspected estrogen-dependent neoplasm (4, 5.2) &#x2022;  Active DVT, PE, or history of these conditions (4, 5.1) &#x2022;  Active arterial thromboembolic disease (for example, stroke
+ and MI), or a history of these conditions (4, 5.1) &#x2022;  Known anaphylactic reaction or angioedema with
+ ESTRASORB (4) &#x2022;  Known liver impairment or disease (4, 5.10) &#x2022;  Known protein C, protein S, or antithrombin deficiency, or
+ other known thrombophilic disorders (4) &#x2022;  Known or suspected pregnancy (4, 8.1) -----------------WARNINGS AND PRECAUTIONS---------------&#x2022;  Estrogens increase the risk of gallbladder disease (5.4) &#x2022;  Discontinue estrogens if severe hypercalcemia, loss of vision,
+ severe hypertriglyceridemia or cholestatic jaundice occurs (5.5, 5.6, 5.9, 5.10)
+ &#x2022;  Monitor thyroid function in women on thyroid hormone replacement therapy (5.11, 5.19)
+ ------------------------ADVERSE REACTIONS---------------------Most common adverse reactions (incidence &#x2265;5 percent) were endometrial disorder, infection, breast pain, headache, sinusitis, and pruritus.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Valeant Pharmaceuticals North America LLC at 1-800-3214576 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ -------------------------DRUG INTERACTIONS------------------
+&#x2022;  Inducers and/or inhibitors of CYP3A4 may affect estrogen drug metabolism (7.1)
+ -----------------USE IN SPECIFIC POPULATIONS------------
+&#x2022;  Nursing Mothers: Estrogen administration to nursing women has been shown to decrease the quantity and quality of breast milk (8.3)
+ &#x2022;  Geriatric Use: An increased risk of probable dementia in women over 65 years of age was reported in the Women's Health initiative Memory ancillary studies of the Women's Health initiative (5.3, 8.5)
+ See 17 for PATIENT COUNSELING INFORMATION and FDA-approved patient labeling
+ Revised: 03/2015
+ FULL PRESCRIBING INFORMATION: CONTENTS*
+ WARNING: ENDOMETRIAL CANCER, CARDIOVASCULAR DISORDERS, BREAST CANCER AND PROBABLE DEMENTIA 1 INDICATIONS AND USAGE
+ 1.1  Treatment of Moderate to Severe Vasomotor Symptoms due to Menopause
+ 2 DOSAGE AND ADMINISTRATION 2.1  Treatment of Moderate to Severe Vasomotor  Symptoms due to Menopause 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1  Cardiovascular Disorders 5.2  Malignant Neoplasms 5.3  Probable Dementia
+ 5.4  Gallbladder Disease 5.5  Hypercalcemia 5.6  Visual Abnormalities
+ 5.7  Addition of a Progestin When a Woman Has Not Had a Hysterectomy
+ 5.8  Elevated Blood Pressure 5.9  Hypertriglyceridemia 5.10 Hepatic Impairment and/or Past History of Cholestatic
+ Jaundice 5.11 Hypothyroidism 5.12 Fluid Retention 5.13 Hypocalcemia 5.14 Exacerbation of Endometriosis 5.15 Hereditary Angioedema 5.16 Exacerbation of Other Conditions 5.17 Application of Sunscreen
+ Reference ID: 3713412
+                                                                                                5.18 Laboratory Tests 5.19 Drug-Laboratory Test Interactions
+ 6 ADVERSE REACTIONS 6.1  Clinical Trials Experience 6.2  Postmarketing Experience
+ 7 DRUG INTERACTIONS 7.1  Metabolic Interactions
+ 8 USE IN SPECIFIC POPULATIONS 8.1  Pregnancy 8.3  Nursing Mothers 8.4  Pediatric Use 8.5  Geriatric Use 8.6  Renal Impairment 8.7  Hepatic Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action 12.2 Pharmacodynamics 12.3 Pharmacokinetics
+ 13  NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment    of
+ Fertility
+ 14  CLINICAL STUDIES 14.1 Effects on Vasomotor Symptoms 14.2 Women's Health Initiative Studies 14.3 Women's Health Initiative Memory Studies
+ 15 REFERENCES 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied 16.2 Storage and Handling
+ 17  PATIENT COUNSELING INFORMATION 17.1 Vaginal Bleeding 17.2 Possible Serious Adverse Reactions with Estrogen-
+Alone Therapy 17.3 Possible Less Serious but Common Adverse Reactions
+ with Estrogen-Alone Therapy
+ *Sections or subsections omitted from the full prescribing information are not listed.
+ Reference ID: 3713412
+                                                                                                                                                         FULL PRESCRIBING INFORMATION
+  WARNING: ENDOMETRIAL CANCER, CARDIOVASCULAR DISORDERS, BREAST CANCER AND PROBABLE DEMENTIA
+ Estrogen-Alone Therapy Endometrial Cancer
+ There is an increased risk of endometrial cancer in a woman with a uterus who uses unopposed estrogens.
+Adding a progestin to estrogen therapy has been shown to reduce the risk of endometrial hyperplasia, which may be a precursor to endometrial cancer.
+Adequate diagnostic measures, including directed or random endometrial sampling when indicated, should be undertaken to rule out malignancy in postmenopausal women with undiagnosed persistent or recurring abnormal genital bleeding [see Warnings and Precautions (5.2)].
+ Cardiovascular Disorders and Probable Dementia
+ Estrogens-alone therapy should not be used for the prevention of cardiovascular disease or dementia [see Warnings and Precautions (5.1, 5.3), and Clinical Studies (14.2, 14.3)].
+ The Women's Health Initiative (WHI) estrogen-alone substudy reported increased risks of stroke and deep vein thrombosis (DVT) in postmenopausal women (50 to 79 years of age) during 7.1 years of treatment with daily oral conjugated estrogens (CE) [0.625 mg]-alone, relative to placebo [see Warnings and Precautions (5.1), and Clinical Studies (14.2)].
+ The WHI Memory Study (WHIMS) estrogen-alone ancillary study of WHI reported an increased risk of developing probable dementia in postmenopausal women 65 years of age or older during 5.2 years of treatment with daily CE (0.625 mg)-alone, relative to placebo.
+It is unknown whether this finding applies to younger postmenopausal women [see Warnings and Precautions (5.3), Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ In the absence of comparable data, these risks should be assumed to be similar for other doses of CE and other dosage forms of estrogens.
+ Estrogens with or without progestins should be prescribed at the lowest effective doses and for the shortest duration consistent with treatment goals and risks for the individual woman.
+ Estrogen Plus Progestin Therapy
+ Cardiovascular Disorders and Probable Dementia
+ Estrogen plus progestin therapy should not be used for the prevention of cardiovascular disease or dementia [see Warnings and Precautions (5.1, 5.3), and Clinical Studies (14.2, 14.3)].
+ The WHI estrogen plus progestin substudy reported increased risks of DVT, pulmonary embolism (PE), stroke and myocardial infarction (MI) in postmenopausal women (50 to 79 years of age) during 5.6 years of treatment with daily oral CE (0.625 mg) combined with medroxyprogesterone acetate (MPA) [2.5 mg] relative to placebo [see Warnings and Precautions (5.1), and Clinical Studies (14.3)].
+ The WHIMS estrogen plus progestin ancillary study of the WHI, reported an increased risk of developing probable dementia in postmenopausal women 65 years of age or older during 4 years of treatment with
+ Reference ID: 3713412
+                                                                                                                                                                                    daily CE (0.625 mg) combined with MPA (2.5 mg), relative to placebo.
+It is unknown whether this finding applies to younger postmenopausal women [see Warnings and Precautions (5.3), Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ Breast Cancer The WHI estrogen plus progestin substudy also demonstrated an increased risk of invasive breast cancer [see Warnings and Precautions (5.2), and Clinical Studies (14.3)].
+ In the absence of comparable data, these risks should be assumed to be similar for other doses of CE and MPA, and other combinations and dosage forms of estrogens and progestins.
+ Estrogens with or without progestins should be prescribed at the lowest effective doses and for the shortest duration consistent with treatment goals and risks for the individual woman.
+ 1 INDICATIONS AND USAGE 1.1 Treatment of Moderate to Severe Vasomotor Symptoms due to Menopause.
+ESTRASORB is indicated for the treatment of moderate to severe vasomotor symptoms due to menopause.
+ 2 DOSAGE AND ADMINISTRATION For topical use only.
+ESTRASORB is not for ophthalmic, oral, or intravaginal use.
+ESTRASORB should not be applied to the face or breasts.
+ Generally, when estrogen therapy is prescribed for a postmenopausal woman with a uterus, a progestin should also
+ be considered to reduce the risk of endometrial cancer.
+A woman without a uterus does not need a progestin.
+In
+ some cases, however, hysterectomized women with a history of endometriosis may need a progestin.
+ Use of estrogen-alone, or in combination with a progestin, should be with the lowest effective dose and for the
+ shortest duration consistent with treatment goals and risks for the individual women.
+Postmenopausal women should
+ be re-evaluated periodically as clinically appropriate.
+ 2.1 Treatment of Moderate to Severe Vasomotor Symptoms due to Menopause The single approved dose of ESTRASORB is 3.48 grams daily.
+Apply one pouch (1.74 grams) to the left thigh and calf and one pouch (1.74 grams) to the right thigh and calf each morning.
+Attempts to taper or discontinue the medication should be made at 3 to 6 month intervals.
+The lowest effective dose of ESTRASORB for this indication has not been determined.
+ 3 DOSAGE FORMS AND STRENGTHS Topical emulsion.
+ Each gram of ESTRASORB contains 2.5 mg of estradiol hemihydrate.
+Each pouch contains 1.74 grams of
+ ESTRASORB.
+  4 CONTRAINDICATIONS ESTRASORB is contraindicated in women with any of the following conditions:
+ &#x2022; Undiagnosed abnormal genital bleeding
+ &#x2022; Known, suspected, or history of cancer of the breast
+ &#x2022; Known or suspected estrogen-dependent neoplasia
+ &#x2022; Active DVT, PE, or history of these conditions.
+ &#x2022; Active arterial thromboembolic disease (for example, stroke and MI), or a history of these conditions
+ &#x2022; Known anaphylactic reaction or angioedema with ESTRASORB
+ &#x2022; Known liver impairment or disease
+ Reference ID: 3713412
+                                                                                                                                                                           &#x2022; Know protein C, protein S, or antithrombin deficiency, or other known thrombophilic disorders
+ &#x2022; Known or suspected pregnancy
+ 5 WARNINGS AND PRECAUTIONS 5.1 Cardiovascular Disorders An increased risk of stroke and DVT has been reported with estrogen-alone therapy.
+An increased risk of PE, DVT, stroke and MI has been reported with estrogen plus progestin therapy.
+Should any of these occur or be suspected, estrogen with or without progestin therapy should be discontinued immediately.
+Risk factors for arterial vascular disease (for example, hypertension, diabetes mellitus, tobacco use, hypercholesterolemia, and obesity) and/or venous thromboembolism (VTE) (for example, personal history or family history of VTE, obesity, and systemic lupus erythematosus) should be managed appropriately.
+Stroke In the WHI estrogen-alone substudy, a statistically significant increased risk of stroke was reported in women 50 to 79 years of age receiving daily CE (0.625 mg)-alone compared to women in the same age group receiving placebo (45 versus 33 per 10,000 women-years).
+The increase in risk was demonstrated in year 1 and persisted [see Clinical Studies (14.2)].
+Should a stroke occur or be suspected, estrogen-alone therapy should be discontinued immediately.
+Subgroup analyses of women 50 to 59 years of age suggest no increased risk of stroke for those women receiving CE (0.625 mg)-alone versus those receiving placebo (18 versus 21 per 10,000 women-years).1
+ In the WHI estrogen plus progestin substudy, a statistically significant increased risk of stroke was reported in women 50 to 79 years of age receiving CE (0.625 mg) plus MPA (2.5 mg) compared to women in the same age group receiving placebo (33 versus 25 per 10,000 women-years) [see Clinical Studies (14.2)].
+The increase in risk was demonstrated after the first year and persisted1.
+Should a stroke occur or be suspected, estrogen plus progestin therapy should be discontinued immediately.
+Coronary Heart Disease In the WHI estrogen-alone substudy, no overall effect on coronary heart disease (CHD) events (defined as nonfatal MI, silent MI, or CHD death) was reported in women receiving estrogen-alone compared to placebo2 [see Clinical Studies (14.2)].
+Subgroup analyses of women 50 to 59 years of age suggest a statistically non-significant reduction in CHD events (CE [0.625 mg]-alone compared to placebo) in women with less than 10 years since menopause (8 versus 16 per 10,000 women-years).1
+ In the WHI estrogen plus progestin substudy, there was a statistically non-significant increased risk of CHD events reported in women receiving daily CE (0.625 mg) plus MPA (2.5 mg) compared to women receiving placebo (41 versus 34 per 10,000 women years).1 An increase in relative risk was demonstrated in year 1, and a trend toward decreasing relative risk was reported in years 2 through 5 [see Clinical Studies (14.2)].
+In postmenopausal women with documented heart disease (n = 2763, average 66.7 years of age), in a controlled clinical trial of secondary prevention of cardiovascular disease (Heart and Estrogen/Progestin Replacement Study; [HERS]), treatment with daily CE (0.625 mg) plus MPA (2.5 mg) demonstrated no cardiovascular benefit.
+During an average follow-up of 4.1 years, treatment with CE plus MPA did not reduce the overall rate of CHD events in post-menopausal women with established CHD.
+There were more CHD events in the CE plus MPA-treated group than in the placebo group in year 1, but not during the subsequent years.
+Two thousand, three hundred and twenty-one (2321) women from the original HERS trial agreed to participate in an open-label extension of HERS, HERS II.
+Average follow-up in HERS II was an additional 2.7 years, for a total of 6.8 years overall.
+Rates of CHD events were comparable among women in the CE/ plus MPA group and the placebo group in HERS, HERS II, and overall.
+Venous Thromboembolism In the WHI estrogen-alone substudy, the risk of VTE (DVT and PE), was increased for women receiving daily CE (0.625 mg)-alone compared to placebo (30 versus 22 per 10,000 women-years), although only the increased risk of
+ Reference ID: 3713412
+                                                                                                                                                                                               DVT reached statistical significance (23 versus 15 per 10,000 women years).
+The increase in VTE risk was demonstrated during the first 2 years3 [see Clinical Studies (14.2)].
+Should a VTE occur or be suspected, estrogen-alone therapy should be discontinued immediately.
+In the WHI estrogen plus progestin substudy, a statistically significant 2-fold greater rate of VTE was reported in women receiving daily CE (0.625 mg) plus MPA (2.5 mg) compared to women receiving placebo (35 versus 17 per 10,000 women-years).
+Statistically significant increases in risk for both DVT (26 versus 13 per 10,000 women-years) and PE (18 versus 8 per 10,000 women-years) were also demonstrated.
+The increase in VTE risk was demonstrated during the first year and persisted4 [see Clinical Studies (14.2)].
+Should a VTE occur or be suspected, estrogen plus progestin therapy should be discontinued immediately.
+If feasible, estrogens should be discontinued at least 4 to 6 weeks before surgery of the type associated with an increased risk of thromboembolism, or during periods of prolonged immobilization.
+5.2 Malignant Neoplasms Endometrial Cancer An increased risk of endometrial cancer has been reported with the use of unopposed estrogen therapy in women with a uterus.
+The reported endometrial cancer risk among unopposed estrogen users is about 2 to 12 times greater than in nonusers, and appears dependent on duration of treatment and on estrogen dose.
+Most studies show no significant increased risk associated with the use of estrogens for less than 1 year.
+The greatest risk appears associated with prolonged use, with increased risks of 15- to 24-fold for use over 5 to 10 years or more, and this risk has been shown to persist at least 8 to 15 years after estrogen therapy is discontinued.
+Clinical surveillance of all women using estrogen-alone or estrogen plus progestin therapy is important.
+Adequate diagnostic measures, including directed or random endometrial sampling when indicated, should be undertaken to rule out malignancy in postmenopausal women with undiagnosed persistent or recurring abnormal vaginal bleeding.
+There is no evidence that the use of natural estrogens results in a different endometrial risk profile than synthetic estrogens of equivalent estrogen dose.
+Adding a progestin to postmenopausal estrogen therapy has been shown to reduce the risk of endometrial hyperplasia, which may be a precursor to endometrial cancer.
+Breast Cancer The most important randomized clinical trial providing information about breast cancer in estrogen-alone users is the WHI substudy of daily CE (0.625 mg)-alone.
+ In the WHI estrogen-alone substudy, after an average follow-up of 7.1 years, daily CE-alone was not associated with an increased risk of invasive breast cancer (relative risk [RR] 0.80]5 [see Clinical Studies (14.2)].
+The most important randomized clinical trial providing information about breast cancer in estrogen plus progestin users is the WHI substudy of daily CE (0.625 mg) plus MPA (2.5 mg).
+After a mean follow-up of 5.6 years, the estrogen plus progestin substudy reported an increased risk of invasive breast cancer in women who took daily CE plus MPA.
+In this substudy, prior use of estrogen-alone or estrogen plus progestin therapy was reported by 26 percent of the women.
+The relative risk of invasive breast cancer was 1.24, and the absolute risk was 41 versus 33 cases per 10,000 women-years, for CE plus MPA compared with placebo.
+Among women who reported prior use of hormone therapy, the relative risk of invasive breast cancer was 1.86, and the absolute risk was 46 versus 25 cases per 10,000 women-years, for CE plus MPA compared with placebo.
+Among women who reported no prior use of hormone therapy, the relative risk of invasive breast cancer was 1.09, and the absolute risk was 40 versus 36 cases per 10,000 women-years for CE plus MPA compared with placebo.
+In the same substudy, invasive breast cancers were larger, were more likely to be node positive, and were diagnosed at a more advanced stage in the CE (0.625 mg) plus MPA (2.5 mg) group compared with the placebo group.
+Metastatic disease was rare, with no apparent difference between the two groups.
+Other prognostic factors, such as histologic subtype, grade and hormone receptor status did not differ between the groups6 [see Clinical Studies (14.2)].
+Consistent with the WHI clinical trial, observational studies have also reported an increased risk of breast cancer for estrogen plus progestin therapy, and a smaller increased risk for estrogen-alone therapy, after several years of use.
+ Reference ID: 3713412
+                                                                                                                                                                                                    The risk increased with duration of use, and appeared to return to baseline over about 5 years after stopping treatment (only the observational studies have substantial data on risk after stopping).
+Observational studies also suggest that the risk of breast cancer was greater, and became apparent earlier, with estrogen plus progestin therapy as compared to estrogen-alone therapy.
+However, these studies have not found significant variation in the risk of breast cancer among different estrogen plus progestin combinations, doses, or routes of administration.
+The use of estrogen-alone and estrogen plus progestin has been reported to result in an increase in abnormal mammograms requiring further evaluation.
+All women should receive yearly breast examinations by a health care provider and perform monthly breast self-examinations.
+In addition, mammography examinations should be scheduled based on patient age, risk factors, and prior mammogram results.
+Ovarian Cancer The WHI estrogen plus progestin substudy reported a statistically non-significant increased risk of ovarian cancer.
+After an average follow-up of 5.6 years, the relative risk for ovarian cancer for CE plus MPA versus placebo was 1.58 (95 percent CI, 0.77-3.24).
+The absolute risk for CE plus MPA versus placebo was 4 versus 3 cases per 10,000 women-years.7 In some epidemiologic studies, the use of estrogen plus progestin and estrogen-only products, in particular for 5 or more years, has been associated with an increased risk of ovarian cancer.
+However, the duration of exposure associated with increased risk is not consistent across all epidemiologic studies, and some report no association.
+5.3 Probable Dementia In the WHIMS estrogen-alone ancillary study of WHI, a population of 2,947 hysterectomized women 65 to 79 years of age was randomized to daily CE (0.625 mg)-alone or placebo.
+After an average follow-up of 5.2 years, 28 women in the estrogen-alone group and 19 women in the placebo group were diagnosed with probable dementia.
+The relative risk of probable dementia for CE-alone versus placebo was 1.49 (95 percent CI, 0.83-2.66).
+The absolute risk of probable dementia for CE-alone versus placebo was 37 versus 25 cases per 10,000 women-years8 [see Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+In the WHIMS estrogen plus progestin ancillary study, a population of 4,532 postmenopausal women 65 to 79 years of age was randomized to daily CE (0.625 mg) plus MPA (2.5 mg) or placebo.
+After an average follow-up of 4 years, 40 women in the CE plus MPA group and 21 women in the placebo group were diagnosed with probable dementia.
+The relative risk of probable dementia for CE plus MPA versus placebo was 2.05 (95 percent CI, 1.21-3.48).
+The absolute risk of probable dementia for CE plus MPA versus placebo was 45 versus 22 cases per 10,000 women-years8 [see Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+When data from the two populations in the WHIMS estrogen-alone and estrogen plus progestin ancillary studies were pooled as planned in the WHIMS protocol, the reported overall relative risk for probable dementia was 1.76 (95 percent CI 1.19-2.60).
+Since both ancillary studies were conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women8 [see Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+5.4 Gallbladder Disease A 2- to 4-fold increase in the risk of gallbladder disease requiring surgery in postmenopausal women receiving estrogens has been reported.
+5.5 Hypercalcemia Estrogen administration may lead to severe hypercalcemia in women with breast cancer and bone metastases.
+If hypercalcemia occurs, use of the drug should be stopped and appropriate measures taken to reduce the serum calcium level.
+ 5.6 Visual Abnormalities Retinal vascular thrombosis has been reported in women receiving estrogens.
+Discontinue medication pending examination if there is sudden partial or complete loss of vision, or a sudden onset of proptosis, diplopia, or
+ Reference ID: 3713412
+                                                                                                                                                                                                                         migraine.
+If examination reveals papilledema or retinal vascular lesions, estrogens should be permanently discontinued.
+5.7 Addition of a Progestin When a Woman Has Not Had a Hysterectomy Studies of the addition of a progestin for 10 or more days of a cycle of estrogen administration, or daily with estrogen in a continuous regimen, have reported a lower incidence of endometrial hyperplasia than would be induced by estrogen treatment alone.
+Endometrial hyperplasia may be a precursor to endometrial cancer.
+There are, however, possible risks that may be associated with the use of progestins with estrogens compared to estrogen-alone treatment.
+These include an increased risk of breast cancer.
+5.8 Elevated Blood Pressure In a small number of case reports, substantial increases in blood pressure have been attributed to idiosyncratic reactions to estrogens.
+In a large, randomized, placebo-controlled, clinical trial, a generalized effect of estrogens on blood pressure was not seen.
+5.9 Hypertriglyceridemia In women with pre-existing hypertriglyceridemia, estrogen therapy may be associated with elevations of plasma triglycerides leading to pancreatitis and other complications.
+Consider discontinuation of treatment if pancreatitis occurs.
+5.10 Hepatic Impairment and/or Past History of Cholestatic Jaundice Estrogens may be poorly metabolized in women with impaired liver function.
+For women with a history of cholestatic jaundice associated with past estrogen use or with pregnancy, caution should be exercised and in the case of recurrence, medication should be discontinued.
+ 5.11 Hypothyroidism Estrogen administration leads to increased thyroid-binding globulin (TBG) levels.
+Women with normal thyroid function can compensate for the increased TBG by making more thyroid hormone, thus maintaining free T4 and T3 serum concentrations in the normal range.
+Women dependent on thyroid hormone replacement therapy who are also receiving estrogens may require increased doses of their thyroid replacement therapy.
+These women should have their thyroid function monitored in order to maintain their free thyroid hormone levels in an acceptable range.
+5.12 Fluid Retention Because estrogens may cause some degree of fluid retention, women with conditions that might be influenced by this factor, such as a cardiac or renal dysfunction, warrant careful observation when estrogen is prescribed.
+5.13 Hypocalcemia Estrogen therapy should be used with caution in women with hypoparathyroidism as estrogen-induced hypocalcemia may occur.
+5.14 Exacerbation of Endometriosis A few cases of malignant transformation of residual endometrial implants have been reported in women treated post-hysterectomy with estrogen-alone therapy.
+For women known to have residual endometriosis post-hysterectomy, the addition of progestin should be considered.
+ 5.15 Hereditary Angioedema Exogenous estrogens may exacerbate symptoms of angioedema in women with hereditary angioedema.
+5.16 Exacerbation of Other Conditions Estrogen therapy may cause an exacerbation of asthma, diabetes mellitus, epilepsy, migraine, porphyria, systemic lupus erythematosus, and hepatic hemangiomas and should be used with caution in patients with these conditions.
+5.17 Application of Sunscreen ESTRASORB should not be used in close proximity to sunscreen application because estradiol absorption may be increased [see Clinical Pharmacology (12.3)].
+ Reference ID: 3713412
+                                                                                                                                                                     5.18 Laboratory Tests Serum follicle stimulating hormone (FSH) and estradiol concentrations have not been shown to be useful in the management of moderate to severe vasomotor symptoms.
+5.19 Drug-Laboratory Test Interactions Accelerated prothrombin time, partial thromboplastin time, and platelet aggregation time; increased platelet count; increased factors II, VII antigen, VIII antigen, VIII coagulant activity, IX, X, XII, VII-X complex, II-VII-X complex, and beta-thromboglobulin; decreased levels of antifactor Xa and antithrombin III; decreased antithrombin III activity; increased levels of fibrinogen and fibrinogen activity; increased plasminogen antigen and activity.
+Increased TBG leading to increased circulating total thyroid hormone levels, as measured by protein-bound iodine (PBI), T4 levels (by column or by radioimmunoassay) or T3 levels by radioimmunoassay.
+T3 resin uptake is decreased, reflecting the elevated TBG.
+Free T4 and free T3 concentrations are unaltered.
+Women on thyroid replacement therapy may require higher doses of thyroid hormone.
+Other binding proteins may be elevated in serum, for example, corticosteroid binding globulin (CBG), and sex hormone binding globulin (SHBG), leading to increased total circulating corticosteroids and sex steroids, respectively.
+Free hormone concentrations, such as testosterone and estradiol, may be decreased.
+Other plasma proteins may be increased (angiotensinogen/renin substrate, alpha-1-antitrypsin, ceruloplasmin).
+Increased plasma high-density lipoprotein (HDL) and HDL-2 cholesterol subfraction concentrations, reduced low-
+density lipoprotein (LDL) cholesterol concentration, and increased triglycerides levels.
+ Impaired glucose tolerance.
+  6 ADVERSE REACTIONS The following serious adverse reactions are discussed elsewhere in labeling:
+ &#x2022; Cardiovascular Disorders [see Boxed Warning, Warning and Precautions (5.1)]
+ &#x2022; Malignant Neoplasms [see Boxed Warning, Warnings and Precautions (5.2)] 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.
+Table 1 summarizes the treatment-emergent adverse reactions with ESTRASORB therapy.
+ Table 1: Number (%) of Patients Reporting &#x2265;5% Treatment-Emergent Adverse Reactions
+ Body system/ Preferred term Statistic Placebo (n = 134) ESTRASORB 3.45 grams
+ (n = 139)
+ Number of subjects with &#x2265;1 TEAE n (%) 82 (61) 95 (68) Body as a whole n (%) 40 (30) 49 (35) Headache n (%) 17 (13) 12 (9) Infection n (%) 10 (7) 16 (12) Respiratory n (%) 15 (11) 19 (14) Sinusitis n (%) 6 (4) 9 (6) Skin and appendages n (%) 7 (5) 15 (11) Pruritus n (%) 0 5 (4) Urogenital n (%) 20 (15) 44 (32) Breast pain n (%) 4 (3) 14 (10) Endometrial disorder n (%) 11 (8) 21 (15) TEAE = Treatment-emergent adverse event.
+ Reference ID: 3713412
+                                                                                                          6.2 Postmarketing Experience The following adverse reactions have been identified during post-approval use of ESTRASORB.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ Genitourinary system Unusual bleeding pattern and abnormal withdrawal bleeding or flow; breakthrough bleeding, spotting; dysmenorrheal; increase in size of uterine leiomyomata; vaginitis including vaginal candidiasis; change in amount of cervical secretion; changes in cervical ectropion; ovarian cancer, endometrial hyperplasia; endometrial cancer.
+ Breasts Tenderness, enlargement, pain, nipple discharge, galactorrhea; fibrocystic breast changes; breast cancer.
+ Cardiovascular Deep and superficial venous thrombosis; pulmonary embolism; thrombophlebitis; myocardial infarction; stroke; increase in blood pressure.
+ Gastrointestinal Nausea, vomiting; abdominal cramps, bloating; cholestatic jaundice; increased incidence of gall bladder disease; pancreatitis, enlargement of hepatic hemangiomas.
+ Skin Chloasma or melasma that may persist when drug is discontinued; erythema multiforme; erythema nodosum; hemorrhagic eruption; loss of scalp hair; hirsutism; pruritus, rash.
+ Eyes Retinal vascular thrombosis, intolerance to contact lenses.
+ Central Nervous System Headache, migraine, dizziness; mental depression; chorea; nervousness; mood disturbance; irritability; exacerbation of epilepsy, dementia.
+ Miscellaneous Increase or decrease in weight; reduced carbohydrate tolerance; aggravation of porphyria; edema; arthralgia; leg cramps; changes in libido; urticaria, angioedema, anaphylactoid/anaphylactic reactions; hypocalcemia; exacerbation of asthma; increased triglycerides.
+ 7 DRUG INTERACTIONS No drug interaction studies have been conducted for ESTRASORB.
+7.1 Metabolic Interactions In vitro and in vivo studies have shown that estrogens are metabolized partially by cytochrome P450 3A4 (CYP3A4).
+Therefore, inducers or inhibitors of CYP3A4 may affect estrogen drug metabolism.
+Inducers of CYP3A4 such as St. John's Wort preparations (Hypericum perforatum), phenobarbital, carbamazepine, and rifampin may reduce plasma concentrations of estrogens, possibly resulting in a decrease in therapeutic effects and/or changes in the uterine bleeding profile.
+Inhibitors of CYP3A4 such as erythromycin, clarithromycin, ketoconazole, itraconazole, ritonavir and grapefruit juice may increase plasma concentrations of estrogens and may result in side effects.
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ Reference ID: 3713412
+                                                                                                                                                                      ESTRASORB should not be used during pregnancy [see Contraindications (4)].
+There appears to be little or no increased risk of birth defects in children born to women who have used estrogens and progestins as an oral contraceptive inadvertently during early pregnancy.
+ 8.2 Nursing Mothers ESTRASORB should not be used during lactation.
+Estrogen administration to nursing women has been shown to decrease the quantity and quality of the breast milk.
+Detectable amounts of estrogens have been identified in the milk of women receiving estrogen therapy.
+Caution should be exercised when ESTRASORB is administered to a nursing woman.
+8.4 Pediatric Use ESTRASORB is not indicated in children.
+Clinical studies have not been conducted in the pediatric population.
+8.5 Geriatric Use There have not been sufficient numbers of geriatric women involved in studies utilizing ESTRASORB to determine whether those over 65 years of age differ from younger subjects in their response to ESTRASORB.
+ The Women's Health Initiative Studies In the WHI estrogen-alone substudy (daily CE [0.625 mg]-alone versus placebo), there was a higher relative risk of
+ stroke in women greater than 65 years of age [see Clinical Studies (14.2)].
+ In the WHI estrogen plus progestin substudy (daily CE [0.625 mg] plus MPA [2.5 mg] versus placebo), there was a
+ higher relative risk of nonfatal stroke and invasive breast cancer in women greater than 65 years of age [see Clinical
+ Studies (14.2)].
+  The Women's Health Initiative Memory Study In the WHIMS, ancillary studies of postmenopausal women 65 to 79 years of age, there was an increased risk of developing probable dementia in women receiving estrogen-alone or estrogen plus progestin when compared to placebo [see Warnings and Precautions (5.3), and Clinical Studies (14.3)].
+Since both ancillary studies were conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women8 [see Warnings and Precautions (5.3), and Clinical Studies (14.3)].
+8.6 Renal Impairment The effect of renal impairment on the pharmacokinetics of ESTRASORB has not been studied.
+8.7 Hepatic Impairment The effect of hepatic impairment on the pharmacokinetics of ESTRASORB has not been studied.
+ 10 OVERDOSAGE Overdosage of estrogen may cause nausea, vomiting, breast tenderness, abdominal pain, drowsiness and fatigue, and withdrawal bleeding may occur in women.
+Treatment of overdose consists of discontinuation of ESTRASORB therapy with institution of appropriate symptomatic care.
+ 11 DESCRIPTION ESTRASORB (estradiol topical emulsion) is designed to deliver estradiol to the blood circulation following topical application of an emulsion.
+Each gram of ESTRASORB contains 2.5 mg of estradiol hemihydrate USP, EP, which is encapsulated using a micellar nanoparticle technology.
+ESTRASORB is packaged in foil pouches containing 1.74 grams of drug product.
+Daily topical application of the contents of two foil pouches provides systemic delivery of 0.05 mg of estradiol per day.
+ Estradiol hemihydrate USP, EP (estradiol) is a white, crystalline powder, chemically described as estra-1,3,5(10)triene-3, 17-diol, hemihydrate.
+The molecular formula of estradiol hemihydrate is C18H24O2 &#x2022;1/2 H2O, and the
+ molecular weight is 281.4 g/mol.
+  Reference ID: 3713412
+                                                                                          The structural formula is:
+ The active ingredient in ESTRASORB is estradiol.
+The remaining components (soybean oil, water, polysorbate 80, and ethanol) are pharmacologically inactive.
+ 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Endogenous estrogens are largely responsible for the development and maintenance of the female reproductive system and secondary sexual characteristics.
+Although circulating estrogens exist in a dynamic equilibrium of metabolic interconversions, estradiol is the principal intracellular human estrogen and is substantially more potent than its metabolites, estrone and estriol, at the receptor level.
+The primary source of estrogen in normally cycling adult women is the ovarian follicle, which secretes 70 to 500 mcg of estradiol daily, depending on the phase of the menstrual cycle.
+After menopause, most endogenous estrogen is produced by conversion of androstenedione, secreted by the adrenal cortex, to estrone in the peripheral tissues.
+Thus, estrone and its sulfate-conjugated form, estrone sulfate, are the most abundant circulating estrogens in postmenopausal women.
+Estrogens act through binding to nuclear receptors in estrogen-responsive tissues.
+To date, two estrogen receptors have been identified.
+These vary in proportion from tissue to tissue.
+Circulating estrogens modulate the pituitary secretion of the gonadotropins, luteinizing hormone (LH) and follicle stimulating hormone (FSH) through a negative feedback mechanism.
+Estrogens act to reduce the elevated levels of these hormones seen in postmenopausal women.
+ 12.2 Pharmacodynamics There are no pharmacodynamic data for ESTRASORB.
+ 12.3 Pharmacokinetics Absorption In a multiple-dose study, 125 women were treated for 28 days once daily with placebo or ESTRASORB containing 2.875 mg, 5.75 mg, or 8.625 mg of estradiol.
+The mean change from baseline in serum estradiol concentrations increased in a dose-dependent manner compared with placebo (Figure 1 below).
+ Reference ID: 3713412
+                                                                                                  Figure 1.
+Mean serum estradiol concentrations (pg/mL) following topical application of placebo or ESTRASORB containing 2.875 mg, 5.75 mg, 8.625 mg of estradiol
+ Serum estradiol concentrations were also assessed in a second study involving 200 postmenopausal women, who applied either a daily dose of ESTRASORB (containing 8.625 mg of estradiol; n = 100) or placebo (n = 100) for 12 weeks.
+Trough estradiol concentrations in the ESTRASORB treatment group increased from a mean of 8.9 pg/mL at baseline to 58.6 pg/mL and 70.2 pg/mL at Weeks 2 and 4, respectively (Figure 2).
+Trough levels of ESTRASORB remained at a plateau throughout the rest of the study: 67.3 pg/mL at Week 8 and 63.0 pg/mL at the end of the study.
+Figure 2: Mean (SE) Trough Serum Estradiol Concentrations Following Daily Topical Application of 3.45 Grams of ESTRASORB Containing 2.5 mg of Estradiol per Gram for 12 weeks.
+ SE = Standard error of the mean
+ Distribution No specific investigation of the tissue distribution of estradiol absorbed from ESTRASORB in humans has been conducted.
+The distribution of exogenous estrogens is similar to that of endogenous estrogens.
+Estrogens are widely distributed in the body and are generally found in higher concentrations in the sex hormone target organs.
+Estrogens circulate in the blood largely bound to sex hormone binding globulin (SHBG) and albumin.
+Metabolism Exogenous estrogens are metabolized in the same manner as endogenous estrogens.
+Circulating estrogens exist in a dynamic equilibrium of metabolic interconversions.
+These transformations take place mainly in the liver.
+Estradiol is converted reversibly to estrone, and both can be converted to estriol, which is a major urinary metabolite.
+ Reference ID: 3713412
+                                                                                                                     Estrogens also undergo enterohepatic recirculation via sulfate and glucuronide conjugation in the liver, biliary secretion of conjugates into the intestines, and hydrolysis in the intestine followed by reabsorption.
+In postmenopausal women, a significant proportion of the circulating estrogens exists as sulfate conjugates, especially estrone sulfate, which serves as a circulating reservoir for the formation of more active estrogens.
+Excretion Estradiol, estrone, and estriol are excreted in the urine along with glucuronide and sulfate conjugates.
+Application of sunscreen Application of SPF15 sunscreen 10 minutes prior to the application of ESTRASORB containing 8.7 mg of estradiol increased the exposure to estradiol by approximately 38%.
+When SPF15 sunscreen is applied 25 minutes after the application of ESTRASORB containing 8.7 mg of estradiol, the increase in exposure to estradiol was approximately 46%.
+Potential for Estradiol Transfer Estradiol was detected on the skin at 2 and 8 hours post-application.
+Washing the application area with soap and water 8 hours post-application removed detectable estradiol from the application site.
+Upon physical contact made by adult males for 2 minutes to the thighs of females who received daily doses of ESTRASORB containing 8.7 mg of estradiol over a two day period at 2 and 8 hours post-application in a separate study, a mean increase of approximately 25 percent in serum estradiol exposure was identified [see Dosage and Administration (2)].
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term continuous administration of natural and synthetic estrogens in certain animal species increases the frequency of carcinomas of the breast, uterus, cervix, vagina, testis, and liver.
+ 14 CLINICAL STUDIES 14.1 Effects on Vasomotor Symptoms In a 12-week randomized, placebo-controlled clinical trial, a total of 200 postmenopausal women (average 52 years of age, range 46 to 58, 79 percent Caucasian in the ESTRASORB treatment group; average 51.8 years of age, range 45.8 to 57.8, 72 percent Caucasian in the placebo treatment group) were assigned to receive ESTRASORB (3.45 grams containing 2.5 mg of estradiol per gram) or placebo for a 12 weeks duration.
+ESTRASORB was shown to be statistically better than placebo at Weeks 4 and 12 for relief of both the frequency and severity of moderate to severe vasomotor symptoms (p-value &lt;0.001 for Weeks 4 and 12).
+Frequency results are shown in Table 2.
+Severity results are shown in Table 3.
+ Reference ID: 3713412
+                                                                                                                                                                                                                  Table 2.
+Mean Number and Mean Change from Baseline in the Number of Moderate to Severe Vasomotor Symptoms Per Day (Intent-to-Treat Population)
+ Time point Treatment Group
+ Placebo ESTRASORB Baseline (observed value) Mean Number of Hot Flushes (SD)
+ (N = 100) 13.63 (5.48)
+ (N = 100) 13.05 (5.78)
+ Week 4 Mean Number of Hot Flushes (SD) Mean Change from Baseline (SD)
+ (N = 97) 7.46 (6.42)
+ -5.97 (4.76)
+ (N = 96) 4.42 (5.60)
+ -8.56 (6.19) P-value vs. Placebo NA &lt;0.001 Week 12 Mean Number of Hot Flushes (SD) Mean Change from Baseline (SD)
+ (N = 90) 5.88 (6.17)
+ -7.20 (5.39)
+ (N = 90) 2.00 (3.64)
+ -11.11 (6.84) P-value vs. Placebo NA &lt;0.001 SD = Standard Deviation; NA = Not applicable
+ Table 3.
+Mean Change from Baseline in the Severity Scorea of Hot Flushes Per Day, Intent-to-Treat Population, Most Recent Value Carried Forward
+ Time point Treatment Group
+ Placebo ESTRASORB Baseline (observed value) Mean Severity Score per Day (SD)
+ (N = 100) 2.44 (0.37)
+ (N = 100) 2.36 (0.36)
+ Week 4 Mean Severity Score per Day (SD) Mean Change from Baseline (SD)
+ (N = 97) 1.99 (0.81)
+ -0.45 (0.75)
+ (N = 96) 1.47 (1.03)
+ -0.89 (1.04) P-value vs. Placebo NA &lt;0.001 Week 12 Mean Severity Score per Day (SD) Mean Change from Baseline (SD)
+ (N = 90) 1.88 (0.98)
+ -0.55 (0.91)
+ (N = 90) 0.92 (1.00)
+ -1.44 (1.04) P-value vs. Placebo NA &lt;0.001 SD = Standard Deviation; NA = Not applicable a The severity score per day is determined by calculating the sum of recorded daily severity and dividing this number by the total number of hot flushes on that day.
+ 14.2 Women's Health Initiative Studies The WHI enrolled approximately 27,000 predominantly healthy postmenopausal women in two substudies to assess the risks and benefits of daily oral CE (0.625 mg)-alone or in combination with MPA (2.5 mg) compared to placebo in the prevention of certain chronic diseases.
+The primary endpoint was the incidence of CHD (defined as nonfatal MI, silent MI and CHD death), with invasive breast cancer as the primary adverse outcome.
+A "global index" included the earliest occurrence of CHD, invasive breast cancer, stroke, PE, endometrial cancer (only in the CE plus MPA substudy), colorectal cancer, hip fracture, or death due to other cause.
+These substudies did not evaluate the effects of CE-alone or CE plus MPA on menopausal symptoms.
+ WHI Estrogen-Alone Substudy
+ The WHI estrogen-alone substudy was stopped early because an increased risk of stroke was observed, and it was deemed that no further information would be obtained regarding the risks and benefits of estrogen-alone in predetermined primary endpoints.
+ Reference ID: 3713412
+                                                                                                                                                                                      Results of the estrogen-alone substudy, which included 10,739 women (average 63 years of age, range 50 to 79; 75.3 percent White, 15.1 percent Black, 6.1 percent Hispanic, 3.6 percent Other), after an average follow- up of 7.1 years are presented in Table 4.
+ Table 4.
+ Relative and Absolute Risk Seen in the Estrogen Alone Substudy of WHIa
+ Event Relative Risk
+ CE vs. Placebo (95% nCIb)
+ CE n = 5,310
+ Placebo&#x2022; n = 5,429
+ Absolute Risk per 10,000 Women-Years
+ CHD eventsc
+ Non-fatal MIc
+ CHD deathc
+ 0.95 (0.78-1.16) 0.91 (0.73-1.14) 1.01 (0.71-1.43)
+ 54 40 16
+ 57 43 16
+ All strokesc
+ Ischemic strokec 1.33 (1.15-1.68) 1.55 (1.19-2.01)
+ 45 38
+ 33 25
+ Deep vein thrombosisc,d 1.47 (1.06-2.06) 23 15
+ Pulmonary embolismc 1.37 (0.90-2.07) 14 10
+ Invasive breast cancerc 0.80 (0.62-1.04) 28 34
+ Colorectal cancere 1.08 (0.75-1.55) 17 16
+ Hip fracturec 0.65 (0.45-0.94) 12 19
+ Vertebral fracturesc,d 0.64 (0.44-0.93) 11 18
+ Lower arm/wrist fracturesc,d 0.58 (0.47-0.72) 35 59
+ Total fracturesc,d 0.71 (0.64-0.80) 144 197
+ Death due to other causese,f 1.08 (0.88-1.32) 53 50
+ Overall mortalityc,d 1.04 (0.88-1.22) 79 75
+ Global Indexg 1.02 (0.92-1.13) 206 201 a Adapted from numerous WHI publications.
+WHI publications can be viewed at www.nhlbi.nih.gov/whi.
+ b Nominal confidence intervals unadjusted for multiple looks and multiple comparisons.
+ c Results are based on centrally adjudicated data for an average follow-up of 7.1 years.
+ d Not included in "global index".
+ e Results are based on an average follow-up of 6.8 years.
+ f All deaths, except from breast or colorectal cancer, definite or probable CHD, PE, or cerebrovascular disease.
+ g A subset of the events was combined in a "global index", defined as the earliest occurrence of CHD events: invasive breast
+  cancer, stroke, PE, endometrial cancer, colorectal cancer, hip fracture, or death due to other causes.
+ For those outcomes included in the WHI "global index" that reached statistical significance, the absolute excess risk per 10,000 women-years in the group treated with CE-alone was 12 more strokes, while the absolute risk reduction per 10,000 women-years was 7 fewer hip fractures9.
+The absolute excess risk of events included in the "global index" was a non-significant 5 events per 10,000 women-years.
+There was no difference between the groups in terms of all-cause mortality.
+No overall difference for primary CHD events (nonfatal MI, silent MI and CHD death) and invasive breast cancer incidence in women receiving CE-alone compared to placebo was reported in final centrally adjudicated results from the estrogen-alone substudy, after an average follow-up of 7.1 years.
+ Reference ID: 3713412
+                                                                                             Centrally adjudicated results for stroke events from the estrogen-alone substudy, after an average follow-up of 7.1 years, reported no significant differences in distribution of stroke subtype or severity, including fatal strokes, in women receiving CE-alone compared to placebo.
+Estrogen-alone increased the risk for ischemic stroke, and this excess risk was present in all subgroups of women examined.10
+ Timing of the initiation of estrogen-alone therapy relative to the start of menopause may affect the overall risk benefit profile.
+ The WHI estrogen-alone substudy, stratified by age, showed in women 50 to 59 years of age a nonsignificant trend toward reduced risk for CHD [hazard ratio (HR) 0.63 (95 percent CI, 0.36-1.09)] and overall mortality [HR 0.71 (95 percent CI, 0.46-1.11)].
+ WHI Estrogen Plus Progestin Substudy
+ The WHI estrogen plus progestin substudy was stopped early.
+According to the predefined stopping rule, after an average follow-up of 5.6 years of treatment, the increased risk of invasive breast cancer and cardiovascular events exceeded the specified benefits included in the "global index".
+The absolute excess risk of events included in the "global index: was 19 per 10,000 women-years.
+For those outcomes included in the WHI "global index" that reached statistical significance after 5.6 years of follow-up, the absolute excess risks per 10,000 women-years in the group treated with CE plus MPA were 7 more CHD events, 8 more strokes, 10 more PEs, and 8 more invasive breast cancers, while the absolute risk reduction per 10,000 women-years were 6 fewer colorectal cancers and 5 fewer hip fractures.
+Results of the estrogen plus progestin substudy, which included 16,608 women (average 63 years of age, range 50 to 79; 83.9 percent White, 6.8 percent Black, 5.4 percent Hispanic, 3.9 percent Other) are presented in Table 5.
+These results reflect centrally adjudicated data after an average follow-up of 5.6 years.
+ Reference ID: 3713412
+                                                                                                                                                            Table 5.
+ Relative and Absolute Risk Seen in the Estrogen Plus Progestin Substudy of WHI at an Average of 5.6 Yearsa,b
+ Event Relative Risk
+ CE/MPA vs. Placebo (95% nCIc)
+ CE/MPA (n = 8,506)
+ Placebo (n = 8, 102)
+ Absolute Risk per 10,000 Women-Years
+ CHD events Non-fatal MI CHD death
+ 1.23 (0.99-1.53) 1.28 (1.00-1.63) 1.10 (0.70-1.75)
+ 41 31 8
+ 34 25 8
+ All strokes Ischemic stroke
+ 1.31 (1.03-1.68) 1.44 (1.09-1.90)
+ 33 26
+ 25 18
+ Deep vein thrombosisd 1.95 (1.43-2.67) 26 13
+ Pulmonary embolism 2.13 (1.45-3.11) 18 8
+ Invasive breast cancere 1.24 (1.01-1.54) 41 33
+ Colorectal cancer 0.61 (0.42-0.87) 10 16
+ Endometrial cancerd 0.81 (0.48-1.36) 6 7
+ Cervical cancerd 1.44 (0.47-4.42) 2 1
+ Hip fracture 0.67 (0.47-0.96) 11 16
+ Vertebral fracturesd 0.65 (0.46-0.92) 11 17
+ Lower arm/wrist fracturesd 0.71 (0.59-0.85) 44 62
+ Total fracturesd 0.76 (0.69-0.83) 152 199
+ Overall mortalityf 1.00 (0.83-1.19) 52 52
+ Global Indexg 1.13 (1.02-1.25) 184 165 a Adapted from numerous WHI publications.
+WHI publications can be viewed at www.nhlbi.nih.gov/whi.
+b Results are based on centrally adjudicated data.
+c Nominal confidence intervals unadjusted for multiple looks and multiple comparisons.
+d Not included in "global index".
+e Includes metastatic and non-metastatic breast cancer, with the exception of in situ breast cancer.
+f All deaths, except from breast or colorectal cancer, definite or probable CHD, PE, or cerebrovascular disease.
+g A subset of the events was combined in a "global index", defined as the earliest occurrence of CHD events, invasive breast
+ cancer, stroke, pulmonary embolism, endometrial cancer, colorectal cancer, hip fracture, or death due to other causes.
+ Timing of the initiation of estrogen plus progestin therapy relative to the start of menopause may affect the overall risk benefit profile.
+The WHI estrogen plus progestin substudy stratified for age showed in women 50 to 59 years of age a non-significant trend toward reduced risk for overall mortality [HR 0.69 (95 percent CI, 0.44-1.07)].
+ Reference ID: 3713412
+                                                                                                                                                                                                 14.3 Women's Health Initiative Memory Study The WHIMS estrogen-alone ancillary study of WHI enrolled 2,947 predominantly healthy hysterectomized postmenopausal women 65 to 79 years of age (45 percent were 65 to 69 years of age, 36 percent were 70 to 74 years of age, and 19 percent were 75 years of age and older) to evaluate the effects of daily CE (0.625 mg)-alone on the incidence of probable dementia (primary outcome) compared to placebo.
+After an average follow-up of 5.2 years, the relative risk of probable dementia for CE-alone versus placebo was 1.49 (95 percent CI, 0.83-2.66).
+The absolute risk of probable dementia for CE-alone versus placebo was 37 versus 25 cases per 10,000 women-years.
+Probable dementia as defined in this study included Alzheimer's disease (AD), vascular dementia (VaD) and mixed type (having features of both AD and VaD).
+The most common classification of probable dementia in the treatment group and the placebo group was AD.
+Since the ancillary study was conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women [see Warnings and Precautions (5.3), and Use in Specific Populations (8.5)].
+The WHIMS estrogen plus progestin ancillary study enrolled 4532 predominantly healthy postmenopausal women 65 years of age and older (47 percent were 65 to 69 years of age, 35 percent were 70 to 74 years of age, and 18 percent were 75 years of age and older) to evaluate the effects of daily CE (0.625 mg) plus MPA (2.5 mg) on the incidence of probable dementia (primary outcome) compared to placebo.
+After an average follow-up of 4 years, the relative risk of probable dementia for CE plus MPA versus placebo was 2.05 (95 percent CI, 1.21- 3.48).
+The absolute risk of probable dementia for CE plus MPA versus placebo was 45 versus 22 per 10,000 women-years.
+ Probable dementia as defined in this study included AD, VaD and mixed type (having features of both AD and VaD).
+ The most common classification of probable dementia in the treatment group and the placebo group was AD.
+ Since the ancillary study was conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women [see Warnings and Precautions (5.3), and Use in Specific Populations (8.5)].
+When data from the two populations were pooled as planned in the WHIMS protocol, the reported overall relative risk for probable dementia was 1.76 (95 percent CI, 1.19-2.60).
+Differences between groups became apparent in the first year of treatment.
+It is unknown whether these findings apply to younger postmenopausal women [see Warnings and Precautions (5.3), and Use in Specific Populations (8.5)].
+ 15 REFERENCES 1.
+ Rossouw JE, et al. Postmenopausal Hormone Therapy and Risk of Cardiovascular Disease by Age and Years
+ Since Menopause.
+JAMA.
+2007;297:1465-1477.
+2.
+ Hsia J, et al. Conjugated Equine Estrogens and Coronary Heart Disease.
+Arch Int Med.
+2006;166:357-365.
+3.
+ Curb JD, et al. Venous Thrombosis and Conjugated Equine Estrogen in Women Without a Uterus.
+Arch Int
+ Med.
+2006; 166:772-780.
+4.
+ Cushman M, et al. Estrogen Plus Progestin and Risk of Venous Thrombosis.
+JAMA.
+2004;292:1573-1580.
+5.
+ Stefanick ML, et al. Effects of Conjugated Equine Estrogens on Breast Cancer and Mammography Screening in
+ Postmenopausal Women with Hysterectomy.
+JAMA.
+2006;295:1647-1657.
+6.
+ Chlebowski RT, et al. Influence of Estrogen Plus Progestin on Breast Cancer and Mammography in Healthy
+ Postmenopausal Women.
+JAMA.
+2003;289:3234-3253.
+7.
+ Anderson GL, et al. Effects of Estrogen Plus Progestin on Gynecologic Cancers and Associated Diagnostic
+ Procedures.
+JAMA.
+2003;290:1739-1748.
+8.
+ Shumaker SA, et al. Conjugated Equine Estrogens and Incidence of Probable Dementia and Mild Cognitive
+ Impairment in Postmenopausal Women.
+JAMA.
+2004;291:2947-2958.
+9.
+ Jackson RD, et al. Effects of Conjugated Equine Estrogen on Risk of Fractures and BMD in Postmenopausal
+ Women With Hysterectomy: Results From the Women's Health Initiative Randomized Trial.
+J Bone Miner Res.
+2006; 21:817-828.
+ 10.
+Hendrix SL, et al. Effects of Conjugated Equine Estrogen on Stroke in the Women's Health Initiative.
+Circulation.
+2006; 113:2425-2434.
+ Reference ID: 3713412
+                                                                       16 HOW SUPPLIED/STORAGE AND HANDLING 16.1 How Supplied ESTRASORB (estradiol topical emulsion), nominal 0.05 mg/day:
+ ESTRASORB is packaged in foil-laminated pouches.
+A daily dose of ESTRASORB is two foil-laminated pouches.
+ Each pouch contains 1.74-grams.
+Each 1.74-gram, foil-laminated pouch contains 4.35 mg of estradiol hemihydrate
+ USP, EP.
+Each box of ESTRASORB contains fourteen 1.74-gram, foil-laminated pouches.
+ 1-month supply carton of 56 pouches, NDC 99207-190-56
+ 16.2 Storage and Handling Store at 20-25C (68-77F); excursions permitted to 15-40C (59-104F).
+ 17 PATIENT COUNSELING INFORMATION See FDA-approved patient labeling (Patient information and Instructions for Use) 17.1 Vaginal Bleeding Inform postmenopausal women of the importance of reporting unusual vaginal bleeding to their healthcare providers as soon as possible [see Warnings and Precautions (5.2)].
+17.2 Possible Serious Adverse Reactions with Estrogen-Alone Therapy Inform postmenopausal women of possible serious adverse reactions of estrogen-alone therapy including Cardiovascular Disorders, Malignant Neoplasms, and Probable Dementia [see Warnings and Precautions (5.1, 5.2, 5.3)].
+17.3 Possible Less Serious but Common Adverse Reactions with Estrogen-Alone Therapy Inform postmenopausal women of possible less serious but common adverse reactions such as headache, breast pain and tenderness, nausea and vomiting.
+ Reference ID: 3713412
+                                                                                             Patient Information
+ ESTRASORB (es-truh-sawrb)
+ (estradiol topical emulsion)
+ Read this Patient Information before you start using ESTRASORB and each time you get a refill.
+There may be new information.
+This information does not take the place of talking to your healthcare provider about your menopausal symptoms or your treatment.
+ What is the most important information I should know about ESTRASORB (an estrogen hormone)?
+ &#x2022;  Using estrogen-alone may increase your chance of getting cancer of the uterus (womb).
+ &#x2022;  Report any unusual vaginal bleeding right away while you are using ESTRASORB.
+Vaginal bleeding after menopause may be a warning sign of cancer of the uterus (womb).
+ Your healthcare provider should check any unusual vaginal bleeding to find out the cause.
+ &#x2022;  Do not use estrogen-alone to prevent heart disease, heart attacks, strokes or dementia (decline of brain function).
+ &#x2022;  Using estrogen-alone may increase your chances of getting strokes or blood clots.
+ &#x2022;  Using estrogen-alone may increase your chance of getting dementia, based on a study of women 65 years of age or older.
+ &#x2022;  Do not use estrogens with progestins to prevent heart disease, heart attacks, strokes or dementia.
+ &#x2022;  Using estrogens with progestins may increase your chances of getting heart attacks, strokes, breast cancer, or blood clots.
+ &#x2022;  Using estrogens with progestins may increase your chance of getting dementia, based on a study of women 65 years of age or older.
+ &#x2022;  You and your healthcare provider should talk regularly about whether you still need treatment with ESTRASORB.
+ What is ESTRASORB?
+ ESTRASORB is a prescription medicine that contains estradiol (an estrogen hormone).
+When applied to the skin, estradiol is absorbed through the skin into the bloodstream.
+ What is ESTRASORB used for?
+ ESTRASORB is used after menopause to:
+ &#x2022;  Reduce moderate to severe hot flashes
+ Reference ID: 3713412
+                                                                                           Estrogens are hormones made by a woman's ovaries.
+The ovaries normally stop making estrogens when a woman is between 45 and 55 years old.
+This drop in body estrogen levels causes the "change of life" or menopause (the end of monthly menstrual periods).
+Sometimes, both ovaries are removed during an operation before natural menopause takes place.
+The sudden drop in estrogen levels causes "surgical menopause."
+ When the estrogen levels begin dropping, some women get very uncomfortable symptoms, such as feelings of warmth in the face, neck, and chest, or sudden strong feelings of heat and sweating ("hot flashes" or "hot flushes").
+In some women, the symptoms are mild, and they will not need to use estrogens.
+In other women, symptoms can be more severe.
+You and your healthcare provider should talk regularly about whether you still need treatment with ESTRASORB.
+ Who should not use ESTRASORB?
+  Do not start using ESTRASORB if you:
+  &#x2022; have unusual vaginal bleeding
+ Vaginal bleeding after menopause may be a warning sign of cancer of the uterus (womb).
+Your healthcare provider should check any unusual vaginal bleeding to find out the cause.
+ &#x2022; currently have or have had certain cancers
+ Estrogens may increase the chances of getting certain types of cancer, including cancer of the breast or uterus.
+If you have or have had cancer, talk with your healthcare provider about whether you should use ESTRASORB.
+ &#x2022; had a stroke or heart attack
+ &#x2022; currently have or have had blood clots
+ &#x2022; currently have or have had liver problems
+ &#x2022; have been diagnosed with a bleeding disorder
+ &#x2022; are allergic to ESTRASORB or any of its ingredients
+ See the list of ingredients in ESTRASORB at the end of this leaflet.
+ &#x2022; think you may be pregnant
+ ESTRASORB is not for pregnant women.
+If you think you may be pregnant, you should have a pregnancy test and know the results.
+Do not use ESTRASORB if the test is positive and talk to your healthcare provider.
+ What should I tell my healthcare provider before I use ESTRASORB?
+ Before you use ESTRASORB, tell your healthcare provider if you:
+ &#x2022; have any unusual vaginal bleeding
+ Reference ID: 3713412
+                                                                                                      Vaginal bleeding after menopause may be a warning sign of cancer of the uterus (womb).
+Your healthcare provider should check any unusual vaginal bleeding to find out the cause.
+ &#x2022;  have any other medical conditions
+ Your healthcare provider may need to check you more carefully if you have certain conditions such as asthma (wheezing), epilepsy (seizures), diabetes, migraine, endometriosis, lupus, angioedema (swelling of face and tongue), or problems with your heart, liver, thyroid, kidneys, or have high calcium levels in your blood.
+ &#x2022;  are going to have surgery or will be on bed rest
+ Your healthcare provider will let you know if you need to stop using ESTRASORB.
+ &#x2022;  are breast feeding
+ The hormone in ESTRASORB can pass into your breast milk.
+ Tell your healthcare provider about all the medicine you take, including prescription and nonprescription medicines, vitamins and herbal supplements.
+Some medicines may affect how ESTRASORB works.
+ESTRASORB may also affect how your other medicines work.
+Keep a list of your medicines and show it to your healthcare provider and pharmacist when you get a new medicine.
+ How should I use ESTRASORB?
+  See the "Instructions for Use" at the end of this Patient Information.
+  &#x2022;  Use ESTRASORB exactly as your healthcare provider tells you to use it.
+ &#x2022;  ESTRASORB is for skin use only.
+Do not apply ESTRASORB to your face or to your breasts.
+ &#x2022;  Apply ESTRASORB to clean, dry skin on both legs each morning.
+ &#x2022;  You will use 2 pouches of ESTRASORB each morning: 1 pouch for the right leg and 1 pouch for the left leg.
+ &#x2022;  Apply 1 ESTRASORB pouch of medicine to the left thigh and calf then apply 1 ESTRASORB pouch of medicine to the right thigh and calf.
+ &#x2022;  Do not apply sunscreen at the same time you apply ESTRASORB.
+ Sunscreen may affect the way ESTRASORB works and cause you to get too much ESTRASORB.
+ &#x2022;  You and your healthcare provider should talk regularly (every 3 to 6 months) about whether you still need treatment with ESTRASORB.
+ What are the possible side effects of ESTRASORB?
+  Side effects are grouped by how serious they are and how often they
+ happen when you are treated.
+  Serious, but less common side effects include:
+  Reference ID: 3713412
+                                                                                                           &#x2022;  heart attack
+ &#x2022;  stroke
+ &#x2022;  blood clots
+ &#x2022;  dementia
+ &#x2022;  breast cancer
+ &#x2022;  cancer of the lining of the uterus (womb)
+ &#x2022;  cancer of the ovary
+ &#x2022;  high blood pressure
+ &#x2022;  high blood sugar
+ &#x2022;  gallbladder disease
+ &#x2022;  liver problems
+ &#x2022;  changes in your thyroid hormone levels
+ &#x2022;  enlargement of benign tumors ("fibroids")
+ Call your healthcare provider right away if you get any of the following warning signs or any other unusual symptoms that concern you:
+ &#x2022;  new breast lumps
+ &#x2022;  unusual vaginal bleeding
+ &#x2022;  changes in vision or speech
+ &#x2022;  sudden new severe headaches
+ &#x2022;  severe pains in your chest or legs with or without shortness of breath, weakness and fatigue
+ &#x2022;  Less serious, but common side effects include:
+ &#x2022;  headache
+ &#x2022;  breast pain
+ &#x2022;  irregular vaginal bleeding or spotting
+ &#x2022;  stomach or abdominal cramps, bloating
+ &#x2022;  nausea and vomiting
+ &#x2022;  hair loss
+ &#x2022;  fluid retention
+ &#x2022;  vaginal yeast infection
+ These are not all of the possible side effects of ESTRASORB.
+For more information, ask your healthcare provider or pharmacist.
+Tell your healthcare provider if you have side effects that bother you or does not go away.
+You may report side effects to Medicis, The Dermatology Company at 1-800-900-6389, or to FDA at 1-800FDA-1088.
+ Reference ID: 3713412
+                                                                                     What can I do to lower my chances of a serious side effect with ESTRASORB?
+ &#x2022;  Talk with your healthcare provider regularly about whether you should
+ continue using ESTRASORB.
+  &#x2022;  If you have a uterus, talk with your healthcare provider about whether the addition of a progestin is right for you.
+ &#x2022;  The addition of progestin is generally recommended for women with a uterus to reduce the chance of getting cancer of the uterus (womb).
+ &#x2022;  See your healthcare provider right away if you get vaginal bleeding while using ESTRASROB.
+ &#x2022;  Have a pelvic exam, breast exam, and mammogram (breast X-ray) every year unless your healthcare provider tells you something else.
+ &#x2022;  If members of your family have had breast cancer or if you have had breast lumps or an abnormal mammogram, you may need to have breast exams more often.
+ &#x2022;  If you have high blood pressure, high cholesterol (fat in the blood), diabetes, are overweight, or if you use tobacco, you may have a higher chance of getting heart disease.
+ &#x2022;  Ask your healthcare provider for ways to lower your chances of getting heart disease.
+ How should I store ESTRASORB?
+ &#x2022;  Store ESTRASORB at room temperature between 68F to 77F (20C to 25C).
+ Keep ESTRASORB and all other medicines out of the reach of children.
+ General information about safe and effective use of ESTRASORB
+ Medicines are sometimes prescribed for conditions that are not mentioned in patient information leaflets.
+Do not use ESTRASORB for a condition for which it was not prescribed.
+Do not give ESTRASORB to other people, even if they have the same symptoms you have.
+It may harm them.
+ This leaflet summarizes the most important information about ESTRASORB.
+If you would like more information, talk with your healthcare provider or pharmacist.
+You can ask your healthcare provider or pharmacist for information about ESTRASORB that is written for health professionals.
+ For more information call 1-800-550-5115.
+ What are the ingredients in ESTRASORB?
+ Active ingredient: estradiol
+ Inactive ingredients: soy bean oil, water, polysorbate 80, and ethanol
+ Reference ID: 3713412
+                                                                         Instructions for Use
+ ESTRASORB (es-truh-sawrb)
+ (estradiol topical emulsion)
+ Read these Instructions for Use before you start using ESTRASORB and each time you get a refill.
+There may be new information.
+This information does not take the place of talking to your healthcare provider about your menopausal symptoms or your treatment.
+ To apply ESTRASORB you will need 2 pouches of ESTRASORB, 1 pouch for each leg: See Figure A
+ Figure A
+ Note:
+ &#x2022;  ESTRASORB should be applied to clean, dry skin of both legs each morning.
+ &#x2022;  Every morning you will apply 2 pouches of ESTRASORB.
+ &#x2022;  You should only open 1 ESTRASORB pouch at a time.
+ Step 1.
+Open 1 ESTRASORB pouch.
+ &#x2022;  Cut or tear the ESTRASORB pouch at the notches indicated at the top of the pouch.
+See Figure B.
+ Figure B
+ Step 2.
+Apply ESTRASORB to your left thigh.
+ &#x2022;  Apply ESTRASORB to the top of your left thigh, being careful to remove all the medicine by pushing the cream (emulsion) from the bottom of the pouch, up through the opening of the pouch.
+See Figure C.
+ Reference ID: 3713412
+                                                                      Figure C
+ Step 3.
+Rub ESTRASORB into the skin of your left leg.
+ &#x2022;  Using 1 hand or 2 hands, rub ESTRASORB into the skin of your entire left thigh and calf (lower back leg) until it is completely rubbed into your skin.
+See Figures D and E.
+ Figure D  Figure E
+ Step 4.
+Open the second ESTRASORB pouch.
+ &#x2022;  Cut or tear the second ESTRASORB pouch at the notches indicated near the top of the pouch.
+See Figure B.
+ Step 5.
+Apply ESTRASORB to your right thigh.
+ &#x2022;  Apply ESTRASORB to the top of your right thigh, being careful to remove all of the medicine by pushing the cream (emulsion) from the bottom of the pouch through the opening of the pouch.
+See Figure F.
+ Figure F
+ Reference ID: 3713412
+                                                                          Step 6.
+Rub ESTRASORB into the skin of your right leg.
+ &#x2022;  Using 1 hand or 2 hands, rub ESTRASORB into the skin of your entire right thigh and right calf (lower back leg) until it is completely rubbed into your skin.
+See Figures G and H.
+ Figure G  Figure H
+ Step 7.
+ Allow the application areas to dry completely before covering with clothing to avoid transfer to other individuals.
+ Step 8.
+Wash your hands.
+ &#x2022;  After you finish applying ESTRASORB to both of your legs, be sure to wash hands well with soap and water to remove any remaining ESTRASORB.
+See Figure I.
+ Figure I
+ This Patient Information and Instructions for Use have been approved by the U.S.
+ Food and Drug Administration.
+  Manufactured for:
+  Medicis Pharmaceuticals, A Division of Valeant Pharmaceuticals North America
+  Bridgewater, NJ 08807
+  Manufactured by:
+  Ei Inc.
+  Kannapolis, NC 28083
+  Estrasorb is a registered trademark of Medicis Pharmaceutical Corporation.
+  Approved 03/2015
+  Reference ID: 3713412
+  

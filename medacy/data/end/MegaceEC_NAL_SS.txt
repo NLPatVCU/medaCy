@@ -1,0 +1,299 @@
+label
+ HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use MEGACE ES safely and effectively.
+See full prescribing information for MEGACE ES.
+ MEGACE ES (megestrol acetate, USP) Oral Suspension Initial U.S. Approval: 1993
+ ----------------------INDICATIONS AND USAGE---------------------Megace ES oral suspension is a progestin indicated for the treatmentof anorexia, cachexia, or an unexplained significant weight loss inpatients with a diagnosis of acquired immunodeficiency syndrome(AIDS) (1).
+ --------------------DOSAGE AND ADMINISTRATION--------------The recommended adult initial dosage of Megace ES oral suspension is 625 mg/day (5 mL/day or one teaspoon daily).
+Shake container well before using (2).
+ ---------------DOSAGE FORMS AND STRENGTHS----------------Oral suspension containing 125 mg of megestrol acetate per mL (3).
+----------------------CONTRAINDICATIONS--------------------------&#x2022;  History of hypersensitivity to megestrol acetate or any
+ component of the formulation (4.1).
+&#x2022;  Known or suspected pregnancy (4.2) (8.1).
+-----------------WARNINGS AND PRECAUTIONS-------------------&#x2022;  Women of childbearing potential should be advised to avoid
+ becoming pregnant (5.2).
+&#x2022;  Use with caution in patients with a history of
+ thromboembolic disease (5.1).
+&#x2022;  Clinical cases of overt Cushing's Syndrome have been
+ reported in association with the chronic use of megestrol acetate.
+In addition, clinical cases of adrenal insufficiency
+ have been observed in patients receiving or being withdrawn from chronic megestrol acetate in the stressed and non-stressed state (5.3).
+ &#x2022;  New onset and exacerbation of pre-existing diabetes have been reported (5.4).
+ ------------------------ADVERSE REACTIONS--------------------------The most common adverse events occurring in &gt; 5% of all patients receiving 800mg/20mL of megestrol acetate oral suspension in the two clinical efficacy trials were nausea, diarrhea, impotence, rash, flatulence, hypertension, and asthenia (6.2).
+ To report SUSPECTED ADVERSE REACTIONS, contact Par Pharmaceutical, Inc.
+at 1-800-828-9393, option 3 or FDA at 1800-FDA-1088 or www.fda.gov/medwatch.
+---------------------------DRUG INTERACTIONS-----------------------Due to a significant decrease in indinavir exposure, administration of a higher dose of indinavir should be considered when coadministering with megestrol acetate (7.1, 12.3).
+----------------USE IN SPECIFIC POPULATIONS-------------------&#x2022;  Geriatrics: In general, dose selection for an elderly patient
+ should be cautious, usually starting at the low end of the dosing range, reflecting the greater frequency of decreased hepatic, renal or cardiac function, and of concomitant disease or other therapy (8.5).
+ &#x2022;  Nursing Mothers: Because of the potential for adverse effects on the newborn, nursing should be discontinued if Megace ES oral suspension is required (8.3).
+ See 17 for PATIENT COUNSELING INFORMATION
+ Revised 9/2014
+ FULL PRESCRIBING INFORMATION: CONTENTS* 1 INDICATIONS AND USAGE 1.1 Limitations of Use 2 DOSAGE AND ADMINISTRATION 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 4.1 Hypersensitivity Reaction 4.2 Pregnancy 5 WARNINGS AND PRECAUTIONS 5.1 General 5.2 Fetal Effects 5.3 Adrenal Insufficiency 5.4 Diabetes 6 ADVERSE REACTIONS 6.1 Serious and Otherwise Important Adverse Reactions 6.2 Clinical Trial Experience 6.3 Postmarketing Experience 7 DRUG INTERACTIONS 7.1 Indinavir 7.2 Zidovudine and Rifabutin 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ 8.3 Nursing Mothers 8.4 Pediatric Use 8.5 Geriatric Use 8.6 Use in Women 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action 12.3 Pharmacokinetics 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility 13.2 Animal Pharmacology and/or Toxicology 14 CLINICAL STUDIES 16 HOW SUPPLIED/STORAGE AND HANDLING 16.1 How Supplied 16.2 Storage 16.3 Safe Handling 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing information are not listed.
+ Reference ID: 3628797
+                                                                                             FULL PRESCRIBING INFORMATION
+  1
+ INDICATIONS AND USAGE
+ Megace ES oral suspension is indicated for the treatment of anorexia, cachexia, or an unexplained significant weight loss in patients with a diagnosis of acquired immunodeficiency syndrome (AIDS).
+ 1.1 Limitations of Use
+  Other Treatable Causes
+  Therapy with megestrol acetate for weight loss should only be instituted after treatable causes of weight loss are sought and addressed.
+These treatable causes include possible malignancies, systemic infections, gastrointestinal disorders affecting absorption, endocrine disease, renal disease or psychiatric diseases.
+ Prophylactic Use
+ Megestrol acetate is not intended for prophylactic use to avoid weight loss.
+ 2 DOSAGE AND ADMINISTRATION
+ The re commended adu lt initial dosage of Megace ES oral suspension is 625 mg/day (5 mL/day or one teaspoon daily).
+Shake the container well before using.
+ This strength (125 mg/mL) is not substitutable with other strengths (e.g., 40 mg/mL).
+ Refer to the prescribing information of the 40 mg/mL product for dosage recommendations for the 40 mg/mL strength.
+ 3 DOSAGE FORMS AND STRENGTHS
+ Megace ES is a milky white, lemon-lime flavored oral suspension containing 125 mg of megestrol acetate per mL.
+Megace ES does not contain the same amount of megestrol acetate as Megace oral suspension or any of the other megestrol acetate oral suspensions (2).
+ 4 CONTRAINDICATIONS
+ 4.1 Hypersensitivity Reaction
+ History of hypersensitivity to megestrol acetate or any component of the formulation.
+ 4.2 Pregnancy
+ Known or suspected pregnancy.
+ Reference ID: 3628797
+                                                                                                     5 WARNINGS AND PRECAUTIONS
+ 5.1 General
+ &#x2022; Effects on HIV viral replication have not been determined.
+ &#x2022; Use with caution in patients with a history of thromboembolic disease.
+ 5.2 Fetal Effects
+ Megestrol acetate may cause fetal harm when administered to a pregnant woman.
+For animal data on fetal effects, see NonClinical Toxicology: Impairment of Fertility (13.1).
+ There are no adequate and well-controlled studies in pregnant women.
+If this drug is used during pregnancy, or if the patient becomes pregnant while taking (receiving) this drug, the patient should be apprised of the potential hazard to the fetus.
+Women of childbearing potential should be advised to avoid becoming pregnant.
+ 5.3 Adrenal Insufficiency
+ The glucocorticoid activity of megestrol acetate oral suspension has not been fully evaluated.
+Clinical cases of overt Cushing's Syndrome have been reported in association with the chronic use of megestrol acetate.
+In addition, clinical cases of adrenal insufficiency have been observed in patients receiving or being withdrawn from chronic megestrol acetate therapy in the stressed and non-stressed state.
+Furthermore, adrenocorticotropin (ACTH) stimulation testing has revealed the frequent occurrence of asymptomatic pituitary-adrenal suppression in patients treated with chronic megestrol acetate therapy.
+Therefore, the possibility of adrenal insufficiency should be considered in any patient receiving or being withdrawn from chronic Megace ES therapy who presents with symptoms and/or signs suggestive of hypoadrenalism (e.g., hypotension, nausea, vomiting, dizziness, or weakness) in either the stressed or non-stressed state.
+Laboratory evaluation for adrenal insufficiency and consideration of replacement or stress doses of a rapidly acting glucocorticoid are strongly recommended in such patients.
+Failure to recognize inhibition of the hypothalamic-pituitary adrenal axis may result in death.
+Finally, in patients who are receiving or being withdrawn from chronic Megace ES therapy, consideration should be given to the use of empiric therapy with stress doses of a rapidly acting glucocorticoid during stress or serious intercurrent illness (e.g., surgery, infection).
+ 5.4 Diabetes
+ Clinical cases of new onset diabetes mellitus and exacerbation of pre-existing diabetes mellitus have been reported in association with the chronic use of megestrol acetate.
+6 ADVERSE REACTIONS
+ 6.1 Serious and Otherwise Important Adverse Reactions
+ The following serious reactions and otherwise important adverse drug reactions are discussed in greater detail in other sections of the labeling:
+ Reference ID: 3628797
+                                                                                                                                                                                                                                                                &#x2022; Hypersensitivity [see Contraindications (4.1)]
+ &#x2022; Pregnancy [see Contraindications (4.2)]
+ &#x2022; Fetal Effects [see Warnings and Precautions (5.2)]
+ &#x2022; Thromboembolic Disease [see Warnings and Precautions (5.1)]
+ &#x2022; Adrenal Insufficiency [see Warnings and Precautions (5.3)]
+ 6.2 Clinical Trial Experience
+ Because clinical trials are conducted under widely varying conditions, adverse reactions observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.
+ The safety of Megace ES (megestrol acetate oral suspension, 125 mg/mL) was based on three studies of megestrol acetate oral suspension (40 mg/mL).
+ The adverse reaction profile of these 3 studies are presented below.
+ Adverse events which occurred in at least 5% of patients in any arm of the two clinical efficacy trials and the open trial for megestrol acetate oral suspension are listed below by treatment group.
+All patients listed had at least one post baseline visit during the 12 study weeks.
+ Table 1: Adverse Events
+ Percentage of Patients Reporting Adverse Events Trial 1
+ (N=236) Trial 2 (N=87)
+ Open Label Trial
+ Placebo Placebo Megestrol Acetate mg/day 0 100 400 800 0 800 1200
+ No.
+of Patients N=34 N=68 N=69 N=65 N=38 N=49 N=176 Diarrhea 15 13 8 15 8 6 10 Impotence 3 4 6 14 0 4 7 Rash 9 9 4 12 3 2 6 Flatulence 9 0 1 9 3 10 6 Hypertension 0 0 0 8 0 0 4 Asthenia 3 2 3 6 8 4 5 Insomnia 0 3 4 6 0 0 1 Nausea 9 4 0 5 3 4 5 Anemia 6 3 3 5 0 0 0 Fever 3 6 4 5 3 2 1 Libido Decreased 3 4 0 5 0 2 1
+ Dyspepsia 0 0 3 3 5 4 2 Hyperglycemia 3 0 6 3 0 0 3 Headache 6 10 1 3 3 0 3 Pain 6 0 0 2 5 6 4 Vomiting 9 3 0 2 3 6 4 Pneumonia 6 2 0 2 3 0 1 Urinary Frequency 0 0 1 2 5 2 1
+ Reference ID: 3628797
+                                                                                                              Adverse events which occurred in 1% to 3% of all patients enrolled in the two clinical efficacytrials with at least one follow-up visit during the first 12 weeks of the study are listed below by body system.
+Adverse events occurring less than 1% are not included.
+There were no significant differences between incidence of these events in patients treated with megestrol acetate and patients treated with placebo.
+ Body as a Whole - abdominal pain, chest pain, infection, moniliasis and sarcoma
+ Cardiovascular System - cardiomyopathy and palpitation
+ Diges ti ve Syst e m - c onsti pa tion, dr y mouth, hepatome ga l y, increased salivation and oral moniliasis
+ Hemic and Lymphatic System - leukopenia
+ Metabolic and Nutritional - LDH increased, edema and peripheral edema
+ Nervou s S ystem - paresthesia, confusion, convulsion, depression, neuropathy, hypesthesia and abnormal thinking
+ Respiratory System - dyspnea, cough, pharyngitis and lung disorder
+ Skin and Appendages - alopecia, herpes, pruritus, vesiculobullous rash, sweating and skin disorder
+ Special Senses - amblyopia
+ Urogenital System - albuminuria, urinary incontinence, urinary tract infection and gynecomastia.
+ 6.3 Postmarketing Experience
+ Postmarketing reports associated with megestrol acetate oral suspension include thromboembolic phenomena including thrombophlebitis, deep vein thrombosis, and pulmonary embolism; and glucose intolerance [see Warnings and Precautions (5.1,5.4)].
+ 7 DRUG INTERACTIONS
+ 7.1 Indinavir
+ Due to the significant decrease in the exposure of indinavir by megestrol acetate, administration of a higher dose of indinavir should be considered when coadministering with megestrol acetate [See Clinical Pharmacology (12.3)].
+ Reference ID: 3628797
+                                                                                                         7.2 Zidovudine and Rifabutin
+ No dosage adjustment for zidovudine and rifabutin is needed when megestrol acetate is coadministered with these drugs [See Clinical Pharmacology (12.3)].
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy
+ Pregnancy Category X [see Warnings and Precautions (5.2)].
+No adequate animal teratology information is available at clinically relevant doses.
+Pregnant rats treated with low doses of megestrol acetate (0.02-fold the recommended clinical dose) resulted in a reduction in fetal weight and number of live births, and feminization of male fetuses.
+ 8.3 Nursing Mothers
+ Because of the potential for adverse effects on the newborn, nursing should be discontinued if Megace ES oral suspension is required.
+ 8.4 Pediatric Use
+ Safety and effectiveness in pediatric patients have not been established.
+ 8.5 Geriatric Use
+ Clinical studies of megestrol acetate oral suspension in the treatment of anorexia, cachexia, or an unexplained significant weight loss in patients with AIDS did not include sufficient numbers of patients aged 65 years and older to determine whether they respond differently than younger patients.
+Other reported clinical experience has not identified differences in responses between elderly and younger patients.
+In general, dose selection for an elderly patient should be cautious, usually starting at the low end of the dosing range, reflecting the greater frequency of decreased hepatic, renal, or cardiac function, and of concomitant disease or other drug therapy.
+ Megestrol acetate is known to be substantially excreted by the kidney, and the risk of toxicreactions to this drug may be greater in patients with impaired renal function.
+Because elderlypatients are more likely to have decreased renal function, care should be taken in dose selection, and it may be useful to monitor renal function.
+ 8.6 Use in Women
+ Megestrol acetate has had limited use in HIV infected women.
+All 10 women in the clinical trials reported breakthrough bleeding.
+Megace ES is a progesterone derivative, which may induce vaginal bleeding in women.
+ Reference ID: 3628797
+                                                                       10 OVERDOSAGE
+ No serious unexpected side effects have resulted from studies involving megestrol acetate oral suspension administered in dosages as high as 1200 mg/day.
+In post-marketing experience, limited reports of overdose have been received.
+ Signs and symptoms reported in the context of overdose included diarrhea, nausea, abdominal pain, shortness of breath, cough, unsteady gait, listlessness, and chest pain.
+ There is no specific antidote for overdose with Megace ES oral suspension.
+ In case of overdose, appropriate supportive measures should be taken.
+ Megestrol acetate has not been tested for dialyzability; however, due to its low solubility it is postulated that dialysis would not be an effective means of treating overdose.
+ 11 DESCRIPTION
+ Megace ES oral suspension contains megestrol acetate, a synthetic derivative of the naturally occurring steroid hormone, progesterone.
+Megestrol acetate is a white, crystalline solid chemically designated as 17-Hydroxy-6-methyl pregna-4,6-diene-3,20-dione acetate.
+Solubility at 37 C in water is 2 mcg per mL, solubility in plasma is 24 mcg per mL.
+Its molecular weight is 384.52.
+ Megace ES is an oral suspension containing 125 mg of megestrol acetate per mL.
+Megace ES oral suspension contains the following inactive ingredients: alcohol (max 0.06% v/vfrom flavor), artificial lime flavor, citric acid monohydrate, docusate sodium, hydroxypropyl methylcellulose (hypromellose), natural and artificial lemon flavor, purified water, sodium benzoate, sodium citrate dihydrate, and sucrose.
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ Several investigators have reported on the appetite enhancing property of megestrol acetate and itspossible use in cachexia.
+The precise mechanism by which megestrol acetate produces effects inanorexia and cachexia is unknown at the present time.
+ Reference ID: 3628797
+                                                                                              12.3 Pharmacokinetics
+ Absorption and Distribution
+ Mean plasma concentrations of megestrol acetate after administration of 625 mg (125 mg/mL) of Megace ES oral suspension are equivalent under fed conditions to 800 mg (40 mg/mL) of megestrol acetate oral suspension in healthy volunteers.
+ In order to characterize the dose proportionality of Megace ES, pharmacokinetic studies across a range of doses were conducted when administered under fasting and fed conditions.
+Pharmacokinetics of megestrol acetate was linear in the dosing range between 150 mg and 675 mg after Megace ES administration regardless of meal condition.
+The mean peak plasma concentration (Cmax) and the mean area under the concentration time-curve (AUC) after a high fat meal were increased by 48% and 36%, respectively, compared to those under the fasting condition after 625 mg Megace ES administration.
+This food effect is less than that seen for the original formulation, megestrol acetate 800 mg/20 mL, where a high fat meal significantly increased AUC and Cmax of megestrol acetate to 2-fold and 7-fold, respectively, compared to those under the fasting condition.
+There was no difference in safety following administration in the fed state, therefore Megace ES could be taken without regard to meals.
+ Plasma steady state pharmacokinetics of megestrol acetate was evaluated in 10 adult, cachectic male adult patients with acquired immunodeficiency syndrome (AIDS) and an involuntary weight loss greater than 10% of baseline who received single oral doses of 800 mg/day of megestrol acetate oral suspension for 21 days.
+The Mean (1SD) Cmax of megestrol acetate was 753 (539) ng/mL.
+The mean AUC was 10476 (7788) ng x hr/mL.
+Median Tmax value was five hours.
+ In another study, 24 asymptomatic HIV seropositive male adult subjects were dosed once daily with 750 mg of megestrol acetate oral suspension for 14 days.
+Mean Cmax and AUC values were 490 (238) ng/mL and 6779 (3048) hr x ng/mL, respectively.
+The median Tmax value was three hours.
+The mean Cmin value was 202 (101) ng/mL.
+The mean % of fluctuation value was 107 (40).
+ Metabolism and Excretion
+ The major route of drug elimination in humans is urine.
+When radio-labeled megestrol acetate was administered to humans in doses of 4 to 90 mg, the urinary excretion within 10 days ranged from 56.5% to 78.4% (mean 66.4%) and fecal excretion ranged from 7.7% to 30.3% (mean 19.8%).
+The total recovered radioactivity varied between 83.1% and 94.7% (mean 86.2%).
+ Megestrol acetate metabolites which were identified in urine constituted 5% to 8% of the dose administered.
+Respiratory excretion as labeled carbon dioxide and fat storage may have accounted for at least part of the radioactivity not found in urine and feces.
+ The mean elimination half-life of megestrol ranged from 20 to 50 hours in healthy subjects.
+ Reference ID: 3628797
+                                                                                        Specific Populations
+ The pharmacokinetics of megestrol acetate has not been studied in specific population, for example, pediatric, renal impairment, and hepatic impairment.
+ Drug Interactions
+ The effects of indinavir, zidovudine or rifabutin on the pharmacokinetics of megestrol acetate were not studied.
+ Zidovudine
+ Pharmacokinetic studies show that there are no significant alterations in exposure of zidovudine when megestrol acetate is administered with this drug.
+ Rifabutin
+ Pharmacokinetic studies show that there are no significant alterations in exposure of rifabutin when megestrol acetate is administered with this drug.
+ Indinavir
+ A pharmacokinetic study in healthy male subjects demonstrated that coadministration of megestrol acetate (675 mg for 14 days) and indinavir (single dose 800 mg) results in a significant decrease in the pharmacokinetic parameters (~32% for Cmax and ~21% for AUC) of indinavir.
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ Data on carcinogenesis were obtained from studies conducted in dogs, monkeys and rats treated with megestrol acetate at doses up to 0.01 to 0.1-fold the recommended clinical dose (13.3 mg/kg/day) based on body mass.
+No males were used in the dog and monkey studies.
+In female beagles, megestrol acetate (0.01, 0.1 or 0.25 mg/kg/day) administered for up to 7 years induced both benign and malignant tumors of the breast.
+In female monkeys, no tumors were found following 10 years of treatment with 0.01, 0.1 or 0.5 mg/kg/day megestrol acetate.
+Pituitary tumors were observed in female rats treated with 3.9 or 10 mg/kg/day of megestrol acetate for 2 years.
+The relationship of these tumors in rats and dogs to humans is unknown but should be considered in assessing the risk-to-benefit ratio when prescribing Megace ES oral suspension and in surveillance of patients on therapy.
+ Megestrol acetate induced unscheduled DNA synthesis in primary cultures of human hepatocytes, but not in rat hepatocytes.
+Megestrol administered to mice increased the frequency of sister chromatid exchange and chromosomal aberrations in bone marrow cells after single intraperitonial doses of 16.25 and 32.50 mg/kg.
+Perinatal/postnatal (segment III) toxicity studies were performed in rats at doses up to 0.02 -fold the recommended clinical dose (13.3 mg/kg/day) based on body
+ Reference ID: 3628797
+                                                                                                            mass.
+In these low dose studies, the reproductive capability of male offspring of megestrol acetate-treated females was impaired.
+Similar results were obtained in dogs.
+No toxicity data are currently available on male reproduction (spermatogenesis) [see Warnings and Precautions (5.2)].
+ 13.2 Animal Pharmacology and/or Toxicology
+ Long-term treatment with Megace ES may increase the risk of respiratory infections.
+A trend toward increased frequency of respiratory infections, decreased lymphocyte counts and increased neutrophil counts was observed in a two-year chronic toxicity/carcinogenicity study of megestrol acetate conducted in rats.
+ 14 CLINICAL STUDIES
+ The efficacy of Megace ES (megestrol acetate oral suspension, 125 mg/mL) was based on two trials of megestrol acetate oral suspension (40 mg/mL).
+ These two trials are described below.
+ Trial 1
+ One was a multicenter, randomized, double-blind, placebo-controlled study comparing megestrol acetate (MA) at doses of 100 mg, 400 mg, and 800 mg per day versus placebo in AIDS patients with anorexia/cachexia and significant weight loss.
+Of the 270 patients entered on study, 195 met all inclusion/exclusion criteria, had at least two additional post baseline weight measurements over a 12 week period or had one post baseline weight measurement but dropped out for therapeutic failure.
+The percent of patients gaining 2.3 kg or more at maximum weight gain in 12 study weeks was statistically significantly greater for the 800 mg (64%) and 400 mg (57%) MA-treated groups than for the placebo group (24%).
+Mean weight increased from baseline to last evaluation in 12 study weeks in the 800 mg MA-treated group by 3.5 kg, the 400 mg MA group by1.9 kg, the 100 mg MA group by 0.9 kg and decreased in the placebo group by 0.7 kg.
+Mean weight changes at 4, 8 and 12 weeks for patients evaluable for efficacy in the two clinical trials is shown graphically.
+Changes in body composition during the 12 study weeks as measured by bioelectrical impedance analysis showed increases in non-water body weight in the MA-treated groups.
+In addition, edema developed or worsened in only 3 patients.
+ Greater percentages of MA-treated patients in the 800 mg group (89%), the 400 mg group (68%) and the 100 mg group (72%), than in the placebo group (50%), showed an improvement in appetite at last evaluation during the 12 study weeks.
+A statistically significant difference was observed between the 800 mg MA-treated group and the placebo group in the change in caloric intake from baseline to time of maximum weight change.
+Patients were asked to assess weight change, appetite, appearance, and overall perception of well-being in a 9 question survey.
+At maximum weight change only the 800 mg MA-treated group gave responses that were statistically significantly more favorable to all questions when compared to the placebo-treated group.
+A dose response was noted in the survey with positive responses correlating with higher dose for all questions.
+ Trial 2
+ Reference ID: 3628797
+                                                                                                                                                                                                                                      The second trial was a multicenter, randomized, double-blind, placebo-controlled study comparing megestrol acetate 800 mg/day versus placebo in AIDS patients with anorexia/cachexia and significant weight loss.
+Of the 100 patients entered on study, 65 met all inclusion/exclusion criteria, had at least two additional post baseline weight measurements over a 12 week period or had one post baseline weight measurement but dropped out for therapeutic failure.
+Patients in the 800 mg MA-treated group had a statistically significantly larger increase in mean maximum weight change than patients in the placebo group.
+From baseline to study week 12, mean weight increased by 5.1 kg in the MA-treated group and decreased 1.0 kg in the placebo group.
+Changes in body composition as measured by bioelectrical impedance analysis showed increases in non-water weight in the MA-treated group (see Clinical Studies table).
+No edema was reported in the MA-treated group.
+A greater percentage of MA-treated patients (67%) than placebo-treated patients (38%) showed an improvement in appetite at last evaluation during the 12 study weeks; this difference was statistically significant.
+There were no statistically significant differences between treatment groups in mean caloric change or in daily caloric intake at time to maximum weight change.
+In the same 9 question survey referenced in the first trial, patients' assessments of weight change, appetite, appearance, and overall perception of well-being showed increases in mean scores in MA-treated patients as compared to the placebo group.
+ In both trials, patients tolerated the drug well and no statistically significant differences were seen between the treatment groups with regard to laboratory abnormalities, new opportunistic infections, lymphocyte counts, T4 counts, T8 counts, or skin reactivity tests [see Adverse Reactions (6)].
+ Ta bl e 2 : M egestrol Aceta te O ra l Su s pension
+ Clinical Efficacy Trials
+  Megestrol Acetate Oral Suspension Clinical Efficacy Trials Trial 1
+ Study Accrual Dates 11/88 to 12/90
+ Trial 2 Study Accrual Dates
+ 5/89 to 4/91 Megestrol Acetate, mg/day
+ Entered Patients Evaluable Patients
+ Mean Change in Weight (kg) Baseline to 12 Weeks
+ % Patients &#x2265;2.3 kg Gain at Last Evaluation in 12 Weeks
+ Mean Changes in Body Composition*: Fat Body Mass (kg) Lean Body Mass (kg) Water (liters)
+ % Patients With Improved Appetite: At Time of Maximum Weight Change At Last Evaluation in 12 Weeks
+ Mean Change in Daily Caloric Intake: Baseline to Time of Maximum Weight Change
+ 0 100 400 800 38 82 75 75 28 61 53 53
+ 0.0 1.3 4.2 4.9
+ 21 44 57 64
+ 0.0 1.0 1.3 2.5 -0.8 -0.1 0.7 1.1 -1.3 -0.3 0.0 0.0
+ 50 72 72 93 50 72 68 89
+ -107 326 308 646
+ 0 800 48 52 29 36
+ -1.0 5.1
+ 28 47
+ 0.7 2.6 -0.7 -0.3 -0.1 -0.1
+ 48 69 38 67
+ 30 464 *Based on bioelectrical impedance analysis determinations at last evaluation in 12 weeks.
+ Reference ID: 3628797
+                                                     16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied
+ Megace ES oral suspension is a milky white, lemon-lime flavored oral suspension containing 125 mg of megestrol acetate per mL.
+Available in bottles of 150 mL (5 fl oz) NDC 49884-949-69.
+16.2 Storage
+ Store Megace ES oral suspension between 15 to 25 C (59 to 77 F) and dispense in a tight container.
+Protect from heat.
+ 16.3 Safe Handling
+  Health Hazard Data
+  There is no threshold limit value established by OSHA, NIOSH, or ACGIH.
+Exposure or overdose at levels approaching recommended dosing levels could result in side effects described above [see Warnings and Precautions (5) and Adverse Reactions (6)].
+Women at risk of pregnancy should avoid such exposure.
+ Reference ID: 3628797
+                                                                                           17 PATIENT COUNSELING INFORMATION
+ The prescriber should inform the patient about the product differences to avoid overdosing or underdosing of megestrol acetate.
+The recommended adult dosage of Megace ES is one teaspoon (5 mL) once a day [see table in Dosage and Administration (2)].
+ Patients using Megace ES should receive the following instructions:
+ &#x2022;  This medication is to be used as directed by the physician.
+ &#x2022;  Megace ES (625 mg/5 mL) does not contain the same amount of megestrol acetate as Megace oral suspension or any of the other megestrol acetate oral suspensions.
+Megace ES contains 625 mg of megestrol acetate per 5 mL (125mg/mL) whereas Megace oral suspension and other megestrol acetate oral suspensions contain 800 mg per 20 mL (40 mg/mL).
+ &#x2022;  Report any adverse reaction experiences while taking this medication.
+ &#x2022;  Use contraception while taking this medication if you are a woman capable of becoming pregnant.
+ &#x2022;  Notify your physician if you become pregnant while taking this medication.
+ Manufactured by: PAR PHARMACEUTICAL COMPANIES, INC.
+ Spring Valley, New York 10977
+ U.S. Patent No:  6,592,903 7,101,576
+ Revised: 09/14  OS949-01-1-09
+ Megace is a registered trademark of Bristol-Myers Squibb Company licensed to Par Pharmaceutical, Inc.
+ Reference ID: 3628797
+  

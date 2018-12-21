@@ -1,0 +1,943 @@
+label
+  HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use PEGASYS safely and effectively.
+See full prescribing information for PEGASYS.
+  PEGASYS (peginterferon alfa-2a) injection, for subcutaneous use Initial U.S. Approval: 2002
+ WARNING: RISK OF SERIOUS DISORDERS See full prescribing information for complete boxed warning.
+ Risk of Serious Disorders &#x2022;  May cause or aggravate fatal or life-threatening neuropsychiatric,
+ autoimmune, ischemic, and infectious disorders.
+Monitor closely and withdraw therapy with persistently severe or worsening signs or symptoms of the above disorders (5)
+ ---------------------------RECENT MAJOR CHANGES --------------------------Boxed Warning 9/2014 Indications and Usage (1) 9/2014 Dosage and Administration (2) 9/2014 Contraindications (4) 9/2014 Warnings and Precautions
+ Pregnancy: Use with Ribavirin (5.1) 9/2014
+ Impact on Growth in Pediatric Patients (5.15) 3/2015
+  --------------------------- INDICATIONS AND USAGE---------------------------PEGASYS is an antiviral indicated for:
+ Treatment of Chronic Hepatitis C (CHC) as part of a combination regimen
+ with other hepatitis C virus (HCV) antiviral drugs in patients 5 years of age
+ and older with compensated liver disease (1.1)
+ PEGASYS monotherapy is indicated for:
+ &#x2022;  CHC only if patient has contraindication to or significant intolerance to
+ other HCV antiviral drugs (1.1) &#x2022;  Treatment of adult patients with HBeAg positive and HBeAg negative  chronic hepatitis B infection who have compensated liver disease and evidence of viral replication and liver inflammation (1.2)
+ -----------------------DOSAGE AND ADMINISTRATION ----------------------&#x2022;  PEGASYS is administered by subcutaneous injection (2) &#x2022;  In adult patients with CHC or chronic hepatitis B (CHB), PEGASYS is
+ dosed as 180 mcg per week and the duration of treatment depends on indication, genotype, and whether it is administered with other HCV antiviral drugs (2.2, 2.4)
+ &#x2022;  In pediatric patients with CHC, PEGASYS is dosed as 180 mcg/1.73 m2 x BSA per week, in combination with ribavirin, and the duration of treatment depends on genotype (2.3)
+ &#x2022;  Dosage modification is recommended in patients experiencing certain laboratory abnormalities, adverse reactions or renal impairment (2.5, 12.3)
+ --------------------- DOSAGE FORMS AND STRENGTHS---------------------Injection (all presentations below are single-dose): &#x2022;  180 mcg/mL in a Vial (3) &#x2022;  180 mcg/0.5 mL in a Prefilled Syringe (3) &#x2022;  180 mcg/0.5 mL in an Autoinjector (3) &#x2022;  135 mcg/0.5 mL in an Autoinjector (3)
+ ------------------------------ CONTRAINDICATIONS -----------------------------&#x2022;  Autoimmune hepatitis (4) &#x2022;  Hepatic decompensation in patients with cirrhosis (4) &#x2022;  Use in neonates/infants (4) &#x2022;  Known hypersensitivity reactions such as urticaria, angioedema,
+ bronchoconstriction and anaphylaxis to alpha interferons or any component of the product (4)
+ Additional contraindications for use with other HCV antiviral drugs: &#x2022;  When used in combination with other HCV antiviral drugs, all
+ contraindications also apply to Pegasys combination therapy (4)
+ &#x2022;  Ribavirin is contraindicated in pregnant women and men whose female partners are pregnant (4, 8.1)
+ ----------------------- WARNINGS AND PRECAUTIONS ----------------------Use with Ribavirin &#x2022;  Birth defects and fetal death: patients must have a negative pregnancy test
+ prior to therapy, use 2 forms of effective contraception, and have monthly pregnancy tests (5.1)
+ PEGASYS Clinically Significant Adverse Reactions or Risks Patients exhibiting the following events should be closely monitored and may require dose reduction or discontinuation of therapy: &#x2022;  Neuropsychiatric reactions (5.2) &#x2022;  Cardiovascular disorders (5.3) &#x2022;  Bone marrow suppression (5.4) &#x2022;  Autoimmune and endocrine disorders (including thyroid disorders;
+ hyperglycemia) (5.5, 5.6) &#x2022;  Ophthalmologic disorders (5.7) &#x2022;  Cerebrovascular disorders (5.8) &#x2022;  Hepatic decompensation in cirrhotic patients.
+Exacerbation of hepatitis  during hepatitis B treatment (5.9) &#x2022;  Pulmonary disorders (5.10) &#x2022;  Infections (bacterial, viral, fungal) (5.11) &#x2022;  Colitis and pancreatitis (5.12, 5.13) &#x2022;  Hypersensitivity and serious skin reactions including Stevens-Johnson  syndrome (5.14) &#x2022;  Growth impairment with combination therapy in pediatric patients (5.15) &#x2022;  Peripheral neuropathy when used in combination with telbivudine (5.16)
+ ------------------------------ ADVERSE REACTIONS -----------------------------&#x2022;  The most common adverse reactions (incidence greater than 40%) are
+ fatigue/asthenia, pyrexia, myalgia, and headache.
+(6.1)
+ &#x2022;  The most common adverse reactions in pediatric subjects were similar to those seen in adults.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Genentech at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ ------------------------------ DRUG INTERACTIONS------------------------------&#x2022;  Drugs metabolized by CYP1A2: monitor for increased serum levels of
+ theophylline and adjust dose accordingly (7.2) &#x2022;  Methadone: monitor for signs and symptoms of methadone toxicity (7.3) &#x2022;  Nucleoside analogues: closely monitor for toxicities.
+Reduce or discontinue
+ the dose of PEGASYS or ribavirin or both should the events worsen (7.4)  &#x2022;  Zidovudine: monitor for worsening neutropenia and/or anemia with
+ PEGASYS and/or ribavirin(7.4)
+ ----------------------- USE IN SPECIFIC POPULATIONS ----------------------&#x2022;  Pediatric patients: Safety and efficacy in pediatric patients less than 5 years
+ old have not been established (8.4) &#x2022;  Geriatric patients: Neuropsychiatric, cardiac, and systemic (flu-like)  adverse reactions may be more severe (8.5) &#x2022;  Patients with hepatic impairment: Clinical status and hepatic function
+ should be closely monitored and treatment should be immediately discontinued if decompensation occurs (8.5)
+ &#x2022;  Patients with renal impairment: PEGASYS dose should be reduced in patients with creatinine clearance less than 30 mL/min (2.5, 8.6)
+ &#x2022;  Chronic Hepatitis B: Safety and efficacy have not been established in hepatitis B patients coinfected with HCV or HIV (8.8)
+ See 17 for PATIENT COUNSELING INFORMATION and FDA-approved Medication Guide.
+ Revised: 3/2015
+ Reference ID: 3717561 1
+                                                                                                                                                                                                   ____________________________________________________________________________________________________________________________________
+    FULL PRESCRIBING INFORMATION: CONTENTS* WARNING: RISK OF SERIOUS DISORDERS 1 INDICATIONS AND USAGE
+ 1.1 Chronic Hepatitis C
+ 1.2 Chronic Hepatitis B
+  2 DOSAGE AND ADMINISTRATION 2.1 Dosage Overview
+ 2.2 Adult Patients with CHC
+ 2.3 Pediatric Patients with CHC
+ 2.4 Chronic Hepatitis B
+ 2.5 Dosage Modifications
+ 2.6 Preparation and Administration
+  3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 Pregnancy:Use with Ribavirin
+ 5.2 Neuropsychiatric
+ 5.3 Cardiovascular Disorders
+ 5.4 Bone Marrow Suppression
+ 5.5 Autoimmune Disorders
+ 5.6 Endocrine Disorders
+ 5.7 Ophthalmologic Disorders
+ 5.8 Cerebrovascular Disorders
+ 5.9 Hepatic Failure and Hepatitis Exacerbations
+ 5.10 Pulmonary Disorders
+ 5.11 Infections
+ 5.12 Colitis
+ 5.13 Pancreatitis
+ 5.14 Hypersensitivity
+ 5.15 Impact on Growth in Pediatric Patients
+ 5.16 Peripheral Neuropathy
+ 5.17 Laboratory Tests
+  6 ADVERSE REACTIONS 6.1 Clinical Trials Experience
+ 6.2 Immunogenicity
+ 6.3 Postmarketing Experience
+  7 DRUG INTERACTIONS 7.1 Drugs Metabolized by Cytochrome P450
+ 7.2 Theophylline
+ 7.3 Methadone
+ 7.4 Nucleoside Analogues
+  8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ 8.2 Nursing Mothers
+ 8.3 Pediatric Use
+ 8.4 Geriatric Use
+ 8.5 Hepatic Impairment
+ 8.6 Renal Impairment
+ 8.7 Organ Transplant Recipients
+ 8.8 Chronic Hepatitis B
+  10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+ 12.4 Microbiology
+  13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+  14 CLINICAL STUDIES 14.1 Chronic Hepatitis C Studies 1, 2, and 3: PEGASYS/COPEGUS
+ Combination Therapy
+ 14.2 Chronic Hepatitis C and Coinfection with HIV (CHC/HIV)
+  Study 4: PEGASYS Monotherapy and PEGASYS/COPEGUS
+ Combination Therapy
+  14.3 Chronic Hepatitis C Studies 5, 6 and 7: PEGASYS Monotherapy
+ 14.4 Chronic Hepatitis B Studies 8 and 9: PEGASYS Monotherapy
+  16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing information are not listed
+ Reference ID: 3717561 2
+                                                                                                                                                                    FULL PRESCRIBING INFORMATION
+  WARNING: RISK OF SERIOUS DISORDERS
+ Risk of Serious Disorders Alpha interferons, including PEGASYS (peginterferon alfa-2a), may cause or aggravate fatal or life-threatening neuropsychiatric, autoimmune, ischemic, and infectious disorders.
+Patients should be monitored closely with periodic clinical and laboratory evaluations.
+Therapy should be withdrawn in patients with persistently severe or worsening signs or symptoms of these conditions.
+In many, but not all cases, these disorders resolve after stopping PEGASYS therapy [see Warnings and Precautions (5.2, 5.5, 5.8, 5.11, 5.14, 5.16), Adverse Reactions (6.1) and Nonclinical Toxicology (13.1)].
+ 1 INDICATIONS AND USAGE 1.1 Chronic Hepatitis C PEGASYS, as part of a combination regimen with other hepatitis C virus (HCV) antiviral drugs, is indicated for the treatment of adults with chronic hepatitis C (CHC) with compensated liver disease.
+For information about the safe and effective use of other HCV antiviral drugs to be used in combination with PEGASYS, refer to their prescribing information.
+PEGASYS in combination with ribavirin is indicated for treatment of pediatric patients 5 years of age and older with CHC and compensated liver disease.
+PEGASYS monotherapy is only indicated for the treatment of patients with CHC with compensated liver disease if there are contraindications or significant intolerance to other HCV antiviral drugs.
+ Limitations of Use: &#x2022;  PEGASYS alone or in combination with ribavirin without additional HCV antiviral drugs is not
+ recommended for treatment of patients with CHC who previously failed therapy with an interferon-alfa.
+&#x2022;  PEGASYS is not recommended for treatment of patients with CHC who have had solid organ
+ transplantation [see Use in Specific Populations (8.8)].
+  1.2 Chronic Hepatitis B (CHB) PEGASYS is indicated for the treatment of adult patients with HBeAg-positive and HBeAg-negative chronic hepatitis B infection who have compensated liver disease and evidence of viral replication and liver inflammation.
+ 2 DOSAGE AND ADMINISTRATION 2.1 Dosage Overview Administer PEGASYS by subcutaneous injection once weekly in the abdomen or thigh for the treatment of:
+ &#x2022;  Adult patients with chronic hepatitis C (CHC) without or with HIV coinfection [see Dosage and Administration (2.2)]; and
+ &#x2022;  Pediatric patients with CHC [see Dosage and Administration (2.3)]; and &#x2022;  Adult patients with chronic hepatitis B (CHB) [see Dosage and Administration (2.4)].
+ For treatment of CHC, use PEGASYS in combination with other HCV antiviral drugs.
+ For information about the recommended dosage and administration and the safe and effective use of these other HCV antiviral drugs, refer to their prescribing information.
+PEGASYS monotherapy is only indicated in the treatment of CHC if there are contraindications to or significant intolerance to other HCV antiviral drugs.
+ For dosage modifications in patients with CHC or CHB:
+ &#x2022;  Due to neutropenia, thrombocytopenia, ALT elevation, and depression [see Dosage and Administration (2.5)].
+ &#x2022;  In patients with severe renal impairment (creatinine clearance less than 30 mL/minute) and in patients with creatinine clearance between 30 and 50 mL/minute [see Dosage and Administration (2.5)].
+ Reference ID: 3717561 3
+                                                                                                                                                                                                                  For important administration instructions for all the PEGASYS injection presentations (i.e., vial, prefilled syringe, autoinjector) see Dosage and Administration (2.6).
+ 2.2 Adult Patients with Chronic Hepatitis C Dosage in Adults with CHC without HIV Coinfection Table 1 displays the recommended dosage and duration of PEGASYS and other HCV antiviral drugs in adults with CHC (without HIV coinfection) based on HCV genotype.
+ For treatment of HCV genotype 1 with PEGASYS in combination with ribavirin or alone, discontinuation of treatment is recommended if at least a 2 log10 reduction from baseline in HCV RNA has not been demonstrated by 12 weeks of therapy or if undetectable HCV RNA has not been achieved after 24 weeks of therapy [see Clinical Studies (14)].
+Refer to the prescribing information for specific HCV antiviral drugs used in combination with PEGASYS for information on stopping therapy based on treatment response.
+  Immediately discontinue PEGASYS for hepatic decompensation (Child-Pugh score greater than 6 [class B and C]).
+ Table 1 Recommended Adult Dosage for PEGASYS for CHC Infection1
+ Hepatitis C Virus Genotype PEGASYS Dosage PEGASYS Duration
+ Genotypes 1, 4* 180 mcg subcutaneous injection in thigh or abdomen once weekly
+ Refer to the prescribing information of HCV antiviral drugs Genotypes 2, 3**
+ Genotypes 5, 6 There is insufficient data for dosage recommendations 1 If PEGASYS is used in combination with other antiviral drugs for CHC, refer to the prescribing information of the other HCV antiviral drugs for the recommended dosage of the other HCV antiviral drugs and duration of the entire treatment regimen.
+* If PEGASYS and ribavirin are used without other HCV antiviral drugs the recommended duration of therapy is 48 weeks.
+** If PEGASYS and ribavirin are used without other HCV antiviral drugs the recommended duration of therapy is 24 weeks.
+ If PEGASYS monotherapy is used for treatment of CHC, the recommended PEGASYS dosage is 180 mcg via subcutaneous injection in thigh or abdomen once weekly for 48 weeks.
+ Dosage in Adults with CHC with HIV Coinfection The recommended PEGASYS dosage in adults with CHC and HIV coinfection is 180 mcg subcutaneously once weekly in the thigh or abdomen.
+If PEGASYS is used in combination with other antiviral drugs, refer to the prescribing information of the other HCV antiviral drugs for the recommended dosage of the other HCV antiviral drugs and duration of the entire treatment regimen (including PEGASYS).
+If PEGASYS and ribavirin are used without other HCV antiviral drugs, the recommended duration of therapy is 48 weeks (regardless of HCV genotype).
+  2.3 Pediatric Patients with CHC
+ PEGASYS is administered as 180 mcg/1.73 m2 x BSA subcutaneously once weekly, to a maximum dose of 180 mcg, and should be given in combination with ribavirin.
+The recommended treatment duration for pediatric patients with HCV genotype 2 or 3 is 24 weeks and for other HCV genotypes is 48 weeks.
+Patients who initiate treatment prior to their 18th birthday should maintain the recommended pediatric dosage (not the adult dosage) through the completion of therapy.
+Refer to the prescribing information of ribavirin for the recommended dosage and duration.
+ Reference ID: 3717561 4
+                                                                                                                                                           2.4 Adults with Chronic Hepatitis B (CHB)
+ The recommended PEGASYS dosage in adults with CHB is 180 mcg subcutaneously once weekly in the thigh or abdomen for 48 weeks.
+ 2.5 Dosage Modifications
+ Dosage Modifications Due to Adverse Reactions, Neutropenia or Thrombocytopenia in Adults
+ Table 2 displays the recommended PEGASYS dosage modifications due to adverse reactions, or due to neutropenia, or thrombocytopenia in adults.
+Following improvement of the adverse reaction, neutropenia or thrombocytopenia, consider re-escalation of the dosage back to the previous dosage [see Warnings and Precautions (5) and Adverse Reactions (6)].
+ Table 2  Recommended PEGASYS Dosage Modifications Due to Adverse Reactions, Neutropenia or Thrombocytopenia in Adults
+ Laboratory Values Recommended PEGASYS Dosage Neutropenia ANC &lt; 750 cells/mm3 Reduce to 135 mcg subcutaneously once weekly
+ ANC &lt; 500 cells/mm3 Discontinue treatment until ANC values return to more than 1000 cells/mm3.
+Reinstitute at 90 mcg subcutaneously once weekly and monitor ANC.
+ Thrombocytopenia Platelet &lt; 50,000 cells/mm3 Reduce to 90 mcg subcutaneously once weekly
+ Platelet &lt; 25,000 cells/mm3 Discontinue treatment
+ ANC = absolute neutrophil count
+ Dosage Modifications Due to ALT Elevation in Adults
+ If ALT increases are progressive despite dose reduction or accompanied by increased bilirubin or evidence of hepatic decompensation, therapy should be immediately discontinued.
+In CHC patients with progressive ALT increases above baseline values, the dosage of PEGASYS should be reduced to 135 mcg and more frequent monitoring of liver function should be performed.
+After PEGASYS dosage reduction or withholding, therapy can be resumed after ALT flares subside.
+ In chronic hepatitis B patients with elevations in ALT (greater than 5 x ULN), more frequent monitoring of liver function should be performed and consideration should be given to either reducing the dosage of PEGASYS to 135 mcg or temporarily discontinuing treatment.
+After PEGASYS dosage reduction or withholding, therapy can be resumed after ALT flares subside.
+ In adult patients with persistent, severe (ALT greater than 10 times above the upper limit of normal) hepatitis B flares, consideration should be given to discontinuation of treatment.
+ Dosage Modifications Due to Depression
+ Table 3 displays the recommended PEGASYS dosage modifications in adults and pediatric patients who develop interferon-related depression or whose underlying depression worsens.
+Table 3 also includes recommended frequency of psychiatric visits.
+ Reference ID: 3717561 5
+                                                                                                                                     Table 3 Recommended PEGASYS Dosage Modifications and Psychiatric Visits Due to Depression in Adult &amp; Pediatric Patients
+ Depression Severity
+ Initial Depression Management (4-8 weeks) Depression Management After 8 Weeks
+ Dosage Modification Visit Schedule
+ Depression Severity
+ Remains Stable
+ Depression Severity Improves
+ Depression Severity Worsens
+ Mild No change Evaluate once weekly by visit and/or phone
+ Continue weekly visit schedule
+ Resume normal visit schedule
+ Consider psychiatric consultation.
+Discontinue PEGASYS or reduce dosage to 135 mcg (135 mcg/1.73 m2 x BSA for pediatric patients) or 90 mcg once weekly (90 mcg/1.73 m2 x BSA for pediatric patients)
+ Moderate
+ Decrease PEGASYS dosage to 135 mcg (135 mcg/1.73 m2 x BSA for pediatric patients) or 90 mcg (90 mcg/1.73 m2 x BSA for pediatric patients) once weekly
+ Evaluate once weekly (office visit at least every other week)
+ Consider psychiatric consultation.
+Continue reduced dosing
+ If symptoms improve and are stable for 4 weeks, may resume normal visit schedule.
+Continue reduced dosage or return to normal dosage
+ Obtain immediate psychiatric consultation Discontinue PEGASYS permanently.
+ Severe Discontinue PEGASYS permanently
+ Obtain immediate psychiatric consultation
+ Psychiatric therapy necessary
+ Dosage Modifications Due to Adverse Reactions or Laboratory Abnormalities in Pediatric Patients
+ Table 4 displays the recommended PEGASYS dosage modifications due to adverse reactions, neutropenia, thrombocytopenia, or elevated liver enzymes in pediatric patients with CHC.
+  Reference ID: 3717561 6
+                                                                                                                                                                                           Table 4 Recommended PEGASYS Dosage Modifications for Neutropenia, Thrombocytopenia, and Elevated ALT in Pediatric Patients
+ Laboratory Abnormality Recommended PEGASYS Dosage Modification
+ Neutropenia
+ ANC 750-999 cells/mm3 Week 1-2: immediate modification to 135 mcg/1.73 m2 x BSA
+ Week 3-48: no modification.
+ ANC 500-749 cells/mm3
+ Week 1-2: &#x2022; Delay or hold dosage until &gt;750 cells/mm3 then
+ resume dosage at 135 mcg/1.73 m2 x BSA &#x2022; Assess weekly x 3 to verify ANC &gt;750 cells/mm3;
+ Week 3-48: immediate modification to 135 mcg/1.73 m2 x BSA.
+ ANC 250-499 cells/mm3
+ Week 1-2: Delay or hold dosage until &gt;750 cells/mm3 then resume dose at 90 mcg/1.73 m2 x BSA;
+ Week 3-48: Delay or hold dosage until &gt;750 cells/mm3 then resume dosage at 135 mcg/1.73 m2 x BSA.
+ ANC &lt;250 cells/mm3 (or febrile neutropenia): Discontinue treatment.
+ Thrombocytopenia Platelet &lt;50,000 cells/mm3 Reduce dosage to 90 mcg/1.73 m2 x BSA.
+ Increased alanine transaminase (ALT)
+ For persistent or increasing elevations &#x2265;5 but &lt;10 x ULN,
+ &#x2022; Modify dosage to 135 mcg/1.73 m2 x BSA.
+&#x2022; Monitor weekly, reduce dosage further if
+ necessary, until stable or ALT level decreases.
+For persistent ALT values &#x2265;10 x ULN Discontinue treatment.
+ Dosage Modifications in Adults and Pediatric Patients with Renal Impairment
+ Prior to administering PEGASYS, evaluate renal function.
+ Table 5 displays the recommended dosage modifications in adults with creatinine clearance less than 30 mL/minute, including patients with end-stage renal disease requiring hemodialysis [see Use in Specific Populations (8.6) and Clinical Pharmacology (12.3)].
+Because there are no data in pediatric patients with renal impairment, dosage recommendations in pediatric patients are not provided.
+Refer to the respective prescribing information of other HCV antiviral drugs regarding use in patients with renal impairment.
+ Table 5 PEGASYS Dosage Modification for Adults with Renal Impairment
+ Creatinine Clearance Recommended PEGASYS Dosage
+ 30 to 50 mL/minute 180 mcg once weekly
+ Less than 30 mL/minute including patients on hemodialysis 135 mcg once weekly
+ Less than 30 mL/minute including patients on hemodialysis* 135 mcg once weekly
+ * If severe adverse reactions or laboratory abnormalities develop, PEGASYS dose can be reduced to 90 mcg once weekly until adverse reactions abate.
+If intolerance persists after dosage adjustment, PEGASYS should be discontinued.
+ Reference ID: 3717561 7
+                                                                                                                                                              2.6 Preparation and Administration After proper training in subcutaneous injection, a patient may subcutaneously self-inject with PEGASYS if a healthcare provider determines that it is appropriate [see Instructions for Use].
+Visually inspect PEGASYS for particulate matter and discoloration before administration (do not use if particulate matter is visible or product is discolored).
+ Table 6 displays the recommended volume of PEGASYS to be administered for the single-dose vial, prefilled syringe, and autoinjector presentations for the different dosages recommendations (i.e., 180, 135, or 90 mcg once weekly).
+  Discard the unused portion of PEGASYS in single-use vials or prefilled syringes in excess of the labeled volume.
+  Table 6 Use of the Vial, Prefilled Syringe, and Autoinjector for Different PEGASYS Dosages
+ Recommended PEGASYS
+ Dosage PEGASYS Presentations
+ 180 mcg/mL in a vial 180 mcg/0.5 mL in a prefilled syringe 180 mcg/0.5 mL
+ in an autoinjector
+ 135 mcg/0.5 mL in an
+ autoinjector 180 mcg Use entire 1 mL Use entire 0.5 mL May use Do not use 135 mcg Use 0.75 mL Use 0.375 mL Do not use May use 90 mcg Use 0.5 mL Use 0.25 mL Do not use Do not use
+ 3 DOSAGE FORMS AND STRENGTHS Injection (all presentations below are single-dose):
+  &#x2022;  180 mcg/mL in a vial &#x2022;  180 mcg/0.5 mL in a prefilled syringe &#x2022;  180 mcg/0.5 mL in an autoinjector &#x2022;  135 mcg/0.5 mL in an autoinjector
+ 4 CONTRAINDICATIONS PEGASYS is contraindicated in patients with:
+ &#x2022;  Known hypersensitivity reactions such as urticaria, angioedema, bronchoconstriction, anaphylaxis, or Stevens-Johnson syndrome to alpha interferons, including PEGASYS, or any of its components.
+ &#x2022;  Autoimmune hepatitis &#x2022;  Hepatic decompensation (Child-Pugh score greater than 6 [class B and C]) in cirrhotic patients before
+ treatment &#x2022;  Hepatic decompensation with Child-Pugh score greater than or equal to 6 in cirrhotic CHC patients
+ coinfected with HIV before treatment
+ PEGASYS is contraindicated in neonates and infants because it contains benzyl alcohol.
+Benzyl alcohol is associated with an increased incidence of neurologic and other complications which are sometimes fatal in neonates and infants.
+ When PEGASYS is used in combination with other HCV antiviral drugs, the contraindications applicable to those agents are applicable to combination therapies.
+PEGASYS combination treatment with ribavirin is contraindicated in women who are pregnant and men whose female partners are pregnant [See Warnings and Precautions (5.1) and Use in Specific Populations (8.1)]
+ Refer to the prescribing information of the other HCV antiviral drugs, including ribavirin, for a list of their contraindications.
+ Reference ID: 3717561 8
+                                                                                                                              5 WARNINGS AND PRECAUTIONS Refer to the prescribing information of the other HCV antiviral drugs, including ribavirin, for their Warnings and Precautions.
+ 5.1 Pregnancy: Use with Ribavirin Ribavirin may cause birth defects and/or death of the exposed fetus.
+Patients must avoid pregnancy (female patients or female partners of male patients) while taking PEGASYS and ribavirin combination therapy.
+Ribavirin therapy should not be started unless a confirmed negative pregnancy test has been obtained immediately prior to initiation of therapy.
+Women of childbearing potential and men must use two forms of effective contraception during treatment and for at least 6 months after treatment has concluded.
+Routine monthly pregnancy tests must be performed during this time [see Contraindications (4), Patient Counseling Information (17) and ribavirin labeling].
+ 5.2 Neuropsychiatric Reactions Life-threatening or fatal neuropsychiatric reactions may manifest in all patients receiving therapy with PEGASYS and include suicide, suicidal ideation, homicidal ideation, depression, relapse of drug addiction, and drug overdose.
+These reactions may occur in patients with and without previous psychiatric illness.
+ PEGASYS should be used with extreme caution in all patients who report a history of depression.
+Neuropsychiatric adverse events observed with alpha interferon treatment include aggressive behavior, psychoses, hallucinations, bipolar disorders, and mania.
+Physicians should monitor all patients for evidence of depression and other psychiatric symptoms.
+Patients should be advised to report any sign or symptom of depression or suicidal ideation to their prescribing physicians.
+In severe cases, therapy should be stopped immediately and psychiatric intervention instituted [see Boxed Warning, Adverse Reactions (6.1) and Dosage and Administration (2.5)].
+ 5.3 Cardiovascular Disorders Hypertension, supraventricular arrhythmias, chest pain, and myocardial infarction have been observed in patients treated with PEGASYS.
+PEGASYS should be administered with caution to patients with pre-existing cardiac disease.
+Because cardiac disease may be worsened by ribavirin-induced anemia, patients with a history of significant or unstable cardiac disease should not receive PEGASYS/ribavirin [see ribavirin prescribing information].
+ 5.4 Bone Marrow Suppression PEGASYS suppresses bone marrow function and may result in severe cytopenias.
+Ribavirin may potentiate the neutropenia and lymphopenia induced by alpha interferons including PEGASYS.
+Very rarely, alpha interferons may be associated with aplastic anemia.
+It is advised that complete blood counts (CBC) be obtained pretreatment and monitored routinely during therapy [see ribavirin prescribing information].
+ PEGASYS/ribavirin should be used with caution in patients with baseline neutrophil counts less than 1,500 cells/mm3, with baseline platelet counts less than 90,000 cells/mm3 or baseline hemoglobin less than 10 g/dL.
+PEGASYS therapy should be discontinued, at least temporarily, in patients who develop severe decreases in neutrophil and/or platelet counts [see Dosage and Administration (2.5)].
+ Severe neutropenia and thrombocytopenia occur with a greater incidence in HIV coinfected patients than monoinfected patients and may result in serious infections or bleeding [see Adverse Reactions (6.1)].
+ Pancytopenia (marked decreases in RBCs, neutrophils and platelets) and bone marrow suppression have been reported in the literature to occur within 3 to 7 weeks after the concomitant administration of pegylated interferon/ribavirin and azathioprine.
+In this limited number of patients (n=8), myelotoxicity was reversible within 4 to 6 weeks upon withdrawal of both HCV antiviral therapy and concomitant azathioprine and did not recur upon reintroduction of either treatment alone.
+PEGASYS, ribavirin, and azathioprine should be
+ Reference ID: 3717561 9
+                                                                                                                  discontinued for pancytopenia, and pegylated interferon/ribavirin should not be re-introduced with concomitant azathioprine.
+ 5.5 Autoimmune Disorders Development or exacerbation of autoimmune disorders including myositis, hepatitis, thrombotic thrombocytopenic purpura, idiopathic thrombocytopenic purpura, psoriasis, rheumatoid arthritis, interstitial nephritis, thyroiditis, and systemic lupus erythematosus have been reported in patients receiving alpha interferon.
+PEGASYS should be used with caution in patients with autoimmune disorders [see Boxed Warning].
+ 5.6 Endocrine Disorders PEGASYS causes or aggravates hypothyroidism and hyperthyroidism.
+Hyperglycemia, hypoglycemia, and diabetes mellitus have been observed to develop in patients treated with PEGASYS.
+Patients with these conditions at baseline who cannot be effectively treated by medication should not begin PEGASYS therapy.
+Patients who develop these conditions during treatment and cannot be controlled with medication may require discontinuation of PEGASYS therapy.
+ 5.7 Ophthalmologic Disorders Decrease or loss of vision, retinopathy including macular edema, retinal artery or vein thrombosis, retinal hemorrhages and cotton wool spots, optic neuritis, papilledema and serous retinal detachment are induced or aggravated by treatment with PEGASYS or other alpha interferons.
+All patients should receive an eye examination at baseline.
+Patients with pre-existing ophthalmologic disorders (e.g., diabetic or hypertensive retinopathy) should receive periodic ophthalmologic exams during interferon alpha treatment.
+Any patient who develops ocular symptoms should receive a prompt and complete eye examination.
+PEGASYS treatment should be discontinued in patients who develop new or worsening ophthalmologic disorders.
+ 5.8 Cerebrovascular Disorders Ischemic and hemorrhagic cerebrovascular events have been observed in patients treated with interferon alfabased therapies, including PEGASYS.
+Events occurred in patients with few or no reported risk factors for stroke, including patients less than 45 years of age.
+Because these are spontaneous reports, estimates of frequency cannot be made and a causal relationship between interferon alfa-based therapies and these events is difficult to establish [see Boxed Warning].
+ 5.9 Hepatic Failure and Hepatitis Exacerbations Chronic hepatitis C (CHC) patients with cirrhosis may be at risk of hepatic decompensation and death when treated with alpha interferons, including PEGASYS.
+Cirrhotic CHC patients coinfected with HIV receiving highly active antiretroviral therapy (HAART) and interferon alfa-2a with or without ribavirin appear to be at increased risk for the development of hepatic decompensation compared to patients not receiving HAART.
+In Study 7 [see Clinical Studies (14.3)], among 129 CHC/HIV cirrhotic subjects receiving HAART, 14 (11%) of these subjects across all treatment arms developed hepatic decompensation resulting in 6 deaths.
+All 14 subjects were on NRTIs, including stavudine, didanosine, abacavir, zidovudine, and lamivudine.
+These small numbers of patients do not permit discrimination between specific NRTIs for the associated risk.
+During treatment, patients' clinical status and hepatic function should be closely monitored, and PEGASYS/ribavirin treatment should be immediately discontinued in patients with hepatic decompensation [see Contraindications (4)].
+ Exacerbations of hepatitis during hepatitis B therapy are not uncommon and are characterized by transient and potentially severe increases in serum ALT.
+Chronic hepatitis B subjects experienced transient acute exacerbations (flares) of hepatitis B (ALT elevation greater than 10-fold higher than the upper limit of normal) during PEGASYS treatment (12% and 18%) and post-treatment (7% and 12%) in HBeAg negative and HBeAg positive subjects, respectively.
+Marked transaminase flares while on PEGASYS therapy have been accompanied by other liver test abnormalities.
+Patients experiencing ALT flares should receive more frequent monitoring of liver function.
+PEGASYS dose reduction should be considered in patients experiencing transaminase flares.
+If ALT increases are progressive despite reduction of PEGASYS dose or are accompanied by increased bilirubin
+ Reference ID: 3717561 10
+                                                                                                                            or evidence of hepatic decompensation, PEGASYS should be immediately discontinued [see Adverse Reactions (6.1) and Dosage and Administration (2.5)].
+ 5.10 Pulmonary Disorders Dyspnea, pulmonary infiltrates, pneumonia, bronchiolitis obliterans, interstitial pneumonitis, pulmonary hypertension and sarcoidosis, some resulting in respiratory failure and/or patient deaths, may be induced or aggravated by PEGASYS or alpha interferon therapy.
+Recurrence of respiratory failure has been observed with interferon rechallenge.
+PEGASYS combination treatment should be suspended in patients who develop pulmonary infiltrates or pulmonary function impairment.
+Patients who resume interferon treatment should be closely monitored.
+ 5.11 Infections While fever may be associated with the flu-like syndrome reported commonly during interferon therapy, other causes of high or persistent fever must be ruled out, particularly in patients with neutropenia.
+Serious and severe infections (bacterial, viral, or fungal), some fatal, have been reported during treatment with alpha interferons including PEGASYS.
+Appropriate anti-infective therapy should be started immediately and discontinuation of therapy should be considered [see Boxed Warning].
+ 5.12 Colitis Ulcerative and hemorrhagic/ischemic colitis, sometimes fatal, have been observed within 12 weeks of starting alpha interferon treatment.
+Abdominal pain, bloody diarrhea, and fever are the typical manifestations of colitis.
+PEGASYS should be discontinued immediately if these symptoms develop.
+The colitis usually resolves within 1 to 3 weeks of discontinuation of alpha interferon.
+ 5.13 Pancreatitis Pancreatitis, sometimes fatal, has occurred during alpha interferon and ribavirin treatment.
+PEGASYS/ribavirin should be suspended if symptoms or signs suggestive of pancreatitis are observed.
+PEGASYS/ribavirin should be discontinued in patients diagnosed with pancreatitis.
+ 5.14 Hypersensitivity Severe acute hypersensitivity reactions (e.g., urticaria, angioedema, bronchoconstriction, and anaphylaxis) have been observed during alpha interferon and ribavirin therapy.
+If such reaction occurs, therapy with PEGASYS/ribavirin should be discontinued and appropriate medical therapy immediately instituted.
+Serious skin reactions including vesiculobullous eruptions, reactions in the spectrum of Stevens-Johnson Syndrome (erythema multiforme major) with varying degrees of skin and mucosal involvement and exfoliative dermatitis (erythroderma) have been reported in patients receiving PEGASYS with and without ribavirin.
+Patients developing signs or symptoms of severe skin reactions must discontinue therapy [see Adverse Reactions (6.2)].
+ 5.15 Impact on Growth in Pediatric Patients During combination therapy for up to 48 weeks with PEGASYS plus ribavirin growth inhibition was observed in pediatric subjects 5 to 17 years of age.
+Decreases in weight for age z-score and height for age z-score up to 48 weeks of therapy compared with baseline were observed.
+At 2 years post-treatment, 16% of pediatric subjects were more than 15 percentiles below their baseline weight curve and 11% were more than 15 percentiles below their baseline height curve.
+ The available longer term data on subjects who were followed up to 6 years post-treatment is too limited to determine the risk of reduced adult height in some patients [see Clinical Trials Experience (6.1)].
+ 5.16 Peripheral Neuropathy Peripheral neuropathy has been reported when alpha interferons were given in combination with telbivudine.
+In one clinical trial, an increased risk and severity of peripheral neuropathy was observed with the combination use of telbivudine and PEGASYS as compared to telbivudine alone.
+The safety and efficacy of telbivudine in combination with interferons for the treatment of chronic hepatitis B have not been demonstrated.
+ Reference ID: 3717561 11
+                                                                                                                                                                5.17 Laboratory Tests Before beginning PEGASYS or PEGASYS combination therapy, standard hematological and biochemical laboratory tests are recommended for all patients.
+Pregnancy screening for women of childbearing potential must be performed.
+Patients who have pre-existing cardiac abnormalities should have electrocardiograms administered before treatment with PEGASYS/ribavirin.
+ After initiation of therapy, hematological tests should be performed at 2 weeks and 4 weeks and biochemical tests should be performed at 4 weeks.
+Additional testing should be performed periodically during therapy.
+In adult clinical studies, the CBC (including hemoglobin level and white blood cell and platelet counts) and chemistries (including liver function tests and uric acid) were measured at 1, 2, 4, 6, and 8 weeks, and then every 4 to 6 weeks or more frequently if abnormalities were found.
+In a pediatric clinical trial, hematological and chemistry assessments were at 1, 3, 5, and 8 weeks, then every 4 weeks.
+Thyroid stimulating hormone (TSH) was measured every 12 weeks.
+Monthly pregnancy testing should be performed during combination therapy and for 6 months after discontinuing therapy.
+ The entrance criteria used for the clinical studies of PEGASYS may be considered as a guideline to acceptable baseline values for initiation of treatment:
+ &#x2022;  Platelet count greater than or equal to 90,000 cells/mm3 (as low as 75,000 cells/mm3 in HCV subjects with cirrhosis or 70,000 cells/mm3 in subjects with CHC and HIV)
+ &#x2022;  Absolute neutrophil count (ANC) greater than or equal to 1,500 cells/mm3
+ &#x2022;  Serum creatinine concentration less than 1.5 x upper limit of normal &#x2022;  TSH and T4 within normal limits or adequately controlled thyroid function &#x2022;  CD4+ cell count greater than or equal to 200 cells/mm3 or CD4+ cell count greater than or equal to
+ 100 cells/mm3 but less than 200 cells/mm3 and HIV-1 RNA less than 5,000 copies/mL in subjects coinfected with HIV
+ &#x2022;  Hemoglobin greater than or equal to 12 g/dL for women and greater than or equal to 13 g/dL for men in CHC monoinfected subjects
+ &#x2022;  Hemoglobin greater than or equal to 11 g/dL for women and greater than or equal to 12 g/dL for men in subjects with CHC and HIV
+ 6 ADVERSE REACTIONS In clinical trials, a broad variety of serious adverse reactions were observed in 1,010 subjects who received PEGASYS at doses of 180 mcg for 48 weeks, alone or in combination with COPEGUS[see Boxed Warning and Warnings and Precautions (5)].
+The most common life-threatening or fatal events induced or aggravated by PEGASYS and COPEGUS include depression, suicide, relapse of drug abuse/overdose, and bacterial infections, each occurring at a frequency of less than 1%.
+Hepatic decompensation occurred in 2% (10/574) of CHC/HIV subjects [see Warnings and Precautions (5.9)].
+ 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying and controlled conditions, adverse reaction rates observed in clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug, and may not reflect the rates observed in clinical practice.
+ Adult Subjects
+ In all hepatitis C studies, one or more serious adverse reactions occurred in 10% of CHC monoinfected subjects and in 19% of CHC/HIV subjects receiving PEGASYS alone or in combination with COPEGUS.
+The most common serious adverse reactions (3% in CHC and 5% in CHC/HIV) was bacterial infection (e.g., sepsis, osteomyelitis, endocarditis, pyelonephritis, pneumonia).
+Other SAEs occurred at a frequency of less than 1% and included: suicide, suicidal ideation, aggression, anxiety, drug abuse and drug overdose, angina, hepatic dysfunction, fatty liver, cholangitis, arrhythmia, diabetes mellitus, autoimmune phenomena (e.g., hyperthyroidism, hypothyroidism, sarcoidosis, systemic lupus erythematosus, rheumatoid arthritis), peripheral
+ Reference ID: 3717561 12
+                                                                                                                                                                                                  neuropathy, aplastic anemia, peptic ulcer, gastrointestinal bleeding, pancreatitis, colitis, corneal ulcer, pulmonary embolism, coma, myositis, cerebral hemorrhage, thrombotic thrombocytopenic purpura, psychotic disorder, and hallucination.
+ In clinical trials, 98 to 99 percent of subjects experienced one or more adverse reactions.
+For hepatitis C subjects, the most commonly reported adverse reactions were psychiatric reactions, including depression, insomnia, irritability, anxiety, and flu-like symptoms such as fatigue, pyrexia, myalgia, headache, and rigors.
+Other common reactions were anorexia, nausea and vomiting, diarrhea, arthralgias, injection site reactions, alopecia, and pruritus.
+Table 7 displays pooled rates of adverse reactions occurring in greater than 5% of subjects in the PEGASYS monotherapy and PEGASYS/COPEGUS combination therapy clinical trials.
+ Overall 11% of CHC monoinfected subjects receiving 48 weeks of therapy with PEGASYS either alone or in combination with COPEGUS discontinued therapy; 16% of CHC/HIV coinfected subjects discontinued therapy.
+The most common reasons for discontinuation of therapy were psychiatric, flu-like syndrome (e.g., lethargy, fatigue, headache), dermatologic and gastrointestinal disorders, and laboratory abnormalities (thrombocytopenia, neutropenia, and anemia).
+ Overall 39% of subjects with CHC or CHC/HIV required modification of PEGASYS and/or COPEGUS therapy.
+The most common reasons for dose modification of PEGASYS in CHC and CHC/HIV subjects was for neutropenia (20% and 27%, respectively) and thrombocytopenia (4% and 6%, respectively).
+The most common reason for dose modification of COPEGUS in CHC and CHC/HIV subjects was anemia (22% and 16%, respectively).
+PEGASYS dose was reduced in 12% of subjects receiving 1000 mg to 1200 mg COPEGUS for 48 weeks and in 7% of subjects receiving 800 mg COPEGUS for 24 weeks.
+COPEGUS dose was reduced in 21% of subjects receiving 1000 mg to 1200 mg COPEGUS for 48 weeks and in 12% of subjects receiving 800 mg COPEGUS for 24 weeks.
+ Chronic hepatitis C monoinfected subjects treated for 24 weeks with PEGASYS and 800 mg COPEGUS were observed to have lower incidence of serious adverse reactions (3% vs. 10%), Hgb less than 10 g/dL (3% vs. 15%), dose modification of PEGASYS (30% vs. 36%) and COPEGUS (19% vs. 38%) and of withdrawal from treatment (5% vs. 15%) compared to subjects treated for 48 weeks with PEGASYS and 1000 mg or 1200 mg COPEGUS.
+The overall incidence of adverse reactions appeared to be similar in the two treatment groups.
+ Table 7  Adverse Reactions Occurring in Greater Than or Equal to 5% of Subjects in Chronic Hepatitis C Clinical Trials (Pooled Studies 1, 2, 3, and Study 4)
+ CHC Monotherapy (Pooled Studies 1-3)
+ CHC Combination Therapy (Study 4)
+ Body System PEGASYS 180 mcg 48 week&#x20ac;  ROFERON-A Either 3 MIU* or 6/3 MIU* of ROFERON-A 48 week&#x20ac;  PEGASYS 180 mcg + 1000 mg or 1200 mg COPEGUS 48 week**
+ Intron A + 1000 mg or 1200 mg Rebetol 
+ 48 week**
+ N=559 N=554 N=451 N=443
+ % % % %
+ Application Site Disorders
+ Injection site reaction 22 18 23 16
+ Endocrine Disorders
+ Hypothyroidism 3 2 4 5
+ Flu-like Symptoms and Signs
+ Reference ID: 3717561 13
+                                                                                                                                                                                                                                                CHC Monotherapy (Pooled Studies 1-3)
+ CHC Combination Therapy (Study 4)
+ Body System PEGASYS 180 mcg 48 week&#x20ac;  ROFERON-A Either 3 MIU* or 6/3 MIU* of ROFERON-A 48 week&#x20ac;  PEGASYS 180 mcg + 1000 mg or 1200 mg COPEGUS 48 week**
+ Intron A + 1000 mg or 1200 mg Rebetol 
+ 48 week**
+ N=559 N=554 N=451 N=443
+ % % % %
+ Fatigue/Asthenia 56 57 65 68
+ Pyrexia 37 41 41 55
+ Rigors 35 44 25 37
+ Pain 11 12 10 9
+ Gastrointestinal Nausea/Vomiting 24 33 25 29 Diarrhea 16 16 11 10 Abdominal pain 15 15 8 9 Dry mouth 6 3 4 7 Dyspepsia &lt;1 1 6 5
+ Hematologic&#x20ac;
+ Lymphopenia 3 5 14 12
+ Anemia 2 1 11 11
+ Neutropenia 21 8 27 8
+ Thrombocytopenia 5 2 5 &lt;1
+ Metabolic and Nutritional
+ Anorexia
+ Weight decrease
+ 17
+ 4
+ 17
+ 3
+ 24
+ 10
+ 26
+ 10
+ Musculoskeletal, Connective Tissue and Bone
+ Myalgia 37 38 40 49
+ Arthralgia 28 29 22 23
+ Back pain 9 10 5 5
+ Neurological
+ Headache 54 58 43 49
+ Dizziness (excluding vertigo) 16 12 14 14
+ Memory impairment 5 4 6 5
+ Resistance Mechanism Disorders
+ Overall 10 6 12 10
+ Reference ID: 3717561 14
+                                                                                                                                                                                                                                      CHC Monotherapy (Pooled Studies 1-3)
+ CHC Combination Therapy (Study 4)
+ Body System PEGASYS 180 mcg 48 week&#x20ac;  ROFERON-A Either 3 MIU* or 6/3 MIU* of ROFERON-A 48 week&#x20ac;  PEGASYS 180 mcg + 1000 mg or 1200 mg COPEGUS 48 week**
+ Intron A + 1000 mg or 1200 mg Rebetol 
+ 48 week**
+ N=559 N=554 N=451 N=443
+ % % % %
+ Psychiatric Irritability/Anxiety/ Nervousness
+ 19 22 33 38
+ Insomnia 19 23 30 37 Depression 18 19 20 28 Concentration impairment 8 10 10 13 Mood alteration 3 2 5 6
+ Respiratory, Thoracic and Mediastinal
+ Dyspnea 4 2 13 14
+ Cough 4 3 10 7
+ Dyspnea exertional &lt;1 &lt;1 4 7
+ Skin and Subcutaneous Tissue
+ Alopecia 23 30 28 33
+ Pruritus 12 8 19 18
+ Dermatitis 8 3 16 13
+ Dry skin 4 3 10 13
+ Rash 5 4 8 5
+ Sweating increased 6 7 6 5
+ Eczema 1 1 5 4
+ Visual Disorders
+ Vision blurred 4 2 5 2 *An induction dose of 6 million international units (MIU) three times a week for the first 12 weeks followed by 3 million international units three times a week for 36 weeks given subcutaneously.
+&#x20ac; Pooled studies 1, 2, and 3 **Study 4 &#x20ac; Severe hematologic abnormalities (lymphocyte less than 500 cells/mm3; hemoglobin less than 10 g/dL; neutrophil less than 750 cells/mm3; platelet less than 50,000 cells/mm3).
+ Pediatric Subjects In a clinical trial with 114 pediatric subjects (5 to 17 years of age) treated with PEGASYS alone or in combination with COPEGUS, dose modifications were required in approximately one-third of subjects, most commonly for neutropenia and anemia.
+In general, the safety profile observed in pediatric subjects was similar to that seen in adults.
+In the pediatric study, the most prevalent adverse events in subjects treated with
+ Reference ID: 3717561 15
+                                                                                                                                                                                           combination therapy for up to 48 weeks with PEGASYS and COPEGUS were influenza-like illness (91%), upper respiratory tract infection (60%), headache (64%), gastrointestinal disorder (56%), skin disorder (47%), and injection-site reaction (45%).
+Seven subjects receiving combination PEGASYS and COPEGUS treatment for 48 weeks discontinued therapy for safety reasons (depression, psychiatric evaluation abnormal, transient blindness, retinal exudates, hyperglycemia, type 1 diabetes mellitus, and anemia).
+Most of the adverse events reported in the study were mild or moderate in severity.
+Severe adverse events were reported in 2 subjects in the PEGASYS plus COPEGUS combination therapy group (hyperglycemia and cholecystectomy).
+ Table 8  Percentage of Pediatric Subjects with Adverse Reactions* During First 24 Weeks of Treatment by Treatment Group (in at Least 10% of Subjects)
+ Study NV17424
+ System Organ Class PEGASYS 180 mcg/1.73 m x BSA + COPEGUS 15 mg/kg (N=55)
+ PEGASYS 180 mcg/1.73 m x BSA + Placebo** (N=59)
+ % % General disorders and administration site conditions
+ Influenza like illness 91 81 Injection site reaction 44 42 Fatigue 25 20 Irritability 24 14
+ Gastrointestinal disorders Gastrointestinal disorder 49 44
+ Nervous system disorders Headache 51 39
+ Skin and subcutaneous tissue disorders Rash 15 10 Pruritus 11 12
+ Musculoskeletal, connective tissue and bone disorders Musculoskeletal pain 35 29
+ Psychiatric disorders Insomnia 9 12
+ Metabolism and nutrition disorders Decreased appetite 11 14
+ *Displayed adverse drug reactions include all grades of reported adverse clinical events considered possibly, probably, or definitely related to study drug.
+ **Subjects in the PEGASYS plus placebo arm who did not achieve undetectable viral load at week 24 switched to combination treatment thereafter.
+Therefore, only the first 24 weeks are presented for the comparison of combination therapy with monotherapy.
+ In pediatric subjects randomized to combination therapy, the incidence of most adverse reactions were similar for the entire treatment period (up to 48 weeks plus 24 weeks follow-up) in comparison to the first 24 weeks, and increased only slightly for headache, gastrointestinal disorder, irritability and rash.
+The majority of adverse reactions occurred in the first 24 weeks of treatment.
+ Growth inhibition in pediatric subjects [see Warnings and Precautions (5.15)].
+ Pediatric subjects treated with PEGASYS plus ribavirin combination therapy showed a delay in weight and height increases up to 48 weeks of therapy compared with baseline.
+Both weight and height for age z-scores as well as the percentiles of the normative population for subject weight and height decreased during treatment.
+At the end of 2 years follow-up after treatment, most subjects had returned to baseline normative curve percentiles for weight (64th mean percentile at baseline, 60th mean percentile at 2 years post-treatment) and height (54th mean percentile at baseline, 56th mean percentile at 2 years post-treatment).
+At the end of treatment, 43% (23 of 53) of subjects experienced a weight percentile decrease of more than 15 percentiles, and 25% (13 of 53) experienced a height percentile decrease of more than 15 percentiles on the normative growth curves.
+At 2 years post-treatment, 16% (6 of 38) of subjects were more than 15 percentiles below their baseline weight curve and 11% (4 of 38) were more than 15 percentiles below their baseline height curve.
+ Reference ID: 3717561 16
+                                                                                                                                                             Thirty-eight of the 114 subjects enrolled in the long-term follow-up study extending up to 6 years posttreatment.
+For most subjects, post-treatment recovery in growth at 2 years post-treatment was maintained to 6 years post-treatment.
+ CHC with HIV Coinfection (Adults) The adverse reaction profile of coinfected subjects treated with PEGASYS/COPEGUS in Study 7 was generally similar to that shown for monoinfected subjects in Study 4 (Table 7).
+Events occurring more frequently in coinfected subjects were neutropenia (40%), anemia (14%), thrombocytopenia (8%), weight decrease (16%), and mood alteration (9%).
+ Chronic Hepatitis B In clinical trials of 48 week treatment duration, the adverse reaction profile of PEGASYS in chronic hepatitis B was similar to that seen in CHC PEGASYS monotherapy use, except for exacerbations of hepatitis [see Warnings and Precautions (5.9)].
+Six percent of PEGASYS treated subjects in the hepatitis B studies experienced one or more serious adverse reactions.
+ The most common or important serious adverse reactions, all of which occurred at a frequency of less than or equal to 1%, in the hepatitis B studies were infections (sepsis, appendicitis, tuberculosis, influenza), hepatitis B flares, and thrombotic thrombocytopenic purpura.
+ One serious adverse reaction of anaphylactic shock occurred in a dose ranging study of 191 subjects in a subject taking a higher than the approved dose of PEGASYS.
+ The most commonly observed adverse reactions in the PEGASYS and lamivudine groups, respectively, were pyrexia (54% vs. 4%), headache (27% vs. 9%), fatigue (24% vs. 10%), myalgia (26% vs. 4%), alopecia (18% vs. 2%), and anorexia (16% vs. 3%).
+ Overall 5% of hepatitis B subjects discontinued PEGASYS therapy and 40% of subjects required modification of PEGASYS dose.
+The most common reason for dose modification in subjects receiving PEGASYS therapy was for laboratory abnormalities including neutropenia (20%), thrombocytopenia (13%), and ALT elevation (11%).
+ Laboratory Values Adult Patients
+ The laboratory test values observed in the hepatitis B trials (except where noted below) were similar to those seen in the PEGASYS monotherapy CHC trials.
+ Neutrophils In the hepatitis C studies, decreases in neutrophil count below normal were observed in 95% of all subjects treated with PEGASYS either alone or in combination with COPEGUS.
+Severe potentially life-threatening neutropenia (ANC less than 500 cells/mm3) occurred in 5% of CHC subjects and 12% of CHC/HIV subjects receiving PEGASYS either alone or in combination with COPEGUS.
+Modification of PEGASYS dose for neutropenia occurred in 17% of subjects receiving PEGASYS monotherapy and 22% of subjects receiving PEGASYS/COPEGUS combination therapy.
+In the CHC/HIV subjects 27% required modification of interferon dosage for neutropenia.
+Two percent of subjects with CHC and 10% of subjects with CHC/HIV required permanent reductions of PEGASYS dosage and less than 1% required permanent discontinuation.
+Median neutrophil counts return to pre-treatment levels 4 weeks after cessation of therapy [see Dosage and Administration (2.5)].
+ Lymphocytes
+ Decreases in lymphocyte count are induced by interferon alpha therapy.
+PEGASYS plus COPEGUS
+ combination therapy induced decreases in median total lymphocyte counts (56% in CHC and 40% in CHC/HIV,
+ with median decrease of 1170 cells/mm3 in CHC and 800 cells/mm3 in CHC/HIV).
+In the hepatitis C studies,
+  Reference ID: 3717561 17
+                                                                                                                                                      lymphopenia was observed during both monotherapy (81%) and combination therapy with PEGASYS and COPEGUS (91%).
+Severe lymphopenia (less than 500 cells/mm3) occurred in approximately 5% of all monotherapy subjects and 14% of all combination PEGASYS and COPEGUS therapy recipients.
+Dose adjustments were not required by protocol.
+The clinical significance of the lymphopenia is not known.
+ In CHC with HIV coinfection, CD4 counts decreased by 29% from baseline (median decrease of 137 cells/mm3) and CD8 counts decreased by 44% from baseline (median decrease of 389 cells/mm3) in the PEGASYS plus COPEGUS combination therapy arm.
+Median lymphocyte CD4 and CD8 counts return to pretreatment levels after 4 to 12 weeks of the cessation of therapy.
+CD4% did not decrease during treatment.
+ Platelets In the hepatitis C studies, platelet counts decreased in 52% of CHC subjects and 51% of CHC/HIV subjects treated with PEGASYS alone (respectively median decrease of 41% and 35% from baseline), and in 33% of CHC subjects and 47% of CHC/HIV subjects receiving combination therapy with COPEGUS (median decrease of 30% from baseline).
+Moderate to severe thrombocytopenia (less than 50,000 cells/mm3) was observed in 4% of CHC and 8% of CHC/HIV subjects.
+Median platelet counts return to pre-treatment levels 4 weeks after the cessation of therapy.
+ Hemoglobin In the hepatitis C studies, the hemoglobin concentration decreased below 12 g/dL in 17% (median Hgb reduction of 2.2 g/dL) of monotherapy and 52% (median Hgb reduction of 3.7 g/dL) of combination therapy subjects.
+Severe anemia (Hgb less than 10 g/dL) was encountered in 13% of all subjects receiving combination therapy and in 2% of CHC subjects and 8% of CHC/HIV subjects receiving PEGASYS monotherapy.
+Dose modification for anemia in COPEGUS recipients treated for 48 weeks occurred in 22% of CHC subjects and 16% of CHC/HIV subjects [see Dosage and Administration (2.5)].
+ Triglycerides Triglyceride levels are elevated in subjects receiving alfa interferon therapy and were elevated in the majority of subjects participating in clinical studies receiving either PEGASYS alone or in combination with COPEGUS.
+Random levels greater than or equal to 400 mg/dL were observed in about 20% of CHC subjects.
+Severe elevations of triglycerides (greater than 1000 mg/dL) occurred in 2% of CHC monoinfected subjects.
+ In HCV/HIV coinfected subjects, fasting levels greater than or equal to 400 mg/dL were observed in up to 36% of subjects receiving either PEGASYS alone or in combination with COPEGUS.
+Severe elevations of triglycerides (greater than 1000 mg/dL) occurred in 7% of coinfected subjects.
+ ALT Elevations Chronic Hepatitis C One percent of subjects in the hepatitis C trials experienced marked elevations (5- to 10-fold above the upper limit of normal) in ALT levels during treatment and follow-up.
+These transaminase elevations were on occasion associated with hyperbilirubinemia and were managed by dose reduction or discontinuation of study treatment.
+Liver function test abnormalities were generally transient.
+One case was attributed to autoimmune hepatitis, which persisted beyond study medication discontinuation [see Dosage and Administration (2.5)].
+ Chronic Hepatitis B Transient ALT elevations are common during hepatitis B therapy with PEGASYS.
+Twenty-five percent and 27% of subjects experienced elevations of 5 to 10 x ULN and 12% and 18% had elevations of greater than 10 x ULN during treatment of HBeAg negative and HBeAg positive disease, respectively.
+Flares have been accompanied by elevations of total bilirubin and alkaline phosphatase and less commonly with prolongation of PT and reduced albumin levels.
+Eleven percent of subjects had dose modifications due to ALT flares and less than 1% of subjects were withdrawn from treatment [see Warnings and Precautions (5.9) and Dosage and Administration (2.5)].
+ Reference ID: 3717561 18
+                                                                                                                                                                         ALT flares of 5 to 10 x ULN occurred in 13% and 16% of subjects, while ALT flares of greater than 10 x ULN
+ occurred in 7% and 12% of subjects in HBeAg negative and HBeAg positive disease, respectively, after
+ discontinuation of PEGASYS therapy.
+  Thyroid Function
+ PEGASYS alone or in combination with COPEGUS was associated with the development of abnormalities in
+ thyroid laboratory values, some with associated clinical manifestations.
+In the hepatitis C studies,
+ hypothyroidism or hyperthyroidism requiring treatment, dose modification or discontinuation occurred in 4%
+ and 1% of PEGASYS treated subjects and 4% and 2% of PEGASYS and COPEGUS treated subjects,
+ respectively.
+Approximately half of the subjects, who developed thyroid abnormalities during PEGASYS
+ treatment, still had abnormalities during the follow-up period [see Warnings and Precautions (5.6)].
+  Pediatric Patients
+ Decreases in hemoglobin, neutrophils and platelets may require dose reduction or permanent discontinuation from treatment [see Dosage and Administration (2.3, 2.5)].
+Most laboratory abnormalities noted during the clinical trial (Table 9) returned to baseline levels shortly after completion of treatment.
+ Table 9  Selected Hematologic Abnormalities During First 24 Weeks of Treatment by Treatment Group in Previously Untreated Pediatric Subjects
+ Laboratory Parameter PEGASYS 180 mcg/1.73 m x BSA + COPEGUS 15 mg/kg (N=55)
+ PEGASYS 180 mcg/1.73 m x BSA + Placebo* (N=59)
+ PEGASYS plus placebo arm who did not achieve undetectable viral load at week 24 switched to combination
+ treatment thereafter.
+Therefore, only the first 24 weeks are presented for the comparison of combination therapy with monotherapy.
+ In patients randomized to combination therapy, the incidence of abnormalities during the entire treatment phase (up to 48 weeks plus 24 weeks follow-up) in comparison to the first 24 weeks increased slightly for neutrophils between 500 and 1,000 cells/mm and hemoglobin values between 8.5 and 10 g/dL.
+The majority of hematologic abnormalities occurred in the first 24 weeks of treatment.
+ 6.2 Immunogenicity Chronic Hepatitis C Nine percent (71/834) of subjects treated with PEGASYS with or without COPEGUS developed binding antibodies to interferon alfa-2a, as assessed by an ELISA assay.
+Three percent of subjects (25/835) receiving PEGASYS with or without COPEGUS, developed low-titer neutralizing antibodies (using an assay with a sensitivity of 100 INU/mL).
+ Chronic Hepatitis B Twenty-nine percent (42/143) of hepatitis B subjects treated with PEGASYS for 24 weeks developed binding antibodies to interferon alfa-2a, as assessed by an ELISA assay.
+Thirteen percent of subjects (19/143) receiving PEGASYS developed low-titer neutralizing antibodies (using an assay with a sensitivity of 100 INU/mL).
+ Reference ID: 3717561 19
+                                                                                                                      The clinical and pathological significance of the appearance of serum neutralizing antibodies is unknown.
+No apparent correlation of antibody development to clinical response or adverse events was observed.
+The percentage of subjects whose test results were considered positive for antibodies is highly dependent on the sensitivity and specificity of the assays.
+ Additionally, the observed incidence of antibody positivity in these assays may be influenced by several factors including sample timing and handling, concomitant medications, and underlying disease.
+For these reasons, comparison of the incidence of antibodies to PEGASYS with the incidence of antibodies to other products may be misleading.
+ 6.3 Postmarketing Experience The following adverse reactions have been identified and reported during post-approval use of PEGASYS therapy.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ Blood and lymphatic system disorders: pure red cell aplasia
+ Ear and labyrinth disorders: hearing impairment, hearing loss
+ Gastrointestinal disorders: tongue pigmentation
+ Immune system disorders: Liver graft rejection and renal graft rejection [see Use in Specific Populations (8.7)]
+ Metabolism and nutrition disorders: dehydration
+ Skin and subcutaneous tissue disorders: serious skin reactions
+ Neurological: seizures
+ 7 DRUG INTERACTIONS 7.1 Drugs Metabolized by Cytochrome P450 There was no effect on the pharmacokinetics of representative drugs metabolized by CYP 2C9, CYP 2C19, CYP 2D6 or CYP 3A4.
+ Treatment with PEGASYS once weekly for 4 weeks in healthy subjects was associated with an inhibition of P450 1A2 and a 25% increase in theophylline AUC.
+ 7.2 Theophylline Treatment with PEGASYS once weekly for 4 weeks in healthy subjects was associated with an inhibition of P450 1A2 and a 25% increase in theophylline AUC.
+Theophylline serum levels should be monitored and appropriate dose adjustments considered for patients given both theophylline and PEGASYS.
+ 7.3 Methadone In a PK study of HCV subjects concomitantly receiving methadone, treatment with PEGASYS once weekly for 4 weeks was associated with methadone levels that were 10% to 15% higher than at baseline.
+The clinical significance of this finding is unknown; however, patients should be monitored for the signs and symptoms of methadone toxicity.
+ The pharmacokinetics of concomitant administration of methadone and PEGASYS were evaluated in 24 PEGASYS nave chronic hepatitis C (CHC) subjects (15 male, 9 female) who received 180 mcg PEGASYS subcutaneously weekly.
+All subjects were on stable methadone maintenance therapy (median dose 95 mg, range 30 mg to 150 mg) prior to receiving PEGASYS.
+Mean methadone PK parameters were 10% to 15% higher after 4 weeks of PEGASYS treatment as compared to baseline.
+Methadone did not significantly alter the PK of PEGASYS as compared to a PK study of 6 chronic hepatitis C subjects not receiving methadone.
+ Reference ID: 3717561 20
+                                                                                                                                       7.4 Nucleoside Analogues NRTIs In Study 7 among the CHC/HIV coinfected cirrhotic subjects receiving NRTIs cases of hepatic decompensation (some fatal) were observed [see Warnings and Precautions (5.9)].
+ Patients receiving PEGASYS/ribavirin in combination with other HCV antiviral drugs and NRTIs should be closely monitored for treatment associated toxicities.
+Physicians should refer to prescribing information for other HCV antiviral drugs and the respective NRTIs for guidance regarding toxicity management.
+In addition, dose reduction or discontinuation of PEGASYS, ribavirin or both , should also be considered if worsening toxicities are observed [see Warnings and Precautions (5.3, 5.9) and Dosage and Administration (2.5)].
+ Zidovudine In Study 7, subjects who were administered zidovudine in combination with PEGASYS/COPEGUS developed severe neutropenia (ANC less than 500 cells/mm3) and severe anemia (hemoglobin less than 8 g/dL) more frequently than similar subjects not receiving zidovudine (neutropenia 15% vs. 9%) (anemia 5% vs. 1%).
+Discontinuation of zidovudine should be considered as medically appropriate.
+Dose reduction or discontinuation of PEGASYS, ribavirin or both should also be considered if worsening clinical toxicities are observed, including hepatic decompensation (e.g., Child-Pugh greater than 6).
+ Refer to the prescribing information for specific HCV antiviral drugs used in combination with PEGASYS for information on drug interaction potential.
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy Pregnancy Category C: PEGASYS Monotherapy PEGASYS has not been studied for its teratogenic effect.
+Non-pegylated interferon alfa-2a treatment of pregnant Rhesus monkeys at approximately 20 to 500 times the human weekly dose resulted in a statistically significant increase in abortions.
+No teratogenic effects were seen in the offspring delivered at term.
+PEGASYS should be assumed to have abortifacient potential.
+There are no adequate and well-controlled studies of PEGASYS in pregnant women.
+PEGASYS is to be used during pregnancy only if the potential benefit justifies the potential risk to the fetus.
+PEGASYS is recommended for use in women of childbearing potential only when they are using effective contraception during therapy.
+ Pregnancy Category X: Use with Ribavirin [see Contraindications (4)] Significant teratogenic and/or embryocidal effects have been demonstrated in all animal species exposed to ribavirin.
+Ribavirin therapy is contraindicated in women who are pregnant and in the male partners of women who are pregnant [see Contraindications (4), Warnings and Precautions (5.1), and ribavirin labeling].
+ Ribavirin Pregnancy Registry: A Ribavirin Pregnancy Registry has been established to monitor maternal and fetal outcomes of pregnancies of female patients and female partners of male patients exposed to ribavirin during treatment and for 6 months following cessation of treatment.
+Healthcare providers and patients are encouraged to report such cases by calling 1-800-593-2214.
+ 8.2 Nursing Mothers It is not known whether peginterferon or its components are excreted in human milk.
+The effect of orally ingested peginterferon from breast milk on the nursing infant has not been evaluated.
+Because of the potential for adverse reactions from the drugs in nursing infants, a decision must be made whether to discontinue nursing or discontinue PEGASYS.
+ 8.3 Pediatric Use The safety and effectiveness of PEGASYS, in patients below the age of 5 years have not been established.
+ Reference ID: 3717561 21
+                                                                                                                                                                  PEGASYS contains benzyl alcohol.
+In neonates and infants, benzyl alcohol has been reported to be associated with an increased incidence of neurological and other complications which are sometimes fatal in neonates and infants [see Contraindications (4)].
+ 8.4 Geriatric Use Younger patients have higher virologic response rates than older patients.
+Clinical studies of PEGASYS alone or in combination with COPEGUS did not include sufficient numbers of subjects aged 65 or over to determine whether they respond differently from younger subjects.
+Adverse reactions related to alpha interferons, such as CNS, cardiac, and systemic (e.g., flu-like) effects may be more severe in the elderly and caution should be exercised in the use of PEGASYS in this population.
+PEGASYS is excreted by the kidney, and the risk of toxic reactions to this therapy may be greater in patients with impaired renal function.
+Because elderly patients are more likely to have decreased renal function, care should be taken in dose selection and it may be useful to monitor renal function.
+PEGASYS should be used with caution in patients with creatinine clearance less than or equal to 50 mL/min.
+The dose of PEGASYS should be reduced for patients with creatinine clearance less than 30 mL/min [see Dosage and Administration (2.5) and Use in Specific Populations (8.6)].
+ 8.5 Hepatic Impairment Chronic hepatitis C (CHC) patients with cirrhosis may be at risk of hepatic decompensation and death when treated with alpha interferons, including PEGASYS.
+During treatment, patients' clinical status and hepatic function should be closely monitored, and PEGASYS treatment should be immediately discontinued if decompensation (Child-Pugh score greater than or equal to 6) is observed [see Contraindications (4)].
+Chronic hepatitis B subjects experienced transient acute exacerbations (flares) of hepatitis B (ALT elevation greater than 10-fold higher than the upper limit of normal) during PEGASYS treatment (12% and 18%) and post-treatment (7% and 12%) in HBeAg negative and HBeAg positive subjects, respectively.
+ 8.6 Renal Impairment Renal function should be evaluated in all patients prior to initiation of PEGASYS by estimating the patient's creatinine clearance.
+ A clinical trial evaluated treatment with PEGASYS and COPEGUS in 50 CHC subjects with moderate (creatinine clearance 30 - 50 mL/min) or severe (creatinine clearance less than 30 mL/min) renal impairment or end stage renal disease (ESRD) requiring chronic hemodialysis (HD).
+In 18 subjects with ESRD receiving chronic HD, PEGASYS was administered at a dose of 135 mcg once weekly.
+Dose reductions and temporary interruptions of PEGASYS (due to PEGASYS-related adverse reactions, mainly anemia) were observed in up to 22% ESRD/HD subjects during treatment; and 17% of these subjects discontinued PEGASYS due to PEGASYS-related adverse reactions.
+Only one-third of ESRD/HD subjects received PEGASYS for 48 weeks.
+Subjects with severe (n=14) or moderate (n=17) renal impairment received PEGASYS 180 mcg once weekly.
+PEGASYS discontinuation rates were 36% and 0% in subjects with severe and moderate renal impairment, respectively, compared to 0% discontinuation rate in subjects with normal renal function.
+  Based on the pharmacokinetic and safety results from this trial, patients with creatinine clearance less than 30 mL/min should receive a reduced dose of PEGASYS.
+In addition, patients with any degree of renal impairment should be carefully monitored for laboratory abnormalities (especially decreased hemoglobin) and adverse reactions, and should undergo careful monitoring of creatinine clearance.
+Patients with clinically significant laboratory abnormalities or adverse reactions which are persistently severe or worsening should have therapy withdrawn [see Dosage and Administration (2.5), Clinical Pharmacology (12.3)].
+Refer to the prescribing information for specific HCV antiviral drugs used in combination with PEGASYS for information on use in patients with renal impairment.
+ Reference ID: 3717561 22
+                                                                                                                       8.7 Organ Transplant Recipients The safety and efficacy of PEGASYS treatment have not been established in patients with liver and other transplantations.
+As with other alpha interferons, liver and renal graft rejections have been reported on PEGASYS.
+ 8.8 Chronic Hepatitis B The safety and efficacy of PEGASYS have not been established in:
+ &#x2022;  Hepatitis B patients coinfected with HCV or HIV &#x2022;  Hepatitis C patients coinfected with HBV or coinfected with HIV with a CD4+ cell count less than
+ 100 cells/mm3
+ 10 OVERDOSAGE There is limited experience with overdosage.
+The maximum dose received by any patient was 7 times the intended dose of PEGASYS (180 mcg/day for 7 days).
+There were no serious reactions attributed to overdosages.
+Weekly doses of up to 630 mcg have been administered to patients with cancer.
+Dose-limiting toxicities were fatigue, elevated liver enzymes, neutropenia, and thrombocytopenia.
+There is no specific antidote for PEGASYS.
+Hemodialysis and peritoneal dialysis are not effective.
+ 11 DESCRIPTION PEGASYS, peginterferon alfa-2a, is a covalent conjugate of recombinant alfa-2a interferon (approximate molecular weight [MW] 20,000 daltons) with a single branched bis-monomethoxy polyethylene glycol (PEG) chain (approximate MW 40,000 daltons).
+The PEG moiety is linked at a single site to the interferon alfa moiety via a stable amide bond to lysine.
+Peginterferon alfa-2a has an approximate molecular weight of 60,000 daltons.
+Interferon alfa-2a is produced using recombinant DNA technology in which a cloned human leukocyte interferon gene is inserted into and expressed in Escherichia coli.
+ PEGASYS is a sterile, preservative-free, colorless to light yellow injectable solution administered subcutaneously.
+ Each vial of 180 mcg/mL peginterferon alfa-2a (expressed as the amount of interferon alfa-2a) also contains acetic acid (0.05 mg), benzyl alcohol (10 mg), polysorbate 80 (0.05 mg), sodium acetate trihydrate (2.62 mg), and sodium chloride (8 mg) at pH 6  0.5.
+ Each prefilled syringe of 180 mcg/0.5 mL peginterferon alfa-2a (expressed as the amount of interferon alfa-2a) also contains acetic acid (0.0231 mg), benzyl alcohol (5 mg), polysorbate 80 (0.025 mg), sodium acetate trihydrate (1.3085 mg), and sodium chloride (4 mg) at pH 6  0.5.
+ Each Autoinjector containing 180 mcg/0.5 mL peginteferon alfa-2a (expressed as the amount of interferon alfa2a), also contains acetic acid (0.0231 mg), benzyl alcohol (5 mg), polysorbate 80 (0.025 mg), sodium acetate trihydrate (1.3085 mg), and sodium chloride (4 mg) at pH 6  0.5.
+ Each Autoinjector containing 135 mcg/0.5 mL peginteferon alfa-2a (expressed as the amount of interferon alfa2a), also contains acetic acid (0.0231 mg), benzyl alcohol (5 mg), polysorbate 80 (0.025 mg), sodium acetate trihydrate (1.3085 mg), and sodium chloride (4 mg) at pH  6  0.5.
+ Because the autoinjectors are designed to deliver the full content, autoinjectors should only be used for patients who need the full dose (180 or 135 mcg).
+If the required dose is not available in an autoinjector, prefilled syringes, or vials should be used to administer the required dose.
+The autoinjector is for subcutaneous administration only.
+ Reference ID: 3717561 23
+                                                                                                                          12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Pegylated recombinant human interferon alfa-2a is an inducer of the innate antiviral immune response [see Microbiology (12.4)].
+ 12.2 Pharmacodynamics PEGASYS stimulates the production of effector proteins such as serum neopterin and 2', 5'-oligoadenylate synthetase.
+ 12.3 Pharmacokinetics Maximal serum concentrations (Cmax) and AUC increased in a nonlinear dose related manner following administration of 90 to 270 mcg of PEGASYS.
+Maximal serum concentrations (Cmax) occur between 72 to 96 hours post-dose.
+ Week 48 mean trough concentrations (16 ng/mL; range 4 to 28) at 168 hours post-dose are approximately 2fold higher than week 1 mean trough concentrations (9 ng/mL; range 0 to 15).
+Steady-state serum levels are reached within 5 to 8 weeks of once weekly dosing.
+The peak to trough ratio at week 48 is approximately 2.
+The mean systemic clearance in healthy subjects given PEGASYS was 94 mL/h, which is approximately 100-fold lower than that for interferon alfa-2a (ROFERON-A).
+The mean terminal half-life after subcutaneous dosing in subjects with chronic hepatitis C was 160 hours (range 84 to 353 hours) compared to 5 hours (range 3.7 to 8.5 hours) for ROFERON-A.
+ Special Populations Gender and Age PEGASYS administration yielded similar pharmacokinetics in male and female healthy subjects.
+The AUC was increased from 1295 to 1663 ngh/mL in subjects older than 62 years taking 180 mcg PEGASYS, but peak concentrations were similar (9 vs. 10 ng/mL) in those older and younger than 62 years.
+ Pediatric Patients In a population pharmacokinetics study, 14 children 2 to 8 years of age with CHC received PEGASYS based on their body surface area (BSA of the child x 180 mcg/1.73 m2).
+The clearance of PEGASYS in children was nearly 4-fold lower compared to the clearance reported in adults.
+ Steady-state trough levels in children with the BSA-adjusted dosing were similar to trough levels observed in adults with 180 mcg fixed dosing.
+Time to reach the steady state in children is approximately 12 weeks, whereas in adults, steady state is reached within 5 to 8 weeks.
+In these children receiving the BSA adjusted dose, the mean exposure (AUC) during the dosing interval is predicted to be 25% to 70% higher than that observed in adults receiving 180 mcg fixed dosing.
+ Renal Impairment A clinical trial evaluated 50 CHC subjects with either moderate (creatinine clearance 30 to 50 mL/min) or severe (creatinine clearance less than 30 mL/min) renal impairment or end stage renal disease (ESRD) requiring chronic hemodialysis (HD).
+Subjects with moderate renal impairment receiving PEGASYS 180 mcg once weekly dose exhibited similar peginterferon alfa-2a plasma exposures compared to subjects with normal renal function (creatinine clearance greater than 80 mL/min) receiving the standard dose of PEGASYS.
+No PEGASYS dose adjustment is required for patients with mild or moderate renal impairment [see Dosage and Administration (2.5) and Use in Specific Populations (8.6)].
+ For subjects with severe renal impairment, peginterferon alfa-2a apparent clearance was 43% lower as compared to subjects with normal renal function.
+A reduced dose of 135 mcg once weekly PEGASYS is recommended in patients with severe renal impairment.
+This dose may result in 30% higher peginterferon alfa2a exposure compared to that of the recommended dose for patients with normal renal function.
+Signs and
+ Reference ID: 3717561 24
+                                                                                                                                                          symptoms of interferon toxicity should be closely monitored in patients with severe renal impairment and the dose reduced to 90 mcg once weekly as appropriate [see Dosage and Administration (2.5) and Use in Specific Populations (8.6)].
+ In 18 subjects with ESRD receiving chronic HD, PEGASYS was administered at a dose of 135 mcg once weekly.
+The apparent clearance of peginterferon alfa-2a was similar between subjects with ESRD and subjects with normal renal function.
+Despite a lower exposure to peginterferon alfa-2a with the 135 mcg dose, subjects with ESRD had a high rate of adverse events and discontinuations of PEGASYS in the trial.
+Therefore, a dose of 135 mcg once weekly should be used for patients with ESRD on HD.
+However, the potential for reduced efficacy and increased interferon toxicity in patients with ESRD receiving chronic HD should be closely monitored.
+The dose may be reduced to 90 mcg once weekly as appropriate [see Dosage and Administration (2.5) and Use in Specific Populations (8.6)].
+ 12.4 Microbiology Mechanism of Action The biological activity of PEGASYS is derived from its recombinant human interferon &#x3b1;-2a moiety.
+Peginterferon &#x3b1;-2a binds to the human type 1 interferon receptor leading to receptor dimerization.
+Receptor dimerization activates multiple intracellular signal transduction pathways initially mediated by the JAK/STAT pathway.
+Given the diversity of cell types that respond to interferon &#x3b1;-2a, and the multiplicity of potential intracellular responses to interferon receptor activation, peginterferon &#x3b1;-2a is expected to have pleiotropic biological effects in the body.
+ Antiviral Activity in Cell Culture In the stable HCV cell culture model system (HCV replicon), PEG-IFN &#x3b1;-2a inhibited HCV RNA replication, with an EC50 value of 0.1-3 ng/mL.
+The combination of PEG-IFN &#x3b1;-2a and ribavirin was more effective at inhibiting HCV RNA replication than either agent alone.
+ Resistance Different HCV genotypes display considerable clinical variability in their response to PEG-IFN-&#x3b1; and ribavirin therapy.
+Viral genetic determinants associated with the variable response have not been definitively identified.
+ Cross-resistance Cross-resistance between IFN-&#x3b1; and ribavirin has not been observed.
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Carcinogenesis
+ PEGASYS has not been tested for its carcinogenic potential.
+  Use with other HCV antiviral drugs: Refer to the prescribing information for specific antiviral drugs used in combination with PEGASYS for additional warnings
+ Mutagenesis PEGASYS did not cause DNA damage when tested in the Ames bacterial mutagenicity assay and in the in vitro chromosomal aberration assay in human lymphocytes, either in the presence or absence of metabolic activation.
+ Use with other HCV antiviral drugs: Refer to the prescribing information for specific HCV antiviral drugs used in combination with PEGASYS for additional warnings.
+  Impairment of Fertility PEGASYS may impair fertility in women.
+Prolonged menstrual cycles and/or amenorrhea were observed in female cynomolgus monkeys given subcutaneous injections of 600 mcg/kg/dose (7200 mcg/m2/dose) of
+ Reference ID: 3717561 25
+                                                                                                                                                            PEGASYS every other day for one month, at approximately 180 times the recommended weekly human dose for a 60 kg person (based on body surface area).
+Menstrual cycle irregularities were accompanied by both a decrease and delay in the peak 17-estradiol and progesterone levels following administration of PEGASYS to female monkeys.
+A return to normal menstrual rhythm followed cessation of treatment.
+Every other day dosing with 100 mcg/kg (1200 mcg/m2) PEGASYS (equivalent to approximately 30 times the recommended human dose) had no effects on cycle duration or reproductive hormone status.
+ The effects of PEGASYS on male fertility have not been studied.
+However, no adverse effects on fertility were observed in male Rhesus monkeys treated with non-pegylated interferon alfa-2a for 5 months at doses up to 25 x 106 IU/kg/day.
+ Use with other HCV antiviral drugs: Refer to the prescribing information for specific HCV antiviral drugs used in combination with PEGASYS for additional warnings.
+  14 CLINICAL STUDIES 14.1 Chronic Hepatitis C Studies 1, 2, and 3: PEGASYS/COPEGUS Combination Therapy Adult Patients The safety and effectiveness of PEGASYS in combination with COPEGUS for the treatment of hepatitis C virus infection were assessed in two randomized controlled clinical trials.
+All subjects were adults, had compensated liver disease, detectable hepatitis C virus, liver biopsy diagnosis of chronic hepatitis, and were previously untreated with interferon.
+Approximately 20% of subjects in both studies had compensated cirrhosis (Child-Pugh class A).
+Subjects coinfected with HIV were excluded from these studies.
+ In Study 1, subjects were randomized to receive either PEGASYS 180 mcg subcutaneous once weekly with an oral placebo, PEGASYS 180 mcg once weekly with COPEGUS 1000 mg by mouth (body weight less than 75 kg) or 1200 mg by mouth (body weight greater than or equal to 75 kg) or Rebetron (interferon alfa-2b 3 MIU subcutaneous three times a week plus ribavirin 1000 mg or 1200 mg by mouth).
+All subjects received 48 weeks of therapy followed by 24 weeks of treatment-free follow-up.
+COPEGUS or placebo treatment assignment was blinded.
+Sustained virological response was defined as undetectable (less than 50 IU/mL) HCV RNA on or after study week 68.
+PEGASYS in combination with COPEGUS resulted in a higher SVR compared to PEGASYS alone or interferon alfa-2b and ribavirin (Table 10).
+In all treatment arms, subjects with viral genotype 1, regardless of viral load, had a lower response rate.
+ Table 10 Sustained Virologic Response to Combination Therapy (Study 1) Interferon alfa-2b + Ribavirin 1000 mg or 1200 mg
+ PEGASYS + Placebo
+ PEGASYS + COPEGUS 1000 mg or 1200 mg 
+All subjects 197/444 (44%)* 65/224 (29%) 241/453 (53%)*
+ Genotype 1 103/285 (36%) 29/145 (20%) 132/298 (44%)
+ Genotypes 2-6 94/159 (59%) 36/79 (46%) 109/155 (70%)
+ *Difference in overall treatment response (PEGASYS/COPEGUS &#x20ac;&#x201c; Interferon alfa-2b/ribavirin) was 9% (95% CI 2.3, 15.3).
+ In Study 2 (see Table 11), all subjects received PEGASYS 180 mcg subcutaneous once weekly and were randomized to treatment for either 24 or 48 weeks and to a COPEGUS dose of either 800 mg or 1000 mg/1200 mg (for body weight less than 75 kg/greater than or equal to 75 kg).
+Assignment to the four treatment arms was stratified by viral genotype and baseline HCV viral titer.
+Subjects with genotype 1 and high viral titer (defined as greater than 2 x 106 HCV RNA copies/mL serum) were preferentially assigned to treatment for 48 weeks.
+ Reference ID: 3717561 26
+                                                                                                                                                                                                 HCV Genotypes HCV 1 and 4 &#x20ac;&#x201c; Irrespective of baseline viral titer, treatment for 48 weeks with PEGASYS and 1000 mg or 1200 mg of COPEGUS resulted in higher SVR (defined as undetectable HCV RNA at the end of the 24-week treatment-free follow-up period) compared to shorter treatment (24 weeks) and/or 800 mg COPEGUS.
+ HCV 2 and 3 &#x20ac;&#x201c; Irrespective of baseline viral titer, treatment for 24 weeks with PEGASYS and 800 mg of COPEGUS resulted in a similar SVR compared to longer treatment (48 weeks) and/or 1000 mg or 1200 mg of COPEGUS (see Table 11).
+ The numbers of subjects with genotype 5 and 6 were too few to allow meaningful assessment.
+ Table 11 Sustained Virologic Response as a Function of Genotype (Study 2) 24 Weeks Treatment 48 Weeks Treatment PEGASYS + COPEGUS 800 mg (N=207)
+ PEGASYS + COPEGUS 1000 mg or 1200 mg* (N=280)
+ PEGASYS + COPEGUS 800 mg (N=361)
+ PEGASYS + COPEGUS 1000 mg or 1200 mg* (N=436)
+ Genotype 1 29/101 (29%) 48/118 (41%) 99/250 (40%) 138/271 (51%) Genotypes 2, 3 79/96 (82%) 116/144 (81%) 75/99 (76%) 117/153 (76%) Genotype 4 0/5 (0%) 7/12 (58%) 5/8 (63%) 9/11 (82%) *1000 mg for body weight less than 75 kg; 1200 mg for body weight greater than or equal to 75 kg.
+ Other Treatment Response Predictors Treatment response rates are lower in subjects with poor prognostic factors receiving pegylated interferon alpha therapy.
+In studies 1 and 2, treatment response rates were lower in subjects older than 40 years (50% vs. 66%), in subjects with cirrhosis (47% vs. 59%), in subjects weighing over 85 kg (49% vs. 60%), and in subjects with genotype 1 with high vs. low viral load (43% vs. 56%).
+African-American subjects had lower response rates compared to Caucasians.
+ Paired liver biopsies were performed on approximately 20% of subjects in studies 4 and 5.
+Modest reductions in inflammation compared to baseline were seen in all treatment groups.
+ In studies 1 and 2, lack of early virologic response by 12 weeks (defined as HCV RNA undetectable or greater than 2 log10 lower than baseline) was grounds for discontinuation of treatment.
+Of subjects who lacked an early viral response by 12 weeks and completed a recommended course of therapy despite a protocol-defined option to discontinue therapy, 5/39 (13%) achieved an SVR.
+Of subjects who lacked an early viral response by 24 weeks, 19 completed a full course of therapy and none achieved an SVR.
+ Pediatric Patients Previously untreated pediatric subjects 5 through 17 years of age (55% less than 12 years old) with chronic hepatitis C, compensated liver disease and detectable HCV RNA were treated with COPEGUS approximately 15 mg/kg/day plus PEGASYS 180 mcg/1.73 m2 x body surface area once weekly for 48 weeks.
+All subjects were followed for 24 weeks post-treatment.
+Sustained virological response (SVR) was defined as undetectable (less than 50 IU/mL) HCV RNA on or after study week 68.
+A total of 114 subjects were randomized to receive either combination treatment of COPEGUS plus PEGASYS or PEGASYS monotherapy; subjects failing PEGASYS monotherapy at 24 weeks or later could receive open-label COPEGUS plus PEGASYS.
+ The initial randomized arms were balanced for demographic factors; 55 subjects received initial combination treatment of COPEGUS plus PEGASYS and 59 received PEGASYS plus placebo; in the overall intent-to-treat population, 45% were female, 80% were Caucasian, and 81% were infected with HCV genotype 1.
+The SVR results are summarized in Table 12.
+ Table  12  Sustained Virologic  Response  in Pediatric Subjects  (NV17424 - Study  3)   PEGASYS  PEGASYS
+  180 mcg/1.73 m  x BSA +  180 mcg/1.73 m  x BSA + Placebo*  COPEGUS 15 mg/kg (N=55)*  (N=59)
+  Reference ID: 3717561 27
+                                                                                                                                                                                   All HCV genotypes** 29 (53%) 12 (20%) HCV genotype 1 21/45 (47%) 8/47 (17%) HCV non-genotype 1*** 8/10 (80%) 4/12 (33%)
+ *Results indicate undetectable HCV-RNA defined as HCV RNA less than 50 IU/mL at 24 weeks post-treatment using the AMPLICOR HCV test v2.
+**Scheduled treatment duration was 48 weeks regardless of the genotype ***Includes HCV genotypes 2, 3 and others
+ 14.2 Chronic Hepatitis C and Coinfection with HIV (CHC/HIV)
+ Study 4: PEGASYS Monotherapy and PEGASYS/COPEGUS Combination Therapy
+ In Study 4, subjects with CHC/HIV were randomized to receive either PEGASYS 180 mcg subcutaneous once weekly plus an oral placebo, PEGASYS 180 mcg once weekly plus COPEGUS 800 mg by mouth daily or ROFERON-A (interferon alfa-2a), 3 MIU subcutaneous three times a week plus COPEGUS 800 mg by mouth daily.
+All subjects received 48 weeks of therapy and sustained virologic response (SVR) was assessed at 24 weeks of treatment-free follow-up.
+COPEGUS or placebo treatment assignment was blinded in the PEGASYS treatment arms.
+All subjects were adults, had compensated liver disease, detectable hepatitis C virus, liver biopsy diagnosis of chronic hepatitis C, and were previously untreated with interferon.
+Subjects also had CD4+ cell count greater than or equal to 200 cells/mm3 or CD4+ cell count greater than or equal to 100 cells/mm3 but less than 200 cells/mm3 and HIV-1 RNA less than 5,000 cells/mm3, and stable status of HIV.
+Approximately 15% of subjects in the study had cirrhosis.
+Results are shown in Table 13.
+ Table 13  Sustained Virologic Response in Subjects with Chronic Hepatitis C Coinfected with HIV (Study 4)
+ ROFERON-A + COPEGUS 800 mg (N=289)
+ PEGASYS + Placebo (N=289)
+ PEGASYS + COPEGUS 800 mg (N=290)
+ All subjects 33 (11%) 58 (20%) 116 (40%)
+ Genotype 1 12/171 (7%) 24/175 (14%) 51/176 (29%)
+ Genotypes 2, 3 18/89 (20%) 32/90 (36%) 59/95 (62%)
+ Treatment response rates are lower in CHC/HIV subjects with poor prognostic factors (including HCV genotype 1, HCV RNA greater than 800,000 IU/mL, and cirrhosis) receiving pegylated interferon alpha therapy.
+Geographic region is not a prognostic factor for response.
+However, poor prognostic factors occur more frequently in the US population than in the non-US population.
+ Of the subjects who did not demonstrate either undetectable HCV RNA or at least a 2 log10 reduction from baseline in HCV RNA titer by 12 weeks of PEGASYS and ribavirin combination therapy, 2% (2/85) achieved an SVR.
+ In CHC subjects with HIV coinfection who received 48 weeks of PEGASYS alone or in combination with ribavirin treatment, mean and median HIV RNA titers did not increase above baseline during treatment or 24 weeks post-treatment.
+ 14.3 Chronic Hepatitis C Studies 5, 6, and 7: PEGASYS Monotherapy The safety and effectiveness of PEGASYS for the treatment of hepatitis C virus infection were assessed in three randomized, open-label, active-controlled clinical studies.
+All subjects were adults, had compensated liver disease, detectable hepatitis C virus (HCV), liver biopsy diagnosis of chronic hepatitis, and were previously untreated with interferon.
+All subjects received therapy by subcutaneous injection for 48 weeks, and were followed for an additional 24 weeks to assess the durability of response.
+In studies 5 and 6, approximately 20%
+ Reference ID: 3717561 28
+                                                                                                                                                                                                                                                   of subjects had cirrhosis or bridging fibrosis.
+Study 7 enrolled subjects with a histological diagnosis of cirrhosis (78%) or bridging fibrosis (22%).
+ In Study 5 (n=630), subjects received either ROFERON-A (interferon alfa-2a) 3 MIU three times a week, PEGASYS 135 mcg once weekly or PEGASYS 180 mcg once weekly.
+In Study 6 (n=526), subjects received either ROFERON-A 6 MIU three times a week for 12 weeks followed by 3 MIU three times a week for 36 weeks or PEGASYS 180 mcg once weekly.
+In Study 7 (n=269), subjects received ROFERON-A 3 MIU three times a week, PEGASYS 90 mcg once weekly or PEGASYS 180 mcg once each week.
+ In all three studies, treatment with PEGASYS 180 mcg resulted in significantly more subjects who experienced a sustained response (defined as undetectable HCV RNA [less than 50 IU/mL] using the COBAS AMPLICOR HCV Test, version 2 and normalization of ALT on or after study week 68) compared to treatment with ROFERON-A.
+ In Study 5, response to PEGASYS 135 mcg was not different from response to 180 mcg.
+In Study 7, response to PEGASYS 90 mcg was intermediate between PEGASYS 180 mcg and ROFERON-A.
+ Table 14 Sustained Response to Monotherapy Treatment Study 5 Study 6 Study 7 Roferon-A 3 MIU (N=207)
+ PEGASYS 180 mcg (N=208)
+ Diff* (95% CI)
+ Roferon-A 6/3 MIU&#x20ac; (N=261)
+ PEGASYS 180 mcg (N=265)
+ Diff* (95% CI)
+ Roferon-A 3 MIU (N=86)
+ PEGASYS 180 mcg (N=87)
+ Diff* (95% CI)
+ Combined Virologic and Biologic Sustained Response
+ 11% 24% 13 (6, 20) 17% 35% 18 (11, 25) 7% 23%
+ 16 (6, 26)
+ Sustained Virologic Response
+ 11% 26% 15 (8, 23) 19% 38% 19 (11, 26) 8% 30%
+ 22 (11, 33)
+ *Percent difference between PEGASYS and ROFERON-A treatment.
+&#x20ac;An induction dose of 6 million international units (MIU) three times a week for the first 12 weeks followed by 3 million international  units three times a week for 36 weeks given subcutaneously.
+ Defined as undetectable HCV RNA [less than 50 IU/mL] using the COBAS AMPLICOR HCV Test, version 2 and normalization of
+ ALT on or after study week 68.
+  Matched pre- and post-treatment liver biopsies were obtained in approximately 70% of subjects.
+Similar modest reductions in inflammation compared to baseline were observed in all treatment groups.
+ Of the subjects who did not demonstrate either undetectable HCV RNA or at least a 2 log10 drop in HCV RNA titer from baseline by 12 weeks of PEGASYS 180 mcg therapy, 2% (3/156) achieved a sustained virologic response [see Dosage and Administration (2.2)].
+ Averaged over Study 5, Study 6, and Study 7, response rates to PEGASYS were 23% among subjects with viral genotype 1 and 48% among subjects with other viral genotypes.
+The treatment response rates were similar in men and women.
+ 14.4 Chronic Hepatitis B Studies 8 and 9: PEGASYS Monotherapy The safety and effectiveness of PEGASYS for the treatment of chronic hepatitis B were assessed in controlled clinical trials in HBeAg positive (Study 8) and HBeAg negative (Study 9) subjects with chronic hepatitis B.
+ Subjects were randomized to PEGASYS 180 mcg subcutaneous once weekly, PEGASYS 180 mcg subcutaneous once weekly combined with lamivudine 100 mg once daily by mouth or lamivudine 100 mg once daily by mouth.
+All subjects received 48 weeks of their assigned therapy followed by 24 weeks of treatment-free follow-up.
+Assignment to receipt of PEGASYS or no PEGASYS was not masked.
+ Reference ID: 3717561 29
+                                                                                                                                                                                                                                                   All subjects were adults with compensated liver disease, had chronic hepatitis B virus (HBV) infection, and evidence of HBV replication (serum HBV greater than 500,000 copies/mL for Study 8 and greater than 100,000 copies/mL for Study 8) as measured by PCR (COBAS AMPLICOR HBV Assay).
+All subjects had serum alanine aminotransferase (ALT) between 1 and 10 times the upper limit of normal (ULN) and liver biopsy findings compatible with the diagnosis of chronic hepatitis.
+ The results observed in the PEGASYS and lamivudine monotherapy groups are shown in Table 15.
+ Table 15  Percentage of Subjects with Serological, Virological, Biochemical, and Histological Response
+ Study 8 HBeAg positive
+ Study 9 HBeAg negative
+ Lamivudine N = 272
+ PEGASYS N = 271
+ Lamivudine N = 181
+ PEGASYS N = 177
+ EOT1 EOF2 EOF2 EOT1 EOF2 EOF2
+ HBeAg Seroconversion (%) 20 19 32 NA NA NA HBV DNA Response (%)3 62 22 32 85 29 43 ALT Normalization (%) 62 28 41 73 44 59 HBsAg Seroconversion (%) 0 0 3 1 0 3
+ N = 184 N = 207 N = 125 N = 143 Histological Improvement (%)4 ND 40 41 ND 41 48
+ Changes in Ishak fibrosis score compared to baseline (%): - Improved5 - Unchanged - Worsened5
+ ND 32 20 16
+ 25 25 26
+ ND 31 23 15
+ 32 30 19
+ 1 End of Treatment (week 48) 2 End of follow-up &#x20ac;&#x201c; 24 weeks post-treatment (week 72) 3 Less than 100,000 copies/mL for HBeAg positive and less than 20,000 copies/mL for HBeAg negative subjects 4 Greater than or equal to 2 point decrease in Ishak necro-inflammatory score from baseline with no worsening of the Ishak fibrosis score.
+Not all subjects provided both initial and end of follow-up biopsies (missing biopsy rates: 19% to 24% in the PEGASYS and 31% to 32% in the lamivudine arms)5Change of 1 point or more in Ishak fibrosis score
+ PEGASYS co-administered with lamivudine did not result in any additional sustained response when compared to PEGASYS monotherapy.
+ Conclusions regarding comparative efficacy of PEGASYS and lamivudine treatment based upon the end of follow-up results are limited by the different mechanisms of action of the two compounds.
+Most treatment effects of lamivudine are unlikely to persist 24 weeks after therapy is withdrawn.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING Each PEGASYS Single Use Vial Package Contains:
+ A box containing 180 mcg per 1 mL solution in a single use vial.
+(NDC 0004-0350-09)
+ Each PEGASYS Prefilled Syringe Monthly Convenience Pack Contains:
+ A box containing four 180 mcg per 0.5 mL ( cc) single use prefilled syringes with 4 needles with or without 4 alcohol swabs.
+Each prefilled syringe is supplied with a 27-gauge, -inch needle with a needle-stick protection device.
+ (NDC 0004-0352-39) with alcohol swabs
+ (NDC 0004-0357-30) without alcohol swabs
+ Reference ID: 3717561 30
+                                                                                                                                   Each PEGASYS ProClick Autoinjector Package Contains:
+ A box containing one 180 mcg per 0.5 mL PEGASYS ProClick single use autoinjector.
+ (NDC 0004-0365-09)
+ A box containing one 135 mcg per 0.5 mL PEGASYS ProClick single use autoinjector.
+ (NDC 0004-0360-09)
+ Each PEGASYS ProClick Autoinjector Monthly Convenience Pack Contains:
+ A box containing four 180 mcg per 0.5 mL PEGASYS ProClick single use autoinjectors.
+ (NDC 0004-0365-30)
+ A box containing four 135 mcg per 0.5 mL PEGASYS ProClick single use autoinjectors.
+ (NDC 0004-0360-30)
+ Storage and Handling Store in the refrigerator at 2C to 8C (36F to 46F).
+Do not leave PEGASYS out of the refrigerator for more than 24 hours.
+Do not freeze or shake.
+Protect from light.
+Vials, prefilled syringes and autoinjectors are for single use only.
+Discard any unused portion remaining in the vial, prefilled syringe.
+ Disposal Instructions If home use is prescribed, a puncture-resistant container for the disposal of used needles, syringes and autoinjectors should be supplied to the patients.
+Patients should be thoroughly instructed in the importance of proper disposal and cautioned against any reuse of any needles, syringes and autoinjectors.
+The full container should be disposed of according to the directions provided by the physician [see FDA-Approved Medication Guide].
+ 17 PATIENT COUNSELING INFORMATION &#x2022; Advise the patient to read the FDA-approved patient labeling (Medication Guide and Instructions for Use)
+ Patients receiving PEGASYS alone or in combination with an approved HCV antiviral drug should be directed in its appropriate use, informed of the benefits and risks associated with treatment, and referred to FDA-approved patient labeling (Medication Guideand Instructions for Use).
+ Pregnancy Patients must be informed that ribavirin must not be used by women who are pregnant or by men whose female partners are pregnant.
+Ribavirin therapy should not be initiated until a report of a negative pregnancy test has been obtained immediately before starting therapy.
+Female patients of childbearing potential and male patients with female partners of childbearing potential must be advised of the teratogenic/embryocidal risks and must be instructed to practice effective contraception during ribavirin therapy and for 6 months post-therapy.
+Patients should be advised to notify the healthcare provider immediately in the event of a pregnancy [see Contraindications (4) and Warnings and Precautions (5.1)].
+ Women of childbearing potential and men must use two forms of effective contraception during treatment and during the 6 months after treatment has been stopped; routine monthly pregnancy tests must be performed during this time [see Contraindications (4), Warnings and Precautions (5.1), Use in Specific Populations (8.1), and ribavirin prescribing information].
+ To monitor maternal and fetal outcomes of pregnant women exposed to ribavirin, the Ribavirin Pregnancy Registry has been established.
+Patients should be encouraged to register by calling 1-800-593-2214.
+ Reference ID: 3717561 31
+                                                                                                                  Laboratory Evaluations and Hydration
+ Patients should be advised that laboratory evaluations are required before starting therapy and periodically
+ thereafter [see Warnings and Precautions (5.17)].
+Patients should be instructed to remain well hydrated,
+ especially during the initial stages of treatment.
+  General Information Patients should be questioned about prior history of drug abuse before initiating PEGASYS; as relapse of drug addiction and drug overdoses have been reported in patients treated with interferons.
+ Patients should be informed that it is not known if therapy with PEGASYS will prevent transmission of HBV infection to others or prevent cirrhosis, liver failure or liver cancer that might result from HBV infection.
+ Patients should be informed that the effect of treatment of hepatitis C infection on transmission is not known, and that appropriate precautions to prevent transmission of the hepatitis C virus during treatment or in the event of treatment failure should be taken.
+ Patients who develop dizziness, confusion, somnolence, and fatigue should be cautioned to avoid driving or operating machinery.
+ Patients should be advised to avoid drinking alcohol to reduce the chance of further injury to the liver.
+ Patients should not switch to another brand of interferon without consulting their healthcare provider.
+ Dosing Instructions Patients should be advised to take their prescribed dose of PEGASYS on the same day and approximately same time each week.
+Patients should also be advised that if they miss a dose, but remember within 2 days, to take their missed dose as soon as they remember and then to take their next dose on the day they normally do.
+If they remember when more than 2 days have passed, patients should be advised to consult their healthcare provider.
+Patients should also be advised to consult their healthcare provider if the full dose is not received (e.g., leakage around the injection site).
+ Patients must be instructed on the use of aseptic techniques when administering PEGASYS.
+Appropriate training for preparation using the vial, prefilled syringe or autoinjector must be given by a healthcare provider, including a careful review of the PEGASYS Medication Guide and Instructions for Use for the vial, prefilled syringe and autoinjector.
+ Patients should be instructed to allow the vial, prefilled syringe or autoinjector to come to room temperature and for condensation on the outside of the prefilled syringe or autoinjector to disappear before use.
+The following instructions should be given:
+ &#x2022;  Vial: warm the refrigerated medicine by gently rolling in the palms of the hands for about one minute.
+ &#x2022;  Pre-filled syringe: lay the syringe on a flat clean surface and wait a few minutes until it reaches room temperature.
+If condensation water is observed on the outside of the syringe, wait another few minutes until it disappears.
+ &#x2022;  Disposable autoinjector: place the autoinjector on a clean flat surface.
+Do not remove the cap at this time.
+Allow the autoinjector to come to room temperature for about 20 minutes to warm up.
+Do not warm up the autoinjector in any other way.
+ Patients should be advised not to shake the vial, prefilled syringe or autoinjector as foaming may occur.
+ Patients should be advised to choose a different place on either the thigh or abdomen each time an injection is made.
+ Reference ID: 3717561 32
+                                          PEGASYS is a trademark of Hoffmann-La Roche Inc.
+ Manufactured by: Hoffmann-La Roche, Inc.
+c/o Genentech, Inc.
+A Member of the Roche Group 1 DNA Way South San Francisco, CA 94080-4990
+ Distributed by: Genentech USA, Inc.
+A Member of the Roche Group 1 DNA Way South San Francisco, CA 94080-4990
+  2015 Genentech, Inc.
+All rights reserved.
+ Reference ID: 3717561 33
+  

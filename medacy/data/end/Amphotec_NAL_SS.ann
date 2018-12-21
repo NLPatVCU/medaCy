@@ -1,0 +1,317 @@
+T1	tradename 0 8	AMPHOTEC
+T2	activeingredient 8 22	Amphotericin B
+T3	tradename 64 73	AMPHOTEC-
+T4	activeingredient 74 88	amphotericin b
+T5	nanoparticle 100 113	lipid complex
+T6	tradename 140 148	AMPHOTEC
+T7	activeingredient 148 162	Amphotericin B
+T8	tradename 224 224	
+T9	routeofadministration 295 325	intravenous (IV)administration
+T10	tradename 327 335	AMPHOTEC
+T11	activeingredient 379 393	amphotericin B
+T12	tradename 439 447	AMPHOTEC
+T13	nanoparticle 456 465	colloidal
+T14	nanoparticle 519 528	Liposomal
+T15	nanoparticle 567 580	lipid complex
+T16	nanoparticle 735 744	liposomal
+T17	nanoparticle 748 761	lipid-complex
+T18	activeingredient 980 994	Amphotericin B
+T19	indication 1001 1011	antifungal
+T20	activeingredient 1076 1091	Amphotericin B,
+T21	molecularweight 1521 1528	924.10.
+T22	tradename 1528 1536	AMPHOTEC
+T23	activeingredient 1637 1640	 B,
+T24	inactiveingredient 1648 1675	sodium cholesteryl sulfate,
+T25	inactiveingredient 1685 1698	tromethamine,
+T26	inactiveingredient 1708 1734	disodium edetatedihydrate,
+T27	inactiveingredient 1745 1765	lactose monohydrate,
+T28	inactiveingredient 1778 1796	hydrochloric acid,
+T29	activeingredient 1886 1901	amphotericin B,
+T30	inactiveingredient 1909 1936	sodium cholesteryl sulfate,
+T31	inactiveingredient 1946 1959	tromethamine,
+T32	inactiveingredient 1970 1997	disodium edetate dihydrate,
+T33	inactiveingredient 2007 2027	lactose monohydrate,
+T34	inactiveingredient 2041 2059	hydrochloric acid,
+T35	tradename 2167 2176	AMPHOTEC,
+T36	activeingredient 2177 2192	amphotericin B,
+T37	activeingredient 2424 2438	Amphotericin B
+T38	tradename 2621 2621	
+T39	indication 2649 2660	Aspergillus
+T40	indication 2665 2681	Candida species.
+T41	indication 2740 2759	Aspergillus species
+T42	indication 2803 2822	Candida specieswere
+T43	tradename 2904 2912	AMPHOTEC
+T44	tradename 2967 2975	AMPHOTEC
+T45	indication 3160 3170	antifungal
+T46	tradename 3293 3301	AMPHOTEC
+T47	indication 3337 3397	Aspergillus fumigatus, Candida albicans, Coccidioidesimmitis
+T48	indication 3402 3426	Cryptococcus neoformans,
+T49	indication 3470 3483	aspergillosis
+T50	tradename 3599 3607	AMPHOTEC
+T51	indication 3646 3669	visceral leishmaniasis,
+T52	indication 3787 3798	Leishmania.
+T53	activeingredient 3993 4007	amphotericin B
+T54	activeingredient 4327 4341	amphotericin B
+T55	tradename 4366 4375	AMPHOTEC.
+T56	activeingredient 4437 4452	amphotericin B,
+T57	tradename 4469 4478	AMPHOTEC,
+T58	indication 4534 4561	systemic fungal infections.
+T59	tradename 4676 4684	AMPHOTEC
+T60	dose 4702 4718	0.5 to 8.0 mg/kg
+T61	frequency 4718 4723	/day.
+T62	activeingredient 4764 4778	amphotericin B
+T63	activeingredient 4809 4823	amphotericin B
+T64	activeingredient 4884 4898	amphotericinB.
+T65	activeingredient 5014 5029	amphotericin B,
+T66	tradename 5046 5055	AMPHOTEC,
+T67	activeingredient 5145 5160	amphotericin B,
+T68	tradename 5184 5185	,
+T69	dose 5399 5415	0.5 to 8.0 mg/kg
+T70	frequency 5415 5420	/day.
+T71	tradename 5812 5820	AMPHOTEC
+T72	activeingredient 5903 5917	Amphotericin B
+T73	tradename 5960 5968	AMPHOTEC
+T74	tradename 5973 5981	AMPHOTEC
+T75	activeingredient 6135 6149	amphotericin B
+T76	tradename 6191 6199	AMPHOTEC
+T77	volumeofdistribution 6511 6528	(L/kg) 3.8 4.1CLt
+T78	clearance 6529 6561	(L/h/kg) 0.105 0.112Distribution
+T79	plasmahalflife 6572 6600	(minutes) 3.5 3.5Elimination
+T80	eliminationhalflife 6611 6632	(hours) 27.5 28.2Cmax
+T81	cmax 6633 6652	(g/mL) 2.6 2.9AUCss
+T82	auc 6653 6674	(g/mL&#x2022;h) 29 36
+T83	activeingredient 6712 6727	amphotericin B,
+T84	indication 6884 6895	 infections
+T85	activeingredient 7138 7153	amphotericin B,
+T86	activeingredient 7393 7407	Amphotericin B
+T87	dose 7450 7457	1 mg/kg
+T88	activeingredient 7734 7736	 B
+T89	volumeofdistribution 8121 8134	(L/kg) 1.1CLt
+T90	clearance 8135 8161	(L/h/kg) 0.028Distribution
+T91	plasmahalflife 8172 8195	(minutes) 38Elimination
+T92	eliminationhalflife 8206 8220	(hours) 39Cmax
+T93	cmax 8221 8236	(g/mL) 2.9AUCss
+T94	auc 8237 8255	(g/mL&#x2022;h) 36
+T95	activeingredient 8312 8326	amphotericin B
+T96	tradename 8334 8342	AMPHOTEC
+T97	activeingredient 8366 8368	 B
+T98	activeingredient 8622 8636	amphotericin B
+T99	tradename 8680 8688	AMPHOTEC
+T100	tradename 8957 8965	AMPHOTEC
+T101	activeingredient 9078 9093	amphotericin B,
+T102	tradename 9110 9119	AMPHOTEC,
+T103	tradename 9371 9379	AMPHOTEC
+T104	activeingredient 9445 9460	amphotericin B,
+T105	tradename 9477 9486	AMPHOTEC,
+T106	tradename 9784 9795	AMPHOTEChas
+T107	activeingredient 9842 9857	amphotericin B,
+T108	tradename 9874 9883	AMPHOTEC,
+T109	tradename 10036 10036	
+T110	indication 10071 10093	invasive aspergillosis
+T111	indication 10242 10264	invasive aspergillosis
+T112	indication 10377 10395	Aspergillos isData
+T113	indication 10438 10459	aspergillus infection
+T114	tradename 10591 10599	AMPHOTEC
+T115	activeingredient 11724 11738	amphotericin B
+T116	tradename 11789 11800	AMPHOTECfor
+T117	tradename 13174 13183	AMPHOTEC.
+T118	frequency 13221 13226	daily
+T119	dose 13236 13243	4 mg/kg
+T120	frequency 13243 13247	/day
+T121	dose 13255 13271	0.73 - 7.5 mg/kg
+T122	frequency 13271 13276	/day)
+T123	dose 13311 13316	6.3 g
+T124	dose 13324 13342	0.36 - 34.4 grams)
+T125	duration 13377 13385	24 days(
+T126	duration 13391 13404	5 - 129 days)
+T127	dose 13733 13741	15 mg/kg
+T128	tradename 14431 14439	AMPHOTEC
+T129	indication 14487 14509	invasive aspergillosis
+T130	tradename 14725 14733	AMPHOTEC
+T131	tradename 15613 15613	
+T132	dose 16525 16532	4 mg/kg
+T133	frequency 16532 16536	/day
+T134	tradename 16540 16548	AMPHOTEC
+T135	dose 16552 16561	0.8 mg/kg
+T136	frequency 16561 16565	/day
+T137	duration 16613 16621	14 days.
+T138	tradename 16717 16725	AMPHOTEC
+T139	tradename 17171 17179	AMPHOTEC
+T140	tradename 17763 17763	
+T141	tradename 18082 18082	
+T142	tradename 18249 18257	AMPHOTEC
+T143	adversereaction 18316 18316	
+T144	activeingredient 18378 18393	amphotericin B-
+T145	adversereaction 18433 18444	anaphylaxis
+T146	routeofadministration 18505 18516	intravenous
+T147	tradename 18724 18733	AMPHOTEC.
+T148	tradename 18747 18756	AMPHOTEC.
+T149	tradename 18783 18783	
+T150	routeofadministration 18807 18821	intravenously.
+T151	adversereaction 18864 18907	fever,chills, hypoxia, hypotension, nausea,
+T152	adversereaction 18911 18921	tachypnea,
+T153	routeofadministration 18960 18979	intravenousinfusion
+T154	tradename 19071 19071	
+T155	routeofadministration 19356 19367	intravenous
+T156	tradename 19642 19650	AMPHOTEC
+T157	activeingredient 19731 19746	amphotericin B;
+T158	tradename 19794 19803	AMPHOTEC.
+T159	activeingredient 19868 19882	amphotericin B
+T160	adversereaction 19913 19941	renal toxicity,bronchospasm,
+T161	adversereaction 19946 19958	hypotension.
+T162	tradename 20031 20040	AMPHOTEC.
+T163	activeingredient 20144 20158	amphotericin B
+T164	adversereaction 20184 20184	
+T165	adversereaction 20223 20243	cardiac dysfunction.
+T166	tradename 20307 20316	AMPHOTEC,
+T167	tradename 20466 20474	AMPHOTEC
+T168	activeingredient 20479 20505	amphotericin Bdeoxycholate
+T169	tradename 21153 21161	AMPHOTEC
+T170	activeingredient 21240 21254	amphotericin B
+T171	tradename 21427 21435	AMPHOTEC
+T172	activeingredient 21502 21516	amphotericin B
+T173	activeingredient 21577 21591	amphotericin B
+T174	tradename 21713 21722	AMPHOTEC,
+T175	activeingredient 21820 21834	amphotericin B
+T176	tradename 22041 22050	AMPHOTEC.
+T177	activeingredient 22145 22159	amphotericin B
+T178	activeingredient 22434 22448	amphotericin B
+T179	tradename 22636 22645	AMPHOTEC.
+T180	activeingredient 22801 22804	 B-
+T181	adversereaction 22812 22823	hypokalemia
+T182	adversereaction 22914 22926	hypokalemia.
+T183	tradename 22999 23000	,
+T184	tradename 23168 23176	AMPHOTEC
+T185	tradename 23243 23251	AMPHOTEC
+T186	tradename 23530 23538	AMPHOTEC
+T187	tradename 23656 23664	AMPHOTEC
+T188	tradename 24135 24144	AMPHOTEC.
+T189	tradename 24170 24178	AMPHOTEC
+T190	tradename 24373 24382	AMPHOTEC.
+T191	tradename 24553 24561	AMPHOTEC
+T192	tradename 24722 24730	AMPHOTEC
+T193	activeingredient 24830 24845	amphotericin B,
+T194	tradename 24924 24933	AMPHOTEC,
+T195	tradename 25096 25105	AMPHOTEC,
+T196	tradename 25298 25306	AMPHOTEC
+T197	tradename 25437 25445	AMPHOTEC
+T198	adversereaction 25456 25470	nephrotoxicity
+T199	adversereaction 25555 25569	Renal toxicity
+T200	tradename 25818 25827	AMPHOTEC.
+T201	tradename 25957 25965	AMPHOTEC
+T202	indication 26011 26038	systemic fungal infections,
+T203	frequency 26071 26076	daily
+T204	dose 26085 26096	3 - 6mg/kg.
+T205	tradename 26151 26159	AMPHOTEC
+T206	dose 26161 26173	4 or 6 mg/kg
+T207	frequency 26173 26178	/day)
+T208	dose 26215 26229	0.8 or 1 mg/kg
+T209	frequency 26229 26234	/day)
+T210	routeofadministration 26503 26503	
+T211	tradename 26581 26590	AMPHOTEC.
+T212	tradename 26798 26807	AMPHOTEC,
+T213	tradename 26950 26958	AMPHOTEC
+T214	tradename 27064 27072	AMPHOTEC
+T215	tradename 27240 27256	AMPHOTECPatients
+T216	tradename 27319 27328	AMPHOTEC(
+T217	tradename 27337 27358	AMPHOTECAspergillosis
+T218	indication 27358 27358	
+T219	tradename 27378 27387	AMPHOTEC(
+T220	adversereaction 27452 27458	Chills
+T221	adversereaction 27475 27480	Fever
+T222	adversereaction 27497 27505	Headache
+T223	adversereaction 27518 27534	Chills and fever
+T224	adversereaction 27568 27579	Hypotension
+T225	adversereaction 27594 27605	Tachycardia
+T226	adversereaction 27620 27632	Hypertension
+T227	adversereaction 27661 27667	Nausea
+T228	tradename 27686 27694	AMPHOTEC
+T229	dose 27696 27708	4 or 6 mg/kg
+T230	frequency 27708 27713	/day)
+T231	dose 27747 27761	0.8 or 1 mg/kg
+T232	frequency 27761 27766	/day)
+T233	adversereaction 28048 28054	Nausea
+T234	adversereaction 28068 28087	Nausea and vomiting
+T235	adversereaction 28101 28109	Vomiting
+T236	adversereaction 28123 28151	Liver function test abnormal
+T237	adversereaction 28191 28207	Thrombocytopenia
+T238	adversereaction 28251 28271	Creatinine increased
+T239	adversereaction 28292 28303	Hypokalemia
+T240	adversereaction 28318 28332	Hypomagnesemia
+T241	adversereaction 28346 28364	Hyperbilirubinemia
+T242	adversereaction 28379 28409	Alkaline phosphatase increased
+T243	adversereaction 28422 28435	Hyperglycemia
+T244	adversereaction 28466 28473	Dyspnea
+T245	adversereaction 28486 28493	Hypoxia
+T246	tradename 28576 28584	AMPHOTEC
+T247	adversereaction 28689 28838	Abdomen enlarged, abdominal pain, back pain, chest pain, face edema, injection site inflammation,mucous membrane disorder, pain, sepsisCardiovascular
+T248	adversereaction 28859 28911	 disorder, hemorrhage, postural hypotensionDigestive
+T249	adversereaction 28926 28977	, dry mouth, hematemesis, jaundice, stomatitisHemic
+T250	adversereaction 29004 29058	, coagulation disorder, prothrombin decreasedMetabolic
+T251	adversereaction 29089 29178	, generalized edema, hypocalcemia, hypophosphatemia, peripheral edema, weight gainNervous
+T252	adversereaction 29194 29265	, dizziness, insomnia, somnolence, thinking abnormal, tremorRespiratory
+T253	adversereaction 29277 29360	, asthma, cough increased, epistaxis, hyperventilation, lung disorder, rhinitisSkin
+T254	adversereaction 29376 29427	Maculopapular rash, pruritis, rash, sweatingSpecial
+T255	adversereaction 29437 29470	 hemorrhageUrogenitalHematuriaThe
+T256	tradename 29530 29538	AMPHOTEC
+T257	tradename 29604 29612	AMPHOTEC
+T258	adversereaction 29651 29822	Accidental injury, allergic reaction, asthenia, death, hypothermia, immune system disorder, infection,injection site pain, injection site reaction, neck painCardiovascular
+T259	adversereaction 29839 30049	, atrial fibrillation, bradycardia, congestive heart failure, heart arrest, phlebitis, shock,supraventricular tachycardia, syncope, vasodilatation, venoocclusive liver disease, ventricularextrasystolesDigestive
+T260	adversereaction 30064 30326	, bloody diarrhea, constipation, dyspepsia, fecal incontinence, gamma glutamyl transpeptidaseincreased, gastrointestinal disorder, gastrointestinal hemorrhage, gingivitis, glossitis, hepatic failure,melena, mouth ulceration, oral moniliasis, rectal disorderHemic
+T261	adversereaction 30357 30469	, fibrinogen increased, hypochromic anemia, leukocytosis, leukopenia, petechia,thromboplastin decreasedMetabolic
+T262	adversereaction 30503 30735	, BUN increased, dehydration, hyponatremia, hyperkalemia, hyperlipemia, hypernatremia,hypervolemia, hypoglycemia, hypoproteinemia, lactic dehydrogenase increased, AST (SGOT)increased, ALT (SGPT) increased, weight lossMusculoskeletal
+T263	adversereaction 30752 30768	, myalgiaNervous
+T264	adversereaction 30784 30929	, anxiety, convulsion, depression, hallucinations, hypertonia, nervousness, neuropathy,paresthesia, psychosis, speech disorder, stuporRespiratory
+T265	adversereaction 30946 31026	, lung edema, pharyngitis, pleural effusion, respiratory disorder, sinusitisSkin
+T266	adversereaction 31045 31170	, alopecia, petechial rash, skin discoloration, skin disorder, skin nodule, skin ulcer, urticaria,vesiculobullous rashSpecial
+T267	adversereaction 31186 31220	, deafness, ear disorder, tinnitus
+T268	adversereaction 31249 31360	, dysuria, glycosuria, kidney failure, oliguria, urinary incontinence, urinary retention,urinary tract disorder
+T269	tradename 31379 31379	
+T270	dose 31576 31587	3 - 4 mg/kg
+T271	tradename 31612 31621	AMPHOTEC,
+T272	routeofadministration 31723 31734	intravenous
+T273	tradename 32401 32401	
+T274	activeingredient 32608 32610	 B
+T275	tradename 33046 33046	
+T276	tradename 33078 33078	
+T277	tradename 33575 33584	AMPHOTEC.
+T278	tradename 33628 33637	AMPHOTEC.
+T279	tradename 33816 33825	AMPHOTEC,
+T280	tradename 34620 34620	
+T281	activeingredient 34622 34637	Amphotericin B)
+T282	tradename 34782 34790	AMPHOTEC
+T283	dose 34791 34796	50 mg
+T284	tradename 34829 34837	AMPHOTEC
+T285	dose 34838 34844	100 mg
+T286	tradename 34908 34916	AMPHOTEC
+T287	tradename 34936 34944	AMPHOTEC
+T288	company 35012 35041	Ben Venue Laboratories, Inc.,
+T289	company 35080 35096	InterMune, Inc.,
+T290	u.s.patent 35136 35179	4,822,777; 5,032,582; 5,194,266; 5,077,057.
+T291	indication 35318 35341	invasive aspergillosis.
+T292	tradename 35392 35400	AMPHOTEC
+T293	activeingredient 35402 35416	amphotericin b
+T294	nanoparticle 35428 35441	lipid complex
+T295	routeofadministration 35563 35574	INTRAVENOUS
+T296	activeingredient 35669 35686	a mpho teric in B
+T297	activeingredient 35707 35723	ampho teric in B
+T298	inactiveingredient 35806 35835	so dium cho lesteryl sulfa te
+T299	inactiveingredient 35862 35873	 metha mine
+T300	inactiveingredient 35918 35944	 dium edeta te dihydra te
+T301	inactiveingredient 35971 35994	 cto se mo no hydra te
+T302	inactiveingredient 36040 36057	 chlo ric a c id
+T303	tradename 36215 36223	AMPHOTEC
+T304	activeingredient 36225 36239	amphotericin b
+T305	nanoparticle 36251 36264	lipid complex
+T306	routeofadministration 36386 36397	INTRAVENOUS
+T307	activeingredient 36492 36510	a mpho. teric in B
+T308	activeingredient 36531 36547	ampho teric in B
+T309	inactiveingredient 36632 36661	so dium cho lesteryl sulfa te
+T310	inactiveingredient 36688 36699	 metha mine
+T311	inactiveingredient 36745 36771	 dium edeta te dihydra te
+T312	inactiveingredient 36798 36821	 cto se mo no hydra te
+T313	inactiveingredient 36869 36886	 chlo ric a c id
+T314	company 37054 37085	InterMune, Inc. InterMune, Inc.
+T315	tradename 37103 37111	AMPHOTEC
+T316	activeingredient 37112 37126	Amphotericin B
+T317	adversereaction 37549 37576	Hypokalemia Hypomagnesemia

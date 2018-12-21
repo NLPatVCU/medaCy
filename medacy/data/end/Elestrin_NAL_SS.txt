@@ -1,0 +1,836 @@
+label
+  HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use ELESTRIN safely and effectively.
+ See full prescribing information for ELESTRIN.
+ Elestrin (estradiol gel) 0.06% 0.52 mg of estradiol per actuation Initial U.S. Approval: 1975
+ WARNING: ENDOMETRIAL CANCER, CARDIOVASCULAR  DISORDERS, BREAST CANCER and PROBABLE DEMENTIA
+  See full prescribing information for complete boxed warning.
+ Estrogen-Alone Therapy &#x2022;  There is an increased risk of endometrial cancer in a woman with a
+ uterus who uses unopposed estrogens (5.2) &#x2022;  Estrogen-alone therapy should not be used for the prevention of
+ cardiovascular disease or dementia (5.1, 5.3) &#x2022;  The Women's Health Initiative (WHI) estrogen-alone substudy
+ reported increased risks of stroke and deep vein thrombosis (DVT) (5.1)
+ &#x2022;  The WHI Memory Study (WHIMS) estrogen-alone ancillary study of WHI reported an increased risk of probable dementia in postmenopausal women 65 years of age and older (5.3)
+ Estrogen Plus Progestin Therapy &#x2022;  Estrogen plus progestin therapy should not be used for the
+ prevention of cardiovascular disease or dementia (5.1, 5.3) &#x2022;  The WHI estrogen plus progestin substudy reported increased risks
+ of stroke, DVT, pulmonary embolism (PE), and myocardial infarction (MI) (5.1)
+ &#x2022;  The WHI estrogen plus progestin study reported increased risks of invasive breast cancer (5.2)
+ &#x2022;  The WHIMS estrogen plus progestin ancillary study of WHI reported an increased risk of probable dementia in postmenopausal women 65 years of age and older (5.3)
+ ----------------------------INDICATIONS AND USAGE--------------------------ELESTRIN is an estrogen indicated for: &#x2022;  Treatment of Moderate to Severe Vasomotor Symptoms due to  Menopause (1.1)
+ ----------------------DOSAGE AND ADMINISTRATION----------------------Daily administration of:
+ &#x2022; one pump actuation to deliver 0.87 g of gel providing 0.52 mg estradiol, or
+ &#x2022; two pump actuations to deliver 1.7 g of gel providing 1.04 mg estradiol
+ to the upper arm.
+ ---------------------DOSAGE FORMS AND STRENGTHS----------------Elestrin 0.06% is available in a metered dose pump which delivers 0.52 mg of estradiol in 0.87 g of gel per pump actuation
+ -------------------------------CONTRAINDICATIONS-----------------------------&#x2022;  Undiagnosed abnormal genital bleeding (4) &#x2022;  Known, suspected, or history of breast cancer (4, 5.2) &#x2022;  Known or suspected estrogen-dependent neoplasia (4, 5.2) &#x2022;  Active DVT, PE, or history of these conditions (4, 5.1) &#x2022;  Active arterial thromboembolic disease (for example, stroke and MI) or
+ a history of these conditions (4, 5.1) &#x2022;  Known anaphylactic reaction or angioedema to ELESTRIN (4) &#x2022;  Known liver impairment or disease (4, 5.10) &#x2022;  Known protein C, protein S, or antithrombin deficiency, or other known
+ thrombophilic disorders (4) &#x2022;  Known or suspected pregnancy (4, 8.1)
+ -----------------------WARNINGS AND PRECAUTIONS-----------------------&#x2022;  Estrogens increase the risk of gallbladder disease (5.4) &#x2022;  Discontinue estrogen if severe hypercalcemia, loss of vision, severe
+ hypertriglyceridemia or cholestatic jaundice occurs (5.5, 5.6, 5.9, 5.10) &#x2022;  Monitor thyroid function in women on thyroid replacement therapy
+ (5.11, 5.21)
+ ------------------------------ADVERSE REACTIONS------------------------------In a placebo-controlled trial that included a total of 484 postmenopausal women, the most common adverse reactions (&#x2265; 5 percent) are breast tenderness, metrorrhagia, nasopharyngitis, and upper respiratory tract infections.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Meda at 1-800-890-3098 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch
+ ------------------------------DRUG INTERACTIONS------------------------------&#x2022;  Inducers and/or inhibitors of CYP3A4 may effect estrogen drug
+ metabolism (7.1)
+ -----------------------USE IN SPECIFIC POPULATIONS-----------------------&#x2022;  Nursing Women: Estrogen administration to nursing women has been
+ shown to decrease the quantity and quality of breast milk (8.3) &#x2022;  Geriatric Use: An increased risk of probable dementia in women over 65
+ years of age was reported in the Women's Health Initiative Memory ancillary studies of the Women's Health Initiative (5.3, 8.5)
+ See 17 for PATIENT COUNSELING INFORMATION and FDA-approved patient labeling.
+ Revised: 02/2014
+ Reference ID: 3462006
+                                                                                                                                                                             FULL PRESCRIBING INFORMATION: CONTENTS* WARNING:  ENDOMETRIAL CANCER, CARDIOVASCULAR DISORDERS, BREAST CANCER and PROBABLE DEMENTIA 1 INDICATIONS AND USAGE
+ 1.1  Treatment of Moderate to Severe Vasomotor Symptoms due to  Menopause
+  2  DOSAGE AND ADMINISTRATION 2.1  Treatment of Moderate to Severe Vasomotor Symptoms due to  Menopause
+ 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1  Cardiovascular Disorders
+ 5.2  Malignant Neoplasms
+ 5.3  Probable Dementia
+ 5.4  Gallbladder Disease
+ 5.5  Hypercalcemia
+ 5.6  Visual Abnormalities
+ 5.7  Addition of a Progestin When a Woman Has Not Had a
+  Hysterectomy
+ 5.8  Elevated Blood Pressure
+ 5.9  Hypertriglyceridemia
+ 5.10 Hepatic Impairment and/or Past History of Cholestatic Jaundice
+ 5.11 Hypothyroidism
+ 5.12 Fluid Retention
+ 5.13 Hypocalcemia
+ 5.14 Exacerbation of Endometriosis
+ 5.15 Hereditary Angioedema
+ 5.16 Exacerbation of Other Conditions
+ 5.17 Photosensitivity or Photoallergy
+ 5.18 Sunscreen Application
+ 5.19 Miscellaneous
+ 5.20 Laboratory Tests
+ 5.21 Drug-Laboratory Test Interactions
+  6  ADVERSE REACTIONS 6.1  Clinical Trials Experience
+ 6.2  Postmarketing Experience
+  7 DRUG INTERACTIONS 7.1  Metabolic Interactions
+  8  USE IN SPECIFIC POPULATIONS 8.1  Pregnancy
+ 8.3  Nursing Mothers
+ 8.4  Pediatric Use
+ 8.5  Geriatric Use
+ 8.6  Renal Impairment
+ 8.7  Hepatic Impairment
+  10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+  13  NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+  14  CLINICAL STUDIES 14.1 Effects on Vasomotor Symptoms
+ 14.2 Women's Health Initiative Studies
+ 14.3 Women's Health Initiative Memory Study
+  15 REFERENCES 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied
+ 16.2 Storage and Handling
+  17  PATIENT COUNSELING INFORMATION 17.1 Vaginal Bleeding
+ 17.2 Possible Serious Adverse Reactions with Estrogen-Alone Therapy
+ 17.3 Possible Less Serious but Common Adverse Reactions with
+  Estrogen-Alone Therapy
+  FDA-Approved Patient Labeling
+ *Sections or subsections omitted from the full prescribing information are not listed
+ Reference ID: 3462006
+                                                                                   FULL PRESCRIBING INFORMATION
+  WARNING: ENDOMETRIAL CANCER, CARDIOVASCULAR DISORDERS,
+ BREAST CANCER and PROBABLE DEMENTIA
+  Estrogen-Alone Therapy
+ Endometrial Cancer
+ There is an increased risk of endometrial cancer in a woman with a uterus who uses unopposed estrogens.
+ Adding a progestin to estrogen therapy has been shown to reduce the risk of endometrial hyperplasia, which may be a precursor to endometrial cancer.
+ Adequate diagnostic measures, including directed or random endometrial sampling when indicated, should be undertaken to rule out malignancy in postmenopausal women with undiagnosed, persistent or recurring abnormal genital bleeding [see Warnings and Precautions (5.2)].
+ Cardiovascular Disorders and Probable Dementia
+ Estrogen-alone therapy should not be used for the prevention of cardiovascular disease or dementia [see Warnings and Precautions (5.1, 5.3), and Clinical Studies (14.2, 14.3)].
+ The Women's Health Initiative (WHI) estrogen-alone substudy reported increased risks of stroke and deep vein thrombosis (DVT) in postmenopausal women (50 to 79 years of age) during 7.1 years of treatment with daily oral conjugated estrogens (CE) [0.625 mg]-alone, relative to placebo [see Warnings and Precautions (5.1), and Clinical Studies (14.2)].
+ The WHI Memory Study (WHIMS) estrogen-alone ancillary study of the WHI reported an  increased risk of developing probable dementia in postmenopausal women 65 years of age or older during 5.2 years of treatment with daily CE (0.625 mg)-alone, relative to placebo.
+ It is unknown whether this finding applies to younger postmenopausal women [see Warnings and Precautions (5.3), Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ In the absence of comparable data, these risks should be assumed to be similar for other doses of CE and other forms of estrogens.
+ Estrogens with or without progestins should be prescribed at the lowest effective doses and for the shortest duration consistent with treatment goals and risks for the individual woman.
+ Estrogen Plus Progestin Therapy
+ Cardiovascular Disorders and Probable Dementia
+ Estrogen plus progestin therapy should not be used for the prevention of cardiovascular disease or dementia [see Warnings and Precautions (5.1, 5.3), and Clinical Studies (14.2,
+ Reference ID: 3462006
+                                                                                  14.3)].
+  The WHI estrogen plus progestin substudy reported increased risks of DVT, pulmonary embolism (PE), stroke and myocardial infarction (MI) in postmenopausal women (50 to 79 years of age) during 5.6 years of treatment with daily oral CE (0.625 mg) combined with medroxyprogesterone acetate (MPA) [2.5 mg], relative to placebo [see Warnings and Precautions (5.1), and Clinical Studies (14.2)].
+ The WHIMS estrogen plus progestin ancillary study of the WHI reported an increased risk of developing probable dementia in postmenopausal women 65 years of age or older during 4 years of treatment with daily CE (0.625 mg) combined with MPA (2.5 mg), relative to placebo.
+ It is unknown whether this finding applies to younger postmenopausal women [see Warnings and Precautions (5.3), Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ Breast Cancer
+ The WHI estrogen plus progestin substudy also demonstrated an increased risk of invasive breast cancer [see Warnings and Precautions (5.2), and Clinical Studies (14.2)].
+ In the absence of comparable data, these risks should be assumed to be similar for other doses of CE and MPA, and other combinations and dosage forms of estrogens and progestins.
+ Estrogens with or without progestins should be prescribed at the lowest effective doses and for the shortest duration consistent with treatment goals and risks for the individual women.
+ 1 INDICATIONS AND USAGE
+ 1.1 Treatment of Moderate to Severe Vasomotor Symptoms due to Menopause
+ 2 DOSAGE AND ADMINISTRATION
+ Generally, when estrogen is prescribed for a postmenopausal woman with a uterus, a progestin should also be considered to reduce the risk of endometrial cancer.
+ A woman without a uterus does not need progestin.
+ In some cases, however, hysterectomized women with a history of endometriosis may need a progestin [see Warnings and Precautions (5.2), (5.14)].
+ Use of estrogen-alone, or in combination with a progestin, should be with the lowest effective dose and for the shortest duration consistent with treatment goals and risks for the individual woman.
+ Postmenopausal women should be re-evaluated periodically as clinically appropriate to determine if treatment is still necessary.
+ Reference ID: 3462006
+                                                                                              The gel is applied onto the skin in a thin layer.
+ The recommended area of application is the upper arm to shoulder (approximately 320 cm2).
+ 2.1 Treatment of Moderate to Severe Vasomotor Symptoms due to Menopause
+ ELESTRIN is applied once daily to the upper arm for the treatment of moderate to severe vasomotor symptoms due to menopause using a metered-dose pump which delivers 0.87 gram of estradiol gel (0.52 mg estradiol) per actuation (1 pump).
+ Patients should be started with the lowest effective dose of ELESTRIN, which is one pump per day (0.87 g per day, which contains 0.52 mg of estradiol).
+ Subsequent dosage adjustment may be made based upon the individual patient response.
+ This dose should be periodically reassessed by the healthcare provider.
+ 3 DOSAGE FORMS AND STRENGTHS
+ Elestrin (estradiol gel) 0.06% is available in a metered dose pump which delivers 0.52 mg of estradiol in 0.87 g of gel per pump actuation
+ 4 CONTRAINDICATIONS
+ ELESTRIN should not be used in women with any of the following conditions:
+ &#x2022;  Undiagnosed abnormal genital bleeding
+ &#x2022;  Known, suspected, or history of breast cancer
+ &#x2022;  Known or suspected estrogen-dependent neoplasia
+ &#x2022;  Active DVT, PE, or history of these conditions.
+ &#x2022;  Active arterial thromboembolic disease (for example, stroke and MI) or a history of these conditions
+ &#x2022;  Known anaphylactic reaction or angioedema to ELESTRIN
+ &#x2022;  Known liver impairment or disease
+ &#x2022;  Known protein C, protein S, or antithrombin deficiency, or other known thrombophilic disorders
+ &#x2022;  Known or suspected pregnancy.
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 Cardiovascular Disorders
+ An increased risk of stroke and DVT has been reported with estrogen-alone therapy.
+ Reference ID: 3462006
+                                                                                                   An increased risk of PE, DVT, stroke and MI has been reported with estrogen plus progestin therapy.
+ Should any of these occur or be suspected, estrogen with or without progestin therapy should be discontinued immediately.
+ Risk factors for arterial vascular disease (for example, hypertension, diabetes mellitus, tobacco use, hypercholesterolemia, and obesity) and/or venous thromboembolism (VTE) (for example, personal history or family history of VTE, obesity, and systemic lupus erythematosus) should be managed appropriately.
+ Stroke
+ In the WHI estrogen-alone substudy, a statistically significant increased risk of stroke was reported in women 50 to 79 years of age receiving daily CE (0.625 mg)-alone compared to women in the same age group receiving placebo (45 versus 33 per 10,000 women-years).
+ The increase in risk was demonstrated in year 1 and persisted [see Clinical Studies (14.2)].
+Should a stroke occur or be suspected, estrogen-alone therapy should be discontinued immediately.
+ Subgroup analyses of women 50 to 59 years of age suggest no increased risk of stroke for those women receiving CE (0.625 mg)-alone versus those receiving placebo (18 versus 21 per 10,000 women-years).1
+ In the WHI estrogen plus progestin substudy, a statistically significant increased risk of stroke was reported in women 50 to 79 years of age receiving daily CE (0.625 mg) plus MPA (2.5 mg) compared to women in the same age group receiving placebo (33 versus 25 per 10,000 women-years) [see Clinical Studies (14.2)].
+The increase in risk was demonstrated after the first year and persisted.1 Should a stroke occur or be suspected, estrogen plus progestin therapy should be discontinued immediately.
+ Coronary Heart Disease
+ In the WHI estrogen-alone substudy, no overall effect on coronary heart disease (CHD) events (defined as nonfatal MI, silent MI and CHD death) was reported in women receiving estrogen-alone compared to placebo2 [see Clinical Studies (14.2)].
+ Subgroup analyses of women 50 to 59 years of age suggest a statistically non-significant reduction in CHD events (CE [0.625 mg]-alone compared to placebo) in women with less than 10 years since menopause (8 versus 16 per 10,000 women-years).1
+ In the WHI estrogen plus progestin substudy, there was a statistically non-significant increased risk of CHD events reported in women receiving daily CE (0.625 mg) plus MPA (2.5 mg) compared to women receiving placebo (41 versus 34 per 10,000 women-years)1.
+An increase in relative risk was demonstrated in year 1, and a trend toward decreasing relative risk was reported in years 2 through 5 [see Clinical Studies (14.2)].
+ In postmenopausal women with documented heart disease (n = 2,763, average age 66.7 years), in a controlled clinical trial of secondary prevention of cardiovascular disease (Heart and Estrogen/Progestin Replacement Study [HERS] treatment with daily CE (0.625 mg) plus MPA (2.5 mg) demonstrated no cardiovascular benefit.
+ During an average follow-up of 4.1 years,
+ Reference ID: 3462006
+                                                                                           treatment with CE plus MPA did not reduce the overall rate of CHD events in postmenopausal women with established coronary heart disease.
+ There were more CHD events in the CE plus MPA-treated group than in the placebo group in year 1, but not during the subsequent years.
+ Two thousand, three hundred and twenty one (2,321) women from the original HERS trial agreed to participate in an open label extension of HERS, HERS II.
+ Average follow-up in HERS II was an additional 2.7 years, for a total of 6.8 years overall.
+ Rates of CHD events were comparable among women in the CE plus MPA group and the placebo group in HERS, HERS II, and overall.
+ Venous Thromboembolism
+ In the WHI estrogen-alone substudy, the risk of VTE (DVT and PE) was increased for women receiving daily CE (0.625 mg)-alone compared to placebo (30 versus 22 per 10,000 women-years), although only the increased risk of DVT reached statistical significance (23 versus 15 per 10,000 women-years).
+ The increase in VTE risk was demonstrated during the first 2 years3 [see Clinical Studies (14.2)].
+Should a VTE occur or be suspected, estrogen-alone therapy should be discontinued immediately.
+ In the WHI estrogen plus progestin substudy, a statistically significant 2-fold greater rate of VTE was reported in women receiving daily CE (0.625 mg) plus MPA (2.5 mg) compared to women receiving placebo (35 versus 17 per 10,000 women-years).
+ Statistically significant increases in risk for both DVT (26 versus 13 per 10,000 women-years) and PE (18 versus 8 per 10,000 women-years) were also demonstrated.
+ The increase in VTE risk was demonstrated during the first year and persisted4 [see Clinical Studies (14)].
+Should a VTE occur or be suspected, estrogen plus progestin therapy should be discontinued immediately.
+ If feasible, estrogens should be discontinued at least 4 to 6 weeks before surgery of the type associated with an increased risk of thromboembolism, or during periods of prolonged immobilization.
+ 5.2 Malignant Neoplasms
+ Endometrial Cancer
+ An increased risk of endometrial cancer has been reported with the use of unopposed estrogen therapy in a woman with a uterus.
+ The reported endometrial cancer risk among unopposed estrogen users is about 2 to 12 times greater than in non-users, and appears dependent on duration of treatment and on estrogen dose.
+ Most studies show no significant increased risk associated with use of estrogens for less than 1 year.
+ The greatest risk appears associated with prolonged use, with an increased risk of 15- to 24-fold for 5 to 10 years or more.
+ This risk has been shown to persist for at least 8 to 15 years after estrogen therapy is discontinued.
+ Clinical surveillance of all women using estrogen-alone or estrogen plus progestin therapy is important.
+ Adequate diagnostic measures, including directed or random endometrial sampling when indicated, should be undertaken to rule out malignancy in postmenopausal women with undiagnosed persistent or recurring abnormal vaginal bleeding.
+ Reference ID: 3462006
+                                                                                     There is no evidence that the use of natural estrogens results in a different endometrial risk profile than synthetic estrogens of equivalent estrogen dose.
+ Adding a progestin to estrogen therapy has been shown to reduce the risk of endometrial hyperplasia, which may be a precursor to endometrial cancer.
+ In a 12-week clinical trial, one case of complex hyperplasia with atypia was reported in the ELESTRIN 1.7 g per day dose.
+ Breast Cancer
+ The most important randomized clinical trial providing information about breast cancer in estrogen-alone users is the WHI substudy of daily CE (0.625 mg)-alone.
+ In the WHI estrogen-alone substudy, after an average of follow-up of 7.1 years, daily CE-alone was not associated with an increased risk of invasive breast cancer [relative risk (RR) 0.80]5 [see Clinical Studies (14.2)].
+ The most important randomized clinical trial providing information about breast cancer in estrogen plus progestin users is the WHI substudy of daily CE (0.625 mg) plus MPA (2.5 mg).
+ After a mean follow-up of 5.6 years, the estrogen plus progestin substudy reported an increased risk of invasive breast cancer in women who took daily CE plus MPA.
+ In this substudy, prior use of estrogen-alone or estrogen plus progestin therapy was reported by 26 percent of the women.
+ The relative risk of invasive breast cancer was 1.24, and the absolute risk was 41 versus 33 cases per 10,000 women-years, for CE plus MPA compared with placebo.
+ Among women who reported prior use of hormone therapy, the relative risk of invasive breast cancer was 1.86, and the absolute risk was 46 versus 25 cases per 10,000 women-years, for CE plus MPA compared with placebo.
+ Among women who reported no prior use of hormone therapy, the relative risk of invasive breast cancer was 1.09, and the absolute risk was 40 versus 36 cases per 10,000 women-years, for CE plus MPA compared with placebo.
+ In the same substudy, invasive breast cancers were larger, were more likely to be node positive, and were diagnosed at a more advanced stage in the CE (0.625 mg) plus MPA (2.5 mg) group compared with the placebo group.
+ Metastatic disease was rare with no apparent difference between the two groups.
+ Other prognostic factors such as histologic subtype, grade and hormone receptor status did not differ between the groups.6 [see Clinical Studies (14.2)].
+ Consistent with the WHI clinical trial, observational studies have also reported an increased risk of breast cancer for estrogen plus progestin therapy, and a smaller increased risk for estrogen-alone therapy, after several years of use.
+ The risk increased with duration of use, and appeared to return to baseline in about 5 years after stopping treatment (only the observational studies have substantial data on risk after stopping).
+ Observational studies also suggest that the risk of breast cancer was greater, and became apparent earlier, with estrogen plus progestin therapy as compared to estrogen-alone therapy.
+ However, these studies have not generally found significant variation in the risk of breast cancer among different estrogen plus progestin combinations, doses, or routes of administration.
+ The use of estrogen-alone and estrogen plus progestin has been reported to result in an increase in abnormal mammograms requiring further evaluation.
+ Reference ID: 3462006
+                                                                                             All women should receive yearly breast examinations by a healthcare provider and perform monthly self-examinations.
+ In addition, mammography examinations should be scheduled based on patient age, risk factors, and prior mammogram results.
+ Ovarian Cancer
+ The WHI estrogen plus progestin substudy reported a statistically non-significant increased risk of ovarian cancer.
+ After an average follow-up of 5.6 years, the relative risk for ovarian cancer for CE plus MPA versus placebo was 1.58 [95 percentCI, 0.77-3.24].
+ The absolute risk for CE plus MPA versus placebo was 4 versus 3 cases per 10,000 women-years.7 In some epidemiological studies, the use of estrogen plus progestin and estrogen-only products, in particular for 5 or more years, has been associated with an increased risk of ovarian cancer.
+ However, the duration of exposure associated with increased risk is not consistent across all epidemiologic studies, and some report no association.
+ 5.3 Probable Dementia
+ In the WHIMS estrogen-alone ancillary study of WHI, a population of 2,947 hysterectomized women 65 to 79 years of age was randomized to daily CE (0.625 mg)-alone or placebo.
+ After an average follow-up of 5.2 years, 28 women in the estrogen-alone group and 19 women in the placebo group were diagnosed with probable dementia.
+ The relative risk of probable dementia for CE-alone versus placebo was 1.49 (95 percent CI, 0.83-2.66).
+ The absolute risk of probable dementia for CE-alone versus placebo was 37 versus 25 cases per 10,000 women-years8 [see Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ In the WHIMS estrogen plus progestin ancillary study, a population of 4,532 postmenopausal women 65 to 79 years of age was randomized to daily CE (0.625 mg) plus MPA (2.5 mg) or placebo.
+ After an average follow-up of 4 years, 40 women in the CE plus MPA group and 21 women in the placebo group were diagnosed with probable dementia.
+ The relative risk of probable dementia for CE plus MPA versus placebo was 2.05 (95% CI, 1.21-3.48).
+ The absolute risk of probable dementia for CE plus MPA versus placebo was 45 versus 22 cases per 10,000 womenyears8 [see Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ When data from the two populations in the WHIMS estrogen-alone and estrogen plus progestin ancillary studies were pooled as planned in the WHIMS protocol, the reported overall relative risk for probable dementia was 1.76 (95% CI, 1.19-2.60).
+ Since both ancillary studies were conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women8 [see Use in Specific Populations (8.5), and Clinical Studies (14.3)].
+ 5.4 Gallbladder Disease
+ A 2- to 4-fold increase in the risk of gallbladder disease requiring surgery in postmenopausal women receiving estrogens has been reported.
+ Reference ID: 3462006
+                                                                                     5.5 Hypercalcemia
+ Estrogen administration may lead to severe hypercalcemia in women with breast cancer and bone metastases.
+ If hypercalcemia occurs, use of the drug should be stopped and appropriate measures taken to reduce the serum calcium level.
+ 5.6 Visual Abnormalities
+ Retinal vascular thrombosis has been reported in women receiving estrogens.
+ Discontinue medication pending examination if there is sudden partial or complete loss of vision, or a sudden onset of proptosis, diplopia, or migraine.
+ If examination reveals papilledema or retinal vascular lesions, estrogens should be permanently discontinued.
+ 5.7 Addition of a Progestin When a Woman Has Not Had a Hysterectomy
+ Studies of the addition of a progestin for 10 or more days of a cycle of estrogen administration, or daily with estrogen in a continuous regimen, have reported a lowered incidence of endometrial hyperplasia than would be induced by estrogen treatment alone.
+ Endometrial hyperplasia may be a precursor to endometrial cancer.
+ There are, however, possible risks that may be associated with the use of progestins with estrogens compared to estrogen-alone regimens.
+ These include an increased risk of breast cancer.
+ 5.8 Elevated Blood Pressure
+ In a small number of case reports, substantial increases in blood pressure have been attributed to idiosyncratic reactions to estrogens.
+ In a large, randomized, placebo-controlled clinical trial, a generalized effect of estrogens on blood pressure was not seen.
+ 5.9 Hypertriglyceridemia
+ In women with pre-existing hypertriglyceridemia, estrogen therapy may be associated with elevations of plasma triglycerides leading to pancreatitis.
+ Consider discontinuation of treatment if pancreatitis occurs.
+ 5.10 Hepatic Impairment and/or Past History of Cholestatic Jaundice
+ Estrogens may be poorly metabolized in women with impaired liver function.
+ For women with a history of cholestatic jaundice associated with past estrogen use or with pregnancy, caution should be exercised, and in the case of recurrence, medication should be discontinued.
+ 5.11 Hypothyroidism
+ Estrogen administration leads to increased thyroid-binding globulin (TBG) levels.
+ Women with normal thyroid function can compensate for the increased TBG by making more thyroid hormone, thus maintaining free T4 and T3 serum concentrations in the normal range.
+ Women dependent on thyroid hormone replacement therapy who are also receiving estrogens may
+ Reference ID: 3462006
+                                                                        require increased doses of their thyroid replacement therapy.
+ These women should have their thyroid function monitored to maintain their free thyroid hormone levels in an acceptable range.
+ 5.12 Fluid Retention
+ Estrogens may cause some degree of fluid retention.
+ Women with conditions that might be influenced by this factor, such as a cardiac or renal dysfunction, warrant careful observation when estrogens-alone is prescribed.
+ 5.13 Hypocalcemia
+ Estrogen therapy should be used with caution in women with hypoparathyroidism as estrogen-induced hypocalcemia may occur.
+ 5.14 Exacerbation of Endometriosis
+ A few cases of malignant transformation of residual endometrial implants have been reported in women treated post-hysterectomy with estrogen-alone therapy.
+ For women known to have residual endometriosis post-hysterectomy, the addition of progestin should be considered.
+ 5.15 Hereditary Angioedema
+ Exogenous estrogens may exacerbate symptoms of angioedema in women with hereditary angioedema
+ 5.16 Exacerbation of Other Conditions
+ Estrogen therapy may cause an exacerbation of asthma, diabetes mellitus, epilepsy, migraine, porphyria, systemic lupus erythematosus, and hepatic hemangiomas and should be used with caution in women with these conditions.
+ 5.17 Photosensitivity or Photoallergy
+ Increased sensitivity to direct exposure to the sun on areas of ELESTRIN application has not been evaluated.
+ 5.18 Sunscreen Application
+ Estradiol absorption was increased when sunscreen was applied 10 minutes before ELESTRIN application.
+ Sunscreen should not be applied to the same site until at least 25 minutes after the application of ELESTRIN.
+ Concomitant application of sunscreen and ELESTRIN to the same application site for 7 or more days may increase estradiol absorption.
+ Avoid applying sunscreen to the area of ELESTRIN application for an extended period of 7 or more days [see Clinical Pharmacology, Pharmacokinetics (12.3)].
+ Reference ID: 3462006
+                                                                                                5.19 Miscellaneous
+ Alcohol based gels potentially are flammable.
+ Avoid fire, flame, or smoking until the gel has dried.
+ 5.20 Laboratory Tests
+ Serum follicle stimulating hormone (FSH) and estradiol levels have not been shown to be useful in the management of moderate to severe vasomotor symptoms.
+ 5.21 Drug-Laboratory Test Interactions
+ Accelerated prothrombin time, partial thromboplastin time, and platelet aggregation time; increased platelet count; increased factors II, VII antigen, VIII antigen, VIII coagulant activity, IX, X, XII, VII-X complex, II-VII-X complex, and beta-thromboglobulin; decreased levels of anti-factor Xa and antithrombin III, decreased antithrombin III activity; increased levels of fibrinogen and fibrinogen activity; increased plasminogen antigen and activity.
+ Increased thyroid binding globulin (TBG) levels leading to increased circulating total thyroid hormone levels as measured by protein-bound iodine (PBI), T4 levels (by column or by radioimmunoassay) or T3 levels by radioimmunoassay.
+ T3 resin uptake is decreased, reflecting the elevated TBG.
+ Free T4 and free T3 concentrations are unaltered.
+ Women on thyroid replacement therapy may require higher doses of thyroid hormone.
+ Other binding proteins may be elevated in serum, for example, corticosteroid binding globulin (CBG), sex hormone-binding globulin (SHBG), leading to increased total circulating corticosteroids and sex steroids, respectively.
+Free hormone concentrations, such as testosterone and estradiol, may be decreased.
+ Other plasma proteins may be increased (angiotensinogen/renin substrate, alpha-1-antitrypsin, ceruloplasmin).
+ Increased plasma high-density lipoprotein (HDL) and HDL2 cholesterol subfraction concentrations, reduced low-density lipoprotein (LDL) cholesterol concentration, increased triglycerides levels.
+ Impaired glucose tolerance.
+ 6 ADVERSE REACTIONS
+ The following serious adverse reactions are discussed elsewhere in the labeling:
+ &#x2022; Cardiovascular Disorders [see Boxed Warning, and Warnings and Precautions (5.1)]
+ &#x2022; Malignant Neoplasms [see Boxed Warning, and Warnings and Precautions (5.2)]
+ 6.1 Clinical Trials Experience
+ Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.
+ Reference ID: 3462006
+                                                                                                                                    ELESTRIN was studied in a placebo-controlled trial that included a total of 484 postmenopausal women.
+ The adverse reactions that occurred at a rate greater than 5 percent in any of the treatment groups are summarized in Table 1.
+ TABLE 1 - Incidence of Treatment-Emergent Adverse Reactions Occurring in &#x2265; 5 Percent of Subjects
+ Body System / Signs and Symptoms
+ Number (%) of Subjects Placebo (n = 137)
+ ELESTRIN 0.87 g/day (n = 136)
+ ELESTRIN 1.7 g/day (n = 142)
+ Reproductive system &amp; breast disorders Breast tenderness 5 (3.6) 9 (6.6) 11 (7.7) Metrorrhagia 3 (2.2) 6 (4.4) 13 (9.2)
+ Respiratory, thoracic &amp; mediastinal disorders Nasopharyngitis 10 (7.3) 14 (10.3) 12 (8.5) Upper respiratory tract  infection 5 (3.6) 8 (5.9) 5 (3.5)
+ 6.2 Postmarketing Experience
+ The following adverse reactions have been identified during post-approval use of ELESTRIN.
+ Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ Genitourinary System
+ Changes in vaginal bleeding pattern and abnormal withdrawal bleeding or flow; breakthrough bleeding; spotting; dysmenorrhea; increase in size of uterine leiomyomata; vaginitis, including vaginal candidiasis; change in amount of cervical secretion; changes in cervical ectropion; ovarian cancer; endometrial hyperplasia; endometrial cancer.
+ Breasts
+ Tenderness; enlargement, pain, nipple discharge, galactorrhea; fibrocystic breast changes; breast cancer.
+ Cardiovascular
+ Deep and superficial venous thrombosis; pulmonary embolism; thrombophlebitis; myocardial infarction; stroke; increase in blood pressure.
+ Reference ID: 3462006
+                                                                      Gastrointestinal
+ Nausea, vomiting; abdominal cramps, bloating; cholestatic jaundice; increased incidence of gallbladder disease; pancreatitis, enlargement of hepatic hemangiomas.
+ Skin
+ Chloasma or melasma that may persist when drug is discontinued; erythema multiforme; erythema nodosum; hemorrhagic eruption; loss of scalp hair; hirsutism; pruritus, rash.
+ Eyes
+ Retinal vascular thrombosis, intolerance to contact lenses.
+ Central Nervous System
+ Headache; migraine; dizziness; mental depression; chorea; nervousness; mood disturbances; irritability; exacerbation of epilepsy, dementia.
+ Miscellaneous
+ Increase or decrease in weight; reduced carbohydrate tolerance; aggravation of porphyria; edema; arthralgias; leg cramps; changes in libido; urticaria, angioedema, anaphylactoid/anaphylactic reactions; hypocalcemia; exacerbation of asthma; increased triglycerides.
+ Additional postmarketing adverse reactions have been reported in women receiving other forms of hormone therapy.
+ 7 DRUG INTERACTIONS
+ No drug-drug interaction studies have been conducted for ELESTRIN.
+ 7.1 Metabolic Interactions
+ In vitro and in vivo studies have shown that estrogens are metabolized partially by cytochrome P450 3A4 (CYP3A4).
+ Therefore, inducers or inhibitors of CYP3A4 may affect estrogen drug metabolism.
+ Inducers of CYP3A4, such as St. John's wort (Hypericum perforatum) preparations, phenobarbital, carbamazepine, and rifampin, may reduce plasma concentrations of estrogens, possibly resulting in a decrease in therapeutic effects and/or changes in the uterine bleeding profile.
+ Inhibitors of CYP3A4, such as erythromycin, clarithromycin, ketoconazole, itraconazole, ritonavir, and grapefruit juice, may increase plasma concentrations of estrogens and result in side effects.
+ Reference ID: 3462006
+                                                                                               8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy
+ ELESTRIN should not be used during pregnancy [see Contraindications (4)].
+There appears to be little or no increased risk of birth defects in children born to women who have used estrogens and progestins as an oral contraceptive inadvertently during early pregnancy.
+ 8.3 Nursing Mothers
+ ELESTRIN should not be used during lactation.
+ Estrogen administration to nursing women has been shown to decrease the quantity and quality of the breast milk.
+ Detectable amounts of estrogens have been identified in the breast milk of women receiving estrogen therapy.
+ Caution should be exercised when ELESTRIN is administered to a nursing woman.
+ 8.4 Pediatric Use
+ ELESTRIN is not indicated in children.
+ Clinical studies have not been conducted in the pediatric population.
+ 8.5 Geriatric Use
+ There have not been sufficient numbers of geriatric women involved in clinical studies utilizing ELESTRIN to determine whether those over 65 years of age differ from younger subjects in their response to ELESTRIN.
+ The Women's Health Initiative Study
+ In the WHI estrogen-alone substudy (daily CE [0.625 mg]-alone versus placebo), there was a higher relative risk of stroke in women greater than 65 years of age [see Clinical Studies (14.2)].
+ In the WHI estrogen plus progestin substudy (daily CE [0.625 mg] plus MPA [2.5 mg] versus placebo), there was a higher relative risk of nonfatal stroke and invasive breast cancer in women greater than 65 years of age [see Clinical Studies (14.2)].
+ The Women's Health Initiative Memory Study
+ In the WHIMS ancillary studies of postmenopausal women 65 to 79 years of age, there was an increased risk of developing probable dementia in women receiving estrogen-alone or estrogen plus progestin when compared to placebo [see Warnings and Precautions (5.3), and Clinical Studies (14.3)].
+ Since both ancillary studies were conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women8 [see Warnings and Precautions (5.3), and Clinical Studies (14.3)].
+ 8.6 Renal Impairment
+ The effect of renal impairment on the pharmacokinetics of ELESTRIN has not been studied.
+ Reference ID: 3462006
+                                                                        8.7 Hepatic Impairment
+ The effect of hepatic impairment on the pharmacokinetics of ELESTRIN has not been studied.
+ 10 OVERDOSAGE
+ Overdosage of estrogen may cause nausea, vomiting, breast tenderness, abdominal pain, drowsiness and fatigue, and withdrawal bleeding may occur in women.
+ Treatment of overdose consists of discontinuation of ELESTRIN therapy with institution of appropriate symptomatic care.
+ 11 DESCRIPTION
+ ELESTRIN (estradiol gel) contains 0.06% of estradiol, an estrogen, in a colorless, non-staining hydroalcoholic gel base.
+ One pump actuation delivers ELESTRIN in a unit dose of 0.52 mg of estradiol in 0.87 g of gel.
+  Estradiol is a white crystalline powder, chemically described as estra-1,3,5(10)-triene-3,17-diol, (17)-.
+ It has a molecular formula of C18H24O2&#x2022;H2O and molecular weight of 281.4.
+ The structural formula is:
+ The active component of ELESTRIN is estradiol.
+ The remaining components of the gel (ethanol, propylene glycol, diethylene glycol monoethyl ether, carbomer 940, triethanolamine, edetate disodium, and purified water) are pharmacologically inactive.
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ Endogenous estrogens are largely responsible for the development and maintenance of the female reproductive system and secondary sexual characteristics.
+ Although circulating estrogens exist in a dynamic equilibrium of metabolic interconversions, estradiol is the principal intracellular human estrogen and is substantially more potent than its metabolites, estrone and estriol, at the receptor level.
+ Reference ID: 3462006
+                                                                                                                        The primary source of estrogen in normally cycling adult women is the ovarian follicle, which secretes 70 to 500 mcg of estradiol daily, depending on the phase of the menstrual cycle.
+ After menopause, most endogenous estrogen is produced by conversion of androstenedione, secreted by the adrenal cortex, to estrone in the peripheral tissues.
+ Thus, estrone and the sulfate-conjugated form, estrone sulfate, are the most abundant circulating estrogens in postmenopausal women.
+ Estrogens act through binding to nuclear receptors in estrogen-responsive tissues.
+ To date, two estrogen receptors have been identified.
+ These vary in proportion from tissue to tissue.
+ Circulating estrogens modulate the pituitary secretion of the gonadotropins, luteinizing hormone (LH) and FSH through a negative feedback mechanism.
+ Estrogens act to reduce the elevated levels of these hormones seen in postmenopausal women.
+ 12.2 Pharmacodynamics
+ Currently, there are no pharmacodynamic data known for ELESTRIN.
+ 12.3 Pharmacokinetics
+ Absorption
+ Steady-state serum concentrations of estradiol are achieved in approximately 3 days following daily application of ELESTRIN to the upper arm.
+ Pharmacokinetic parameters for estradiol on Day 14 following daily application of 0.87 g or 1.7 g of ELESTRIN are summarized in Table 2.
+ Dose dependent PK parameters for ELESTRIN 0.87 g and 1.7 g indicated the dose and serum estradiol (E2) concentrations to be linearly related but not dose-proportional (i.e., doubling in dose led to a 2.5- to 3.0-fold increase in PK parameters).
+ The nominal mean delivery rates of estradiol using the baseline-adjusted average serum concentrations from pharmacokinetic studies using 0.87 g per day and 1.7 g per day are 0.0125 mg per day and 0.0375 mg per day, respectively.
+ TABLE 2 - Summary of Unadjusted PK Parameters for Estradiol after 14 Days of Dosing
+ Pharmacokinetic Parameter
+ 0.87 g ELESTRIN (0.52 mg/d Estradiol)
+ Mean
+ 1.7 g ELESTRIN (1.04 mg/d Estradiol)
+ Mean AUC0-24 (pg&#x2022;hr/mL) 335.2 940.2 Cmax (pg/mL) 21.6 66.7 Cave (pg/mL) 15.4 39.2 Cmin (pg/mL) 9.4 21.1 Tmax (h)a 18 (1 - 20) 4 (1 - 20) Fluctuation Index 0.80 1.16 E2:E1b ratio 0.53 0.98
+ a Tmax shown as median (range)
+ Reference ID: 3462006
+                                                                  b E2:E1 (estradiol:estrone) ratio
+  Mean concentrations of estradiol over a 24-hour period on Day 14 are shown in Figure 1.
+  Figure 1 - Mean Serum Estradiol Concentrations (Unadjusted) After Multiple Doses.
+Error bars represent standard deviations.
+ Based on the Cave values at steady state, the E2:E1 ratio was 0.53 for the 0.87 g and 0.98 for the 1.7 g doses.
+ The significance of this finding is that the 1.7 g dose produced an E2:E1 ratio of a premenopausal woman.
+ The 1.7 g dose of ELESTRIN reached the goal of restoring the E2:E1 ratio (~1.0) to that observed in premenopausal women in the early follicular phase of the menstrual cycle.
+ Application of sunscreen 10 minutes before application of ELESTRIN increased the exposure to estradiol by approximately 55 percent.
+ No significant change in estradiol exposure was observed when sunscreen was applied 25 minutes after application of ELESTRIN.
+ In the same study, prolonged (7 days) concomitant application of sunscreen to the site of ELESTRIN application increased exposure to estradiol by about 2-fold, regardless of whether it was applied before or after application of ELESTRIN.
+ Distribution
+ The distribution of exogenous estrogens is similar to that of endogenous estrogens.
+ Estrogens are widely distributed in the body and are generally found in higher concentrations in the sex hormone target organs.
+ Estrogens circulate in blood largely bound to SHBG and albumin.
+ Metabolism
+ Exogenous estrogens are metabolized in the same manner as endogenous estrogens.
+ Circulating estrogens exist in a dynamic equilibrium of metabolic interconversions.
+ These transformations
+ Reference ID: 3462006
+                                                                                            take place mainly in the liver.
+ Estradiol is converted reversibly to estrone, and both can be converted to estriol, which is a major urinary metabolite.
+ Estrogens also undergo enterohepatic recirculation via sulfate and glucuronide conjugation in the liver, biliary secretion of conjugates into the intestine, and hydrolysis in the intestine followed by reabsorption.
+ In postmenopausal women, a significant proportion of the circulating estrogens exist as sulfate conjugates, especially estrone sulfate, which serves as a circulating reservoir for the formation of more active estrogens.
+ Excretion
+ Estradiol, estrone and estriol are excreted in the urine along with glucuronide and sulfate conjugates.
+ Use in Specific Populations
+ No pharmacokinetic studies were conducted in specific populations, including women with renal or hepatic impairment.
+ Potential for Estradiol Transfer
+ The potential for estradiol transfer between treated postmenopausal female subjects and their untreated male partners was evaluated.
+ Two and 8 hours after women applied 2.6 g ELESTRIN to one arm (12 women per time point), they engaged in direct arm-to-arm contact with a male partner for 5 minutes.
+ No significant changes in estradiol pharmacokinetic parameters were observed in the male partners after contact.
+ Less than 10 percent of the estradiol dose was measured on the skin at 2 and 8 hours after application.
+ After washing the application site with soap and water at 8 hours after application, about 1 percent of the dose of estradiol was measurable.
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ Long-term continuous administration of natural and synthetic estrogens in certain animal species increases the frequency of carcinomas of the breast, uterus, cervix, vagina, testis, and liver.
+ 14 CLINICAL STUDIES
+ 14.1 Effects on Vasomotor Symptoms
+ A randomized, double-blind, placebo-controlled clinical trial evaluated the efficacy of 12-week treatment with three different daily doses of ELESTRIN for the treatment of vasomotor symptoms in 484 postmenopausal women between 28 and 74 years of age (mean 54 years; 83-88 percent Caucasian per group) who had at least 60 moderate-to-severe hot flushes per week at baseline.
+ At baseline, mean hot flushes is 13 per day, mean serum estradiol is 11.2-13.2 pg/mL, and prior hormone/estrogen therapy is 75.7-84.5 percent.
+ Subjects applied placebo,
+ Reference ID: 3462006
+                                                                                                                                                             ELESTRIN 1.7 g (1.04 mg estradiol), or 2.6 g (1.56 mg estradiol) once daily to the upper arm.
+ The study was amended to identify the lowest effective dose of ELESTRIN and limit the number of subjects exposed to the 2.6 g dose.
+ After the study amendment, ELESTRIN 0.87 g (0.52 mg estradiol) was added and the 2.6 g was discontinued from further enrollment.
+ Reduction in both the frequency and severity of moderate to severe hot flushes was statistically significant for the ELESTRIN 1.7 g per day dose compared to placebo at week 4.
+ Statistically significant reductions in both the frequency and severity of moderate to severe hot flushes when compared to placebo were delayed for the ELESTRIN 0.87 g per day dose to week 5.
+ Both the 0.87 g per day and 1.7 g per day doses were statistically significant compared to placebo at week 12.
+ Statistically significant reductions in the frequency and severity of daily moderate-to-severe hot flush rate compared to placebo were noted beginning at week 3 for the 1.7 g per day ELESTRIN treatment (data on file).
+ The reductions in frequency and severity are shown in Table 3.
+ TABLE 3 - Mean Change From Baselinea in the Number and Severity of Hot Flushes after ELESTRIN Treatment
+ Evaluation Placebo (N=137)
+ ELESTRIN 0.87 g/day (N=136)
+ ELESTRIN 1.7 g/day (N=142)
+ Number of Daily Hot Flushes Baseline (Mean  SD)b 13.5  4.5 13.3  4.6 13.1  6.5
+ Mean Change: Week 4 -5.1 -6.5# -8.0*** Week 5 -5.1 -7.5* -8.8*** Week 12 -5.4 -8.5*** -10.0***
+ Daily Hot Flush Severityc
+ Baseline (Mean  SD)b 2.4  0.3 2.4  0.3 2.4  0.3 Mean Change: Week 4 -0.2 -0.5# -0.7***
+ Week 5 -0.2 -0.5* -0.8*** Week 12 -0.3 -0.8*** -1.2***
+ a Differences from baseline based on LS means derived from the ANCOVA model with factors for
+ baseline, treatment, site, and treatment-by-baseline interaction.
+b Unadjusted means and standard deviations, based on the first 14 days of the Screening Period.
+ c Severity score: 1=mild, 2=moderate, 3=severe.
+ SD: standard deviation
+ #P=ns, *P&lt;0.01, **P&lt;0.001, ***P&lt;0.0001 for treatment comparison with placebo (Dunnett's test).
+  14.2 Women's Health Initiative Studies
+ The WHI enrolled approximately 27,000 predominantly healthy postmenopausal women in two substudies to assess the risks and benefits of daily oral CE (0.625 mg)-alone or in combination with MPA (2.5 mg) compared to placebo in the prevention of certain chronic diseases.
+ The primary endpoint was the incidence of CHD (defined as nonfatal MI, silent MI and CHD death), with invasive breast cancer as the primary adverse outcome.
+ A "global index" included the earliest occurrence of CHD, invasive breast cancer, stroke, PE, endometrial cancer (only in the
+ Reference ID: 3462006
+                                                                                                                                                                                  CE plus MPA substudy), colorectal cancer, hip fracture, or death due to other cause.
+ These substudies did not evaluate the effects of CE-alone or CE plus MPA on menopausal symptoms.
+ WHI Estrogen-Alone Substudy
+ The WHI estrogen-alone substudy was stopped early because an increased risk of stroke was observed, and it was deemed that no further information would be obtained regarding the risk and benefits of estrogen-alone in predetermined endpoints.
+ Results of the estrogen-alone substudy, which included 10,739 women (average 63 years of age, range 50 to 79; 75.3 percent White, 15.1 percent Black, 6.1 percent Hispanic, 3.6 percent Other), after an average follow-up of 7.1 years are presented in Table 4.
+ TABLE 4 - Relative and Absolute Risk Seen in the Estrogen-Alone substudy of WHIa
+ Event
+ Relative Risk CE vs. Placebo
+ (95% nCIb)
+ CE n = 5,310
+ Placebo n = 5,429
+ Absolute Risk per 10,000 Women-Years CHD eventsc 0.95 (0.78-1.16) 54 57 Non-fatal MI c 0.91 (0.73-1.14) 40 43 CHD deathc 1.01 (0.71-1.43) 16 16
+ All Strokec 1.33 (1.15-1.68) 45 33 Ischemic strokec 1.55 (1.19-2.01) 38 25
+ Deep vein thrombosisc,d 1.47 (1.06-2.06) 23 15 Pulmonary embolismc 1.37 (0.90-2.07) 14 10 Invasive breast cancerc 0.80 (0.62-1.04) 28 34 Colorectal cancerc 1.08 (0.75-1.55) 17 16 Hip fracturec 0.65 (0.45-0.94) 12 19 Vertebral fracturesc,d 0.64 (0.44-0.93) 11 18 Lower arm/wrist fracturesc,d 0.58 (0.47-0.72) 35 59 Total fracturesc,d 0.71 (0.64-0.80) 144 197 Death due to other causese,f 1.08 (0.88-1.32) 53 50 Overall mortalityc,d 1.04 (0.88-1.22) 79 75 Global indexg 1.02 (0.92-1.13) 206 201
+ a Adapted from numerous WHI publications.
+ WHI publications can be viewed at
+ www.nhlbi.nih.gov/whi.
+b Nominal confidence intervals unadjusted for multiple looks and multiple comparisons.
+ c Results are based on centrally adjudicated data for an average follow-up of 7.1 years.
+ d Not included in "global index".
+ e Results are based on an average follow-up of 6.8 years.
+ f All deaths, except from breast or colorectal cancer, definite or probable CHD, PE or cerebrovascular
+ disease.
+ g A subset of the events was combined in a "global index" defined as the earliest occurrence of CHD
+ events, invasive breast cancer, stroke, pulmonary embolism, endometrial cancer, colorectal cancer, hip
+  Reference ID: 3462006
+                                                                                               fracture, or death due to other causes.
+ For those outcomes included in the WHI "global index" that reached statistical significance, the absolute excess risks per 10,000 women-years in the group treated with CE-alone were 12 more strokes, while the absolute risk reduction per 10,000 women-years was 7 fewer hip fractures.9 The absolute excess risk of events included in the "global index" was a non-significant 5 events per 10,000 women-years.
+ There was no difference between the groups in terms of all-cause mortality.
+ No overall difference for primary CHD events (nonfatal MI, silent MI and CHD death) and invasive breast cancer incidence in women receiving CE-alone compared with placebo was reported in final centrally adjudicated results from the estrogen-alone substudy, after an average follow-up of 7.1 years.
+ Centrally adjudicated results for stroke events from the estrogen-alone substudy, after an average follow-up of 7.1 years, reported no significant difference in the distribution of stroke subtype and severity, including fatal strokes, in women receiving estrogen-alone compared to placebo.
+ Estrogen-alone therapy increased the risk of ischemic stroke, and this excess risk was present in all subgroups of women examined.10
+ Timing of initiation of estrogen-alone therapy relative to the start of menopause may affect the overall risk benefit profile.
+ The WHI estrogen-alone substudy stratified by age showed in women 50 to 59 years of age a non-significant trend toward reduced risk for CHD [hazard ratio (HR) 0.63 (95 percent CI, 0.36-1.09)] and overall mortality [HR 0.71 (95 percent CI, 0.46-1.11)].
+ WHI Estrogen Plus Progestin Substudy
+ The WHI estrogen plus progestin substudy was stopped early.
+ According to the predefined stopping rule, after an average follow-up of 5.6 years of treatment, the increased risk of invasive breast cancer and cardiovascular events exceeded the specified benefits included in the "global index." The absolute excess risk of events included in the "global index" was 19 per 10,000 women-years.
+ For those outcomes included in the WHI "global index" that reached statistical significance after 5.6 years of follow-up, the absolute excess risks per 10,000 women-years in the group treated with CE plus MPA were 7 more CHD events, 8 more strokes, 10 more PEs, and 8 more invasive breast cancers, while the absolute risk reduction per 10,000 women-years were 6 fewer colorectal cancers and 5 fewer hip fractures.
+ Results of the CE plus MPA substudy, which included 16,608 women (average 63 years of age, range 50 to 79; 83.9 percent White, 6.8 percent Black, 5.4 percent Hispanic, 3.9 percent Other) are presented in Table 5.
+ These results reflect centrally adjudicated data after an average follow-up of 5.6 years.
+ Reference ID: 3462006
+                                                                                                                                                                      TABLE 5 - Relative and Absolute Risk Seen in the Estrogen Plus Progestin Substudy of WHI at an Average of 5.6 Yearsa,b
+ Event
+ Relative Risk CE/MPA vs. Placebo
+ (95% nCIc)
+ CE/MPA n = 8,506
+ Placebo n = 8,102
+ Absolute Risk per 10,000 Women-Years
+ CHD events 1.23 (0.99-1.53) 41 34 Non-fatal MI 1.28 (1.00-1.63) 31 25 CHD death 1.10 (0.70-1.75) 8 8
+ All Stroke 1.31 (1.03-1.68) 33 25 Ischemic stroke 1.44 (1.09-1.90) 26 18
+ Deep vein thrombosisd 1.95 (1.43-2.67) 26 13 Pulmonary embolism 2.13 (1.45-3.11) 18 8 Invasive breast cancere 1.24 (1.01-1.54) 41 33 Colorectal cancer 0.61 (0.42-0.87) 10 16 Endometrial cancerd 0.81 (0.48-1.36) 6 7 Cervical cancerd 1.44 (0.47-4.42) 2 1 Hip fracture 0.67 (0.47-0.96) 11 16 Vertebral fracturesd 0.65 (0.46-0.92) 11 17 Lower arm/wrist fracturesd 0.71 (0.59-0.85) 44 62 Total fractures 0.76 (0.69-0.83) 152 199 Overall mortalityf 1.00 (0.83-1.19) 52 52 Global Indexg 1.13 (1.02-1.25) 184 165
+ a Adapted from numerous WHI publications.
+ WHI publications can be viewed at
+ www.nhlbi.nih.gov/whi.
+b Results are based on centrally adjudicated data.
+ c Nominal confidence intervals unadjusted for multiple looks and multiple comparisons.
+ d Not included in "global index".
+ e Includes metastatic and non-metastatic breast cancer with the exception of in situ breast cancer.
+ f All deaths, except from breast or colorectal cancer, definite or probable CHD, PE or cerebrovascular
+ disease.
+ g A subset of the events was combined in a "global index", defined as the earliest occurrence of CHD
+ events, invasive breast cancer, stroke, pulmonary embolism, endometrial cancer, colorectal cancer, hip
+ fracture, or death due to other causes.
+  Timing of initiation of estrogen plus progestin therapy relative to the start of menopause may affect the overall risk benefit profile.
+ The WHI estrogen plus progestin substudy stratified by age showed in women 50 to 59 years of age a non-significant trend toward reduced risk for overall mortality [HR 0.69 (95 percent CI, 0.44-1.07)].
+ Reference ID: 3462006
+                                                                                                     14.3 Women's Health Initiative Memory Study
+ The WHIMS estrogen-alone ancillary study of WHI enrolled 2,947 predominantly healthy hysterectomized postmenopausal women 65 to 79 years of age (45 percent were 65 to 69 years of age, 36 percent were 70 to 74 years of age, and 19 percent were 75 years of age and older) to evaluate the effects of daily CE (0.625 mg)-alone on the incidence of probable dementia (primary outcome) compared to placebo.
+ After an average follow-up of 5.2 years, the relative risk of probable dementia for CE-alone versus placebo was 1.49 (95 percent CI, 0.83-2.66).
+ The absolute risk of probable dementia for CE-alone versus placebo was 37 versus 25 cases per 10,000 women-years.
+ Probable dementia as defined in the study included Alzheimer's disease (AD), vascular dementia (VaD) and mixed type (having features of both AD and VaD).
+ The most common classification of probable dementia in the treatment group and the placebo group was AD.
+ Since the ancillary study was conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women [see Warnings and Precautions (5.3), and Use in Specific Populations (8.5)].
+ The WHIMS estrogen plus progestin ancillary study enrolled 4,532 predominantly healthy postmenopausal women 65 years of age and older (47 percent were 65 to 69 years of age, 35 percent were 70 to 74 years of age, and 18 percent were 75 years of age and older) to evaluate the effects of daily CE (0.625 mg) plus MPA (2.5 mg) on the incidence of probable dementia (primary outcome) compared to placebo.
+ After an average follow-up of 4 years, the relative risk of probable dementia for CE plus MPA versus placebo was 2.05 (95 percent CI, 1.21-3.48).
+ The absolute risk of probable dementia for CE plus MPA versus placebo was 45 versus 22 cases per 10,000 women-years.
+ Probable dementia as defined in the study included AD, VaD and mixed types (having features of both AD and VaD).
+ The most common classification of probable dementia in the treatment group and the placebo group was AD.
+ Since the ancillary study was conducted in women 65 to 79 years of age, it is unknown whether these findings apply to younger postmenopausal women [see Warnings and Precautions (5.3), and Use in Specific Populations (8.5)].
+ When data from the two populations were pooled as planned in the WHIMS protocol, the reported overall relative risk for probable dementia was 1.76 (95 percent CI, 1.19-2.60).
+ Differences between groups became apparent in the first year of treatment.
+ It is unknown whether these findings apply to younger postmenopausal women [see Warnings and Precautions (5.3), and Use in Specific Populations (8.5)].
+ 15 REFERENCES
+ 1.
+ Rossouw JE, et al. Postmenopausal Hormone Therapy and Risk of Cardiovascular Disease by Age and Years Since Menopause.
+JAMA.
+2007;297:1465-1477.
+ 2.
+ Hsia J, et al. Conjugated Equine Estrogens and Coronary Heart Disease.
+Arch Int Med.
+2006;166:357-365.
+ 3.
+ Curb JD, et al. Venous Thrombosis and Conjugated Equine Estrogen in Women Without a Uterus.
+Arch Int Med.
+2006;166:772-780.
+ Reference ID: 3462006
+                                                                                                         4.
+ Cushman M, et al. Estrogen Plus Progestin and Risk of Venous Thrombosis.
+JAMA.
+2004;292:1573-1580.
+ 5.
+ Stefanick ML, et al. Effects of Conjugated Equine Estrogens on Breast Cancer and Mammography Screening in Postmenopausal Women With Hysterectomy.
+JAMA.
+2006;295:1647-1657.
+ 6.
+ Chlebowski RT, et al. Influence of Estrogen Plus Progestin on Breast Cancer and Mammography in Healthy Postmenopausal Women.
+JAMA.
+2003;289:3234-3253.
+ 7.
+ Anderson GL, et al. Effects of Estrogen Plus Progestin on Gynecologic Cancers and Associated Diagnostic Procedures.
+JAMA.
+2003;290:1739-1748.
+ 8.
+ Shumaker SA, et al. Conjugated Equine Estrogens and Incidence of Probable Dementia and Mild Cognitive Impairment in Postmenopausal Women.
+JAMA.
+2004;291:2947-2958.
+ 9.
+ Jackson RD, et al. Effects of Conjugated Equine Estrogen on Risk of Fractures and BMD in Postmenopausal Women With Hysterectomy: Results From the Women's Health Initiative Randomized Trial.
+J Bone Miner Res.
+2006;21:817-828.
+ 10.
+Hendrix SL, et al. Effects of Conjugated Equine Estrogen on Stroke in the Women's Health Initiative.
+Circulation.
+2006;113:2425-2434.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 16.1 How Supplied
+ Elestrin (estradiol gel) 0.06% is a colorless, non-staining hydroalcoholic gel supplied in a non-aerosol, metered-dose pump container constructed of polypropylene.
+The drug product is contained within a collapsible inner liner/bag consisting of an inner and outer layer of low density polyethylene with a resealable polypropylene cap.
+Each pump container holds 35 g of gel and is capable of delivering 26 g of gel as 30 metered doses.
+Each metered dose delivers 0.87 g of gel which contains 0.52 mg of estradiol.
+  NDC 18860-480-01...
+35 g of pump container.
+ This pump container is packaged individually or as two pump containers together in Cartons (18860-480-30 and 18860-480-60).
+ NDC 18860-480-30.....Carton containing one ELESTRIN 35 g pump container.
+ NDC 18860-480-60.....Carton containing two ELESTRIN 35 g pump containers.
+ 16.2 Storage and Handling
+ Store at 20 to 25C (68 to 77F); excursions permitted to 15 to 30C (59 to 86F).
+ [See USP Controlled Room Temperature].
+ 17 PATIENT COUNSELING INFORMATION
+ See FDA-Approved Patient Labeling.
+ Reference ID: 3462006
+                                  17.1 Vaginal Bleeding
+ Inform postmenopausal women of the importance of reporting vaginal bleeding to their healthcare provider as soon as possible [see Warnings and Precautions (5.2)].
+ 17.2 Possible Serious Adverse Reactions with Estrogen-Alone Therapy
+ Inform postmenopausal women of possible serious adverse reactions of estrogen-alone therapy including Cardiovascular Disorders, Malignant Neoplasms, and Probable Dementia [see Warnings and Precautions (5.1, 5.2, 5.3)].
+ 17.3 Possible Less Serious but Common Adverse Reactions with Estrogen-Alone Therapy
+ Inform postmenopausal women of possible less serious but common adverse reactions of estrogen-alone therapy such as headache, breast pain and tenderness, nausea and vomiting.
+ Reference ID: 3462006
+                                                                                                 FDA-APPROVED PATIENT LABELING
+ ELESTRIN (estradiol gel)
+ Read this PATIENT INFORMATION before you start using ELESTRIN and read what you get each time you refill your ELESTRIN prescription.
+ There may be new information.
+ This information does not take the place of talking to your healthcare provider about your menopausal symptoms or your treatment.
+ What is the most important information I should know about ELESTRIN (an estrogen hormone)?
+ &#x2022;  Using estrogen-alone may increase your chance of getting cancer of the uterus (womb) Report any unusual vaginal bleeding right away while you are using ELESTRIN.
+ Vaginal bleeding after menopause may be a warning sign of cancer of the uterus (womb).
+ Your healthcare provider should check any unusual vaginal bleeding to find out the cause.
+ &#x2022;  Do not use estrogen-alone to prevent heart disease, heart attacks, strokes, or dementia (decline in brain function)
+ &#x2022;  Using estrogen-alone may increase your chances of getting strokes or blood clots
+ &#x2022;  Using estrogen-alone may increase your chance of getting dementia, based on a study of women age 65 years or older
+ &#x2022;  Do not use estrogens with progestins to prevent heart disease, heart attacks, strokes or dementia
+ &#x2022;  Using estrogens with progestins may increase your chances of getting heart attacks, strokes, breast cancer, or blood clots
+ &#x2022;  Using estrogens with progestins may increase your chance of getting dementia, based on a study of women age 65 years or older
+ &#x2022;  You and your healthcare provider should talk regularly about whether you still need treatment with ELESTRIN
+ What is ELESTRIN?
+ ELESTRIN is a medicine in a colorless gel that contains an estrogen hormone (estradiol) which is absorbed through the skin into the bloodstream.
+ What is ELESTRIN used for?
+ ELESTRIN is used after menopause to:
+ &#x2022;  Reduce moderate to severe hot flashes
+ Reference ID: 3462006
+                                                                                            Estrogens are hormones made by a woman's ovaries.
+ The ovaries normally stop making estrogens when a woman is between 45 to 55 years old.
+ This drop in body estrogen levels causes the "change of life" or menopause (the end of monthly menstrual periods).
+ Sometimes, both ovaries are removed during an operation before natural menopause takes place.
+ The sudden drop in estrogen levels causes "surgical menopause."
+ When the estrogen levels begin dropping, some women develop very uncomfortable symptoms, such as feelings of warmth in the face, neck, and chest, or sudden strong feelings of heat and sweating ("hot flashes" or "hot flushes").
+ In some women, the symptoms are mild, and they will not need estrogens.
+ In other women, symptoms can be more severe.
+ You and your healthcare provider should talk regularly about whether you still need treatment with ELESTRIN.
+ Who should not use ELESTRIN?
+ Do not start using ELESTRIN if you:
+ &#x2022; Have unusual vaginal bleeding
+ &#x2022; Currently have or have had certain cancers Estrogens may increase the chance of getting certain types of cancers, including cancer of the breast or uterus.
+ If you have or have had cancer, talk with your healthcare provider about whether you should use ELESTRIN.
+ &#x2022; Had a stroke or heart attack
+ &#x2022; Currently have or have had blood clots
+ &#x2022; Currently have or have had liver problems
+ &#x2022; Have been diagnosed with a bleeding disorder
+ &#x2022; Are allergic to ELESTRIN or any of its ingredients See the list of ingredients in ELESTRIN at the end of this leaflet
+ &#x2022; Think you may be pregnant
+ Tell your healthcare provider:
+ &#x2022; If you have any unusual vaginal bleeding Vaginal bleeding after menopause may be a warning sign of cancer of the uterus (womb).
+  Your healthcare provider should check any unusual vaginal bleeding to find out the cause.
+  &#x2022; About all of your medical problems Your healthcare provider may need to check you more carefully if you have certain conditions, such as asthma (wheezing), epilepsy (seizures), diabetes, migraine, endometriosis, lupus, or problems with your heart, liver, thyroid, kidneys, or have high calcium levels in your blood.
+ Reference ID: 3462006
+                                                                                               &#x2022;  About all the medicines you take This includes prescription and nonprescription medicines, vitamins, and herbal supplements.
+ Some medicines may affect how ELESTRIN works.
+ ELESTRIN may also affect how your other medicines work.
+ &#x2022;  If you are going to have surgery or will be on bed rest You may need to stop using ELESTRIN.
+ &#x2022;  If you are breastfeeding The hormone in ELESTRIN can pass into your breast milk.
+ How should I use ELESTRIN?
+ 1.
+ Start at the lowest dose and talk to your healthcare provider about how well that dose is working for you.
+ 2.
+ ELESTRIN should be used at the lowest dose possible for your treatment and only as long as needed.
+ You and your healthcare provider should talk regularly (for example, every 3 to 6 months) about the dose you are taking and whether you still need treatment with ELESTRIN.
+ ELESTRIN comes in a metered-dose pump.
+ One dose of ELESTRIN is released each time the pump is depressed (pressed down).
+ Use ELESTRIN exactly how your healthcare provider tells you.
+ The ELESTRIN pump contains enough of the medicine to let you prime the pump (get the pump ready) before you use it the first time.
+ To prime the pump, push the head of the pump down slowly , then remove your finger from the pump head and allow it to spring back automatically (by itself).
+Repeat this until the gel comes out.
+ Throw away this first amount of gel as it will not be a full dose.
+ Once the pump head has come all the way back up, the pump is now primed and ready to use.
+ With each dose, remember to push the pump head down slowly and allow it to spring back automatically let the pump head come all the way back up before you push it down again.
+If using more than 1 dose, wait 5 seconds before pumping the next dose.
+This will make sure that the pump works correctly and gives your full dose of ELESTRIN.
+Use the pump a total of 30 times (30 pushes) as your healthcare provider tells you.
+After you have initially primed the pump and have used a total of 30 doses of ELESTRIN, you will need to throw the pump away and use a new one.
+ The correct amount of medicine in each dose cannot be assured after 30 doses have been used, even though the pump container is not completely empty.
+ Important things to remember when using ELESTRIN
+ Wash your hands with soap and water after applying the gel to reduce the chance that the medicine will be spread from your hands to other people.
+ Allow the gel to dry for five minutes or more before dressing.
+ Try to keep the area dry for as long as possible.
+ Reference ID: 3462006
+                                                                                                Do not allow others to come in contact with the area of skin where you applied the gel for at least
+ two hours after you apply ELESTRIN.
+  Always move the spout into locked position and place the cap over the top of the pump after
+ each use.
+  Never apply ELESTRIN to the breast.
+ Never apply ELESTRIN in or around the vagina.
+  Do not allow others to apply the gel for you.
+  Do not apply sunscreen to the area where the gel was applied for at least 25 minutes.
+  Do not apply sunscreen to the area where the gel was applied for 7 or more consecutive days.
+  Avoid fire, flame or smoking until the gel has dried.
+ ELESTRIN contains alcohol.
+ Alcohol
+ based gels are flammable.
+  It is important that you read and follow the detailed "Patient Instructions for Use" at the end of
+ this leaflet on how to use the ELESTRIN pump and apply the dose.
+ What should I do if someone else is exposed to ELESTRIN?
+ If someone else is exposed to ELESTRIN by direct contact with the gel, that person should wash the area of contact with soap and water as soon as possible.
+ The longer the gel is in contact with the skin before washing, the greater is the chance that the other person will absorb some of the estrogen hormone.
+ This is especially important for men and children.
+ What should I do if I get ELESTRIN in my eyes?
+ If you get ELESTRIN in your eyes, rinse your eyes right away with warm clean water to flush out any ELESTRIN.
+ Seek medical attention if needed.
+ What should I do if I miss a dose?
+ If you miss a dose, do not double the dose on the next day to catch up.
+ If your next dose is less than 12 hours away, it is best just to wait and apply your normal dose the next day.
+ If it is more than 12 hours until the next dose, apply the dose you missed and resume your normal dosing the next day.
+ What are the possible side effects of ELESTRIN?
+  Side effects are grouped by how serious they are and how often they happen when you are
+ treated.
+  Serious, but less common side effects include:
+  &#x2022; Heart attack
+ &#x2022; Stroke
+ Reference ID: 3462006
+                                                                                             &#x2022; Blood clots
+ &#x2022; Dementia
+ &#x2022; Breast cancer
+ &#x2022; Cancer of the lining of the uterus (womb)
+ &#x2022; Cancer of the ovary
+ &#x2022; High blood pressure
+ &#x2022; High blood sugar
+ &#x2022; Gallbladder disease
+ &#x2022; Liver problems
+ &#x2022; Enlargement of benign tumors of the uterus ("fibroids")
+ Call your healthcare provider right away if you get any of the following warning signs or any other unusual symptoms that concern you:
+ &#x2022; New breast lumps
+ &#x2022; Unusual vaginal bleeding
+ &#x2022; Changes in vision or speech
+ &#x2022; Sudden new severe headaches
+ &#x2022; Severe pains in your chest or legs with or without shortness of breath, weakness and fatigue
+ Less serious, but common side effects include:
+ &#x2022; Headache
+ &#x2022; Breast pain
+ &#x2022; Irregular vaginal bleeding or spotting
+ &#x2022; Stomach or abdominal cramps, bloating
+ &#x2022; Nausea and vomiting
+ &#x2022; Hair loss
+ &#x2022; Fluid retention
+ &#x2022; Vaginal yeast infection
+ These are not all the possible side effects of ELESTRIN.
+ For more information, ask your healthcare provider or pharmacist for advice about side effects.
+ You may report side effects to Meda Pharmaceuticals at 1-800-890-3098 or to FDA at 1-800-FDA-1088.
+ Reference ID: 3462006
+                                                                                                            What can I do to lower my chances of a serious side effect with ELESTRIN?
+ &#x2022;  Talk with your healthcare provider regularly about whether you should continue using ELESTRIN
+ &#x2022;  If you have a uterus, talk to your healthcare provider about whether the addition of a progestin is right for you
+ The addition of a progestin is generally recommended for a woman with a uterus to reduce the chance of getting cancer of the uterus.
+ See your healthcare provider right away if you get vaginal bleeding while using ELESTRIN.
+ &#x2022;  Have a pelvic exam, breast exam and mammogram (breast X-ray) every year unless your healthcare provider tells you something else
+ If members of your family have had breast cancer or if you have ever had breast lumps or an abnormal mammogram, you may need to have breast exams more often.
+ &#x2022;  If you have high blood pressure, high cholesterol (fat in the blood), diabetes, are overweight, or if you use tobacco, you may have a higher chance for getting heart disease
+ Ask your healthcare provider for ways to lower your chances of getting heart disease.
+ General information about safe and effective use of ELESTRIN
+ Medicines are sometimes prescribed for conditions that are not mentioned in patient information leaflets.
+ Do not use ELESTRIN for conditions for which it was not prescribed.
+ Do not give ELESTRIN to other people, even if they have the same symptoms you have.
+ It may harm them.
+ Keep ELESTRIN out of the reach of children
+ This leaflet provides a summary of the most important information about ELESTRIN.
+ If you would like more information, talk with your healthcare provider or pharmacist.
+ You can ask for information about ELESTRIN that is written for health professionals.
+ You can get more information by calling 1-800-890-3098 (toll free).
+ Patient Instructions for Use.
+ 1.
+ Remove the cap.
+ 2.
+ Activate the pump.
+ &#x2022;  Unlock the pump by turning the spout on top of the bottle a quarter turn to the left or the right.
+ 3.
+Prime the pump (get the pump ready) before using the pump for the first time.
+ &#x2022;  Push the head of the pump down slowly and allow it to spring back automatically.
+Repeat this until gel comes out.
+ Throw away the first amount of gel as it will not be a full dose.
+ Once the pump head has come all the way back up, the pump is now primed and ready to
+ Reference ID: 3462006
+                                                                        use.
+Throw away the unused gel by placing it in the trash to avoid another person or pet from accidental contact with the gel or, eating or drinking it.
+ &#x2022;  After priming, the pump is ready to use.
+ &#x2022;  One complete pump depression will dispense the same amount of ELESTRIN each time.
+ After each daily dose, return the spout to the locked position and replace the cap before you put it away.
+ 4.
+ Apply ELESTRIN.
+ &#x2022;  Dry skin completely before applying ELESTRIN You should apply your daily dose of gel to clean, dry, unbroken skin.
+ If you take a bath or shower or use a sauna, apply ELESTRIN after your bath, shower, or sauna.
+ If you go swimming, try to leave as much time as possible, at least 2 hours, between applying your ELESTRIN dose and going into the water.
+ &#x2022;  Apply ELESTRIN at the same time each day.
+ Figure 1
+ To apply the dose, hold the pump with the tip facing the application area of the arm.
+ For each pump depression needed, press the pump firmly and fully with a continuous motion without hesitation.
+ Figure 2
+ Gently spread the gel using only 2 fingers.
+ Spread and gently rub in the gel over the entire area of your upper arm and shoulder area, as illustrated.
+ Reference ID: 3462006
+                                                   5.
+Wash your hands with soap and water.
+ ELESTRIN should not be used after the date printed on the container (expiration date).
+ What are the ingredients in ELESTRIN?
+ Active ingredient: estradiol.
+ Inactive ingredients: purified water, ethanol, propylene glycol, diethylene glycol monoethyl ether, carbomer 940, triethanolamine, and edetate disodium.
+ ELESTRIN is a trademark of Meda Pharmaceuticals
+ Distributed by:
+ Meda Pharmaceuticals Commercial Corp.
+ 1818 Market Street, Suite 2350, Philadelphia, PA 19103
+ Manufactured by:
+ DPT Laboratories, Ltd. 318 McCullough San Antonio, TX 78215
+ U.S. Pat.
+No.
+7,198,801 and U.S. Pat.
+No.
+7,470,433
+ Reference ID: 3462006
+  
