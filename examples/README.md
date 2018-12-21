@@ -1,4 +1,4 @@
-#https://github.com/NanoNLP/medaCy/examples Tutorials with medaCy Workflows
+#Tutorials with medaCy Workflows
 This directory contains workflows for using medaCy.
 
 #### Building a 
