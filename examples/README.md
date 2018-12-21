@@ -4,7 +4,7 @@ This directory contains common workflows for using medaCy
 ## Table of contents
 1. [How medaCy Works](#how-medacy-works)
 2. [Building a medaCy Pipeline](#building-a-custom-medacy-pipeline)
-3. [Pre-trained Models](#pre-trained-ner-models-hospital)
+3. [Pre-trained Models](#utilizing-pre-trained-ner-models)
 
 ### How medaCy Works
 MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
@@ -17,7 +17,7 @@ to overlay rich medical concept information onto text. Components are chained or
 
 ### Building a custom medaCy pipeline
 
-### Pre-trained NER models :hospital:
+### Utilizing Pre-trained NER models
 | Application | Dataset Trained Over | Entities |
 | :---------: | :----------------: |:-------------:|
 | [Clinical Notes](/examples/models/clinical_notes_model.md)| [N2C2 2018](https://n2c2.dbmi.hms.harvard.edu/) | Drug, Form, Route, ADE, Reason, Frequency, Duration, Dosage, Strength  |
