@@ -1,9 +1,16 @@
-# Tutorials with medaCy Workflows
-This directory contains workflows for using medaCy.
+# Using medaCy: Tutorials and Workflows
+This directory contains common workflows for using medaCy
 
-#### Building a 
+## Table of contents
+1. [How medaCy Works](#how-medacy-works)
+2. [Building a medaCy Pipeline](#building-a-custom-medacy-pipeline)
+3. [Pre-trained Models](#pre-trained-ner-models)
 
-#### Using medaCy's Pre-trained NER Models :hospital:
+### How medaCy Works
+
+### Building a custom medaCy pipeline
+
+### Pre-trained NER models :hospital:
 | Application | Dataset | Entities |
 | :---------: | :----------------: |:-------------:|
 | [Clinical Notes](/examples/models/clinical_notes_model.md)| [N2C2 2018](https://n2c2.dbmi.hms.harvard.edu/) | Drug, Dosage, Frequency, ADE, Reason  |
