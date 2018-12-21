@@ -7,6 +7,13 @@ This directory contains common workflows for using medaCy
 3. [Pre-trained Models](#pre-trained-ner-models-hospital)
 
 ### How medaCy Works
+MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
+MedaCy consists of a set of lightning-fast pipelines that are specialized for learning specific types of medical entities. A pipeline consists
+of a stackable and interchangeable set of PipelineComponents - these are bite-sized code blocks that each overlay a feature onto the text being processed.
+
+#### Pipeline Components
+PipelineComponents can be developed to utilize in custom pipelines by interfacing the [BasePipeline](medacy/pipelines/base/base_pipeline.py) and [BaseComponent](medacy/pipeline_components/base/base_component.py) classes. Alternatively use components already implemented in medaCy. Some more powerful components require outside software - an example is the MetaMapComponent which interfaces with [MetaMap](https://metamap.nlm.nih.gov/)
+to overlay rich medical concept information onto text. Components are chained or stacked in pipelines and can themselves depend on the outputs of previous components to function. In the underlying implementation, a medaCy PipelineComponent is a wrapper over a spaCy component that includes a number of utilities specific to faciliting the model training, utilization, and distribution process of medical domain models.
 
 ### Building a custom medaCy pipeline
 
