@@ -15,12 +15,12 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 ## :thought_balloon: Where to ask questions
 
-MedaCy actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar>)
+MedaCy actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
 receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](/CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
-Medacy can be installed for general use or for pipeline development / research purpose.
+Medacy can be installed for general use or for pipeline development / research purposes.
 
 | Application | Run           |
 | ----------- |:-------------:|
@@ -30,9 +30,7 @@ Medacy can be installed for general use or for pipeline development / research p
 
 
 **Note:** Make sure you have at the least spaCy's small model installed.
-```python
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
-```
+`pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz`
 
 
 # :books: User Guide
@@ -83,17 +81,13 @@ model.predict(test_loader)
 
 ```
 
-One can also dump fitted models into a specified directory.
+One can also dump/load fitted models into a specified directory.
 ```python
 model.fit(train_loader)
 model.dump('/path/to/dump/to') # Trained model is now stored at specified directory
+model.load('/path/to/dump/to') # Trained model is loaded back into medaCy
 
 ``` 
-
-Note, the ClinicalPipeline requires spaCy's small model - install it with pip:
-```python
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
-```
 
 
 How medaCy works
