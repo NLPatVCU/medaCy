@@ -32,7 +32,7 @@ class ClinicalTokenizer():
         Custom prefix tokenization rules
         :return:
         """
-        custom_prefixes = [r"""^[\[\(\.\\]""", r"""^[/@]"'"""]
+        custom_prefixes = [r"""^[\[\("'\\/@]"""]
         all_prefixes_re = compile_prefix_regex(tuple(list(self.nlp.Defaults.prefixes) + custom_prefixes))
         return all_prefixes_re
 
@@ -41,7 +41,7 @@ class ClinicalTokenizer():
         Custom infix tokenization rules
         :return:
         """
-        custom_infixes = [r'\[', r'(?<=[0-9])-(?=[0-9])', r'[!&:,()\*/\-><]']
+        custom_infixes = ['\[', '(?<=[0-9])-(?=[0-9])', '[!&:,()\*/-><]']
         infix_re = compile_infix_regex(tuple(list(self.nlp.Defaults.infixes) + custom_infixes))
 
         return infix_re
@@ -51,5 +51,5 @@ class ClinicalTokenizer():
         Custom suffix tokenization rules
         :return:
         """
-        suffix_re = re.compile(r'''[\]\)\-\?\n\+\.]$|["',]$|(mg$)|(mcg$)|(mL$)|(cap$)''')
+        suffix_re = re.compile(r'''[\]\)"',.x\-%\?\\n]|\*|(mg$)|(mcg$)|(mL$)|(cap$)|(-+$)$''')
         return suffix_re
