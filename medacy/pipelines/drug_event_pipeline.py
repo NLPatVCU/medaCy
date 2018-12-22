@@ -14,9 +14,14 @@ class DrugEventPipeline(BasePipeline):
         """
 
         description= "Pipeline for recognition of adverse drug events from the 2018/19 FDA OSE drug label challenge"
-        super.__init__("drug_event_pipeline", spacy_pipeline=spacy.load("en_core_web_sm"), description=description)
+        super().__init__("drug_event_pipeline",
+                         spacy_pipeline=spacy.load("en_core_web_sm"),
+                         description=description,
+                         creators="Corey Sutphin",
+                         organization="NLP@VCU")
         self.entities = entities
-        self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
+
+        #self.spacy_pipeline.tokenizer = self.get_tokenizer()  # Currently using SpaCy's default tokenizer
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
         self.add_component(MetaMapComponent, metamap)
