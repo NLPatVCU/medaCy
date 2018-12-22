@@ -1,6 +1,6 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from ..pipeline_components import ClinicalTokenizer, SystematicReviewTokenizer
+from ..pipeline_components import ClinicalTokenizer
 from medacy.model.feature_extractor import FeatureExtractor
 
 from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent
@@ -33,7 +33,6 @@ class ClinicalPipeline(BasePipeline):
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
         self.add_component(MetaMapComponent, metamap)
         self.add_component(UnitComponent)
-            
 
 
     def get_learner(self):
@@ -49,7 +48,7 @@ class ClinicalPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size=4, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text'])
+        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
         return extractor
 
 
