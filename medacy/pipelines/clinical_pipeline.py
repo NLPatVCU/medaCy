@@ -1,6 +1,6 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from ..pipeline_components import ClinicalTokenizer, CharacterTokenizer
+from ..pipeline_components import ClinicalTokenizer
 from medacy.model.feature_extractor import FeatureExtractor
 
 from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent
@@ -19,7 +19,12 @@ class ClinicalPipeline(BasePipeline):
         :param metamap: an instance of MetaMap
         """
         description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
-        super().__init__("clinical_pipeline", spacy_pipeline=spacy.load("en_core_web_sm"), description=description)
+        super().__init__("clinical_pipeline",
+                         spacy_pipeline=spacy.load("en_core_web_sm"),
+                         description=description,
+                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
+                         organization="NLP@VCU"
+                         )
 
         self.entities = entities
 
@@ -28,7 +33,6 @@ class ClinicalPipeline(BasePipeline):
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
         self.add_component(MetaMapComponent, metamap)
         self.add_component(UnitComponent)
-            
 
 
     def get_learner(self):
@@ -44,7 +48,7 @@ class ClinicalPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size = 2, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num'])
+        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
         return extractor
 
 

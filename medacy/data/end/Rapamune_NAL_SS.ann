@@ -1,0 +1,1337 @@
+T1	tradename 112 120	Rapamune
+T2	tradename 183 202	Rapamune. RAPAMUNE
+T3	activeingredient 204 214	sirolimus)
+T4	routeofadministration 215 219	ORAL
+T5	fdaapprovaldate 265 269	1999
+T6	adversereaction 461 470	infection
+T7	adversereaction 503 511	lymphoma
+T8	tradename 691 700	Rapamune.
+T9	tradename 739 747	Rapamune
+T10	adversereaction 938 960	mortality, graft loss,
+T11	adversereaction 966 991	hepatic artery thrombosis
+T12	tradename 1158 1166	Rapamune
+T13	indication 1216 1310	prophylaxis of organ rejection in patients aged &#x2265;13 years receiving renal transplants.
+T14	co-administereddrug 1388 1406	cyclosporine (CsA)
+T15	co-administereddrug 1411 1431	corticosteroids. CsA
+T16	co-administereddrug 1569 1581	cyclosporine
+T17	co-administereddrug 1586 1601	corticosteroids
+T18	co-administereddrug 1683 1686	CsA
+T19	frequency 1957 1962	daily
+T20	routeofadministration 1963 1972	by mouth,
+T21	tradename 2116 2124	Rapamune
+T22	activeingredient 2154 2163	sirolimus
+T23	tradename 2276 2284	Rapamune
+T24	co-administereddrug 2289 2301	Cyclosporine
+T25	dose 2343 2347	6 mg
+T26	frequency 2370 2375	daily
+T27	dose 2398 2402	2 mg
+T28	tradename 2421 2429	Rapamune
+T29	co-administereddrug 2440 2452	Cyclosporine
+T30	tradename 2579 2587	Rapamune
+T31	co-administereddrug 2592 2604	Cyclosporine
+T32	dose 2699 2704	15 mg
+T33	frequency 2728 2733	daily
+T34	dose 2755 2759	5 mg
+T35	tradename 2866 2874	Rapamune
+T36	routeofadministration 2875 2879	Oral
+T37	tradename 2945 2953	Rapamune
+T38	tradename 3119 3127	Rapamune
+T39	adversereaction 3230 3256	Hypersensitivity Reactions
+T40	adversereaction 3273 3283	Angioedema
+T41	adversereaction 3300 3336	Fluid Accumulation and Wound Healing
+T42	adversereaction 3353 3367	Hyperlipidemia
+T43	adversereaction 3415 3426	Proteinuria
+T44	adversereaction 3443 3466	Latent Viral Infections
+T45	adversereaction 3485 3510	Interstitial Lung Disease
+T46	co-administereddrug 3548 3560	Cyclosporine
+T47	adversereaction 3596 3637	Calcineurin Inhibitor-induced HUS/TTP/TMA
+T48	adversereaction 3777 3979	peripheral edema, hypertriglyceridemia, hypertension, hypercholesterolemia, creatinine increased, abdominal pain, diarrhea, headache, fever, urinary tract infection, anemia, nausea, arthralgia, pain,
+T49	adversereaction 3984 4000	thrombocytopenia
+T50	company 4054 4081	Wyeth Pharmaceuticals Inc.
+T51	activeingredient 4356 4365	sirolimus
+T52	indication 5110 5165	Prophylaxis of Organ Rejection in Renal Transplantation
+T53	tradename 5504 5512	Rapamune
+T54	routeofadministration 5513 5517	Oral
+T55	tradename 5563 5571	Rapamune
+T56	routeofadministration 5572 5576	Oral
+T57	tradename 5591 5599	Rapamune
+T58	adversereaction 5690 5699	Infection
+T59	adversereaction 5733 5741	Lymphoma
+T60	adversereaction 5786 5808	Mortality, Graft Loss,
+T61	adversereaction 5813 5845	Hepatic Artery Thrombosis (HAT)
+T62	adversereaction 5912 5938	Hypersensitivity Reactions
+T63	adversereaction 5944 5954	Angioedema
+T64	adversereaction 5960 5996	Fluid Accumulation and Wound Healing
+T65	adversereaction 6002 6016	Hyperlipidemia
+T66	adversereaction 6042 6053	Proteinuria
+T67	adversereaction 6060 6083	Latent Viral Infections
+T68	adversereaction 6091 6116	Interstitial Lung Disease
+T69	co-administereddrug 6143 6155	Cyclosporine
+T70	adversereaction 6180 6314	Calcineurin Inhibitor-Induced Hemolytic Uremic Syndrome/Thrombotic Thrombocytopenic Purpura/Thrombotic Microangiopathy (HUS/TTP/TMA)
+T71	adversereaction 6321 6346	Antimicrobial Prophylaxis
+T72	activeingredient 6363 6372	Sirolimus
+T73	indication 6559 6622	Prophylaxis of Organ Rejection Following Renal Transplantation
+T74	tradename 6628 6636	Rapamune
+T75	co-administereddrug 6647 6659	Cyclosporine
+T76	tradename 6842 6850	Rapamune
+T77	co-administereddrug 6976 6988	Cyclosporine
+T78	indication 7558 7588	Prophylaxis of Organ Rejection
+T79	co-administereddrug 7595 7607	Cyclosporine
+T80	tradename 7710 7718	Rapamune
+T81	activeingredient 7808 7823	Sirolimus-based
+T82	tradename 7939 7947	Rapamune
+T83	routeofadministration 7948 7952	Oral
+T84	tradename 7968 7976	Rapamune
+T85	adversereaction 8269 8278	infection
+T86	adversereaction 8311 8319	lymphoma
+T87	adversereaction 8407 8416	infection
+T88	adversereaction 8449 8457	lymphoma
+T89	tradename 8607 8615	Rapamune
+T90	tradename 8963 8971	Rapamune
+T91	activeingredient 8973 8983	sirolimus)
+T92	adversereaction 9207 9229	Mortality, Graft Loss,
+T93	adversereaction 9241 9266	 Artery Thrombosis (HAT)
+T94	tradename 9279 9287	Rapamune
+T95	co-administereddrug 9308 9318	tacrolimus
+T96	adversereaction 9346 9355	mortality
+T97	adversereaction 9361 9371	graft loss
+T98	tradename 9577 9585	Rapamune
+T99	co-administereddrug 9607 9619	cyclosporine
+T100	co-administereddrug 9623 9633	tacrolimus
+T101	adversereaction 9669 9673	HAT;
+T102	adversereaction 9689 9692	HAT
+T103	tradename 9997 10005	Rapamune
+T104	indication 10129 10184	Prophylaxis of Organ Rejection in Renal Transplantation
+T105	tradename 10186 10194	Rapamune
+T106	activeingredient 10196 10206	sirolimus)
+T107	indication 10228 10323	prophylaxis of organ rejection in patients aged 13 years or older receiving renal transplants.
+T108	tradename 10421 10429	Rapamune
+T109	tradename 10577 10585	Rapamune
+T110	co-administereddrug 10623 10635	cyclosporine
+T111	co-administereddrug 10640 10669	corticosteroids; cyclosporine
+T112	tradename 11039 11047	Rapamune
+T113	co-administereddrug 11076 11088	cyclosporine
+T114	co-administereddrug 11093 11108	corticosteroids
+T115	co-administereddrug 11244 11256	Cyclosporine
+T116	co-administereddrug 11368 11380	cyclosporine
+T117	tradename 11702 11710	Rapamune
+T118	co-administereddrug 11737 11749	cyclosporine
+T119	co-administereddrug 11754 11769	corticosteroids
+T120	tradename 12077 12085	Rapamune
+T121	tradename 12338 12346	Rapamune
+T122	co-administereddrug 12355 12367	cyclosporine
+T123	tradename 12533 12541	Rapamune
+T124	tradename 12671 12679	Rapamune
+T125	routeofadministration 12702 12708	orally
+T126	frequency 12709 12720	once daily,
+T127	tradename 12993 13001	Rapamune
+T128	tradename 13092 13100	Rapamune
+T129	co-administereddrug 13142 13154	cyclosporine
+T130	routeofadministration 13155 13159	oral
+T131	co-administereddrug 13188 13200	cyclosporine
+T132	tradename 13292 13300	Rapamune
+T133	activeingredient 13344 13353	sirolimus
+T134	activeingredient 13416 13425	sirolimus
+T135	tradename 13453 13461	Rapamune
+T136	tradename 13712 13720	Rapamune
+T137	activeingredient 13898 13907	sirolimus
+T138	tradename 13932 13940	Rapamune
+T139	tradename 14024 14032	Rapamune
+T140	dose 14080 14086	40 mg.
+T141	dose 14123 14128	40 mg
+T142	activeingredient 14222 14231	Sirolimus
+T143	dose 14322 14336	Two milligrams
+T144	dose 14338 14343	2 mg)
+T145	tradename 14347 14355	Rapamune
+T146	routeofadministration 14356 14360	Oral
+T147	dose 14425 14429	2 mg
+T148	tradename 14430 14438	Rapamune
+T149	tradename 14541 14549	Rapamune
+T150	routeofadministration 14550 14554	Oral
+T151	tradename 14610 14618	Rapamune
+T152	tradename 14735 14743	Rapamune
+T153	co-administereddrug 14748 14760	Cyclosporine
+T154	tradename 14844 14852	Rapamune
+T155	routeofadministration 14853 14857	Oral
+T156	co-administereddrug 14916 14928	cyclosporine
+T157	co-administereddrug 14933 14949	corticosteroids.
+T158	tradename 14969 14977	Rapamune
+T159	frequency 15045 15050	daily
+T160	dose 15072 15076	2 mg
+T161	dose 15119 15124	6 mg.
+T162	activeingredient 15181 15190	sirolimus
+T163	tradename 15276 15284	Rapamune
+T164	co-administereddrug 15295 15307	Cyclosporine
+T165	co-administereddrug 15364 15376	cyclosporine
+T166	tradename 15442 15450	Rapamune
+T167	activeingredient 15485 15494	sirolimus
+T168	co-administereddrug 15602 15614	cyclosporine
+T169	activeingredient 15656 15676	sirolimus, sirolimus
+T170	co-administereddrug 15711 15723	cyclosporine
+T171	tradename 15752 15760	Rapamune
+T172	tradename 15919 15927	Rapamune
+T173	co-administereddrug 15957 15969	cyclosporine
+T174	co-administereddrug 15974 15989	corticosteroids
+T175	tradename 16437 16445	Rapamune
+T176	co-administereddrug 16451 16464	cyclosporine,
+T177	tradename 16465 16473	Rapamune
+T178	dose 16532 16537	15 mg
+T179	dose 16621 16625	5 mg
+T180	frequency 16625 16629	/day
+T181	frequency 16712 16717	daily
+T182	tradename 16726 16734	Rapamune
+T183	co-administereddrug 16827 16839	cyclosporine
+T184	dose 16856 16864	7 mg/kg/
+T185	frequency 16864 16867	day
+T186	co-administereddrug 17023 17033	Prednisone
+T187	dose 17074 17078	5 mg
+T188	frequency 17078 17083	/day.
+T189	activeingredient 17173 17182	sirolimus
+T190	tradename 17424 17432	Rapamune
+T191	tradename 17635 17643	Rapamune
+T192	co-administereddrug 17798 17811	cyclosporine,
+T193	activeingredient 17812 17821	sirolimus
+T194	co-administereddrug 17960 17972	cyclosporine
+T195	activeingredient 18057 18066	sirolimus
+T196	activeingredient 18184 18193	sirolimus
+T197	activeingredient 18299 18308	sirolimus
+T198	activeingredient 18380 18389	sirolimus
+T199	activeingredient 18514 18523	sirolimus
+T200	activeingredient 18836 18845	sirolimus
+T201	dose 19494 19501	1 mg/m2
+T202	frequency 19501 19506	/day.
+T203	dose 19534 19543	3 mg/m 2.
+T204	tradename 19630 19638	Rapamune
+T205	tradename 19840 19848	Rapamune
+T206	tradename 20104 20112	Rapamune
+T207	routeofadministration 20113 20117	Oral
+T208	routeofadministration 20138 20142	oral
+T209	tradename 20208 20216	Rapamune
+T210	routeofadministration 20218 20222	Oral
+T211	tradename 20277 20285	Rapamune
+T212	tradename 20749 20757	Rapamune
+T213	routeofadministration 20758 20762	Oral
+T214	inactiveingredient 20781 20796	polysorbate 80,
+T215	tradename 20985 20993	Rapamune
+T216	routeofadministration 20994 20998	Oral
+T217	tradename 21109 21117	Rapamune
+T218	routeofadministration 21118 21122	Oral
+T219	tradename 21186 21194	Rapamune
+T220	tradename 21260 21268	RAPAMUNE
+T221	tradename 21347 21355	RAPAMUNE
+T222	tradename 21441 21449	RAPAMUNE
+T223	tradename 21517 21525	Rapamune
+T224	tradename 21584 21592	Rapamune
+T225	adversereaction 21735 21743	Lymphoma
+T226	adversereaction 21815 21823	lymphoma
+T227	adversereaction 21924 21960	lymphoma/lymphoproliferative disease
+T228	tradename 22009 22025	Rapamune-treated
+T229	adversereaction 22203 22213	infection,
+T230	adversereaction 22257 22270	tuberculosis,
+T231	adversereaction 22294 22301	sepsis.
+T232	tradename 22415 22424	Rapamune.
+T233	adversereaction 22731 22753	Mortality, Graft Loss,
+T234	adversereaction 22758 22790	Hepatic Artery Thrombosis (HAT)
+T235	tradename 22819 22827	Rapamune
+T236	tradename 22965 22973	Rapamune
+T237	adversereaction 23080 23101	mortality, graft loss
+T238	adversereaction 23106 23138	Hepatic Artery Thrombosis (HAT).
+T239	tradename 23200 23208	Rapamune
+T240	co-administereddrug 23230 23240	tacrolimus
+T241	adversereaction 23268 23277	mortality
+T242	adversereaction 23282 23292	graft loss
+T243	co-administereddrug 23327 23337	tacrolimus
+T244	tradename 23502 23510	Rapamune
+T245	co-administereddrug 23532 23544	cyclosporine
+T246	co-administereddrug 23548 23558	tacrolimus
+T247	adversereaction 23594 23597	HAT
+T248	adversereaction 23663 23666	HAT
+T249	tradename 23956 23970	Rapamune-based
+T250	tradename 24356 24364	Rapamune
+T251	tradename 24448 24456	Rapamune
+T252	adversereaction 24587 24642	Hypersensitivity Reactions Hypersensitivity reactions,
+T253	adversereaction 24653 24726	anaphylactic/anaphylactoid reactions, angioedema, exfoliative dermatitis
+T254	adversereaction 24731 24759	hypersensitivity vasculitis,
+T255	tradename 24809 24817	Rapamune
+T256	adversereaction 24854 24864	Angioedema
+T257	tradename 24866 24874	Rapamune
+T258	adversereaction 24919 24930	angioedema.
+T259	tradename 24955 24963	Rapamune
+T260	adversereaction 24996 25007	angioedema,
+T261	adversereaction 25069 25080	angioedema.
+T262	adversereaction 25086 25122	Fluid Accumulation and Wound Healing
+T263	adversereaction 25151 25184	impaired or delayed wound healing
+T264	tradename 25207 25216	Rapamune,
+T265	adversereaction 25228 25238	lymphocele
+T266	adversereaction 25243 25259	wound dehiscence
+T267	activeingredient 25316 25325	sirolimus
+T268	adversereaction 25483 25494	Lymphocele,
+T269	tradename 25638 25646	Rapamune
+T270	adversereaction 25843 25866	abnormal wound healing
+T271	adversereaction 25943 25962	fluid accumulation,
+T272	adversereaction 25973 26030	peripheral edema, lymphedema, pleural effusion, ascites,
+T273	adversereaction 26035 26056	pericardial effusions
+T274	adversereaction 26068 26106	hemodynamically significant effusions
+T275	adversereaction 26111 26120	tamponade
+T276	tradename 26192 26201	Rapamune.
+T277	adversereaction 26207 26268	Hyperlipidemia Increased serum cholesterol and triglycerides
+T278	tradename 26340 26348	Rapamune
+T279	adversereaction 26482 26502	hypercholesterolemia
+T280	adversereaction 26520 26540	hypertriglyceridemia
+T281	tradename 26572 26580	Rapamune
+T282	tradename 26776 26785	Rapamune.
+T283	tradename 26848 26856	Rapamune
+T284	adversereaction 26881 26896	hyperlipidemia.
+T285	tradename 27108 27116	Rapamune
+T286	co-administereddrug 27122 27134	cyclosporine
+T287	tradename 27138 27146	Rapamune
+T288	co-administereddrug 27154 27166	cyclosporine
+T289	adversereaction 27224 27238	hyperlipidemia
+T290	adversereaction 27244 27264	hypercholesterolemia
+T291	tradename 27507 27515	Rapamune
+T292	co-administereddrug 27521 27549	HMG-CoA reductase inhibitors
+T293	adversereaction 27585 27599	CPK elevations
+T294	adversereaction 27607 27614	myalgia
+T295	adversereaction 27626 27640	rhabdomyolysis
+T296	tradename 27778 27786	Rapamune
+T297	tradename 27825 27833	Rapamune
+T298	co-administereddrug 27858 27871	cyclosporine,
+T299	tradename 28245 28253	Rapamune
+T300	co-administereddrug 28260 28273	cyclosporine,
+T301	co-administereddrug 28407 28419	cyclosporine
+T302	tradename 28424 28432	Rapamune
+T303	co-administereddrug 28559 28571	cyclosporine
+T304	tradename 28718 28726	Rapamune
+T305	co-administereddrug 28732 28744	cyclosporine
+T306	tradename 28866 28874	Rapamune
+T307	co-administereddrug 28882 28895	cyclosporine,
+T308	co-administereddrug 29075 29087	cyclosporine
+T309	tradename 29439 29447	Rapamune
+T310	adversereaction 29491 29502	Proteinuria
+T311	tradename 29653 29661	Rapamune
+T312	tradename 29838 29846	Rapamune
+T313	tradename 30008 30016	Rapamune
+T314	tradename 30244 30252	Rapamune
+T315	adversereaction 30362 30373	proteinuria
+T316	tradename 30466 30474	Rapamune
+T317	tradename 30708 30717	Rapamune.
+T318	tradename 30788 30796	Rapamune
+T319	adversereaction 30872 30895	Latent Viral Infections
+T320	adversereaction 31039 31071	BK virus-associated nephropathy,
+T321	tradename 31149 31158	Rapamune.
+T322	adversereaction 31364 31397	BK virus-associated nephropathy.
+T323	adversereaction 31488 31520	BK virus-associated nephropathy.
+T324	adversereaction 31531 31580	progressive multifocal leukoencephalopathy (PML),
+T325	tradename 31672 31681	Rapamune.
+T326	adversereaction 31682 31685	PML
+T327	adversereaction 31710 31764	hemiparesis, apathy, confusion, cognitive deficiencies
+T328	adversereaction 31769 31776	ataxia.
+T329	adversereaction 31795 31798	PML
+T330	adversereaction 31943 31946	PML
+T331	adversereaction 32204 32208	PML.
+T332	adversereaction 32337 32362	Interstitial Lung Disease
+T333	adversereaction 32410 32477	pneumonitis, bronchiolitis obliterans organizing pneumonia [BOOP],
+T334	adversereaction 32482 32501	pulmonary fibrosis)
+T335	tradename 32628 32637	Rapamune.
+T336	adversereaction 32658 32683	interstitial lung disease
+T337	tradename 32740 32749	Rapamune.
+T338	activeingredient 32790 32799	sirolimus
+T339	co-administereddrug 32882 32894	Cyclosporine
+T340	tradename 32938 32946	Rapamune
+T341	co-administereddrug 32955 32967	cyclosporine
+T342	tradename 33099 33108	Rapamune,
+T343	co-administereddrug 33298 33311	cyclosporine,
+T344	tradename 33489 33497	Rapamune
+T345	co-administereddrug 33506 33519	cyclosporine.
+T346	adversereaction 33635 33769	Calcineurin Inhibitor-Induced Hemolytic Uremic Syndrome/Thrombotic Thrombocytopenic Purpura/Thrombotic Microangiopathy (HUS/TTP/TMA)
+T347	tradename 33794 33802	Rapamune
+T348	adversereaction 33858 33991	calcineurin inhibitor-induced hemolytic uremic syndrome/thrombotic thrombocytopenic purpura/thrombotic microangiopathy (HUS/TTP/TMA)
+T349	adversereaction 34065 34095	Pneumocystis carinii pneumonia
+T350	adversereaction 34210 34241	Pneumocystis carinii pneumonia
+T351	activeingredient 34467 34476	Sirolimus
+T352	activeingredient 34538 34547	sirolimus
+T353	adversereaction 34869 34881	skin cancer.
+T354	tradename 35132 35140	Rapamune
+T355	adversereaction 35565 35585	infection, lymphoma,
+T356	adversereaction 35590 35600	malignancy
+T357	adversereaction 35664 35693	Excess mortality, graft loss,
+T358	adversereaction 35698 35752	hepatic artery thrombosis in liver transplant patients
+T359	adversereaction 35842 35902	Bronchial anastomotic dehiscence in lung transplant patients
+T360	adversereaction 35966 35992	Hypersensitivity reactions
+T361	adversereaction 36040 36062	Exfoliative dermatitis
+T362	adversereaction 36110 36120	Angioedema
+T363	adversereaction 36168 36204	Fluid Accumulation and Wound Healing
+T364	adversereaction 36252 36294	Hypertriglyceridemia, hypercholesterolemia
+T365	adversereaction 36342 36367	Decline in renal function
+T366	co-administereddrug 36396 36408	cyclosporine
+T367	tradename 36414 36422	Rapamune
+T368	adversereaction 36471 36482	Proteinuria
+T369	adversereaction 36623 36756	calcineurin inhibitor-induced hemolytic uremic syndrome/thrombotic thrombocytopenic purpura/thrombotic microangiopathy (HUS/TTP/TMA)
+T370	tradename 36861 36869	Rapamune
+T371	adversereaction 36896 37111	peripheral edema, hypertriglyceridemia, hypertension, hypercholesterolemia, creatinine increased, constipation, abdominal pain, diarrhea, headache, fever, urinary tract infection, anemia, nausea, arthralgia, pain,
+T372	adversereaction 37116 37133	thrombocytopenia.
+T373	adversereaction 37237 37280	creatinine increased, hypertriglyceridemia,
+T374	adversereaction 37285 37327	thrombotic thrombocytopenic purpura (TTP).
+T375	indication 37364 37427	Prophylaxis of Organ Rejection Following Renal Transplantation
+T376	tradename 37456 37464	Rapamune
+T377	routeofadministration 37465 37469	Oral
+T378	indication 37487 37549	prevention of organ rejection following renal transplantation
+T379	tradename 37880 37888	Rapamune
+T380	routeofadministration 37889 37893	Oral
+T381	dose 37904 37908	2 mg
+T382	frequency 37908 37913	/day,
+T383	tradename 37927 37935	Rapamune
+T384	routeofadministration 37936 37940	Oral
+T385	dose 37950 37954	5 mg
+T386	frequency 37954 37959	/day,
+T387	co-administereddrug 38258 38270	cyclosporine
+T388	co-administereddrug 38275 38291	corticosteroids.
+T389	tradename 38432 38440	Rapamune
+T390	routeofadministration 38560 38564	oral
+T391	tradename 38712 38720	Rapamune
+T392	frequency 38771 38776	daily
+T393	dose 38797 38802	5 mg,
+T394	dose 38826 38832	15 mg,
+T395	dose 38901 38905	2 mg
+T396	dose 38983 38987	2 mg
+T397	tradename 38991 38999	Rapamune
+T398	routeofadministration 39000 39004	Oral
+T399	dose 39097 39101	5 mg
+T400	tradename 39106 39114	Rapamune
+T401	routeofadministration 39115 39119	Oral
+T402	frequency 39129 39137	per day.
+T403	tradename 39502 39510	RAPAMUNE
+T404	indication 39542 39605	PROPHYLAXIS OF ORGAN REJECTION FOLLOWING RENAL TRANSPLANTATION
+T405	tradename 39715 39723	Rapamune
+T406	routeofadministration 39724 39728	Oral
+T407	dose 39787 39791	2 mg
+T408	frequency 39791 39795	/day
+T409	dose 39796 39800	5 mg
+T410	frequency 39800 39804	/day
+T411	adversereaction 39862 39878	Peripheral edema
+T412	adversereaction 39889 39909	Hypertriglyceridemia
+T413	adversereaction 39920 39932	Hypertension
+T414	adversereaction 39943 39963	Hypercholesterolemia
+T415	adversereaction 39974 39994	Creatinine increased
+T416	adversereaction 40005 40017	Constipation
+T417	adversereaction 40028 40042	Abdominal pain
+T418	adversereaction 40053 40061	Diarrhea
+T419	adversereaction 40072 40080	Headache
+T420	adversereaction 40091 40096	Fever
+T421	adversereaction 40107 40130	Urinary tract infection
+T422	adversereaction 40141 40147	Anemia
+T423	adversereaction 40158 40164	Nausea
+T424	adversereaction 40175 40185	Arthralgia
+T425	adversereaction 40196 40212	Thrombocytopenia
+T426	adversereaction 40222 40226	Pain
+T427	adversereaction 40237 40241	Acne
+T428	adversereaction 40252 40256	Rash
+T429	adversereaction 40266 40271	Edema
+T430	co-administereddrug 40303 40315	cyclosporine
+T431	co-administereddrug 40320 40336	corticosteroids.
+T432	adversereaction 40456 40506	Sepsis, lymphocele, herpes zoster, herpes simplex.
+T433	adversereaction 40534 40556	Venous thromboembolism
+T434	adversereaction 40568 40612	pulmonary embolism, deep venous thrombosis)
+T435	adversereaction 40614 40626	tachycardia.
+T436	adversereaction 40682 40693	Stomatitis.
+T437	adversereaction 40739 40823	Thrombotic thrombocytopenic purpura/hemolytic uremic syndrome (TTP/HUS), leukopenia.
+T438	adversereaction 40858 40927	Abnormal healing, increased lactic dehydrogenase (LDH), hypokalemia.
+T439	adversereaction 40963 40977	Bone necrosis.
+T440	adversereaction 41009 41030	Pneumonia, epistaxis.
+T441	adversereaction 41048 41104	Melanoma, squamous cell carcinoma, basal cell carcinoma.
+T442	adversereaction 41135 41176	Pyelonephritis, decline in renal function
+T443	co-administereddrug 41229 41241	cyclosporine
+T444	tradename 41247 41255	Rapamune
+T445	adversereaction 41295 41329	ovarian cysts, menstrual disorders
+T446	adversereaction 41341 41351	amenorrhea
+T447	adversereaction 41356 41368	menorrhagia)
+T448	adversereaction 41435 41444	lymphoma/
+T449	adversereaction 41608 41653	Increased Serum Cholesterol and Triglycerides
+T450	tradename 41666 41674	Rapamune
+T451	adversereaction 41724 41770	increased serum cholesterol and triglycerides
+T452	adversereaction 42022 42042	hypercholesterolemia
+T453	adversereaction 42090 42110	hypertriglyceridemia
+T454	tradename 42199 42207	Rapamune
+T455	dose 42208 42212	2 mg
+T456	tradename 42217 42225	Rapamune
+T457	dose 42226 42230	5 mg
+T458	adversereaction 42305 42325	hypercholesterolemia
+T459	tradename 42405 42413	Rapamune
+T460	tradename 42542 42550	Rapamune
+T461	adversereaction 42623 42637	hyperlipidemia
+T462	adversereaction 42643 42663	hypercholesterolemia
+T463	adversereaction 42910 42944	Abnormal Healing Abnormal healing
+T464	adversereaction 42989 43028	fascial dehiscence, incisional hernia,
+T465	adversereaction 43033 43055	anastomosis disruption
+T466	tradename 43542 43559	Rapamune Rapamune
+T467	routeofadministration 43574 43578	Oral
+T468	routeofadministration 43588 43592	Oral
+T469	dose 43607 43611	2 mg
+T470	frequency 43611 43615	/day
+T471	dose 43616 43620	5 mg
+T472	frequency 43620 43624	/day
+T473	frequency 43630 43634	/day
+T474	co-administereddrug 44115 44127	cyclosporine
+T475	co-administereddrug 44132 44148	corticosteroids.
+T476	tradename 44271 44279	Rapamune
+T477	co-administereddrug 44290 44302	Cyclosporine
+T478	tradename 44490 44498	Rapamune
+T479	co-administereddrug 44534 44546	cyclosporine
+T480	tradename 44586 44594	Rapamune
+T481	co-administereddrug 44600 44612	cyclosporine
+T482	co-administereddrug 44684 44700	corticosteroids.
+T483	co-administereddrug 44753 44765	cyclosporine
+T484	dose 44806 44810	2 mg
+T485	tradename 44811 44819	Rapamune
+T486	co-administereddrug 44904 44916	cyclosporine
+T487	adversereaction 45014 45044	abnormal liver function tests
+T488	adversereaction 45056 45074	increased AST/SGOT
+T489	adversereaction 45079 45098	increased ALT/SGPT)
+T490	adversereaction 45100 45131	hypokalemia, thrombocytopenia,
+T491	adversereaction 45136 45153	abnormal healing.
+T492	co-administereddrug 45252 45264	cyclosporine
+T493	co-administereddrug 45284 45296	cyclosporine
+T494	adversereaction 45322 45462	hypertension, cyclosporine toxicity, increased creatinine, abnormal kidney function, toxic nephropathy, edema, hyperkalemia, hyperuricemia,
+T495	adversereaction 45467 45484	gum hyperplasia.
+T496	co-administereddrug 45562 45574	cyclosporine
+T497	tradename 45919 45927	Rapamune
+T498	co-administereddrug 45934 45946	cyclosporine
+T499	co-administereddrug 45978 45990	cyclosporine
+T500	tradename 46247 46255	Rapamune
+T501	co-administereddrug 46261 46273	cyclosporine
+T502	co-administereddrug 46376 46388	CYCLOSPORINE
+T503	tradename 46442 46459	Rapamune Rapamune
+T504	co-administereddrug 46466 46478	Cyclosporine
+T505	co-administereddrug 46489 46501	Cyclosporine
+T506	co-administereddrug 46843 46855	cyclosporine
+T507	co-administereddrug 46860 46876	corticosteroids.
+T508	activeingredient 47101 47110	sirolimus
+T509	tradename 47277 47286	Rapamune.
+T510	tradename 47416 47424	Rapamune
+T511	tradename 47539 47547	Rapamune
+T512	tradename 47741 47749	Rapamune
+T513	activeingredient 47767 47776	sirolimus
+T514	adversereaction 48086 48125	pneumonia, acute rejection, graft loss
+T515	adversereaction 48130 48136	death,
+T516	tradename 48160 48168	Rapamune
+T517	adversereaction 48353 48362	pneumonia
+T518	adversereaction 48384 48394	graft loss
+T519	adversereaction 48465 48470	death
+T520	activeingredient 48497 48506	sirolimus
+T521	adversereaction 48785 48796	proteinuria
+T522	tradename 48804 48812	Rapamune
+T523	adversereaction 48889 48901	tuberculosis
+T524	activeingredient 48908 48917	sirolimus
+T525	tradename 49366 49374	Rapamune
+T526	co-administereddrug 49395 49418	calcineurin inhibitors
+T527	co-administereddrug 49423 49438	corticosteroids
+T528	adversereaction 49481 49513	deterioration of renal function
+T529	adversereaction 49515 49536	creatinine increased)
+T530	adversereaction 49586 49612	serum lipid abnormalities
+T531	adversereaction 49645 49691	increased serum triglycerides and cholesterol)
+T532	adversereaction 49698 49723	urinary tract infections.
+T533	tradename 49836 49845	Rapamune.
+T534	adversereaction 50079 50090	Lymphedema.
+T535	adversereaction 50118 50138	Pericardial effusion
+T536	adversereaction 50254 50273	fluid accumulation.
+T537	adversereaction 50303 50311	Ascites.
+T538	tradename 50398 50406	Rapamune
+T539	adversereaction 50462 50503	calcineurin inhibitor-induced HUS/TTP/TMA
+T540	adversereaction 50544 50570	pancytopenia, neutropenia.
+T541	adversereaction 50608 50623	Hepatotoxicity,
+T542	adversereaction 50634 50657	fatal hepatic necrosis,
+T543	activeingredient 50673 50682	sirolimus
+T544	adversereaction 50733 50760	Hypersensitivity reactions,
+T545	adversereaction 50771 50821	anaphylactic/anaphylactoid reactions, angioedema,
+T546	adversereaction 50826 50853	hypersensitivity vasculitis
+T547	adversereaction 50917 50962	Tuberculosis. BK virus associated nephropathy
+T548	tradename 51034 51043	Rapamune.
+T549	adversereaction 51172 51221	progressive multifocal leukoencephalopathy (PML),
+T550	tradename 51314 51322	Rapamune
+T551	adversereaction 51363 51399	Clostridium difficile enterocolitis.
+T552	adversereaction 51435 51538	Liver function test abnormal, AST/SGOT increased, ALT/SGPT increased, hypophosphatemia, hyperglycemia.
+T553	adversereaction 51573 51598	interstitial lung disease
+T554	adversereaction 51610 51622	pneumonitis,
+T555	adversereaction 51636 51677	 obliterans organizing pneumonia [BOOP],
+T556	adversereaction 51682 51701	pulmonary fibrosis)
+T557	tradename 51829 51838	Rapamune.
+T558	adversereaction 51858 51883	interstitial lung disease
+T559	tradename 51940 51949	Rapamune.
+T560	activeingredient 51984 51993	sirolimus
+T561	adversereaction 52065 52126	pulmonary hemorrhage; pleural effusion; alveolar proteinosis.
+T562	adversereaction 52144 52166	Exfoliative dermatitis
+T563	adversereaction 52228 52332	Nephrotic syndrome, proteinuria, focal segmental glomerulosclerosis, ovarian cysts, menstrual disorders
+T564	adversereaction 52374 52385	Azoospermia
+T565	tradename 52420 52428	Rapamune
+T566	tradename 52478 52486	Rapamune
+T567	activeingredient 52524 52533	Sirolimus
+T568	activeingredient 52669 52678	sirolimus
+T569	activeingredient 52746 52755	sirolimus
+T570	co-administereddrug 52786 52813	Cyclosporine Cyclosporine,
+T571	activeingredient 52890 52899	sirolimus
+T572	activeingredient 52941 52951	sirolimus.
+T573	co-administereddrug 53010 53023	cyclosporine,
+T574	tradename 53047 53055	Rapamune
+T575	co-administereddrug 53098 53110	cyclosporine
+T576	routeofadministration 53111 53115	oral
+T577	co-administereddrug 53143 53155	cyclosporine
+T578	co-administereddrug 53181 53193	cyclosporine
+T579	tradename 53237 53246	Rapamune,
+T580	tradename 53264 53272	Rapamune
+T581	activeingredient 53312 53321	sirolimus
+T582	activeingredient 53537 53546	sirolimus
+T583	activeingredient 53793 53802	sirolimus
+T584	activeingredient 53985 53995	sirolimus,
+T585	tradename 54050 54058	Rapamune
+T586	activeingredient 54230 54239	sirolimus
+T587	tradename 54316 54324	Rapamune
+T588	activeingredient 54454 54463	sirolimus
+T589	activeingredient 54809 54818	sirolimus
+T590	tradename 55002 55011	Rapamune:
+T591	tradename 55130 55139	Rapamune,
+T592	routeofadministration 55311 55315	oral
+T593	activeingredient 55442 55451	Sirolimus
+T594	co-administereddrug 55763 55776	cyclosporine,
+T595	activeingredient 55833 55842	sirolimus
+T596	tradename 56151 56159	Rapamune
+T597	tradename 56177 56185	Rapamune
+T598	tradename 56218 56226	Rapamune
+T599	tradename 56253 56261	Rapamune
+T600	activeingredient 56398 56407	Sirolimus
+T601	activeingredient 56489 56498	sirolimus
+T602	activeingredient 56569 56578	sirolimus
+T603	activeingredient 56729 56739	sirolimus,
+T604	tradename 56936 56944	Rapamune
+T605	tradename 57036 57044	Rapamune
+T606	routeofadministration 57045 57049	Oral
+T607	tradename 57063 57071	Rapamune
+T608	tradename 57192 57200	Rapamune
+T609	routeofadministration 57201 57205	Oral
+T610	tradename 57219 57227	Rapamune
+T611	tradename 57358 57366	Rapamune
+T612	routeofadministration 57367 57371	Oral
+T613	tradename 57844 57852	Rapamune
+T614	routeofadministration 57853 57857	Oral
+T615	tradename 58284 58292	Rapamune
+T616	routeofadministration 58293 58297	Oral
+T617	activeingredient 58473 58482	sirolimus
+T618	tradename 59032 59040	Rapamune
+T619	tradename 59381 59389	Rapamune
+T620	activeingredient 59751 59761	sirolimus,
+T621	activeingredient 59786 59795	sirolimus
+T622	routeofadministration 59870 59874	oral
+T623	dose 59897 59907	800 mg/kg.
+T624	tradename 59925 59933	Rapamune
+T625	activeingredient 59935 59945	sirolimus)
+T626	activeingredient 59977 59986	Sirolimus
+T627	activeingredient 60074 60083	sirolimus
+T628	molecularweight 60525 60531	914.2.
+T629	activeingredient 60558 60567	sirolimus
+T630	activeingredient 60596 60605	Sirolimus
+T631	tradename 60743 60751	Rapamune
+T632	routeofadministration 60790 60794	oral
+T633	activeingredient 60823 60833	sirolimus.
+T634	tradename 60835 60843	Rapamune
+T635	activeingredient 60915 60925	sirolimus,
+T636	activeingredient 61008 61018	sirolimus,
+T637	activeingredient 61086 61096	sirolimus.
+T638	tradename 61126 61134	Rapamune
+T639	routeofadministration 61135 61139	Oral
+T640	inactiveingredient 61153 61165	Phosal 50 PG
+T641	inactiveingredient 61168 61258	phosphatidylcholine, propylene glycol, mono- and di-glycerides, ethanol, soy fatty acids,
+T642	inactiveingredient 61263 61282	ascorbyl palmitate)
+T643	inactiveingredient 61288 61303	polysorbate 80.
+T644	tradename 61304 61312	Rapamune
+T645	routeofadministration 61313 61317	Oral
+T646	inactiveingredient 61348 61356	ethanol.
+T647	tradename 61386 61394	Rapamune
+T648	inactiveingredient 61411 61677	sucrose, lactose, polyethylene glycol 8000, calcium sulfate, microcrystalline cellulose, pharmaceutical glaze, talc, titanium dioxide, magnesium stearate, povidone, poloxamer 188, polyethylene glycol 20,000, glyceryl monooleate, carnauba wax, dl-alpha tocopherol,
+T649	inactiveingredient 61752 61778	yellow iron (ferric) oxide
+T650	inactiveingredient 61783 61809	brown iron (ferric) oxide.
+T651	activeingredient 61863 61872	Sirolimus
+T652	activeingredient 62097 62106	Sirolimus
+T653	activeingredient 62153 62162	sirolimus
+T654	activeingredient 62270 62280	sirolimus:
+T655	activeingredient 62638 62647	sirolimus
+T656	activeingredient 62797 62806	Sirolimus
+T657	activeingredient 62977 62986	sirolimus
+T658	activeingredient 63134 63143	sirolimus
+T659	routeofadministration 63429 63448	Orally-administered
+T660	tradename 63449 63458	Rapamune,
+T661	dose 63471 63475	2 mg
+T662	frequency 63475 63479	/day
+T663	dose 63484 63489	5 mg/
+T664	frequency 63489 63493	day,
+T665	dose 63806 63810	5 mg
+T666	dose 63834 63839	15 mg
+T667	frequency 63847 63852	daily
+T668	dose 63873 63877	2 mg
+T669	dose 63902 63907	6 mg.
+T670	activeingredient 63963 63972	sirolimus
+T671	activeingredient 64099 64108	Sirolimus
+T672	routeofadministration 64166 64170	oral
+T673	activeingredient 64325 64334	sirolimus
+T674	tradename 64436 64444	Rapamune
+T675	dose 64445 64449	2 mg
+T676	activeingredient 64573 64582	SIROLIMUS
+T677	tradename 64691 64699	RAPAMUNE
+T678	dose 64700 64704	2 MG
+T679	frequency 64705 64711	DAILYa
+T680	cmax 64768 64795	(ng/mL) 14.4  5.3 15.0  4.9
+T681	tmax 64802 64824	(hr) 2.1  0.8 3.5  2.4
+T682	auc 64830 64862	(ng&#x2022;h/mL) 194  78 230  67
+T683	clearance 64903 64928	(mL/h/kg) 173  50 139  63
+T684	tradename 64989 64997	Rapamune
+T685	activeingredient 65126 65135	sirolimus
+T686	activeingredient 65396 65405	sirolimus
+T687	tradename 65756 65764	Rapamune
+T688	routeofadministration 65765 65769	Oral
+T689	activeingredient 65828 65837	sirolimus
+T690	tmax 65856 65862	1 hour
+T691	tmax 65867 65874	2 hours
+T692	activeingredient 65970 65979	sirolimus
+T693	tradename 66059 66067	Rapamune
+T694	routeofadministration 66068 66072	Oral
+T695	activeingredient 66133 66142	sirolimus
+T696	activeingredient 66233 66242	Sirolimus
+T697	dose 66350 66354	2 mg
+T698	activeingredient 66367 66376	Sirolimus
+T699	tradename 66426 66434	Rapamune
+T700	routeofadministration 66435 66439	Oral
+T701	dose 66517 66532	3 and 12 mg/m2.
+T702	activeingredient 66603 66612	sirolimus
+T703	tradename 66634 66642	Rapamune
+T704	routeofadministration 66643 66647	Oral
+T705	activeingredient 66873 66882	sirolimus
+T706	activeingredient 66952 66961	sirolimus
+T707	tradename 67001 67009	Rapamune
+T708	activeingredient 67088 67097	sirolimus
+T709	activeingredient 67162 67171	sirolimus
+T710	activeingredient 67271 67280	sirolimus
+T711	volumeofdistribution 67284 67295	12  8 L/kg.
+T712	activeingredient 67296 67305	Sirolimus
+T713	activeingredient 67455 67464	Sirolimus
+T714	activeingredient 67506 67515	Sirolimus
+T715	activeingredient 67709 67718	sirolimus
+T716	activeingredient 67773 67782	sirolimus
+T717	activeingredient 67864 67873	Sirolimus
+T718	activeingredient 68140 68149	Sirolimus
+T719	activeingredient 68305 68314	sirolimus
+T720	routeofadministration 68315 68319	oral
+T721	activeingredient 68525 68534	sirolimus
+T722	eliminationhalflife 68620 68633	62  16 hours.
+T723	activeingredient 68635 68644	Sirolimus
+T724	activeingredient 68741 68750	sirolimus
+T725	activeingredient 68896 68905	SIROLIMUS
+T726	tradename 69215 69223	Rapamune
+T727	dose 69226 69230	2 mg
+T728	frequency 69230 69235	/day)
+T729	tradename 69292 69300	Rapamune
+T730	dose 69303 69308	5 mg/
+T731	frequency 69308 69312	day)
+T732	tradename 69389 69397	Rapamune
+T733	tradename 69443 69451	Rapamune
+T734	tradename 69507 69515	Rapamune
+T735	co-administereddrug 69860 69872	cyclosporine
+T736	activeingredient 69901 69910	sirolimus
+T737	co-administereddrug 69992 70004	cyclosporine
+T738	tradename 70025 70033	Rapamune
+T739	activeingredient 70094 70103	sirolimus
+T740	co-administereddrug 70133 70145	cyclosporine
+T741	activeingredient 70175 70184	sirolimus
+T742	tradename 70383 70391	Rapamune
+T743	routeofadministration 70422 70426	oral
+T744	activeingredient 70755 70764	sirolimus
+T745	activeingredient 70930 70939	sirolimus
+T746	activeingredient 70973 70982	sirolimus
+T747	tradename 71056 71064	Rapamune
+T748	tradename 71340 71348	Rapamune
+T749	activeingredient 71625 71634	sirolimus
+T750	tradename 71795 71803	Rapamune
+T751	activeingredient 71911 71920	Sirolimus
+T752	routeofadministration 72241 72245	oral
+T753	dose 72321 72334	1.75  0.71 mg
+T754	frequency 72334 72338	/day
+T755	dose 72340 72377	0.064  0.018 mg/kg, 1.65  0.43 mg/m2)
+T756	dose 72446 72459	2.79  1.25 mg
+T757	frequency 72459 72463	/day
+T758	dose 72466 72504	0.053  0.0150 mg/kg, 1.86  0.61 mg/m2)
+T759	activeingredient 72521 72530	sirolimus
+T760	tradename 72640 72648	Rapamune
+T761	activeingredient 72707 72716	SIROLIMUS
+T762	tradename 73127 73135	Rapamune
+T763	co-administereddrug 73157 73169	cyclosporine
+T764	routeofadministration 73170 73174	oral
+T765	routeofadministration 73210 73214	Oral
+T766	co-administereddrug 73233 73245	cyclosporine
+T767	routeofadministration 73395 73404	Oral-dose
+T768	activeingredient 73637 73646	SIROLIMUS
+T769	dose 73790 73807	1, 3, 9, 15 mg/m2
+T770	tradename 73973 73981	Rapamune
+T771	routeofadministration 73982 73986	Oral
+T772	tradename 74029 74037	Rapamune
+T773	tradename 74211 74219	Rapamune
+T774	routeofadministration 74220 74224	Oral
+T775	activeingredient 74246 74255	sirolimus
+T776	activeingredient 74412 74421	Sirolimus
+T777	tradename 74671 74679	Rapamune
+T778	co-administereddrug 74704 74716	cyclosporine
+T779	routeofadministration 74717 74721	oral
+T780	routeofadministration 74758 74762	Oral
+T781	co-administereddrug 74780 74792	cyclosporine
+T782	activeingredient 74935 74944	sirolimus
+T783	activeingredient 75102 75111	Sirolimus
+T784	activeingredient 75217 75226	sirolimus
+T785	co-administereddrug 75381 75407	Cyclosporine: Cyclosporine
+T786	activeingredient 75457 75466	Sirolimus
+T787	routeofadministration 75529 75533	oral
+T788	co-administereddrug 75562 75574	cyclosporine
+T789	activeingredient 75596 75605	Sirolimus
+T790	co-administereddrug 75640 75652	cyclosporine
+T791	tradename 75681 75689	Rapamune
+T792	dose 75860 75865	10 mg
+T793	tradename 75867 75875	Rapamune
+T794	dose 75925 75931	300-mg
+T795	co-administereddrug 75972 75984	cyclosporine
+T796	activeingredient 76165 76174	sirolimus
+T797	activeingredient 76246 76255	sirolimus
+T798	activeingredient 76334 76343	sirolimus
+T799	dose 76438 76443	10 mg
+T800	tradename 76445 76453	Rapamune
+T801	routeofadministration 76454 76458	Oral
+T802	dose 76509 76515	300 mg
+T803	co-administereddrug 76556 76568	cyclosporine
+T804	activeingredient 76650 76660	sirolimus,
+T805	activeingredient 76777 76786	sirolimus
+T806	co-administereddrug 76860 76872	cyclosporine
+T807	activeingredient 76911 76920	sirolimus
+T808	tradename 77017 77025	Rapamune
+T809	dose 77122 77126	5 mg
+T810	tradename 77128 77136	Rapamune
+T811	routeofadministration 77137 77141	Oral
+T812	dose 77194 77200	300 mg
+T813	co-administereddrug 77240 77252	cyclosporine
+T814	co-administereddrug 77333 77345	cyclosporine
+T815	activeingredient 77383 77392	sirolimus
+T816	activeingredient 77455 77464	sirolimus
+T817	activeingredient 77533 77542	sirolimus
+T818	activeingredient 77621 77630	sirolimus
+T819	co-administereddrug 77644 77656	cyclosporine
+T820	tradename 77707 77715	Rapamune
+T821	routeofadministration 77716 77720	Oral
+T822	co-administereddrug 77823 77835	cyclosporine
+T823	activeingredient 77906 77915	sirolimus
+T824	co-administereddrug 77994 78006	cyclosporine
+T825	routeofadministration 78007 78016	oral-dose
+T826	co-administereddrug 78091 78103	cyclosporine
+T827	co-administereddrug 78156 78168	cyclosporine
+T828	activeingredient 78238 78247	sirolimus
+T829	dose 78248 78269	0.5, 1.5, and 3 mg/m2
+T830	frequency 78269 78273	/day
+T831	routeofadministration 78324 78328	Oral
+T832	co-administereddrug 78339 78351	cyclosporine
+T833	routeofadministration 78352 78356	Oral
+T834	dose 78368 78378	1.25 mg/kg
+T835	frequency 78378 78383	/day.
+T836	activeingredient 78408 78417	sirolimus
+T837	tradename 78484 78492	Rapamune
+T838	co-administereddrug 78518 78531	cyclosporine.
+T839	activeingredient 78573 78582	sirolimus
+T840	activeingredient 78683 78692	sirolimus
+T841	co-administereddrug 78696 78708	cyclosporine
+T842	routeofadministration 78754 78758	Oral
+T843	co-administereddrug 78769 78781	cyclosporine
+T844	routeofadministration 78782 78786	oral
+T845	activeingredient 78969 78978	sirolimus
+T846	routeofadministration 79103 79107	oral
+T847	dose 79126 79131	10 mg
+T848	activeingredient 79135 79144	sirolimus
+T849	routeofadministration 79145 79149	oral
+T850	dose 79164 79170	120 mg
+T851	activeingredient 79256 79276	sirolimus. Sirolimus
+T852	activeingredient 79353 79362	Sirolimus
+T853	activeingredient 79609 79618	sirolimus
+T854	routeofadministration 79619 79623	oral
+T855	routeofadministration 79762 79766	oral
+T856	dose 79786 79790	2 mg
+T857	frequency 79791 79796	daily
+T858	activeingredient 79800 79809	sirolimus
+T859	routeofadministration 79810 79814	oral
+T860	dose 79828 79834	800 mg
+T861	frequency 79835 79839	q 8h
+T862	activeingredient 79984 79993	sirolimus
+T863	activeingredient 80012 80021	Sirolimus
+T864	activeingredient 80317 80326	sirolimus
+T865	routeofadministration 80327 80331	oral
+T866	activeingredient 80557 80566	sirolimus
+T867	tradename 80601 80609	Rapamune
+T868	routeofadministration 80610 80614	Oral
+T869	activeingredient 80654 80663	sirolimus
+T870	activeingredient 80759 80768	sirolimus
+T871	activeingredient 80799 80808	sirolimus
+T872	tradename 80963 80971	Rapamune
+T873	routeofadministration 80973 80977	oral
+T874	dose 81299 81305	600 mg
+T875	frequency 81306 81324	daily for 14 days,
+T876	dose 81347 81352	20-mg
+T877	activeingredient 81361 81370	sirolimus
+T878	routeofadministration 81371 81375	oral
+T879	activeingredient 81404 81413	sirolimus
+T880	activeingredient 81535 81544	sirolimus
+T881	routeofadministration 81670 81674	oral
+T882	dose 81693 81697	2 mg
+T883	frequency 81698 81703	daily
+T884	activeingredient 81707 81716	sirolimus
+T885	routeofadministration 81717 81721	oral
+T886	activeingredient 81850 81859	sirolimus
+T887	activeingredient 81875 81884	Sirolimus
+T888	activeingredient 82302 82311	Sirolimus
+T889	tradename 82615 82623	Rapamune
+T890	tradename 83253 83262	Rapamune.
+T891	activeingredient 83312 83321	sirolimus
+T892	activeingredient 83793 83802	sirolimus
+T893	tradename 84093 84101	Rapamune
+T894	activeingredient 84262 84271	sirolimus
+T895	tradename 84429 84437	Rapamune
+T896	activeingredient 84462 84471	sirolimus
+T897	activeingredient 84700 84709	sirolimus
+T898	dose 84748 84752	2 mg
+T899	frequency 84753 84758	daily
+T900	activeingredient 85110 85127	sirolimus-related
+T901	dose 85211 85215	2 mg
+T902	frequency 85216 85221	daily
+T903	activeingredient 85294 85303	Sirolimus
+T904	routeofadministration 85598 85602	oral
+T905	activeingredient 85622 85631	sirolimus
+T906	dose 85711 85715	2 mg
+T907	frequency 85717 85722	daily
+T908	routeofadministration 86101 86112	intravenous
+T909	activeingredient 86122 86131	sirolimus
+T910	indication 86265 86295	Prophylaxis of Organ Rejection
+T911	tradename 86297 86305	Rapamune
+T912	routeofadministration 86306 86310	Oral
+T913	tradename 86348 86356	Rapamune
+T914	routeofadministration 86357 86361	Oral
+T915	indication 86379 86441	prevention of organ rejection following renal transplantation
+T916	tradename 86564 86572	Rapamune
+T917	routeofadministration 86573 86577	Oral
+T918	dose 86588 86592	2 mg
+T919	dose 86598 86603	5 mg,
+T920	frequency 86604 86615	once daily)
+T921	co-administereddrug 86704 86716	cyclosporine
+T922	co-administereddrug 86721 86737	corticosteroids.
+T923	tradename 86935 86943	Rapamune
+T924	routeofadministration 86944 86948	Oral
+T925	dose 86958 86962	2 mg
+T926	frequency 86962 86967	/day;
+T927	tradename 87000 87008	Rapamune
+T928	routeofadministration 87009 87013	Oral
+T929	dose 87023 87027	5 mg
+T930	frequency 87027 87032	/day,
+T931	dose 87066 87075	2-3 mg/kg
+T932	frequency 87075 87080	/day.
+T933	tradename 87320 87328	Rapamune
+T934	routeofadministration 87330 87334	Oral
+T935	dose 87344 87349	2 mg/
+T936	tradename 87385 87393	Rapamune
+T937	routeofadministration 87394 87398	Oral
+T938	tradename 87920 87928	Rapamune
+T939	routeofadministration 87929 87933	Oral
+T940	dose 87956 87960	2 mg
+T941	frequency 87960 87964	/day
+T942	dose 87969 87974	5 mg/
+T943	frequency 87974 87978	day,
+T944	tradename 88314 88331	Rapamune Rapamune
+T945	routeofadministration 88346 88350	Oral
+T946	routeofadministration 88360 88364	Oral
+T947	dose 88374 88384	2-3 mg/kg/
+T948	frequency 88384 88387	day
+T949	dose 88389 88393	2 mg
+T950	frequency 88393 88397	/day
+T951	dose 88398 88403	5 mg/
+T952	frequency 88403 88406	day
+T953	co-administereddrug 88865 88877	cyclosporine
+T954	co-administereddrug 88882 88898	corticosteroids.
+T955	tradename 89096 89113	Rapamune Rapamune
+T956	routeofadministration 89123 89127	Oral
+T957	routeofadministration 89137 89141	Oral
+T958	dose 89162 89166	2 mg
+T959	frequency 89166 89170	/day
+T960	dose 89171 89175	5 mg
+T961	frequency 89175 89179	/day
+T962	co-administereddrug 89624 89636	cyclosporine
+T963	co-administereddrug 89641 89657	corticosteroids.
+T964	tradename 89996 90004	Rapamune
+T965	tradename 90138 90155	Rapamune Rapamune
+T966	routeofadministration 90178 90182	Oral
+T967	routeofadministration 90192 90196	Oral
+T968	dose 90206 90216	2-3 mg/kg/
+T969	frequency 90216 90219	day
+T970	dose 90231 90235	2 mg
+T971	frequency 90235 90239	/day
+T972	dose 90240 90245	5 mg/
+T973	frequency 90245 90248	day
+T974	tradename 90570 90587	Rapamune Rapamune
+T975	routeofadministration 90610 90614	Oral
+T976	routeofadministration 90624 90628	Oral
+T977	dose 90638 90647	2-3 mg/kg
+T978	frequency 90647 90651	/day
+T979	dose 90663 90667	2 mg
+T980	frequency 90667 90671	/day
+T981	dose 90672 90676	5 mg
+T982	frequency 90676 90680	/day
+T983	co-administereddrug 90876 90888	cyclosporine
+T984	co-administereddrug 90893 90909	corticosteroids.
+T985	tradename 91081 91089	Rapamune
+T986	tradename 91278 91286	Rapamune
+T987	routeofadministration 91287 91291	Oral
+T988	dose 91301 91305	2 mg
+T989	frequency 91305 91309	/day
+T990	tradename 91324 91332	Rapamune
+T991	routeofadministration 91333 91337	Oral
+T992	dose 91347 91351	5 mg
+T993	frequency 91351 91355	/day
+T994	tradename 91502 91510	Rapamune
+T995	routeofadministration 91511 91515	Oral
+T996	tradename 91612 91620	Rapamune
+T997	routeofadministration 91622 91626	Oral
+T998	tradename 91759 91767	Rapamune
+T999	routeofadministration 91768 91772	Oral
+T1000	dose 91782 91786	5-mg
+T1001	tradename 91891 91899	Rapamune
+T1002	routeofadministration 91901 91905	Oral
+T1003	dose 91916 91920	2 mg
+T1004	frequency 91920 91924	/day
+T1005	tradename 91926 91934	Rapamune
+T1006	routeofadministration 91936 91940	Oral
+T1007	dose 91951 91955	5 mg
+T1008	frequency 91955 91959	/day
+T1009	co-administereddrug 92301 92313	cyclosporine
+T1010	co-administereddrug 92318 92334	corticosteroids.
+T1011	co-administereddrug 92642 92654	cyclosporine
+T1012	tradename 92659 92667	Rapamune
+T1013	routeofadministration 92668 92672	Oral
+T1014	co-administereddrug 92716 92728	cyclosporine
+T1015	tradename 92892 92909	Rapamune Rapamune
+T1016	routeofadministration 92932 92936	Oral
+T1017	routeofadministration 92946 92950	Oral
+T1018	dose 92960 92969	2-3 mg/kg
+T1019	frequency 92969 92973	/day
+T1020	dose 92985 92990	2 mg/
+T1021	dose 92994 92998	5 mg
+T1022	frequency 92998 93002	/day
+T1023	tradename 93890 93898	Rapamune
+T1024	tradename 93935 93943	Rapamune
+T1025	routeofadministration 93944 93948	Oral
+T1026	tradename 93962 93970	Rapamune
+T1027	indication 94002 94049	organ rejection following renal transplantation
+T1028	co-administereddrug 94186 94198	Cyclosporine
+T1029	tradename 94244 94252	Rapamune
+T1030	co-administereddrug 94303 94315	cyclosporine
+T1031	tradename 94657 94666	Rapamune,
+T1032	co-administereddrug 94667 94680	cyclosporine,
+T1033	co-administereddrug 94685 94700	corticosteroids
+T1034	co-administereddrug 94904 94917	cyclosporine.
+T1035	co-administereddrug 94925 94937	cyclosporine
+T1036	tradename 94955 94963	Rapamune
+T1037	activeingredient 95006 95015	sirolimus
+T1038	tradename 95236 95244	Rapamune
+T1039	co-administereddrug 95250 95262	cyclosporine
+T1040	tradename 95285 95293	Rapamune
+T1041	co-administereddrug 95577 95589	cyclosporine
+T1042	tradename 96318 96335	Rapamune Rapamune
+T1043	co-administereddrug 96352 96378	Cyclosporine Cyclosporine
+T1044	tradename 97259 97267	Rapamune
+T1045	tradename 97273 97281	Rapamune
+T1046	co-administereddrug 97293 97305	Cyclosporine
+T1047	co-administereddrug 97314 97326	Cyclosporine
+T1048	co-administereddrug 97663 97679	corticosteroids.
+T1049	co-administereddrug 97887 97899	cyclosporine
+T1050	co-administereddrug 97956 97968	cyclosporine
+T1051	co-administereddrug 98236 98248	cyclosporine
+T1052	tradename 98397 98405	Rapamune
+T1053	tradename 98411 98419	Rapamune
+T1054	co-administereddrug 98441 98453	Cyclosporine
+T1055	co-administereddrug 98462 98474	Cyclosporine
+T1056	co-administereddrug 98854 98870	corticosteroids.
+T1057	tradename 98998 99006	Rapamune
+T1058	co-administereddrug 99043 99055	cyclosporine
+T1059	tradename 99089 99097	Rapamune
+T1060	co-administereddrug 99103 99115	cyclosporine
+T1061	co-administereddrug 99261 99273	cyclosporine
+T1062	tradename 99310 99318	Rapamune
+T1063	co-administereddrug 99324 99336	cyclosporine
+T1064	co-administereddrug 99604 99616	cyclosporine
+T1065	tradename 99753 99761	Rapamune
+T1066	co-administereddrug 99767 99779	cyclosporine
+T1067	tradename 99894 99902	Rapamune
+T1068	activeingredient 100251 100260	sirolimus
+T1069	co-administereddrug 100266 100278	cyclosporine
+T1070	co-administereddrug 100295 100310	corticosteroids
+T1071	tradename 100335 100343	Rapamune
+T1072	activeingredient 100400 100409	sirolimus
+T1073	co-administereddrug 100508 100520	cyclosporine
+T1074	activeingredient 101054 101063	sirolimus
+T1075	tradename 101724 101732	Rapamune
+T1076	co-administereddrug 101739 101768	Cyclosporine, Corticosteroids
+T1077	tradename 102298 102306	Rapamune
+T1078	tradename 102398 102406	Rapamune
+T1079	tradename 102716 102725	Rapamune.
+T1080	tradename 103045 103053	Rapamune
+T1081	tradename 103448 103457	Rapamune,
+T1082	tradename 103644 103652	Rapamune
+T1083	activeingredient 103760 103769	sirolimus
+T1084	tradename 104093 104101	Rapamune
+T1085	tradename 104380 104388	RAPAMUNE
+T1086	tradename 104428 104436	Rapamune
+T1087	tradename 104801 104809	Rapamune
+T1088	adversereaction 104836 104845	pneumonia
+T1089	activeingredient 104880 104889	sirolimus
+T1090	tradename 105154 105162	Rapamune
+T1091	activeingredient 105464 105473	sirolimus
+T1092	activeingredient 105676 105685	sirolimus
+T1093	activeingredient 105992 106001	sirolimus
+T1094	activeingredient 106416 106425	Sirolimus
+T1095	tradename 106788 106796	Rapamune
+T1096	tradename 107093 107102	Rapamune.
+T1097	activeingredient 107263 107278	Sirolimus-based
+T1098	tradename 107359 107373	Rapamune-based
+T1099	tradename 107686 107694	Rapamune
+T1100	tradename 107847 107861	Rapamune-based
+T1101	tradename 108010 108018	Rapamune
+T1102	tradename 108296 108304	Rapamune
+T1103	tradename 108410 108418	Rapamune
+T1104	tradename 108823 108831	Rapamune
+T1105	tradename 108908 108916	Rapamune
+T1106	tradename 109388 109396	Rapamune
+T1107	activeingredient 109398 109407	sirolimus
+T1108	co-administereddrug 109505 109526	calcineurin inhibitor
+T1109	co-administereddrug 109531 109546	corticosteroids
+T1110	tradename 109828 109836	Rapamune
+T1111	tradename 110034 110042	Rapamune
+T1112	tradename 110173 110181	Rapamune
+T1113	co-administereddrug 110202 110225	calcineurin inhibitors
+T1114	co-administereddrug 110230 110245	corticosteroids
+T1115	tradename 110540 110548	Rapamune
+T1116	tradename 110829 110837	Rapamune
+T1117	routeofadministration 110941 110945	oral
+T1118	tradename 111069 111077	RAPAMUNE
+T1119	tradename 111238 111246	Rapamune
+T1120	routeofadministration 111247 111251	Oral
+T1121	tradename 111267 111275	Rapamune
+T1122	routeofadministration 111276 111280	Oral
+T1123	activeingredient 111370 111379	sirolimus
+T1124	routeofadministration 111412 111416	oral
+T1125	routeofadministration 111503 111507	oral
+T1126	tradename 111567 111575	Rapamune
+T1127	routeofadministration 111576 111580	Oral
+T1128	tradename 112224 112232	Rapamune
+T1129	routeofadministration 112233 112237	Oral
+T1130	tradename 112504 112512	Rapamune
+T1131	tradename 112522 112530	Rapamune
+T1132	tradename 112640 112648	RAPAMUNE
+T1133	tradename 112777 112785	RAPAMUNE
+T1134	tradename 112957 112965	RAPAMUNE
+T1135	tradename 113092 113100	RAPAMUNE
+T1136	dose 113223 113228	2 mg,
+T1137	tradename 113280 113288	RAPAMUNE
+T1138	tradename 113340 113348	Rapamune
+T1139	tradename 114471 114479	Rapamune
+T1140	tradename 114497 114505	Rapamune
+T1141	tradename 114538 114546	Rapamune
+T1142	tradename 114764 114772	RAPAMUNE
+T1143	activeingredient 114791 114801	sirolimus)
+T1144	tradename 114814 114822	RAPAMUNE
+T1145	activeingredient 114841 114851	sirolimus)
+T1146	routeofadministration 114854 114858	Oral
+T1147	tradename 114921 114929	Rapamune
+T1148	tradename 115200 115219	RAPAMUNE? Rapamune
+T1149	adversereaction 115406 115417	infections.
+T1150	adversereaction 115650 115659	infection
+T1151	tradename 115700 115709	Rapamune.
+T1152	tradename 115773 115781	Rapamune
+T1153	adversereaction 115813 115822	lymphoma,
+T1154	tradename 115918 115926	RAPAMUNE
+T1155	tradename 116085 116093	RAPAMUNE
+T1156	tradename 116148 116156	RAPAMUNE
+T1157	tradename 116291 116300	RAPAMUNE?
+T1158	tradename 116347 116356	RAPAMUNE.
+T1159	tradename 116366 116385	RAPAMUNE? RAPAMUNE
+T1160	tradename 116650 116658	RAPAMUNE
+T1161	co-administereddrug 116695 116707	cyclosporine
+T1162	co-administereddrug 116744 116760	corticosteroids.
+T1163	tradename 116799 116807	RAPAMUNE
+T1164	co-administereddrug 116864 116876	cyclosporine
+T1165	co-administereddrug 116881 116896	corticosteroids
+T1166	tradename 116940 116948	RAPAMUNE
+T1167	tradename 117025 117034	RAPAMUNE?
+T1168	tradename 117048 117056	RAPAMUNE
+T1169	activeingredient 117080 117089	sirolimus
+T1170	tradename 117126 117135	RAPAMUNE.
+T1171	tradename 117202 117211	RAPAMUNE.
+T1172	tradename 117256 117265	RAPAMUNE?
+T1173	tradename 117281 117290	RAPAMUNE,
+T1174	tradename 117663 117672	RAPAMUNE.
+T1175	tradename 117765 117774	RAPAMUNE.
+T1176	tradename 117810 117818	RAPAMUNE
+T1177	tradename 117896 117904	RAPAMUNE
+T1178	tradename 118091 118099	RAPAMUNE
+T1179	tradename 118177 118185	RAPAMUNE
+T1180	tradename 118263 118271	RAPAMUNE
+T1181	co-administereddrug 118395 118407	cyclosporine
+T1182	co-administereddrug 118451 118461	tacrolimus
+T1183	tradename 118944 118953	RAPAMUNE?
+T1184	tradename 118969 118977	RAPAMUNE
+T1185	tradename 119068 119076	RAPAMUNE
+T1186	tradename 119134 119142	RAPAMUNE
+T1187	tradename 119269 119277	RAPAMUNE
+T1188	tradename 119345 119353	RAPAMUNE
+T1189	tradename 119474 119482	RAPAMUNE
+T1190	tradename 119535 119543	RAPAMUNE
+T1191	tradename 119592 119600	RAPAMUNE
+T1192	tradename 119670 119678	RAPAMUNE
+T1193	tradename 119728 119736	RAPAMUNE
+T1194	tradename 119772 119780	RAPAMUNE
+T1195	tradename 119856 119864	RAPAMUNE
+T1196	tradename 120002 120010	RAPAMUNE
+T1197	tradename 120056 120064	RAPAMUNE
+T1198	tradename 120091 120099	RAPAMUNE
+T1199	tradename 120134 120142	RAPAMUNE
+T1200	routeofadministration 120143 120147	oral
+T1201	tradename 120236 120244	RAPAMUNE
+T1202	routeofadministration 120245 120249	Oral
+T1203	tradename 120468 120476	RAPAMUNE
+T1204	routeofadministration 120477 120481	oral
+T1205	tradename 120513 120521	RAPAMUNE
+T1206	routeofadministration 120522 120526	oral
+T1207	tradename 120606 120614	RAPAMUNE
+T1208	routeofadministration 120615 120619	oral
+T1209	tradename 120848 120857	RAPAMUNE?
+T1210	tradename 120912 120921	RAPAMUNE.
+T1211	tradename 120979 120988	RAPAMUNE.
+T1212	tradename 121175 121184	RAPAMUNE.
+T1213	tradename 121224 121243	RAPAMUNE? RAPAMUNE
+T1214	tradename 121361 121370	RAPAMUNE?
+T1215	adversereaction 121760 121768	Swelling
+T1216	adversereaction 121770 121776	edema)
+T1217	adversereaction 121966 121985	Poor wound healing.
+T1218	tradename 121986 121994	RAPAMUNE
+T1219	adversereaction 122166 122215	Increased levels of cholesterol and triglycerides
+T1220	tradename 122325 122334	RAPAMUNE.
+T1221	tradename 122490 122499	RAPAMUNE,
+T1222	tradename 122663 122671	RAPAMUNE
+T1223	co-administereddrug 122686 122698	cyclosporine
+T1224	tradename 122880 122888	RAPAMUNE
+T1225	co-administereddrug 122894 122906	cyclosporine
+T1226	adversereaction 122948 122980	Increased protein in your urine.
+T1227	adversereaction 123551 123560	confusion
+T1228	adversereaction 123824 123872	cough, shortness of breath, difficulty breathing
+T1229	tradename 123934 123942	RAPAMUNE
+T1230	adversereaction 123974 123998	Blood clotting problems.
+T1231	tradename 124004 124012	RAPAMUNE
+T1232	co-administereddrug 124027 124039	cyclosporine
+T1233	co-administereddrug 124043 124054	tacrolimus,
+T1234	adversereaction 124074 124097	blood clotting problem.
+T1235	adversereaction 124143 124151	bleeding
+T1236	adversereaction 124155 124164	bruising.
+T1237	tradename 124191 124199	RAPAMUNE
+T1238	adversereaction 124219 124238	high blood pressure
+T1239	adversereaction 124250 124254	pain
+T1240	adversereaction 124301 124309	diarrhea
+T1241	adversereaction 124321 124329	headache
+T1242	adversereaction 124341 124346	fever
+T1243	adversereaction 124358 124381	urinary tract infection
+T1244	adversereaction 124393 124417	low red blood cell count
+T1245	adversereaction 124419 124426	anemia)
+T1246	adversereaction 124438 124444	nausea
+T1247	adversereaction 124456 124474	low platelet count
+T1248	tradename 124648 124657	RAPAMUNE.
+T1249	tradename 124870 124889	RAPAMUNE? RAPAMUNE
+T1250	tradename 124915 124923	RAPAMUNE
+T1251	tradename 125204 125212	RAPAMUNE
+T1252	tradename 125239 125247	RAPAMUNE
+T1253	routeofadministration 125248 125252	oral
+T1254	tradename 125290 125298	RAPAMUNE
+T1255	routeofadministration 125299 125303	oral
+T1256	tradename 125415 125423	RAPAMUNE
+T1257	routeofadministration 125424 125428	oral
+T1258	tradename 125535 125543	RAPAMUNE
+T1259	routeofadministration 125544 125548	oral
+T1260	tradename 125630 125638	RAPAMUNE
+T1261	routeofadministration 125639 125643	oral
+T1262	tradename 125677 125685	RAPAMUNE
+T1263	tradename 125891 125899	RAPAMUNE
+T1264	tradename 125975 125983	RAPAMUNE
+T1265	tradename 126092 126100	RAPAMUNE
+T1266	tradename 126163 126171	RAPAMUNE
+T1267	tradename 126329 126338	RAPAMUNE.
+T1268	tradename 126457 126465	RAPAMUNE
+T1269	tradename 126607 126616	RAPAMUNE?
+T1270	activeingredient 126666 126676	sirolimus.
+T1271	tradename 126702 126710	RAPAMUNE
+T1272	routeofadministration 126711 126715	Oral
+T1273	inactiveingredient 126730 126742	Phosal 50 PG
+T1274	inactiveingredient 126745 126835	phosphatidylcholine, propylene glycol, mono- and di-glycerides, ethanol, soy fatty acids,
+T1275	inactiveingredient 126840 126859	ascorbyl palmitate)
+T1276	inactiveingredient 126865 126880	polysorbate 80.
+T1277	tradename 126881 126889	RAPAMUNE
+T1278	routeofadministration 126890 126894	Oral
+T1279	inactiveingredient 126923 126931	ethanol.
+T1280	tradename 126961 126969	RAPAMUNE
+T1281	inactiveingredient 126987 127253	sucrose, lactose, polyethylene glycol 8000, calcium sulfate, microcrystalline cellulose, pharmaceutical glaze, talc, titanium dioxide, magnesium stearate, povidone, poloxamer 188, polyethylene glycol 20,000, glyceryl monooleate, carnauba wax, dl-alpha tocopherol,
+T1282	inactiveingredient 127328 127354	yellow iron (ferric) oxide
+T1283	inactiveingredient 127359 127385	brown iron (ferric) oxide.
+T1284	tradename 127391 127399	Rapamune
+T1285	routeofadministration 127400 127404	Oral
+T1286	tradename 127419 127427	Rapamune
+T1287	routeofadministration 127428 127432	Oral
+T1288	tradename 127586 127594	RAPAMUNE
+T1289	activeingredient 127611 127621	sirolimus)
+T1290	routeofadministration 127623 127627	Oral
+T1291	tradename 127742 127750	RAPAMUNE
+T1292	routeofadministration 127751 127755	Oral
+T1293	tradename 127912 127920	RAPAMUNE
+T1294	routeofadministration 127921 127925	Oral
+T1295	tradename 128086 128095	RAPAMUNE?
+T1296	tradename 128179 128187	RAPAMUNE
+T1297	routeofadministration 128188 128192	Oral
+T1298	tradename 128281 128289	RAPAMUNE
+T1299	routeofadministration 128290 128294	Oral
+T1300	tradename 128437 128445	Rapamune
+T1301	routeofadministration 128446 128450	Oral
+T1302	tradename 128467 128475	Rapamune
+T1303	routeofadministration 128476 128480	Oral
+T1304	activeingredient 128564 128573	sirolimus
+T1305	routeofadministration 128617 128621	oral
+T1306	routeofadministration 128715 128719	oral
+T1307	tradename 129151 129159	RAPAMUNE
+T1308	routeofadministration 129160 129164	Oral
+T1309	routeofadministration 129197 129201	oral
+T1310	routeofadministration 129347 129351	oral
+T1311	routeofadministration 129441 129445	oral
+T1312	tradename 129472 129480	RAPAMUNE
+T1313	routeofadministration 129481 129485	Oral
+T1314	routeofadministration 129573 129577	oral
+T1315	routeofadministration 129614 129618	oral
+T1316	tradename 129801 129809	Rapamune
+T1317	routeofadministration 129810 129814	Oral
+T1318	tradename 130258 130266	RAPAMUNE
+T1319	routeofadministration 130268 130272	Oral
+T1320	tradename 130523 130531	RAPAMUNE
+T1321	routeofadministration 130532 130536	Oral
+T1322	tradename 130935 130943	RAPAMUNE
+T1323	routeofadministration 130944 130948	Oral
+T1324	tradename 131064 131072	Rapamune
+T1325	routeofadministration 131073 131077	Oral
+T1326	tradename 131295 131304	RAPAMUNE?
+T1327	tradename 131332 131340	RAPAMUNE
+T1328	routeofadministration 131341 131345	Oral
+T1329	tradename 131446 131454	RAPAMUNE
+T1330	routeofadministration 131455 131459	Oral
+T1331	tradename 131629 131637	RAPAMUNE
+T1332	routeofadministration 131638 131642	Oral
+T1333	tradename 131748 131756	RAPAMUNE
+T1334	routeofadministration 131757 131761	Oral
+T1335	tradename 131842 131850	RAPAMUNE
+T1336	routeofadministration 131851 131855	Oral
+T1337	tradename 131882 131890	RAPAMUNE

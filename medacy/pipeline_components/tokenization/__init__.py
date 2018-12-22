@@ -1,1 +1,3 @@
 from .clinical_tokenizer import ClinicalTokenizer
+from .character_tokenizer import CharacterTokenizer
+from .systematic_review_tokenizer import SystematicReviewTokenizer

@@ -1,0 +1,629 @@
+label
+   HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use WELCHOL safely and effectively.
+See full prescribing information for WELCHOL.
+ WELCHOL (colesevelam hydrochloride) Initial U.S. Approval: 2000
+ --------------------RECENT MAJOR CHANGES---------------------Warnings and Precautions (5.6) 5/2013
+ ---------------------INDICATIONS AND USAGE-----------------------WELCHOL is a bile acid sequestrant indicated as an adjunct to diet and exercise to &#x2022;  reduce elevated low-density lipoprotein cholesterol (LDL-C) in
+ adults with primary hyperlipidemia as monotherapy or in combination with a hydroxymethyl-glutaryl-coenzyme A (HMG CoA) reductase inhibitor (statin) (1.1).
+ &#x2022;  reduce LDL-C levels in boys and postmenarchal girls, 10 to 17 years of age, with heterozygous familial hypercholesterolemia as monotherapy or in combination with a statin after failing an adequate trial of diet therapy.
+ &#x2022;  improve glycemic control in adults with type 2 diabetes mellitus (1.2).
+ Important Limitations of Use (1.3): &#x2022;  Do not use for glycemic control in type 1 diabetes or for treating
+ diabetic ketoacidosis.
+&#x2022;  WELCHOL has not been studied in type 2 diabetes in
+ combination with a dipeptidyl peptidase 4 inhibitor.
+&#x2022;  WELCHOL has not been studied in Fredrickson Type I, III, IV,
+ and V dyslipidemias.
+&#x2022;  WELCHOL has not been studied in children younger than 10
+ years of age or in pre-menarchal girls.
+ -----------------DOSAGE AND ADMINISTRATION-----------------&#x2022;  WELCHOL Tablets: The recommended dose is 6 tablets once  daily or 3 tablets twice daily.
+WELCHOL Tablets should be taken with a meal and liquid (2.1, 2.2).
+ &#x2022;  WELCHOL for Oral Suspension: The recommended dose is one 3.75 gram packet once daily or one 1.875 gram packet twice daily.
+To prepare, empty the entire contents of one packet into a glass or cup.
+Add  to 1 cup (4 to 8 ounces) of water, fruit juice, or diet soft drinks.
+Stir well and drink.
+WELCHOL  for Oral Suspension should be taken with meals.
+To avoid esophageal distress, WELCHOL for Oral Suspension should not be taken in its dry form (2.1, 2.2).
+ ----------------DOSAGE FORMS AND STRENGTHS----------------Tablets: 625 mg (3)
+ Oral suspension: 3.75 gram packet, 1.875 gram packet (3)
+  -----------------------CONTRAINDICATIONS-------------------------&#x2022;  Do not use in patients with a history of bowel obstruction (4) &#x2022;  Do not use in patients with serum triglyceride (TG)
+ concentrations &gt;500 mg/dL (4)
+ &#x2022;  Do not use in patients with a history of
+ hypertriglyceridemia-induced pancreatitis (4)
+  ------------------WARNINGS AND PRECAUTIONS--------------------&#x2022;  The effect of WELCHOL on cardiovascular morbidity and
+ mortality has not been determined (5.1).
+ &#x2022;  WELCHOL can increase TG, particularly when used with insulin
+ or sulfonylureas.
+Marked hypertriglyceridemia can cause acute pancreatitis.
+The effect of hypertriglyceridemia on the risk of coronary artery disease is uncertain.
+Monitor lipids, including TG and non-high density lipoprotein cholesterol (non-HDL-C) (5.2).
+ &#x2022;  Bile acid sequestrants may decrease absorption of fat-soluble vitamins.
+Use caution in patients susceptible to fat-soluble vitamin deficiencies (5.3).
+ &#x2022;  Because of its constipating effects, WELCHOL is not recommended in patients at risk of bowel obstruction (e.g., patients with gastroparesis, other gastrointestinal motility disorders or a history of major gastrointestinal surgery) (5.4).
+ &#x2022;  WELCHOL reduces gastrointestinal absorption of some drugs.
+Administer drugs with a known interaction with colesevelam at least 4 hours prior to WELCHOL.
+Drugs that have not been tested for interaction with colesevelam, especially those with a narrow therapeutic index, should also be administered at least 4 hours prior to WELCHOL.
+Alternatively, monitor drug levels of the co-administered drug (5.5, 7, 12.3).
+ &#x2022;  WELCHOL for Oral Suspension contains 13.5 mg phenylalanine per 1.875 gram packet and 27 mg phenylalanine per 3.75 gram packet (5.6, 11).
+ ------------------------ADVERSE REACTIONS---------------------------In clinical trials, the most common (incidence &#x2265;2% and greater than placebo) adverse reactions with WELCHOL included constipation, dyspepsia, and nausea.
+ Postmarketing reports with concomitant WELCHOL administration include: &#x2022;  Increased seizure activity or decreased phenytoin levels in patients
+ receiving phenytoin.
+Administer phenytoin 4 hours prior to WELCHOL.
+ &#x2022;  Reduced International Normalized Ratio (INR) in patients receiving warfarin.
+Monitor INR.
+ &#x2022;  Elevated thyroid-stimulating hormone (TSH) in patients receiving thyroid hormone replacement therapy.
+Administer thyroid hormones 4 hours prior to WELCHOL.
+ Other postmarketing reports include bowel obstruction, dysphagia, esophageal obstruction, fecal impaction, hypertriglyceridemia, pancreatitis, and increased transaminases (5.5, 6.2, 7, 12.3).
+ To report SUSPECTED ADVERSE REACTIONS, contact Daiichi Sankyo, Inc.
+at 1-877-437-7763 or FDA at 1-800-332-1088 or www.fda.gov/medwatch.
+ -----------------------DRUG INTERACTIONS-----------------------------In drug interaction studies, WELCHOL reduced levels of cyclosporine, glimepiride, glipizide, glyburide, levothyroxine, olmesartan medoxomil, and oral contraceptives containing ethinyl estradiol and norethindrone.
+WELCHOL increased levels of metformin when coadministered with metformin extended release.
+There have been postmarketing reports of decreases in phenytoin levels in patients receiving phenytoin concomitantly with WELCHOL and decreases in INR in patients receiving warfarin concomitantly with WELCHOL (5.5, 7, 12.3).
+ See Section 17 for PATIENT COUNSELING INFORMATION.
+ Revised XX/2013
+ Reference ID: 3440203
+                                                                                                                                      FULL PRESCRIBING INFORMATION: CONTENTS* 1 INDICATIONS AND USAGE
+ 1.1 Primary Hyperlipidemia
+ 1.2 Type 2 Diabetes Mellitus
+ 1.3    Important Limitations of Use
+  2 DOSAGE AND ADMINISTRATION 2.1 Primary Hyperlipidemia
+ 2.2 Type 2 Diabetes Mellitus
+  3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 General
+ 5.2 Serum Triglycerides
+ 5.3 Vitamin K or Fat-Soluble Vitamin Deficiencies Precautions
+ 5.4 Gastrointestinal Disorders
+ 5.5   Drug Interactions
+ 5.6 Phenylketonurics
+ 5.7 Macrovascular Outcomes
+  6 ADVERSE REACTIONS 6.1 Clinical Studies Experience
+ 6.2 Post-marketing Experience
+  7 DRUG INTERACTIONS
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ 8.3 Nursing Mothers
+ 8.4 Pediatric Use
+ 8.5 Geriatric Use
+ 8.6 Hepatic Impairment
+ 8.7 Renal Impairment
+  10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+  13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 13.2  Animal Toxicology and/or Pharmacology
+  14 CLINICAL STUDIES 14.1 Primary Hyperlipidemia
+ 14.2 Type 2 Diabetes Mellitus
+  16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ 17.1 Primary Hyperlipidemia
+ 17.2 Type 2 Diabetes Mellitus
+  *Sections or subsections omitted from the full prescribing information are not listed.
+ Reference ID: 3440203
+                                                                                                                                                   FULL PRESCRIBING INFORMATION
+ 1 INDICATIONS AND USAGE 1.1 Primary Hyperlipidemia
+ WELCHOL is indicated as an adjunct to diet and exercise to reduce elevated low-density lipoprotein cholesterol (LDL-C) in adults with primary hyperlipidemia (Fredrickson Type IIa) as monotherapy or in combination with a hydroxymethyl-glutaryl-coenzyme A (HMG CoA) reductase inhibitor (statin).
+ WELCHOL is indicated as monotherapy or in combination with a statin to reduce LDL-C levels in boys and postmenarchal girls, 10 to 17 years of age, with heterozygous familial hypercholesterolemia if after an adequate trial of diet therapy the following findings are present: a.
+LDL-C remains &#x2265; 190 mg/dL or b. LDL-C remains &#x2265; 160 mg/dL and &#x2022;  there is a positive family history of premature cardiovascular disease or &#x2022;  two or more other CVD risk factors are present in the pediatric patient.
+ Lipid-altering agents should be used in addition to a diet restricted in saturated fat and cholesterol when response to diet and non-pharmacological interventions alone has been inadequate [See Clinical Studies (14.1)].
+ In patients with coronary heart disease (CHD) or CHD risk equivalents such as diabetes mellitus, LDL-C treatment goals are &lt; 100 mg/dL.
+An LDL-C goal of &lt; 70 mg/dL is a therapeutic option on the basis of recent trial evidence.
+If LDL-C is at goal but the serum triglyceride (TG) value is &gt; 200 mg/dL, then non-HDL cholesterol (non-HDL-C) (total cholesterol [TC] minus high density lipoprotein cholesterol [HDL-C]) becomes a secondary target of therapy.
+The goal for non-HDL-C in persons with high serum TG is set at 30 mg/dL higher than that for LDL-C.
+ 1.2 Type 2 Diabetes Mellitus WELCHOL is indicated as an adjunct to diet and exercise to improve glycemic control in
+ adults with type 2 diabetes mellitus [See Clinical Studies (14.2)].
+ Diabetes mellitus is considered a CHD risk equivalent.
+ In addition to glycemic control, intensive lipid control is warranted [See Indications and Usage (1.1) and Warnings and Precautions (5.2)].
+ 1.3 Important Limitations of Use &#x2022;  WELCHOL should not be used for the treatment of type 1 diabetes or for the treatment of
+ diabetic ketoacidosis.
+&#x2022;  WELCHOL has not been studied in type 2 diabetes in combination with a dipeptidyl
+ peptidase 4 inhibitor.
+&#x2022;  WELCHOL has not been studied in pediatric patients with type 2 diabetes.
+&#x2022;  WELCHOL has not been studied in Fredrickson Type I, III, IV, and V dyslipidemias.
+&#x2022;  WELCHOL has not been studied in children younger than 10 years of age or in pre
+menarchal girls.
+ Reference ID: 3440203
+                                                                                                                                           2 DOSAGE AND ADMINISTRATION 2.1  Primary Hyperlipidemia
+ The recommended dose of WELCHOL Tablets in adults, whether used as monotherapy or in combination with a statin, is 6 tablets once daily or 3 tablets twice daily.
+WELCHOL Tablets should be taken with a meal and liquid.
+ The recommended dose of WELCHOL for Oral Suspension, in adults and children 10 to 17 years of age, is one 3.75 gram packet once daily or one 1.875 gram packet twice daily.
+To prepare, empty the entire contents of one packet into a glass or cup.
+Add  to 1 cup (4 to 8 ounces) of water, fruit juice, or diet soft drinks.
+Stir well and drink.
+WELCHOL for Oral Suspension should be taken with meals.
+To avoid esophageal distress, WELCHOL for Oral Suspension should not be taken in its dry form.
+Due to tablet size, it is recommended that any patient who has difficulty swallowing tablets use WELCHOL for Oral Suspension.
+ WELCHOL can be dosed at the same time as a statin or the two drugs can be dosed apart [See Clinical Studies (14.1)].
+ After initiation of WELCHOL, lipid levels should be analyzed within 4 to 6 weeks.
+ 2.2  Type 2 Diabetes Mellitus The recommended dose of WELCHOL Tablets is 6 tablets once daily or 3 tablets twice  daily.
+WELCHOL should be taken with a meal and liquid.
+ The recommended dose of WELCHOL for Oral Suspension is one 3.75 gram packet once daily or one 1.875 gram packet twice daily.
+To prepare, empty the entire contents of one packet into a glass or cup.
+Add  to 1 cup (4 to 8 ounces) of water, fruit juice, or diet soft drinks.
+Stir well and drink.
+WELCHOL for Oral Suspension should be taken with meals.
+To avoid esophageal distress, WELCHOL for Oral Suspension should not be taken in its dry form.
+ 3  DOSAGE FORMS AND STRENGTHS
+ &#x2022;  Tablets: 625 mg tablets are off-white, oval, film-coated and imprinted with "Sankyo" and "C01" on one side.
+ &#x2022;  Oral Suspension: a white to pale yellow powder containing yellow granules packaged in single-dose packets: 3.75 gram single-dose packet, 1.875 gram single-dose packet.
+ 4  CONTRAINDICATIONS WELCHOL is contraindicated in patients with &#x2022;  A history of bowel obstruction [See Warnings and Precautions (5.4)] &#x2022;  Serum TG concentrations &gt;500 mg/dL [See Warnings and Precautions (5.2)] &#x2022;  A history of hypertriglyceridemia-induced pancreatitis [See Warnings and Precautions
+ (5.2)]
+ 5 WARNINGS AND PRECAUTIONS
+ Reference ID: 3440203
+                                                                                                                                                                 5.1 General The effect of WELCHOL on cardiovascular morbidity and mortality has not been
+ determined.
+ 5.2 Serum Triglycerides WELCHOL, like other bile acid sequestrants, can increase serum TG concentrations.
+ WELCHOL had small effects on serum TG (median increase 5% compared to placebo) in trials of patients with primary hyperlipidemia [See Adverse Reactions (6.1) and Clinical Studies (14.1)].
+ In clinical trials in patients with type 2 diabetes, greater increases in TG levels occurred when WELCHOL was used as monotherapy (median increase 9.7% compared to placebo) and when WELCHOL was used in combination with pioglitazone (median increase 11% compared to placebo in combination with pioglitazone), sulfonylureas (median increase 18% compared to placebo in combination with sulfonylureas), and insulin (median increase 22% compared to placebo in combination with insulin) [See Adverse Reactions (6.1) and Clinical Studies (14.2)].
+ Hypertriglyceridemia of sufficient severity can cause acute pancreatitis.
+The long-term effect of hypertriglyceridemia on the risk of coronary artery disease is uncertain.
+In patients with type 2 diabetes, the effect of WELCHOL on LDL-C levels may be attenuated by WELCHOL's effects on TG levels and a smaller reduction in non-HDL-C compared to the reduction in LDL-C.
+Caution should be exercised when treating patients with TG levels greater than 300 mg/dL.
+ Because most patients in the WELCHOL clinical trials had baseline TG &lt;300 mg/dL, it is unknown whether patients with more uncontrolled baseline hypertriglyceridemia would have greater increases in serum TG levels with WELCHOL.
+In addition, the use of WELCHOL is contraindicated in patients with TG levels &gt;500 mg/dL [See Contraindications (4)].
+Lipid parameters, including TG levels and non-HDL-C, should be obtained before starting WELCHOL and periodically thereafter.
+WELCHOL should be discontinued if TG levels exceed 500 mg/dL or if the patient develops hypertriglyceridemia-induced pancreatitis [See Adverse Reactions (6.1)].
+ 5.3 Vitamin K or Fat-Soluble Vitamin Deficiencies Precautions Bile acid sequestrants may decrease the absorption of fat-soluble vitamins A, D, E, and
+ K. No specific clinical studies have been conducted to evaluate the effects of WELCHOL on the absorption of co-administered dietary or supplemental vitamin therapy.
+In non-clinical safety studies, rats administered colesevelam hydrochloride at doses greater than 30-fold the projected human clinical dose experienced hemorrhage from vitamin K deficiency.
+Patients on oral vitamin supplementation should take their vitamins at least 4 hours prior to WELCHOL.
+Caution should be exercised when treating patients with a susceptibility to deficiencies of vitamin K (e.g., patients on warfarin, patients with malabsorption syndromes) or other fat-soluble vitamins.
+ 5.4 Gastrointestinal Disorders Because of its constipating effects, WELCHOL is not recommended in patients with
+ gastroparesis, other gastrointestinal motility disorders, and in those who have had major gastrointestinal tract surgery and who may be at risk for bowel obstruction.
+Because of the tablet size, WELCHOL Tablets can cause dysphagia or esophageal obstruction and should be used with
+ Reference ID: 3440203
+                                                                                                  caution in patients with dysphagia or swallowing disorders.
+To avoid esophageal distress, WELCHOL for Oral Suspension should not be taken in its dry form.
+Always mix WELCHOL for Oral Suspension with water, fruit juice, or diet soft drinks before ingesting.
+ 5.5 Drug Interactions WELCHOL reduces gastrointestinal absorption of some drugs.
+Drugs with a known
+ interaction with colesevelam should be administered at least 4 hours prior to WELCHOL.
+Drugs that have not been tested for interaction with colesevelam, especially those with a narrow therapeutic index, should also be administered at least 4 hours prior to WELCHOL.
+Alternatively, the physician should monitor drug levels of the co-administered drug [See Drug Interactions (7) and Clinical Pharmacology (12.3)].
+ 5.6 Phenylketonurics WELCHOL for Oral Suspension contains 13.5 mg phenylalanine per 1.875 gram packet
+ and 27 mg phenylalanine per 3.75 gram packet [See Description (11)].
+ 5.7 Macrovascular Outcomes There have been no clinical studies establishing conclusive evidence of macrovascular
+ disease risk reduction with WELCHOL or any other antidiabetic drugs.
+ 6 ADVERSE REACTIONS 6.1 Clinical Studies Experience
+ Because clinical studies are conducted under widely varying conditions, adverse reaction rates observed in the clinical studies of a drug cannot be directly compared to rates in clinical studies of another drug and may not reflect the rates observed in practice.
+ Primary Hyperlipidemia: In 7 double-blind, placebo-controlled, clinical trials, 807 patients with primary hyperlipidemia (age range 18-86 years, 50% women, 90% Caucasians, 7% Blacks, 2% Hispanics, 1% Asians) and elevated LDL-C were treated with WELCHOL 1.5 g/day to 4.5 g/day from 4 to 24 weeks (total exposure 199 patient-years).
+ In clinical trials for the reduction of LDL-C, 68% of patients receiving WELCHOL vs. 64% of patients receiving placebo reported an adverse reaction.
+ Reference ID: 3440203
+                                                                                                                             Table 1
+ Placebo-Controlled Clinical Studies of WELCHOL for Primary Hyperlipidemia: Adverse
+ Reactions Reported in &#x2265; 2% of Patients and More Commonly than in Patients Given
+ Placebo, Regardless of Investigator Assessment of Causality
+  Number of Patients (%) WELCHOL Placebo
+ N = 807 N = 258 Constipation 89 (11.0) 18 (7.0) Dyspepsia 67 (8.3) 9 (3.5) Nausea 34 (4.2) 10 (3.9) Accidental injury 30 (3.7) 7 (2.7) Asthenia 29 (3.6) 5 (1.9) Pharyngitis 26 (3.2) 5 (1.9) Flu syndrome 26 (3.2) 8 (3.1) Rhinitis 26 (3.2) 8 (3.1) Myalgia 17 (2.1) 1 (0.4)
+ Pediatric Patients 10 to 17 Years of Age: In an 8-week double-blind, placebo-controlled study boys and post-menarchal girls, 10 to 17 years of age, with heterozygous familial hypercholesterolemia (heFH) (n=192), were treated with WELCHOL tablets (1.9-3.8 g, daily) or placebo tablets [See Clinical Studies (14.1)].
+ Table 2 Placebo-Controlled Clinical Study of WELCHOL for Primary Hyperlipidemia in
+ heFH Pediatric Patients: Adverse Reactions Reported in &#x2265;2% of Patients and More Commonly than in Patients Given Placebo, Regardless of Investigator Assessment of Causality
+ Number of Patients (%) WELCHOL Placebo
+ N = 129 N = 65 Nasopharyngitis 8 (6.2) 3 (4.6) Headache 5 (3.9) 2 (3.1) Fatigue 5 (3.9) 1 (1.5) Creatine Phosphokinase Increase 3 (2.3) 0 (0.0) Rhinitis 3 (2.3) 0 (0.0) Vomiting 3 (2.3) 1 (1.5)
+ The reported adverse reactions during the additional 18-week open-label treatment period with WELCHOL 3.8 g per day were similar to those during the double-blind period and  included headache (7.6%), nasopharyngitis (5.4%), upper respiratory tract infection (4.9%), influenza (3.8%), and nausea (3.8%) [See Clinical Studies (14.1)].
+ Reference ID: 3440203
+                                                                                                                                            Type 2 Diabetes Mellitus: The safety of WELCHOL in patients with type 2 diabetes mellitus was evaluated in 5 add-on combination and 1 monotherapy double-blind, 12-26 week, placebo-controlled clinical trials [see Clinical Studies (14.2)].
+In these studies 1022 patients were exposed to WELCHOL.
+ The mean exposure duration was 20 weeks (total exposure 393 patient-years).
+ Patients were to receive 3.8 grams of WELCHOL per day.
+The mean age of patients exposed to WELCHOL was 55.7 years, 52.8 percent of the population was male and 61.9% were Caucasian, 4.8% were Asian, and 15.9% were Black or African American.
+ At baseline the population had a mean HbA1C of 8.2% and 26% had past medical history suggestive of microvascular complications of diabetes.
+Baseline characteristics in the placebo group were comparable.
+ In clinical trials of type 2 diabetes, 57% of patients receiving WELCHOL vs. 52% of patients receiving placebo reported an adverse reaction.
+ Table 3 shows common adverse reactions associated with the use of WELCHOL in the 1015 patients with type 2 diabetes.
+ These adverse reactions were not present at baseline, occurred more commonly on WELCHOL than on placebo, and occurred in at least 2% of patients treated with WELCHOL.
+ Table 3
+ Placebo-Controlled Clinical Studies of WELCHOLfor Type 2 Diabetes:: Adverse
+ Reactions Reported in &#x2265; 2% of Patients and More Commonly than in Patients Given
+ Placebo, Regardless of Investigator Assessment of Causality
+  Number of Patients (%) WELCHOL Placebo
+ N = 1015 N = 1010 Constipation 66 (6.5) 22 (2.2) Hypoglycemia 35 (3.4) 31 (3.1) Dyspepsia 28 (2.8) 10 (1.0) Nausea 26 (2.6) 16 (1.6) Hypertension  26 (2.6) 19 (1.9) Back Pain 23 (2.3) 13 (1.3)
+ A total of 5.3% of WELCHOL-treated patients and 3.6% of placebo-treated patients were discontinued from the diabetes trials due to adverse reactions.
+This difference was driven mostly by gastrointestinal adverse reactions such as abdominal pain and constipation.
+ One patient in the add-on to sulfonylurea trial discontinued due to body rash and mouth blistering that occurred on the first day of dosing of WELCHOL, which may represent a hypersensitivity reaction to WELCHOL.
+ Hypertriglyceridemia: Patients with fasting serum TG levels above 500 mg/dL were excluded from the diabetes clinical trials.
+ In the diabetes trials, 1292 (67.7%) patients had baseline fasting serum TG levels less than 200 mg/dL, 426 (22.3%) had baseline fasting serum
+ Reference ID: 3440203
+                                                                                                                                                                      TG levels between 200 and less than 300 mg/dL, 175 (9.2%) had baseline fasting serum TG levels between 300 and 500 mg/dL, and 16 (0.8%) had fasting serum TG levels greater than or equal to 500 mg/dL.
+ The median baseline fasting TG concentration for the study population was 160 mg/dL; the median post-treatment fasting TG was 180 mg/dL in the WELCHOL group and 162 mg/dL in the placebo group.
+WELCHOL therapy resulted in a median placebo-corrected increase in serum TG of 9.7% (p=0.03) in the monotherapy study and of 5% (p=0.22), 11% (p&lt;0.001), 18% (p&lt;0.001), and 22% (p&lt;0.001), when added to metformin, pioglitazone, sulfonylureas, and insulin, respectively [See Warnings and Precautions (5.2) and Clinical Studies (14.2)].
+In comparison, WELCHOL resulted in a median increase in serum TG of 5% compared to placebo (p=0.42) in a 24-week monotherapy lipid-lowering trial [See Clinical Studies (14.1)].
+ Treatment-emergent fasting TG concentrations &#x2265;500 mg/dL occurred in 0.9% of WELCHOL-treated patients compared to 0.7% of placebo-treated patients in the diabetes trials.
+Among these patients, the TG concentrations with WELCHOL (median 606 mg/dL; interquartile range 570-794 mg/dL) were similar to that observed with placebo (median 663 mg/dL; interquartile range 542-984 mg/dL).
+Five (0.6%) patients on WELCHOL and 3 (0.3%) patients on placebo developed TG elevations &gt;1000 mg/dL.
+ In all WELCHOL clinical trials, including studies in patients with type 2 diabetes and patients with primary hyperlipidemia, there were no reported cases of acute pancreatitis associated with hypertriglyceridemia.
+It is unknown whether patients with more uncontrolled, baseline hypertriglyceridemia would have greater increases in serum TG levels with WELCHOL [See Contraindications (4) and Warnings and Precautions (5.2)].
+ Cardiovascular adverse events: During the diabetes clinical trials, the incidence of patients with treatment-emergent serious adverse events involving the cardiovascular system was 2.2% (22/1015)) in the WELCHOL group and 1% (10/1010) in the placebo group.
+ These overall rates included disparate events (e.g., myocardial infarction, aortic stenosis, and bradycardia); therefore, the significance of this imbalance is unknown.
+ 6.2 Post-marketing Experience The following additional adverse reactions have been identified during post-approval use
+ of WELCHOL.
+Because these reactions are reported voluntarily from a population of uncertain size, it is generally not possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ Drug Interactions with concomitant WELCHOL administration include: &#x2022;  Increased seizure activity or decreased phenytoin levels in patients receiving
+ phenytoin.
+Phenytoin should be administered 4 hours prior to WELCHOL.
+&#x2022;  Reduced International Normalized Ratio (INR) in patients receiving warfarin
+ therapy.
+In warfarin-treated patients, INR should be monitored frequently during WELCHOL initiation then periodically thereafter.
+ &#x2022;  Elevated thyroid-stimulating hormone (TSH) in patients receiving thyroid hormone replacement therapy.
+Thyroid hormone replacement should be administered 4 hours prior to WELCHOL [See Drug Interactions (7)].
+ Gastrointestinal Adverse Reactions
+ Reference ID: 3440203
+                                                                                                                                                Bowel obstruction (in patients with a history of bowel obstruction or resection), dysphagia (tablet and oral suspension formulations) or esophageal obstruction (occasionally requiring medical intervention), fecal impaction, pancreatitis, abdominal distension, exacerbation of hemorrhoids, and increased transaminases.
+ Laboratory Abnormalities Hypertriglyceridemia
+ 7 DRUG INTERACTIONS Table 4 lists the drugs that have been tested in in vitro binding, in vivo drug interaction
+ studies with colesevelam and/or drugs with postmarketing reports consistent with potential drug-drug interactions.
+Orally administered drugs that have not been tested for interaction with colesevelam, especially those with a narrow therapeutic index, should also be administered at least 4 hours prior to WELCHOL.
+Alternatively, the physician should monitor drug levels of the co-administered drug.
+ Table 4
+ Drugs Tested in In Vitro Binding or In Vivo Drug Interaction Testing or With
+  Post-Marketing Reports
+  Drugs with a known interaction with colesevelam: Decrease in exposure of coadministered drug
+ cyclosporinec , glimepiridea, glipizidea , glyburidea , levothyroxinea, olmesartan medoxomila, and oral contraceptives containing ethinyl estradiol and norethindronea
+ Drugs with a known interaction with colesevelam:  Increase in exposure of coadministered drug
+ metformin extended release (ER)d
+ Drug(s) with postmarketing reports consistent with potential drug-drug interactions when coadministered with WELCHOL
+ phenytoina , warfarinb
+ Drugs that do not interact with colesevelam based on in vitro or in vivo testing
+ aspirin, atenolol, cephalexin, ciprofloxacin, digoxin, enalapril, fenofibrate, lovastatin, metformin, metoprolol, phenytoina, pioglitazone, rosiglitazone, quinidine, repaglinide, sitagliptin, valproic acid, verapamil, warfarinb
+ a Should be administered at least 4 hours prior to WELCHOL b No significant alteration of warfarin drug levels with warfarin and WELCHOL coadministration in an in vivo study which did not evaluate warfarin pharmacodynamics (INR).
+[See Post-marketing Experience (6.2)] c Cyclosporine levels should be monitored and, based on theoretical grounds, cyclosporine should be administered at least 4 hours prior to WELCHOL.d Patients receiving concomitant metformin ER and colesevelam should be monitored for clinical response as is usual for the use of anti-diabetes drugs.
+ In an in vivo drug interaction study, WELCHOL and warfarin coadministration had no effect on warfarin drug levels.
+This study did not assess the effect of WELCHOL and warfarin coadministration on INR.
+In post-marketing reports, concomitant use of WELCHOL and warfarin has been associated with reduced INR.
+Therefore, in patients on warfarin therapy, the INR should be monitored before initiating WELCHOL and frequently enough during early WELCHOL therapy to ensure that no significant alteration in INR occurs.
+Once the INR is
+ Reference ID: 3440203
+                                                                                                                          stable, continue to monitor the INR at intervals usually recommended for patients on warfarin [See Post-marketing Experience (6.2)].
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ Pregnancy Category B. There are no adequate and well-controlled studies of colesevelam use in pregnant women.
+Animal reproduction studies in rats and rabbits revealed no evidence of fetal harm.
+Requirements for vitamins and other nutrients are increased in pregnancy.
+However, the effect of colesevelam on the absorption of fat-soluble vitamins has not been studied in pregnant women.
+This drug should be used during pregnancy only if clearly needed.
+ In animal reproduction studies, colesevelam revealed no evidence of fetal harm when administered to rats and rabbits at doses 50 and 17 times the maximum human dose, respectively.
+ Because animal reproduction studies are not always predictive of human response, this drug should be used in pregnancy only if clearly needed.
+ 8.3 Nursing Mothers Colesevelam hydrochloride is not expected to be excreted in human milk because
+ colesevelam hydrochloride is not absorbed systemically from the gastrointestinal tract.
+ 8.4 Pediatric Use The safety and effectiveness of WELCHOL as monotherapy or in combination with a
+ statin were evaluated in children, 10 to 17 years of age with heFH [See Clinical Studies (14.1)].
+The adverse reaction profile was similar to that of patients treated with placebo.
+ In this limited controlled study, there were no significant effects on growth, sexual maturation, fat-soluble vitamin levels or clotting factors in the adolescent boys or girls relative to placebo [See Adverse Reactions (6.1)].
+ Due to tablet size, WELCHOL for Oral Suspension is recommended for use in the pediatric population.
+Dose adjustments are not required when WELCHOL is administered to children 10 to 17 years of age.
+ WELCHOL has not been studied in children younger than 10 years of age or in pre-menarchal girls.
+ 8.5 Geriatric Use Primary Hyperlipidemia: Of the 1350 patients enrolled in the hyperlipidemia clinical
+ studies, 349 (26%) were &#x2265;65 years old, and 58 (4%) were &#x2265;75 years old.
+No overall differences in safety or effectiveness were observed between these subjects and younger subjects, and other reported clinical experience has not identified differences in responses between the elderly and younger patients, but greater sensitivity of some older individuals cannot be ruled out.
+ Type 2 Diabetes Mellitus: Of the 2048 patients enrolled in the six diabetes studies, 397 (19%) were &#x2265;65 years old, and 36 (2%) were &#x2265;75 years old.
+In these trials, WELCHOL 3.8 g/day or placebo was added onto background anti-diabetic therapy.
+No overall differences in safety or
+ Reference ID: 3440203
+                                                                                           effectiveness were observed between the elderly and younger patients, but greater sensitivity of some older individuals cannot be ruled out.
+  8.6 Hepatic Impairment No special considerations or dosage adjustments are recommended when WELCHOL is
+ administered to patients with hepatic impairment.
+ 8.7 Renal Impairment Type 2 Diabetes Mellitus: Of the 2048 patients enrolled in the six diabetes studies, 807
+ (39%) had mild renal insufficiency (creatinine clearance [CrCl] 50-&lt;80 mL/min), 61 (3%) had moderate renal insufficiency (CrCl 30-&lt;50 mL/min), and none had severe renal insufficiency (CrCl &lt;30 mL/min), as estimated from baseline serum creatinine using the Modification of Diet in Renal Disease (MDRD) equation.
+No overall differences in safety or effectiveness were observed between patients with CrCl &lt;50 mL/min (n=53) and those with a CrCl &#x2265;50 mL/min (n=1075) in the add-on to metformin, sulfonylureas, and insulin diabetes studies.
+In the monotherapy study and add-on to pioglitazone study only 3 and 5 patients respectively had moderate renal insufficiency
+ 10 OVERDOSAGE Doses of WELCHOL in excess of 4.5 g/day have not been tested.
+Because WELCHOL is
+ not absorbed, the risk of systemic toxicity is low.
+However, excessive doses of WELCHOL may cause more severe local gastrointestinal effects (e.g., constipation) than recommended doses.
+ 11 DESCRIPTION WELCHOL (colesevelam hydrochloride) is a non-absorbed, polymeric, lipid-lowering
+ and glucose-lowering agent intended for oral administration.
+ Colesevelam hydrochloride is a high-capacity bile acid-binding molecule.
+  Colesevelam hydrochloride is poly(allylamine hydrochloride) cross-linked with epichlorohydrin and alkylated with 1-bromodecane and (6-bromohexyl)-trimethylammonium bromide.
+ The chemical name (IUPAC) of colesevelam hydrochloride is allylamine polymer with 1-chloro-2,3-epoxypropane, [6-(allylamino)-hexyl]trimethylammonium chloride and N-allyldecylamine, hydrochloride.
+The chemical structure of colesevelam hydrochloride is represented by the following formula:
+ Reference ID: 3440203
+                                                             wherein (a) represents allyl amine monomer units that have not been alkylated by either of the 1-bromodecane or (6-bromohexyl)-trimethylammonium bromide alkylating agents or cross-linked by epichlorohydrin; (b) represents allyl amine units that have undergone cross-linking with epichlorohydrin; (c) represents allyl amine units that have been alkylated with a decyl group; (d) represents allyl amine units that have been alkylated with a (6-trimethylammonium) hexyl group, and m represents a number &#x2265; 100 to indicate an extended polymer network.
+ A small amount of the amines are dialkylated, and are not depicted in the formula above.
+ No regular order of the groups is implied by the structure; cross-linking and alkylation are expected to occur randomly along the polymer chains.
+A large amount of the amines are protonated.
+The polymer is depicted in the hydrochloride form; a small amount of the halides are bromide.
+Colesevelam hydrochloride is hydrophilic and insoluble in water.
+ WELCHOL Tablets are an off-white, oval, film-coated, solid tablet containing 625 mg colesevelam hydrochloride.
+ In addition, each tablet contains the following inactive ingredients: magnesium stearate, microcrystalline cellulose, silicon dioxide, HPMC (hydroxypropyl methylcellulose), and acetylated monoglyceride.
+The tablets are imprinted using a water-soluble black ink.
+ WELCHOL for Oral Suspension is a citrus-flavored, white to pale yellow powder containing yellow granules packaged in single-dose packets containing either 1.875 gram or 3.75
+ Reference ID: 3440203
+                                                                                                                gram colesevelam hydrochloride.
+In addition, each packet contains the following inactive ingredients:  lemon flavor, orange flavor, propylene glycol alginate, simethicone, aspartame, citric acid, medium chain triglycerides, and magnesium trisilicate.
+ PHENYLKETONURICS: WELCHOL for Oral Suspension contains 13.5 mg phenylalanine per 1.875 gram dose and 27 mg phenylalanine per 3.75 gram dose.
+ 12  CLINICAL PHARMACOLOGY  12.1  Mechanism of Action   Primary Hyperlipidemia: Colesevelam  hydrochloride, the active pharmaceutical  ingredient in WELCHOL, i s a non-absorbed, lipid-lowering pol ymer that binds bile acids in the  intestine, impeding their reabsorption.
+As the bile acid pool becomes depleted, the hepatic enzyme, cholesterol 7--hydroxylase, is upregulated, which increases the conversion of cholesterol to bile acids.
+This causes an increased demand for cholesterol in the liver cells, resulting in the dual effect of increasing transcription and activity of the cholesterol biosynthetic enzyme, HMG-CoA reductase, and increasing the number of hepatic LDL receptors.
+These compensatory effects result in increased clearance of LDL-C from the blood, resulting in decreased serum LDL-C levels.
+Serum TG levels may increase or remain unchanged.
+ Type 2 Diabetes Mellitus: The mechanism by which WELCHOL improves glycemic control is unknown.
+ 12.2 Pharmacodynamics A maximum therapeutic response to the lipid-lowering effects of WELCHOL was
+ achieved within 2 weeks and was maintained during long-term therapy.
+In the diabetes clinical studies, a therapeutic response to WELCHOL, as reflected by a reduction in hemoglobin A1C (A1C), was initially noted following 4-6 weeks of treatment and reached maximal or near-maximal effect after 12-18 weeks of treatment.
+ 12.3 Pharmacokinetics Absorption: Colesevelam hydrochloride is a hydrophilic, water-insoluble polymer that is
+ not hydrolyzed by digestive enzymes and is not absorbed.
+ Distribution: Colesevelam hydrochloride is not absorbed, and therefore, its distribution is limited to the gastrointestinal tract.
+ Metabolism:  Colesevelam hydrochloride is not metabolized systemically and does not interfere with systemic drug-metabolizing enzymes such as cytochrome P-450.
+ Excretion: In 16 healthy volunteers, an average of 0.05% of administered radioactivity from a single 14C-labeled colesevelam hydrochloride dose was excreted in the urine.
+ Drug Interactions: Drug interactions between colesevelam and concomitantly administered drugs were screened through in vitro studies and confirmed in in vivo studies.
+In vitro studies demonstrated that cephalexin, metformin, and ciprofloxacin had negligible binding to colesevelam hydrochloride.
+Therefore, an in vivo pharmacokinetic interaction of WELCHOL with these drugs is unlikely.
+WELCHOL was found to have no significant effect on the
+ Reference ID: 3440203
+                                                                                                                                                                                                                                                    bioavailability of aspirin, atenolol, digoxin, enalapril, fenofibrate, lovastatin, metoprolol, phenytoin, pioglitazone, quinidine, rosiglitazone, sitagliptin, valproic acid, and warfarin.
+The results of additional in vivo drug interactions of WELCHOL are presented in Table 5.
+ Table 5
+ Mean Change in Drug Exposure (AUC0-&#x221e; and Cmax) when Administered
+  with WELCHOL (3.75 g)a
+  1 hr prior to 4 hr prior to Drug Dose Co-administered WELCHOL WELCHOL
+ AUC0-&#x221e; Cmax AUC0-&#x221e; Cmax AUC0-&#x221e; Cmax Cyclosporine 200 mg -34% -44% N/A N/A N/A N/A Ethinyl Estradiol* b 0.035 mg -24% -24% -18% -1% -12% 0% Glimepiride b 4 mg -18% -8% N/A N/A -6% 3% Glipizide b 20 mg -12% -13% N/A N/A -4% 0% Glyburide b 3 mg -32% -47% -20% -15% -7% 4% Levothyroxine b 600 g -22% -33% 6% -2% 1% 8% Metformin ER c 1500 mg 44% 8% N/A N/A N/A N/A Norethindrone* b 1 mg -1% -20% 5% -3% 6% 7% Olmesartan Medoxomilb 40 mg -39% -28% N/A N/A -15% -4% Repaglinide 2 mg -7% -19% -6% -1% N/A N/A Verapamil sustained-release 240 mg -31% -11% N/A N/A N/A N/A a With verapamil, the dose of WELCHOL was 4.5 g
+ b Should be administered at least 4 hours prior to WELCHOL [See Drug Interactions (7)].
+ c Patients receiving concomitant metformin ER and colesevelam should be monitored for clinical
+ response as is usual for the use of anti-diabetes drugs  [See Drug Interactions (7)].
+ d Cyclosporine levels should be monitored and, based on theoretical grounds, cyclosporine should be
+ administered at least 4 hours prior to WELCHOL [See Drug Interactions (7)].
+ * Oral contraceptive containing norethindrone and ethinyl estradiol.
+N/A - Not Available
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ Carcinogenesis: A 104-week carcinogenicity study with colesevelam hydrochloride was conducted in CD-1 mice, at oral dietary doses up to 3 g/kg/day.
+This dose was approximately 50 times the maximum recommended human dose of 4.5 g/day, based on body weight, mg/kg.
+There were no significant drug-induced tumor findings in male or female mice.
+In a 104-week carcinogenicity study with colesevelam hydrochloride in Harlan Sprague-Dawley rats, a statistically significant increase in the incidence of pancreatic acinar cell adenoma was seen in male rats at doses &gt;1.2 g/kg/day (approximately 20 times the maximum human dose, based on body weight, mg/kg) (trend test only).
+A statistically significant increase in thyroid C-cell adenoma was seen in female rats at 2.4 g/kg/day (approximately 40 times the maximum human dose, based on body weight, mg/kg).
+ Reference ID: 3440203
+                                                                                                                                           Mutagenesis: Colesevelam hydrochloride and 4 degradants present in the drug substance have been evaluated for mutagenicity in the Ames test and a mammalian chromosomal aberration test.
+The 4 degradants and an extract of the parent compound did not exhibit genetic toxicity in an in vitro bacterial mutagenesis assay in S. typhimurium and E. coli (Ames assay) with or without rat liver metabolic activation.
+An extract of the parent compound was positive in the Chinese Hamster Ovary (CHO) cell chromosomal aberration assay in the presence of metabolic activation and negative in the absence of metabolic activation.
+The results of the CHO cell chromosomal aberration assay with 2 of the 4 degradants, decylamine HCl and aminohexyltrimethyl ammonium chloride HCl, were equivocal in the absence of metabolic activation and negative in the presence of metabolic activation.
+The other 2 degradants, didecylamine HCl and 6-decylamino-hexyltrimethyl ammonium chloride HCl, were negative in the presence and absence of metabolic activation.
+ Impairment of Fertility: Colesevelam hydrochloride did not impair fertility in rats at doses up to 3 g/kg/day (approximately 50 times the maximum human dose, based on body weight, mg/kg).
+ 13.2 Animal Toxicology and/or Pharmacology Reproductive Toxicology Studies
+ Reproduction studies have been performed in rats and rabbits at doses up to 3 g/kg/day and 1 g/kg/day, respectively (approximately 50 and 17 times the maximum human dose, based on body weight, mg/kg) and have revealed no evidence of harm to the fetus due to colesevelam hydrochloride.
+ 14 CLINICAL STUDIES 14.1 Primary Hyperlipidemia
+ WELCHOL reduces TC, LDL-C, apolipoprotein B (Apo B), and non-HDL-C when administered alone or in combination with a statin in patients with primary hyperlipidemia.
+ Approximately 1600 patients were studied in 9 clinical trials with treatment durations ranging from 4 to 50 weeks.
+With the exception of one open-label, uncontrolled, long-term extension study, all studies were multicenter, randomized, double-blind, and placebo-controlled.
+A maximum therapeutic response to WELCHOL was achieved within 2 weeks and was maintained during long-term therapy.
+ Monotherapy: In a study in patients with LDL-C between 130 mg/dL and 220 mg/dL (mean 158 mg/dL), WELCHOL was given for 24 weeks in divided doses with the morning and evening meals.
+ As shown in Table 6, the mean LDL-C reductions were 15% and 18% at the 3.8 g and 4.5 g doses.
+The respective mean TC reductions were 7% and 10%.
+The mean Apo B reductions were 12% in both treatment groups.
+WELCHOL at both doses increased HDL-C by 3%.
+Increases in TG of 9-10% were observed at both WELCHOL doses but the changes were not statistically different from placebo.
+ Reference ID: 3440203
+                                                                                                                                                                                                                                                            Table 6
+ Response to WELCHOL Monotherapy in a 24-Week Trial - Percent Change in Lipid
+ Parameters from Baseline
+ Grams/Day N TC LDL-C Apo B HDL-Ca Non-HDL-C TGa
+ Placebo 88 +1 0 0 &#x20ac;&#x201c;1 +1 +5 3.8 g (6 tablets) 95 &#x20ac;&#x201c;7* &#x20ac;&#x201c;15* &#x20ac;&#x201c;12* +3* &#x20ac;&#x201c;10* +10 4.5 g (7 tablets) 94 &#x20ac;&#x201c;10* &#x20ac;&#x201c;18* &#x20ac;&#x201c;12* +3 &#x20ac;&#x201c;13* +9 *p&lt;0.05 for lipid parameters compared to placebo, for Apo B compared to baseline.
+a Median % change from baseline.
+ In a study in 98 patients with LDL-C between 145 mg/dL and 250 mg/dL (mean 169 mg/dL), WELCHOL 3.8 g was given for 6 weeks as a single dose with breakfast, as a single dose with dinner, or as divided doses with breakfast and dinner.
+The mean LDL-C reductions were 18%, 15%, and 18% for the 3 dosing regimens, respectively.
+The reductions with these 3 regimens were not statistically different from one another.
+ Combination Therapy: Co-administration of WELCHOL and a statin (atorvastatin, lovastatin, or simvastatin) in 3 clinical studies demonstrated an additive reduction of LDL-C.
+The mean baseline LDL-C was 184 mg/dL in the atorvastatin study (range 156-236 mg/dL), 171 mg/dL in the lovastatin study (range 115-247 mg/dL), and 188 mg/dL in the simvastatin study (range 148-352 mg/dL).
+As demonstrated in Table 7, WELCHOL doses of 2.3 g to 3.8 g resulted in an additional 8% to 16% reduction in LDL-C above that seen with the statin alone.
+ Table 7 Response to WELCHOL in Combination with Atorvastatin, Simvastatin, or
+ Lovastatin - Percent Change in Lipid Parameters Dose/Day N TC LDL-C Apo B HDL-Ca Non-HDL-C TGa
+ Atorvastatin Trial (4-week) Placebo 19 +4 +3 &#x20ac;&#x201c;3 +4 +4 +10 Atorvastatin 10 mg 18 &#x20ac;&#x201c;27* &#x20ac;&#x201c;38* &#x20ac;&#x201c;32* +8 &#x20ac;&#x201c;35* &#x20ac;&#x201c;24* WELCHOL 3.8 g/ 18 &#x20ac;&#x201c;31* &#x20ac;&#x201c;48* &#x20ac;&#x201c;38* +11 &#x20ac;&#x201c;40* &#x20ac;&#x201c;1 Atorvastatin 10 mg Atorvastatin 80 mg 20 &#x20ac;&#x201c;39* &#x20ac;&#x201c;53* &#x20ac;&#x201c;46* +6 &#x20ac;&#x201c;50* &#x20ac;&#x201c;33* Simvastatin Trial (6-week) Placebo 33 &#x20ac;&#x201c;2 &#x20ac;&#x201c;4 &#x20ac;&#x201c;4* &#x20ac;&#x201c;3 &#x20ac;&#x201c;2 +6* Simvastatin 10 mg 35 &#x20ac;&#x201c;19* &#x20ac;&#x201c;26* &#x20ac;&#x201c;20* +3* &#x20ac;&#x201c;24* &#x20ac;&#x201c;17* WELCHOL 3.8 g/ 34 &#x20ac;&#x201c;28* &#x20ac;&#x201c;42* &#x20ac;&#x201c;33* +10* &#x20ac;&#x201c;37* &#x20ac;&#x201c;12* Simvastatin 10 mg
+ Simvastatin 20 mg 39 &#x20ac;&#x201c;23* &#x20ac;&#x201c;34* &#x20ac;&#x201c;26* +7* &#x20ac;&#x201c;30* &#x20ac;&#x201c;12* WELCHOL 2.3 g/ 37 &#x20ac;&#x201c;29* &#x20ac;&#x201c;42* &#x20ac;&#x201c;32* +4* &#x20ac;&#x201c;37* &#x20ac;&#x201c;12* Simvastatin 20 mg
+ Lovastatin Trial (4-week) Placebo 26 +1 0 0 +1 +1 +1 Lovastatin 10 mg 26 &#x20ac;&#x201c;14* &#x20ac;&#x201c;22* &#x20ac;&#x201c;16* +5 &#x20ac;&#x201c;19* 0 WELCHOL 2.3 g/ Lovastatin 10 mg Together
+ 27 &#x20ac;&#x201c;21* &#x20ac;&#x201c;34* &#x20ac;&#x201c;24* +4 &#x20ac;&#x201c;27* &#x20ac;&#x201c;1
+ WELCHOL 2.3 g/ Lovastatin 10 mg
+ 23 &#x20ac;&#x201c;21* &#x20ac;&#x201c;32* &#x20ac;&#x201c;24* +2 &#x20ac;&#x201c;28* &#x20ac;&#x201c;2
+ Reference ID: 3440203
+                                                                                                                                                 Apart *p&lt;0.05 for lipid parameters compared to placebo, for Apo B compared to baseline.
+a Median % change from baseline.
+ In all 3 studies, the LDL-C reduction achieved with the combination of WELCHOL and any given dose of statin therapy was statistically superior to that achieved with WELCHOL or that dose of the statin alone.
+The LDL-C reduction with atorvastatin 80 mg was not statistically significantly different from the combination of WELCHOL 3.8 g and atorvastatin 10 mg.
+ The effect of WELCHOL when added to fenofibrate was assessed in 122 patients with mixed hyperlipidemia (Fredrickson Type IIb).
+Inclusion in the study required LDL-C &#x2265;115 mg/dL and TG 150 mg/dL to 749 mg/dL.
+Patients were treated with 160 mg of fenofibrate during an 8-week open-label run-in period and then randomly assigned to receive fenofibrate 160 mg plus either WELCHOL 3.8 g or placebo for 6 weeks of double-blind treatment.
+The overall mean LDL-C at the start of randomized treatment was 144 mg/dL.
+The results of the study are summarized in Table 8.
+ Table 8 Response to WELCHOL Added to Fenofibrate in Patients with Mixed Hyperlipidemia
+ (Mean % Change from Treated Baselineb at 6 Weeks) Treatment N TC LDL-C Apo HDL-C Non-HDL- TGa
+ B C Placebo + Fenofibrate 160 mg 61 2 2 1 -1 2 -3 WELCHOL + Fenofibrate 160 mg 61 -6* -10* -7* 0 -8* 6 * p&#x2264;0.0002 compared to placebo.
+ a For triglycerides, median % change from baseline.
+ b Treated Baseline: following 8-week treatment with open-label fenofibrate 160 mg.
+  Pediatric Therapy: The safety and efficacy of WELCHOL in pediatric patients were evaluated in an 8-week, multi-center, randomized, double-blind, placebo-controlled, parallel-group study followed by an open-label phase, in 194 boys and postmenarchal girls 10-17 years of age (mean age 14.1 years) with heterozygous familial hypercholesterolemia (heFH), taking a stable dose of an FDA-approved statin (with LDL-C &gt;130 mg/dL) or naive to lipid-lowering therapy (with LDL-C &gt;160 mg/dL).
+This study had 3 periods: a single-blind, placebo stabilization period; an 8-week, randomized, double-blind, parallel-group, placebo-controlled treatment period; and an 18-week, open-label treatment period.
+Forty-seven (24%) patients were taking statins and 147 (76%) patients were statin-naive at screening.
+The mean baseline LDL-C at Day 1 was approximately 199 mg/dL.
+ During the double-blind treatment period, patients were assigned randomly to treatment: WELCHOL 3.8 g/day (n=64), WELCHOL 1.9 g/day (n=65), or placebo (n=65).
+In total, 186 patients completed the double-blind treatment period.
+After 8 weeks of treatment, WELCHOL 3.8 g/day significantly decreased plasma levels of LDL-C, non-HDL-C, TC, and Apo B and significantly increased HDL-C.
+ A moderate, non-statistically significant increase in TG was observed versus placebo (Table 9).
+ Reference ID: 3440203
+                                                                                                                                        Table 9 Response to WELCHOL 3.8 g Compared to Placebo in Pediatric Patients 10-17 Years of
+ Age &#x20ac;&#x201c; Mean Percent Change in Lipid Parameters from Baseline to Week 8 Treatment TC LDL-C Apo B HDL-C Non-HDL- TGa Difference (N=128) (N=128) (N=124) (N=128) C (N=128)
+ (N=128) WELCHOL 3.8 g  vs -7* -13* -8* +6* &#x20ac;&#x201c;11 * +5 Placebo *p&#x2264;0.05 for lipid parameters compared to placebo Values represent LS mean.
+ Only patients with values at both study baseline and endpoint are included in this table.
+Study baseline was defined as the last value measured before or on Day 1 prior to the first dose of randomized study medication.
+a For triglycerides, median % change from baseline.
+Results were based on the ITT population with LOCF
+ During the open-label treatment period patients were treated with WELCHOL 3.8 g/day.
+In total, 173 (89%) patients completed 26 weeks of treatment.
+Results at Week 26 were consistent with those at Week 8.
+ 14.2 Type 2 Diabetes Mellitus WELCHOL has been studied as monotherapy and in combination with metformin,
+ pioglitazone, sulfonylureas, and insulin.
+In these studies, WELCHOL and placebo were administered either as 3 tablets twice daily with lunch and dinner or as 6 tablets with dinner alone.
+ Monotherapy: The efficacy of WELCHOL 3.8 g/day as anti-diabetes monotherapy was evaluated in a randomized double-blind, placebo-controlled trial involving 357 patients (176 WELCHOL and 181 placebo) with T2DM who were treatment-naive or had not received antihyperglycemic medication within 3 months prior to the start of the study.
+Statin use at baseline was reported in 13% of the WELCHOL-treated patients and 16% of the placebo-treated patients.
+ WELCHOL resulted in a statistically significant reduction in A1C of 0.27% compared to placebo (Table 10).
+ The mean baseline LDL-C was 121 mg/dL in the monotherapy trial.
+WELCHOL treatment resulted in a placebo-corrected 11% reduction in LDL-C.
+ WELCHOL treatment also reduced serum TC, ApoB, and non-HDL-C (Table 11).
+ The mean change in body weight was 0.6 kg for WELCHOL and -0.7 kg for placebo treatment groups.
+ Reference ID: 3440203
+      3.8 g/day  A1C (%), Mean
+    N  175  169  Baseline  8.25  8.17
+  Change from baselinea   -0.26  0.01  Treatment difference (p-value)  -0.27 (p=0.013)
+  FPG (mg/dL), Mean    N  172  166
+  Baseline  172  168  Change from baselinea  -4.6  5.7
+  Treatment difference (p-value)  -10.3 (p=0.037b)   a Least-squares mean change calculated from an Analysis of Covariance model
+    bNominal p=value, not controlled for multiplicity testing.
+  A1C = hemoglobin A1C, FPG = fasting plasma glucose
+                                                                                                                      Table 10
+  Glycemic Parameters in a 24-Week Placebo-Controlled Study of WELCHOL
+   Monotherapy in Patients with Type 2 Diabetes
+   WELCHOL Placebo
+ Table 11
+ Percent Change in Lipid Parameters in a 24-Week Placebo-Controlled Study of
+  WELCHOL Monotherapy in Patients with Type 2 Diabetes
+ Dose/Day N&#x2022; TC LDL-C Apo B HDL-C Non-HDL-C TGa
+ WELCHOL 3.8 g 162 -3.3* -10.0* -5.6* 1.7 -4.4* 15.5 Placebo 160 1.8 1.2 0.9 -0.1 3.0 5.8
+ *p&lt;0.001 for lipid parameters compared to placebo (this more stringent criterion for statistical significance accounts for multiplicity testing of the
+ lipid parameters, which were secondary endpoints in the diabetes trials)
+ a Median % change from baseline.
+ &#x2022;The number of patients with analyzable data, i.e., a baseline and post-treatment value (last-observation carried forward), varied slightly among different parameters.
+The N given represents the smallest number of patients included in the analysis for any parameter.
+ Add-on combination Therapy: The efficacy of WELCHOL 3.8 g/day in patients with type 2 diabetes mellitus was evaluated in 5 double-blind, placebo-controlled add-on therapy trials involving a total of 1691 patients with baseline A1C 7.5-9.5%.
+Patients were enrolled and maintained on their pre-existing, stable, background anti-diabetic regimen.
+Statin use at baseline was reported in 41% of the WELCHOL-treated patients and 48% of the placebo-treated patients.
+ In 3 add-on combination therapy trials (metformin, sulfonylurea and insulin), treatment with WELCHOL resulted in a statistically significant reduction in A1C of 0.5% compared to placebo.
+Similar placebo-corrected reductions in A1C occurred in patients who received WELCHOL in combination with metformin, sulfonylurea, or insulin monotherapy or combinations of these therapies with other anti-diabetic agents.
+In the pioglitazone trial, treatment with WELCHOL resulted in a statistically significant reduction in A1C of 0.32% compared to placebo.
+In the metformin, pioglitazone, and sulfonylurea trials, treatment with WELCHOL also resulted in statistically significant reductions in fasting plasma glucose (FPG) of at least 14 mg/dL compared to placebo.
+ Reference ID: 3440203
+                                                                                                                          WELCHOL had consistent effects on A1C across subgroups of age, gender, race, body mass index, and baseline A1C. WELCHOL's effects on A1C were also similar for the two dosing regimens (3 tablets with lunch and with dinner or 6 tablets with dinner alone).
+ The mean baseline LDL-C was 104 mg/dL in the metformin study (range 32-214 mg/dL), 107 mg/dL in the pioglitazone study (range 48-263 mg/dL), 106 mg/dL in the sulfonylurea study (range 41-264 mg/dL), 102 mg/dL in the insulin study (range 35-204 mg/dL).
+In these trials, WELCHOL treatment was associated with a 12% to 16% reduction in LDL-C levels.
+The percentage decreases in LDL-C were of similar magnitude to those observed in patients with primary hyperlipidemia.
+WELCHOL treatment was associated with statistically significant increases in TG levels in the studies of patients on insulin, patients on a sulfonylurea, and patients on pioglitazone but not in the study of patients on metformin.
+The clinical significance of these increases is unknown.
+WELCHOL is contraindicated in patients with TG levels &gt; 500 mg/dL [See Contraindications (4)] and periodic monitoring of lipid parameters including TG and non-HDL-C levels is recommended [See Warnings and Precautions (5.2) and Adverse Reactions (6.1)].
+ Body weight did not significantly increase from baseline with WELCHOL therapy, compared with placebo, in any of the add-on combination diabetes studies.
+ Add-on Combination Therapy with Metformin:  WELCHOL 3.8 g/day or placebo was added to background anti-diabetic therapy in a 26-week trial of 316 patients already receiving treatment with metformin alone (N=159) or metformin in combination with other oral agents (N=157).
+A total of 60% of these patients were receiving &#x2265;1,500 mg/day of metformin.
+In combination with metformin, WELCHOL resulted in statistically significant placebo-corrected reductions in A1C and FPG (Table 12).
+WELCHOL also reduced TC, LDL-C, Apo B, and non-HDL-C (Table 13).
+The mean percent change in serum LDL-C levels with WELCHOL compared to placebo was -16% among statin users and statin non-users; the median percent change in serum TG levels with WELCHOL compared to placebo was -2% among statin users and 10% among statin non-users.
+The mean change in body weight was -0.5 kg for WELCHOL and -0.3 kg for placebo.
+ Reference ID: 3440203
+                                                                                                                                                                                                                                           Table 12 Glycemic Parameters in a 26-Week Placebo-Controlled Study of WELCHOL in
+ Combination with Metformin in Patients with Type 2 Diabetes
+ Total Patient Metformin Alone  Metformin in Population  Combination with
+   Other Oral   Anti-Diabetic Agents
+  WELCHOL Placebo WELCHOL Placebo WELCHOL Placebo 3.8 g/day 3.8 g/day 3.8 g/day
+ A1C (%), Mean N 148 152 79 76 69 76 Baseline 8.1 8.1 8.2 8.2 8.1 8.0 Change from baselinea -0.4 0.2 -0.4 0.0 -0.4 0.3 Treatment difference (p-value) -0.5 (p&lt;0.001) -0.5 (p=0.002) -0.6 (p&lt;0.001) FPG (mg/dL), Mean N 149 152 79 76 70 76 Baseline 178 174 184 180 171 168 Change from baselinea -3 11 -7 8 0 13 Treatment difference (p-value) -14 (p=0.01) -14 (p=0.07) -14 (p=0.10) a Least-squares mean change calculated from an Analysis of Covariance model.
+A1C = hemoglobin A1C, FPG = fasting plasma glucose
+ Table 13
+ Percent Change in Lipid Parameters in a 26-Week Placebo-Controlled Study of
+ WELCHOL in Combination with Metformin in Patients with Type 2 Diabetes
+  Dose/Day N&#x2022; TC LDL-C Apo B HDL-C Non-HDL- TGa C
+ Total Patient Population WELCHOL 3.8 g 125 -4* -12* -4* 1 -6* 12 Placebo 126 3 4 4 0 5 7 Metformin Alone WELCHOL 3.8 g 66 -3 -9 -2 1 -4 15 Placebo 61 2 0 1 -2 4 8 Metformin in Combination with Other Oral Anti-diabetic Agents WELCHOL 3.8 g 59 -6* -15* -6* 1 -7* 8 Placebo 65 4 7 7 2 6 5 *p&lt;0.001 for lipid parameters compared to placebo (this more stringent criterion for statistical significance accounts for multiplicity
+ testing of the lipid parameters, which were secondary endpoints in the diabetes trials)
+ a Median % change from baseline.
+ &#x2022;The number of patients with analyzable data, i.e., a baseline and post-treatment value (last-observation carried forward), varied slightly among different parameters.
+The N given represents the smallest number of patients included in the analysis for any parameter.
+ Add-on Combination Therapy with pioglitazone: WELCHOL 3.8 g/day or placebo was added to background anti-diabetic therapy in a 24-week trial of 562 patients already receiving treatment with pioglitazone alone (N=51) or pioglitazone in combination with other oral agents (N=511).
+Of these, most were on dual therapy with metformin (N=298) or triple therapy with metformin and a sulfonylurea (N=139).
+In combination with pioglitazone-based therapy, WELCHOL resulted in statistically significant reductions in A1C and FPG compared to placebo (Table 14).
+WELCHOL also reduced TC, LDL-C, Apo B, and non-HDL-C but increased serum TG (Table 15).
+The mean change in body weight was 0.8 kg for WELCHOL and 0.4 kg for placebo.
+ Reference ID: 3440203
+                                                                                                                                                           Table 14
+ Glycemic Parameters in a 24-Week Placebo-Controlled Study of WELCHOL in
+ Combination with Pioglitazone Based Therapy in Patients with Type 2 Diabetes
+  WELCHOL Placebo 3.8 g/day
+ A1C (%), Mean N 271 276 Baseline 8.2 8.1 Change from baselinea -0.34 -0.02 Treatment difference (p-value) -0.32 (0.0001) FPG (mg/dL), Mean N 268 270 Baseline 155 157 Change from baselinea -4.8 +9.9 Treatment difference (p-value) -14.7 (&lt;0.0001) a Least-squares mean change calculated from an Analysis of Covariance model.
+A1C = hemoglobin A1C, FPG = fasting plasma glucose
+ Table 15
+ Percent Change in Lipid Parameters in a 24-Week Placebo-Controlled Study of
+  WELCHOL in Combination with Pioglitazone Based Therapy in Patients with Type 2  Diabetes
+  Dose/Day N&#x2022; TC LDL-C Apo B HDL-C Non-HDL- TGa C
+ Total Patient Cohort WELCHOL 3.8 g 262 -3* -9* -5* +3 -5* +14* Placebo 262 +3 +7 +4 +1 +5 +2 *p&lt;0.001 for lipid parameters compared to placebo a Median % change from baseline.
+&#x2022; The N given represents the smallest number of patients included in the analysis for any parameter.
+ Add-on Combination Therapy with Sulfonylurea: WELCHOL 3.8 g/day or placebo was added to background anti-diabetic therapy in a 26-week trial of 460 patients already treated with sulfonylurea alone (N=156) or sulfonylurea in combination with other oral agents (N=304).
+A total of 72% of these patients were receiving at least half-maximal doses of sulfonylurea therapy.
+In combination with a sulfonylurea, WELCHOL resulted in statistically significant placebo-corrected reductions in A1C and FPG (Table 16).
+WELCHOL also reduced TC, LDL-C, Apo B, and non-HDL-C, but increased serum TG (Table 17).
+The mean percent change in serum LDL-C levels with WELCHOL compared to placebo was -18% among statin users and -15% among statin non-users; the median percent increase in serum TG with WELCHOL compared to placebo was 29% among statin users and 9% among statin non-users.
+The mean change in body weight was 0.0 kg for WELCHOL and -0.4 kg for placebo.
+  Reference ID: 3440203
+  Table 16
+   Glycemic Parameters in a 26-Week Placebo-Controlled Study of WELCHOL in
+ Combination with Sulfonylurea in Patients with  Type 2 Diabetes
+    Total Patient Sulfonylurea Alone  Sulfonylurea in Population  Combination with
+  Other Oral  Anti-diabetic Agents
+                                                                                                                                                                                                                                                     WELCHOL Placebo WELCHOL Placebo WELCHOL Placebo 3.8 g/day 3.8 g/day 3.8 g/day
+ A1C (%), Mean n 218 218 69 80 149 138 Baseline 8.2 8.3 8.2 8.4 8.2 8.3 Change from baselinea -0.3 0.2 -0.3 0.5 -0.4 0.0 Treatment difference (p-value) -0.5 (p&lt;0.001) -0.8 (p&lt;0.001) -0.4 (p&lt;0.001) FPG (mg/dL), Mean n 218 217 70 80 148 137 Baseline 177 181 181 186 175 178 Change from baselinea -4 10 3 15 -11 4 Treatment difference (p-value) -14 (p=0.009) -12 (p=0.18) -14 (p=0.03) a Least-squares mean change calculated from an Analysis of Covariance model.
+ A1C = hemoglobin A1C, FPG = fasting plasma glucose
+  Table 17 Percent Change in Lipid Parameters in a 26-Week Placebo-Controlled Study of WELCHOL in Combination With Sulfonylurea in Patients with Type 2 Diabetes
+ Dose/Day N&#x2022; TC LDL-C Apo B HDL-C Non-HDL- TGa C
+ Total Patient Population WELCHOL 3.8 g 186 -5* -16* -6* 1 -6* 20* Placebo 193 0 1 1 0 1 1 Sulfonylurea Alone WELCHOL 3.8 g 57 -5 -14* -5 -1 -6 17 Placebo 68 0 1 1 1 0 -1 Sulfonylurea in Combination with Other Oral Anti-diabetic Agents WELCHOL 3.8 g 129 -5 -18* -7* 1 -6 21* Placebo 125 0 0 1 0 1 2 *p&lt;0.001 for lipid parameters compared to placebo (this more stringent criterion for statistical significance accounts for multiplicity
+ testing of the lipid parameters, which were secondary endpoints in the diabetes trials)
+ a Median % change from baseline.
+ &#x2022; The number of patients with analyzable data, i.e., a baseline and post-treatment value (last-observation carried forward), varied slightly among different parameters.
+The N given represents the smallest number of patients included in the analysis for any parameter.
+ Add-on Combination Therapy with Insulin:  WELCHOL 3.8 g/day or placebo was added to background anti-diabetic therapy in a 16-week trial of 287 patients already treated with insulin alone (N=116) or insulin in combination with oral agents (N=171).
+At baseline, the median daily insulin dose was 70 units in the WELCHOL group and 65 units in the placebo group.
+In combination with insulin, WELCHOL resulted in a statistically significant placebo-corrected reduction in A1C (Table 18).
+WELCHOL also reduced LDL-C and Apo B, but increased serum TG (Table 19).
+The mean percent change in serum LDL-C levels with WELCHOL compared to placebo was -13% among statin users and statin non-users; the median percent increase in serum TG levels with WELCHOL compared to placebo was 24% among statin users and 17% among
+ Reference ID: 3440203
+                                                                                                                                                                                                                  statin non-users.
+The mean change in body weight was 0.6 kg for WELCHOL and 0.2 kg for placebo.
+  Table 18
+ Glycemic Parameters in a 16-Week Placebo-Controlled Study of WELCHOL in
+ Combination with Insulin in Patients with Type 2 Diabetes
+ Total Patient Insulin Alone  Insulin in Combination  Population  with Oral
+   Anti-diabetic Agents  WELCHOL Placebo WELCHOL Placebo WELCHOL Placebo
+ 3.8 g/day 3.8 g/day 3.8 g/day A1C (%), Mean n 144 136 54 55 90 81 Baseline 8.3 8.2 8.2 8.3 8.3 8.2 Change from baselinea -0.4 0.1 -0.4 0.2 -0.4 0.0 Treatment difference (p-value) -0.5 (p&lt;0.001) -0.6 (p&lt;0.001) -0.4 (p&lt;0.001) FPG (mg/dL), Mean n 144 136 54 55 90 81 Baseline 165 151 165 163 165 143 Change from baselinea 2 16 8 17 -4 14 Treatment difference (p-value) -15 (p=0.08) -9 (p=0.51) -18 (p=0.09)
+ a Least-squares mean change calculated from an Analysis of Covariance model.
+ A1C = hemoglobin A1C, FPG = fasting plasma glucose
+  Table 19
+ Percent Change in Lipid Parameters in a 16-Week Placebo-Controlled Study of
+  WELCHOL in Combination with Insulin in Patients with Type 2 Diabetes
+  Dose/Day N&#x2022; TC LDL-C Apo B HDL-C Non-HDL- TGa C
+ Total Patient Cohort WELCHOL 3.8 g 129 -3 -12* -4 -1 -3 23* Placebo 121 1 1 1 0 1 0 Insulin Alone WELCHOL 3.8 g 46 -3 -12 -5 0 -3 19 Placebo 48 2 4 2 3 2 -2 Insulin in Combination with Oral Anti-diabetic Agents WELCHOL 3.8 g 83 -4 -13 -4 -1 -3 25* Placebo 73 -1 -3 0 -1 -1 2 *p&lt;0.001 for lipid parameters compared to placebo (this more stringent criterion for statistical significance accounts for multiplicity
+ testing of the lipid parameters, which were secondary endpoints in the diabetes trials)
+ a Median % change from baseline.
+ &#x2022; The number of patients with analyzable data, i.e., a baseline and post-treatment value (last-observation carried forward), varied slightly among different parameters.
+The N given represents the smallest number of patients included in the analysis for any parameter.
+ Reference ID: 3440203
+                                                                                                                                          16 HOW SUPPLIED/STORAGE AND HANDLING WELCHOL (colesevelam hydrochloride) Tablets, 625 mg, are supplied as an off-white,
+ solid tablet imprinted with the word "Sankyo" and "C01" on one side.
+WELCHOL tablets are available as follows:
+ &#x2022;  Bottles of 180 - NDC 65597-701-18
+ Storage:  Store at 25C (77F); excursions permitted to 15-30C (59-86F) [see USP Controlled Room Temperature].
+Brief exposure to 40C (104F) does not adversely affect the product.
+Protect from moisture.
+ WELCHOL (colesevelam hydrochloride) for Oral Suspension is a white to pale yellow powder containing yellow granules.
+WELCHOL for Oral Suspension is available as follows:
+ &#x2022;  1.875 gram single-dose packet Cartons of 60 packets - NDC 65597-903-60
+ &#x2022;  3.75 gram single-dose packet Cartons of 30 packets - NDC 65597-902-30
+ Storage:  Store at 25C (77F); excursions permitted to 15-30C (59-86F) [see USP Controlled Room Temperature].
+Protect from moisture.
+ 17 PATIENT COUNSELING INFORMATION Dosing: Patients should be advised to take WELCHOL Tablets with a meal and liquid.
+ WELCHOL can be taken as 6 tablets once daily or 3 tablets twice daily.
+Patients should be advised to take WELCHOL for Oral Suspension as one 3.75 gram packet once daily or one 1.875 gram packet twice daily.
+To prepare, empty the entire contents of one packet into a glass or cup.
+Add  to 1 cup (4 to 8 ounces) of water, fruit juice, or diet soft drinks.
+Stir well and drink.
+WELCHOL for Oral Suspension should be taken with meals.
+To avoid esophageal distress, WELCHOL for Oral Suspension should not be taken in its dry form.
+Always mix WELCHOL for Oral Suspension with water, fruit juice, or diet soft drinks before ingesting [See Dosage and Administration (2)].
+ Drug interactions: Drugs with a known interaction with colesevelam (e.g., cyclosporine, glimepiride, glipizide, glyburide, levothyroxine, olmesartan medoxomil, oral contraceptives) should be administered at least 4 hours prior to WELCHOL.
+In an in vivo drug interaction study, there was no significant effect on the bioavailability of phenytoin; however, due to its narrow therapeutic index and post-marketing reports consistent with potential drug-drug interactions, phenytoin should be administered at least 4 hours prior to WELCHOL.
+Drugs that have not been tested for interaction with colesevelam, especially those with a narrow therapeutic index, should also be administered at least 4 hours prior to WELCHOL.
+Alternatively the physician should monitor blood levels of the coadministered drug.
+Patients receiving concomitant metformin ER and colesevelam should be monitored for clinical response as is usual for the use of anti-diabetes drugs [See Drug Interactions (7)].
+ Gastrointestinal: WELCHOL can cause constipation.
+WELCHOL is contraindicated in patients with a history of bowel obstruction.
+WELCHOL is not recommended in patients who may be at risk of bowel obstruction, including patients with gastroparesis, other gastrointestinal
+ Reference ID: 3440203
+                                                                                                  motility disorders, or a history of major gastrointestinal surgery.
+Patients should be instructed to consume a diet that promotes bowel regularity.
+Patients should be instructed to promptly discontinue WELCHOL and seek medical attention if severe abdominal pain or severe constipation occurs.
+Because of the tablet size, WELCHOL Tablets can cause dysphagia or esophageal obstruction and should be used with caution in patients with dysphagia or swallowing disorders.
+To avoid esophageal distress, WELCHOL for Oral Suspension should not be taken in its dry form.
+Always mix WELCHOL for Oral Suspension with water, fruit juice, or diet soft drinks before ingesting [See Warnings and Precautions (5.4)].
+ Hypertriglyceridemia and pancreatitis: Patients should be instructed to discontinue WELCHOL and seek prompt medical attention if the hallmark symptoms of acute pancreatitis occur (e.g., severe abdominal pain with or without nausea and vomiting) [See Warnings and Precautions (5.2)].
+ 17.1 Primary Hyperlipidemia: Patients should be advised to adhere to their National Cholesterol Education Program
+ (NCEP)-recommended diet.
+ 17.2 Type 2 Diabetes Mellitus: General: Patients should be advised that it is important to adhere to dietary instructions,
+ a regular exercise program, and regular testing of blood glucose.
+ Hypertriglyceridemia and cardiovascular disease: Patients should be informed that WELCHOL may increase serum triglyceride concentrations and that the long-term effect of hypertriglyceridemia on the risk of coronary artery disease is uncertain [See Warnings and Precautions (5.2)].
+ Marketed by:  Daiichi Sankyo, Inc.
+ Parsippany, New Jersey 07054
+  Active Ingredient:  Product of Austria
+ Reference ID: 3440203
+  

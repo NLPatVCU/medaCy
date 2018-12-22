@@ -2,6 +2,7 @@ from .metamap.metamap import MetaMap
 
 from .tokenization.clinical_tokenizer import ClinicalTokenizer
 from .tokenization.character_tokenizer import CharacterTokenizer
+from .tokenization.systematic_review_tokenizer import SystematicReviewTokenizer
 
 from .metamap.metamap_component import MetaMapComponent
 from .annotation.gold_annotator_component import GoldAnnotatorComponent

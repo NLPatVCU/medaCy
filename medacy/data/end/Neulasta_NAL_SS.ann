@@ -1,0 +1,590 @@
+T1	tradename 106 114	Neulasta
+T2	tradename 176 194	Neulasta. Neulasta
+T3	nanoparticle 196 210	pegfilgrastim)
+T4	routeofadministration 226 238	subcutaneous
+T5	fdaapprovaldate 266 270	2002
+T6	tradename 613 621	Neulasta
+T7	indication 719 739	febrile neutropenia,
+T8	indication 883 903	febrile neutropenia.
+T9	tradename 908 916	Neulasta
+T10	dose 1118 1122	6 mg
+T11	routeofadministration 1136 1150	subcutaneously
+T12	tradename 1585 1594	Neulasta.
+T13	tradename 1691 1699	Neulasta
+T14	nanoparticle 1761 1774	pegfilgrastim
+T15	adversereaction 1875 1896	Fatal splenic rupture
+T16	adversereaction 2026 2068	Acute respiratory distress syndrome (ARDS)
+T17	adversereaction 2095 2099	ARDS
+T18	tradename 2188 2196	Neulasta
+T19	adversereaction 2214 2219	ARDS.
+T20	adversereaction 2235 2262	Serious allergic reactions,
+T21	adversereaction 2273 2285	anaphylaxis,
+T22	tradename 2323 2331	Neulasta
+T23	adversereaction 2349 2377	serious allergic reactions.
+T24	tradename 2418 2426	Neulasta
+T25	adversereaction 2605 2623	sickle cell crises
+T26	adversereaction 2831 2840	bone pain
+T27	adversereaction 2845 2863	pain in extremity.
+T28	company 2915 2925	Amgen Inc.
+T29	company 3207 3214	Amgen's
+T30	tradename 3452 3460	Neulasta
+T31	tradename 4116 4124	Neulasta
+T32	tradename 4211 4219	Neulasta
+T33	adversereaction 4300 4315	Splenic Rupture
+T34	adversereaction 4320 4355	Acute Respiratory Distress Syndrome
+T35	adversereaction 4360 4386	Serious Allergic Reactions
+T36	tradename 5065 5073	Neulasta
+T37	tradename 5123 5131	Neulasta
+T38	tradename 5322 5330	Neulasta
+T39	indication 5401 5421	febrile neutropenia,
+T40	indication 5565 5584	febrile neutropenia
+T41	tradename 5614 5622	Neulasta
+T42	tradename 5821 5829	Neulasta
+T43	routeofadministration 5842 5854	subcutaneous
+T44	dose 5868 5872	6 mg
+T45	frequency 5886 5914	once per chemotherapy cycle
+T46	tradename 5944 5952	Neulasta
+T47	tradename 6057 6065	Neulasta
+T48	routeofadministration 6082 6096	subcutaneously
+T49	tradename 6185 6193	Neulasta
+T50	tradename 6287 6295	Neulasta
+T51	tradename 6490 6498	Neulasta
+T52	tradename 6779 6787	Neulasta
+T53	tradename 6847 6855	Neulasta
+T54	tradename 6925 6933	Neulasta
+T55	tradename 7104 7113	Neulasta.
+T56	tradename 7169 7177	Neulasta
+T57	tradename 7212 7220	Neulasta
+T58	tradename 7352 7360	Neulasta
+T59	tradename 7463 7471	Neulasta
+T60	tradename 7482 7490	Neulasta
+T61	tradename 7602 7610	Neulasta
+T62	tradename 7673 7682	Neulasta.
+T63	tradename 7815 7824	Neulasta.
+T64	tradename 7869 7877	Neulasta
+T65	routeofadministration 7911 7923	subcutaneous
+T66	tradename 8064 8073	Neulasta,
+T67	tradename 8167 8175	Neulasta
+T68	tradename 8221 8229	Neulasta
+T69	tradename 8291 8300	Neulasta.
+T70	tradename 8326 8334	Neulasta
+T71	tradename 8466 8474	Neulasta
+T72	tradename 8726 8734	Neulasta
+T73	tradename 8859 8867	Neulasta
+T74	tradename 9031 9039	Neulasta
+T75	tradename 9353 9361	Neulasta
+T76	tradename 9418 9426	Neulasta
+T77	tradename 9540 9549	Neulasta.
+T78	tradename 9872 9880	Neulasta
+T79	tradename 9882 9890	Neulasta
+T80	tradename 9946 9954	Neulasta
+T81	nanoparticle 10015 10028	pegfilgrastim
+T82	adversereaction 10075 10107	Splenic Rupture Splenic rupture,
+T83	tradename 10173 10182	Neulasta.
+T84	adversereaction 10220 10235	splenic rupture
+T85	tradename 10313 10322	Neulasta.
+T86	adversereaction 10327 10405	Acute Respiratory Distress Syndrome Acute respiratory distress syndrome (ARDS)
+T87	tradename 10438 10447	Neulasta.
+T88	tradename 10547 10556	Neulasta,
+T89	adversereaction 10561 10566	ARDS.
+T90	tradename 10580 10588	Neulasta
+T91	adversereaction 10607 10612	ARDS.
+T92	adversereaction 10617 10671	Serious Allergic Reactions Serious allergic reactions,
+T93	adversereaction 10682 10694	anaphylaxis,
+T94	tradename 10727 10736	Neulasta.
+T95	adversereaction 10804 10823	Allergic reactions,
+T96	adversereaction 10834 10846	anaphylaxis,
+T97	tradename 10956 10964	Neulasta
+T98	adversereaction 10982 11010	serious allergic reactions.
+T99	tradename 11030 11038	Neulasta
+T100	nanoparticle 11099 11112	pegfilgrastim
+T101	tradename 11179 11187	Neulasta
+T102	tradename 11461 11470	Neulasta.
+T103	nanoparticle 11614 11628	pegfilgrastim.
+T104	nanoparticle 11772 11785	pegfilgrastim
+T105	nanoparticle 11864 11877	pegfilgrastim
+T106	nanoparticle 11993 12006	pegfilgrastim
+T107	adversereaction 12180 12195	Splenic Rupture
+T108	adversereaction 12242 12277	Acute Respiratory Distress Syndrome
+T109	adversereaction 12324 12350	Serious Allergic Reactions
+T110	nanoparticle 12725 12738	pegfilgrastim
+T111	adversereaction 12785 12794	bone pain
+T112	adversereaction 12799 12817	pain in extremity.
+T113	tradename 13126 13134	Neulasta
+T114	tradename 13201 13209	Neulasta
+T115	tradename 13480 13488	Neulasta
+T116	dose 13569 13579	100 mcg/kg
+T117	dose 13603 13607	6 mg
+T118	frequency 13623 13660	per chemotherapy cycle over 4 cycles.
+T119	dose 13851 13860	100 mg/m2
+T120	frequency 13861 13874	every 21 days
+T121	dose 13946 13950	6 mg
+T122	tradename 13951 13959	Neulasta
+T123	adversereaction 14153 14162	Bone pain
+T124	adversereaction 14167 14184	pain in extremity
+T125	tradename 14219 14235	Neulasta-treated
+T126	tradename 14354 14362	Neulasta
+T127	tradename 14461 14469	Neulasta
+T128	dose 14470 14474	6 mg
+T129	routeofadministration 14475 14477	SC
+T130	adversereaction 14544 14553	Bone pain
+T131	adversereaction 14562 14579	Pain in extremity
+T132	adversereaction 14586 14598	Leukocytosis
+T133	adversereaction 14620 14632	leukocytosis
+T134	tradename 14749 14758	Neulasta.
+T135	adversereaction 14793 14805	leukocytosis
+T136	nanoparticle 14959 14972	pegfilgrastim
+T137	nanoparticle 15210 15231	pegfilgrastim-treated
+T138	nanoparticle 15303 15316	pegfilgrastim
+T139	tradename 15841 15849	Neulasta
+T140	tradename 16031 16040	Neulasta.
+T141	tradename 16472 16481	Neulasta.
+T142	adversereaction 16511 16526	Splenic rupture
+T143	adversereaction 16602 16620	Sickle cell crisis
+T144	adversereaction 16658 16722	Hypersensitivity reactions: Allergic reactions/hypersensitivity,
+T145	adversereaction 16733 16756	anaphylaxis, skin rash,
+T146	adversereaction 16761 16793	urticaria, generalized erythema
+T147	adversereaction 16798 16806	flushing
+T148	adversereaction 16894 16898	ARDS
+T149	adversereaction 16991 17015	Injection site reactions
+T150	adversereaction 17058 17096	Sweet's syndrome, Cutaneous vasculitis
+T151	tradename 17160 17168	Neulasta
+T152	nanoparticle 17555 17568	Pegfilgrastim
+T153	tradename 17800 17808	Neulasta
+T154	nanoparticle 17992 18005	pegfilgrastim
+T155	nanoparticle 18604 18617	pegfilgrastim
+T156	tradename 18768 18776	Neulasta
+T157	company 18815 18822	Amgen's
+T158	nanoparticle 18985 18998	pegfilgrastim
+T159	tradename 19256 19264	Neulasta
+T160	nanoparticle 19367 19380	pegfilgrastim
+T161	nanoparticle 19502 19515	pegfilgrastim
+T162	routeofadministration 19522 19534	subcutaneous
+T163	dose 19553 19563	100 mcg/kg
+T164	auc 19569 19590	22.0 ( 13.1) mcghr/mL
+T165	auc 19631 19652	29.3 ( 23.2) mcghr/mL
+T166	auc 19700 19721	47.9 ( 22.5) mcghr/mL
+T167	plasmahalflife 19845 19884	20.2 ( 11.3) hours, 21.2 ( 16.0) hours,
+T168	plasmahalflife 19889 19909	30.1 ( 38.2) hours,
+T169	adversereaction 19961 19971	bone pain.
+T170	tradename 20035 20043	Neulasta
+T171	nanoparticle 20441 20455	pegfilgrastim.
+T172	nanoparticle 20468 20481	pegfilgrastim
+T173	tradename 20619 20627	Neulasta
+T174	routeofadministration 20722 20734	subcutaneous
+T175	dose 20744 20754	300 mcg/kg
+T176	tradename 21290 21306	Neulasta-induced
+T177	tradename 21357 21365	Neulasta
+T178	nanoparticle 21367 21381	pegfilgrastim)
+T179	activeingredient 21409 21442	recombinant methionyl human G-CSF
+T180	activeingredient 21444 21455	filgrastim)
+T181	surfacecoating 21461 21492	monomethoxypolyethylene glycol.
+T182	activeingredient 21494 21504	Filgrastim
+T183	molecularweight 21589 21609	19 kilodaltons (kD).
+T184	activeingredient 21611 21621	Filgrastim
+T185	nanoparticle 21783 21797	pegfilgrastim,
+T186	molecularweight 21801 21806	20 kD
+T187	surfacecoating 21807 21837	monomethoxypolyethylene glycol
+T188	activeingredient 21907 21918	filgrastim.
+T189	nanoparticle 21952 21965	pegfilgrastim
+T190	molecularweight 21983 21989	39 kD.
+T191	tradename 21990 21998	Neulasta
+T192	tradename 22037 22045	Neulasta
+T193	routeofadministration 22057 22069	subcutaneous
+T194	tradename 22152 22160	Neulasta
+T195	tradename 22220 22228	Neulasta
+T196	tradename 22266 22274	Neulasta
+T197	tradename 22327 22336	Neulasta.
+T198	routeofadministration 22410 22422	subcutaneous
+T199	tradename 22462 22470	Neulasta
+T200	nanoparticle 22485 22498	pegfilgrastim
+T201	inactiveingredient 22605 22612	acetate
+T202	inactiveingredient 22624 22638	polysorbate 20
+T203	inactiveingredient 22650 22656	sodium
+T204	inactiveingredient 22673 22681	sorbitol
+T205	nanoparticle 22769 22782	Pegfilgrastim
+T206	nanoparticle 23041 23054	pegfilgrastim
+T207	nanoparticle 23123 23136	pegfilgrastim
+T208	nanoparticle 23276 23290	pegfilgrastim,
+T209	nanoparticle 23515 23528	pegfilgrastim
+T210	nanoparticle 23629 23642	pegfilgrastim
+T211	tradename 23675 23683	Neulasta
+T212	plasmahalflife 23696 23711	15 to 80 hours
+T213	routeofadministration 23718 23730	subcutaneous
+T214	nanoparticle 23789 23802	pegfilgrastim
+T215	routeofadministration 23837 23851	subcutaneously
+T216	tradename 23920 23929	Neulasta.
+T217	nanoparticle 24001 24015	pegfilgrastim,
+T218	nanoparticle 24244 24257	pegfilgrastim
+T219	nanoparticle 24408 24422	pegfilgrastim.
+T220	nanoparticle 24706 24734	pegfilgrastim. Pegfilgrastim
+T221	nanoparticle 25015 25028	pegfilgrastim
+T222	routeofadministration 25029 25043	subcutaneously
+T223	frequency 25044 25059	every other day
+T224	nanoparticle 25833 25846	pegfilgrastim
+T225	tradename 26474 26482	Neulasta
+T226	dose 26626 26634	60 mg/m2
+T227	dose 26649 26657	75 mg/m2
+T228	frequency 26671 26703	every 21 days for up to 4 cycles
+T229	tradename 26805 26814	Neulasta.
+T230	indication 27092 27112	febrile neutropenia.
+T231	indication 27204 27223	febrile neutropenia
+T232	activeingredient 27246 27257	filgrastim,
+T233	tradename 27362 27370	Neulasta
+T234	activeingredient 27422 27440	filgrastim-treated
+T235	routeofadministration 27551 27563	subcutaneous
+T236	tradename 27577 27585	Neulasta
+T237	dose 27587 27592	6 mg)
+T238	frequency 27633 27638	daily
+T239	routeofadministration 27639 27651	subcutaneous
+T240	activeingredient 27652 27662	filgrastim
+T241	dose 27664 27672	5 mcg/kg
+T242	frequency 27672 27677	/day)
+T243	routeofadministration 27788 27800	subcutaneous
+T244	tradename 27814 27822	Neulasta
+T245	dose 27827 27838	100 mcg/kg)
+T246	frequency 27851 27856	daily
+T247	routeofadministration 27857 27869	subcutaneous
+T248	activeingredient 27870 27880	filgrastim
+T249	dose 27882 27890	5 mcg/kg
+T250	frequency 27890 27895	/day)
+T251	tradename 28058 28074	Neulasta-treated
+T252	activeingredient 28107 28125	filgrastim-treated
+T253	tradename 28259 28267	Neulasta
+T254	activeingredient 28301 28311	filgrastim
+T255	tradename 28398 28406	Neulasta
+T256	activeingredient 28439 28449	Filgrastim
+T257	dose 28723 28732	100 mg/m2
+T258	frequency 28747 28779	every 21 days for up to 4 cycles
+T259	routeofadministration 28911 28923	subcutaneous
+T260	tradename 28937 28945	Neulasta
+T261	dose 28947 28952	6 mg)
+T262	tradename 29189 29205	Neulasta-treated
+T263	indication 29416 29435	febrile neutropenia
+T264	tradename 29459 29475	Neulasta-treated
+T265	tradename 29569 29577	Neulasta
+T266	tradename 29622 29630	Neulasta
+T267	nanoparticle 29708 29722	pegfilgrastim,
+T268	tradename 29891 29899	Neulasta
+T269	tradename 30298 30306	Neulasta
+T270	tradename 30324 30332	Neulasta
+T271	tradename 30449 30457	Neulasta
+T272	nanoparticle 30569 30582	pegfilgrastim
+T273	tradename 30624 30633	Neulasta.
+T274	tradename 30942 30950	Neulasta
+T275	tradename 31195 31203	Neulasta
+T276	tradename 31326 31335	Neulasta:
+T277	adversereaction 31345 31360	Splenic rupture
+T278	adversereaction 31370 31405	Acute Respiratory Distress Syndrome
+T279	adversereaction 31415 31441	Serious allergic reactions
+T280	adversereaction 31451 31469	Sickle cell crisis
+T281	tradename 31799 31808	Neulasta:
+T282	tradename 32106 32114	Neulasta
+T283	tradename 32255 32264	Neulasta.
+T284	tradename 32427 32435	Neulasta
+T285	tradename 32471 32479	Neulasta
+T286	tradename 32674 32683	Neulasta.
+T287	tradename 32723 32731	Neulasta
+T288	tradename 32857 32866	Neulasta.
+T289	tradename 32956 32964	Neulasta
+T290	company 33019 33024	Amgen
+T291	tradename 33169 33177	Neulasta
+T292	tradename 33317 33325	Neulasta
+T293	tradename 33550 33558	Neulasta
+T294	tradename 33707 33715	Neulasta
+T295	tradename 33821 33829	Neulasta
+T296	tradename 34004 34012	Neulasta
+T297	tradename 34125 34134	Neulasta.
+T298	tradename 34197 34205	Neulasta
+T299	tradename 34252 34260	Neulasta
+T300	tradename 34412 34420	Neulasta
+T301	tradename 34507 34515	Neulasta
+T302	tradename 34658 34666	Neulasta
+T303	tradename 34695 34703	Neulasta
+T304	tradename 34842 34850	Neulasta
+T305	tradename 34888 34896	Neulasta
+T306	tradename 34953 34961	Neulasta
+T307	tradename 35122 35130	Neulasta
+T308	tradename 35371 35379	Neulasta
+T309	tradename 35459 35467	Neulasta
+T310	tradename 35518 35526	Neulasta
+T311	tradename 35567 35575	Neulasta
+T312	tradename 35676 35684	Neulasta
+T313	tradename 35813 35821	Neulasta
+T314	tradename 35925 35933	Neulasta
+T315	tradename 35986 35994	Neulasta
+T316	nanoparticle 35996 36010	pegfilgrastim)
+T317	company 36028 36038	Amgen Inc.
+T318	tradename 36263 36271	Neulasta
+T319	nanoparticle 36272 36285	Pegfilgrastim
+T320	tradename 36425 36433	Neulasta
+T321	tradename 36520 36529	Neulasta.
+T322	tradename 36595 36603	Neulasta
+T323	tradename 36630 36648	Neulasta? Neulasta
+T324	tradename 36967 36976	Neulasta?
+T325	tradename 36989 36997	Neulasta
+T326	tradename 37055 37063	Neulasta
+T327	nanoparticle 37065 37079	pegfilgrastim)
+T328	activeingredient 37096 37107	filgrastim)
+T329	tradename 37170 37179	Neulasta?
+T330	tradename 37353 37361	Neulasta
+T331	tradename 37725 37734	Neulasta?
+T332	tradename 37836 37845	Neulasta.
+T333	tradename 37895 37904	Neulasta,
+T334	tradename 38024 38033	Neulasta?
+T335	adversereaction 38043 38058	Spleen Rupture.
+T336	tradename 38120 38129	Neulasta.
+T337	adversereaction 38133 38149	ruptured spleen
+T338	adversereaction 38442 38485	Acute Respiratory Distress Syndrome (ARDS).
+T339	adversereaction 38629 38656	Serious Allergic Reactions.
+T340	tradename 38658 38666	Neulasta
+T341	adversereaction 38677 38704	serious allergic reactions.
+T342	tradename 39000 39009	Neulasta,
+T343	adversereaction 39072 39091	Sickle Cell Crises.
+T344	adversereaction 39116 39134	sickle cell crisis
+T345	tradename 39180 39189	Neulasta.
+T346	activeingredient 39297 39308	filgrastim,
+T347	tradename 39331 39339	Neulasta
+T348	nanoparticle 39341 39355	pegfilgrastim)
+T349	tradename 39509 39518	Neulasta?
+T350	tradename 39744 39752	Neulasta
+T351	tradename 39855 39863	Neulasta
+T352	tradename 39981 39989	Neulasta
+T353	tradename 40160 40169	Neulasta.
+T354	tradename 40201 40209	Neulasta
+T355	company 40253 40260	Amgen's
+T356	tradename 40380 40388	NEULASTA
+T357	tradename 40399 40407	Neulasta
+T358	tradename 40445 40453	Neulasta
+T359	tradename 40551 40559	Neulasta
+T360	tradename 40616 40625	Neulasta.
+T361	tradename 40648 40656	Neulasta
+T362	tradename 40712 40720	Neulasta
+T363	tradename 40925 40933	Neulasta
+T364	tradename 40991 40999	Neulasta
+T365	tradename 41538 41546	Neulasta
+T366	tradename 41577 41585	Neulasta
+T367	tradename 41807 41816	Neulasta.
+T368	tradename 41995 42003	Neulasta
+T369	tradename 42256 42264	NEULASTA
+T370	tradename 43532 43540	Neulasta
+T371	tradename 43819 43827	Neulasta
+T372	tradename 44032 44041	Neulasta.
+T373	tradename 44796 44804	Neulasta
+T374	tradename 46470 46478	Neulasta
+T375	tradename 46490 46498	Neulasta
+T376	tradename 46585 46593	Neulasta
+T377	tradename 46709 46718	Neulasta.
+T378	tradename 46724 46732	Neulasta
+T379	tradename 46867 46875	Neulasta
+T380	tradename 46946 46954	Neulasta
+T381	tradename 47083 47092	Neulasta?
+T382	nanoparticle 47115 47128	pegfilgrastim
+T383	inactiveingredient 47199 47234	acetate, sorbitol, polysorbate 20,
+T384	inactiveingredient 47239 47246	sodium.
+T385	tradename 47247 47255	Neulasta
+T386	nanoparticle 47257 47271	pegfilgrastim)
+T387	company 47289 47299	Amgen Inc.
+T388	tradename 47541 47549	Neulasta
+T389	nanoparticle 47564 47578	pegfilgrastim)
+T390	tradename 47610 47618	Neulasta
+T391	tradename 47669 47677	Neulasta
+T392	tradename 47705 47713	Neulasta
+T393	tradename 47744 47753	Neulasta.
+T394	tradename 47987 47995	Neulasta
+T395	tradename 48027 48036	Neulasta?
+T396	tradename 48104 48112	Neulasta
+T397	tradename 48169 48177	Neulasta
+T398	tradename 48328 48336	Neulasta
+T399	tradename 48481 48489	Neulasta
+T400	tradename 48599 48607	Neulasta
+T401	tradename 48665 48674	Neulasta,
+T402	tradename 48781 48789	Neulasta
+T403	tradename 48821 48830	Neulasta.
+T404	tradename 48896 48905	Neulasta,
+T405	tradename 48939 48947	Neulasta
+T406	tradename 49031 49040	Neulasta.
+T407	tradename 49124 49132	Neulasta
+T408	tradename 49227 49235	Neulasta
+T409	tradename 49333 49341	Neulasta
+T410	tradename 49457 49465	Neulasta
+T411	tradename 49528 49536	Neulasta
+T412	tradename 49588 49596	Neulasta
+T413	tradename 49923 49931	Neulasta
+T414	tradename 50006 50014	Neulasta
+T415	tradename 50177 50185	Neulasta
+T416	tradename 50299 50308	Neulasta.
+T417	tradename 50398 50406	Neulasta
+T418	tradename 50501 50509	Neulasta
+T419	tradename 50569 50577	Neulasta
+T420	tradename 50667 50675	Neulasta
+T421	tradename 50721 50730	Neulasta.
+T422	tradename 50790 50799	Neulasta,
+T423	tradename 50869 50877	Neulasta
+T424	tradename 50916 50934	Neulasta? Neulasta
+T425	tradename 51217 51225	Neulasta
+T426	tradename 51282 51291	Neulasta?
+T427	tradename 51304 51312	Neulasta
+T428	nanoparticle 51360 51373	pegfilgrastim
+T429	tradename 51376 51384	Neulasta
+T430	activeingredient 51392 51402	filgrastim
+T431	tradename 51475 51484	Neulasta?
+T432	tradename 51504 51513	Neulasta,
+T433	tradename 51811 51819	Neulasta
+T434	tradename 51951 51960	Neulasta.
+T435	tradename 52274 52282	Neulasta
+T436	tradename 52489 52498	Neulasta?
+T437	tradename 52591 52599	Neulasta
+T438	tradename 52630 52639	Neulasta,
+T439	tradename 52699 52708	Neulasta.
+T440	tradename 52806 52814	Neulasta
+T441	tradename 52845 52854	Neulasta?
+T442	tradename 52865 52873	Neulasta
+T443	routeofadministration 52915 52928	subcutaneous)
+T444	tradename 52956 52964	Neulasta
+T445	tradename 53089 53097	Neulasta
+T446	tradename 53202 53211	Neulasta.
+T447	tradename 53284 53292	Neulasta
+T448	tradename 53481 53489	Neulasta
+T449	tradename 53568 53576	Neulasta
+T450	tradename 53691 53699	Neulasta
+T451	tradename 53736 53744	Neulasta
+T452	tradename 53932 53940	Neulasta
+T453	tradename 53985 53993	Neulasta
+T454	adversereaction 54023 54041	allergic reaction.
+T455	tradename 54081 54089	Neulasta
+T456	tradename 54253 54262	Neulasta.
+T457	tradename 54309 54317	Neulasta
+T458	tradename 54420 54428	Neulasta
+T459	tradename 54473 54481	Neulasta
+T460	tradename 54632 54640	Neulasta
+T461	tradename 54699 54707	Neulasta
+T462	tradename 54758 54767	Neulasta.
+T463	tradename 54793 54801	Neulasta
+T464	tradename 54867 54875	Neulasta
+T465	tradename 55009 55018	Neulasta.
+T466	tradename 55095 55103	Neulasta
+T467	tradename 55207 55216	Neulasta.
+T468	tradename 55278 55286	Neulasta
+T469	tradename 55334 55343	Neulasta.
+T470	tradename 55378 55396	Neulasta? Neulasta
+T471	adversereaction 55449 55464	Spleen rupture.
+T472	tradename 55535 55544	Neulasta.
+T473	adversereaction 55548 55563	ruptured spleen
+T474	adversereaction 55793 55836	Acute Respiratory Distress Syndrome (ARDS).
+T475	adversereaction 55947 55952	ARDS:
+T476	adversereaction 56040 56067	Serious allergic reactions.
+T477	adversereaction 56145 56170	serious allergic reaction
+T478	tradename 56176 56185	Neulasta:
+T479	tradename 56356 56365	Neulasta,
+T480	tradename 56399 56407	Neulasta
+T481	tradename 56491 56500	Neulasta.
+T482	tradename 56723 56731	Neulasta
+T483	nanoparticle 56733 56747	pegfilgrastim)
+T484	tradename 56782 56790	Neulasta
+T485	tradename 56991 57000	Neulasta.
+T486	tradename 57235 57243	Neulasta
+T487	tradename 57392 57401	Neulasta,
+T488	tradename 57505 57513	Neulasta
+T489	tradename 57673 57682	Neulasta?
+T490	nanoparticle 57702 57715	pegfilgrastim
+T491	inactiveingredient 57739 57763	acetate, polysorbate 20,
+T492	inactiveingredient 57768 57784	sodium, sorbitol
+T493	tradename 57894 57902	Neulasta
+T494	nanoparticle 57904 57918	pegfilgrastim)
+T495	company 57936 57946	Amgen Inc.
+T496	company 58080 58090	Amgen Inc.
+T497	tradename 58306 58314	Neulasta
+T498	nanoparticle 58316 58330	pegfilgrastim)
+T499	tradename 58401 58409	Neulasta
+T500	tradename 58652 58660	Neulasta
+T501	tradename 59118 59126	Neulasta
+T502	tradename 59232 59241	Neulasta.
+T503	nanoparticle 59632 59645	pegfilgrastim
+T504	tradename 59675 59684	Neulasta.
+T505	tradename 60183 60191	Neulasta
+T506	company 60378 60383	Amgen
+T507	company 60472 60477	Amgen
+T508	tradename 60602 60610	Neulasta
+T509	tradename 60710 60718	Neulasta
+T510	tradename 60777 60785	Neulasta
+T511	tradename 62371 62380	Neulasta.
+T512	tradename 63265 63273	Neulasta
+T513	tradename 63454 63462	Neulasta
+T514	tradename 63486 63494	Neulasta
+T515	tradename 63781 63789	Neulasta
+T516	company 64252 64257	Amgen
+T517	company 65965 65970	Amgen
+T518	company 66788 66793	Amgen
+T519	company 67969 67974	Amgen
+T520	tradename 69297 69305	Neulasta
+T521	tradename 69650 69659	Neulasta,
+T522	tradename 70538 70547	Neulasta.
+T523	company 71120 71125	Amgen
+T524	company 71463 71468	Amgen
+T525	tradename 71630 71638	Neulasta
+T526	nanoparticle 71640 71654	pegfilgrastim)
+T527	company 71672 71682	Amgen Inc.
+T528	company 71757 71767	Amgen Inc.
+T529	tradename 72019 72027	Neulasta
+T530	tradename 72676 72684	Neulasta
+T531	nanoparticle 72686 72700	pegfilgrastim)
+T532	tradename 72721 72729	Neulasta
+T533	nanoparticle 72731 72745	pegfilgrastim)
+T534	tradename 73065 73074	Neulasta.
+T535	tradename 73937 73945	Neulasta
+T536	tradename 74051 74059	Neulasta
+T537	tradename 74175 74183	Neulasta
+T538	tradename 74294 74302	Neulasta
+T539	tradename 74478 74486	Neulasta
+T540	tradename 74858 74866	Neulasta
+T541	tradename 75617 75625	Neulasta
+T542	tradename 76344 76352	Neulasta
+T543	tradename 76540 76549	Neulasta,
+T544	tradename 77193 77201	Neulasta
+T545	tradename 77239 77247	Neulasta
+T546	tradename 77276 77285	Neulasta.
+T547	tradename 77467 77475	Neulasta
+T548	tradename 77999 78008	Neulasta,
+T549	tradename 78192 78200	Neulasta
+T550	tradename 78292 78300	Neulasta
+T551	tradename 78352 78360	Neulasta
+T552	nanoparticle 78408 78421	pegfilgrastim
+T553	tradename 78424 78432	Neulasta
+T554	activeingredient 78440 78450	filgrastim
+T555	tradename 78985 78993	Neulasta
+T556	tradename 79172 79180	Neulasta
+T557	tradename 79714 79723	Neulasta,
+T558	adversereaction 80418 80461	acute respiratory distress syndrome (ARDS):
+T559	tradename 80643 80651	Neulasta
+T560	tradename 80745 80753	Neulasta
+T561	tradename 80851 80859	Neulasta
+T562	tradename 81013 81021	Neulasta
+T563	tradename 81966 81975	Neulasta.
+T564	tradename 82503 82512	Neulasta.
+T565	company 83292 83299	Amgen's
+T566	tradename 83690 83698	Neulasta
+T567	tradename 84704 84712	Neulasta
+T568	nanoparticle 84727 84741	pegfilgrastim)
+T569	tradename 85538 85546	Neulasta
+T570	routeofadministration 85571 85584	subcutaneous)
+T571	adversereaction 85734 85761	Serious allergic reactions
+T572	tradename 85778 85787	Neulasta.
+T573	tradename 85943 85951	Neulasta
+T574	tradename 85987 85995	Neulasta
+T575	tradename 86127 86135	Neulasta
+T576	adversereaction 86329 86346	allergic reaction
+T577	tradename 86370 86379	Neulasta,
+T578	tradename 87738 87747	Neulasta.
+T579	tradename 88334 88343	Neulasta.
+T580	tradename 88387 88395	Neulasta
+T581	tradename 88689 88697	Neulasta
+T582	tradename 89796 89804	Neulasta
+T583	company 94265 94272	Amgen's
+T584	tradename 96440 96448	Neulasta
+T585	nanoparticle 96450 96464	pegfilgrastim)
+T586	company 96482 96492	Amgen Inc.
+T587	adversereaction 97291 97306	Splenic Rupture
+T588	adversereaction 97312 97347	Acute Respiratory Distress Syndrome
+T589	adversereaction 97353 97379	Serious Allergic Reactions
+T590	adversereaction 97553 97565	Leukocytosis

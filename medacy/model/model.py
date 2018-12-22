@@ -1,13 +1,18 @@
+"""
+A medaCy named entity recognition model wraps together three functionalities
+"""
+
 import logging, os, joblib, time
 from tabulate import tabulate
 from statistics import mean
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
 from .stratified_k_fold import SequenceStratifiedKFold
 
 from medacy.pipelines.base.base_pipeline import BasePipeline
+from ._model import predict_document
 from ..tools import DataLoader
-from ..tools import model_to_ann
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
+
 
 
 
@@ -27,6 +32,10 @@ class Model:
         self.y_data = []
         self.n_jobs = n_jobs
 
+        #Run an initializing document through the pipeline to register all token extensions.
+        #This allows the gathering of pipeline information prior to fitting with live data.
+        doc = self.pipeline(medacy_pipeline.spacy_pipeline.make_doc("Initialize"), predict=True)
+        assert doc is not None, "Model could not be initialized with the set pipeline"
 
     def fit(self, training_data_loader):
         """
@@ -68,64 +77,64 @@ class Model:
 
 
 
-    def predict(self, new_data_loader):
+    def predict(self, documents, prediction_directory = None):
         """
-        Predicts on the new data using the trained model, if model is not yet trained will return none.
-        Outputs predictions to a /predictions directory where new example data is located.
-        :param new_data_loader: DataLoader instance containing examples to predict on
+
+        :param documents: a document (string) or collection of documents contained in a DataLoader
+        :param prediction_directory: the directory to write predictions to if corpus is a DataLoader
         :return:
         """
 
-        assert isinstance(new_data_loader, DataLoader), "Must pass in an instance of DataLoader containing your examples to be used for prediction"
+        assert isinstance(documents, DataLoader) or isinstance(documents, str), "Must pass in an instance of DataLoader containing your examples to be used for prediction"
+        assert self.model is not None, "Must fit or load a pickled model before predicting"
 
-        if self.model is None:
-            return None
-        else:
-            model = self.model
+        if isinstance(documents, str): #TODO Implement prediction over a single string
+            raise AttributeError("Not yet implement, only bulk predictions with a data loader allowed")
 
+        model = self.model
         medacy_pipeline = self.pipeline
 
-        # create directory to write predictions to
-        prediction_directory = new_data_loader.data_directory + "/predictions/"
-        if os.path.isdir(prediction_directory):
-            logging.warning("Overwritting existing predictions")
-        else:
-            os.makedirs(prediction_directory)
+        if isinstance(documents, DataLoader):
+            # create directory to write predictions to
+            if prediction_directory is None:
+                prediction_directory = documents.data_directory + "/predictions/"
 
-        for data_file in new_data_loader.get_files():
-            logging.info("Predicting file: %s", data_file.file_name)
+            if os.path.isdir(prediction_directory):
+                logging.warning("Overwritting existing predictions")
+            else:
+                os.makedirs(prediction_directory)
 
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+            for data_file in documents.get_files():
+                logging.info("Predicting file: %s", data_file.file_name)
+                with open(data_file.raw_path, 'r') as raw_text:
+                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                    doc.set_extension('file_name', default=data_file.file_name, force=True)
+                    if data_file.metamapped_path is not None:
+                        doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
-            if data_file.metamapped_path is not None:
-                doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+                # run through the pipeline
+                doc = medacy_pipeline(doc, predict=True)
 
-            # run through the pipeline
-            doc = medacy_pipeline(doc, predict=True)
+                annotations = predict_document(model, doc, medacy_pipeline)
+                logging.debug("Writing to: %s", os.path.join(prediction_directory,data_file.file_name+".ann"))
+                annotations.to_ann(write_location=os.path.join(prediction_directory,data_file.file_name+".ann"))
 
-            ann_file_contents = model_to_ann(model, medacy_pipeline, doc)
-            with open(prediction_directory+data_file.file_name+".ann", "a+") as f:
-                f.write(ann_file_contents)
+        if isinstance(documents, str):
+            raise NotImplementedError("Currently only DataLoaders can be predicted on.")
 
 
-    def cross_validate(self, training_data_loader=None, num_folds=10):
+    def cross_validate(self, num_folds=10):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
-        :param training_data_loader: Optional parameter for data to cross validate, if ommited cross validation will be
-                performed on the data that was used to previously fit the model.
         :param num_folds: number of folds to split training data into for cross validation
         :return: Prints out performance metrics
         """
 
         assert num_folds > 1, "Number of folds for cross validation must be greater than 1"
 
-        # If a new data loader has been passed in, extract features.  Else use the already extracted features
-        # from previously fitting the model.
-        if training_data_loader is not None:
-            assert isinstance(training_data_loader,
-                              DataLoader), "Must pass in an instance of DataLoader containing your training files"
-            self._extract_features(self.pipeline, training_data_loader.is_metamapped())
+        assert self.model is not None, "Cannot cross validate a un-fit model"
+        assert self.X_data is not None and self.y_data is not None, \
+            "Must have features and labels extracted for cross validation"
 
         X_data = self.X_data
         Y_data = self.y_data
@@ -206,7 +215,7 @@ class Model:
                        format(statistics_all_folds[label]['f1_max'], ".3f")]
                       for label in named_entities + ['system']]
 
-        print(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+        logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
 
 
@@ -236,17 +245,66 @@ class Model:
         # run 'er through
         doc = medacy_pipeline(doc)
 
+        # print()
+        # print("Training on")
+        # for token in doc:
+        #     print(token, token._.feature_is_mass_unit, token.like_num, token._.feature_is_measurement,
+        #           token._.gold_label)
+        # print()
+
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc)
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
-        return (features, labels)
+        return features, labels
 
-    def dump(self, path):
+    def load(self, path):
         """
-        Dumps the fitted model this class contains into the specified directory
+        Loads a pickled model.
         :param path: File path to directory where fitted model should be dumped
         :return:
         """
-        assert self.model is not None, "Must fit model before dumping"
+        self.model = joblib.load(path)
+
+    def dump(self, path):
+        """
+        Dumps a model into a pickle file
+        :param path: Directory path to dump the model
+        :return:
+        """
+        assert self.model is not None, "Must fit model before dumping."
         joblib.dump(self.model, path)
+
+
+    def get_info(self, return_dict=False):
+        """
+        Retrieves information about a Model including details about the feature extraction pipeline, features utilized,
+        and learning model.
+        :param return_dict: Returns a raw dictionary of information as opposed to a formatted string
+        :return: Returns structured information
+        """
+        pipeline_information = self.pipeline.get_pipeline_information()
+        feature_extractor = self.pipeline.get_feature_extractor()
+        #TODO include tokenizer
+        pipeline_information['feature_extraction'] = {}
+        pipeline_information['feature_extraction']['medacy_features'] = feature_extractor.all_custom_features
+        pipeline_information['feature_extraction']['spacy_features'] = feature_extractor.spacy_features
+        pipeline_information['feature_extraction']['window_size'] = feature_extractor.window_size
+
+        if return_dict:
+            return pipeline_information
+
+        text = ["Pipeline Name: %s" % pipeline_information['pipeline_name'],
+                "Learner Name: %s" % pipeline_information['learner_name'],
+                "Pipeline Description: %s" % pipeline_information['description'],
+                "Pipeline Components: [%s]" % ",".join(pipeline_information['components']),
+                "Spacy Features: [%s]" % ", ".join(pipeline_information['feature_extraction']['spacy_features']),
+                "Medacy Features: [%s]" % ", ".join(pipeline_information['feature_extraction']['medacy_features']).replace('feature_', ''),
+                "Window Size: (+-) %i" % pipeline_information['feature_extraction']['window_size']
+                ]
+
+        return "\n".join(text)
+
+    def __str__(self):
+        return self.get_info()
+
