@@ -16,3 +16,14 @@ medaCy comes equipped with a powerful model for entity extraction from clinical 
                       ------------------------------------------------
      Overall (micro)  0.7905  0.7137  0.7502    0.9243  0.8235  0.8710
      Overall (macro)  0.7786  0.6981  0.7343    0.9152  0.8099  0.8569
+| Entities | Strict | Lenient |
+| :-------: | :----------------: |:-------------:|
+|Drug| | |  |
+|Strength|  |  |
+|Duration | |  |
+|Route | |  |
+|Form | |  |
+|ADE | |  |
+|Dosage | |  |
+|Reason | |  |
+|Frequency | |  |
