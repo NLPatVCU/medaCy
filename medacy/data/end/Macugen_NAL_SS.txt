@@ -1,0 +1,214 @@
+label
+ NDA 21-756/S-018 Page 3
+ HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all of the information needed to use MACUGEN safely and effectively.
+See full prescribing information for MACUGEN.
+MACUGEN(pegaptanib sodium injection) Intravitreal Injection Initial U.S. Approval: 2004
+ ------------------INDICATIONS AND USAGE------------------ Macugen is indicated for the treatment of neovascular (wet) age-related macular degeneration (1).
+ ------------DOSAGE AND ADMINISTRATION-------------&#x2022;  FOR OPHTHALMIC INTRAVITREAL INJECTION
+ ONLY (2.1).
+&#x2022;  Macugen 0.3 mg should be administered once every six  weeks by intravitreous injection into the eye to be treated (2.2).
+ -----------DOSAGE FORMS AND STRENGTHS-----------&#x2022;  0.3 mg/90 L solution in a single-use syringe for
+ intravitreal injection (3).
+ ---------------------CONTRAINDICATIONS-------------------- &#x2022;  Ocular or periocular infections (4.1).
+&#x2022;  Hypersensitivity (4.2).
+ -------------WARNINGS AND PRECAUTIONS-------------&#x2022;  Endophthalmitis may occur following intravitreous
+ injections.
+Proper aseptic injection technique should always be utilized when administering Macugen.
+Patients should be monitored during the week following the injection (5.1).
+ &#x2022;  Increases in intraocular pressure have been seen within 30 minutes of injection of Macugen (5.2).
+ &#x2022;  Rare cases of anaphylaxis/anaphylactoid reactions, including angioedema, have been reported in the post-marketing experience (5.3).
+ --------------------ADVERSE REACTIONS--------------------Most common adverse reactions (reported in 10-40% of patients treated with Macugen for up to two years) are  anterior chamber inflammation, blurred vision, cataract, conjunctival hemorrhage, corneal edema, eye discharge, eye irritation, eye pain, hypertension, increased intraocular pressure (IOP), ocular discomfort, punctate keratitis, reduced visual acuity, visual disturbance, vitreous floaters, and vitreous opacities (6.2).
+ To report SUSPECTED ADVERSE REACTIONS, contact Eyetech Inc.
+at 1-866-MACUGEN (1-866-622-8436) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ See 17 for PATIENT COUNSELING INFORMATION
+     Revised: 07/2011
+ FULL PRESCRIBING INFORMATION: CONTENTS* 8.3 Nursing Mothers 1 INDICATIONS AND USAGE 8.4 Pediatric Use 2.
+DOSAGE AND ADMINISTRATION 8.5 Geriatric Use
+ 2.1 General Dosing Information 10 OVERDOSAGE 2.2 Dosing 11 DESCRIPTION 2.3 Preparation for Administration 12 CLINICAL PHARMACOLOGY 2.4 Administration 12.1Mechanism of Action
+ 3 DOSAGE FORMS AND STRENGTHS 12.3Pharmacokinetics 4 CONTRAINDICATIONS 13 NONCLINICAL TOXICOLOGY
+ 4.1 Ocular or Periocular Infections 13.1Carcinogenesis, Mutagenesis, Impairment of Fertility 4.2 Hypersensitivity 13.2Animal Toxicology and/or Pharmacology
+ 5 WARNINGS AND PRECAUTIONS 14 CLINICAL STUDIES 5.1 Endophthalmitis 16 HOW SUPPLIED/STORAGE AND HANDLING 5.2 Increases in Intraocular Pressure 17 PATIENT COUNSELING INFORMATION 5.3 Anaphylaxis
+ 6 ADVERSE REACTIONS 6.1 Injection Procedure 6.2 Clinical Studies Experience 6.3 Postmarketing Experience *Sections or subsections omitted from the full prescribing
+ 8 USE IN SPECIFIC POPULATIONS information are not listed.
+8.1 Pregnancy
+ Reference ID: 3026883
+                   NDA 21-756/S-018 Page 4
+ FULL PRESCRIBING INFORMATION
+ 1 INDICATIONS AND USAGE Macugen is indicated for the treatment of neovascular (wet) age-related macular
+ degeneration.
+ 2.
+DOSAGE AND ADMINISTRATION 2.1 General Dosing Information FOR OPHTHALMIC INTRAVITREAL INJECTION ONLY.
+ 2.2 Dosing Macugen 0.3 mg should be administered once every six weeks by intravitreous injection into the eye to be treated.
+ 2.3 Preparation for Administration Macugen should be inspected visually for particulate matter and discoloration prior to
+ administration.
+ If visible particulates are observed and/or the liquid in the syringe is
+ discolored, the syringe must not be used.
+ Administration of the syringe contents involves assembly of the syringe with the administration needle.
+ The injection procedure should be carried out under controlled aseptic conditions, which includes the use of sterile gloves, a sterile drape, and a sterile eyelid speculum (or equivalent).
+ When ready to assemble syringe and administer injection, carefully peel open pouches, remove contents, and place on sterile field.
+ If upon opening the pouch, the plastic clip is missing or not attached to the syringe, the syringe should not be used.
+ To avoid compromising the sterility of the product, do not pull back on the plunger.
+1.
+Remove the syringe from the plastic clip.
+ 2.
+Twist off cap.
+ 3.
+Attach the sterile BD 30G &#x2022; Precision Glide administration needle (included) to the
+ syringe by screwing it into the syringe tip.
+ --Another sterile BD 30G &#x2022; Precision Glide administration needle may be used in lieu of
+ the one included.
+Remove the plastic needle shield from the needle.
+  4.
+Holding the syringe with the needle pointing up, check the syringe for bubbles.
+If there
+ are bubbles, gently tap the syringe with your finger until the bubbles rise to the top of the
+ syringe.
+SLOWLY depress the plunger to eliminate all the bubbles and to expel the excess
+ drug so that the top edge of the 3rd rib on the plunger stopper aligns with the preprinted black dosing line (See Figure 2, below).
+ 5.
+Inject the entire contents of the syringe.
+ PRIOR to Injection
+ Figure1.
+Before expelling air bubble and excess drug
+ Reference ID: 3026883
+                     NDA 21-756/S-018 Page 5
+ READY for Injection Figure 2.
+After expelling air bubble and excess drug
+ 2.4 Administration The injection procedure should be carried out under controlled aseptic conditions, which includes the use of sterile gloves, a sterile drape, and a sterile eyelid speculum (or equivalent).
+Adequate anesthesia and a broad-spectrum microbicide should be given prior to the injection.
+ The patient's medical history for hypersensitivity reactions should be evaluated prior to performing the intravitreal procedure [see Warnings and Precautions (5) and Adverse Events (6)].
+Following the injection, patients should be monitored for elevation in intraocular pressure and for endophthalmitis.
+ Monitoring may consist of a check for perfusion of the optic nerve head immediately after the injection, tonometry within 30 minutes following the injection, and monitoring during the week following the injection.
+ Patients should be instructed to report any symptoms suggestive of endophthalmitis without delay.
+ No special dosage modification is required for any of the populations that have been studied (i.e. gender, elderly).
+ The safety and efficacy of Macugen therapy administered to both eyes concurrently have not been studied.
+ Reference ID: 3026883
+                      NDA 21-756/S-018 Page 6
+ 3 DOSAGE FORMS AND STRENGTHS Single-use glass syringe pre-filled with 0.3 mg of Macugen in a nominal 90 L solution for intravitreal injection.
+ 4 CONTRAINDICATIONS 4.1 Ocular or Periocular Infections Macugen is contraindicated in patients with ocular or periocular infections.
+   4.2 Hypersensitivity Macugen is contraindicated in patients with known hypersensitivity to pegaptanib sodium or any other excipient in this product.
+ 5 WARNINGS AND PRECAUTIONS 5.1 Endophthalmitis Intravitreous injections, including those with Macugen, have been associated with endophthalmitis.
+ Proper aseptic injection technique should always be utilized when administering Macugen.
+ In addition, patients should be monitored during the week following the injection to permit early treatment, should an infection occur [see Dosage and Administration (2.4)].
+5.2 Increases in Intraocular Pressure Increases in intraocular pressure have been seen within 30 minutes of injection with Macugen.
+Therefore, intraocular pressure as well as the perfusion of the optic nerve head should be monitored and managed appropriately [see Dosage and Administration (2.4)].
+5.3 Anaphylaxis Rare cases of anaphylaxis/anaphylactoid reactions, including angioedema, have been reported in the post-marketing experience following the Macugen intravitreal administration procedure [see Adverse Events (6.3) and Dosage and Administration (2.4)].
+ 6 ADVERSE REACTIONS 6.1 Injection Procedure Serious adverse events related to the injection procedure occurring in &lt; 1% of intravitreous injections included endophthalmitis [see Warnings and Precautions (5.1)], retinal detachment, and iatrogenic traumatic cataract.
+ 6.2 Clinical Studies Experience The most frequently reported adverse events in patients treated with Macugen 0.3 mg for up to two years were anterior chamber inflammation, blurred vision, cataract, conjunctival hemorrhage, corneal edema, eye discharge, eye irritation, eye pain, hypertension, increased intraocular pressure (IOP), ocular discomfort, punctate keratitis, reduced visual acuity, visual disturbance, vitreous floaters, and vitreous opacities.
+ These events occurred in approximately 10-40% of patients.
+ The following events were reported in 6-10% of patients receiving Macugen 0.3 mg therapy:  Ocular: blepharitis, conjunctivitis, photopsia, vitreous disorder.
+ Non-Ocular: bronchitis, diarrhea, dizziness, headache, nausea, urinary tract infection.
+ Reference ID: 3026883
+               NDA 21-756/S-018 Page 7
+ The following events were reported in 1-5% of patients receiving Macugen 0.3 mg therapy:
+  Ocular: allergic conjunctivitis, conjunctival edema, corneal abrasion, corneal deposits,
+ corneal epithelium disorder, endophthalmitis, eye inflammation, eye swelling, eyelid  irritation, meibomianitis, mydriasis, periorbital hematoma, retinal edema, vitreous  hemorrhage.
+  Non-Ocular: arthritis, bone spur, carotid artery occlusion, cerebrovascular accident, chest  pain, contact dermatitis, contusion, diabetes mellitus, dyspepsia, hearing loss, pleural  effusion, transient ischemic attack, urinary retention, vertigo, vomiting.
+  6.3 Postmarketing Experience Anaphylaxis/anaphylactoid reactions, including angioedema, have been identified during postapproval use of Macugen.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure [see Warnings and Precautions (5.3) and Dosage and Administration (2.4)].
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy Teratogenic Effects: Pregnancy Category B.  Pegaptanib produced no maternal toxicity and no evidence of teratogenicity or fetal mortality in mice at intravenous doses of up to 40 mg/kg/day (about 7,000 times the recommended human monocular ophthalmic dose of 0.3 mg/eye).
+Pegaptanib crosses the placenta in mice.
+ There are, however, no adequate and well-controlled studies in pregnant women.
+Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed.
+ 8.3 Nursing Mothers It is not known whether pegaptanib is excreted in human milk.
+Because many drugs are excreted in human milk, caution should be exercised when Macugen is administered to a nursing woman.
+ 8.4 Pediatric Use Safety and effectiveness of Macugen in pediatric patients have not been established.
+ 8.5 Geriatric Use Approximately 94% (834/892) of the patients treated with Macugen were &#x2265; 65 years of age and approximately 62% (553/892) were &#x2265; 75 years of age.
+ No difference in treatment effect or systemic exposure was seen with increasing age.
+ 10 OVERDOSAGE Doses of Macugen up to 10 times the recommended dosage of 0.3 mg have been studied.
+ No additional adverse events have been noted but there is decreased efficacy with doses above 1 mg.
+ Reference ID: 3026883
+                NDA 21-756/S-018 Page 8
+ 11 DESCRIPTION Macugen (pegaptanib sodium injection) is a sterile, aqueous solution containing pegaptanib sodium for intravitreous injection.
+ Macugen is supplied in a single-dose, pre-filled syringe and is formulated as a 3.47 mg/mL solution, measured as the free acid form of the oligonucleotide.
+The active ingredient is 0.3 mg of the free acid form of the oligonucleotide without polyethylene glycol, in a nominal volume of 90 L.
+ This dose is equivalent to 1.6 mg of pegaptanib sodium (pegylated oligonucleotide) or 0.32 mg when expressed as the sodium salt form of the oligonucleotide moiety.
+ The product is a sterile, clear, preservative-free solution containing sodium chloride, monobasic sodium phosphate monohydrate, dibasic sodium phosphate heptahydrate, hydrochloric acid, and/or sodium hydroxide to adjust the pH and water for injection.
+ Pegaptanib sodium is a covalent conjugate of an oligonucleotide of twenty-eight nucleotides in length that terminates in a pentylamino linker, to which two 20-kilodalton monomethoxy polyethylene glycol (PEG) units are covalently attached via the two amino groups on a lysine residue.
+ Pegaptanib sodium is represented by the following structural formula:
+ Where R is
+ and n is approximately 450.
+ Reference ID: 3026883
+                              NDA 21-756/S-018 Page 9
+ The chemical name for pegaptanib sodium is as follows: RNA, ((2'-deoxy-2'-fluoro)C-Gm-Gm-A-A-(2'-deoxy-2'-fluoro)U-(2'-deoxy-2'-fluoro)C-Am-Gm-(2'-deoxy-2'-fluoro)U-Gm-AmAm-(2'-deoxy-2'-fluoro)U-Gm-(2'-deoxy-2'-fluoro)C-(2'-deoxy-2'-fluoro)U-(2'-deoxy-2'fluoro)U-Am-(2'-deoxy-2'-fluoro)U-Am-(2'-deoxy-2'-fluoro)C-Am-(2'-deoxy-2'-fluoro)U-(2'deoxy-2'-fluoro)C-(2'-deoxy-2'-fluoro)C-Gm-(3'&#x2020;&#x2019;3')-dT), 5'-ester with ,'-[4,12-dioxo-6[[[5-(phosphoonoxy)pentyl]amino] carbonyl]-3,13-dioxa-5,11-diaza-1,15pentadecanediyl]bis[&#x2030;-methoxypoly(oxy-1,2-ethanediyl)], sodium salt.
+ The molecular formula for pegaptanib sodium is C294H342F13N107Na28O188P28[C2H4O]n (where n is approximately 900) and the molecular weight is approximately 50 kilodaltons.
+  Macugen is formulated to have an osmolality of 280-360 mOsm/Kg, and a pH of 6-7.
+ 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Pegaptanib is a selective vascular endothelial growth factor (VEGF) antagonist.
+ VEGF is a secreted protein that selectively binds and activates its receptors located primarily on the surface of vascular endothelial cells.
+ VEGF induces angiogenesis, and increases vascular permeability and inflammation, all of which are thought to contribute to the progression of the neovascular (wet) form of age-related macular degeneration (AMD), a leading cause of blindness.
+ VEGF has been implicated in blood retinal barrier breakdown and pathological ocular neovascularization.
+ Pegaptanib is an aptamer, a pegylated modified oligonucleotide, which adopts a three-dimensional conformation that enables it to bind to extracellular VEGF.
+ Under in vitro testing conditions, pegaptanib binds to the major pathological VEGF isoform, extracellular VEGF165, thereby inhibiting VEGF165 binding to its VEGF receptors.
+ The inhibition of VEGF164, the rodent counterpart of human VEGF165, was effective at suppressing pathological neovascularization.
+ 12.3 Pharmacokinetics Absorption In animals, pegaptanib is slowly absorbed into the systemic circulation from the eye after intravitreous administration.
+ The rate of absorption from the eye is the rate limiting step in the disposition of pegaptanib in animals and is likely to be the rate limiting step in humans.
+  In humans, a mean maximum plasma concentration of about 80 ng/mL occurs within 1 to 4 days after a 3 mg monocular dose (10 times the recommended dose).
+ The mean area under the plasma concentration-time curve (AUC) is about 25 ghr/mL at this dose.
+ Pegaptanib is metabolized by nucleases and is generally not affected by the cytochrome P450 system.
+ Two early clinical studies conducted in patients who received Macugen alone and in combination with photodynamic therapy (PDT) revealed no apparent difference in the plasma pharmacokinetics of pegaptanib.
+ Distribution/Metabolism/Excretion
+ Reference ID: 3026883
+                              NDA 21-756/S-018 Page 10
+ Twenty-four hours after intravitreous administration of a radiolabeled dose of pegaptanib to both eyes of rabbits, radioactivity was mainly distributed in vitreous fluid, retina, and aqueous fluid.
+After intravitreous and intravenous administrations of radiolabeled pegaptanib to rabbits, the highest concentrations of radioactivity (excluding the eye for the intravitreous dose) were obtained in the kidney.
+ In rabbits, the component nucleotide, 2'fluorouridine is found in plasma and urine after single radiolabeled pegaptanib intravenous and intravitreous doses.
+In rabbits, pegaptanib is eliminated as parent drug and metabolites primarily in the urine.
+ Based on preclinical data, pegaptanib is metabolized by endo- and exonucleases.
+ In humans, after a 3 mg monocular dose (10 times the recommended dose), the average ( standard deviation) apparent plasma half-life of pegaptanib is 10 (4) days.
+  Special Populations Plasma concentrations do not appear to be affected by age or gender, but have not been studied in patients under the age of 50.
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Carcinogenicity studies with pegaptanib have not been conducted.
+ No data are available to evaluate male or female mating or fertility indices.
+ 13.2 Animal Toxicology and/or Pharmacology Pegaptanib and its monomer component nucleotides (2'-MA, 2'-MG, 2'-FU, 2'-FC) were evaluated for genotoxicity in a battery of in vitro and in vivo assay systems.
+ Pegaptanib, 2'O-methyladenosine (2'-MA), and 2'-O-methylguanosine (2'-MG) were negative in all assay systems evaluated.
+2'-fluorouridine (2'-FU) and 2'-fluorocytidine (2'-FC) were nonclastogenic and were negative in all S. typhimurium tester strains, but produced a non-dose related increase in revertant frequency in a single E. coli tester strain.
+Pegaptanib, 2'-FU, and 2'-FC tested negative in cell transformation assays.
+ 14 CLINICAL STUDIES Macugen was studied in two controlled, double-masked, and identically designed randomized studies in patients with neovascular AMD.
+ Patients were randomized to receive control (sham treatment) or 0.3 mg, 1 mg or 3 mg Macugen administered as intravitreous injections every 6 weeks for 48 weeks.
+ A total of approximately 1200 patients were enrolled with 892 patients receiving Macugen and 298 receiving a sham injection.
+ The median age of the patients was 77 years.
+Patients received a mean 8.5 treatments out of a possible 9 total treatments across all treatment arms.
+ Patients were re-randomized between treatment and no treatment during the second year.
+ Patients who continued treatment in year 2 received a mean of 16 treatments out of a possible total 17 overall.
+  The two trials enrolled patients with neovascular AMD characteristics including classic, occult, and mixed lesions of up to 12 disc areas and baseline visual acuity in the study eye between 20/40 and 20/320.
+ The primary efficacy endpoint was the proportion of patients losing less than 15 letters of visual acuity, from baseline up to 54 week assessment.
+ Reference ID: 3026883
+                       NDA 21-756/S-018 Page 11
+ Verteporfin PDT usage was permitted at the discretion of the investigators in patients with predominantly classic lesions.
+ The groups treated with Macugen 0.3 mg exhibited a statistically significant result in both trials for the primary efficacy endpoint at 1 year: Study EOP1003, Macugen 73% vs. Sham 60%; Study EOP1004, Macugen 67% vs. Sham 53%.
+ Concomitant use of PDT overall was low.
+More sham treated patients (75/296) received PDT than Macugen 0.3 mg treated patients (58/294).
+ On average, Macugen 0.3 mg treated patients and sham treated patients continued to experience vision loss.
+ However, the rate of vision decline in the Macugen treated group was slower than the rate in the patients who received sham treatment.
+ See Figure 1.
+   Figure 1
+ Mean Visual Acuity: Year 1
+ At the end of the first year (week 54), approximately 1050 of the original 1200 patients were re-randomized to either continue the same treatment or to discontinue treatment through week 102.
+See Figure 2.
+ Macugen was less effective during the second year than during the first year.
+ The percentage of patients losing less than 15 letters from baseline to week 102 was: Study EOP1003, Macugen 38/67 (57%); Sham 30/54 (56%); Study EOP1004, Macugen 40/66 (61%); Sham 18/53 (34%).
+ Reference ID: 3026883
+                              NDA 21-756/S-018 Page 12
+ Figure 2
+ Mean Visual Acuity: Year 2
+ Dose levels above 0.3 mg did not demonstrate any additional benefit.
+  The safety or efficacy of Macugen beyond 2 years has not been demonstrated.
+ 16 HOW SUPPLIED/STORAGE AND HANDLING Macugen (pegaptanib sodium injection) is supplied in a sterile foil pouch as a single-use glass syringe pre-filled with 0.3 mg of Macugen in a nominal 90 L deliverable volume pack.
+A sterile packaged BD single use 30G x &#x2022; Precision Glide Luer Lok needle is supplied in a separate pouch.
+ The foil pouch and needle are packaged together in a carton (NDC 68782-001-02).
+ Store in the refrigerator at 2 to 8C (36 to 46F).
+ Do not freeze or shake vigorously.
+ Rx only.
+ 17 PATIENT COUNSELING INFORMATION In the days following Macugen administration, patients are at risk for the development of endophthalmitis.
+ If the eye becomes red, sensitive to light, painful or develops a change in vision, the patient should seek the immediate care with their ophthalmologist [see Warnings and Precautions (5.1)].
+ MACUGEN(pegaptanib sodium injection)
+ Manufactured by:
+ Gilead Sciences, Inc
+ 650 Cliffside Drive
+ San Dimas, CA 91773
+ For:
+ Eyetech Inc.
+ 11360 Jog Road, Suite 200
+ Palm Beach Gardens, Florida 33418
+ BD and Precision Glide Luer Lok are registered trademarks of Becton Dickinson &amp; CO, Franklin Lakes, New Jersey 07417
+ Reference ID: 3026883
+  

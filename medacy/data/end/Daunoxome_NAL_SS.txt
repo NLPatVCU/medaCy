@@ -1,0 +1,273 @@
+83030119906
+DESCRIPTIONDaunoXome (daunorubicin citrate liposome injection) is asterile, pyrogen-free, preservative-free product in a singleuse vial for intravenous infusion.
+DaunoXome contains an aqueous solution of the citrate saltof daunorubicin encapsulated within l ipid vesicles (liposomes) composed of a lipid bilayer of distearoylphos-phatidylcholine and cholesterol (2:1 molar ratio), with amean diameter of about 45 nm.
+The lipid to drug weightratio is 18.7:1 (total lipid:daunorubicin base), equivalent to a10:5:1 molar ratio of distearoylphosphatidylcholine:cholesterol:daunorubicin.
+Daunorubicin is an anthracyclineantibiotic with antineoplastic activity, originally obtainedfrom Streptomyces peucetius.
+Daunorubicin has a 4-ringanthracycline moiety linked by a glycosidic bond todaunosamine, an amino sugar.
+Daunorubicin may also beisolated from Streptomyces coeruleorubidus and has thefollowing chemical name: (8S-cis)-8-acetyl-10-[(3-amino-2,3,6-trideoxy--L-lyxo-hexopyranosyl)oxy]-7,8,9,10-tetrahydro-6,8,11-trihydroxy-1-methoxy-5,12-naphthacene-dione hydrochloride.
+Daunorubicin citrate has the following chemical structure:
+DSPC (distearoylphosphatidylcholine) has the following chemical structure:
+The following represents the idealized, spherical morphology ofa liposome:
+Note: Liposomal encapsulation can substantially affecta drug's functional properties relative to those of theunencapsulated drug.
+In addition, different liposomal drug products may varyfrom one another in the chemical composition andphysical form of the liposomes.
+Such differences can substantially affect the functional properties ofliposomal drug products.
+ Each vial contains daunorubicin citrate equivalent to 50 mgof daunorubicin base, encapsulated in liposomes consistingof 704 mg distearoylphosphatidylcholine and 168 mg cholesterol.
+The liposomes encapsulating daunorubicin aredispersed in an aqueous medium containing 2,125 mgsucrose, 94 mg glycine, and 7 mg calcium chloride dihydrate in a total volume of 25 mL/vial.
+The pH of the dispersion is between 4.9 and 6.0.
+The liposome dispersion should appear red and translucent.
+ CLINICAL PHARMACOLOGY
+Mechanism of ActionDaunoXome is a liposomal preparation of daunorubicin formulated to maximize the selectivity of daunorubicin forsolid tumors in  s i tu .
+ Whi le in  the c i rculat ion, theDaunoXome formulation helps to protect the entrappeddaunorubicin from chemical and enzymatic degradation,minimizes protein binding, and generally decreases uptakeby normal (non-reticuloendothelial system) tissues.
+Thespecific mechanism by which DaunoXome is able to deliverdaunorubicin to solid tumors in situ is not known.
+However,it is believed to be a function of increased permeability ofthe tumor neovasculature to some particles in the sizerange of DaunoXome.
+In animal studies, daunorubicin hasbeen shown to accumulate in tumors to a greater extentwhen administered as DaunoXome than when administeredas daunorubicin.
+Once within the tumor environment,daunorubicin is released over time enabling it to exert its antineoplastic activity.
+PharmacokineticsFollowing intravenous injection of DaunoXome, plasmaclearance of daunorubicin shows monoexponential decline.The pharmacokinetic parameter values for total daunoru-bicin following a single 40 mg/m2 dose of DaunoXomeadministered over a 30 - 60 minute period to patients with AIDS-related Kaposi's sarcoma and following a single rapidintravenous, 80 mg/m2 dose of conventional daunorubicinto patients with disseminated solid malignancies are shownin Table I.
+TABLE IPHARMACOKINETIC PARAMETERS OFDAUNOXOME IN AIDS PATIENTS WITHKAPOSI'S SARCOMA AND REPORTEDPARAMETERS FOR CONVENTIONAL DAUNORUBICIN
+The plasma pharmacokinetics of DaunoXome differ significantly from the results reported for conventionaldaunorubicin hydrochloride.
+DaunoXome has a smallsteady-state volume of distribution of 6.4 L, (probablybecause it is confined to vascular fluid volume), and clearance of 17 mL/min.
+These differences in the volume ofdistribution and clearance result in a higher daunorubicinexposure (in terms of plasma AUC) from DaunoXome than
+with conventional daunorubicin hydrochloride.
+The apparentelimination half-life of DaunoXome (daunorubicin citrateliposome injection) is 4.4 hours, far shorter than that ofdaunorubicin, and probably represents a distribution half-life.
+Although preclinical biodistribution data in animals sug-gest that DaunoXome crosses the normal blood-brain barri-er, it is unknown whether DaunoXome crosses the blood-brain barrier in humans.
+Metabolism: Daunorubicinol, the major active metaboliteof daunorubicin, was detected at low levels in the plasmafollowing intravenous administration of DaunoXome.
+ No formal assessments of pharmacokinetic drug-druginteractions between DaunoXome and other agents havebeen conducted.
+Special Populations: The pharmacokinetics ofDaunoXome have not been evaluated in women, in different ethnic groups, or in subjects with renal and hepatic insufficiency.
+Clinical StudyIn an open-label, randomized, controlled clinical study conducted at 13 centers in the U.S.A. and Canada inadvanced (25 or more mucocutaneous lesions; the devel-opment of 10 or more lesions in a one month period of time;symptomatic visceral involvement; or tumor-associatededema) HIV-related Kaposi's sarcoma, two treatment regimens were compared as f irst l ine cytotoxic therapy: DaunoXome 40 mg/m2 and ABV (doxorubicin(Adriamycin) 10 mg/m2, bleomycin 15 U, and vincristine1.0 mg).
+All drugs were administered intravenously every 2 weeks.
+Responses were assessed using the AIDSClinical Trials Group Oncology Committee of the NationalInstitute of Allergy and Infectious Diseases (ACTG) criteria(a response required at least one of any of the following forat least 28 days: a.
+&#x2265; 50% reduction in the number; b. &#x2265; 50% reduction in the sums of the products of thelargest perpendicular diameters of bidimensionally measurable marker lesions; or c.
+complete flattening of &#x2265; 50% of all previously raised lesions).
+Table II summarizesthe efficacy results.
+&#x2026; Adriamycin is a registered trademark of Pharmacia &amp; Upjohn Co.,Kalamazoo, MI.
+TABLE IIEFFICACY DATA
+FIRST LINE CYTOTOXIC THERAPY FORADVANCED KAPOSI'S SARCOMA
+Twenty of the 33 ABV responders responded to therapy bycriteria more stringent than flattening of lesions (i.e., shrink-age of lesions and/or reduction in the number of lesions).Eleven of the 27 DaunoXome responders responded totherapy by criteria other than flattening of lesions.Photographic evidence of tumor response to DaunoXomeand ABV was comparable across all anatomic sites (e.g., face, oral cavity, trunk, legs, and feet).
+INDICATIONS AND USAGEDaunoXome is indicated as a first line cytotoxic therapy foradvanced HIV-associated Kaposi's sarcoma.
+DaunoXomeis not recommended in patients with less than advanced HIV-related Kaposi's sarcoma.
+CONTRAINDICATIONSTherapy with DaunoXome is contraindicated in patientswho have experienced a serious hypersensitivity reaction toprevious doses of DaunoXome or to any of its constituents.
+WARNINGSDaunoXome is intended for administration under the supervision of a physician who is experienced in the use of cancer chemotherapeutic agents.
+The primary toxicity of DaunoXome is myelosuppression,especially of the granulocytic series, which may be severe,and associated with fever and may result in infection.Effects on the platelets and erythroid series are much lessmarked.
+Careful hematologic monitoring is required andsince patients with HIV infection are immunocompromised,patients must be observed carefully for evidence of intercurrent or opportunistic infections.
+Special attention must be given to the potential cardiac toxicity of DaunoXome.
+Although there is no reliable meansof predicting congestive heart failure, cardiomyopathyinduced by anthracyclines is usually associated with adecrease of the left ventricular ejection fraction (LVEF).Cardiac function should be evaluated in each patient bymeans of a history and physical examination before eachcourse of DaunoXome and determination of LVEF shouldbe performed at total cumulative doses of DaunoXome of320 mg/m2, and every 160 mg/m2 thereafter.
+Patients who have received prior therapy with anthracy-clines (doxorubicin &gt; 300 mg/m2 or equivalent), have pre-existing cardiac disease, or have received previousradiotherapy encompassing the heart may be less "cardiac" tolerant to treatment with DaunoXome.
+Therefore, monitor-ing of LVEF at cumulative DaunoXome doses should occurprior to therapy and every 160 mg/m2 of DaunoXome.
+In patients with Kaposi's sarcoma, congestive heart failurehas been reported in one patient at a cumulative dose of340 mg/m2 of DaunoXome.
+In eight Kaposi's sarcomapatients, LVEF decreases were reported at cumulativedoses ranging from 200 mg/m2 to 2100 mg/m2 (mediandose 320 mg/m2) of DaunoXome.
+In clinical studies inmalignancies other than Kaposi's sarcoma and treated withdoses of DaunoXome greater than the recommended doseof 40 mg/m2, congestive heart failure has been reported ata cumulative dose as low as 200 mg/m2 of DaunoXome;seven patients have been reported with LVEF decreases.The proportion of patients at risk for cardiotoxicity isunknown because the denominator is uncertain since there were several instances of missing repeat cardiac evaluations.
+A triad of back pain, flushing, and chest tightness has beenreported in 13.8% of the patients (16/116) treated withDaunoXome in the randomized clinical trial and in 2.7% oftreatment cycles (27/994).
+This triad generally occurs during the first five minutes of the infusion, subsides withinterruption of the infusion, and generally does not recur ifthe infusion is then resumed at a slower rate.
+This combina-tion of symptoms appears to be related to the lipid component of DaunoXome, as a similar set of signs andsymptoms has been observed with other l iposomal products not containing daunorubicin.
+Daunorubicin has been associated with local tissue necrosis at the site of drug extravasation.
+Although no suchlocal tissue necrosis has been observed with DaunoXome,care should be taken to ensure that there is no extravasa-tion of drug when DaunoXome is administered.
+Dosage should be reduced in patients with impaired hepaticfunction.
+(See DOSAGE AND ADMINISTRATION)
+Pregnancy Category DDaunoXome can cause fetal harm when administered to apregnant woman.
+DaunoXome was administered to rats ongestation days 6 through 15 at 0.3, 1.0 or 2.0 mg/kg/day,(about 1/20th, 1/6th, or 1/3rd the recommended humandose on a mg/m2 basis).
+DaunoXome produced severematernal toxicity and embryolethality at 2.0 mg/kg/day andwas embryotoxic and caused fetal malformations (anophthalmia, microphthalmia, incomplete ossification) at0.3 mg/kg/day.
+Embryotoxicity was characterized byincreased embryo-fetal deaths, reduced numbers of litters,and reduced litter sizes.
+There are no studies of DaunoXome in pregnant women.
+IfDaunoXome is used during pregnancy, or if the patientbecomes pregnant while taking DaunoXome, the patientmust be warned of the potential hazard to the fetus.Patients should be advised to avoid becoming pregnantwhile taking DaunoXome.
+PRECAUTIONSDrug InteractionsIn the patient population studied, DaunoXome has beenadministered to patients receiving a variety of concomitant
+medications (e.g., antiretroviral agents, antiviral agents,anti-infective agents).
+Although interactions of DaunoXome(daunorubicin citrate liposome injection) with other drugshave not been observed, no systematic studies of interac-tions have been conducted.
+Carcinogenesis, Mutagenesis, andImpairment of FertilityNo carcinogenesis, mutagenesis, or impairment of fertilitystudies were conducted with DaunoXome.
+Carcinogenesis: Carcinogenicity and mutagenicity studieshave been conducted with daunorubicin, the active component of DaunoXome.
+A high incidence of mammarytumors was observed about 120 days after a single intravenous dose of 12.5 mg/kg daunorubicin in rats (about2 times the human dose on a mg/m2 basis).
+Mutagenesis:Daunorubicin was mutagenic in in vitro tests (Ames assay,V79 hamster cell assay), and clastogenic in in vitro(CCRF-CEM human lymphoblasts) and in in vivo (SCEassay in mouse bone marrow) tests.
+Impairment of Fertility:Daunorubicin intravenous doses of 0.25 mg/kg/day (about8 times the human dose on a mg/m2 basis) in male dogs caused testicular atrophy and total aplasia of spermatocytes in the seminiferous tubules.
+PregnancyPregnancy "Category D".
+See WARNINGS Section.
+Pediatric UseSafety and effectiveness in pediatric patients have not beenestablished.
+Use in the ElderlySafety and effectiveness in the elderly have not beenestablished.
+Special PopulationsSafety has not been established in patients with pre-exist-ing hepatic or renal dysfunction.
+ADVERSE REACTIONSDaunoXome contains daunorubicin, encapsulated within aliposome.
+Conventional daunorubicin has acute myelosup-pression as its dose limiting side effect, with the greatesteffect on the granulocytic series.
+In addition, daunorubicincauses alopecia, and nausea and vomiting in a significantnumber of patients treated.
+Extravasation of conventionaldaunorubicin can cause severe local tissue necrosis.Chronic therapy at total doses above 300 mg/m2 causes acumulative-dose-related cardiomyopathy with congestiveheart failure.
+Administered as DaunoXome, daunorubicin has substan-tially altered pharmacokinetics and some differences in toxicity.
+The most important acute toxicity of DaunoXomeremains myelosuppression, principally of the granulocyticseries, with much less marked effects on the platelets anderythroid series.
+In an open-label, randomized, controlled clinical trial conducted in 13 centers in the U.S.A. and Canada inadvanced HIV-related Kaposi's sarcoma, two treatment regimens were compared as first line cytotoxic therapy:DaunoXome and ABV (doxorubicin (Adriamycin),bleomycin, and vincristine).
+All drugs were administeredintravenously every 2 weeks.
+The safety data presentedbelow include all reported or observed adverse experi-ences, including those not considered to be drug related.Patients with advanced HIV-associated Kaposi's sarcomaare seriously ill due to their underlying infection and arereceiving several concomitant medications including potentially toxic antiviral and antiretroviral agents.
+The contribution of the study drugs to the adverse experienceprofile is therefore difficult to establish.
+Table III summarizes the important safety data.
+TABLE IIISUMMARY OF IMPORTANT SAFETY DATA
+A triad of back pain, flushing and chest tightness wasreported in 13.8% of the patients (16/116) treated withDaunoXome in the Phase III clinical trial and in 2.7% oftreatment cycles (27/994).
+Most of the episodes were mildto moderate in severity (12% of patients and 2.5% of treatment cycles).
+Mild alopecia was reported in 6% of patients treated withDaunoXome and moderate alopecia in 2% of patients.
+Mildnausea was reported in 35% of DaunoXome patients, moderate nausea in 16% of patients and severe nausea in3% of patients.
+For patients treated with DaunoXome, mildvomiting was reported in 10%, moderate in 10%, andsevere in 3% of patients.
+Although grade 3 - 4 injection siteinflammation was reported in 2 patients treated withDaunoXome, no instances of local tissue necrosis wereobserved with extravasation.
+Table IV is a listing of all the mild-moderate and severeadverse events reported on both treatment arms inProtocol 103-09 in &#x2265; 5% of DaunoXome patients.
+TABLE IVADVERSE EXPERIENCES:
+ PROTOCOL 103-09
+The following adverse events were reported in &#x2264; 5% ofpatients treated with DaunoXome, tabulated by body system.
+Body As A Whole: Injection site inflammation
+Cardiovascular: Hot flushes, hypertension, palpitation, syncope, tachycardia.
+In other follow-up clinical trials ofDaunoXome (daunorubicin citrate liposome injection) use intreatment of Kaposi's sarcoma or other malignancies, thefollowing serious cardiac events were reported: Pericardialeffusion, pericardial tamponade, ventricular extrasystoles,cardiac arrest, sinus tachycardia, atrial fibrillation, pulmonaryhypertension, myocardial infarction, supraventricular tachy-cardia, angina pectoris (see WARNINGS section).
+Digestive: Increased appetite, dysphagia, GI hemorrhage,gastritis, gingival bleeding, hemorrhoids, hepatomegaly,melena, dry mouth, tooth caries
+Hemic and Lymphatic: Lymphadenopathy, splenomegaly
+Metabolic and Nutritional: Dehydration, thirst
+Nervous: Amnesia, anxiety, ataxia, confusion, convul-sions, emotional lability, abnormal gait, hallucination, hyperkinesia, hypertonia, meningit is, somnolence, abnormal thinking, tremor
+Respiratory: Hemoptysis, hiccups, pulmonary infiltration,increased sputum
+Skin: Folliculitis, seborrhea, dry skin
+Special Senses: Conjunctivitis, deafness, earache, eyepain, taste perversion, tinnitus
+Urogenital: Dysuria, nocturia, polyuria
+OVERDOSAGEThe symptoms of acute overdosage are increased severities of the observed dose-limiting toxicities of therapeutic doses of DaunoXome, myelosuppression (especially granulocytopenia), fatigue, and nausea andvomiting.
+DOSAGE AND ADMINISTRATIONDaunoXome should be administered intravenously over a60 minute period at a dose of 40 mg/m2, with doses repeated every two weeks.
+Blood counts should be repeated prior to each dose, and therapy withheld if theabsolute granulocyte count is less than 750 cells/mm3.Treatment should be continued until there is evidence ofprogressive disease (e.g., based on best responseachieved: new visceral sites of involvement, or progressionof visceral disease; development of 10 or more new, cutaneous lesions or a 25% increase in the number oflesions compared to baseline; a change in the character of25% or more of all previously counted flat lesions to raised;increase in surface area of the indicator lesions), or untilother intercurrent complications of HIV disease precludecontinuation of therapy.
+Patients with Impaired Hepatic and RenalFunctionLimited clinical experience exists in treating hepatically andrenally impaired patients with DaunoXome.
+Therefore, based on experience with daunorubicin HCI, it isrecommended that the dosage of DaunoXome be reducedif the bilirubin or creatinine is elevated as follows: Serumbilirubin 1.2 to 3 mg/dL, give 3/4 the normal dose; serumbilirubin or creatinine &gt; 3 mg/dL, give 1/2 the normal dose.
+Do not mix DaunoXome with other drugs.
+Preparation Of SolutionDaunoXome should be diluted 1:1 with 5% DextroseInjection (D5W) before administration.
+Each vial ofDaunoXome contains daunorubicin citrate equivalent to 50 mg daunorubicin base, at a concentration of 2 mg/mL.The recommended concentration after dilution is 1 mgdaunorubicin/mL of solution.
+Use aseptic technique.Aseptic technique must be strictly observed in all handling,since no preservative or bacteriostatic agent is present inDaunoXome or in the materials recommended for dilution.
+ Withdraw the calculated volume of DaunoXome from thevial into a sterile syringe, and transfer it into a sterile infu-sion bag containing an equivalent amount of D5W. Administer diluted DaunoXome immediately.
+If not usedimmediately, diluted DaunoXome should be refrigerated at 2 - 8 C (36 - 46F) for a maximum of 6 hours.
+Caution: The only fluid which may be mixed withDaunoXome is D5W; DaunoXome must not be mixedwith saline, bacteriostatic agents such as benzyl alcohol, or any other solution.
+Do not use an in-line filter for the intravenous infusion ofDaunoXome.
+All parenteral drug products should be inspected visually for particulate matter and discoloration prior toadministration, whenever solution and container permit.
+DaunoXome is a translucent dispersion of liposomes that scatters light to some degree.
+Do notuse DaunoXome if it appears opaque, or has precipitateor foreign matter present.
+Procedures for proper handling and disposal of anticancerdrugs should be followed.1-8
+HOW SUPPLIEDDaunoXome is a translucent, red, liposomal dispersion supplied in single use vials, each sealed with a syntheticrubber stopper and aluminum sealing ring with a plasticcap.
+DaunoXome provides daunorubicin citrate equivalentto 50 mg of daunorubicin base, at a concentration of 2 mg/mL.
+DaunoXome is supplied under NDC code 10885-001-01 fora single unit pack.
+StorageStore DaunoXome in a refrigerator, 2-8C (36-46F).Do not freeze.
+Protect from light.
+REFERENCES1.
+ONS Clinical Practice Committee.
+ Cancer
+Chemotherapy Guidelines and Recommendations forPractice.
+ Pittsburg, Pa:Oncology Nursing Society;1999:32-41.
+2.
+Recommendations for the Safe Handling of ParenteralAntineoplastic Drugs.
+ Washington, DC:  Division ofSafety, Clinical Center Pharmacy Department andCancer Nursing Services, National Institutes of Health;1992.
+ US Dept of Health and Human Services, PublicHealth Service Publication NIH 92-2621.
+3.
+AMA Council on Scientific Affairs.
+ Guidelines forHandling Parenteral Antineoplastics.
+ JAMA .1985;253:1590-1591.
+4.
+National Study Commission on Cytotoxic Exposure -Recommendations for Handling Cytotoxic Agents.1987.
+ Available from Louis P. Jeffrey, Sc.D., Chairman,National Study Commission on Cytotoxic Exposure.Massachusetts College of Pharmacy and Allied HealthSciences, 179 Longwood Avenue, Boston, MA  02115.
+5.
+Clinical Oncological Society of Australia.
+ Guidelinesand Recommendations for Safe Handling ofAntineoplastic Agents.
+ Med J Australia.
+ 1983;1:426-428.
+6.
+Jones RB, Frank R, Mass T. Safe Handling ofChemotherapeutic Agents: A Report from the MountSinai Medical Center.
+ CA-A Cancer J for Clin.1983;33:258-263.
+7.
+American Society of Hospital Pharmacists.
+ ASHPTechnical Assistance Bulletin on Handling Cytotoxicand Hazardous Drugs.
+ Am J Hosp Pharm.1990;47:1033-1049.
+8.
+Controlling Occupational Exposure to HazardousDrugs.
+(OSHA Work-Practice Guidelines).
+ Am JHealth-Syst Pharm.
+1996;53:1669-1685.
+Manufactured for:Galen US Inc.
+25 Fretz RoadSoudertonPA 18964For medical information about DaunoXome (daw-nuh-zome),call 1-800-280-5708.
+DaunoXome is a registered trademark of Galen Limited.Copyright 2011, Galen Limited.All rights reserved.
+Rev.
+December 2011
+WARNINGS1.
+Cardiac function should be monitored regularly in
+patients receiving DaunoXome (daunorubicin cit-rate liposome injection) because of the potentialrisk for cardiac toxicity and congestive heart failure.Cardiac monitoring is advised especially in thosepatients who have received prior anthracyclines orwho have pre-existing cardiac disease or who havehad prior radiotherapy encompassing the heart.
+2.
+Severe myelosuppression may occur.
+3.
+DaunoXome should be administered only under thesupervision of a physician who is experienced inthe use of cancer chemotherapeutic agents.
+4.
+Dosage should be reduced in patients withimpaired hepatic function.
+(See DOSAGE ANDADMINISTRATION)
+5.
+A triad of back pain, flushing, and chest tightnesshas been reported in 13.8% of the patients (16/116)treated with DaunoXome in the Phase III clinicaltrial, and in 2.7% of treatment cycles (27/994).
+Thistriad generally occurs during the first five minutes ofthe infusion, subsides with interruption of the infusion, and generally does not recur if the infusionis then resumed at a slower rate.
+DaunoXome(daunorubicin citrate liposome injection)
+Parameter (units) aDaunoXome bConventionalDaunorubicin
+Plasma Clearance (mL/min) 17.3 + 6.1 c 236 + 181
+Volume of Distribution (L) 6.4 + 1.5 1006 + 622
+Distribution Half-Life (h) 4.41 + 2.33 0.77 + 0.3
+Elimination Half-Life (h) 55.4 + 13.7
+aN=30; bN=4; cCalculated
+DaunoXome ABV
+n=116 n=111
+Response Rate 23%* 30%
+Duration of Response, Median 110 days** 113 days
+Time to Progression, Median 92 days*** 105 days
+Survival 342 days**** 291 days
+* The 95% confidence interval for difference in the response rates (ABV - DaunoXome) was (-5%, 18%).
+** The hazard ratio (ABV/DaunoXome) for duration of response was 0.80, and the 95% confidence intervals were (0.44, 1.46).
+*** The hazard ratio (ABV/DaunoXome) for time to progression was 0.78, and the 95% confidence intervals were (0.57, 1.07).
+**** The hazard ratio for mortality (ABV/DaunoXome) was 1.29, and 95% confidence intervals were (0.92, 1.79).
+(CH2)16CH3C
+O
+O
+(CH2)16CH3C
+O
+OOPO
+O
+O-(H3C)3
++N
+H
+DaunoXome(daunorubicin citrate liposome injection)
+The diameter ofthe liposomes inDaunoXome isbetween 35 and65 nm.
+* The denominator is uncertain since there were severalinstances of missing repeat cardiac evaluations.
+ ** p = 0.21*** p &lt; 0.001
+DaunoXome ABV(N = 116) (N = 111)
+% of patients      % of patients
+Neutropenia (&lt; 1000 cells/mm3) 36% 35%
+Neutropenia (&lt; 500 cells/mm3) 15% 5%
+Opportunistic Infections/ 40% 27%Illnesses,% of patients
+Median time to first  214 days 412 days**Opportunistic Infections/Illnesses
+Number of cases with absolute 3      1reduction in ejection fraction of 20 - 25%*
+Number of cases removed from 2 0therapy due to cardiac causes*
+Alopecia 8% 36%***All grades % of patients
+Neuropathy 13% 41%***All grades % of patients
+represents a molecule of DSPC.
+This represents the aqueous core thatcontains daunorubicin citrate.
+DaunoXome ABV(N = 116) (N =  111)
+Nausea 51% 3% 45% 5%
+Fatigue 43% 6% 44% 7%
+Fever 42% 5% 49% 5%
+Diarrhea 34% 4% 29% 6%
+Cough 26% 2% 19% 0%
+Dyspnea 23% 3% 17% 3%
+Headache 22% 3% 23% 2%
+Allergic Reactions 21% 3% 19% 2%
+Abdominal Pain 20% 3% 23% 4%
+Anorexia 21% 2% 26% 2%
+Vomiting 20% 3% 26% 2%
+Rigors 19% 0% 23% 0%
+Back Pain 16% 0% 8% 0%
+Increased Sweating 12% 2% 12% 0%
+Neuropathy 12% 1% 38% 3%
+Rhinitis 12% 0% 6% 0%
+Edema 9% 2% 8% 1%
+Chest Pain 9% 1% 7% 0%
+Depression 7% 3% 6% 0%
+Malaise 9% 1% 11% 1%
+Stomatitis 9% 1% 8% 0%
+Alopecia 8% 0% 36% 0%
+Dizziness 8% 0% 9% 0%
+Sinusitis 8% 0% 5% 1%
+Arthralgia 7% 0% 6% 0%
+Constipation 7% 0% 18% 0%
+Myalgia 7% 0% 12% 0%
+Pruritus 7% 0% 14% 0%
+Insomnia 6% 0% 14% 0%
+Influenza-like 5% 0% 5% 0%symptoms
+Tenesmus 4% 1% 1% 0%
+Abnormal vision 3% 2% 3% 0%
+Mild Moderate Severe Severe
+Mild Moderate
+Front View Back View
+4001139
+Rx only
+4001139
+ 

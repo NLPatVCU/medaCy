@@ -1,0 +1,396 @@
+T1	tradename 48 55	DEPODUR
+T2	activeingredient 58 74	morphine sulfate
+T3	nanoparticle 86 99	lipid complex
+T4	company 100 127	Pacira Pharmaceuticals Inc.
+T5	tradename 129 136	DepoDur
+T6	activeingredient 139 155	morphine sulfate
+T7	nanoparticle 173 181	liposome
+T8	tradename 216 223	DepoDur
+T9	activeingredient 225 241	morphine sulfate
+T10	nanoparticle 259 267	liposome
+T11	nanoparticle 306 330	multivesicular liposomes
+T12	activeingredient 393 410	morphine sulfate,
+T13	routeofadministration 424 432	epidural
+T14	activeingredient 462 478	morphine sulfate
+T15	molecularweight 600 604	758.
+T16	activeingredient 605 621	Morphine sulfate
+T17	tradename 881 888	DepoDur
+T18	nanoparticle 970 1006	multivesicular lipid-based particles
+T19	activeingredient 1019 1036	Morphine Sulfate,
+T20	nanoparticle 1069 1077	liposome
+T21	particlediameter 1107 1118	17 to 23 m.
+T22	nanoparticle 1123 1132	liposomes
+T23	inactiveingredient 1158 1173	sodium chloride
+T24	activeingredient 1203 1219	morphine sulfate
+T25	dose 1283 1292	10 mg/mL.
+T26	corecomposition 1356 1404	1,2-dioleoyl-sn-glycero-3-phosphocholine (DOPC),
+T27	corecomposition 1417 1429	cholesterol,
+T28	corecomposition 1441 1502	1,2-dipalmitoyl-sn-glycero-3-phospho-rac-(1-glycerol) (DPPG),
+T29	inactiveingredient 1514 1526	tricaprylin,
+T30	inactiveingredient 1543 1552	triolein,
+T31	tradename 1574 1581	DepoDur
+T32	tradename 1642 1649	DepoDur
+T33	routeofadministration 1659 1667	epidural
+T34	activeingredient 1675 1691	morphine sulfate
+T35	nanoparticle 1713 1737	multivesicular liposomes
+T36	nanoparticle 1763 1772	Liposomal
+T37	nanoparticle 1809 1822	lipid complex
+T38	nanoparticle 1971 1980	liposomal
+T39	nanoparticle 1984 1999	lipid-complexed
+T40	routeofadministration 2274 2282	Epidural
+T41	activeingredient 2301 2317	morphine sulfate
+T42	activeingredient 2407 2415	Morphine
+T43	tradename 2430 2437	DepoDur
+T44	activeingredient 2486 2495	Morphine,
+T45	activeingredient 2689 2697	morphine
+T46	activeingredient 2943 2962	morphine-containing
+T47	activeingredient 3055 3063	morphine
+T48	activeingredient 3108 3116	morphine
+T49	activeingredient 3509 3517	morphine
+T50	activeingredient 3617 3625	Morphine
+T51	activeingredient 3816 3824	Morphine
+T52	activeingredient 4137 4145	Morphine
+T53	activeingredient 4501 4509	Morphine
+T54	activeingredient 4850 4858	morphine
+T55	routeofadministration 5275 5283	Epidural
+T56	tradename 5302 5309	DepoDur
+T57	activeingredient 5349 5365	morphine sulfate
+T58	activeingredient 5384 5400	morphine sulfate
+T59	tradename 5523 5531	DepoDur.
+T60	tradename 5581 5588	DepoDur
+T61	routeofadministration 5601 5611	epidurally
+T62	activeingredient 5625 5633	morphine
+T63	tradename 5715 5722	DepoDur
+T64	activeingredient 5727 5743	Morphine Sulfate
+T65	tradename 5765 5772	DepoDur
+T66	dose 5773 5777	5 mg
+T67	activeingredient 5778 5794	Morphine Sulfate
+T68	dose 5815 5819	5 mg
+T69	cmax 5862 5873	(ng/mL) 7.1
+T70	tmax 5894 5904	(hr) * 1.0
+T71	tmax 5906 5918	0.3-4.0) 0.3
+T72	tmax 5920 5928	0.3-2.0)
+T73	auc 5934 5956	(ng&#x2022;hr/mL) 38.8
+T74	plasmahalflife 5977 5985	(hr) 3.8
+T75	tradename 6015 6022	DepoDur
+T76	activeingredient 6062 6078	morphine sulfate
+T77	activeingredient 6153 6169	morphine sulfate
+T78	tradename 6204 6211	DepoDur
+T79	dose 6273 6284	5 to 25 mg.
+T80	routeofadministration 6512 6520	Epidural
+T81	tradename 6539 6546	DepoDur
+T82	tradename 6557 6604	DepoDur DepoDur DepoDur DepoDur DepoDur DepoDur
+T83	dose 6606 6610	5 mg
+T84	dose 6618 6623	10 mg
+T85	dose 6631 6636	15 mg
+T86	dose 6644 6649	20 mg
+T87	dose 6657 6662	25 mg
+T88	dose 6670 6675	30 mg
+T89	cmax 6749 6777	9.4 20.0 18.6 26.4 22.6 47.3
+T90	auc 6841 6875	41.0 124.9 131.6 185.9 207.3 341.5
+T91	activeingredient 6957 6973	morphine sulfate
+T92	tradename 6997 7004	DepoDur
+T93	activeingredient 7035 7043	morphine
+T94	activeingredient 7097 7105	morphine
+T95	activeingredient 7136 7144	morphine
+T96	activeingredient 7269 7277	morphine
+T97	volumeofdistribution 7295 7307	1 to 4 L/kg.
+T98	activeingredient 7308 7316	Morphine
+T99	activeingredient 7367 7375	Morphine
+T100	activeingredient 7466 7482	morphine sulfate
+T101	tradename 7506 7513	DepoDur
+T102	activeingredient 7544 7552	morphine
+T103	activeingredient 7933 7941	morphine
+T104	activeingredient 8217 8233	morphine sulfate
+T105	tradename 8257 8264	DepoDur
+T106	tradename 8377 8384	DepoDur
+T107	activeingredient 8456 8464	morphine
+T108	activeingredient 8580 8588	morphine
+T109	clearance 8910 8929	20-30 mL/minute/kg.
+T110	plasmahalflife 9031 9039	2 hours.
+T111	plasmahalflife 9150 9158	15 hours
+T112	tradename 9281 9289	DepoDur,
+T113	tradename 9534 9541	DepoDur
+T114	activeingredient 9614 9622	morphine
+T115	activeingredient 9810 9818	morphine
+T116	tradename 9913 9920	DepoDur
+T117	activeingredient 9991 9999	morphine
+T118	tradename 10369 10376	DepoDur
+T119	activeingredient 10447 10455	morphine
+T120	plasmahalflife 10828 10856	4.2 16.2 20.0 23.9 32.9 25.6
+T121	activeingredient 11121 11129	morphine
+T122	routeofadministration 11232 11240	Epidural
+T123	activeingredient 11345 11361	morphine sulfate
+T124	tradename 11367 11374	DepoDur
+T125	routeofadministration 11467 11475	epidural
+T126	dose 11494 11499	15 mg
+T127	tradename 11503 11510	DepoDur
+T128	tradename 11669 11676	DepoDur
+T129	tradename 11895 11902	DepoDur
+T130	tradename 11933 11940	DepoDur
+T131	tradename 12362 12369	DepoDur
+T132	tradename 12551 12558	DepoDur
+T133	routeofadministration 12583 12591	epidural
+T134	activeingredient 12635 12651	morphine sulfate
+T135	tradename 12657 12664	DepoDur
+T136	dose 12757 12762	15 mg
+T137	tradename 12766 12773	DepoDur
+T138	routeofadministration 12774 12784	epidurally
+T139	tradename 12955 12962	DepoDur
+T140	tradename 12972 12979	DepoDur
+T141	tradename 13087 13094	DepoDur
+T142	tradename 13377 13384	DepoDur
+T143	dose 13611 13637	10, 15, 20, 25, and 30 mg
+T144	tradename 13638 13645	DepoDur
+T145	routeofadministration 13874 13885	intravenous
+T146	co-administereddrug 13887 13895	fentanyl
+T147	frequency 13994 14000	single
+T148	routeofadministration 14001 14009	epidural
+T149	dose 14028 14045	15, 20, and 25 mg
+T150	tradename 14046 14053	DepoDur
+T151	routeofadministration 14113 14121	epidural
+T152	routeofadministration 14151 14153	IV
+T153	frequency 14565 14571	single
+T154	routeofadministration 14572 14580	epidural
+T155	dose 14590 14611	10, 15, 20, and 25 mg
+T156	tradename 14612 14619	DepoDur
+T157	dose 14632 14636	5 mg
+T158	tradename 14637 14644	DepoDur
+T159	dose 14648 14652	5 mg
+T160	activeingredient 14653 14669	morphine sulfate
+T161	routeofadministration 14900 14911	intravenous
+T162	co-administereddrug 14912 14920	fentanyl
+T163	routeofadministration 15055 15057	IV
+T164	co-administereddrug 15058 15066	fentanyl
+T165	frequency 15200 15206	single
+T166	routeofadministration 15207 15215	epidural
+T167	dose 15225 15241	5, 10, and 15 mg
+T168	tradename 15242 15249	DepoDur
+T169	routeofadministration 15262 15270	epidural
+T170	activeingredient 15271 15287	morphine sulfate
+T171	dose 15299 15304	5 mg)
+T172	routeofadministration 15363 15374	intrathecal
+T173	co-administereddrug 15545 15558	acetaminophen
+T174	co-administereddrug 15564 15571	codeine
+T175	routeofadministration 15575 15586	intravenous
+T176	activeingredient 15587 15603	morphine sulfate
+T177	tradename 15664 15671	DepoDur
+T178	dose 15681 15693	10 and 15 mg
+T179	activeingredient 15865 15881	morphine sulfate
+T180	tradename 16074 16081	DepoDur
+T181	dose 16102 16118	5 mg 10 mg 15 mg
+T182	tradename 16478 16485	DepoDur
+T183	nanoparticle 16509 16517	liposome
+T184	activeingredient 16531 16547	morphine sulfate
+T185	frequency 16561 16572	single-dose
+T186	routeofadministration 16595 16603	epidural
+T187	indication 16654 16683	pain following major surgery.
+T188	tradename 16684 16691	DepoDur
+T189	tradename 16789 16796	DepoDur
+T190	routeofadministration 16817 16842	intrathecal, intravenous,
+T191	routeofadministration 16846 16859	intramuscular
+T192	tradename 16894 16901	DepoDur
+T193	tradename 17023 17030	DepoDur
+T194	activeingredient 17093 17102	morphine,
+T195	tradename 17153 17161	DepoDur,
+T196	routeofadministration 17336 17344	epidural
+T197	tradename 17386 17403	DepoDur. DepoDur,
+T198	tradename 17510 17517	DepoDur
+T199	tradename 17621 17628	DepoDur
+T200	routeofadministration 17847 17855	epidural
+T201	tradename 18294 18301	DepoDur
+T202	tradename 18330 18337	DepoDur
+T203	routeofadministration 18376 18384	epidural
+T204	routeofadministration 18415 18426	intrathecal
+T205	tradename 18445 18452	DepoDur
+T206	routeofadministration 18746 18754	epidural
+T207	tradename 18755 18762	DepoDur
+T208	tradename 18877 18884	DepoDur
+T209	tradename 18983 18990	DepoDur
+T210	routeofadministration 19188 19196	epidural
+T211	routeofadministration 19268 19276	epidural
+T212	tradename 19310 19317	DepoDur
+T213	tradename 19586 19593	DepoDur
+T214	routeofadministration 19704 19712	epidural
+T215	routeofadministration 19780 19788	epidural
+T216	tradename 20807 20815	DepoDur.
+T217	tradename 20858 20865	DepoDur
+T218	tradename 21042 21050	DepoDur.
+T219	tradename 21148 21156	DepoDur,
+T220	tradename 21710 21718	DepoDur,
+T221	routeofadministration 21839 21847	Epidural
+T222	tradename 21901 21908	DepoDur
+T223	tradename 22123 22130	DepoDur
+T224	tradename 22192 22199	DepoDur
+T225	routeofadministration 22275 22283	epidural
+T226	tradename 22378 22385	DepoDur
+T227	activeingredient 22389 22398	morphine,
+T228	tradename 22418 22425	DepoDur
+T229	tradename 22615 22622	DepoDur
+T230	tradename 23026 23034	DepoDur,
+T231	tradename 23330 23337	DepoDur
+T232	tradename 23460 23467	DepoDur
+T233	tradename 23559 23566	DepoDur
+T234	tradename 23677 23684	DepoDur
+T235	routeofadministration 24092 24100	epidural
+T236	tradename 24179 24186	DepoDur
+T237	tradename 24255 24262	DepoDur
+T238	routeofadministration 24391 24399	Epidural
+T239	tradename 24715 24722	DepoDur
+T240	activeingredient 25202 25218	morphine sulfate
+T241	tradename 25242 25249	DepoDur
+T242	tradename 25383 25390	DepoDur
+T243	frequency 25407 25418	single-dose
+T244	routeofadministration 25678 25686	epidural
+T245	tradename 25773 25780	DepoDur
+T246	routeofadministration 26077 26085	epidural
+T247	frequency 26527 26538	single-dose
+T248	routeofadministration 26539 26549	epidurally
+T249	routeofadministration 26584 26595	Intravenous
+T250	routeofadministration 26599 26612	Intramuscular
+T251	tradename 26646 26653	DepoDur
+T252	routeofadministration 26662 26673	intravenous
+T253	routeofadministration 26677 26690	intramuscular
+T254	tradename 26733 26740	DepoDur
+T255	tradename 26896 26903	DepoDur
+T256	tradename 27109 27116	DepoDur
+T257	tradename 27281 27288	DepoDur
+T258	tradename 27460 27467	DepoDur
+T259	tradename 27576 27583	DepoDur
+T260	routeofadministration 27624 27632	epidural
+T261	activeingredient 28186 28195	morphine.
+T262	tradename 28196 28203	DepoDur
+T263	activeingredient 28587 28603	morphine sulfate
+T264	activeingredient 28684 28692	morphine
+T265	activeingredient 28985 28993	morphine
+T266	routeofadministration 29724 29738	subcutaneously
+T267	routeofadministration 30088 30100	subcutaneous
+T268	dose 30144 30154	0.15 mg/kg
+T269	activeingredient 30346 30362	morphine sulfate
+T270	routeofadministration 30369 30383	subcutaneously
+T271	routeofadministration 30906 30918	subcutaneous
+T272	dose 30931 30941	100 mg/kg.
+T273	activeingredient 32623 32639	Morphine sulfate
+T274	routeofadministration 32830 32838	epidural
+T275	activeingredient 32857 32873	morphine sulfate
+T276	activeingredient 32961 32977	morphine sulfate
+T277	tradename 33032 33039	DepoDur
+T278	tradename 33287 33294	DepoDur
+T279	tradename 33358 33365	DepoDur
+T280	tradename 33507 33514	DepoDur
+T281	tradename 33758 33766	DepoDur,
+T282	tradename 34171 34178	DepoDur
+T283	tradename 34258 34265	DepoDur
+T284	tradename 34434 34442	DepoDur.
+T285	tradename 34541 34549	DepoDur.
+T286	tradename 34617 34625	DepoDur,
+T287	tradename 34870 34877	DepoDur
+T288	adversereaction 34883 35013	decreased oxygen saturation, hypotension, urinary retention, vomiting, constipation, nausea, pruritus, pyrexia, anemia, headache,
+T289	adversereaction 35018 35028	dizziness.
+T290	adversereaction 35087 35118	hypoxia, tachycardia, insomnia,
+T291	adversereaction 35123 35134	flatulence.
+T292	tradename 35202 35210	DepoDur)
+T293	adversereaction 35221 35469	respiratory depression, hypercapnia, paralytic ileus, somnolence, bladder spasm, abdominal distension, hypoesthesia, hypertension, oliguria, bradycardia, anxiety, back pain, increased sweating, dyspepsia, rigors, dyspnea, hypokalemia, paresthesia,
+T294	tradename 35527 35534	DepoDur
+T295	adversereaction 35577 35599	respiratory depression
+T296	adversereaction 35675 35697	respiratory depression
+T297	tradename 35747 35755	DepoDur.
+T298	adversereaction 35775 35797	respiratory depression
+T299	adversereaction 35888 35928	central nervous system (CNS) depression,
+T300	adversereaction 35939 36011	obtunded feeling, non-arousable condition, unresponsiveness, confusion,
+T301	adversereaction 36016 36025	lethargy,
+T302	routeofadministration 36054 36062	epidural
+T303	tradename 36081 36089	DepoDur.
+T304	adversereaction 36339 36362	respiratory depression,
+T305	adversereaction 36373 36378	apnea
+T306	adversereaction 36382 36401	respiratory arrest,
+T307	adversereaction 36406 36420	cardiac arrest
+T308	tradename 36486 36494	DepoDur.
+T309	adversereaction 36506 36528	respiratory depression
+T310	adversereaction 36532 36537	apnea
+T311	routeofadministration 36571 36579	epidural
+T312	tradename 36580 36587	DepoDur
+T313	tradename 36659 36666	DepoDur
+T314	routeofadministration 37128 37177	intravenous, intramuscular, intrathecal, epidural
+T315	routeofadministration 37181 37186	oral)
+T316	routeofadministration 37703 37718	parenteral/oral
+T317	routeofadministration 37736 37744	epidural
+T318	tradename 37763 37771	DepoDur.
+T319	tradename 38110 38117	DepoDur
+T320	routeofadministration 38134 38142	epidural
+T321	tradename 38162 38169	DepoDur
+T322	activeingredient 38358 38366	morphine
+T323	tradename 38634 38641	DepoDur
+T324	tradename 38918 38925	DepoDur
+T325	tradename 39309 39316	DepoDur
+T326	dose 39537 39548	0.4 to 2 mg
+T327	routeofadministration 39584 39598	intravenously,
+T328	dose 39829 39834	10 mg
+T329	routeofadministration 39961 39974	Intramuscular
+T330	routeofadministration 39978 39990	subcutaneous
+T331	routeofadministration 40025 40036	intravenous
+T332	tradename 40136 40144	DepoDur,
+T333	tradename 40339 40346	DepoDur
+T334	routeofadministration 40375 40383	epidural
+T335	tradename 40481 40488	DepoDur
+T336	tradename 40571 40578	DepoDur
+T337	tradename 40663 40670	DepoDur
+T338	inactiveingredient 40778 40785	saline.
+T339	tradename 40795 40802	DepoDur
+T340	nanoparticle 40847 40856	particles
+T341	tradename 41059 41066	DepoDur
+T342	dose 41070 41076	15 mg.
+T343	tradename 41140 41147	DepoDur
+T344	dose 41151 41160	10-15 mg.
+T345	dose 41194 41199	20-mg
+T346	tradename 41208 41216	DepoDur,
+T347	dose 41356 41362	10 mg.
+T348	tradename 41482 41489	DepoDur
+T349	tradename 41732 41739	DepoDur
+T350	tradename 41908 41916	DepoDur.
+T351	tradename 42002 42010	DepoDur.
+T352	tradename 42141 42148	DepoDur
+T353	tradename 42242 42249	DepoDur
+T354	tradename 42476 42483	DepoDur
+T355	tradename 42605 42612	DepoDur
+T356	routeofadministration 42718 42726	epidural
+T357	routeofadministration 43243 43251	epidural
+T358	tradename 43285 43292	DepoDur
+T359	routeofadministration 43697 43708	intrathecal
+T360	tradename 43778 43785	DepoDur
+T361	routeofadministration 43816 43824	epidural
+T362	inactiveingredient 43877 43883	saline
+T363	tradename 43997 44004	DepoDur
+T364	routeofadministration 44092 44100	epidural
+T365	tradename 44241 44248	DepoDur
+T366	tradename 44282 44289	DepoDur
+T367	routeofadministration 44366 44374	epidural
+T368	tradename 44459 44467	DepoDur.
+T369	tradename 44478 44485	DepoDur
+T370	tradename 44564 44571	DepoDur
+T371	tradename 44770 44777	DEPODUR
+T372	tradename 44811 44818	DEPODUR
+T373	tradename 44906 44913	DepoDur
+T374	activeingredient 44926 44934	morphine
+T375	nanoparticle 44951 44987	multivesicular lipid-based particles
+T376	tradename 45056 45063	DepoDur
+T377	nanoparticle 45108 45117	particles
+T378	tradename 45178 45185	DepoDur
+T379	tradename 45470 45477	DepoDur
+T380	tradename 45511 45518	DepoDur
+T381	tradename 45584 45591	DepoDur
+T382	tradename 45701 45709	DepoDur,
+T383	tradename 45904 45912	DepoDur.
+T384	tradename 45973 45980	DepoDur
+T385	tradename 46150 46157	DepoDur
+T386	tradename 46270 46277	DepoDur
+T387	activeingredient 46279 46295	morphine sulfate
+T388	nanoparticle 46314 46322	liposome
+T389	dose 46350 46358	10 mg/mL
+T390	routeofadministration 46388 46396	epidural
+T391	tradename 46569 46576	DepoDur
+T392	tradename 46653 46660	DepoDur
+T393	tradename 46699 46706	DepoDur
+T394	company 47019 47041	EKR Therapeutics, Inc.
+T395	company 47079 47101	Pacira Pharmaceuticals
+T396	company 47134 47160	Pacia Pharmaceuticals Inc.

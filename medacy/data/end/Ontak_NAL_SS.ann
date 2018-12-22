@@ -1,0 +1,218 @@
+T1	tradename 110 115	Ontak
+T2	tradename 177 190	Ontak. ONTAK"
+T3	nanoparticle 193 213	denileukin diftitox)
+T4	routeofadministration 228 239	intravenous
+T5	fdaapprovaldate 272 276	1999
+T6	adversereaction 286 337	SERIOUS INFUSION REACTIONS, CAPILLARY LEAK SYNDROME
+T7	adversereaction 342 364	LOSS OF VISUAL ACUITY.
+T8	adversereaction 479 516	Serious and fatal infusion reactions.
+T9	tradename 528 533	Ontak
+T10	adversereaction 612 635	Capillary leak syndrome
+T11	adversereaction 664 703	Loss of visual acuity and color vision.
+T12	tradename 812 812	
+T13	indication 887 1007	persistent or recurrent cutaneous T-cell lymphoma whose malignant cells express the CD25 component of the IL-2 receptor.
+T14	co-administereddrug 1081 1094	antihistamine
+T15	co-administereddrug 1099 1112	acetaminophen
+T16	tradename 1127 1132	Ontak
+T17	dose 1157 1170	9 or 18 mcg/g
+T18	frequency 1170 1174	/day
+T19	routeofadministration 1178 1189	intravenous
+T20	duration 1225 1243	5 consecutive days
+T21	frequency 1244 1257	every 21 days
+T22	adversereaction 1509 1528	Infusion reactions:
+T23	tradename 1574 1579	Ontak
+T24	adversereaction 1584 1611	serious infusion reactions.
+T25	adversereaction 1657 1681	Capillary leak syndrome:
+T26	adversereaction 1754 1793	Loss of Visual Acuity and Color Vision:
+T27	tradename 1963 1968	Ontak
+T28	adversereaction 2122 2146	pyrexia, nausea,fatigue,
+T29	adversereaction 2148 2216	igors, vomiting, diarrhea, headache, peripheral edema,cough, dyspnea
+T30	adversereaction 2221 2229	prurtus.
+T31	company 2281 2291	Eisai Inc.
+T32	adversereaction 2725 2776	SERIOUS INFUSION REACTIONS, CAPILLARY LEAK SYNDROME
+T33	adversereaction 2781 2803	LOSS OF VISUAL ACUITY.
+T34	adversereaction 3010 3028	Infusion Reactions
+T35	adversereaction 3033 3056	Capillary Leak Syndrome
+T36	adversereaction 3061 3072	Visual Loss
+T37	tradename 3791 3796	Ontak
+T38	indication 3846 3965	peristent or recurrent cutaneous T-cell lymphoma whose malignant cells express the CD25 component of the IL-2 receptor
+T39	co-administereddrug 4094 4107	antihistamine
+T40	co-administereddrug 4112 4125	acetaminophen
+T41	tradename 4141 4146	Ontak
+T42	dose 4173 4185	9 or 18 mcgl
+T43	frequency 4185 4189	/day
+T44	routeofadministration 4193 4204	intravenous
+T45	duration 4238 4256	5 consecutive days
+T46	frequency 4257 4270	every 21 days
+T47	tradename 4354 4359	Ontak
+T48	tradename 4623 4628	Ontak
+T49	tradename 5064 5069	Ontak
+T50	tradename 5110 5115	Ontak
+T51	tradename 5219 5224	Ontak
+T52	tradename 5508 5514	Ontak.
+T53	tradename 5529 5534	Ontak
+T54	tradename 5573 5578	Ontak
+T55	tradename 5642 5647	Ontak
+T56	tradename 5733 5738	Ontak
+T57	adversereaction 5915 5954	Infusion Reactions Infusion reactions,
+T58	tradename 6113 6126	Ontak-treated
+T59	adversereaction 6205 6231	Serious infusion reactions
+T60	tradename 6266 6279	Ontak-treated
+T61	tradename 6417 6422	Ontak
+T62	tradename 6587 6593	Ontak.
+T63	tradename 6645 6650	Ontak
+T64	tradename 6712 6717	Ontak
+T65	adversereaction 6722 6749	serious infusion reactions.
+T66	adversereaction 6756 6804	Capillary Leak Syndrome Capillary leak syndrome
+T67	adversereaction 6880 6923	hypotension; edema, serum album -c3.0 g/dL)
+T68	tradename 6943 6948	Ontak
+T69	adversereaction 7038 7062	capillary leak syndrome.
+T70	adversereaction 7075 7099	capillary leak syndrome
+T71	tradename 7134 7147	Ontak-treated
+T72	adversereaction 7187 7211	capillary leak syndrome,
+T73	adversereaction 7341 7365	capillary leak syndrome
+T74	adversereaction 7426 7450	capillary leak syndrome
+T75	tradename 7565 7571	Ontak.
+T76	adversereaction 7639 7657	edema, hypotension
+T77	tradename 7822 7827	Ontak
+T78	adversereaction 7919 7954	Visual Loss Loss of visual acuity,
+T79	adversereaction 7968 7989	loss of color vision,
+T80	adversereaction 8007 8031	retinal pigment mottling
+T81	tradename 8076 8082	Ontak.
+T82	adversereaction 8182 8200	visual impairment.
+T83	tradename 8328 8334	Ontak:
+T84	tradename 8625 8630	Ontak
+T85	adversereaction 8873 8891	Infusion Reactions
+T86	adversereaction 8929 8952	Capillary Leak Syndrome
+T87	tradename 9370 9375	Ontak
+T88	dose 9379 9386	9 mcg/g
+T89	dose 9397 9404	18mcg/g
+T90	tradename 9517 9530	Ontak-treated
+T91	dose 9571 9585	9 and 18 mcg/g
+T92	dose 9646 9654	18 mcg/g
+T93	tradename 9947 9953	Ontak,
+T94	adversereaction 9980 10076	pyrexia, nausea, fatigue, rigors; vomiting, diarrhea, headache, peripheral edema, cough, dyspnea
+T95	adversereaction 10081 10090	pruritus.
+T96	adversereaction 10138 10161	capillary leak syndrome
+T97	adversereaction 10170 10188	infusion reactions
+T98	adversereaction 10226 10247	loss of visual acuity
+T99	tradename 10254 10259	Ontak
+T100	tradename 10383 10388	Ontak
+T101	tradename 10547 10552	Ontak
+T102	dose 10587 10594	9 mcg/g
+T103	dose 10630 10638	18 mcg/g
+T104	tradename 10859 10872	Ontak-treated
+T105	dose 10883 10891	18 mcg/g
+T106	tradename 10947 10958	Ontak Ontak
+T107	dose 10972 10986	9mcg/g 18mcg/g
+T108	adversereaction 11051 11057	Pyrxia
+T109	adversereaction 11087 11093	Nausea
+T110	adversereaction 11124 11130	Rigors
+T111	adversereaction 11160 11167	Fatigue
+T112	adversereaction 11198 11207	Vomitting
+T113	adversereaction 11234 11242	Headache
+T114	adversereaction 11273 11288	Edema perpheral
+T115	adversereaction 11319 11327	Diarrhea
+T116	adversereaction 11355 11363	Anorexia
+T117	adversereaction 11390 11394	Rash
+T118	adversereaction 11423 11430	Myalgia
+T119	adversereaction 11460 11465	Cough
+T120	adversereaction 11492 11500	Pruritus
+T121	adversereaction 11530 11539	Back pain
+T122	adversereaction 11569 11577	Asthenia
+T123	adversereaction 11606 11617	Hypotension
+T124	adversereaction 11644 11677	Upper respiratory tract infection
+T125	adversereaction 11703 11711	Diziness
+T126	adversereaction 11739 11749	Arthralgia
+T127	adversereaction 11777 11781	Pain
+T128	adversereaction 11808 11818	Chest pain
+T129	adversereaction 11845 11854	Dysgeusia
+T130	adversereaction 11878 11885	Dyspnea
+T131	adversereaction 11939 12026	Increase in serum alanine aminotransferase (ALT) or aspartate aminotransferase (AST)
+T132	tradename 12083 12088	Ontak
+T133	tradename 12300 12306	Ontak.
+T134	nanoparticle 12351 12370	denileukin diftitox
+T135	nanoparticle 12488 12507	denileukin diftitox
+T136	nanoparticle 12784 12803	denileukin difttox,
+T137	nanoparticle 13047 13067	denileukin diftitox.
+T138	nanoparticle 13403 13422	denileukin diftitox
+T139	nanoparticle 13564 13584	denileukin diftitox,
+T140	activeingredient 13669 13685	diphtheria toxin
+T141	nanoparticle 13831 13840	 diftitox
+T142	dose 13884 13898	9 and 18 mcg/g
+T143	frequency 13898 13902	/day
+T144	auc 14021 14025	80%)
+T145	tradename 14654 14660	Ontak.
+T146	adversereaction 14882 14927	hyperthyroidism, thyroiditis, thyrotoxicosis,
+T147	adversereaction 14932 14947	hypothyroidism.
+T148	tradename 15037 15043	Ontak.
+T149	tradename 15278 15290	Ontak. Ontak
+T150	tradename 15396 15401	Ontak
+T151	tradename 15560 15566	Ontak,
+T152	tradename 15643 15649	Ontak,
+T153	tradename 15846 15851	Ontak
+T154	dose 16055 16064	31 mcg/kg
+T155	frequency 16064 16069	/day)
+T156	adversereaction 16101 16132	nausea, vomiting, fever, chills
+T157	adversereaction 16140 16160	persistent asthenia.
+T158	tradename 16179 16184	Ontak
+T159	nanoparticle 16186 16206	denileukin diftitox)
+T160	activeingredient 16296 16312	diphtheria toxin
+T161	molecularweight 16489 16495	58 kD.
+T162	tradename 16583 16588	Ontak
+T163	routeofadministration 16664 16680	intravenous (IV)
+T164	tradename 16716 16721	Ontak
+T165	nanoparticle 16754 16773	denileukin diftitox
+T166	inactiveingredient 16799 16810	citric acid
+T167	inactiveingredient 16820 16824	EDTA
+T168	inactiveingredient 16839 16853	polysorbate 20
+T169	inactiveingredient 16866 16871	Water
+T170	nanoparticle 16989 17008	Denileukin diftitox
+T171	activeingredient 17072 17088	diphtheria toxin
+T172	nanoparticle 17215 17234	denileukin diftitox
+T173	activeingredient 17340 17356	diphtheria toxin
+T174	nanoparticle 17561 17580	denileukin diftitox
+T175	dose 17620 17631	3 to 31 mcg
+T176	frequency 17631 17636	/day)
+T177	indication 17654 17663	lymphoma.
+T178	nanoparticle 17666 17685	Denileukin diftitox
+T179	routeofadministration 17709 17711	IV
+T180	nanoparticle 17801 17820	denileukin diftitox
+T181	eliminationhalflife 17968 17985	70 to 80 minutes)
+T182	clearance 18077 18095	0.6 to 2.0 mL/ming
+T183	volumeofdistribution 18174 18192	0.06 to 0.09 L/kg)
+T184	nanoparticle 18456 18476	denileukin diftitox.
+T185	nanoparticle 18629 18669	denileukin diftitox. Denileukin diftitox
+T186	nanoparticle 18813 18832	denileukin diftitox
+T187	tradename 18972 18977	Ontak
+T188	dose 19308 19325	0, 9 or 18 mcg/kg
+T189	frequency 19325 19329	/day
+T190	tradename 19330 19335	Ontak
+T191	routeofadministration 19340 19351	intravenous
+T192	duration 19378 19383	21day
+T193	dose 19769 19775	9mcg/g
+T194	frequency 19775 19779	/day
+T195	tradename 19780 19786	Ontak.
+T196	dose 19805 19813	18 mcg/g
+T197	frequency 19813 19817	/day
+T198	tradename 19818 19824	Ontak.
+T199	dose 20891 20905	9 or l8 mcg/kg
+T200	frequency 20905 20909	/day
+T201	tradename 21247 21252	Ontak
+T202	routeofadministration 21276 21278	iv
+T203	frequency 21288 21293	daily
+T204	duration 21298 21304	5 days
+T205	frequency 21305 21319	every 3 weeks.
+T206	tradename 21363 21368	Ontak
+T207	tradename 21755 21760	Ontak
+T208	dose 22220 22227	9 mcg/g
+T209	frequency 22227 22231	/day
+T210	dose 22232 22240	18 mcg/g
+T211	frequency 22240 22244	/day
+T212	tradename 22535 22540	Ontak
+T213	adversereaction 22789 22849	Fever, chills, breathing problems, chest pain, tachycardia,
+T214	adversereaction 22854 22861	uricara
+T215	adversereaction 22886 22911	Rapid weight gain, edema,
+T216	adversereaction 22916 22939	orthostatic hypotension
+T217	adversereaction 23007 23051	Visual loss, including loss of color vision.
+T218	company 23087 23097	Eisai Inc.

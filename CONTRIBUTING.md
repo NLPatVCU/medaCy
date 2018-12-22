@@ -10,6 +10,7 @@ This contribution guide is designed to inform:
 ## Table of contents
 1. [Issues and Bug Reports](#issues-and-bug-reports)
 2. [Development Set-up](#development-environment-setup)
+3. [Running Unit Tests](#running-unit-tests)
 
 ## Issues And Bug Reports
 Please do a search before posting an issue/bug report - your problem may already be solved! If your search comes up for not - congratulations, you may have something to contribute!
@@ -34,3 +35,18 @@ This section details a suggested set-up for efficient development, testing, and 
 
 **Part 2: Developing with PyCharm**
 PyCharm can streamline development efforts - especially if you are developing locally and running medaCy on a remote machine for model building.
+
+## Running Unit Tests
+Work is currently being done to achieve full coverage of unit tests - but core functionality has been extensively tested. After installing medaCy for development, run:
+
+1) For quick testing, run:
+
+    `python setup.py test`.
+
+1) For more fine-grained testing on individual files with colorful log output run:
+
+    `pytest -s tests/tools/test_data_manager.py -o log_cli=True --log-cli-level=INFO`.
+
+    This will show log output during tests and allow you to adust logging level for the test file being run. Read the pytest documentation for details.
+
+

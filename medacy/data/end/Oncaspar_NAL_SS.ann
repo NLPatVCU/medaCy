@@ -1,0 +1,308 @@
+T1	tradename 112 120	Oncaspar
+T2	tradename 183 191	Oncaspar
+T3	tradename 195 203	Oncaspar
+T4	nanoparticle 205 218	pegaspargase)
+T5	routeofadministration 234 247	intramuscular
+T6	routeofadministration 251 262	intravenous
+T7	fdaapprovaldate 290 294	1994
+T8	tradename 494 494	
+T9	chemoclass 501 527	asparagine specific enzyme
+T10	indication 647 675	acute lymphoblastic leukemia
+T11	indication 691 719	Acute lymphoblastic leukemia
+T12	dose 843 871	2,500 International Units/m2
+T13	routeofadministration 872 887	intramuscularly
+T14	routeofadministration 891 904	intravenously
+T15	routeofadministration 964 977	intramuscular
+T16	routeofadministration 1119 1130	intravenous
+T17	inactiveingredient 1196 1211	sodium chloride
+T18	inactiveingredient 1215 1223	dextrose
+T19	tradename 1317 1325	Oncaspar
+T20	tradename 1714 1722	Oncaspar
+T21	activeingredient 1778 1792	L-asparaginase
+T22	activeingredient 1850 1864	L-asparaginase
+T23	activeingredient 1936 1950	L-asparaginase
+T24	adversereaction 2045 2056	Anaphylaxis
+T25	adversereaction 2060 2086	serious allergic reactions
+T26	tradename 2155 2163	Oncaspar
+T27	adversereaction 2181 2208	serious allergic reactions.
+T28	adversereaction 2225 2235	Thrombosis
+T29	tradename 2250 2258	Oncaspar
+T30	adversereaction 2276 2302	serious thrombotic events.
+T31	adversereaction 2319 2331	Pancreatitis
+T32	adversereaction 2376 2389	pancreatitis.
+T33	tradename 2402 2410	Oncaspar
+T34	adversereaction 2428 2441	pancreatitis.
+T35	adversereaction 2458 2477	Glucose intolerance
+T36	adversereaction 2582 2596	Hepatotoxicity
+T37	adversereaction 2762 2780	allergic reactions
+T38	adversereaction 2792 2804	anaphylaxis)
+T39	adversereaction 2806 2919	central nervous system (CNS) thrombosis, coagulopathy, elevated transaminases, hyperbilirubinemia, hyperglycemia,
+T40	adversereaction 2924 2937	pancreatitis.
+T41	company 2990 3021	Sigma-Tau Pharmaceuticals, Inc.
+T42	indication 3282 3316	Acute Lymphoblastic Leukemia (ALL)
+T43	indication 3346 3374	Acute Lymphoblastic Leukemia
+T44	adversereaction 3867 3878	Anaphylaxis
+T45	adversereaction 3883 3909	Serious Allergic Reactions
+T46	adversereaction 3952 3962	Thrombosis
+T47	adversereaction 4002 4014	Pancreatitis
+T48	adversereaction 4020 4046	Serious Allergic Reactions
+T49	adversereaction 4052 4071	Glucose Intolerance
+T50	adversereaction 4077 4087	Thrombosis
+T51	adversereaction 4093 4105	Coagulopathy
+T52	adversereaction 4111 4123	Pancreatitis
+T53	adversereaction 4129 4143	Hepatotoxicity
+T54	adversereaction 4148 4171	Abnormal Liver Function
+T55	adversereaction 4177 4196	Glucose Intolerance
+T56	adversereaction 4255 4273	Allergic Reactions
+T57	indication 4729 4763	Acute Lymphoblastic Leukemia (ALL)
+T58	tradename 4764 4772	Oncaspar
+T59	indication 4890 4894	ALL.
+T60	indication 4900 4928	Acute Lymphoblastic Leukemia
+T61	tradename 4966 4974	Oncaspar
+T62	indication 5081 5084	ALL
+T63	activeingredient 5125 5140	L-asparaginase.
+T64	tradename 5216 5224	Oncaspar
+T65	dose 5228 5256	2,500 International Units/m2
+T66	routeofadministration 5257 5272	intramuscularly
+T67	routeofadministration 5277 5291	intravenously.
+T68	tradename 5292 5300	Oncaspar
+T69	frequency 5348 5362	every 14 days.
+T70	tradename 5405 5413	Oncaspar
+T71	routeofadministration 5430 5446	intramuscularly,
+T72	tradename 5609 5617	Oncaspar
+T73	routeofadministration 5722 5736	intravenously,
+T74	tradename 5737 5745	Oncaspar
+T75	routeofadministration 5926 5937	intravenous
+T76	tradename 6311 6319	Oncaspar
+T77	tradename 7036 7044	Oncaspar
+T78	activeingredient 7097 7111	L-asparaginase
+T79	activeingredient 7165 7179	L-asparaginase
+T80	activeingredient 7247 7261	L-asparaginase
+T81	adversereaction 7304 7315	Anaphylaxis
+T82	adversereaction 7320 7358	Serious Allergic Reactions Anaphylaxis
+T83	adversereaction 7363 7389	serious allergic reactions
+T84	tradename 7422 7430	Oncaspar
+T85	adversereaction 7446 7472	serious allergic reactions
+T86	activeingredient 7541 7556	L-asparaginase.
+T87	tradename 7609 7617	Oncaspar
+T88	adversereaction 7696 7707	anaphylaxis
+T89	routeofadministration 7743 7754	intravenous
+T90	tradename 7794 7802	Oncaspar
+T91	adversereaction 7820 7847	serious allergic reactions.
+T92	adversereaction 7853 7890	Thrombosis Serious thrombotic events,
+T93	adversereaction 7901 7926	sagittal sinus thrombosis
+T94	tradename 7960 7968	Oncaspar
+T95	tradename 7983 7991	Oncaspar
+T96	adversereaction 8009 8035	serious thrombotic events.
+T97	adversereaction 8041 8066	Pancreatitis Pancreatitis
+T98	tradename 8099 8107	Oncaspar
+T99	tradename 8193 8201	Oncaspar
+T100	adversereaction 8219 8232	pancreatitis.
+T101	adversereaction 8238 8277	Glucose Intolerance Glucose intolerance
+T102	tradename 8310 8318	Oncaspar
+T103	adversereaction 8338 8357	glucose intolerance
+T104	adversereaction 8380 8459	Coagulopathy Increased prothrombin time, increased partial thromboplastin time,
+T105	adversereaction 8465 8483	hypofibrinogenemia
+T106	tradename 8516 8524	Oncaspar
+T107	adversereaction 8729 8742	coagulopathy.
+T108	adversereaction 8748 8762	Hepatotoxicity
+T109	adversereaction 8767 8805	Abnormal Liver Function Hepatotoxicity
+T110	adversereaction 8810 8834	abnormal liver function,
+T111	adversereaction 9343 9354	Anaphylaxis
+T112	adversereaction 9359 9385	serious allergic reactions
+T113	adversereaction 9432 9450	Serious thrombosis
+T114	adversereaction 9497 9509	Pancreatitis
+T115	adversereaction 9556 9575	Glucose intolerance
+T116	adversereaction 9622 9634	Coagulopathy
+T117	adversereaction 9681 9695	Hepatotoxicity
+T118	adversereaction 9700 9723	abnormal liver function
+T119	tradename 9801 9809	Oncaspar
+T120	adversereaction 9814 9832	allergic reactions
+T121	adversereaction 9844 9856	anaphylaxis)
+T122	adversereaction 9858 9976	hyperglycemia, pancreatitis, central nervous system (CNS) thrombosis, coagulopathy, hyperbilirubinemia, hepatotoxicity
+T123	adversereaction 9981 10020	elevated transaminases. Hyperlipidemia
+T124	adversereaction 10022 10042	hypercholesterolemia
+T125	adversereaction 10047 10068	hypertriglyceridemia)
+T126	tradename 10110 10119	Oncaspar.
+T127	indication 10395 10398	ALL
+T128	indication 10483 10486	ALL
+T129	tradename 10500 10508	Oncaspar
+T130	tradename 10836 10844	Oncaspar
+T131	tradename 10897 10905	Oncaspar
+T132	tradename 11100 11108	Oncaspar
+T133	tradename 11394 11402	Oncaspar
+T134	tradename 11455 11463	Oncaspar
+T135	tradename 12176 12184	Oncaspar
+T136	activeingredient 12193 12207	L-Asparaginase
+T137	adversereaction 12223 12243	Abnormal Liver Tests
+T138	adversereaction 12258 12281	Elevated Transaminases1
+T139	adversereaction 12296 12314	Hyperbilirubinemia
+T140	adversereaction 12330 12343	Hyperglycemia
+T141	adversereaction 12358 12405	Central Nervous System Thrombosis Coagulopathy2
+T142	adversereaction 12437 12449	Pancreatitis
+T143	adversereaction 12576 12634	Prolonged prothrombin time or partial thromboplastin time;
+T144	adversereaction 12638 12657	hypofibrinogenemia.
+T145	tradename 12962 12970	Oncaspar
+T146	adversereaction 12977 13000	elevated transaminases,
+T147	adversereaction 13006 13019	coagulopathy,
+T148	adversereaction 13024 13038	hyperglycemia,
+T149	adversereaction 13043 13069	CNS thrombosis/hemorrhage,
+T150	adversereaction 13074 13087	pancreatitis,
+T151	adversereaction 13092 13119	clinical allergic reaction,
+T152	adversereaction 13128 13147	hyperbilirubinemia,
+T153	adversereaction 13179 13192	pancreatitis.
+T154	indication 13213 13216	ALL
+T155	indication 13335 13338	ALL
+T156	tradename 13352 13360	Oncaspar
+T157	tradename 13453 13461	Oncaspar
+T158	indication 13507 13510	ALL
+T159	tradename 13648 13656	Oncaspar
+T160	adversereaction 13662 13689	clinical allergic reactions
+T161	adversereaction 13691 13734	elevated transaminases, hyperbilirubinemia,
+T162	adversereaction 13739 13754	coagulopathies.
+T163	tradename 13802 13810	Oncaspar
+T164	adversereaction 13826 13836	thrombosis
+T165	adversereaction 13843 13856	hyperglycemia
+T166	adversereaction 13893 13905	pancreatitis
+T167	adversereaction 13917 13954	Allergic Reactions Allergic reactions
+T168	adversereaction 13978 14037	bronchospasm, hypotension, laryngeal edema, local erythema
+T169	adversereaction 14041 14065	swelling, systemic rash,
+T170	adversereaction 14070 14080	urticaria.
+T171	indication 14093 14096	ALL
+T172	tradename 14107 14115	Oncaspar
+T173	adversereaction 14154 14181	clinical allergic reactions
+T174	adversereaction 14250 14267	allergic reaction
+T175	indication 14577 14580	ALL
+T176	indication 14614 14617	ALL
+T177	activeingredient 14658 14671	asparaginase,
+T178	activeingredient 14767 14782	L-asparaginase,
+T179	activeingredient 14892 14907	L-asparaginase.
+T180	adversereaction 14954 14981	clinical allergic reactions
+T181	tradename 14985 14993	Oncaspar
+T182	indication 15043 15046	ALL
+T183	activeingredient 15091 15104	asparaginase,
+T184	adversereaction 15135 15162	clinical allergic reactions
+T185	tradename 15166 15174	Oncaspar
+T186	adversereaction 15213 15241	CLINICAL ALLERGIC REACTIONS,
+T187	tradename 15712 15720	Oncaspar
+T188	tradename 16583 16591	Oncaspar
+T189	tradename 16870 16878	Oncaspar
+T190	tradename 17044 17052	Oncaspar
+T191	tradename 17084 17092	Oncaspar
+T192	tradename 17189 17197	Oncaspar
+T193	tradename 17303 17311	Oncaspar
+T194	tradename 17470 17478	Oncaspar
+T195	tradename 17704 17712	Oncaspar
+T196	dose 17895 17924	10,000 International Units/m2
+T197	tradename 17928 17936	Oncaspar
+T198	routeofadministration 17943 17954	intravenous
+T199	adversereaction 17998 18024	increase in liver enzymes.
+T200	adversereaction 18054 18058	rash
+T201	tradename 18282 18290	Oncaspar
+T202	nanoparticle 18292 18305	pegaspargase)
+T203	activeingredient 18309 18323	L-asparaginase
+T204	corecomposition 18325 18353	L-asparagine amidohydrolase)
+T205	surfacecoating 18387 18425	monomethoxypolyethylene glycol (mPEG).
+T206	activeingredient 18426 18440	L-asparaginase
+T207	chemoclass 18457 18463	enzyme
+T208	molecularweight 18531 18539	34.5 kDa
+T209	surfacecoating 18587 18591	mPEG
+T210	activeingredient 18606 18621	L-asparaginase;
+T211	surfacecoating 18651 18655	mPEG
+T212	molecularweight 18674 18680	5 kDa.
+T213	tradename 18681 18689	Oncaspar
+T214	activeingredient 18762 18776	L-asparaginase
+T215	tradename 19054 19062	Oncaspar
+T216	nanoparticle 19239 19252	pegaspargase,
+T217	inactiveingredient 19253 19278	dibasic sodium phosphate,
+T218	inactiveingredient 19294 19321	monobasic sodium phosphate,
+T219	inactiveingredient 19341 19357	sodium chloride,
+T220	inactiveingredient 19375 19380	water
+T221	tradename 19480 19488	Oncaspar
+T222	chemoclass 19818 19824	enzyme
+T223	activeingredient 19825 19840	L-asparaginase,
+T224	routeofadministration 20122 20135	intramuscular
+T225	tradename 20145 20153	Oncaspar
+T226	dose 20155 20184	2,500 International Units/m2)
+T227	activeingredient 20587 20599	asparaginase
+T228	indication 20707 20710	ALL
+T229	routeofadministration 20732 20745	intramuscular
+T230	dose 20764 20792	2,500 International Units/m2
+T231	tradename 20824 20832	Oncaspar
+T232	eliminationhalflife 20851 20859	5.8 days
+T233	tradename 21120 21128	Oncaspar
+T234	indication 21288 21291	ALL
+T235	tradename 21301 21309	Oncaspar
+T236	dose 21313 21341	2,500 International Units/m2
+T237	routeofadministration 21342 21357	intramuscularly
+T238	frequency 21358 21372	every 2 weeks.
+T239	tradename 21397 21405	Oncaspar
+T240	plasmahalflife 21410 21423	3.2  1.8 days
+T241	activeingredient 21491 21505	L-asparaginase
+T242	plasmahalflife 21510 21523	5.7  3.2 days
+T243	auc 21620 21655	9.5  4.0 International Units/mL/day
+T244	auc 21702 21737	9.8  6.0 International Units/mL/day
+T245	tradename 22082 22090	Oncaspar
+T246	tradename 22174 22182	Oncaspar
+T247	indication 22396 22399	ALL
+T248	tradename 22432 22440	Oncaspar
+T249	indication 22630 22633	ALL
+T250	tradename 22657 22665	Oncaspar
+T251	activeingredient 22684 22698	L-asparaginase
+T252	tradename 22731 22739	Oncaspar
+T253	routeofadministration 22757 22772	intramuscularly
+T254	dose 22786 22814	2,500 International Units/m2
+T255	activeingredient 22936 22950	L-asparaginase
+T256	routeofadministration 22968 22983	intramuscularly
+T257	dose 22997 23025	6,000 International Units/m2
+T258	frequency 23026 23044	three times weekly
+T259	tradename 23268 23276	Oncaspar
+T260	activeingredient 23296 23310	L-asparaginase
+T261	activeingredient 23698 23710	asparaginase
+T262	tradename 23786 23794	Oncaspar
+T263	activeingredient 23814 23828	L-asparaginase
+T264	activeingredient 24212 24226	L-Asparaginase
+T265	tradename 24227 24235	Oncaspar
+T266	activeingredient 24314 24328	L-Asparaginase
+T267	tradename 24543 24551	Oncaspar
+T268	dose 24553 24581	2,500 International Units/m2
+T269	routeofadministration 24582 24596	intramuscular)
+T270	activeingredient 24670 24684	L-asparaginase
+T271	dose 24686 24714	6,000 International Units/m2
+T272	routeofadministration 24715 24729	intramuscular)
+T273	frequency 24747 24761	3 times weekly
+T274	tradename 25025 25033	Oncaspar
+T275	activeingredient 25104 25118	L-asparaginase
+T276	tradename 25186 25194	Oncaspar
+T277	activeingredient 25214 25228	L-asparaginase
+T278	indication 25351 25354	ALL
+T279	activeingredient 25382 25394	Asparaginase
+T280	tradename 25427 25435	Oncaspar
+T281	indication 25532 25546	acute leukemia
+T282	indication 25562 25566	ALL]
+T283	activeingredient 25621 25634	asparaginase.
+T284	activeingredient 25655 25667	asparaginase
+T285	activeingredient 25916 25931	L-asparaginase.
+T286	tradename 25954 25962	Oncaspar
+T287	dose 25976 26013	2,000 or 2,500 International Units/m2
+T288	routeofadministration 26027 26042	intramuscularly
+T289	routeofadministration 26046 26059	intravenously
+T290	frequency 26060 26074	every 14 days.
+T291	tradename 26093 26101	Oncaspar
+T292	indication 26392 26395	ALL
+T293	activeingredient 26434 26459	L-asparaginase-containing
+T294	tradename 26543 26551	Oncaspar
+T295	indication 26804 26807	ALL
+T296	activeingredient 26847 26862	L-asparaginase.
+T297	tradename 26902 26910	Oncaspar
+T298	nanoparticle 26912 26925	pegaspargase)
+T299	activeingredient 27027 27041	L-asparaginase
+T300	tradename 27087 27095	Oncaspar
+T301	tradename 27205 27213	Oncaspar
+T302	adversereaction 27294 27320	Serious Allergic Reactions
+T303	adversereaction 27359 27386	serious allergic reactions,
+T304	adversereaction 27397 27409	anaphylaxis,
+T305	adversereaction 27495 27505	Thrombosis
+T306	adversereaction 27649 27661	Pancreatitis
+T307	adversereaction 27747 27766	Glucose Intolerance
+T308	company 27930 27962	Sigma-Tau Pharmaceuticals, Inc.,

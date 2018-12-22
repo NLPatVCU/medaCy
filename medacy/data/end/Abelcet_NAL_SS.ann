@@ -1,0 +1,260 @@
+T1	tradename 0 7	ABELCET
+T2	activeingredient 8 22	Amphotericin B
+T3	nanoparticle 23 36	Lipid Complex
+T4	tradename 65 65	
+T5	routeofadministration 108 119	intravenous
+T6	tradename 130 137	ABELCET
+T7	activeingredient 150 165	ampho-tericin B
+T8	corecomposition 243 304	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
+T9	corecomposition 309 358	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
+T10	tradename 394 401	ABELCET
+T11	nanoparticle 465 474	Liposomal
+T12	nanoparticle 511 524	lipid complex
+T13	nanoparticle 671 680	liposomal
+T14	nanoparticle 684 699	lipid-complexed
+T15	activeingredient 909 923	Amphotericin B
+T16	indication 938 948	antifungal
+T17	activeingredient 1007 1021	Amphotericin B
+T18	molecularweight 1404 1410	924.09
+T19	tradename 1478 1485	ABELCET
+T20	activeingredient 1599 1613	amphotericin B
+T21	tradename 1668 1668	
+T22	activeingredient 1679 1693	Amphotericin B
+T23	corecomposition 1742 1749	 (DMPC)
+T24	corecomposition 1797 1804	 (DMPG)
+T25	inactiveingredient 1817 1826	 Chloride
+T26	inactiveingredient 1840 1840	
+T27	tradename 1925 1932	ABELCET
+T28	activeingredient 1934 1949	amphotericin B,
+T29	tradename 2247 2247	
+T30	activeingredient 2485 2499	amphotericin B
+T31	indication 2622 2632	antifungal
+T32	tradename 2756 2763	ABELCET
+T33	indication 2799 2876	Aspergillus fumigatus, Candida albicans, C. guiller-mondii, C. stellatoideae,
+T34	indication 2881 2952	C. tropicalis, Cryptococcus sp., Coccidioidomyces sp., Histoplasma sp.,
+T35	indication 2956 2971	Blastomyces sp.
+T36	activeingredient 3155 3169	amphotericin B
+T37	activeingredient 3423 3437	amphotericin B
+T38	tradename 3463 3470	ABELCET
+T39	activeingredient 3536 3550	amphotericin B
+T40	tradename 3592 3599	ABELCET
+T41	activeingredient 3620 3634	amphotericin B
+T42	tradename 3679 3686	ABELCET
+T43	activeingredient 3692 3710	amphotericin Bthat
+T44	activeingredient 3751 3765	amphotericin B
+T45	tradename 3794 3801	ABELCET
+T46	tradename 3897 3904	ABELCET
+T47	activeingredient 3979 3993	amphotericin B
+T48	dose 4015 4026	0.6-5 mg/kg
+T49	frequency 4026 4031	/day.
+T50	activeingredient 4056 4070	amphotericin B
+T51	tradename 4120 4120	
+T52	activeingredient 4125 4139	amphotericin B
+T53	activeingredient 4189 4203	Amphotericin B
+T54	tradename 4262 4269	ABELCET
+T55	activeingredient 4273 4287	Amphotericin B
+T56	tradename 4302 4309	ABELCET
+T57	activeingredient 4310 4324	Amphotericin B
+T58	dose 4325 4332	5 mg/kg
+T59	frequency 4332 4336	/day
+T60	duration 4341 4349	5-7 days
+T61	dose 4350 4359	0.6 mg/kg
+T62	frequency 4359 4363	/day
+T63	duration 4368 4376	42 daysa
+T64	cmax 4440 4455	(g/mL) 1.7  0.8
+T65	auc 4610 4626	(g*h/mL) 14.0  7
+T66	clearance 4661 4683	(mL/h*kg) 436.0  188.5
+T67	volumeofdistribution 4749 4767	(L/kg) 131.0  57.7
+T68	plasmahalflife 4821 4834	(h) 173.4  78
+T69	activeingredient 5441 5455	amphotericin B
+T70	tradename 5483 5490	ABELCET
+T71	activeingredient 5629 5643	amphotericin B
+T72	activeingredient 5735 5749	amphotericin B
+T73	tradename 5816 5823	ABELCET
+T74	dose 5824 5831	5 mg/kg
+T75	frequency 5831 5835	/day
+T76	duration 5840 5847	7 days.
+T77	tradename 5910 5917	ABELCET
+T78	activeingredient 5965 5979	amphotericin B
+T79	tradename 6071 6078	ABELCET
+T80	dose 6082 6091	5.3 mg/kg
+T81	frequency 6091 6096	/day:
+T82	activeingredient 6225 6239	amphotericin B
+T83	tradename 6246 6253	ABELCET
+T84	activeingredient 6368 6382	amphotericin B
+T85	tradename 6430 6437	ABELCET
+T86	tradename 6544 6551	ABELCET
+T87	tradename 6636 6643	ABELCET
+T88	tradename 6703 6710	ABELCET
+T89	activeingredient 6742 6756	amphotericin B
+T90	activeingredient 6808 6822	amphotericin B
+T91	tradename 7057 7057	
+T92	indication 7092 7118	invasive fungal infections
+T93	activeingredient 7182 7196	amphotericin B
+T94	activeingredient 7326 7340	amphotericin B
+T95	tradename 7513 7520	ABELCET
+T96	indication 7568 7594	invasive fungal infections
+T97	activeingredient 7680 7695	amphotericin B,
+T98	tradename 7789 7796	ABELCET
+T99	indication 7817 7843	invasive fungal infections
+T100	activeingredient 7980 7982	 B
+T101	dose 8067 8073	500 mg
+T102	activeingredient 8077 8092	amphotericin B.
+T103	activeingredient 8300 8314	amphotericin B
+T104	tradename 9059 9066	ABELCET
+T105	activeingredient 9565 9579	amphotericin B
+T106	tradename 9706 9713	ABELCET
+T107	tradename 9889 9896	ABELCET
+T108	activeingredient 9979 9993	amphotericin B
+T109	activeingredient 10620 10634	Amphotericin B
+T110	tradename 10769 10776	ABELCET
+T111	tradename 10928 10935	ABELCET
+T112	dose 10948 10955	5 mg/kg
+T113	frequency 10955 10959	/day
+T114	activeingredient 10982 10996	amphotericin B
+T115	dose 11010 11019	0.7 mg/kg
+T116	frequency 11019 11024	/day.
+T117	tradename 11066 11073	ABELCET
+T118	dose 11096 11103	5 mg/kg
+T119	frequency 11103 11107	/day
+T120	activeingredient 11134 11148	amphotericin B
+T121	dose 11176 11188	0.6-1 mg/kg/
+T122	frequency 11188 11192	day,
+T123	tradename 11249 11256	ABELCET
+T124	dose 11295 11302	5 mg/kg
+T125	frequency 11302 11306	/day
+T126	tradename 11316 11316	
+T127	tradename 11372 11372	
+T128	activeingredient 11439 11453	amphotericin B
+T129	adversereaction 11515 11515	
+T130	activeingredient 11539 11553	amphotericin B
+T131	activeingredient 11578 11593	amphotericin B-
+T132	adversereaction 11612 11623	Anaphylaxis
+T133	tradename 11647 11654	ABELCET
+T134	adversereaction 11700 11720	respiratory distress
+T135	tradename 11829 11836	ABELCET
+T136	activeingredient 11870 11885	amphotericin B-
+T137	tradename 11934 11941	ABELCET
+T138	adversereaction 12065 12070	fever
+T139	adversereaction 12075 12081	chills
+T140	routeofadministration 12123 12134	intravenous
+T141	tradename 12148 12155	ABELCET
+T142	tradename 12225 12232	ABELCET
+T143	adversereaction 12320 12358	hypotension,bronchospasm, arrhythmias,
+T144	adversereaction 12363 12369	shock.
+T145	tradename 12443 12450	ABELCET
+T146	tradename 12718 12725	ABELCET
+T147	activeingredient 12815 12830	amphotericin B;
+T148	tradename 12880 12887	ABELCET
+T149	activeingredient 12957 12971	amphotericin B
+T150	tradename 13104 13111	ABELCET
+T151	activeingredient 13237 13251	amphotericin B
+T152	tradename 13366 13373	ABELCET
+T153	tradename 13504 13511	ABELCET
+T154	tradename 13623 13630	ABELCET
+T155	activeingredient 13765 13779	amphotericin B
+T156	tradename 13880 13887	ABELCET
+T157	activeingredient 13988 14003	amphotericin B-
+T158	tradename 14194 14201	ABELCET
+T159	activeingredient 14325 14327	 B
+T160	activeingredient 14662 14676	amphotericin B
+T161	tradename 14732 14739	ABELCET
+T162	activeingredient 14822 14836	amphotericin B
+T163	tradename 15013 15020	ABELCET
+T164	activeingredient 15191 15206	Amphotericin B-
+T165	tradename 15366 15373	ABELCET
+T166	tradename 15516 15523	ABELCET
+T167	activeingredient 15583 15597	amphotericin B
+T168	tradename 15758 15765	ABELCET
+T169	tradename 15977 15984	ABELCET
+T170	tradename 16078 16085	ABELCET
+T171	tradename 16280 16287	ABELCET
+T172	tradename 16377 16384	ABELCET
+T173	tradename 16609 16616	ABELCET
+T174	tradename 16713 16720	ABELCET
+T175	tradename 16946 16953	ABELCET
+T176	tradename 17100 17107	ABELCET
+T177	tradename 17266 17273	ABELCET
+T178	tradename 17604 17611	ABELCET
+T179	dose 17615 17622	5 mg/kg
+T180	frequency 17622 17626	/day
+T181	dose 17799 17808	2.5 mg/kg
+T182	frequency 17808 17812	/day
+T183	tradename 17822 17822	
+T184	tradename 17971 17978	ABELCET
+T185	dose 17981 17988	5 mg/kg
+T186	frequency 17988 17992	/day
+T187	tradename 18208 18215	ABELCET
+T188	dose 18312 18319	5 mg/kg
+T189	frequency 18319 18324	/day.
+T190	tradename 18663 18670	ABELCET
+T191	tradename 18829 18836	ABELCET
+T192	adversereaction 18997 19003	Chills
+T193	adversereaction 19006 19011	Fever
+T194	adversereaction 19014 19040	Increased Serum Creatinine
+T195	adversereaction 19043 19065	Multiple Organ Failure
+T196	adversereaction 19068 19074	Nausea
+T197	adversereaction 19076 19087	Hypotension
+T198	adversereaction 19089 19108	Respiratory Failure
+T199	adversereaction 19110 19118	Vomiting
+T200	adversereaction 19120 19127	Dyspnea
+T201	adversereaction 19129 19135	Sepsis
+T202	adversereaction 19137 19145	Diarrhea
+T203	adversereaction 19147 19155	Headache
+T204	adversereaction 19157 19171	Cardiac Arrest
+T205	adversereaction 19173 19185	Hypertension
+T206	adversereaction 19187 19198	Hypokalemia
+T207	adversereaction 19200 19209	Infection
+T208	adversereaction 19211 19225	Kidney Failure
+T209	adversereaction 19227 19231	Pain
+T210	adversereaction 19233 19249	Thrombocytopenia
+T211	adversereaction 19251 19265	Abdominal Pain
+T212	adversereaction 19267 19273	Anemia
+T213	adversereaction 19275 19293	Hyperbilirubinemia
+T214	adversereaction 19295 19322	Gastrointestinal Hemorrhage
+T215	adversereaction 19324 19334	Leukopenia
+T216	adversereaction 19336 19340	Rash
+T217	adversereaction 19342 19362	Respiratory Disorder
+T218	adversereaction 19364 19374	Chest Pain
+T219	adversereaction 19376 19395	Nausea and Vomiting
+T220	tradename 19469 19476	ABELCET
+T221	tradename 19578 19585	ABELCET
+T222	adversereaction 19615 19670	malaise, weight loss, deafness, injection site reaction
+T223	adversereaction 19681 19701	inflammationAllergic
+T224	adversereaction 19703 19792	bronchospasm, wheezing, asthma, anaphylactoid and other allergic reactionsCardiopulmonary
+T225	adversereaction 19794 20010	cardiac failure, pulmonary edema, shock, myocardial infarction, hemoptysis,tachypnea, thrombophlebitis, pulmonary embolus, cardiomyopathy, pleural effusion, arrhythmiasincluding ventricular fibrillationDermatological
+T226	adversereaction 20012 20101	maculopapular rash, pruritus, exfoliative dermatitis, erythema multiformeGastrointestinal
+T227	adversereaction 20103 20293	acute liver failure, hepatitis, jaundice, melena, anorexia, dyspepsia, cramping, epi-gastric pain, veno-occlusive liver disease, diarrhea, hepatomegaly, cholangitis, cholecystitisHematologic
+T228	adversereaction 20295 20346	coagulation defects, leukocytosis, blood dyscrasias
+T229	adversereaction 20357 20384	eosinophiliaMusculoskeletal
+T230	adversereaction 20386 20397	myasthenia,
+T231	adversereaction 20408 20447	bone, muscle, and joint painsNeurologic
+T232	adversereaction 20449 20623	convulsions, tinnitus, visual impairment, hearing loss, peripheral neuropathy, transientvertigo, diplopia, encephalopathy, cerebral vascular accident, extrapyramidal syndrome
+T233	adversereaction 20664 20755	oliguria, decreased renal function, anuria, renal tubular acidosis, impotence, dysuriaSerum
+T234	adversereaction 20783 20845	hypomagnesemia, hyperkalemia, hypocalcemia, hypercalcemiaLiver
+T235	adversereaction 20875 20925	increased AST, ALT, alkaline phosphatase, LDHRenal
+T236	adversereaction 20955 20973	increased BUNOther
+T237	adversereaction 20994 21082	acidosis, hyperamylasemia, hypoglycemia, hyperglycemia, hyperuricemia,hypophosphatemiaTo
+T238	company 21127 21158	Sigma-Tau Pharmaceuticals, Inc.
+T239	activeingredient 21305 21307	 B
+T240	tradename 21462 21469	ABELCET
+T241	dose 21478 21489	7-13 mg/kg.
+T242	tradename 21545 21552	ABELCET
+T243	tradename 21690 21697	ABELCET
+T244	dose 21801 21808	5 mg/kg
+T245	tradename 21837 21844	ABELCET
+T246	routeofadministration 21871 21882	intravenous
+T247	tradename 22034 22041	ABELCET
+T248	tradename 22403 22410	ABELCET
+T249	tradename 22551 22558	ABELCET
+T250	tradename 23373 23380	ABELCET
+T251	tradename 23539 23546	ABELCET
+T252	tradename 23686 23693	ABELCET
+T253	tradename 24002 24009	ABELCET
+T254	tradename 24076 24083	ABELCET
+T255	tradename 24178 24185	ABELCET
+T256	tradename 24251 24258	ABELCET
+T257	u.s.patent 24459 24486	4,973,4655,616,3346,406,713
+T258	company 24517 24546	Sigma-Tau PharmaSource, Inc.,
+T259	company 24585 24617	Sigma-Tau Pharmaceuticals, Inc.,
+T260	tradename 24714 24721	ABELCET
