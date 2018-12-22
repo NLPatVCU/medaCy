@@ -1,0 +1,604 @@
+AmBisome Label
+                AmBisome
+ (amphotericin B) liposome for injection
+ Revised: March 2012
+ DESCRIPTION AmBisome for Injection is a sterile, non-pyrogenic lyophilized product for intravenous infusion.
+Each vial contains 50 mg of amphotericin B, USP, intercalated into a liposomal membrane consisting of approximately 213 mg hydrogenated soy phosphatidylcholine; 52 mg cholesterol, NF; 84 mg distearoylphosphatidylglycerol; 0.64 mg alpha tocopherol, USP; together with 900 mg sucrose, NF; and 27 mg disodium succinate hexahydrate as buffer.
+Following reconstitution with Sterile Water for Injection, USP, the resulting pH of the suspension is between 5-6.
+ AmBisome is a true single bilayer liposomal drug delivery system.
+Liposomes are closed, spherical vesicles created by mixing specific proportions of amphophilic substances such as phospholipids and cholesterol so that they arrange themselves into multiple concentric bilayer membranes when hydrated in aqueous solutions.
+Single bilayer liposomes are then formed by microemulsification of multilamellar vesicles using a homogenizer.
+AmBisome consists of these unilamellar bilayer liposomes with amphotericin B intercalated within the membrane.
+Due to the nature and quantity of amphophilic substances used, and the lipophilic moiety in the amphotericin B molecule, the drug is an integral part of the overall structure of the AmBisome liposomes.
+AmBisome contains true liposomes that are less than 100 nm in diameter.
+A schematic depiction of the liposome is presented below.
+ 1
+  Reference ID: 3098093
+                 Note: Liposomal encapsulation or incorporation into a lipid complex can substantially affect a drug&#x2019;s functional properties relative to those of the unencapsulated drug or non-lipid associated drug.
+In addition, different liposomal or lipid-complex products with a common active ingredient may vary from one another in the chemical composition and physical form of the lipid component.
+Such differences may affect the functional properties of these drug products.
+ Amphotericin B is a macrocyclic, polyene, antifungal antibiotic produced from a strain of Streptomyces nodosus.
+Amphotericin B is designated chemically as: [1R-(1R*,3S*,5R*,6R*,9R*,11R*,15S*,16R*,17R*,18S*, 19E,21E,23E,25E,27E,29E,31E,33R*,35S*,36R*,37S*)]-33-[(3-Amino-3,6dideoxy--D-mannopyranosyl)oxy]-1,3,5,6,9,11,17,37-octahydroxy-15,16,18trimethyl-13-oxo-14,39-dioxabicyclo[33.3.1]nonatriaconta-19,21,23,25,27,29,31heptaene-36-carboxylic acid (CAS No.1397-89-3). 
+Amphotericin B has a molecular formula of C47H73NO17 and a molecular weight of 924.09.
+ The structure of amphotericin B is shown below:
+ MICROBIOLOGY Mechanism of Action Amphotericin B, the active ingredient of AmBisome, acts by binding to the sterol component, ergosterol, of the cell membrane of susceptible fungi.
+It forms transmembrane channels leading to alterations in cell permeability through which monovalent ions (NA+, K+, H+, and Cl-) leak out of the cell resulting in cell death.
+While amphotericin B has a higher affinity for the ergosterol component of the fungal cell membrane, it can also bind to the cholesterol component of the mammalian cell leading to cytotoxicity.
+AmBisome, the liposomal preparation of amphotericin B, has been shown to penetrate the cell wall of both extracellular and intracellular forms of susceptible fungi.
+ 2
+  Reference ID: 3098093
+                Activity In Vitro and In Vivo AmBisome has shown in vitro activity comparable to amphotericin B against the following organisms: Aspergillus fumigatus, Aspergillus flavus, Candida albicans, Candida krusei, Candida lusitaniae, Candida parapsilosis, Candida tropicalis, Cryptococcus neoformans, and Blastomyces dermatitidis.
+  Drug Resistance Mutants with decreased susceptibility to amphotericin B have been isolated from several fungal species after serial passage in culture media containing the drug, and from some patients receiving prolonged therapy.
+Drug combination studies in vitro and in vivo suggest that imidazoles may induce resistance to amphotericin B. However, the clinical relevance of drug resistance has not been established.
+ Susceptibility Testing Standardized methods of in vitro antifungal susceptibility testing have been developed for testing yeasts (1,2,3) and filamentous fungi (4,5).
+The clinical relevance of the test results is not always clear.
+ CLINICAL PHARMACOLOGY Pharmacokinetics The assay used to measure amphotericin B in the serum after administration of AmBisome does not distinguish amphotericin B that is complexed with the phospholipids of AmBisome from amphotericin B that is uncomplexed.
+The pharmacokinetic profile of amphotericin B after administration of AmBisome is based upon total serum concentrations of amphotericin B. The pharmacokinetic profile of amphotericin B was determined in febrile neutropenic cancer and bone marrow transplant patients who received 1-2 hour infusions of 1 to 5 mg/kg/day AmBisome for 3 to 20 days.
+ The pharmacokinetics of amphotericin B after administration of AmBisome is nonlinear such that there is a greater than proportional increase in serum concentrations with an increase in dose from 1 to 5 mg/kg/day.
+The pharmacokinetic parameters of total amphotericin B (mean  SD) after the first dose and at steady state are shown in the table below.
+ 3
+  Reference ID: 3098093
+                         Pharmacokinetic Parameters of AmBisome Dose
+ (mg/kg/day): 1 2.5 5
+ Day 1 n = 8
+ Last n = 7
+ 1 n = 7
+ Last n = 7
+ 1 n = 12
+ Last n = 9
+ Parameters Cmax (mcg/mL)  7.3  3.8 12.2  4.9 17.2  7.1 31.4  17.8 57.6  21 83  35.2 AUC0-24 (mcg&#x2022;hr/mL)  27  14 60  20 65  33 197  183 269  96 555  311 t(hr) 10.7  6.4 7  2.1 8.1  2.3 6.3  2 6.4  2.1 6.8  2.1 Vss(L/kg) 0.44  0.27 0.14  0.05 0.40  0.37 0.16  0.09 0.16  0.10 0.10  0.07 Cl (mL/hr/kg) 39  22 17  6 51  44 22  15 21  14 11  6
+ Distribution Based on total amphotericin B concentrations measured within a dosing interval (24 hours) after administration of AmBisome, the mean half-life was 7-10 hours.
+However, based on total amphotericin B concentration measured up to 49 days after dosing of AmBisome, the mean half-life was 100-153 hours.
+The long terminal elimination half-life is probably a slow redistribution from tissues.
+ Steady state concentrations were generally achieved within 4 days of dosing.
+ Although variable, mean trough concentrations of amphotericin B remained relatively constant with repeated administration of the same dose over the range of 1 to 5 mg/kg/day, indicating no significant drug accumulation in the serum.
+ Metabolism The metabolic pathways of amphotericin B after administration of AmBisome are not known.
+ Excretion The mean clearance at steady state was independent of dose.
+The excretion of amphotericin B after administration of AmBisome has not been studied.
+ Pharmacokinetics in Special Populations Renal Impairment The effect of renal impairment on the disposition of amphotericin B after administration of AmBisome has not been studied.
+However, AmBisome has been successfully administered to patients with pre-existing renal impairment (see DESCRIPTION OF CLINICAL STUDIES).
+ Hepatic Impairment The effect of hepatic impairment on the disposition of amphotericin B after administration of AmBisome is not known.
+ 4
+  Reference ID: 3098093
+                                          Pediatric and Elderly Patients The pharmacokinetics of amphotericin B after administration of AmBisome in pediatric and elderly patients has not been studied; however, AmBisome has been used in pediatric and elderly patients (see DESCRIPTION OF CLINICAL STUDIES).
+ Gender and Ethnicity The effect of gender or ethnicity on the pharmacokinetics of amphotericin B after administration of AmBisome is not known.
+ INDICATIONS AND USAGE AmBisome is indicated for the following:
+ &#x2022; Empirical therapy for presumed fungal infection in febrile, neutropenic patients.
+ &#x2022; Treatment of Cryptococcal Meningitis in HIV infected patients (see DESCRIPTION OF CLINICAL STUDIES).
+ &#x2022; Treatment of patients with Aspergillus species, Candida species and/or Cryptococcus species infections (see above for the treatment of Cryptococcal Meningitis) refractory to amphotericin B deoxycholate, or in patients where renal impairment or unacceptable toxicity precludes the use of amphotericin B deoxycholate.
+ &#x2022; Treatment of visceral leishmaniasis.
+In immunocompromised patients with visceral leishmaniasis treated with AmBisome, relapse rates were high following initial clearance of parasites (see DESCRIPTION OF CLINICAL
+ STUDIES).
+ See DOSAGE AND ADMINISTRATION for recommended doses by indication.
+ DESCRIPTION OF CLINICAL STUDIES Eleven clinical studies supporting the efficacy and safety of AmBisome were conducted.
+This clinical program included both controlled and uncontrolled studies.
+These studies, which involved 2171 patients, included patients with confirmed systemic mycoses, empirical therapy, and visceral leishmaniasis.
+  Nineteen hundred and forty-six episodes were evaluable for efficacy, of which 1280 (302 pediatric and 978 adults) were treated with AmBisome.
+ Three controlled empirical therapy trials compared the efficacy and safety of AmBisome to amphotericin B. One of these studies was conducted in a pediatric population, one in adults, and a third in patients aged 2 years or more.
+In addition, a controlled empirical therapy trial comparing the safety of AmBisome to Abelcet (amphotericin B lipid complex) was conducted in patients aged 2 years or more.
+ 5
+  Reference ID: 3098093
+                       One controlled trial compared the efficacy and safety of AmBisome to amphotericin B in HIV patients with cryptococcal meningitis.
+ One compassionate use study enrolled patients who had failed amphotericin B deoxycholate therapy or who were unable to receive amphotericin B deoxycholate because of renal insufficiency.
+ Empirical Therapy in Febrile Neutropenic Patients Study 94-0-002, a randomized, double-blind, comparative multi-center trial, evaluated the efficacy of AmBisome (1.5-6 mg/kg/day) compared with amphotericin B deoxycholate (0.3-1.2 mg/kg/day) in the empirical treatment of 687 adult and pediatric neutropenic patients who were febrile despite having received at least 96 hours of broad spectrum antibacterial therapy.
+Therapeutic success required (a) resolution of fever during the neutropenic period, (b) absence of an emergent fungal infection, (c) patient survival for at least 7 days post therapy, (d) no discontinuation of therapy due to toxicity or lack of efficacy, and (e) resolution of any study-entry fungal infection.
+ The overall therapeutic success rates for AmBisome and the amphotericin B deoxycholate were equivalent.
+Results are summarized in the following table.
+Note: The categories presented below are not mutually exclusive.
+ Empirical Therapy in Febrile Neutropenic Patients: Randomized, Double-Blind Study in 687 Patients
+ AmBisome Amphotericin B Number of patients receiving at least one dose of study drug
+ 343 344
+ Overall Success 171 (49.9%) 169 (49.1%) Fever resolution during neutropenic period 199 (58%) 200 (58.1%) No treatment emergent fungal infection  300 (87.5%) 301 (87.7%) Survival through 7 days post study drug 318 (92.7%) 308 (89.5%) Study drug not prematurely discontinued due to toxicity or lack of efficacy* 294 (85.7%) 280 (81.4%) * 8 and 10 patients, respectively, were treated as failures due to premature discontinuation alone.
+ This therapeutic equivalence had no apparent relationship to the use of prestudy antifungal prophylaxis or concomitant granulocytic colony stimulating factors.
+ The incidence of mycologically confirmed and clinically diagnosed, emergent fungal infections are presented in the following table.
+AmBisome and amphotericin B were found to be equivalent with respect to the total number of emergent fungal infections.
+ 6
+  Reference ID: 3098093
+                   Empirical Therapy in Febrile Neutropenic Patients:
+ Emergent Fungal Infections
+  AmBisome Amphotericin B Number of patients receiving at least one dose of study drug
+ 343 344
+ Mycologically confirmed fungal infection
+ 11 (3.2%) 27 (7.8%)
+ Clinically diagnosed fungal infection
+ 32 (9.3%) 16 (4.7%)
+ Total emergent fungal infections
+ 43 (12.5%) 43 (12.5%)
+ Mycologically confirmed fungal infections at study-entry were cured in 8 of  11 patients in the AmBisome group and 7 of 10 in the amphotericin B group.
+  Study 97-0-034, a randomized, double-blind, comparative multi-center trial, evaluated the safety of AmBisome (3 and 5 mg/kg/day) compared with amphotericin B lipid complex (5 mg/kg/day) in the empirical treatment of  202 adult and 42 pediatric neutropenic patients.
+One hundred and sixty-six patients received AmBisome (85 patients received 3 mg/kg/day and 81 received 5 mg/kg/day) and 78 patients received amphotericin B lipid complex.
+The study patients were febrile despite having received at least 72 hours of broad spectrum antibacterial therapy.
+The primary endpoint of this study was safety.
+ The study was not designed to draw statistically meaningful conclusions related to comparative efficacy, and in fact, Abelcet is not labeled for this indication.
+ Two supportive prospective randomized, open label, comparative multi-center studies examined the efficacy of two dosages of AmBisome (1 and 3 mg/kg/day) compared to amphotericin B deoxycholate (1 mg/kg/day) in the treatment of neutropenic patients with presumed fungal infections.
+These patients were undergoing chemotherapy as part of a bone marrow transplant or had hematological disease.
+Study 104-10 enrolled adult patients (n=134).
+ Study 104-14 enrolled pediatric patients (n=214).
+Both studies support the efficacy equivalence of AmBisome and amphotericin B as empirical therapy in febrile neutropenic patients.
+ Treatment of Cryptococcal Meningitis in HIV Infected Patients.
+Study 94-0-013, a randomized, double-blind, comparative multi-center trial, evaluated the efficacy of AmBisome at doses (3 and 6 mg/kg/day) compared with amphotericin B deoxycholate (0.7 mg/kg/day) for the treatment of cryptococcal meningitis in 266 adult and one pediatric HIV positive patients (the pediatric patient received amphotericin B deoxycholate).
+Of the 267 treated patients, 86 received AmBisome 3 mg/kg/day, 94 received 6 mg/kg/day and 87 received amphotericin B deoxycholate; cryptococcal meningitis was documented by a positive CSF culture at baseline in 73, 85 and 76 patients, respectively.
+Patients received study drug once daily for an induction period of 11 to 21 days.
+Following induction, all patients were switched to oral fluconazole
+ Reference ID: 3098093
+  7
+                                at 400 mg/day for adults and 200 mg/day for patients less than 13 years of age to complete 10 weeks of protocol-directed therapy.
+For mycologically evaluable patients, defined as all randomized patients who received at least one dose of study drug, had a positive baseline CSF culture, and had at least one follow-up culture, success was evaluated at week 2 (i.e., 14  4 days), and was defined as CSF culture conversion.
+Success rates at 2 weeks for AmBisome and amphotericin B deoxycholate are summarized in the following table:
+ Success Rates at 2 weeks (CSF Culture Conversion) Study 94-0-013 AmBisome
+ 3 mg/kg AmBisome
+ 6 mg/kg Amphotericin B
+ 0.7 mg/kg
+ Success at Week 2 35/60 (58.3%)
+ 97.5% CI1= -9.4%, +31%
+ 36/75 (48%) 97.5% CI1= -18.8%, +19.8%
+ 29/61 (47.5 %)
+ 1 97.5% Confidence Interval for the difference between AmBisome and amphotericin B success rates.
+A negative value is in favor of amphotericin B. A positive value is in favor of AmBisome.
+ Success at 10 weeks was defined as clinical success at week 10 plus CSF culture conversion at or prior to week 10.
+Success rates at 10 weeks in patients with positive baseline culture for cryptococcus species are summarized in the following table and show that the efficacy of AmBisome 6 mg/kg/day approximates the efficacy of the amphotericin B deoxycholate regimen.
+These data do not support the conclusion that AmBisome 3 mg/kg/day is comparable in efficacy to amphotericin B deoxycholate.
+The table also presents 10-week survival rates for patients treated in this study.
+ Success Rates and Survival Rates at week 10, Study 94-0-013 (see text for definitions)
+ AmBisome 3 mg/kg
+ AmBisome 6 mg/kg
+ Amphotericin B 0.7 mg/kg
+ Success in patients with documented cryptococcal meningitis
+ 27/73 (37%) 97.5% CI1=
+ -33.7%, +2.4%
+ 42/85 (49%) 97.5% CI1=
+ -20.9%, 14.5% 40/76 (53%)
+ Survival rates
+ 74/86 (86%) 97.5% CI1=
+ -13.8%, +8.9%
+ 85/94 (90%) 97.5% CI1=
+ -8.3%, +12.2% 77/87 (89%)
+ 1 97.5% Confidence Interval for the difference between AmBisome and amphotericin B rates.
+A negative value is in favor of amphotericin B. A positive value is in favor of AmBisome.
+ 8
+  Reference ID: 3098093
+           The incidence of infusion-related, cardiovascular and renal adverse events was lower in patients receiving AmBisome compared to amphotericin B deoxycholate (see ADVERSE REACTIONS section for details); therefore, the risks and benefits (advantages and disadvantages) of the different amphotericin B formulations should be taken into consideration when selecting a patient treatment regimen.
+ Treatment of Patients with Aspergillus Species, Candida Species and/or Cryptococcus Species Infections Refractory to Amphotericin B Deoxycholate, or in Patients Where Renal Impairment or Unacceptable Toxicity Precludes the Use of Amphotericin B Deoxycholate AmBisome was evaluated in a compassionate use study in hospitalized patients with systemic fungal infections.
+These patients either had fungal infections refractory to amphotericin B deoxycholate, were intolerant to the use of amphotericin B deoxycholate, or had pre-existing renal insufficiency.
+Patient recruitment involved 140 infectious episodes in 133 patients, with 53 episodes evaluable for mycological response and 91 episodes evaluable for clinical outcome.
+Clinical success and mycological eradication occurred in some patients with documented aspergillosis, candidiasis, and cryptococcosis.
+   Treatment of Visceral Leishmaniasis AmBisome was studied in patients with visceral leishmaniasis who were infected in the Mediterranean basin with documented or presumed Leishmania infantum.
+Clinical studies have not provided conclusive data regarding efficacy against L. donovani or L. chagasi.
+ AmBisome achieved high rates of acute parasite clearance in immunocompetent patients when total doses of 12-30 mg/kg were administered.
+Most of these immunocompetent patients remained relapse-free during follow-up periods of 6 months or longer.
+While acute parasite clearance was achieved in most of the immunocompromised patients who received total doses of 30-40 mg/kg, the majority of these patients were observed to relapse in the 6 months following the completion of therapy.
+Of the 21 immunocompromised patients studied, 17 were coinfected with HIV; approximately half of the HIV infected patients had AIDS.
+The following table presents a comparison of efficacy rates among immunocompetent and immunocompromised patients infected in the Mediterranean basin who had no prior treatment or remote prior treatment for visceral leishmaniasis.
+Efficacy is expressed as both acute parasite clearance at the end of therapy (EOT) and as overall success (clearance with no relapse) during the follow-up period (F/U) of greater than 6 months for immunocompetent and immunocompromised patients:
+ 9
+  Reference ID: 3098093
+                           AmBisome Efficacy in Visceral Leishmaniasis Immunocompetent Patients
+ No.
+of Patients Parasite (%) Clearance at EOT Overall Success (%) at F/U 87 86/87 (98.9) 83/86 (96.5)
+ Immunocompromised Patients Regimen Total Dose Parasite (%)
+ Clearance at EOT Overall Success (%) at F/U
+ 100 mg/day X 21 days
+ 29-38.9 mg/kg 10/10 (100) 2/10 (20)
+ 4 mg/kg/day, days 1-5, and 10, 17, 24, 31, 38 40 mg/kg 8/9 (88.9) 0/7 (0)
+ TOTAL 18/19 (94.7) 2/17 (11.8)
+ When followed for 6 months or more after treatment, the overall success rate among immunocompetent patients was 96.5% and the overall success rate among immunocompromised patients was 11.8% due to relapse in the majority of patients.
+While case reports have suggested there may be a role for long-term therapy to prevent relapses in HIV coinfected patients (Lopez-Dupla, et al. J Antimicrob Chemother 1993; 32: 657-659), there are no data to date documenting the efficacy or safety of repeat courses of AmBisome or of maintenance therapy with this drug among immunocompromised patients.
+ CONTRAINDICATIONS AmBisome is contraindicated in those patients who have demonstrated or have known hypersensitivity to amphotericin B deoxycholate or any other constituents of the product unless, in the opinion of the treating physician, the benefit of therapy outweighs the risk.
+ WARNINGS Anaphylaxis has been reported with amphotericin B deoxycholate and other amphotericin B-containing drugs, including AmBisome.
+If a severe anaphylactic reaction occurs, the infusion should be immediately discontinued and the patient should not receive further infusions of AmBisome.
+ PRECAUTIONS General As with any amphotericin B-containing product the drug should be administered by medically trained personnel.
+During the initial dosing period, patients should be under close clinical observation.
+AmBisome has been shown to be significantly less toxic than amphotericin B deoxycholate; however, adverse events may still occur.
+ 10
+  Reference ID: 3098093
+                                 Laboratory Tests Patient management should include laboratory evaluation of renal, hepatic and hematopoietic function, and serum electrolytes (particularly magnesium and potassium).
+ Drug-Laboratory Interactions: Serum phosphate false elevation False elevations of serum phosphate may occur when samples from patients receiving AmBisome are analyzed using the PHOSm assay (e.g. used in Beckman Coulter analyzers including the Synchron LX20).
+This assay is intended for the quantitative determination of inorganic phosphorus in human serum, plasma or urine samples.
+Drug Interactions No formal clinical studies of drug interactions have been conducted with AmBisome.
+However, the following drugs are known to interact with amphotericin B and may interact with AmBisome:
+ Antineoplastic Agents Concurrent use of antineoplastic agents may enhance the potential for renal toxicity, bronchospasm, and hypotension.
+Antineoplastic agents should be given concomitantly with caution.
+ Corticosteroids and Corticotropin (ACTH) Concurrent use of corticosteroids and ACTH may potentiate hypokalemia which could predispose the patient to cardiac dysfunction.
+If used concomitantly, serum electrolytes and cardiac function should be closely monitored.
+ Digitalis Glycosides Concurrent use may induce hypokalemia and may potentiate digitalis toxicity.
+When administered concomitantly, serum potassium levels should be closely monitored.
+ Flucytosine Concurrent use of flucytosine may increase the toxicity of flucytosine by
+ possibly increasing its cellular uptake and/or impairing its renal excretion.
+   Azoles (e.g. ketoconazole, miconazole, clotrimazole, fluconazole, etc.)
+ In vitro and in vivo animal studies of the combination of amphotericin B and
+ imidazoles suggest that imidazoles may induce fungal resistance to
+ amphotericin B. Combination therapy should be administered with caution,
+ especially in immunocompromised patients.
+ Leukocyte Transfusions Acute pulmonary toxicity has been reported in patients simultaneously receiving intravenous amphotericin B and leukocyte transfusions.
+ Other Nephrotoxic Medications
+ Reference ID: 3098093
+ 11
+                    Concurrent use of amphotericin B and other nephrotoxic medications may enhance the potential for drug-induced renal toxicity.
+Intensive monitoring of renal function is recommended in patients requiring any combination of nephrotoxic medications.
+ Skeletal Muscle Relaxants Amphotericin B-induced hypokalemia may enhance the curariform effect of skeletal muscle relaxants (e.g. tubocurarine) due to hypokalemia.
+When administered concomitantly, serum potassium levels should be closely monitored.
+ Carcinogenesis, Mutagenesis, Impairment of Fertility No long term studies in animals have been performed to evaluate carcinogenic potential of AmBisome.
+AmBisome has not been tested to determine its mutagenic potential.
+A Segment I Reproductive Study in rats found an abnormal estrous cycle (prolonged diestrus) and decreased number of corpora lutea in the high dose groups (10 and 15 mg/kg, doses equivalent to human doses of 1.6 and 2.4 mg/kg based on body surface area considerations).
+AmBisome did not affect fertility or days to copulation.
+There were no effects on male reproductive function.
+ Pregnancy Category B There have been no adequate and well-controlled studies of AmBisome in pregnant women.
+Systemic fungal infections have been successfully treated in pregnant women with amphotericin B deoxycholate, but the number of cases reported has been small.
+ Segment II studies in both rats and rabbits have concluded that AmBisome had no teratogenic potential in these species.
+In rats, the maternal non-toxic dose of AmBisome was estimated to be 5 mg/kg (equivalent to 0.16 to 0.8 times the recommended human clinical dose range of 1 to 5 mg/kg) and in rabbits, 3 mg/kg (equivalent to 0.2 to 1 times the recommended human clinical dose range), based on body surface area correction.
+Rabbits receiving the higher doses, (equivalent to 0.5 to 2 times the recommended human dose) of AmBisome experienced a higher rate of spontaneous abortions than did the control groups.
+AmBisome should only be used during pregnancy if the possible benefits to be derived outweigh the potential risks involved.
+ Nursing Mothers Many drugs are excreted in human milk.
+However, it is not known whether AmBisome is excreted in human milk.
+Due to the potential for serious adverse reactions in breast-fed infants, a decision should be made whether to discontinue nursing or whether to discontinue the drug, taking into account the importance of the drug to the mother.
+ 12
+  Reference ID: 3098093
+                              Pediatric Use Pediatric patients, age 1 month to 16 years, with presumed fungal infection (empirical therapy), confirmed systemic fungal infections or with visceral leishmaniasis have been successfully treated with AmBisome.
+In studies which included 302 pediatric patients administered AmBisome, there was no evidence of any differences in efficacy or safety of AmBisome compared to adults.
+Since pediatric patients have received AmBisome at doses comparable to those used in adults on a per kilogram body weight basis, no dosage adjustment is required in this population.
+Safety and effectiveness in pediatric patients below the age of one month have not been established.
+(See DESCRIPTION OF CLINICAL STUDIES - Empirical Therapy in Febrile Neutropenic Patients and DOSAGE AND ADMINISTRATION).
+ Elderly Patients Experience with AmBisome in the elderly (65 years or older) comprised 72 patients.
+It has not been necessary to alter the dose of AmBisome for this population.
+As with most other drugs, elderly patients receiving AmBisome should be carefully monitored.
+ ADVERSE REACTIONS The following adverse events are based on the experience of 592 adult patients (295 treated with AmBisome and 297 treated with amphotericin B deoxycholate) and 95 pediatric patients (48 treated with AmBisome and 47 treated with amphotericin B deoxycholate) in Study 94-0-002, a randomized double-blind, multi-center study in febrile, neutropenic patients.
+AmBisome and amphotericin B were infused over two hours.
+ The incidence of common adverse events (incidence of 10% or greater) occurring with AmBisome compared to amphotericin B deoxycholate, regardless of relationship to study drug, is shown in the following table:
+ Empirical Therapy Study 94-0-002  Common Adverse Events
+ Adverse Event by Body System
+ AmBisome n=343
+ %
+ Amphotericin B n=344
+ % Body as a Whole Abdominal pain Asthenia Back pain Blood product transfusion react.
+Chills Infection Pain Sepsis
+ 19.8 13.1 12
+ 18.4 47.5 11.1 14 14
+ 21.8 10.8 7.3
+ 18.6 75.9 9.3
+ 12.8 11.3
+ Cardiovascular System Chest pain Hypertension Hypotension
+ 12 7.9
+ 14.3
+ 11.6 16.3 21.5
+ 13
+  Reference ID: 3098093
+                  Empirical Therapy Study 94-0-002
+  Common Adverse Events
+ Adverse Event by Body System
+ AmBisome n=343
+ %
+ Amphotericin B n=344
+ % Tachycardia 13.4 20.9 Digestive System Diarrhea 30.3 27.3 Gastrointestinal hemorrhage 9.9 11.3 Nausea 39.7 38.7 Vomiting 31.8 43.9 Metabolic and Nutritional Disorders Alkaline phosphatase increased 22.2 19.2 ALT (SGPT) increased 14.6 14 AST (SGOT) increased 12.8 12.8 Bilirubinemia 18.1 19.2 BUN increased 21 31.1 Creatinine increased 22.4 42.2 Edema 14.3 14.8 Hyperglycemia 23 27.9 Hypernatremia 4.1 11 Hypervolemia 12.2 15.4 Hypocalcemia 18.4 20.9 Hypokalemia 42.9 50.6 Hypomagnesemia 20.4 25.6 Peripheral edema 14.6 17.2 Nervous System Anxiety 13.7 11 Confusion 11.4 13.4 Headache 19.8 20.9 Insomnia 17.2 14.2 Respiratory System Cough increased 17.8 21.8 Dyspnea 23 29.1 Epistaxis 14.9 20.1 Hypoxia 7.6 14.8 Lung disorder 17.8 17.4 Pleural effusion 12.5 9.6 Rhinitis 11.1 11
+ Skin and Appendages Pruritus Rash Sweating
+ 10.8 24.8
+ 7
+ 10.2 24.4 10.8
+ Urogenital System Hematuria 14 14
+ AmBisome was well tolerated.
+AmBisome had a lower incidence of chills, hypertension, hypotension, tachycardia, hypoxia, hypokalemia, and various events related to decreased kidney function as compared to amphotericin B deoxycholate.
+ 14
+  Reference ID: 3098093
+                       In pediatric patients (16 years of age or less) in this double-blind study, AmBisome compared to amphotericin B deoxycholate had a lower incidence of hypokalemia (37% versus 55%), chills (29% versus 68%), vomiting (27% versus 55%), and hypertension (10% versus 21%).
+Similar trends, although with a somewhat lower incidence, were observed in open-label, randomized Study 104-14 involving 205 febrile neutropenic pediatric patients (141 treated with AmBisome and 64 treated with amphotericin B deoxycholate).
+Pediatric patients appear to have more tolerance than older individuals for the nephrotoxic effects of amphotericin B deoxycholate.
+ The following adverse events are based on the experience of 244 patients  (202 adult and 42 pediatric patients) of whom 85 patients were treated with AmBisome 3 mg/kg, 81 patients were treated with AmBisome 5 mg/kg and 78 patients treated with amphotericin B lipid complex 5 mg/kg in  Study 97-0-034, a randomized double-blind, multi-center study in febrile, neutropenic patients.
+AmBisome and amphotericin B lipid complex were infused over two hours.
+The incidence of adverse events occurring in more than 10% of subjects in one or more arms regardless of relationship to study drug are summarized in the following table:
+ Empirical Therapy Study 97-0-034  Common Adverse Events
+ Adverse Event by Body System
+ AmBisome
+ 3 mg/kg/day n=85
+ %
+ AmBisome
+ 5 mg/kg/day n=81
+ %
+ Amphotericin B Lipid  Complex 5 mg/kg/day
+ n=78 %
+ Body as a Whole Abdominal pain 12.9 9.9 11.5 Asthenia 8.2 6.2 11.5 Chills/rigors 40 48.1 89.7 Sepsis 12.9 7.4 11.5 Transfusion reaction 10.6 8.6 5.1 Cardiovascular System Chest pain 8.2 11.1 6.4 Hypertension 10.6 19.8 23.1 Hypotension 10.6 7.4 19.2 Tachycardia 9.4 18.5 23.1 Digestive System Diarrhea Nausea Vomiting
+ 15.3 25.9 22.4
+ 17.3 29.6 25.9
+ 14.1 37.2 30.8
+ Metabolic and Nutritional Disorders Alkaline phosphatase increased 7.1 8.6 12.8 Bilirubinemia 16.5 11.1 11.5 BUN increased 20 18.5 28.2 Creatinine increased 20 18.5 48.7 Edema 12.9 12.3 12.8 Hyperglycemia 8.2 8.6 14.1
+ 15
+  Reference ID: 3098093
+                           Empirical Therapy Study 97-0-034
+  Common Adverse Events
+ Adverse Event by Body System
+ AmBisome
+ 3 mg/kg/day n=85
+ %
+ AmBisome
+ 5 mg/kg/day n=81
+ %
+ Amphotericin B Lipid
+ Complex 5 mg/kg/day
+ n=78 %
+ Hypervolemia 8.2 11.1 14.1 Hypocalcemia 10.6 4.9 5.1 Hypokalemia 37.6 43.2 39.7 Hypomagnesemia 15.3 25.9 15.4 Liver function tests abnormal 10.6 7.4 11.5 Nervous System Anxiety Confusion Headache
+ 10.6 12.9 9.4
+ 7.4 8.6 17.3
+ 9 3.8
+ 10.3 Respiratory System Dyspnea 17.6 22.2 23.1 Epistaxis 10.6 8.6 14.1 Hypoxia 7.1 6.2 20.5 Lung disorder 14.1 13.6 15.4 Skin and Appendages Rash 23.5 22.2 14.1
+ The following adverse events are based on the experience of 267 patients  (266 adult patients and 1 pediatric patient) of whom 86 patients were treated with AmBisome 3 mg/kg, 94 patients were treated with AmBisome 6 mg/kg and 87 patients treated with amphotericin B deoxycholate 0.7 mg/kg in  Study 94-0-013 a randomized, double-blind, comparative multi-center trial, in the treatment of cryptococcal meningitis in HIV positive patients.
+The incidence of adverse events occurring in more than 10% of subjects in one or more arms regardless of relationship to study drug are summarized in the following table:
+ Cryptococcal Meningitis Therapy Study 94-0-013  Common Adverse Events
+ Adverse Event by Body System
+ AmBisome 3 mg/kg/day
+ n=86 %
+ AmBisome 6 mg/kg/day
+ n=94 %
+ Amphotericin B
+ 0.7 mg/kg/day n=87
+ % Body as a Whole Abdominal pain Infection Procedural Complication
+ 7 12.8 8.1
+ 7.4 11.7 9.6
+ 10.3 6.9
+ 10.3 Cardiovascular System Phlebitis 9.3 10.6 25.3 Digestive System Anorexia Constipation Diarrhea Nausea
+ 14 15.1 10.5 16.3
+ 9.6 14.9 16
+ 21.3
+ 11.5 20.7 10.3 25.3
+ 16
+  Reference ID: 3098093
+               Cryptococcal Meningitis Therapy Study 94-0-013
+  Common Adverse Events
+ Adverse Event by Body System
+ AmBisome 3 mg/kg/day
+ n=86 %
+ AmBisome 6 mg/kg/day
+ n=94 %
+ Amphotericin B
+ 0.7 mg/kg/day n=87
+ % Vomiting 10.5 21.3 20.7 Hemic and Lymphatic System Anemia Leukopenia Thrombocytopenia
+ 26.7 15.1 5.8
+ 47.9 17
+ 12.8
+ 43.7 17.2 6.9
+ Metabolic and Nutritional Disorders Bilirubinemia BUN increased Creatinine increased Hyperglycemia Hypocalcemia Hypokalemia Hypomagnesemia Hyponatremia Liver Function Tests Abnormal
+ 0 9.3 18.6 9.3 12.8 31.4 29.1 11.6 12.8
+ 8.5 7.4 39.4 12.8 17
+ 51.1 48.9 8.5 4.3
+ 12.6 10.3 43.7 17.2 13.8 48.3 40.2 9.2 9.2
+ Nervous System Dizziness Insomnia
+ 7 22.1
+ 8.5 17
+ 10.3 20.7
+ Respiratory System Cough Increased 8.1 2.1 10.3 Skin and Appendages Rash 4.7 11.7 4.6
+ Infusion Related Reactions In Study 94-0-002, the large, double-blind study of pediatric and adult febrile neutropenic patients, no premedication to prevent infusion related reaction was administered prior to the first dose of study drug (Day 1).
+AmBisome-treated patients had a lower incidence of infusion related fever (17% versus 44%), chills/rigors (18% versus 54%) and vomiting (6% versus 8%) on Day 1 as compared to amphotericin B deoxycholate-treated patients.
+ The incidence of infusion related reactions on Day 1 in pediatric and adult patients is summarized in the following table:
+ 17
+  Reference ID: 3098093
+                     Incidence of Day 1 Infusion Related Reactions (IRR) By Patient Age Pediatric Patients (&#x2264; 16 years of age)
+ Adult Patients (&gt;16 years of age)
+ AmBisome Amphotericin B AmBisome Amphotericin B Total number of patients receiving at least one dose of study drug
+ 48 47 295 297
+ Patients with fever&#x2020; Increase &#x2265;1.0oC
+ 6 (13%) 22 (47%) 52 (18%) 128 (43%)
+ Patients with chills/rigors 4 (8%) 22 (47%) 59 (20%) 165 (56%) Patients with nausea 4 (8%) 4 (9%) 38 (13%) 31 (10%) Patients with vomiting 2 (4%) 7 (15%) 19 (6%) 21 (7%) Patients with other reactions 10 (21%) 13 (28%) 47 (16%) 69 (23%)
+ &#x2020;Day 1 body temperature increased above the temperature taken within 1 hour prior to  infusion (preinfusion temperature) or above the lowest infusion value (no preinfusion  temperature recorded).
+ Cardiorespiratory events, except for vasodilatation (flushing), during all study drug infusions were more frequent in amphotericin B-treated patients as summarized in the following table:
+ Incidence of Infusion Related Cardiorespiratory Events Event AmBisome
+ n=343 Amphotericin B
+ n=344 Hypotension 12 (3.5%) 28 (8.1%) Tachycardia 8 (2.3%) 43 (12.5%) Hypertension 8 (2.3%) 39 (11.3%) Vasodilatation 18 (5.2%) 2 (0.6%) Dyspnea 16 (4.7%) 25 (7.3%) Hyperventilation 4 (1.2%) 17 (4.9%) Hypoxia 1 (0.3%) 22 (6.4%)
+ The percentage of patients who received drugs either for the treatment or prevention of infusion related reactions (e.g., acetaminophen, diphenhydramine, meperidine and hydrocortisone) was lower in AmBisome-treated patients compared with amphotericin B deoxycholate-treated patients.
+ In the empirical therapy study 97-0-034, on Day 1, where no premedication was administered, the overall incidence of infusion related events of chills/rigors was significantly lower for patients administered AmBisome compared with amphotericin B lipid complex.
+Fever, chills/rigors and hypoxia were significantly lower for each AmBisome group compared with the amphotericin B lipid complex group.
+The infusion related event hypoxia was reported for 11.5% of amphotericin B lipid complex-treated patients compared with 0% of patients administered 3 mg/kg per day AmBisome and 1.2% of patients treated with 5 mg/kg per day AmBisome.
+ 18
+  Reference ID: 3098093
+                                                      Incidence of Day 1 Infusion Related Reactions (IRR) Chills/Rigors
+ Empirical Therapy Study 97-0-034
+  AmBisome Amphotericin B lipid complex 5 mg/kg/day
+3 mg/kg/day 5 mg/kg/day BOTH
+ Total number of patients 85 81 166 78 Patients with Chills/Rigors (Day1) 16 (18.8%) 19 (23.5%) 35 (21.1%) 62 (79.5%) Patients with other notable reactions:  Fever (&gt;1.0oC increase in
+ temperature) Nausea Vomiting Hypertension Tachycardia Dyspnea Hypoxia
+ 20 (23.5%) 9 (10.6%) 5 (5.9%) 4 (4.7%) 2 (2.4%) 4 (4.7%)
+ 0
+ 16 (19.8%) 7 (8.6%) 5 (6.2%) 7 (8.6%) 8 (9.9%) 8 (9.9%) 1 (1.2%)
+ 36 (21.7%) 16 (9.6%) 10 (6%)
+ 11 (6.6%) 10 (6%)
+ 12 (7.2%) 1 (&lt;1%)
+ 45 (57.7%) 9 (11.5%) 11 (14.1%) 12 (15.4%) 14 (17.9%) 8 (10.3%) 9 (11.5%)
+ Day 1 body temperature increased above the temperature taken within 1 hour prior to infusion (preinfusion temperature) or above the lowest infusion value (no preinfusion temperature recorded).
+ Patients were not administered premedications to prevent infusion related reactions prior to the Day 1 study drug infusion.
+ In Study 94-0-013, a randomized double-blind multicenter trial comparing AmBisome and amphotericin B deoxycholate as initial therapy for cryptococcal meningitis, premedications to prevent infusion related reactions were permitted.
+ AmBisome treated patients had a lower incidence of fever, chill/rigors and respiratory adverse events as summarized in the following table:
+ Incidence of Infusion-Related Reactions Study 94-0-013 AmBisome 3 mg/kg AmBisome 6 mg/kg Amphotericin B
+ Total number of patients receiving at least one dose of study drug 86 94 87 Patients with fever increase of &gt;1C 6 (7%) 8 (9%) 24 (28%) Patients with chills/rigors 5 (6%) 8 (9%) 42 (48%) Patients with nausea 11 (13%) 13 (14%) 18 (20%) Patients with vomiting 14 (16%) 13 (14%) 16 (18%) Respiratory adverse events 0 1 (1%) 8 (9%)
+ There have been a few reports of flushing, back pain with or without chest tightness, and chest pain associated with AmBisome administration; on occasion this has been severe.
+Where these symptoms were noted, the reaction developed within a few minutes after the start of infusion and disappeared rapidly when the infusion was stopped.
+The symptoms do not occur with every dose and usually do not recur on subsequent administrations when the infusion rate is slowed.
+ 19
+  Reference ID: 3098093
+                                   Toxicity and Discontinuation of Dosing In Study 94-0-002, a significantly lower incidence of grade 3 or 4 toxicity was observed in the AmBisome group compared with the amphotericin B group.
+ In addition, nearly three times as many patients administered amphotericin B required a reduction in dose due to toxicity or discontinuation of study drug due to an infusion related reaction compared with those administered AmBisome.
+ In empirical therapy study 97-0-034, a greater proportion of patients in the amphotericin B lipid complex group discontinued the study drug due to an adverse event than in the AmBisome groups.
+ Less Common Adverse Events The following adverse events also have been reported in 2% to 10% of AmBisome-treated patients receiving chemotherapy or bone marrow transplantation, or had HIV disease in six comparative, clinical trials:
+ Body as a Whole Abdomen enlarged, allergic reaction, cellulitis, cell mediated immunological reaction, face edema, graft versus host disease, malaise, neck pain, and procedural complication.
+ Cardiovascular System Arrhythmia, atrial fibrillation, bradycardia, cardiac arrest, cardiomegaly, hemorrhage, postural hypotension, valvular heart disease, vascular disorder, and vasodilatation (flushing).
+ Digestive System Anorexia, constipation, dry mouth/nose, dyspepsia, dysphagia, eructation, fecal incontinence, flatulence, hemorrhoids, gum/oral hemorrhage, hematemesis, hepatocellular damage, hepatomegaly, liver function test abnormal, ileus, mucositis, rectal disorder, stomatitis, ulcerative stomatitis, and veno-occlusive liver disease.
+ Hemic &amp; Lymphatic System Anemia, coagulation disorder, ecchymosis, fluid overload, petechia, prothrombin decreased, prothrombin increased, and thrombocytopenia.
+ Metabolic &amp; Nutritional Disorders Acidosis, amylase increased, hyperchloremia, hyperkalemia, hypermagnesemia, hyperphosphatemia, hyponatremia, hypophosphatemia, hypoproteinemia, lactate dehydrogenase increased, nonprotein nitrogen (NPN) increased, and respiratory alkalosis.
+ Musculoskeletal System Arthralgia, bone pain, dystonia, myalgia, and rigors.
+ 20
+  Reference ID: 3098093
+                         Nervous System Agitation, coma, convulsion, cough, depression, dysesthesia, dizziness, hallucinations, nervousness, paresthesia, somnolence, thinking abnormality, and tremor.
+ Respiratory System Asthma, atelectasis, hemoptysis, hiccup, hyperventilation, influenza-like symptoms, lung edema, pharyngitis, pneumonia, respiratory insufficiency, respiratory failure, and sinusitis.
+ Skin &amp; Appendages Alopecia, dry skin, herpes simplex, injection site inflammation, maculopapular rash, purpura, skin discoloration, skin disorder, skin ulcer, urticaria, and vesiculobullous rash.
+ Special Senses Conjunctivitis, dry eyes, and eye hemorrhage.
+ Urogenital System Abnormal renal function, acute kidney failure, acute renal failure, dysuria, kidney failure, toxic nephropathy, urinary incontinence, and vaginal hemorrhage.
+ Post-marketing Experience The following infrequent adverse experiences have been reported in post-marketing surveillance, in addition to those mentioned above: angioedema, erythema, urticaria, bronchospasm, cyanosis/hypoventilation, pulmonary edema, agranulocytosis, hemorrhagic cystitis, and rhabdomyolysis.
+ Clinical Laboratory Values The effect of AmBisome on renal and hepatic function and on serum electrolytes was assessed from laboratory values measured repeatedly in Study 94-0-002.
+The frequency and magnitude of hepatic test abnormalities were similar in the AmBisome and amphotericin B groups.
+ Nephrotoxicity was defined as creatinine values increasing 100% or more over pretreatment levels in pediatric patients, and creatinine values increasing 100% or more over pretreatment levels in adult patients provided the peak creatinine concentration was &gt;1.2 mg/dL.
+Hypokalemia was defined as potassium levels &#x2264;2.5 mmol/L any time during treatment.
+ Incidence of nephrotoxicity, mean peak serum creatinine concentration, mean change from baseline in serum creatinine, and, incidence of hypokalemia in the double-blind randomized study were lower in the AmBisome group as summarized in the following table:
+ 21
+  Reference ID: 3098093
+  Study 94-0-002 Laboratory Evidence of Nephrotoxicity  AmBisome Amphotericin B Total number of patients receiving at least one dose of study drug
+ 343 344
+ Nephrotoxicity 64 (18.7%) 116 (33.7%) Mean peak creatinine 1.24 mg/dL 1.52 mg/dL Mean change from baseline in creatinine 0.48 mg/dL 0.77 mg/dL Hypokalemia 23 (6.7%) 40 (11.6%)
+  0.7 ( 69) ( 338) (153) 0.6 ( 320)
+ 0.5 (163) 0.4 (310) (70)0.3 (340) 0.2 0.1
+  0
+ 0 1 2 3 4 5
+ AmBisome 3 mg/kg/day (n = 343) Weeks on Study
+ Amphotericin B 0.6 mg/kg/day (n = 344)
+                  The effect of AmBisome (3 mg/kg/day) vs. amphotericin B (0.6 mg/kg/day) on renal function in adult patients enrolled in this study is illustrated in the following figure:
+ Mean Change  in Creatinine Over Time  in Study 94-0-002
+ In empirical therapy study 97-0-034, the incidence of nephrotoxicity as measured by increases of serum creatinine from baseline was significantly lower for patients administered AmBisome (individual dose groups and combined) compared with amphotericin B lipid complex.
+   Incidence of Nephrotoxicity
+ Empirical Therapy Study 97-0-034
+  M
+ean
+ Cha
+nge
+ in C
+reat
+inin
+eLe
+vels
+ (mg/
+dL)
+  AmBisome Amphotericin B lipid complex 5 mg/kg/day
+3 mg/kg/day 5 mg/kg/day BOTH
+ Total number of patients 85 81 166 78 Number with nephrotoxicity 1.5X baseline serum creatinine value 25 (29.4%) 21 (25.9%) 46 (27.7%) 49 (62.8%) 2X baseline serum creatinine value 12 (14.1%) 12 (14.8%) 24 (14.5%) 33 (42.3%)
+ The following graph shows the average serum creatinine concentrations in the compassionate use study and shows that there is a drop from pretreatment concentrations for all patients, especially those with elevated (greater than  1.7 mg/dL) pretreatment creatinine concentrations.
+ 22
+  Reference ID: 3098093
+      Patients Whose Pretreatment Value was Greater Than 1.7 mg/dL
+ 3.5 3
+ 2.5 2
+ 1.5 1
+ 0.5 0
+ (38) (25)
+ (17)
+ (115)
+ (83)
+ (50) (18) (19)
+ (17)
+ All Episodes
+ 0  10  20  30  40  50
+ Day of Test
+                    Mean Creatinine Concentrations Over Time
+ Mea
+n C
+reat
+inin
+e C
+once
+ntra
+tion
+ (mg/
+dL)
+  The incidence of nephrotoxicity in Study 94-0-013, comparative trial in cryptococcal meningitis was lower in the AmBisome groups as shown in the following table:
+ Laboratory Evidence of Nephrotoxicity Study 94-0-013 AmBisome 3 mg/kg AmBisome 6 mg/kg Amphotericin B
+ Total number of patients receiving at least one dose of study drug
+ 86 94 87
+ Number with Nephrotoxicity  (%)
+ 1.5X baseline serum creatinine
+ 30 (35%) 44 (47%) 52 (60%)
+ 2 X baseline serum creatinine
+ 12 (14%) 20 (21%) 29 (33%)
+ OVERDOSAGE The toxicity of AmBisome due to overdose has not been defined.
+Repeated daily doses up to 10 mg/kg in pediatric patients and 15 mg/kg in adult patients have been administered in clinical trials with no reported dose-related toxicity.
+  Management If overdosage should occur, cease administration immediately.
+Symptomatic supportive measures should be instituted.
+Particular attention should be given to monitoring renal function.
+Hemodialysis or peritoneal dialysis do not appear to significantly affect the elimination of AmBisome.
+ 23
+  Reference ID: 3098093
+                                      DOSAGE AND ADMINISTRATION AmBisome should be administered by intravenous infusion, using a controlled infusion device, over a period of approximately 120 minutes.
+    An in-line membrane filter may be used for the intravenous infusion of AmBisome; provided THE MEAN PORE DIAMETER OF THE FILTER IS NOT LESS THAN 1.0 MICRON.
+ NOTE: An existing intravenous line must be flushed with 5% Dextrose Injection prior to infusion of AmBisome.
+If this is not feasible, AmBisome must be administered through a separate line.
+ Infusion time may be reduced to approximately 60 minutes in patients in whom the treatment is well-tolerated.
+If the patient experiences discomfort during infusion, the duration of infusion may be increased.
+ The recommended initial dose of AmBisome for each indication for adult and pediatric patients is as follows:
+ Indication Dose (mg/kg/day) Empirical therapy 3
+ Systemic fungal infections: Aspergillus
+ Candida Cryptococcus
+ 3-5
+ Cryptococcal meningitis in HIV infected patients (see DESCRIPTION OF CLINICAL STUDIES) 6
+ Dosing and rate of infusion should be individualized to the needs of the specific patient to ensure maximum efficacy while minimizing systemic toxicities or adverse events.
+ Doses recommended for visceral leishmaniasis are presented below:
+ Visceral Leishmaniasis Dose (mg/kg/day)
+ Immunocompetent patients 3 (days 1-5) and 3 on days 14, 21
+ Immunocompromised patients 4 (days 1-5) and
+ 4 on days 10, 17, 24, 31, 38
+ For immunocompetent patients who do not achieve parasitic clearance with the recommended dose, a repeat course of therapy may be useful.
+ For immunocompromised patients who do not clear parasites or who experience relapses, expert advice regarding further treatment is
+ Reference ID: 3098093
+  24
+                                               recommended.
+For additional information see DESCRIPTION OF CLINICAL STUDIES.
+ Directions for Reconstitution, Filtration and Dilution Read This Entire Section Carefully Before Beginning Reconstitution AmBisome must be reconstituted using Sterile Water for Injection, USP (without a bacteriostatic agent).
+Vials of AmBisome containing 50 mg of amphotericin B are prepared as follows:
+ Reconstitution 1.
+Aseptically add 12 mL of Sterile Water for Injection, USP to each AmBisome
+ vial to yield a preparation containing 4 mg amphotericin B/mL.
+CAUTION: DO NOT RECONSTITUTE WITH SALINE OR ADD SALINE TO THE RECONSTITUTED CONCENTRATION, OR MIX WITH OTHER DRUGS.
+The use of any solution other than those recommended, or the presence of a bacteriostatic agent in the solution, may cause precipitation of AmBisome.
+ 2.
+ Immediately after the addition of water, SHAKE THE VIAL VIGOROUSLY for 30 seconds to completely disperse the AmBisome.
+AmBisome forms a yellow, translucent suspension.
+Visually inspect the vial for particulate matter and continue shaking until completely dispersed.
+ Filtration and Dilution 3.
+Calculate the amount of reconstituted (4 mg/mL) AmBisome to be further
+ diluted.
+4.
+Withdraw this amount of reconstituted AmBisome into a sterile syringe.
+5.
+Attach the 5-micron filter, provided, to the syringe.
+Inject the syringe
+ contents through the filter, into the appropriate amount of 5% Dextrose Injection.
+(Use only one filter per vial of AmBisome.)
+ 6.
+AmBisome must be diluted with 5% Dextrose Injection to a final concentration of 1 to 2 mg/mL prior to administration.
+Lower concentrations (0.2 to 0.5 mg/mL) may be appropriate for infants and small children to provide sufficient volume for infusion.
+DISCARD PARTIALLY USED VIALS.
+ STORAGE OF AMBISOME Unopened vials of lyophilized material are to be stored at temperatures up to 25 C (77 F).
+ Storage of Reconstituted Product Concentrate The reconstituted product concentrate may be stored for up to 24 hours at 2-8 C (36-46 F) following reconstitution with Sterile Water for Injection, USP.
+Do not freeze.
+ Storage of Diluted Product Injection of AmBisome should commence within 6 hours of dilution with 5% Dextrose Injection.
+ Reference ID: 3098093
+ 25
+                                   As with all parenteral drug products, the reconstituted AmBisome should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit.
+Do not use material if there is any evidence of precipitation or foreign matter.
+Aseptic technique must be strictly observed in all handling since no preservative or bacteriostatic agent is present in AmBisome or in the materials specified for reconstitution and dilution.
+ HOW SUPPLIED AmBisome for Injection is available as single cartons (equivalent to 50mg amphotericin B) and in packs of ten individual vial cartons (NDC 0469-3051-30).
+ Each carton contains one pre-packaged, disposable sterile 5 micron filter.
+ References 1.Clinical and Laboratory Standards Institute (CLSI).
+Method for Broth
+ Dilution Antifungal Susceptibility Testing of Yeasts; Approved Standard -  3rd edition.
+CLSI document M27- A3.
+CLSI, 940 West Valley Rd.
+Suite 1400, Wayne, PA 19087-1898, 2008.
+ 2.
+CLSI.
+Reference Method for Broth Dilution Antifungal Susceptibility Testing of Yeast; 3rd Informational Supplement.
+CLSI document M27S3, 2008.
+ 3.
+  CLSI.
+Method for Antifungal Disk Diffusion Susceptibility Testing of Yeasts; Approved Guideline- 2nd edition.
+CLSI document M44-A2, 2009.
+ 4.
+  CLSI Reference Method for Broth Dilution Antifungal Susceptibility Testing of Filamentous Fungi; Approved Standard &#x2013; 2nd edition.
+CLSI document M38-A2, 2008.
+ 5.
+  CLSI.
+Method for Antifungal Disk Diffusion Susceptibility Testing of Nondermatophyte Filamentous Fungi; Approved Guideline.
+CLSI document M51-A, 2010.
+ Rx only
+ Marketed by: Astellas Pharma US, Inc.
+Deerfield, IL 60015-2548
+ Manufactured by: Gilead Sciences, Inc.
+San Dimas, CA 91773
+ 26
+  Reference ID: 3098093
+        AmBisome is a registered trademark of Gilead Sciences, Inc.
+Abelcet is a registered trademark of The Liposome Company, Inc.
+ Revised: March 2012 11C010-AMB
+ 27
+  Reference ID: 3098093
+   

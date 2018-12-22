@@ -1,0 +1,555 @@
+label
+   HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use DOXIL safely and effectively.
+See full prescribing information for DOXIL.
+ DOXIL (doxorubicin hydrochloride liposome injection), for intravenous use Initial U.S. Approval: 1995
+ WARNING: CARDIOMYOPATHY and INFUSIONRELATED REACTIONS
+ See full prescribing information for complete boxed warning.
+&#x2022;  Myocardial damage may lead to congestive heart failure
+ and may occur as the total cumulative dose of doxorubicin HCl approaches 550 mg/m2.
+The risk of cardiomyopathy may be increased at lower cumulative doses with mediastinal irradiation (5.1).
+ &#x2022;  Acute infusion-related reactions occurred in 11% of patients with solid tumors.
+Serious, life-threatening, and fatal infusion reactions have been reported.
+Medications/emergency equipment to treat such reactions should be available for immediate use (5.2).
+ ---------------------------RECENT MAJOR CHANGES-----------------------Boxed Warning 01/2015 Dosage and Administration (2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7) 01/2015 Contraindications (4) 01/2015 Warnings and Precautions (5.1, 5.2, 5.3, 5.5) 01/2015
+ ---------------------------INDICATIONS AND USAGE------------------------DOXIL is an anthracycline topoisomerase II inhibitor indicated for: &#x2022;  Ovarian cancer (1.1) After failure of platinum-based chemotherapy.
+&#x2022;  AIDS-related Kaposi's Sarcoma (1.2) After failure of prior systemic chemotherapy or intolerance to such therapy.
+&#x2022;  Multiple Myeloma (1.3) In combination with bortezomib in patients who have not previously received bortezomib and have received at least one prior therapy.
+ -----------------------DOSAGE AND ADMINISTRATION--------------------Administer DOXIL at an initial rate of 1 mg/min to minimize the risk of infusion reactions.
+If no infusion related reactions occur, increase rate of infusion to complete administration over 1 hour.
+Do not administer as bolus injection or undiluted solution (2).
+&#x2022;  Ovarian cancer: 50 mg/m2 IV every 4 weeks (2.2) &#x2022;  AIDS-related Kaposi's Sarcoma: 20 mg/m2 IV every 3 weeks (2.3) &#x2022;  Multiple Myeloma: 30 mg/m2 IV on day 4 following bortezomib (2.4)
+ --------------------DOSAGE FORMS AND STRENGTHS-------------------Doxorubicin hydrochloride (HCl) liposomal injection: Single use vials: 20 mg/10 mL and 50 mg/25 mL (3)
+ ------------------------------CONTRAINDICATIONS--------------------------&#x2022;  Hypersensitivity reactions to doxorubicin HCl or the components of
+ DOXIL (4, 5.2)
+ -------------------------WARNINGS AND PRECAUTIONS------------------&#x2022;  Hand-Foot Syndrome may occur.
+Dose modification or discontinuation
+ may be required (5.3) &#x2022;  Embryo fetal Toxicity: Can cause fetal harm.
+Advise of potential risk to a
+ fetus.
+Use effective contraception (5.5, 8.1, 8.3)
+ -----------------------------ADVERSE REACTIONS----------------------------Most common adverse reactions (&gt;20%) are asthenia, fatigue, fever, anorexia, nausea, vomiting, stomatitis, diarrhea, constipation, hand-foot syndrome, rash, neutropenia, thrombocytopenia, and anemia (6).
+ To report SUSPECTED ADVERSE REACTIONS contact Janssen Products, LP at 1-800-JANSSEN (1-800-526-7736) or FDA at 1-800FDA-1088 or www.fda.gov/medwatch.
+ ----------------------USE IN SPECIFIC POPULATIONS--------------------&#x2022;  Lactation: Discontinue breastfeeding (8.2).
+ See 17 for PATIENT COUNSELING INFORMATION.
+Revised: 01/2015
+ FULL PRESCRIBING INFORMATION: CONTENTS* WARNING-CARDIOMYOPATHY, INFUSION-RELATED REACTIONS
+ 1 INDICATIONS AND USAGE 1.1  Ovarian Cancer 1.2  AIDS-Related Kaposi's Sarcoma 1.3  Multiple Myeloma
+ 2 DOSAGE AND ADMINISTRATION 2.1  Important Use Information 2.2  Ovarian Cancer 2.3  AIDS-Related Kaposi's Sarcoma 2.4  Multiple Myeloma 2.5  Dose Modific ations for Adverse Reactions 2.6  Preparation and Administration 2.7 Procedure for Proper Handling and Disposal
+ 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1  Cardiomyopathy 5.2  Infusion-Related Reactions 5.3  Hand-Foot Syndrome (HFS) 5.4  Secondary Oral Neoplasms 5.5  Embryo fetal Toxicity
+ 6 ADVERSE REACTIONS 6.1  Adverse Reactions in Clinical Trials 6.2  Postmarketing Experience
+ 7 DRUG INTERACTIONS 8 USE IN SPECIFIC POPULATIONS
+ 8.1  Pregnancy 8.2  Lactation 8.3  Females and Males of Reproductive Potential 8.4  Pediatric Use 8.5  Geriatric Use 8.6  Hepatic Impairment
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1  Mechanism of Action 12.3  Pharmacokinetics
+ 13 NON-CLINICAL TOXICOLOGY 13.1  Carcinogenesis, Mutagenesis, and Impairment
+  of Fertility
+ 14 CLINICAL STUDIES
+ 14.1  Ovarian Cancer 14.2  AIDS-Related Kaposi's Sarcoma 14.3  Multiple Myeloma
+ 15 REFERENCES 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing information are not listed
+ 1
+ Reference ID: 3691294
+                                                                                                                     FULL PRESCRIBING INFORMATION
+  WARNING: CARDIOMYOPATHY and INFUSION-RELATED REACTIONS &#x2022;  DOXIL (doxorubicin HCl liposome injection) can cause myocardial damage, including
+ congestive heart failure, as the total cumulative dose of doxorubicin HCl approaches 550 mg/m2.
+In a clinical study of 250 patients with advanced cancer who were treated with DOXIL, the risk of cardiotoxicity was 11% when the cumulative anthracycline dose was between 450-550 mg/m2 .
+Prior use of other anthracyclines or anthracenediones should be included in calculations of total cumulative dosage.
+The risk of cardiomyopathy may be increased at lower cumulative doses in patients with prior mediastinal irradiation [see Warnings and Precautions (5.1)].
+ &#x2022;  Acute infusion-related reactions consisting of, but not limited to, flushing, shortness of breath, facial swelling, headache, chills, back pain, tightness in the chest or throat, and/or hypotension occurred in 11% of patients with solid tumors treated with DOXIL.
+Serious, life-threatening and fatal infusion reactions have been reported [see Dosage and Administration (2.6) and Warnings and Precautions (5.2)].
+ 1 INDICATIONS AND USAGE 1.1 Ovarian Cancer
+ DOXIL is indicated for the treatment of patients with ovarian cancer whose disease has progressed or recurred after platinum-based chemotherapy.
+ 1.2 AIDS-Related Kaposi's Sarcoma DOXIL is indicated for the treatment of AIDS-related Kaposi's sarcoma in patients after failure of prior systemic chemotherapy or intolerance to such therapy.
+ 1.3 Multiple Myeloma DOXIL, in combination with bortezomib, is indicated for the treatment of patients with multiple myeloma who have not previously received bortezomib and have received at least one prior therapy.
+ 2 DOSAGE AND ADMINISTRATION 2.1 Important Use Information
+ Do not substitute DOXIL for doxorubicin HCl injection.
+ Do not administer as an undiluted suspension or as an intravenous bolus [see Warnings and Precautions (5.2)].
+ Reference ID: 3691294
+ 2
+                                              2.2 Ovarian Cancer The recommended dose of DOXIL is 50 mg/m2 intravenously over 60 minutes every 28 days until disease progression or unacceptable toxicity.
+ 2.3 AIDS-Related Kaposi's Sarcoma The recommended dose of DOXIL is 20 mg/m2 intravenously over 60 minutes every 21 days until disease progression or unacceptable toxicity.
+ 2.4 Multiple Myeloma The recommended dose of DOXIL is 30 mg/m2 intravenously over 60 minutes on day 4 of each 21-day cycle for eight cycles or until disease progression or unacceptable toxicity.
+Administer DOXIL after bortezomib on day 4 of each cycle [see Clinical Studies (14.3)].
+ 2.5 Dose Modifications for Adverse Reactions Do not increase DOXIL after a dose reduction for toxicity.
+ Reference ID: 3691294
+ 3
+                                                                                                                                                                                                                                                              Table 1: Recommended Dose Modifications for Hand-Foot Syndrome, Stomatitis, or Hematologic Adverse Reactions
+ Toxicity Dose Adjustment Hand-Foot Syndrome (HFS) Grade 1: Mild erythema, swelling, or desquamation not interfering with daily activities
+ &#x2022; If no previous Grade 3 or 4 HFS: no dose adjustment.
+&#x2022; If previous Grade 3 or 4 HFS: delay dose up to 2 weeks, then decrease
+ dose by 25%.
+Grade 2: Erythema, desquamation, or swelling interfering with, but not precluding normal physical activities; small blisters or ulcerations less than 2 cm in diameter
+ &#x2022; Delay dosing up to 2 weeks or until resolved to Grade 0-1.
+&#x2022; Discontinue DOXIL if no resolution after 2 weeks.
+&#x2022; If resolved to Grade 0-1 within 2 weeks:
+ o And no previous Grade 3 or 4 HFS: continue treatment at previous dose.
+ o And previous Grade 3 or 4 toxicity: decrease dose by 25%.
+Grade 3: Blistering, ulceration, &#x2022; Delay dosing up to 2 weeks or until resolved to Grade 0-1, then or swelling interfering with decrease dose by 25%.
+walking or normal daily &#x2022; Discontinue DOXIL if no resolution after 2 weeks.
+activities; cannot wear regular clothing Grade 4: Diffuse or local process causing infectious complications, or a bed ridden state or hospitalization
+ &#x2022; Delay dosing up to 2 weeks or until resolved to Grade 0-1, then decrease dose by 25%.
+ &#x2022; Discontinue DOXIL if no resolution after 2 weeks.
+ Stomatitis Grade 1: Painless ulcers, erythema, or mild soreness
+ &#x2022; If no previous Grade 3 or 4 toxicity: no dose adjustment.
+&#x2022; If previous Grade 3 or 4 toxicity: delay up to 2 weeks then decrease
+ dose by 25%.
+Grade 2: Painful erythema, edema, or ulcers, but can eat
+ &#x2022; Delay dosing up to 2 weeks or until resolved to Grade 0-1.
+&#x2022; Discontinue DOXIL if there is no resolution after 2 weeks.
+&#x2022; If resolved to Grade 0-1 within 2 weeks:
+ o And no previous Grade 3 or 4 stomatitis: resume treatment at previous dose.
+ o And previous Grade 3 or 4 toxicity: decrease dose by 25%.
+Grade 3: Painful erythema, edema, or ulcers, and cannot eat
+ &#x2022; Delay dosing up to 2 weeks or until resolved to Grade 0-1.
+Decrease dose by 25% and return to original dose interval.
+ &#x2022; If after 2 weeks there is no resolution, discontinue DOXIL.
+Grade 4: Requires parenteral or enteral support
+ &#x2022; Delay dosing up to 2 weeks or until resolved to Grade 0-1.
+Decrease dose by 25% and return to original dose interval.
+ &#x2022; If after 2 weeks there is no resolution, discontinue DOXIL.
+Neutropenia or Thrombocytopenia Grade 1 No dose reduction Grade 2 Delay until ANC &#x2265; 1,500 and platelets &#x2265; 75,000; resume treatment at
+ previous dose Grade 3 Delay until ANC &#x2265; 1,500 and platelets &#x2265; 75,000; resume treatment at
+ previous dose Grade 4 Delay until ANC &#x2265; 1,500 and platelets &#x2265; 75,000; resume at 25% dose
+ reduction or continue previous dose with prophylactic granulocyte growth factor
+ Reference ID: 3691294
+ 4
+                                                                                                                                             Table 2: Recommended Dose Modifications of DOXIL for Toxicity When Administered in Combination With Bortezomib
+ Toxicity DOXIL Fever &#x2265;38C and ANC &lt;1,000/mm3
+ &#x2022; Withhold dose for this cycle if before Day 4; &#x2022; Decrease dose by 25%, if after Day 4 of previous cycle.
+ On any day of drug administration after Day 1 of each cycle: &#x2022; Platelet count &lt;25,000/mm3
+ &#x2022; Hemoglobin &lt;8 g/dL &#x2022; ANC &lt;500/mm3
+ &#x2022; Withhold dose for this cycle if before Day 4; &#x2022; Decrease dose by 25%, if after Day 4 of previous cycle AND if
+ bortezomib is reduced for hematologic toxicity.
+ Grade 3 or 4 non-hematologic drug related toxicity
+ Do not dose until recovered to Grade &lt;2, then reduce dose by 25%.
+ For neuropathic pain or peripheral neuropathy, no dosage adjustments are required for DOXIL.
+Refer to bortezomib manufacturer's prescribing information.
+ 2.6 Preparation and Administration Preparation Dilute DOXIL doses up to 90 mg in 250 mL of 5% Dextrose Injection, USP prior to administration.
+Dilute doses exceeding 90 mg in 500 mL of 5% Dextrose Injection, USP prior to administration.
+Refrigerate diluted DOXIL at 2C to 8C (36F to 46F) and administer within 24 hours.
+ Administration Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit.
+Do not use if a precipitate or foreign matter is present.
+ Do not use with in-line filters.
+ Administer the first dose of DOXIL at an initial rate of 1 mg/min.
+If no infusion-related adverse reactions are observed, increase the infusion rate to complete the administration of the drug over one hour [see Warnings and Precautions (5.2)].
+Do not rapidly flush the infusion line.
+ Do not mix DOXIL with other drugs.
+ Management of Suspected Extravasation Discontinue DOXIL for burning or stinging sensation or other evidence indicating perivenous infiltration or extravasation.
+Manage confirmed or suspected extravasation as follows:
+ &#x2022; Do not remove the needle until attempts are made to aspirate extravasated fluid
+ Reference ID: 3691294
+ 5
+                                                                                                                           &#x2022; Do not flush the line
+ &#x2022; Avoid applying pressure to the site
+ &#x2022; Apply ice to the site intermittently for 15 min 4 times a day for 3 days
+ &#x2022; If the extravasation is in an extremity, elevate the extremity
+ 2.7 Procedure for Proper Handling and Disposal Handle and dispose of DOXIL in accordance with recommendations for the handling and disposal of hazardous drugs.1
+ If DOXIL comes into contact with skin or mucosa, immediately wash thoroughly with soap and water.
+ 3 DOSAGE FORMS AND STRENGTHS DOXIL: doxorubicin HCl liposomal injection: single use vials contain 20mg/10 mL and 50mg/25mL doxorubicin HCl as a translucent, red liposomal dispersion.
+ 4 CONTRAINDICATIONS DOXIL is contraindicated in patients who have a history of severe hypersensitivit y reactions, including anaphylaxis, to doxorubicin HCl [see Warnings and Precautions (5.2)].
+ 5 WARNINGS AND PRECAUTIONS 5.1 Cardiomyopathy
+ Doxorubicin HCl can result in myocardial damage, including acute left ventricular failure.
+The risk of cardiomyopathy with doxorubicin HCl is generally proportional to the cumulative exposure.
+The relationship between cumulative DOXIL dose and the risk of cardiac toxicity has not been determined.
+ In a clinical study in 250 patients with advanced cancer who were treated with DOXIL, the risk of cardiotoxicity was 11% when the cumulative anthracycline dose was between 450-550 mg/m2 .
+Cardiotoxicity was defined as &gt;20% decrease in resting left ventricular ejection fraction (LVEF) from baseline where LVEF remained in the normal range or a &gt;10% decrease in LVEF from baseline where LVEF was less than the institutional lower limit of normal.
+Two percent of patients developed signs and symptoms of congestive heart failure without documented evidence of cardiotoxicity.
+ Assess left ventricular cardiac function (e.g. MUGA or echocardiogram) prior to initiation of DOXIL, during treatment to detect acute changes, and after treatment to detect delayed cardiotoxicity.
+Administer DOXIL to patients with a history of cardiovascular disease only when the potential benefit of treatment outweighs the risk.
+ Reference ID: 3691294
+ 6
+                                                                                                                                     5.2 Infusion-Related Reactions Serious and sometimes life-threatening infusion-related reactions characterized by one or more of the following symptoms can occur with DOXIL: flushing, shortness of breath, facial swelling, headache, chills, chest pain, back pain, tightness in the chest and throat, fever, tachycardia, pruritus, rash, cyanosis, syncope, bronchospasm, asthma, apnea, and hypotension.
+The majority of infusion-related events occurred during the first infusion.
+Of 239 patients with ovarian cancer treated with DOXIL in Trial 4, 7% of patients experienced acute infusion-related reactions resulting in dose interruption.
+All occurred during cycle 1 and none during subsequent cycles.
+Across multiple studies of DOXIL monotherapy including this and other studies enrolling 760 patients with various solid tumors, 11% of patients had infusion-related reactions.
+ Ensure that medications to treat infusion-related reactions and cardiopulmonary resuscitative equipment is available for immediate use prior to initiation of DOXIL.
+Initiate DOXIL infusions at a rate of 1 mg/min and increase rate as tolerated [see Dosage and Administration (2.6)].
+In the event of an infusion-related reaction, temporarily stop the drug until resolution then resume at a reduced infusion rate.
+Discontinue DOXIL infusion for serious or life-threatening infusion-related reactions.
+ 5.3 Hand-Foot Syndrome (HFS) In Trial 4, the incidence of HFS was 51% of patients in the DOXIL arm and 0.9% of patients in the topotecan arm, including 24% Grade 3 or 4 cases of HFS in DOXIL-treated patients and no Grade 3 or 4 cases in topotecan-treated patients.
+HFS or other skin toxicit y required discontinuation of DOXIL in 4.2% of patients.
+ HFS was generally observed after 2 or 3 cycles of treatment but may occur earlier.
+Delay DOXIL for the first episode of Grade 2 or greater HFS [see Dosage and Administration (2.5)].
+Discontinue DOXIL if HFS is severe and debilitating.
+ 5.4 Secondary Oral Neoplasms Secondary oral cancers, primarily squamous cell carcinoma, have been reported from post-marketing experience in patients with long-term (more than one year) exposure to DOXIL.
+These malignancies were diagnosed both during treatment with DOXIL and up to 6 years after the last dose.
+Examine patients at regular intervals for the presence of oral ulceration or with any oral discomfort that may be indicative of secondary oral cancer.
+ The altered pharmacokinetics and preferential tissue distribution of liposomal doxorubicin that contributes to enhanced skin toxicity and mucositis compared to free doxorubicin may play a role in the development of oral secondary malignancies with long-term use.
+ Reference ID: 3691294
+ 7
+                                                                                                                                    5.5 Embryofetal Toxicity Based on animal data, DOXIL can cause fetal harm when administered to a pregnant woman.
+At doses approximately 0.12 times the recommended clinical dose, DOXIL was embryotoxic and abortifacient in rabbits.
+Advise pregnant women of the potential risk to a fetus.
+Advise females and males of reproductive potential to use effective contraception during and for 6 months after treatment with DOXIL [see Use in Specific Populations (8.1) and (8.3)].
+ 6 ADVERSE REACTIONS The following adverse reactions are discussed in more detail in other sections of the labeling.
+ &#x2022; Cardiomyopathy [see Warnings and Precautions (5.1)]
+ &#x2022; Infusion-Related Reactions [see Warnings and Precautions (5.2)]
+ &#x2022; Hand-Foot Syndrome [see Warnings and Precautions (5.3)]
+ &#x2022; Secondary Oral Neoplasms [see Warnings and Precautions (5.4)] The most common adverse reactions (&gt;20%) observed with DOXIL are asthenia, fatigue, fever, nausea, stomatitis, vomiting, diarrhea, constipation, anorexia, hand-foot syndrome, rash and neutropenia, thrombocytopenia and anemia.
+ 6.1 Adverse Reactions in Clinical Trials Because clinical trials are conducted under widely varying conditions, the adverse reaction rates observed cannot be directly compared to rates on other clinical trials and may not reflect the rates observed in clinical practice.
+ The safety data reflect exposure to DOXIL in 1310 patients including: 239 patients with ovarian cancer, 753 patients with AIDS-related Kaposi's sarcoma, and 318 patients with multiple myeloma.
+ The following tables present adverse reactions from clinical trials of single-agent DOXIL in ovarian cancer and AIDS-Related Kaposi's sarcoma.
+ Patients With Ovarian Cancer The safety data described below are from Trial 4, which included 239 patients with ovarian cancer treated with DOXIL 50 mg/m2 once every 4 weeks for a minimum of four courses in a randomized, multicenter, open-label study.
+In this trial, patients received DOXIL for a median number of 3.2 months (range 1 day to 25.8 months).
+The median age of the patients is 60 years (range 27 to 87), with 91% Caucasian, 6% Black, and 3% Hispanic or Other.
+ Reference ID: 3691294
+ 8
+                                                                                                                                                                                                                                               Table 3 presents the hematologic adverse reactions from Trial 4.
+ Table 3: Hematologic Adverse Reactions in Trial 4 DOXIL Patients Topotecan
+ (n=239) Patients (n=235)
+ Neutropenia 500 - &lt;1000/mm3 8% 14% &lt;500/mm3 4.2% 62%
+ Anemia 6.5 - &lt;8 g/dL 5% 25% &lt; 6.5 g/dL 0.4% 4.3%
+ Thrombocytopenia 10,000 - &lt;50,000/mm3 1.3% 17% &lt;10,000/mm3 0.0% 17%
+ Table 4 presents the non-hematologic adverse reactions from Trial 4.
+ Table 4: Non-Hematologic Adverse Reactions in Trial 4 Non-Hematologic DOXIL (%) Topotecan (%) Adverse Reaction treated treated 10% or Greater (n=239) (n=235)
+ All grades Grades 3-4 All grades Grades 3-4 Body as a Whole
+ Asthenia 40 7 52 8 Fever 21 0.8 31 6 Mucous Membrane Disorder 14 3.8 3.4 0 Back Pain 12 1.7 10 0.9 Infection 12 2.1 6 0.9 Headache 11 0.8 15 0
+ Digestive Nausea 46 5 63 8 Stomatitis 41 8 15 0.4 Vomiting 33 8 44 10 Diarrhea 21 2.5 35 4.2 Anorexia 20 2.5 22 1.3 Dyspepsia 12 0.8 14 0
+ Nervous
+ Dizziness 4.2 0 10 0 Respiratory
+ Pharyngitis 16 0 18 0.4 Dyspnea 15 4.1 23 4.3 Cough increased 10 0 12 0
+ Skin and Appendages Hand-foot syndrome 51 24 0.9 0 Rash 29 4.2 12 0.4 Alopecia 19 N/A 52 N/A
+ The following additional adverse reactions were observed in patients with ovarian cancer with doses administered every four weeks (Trial 4).
+ Reference ID: 3691294
+ 9
+                                                                                                                                  Incidence 1% to 10% Cardiovascular: vasodilation, tachycardia, deep vein thrombosis, hypotension, cardiac arrest.
+ Digestive: oral moniliasis, mouth ulceration, esophagitis, dysphagia, rectal bleeding, ileus.
+ Hematologic and Lymphatic: ecchymosis.
+ Metabolic and Nutritional: dehydration, weight loss, hyperbilirubinemia, hypokalemia, hypercalcemia, hyponatremia.
+ Nervous: somnolence, dizziness, depression.
+ Respiratory: rhinitis, pneumonia, sinusitis, epistaxis.
+ Skin and Appendages: pruritus, skin discoloration, vesiculobullous rash, maculopapular rash, exfoliative dermatitis, herpes zoster, dry skin, herpes simplex, fungal dermatitis, furunculosis, acne.
+ Special Senses: conjunctivitis, taste perversion, dry eyes.
+ Urinary: urinary tract infection, hematuria, vaginal moniliasis.
+ Patients With AIDS-Related Kaposi's Sarcoma The safety data described is based on the experience reported in 753 patients with AIDS-related Kaposi's sarcoma (KS) enrolled in four open-label, uncontrolled trials of DOXIL administered at doses ranging from 10 to 40 mg/m2 every 2 to 3 weeks.
+Demographics of the population were: median age 38.7 years (range 24-70); 99% male; 88% Caucasian, 6% Hispanic, 4% Black, and 2% Asian/other/unknown.
+The majority of patients were treated with 20 mg/m2 of DOXIL every 2 to 3 weeks with a median exposure of 4.2 months (range 1 day to 26.6 months).
+The median cumulative dose was 120 mg/m2 (range 3.3 to 798.6 mg/m2); 3% received cumulative doses of greater than 450 mg/m2 .
+ Disease characteristics were: 61% poor risk for KS tumor burden, 91% poor risk for immune system, and 47% poor risk for systemic illness; 36% were poor risk for all three categories; median CD4 count 21 cells/mm3 (51% less than 50 cells/mm3); mean absolute neutrophil count at study entry approximately 3,000 cells/mm3 .
+ Of the 693 patients with concomitant medication information, 59% were on one or more antiretroviral medications [35% zidovudine (AZT), 21% didanosine (ddI), 16% zalcitabine (ddC), and 10% stavudine (D4T)]; 85% received PCP prophylaxis (54% sulfamethoxazole/trimethoprim); 85% received antifungal medications (76% fluconazole);
+ Reference ID: 3691294
+ 10
+                                                                                                                                                                                                                                72% received antivirals (56% acyclovir, 29% ganciclovir, and 16% foscarnet) and 48% patients received colony-stimulating factors (sargramostim/filgrastim) during their course of treatment.
+ Adverse reactions led to discontinuation of treatment in 5% of patients with AIDS-related Kaposi's sarcoma and included myelosuppression, cardiac adverse reactions, infusion-related reactions, toxoplasmosis, HFS, pneumonia, cough/dyspnea, fatigue, optic neuritis, progression of a non-KS tumor, allergy to penicillin, and unspecified reasons.
+Tables 5 and 6 summarize adverse reactions reported in patients treated with DOXIL for AIDS-related Kaposi's sarcoma in a pooled analysis of the four trials.
+ Table 5: Hematologic Adverse Reactions Reported in Patients With AIDS-Related Kaposi's Sarcoma Patients With Refractory or Total Patients With AIDS-Related
+ Intolerant AIDS-Related Kaposi's Kaposi's Sarcoma Sarcoma (n=720**) (n=74*)
+ Neutropenia &lt; 1000/mm3 46% 49% &lt; 500/mm3 11% 13%
+ Anemia &lt; 10 g/dL 58% 55% &lt; 8 g/dL 16% 18%
+ Thrombocytopenia &lt; 150,000/mm3 61% 61% &lt; 25,000/mm3 1.4% 4.2%
+ *This includes a subset of subjects who were retrospectively identified as having disease progression on prior
+ systemic combination chemotherapy (at least 2 cycles of a regimen containing at least 2 of 3 treatments:
+ bleomycin, vincristine or vinblastine, or doxorubicin) or as being intolerant to such therapy.
+ **This includes only subjects with AIDS-KS who had available data from the 4 pooled trials.
+  Table 6: Non-Hematologic Adverse Reactions Reported in &#x2265; 5% of Patients With AIDS-Related Kaposi's Sarcoma 
+Adverse Reactions Patients With Refractory or Total Patients With Intolerant AIDS-Related AIDS-Related  Kaposi's Sarcoma Kaposi's Sarcoma (n=77*) (n=705**)
+ Nausea 18% 17% Asthenia 7% 10% Fever 8% 9% Alopecia 9% 9% Alkaline Phosphatase Increase 1.3% 8% Vomiting 8% 8% Diarrhea 5% 8% Stomatitis 5% 7% Oral Moniliasis 1.3% 6%
+ *This includes a subset of subjects who were retrospectively identified as having disease progression on prior
+ systemic combination chemotherapy (at least 2 cycles of a regimen containing at least 2 of 3 treatments:
+ bleomycin, vincristine or vinblastine, or doxorubicin) or as being intolerant to such therapy.
+ **This includes only subjects with AIDS-KS who had available adverse event data from the 4 pooled trials.
+  Reference ID: 3691294
+ 11
+                                                                                                               The following additional adverse reactions were observed in 705 patients with AIDS-related Kaposi's sarcoma.
+ Incidence 1% to 5% Body as a Whole: headache, back pain, infection, allergic reaction, chills.
+  Cardiovascular: chest pain, hypotension, tachycardia.
+  Cutaneous: herpes simplex, rash, itching.
+  Digestive: mouth ulceration, anorexia, dysphagia.
+  Metabolic and Nutritional: SGPT increase, weight loss, hyperbilirubinemia.
+  Other: dyspnea, pneumonia, dizziness, somnolence.
+  Incidence Less Than 1% Body As A Whole: sepsis, moniliasis, cryptococcosis.
+  Cardiovascular: thrombophlebitis, cardiomyopathy, palpitation, bundle branch block,
+ congestive heart failure, heart arrest, thrombosis, ventricular arrhythmia.
+  Digestive: hepatitis.
+  Metabolic and Nutritional Disorders: dehydration
+  Respiratory: cough increase, pharyngitis.
+  Skin and Appendages: maculopapular rash, herpes zoster.
+  Special Senses: taste perversion, conjunctivitis.
+  Patients With Multiple Myeloma The safety data described are from 318 patients treated with DOXIL (30 mg/m2) administered on day 4 following bortezomib (1.3 mg/m2 i.v.
+bolus on days 1, 4 , 8 and 11) every 3 weeks, in a randomized, open-label, multicenter study (Trial 6).
+In this trial, patients in the DOXIL + bortezomib combination group were treated for a median number of 4.5 months (range 21 days to 13.5 months).
+The population was 28 to 85 years of age (median age 61), 58% male, 90% Caucasian, 6% Black, and 4% Asian and Other.
+Table 7 lists adverse reactions reported in 10% or more of patients treated with DOXIL in combination with bortezomib for multiple myeloma.
+ Reference ID: 3691294
+ 12
+                                                                                                                                                                                                                                                                                                                Table 7: Frequency of Treatment-Emergent Adverse Reactions Reported in &#x2265;10% Patients Treated for Multiple Myeloma With DOXIL in Combination With Bortezomib
+ Adverse Reaction DOXIL + bortezomib Bortezomib (n=318) (n=318)
+ Any (%) Grade 3-4 Any (%) Grade 3-4
+ Blood and lymphatic system disorders Neutropenia 36 32 22 16 Thrombocytopenia 33 24 28 17 Anemia 25 9 21 9 General disorders and administration site conditions Fatigue 36 7 28 3 Pyrexia 31 1 22 1 Asthenia 22 6 18 4 Gastrointestinal disorders Nausea 48 3 40 1 Diarrhea 46 7 39 5 Vomiting 32 4 22 1 Constipation 31 1 31 1 Mucositis/Stomatitis 20 2 5 &lt;1 Abdominal pain 11 1 8 1 Infections and infestations Herpes zoster 11 2 9 2 Herpes simplex 10 0 6 1 Investigations Weight decreased 12 0 4 0 Metabolism and Nutritional disorders Anorexia 19 2 14 &lt;1 Nervous system disorders Peripheral Neuropathy1 42 7 45 11 Neuralgia 17 3 20 4 Paresthesia/dysesthesia 13 &lt;1 10 0 Respiratory, thoracic and mediastinal disorders Cough 18 0 12 0 Skin and subcutaneous tissue disorders Rash2 22 1 18 1 Hand-foot syndrome 19 6 &lt;1 0 1 Peripheral neuropathy includes the following adverse reactions: peripheral sensory neuropathy, neuropathy  peripheral, polyneuropathy, peripheral motor neuropathy, and neuropathy NOS.
+2 Rash includes the following adverse reactions: rash, rash erythematous, rash macular, rash maculo-papular,
+ rash pruritic, exfoliative rash, and rash generalized.
+ 6.2 Postmarketing Experience The following additional adverse reactions have been identified during post approval use of DOXIL.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+ Musculoskeletal and Connective Tissue Disorders: muscle spasms
+ Reference ID: 3691294
+ 13
+                                                                                                               Respiratory, Thoracic and Mediastinal Disorders: pulmonary embolism (in some cases fatal)
+ Hematologic disorders: Secondary acute myelogenous leukemia
+ Skin and subcutaneous tissue disorders: erythema multiforme, Stevens-Johnson syndrome, toxic epidermal necrolysis
+ Secondary oral neoplasms: [see Warnings and Precautions (5.4)].
+ 7 DRUG INTERACTIONS No formal drug interaction studies have been conducted with DOXIL.
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ Risk Summary Based on findings in animals, DOXIL can cause fetal harm when administered to a pregnant woman.
+In animal reproduction studies, DOXIL was embryotoxic in rats and abortifacient in rabbits following intravenous administration during organogenesis at doses approximately 0.12 times the recommended clinical dose [see Data].
+There are no available human data informing the drug-associated risk.
+Advise pregnant women of the potential risk to a fetus.
+ The background risk of major birth defects and miscarriage for the indicated populations are unknown.
+However, the background risk in the U.S. general population of major birth defects is 2-4% and of miscarriage is 15-20% of clinically recognized pregnancies.
+ Data Animal Data DOXIL was embryotoxic at doses of 1 mg/kg/day in rats and was embryotoxic and abortifacient at 0.5 mg/kg/day in rabbits (both doses are about 0.12 times the recommended dose of 50 mg/m2 human dose on a mg/m2 basis).
+Embryotoxicity was characterized by increased embryo-fetal deaths and reduced live litter sizes.
+ 8.2 Lactation Risk Summary It is not known whether DOXIL is present in human milk.
+Because many drugs, including anthracyclines, are excreted in human milk and because of the potential for serious adverse reactions in nursing infants from DOXIL, discontinue breastfeeding during treatment with DOXIL.
+ Reference ID: 3691294
+ 14
+                                                                                                              8.3 Females and Males of Reproductive Potential Contraception Females
+ DOXIL can cause fetal harm when administered to a pregnant woman [see Use in Specific Populations (8.1)].
+Advise females of reproductive potential to use effective contraception during and for 6 months after treatment with DOXIL.
+ Males DOXIL may damage spermatozoa and testicular tissue, resulting in possible genetic fetal abnormalities.
+Males with female sexual partners of reproductive potential should use effective contraception during and for 6 months after treatment with DOXIL [see Nonclinical Toxicology (13.1)].
+ Infertility Females
+ In females of reproductive potential, DOXIL may cause infertility and result in amenorrhea.
+Premature menopause can occur with doxorubicin HCl.
+Recovery of menses and ovulation is related to age at treatment.
+ Males DOXIL may result in oligospermia, azoospermia, and permanent loss of fertility.
+Sperm counts have been reported to return to normal levels in some men.
+This may occur several years after the end of therapy [see Nonclinical Toxicology (13.1)].
+ 8.4 Pediatric Use The safety and effectiveness of DOXIL in pediatric patients have not been established.
+ 8.5 Geriatric Use Clinical studies of DOXIL conducted in patients with either epithelial ovarian cancer (Trial 4) or with AIDS-related Kaposi's sarcoma (Trial 5) did not contain sufficient numbers of patients aged 65 and over to determine whether they respond differently from younger subjects.
+ In Trial 6, of 318 patients treated with DOXIL in combination with bortezomib for multiple myeloma, 37% were 65 years of age or older and 8% were 75 years of age or older.
+No overall differences in safety or efficacy were observed between these patients and younger patients.
+ Reference ID: 3691294
+ 15
+                                                                                              O OH O OH
+ OH
+ H3CO O OH O
+ H
+ CH 3
+ HO NH2
+ O HCl
+                            8.6 Hepatic Impairment The pharmacokinetics of DOXIL has not been adequately evaluated in patients with hepatic impairment.
+Doxorubicin is eliminated in large part by the liver.
+Reduce DOXIL for serum bilirubin of 1.2 mg/dL or higher.
+ 10 OVERDOSAGE Acute overdosage with doxorubicin HCl causes increased risk of severe mucositis, leukopenia, and thrombocytopenia.
+ 11 DESCRIPTION DOXIL (doxorubicin HCl liposome injection) is doxorubicin hydrochloride (HCl), an anthracycline topoisomerase II inhibitor, that is encapsulated in STEALTH liposomes for intravenous use.
+ The chemical name of doxorubicin HCl is (8S,10S)-10-[(3-amino-2,3,6-trideoxy--L-lyxohexopyranosyl)oxy]-8-glycolyl-7,8,9,10-tetrahydro-6,8,11-trihydroxy-1-methoxy-5,12naphthacenedione hydrochloride.
+The molecular formula is C27-H29 -NO11&#x2022;HCl; its molecular weight is 579.99.
+ The molecular structure is:
+ DOXIL is a sterile, translucent, red liposomal dispersion in 10-mL or 30-mL glass, single use vials.
+Each vial contains 20 mg or 50 mg doxorubicin HCl at a concentration of 2 mg/mL and a pH of 6.5.
+The STEALTH liposome carriers are composed of cholesterol, 3.19 mg/mL; fully hydrogenated soy phosphatidylcholine (HSPC), 9.58 mg/mL; and N-(carbonyl-methoxypolyethylene glycol 2000)-1,2-distearoyl-sn-glycero3-phosphoethanolamine sodium salt (MPEG-DSPE), 3.19 mg/mL.
+Each mL also contains ammonium sulfate, approximately 2 mg; histidine as a buffer; hydrochloric acid and/or
+ Reference ID: 3691294
+ 16
+                             O
+ CH3 O CH2 CH2 O n
+ C O
+ NH CH2 CH2 O P O
+ O-Na+
+ O CH2
+ HC H2C O
+ O C C O
+ (CH2)16 (CH2)16
+ CH3 CH3
+ n = ca.
+45
+ HSPC has the following structural formula:
+ O
+ H2C O C (CH2)n CH3
+ CH3 O - HC O C (CH2)m CH3
+ H3C N+ CH2 CH2 O P O CH2 O
+ CH3 O
+ m, n = 14 or 16
+                        sodium hydroxide for pH control; and sucrose to maintain isotonicity.
+Greater than 90% of the drug is encapsulated in the STEALTH liposomes.
+ MPEG-DSPE has the following structural formula:
+ Representation of a STEALTH liposome:
+  12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action
+ The active ingredient of DOXIL is doxorubicin HCl.
+The mechanism of action of doxorubicin HCl is thought to be related to its ability to bind DNA and inhibit nucleic acid synthesis.
+Cell structure studies have demonstrated rapid cell penetration and perinuclear
+ Reference ID: 3691294
+ 17
+                                                                                                                                            chromatin binding, rapid inhibition of mitotic activity and nucleic acid synthesis, and induction of mutagenesis and chromosomal aberrations.
+ 12.3 Pharmacokinetics The pharmacokinetic parameters for total doxorubicin following a single dose of DOXIL infused over 30 minutes are presented in Table 8.
+ Table 8:  Pharmacokinetic Parameters of Total Doxorubicin from DOXIL in Patients With AIDS-Related Kaposi's Sarcoma
+ Dose
+ Parameter (units) 10 mg/m2
+ 20 mg/m2
+ Peak Plasma Concentration (g/mL) Plasma Clearance (L/h/m2)
+ 4.12  0.215 0.056  0.01
+ 8.34  0.49 0.041  0.004
+ Steady State Volume of Distribution (L/m2) 2.83  0.145 2.72  0.120 AUC (g/mL&#x2022;h) 277  32.9 590  58.7 First Phase (1) Half-Life (h) 4.7  1.1 5.2  1.4 Second Phase (1) Half-Life (h) 52.3  5.6 55.0  4.8 N=23 Mean  Standard Error
+ DOXIL displayed linear pharmacokinetics over the range of 10 to 20 mg/m2.
+Relative to DOXIL doses at or below 20 mg/m2, the pharmacokinetics of total doxorubicin following a 50 mg/m2 DOXIL dose are nonlinear.
+At this dose, the elimination half-life of DOXIL is longer and the clearance lower compared to a 20 mg/m2 dose.
+ Distribution: Direct measurement of liposomal doxorubicin shows that at least 90% of the drug (the assay used cannot quantify less than 5-10% free doxorubicin) remains liposome-encapsulated during circulation.
+ In contrast to doxorubicin, which displays a large volume of distribution (range 700 to 1100 L/m2), the small steady state volume of distribution of liposomal doxorubicin suggests that DOXIL is largely confined to vascular fluid.
+Doxorubicin becomes available after the liposomes are extravasated.
+Plasma protein binding of DOXIL has not been determined; the plasma protein binding of doxorubicin is approximately 70%.
+ Metabolism: Doxorubicinol, the major metabolite of doxorubicin, was detected at concentrations of 0.8 to 26.2 ng/mL in the plasma of patients who received 10 or 20 mg/m2 DOXIL.
+ Reference ID: 3691294
+ 18
+                                                                                                                                               Elimination: The plasma clearance of total doxorubicin from DOXIL was 0.041 L/h/m2 at a dose of 20 mg/m2 .
+Following administration of doxorubicin HCl, the plasma clearance of doxorubicin is 24 to 35 L/h/m2 .
+ 13 NON-CLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, and Impairment of Fertility
+ Mutagenicity or carcinogenicity studies have not been conducted with DOXIL, however doxorubicin was shown to be mutagenic in the in vitro Ames assay, and clastogenic in multiple in vitro assays (CHO cell, V79 hamster cell, human lymphoblast, and SCE assays) and the in vivo mouse micronucleus assay.
+The possible adverse effects on fertility in animals have not been adequately evaluated.
+DOXIL resulted in mild to moderate ovarian and testicular atrophy in mice after administration of a single dose of 36 mg/kg (about 2 times the 50 mg/m2 human dose on a mg/m2 basis).
+Decreased testicular weights and hypospermia were observed in rats after repeat doses &#x2265; 0.25 mg/kg/day (about 0.03 times the 50 mg/m2 human dose on a mg/m2 basis), and diffuse degeneration of the seminiferous tubules and a marked decrease in spermatogenesis were observed in dogs after repeat doses of 1 mg/kg/day (about 0.4 times the 50 mg/m2 human dose on a mg/m2 basis).
+ 14 CLINICAL STUDIES 14.1 Ovarian Cancer
+ DOXIL was studied in three open-label, single-arm, clinical studies of 176 patients with metastatic ovarian cancer (Trials 1, 2, and 3).
+One hundred forty-five of these patients were refractory to both paclitaxel- and platinum-based chemotherapy regimens, defined as disease progression while on treatment or relapse within 6 months of completing treatment.
+Patients received DOXIL at 50 mg/m2 every 3 or 4 weeks for 3-6+ cycles in the absence of dose-limiting toxicity or disease progression.
+ The median age at diagnosis ranged from 52 to 64 years in the 3 studies, and the range was 22 to 85.
+Most patients had International Federation of Obstetricians and Gynecologists (FIGO) stage III or IV disease (ranging from 83% to 93%).
+Approximately one third of the patients had three or more prior lines of therapy (ranging from 22% to 33%).
+ The primary outcome measure was confirmed response rate based on Southwestern Oncology Group (SWOG) criteria for patients refractory to both paclitaxel- and a platinum-containing regimen.
+Secondary efficacy parameters were time to response, duration of response, and time to progression.
+ Reference ID: 3691294
+ 19
+                                                                                                                     The response rates for the individual single arm trials are given in Table 9 below.
+ Table 9:  Response Rates in Patients With Refractory Ovarian Cancer From Single Arm Ovarian Cancer Trials
+ Trial 1 (U.S.) Trial 2 (U.S.) Trial 3 (non-U.S.) N=27 N=82 N=36
+ Response Rate 22.2% 17.1% 0% 95% Confidence Interval 8.6% - 42.3% 9.7% - 27.0% 0.0% - 9.7%
+ In a pooled analysis of Trials 1-3, the response rate for all patients refractory to paclitaxel and platinum agents was 13.8% (95% CI 8.1% to 19.3%).
+The median time to progression was 15.9 weeks, the median time to response was 17.6 weeks, and the duration of response was 39.4 weeks.
+ In Trial 4, a randomized, multicenter, open-label, trial in 474 patients with epithelial ovarian cancer after platinum-based chemotherapy, patients were randomized to receive either DOXIL 50 mg/m2 every 4 weeks (n=239) or topotecan 1.5 mg/m2 daily for 5 consecutive days every 3 weeks (n=235).
+Patients were stratified according to platinum sensitivity (response to initial platinum-based therapy and a progression-free interval of greater than 6 months off treatment) and the presence of bulky disease (tumor mass greater than 5 cm in size).
+The primary outcome measure was time to progression (TTP).
+Other endpoints included overall survival and objective response rate.
+ Of the 474 patients, the median age at diagnosis was 60 years (range 25 to 87), 90% were FIGO stage III and IV; 46% were platinum sensitive; and 45% had bulky disease.
+ There was no statistically significant difference in TTP between the two arms.
+Results are provided in Table 10.
+ Reference ID: 3691294
+ 20
+                                                                                                                                                                             Table 10: Results of Efficacy Analyses1 Protocol Defined ITT Population
+ DOXIL Topotecan (n=239) (n=235)
+ TTP (Protocol Specified Primary Endpoint) Median (Months)2 p-value3 Hazard Ratio4
+ 4.1 0.62 0.96
+ 4.2
+ 95% CI for Hazard Ratio (0.76, 1.20) Overall Survival Median (Months) 2 p-value5 Hazard Ratio4
+ 14.4 0.05 0.82
+ 13.7
+ 95% CI for Hazard Ratio (0.68, 1.00) Response Rate Overall Response n (%) 47 (19.7) 40 (17.0) Complete Response n (%) 9 (3.8) 11 (4.7) Partial Response n (%) Median Duration of Response (Months) 2
+ 38 (15.9) 6.9
+ 29 (12.3) 5.9
+ 1  Analysis based on investigators' strata for protocol defined ITT population.
+2  Kaplan-Meier estimates.
+3  p-value is based on the stratified log-rank test.
+4  Hazard ratio is based on Cox proportional-hazard model with the treatment as single independent variable.
+ A hazard ratio less than 1 indicates an advantage for DOXIL.
+5  p-value not adjusted for multiple comparisons.
+ 14.2 AIDS-Related Kaposi's Sarcoma DOXIL was studied in an open-label, single-arm, multicenter study at a dose of 20 mg/m2
+ every 3 weeks, until disease progression or unacceptable toxicity (Trial 5).
+ Data is described for a cohort of 77 patients retrospectively identified as having disease progression on prior systemic combination chemotherapy (at least two cycles of a regimen containing at least two of three treatments: bleomycin, vincristine or vinblastine, or doxorubicin) or as being intolerant to such therapy.
+Forty-nine of the 77 (64%) patients had received prior doxorubicin HCl.
+ The median time on study was 5.1 months (range 1 day to 15 months).
+The median cumulative dose of DOXIL was 154 mg/m2 (range 20 to 620 mg/m2).
+Among the 77 patients, mean age was 38 years (range 24 to 54); 87% were Caucasian, 5% Hispanic, 4% Black, and 4% Asian/Other/Unknown; median CD4 count was 10 cells/mm3; ACTG staging criteria were 78% poor risk for tumor burden, 96% poor risk for immune system, and 58% poor risk for systemic illness at baseline; and mean Karnofsky status score was 74%.
+All patients had cutaneous or subcutaneous lesions, 40% also had oral lesions, 26% pulmonar y lesions, and 14% had lesions of the stomach/intestine.
+ Reference ID: 3691294
+ 21
+                                                                                                                                                                             Two analyses of tumor response were used: one based on investigator assessment of changes in lesions based on modified ACTG criteria (partial response defined as no new lesions, sites of disease, or worsening edema; flattening of &#x2265;50% of previously raised lesions or area of indicator lesions decreasing by &#x2265;50%; and response lasting at least 21 days with no prior progression), and one based on changes in up to five prospectively indentified representative indicator lesions (partial response defined as flattening of &#x2265;50% of previously raised indicator lesions, or &gt;50% decrease in the area of indicator lesions and lasting at least 21 days with no prior progression).
+ Of the 77 patients, 34 were evaluable for investigator assessment and 42 were evaluable for indicator lesion assessment; analyses of tumor responses are shown in Table 11.
+ Table 11: Response in Patients with Refractory1 AIDS-Related Kaposi's Sarcoma
+ Investigator Assessment All Evaluable Evaluable Patients Patients Who Received Prior (n=34) Doxorubicin
+ (n=20) Response2
+  Partial (PR) 27% 30%
+ Stable 29% 40%
+ Progression 44% 30%
+  Duration of PR (Days)
+ Median 73 89
+ Range 42+ - 210+ 42+ - 210+
+  Time to PR (Days)
+ Median 43 53
+ Range 15 - 133 15 - 109
+  Indicator Lesion Assessment All Evaluable Evaluable Patients Patients Who Received Prior (n=42) Doxorubicin
+ (n=23) Response2
+ Partial (PR) 48% 52% Stable 26% 30% Progression 26% 17%
+ Duration of PR (Days) Median 71 79 Range 22+ - 210+ 35 - 210+
+ Time to PR (Days) Median 22 48 Range 15 - 109 15 - 109
+ 1 Patients with disease that progressed on prior combination chemotherapy or who were intolerant to such therapy.
+ 2 There were no complete responses in this population.
+ Reference ID: 3691294
+ 22
+                                                                               Retrospective efficacy analyses were performed in two trials that had subsets of patients who received single-agent DOXIL and who were on stable antiretroviral therapy for at least 60 days prior to enrollment and until a response was demonstrated.
+In one trial, 7 of 17 (40%) patients had a durable response (median duration not reached but was longer than 11.6 months).
+In the second trial, 4 of 11 patients (40%) on a stable antiretroviral therapy demonstrated durable responses.
+ 14.3 Multiple Myeloma The efficacy of DOXIL in combination with bortezomib was evaluated in Trial 6, a randomized, open-label, international, multicenter study in 646 patients who had not previously received bortezomib and whose disease progressed during or after at least one prior therapy.
+Patients were randomized (1:1) to receive either DOXIL (30 mg/m2) administered IV on day 4 following bortezomib (1.3 mg/m2 IV on days 1, 4 , 8 and 11) or bortezomib alone every 3 weeks for up to 8 cycles or until disease progression or unacceptable toxicity.
+Patients who maintained a response were allowed to receive further treatment.
+The median number of cycles in each treatment arm was 5 (range 1-18).
+ The baseline demographics and clinical characteristics of the patients with multiple myeloma were similar between treatment arms (Table 12).
+ Reference ID: 3691294
+ 23
+                                                                                                                                               Table 12 Summary of Baseline Patient and Disease Characteristics DOXIL + bortezomib bortezomib
+ Patient Characteristics n=324 n=322 Median age in years (range) 61 (28, 85) 62 (34, 88) % Male/female 58 / 42 54 / 46 % Caucasian/Black/other 90 / 6/ 4 94 / 4 / 2%
+ Disease Characteristics % with IgG/IgA/Light chain 57 / 27 / 12 62 / 24 /11 % 2 -microglobulin group
+ &#x2264;2.5 mg/L 14 14 &gt;2.5 mg/L and &#x2264;5.5 mg/L 56 55 &gt;5.5 mg/L 30 31
+ Serum M-protein (g/dL): Median (Range) 2.5 (0-10.0) 2.7 (0-10.0) Urine M-protein (mg/24 hours): Median (Range) 107 (0-24883) 66 (0-39657) Median Months Since Diagnosis 35.2 37.5 % Prior Therapy
+ One 34 34 More than one 66 66
+ Prior Systemic Therapies for Multiple Myeloma Corticosteroid (%) 99 &gt;99 Anthracyclines 68 67 Alkylating agent (%) 92 90 Thalidomide/lenalidomide (%) 40 43 Stem cell transplantation (%) 57 54
+ The primary outcome measure was time to progression (TTP).
+TTP was defined as the time from randomization to the first occurrence of progressive disease or death due to progressive disease.
+The combination arm demonstrated significant improvement in TTP.
+As the prespecified primary objective was achieved at the interim analysis, patients in the bortezomib monotherapy group were then allowed to receive the DOXIL + bortezomib combination.
+Survival continued to be followed after the interim analysis and survival data are not mature at this time.
+Efficacy results are as shown in Table 13 and Figure 1.
+ Reference ID: 3691294
+ 24
+                                                                                                                                Table 13: Efficacy of DOXIL in Combination With Bortezomib in the Treatment of Patients With Multiple Myeloma
+ Endpoint DOXIL + bortezomib Bortezomib n=324 n=322
+ Time to Progression1 Progression or death due to progression (n)  99 150
+ Censored (n) 225 172 Median in days (months) 282 (9.3) 197 (6.5) 95% CI 250;338 170;217 Hazard ratio2 0.55 (95% CI) (0.43, 0.71) p-value3 &lt;0.001
+ Response (n)4 303 310 % Complete Response (CR) 5 3 %Partial Response (PR) 43 40 %CR + PR 48 43 p-value5 0.25
+ Median Duration of Response (months) 10.2  7.0 (95% CI)  (10.2;12.9) (5.9;8.3) 1  Kaplan Meier estimate.
+2  Hazard ratio based on stratified Cox proportional hazards regression.
+A hazard ratio &lt; 1 indicates an
+ advantage for DOXIL+bortezomib.
+3 Stratified log-rank test.
+4 RR as per EBMT criteria.
+5 Cochran-Mantel-Haenszel test adjusted for the stratification factors.
+ Reference ID: 3691294
+ 25
+                                                            Figure 1- Time to Progression Kaplan-Meier Curve
+ 15 REFERENCES 1.
+"Hazardous Drugs", OSHA, http://www.osha.gov/SLTC/hazardousdrugs/index.html
+ 16 HOW SUPPLIED/STORAGE AND HANDLING DOXIL is a sterile, translucent, red liposomal dispersion in 10-mL or 30-mL glass, single
+ use vials.
+  Each 10-mL vial contains 20 mg doxorubicin HCl at a concentration of 2 mg/mL.
+  Each 30-mL vial contains 50 mg doxorubicin HCl at a concentration of 2 mg/mL.
+  The following individually cartoned vials are available:
+  Table 14 mg in vial fill volume vial size NDC #s 20 mg vial 10-mL 10-mL 59676-960-01 50 mg vial 25-mL 30-mL 59676-960-02
+ Reference ID: 3691294
+ 26
+                                                                                                         Refrigerate unopened vials of DOXIL at 2- 8C (36- 46F).
+Do not freeze.
+ Handle and dispose of DOXIL consistent with recommendations for the handling and disposal of hazardous drugs.1
+ 17 PATIENT COUNSELING INFORMATION Cardiomyopathy Advise patients to contact their healthcare provider if they develop symptoms of heart failure [see Warnings and Precautions (5.1)].
+ Infusion-Related Reactions Advise patients about the symptoms of infusion related reactions and to seek immediate medical attention if they develop any of these symptoms [see Warnings and Precautions (5.2)].
+ Myelosuppression Advise patients to contact their healthcare provider for a new onset fever or symptoms of infection.
+ Hand-Foot Syndrome Advise patients to notify their healthcare provider if they experience tingling or burning, redness, flaking, bothersome swelling, small blisters, or small sores on the palms of their hands or soles of their feet (symptoms of Hand-Foot Syndrome) [see Warnings and Precautions (5.3)].
+ Stomatitis Advise patients to notify their healthcare provider if they develop painful redness, swelling, or sores in the mouth (symptoms of stomatitis).
+ Embryofetal Toxicity Advise females of reproductive potential of the potential risk to a fetus and to inform their healthcare provider with a known or suspected pregnancy [see Warnings and Precautions (5.5) and Use in Specific Populations (8.1)].
+Advise females and males of reproductive potential to use effective contraception during and for 6 months following treatment with DOXIL [see Use in Specific Populations (8.3)].
+ Lactation Advise females not to breastfeed during treatment with DOXIL [see Use in Specific Populations (8.2)].
+ Reference ID: 3691294
+ 27
+                                                                 Infertility Advise females and males of reproductive potential that DOXIL may cause temporary or permanent infertility [see Use in Specific Populations (8.3)].
+ Discoloration of Urine and Body Fluids Inform patients that following DOXIL administration, a reddish-orange color to the urine and other body fluids may be observed.
+This nontoxic reaction is due to the color of the product and will dissipate as the drug is eliminated from the body.
+ Manufactured by: ALZA Corporation Bedford, OH 44146
+ or
+ TTY Biopharm Company Limited No.
+838, Sec.
+1, Chung Hwa Rd.
+Chung-Li, Taoyuan, Taiwan, R.O.C.
+ Manufactured for: Janssen Products, LP Horsham, PA 19044  Janssen Products, LP 2010
+ An ALZA STEALTH
+ Technology Product
+  STEALTH and DOXIL are registered trademarks of ALZA Corporation.
+  Reference ID: 3691294
+ 28
+  

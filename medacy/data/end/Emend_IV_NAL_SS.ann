@@ -1,0 +1,1088 @@
+T1	tradename 113 118	EMEND
+T2	tradename 180 193	EMEND. EMEND
+T3	nanoparticle 195 221	fosaprepitant dimeglumine)
+T4	routeofadministration 241 252	intravenous
+T5	fdaapprovaldate 280 284	2008
+T6	tradename 363 368	EMEND
+T7	indication 563 569	nausea
+T8	indication 574 582	vomiting
+T9	indication 630 673	highly emetogenic cancer chemotherapy (HEC)
+T10	indication 715 748	prevention of nausea and vomiting
+T11	indication 795 842	moderately emetogenic cancer chemotherapy (MEC)
+T12	indication 1014 1017	HEC
+T13	tradename 1041 1046	EMEND
+T14	dose 1062 1069	150 mg)
+T15	tradename 1208 1213	EMEND
+T16	tradename 1248 1253	EMEND
+T17	indication 1292 1319	prevent nausea and vomiting
+T18	indication 1331 1334	HEC
+T19	indication 1407 1410	HEC
+T20	indication 1415 1418	MEC
+T21	tradename 1443 1448	EMEND
+T22	dose 1464 1471	115 mg)
+T23	tradename 1586 1591	EMEND
+T24	dose 1602 1608	80 mg)
+T25	routeofadministration 1619 1625	orally
+T26	tradename 1643 1648	EMEND
+T27	tradename 1667 1672	EMEND
+T28	indication 1707 1734	prevent nausea and vomiting
+T29	indication 1746 1749	HEC
+T30	indication 1753 1756	MEC
+T31	routeofadministration 1963 1974	intravenous
+T32	dose 2019 2025	150 mg
+T33	dose 2030 2036	115 mg
+T34	activeingredient 2282 2292	aprepitant
+T35	activeingredient 2500 2513	Fosaprepitant
+T36	activeingredient 2858 2871	fosaprepitant
+T37	activeingredient 2875 2885	aprepitant
+T38	activeingredient 3137 3150	fosaprepitant
+T39	activeingredient 3154 3164	aprepitant
+T40	routeofadministration 3371 3375	oral
+T41	activeingredient 3376 3386	aprepitant
+T42	adversereaction 3524 3636	hiccups, asthenia/fatigue, AST/ALT increased, headache, constipation, anorexia, dyspepsia, diarrhea, eructation.
+T43	tradename 3685 3690	EMEND
+T44	indication 3750 3753	HEC
+T45	routeofadministration 3767 3771	oral
+T46	activeingredient 3772 3783	aprepitant.
+T47	adversereaction 3797 3820	infusion site reactions
+T48	tradename 3840 3845	EMEND
+T49	company 3915 3945	Merck Sharp &amp; Dohme Corp.,
+T50	company 3962 3984	Merck &amp; Co., Inc.,
+T51	activeingredient 4162 4175	fosaprepitant
+T52	activeingredient 4179 4189	aprepitant
+T53	activeingredient 4301 4312	aprepitant,
+T54	tradename 4369 4374	EMEND
+T55	indication 4720 4753	Prevention of Nausea and Vomiting
+T56	indication 4770 4806	Highly Emetogenic Chemotherapy (HEC)
+T57	indication 4813 4846	Prevention of Nausea and Vomiting
+T58	indication 4863 4903	Moderately Emetogenic Chemotherapy (MEC)
+T59	tradename 4925 4930	EMEND
+T60	activeingredient 5405 5429	Fosaprepitant/Aprepitant
+T61	activeingredient 5526 5536	Aprepitant
+T62	indication 5958 5994	Highly Emetogenic Chemotherapy (HEC)
+T63	indication 6001 6041	Moderately Emetogenic Chemotherapy (MEC)
+T64	tradename 6457 6462	EMEND
+T65	indication 6625 6676	prevention of acute and delayed nausea and vomiting
+T66	indication 6723 6766	highly emetogenic cancer chemotherapy (HEC)
+T67	indication 6846 6879	prevention of nausea and vomiting
+T68	indication 6926 6973	moderately emetogenic cancer chemotherapy (MEC)
+T69	tradename 7033 7038	EMEND
+T70	indication 7256 7289	Prevention of Nausea and Vomiting
+T71	indication 7306 7342	Highly Emetogenic Chemotherapy (HEC)
+T72	tradename 7344 7349	EMEND
+T73	dose 7364 7370	150 mg
+T74	tradename 7395 7401	EMEND)
+T75	tradename 7403 7408	EMEND
+T76	dose 7423 7429	150 mg
+T77	routeofadministration 7446 7459	intravenously
+T78	tradename 7582 7587	EMEND
+T79	tradename 7622 7627	EMEND
+T80	co-administereddrug 7776 7789	dexamethasone
+T81	tradename 7795 7800	EMEND
+T82	dose 7815 7821	150 mg
+T83	co-administereddrug 7861 7874	dexamethasone
+T84	tradename 7880 7885	EMEND
+T85	dose 7900 7906	115 mg
+T86	tradename 8039 8044	EMEND
+T87	tradename 8112 8118	EMEND)
+T88	tradename 8241 8246	EMEND
+T89	dose 8247 8253	150 mg
+T90	routeofadministration 8254 8265	intravenous
+T91	co-administereddrug 8283 8297	Dexamethasone*
+T92	dose 8298 8303	12 mg
+T93	routeofadministration 8304 8310	orally
+T94	dose 8311 8315	8 mg
+T95	routeofadministration 8316 8322	orally
+T96	dose 8323 8327	8 mg
+T97	routeofadministration 8328 8334	orally
+T98	frequency 8335 8346	twice daily
+T99	dose 8348 8352	8 mg
+T100	routeofadministration 8353 8359	orally
+T101	frequency 8360 8371	twice daily
+T102	co-administereddrug 8503 8516	Dexamethasone
+T103	co-administereddrug 8645 8658	dexamethasone
+T104	tradename 8693 8698	EMEND
+T105	dose 8713 8719	115 mg
+T106	tradename 8745 8751	EMEND)
+T107	tradename 8753 8758	EMEND
+T108	dose 8773 8779	115 mg
+T109	tradename 8898 8903	EMEND
+T110	dose 8904 8909	80 mg
+T111	tradename 8950 8955	EMEND
+T112	dose 8970 8976	115 mg
+T113	co-administereddrug 9111 9124	dexamethasone
+T114	tradename 9130 9135	EMEND
+T115	dose 9150 9156	115 mg
+T116	co-administereddrug 9196 9209	dexamethasone
+T117	tradename 9215 9220	EMEND
+T118	dose 9235 9241	150 mg
+T119	tradename 9375 9380	EMEND
+T120	tradename 9409 9414	EMEND
+T121	dose 9415 9421	125 mg
+T122	tradename 9445 9450	EMEND
+T123	dose 9465 9471	115 mg
+T124	tradename 9709 9715	EMEND)
+T125	indication 9724 9758	prevention of nausea and vomiting
+T126	indication 9775 9812	highly emetogenic cancer chemotherapy
+T127	tradename 9838 9843	EMEND
+T128	dose 9844 9850	115 mg
+T129	routeofadministration 9851 9862	intravenous
+T130	dose 9864 9869	80 mg
+T131	routeofadministration 9870 9876	orally
+T132	dose 9877 9882	80 mg
+T133	routeofadministration 9883 9889	orally
+T134	co-administereddrug 9896 9910	Dexamethasone*
+T135	dose 9911 9916	12 mg
+T136	routeofadministration 9917 9923	orally
+T137	dose 9924 9928	8 mg
+T138	routeofadministration 9929 9935	orally
+T139	dose 9936 9940	8 mg
+T140	routeofadministration 9941 9947	orally
+T141	frequency 9948 9958	once daily
+T142	dose 9960 9964	8 mg
+T143	routeofadministration 9965 9971	orally
+T144	frequency 9972 9982	once daily
+T145	co-administereddrug 10114 10127	Dexamethasone
+T146	co-administereddrug 10255 10268	dexamethasone
+T147	indication 10307 10340	Prevention of Nausea and Vomiting
+T148	indication 10357 10397	Moderately Emetogenic Chemotherapy (MEC)
+T149	tradename 10399 10404	EMEND
+T150	dose 10419 10425	115 mg
+T151	tradename 10451 10457	EMEND)
+T152	tradename 10459 10464	EMEND
+T153	dose 10479 10485	115 mg
+T154	tradename 10604 10609	EMEND
+T155	dose 10610 10615	80 mg
+T156	tradename 10656 10661	EMEND
+T157	dose 10676 10682	115 mg
+T158	co-administereddrug 10817 10830	dexamethasone
+T159	tradename 10836 10841	EMEND
+T160	dose 10856 10862	115 mg
+T161	co-administereddrug 10902 10915	dexamethasone
+T162	tradename 10921 10926	EMEND
+T163	dose 10941 10947	150 mg
+T164	tradename 11081 11086	EMEND
+T165	tradename 11115 11120	EMEND
+T166	dose 11121 11127	125 mg
+T167	tradename 11151 11156	EMEND
+T168	dose 11171 11177	115 mg
+T169	tradename 11241 11247	EMEND)
+T170	indication 11256 11289	prevention of nausea and vomiting
+T171	indication 11306 11347	moderately emetogenic cancer chemotherapy
+T172	tradename 11369 11374	EMEND
+T173	dose 11375 11381	115 mg
+T174	routeofadministration 11382 11393	intravenous
+T175	dose 11394 11399	80 mg
+T176	routeofadministration 11401 11407	orally
+T177	dose 11409 11414	80 mg
+T178	routeofadministration 11416 11422	orally
+T179	co-administereddrug 11423 11437	Dexamethasone*
+T180	dose 11438 11443	12 mg
+T181	routeofadministration 11444 11450	orally
+T182	co-administereddrug 11584 11597	Dexamethasone
+T183	co-administereddrug 11686 11699	dexamethasone
+T184	tradename 11753 11758	EMEND
+T185	tradename 12007 12012	EMEND
+T186	dose 12028 12034	115 mg
+T187	dose 12039 12061	150 mg) 115 mg 150 mg
+T188	inactiveingredient 12100 12115	Sodium Chloride
+T189	inactiveingredient 12138 12145	saline)
+T190	inactiveingredient 12180 12186	saline
+T191	inactiveingredient 12358 12373	Sodium Chloride
+T192	inactiveingredient 12396 12403	saline)
+T193	inactiveingredient 12660 12667	saline.
+T194	inactiveingredient 12734 12741	saline.
+T195	inactiveingredient 12870 12876	saline
+T196	inactiveingredient 13071 13077	saline
+T197	tradename 13586 13591	EMEND
+T198	tradename 13731 13736	EMEND
+T199	dose 13932 13938	150-mg
+T200	routeofadministration 14033 14044	intravenous
+T201	dose 14095 14101	115-mg
+T202	routeofadministration 14196 14207	intravenous
+T203	tradename 14296 14301	EMEND
+T204	tradename 14373 14378	EMEND
+T205	activeingredient 14395 14406	aprepitant,
+T206	inactiveingredient 14407 14421	polysorbate 80
+T207	adversereaction 14504 14532	flushing, erythema, dyspnea,
+T208	adversereaction 14537 14559	anaphylactic reactions
+T209	routeofadministration 14669 14676	orally,
+T210	activeingredient 14803 14816	fosaprepitant
+T211	activeingredient 14841 14852	aprepitant,
+T212	activeingredient 14864 14877	fosaprepitant
+T213	activeingredient 15152 15162	aprepitant
+T214	activeingredient 15368 15381	Fosaprepitant
+T215	activeingredient 15406 15417	aprepitant,
+T216	activeingredient 15524 15537	Fosaprepitant
+T217	activeingredient 15683 15693	aprepitant
+T218	activeingredient 15697 15710	fosaprepitant
+T219	activeingredient 15798 15811	fosaprepitant
+T220	activeingredient 15865 15875	aprepitant
+T221	activeingredient 15923 15933	aprepitant
+T222	activeingredient 16002 16012	aprepitant
+T223	activeingredient 16098 16108	aprepitant
+T224	activeingredient 16352 16362	aprepitant
+T225	activeingredient 16672 16682	aprepitant
+T226	adversereaction 17052 17078	Hypersensitivity Reactions
+T227	adversereaction 17146 17174	flushing, erythema, dyspnea,
+T228	adversereaction 17180 17191	anaphylaxis
+T229	activeingredient 17225 17239	fosaprepitant.
+T230	co-administereddrug 17516 17524	Warfarin
+T231	activeingredient 17566 17579	fosaprepitant
+T232	activeingredient 17583 17593	aprepitant
+T233	co-administereddrug 17599 17607	warfarin
+T234	co-administereddrug 17741 17749	warfarin
+T235	activeingredient 17871 17884	fosaprepitant
+T236	co-administereddrug 17972 17995	Hormonal Contraceptives
+T237	activeingredient 18023 18036	fosaprepitant
+T238	activeingredient 18040 18051	aprepitant,
+T239	co-administereddrug 18068 18091	hormonal contraceptives
+T240	activeingredient 18165 18178	fosaprepitant
+T241	activeingredient 18182 18193	aprepitant.
+T242	activeingredient 18322 18335	fosaprepitant
+T243	activeingredient 18339 18349	aprepitant
+T244	tradename 18435 18440	EMEND
+T245	tradename 19199 19204	EMEND
+T246	activeingredient 19235 19246	aprepitant,
+T247	activeingredient 19287 19297	aprepitant
+T248	tradename 19335 19340	EMEND
+T249	activeingredient 19379 19392	fosaprepitant
+T250	activeingredient 19467 19477	aprepitant
+T251	routeofadministration 19528 19532	Oral
+T252	activeingredient 19533 19543	Aprepitant
+T253	indication 19545 19581	Highly Emetogenic Chemotherapy (HEC)
+T254	indication 19643 19681	highly emetogenic cancer chemotherapy,
+T255	activeingredient 19713 19723	aprepitant
+T256	routeofadministration 19861 19865	Oral
+T257	activeingredient 19866 19876	aprepitant
+T258	co-administereddrug 19907 19918	ondansetron
+T259	co-administereddrug 19923 19937	dexamethasone.
+T260	activeingredient 20033 20043	aprepitant
+T261	activeingredient 20216 20226	aprepitant
+T262	activeingredient 20370 20380	aprepitant
+T263	indication 20547 20550	HEC
+T264	activeingredient 20584 20594	Aprepitant
+T265	activeingredient 20632 20642	Aprepitant
+T266	adversereaction 20705 20712	hiccups
+T267	adversereaction 20754 20770	asthenia/fatigue
+T268	adversereaction 20794 20807	ALT increased
+T269	adversereaction 20816 20829	AST increased
+T270	adversereaction 20855 20867	constipation
+T271	adversereaction 20876 20885	dyspepsia
+T272	adversereaction 20894 20902	diarrhea
+T273	adversereaction 20926 20934	headache
+T274	adversereaction 20968 20976	anorexia
+T275	activeingredient 21024 21034	aprepitant
+T276	activeingredient 21268 21278	aprepitant
+T277	indication 21394 21397	HEC
+T278	activeingredient 21411 21422	aprepitant.
+T279	indication 21424 21464	Moderately Emetogenic Chemotherapy (MEC)
+T280	indication 21524 21566	moderately emetogenic cancer chemotherapy,
+T281	activeingredient 21603 21613	aprepitant
+T282	activeingredient 21763 21773	aprepitant
+T283	co-administereddrug 21804 21815	ondansetron
+T284	co-administereddrug 21820 21833	dexamethasone
+T285	activeingredient 21835 21845	aprepitant
+T286	activeingredient 22001 22011	aprepitant
+T287	activeingredient 22184 22194	aprepitant
+T288	activeingredient 22338 22348	aprepitant
+T289	indication 22710 22713	MEC
+T290	activeingredient 22747 22757	Aprepitant
+T291	activeingredient 22795 22805	Aprepitant
+T292	adversereaction 22876 22886	eructation
+T293	adversereaction 22948 22955	fatigue
+T294	activeingredient 23003 23013	aprepitant
+T295	indication 23238 23241	HEC
+T296	indication 23245 23248	MEC
+T297	activeingredient 23286 23296	aprepitant
+T298	indication 23464 23467	HEC
+T299	indication 23471 23474	MEC
+T300	activeingredient 23516 23526	Aprepitant
+T301	adversereaction 23592 23629	candidiasis, staphylococcal infection
+T302	adversereaction 23673 23700	anemia, febrile neutropenia
+T303	adversereaction 23738 23761	weight gain, polydipsia
+T304	adversereaction 23785 23818	disorientation, euphoria, anxiety
+T305	adversereaction 23845 23915	dizziness, dream abnormality, cognitive disorder, lethargy, somnolence
+T306	adversereaction 23931 23945	conjunctivitis
+T307	adversereaction 23975 23983	tinnitus
+T308	adversereaction 24003 24053	bradycardia, cardiovascular disorder, palpitations
+T309	adversereaction 24073 24092	hot flush, flushing
+T310	adversereaction 24142 24205	pharyngitis, sneezing, cough, postnasal drip, throat irritation
+T311	adversereaction 24235 24479	nausea, acid reflux, dysgeusia, epigastric discomfort, obstipation, gastroesophageal reflux disease, perforating duodenal ulcer, vomiting, abdominal pain, dry mouth, abdominal distension, faeces hard, neutropenic colitis, flatulence, stomatitis
+T312	adversereaction 24521 24598	rash, acne, photosensitivity, hyperhidrosis, oily skin, pruritus, skin lesion
+T313	adversereaction 24649 24689	muscle cramp, myalgia, muscular weakness
+T314	adversereaction 24720 24750	polyuria, dysuria, pollakiuria
+T315	adversereaction 24805 24871	edema, chest discomfort, malaise, thirst, chills, gait disturbance
+T316	adversereaction 24888 25016	alkaline phosphatase increased, hyperglycemia, microscopic hematuria, hyponatremia, weight decreased, neutrophil count decreased
+T317	adversereaction 25084 25108	Stevens-Johnson syndrome
+T318	activeingredient 25175 25185	aprepitant
+T319	indication 25479 25482	HEC
+T320	indication 25487 25490	MEC
+T321	activeingredient 25577 25590	Fosaprepitant
+T322	indication 25652 25683	highly emetogenic chemotherapy,
+T323	tradename 25755 25760	EMEND
+T324	dose 25775 25781	150 mg
+T325	tradename 25839 25844	EMEND
+T326	activeingredient 25846 25857	aprepitant)
+T327	indication 25922 25925	HEC
+T328	activeingredient 25939 25950	aprepitant.
+T329	activeingredient 26034 26047	fosaprepitant
+T330	activeingredient 26086 26096	aprepitant
+T331	adversereaction 26157 26250	infusion-site erythema, infusion-site pruritus, infusion-site pain, infusion-site induration,
+T332	adversereaction 26255 26286	infusion-site thrombophlebitis.
+T333	activeingredient 26345 26358	fosaprepitant
+T334	dose 26359 26365	150 mg
+T335	routeofadministration 26397 26401	oral
+T336	activeingredient 26402 26412	aprepitant
+T337	activeingredient 26527 26540	Fosaprepitant
+T338	dose 26541 26547	150 mg
+T339	routeofadministration 26580 26584	Oral
+T340	activeingredient 26585 26595	Aprepitant
+T341	adversereaction 26658 26750	infusion site erythema, infusion site pruritus, infusion site induration, infusion site pain
+T342	adversereaction 26767 26791	blood pressure increased
+T343	adversereaction 26832 26840	erythema
+T344	adversereaction 26861 26877	thrombophlebitis
+T345	adversereaction 26894 26925	infusion-site thrombophlebitis)
+T346	dose 27099 27104	40-mg
+T347	activeingredient 27105 27115	aprepitant
+T348	routeofadministration 27116 27122	orally
+T349	dose 27158 27162	4-mg
+T350	co-administereddrug 27163 27174	ondansetron
+T351	routeofadministration 27175 27189	intravenously.
+T352	dose 27268 27273	40-mg
+T353	activeingredient 27274 27284	aprepitant
+T354	dose 27341 27345	4-mg
+T355	co-administereddrug 27346 27357	ondansetron
+T356	routeofadministration 27358 27372	intravenously.
+T357	activeingredient 27399 27410	aprepitant,
+T358	adversereaction 27411 27424	increased ALT
+T359	co-administereddrug 27474 27485	ondansetron
+T360	activeingredient 27576 27586	aprepitant
+T361	co-administereddrug 27632 27644	ondansetron.
+T362	activeingredient 27713 27723	Aprepitant
+T363	dose 27724 27729	40 mg
+T364	activeingredient 27763 27773	Aprepitant
+T365	co-administereddrug 27792 27803	ondansetron
+T366	adversereaction 27826 27834	insomnia
+T367	adversereaction 27860 27905	dysarthria, hypoesthesia, sensory disturbance
+T368	adversereaction 27920 27949	miosis, visual acuity reduced
+T369	adversereaction 27968 27979	bradycardia
+T370	adversereaction 28029 28046	dyspnea, wheezing
+T371	adversereaction 28075 28157	abdominal pain upper, bowel sounds abnormal, dry mouth, nausea, stomach discomfort
+T372	activeingredient 28313 28324	aprepitant:
+T373	adversereaction 28392 28402	Angioedema
+T374	adversereaction 28407 28416	urticaria
+T375	activeingredient 28484 28494	aprepitant
+T376	activeingredient 28636 28649	fosaprepitant
+T377	activeingredient 28655 28666	aprepitant.
+T378	adversereaction 29138 29164	pruritus, rash, urticaria,
+T379	adversereaction 29172 29224	Stevens-Johnson syndrome/toxic epidermal necrolysis.
+T380	adversereaction 29251 29277	hypersensitivity reactions
+T381	adversereaction 29288 29311	anaphylactic reactions.
+T382	adversereaction 29348 29380	ifosfamide-induced neurotoxicity
+T383	activeingredient 29407 29417	aprepitant
+T384	co-administereddrug 29422 29432	ifosfamide
+T385	activeingredient 29519 29532	fosaprepitant
+T386	routeofadministration 29583 29587	oral
+T387	activeingredient 29588 29611	aprepitant. Aprepitant
+T388	activeingredient 29740 29750	Aprepitant
+T389	activeingredient 29782 29795	Fosaprepitant
+T390	dose 29796 29803	150 mg,
+T391	activeingredient 29887 29900	Fosaprepitant
+T392	activeingredient 29904 29914	aprepitant
+T393	routeofadministration 30059 30063	oral
+T394	activeingredient 30064 30075	aprepitant,
+T395	activeingredient 30103 30116	fosaprepitant
+T396	routeofadministration 30121 30125	oral
+T397	activeingredient 30166 30179	fosaprepitant
+T398	activeingredient 30214 30238	Fosaprepitant/Aprepitant
+T399	activeingredient 30299 30310	Aprepitant,
+T400	activeingredient 30350 30363	fosaprepitant
+T401	dose 30364 30371	150 mg,
+T402	routeofadministration 30470 30474	oral
+T403	activeingredient 30610 30620	aprepitant
+T404	co-administereddrug 30691 30716	ondansetron, granisetron,
+T405	co-administereddrug 30720 30735	hydrodolasetron
+T406	co-administereddrug 30793 30807	Dexamethasone:
+T407	activeingredient 30808 30821	Fosaprepitant
+T408	dose 30822 30828	150 mg
+T409	routeofadministration 30854 30865	intravenous
+T410	co-administereddrug 30908 30922	dexamethasone,
+T411	dose 30948 30952	8-mg
+T412	routeofadministration 30953 30957	oral
+T413	routeofadministration 31029 31033	oral
+T414	co-administereddrug 31034 31047	dexamethasone
+T415	activeingredient 31133 31146	fosaprepitant
+T416	dose 31147 31153	150-mg
+T417	routeofadministration 31154 31165	intravenous
+T418	routeofadministration 31180 31184	oral
+T419	activeingredient 31185 31195	aprepitant
+T420	dose 31207 31213	125 mg
+T421	dose 31228 31233	80 mg
+T422	frequency 31233 31237	/day
+T423	dose 31279 31284	20-mg
+T424	routeofadministration 31285 31289	oral
+T425	co-administereddrug 31290 31303	dexamethasone
+T426	routeofadministration 31322 31326	oral
+T427	co-administereddrug 31327 31340	dexamethasone
+T428	co-administereddrug 31383 31396	dexamethasone
+T429	routeofadministration 31430 31434	oral
+T430	co-administereddrug 31435 31448	dexamethasone
+T431	activeingredient 31532 31545	fosaprepitant
+T432	dose 31546 31552	115 mg
+T433	activeingredient 31565 31576	aprepitant.
+T434	co-administereddrug 31578 31597	Methylprednisolone:
+T435	routeofadministration 31601 31605	oral
+T436	activeingredient 31606 31616	aprepitant
+T437	dose 31628 31634	125 mg
+T438	dose 31648 31653	80 mg
+T439	frequency 31653 31657	/day
+T440	co-administereddrug 31695 31713	methylprednisolone
+T441	co-administereddrug 31767 31785	methylprednisolone
+T442	routeofadministration 31805 31818	intravenously
+T443	dose 31822 31828	125 mg
+T444	routeofadministration 31842 31848	orally
+T445	dose 31852 31857	40 mg
+T446	routeofadministration 31879 31890	intravenous
+T447	co-administereddrug 31891 31909	methylprednisolone
+T448	routeofadministration 31963 31967	oral
+T449	co-administereddrug 31968 31986	methylprednisolone
+T450	activeingredient 32082 32082	
+T451	dose 32083 32089	115 mg
+T452	activeingredient 32102 32113	aprepitant.
+T453	co-administereddrug 32140 32150	Docetaxel:
+T454	routeofadministration 32179 32183	oral
+T455	activeingredient 32184 32194	aprepitant
+T456	co-administereddrug 32253 32277	docetaxel. Vinorelbine:
+T457	routeofadministration 32306 32310	oral
+T458	activeingredient 32311 32321	aprepitant
+T459	co-administereddrug 32379 32390	vinorelbine
+T460	tradename 32459 32464	EMEND
+T461	routeofadministration 32942 32946	oral
+T462	activeingredient 32947 32958	aprepitant,
+T463	co-administereddrug 32959 32971	ondansetron,
+T464	co-administereddrug 32976 32989	dexamethasone
+T465	routeofadministration 33018 33022	oral
+T466	activeingredient 33240 33253	fosaprepitant
+T467	activeingredient 33257 33267	aprepitant
+T468	co-administereddrug 33295 33318	hormonal contraceptives
+T469	activeingredient 33465 33478	fosaprepitant
+T470	activeingredient 33482 33493	aprepitant.
+T471	activeingredient 33622 33635	fosaprepitant
+T472	activeingredient 33639 33650	aprepitant.
+T473	co-administereddrug 33652 33662	Midazolam:
+T474	activeingredient 33684 33694	aprepitant
+T475	activeingredient 33698 33711	fosaprepitant
+T476	co-administereddrug 33731 33740	midazolam
+T477	activeingredient 33886 33910	Fosaprepitant/Aprepitant
+T478	co-administereddrug 33931 33940	Midazolam
+T479	activeingredient 33949 33974	fosaprepitant/ aprepitant
+T480	co-administereddrug 33984 33993	Midazolam
+T481	activeingredient 34022 34035	fosaprepitant
+T482	dose 34036 34042	150 mg
+T483	routeofadministration 34053 34057	oral
+T484	dose 34058 34062	2 mg
+T485	activeingredient 34147 34160	fosaprepitant
+T486	dose 34161 34167	100 mg
+T487	routeofadministration 34178 34182	oral
+T488	dose 34183 34187	2 mg
+T489	routeofadministration 34188 34192	oral
+T490	co-administereddrug 34193 34202	midazolam
+T491	routeofadministration 34234 34238	oral
+T492	activeingredient 34239 34249	aprepitant
+T493	dose 34250 34256	125 mg
+T494	dose 34270 34275	80 mg
+T495	routeofadministration 34292 34296	oral
+T496	dose 34297 34301	2 mg
+T497	routeofadministration 34322 34326	oral
+T498	co-administereddrug 34327 34336	midazolam
+T499	routeofadministration 34416 34420	oral
+T500	activeingredient 34421 34431	aprepitant
+T501	dose 34432 34438	125 mg
+T502	dose 34452 34457	80 mg
+T503	routeofadministration 34475 34486	intravenous
+T504	dose 34487 34491	2 mg
+T505	activeingredient 34518 34528	aprepitant
+T506	routeofadministration 34554 34565	intravenous
+T507	co-administereddrug 34566 34575	midazolam
+T508	routeofadministration 34684 34688	oral
+T509	activeingredient 34689 34699	aprepitant
+T510	dose 34700 34706	125 mg
+T511	routeofadministration 34707 34718	intravenous
+T512	dose 34719 34723	2 mg
+T513	activeingredient 34743 34753	aprepitant
+T514	routeofadministration 34755 34766	intravenous
+T515	co-administereddrug 34767 34776	midazolam
+T516	co-administereddrug 34853 34862	midazolam
+T517	co-administereddrug 34969 34978	midazolam
+T518	co-administereddrug 35028 35050	alprazolam, triazolam)
+T519	activeingredient 35111 35124	fosaprepitant
+T520	activeingredient 35128 35139	aprepitant.
+T521	co-administereddrug 35160 35183	W arfarin, Tolbutamide)
+T522	co-administereddrug 35185 35194	Warfarin:
+T523	dose 35204 35210	125-mg
+T524	routeofadministration 35219 35223	oral
+T525	activeingredient 35224 35234	aprepitant
+T526	dose 35265 35270	80 mg
+T527	frequency 35270 35274	/day
+T528	co-administereddrug 35343 35351	warfarin
+T529	routeofadministration 35393 35397	oral
+T530	activeingredient 35398 35408	aprepitant
+T531	co-administereddrug 35443 35451	warfarin
+T532	co-administereddrug 35506 35514	warfarin
+T533	routeofadministration 35681 35685	oral
+T534	activeingredient 35686 35697	aprepitant.
+T535	co-administereddrug 35721 35729	warfarin
+T536	activeingredient 35870 35883	fosaprepitant
+T537	co-administereddrug 35915 35927	Tolbutamide:
+T538	routeofadministration 35928 35932	Oral
+T539	activeingredient 35933 35944	aprepitant,
+T540	dose 35959 35965	125 mg
+T541	dose 35979 35984	80 mg
+T542	frequency 35984 35988	/day
+T543	co-administereddrug 36027 36038	tolbutamide
+T544	co-administereddrug 36111 36122	tolbutamide
+T545	dose 36123 36129	500 mg
+T546	routeofadministration 36147 36153	orally
+T547	routeofadministration 36206 36210	oral
+T548	activeingredient 36211 36221	aprepitant
+T549	activeingredient 36303 36324	Aprepitant Aprepitant
+T550	activeingredient 36383 36396	fosaprepitant
+T551	activeingredient 36400 36410	aprepitant
+T552	activeingredient 36501 36512	aprepitant.
+T553	activeingredient 36787 36800	fosaprepitant
+T554	activeingredient 36804 36814	aprepitant
+T555	co-administereddrug 36852 36946	ketoconazole, itraconazole, nefazodone, troleandomycin, clarithromycin, ritonavir, nelfinavir)
+T556	activeingredient 37091 37102	aprepitant,
+T557	activeingredient 37171 37181	Aprepitant
+T558	activeingredient 37240 37253	fosaprepitant
+T559	activeingredient 37257 37267	aprepitant
+T560	co-administereddrug 37428 37441	Ketoconazole:
+T561	dose 37457 37463	125-mg
+T562	routeofadministration 37472 37476	oral
+T563	activeingredient 37477 37487	aprepitant
+T564	dose 37537 37543	400 mg
+T565	frequency 37543 37547	/day
+T566	co-administereddrug 37551 37564	ketoconazole,
+T567	activeingredient 37603 37613	aprepitant
+T568	activeingredient 37680 37690	aprepitant
+T569	activeingredient 37753 37766	fosaprepitant
+T570	activeingredient 37770 37780	aprepitant
+T571	co-administereddrug 37845 37854	Rifampin:
+T572	dose 37870 37876	375-mg
+T573	routeofadministration 37885 37889	oral
+T574	activeingredient 37890 37900	aprepitant
+T575	dose 37950 37956	600 mg
+T576	frequency 37956 37960	/day
+T577	co-administereddrug 37964 37973	rifampin,
+T578	activeingredient 38010 38020	aprepitant
+T579	activeingredient 38138 38151	fosaprepitant
+T580	activeingredient 38155 38165	aprepitant
+T581	co-administereddrug 38302 38312	Diltiazem:
+T582	routeofadministration 38375 38386	intravenous
+T583	dose 38400 38406	100 mg
+T584	activeingredient 38410 38423	fosaprepitant
+T585	co-administereddrug 38429 38438	diltiazem
+T586	dose 38439 38445	120 mg
+T587	activeingredient 38496 38506	aprepitant
+T588	co-administereddrug 38538 38547	diltiazem
+T589	activeingredient 38698 38711	fosaprepitant
+T590	activeingredient 38758 38759	]
+T591	activeingredient 38886 38886	
+T592	activeingredient 38920 38934	fosaprepitant]
+T593	co-administereddrug 39095 39104	diltiazem
+T594	activeingredient 39150 39160	aprepitant
+T595	dose 39211 39217	230 mg
+T596	co-administereddrug 39251 39260	diltiazem
+T597	dose 39261 39267	120 mg
+T598	frequency 39268 39281	3 times daily
+T599	activeingredient 39327 39337	aprepitant
+T600	co-administereddrug 39382 39391	diltiazem
+T601	co-administereddrug 39544 39553	diltiazem
+T602	co-administereddrug 39562 39573	Paroxetine:
+T603	frequency 39594 39604	once daily
+T604	activeingredient 39614 39625	aprepitant,
+T605	dose 39664 39669	85 mg
+T606	dose 39673 39679	170 mg
+T607	co-administereddrug 39713 39723	paroxetine
+T608	dose 39724 39729	20 mg
+T609	frequency 39730 39741	once daily,
+T610	activeingredient 39831 39841	aprepitant
+T611	co-administereddrug 39846 39857	paroxetine.
+T612	activeingredient 39989 40002	fosaprepitant
+T613	activeingredient 40007 40018	aprepitant,
+T614	activeingredient 40054 40064	aprepitant
+T615	routeofadministration 40089 40093	oral
+T616	activeingredient 40112 40123	aprepitant.
+T617	routeofadministration 40166 40170	oral
+T618	activeingredient 40180 40190	aprepitant
+T619	dose 40197 40207	1000 mg/kg
+T620	frequency 40208 40219	twice daily
+T621	auc 40241 40263	31.3 mcg&#x2022;hr/mL,
+T622	dose 40359 40367	25 mg/kg
+T623	frequency 40367 40371	/day
+T624	auc 40393 40415	26.9 mcg&#x2022;hr/mL,
+T625	activeingredient 40547 40558	aprepitant.
+T626	activeingredient 41071 41081	Aprepitant
+T627	activeingredient 41315 41325	aprepitant
+T628	activeingredient 41384 41394	aprepitant
+T629	tradename 41624 41629	EMEND
+T630	routeofadministration 41846 41850	oral
+T631	activeingredient 41851 41862	aprepitant,
+T632	activeingredient 42379 42392	fosaprepitant
+T633	activeingredient 42396 42406	aprepitant
+T634	activeingredient 42562 42575	fosaprepitant
+T635	activeingredient 42579 42590	aprepitant.
+T636	activeingredient 42617 42630	fosaprepitant
+T637	routeofadministration 42638 42642	oral
+T638	activeingredient 42643 42653	aprepitant
+T639	activeingredient 42784 42795	aprepitant,
+T640	activeingredient 42839 42849	Aprepitant
+T641	tradename 42942 42947	EMEND
+T642	activeingredient 42976 42989	fosaprepitant
+T643	dose 42990 42996	150 mg
+T644	routeofadministration 43022 43026	oral
+T645	activeingredient 43027 43038	aprepitant,
+T646	dose 43039 43045	125 mg
+T647	dose 43049 43055	80 mg.
+T648	tradename 43185 43190	EMEND
+T649	nanoparticle 43192 43218	fosaprepitant dimeglumine)
+T650	activeingredient 43270 43281	aprepitant,
+T651	nanoparticle 43662 43687	Fosaprepitant dimeglumine
+T652	molecularweight 43756 43764	1004.83.
+T653	tradename 43797 43802	EMEND
+T654	activeingredient 43845 43855	aprepitant
+T655	inactiveingredient 43867 43889	polysorbate 80 (PS80),
+T656	routeofadministration 43909 43922	intravenously
+T657	tradename 44202 44207	EMEND
+T658	dose 44222 44228	115 mg
+T659	routeofadministration 44233 44244	intravenous
+T660	dose 44269 44275	188 mg
+T661	nanoparticle 44279 44304	fosaprepitant dimeglumine
+T662	dose 44319 44325	115 mg
+T663	activeingredient 44329 44342	fosaprepitant
+T664	inactiveingredient 44393 44409	edetate disodium
+T665	inactiveingredient 44421 44435	polysorbate 80
+T666	inactiveingredient 44447 44464	lactose anhydrous
+T667	inactiveingredient 44477 44493	sodium hydroxide
+T668	inactiveingredient 44501 44518	hydrochloric acid
+T669	tradename 44553 44558	EMEND
+T670	dose 44573 44579	150 mg
+T671	routeofadministration 44584 44595	intravenous
+T672	dose 44620 44628	245.3 mg
+T673	nanoparticle 44632 44657	fosaprepitant dimeglumine
+T674	dose 44672 44678	150 mg
+T675	activeingredient 44682 44695	fosaprepitant
+T676	inactiveingredient 44746 44762	edetate disodium
+T677	inactiveingredient 44774 44788	polysorbate 80
+T678	inactiveingredient 44798 44815	lactose anhydrous
+T679	inactiveingredient 44826 44842	sodium hydroxide
+T680	inactiveingredient 44850 44867	hydrochloric acid
+T681	nanoparticle 44889 44914	Fosaprepitant dimeglumine
+T682	activeingredient 44948 44962	fosaprepitant.
+T683	activeingredient 44990 45004	Fosaprepitant,
+T684	activeingredient 45018 45029	aprepitant,
+T685	routeofadministration 45048 45061	intravenously
+T686	activeingredient 45086 45097	aprepitant,
+T687	activeingredient 45177 45190	fosaprepitant
+T688	dose 45344 45350	188 mg
+T689	nanoparticle 45354 45379	fosaprepitant dimeglumine
+T690	dose 45395 45401	115-mg
+T691	activeingredient 45402 45415	fosaprepitant
+T692	activeingredient 45430 45441	aprepitant,
+T693	dose 45526 45534	245.3 mg
+T694	nanoparticle 45538 45563	fosaprepitant dimeglumine
+T695	dose 45579 45585	150-mg
+T696	activeingredient 45586 45599	fosaprepitant
+T697	activeingredient 45614 45625	aprepitant,
+T698	activeingredient 45719 45732	Fosaprepitant
+T699	activeingredient 45749 45759	aprepitant
+T700	activeingredient 45821 45843	aprepitant. Aprepitant
+T701	activeingredient 45936 45946	Aprepitant
+T702	activeingredient 46123 46133	Aprepitant
+T703	activeingredient 46335 46345	aprepitant
+T704	activeingredient 46466 46476	aprepitant
+T705	routeofadministration 46819 46823	oral
+T706	activeingredient 46824 46834	aprepitant
+T707	dose 46844 46849	10 mg
+T708	dose 46857 46862	30 mg
+T709	dose 46870 46876	100 mg
+T710	dose 46886 46892	300 mg
+T711	frequency 46899 46909	once daily
+T712	duration 46914 46921	14 days
+T713	activeingredient 46967 46977	aprepitant
+T714	activeingredient 47138 47148	aprepitant
+T715	routeofadministration 47267 47271	oral
+T716	activeingredient 47272 47282	aprepitant
+T717	activeingredient 47328 47338	aprepitant
+T718	activeingredient 47681 47691	aprepitant
+T719	dose 47826 47832	200-mg
+T720	activeingredient 47842 47855	fosaprepitant
+T721	activeingredient 47914 47924	Aprepitant
+T722	activeingredient 47931 47944	Fosaprepitant
+T723	routeofadministration 47980 47991	intravenous
+T724	dose 47992 47998	115-mg
+T725	activeingredient 48007 48020	fosaprepitant
+T726	activeingredient 48106 48116	aprepitant
+T727	auc 48121 48150	31.7 ( 14.3) mcg&#x2022;hr/mL
+T728	activeingredient 48172 48182	aprepitant
+T729	cmax 48208 48228	3.27 ( 1.16) mcg/mL.
+T730	activeingredient 48238 48248	aprepitant
+T731	dose 48315 48321	125-mg
+T732	routeofadministration 48322 48326	oral
+T733	activeingredient 48327 48337	aprepitant
+T734	dose 48351 48357	115-mg
+T735	routeofadministration 48358 48369	intravenous
+T736	activeingredient 48370 48383	fosaprepitant
+T737	activeingredient 48608 48618	Aprepitant
+T738	dose 48629 48635	125-mg
+T739	routeofadministration 48636 48640	Oral
+T740	activeingredient 48641 48651	Aprepitant
+T741	dose 48656 48662	115-mg
+T742	routeofadministration 48663 48674	Intravenous
+T743	activeingredient 48676 48689	Fosaprepitant
+T744	activeingredient 48728 48740	A prep itant
+T745	dose 48795 48801	125-mg
+T746	routeofadministration 48802 48806	Oral
+T747	activeingredient 48807 48817	Aprepitant
+T748	dose 48818 48824	115-mg
+T749	routeofadministration 48825 48827	IV
+T750	activeingredient 48828 48841	Fosaprepitant
+T751	routeofadministration 48895 48906	intravenous
+T752	dose 48907 48913	150-mg
+T753	activeingredient 48922 48935	fosaprepitant
+T754	activeingredient 49022 49032	aprepitant
+T755	auc 49037 49068	37.38 ( 14.75) mcg&#x2022;hr/mL
+T756	activeingredient 49090 49100	aprepitant
+T757	cmax 49126 49146	4.15 ( 1.15) mcg/mL.
+T758	activeingredient 49161 49174	Fosaprepitant
+T759	activeingredient 49199 49221	aprepitant. Aprepitant
+T760	volumeofdistribution 49350 49354	70 L
+T761	activeingredient 49367 49377	Aprepitant
+T762	activeingredient 49513 49526	Fosaprepitant
+T763	activeingredient 49552 49562	aprepitant
+T764	activeingredient 49676 49689	fosaprepitant
+T765	activeingredient 49740 49750	aprepitant
+T766	activeingredient 49878 49891	fosaprepitant
+T767	activeingredient 49895 49905	aprepitant
+T768	activeingredient 49986 49999	fosaprepitant
+T769	routeofadministration 50013 50026	intravenously
+T770	activeingredient 50052 50062	aprepitant
+T771	activeingredient 50113 50123	Aprepitant
+T772	activeingredient 50216 50226	aprepitant
+T773	activeingredient 50469 50479	aprepitant
+T774	routeofadministration 50575 50579	oral
+T775	dose 50580 50586	300-mg
+T776	activeingredient 50601 50612	aprepitant,
+T777	activeingredient 50698 50709	aprepitant,
+T778	routeofadministration 50826 50837	intravenous
+T779	dose 50838 50844	100-mg
+T780	activeingredient 50859 50872	fosaprepitant
+T781	activeingredient 50961 50971	Aprepitant
+T782	activeingredient 51011 51021	aprepitant
+T783	plasmahalflife 51106 51120	9 to 13 hours.
+T784	routeofadministration 51431 51435	oral
+T785	activeingredient 51471 51482	aprepitant,
+T786	activeingredient 51581 51591	aprepitant
+T787	dose 51851 51857	125-mg
+T788	activeingredient 51866 51876	aprepitant
+T789	dose 51890 51895	80 mg
+T790	frequency 51896 51906	once daily
+T791	activeingredient 51946 51956	aprepitant
+T792	routeofadministration 52290 52294	oral
+T793	activeingredient 52330 52341	aprepitant,
+T794	activeingredient 52793 52803	aprepitant
+T795	activeingredient 53012 53025	Fosaprepitant
+T796	activeingredient 53147 53160	fosaprepitant
+T797	activeingredient 53164 53175	aprepitant.
+T798	dose 53213 53219	125-mg
+T799	routeofadministration 53228 53232	oral
+T800	activeingredient 53233 53243	aprepitant
+T801	dose 53257 53262	80 mg
+T802	activeingredient 53376 53386	aprepitant
+T803	activeingredient 53581 53591	aprepitant
+T804	dose 54057 54063	240-mg
+T805	routeofadministration 54072 54076	oral
+T806	activeingredient 54077 54087	aprepitant
+T807	activeingredient 54390 54400	aprepitant
+T808	activeingredient 54650 54660	aprepitant
+T809	activeingredient 54751 54761	aprepitant
+T810	activeingredient 55043 55054	aprepitant;
+T811	routeofadministration 55680 55684	oral
+T812	dose 55704 55722	0.05 to 1000 mg/kg
+T813	frequency 55723 55735	twice daily.
+T814	activeingredient 55785 55795	aprepitant
+T815	auc 55867 55889	19.6 mcg&#x2022;hr/mL)
+T816	dose 55917 55923	125 mg
+T817	frequency 55923 55928	/day.
+T818	activeingredient 55944 55954	aprepitant
+T819	dose 55967 55982	5 to 1000 mg/kg
+T820	frequency 55983 55994	twice daily
+T821	dose 56152 56167	5 to 1000 mg/kg
+T822	frequency 56168 56179	twice daily
+T823	dose 56250 56267	125 to 1000 mg/kg
+T824	frequency 56268 56280	twice daily.
+T825	routeofadministration 56349 56353	oral
+T826	dose 56373 56390	2.5 to 2000 mg/kg
+T827	frequency 56390 56395	/day.
+T828	activeingredient 56527 56537	aprepitant
+T829	dose 56569 56586	125 and 500 mg/kg
+T830	frequency 56586 56590	/day
+T831	activeingredient 56659 56685	fosaprepitant. Aprepitant
+T832	activeingredient 56690 56703	fosaprepitant
+T833	activeingredient 56935 56949	Fosaprepitant,
+T834	routeofadministration 56968 56982	intravenously,
+T835	activeingredient 57007 57018	aprepitant.
+T836	activeingredient 57059 57072	fosaprepitant
+T837	activeingredient 57077 57088	aprepitant,
+T838	activeingredient 57123 57133	aprepitant
+T839	routeofadministration 57158 57162	oral
+T840	activeingredient 57181 57192	aprepitant.
+T841	routeofadministration 57193 57197	Oral
+T842	activeingredient 57198 57208	aprepitant
+T843	dose 57341 57351	1000 mg/kg
+T844	frequency 57352 57363	twice daily
+T845	activeingredient 57541 57555	Fosaprepitant,
+T846	activeingredient 57569 57580	aprepitant,
+T847	routeofadministration 57599 57612	intravenously
+T848	activeingredient 57637 57648	aprepitant.
+T849	routeofadministration 57650 57654	Oral
+T850	activeingredient 57673 57683	aprepitant
+T851	co-administereddrug 57704 57715	ondansetron
+T852	co-administereddrug 57720 57733	dexamethasone
+T853	activeingredient 57735 57745	aprepitant
+T854	indication 57773 57818	prevent acute and delayed nausea and vomiting
+T855	indication 57835 57865	highly emetogenic chemotherapy
+T856	indication 57979 58015	Highly Emetogenic Chemotherapy (HEC)
+T857	tradename 58016 58021	EMEND
+T858	dose 58036 58042	115 mg
+T859	tradename 58068 58074	EMEND)
+T860	activeingredient 58076 58089	Fosaprepitant
+T861	dose 58090 58096	115 mg
+T862	routeofadministration 58097 58108	intravenous
+T863	dose 58156 58162	125 mg
+T864	routeofadministration 58163 58167	oral
+T865	activeingredient 58168 58178	aprepitant
+T866	routeofadministration 58268 58272	oral
+T867	activeingredient 58273 58284	aprepitant.
+T868	activeingredient 58373 58383	aprepitant
+T869	co-administereddrug 58501 58510	cisplatin
+T870	dose 58511 58523	&gt;50 mg/m2
+T871	co-administereddrug 58530 58539	cisplatin
+T872	dose 58547 58558	80.2 mg/m2)
+T873	activeingredient 58615 58625	aprepitant
+T874	activeingredient 58741 58759	aprepitant-treated
+T875	activeingredient 58989 58999	aprepitant
+T876	indication 59311 59341	Highly Emetogenic Chemotherapy
+T877	activeingredient 59380 59390	Aprepitant
+T878	activeingredient 59399 59409	Aprepitant
+T879	dose 59410 59416	125 mg
+T880	routeofadministration 59418 59424	orally
+T881	dose 59425 59430	80 mg
+T882	routeofadministration 59431 59437	orally
+T883	dose 59438 59443	80 mg
+T884	routeofadministration 59444 59450	orally
+T885	co-administereddrug 59457 59470	Dexamethasone
+T886	dose 59471 59476	12 mg
+T887	routeofadministration 59477 59483	orally
+T888	dose 59484 59488	8 mg
+T889	routeofadministration 59489 59495	orally
+T890	dose 59496 59500	8 mg
+T891	routeofadministration 59501 59507	orally
+T892	dose 59508 59512	8 mg
+T893	routeofadministration 59513 59519	orally
+T894	co-administereddrug 59603 59616	Dexamethasone
+T895	dose 59617 59622	20 mg
+T896	routeofadministration 59623 59629	orally
+T897	dose 59630 59634	8 mg
+T898	routeofadministration 59635 59641	orally
+T899	dose 59655 59659	8 mg
+T900	routeofadministration 59660 59666	orally
+T901	frequency 59667 59678	twice daily
+T902	dose 59680 59684	8 mg
+T903	routeofadministration 59685 59691	orally
+T904	frequency 59692 59703	twice daily
+T905	co-administereddrug 59843 59854	Ondansetron
+T906	dose 59855 59860	32 mg
+T907	routeofadministration 59861 59865	I.V.
+T908	activeingredient 59901 59912	aprepitant.
+T909	co-administereddrug 60025 60036	ondansetron
+T910	activeingredient 60126 60136	aprepitant
+T911	activeingredient 60291 60301	aprepitant
+T912	routeofadministration 60502 60506	oral
+T913	activeingredient 60507 60517	aprepitant
+T914	activeingredient 62002 62012	Aprepitant
+T915	activeingredient 63256 63266	Aprepitant
+T916	activeingredient 64664 64674	aprepitant
+T917	activeingredient 64886 64896	aprepitant
+T918	activeingredient 65105 65115	aprepitant
+T919	activeingredient 65178 65188	aprepitant
+T920	indication 65333 65363	Highly Emetogenic Chemotherapy
+T921	activeingredient 65431 65441	Aprepitant
+T922	activeingredient 65482 65492	Aprepitant
+T923	activeingredient 66205 66215	aprepitant
+T924	activeingredient 66742 66752	Aprepitant
+T925	activeingredient 66802 66812	Aprepitant
+T926	activeingredient 66839 66849	Aprepitant
+T927	indication 67248 67278	Highly Emetogenic Chemotherapy
+T928	tradename 67350 67355	EMEND
+T929	dose 67370 67376	150 mg
+T930	tradename 67401 67413	EMEND) EMEND
+T931	dose 67428 67434	150 mg
+T932	tradename 67548 67553	EMEND
+T933	indication 67562 67595	prevention of nausea and vomiting
+T934	indication 67607 67611	HEC.
+T935	tradename 67679 67684	EMEND
+T936	dose 67699 67705	150 mg
+T937	routeofadministration 67741 67745	oral
+T938	activeingredient 67746 67756	aprepitant
+T939	indication 67819 67849	highly emetogenic chemotherapy
+T940	dose 67883 67900	&#x2265;70 mg/m2)
+T941	tradename 68007 68012	EMEND
+T942	activeingredient 68035 68046	aprepitant,
+T943	indication 68339 68342	HEC
+T944	indication 68398 68428	Highly Emetogenic Chemotherapy
+T945	activeingredient 68466 68479	Fosaprepitant
+T946	activeingredient 68489 68502	Fosaprepitant
+T947	dose 68503 68509	150 mg
+T948	routeofadministration 68510 68523	intravenously
+T949	co-administereddrug 68541 68554	Dexamethasone
+T950	dose 68555 68560	12 mg
+T951	routeofadministration 68561 68567	orally
+T952	dose 68568 68572	8 mg
+T953	routeofadministration 68573 68579	orally
+T954	dose 68581 68585	8 mg
+T955	routeofadministration 68586 68592	orally
+T956	frequency 68593 68604	twice daily
+T957	dose 68606 68610	8 mg
+T958	routeofadministration 68611 68617	orally
+T959	frequency 68618 68629	twice daily
+T960	activeingredient 68689 68699	Aprepitant
+T961	activeingredient 68709 68719	Aprepitant
+T962	dose 68720 68726	125 mg
+T963	routeofadministration 68727 68733	orally
+T964	dose 68734 68739	80 mg
+T965	routeofadministration 68740 68746	orally
+T966	dose 68748 68753	80 mg
+T967	routeofadministration 68754 68760	orally
+T968	co-administereddrug 68767 68780	Dexamethasone
+T969	dose 68781 68786	12 mg
+T970	routeofadministration 68787 68793	orally
+T971	dose 68794 68798	8 mg
+T972	routeofadministration 68799 68805	orally
+T973	dose 68807 68811	8 mg
+T974	routeofadministration 68812 68818	orally
+T975	dose 68819 68823	8 mg
+T976	routeofadministration 68824 68830	orally
+T977	co-administereddrug 69029 69040	Ondansetron
+T978	dose 69041 69046	32 mg
+T979	routeofadministration 69047 69051	I.V.
+T980	tradename 69086 69091	EMEND
+T981	co-administereddrug 69221 69232	ondansetron
+T982	activeingredient 69289 69302	fosaprepitant
+T983	dose 69303 69309	150 mg
+T984	routeofadministration 69448 69452	oral
+T985	activeingredient 69453 69463	aprepitant
+T986	indication 70046 70076	Highly Emetogenic Chemotherapy
+T987	activeingredient 70139 70152	Fosaprepitant
+T988	activeingredient 70178 70188	Aprepitant
+T989	indication 70863 70903	Moderately Emetogenic Chemotherapy (MEC)
+T990	activeingredient 71011 71021	aprepitant
+T991	indication 71114 71148	moderately emetogenic chemotherapy
+T992	co-administereddrug 71171 71187	cyclophosphamide
+T993	dose 71188 71203	750-1500 mg/m2;
+T994	co-administereddrug 71207 71223	cyclophosphamide
+T995	dose 71224 71238	500-1500 mg/m2
+T996	co-administereddrug 71243 71254	doxorubicin
+T997	dose 71256 71273	&#x2264;60 mg/m2)
+T998	co-administereddrug 71277 71287	epirubicin
+T999	dose 71289 71307	&#x2264;100 mg/m2)
+T1000	co-administereddrug 71359 71375	cyclophosphamide
+T1001	co-administereddrug 71378 71389	doxorubicin
+T1002	co-administereddrug 71403 71419	cyclophosphamide
+T1003	co-administereddrug 71422 71432	epirubicin
+T1004	co-administereddrug 71435 71447	fluorouracil
+T1005	activeingredient 71513 71523	aprepitant
+T1006	activeingredient 71647 71665	aprepitant-treated
+T1007	activeingredient 71886 71896	aprepitant
+T1008	indication 72255 72289	Moderately Emetogenic Chemotherapy
+T1009	activeingredient 72321 72331	Aprepitant
+T1010	activeingredient 72341 72351	Aprepitant
+T1011	dose 72352 72358	125 mg
+T1012	routeofadministration 72359 72366	orally*
+T1013	dose 72368 72373	80 mg
+T1014	routeofadministration 72374 72380	orally
+T1015	dose 72381 72386	80 mg
+T1016	routeofadministration 72387 72393	orally
+T1017	co-administereddrug 72394 72407	Dexamethasone
+T1018	dose 72408 72413	12 mg
+T1019	routeofadministration 72414 72428	orally&#x2022;
+T1020	co-administereddrug 72439 72450	Ondansetron
+T1021	dose 72451 72455	8 mg
+T1022	routeofadministration 72456 72462	orally
+T1023	co-administereddrug 72507 72520	Dexamethasone
+T1024	dose 72521 72526	20 mg
+T1025	routeofadministration 72527 72533	orally
+T1026	co-administereddrug 72544 72555	Ondansetron
+T1027	dose 72556 72560	8 mg
+T1028	routeofadministration 72561 72567	orally
+T1029	dose 72578 72582	8 mg
+T1030	routeofadministration 72583 72589	orally
+T1031	frequency 72590 72602	twice daily
+T1032	dose 72603 72607	8 mg
+T1033	routeofadministration 72608 72614	orally
+T1034	frequency 72615 72627	twice daily
+T1035	co-administereddrug 72745 72758	Dexamethasone
+T1036	co-administereddrug 72828 72839	Ondansetron
+T1037	co-administereddrug 72939 72950	ondansetron
+T1038	routeofadministration 72985 72989	oral
+T1039	activeingredient 72990 73000	aprepitant
+T1040	activeingredient 74025 74035	Aprepitant
+T1041	activeingredient 74666 74676	aprepitant
+T1042	activeingredient 75293 75303	aprepitant
+T1043	activeingredient 75838 75848	aprepitant
+T1044	activeingredient 76284 76294	aprepitant
+T1045	activeingredient 76476 76486	aprepitant
+T1046	routeofadministration 76641 76643	IV
+T1047	routeofadministration 76770 76772	IV
+T1048	dose 76774 76789	&lt;1500 mg/m2)
+T1049	routeofadministration 76805 76807	IV
+T1050	dose 76809 76820	&gt;1 g/m2)
+T1051	activeingredient 76878 76888	aprepitant
+T1052	activeingredient 77107 77124	aprepitanttreated
+T1053	activeingredient 77339 77349	aprepitant
+T1054	tradename 77596 77601	EMEND
+T1055	activeingredient 78032 78042	Aprepitant
+T1056	activeingredient 78426 78436	aprepitant
+T1057	activeingredient 78619 78629	aprepitant
+T1058	activeingredient 78886 78896	aprepitant
+T1059	activeingredient 79177 79187	aprepitant
+T1060	activeingredient 79442 79452	aprepitant
+T1061	activeingredient 79799 79809	aprepitant
+T1062	dose 80092 80098	115-mg
+T1063	dose 80235 80241	150-mg
+T1064	routeofadministration 80435 80446	intravenous
+T1065	tradename 80692 80697	EMEND
+T1066	tradename 80828 80833	EMEND
+T1067	adversereaction 80857 80876	Allergic reactions,
+T1068	adversereaction 80929 80976	hives, rash, itching, redness of the face/skin
+T1069	adversereaction 80991 81029	difficulty in breathing or swallowing,
+T1070	tradename 81106 81111	EMEND
+T1071	adversereaction 81167 81185	allergic reaction.
+T1072	adversereaction 81199 81220	severe skin reactions
+T1073	adversereaction 81264 81286	infusion site reaction
+T1074	adversereaction 81295 81317	erythema, edema, pain,
+T1075	adversereaction 81321 81337	thrombophlebitis
+T1076	tradename 81435 81440	EMEND
+T1077	co-administereddrug 81676 81684	warfarin
+T1078	activeingredient 81838 81851	fosaprepitant
+T1079	tradename 81901 81906	EMEND
+T1080	co-administereddrug 81948 81972	hormonal contraceptives.
+T1081	activeingredient 82120 82133	fosaprepitant
+T1082	activeingredient 82137 82148	aprepitant.
+T1083	company 82169 82199	Merck Sharp &amp; Dohme Corp.,
+T1084	company 82216 82238	MERCK &amp; CO., INC.,
+T1085	company 82294 82320	DSM Pharmaceuticals, Inc.,
+T1086	u.s.patent 82404 82424	5,512,570; 5,691,336
+T1087	company 82448 82478	Merck Sharp &amp; Dohme Corp.,
+T1088	company 82495 82516	Merck &amp; Co., Inc.

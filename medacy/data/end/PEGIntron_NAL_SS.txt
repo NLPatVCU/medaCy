@@ -1,0 +1,1004 @@
+untitled
+   1
+ HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use PEGINTRON safely and effectively.
+See full prescribing information for PEGINTRON.
+ PEGINTRON (peginterferon alfa-2b) injection, for subcutaneous use Initial U.S. Approval: 2001
+  WARNING: RISK OF SERIOUS DISORDERS AND RIBAVIRIN-ASSOCIATED EFFECTS
+ See full prescribing information for complete boxed warning.
+&#x2022; May cause or aggravate fatal or life-threatening
+ neuropsychiatric, autoimmune, ischemic, and infectious disorders.
+Monitor closely and withdraw therapy with persistently severe or worsening signs or symptoms of the above disorders.
+(5.2)
+ Use with Ribavirin &#x2022; Ribavirin may cause birth defects and fetal death; avoid
+ pregnancy in female patients and female partners of male patients.
+(5.1)
+   ----------------------------INDICATIONS AND USAGE ----------------------------  PegIntron is an antiviral indicated for treatment of Chronic Hepatitis C (CHC) in patients with compensated liver disease.
+(1.1)   ----------------------- DOSAGE AND ADMINISTRATION -----------------------  &#x2022; PegIntron is administered by subcutaneous injection.
+(2)   PegIntron
+ Dose (Adults)*
+ PegIntron Dose (Pediatric Patients)
+ REBETOL Dose* (Adults)
+ REBETOL Dose (Pediatric Patients)
+ PegIntron Combination Therapy (2.1)
+ 1.5 mcg/kg/ week
+ 60 mcg/m2/ week
+  800-1400 mg orally daily with food
+ 15 mg/kg/day orally with food in 2 divided doses
+ *Refer to Tables 1-7 of the Full Prescribing Information.
+&#x2022; Dose reduction is recommended in patients experiencing certain
+ adverse reactions or renal dysfunction.
+(2.3, 2.5)   --------------------- DOSAGE FORMS AND STRENGTHS ---------------------  Injection: 50 mcg per 0.5 mL, 80 mcg per 0.5 mL, 120 mcg per 0.5 mL, 150 mcg per 0.5 mL in single-use vial (with 1.25 mL diluent) and single-use pre-filled pens (3)   ------------------------------- CONTRAINDICATIONS -------------------------------  &#x2022; Known hypersensitivity reactions, such as urticaria, angioedema,
+ bronchoconstriction, anaphylaxis, Stevens-Johnson syndrome, and toxic epidermal necrolysis to interferon alpha or any other product component.
+(4)
+ &#x2022; Autoimmune hepatitis.
+(4) &#x2022; Hepatic decompensation (Child-Pugh score greater than 6 [class B
+ and C]) in cirrhotic CHC patients before or during treatment.
+(4) Additional contraindications for combination therapy with ribavirin: &#x2022; Pregnant women and men whose female partners are pregnant.
+(4,
+ 8.1) &#x2022; Hemoglobinopathies (e.g., thalassemia major, sickle-cell anemia).
+ (4) &#x2022; Creatinine clearance less than 50 mL/min.
+(4)   ----------------------- WARNINGS AND PRECAUTIONS ------------------------  &#x2022; Birth defects and fetal death with ribavirin: Patients must have a
+ negative pregnancy test prior to therapy, use at least 2 forms of contraception, and undergo monthly pregnancy tests.
+(5.1)
+  Patients exhibiting the following conditions should be closely monitored and may require dose reduction or discontinuation of therapy:
+ &#x2022; Hemolytic anemia with ribavirin.
+(5.1) &#x2022; Neuropsychiatric events.
+(5.2) &#x2022; History of significant or unstable cardiac disease.
+(5.3) &#x2022; Hypothyroidism, hyperthyroidism, hyperglycemia, diabetes mellitus
+ that cannot be effectively treated by medication.
+(5.4) &#x2022; New or worsening ophthalmologic disorders.
+(5.5) &#x2022; Ischemic and hemorrhagic cerebrovascular events.
+(5.6) &#x2022; Severe decreases in neutrophil or platelet counts.
+(5.7) &#x2022; History of autoimmune disorders.
+(5.8) &#x2022; Pancreatitis and ulcerative or hemorrhagic/ischemic colitis and
+ pancreatitis.
+(5.9, 5.10) &#x2022; Pulmonary infiltrates or pulmonary function impairment.
+(5.11) &#x2022; Child-Pugh score greater than 6 (class B and C).
+(4, 5.12) &#x2022; Increased creatinine levels in patients with renal insufficiency.
+ (5.13) &#x2022; Serious, acute hypersensitivity reactions and cutaneous eruptions.
+ (5.14)  &#x2022; Dental/periodontal disorders reported with combination therapy.
+ (5.16) &#x2022; Hypertriglyceridemia may result in pancreatitis (e.g., triglycerides
+ greater than 1000 mg/dL).
+(5.17) &#x2022; Weight loss and growth inhibition reported during combination
+ therapy in pediatric patients.
+Long-term growth inhibition (height) reported in some patients.
+(5.18)
+ &#x2022; Peripheral neuropathy when used in combination with telbivudine.
+(5.19)
+    ------------------------------ ADVERSE REACTIONS ------------------------------  Most common adverse reactions (greater than 40%) in adult patients receiving either PegIntron or PegIntron/REBETOL are injection site inflammation/reaction, fatigue/asthenia, headache, rigors, fevers, nausea, myalgia and anxiety/emotional lability/irritability (6.1).
+Most common adverse reactions (greater than 25%) in pediatric patients receiving PegIntron/REBETOL are pyrexia, headache, neutropenia, fatigue, anorexia, injection-site erythema, vomiting (6.1).
+ To report SUSPECTED ADVERSE REACTIONS, contact Schering Corporation, a subsidiary of Merck &amp; Co., Inc., at 1-800-526-4099 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+  ------------------------------- DRUG INTERACTIONS -------------------------------  &#x2022; Drug metabolized by CYP450: Caution with drugs metabolized by
+ CYP2C8/9 (e.g., warfarin, phenytoin) or CYP2D6 (e.g., flecainide).
+(7.1)
+ &#x2022; Methadone: Monitor for increased narcotic effect.
+(7.2) &#x2022; Nucleoside analogues: Closely monitor for toxicities.
+ Discontinue
+ nucleoside reverse transcriptase inhibitors or reduce dose or discontinue interferon, ribavirin, or both with worsening toxicities.
+(7.3)
+ &#x2022; Didanosine: Concurrent use with REBETOL is not recommended.
+(7.3)
+   ----------------------- USE IN SPECIFIC POPULATIONS -----------------------  &#x2022; Ribavirin Pregnancy Registry (8.1) &#x2022; Pediatrics: safety and efficacy in pediatrics less than 3 years old
+ have not been established.
+(8.4) &#x2022; Geriatrics: neuropsychiatric, cardiac, pulmonary, GI, and systemic
+ (flu-like) adverse reactions may be more severe.
+(8.5) &#x2022; Organ transplant: safety and efficacy have not been studied.
+(8.6) &#x2022; HIV or HBV co-infection: safety and efficacy have not been
+ established.
+(8.7)  See 17 for PATIENT COUNSELING INFORMATION and Medication Guide.
+ Revised: 01/2015
+      2
+ FULL PRESCRIBING INFORMATION: CONTENTS*  WARNING: RISK OF SERIOUS DISORDERS AND RIBAVIRIN-ASSOCIATED EFFECTS 1 INDICATIONS AND USAGE
+ 1.1 Chronic Hepatitis C (CHC) 2 DOSAGE AND ADMINISTRATION
+ 2.1 PegIntron Combination Therapy 2.2 PegIntron Monotherapy 2.3 Dose Reduction 2.4 Discontinuation of Dosing 2.5 Renal Function 2.6 Preparation and Administration
+ 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 Use with Ribavirin  5.2 Neuropsychiatric Events 5.3 Cardiovascular Events 5.4 Endocrine Disorders 5.5 Ophthalmologic Disorders 5.6 Cerebrovascular Disorders 5.7 Bone Marrow Toxicity 5.8 Autoimmune Disorders 5.9 Pancreatitis 5.10 Colitis 5.11 Pulmonary Disorders 5.12 Hepatic Failure 5.13 Patients with Renal Insufficiency 5.14 Hypersensitivity 5.15 Laboratory Tests 5.16 Dental and Periodontal Disorders 5.17 Triglycerides 5.18 Impact on Growth - Pediatric Use 5.19 Peripheral Neuropathy
+ 6 ADVERSE REACTIONS 6.1 Clinical Trials Experience 6.2 Immunogenicity 6.3 Postmarketing Experience
+ 7 DRUG INTERACTIONS 7.1 Drugs Metabolized by Cytochrome P-450 7.2 Methadone 7.3 Use with Ribavirin (Nucleoside Analogues)
+ 8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy 8.3 Nursing Mothers 8.4 Pediatric Use 8.5 Geriatric Use 8.6 Organ Transplant Recipients 8.7 HIV or HBV Co-infection
+ 10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action 12.2 Pharmacodynamics 12.3 Pharmacokinetics 12.4 Microbiology 12.5 Pharmacogenomics
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL STUDIES 14.1 Chronic Hepatitis C in Adults 14.2 Chronic Hepatitis C in Pediatrics
+ 15 REFERENCES 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION  *Sections or subsections omitted from the full prescribing information are not listed.
+      3
+ FULL PRESCRIBING INFORMATION
+  WARNING: RISK OF SERIOUS DISORDERS AND RIBAVIRIN-ASSOCIATED EFFECTS  Alpha interferons, including PegIntron, may cause or aggravate fatal or life-threatening neuropsychiatric, autoimmune, ischemic, and infectious disorders.
+Patients should be monitored closely with periodic clinical and laboratory evaluations.
+Patients with persistently severe or worsening signs or symptoms of these conditions should be withdrawn from therapy.
+In many, but not all cases, these disorders resolve after stopping PegIntron therapy [see Warnings and Precautions (5) and Adverse Reactions (6.1)].
+ Use with Ribavirin  Ribavirin may cause birth defects and death of the unborn child.
+Extreme care must be taken to avoid pregnancy in female patients and in female partners of male patients.
+Ribavirin causes hemolytic anemia.
+The anemia associated with ribavirin therapy may result in a worsening of cardiac disease.
+[See ribavirin labeling.]  1 INDICATIONS AND USAGE  1.1 Chronic Hepatitis C (CHC)   PegIntron, as part of a combination regimen, is indicated for the treatment of Chronic Hepatitis C (CHC) in patients with compensated liver disease.
+   &#x2022; PegIntron in combination with REBETOL (ribavirin) and an approved Hepatitis C Virus (HCV) NS3/4A protease inhibitor is indicated in adult patients with HCV genotype 1 infection (see labeling of the specific HCV NS3/4A protease inhibitor for further information).
+  &#x2022; PegIntron in combination with REBETOL is indicated in patients with genotypes other than 1, pediatric patients (3-17 years of age), or in patients with genotype 1 infection where use of an HCV NS3/4A protease inhibitor is not warranted based on tolerability, contraindications or other clinical factors.
+   PegIntron monotherapy should only be used in the treatment of CHC in patients with compensated liver disease if there are contraindications to or significant intolerance of REBETOL and is indicated for use only in previously untreated adult patients.
+Combination therapy provides substantially better response rates than monotherapy [see Clinical Studies (14.1, 14.2)].
+ 2 DOSAGE AND ADMINISTRATION  2.1 PegIntron Combination Therapy Adults  The recommended dose of PegIntron is 1.5 mcg/kg/week.
+The volume of PegIntron to be injected depends on the strength of PegIntron and patient's body weight (see Table 1).
+   The recommended dose of REBETOL for use with PegIntron is 800 to 1400 mg orally based on patient body weight.
+REBETOL should be taken with food.
+REBETOL should not be used in patients with creatinine clearance less than 50 mL/min.
+  See labeling of the specific HCV NS3/4A protease inhibitor for information regarding dosing regimen and administration of the protease inhibitor in combination with PegIntron and ribavirin.
+Duration of Treatment - Treatment with PegIntron/REBETOL of Interferon Alpha-naive Patients  The treatment duration for patients with genotype 1 is 48 weeks.
+Discontinuation of therapy should be considered in patients who do not achieve at least a 2 log10 drop or loss of HCV-RNA at 12 weeks, or if HCV-RNA remains detectable after 24 weeks of therapy.
+Patients with genotype 2 and 3 should be treated for 24 weeks.
+Duration of Treatment - Re-treatment with PegIntron/REBETOL of Prior Treatment Failures  For patients with genotype 1 infection, PegIntron and REBETOL without an HCV NS3/4A protease inhibitor should only be used if there are contraindications, significant intolerance or other clinical factors that would not warrant use of an HCV NS3/4A protease inhibitor.
+The treatment duration for patients who previously failed therapy is 48 weeks, regardless of HCV genotype.
+Re-treated patients who fail to achieve undetectable HCV-RNA at Week 12 of therapy, or whose HCV-RNA remains detectable after 24 weeks of therapy, are highly unlikely to achieve SVR and discontinuation of therapy should be considered [see Clinical Studies (14.1)].
+  Table 1: Recommended PegIntron Combination Therapy Dosing (Adults)
+ Body Weight kg (lbs)
+ PegIntron REDIPEN Pre-
+filled pen or Vial Strength to Use
+ Amount of PegIntron to Administer
+ (mcg)
+ Volume* of PegIntron to Administer
+ (mL)
+ REBETOL Daily Dose
+ REBETOL Number of Capsules
+ &lt;40 (&lt;88) 50 mcg per 0.5 mL 50 0.5 800 mg/day
+ 2 x 200 mg capsules A.M. 2 x 200 mg capsules P.M.
+ 40-50 (88-111)
+ 80 mcg per 0.5 mL 64 0.4 800 mg/day 2 x 200 mg capsules A.M. 2 x 200 mg capsules P.M.
+ 51-60 (112-133) 80 0.5 800 mg/day
+ 2 x 200 mg capsules A.M. 2 x 200 mg capsules P.M.
+ 61-65 (134-144)
+ 120 mcg per 0.5 mL
+ 96 0.4 800 mg/day 2 x 200 mg capsules A.M. 2 x 200 mg capsules P.M.
+ 66-75 (145-166) 96 0.4 1000 mg/day
+ 2 x 200 mg capsules A.M. 3 x 200 mg capsules P.M.
+ 76-80 (167-177) 120 0.5
+ 1000 mg/day 2 x 200 mg capsules A.M. 3 x 200 mg capsules P.M. 81-85
+ (178-187) 1200 mg/day 3 x 200 mg capsules A.M. 3 x 200 mg capsules P.M.
+ 86-105 (188-231)
+ 150 mcg per 0.5 mL 150 0.5 1200 mg/day
+ 3 x 200 mg capsules A.M. 3 x 200 mg capsules P.M.
+    4
+ &gt;105 (&gt;231)
+ &#x20ac; &#x20ac; &#x20ac; 1400 mg/day 3 x 200 mg capsules A.M. 4 x 200 mg capsules P.M. * When reconstituted as directed.
+&#x20ac; For patients weighing greater than 105 kg (greater than 231 pounds), the PegIntron dose of 1.5 mcg/kg/week should be calculated based on the individual patient weight.
+This may require combinations of various PegIntron dose strengths and volumes.
+   Pediatric Patients  Dosing for pediatric patients is determined by body surface area for PegIntron and by body weight for REBETOL.
+The recommended dose of PegIntron is 60 mcg/m2/week subcutaneously in combination with 15 mg/kg/day of REBETOL orally in 2 divided doses (see Table 2) for pediatric patients ages 3 to 17 years.
+Patients who reach their 18th birthday while receiving PegIntron/REBETOL should remain on the pediatric dosing regimen.
+The treatment duration for patients with genotype 1 is 48 weeks.
+Patients with genotype 2 and 3 should be treated for 24 weeks.
+  Table 2: Recommended REBETOL* Dosing in Combination Therapy (Pediatrics)
+ Body Weight kg (lbs)
+ REBETOL Daily Dose
+ REBETOL Number of Capsules
+ &lt;47 (&lt;103)
+ 15 mg/kg/day
+ Use REBETOL oral solution   47-59
+ (103-131) 800 mg/day 2 x 200 mg capsules A.M. 2 x 200 mg capsules P.M.
+ 60-73 (132-162) 1000 mg/day
+ 2 x 200 mg capsules A.M. 3 x 200 mg capsules P.M.
+ &gt;73 (&gt;162) 1200 mg/day
+ 3 x 200 mg capsules A.M. 3 x 200 mg capsules P.M.
+ *REBETOL to be used in combination with PegIntron 60 mcg/m2 weekly.
+ &#x20ac; REBETOL oral solution may be used for any patient regardless of body weight.
+  2.2 PegIntron Monotherapy  The recommended dose of PegIntron regimen is 1 mcg/kg/week subcutaneously for 1 year administered on the same day of the week.
+Discontinuation of therapy should be considered in patients who do not achieve at least a 2 log10 drop or loss of HCV-RNA at 12 weeks of therapy, or whose HCV-RNA levels remain detectable after 24 weeks of therapy.
+The volume of PegIntron to be injected depends on patient weight (see Table 3).
+  Table 3: Recommended PegIntron Monotherapy Dosing Body Weight
+ kg (lbs) PegIntron REDIPEN Pre-filled pen or
+ Vial Strength to Use Amount of
+  PegIntron to Administer (mcg)
+ Volume of PegIntron to Administer (mL)*
+ &#x201a;45 (&#x201a;100) 50 mcg per 0.5 mL
+ 40 0.4
+ 46-56 (101-124) 50 0.5
+ 57-72 (125-159) 80 mcg per 0.5 mL
+ 64 0.4
+ 73-88 (160-195) 80 0.5
+ 89-106 (196-234) 120 mcg per 0.5 mL
+ 96 0.4
+ 107-136 (235-300) 120 0.5
+ 137-160 (301-353) 150 mcg per 0.5 mL 150 0.5
+ * When reconstituted as directed.
+ 2.3 Dose Reduction  If a serious adverse reaction develops during the course of treatment discontinue or modify the dosage of PegIntron and REBETOL until the adverse event abates or decreases in severity [see Warnings and Precautions (5)].
+If persistent or recurrent serious adverse events develop despite adequate dosage adjustment, discontinue treatment.
+For guidelines for dose modifications and discontinuation based on depression or laboratory parameters see Tables 4 and 5.
+Dose reduction of PegIntron in adult patients on PegIntron/REBETOL combination therapy is accomplished in a two-step process from the original starting dose of 1.5 mcg/kg/week, to 1 mcg/kg/week, then to 0.5 mcg/kg/week, if needed.
+Dose reduction in patients on PegIntron monotherapy is accomplished by reducing the original starting dose of 1 mcg/kg/week to 0.5 mcg/kg/week.
+Instructions for dose reductions in adults are outlined in Tables 6 (Monotherapy: REDIPEN/Vial) and 7 (Combination therapy: REDIPEN/Vial).
+  In the adult combination therapy Study 2, dose reductions occurred in 42% of subjects receiving PegIntron 1.5 mcg/kg plus REBETOL 800 mg daily, including 57% of those subjects weighing 60 kg or less.
+In Study 4, 16% of subjects had a dose reduction of PegIntron to 1 mcg/kg in combination
+    5
+ with REBETOL, with an additional 4% requiring the second dose reduction of PegIntron to 0.5 mcg/kg due to adverse events [see Adverse Reactions (6.1)].
+  Dose reduction in pediatric patients is accomplished by modifying the recommended dose in a 2-step process from the original starting dose of 60 mcg/m2/week, to 40 mcg/m2/week, then to 20 mcg/m2/week, if needed (see Tables 4 and 5).
+In the pediatric combination therapy trial, dose reductions occurred in 25% of subjects receiving PegIntron 60 mcg/m2 weekly plus REBETOL 15 mg/kg daily.
+  Table 4: Guidelines for Modification or Discontinuation of PegIntron or PegIntron/REBETOL and for Scheduling Visits for Patients with Depression
+ Depression Severity*
+ Initial Management (4-8 weeks) Depression Status
+ Dose Modification Visit Schedule Remains Stable Improves Worsens
+ Mild No change Evaluate once
+ weekly by visit or phone
+ Continue weekly visit schedule
+ Resume normal visit schedule
+ See moderate or
+ severe depression
+ Moderate
+ Adults: Adjust Dose* Pediatrics: Decrease
+ dose to 40 mcg/m2/week, then
+ to 20 mcg/m2/week, if needed
+ Evaluate once weekly (office visit at least every other
+ week)
+ Consider psychiatric
+ consultation.
+Continue reduced
+ dosing
+ If symptoms improve and are stable for 4 weeks, may resume
+ normal visit schedule.
+Continue reduced dosing or return to
+ normal dose
+ See severe depression
+ Severe Discontinue
+ PegIntron/REBETOL permanently
+ Obtain immediate psychiatric
+ consultation Psychiatric therapy as necessary
+ * See DSM-IV for definitions.
+For patients on PegIntron/REBETOL combination therapy: 1st dose reduction of PegIntron is to 1 mcg/kg/week, 2nd dose reduction (if needed) of PegIntron is to 0.5 mcg/kg/week.
+For patients on PegIntron monotherapy: decrease PegIntron dose to 0.5 mcg/kg/week.
+  Table 5: Guidelines for Dose Modification and Discontinuation of PegIntron or PegIntron/REBETOL Based on Laboratory Parameters in
+ Adults and Pediatrics Laboratory Parameters Reduce PegIntron
+ Dose (see note 1) if: Reduce ribavirin Daily Dose (see
+ note 2) if: Discontinue Therapy if:
+ WBC 1.0 to &lt;1.5 x 109/L N/A &lt;1.0 x 109/L
+ Neutrophils 0.5 to &lt;0.75 x 109/L N/A &lt;0.5 x 109/L
+ Platelets 25 to &lt;50 x 109/L (adults) N/A &lt;25 x 109/L (adults)
+ 50 to &lt;70 x 109/L (pediatrics) N/A &lt;50 x 109/L (pediatrics)
+ Creatinine N/A N/A &gt;2 mg/dL (pediatrics) Hemoglobin in patients without history of cardiac disease N/A 8.5 to &lt;10 g/dL &lt;8.5 g/dL
+  Reduce PegIntron Dose by Half and the Ribavirin Dose by 200 mg/day if:
+  Hemoglobin in patients with history of cardiac disease*&#x20ac;  &#x201a;2 g/dL decrease in hemoglobin during any four week period during treatment
+ &lt;8.5 g/dL or &lt;12 g/dL after four weeks of
+ dose reduction Note 1:  Adult patients on combination therapy: 1st dose reduction of PegIntron is to 1 mcg/kg/week.
+If needed, 2nd dose reduction of PegIntron is to
+ 0.5 mcg/kg/week.
+ Adult patients on PegIntron monotherapy: decrease PegIntron dose to 0.5 mcg/kg/week.
+ Pediatric patients: 1st dose reduction of PegIntron is to 40 mcg/m2/week, 2nd dose reduction of PegIntron is to 20 mcg/m2/week.
+ Note 2: Adult patients: 1st dose reduction of ribavirin is by 200 mg/day (except in patients receiving the 1400 mg, dose reduction should be by 400 mg/day).
+If needed, 2nd dose reduction of ribavirin is by an additional 200 mg/day.
+Patients whose dose of ribavirin is reduced to 600 mg daily receive one 200 mg capsule in the morning and two 200 mg capsules in the evening.
+ Pediatric patients: 1st dose reduction of ribavirin is to 12 mg/kg/day, 2nd dose reduction of ribavirin is to 8 mg/kg/day.
+ * Pediatric patients who have pre-existing cardiac conditions and experience a hemoglobin decrease greater than or equal to 2 g/dL during any 4-week period during treatment should have weekly evaluations and hematology testing.
+&#x20ac; These guidelines are for patients with stable cardiac disease.
+Patients with a history of significant or unstable cardiac disease should not be treated with PegIntron /REBETOL combination therapy [see Warnings and Precautions (5.3)].
+    6
+  Table 6: Reduced PegIntron Dose (0.5 mcg/kg) for (1 mcg/kg) Monotherapy in Adults
+ Body Weight kg (lbs)
+ PegIntron REDIPEN/Vial
+   Strength to Use Amount to Administer (mcg) Volume* to Administer
+ (mL) &#x201a;45
+ (&#x201a;100) 50 mcg per 0.5 mL&#x20ac; 20 0.2
+ 46-56 (101-124) 50 mcg per 0.5 mL
+&#x20ac; 25 0.25
+ 57-72 (125-159) 50 mcg per 0.5 mL 30 0.3
+ 73-88 (160-195) 50 mcg per 0.5 mL 40 0.4
+ 89-106 (196-234) 50 mcg per 0.5 mL 50 0.5
+ 107-136 (235-300) 80 mcg per 0.5 mL 64 0.4
+ &#x2265;137  (&#x2265;301) 80 mcg per 0.5 mL 80 0.5
+ * When reconstituted as directed.
+&#x20ac; Must use vial.
+Minimum delivery for REDIPEN 0.3 mL.
+    Table 7: Two-Step Dose Reduction of PegIntron REDIPEN/Vial in Combination Therapy in Adults First Dose Reduction to PegIntron 1 mcg/kg Second Dose Reduction to PegIntron 0.5 mcg/kg
+ Body weight kg (lbs)
+ PegIntron REDIPEN/Vial
+ Strength to Use
+ Amount of PegIntron  (mcg)
+ to Administer
+ Volume (mL) &#x20ac; of
+ PegIntron  to
+ Administer
+ Body weight kg (lbs)
+ PegIntron REDIPEN/
+ Vial Strength to
+ Use
+ Amount of PegIntron (mcg) to
+ Administer
+ Volume (mL) &#x20ac; of PegIntron to
+ Administer
+ &lt;40 (&lt;88)
+ 50 mcg per 0.5 mL
+ 35 0.35 &lt;40 (&lt;88) 50 mcg per 0.5 mL*
+ 20 0.2
+ 40-50 (88-111) 45 0.45
+ 40-50 (88-111) 25 0.25
+ 51-60 (112-133) 50 0.5
+ 51-60 (112-133)
+ 50 mcg per 0.5 mL
+ 30 0.3
+ 61-75 (134-166) 80 mcg per 0.5 mL
+ 64 0.4 61-75 (134-166) 35 0.35
+ 76-85 (167-187) 80 0.5
+ 76-85 (167-187) 45 0.45
+ 86-104 (188-230)
+  120 mcg per 0.5 mL 96 0.4 86-104 (188-230) 50 0.5
+ 105-125 (231-275) 108 0.45
+ 105-125 (231-275) 80 mcg per
+ 0.5 mL
+ 64 0.4
+ &gt;125 (&gt;275) 150 mcg per 0.5 mL 135 0.45
+ &gt;125 (&gt;275) 72 0.45
+ * Must use vial.
+Minimum delivery for REDIPEN 0.3 mL.
+ &#x20ac; When reconstituted as directed.
+                                        2.4 Discontinuation of Dosing Adults  See labeling of the specific HCV NS3/4A protease inhibitor for information regarding discontinuation of dosing based on treatment futility.
+ In HCV genotype 1, interferon-alfa-naive patients receiving PegIntron, alone or in combination with REBETOL, discontinuation of therapy is recommended if there is not at least a 2 log10 drop or loss of HCV-RNA at 12 weeks of therapy, or if HCV-RNA levels remain detectable after 24 weeks of therapy.
+Regardless of genotype, previously treated patients who have detectable HCV-RNA at Week 12 or 24, are highly unlikely to achieve SVR and discontinuation of therapy is recommended.
+  Pediatrics (3-17 years of age)  It is recommended that patients receiving PegIntron/REBETOL combination (excluding those with HCV genotype 2 and 3) be discontinued from therapy at 12 weeks if their treatment Week 12 HCV-RNA dropped less than 2 log10 compared to pretreatment or at 24 weeks if they have detectable HCV-RNA at treatment Week 24.
+                                     2.5 Renal Function  In patients with moderate renal dysfunction (creatinine clearance 30-50 mL/min), the PegIntron dose should be reduced by 25%.
+Patients with severe renal dysfunction (creatinine clearance 10-29 mL/min), including those on hemodialysis, should have the PegIntron dose reduced by 50%.
+If renal function decreases during treatment, PegIntron therapy should be discontinued.
+When PegIntron is administered in combination with REBETOL, subjects with impaired renal function or those over the age of 50 should be more carefully monitored with respect to the development of anemia.
+PegIntron/REBETOL should not be used in patients with creatinine clearance less than 50 mL/min.
+     7
+ 2.6 Preparation and Administration A patient should self-inject PegIntron only if the physician determines that it is appropriate and the patient agrees to medical follow-up as necessary
+ and has been trained in proper injection technique [see illustrated FDA-approved Medication Guide and Instructions for Use for directions on injection site preparation and injection instructions].
+  The reconstituted solution should be visually inspected for discoloration and particulate matter prior to administration.
+Do not use the solution if it is discolored or not clear, or if particulates are present.
+ DO NOT REUSE THE VIAL OR PRE-FILLED PEN; DISCARD THE UNUSED PORTION.
+Pooling of unused portions of some medications has been linked to bacterial contamination and morbidity.
+  3 DOSAGE FORMS AND STRENGTHS
+  &#x2022; Single-use vial: 1.25 mL diluent vial: 50 mcg per 0.5 mL, 80 mcg per 0.5 mL, 120 mcg per 0.5 mL, 150 mcg per 0.5 mL.
+&#x2022; REDIPEN single-use pre-filled pen: 50 mcg per 0.5 mL, 80 mcg per 0.5 mL, 120 mcg per 0.5 mL, 150 mcg per 0.5 mL.
+  4 CONTRAINDICATIONS  PegIntron is contraindicated in patients with:
+ &#x2022; known hypersensitivity reactions, such as urticaria, angioedema, bronchoconstriction, anaphylaxis, Stevens-Johnson syndrome, and toxic epidermal necrolysis to interferon alpha or any other component of the product
+  &#x2022; autoimmune hepatitis &#x2022; hepatic decompensation (Child-Pugh score greater than 6 [class B and C]) in cirrhotic CHC patients before or during treatment
+ PegIntron/ribavirin combination therapy is additionally contraindicated in:  &#x2022; women who are pregnant.
+Ribavirin may cause fetal harm when administered to a pregnant woman.
+Ribavirin is contraindicated in women
+ who are or may become pregnant.
+If ribavirin is used during pregnancy, or if the patient becomes pregnant while taking ribavirin, the patient should be apprised of the potential hazard to her fetus [see Use in Specific Populations (8.1)].
+ &#x2022; men whose female partners are pregnant &#x2022; patients with hemoglobinopathies (e.g., thalassemia major, sickle-cell anemia) &#x2022; patients with creatinine clearance less than 50 mL/min
+  5 WARNINGS AND PRECAUTIONS   Patients should be monitored for the following serious conditions, some of which may become life threatening.
+Patients with persistently severe or worsening signs or symptoms should be withdrawn from therapy.
+ 5.1 Use with Ribavirin  Pregnancy  Ribavirin may cause birth defects and death of the unborn child.
+Ribavirin therapy should not be started until a report of a negative pregnancy test has been obtained immediately prior to planned initiation of therapy.
+Patients should use at least 2 forms of contraception and have monthly pregnancy tests during treatment and during the 6-month period after treatment has been stopped [see Contraindications (4) and ribavirin labeling].
+ Anemia  Ribavirin caused hemolytic anemia in 10% of PegIntron/REBETOL-treated subjects within 1 to 4 weeks of initiation of therapy.
+Complete blood counts should be obtained pretreatment and at Week 2 and Week 4 of therapy or more frequently if clinically indicated.
+Anemia associated with ribavirin therapy may result in a worsening of cardiac disease.
+Decrease in dosage or discontinuation of ribavirin may be necessary [see Dosage and Administration (2.3) and ribavirin labeling].
+ 5.2 Neuropsychiatric Events  Life-threatening or fatal neuropsychiatric events, including suicide, suicidal and homicidal ideation, depression, relapse of drug addiction/overdose, and aggressive behavior sometimes directed towards others have occurred in patients with and without a previous psychiatric disorder during PegIntron treatment and follow-up.
+Psychoses, hallucinations, bipolar disorders, and mania have been observed in patients treated with interferon alpha.
+  PegIntron should be used with caution in patients with a history of psychiatric disorders.
+Treatment with interferons may be associated with exacerbated symptoms of psychiatric disorders in patients with co-occurring psychiatric and substance use disorders.
+If treatment with interferons is initiated in patients with prior history or existence of psychiatric condition or with a history of substance use disorders, treatment considerations should include the need for drug screening and periodic health evaluation, including psychiatric symptom monitoring.
+Early intervention for re-emergence or development of neuropsychiatric symptoms and substance use is recommended.
+ Patients should be advised to report immediately any symptoms of depression or suicidal ideation to their prescribing physicians.
+Physicians should monitor all patients for evidence of depression and other psychiatric symptoms.
+If patients develop psychiatric problems, including clinical depression, it is recommended that the patients be carefully monitored during treatment and in the 6-month follow-up period.
+If psychiatric symptoms persist or worsen, or suicidal ideation or aggressive behavior towards others is identified, it is recommended that treatment with PegIntron be discontinued, and the patient followed, with psychiatric intervention as appropriate.
+In severe cases, PegIntron should be stopped immediately and psychiatric intervention instituted [see Dosage and Administration (2.3)].
+Cases of encephalopathy have been observed in some patients, usually elderly, treated at higher doses of PegIntron.
+ 5.3 Cardiovascular Events  Cardiovascular events, which include hypotension, arrhythmia, tachycardia, cardiomyopathy, angina pectoris, and myocardial infarction, have been observed in patients treated with PegIntron.
+PegIntron should be used cautiously in patients with cardiovascular disease.
+Patients with a history of myocardial infarction and arrhythmic disorder who require PegIntron therapy should be closely monitored [see Warnings and Precautions (5.15)].
+Patients with a history of significant or unstable cardiac disease should not be treated with PegIntron/ribavirin combination therapy [see ribavirin labeling].
+  5.4 Endocrine Disorders  PegIntron causes or aggravates hypothyroidism and hyperthyroidism.
+Hyperglycemia has been observed in patients treated with PegIntron.
+Diabetes mellitus, including cases of new onset Type 1 diabetes, has been observed in patients treated with alpha interferons, including PegIntron.
+    8
+ Patients with these conditions who cannot be effectively treated by medication should not begin PegIntron therapy.
+Patients who develop these conditions during treatment and cannot be controlled with medication should not continue PegIntron therapy.
+ 5.5 Ophthalmologic Disorders  Decrease or loss of vision, retinopathy including macular edema, retinal artery or vein thrombosis, retinal hemorrhages and cotton wool spots, optic neuritis, papilledema, and serous retinal detachment may be induced or aggravated by treatment with peginterferon alfa-2b or other alpha interferons.
+All patients should receive an eye examination at baseline.
+Patients with preexisting ophthalmologic disorders (e.g., diabetic or hypertensive retinopathy) should receive periodic ophthalmologic exams during interferon alpha treatment.
+Any patient who develops ocular symptoms should receive a prompt and complete eye examination.
+Peginterferon alfa-2b treatment should be discontinued in patients who develop new or worsening ophthalmologic disorders.
+ 5.6 Cerebrovascular Disorders  Ischemic and hemorrhagic cerebrovascular events have been observed in patients treated with interferon alfa-based therapies, including PegIntron.
+Events occurred in patients with few or no reported risk factors for stroke, including patients less than 45 years of age.
+Because these are spontaneous reports, estimates of frequency cannot be made, and a causal relationship between interferon alfa-based therapies and these events is difficult to establish.
+ 5.7 Bone Marrow Toxicity   PegIntron suppresses bone marrow function, sometimes resulting in severe cytopenias.
+PegIntron should be discontinued in patients who develop severe decreases in neutrophil or platelet counts [see Dosage and Administration (2.3)].
+Ribavirin may potentiate the neutropenia induced by interferon alpha.
+Very rarely alpha interferons may be associated with aplastic anemia.
+ 5.8 Autoimmune Disorders  Development or exacerbation of autoimmune disorders (e.g., thyroiditis, thrombotic thrombocytopenic purpura, idiopathic thrombocytopenic purpura, rheumatoid arthritis, interstitial nephritis, systemic lupus erythematosus, and psoriasis) has been observed in patients receiving PegIntron.
+ PegIntron should be used with caution in patients with autoimmune disorders.
+ 5.9 Pancreatitis  Fatal and nonfatal pancreatitis has been observed in patients treated with alpha interferon.
+PegIntron therapy should be suspended in patients with signs and symptoms suggestive of pancreatitis and discontinued in patients diagnosed with pancreatitis.
+ 5.10 Colitis  Fatal and nonfatal ulcerative or hemorrhagic/ischemic colitis have been observed within 12 weeks of the start of alpha interferon treatment.
+Abdominal pain, bloody diarrhea, and fever are the typical manifestations.
+PegIntron treatment should be discontinued immediately in patients who develop these signs and symptoms.
+The colitis usually resolves within 1 to 3 weeks of discontinuation of alpha interferons.
+ 5.11 Pulmonary Disorders  Dyspnea, pulmonary infiltrates, pneumonia, bronchiolitis obliterans, interstitial pneumonitis, pulmonary hypertension, and sarcoidosis, some resulting in respiratory failure or patient deaths, may be induced or aggravated by PegIntron or alpha interferon therapy.
+Recurrence of respiratory failure has been observed with interferon rechallenge.
+PegIntron combination treatment should be suspended in patients who develop pulmonary infiltrates or pulmonary function impairment.
+Patients who resume interferon treatment should be closely monitored.
+  Because of the fever and other "flu-like" symptoms associated with PegIntron administration, it should be used cautiously in patients with debilitating medical conditions, such as those with a history of pulmonary disease (e.g., chronic obstructive pulmonary disease).
+   5.12 Hepatic Failure  Chronic Hepatitis C (CHC) patients with cirrhosis may be at risk of hepatic decompensation and death when treated with alpha interferons, including PegIntron.
+Cirrhotic CHC patients co-infected with HIV receiving highly active antiretroviral therapy (HAART) and alpha interferons with or without ribavirin appear to be at increased risk for the development of hepatic decompensation compared to patients not receiving HAART.
+During treatment, patients' clinical status and hepatic function should be closely monitored, and PegIntron treatment should be immediately discontinued if decompensation (Child-Pugh score greater than 6) is observed [see Contraindications (4)].
+ 5.13 Patients with Renal Insufficiency  Increases in serum creatinine levels have been observed in patients with renal insufficiency receiving interferon alpha products, including PegIntron.
+Patients with impaired renal function should be closely monitored for signs and symptoms of interferon toxicity, including increases in serum creatinine, and PegIntron dosing should be adjusted accordingly or discontinued [see Clinical Pharmacology (12.3) and Dosage and Administration (2.3)].
+PegIntron monotherapy should be used with caution in patients with creatinine clearance less than 50 mL/min; the potential risks should be weighed against the potential benefits in these patients.
+Combination therapy with ribavirin must not be used in patients with creatinine clearance less than 50 mL/min [see ribavirin labeling].
+ 5.14 Hypersensitivity  Serious, acute hypersensitivity reactions (e.g., urticaria, angioedema, bronchoconstriction, anaphylaxis) and cutaneous eruptions (Stevens-Johnson syndrome, toxic epidermal necrolysis) have been rarely observed during alpha interferon therapy.
+If such a reaction develops during treatment with PegIntron, discontinue treatment and institute appropriate medical therapy immediately.
+Transient rashes do not necessitate interruption of treatment.
+ 5.15 Laboratory Tests  PegIntron alone or in combination with ribavirin may cause severe decreases in neutrophil and platelet counts, and hematologic, endocrine (e.g., TSH), and hepatic abnormalities.
+Transient elevations in ALT (2- to 5-fold above baseline) were observed in 10% of subjects treated with PegIntron, and were not associated with deterioration of other liver functions.
+Triglyceride levels are frequently elevated in patients receiving alpha interferon therapy including PegIntron and should be periodically monitored.
+ Patients on PegIntron or PegIntron/REBETOL combination therapy should have hematology and blood chemistry testing before the start of treatment and then periodically thereafter.
+In the adult clinical trial, complete blood counts (including hemoglobin, neutrophil, and platelet counts) and chemistries (including AST, ALT, bilirubin, and uric acid) were measured during the treatment period at Weeks 2, 4, 8, and 12, and then at 6-week intervals, or more frequently if abnormalities developed.
+In pediatric subjects, the same laboratory parameters were evaluated with additional
+    9
+ assessment of hemoglobin at treatment Week 6.
+TSH levels were measured every 12 weeks during the treatment period.
+HCV-RNA should be measured periodically during treatment [see Dosage and Administration (2.1, 2.2, 2.4)].
+ Patients who have pre-existing cardiac abnormalities should have electrocardiograms done before treatment with PegIntron/ribavirin.
+  5.16 Dental and Periodontal Disorders  Dental and periodontal disorders have been reported in patients receiving PegIntron/REBETOL combination therapy.
+In addition, dry mouth could have a damaging effect on teeth and mucous membranes of the mouth during long-term treatment with the combination of REBETOL and PegIntron.
+Patients should brush their teeth thoroughly twice daily and have regular dental examinations.
+If vomiting occurs, patients should be advised to rinse out their mouth thoroughly afterwards.
+ 5.17 Triglycerides  Elevated triglyceride levels have been observed in patients treated with interferon alpha, including PegIntron therapy.
+Hypertriglyceridemia may result in pancreatitis [see Warnings and Precautions (5.9)].
+Elevated triglyceride levels should be managed as clinically appropriate.
+Discontinuation of PegIntron therapy should be considered for patients with symptoms of potential pancreatitis, such as abdominal pain, nausea, or vomiting, and persistently elevated triglycerides (e.g., triglycerides greater than 1000 mg/dL).
+ 5.18 Impact on Growth - Pediatric Use   Data on the effects of PegIntron plus REBETOL on growth come from an open-label trial in 107 subjects, 3 through 17 years of age, in which weight and height changes are compared to US normative population data.
+In general, the weight and height gain of pediatric subjects treated with PegIntron plus REBETOL lags behind that predicted by normative population data for the entire length of treatment.
+Severely inhibited growth velocity (less than 3rd percentile) was observed in 70% of the subjects while on treatment.
+Following treatment, rebound growth and weight gain occurred in most subjects.
+Long-term follow-up data in pediatric subjects, however, indicates that PegIntron in combination therapy with REBETOL may induce a growth inhibition that results in reduced adult height in some patients [see Adverse Reactions (6.1)].
+  5.19 Peripheral Neuropathy  Peripheral neuropathy has been reported when alpha interferons were given in combination with telbivudine.
+In one clinical trial, an increased risk and severity of peripheral neuropathy was observed with the combination use of telbivudine and pegylated interferon alfa-2a as compared to telbivudine alone.
+The safety and efficacy of telbivudine in combination with interferons for the treatment of chronic hepatitis B has not been demonstrated.
+   6 ADVERSE REACTIONS  6.1 Clinical Trials Experience    Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in clinical practice.
+  Clinical trials with PegIntron alone or in combination with REBETOL have been conducted in over 6900 subjects from 3 to 75 years of age.
+  Serious adverse reactions have occurred in approximately 12% of subjects in clinical trials with PegIntron with or without REBETOL [see Warnings and Precautions (5)].
+The most common serious events occurring in subjects treated with PegIntron and REBETOL were depression and suicidal ideation [see Warnings and Precautions (5.2)], each occurring at a frequency of less than 1%.
+The most common fatal events occurring in subjects treated with PegIntron and REBETOL were cardiac arrest, suicidal ideation, and suicide attempt [see Warnings and Precautions (5.2, 5.3)], all occurring in less than 1% of subjects.
+   Greater than 96% of all subjects in clinical trials experienced one or more adverse events.
+The most commonly reported adverse reactions in adult subjects receiving either PegIntron or PegIntron/REBETOL were injection-site inflammation/reaction, fatigue/asthenia, headache, rigors, fevers, nausea, myalgia, and emotional lability/irritability.
+The most common adverse events in pediatric subjects, ages 3 and older, were pyrexia, headache, vomiting, neutropenia, fatigue, anorexia, injection-site erythema, and abdominal pain.
+    Adults  Study 1 compared PegIntron monotherapy with INTRON A monotherapy.
+Study 2 compared combination therapy of PegIntron/REBETOL with combination therapy with INTRON A/REBETOL.
+In these clinical trials, nearly all subjects experienced one or more adverse reactions.
+Study 3 compared a PegIntron/weight-based REBETOL combination to a PegIntron/flat dose REBETOL regimen.
+Study 4 compared two PegIntron (1.5 mcg/kg/week and 1 mcg/kg/week) doses in combination with REBETOL and a third treatment group receiving Pegasys (180 mcg/week)/Copegus (1000-1200 mg/day).
+ Adverse reactions that occurred in Studies 1 and 2 at greater than 5% incidence are provided in Table 8 by treatment group.
+Due to potential differences in ascertainment procedures, adverse reaction rate comparisons across trials should not be made.
+Table 9 summarizes the treatment-related adverse reactions in Study 4 that occurred at a greater than or equal to 10% incidence.
+  Table 8: Adverse Reactions Occurring in Greater than 5% of Subjects  Percentage of Subjects Reporting Adverse Reactions*  Study 1 Study 2
+ Adverse Reactions PegIntron 1 mcg/kg
+  (N=297)
+ INTRON A 3 MIU
+  (N=303)
+ PegIntron 1.5 mcg/kg/ REBETOL
+ (N=511)
+ INTRON A/ REBETOL
+  (N=505)
+ Application Site      Injection Site  Inflammation/Reaction
+ 47 20 75 49
+ Autonomic Nervous System
+       Dry Mouth 6 7 12 8  Increased Sweating  6 7 11 7  Flushing 6 3 4 3
+    10
+  Percentage of Subjects Reporting Adverse Reactions*  Study 1 Study 2
+ Adverse Reactions PegIntron 1 mcg/kg
+  (N=297)
+ INTRON A 3 MIU
+  (N=303)
+ PegIntron 1.5 mcg/kg/ REBETOL
+ (N=511)
+ INTRON A/ REBETOL
+  (N=505)
+ Body as a Whole      Fatigue/Asthenia 52 54 66 63  Headache 56 52 62 58  Rigors 23 19 48 41  Fever 22 12 46 33  Weight Loss 11 13 29 20  Right Upper Quadrant  Pain
+ 8 8 12 6
+  Chest Pain 6 4 8 7  Malaise 7 6 4 6 Central/Peripheral Nervous System
+       Dizziness 12 10 21 17 Endocrine      Hypothyroidism 5 3 5 4 Gastrointestinal      Nausea 26 20 43 33  Anorexia 20 17 32 27  Diarrhea 18 16 22 17  Vomiting 7 6 14 12  Abdominal Pain 15 11 13 13  Dyspepsia 6 7 9 8  Constipation 1 3 5 5 Hematologic Disorders      Neutropenia 6 2 26 14  Anemia 0 0 12 17  Leukopenia &lt;1 0 6 5  Thrombocytopenia 7 &lt;1 5 2 Liver and Biliary System
+        Hepatomegaly 6 5 4 4 Musculoskeletal      Myalgia 54 53 56 50  Arthralgia 23 27 34 28  Musculoskeletal  Pain
+ 28 22 21 19
+ Psychiatric      Insomnia 23 23 40 41  Depression 29 25 31 34  Anxiety/Emotional  Lability/Irritability
+ 28 34 47 47
+  Concentration  Impaired
+ 10 8 17 21
+  Agitation 2 2 8 5  Nervousness 4 3 6 6 Reproductive, Female      Menstrual Disorder 4 3 7 6 Resistance Mechanism       Viral Infection 11 10 12 12  Fungal Infection &lt;1 3 6 1 Respiratory System      Dyspnea 4 2 26 24  Coughing 8 5 23 16  Pharyngitis 10 7 12 13  Rhinitis 2 2 8 6  Sinusitis 7 7 6 5 Skin and Appendages      Alopecia 22 22 36 32  Pruritus 12 8 29 28  Rash 6 7 24 23  Skin Dry 11 9 24 23 Special Senses, Other       Taste Perversion &lt;1 2 9 4 Vision Disorders      Vision Blurred 2 3 5 6
+    11
+  Percentage of Subjects Reporting Adverse Reactions*  Study 1 Study 2
+ Adverse Reactions PegIntron 1 mcg/kg
+  (N=297)
+ INTRON A 3 MIU
+  (N=303)
+ PegIntron 1.5 mcg/kg/ REBETOL
+ (N=511)
+ INTRON A/ REBETOL
+  (N=505)
+  Conjunctivitis 4 2 4 5 *Subjects reporting one or more adverse reactions.
+ A subject may have reported more than one adverse reaction within a body system/organ class category.
+  Table 9: Treatment-Related Adverse Reactions (Greater than or Equal to 10% Incidence)
+ By Descending Frequency  Percentage of Subjects Reporting Treatment-Related Adverse
+ Reactions  Study 4 Adverse Reactions PegIntron
+ 1.5 mcg/kg with REBETOL
+  (N=1019)
+ PegIntron 1 mcg/kg with
+ REBETOL
+  (N=1016)
+ Pegasys 180 mcg with Copegus
+    (N=1035) Fatigue 67 68 64 Headache 50 47 41 Nausea 40 35 34 Chills 39 36 23 Insomnia 38 37 41 Anemia 35 30 34 Pyrexia 35 32 21 Injection Site Reactions 34 35 23 Anorexia 29 25 21 Rash 29 25 34 Myalgia 27 26 22 Neutropenia 26 19 31 Irritability 25 25 25 Depression  25 19 20 Alopecia 23 20 17 Dyspnea 21 20 22 Arthralgia 21 22 22 Pruritus 18 15 19 Influenza-like Illness 16 15 15 Dizziness 16 14 13 Diarrhea 15 16 14 Cough 15 16 17 Weight Decreased 13 10 10 Vomiting 12 10 9 Unspecified Pain 12 13 9 Dry Skin 11 11 12 Anxiety 11 11 10 Abdominal Pain 10 10 10 Leukopenia 9 7 10
+    12
+    The adverse reaction profile in Study 3, which compared PegIntron/weight-based REBETOL combination to a PegIntron/flat-dose REBETOL regimen, revealed an increased rate of anemia with weight-based dosing (29% vs. 19% for weight-based vs. flat-dose regimens, respectively).
+However, the majority of cases of anemia were mild and responded to dose reductions.
+  The incidence of serious adverse reactions was comparable in all trials.
+In the PegIntron monotherapy trial (Study 1) the incidence of serious adverse reactions was similar (about 12%) in all treatment groups.
+In Study 2, the incidence of serious adverse reactions was 17% in the PegIntron/REBETOL groups compared to 14% in the INTRON A/REBETOL group.
+In Study 3, there was a similar incidence of serious adverse reactions reported for the weight-based REBETOL group (12%) and for the flat-dose REBETOL regimen.
+ In many but not all cases, adverse reactions resolved after dose reduction or discontinuation of therapy.
+Some subjects experienced ongoing or new serious adverse reactions during the 6-month follow-up period.
+   There have been 31 subject deaths that occurred during treatment or during follow-up in these clinical trials.
+In Study 1, there was 1 suicide in a subject receiving PegIntron monotherapy and 2 deaths among subjects receiving INTRON A monotherapy (1 murder/suicide and 1 sudden death).
+In Study 2, there was 1 suicide in a subject receiving PegIntron/REBETOL combination therapy, and 1 subject death in the INTRON A/REBETOL group (motor vehicle accident).
+In Study 3, there were 14 deaths, 2 of which were probable suicides, and 1 was an unexplained death in a person with a relevant medical history of depression.
+In Study 4, there were 12 deaths, 6 of which occurred in subjects receiving PegIntron/REBETOL combination therapy; 5 in the PegIntron 1.5 mcg/REBETOL arm (N=1019) and 1 in the PegIntron 1 mcg/REBETOL arm (n=1016); and 6 of which occurred in subjects receiving Pegasys/Copegus (N=1035).
+There were 3 suicides that occurred during the off-treatment follow-up period in subjects who received PegIntron (1.5 mcg/kg)/REBETOL combination therapy.
+ In Studies 1 and 2, 10% to 14% of subjects receiving PegIntron, alone or in combination with REBETOL, discontinued therapy compared with 6% treated with INTRON A alone and 13% treated with INTRON A in combination with REBETOL.
+Similarly in Study 3, 15% of subjects receiving PegIntron in combination with weight-based REBETOL and 14% of subjects receiving PegIntron and flat-dose REBETOL discontinued therapy due to an adverse reaction.
+The most common reasons for discontinuation of therapy were related to known interferon effects of psychiatric, systemic (e.g., fatigue, headache), or gastrointestinal adverse reactions.
+In Study 4, 13% of subjects in the PegIntron 1.5 mcg/REBETOL arm, 10% in the PegIntron 1 mcg/REBETOL arm, and 13% in the Pegasys 180 mcg/Copegus arm discontinued therapy due to adverse events.
+ In Study 2, dose reductions due to adverse reactions occurred in 42% of subjects receiving PegIntron (1.5 mcg/kg)/REBETOL and in 34% of those receiving INTRON A/REBETOL.
+The majority of subjects (57%) weighing 60 kg or less receiving PegIntron (1.5 mcg/kg)/REBETOL required dose reduction.
+Reduction of interferon was dose-related (PegIntron 1.5 mcg/kg more than PegIntron 0.5 mcg/kg or INTRON A), 40%, 27%, 28%, respectively.
+Dose reduction for REBETOL was similar across all three groups, 33% to 35%.
+The most common reasons for dose modifications were neutropenia (18%) or anemia (9%).
+Other common reasons included depression, fatigue, nausea, and thrombocytopenia.
+In Study 3, dose modifications due to adverse reactions occurred more frequently with weight-based dosing (WBD) compared to flat dosing (29% and 23%, respectively).
+In Study 4, 16% of subjects had a dose reduction of PegIntron to 1 mcg/kg in combination with REBETOL, with an additional 4% requiring the second dose reduction of PegIntron to 0.5 mcg/kg due to adverse events, compared to 15% of subjects in the Pegasys/Copegus arm, who required a dose reduction to 135 mcg/week with Pegasys, with an additional 7% requiring a second dose reduction to 90 mcg/week with Pegasys.
+ In the PegIntron/REBETOL combination trials the most common adverse reactions were psychiatric, which occurred among 77% of subjects in Study 2 and 68% to 69% of subjects in Study 3.
+These psychiatric adverse reactions included most commonly depression, irritability, and insomnia, each reported by approximately 30% to 40% of subjects in all treatment groups.
+Suicidal behavior (ideation, attempts, and suicides) occurred in 2% of all subjects during treatment or during follow-up after treatment cessation [see Warnings and Precautions (5.2)].
+In Study 4, psychiatric adverse reactions occurred in 58% of subjects in the PegIntron 1.5 mcg/REBETOL arm, 55% of subjects in the PegIntron 1 mcg/REBETOL arm, and 57% of subjects in the Pegasys 180 mcg/Copegus arm.
+ PegIntron induced fatigue or headache in approximately two-thirds of subjects, with fever or rigors in approximately half of the subjects.
+The severity of some of these systemic symptoms (e.g., fever and headache) tended to decrease as treatment continued.
+In Studies 1 and 2, application site inflammation and reaction (e.g., bruise, itchiness, and irritation) occurred at approximately twice the incidence with PegIntron therapies (in up to 75% of subjects) compared with INTRON A. However, injection-site pain was infrequent (2-3%) in all groups.
+In Study 3, there was a 23% to 24% incidence overall for injection-site reactions or inflammation.
+ In Study 2, many subjects continued to experience adverse reactions several months after discontinuation of therapy.
+By the end of the 6-month follow-up period, the incidence of ongoing adverse reactions by body class in the PegIntron 1.5/REBETOL group was 33% (psychiatric), 20% (musculoskeletal), and 10% (for endocrine and for GI).
+In approximately 10% to 15% of subjects, weight loss, fatigue, and headache had not resolved.
+ Individual serious adverse reactions in Study 2 occurred at a frequency less than or equal to 1% and included suicide attempt, suicidal ideation, severe depression; psychosis, aggressive reaction, relapse of drug addiction/overdose; nerve palsy (facial, oculomotor); cardiomyopathy, myocardial infarction, angina, pericardial effusion, retinal ischemia, retinal artery or vein thrombosis, blindness, decreased visual acuity, optic neuritis, transient ischemic attack, supraventricular arrhythmias, loss of consciousness; neutropenia, infection (sepsis, pneumonia, abscess, cellulitis); emphysema, bronchiolitis obliterans, pleural effusion, gastroenteritis, pancreatitis, gout, hyperglycemia, hyperthyroidism and hypothyroidism, autoimmune thrombocytopenia with or without purpura, rheumatoid arthritis, interstitial nephritis, lupus-like syndrome, sarcoidosis, aggravated psoriasis; urticaria, injection-site necrosis, vasculitis, and phototoxicity.
+ Subjects receiving PegIntron/REBETOL as re-treatment after failing a previous interferon combination regimen reported adverse reactions similar to those previously associated with this regimen during clinical trials of treatment-naive subjects.
+  Pediatric Subjects  In general, the adverse-reaction profile in the pediatric population was similar to that observed in adults.
+In the pediatric trial, the most prevalent adverse reactions in all subjects were pyrexia (80%), headache (62%), neutropenia (33%), fatigue (30%), anorexia (29%), injection-site erythema (29%), and vomiting (27%).
+The majority of adverse reactions reported in the trial were mild or moderate in severity.
+Severe adverse reactions were reported in 7% (8/107) of all subjects and included injection-site pain (1%), pain in extremity (1%), headache (1%), neutropenia (1%), and pyrexia (4%).
+Important adverse reactions that occurred in this subject population were nervousness (7%; 7/107), aggression (3%; 3/107), anger (2%; 2/107), and depression (1%; 1/107).
+Five subjects received levothyroxine treatment; three with clinical hypothyroidism and two with asymptomatic TSH elevations.
+Weight and height gain of pediatric subjects treated with PegIntron plus REBETOL lagged behind that predicted by normative population data for the entire length of treatment.
+Severely inhibited growth velocity (less than 3rd percentile) was observed in 70% of the subjects while on treatment.
+  Dose modifications were required in 25% of subjects, most commonly for anemia, neutropenia, and weight loss.
+Two subjects (2%; 2/107) discontinued therapy as the result of an adverse reaction.
+ Adverse reactions that occurred with a greater than or equal to 10% incidence in the pediatric trial subjects are provided in Table 10.
+  Table 10: Percentage of Pediatric Subjects with Treatment-related Adverse Reactions (in At Least 10% of All Subjects)
+ System Organ Class All Subjects
+    13
+ Preferred Term N=107 Blood and Lymphatic System Disorders
+  Neutropenia 33% Anemia 11% Leukopenia 10%
+ Gastrointestinal Disorders  Abdominal Pain 21%
+ Abdominal Pain Upper 12%
+ Vomiting 27% Nausea 18%
+ General Disorders and Administration Site Conditions  Pyrexia 80% Fatigue 30% Injection-site Erythema 29% Chills 21% Asthenia 15% Irritability 14%
+ Investigations  Weight Decreased 19%
+ Metabolism and Nutrition Disorders  Anorexia 29% Decreased Appetite 22%
+ Musculoskeletal and Connective Tissue Disorders  Arthralgia 17% Myalgia 17%
+ Nervous System Disorders  Headache 62% Dizziness 14%
+ Skin and Subcutaneous Tissue Disorders  Alopecia 17%
+   Ninety-four of 107 subjects enrolled in a 5 year long-term follow-up trial.
+The long-term effects on growth were less in those subjects treated for 24 weeks than those treated for 48 weeks.
+Twenty-four percent of subjects (11/46) treated for 24 weeks and 40% of subjects (19/48) treated for 48 weeks had a &gt;15 percentile height-for-age decrease from pre-treatment to the end of the 5 year long-term follow-up compared to pre-treatment baseline percentiles.
+Eleven percent of subjects (5/46) treated for 24 weeks and 13% of subjects (6/48) treated for 48 weeks were observed to have a decrease from pre-treatment baseline of &gt;30 height-for-age percentiles to the end of the 5 year long-term follow-up.
+While observed across all age groups, the highest risk for reduced height at the end of long-term follow-up appeared to correlate with initiation of combination therapy during the years of expected peak growth velocity [see Warnings and Precautions (5.18)].
+ Laboratory Values Adults  Changes in selected laboratory values during treatment with PegIntron alone or in combination with REBETOL treatment are described below.
+Decreases in hemoglobin, neutrophils, and platelets may require dose reduction or permanent discontinuation from therapy [see Dosage and Administration (2.3) and Warnings and Precautions (5.1, 5.7)].
+ Hemoglobin.
+Hemoglobin levels decreased to less than 11 g/dL in about 30% of subjects in Study 2.
+In Study 3, 47% of subjects receiving WBD REBETOL and 33% on flat-dose REBETOL had decreases in hemoglobin levels less than 11 g/dL.
+Reductions in hemoglobin to less than 9 g/dL occurred more frequently in subjects receiving WBD compared to flat dosing (4% and 2%, respectively).
+In Study 2, dose modification was required in 9% and 13% of subjects in the PegIntron/REBETOL and INTRON A/REBETOL groups.
+In Study 4, subjects receiving PegIntron (1.5 mcg/kg)/REBETOL had decreases in hemoglobin levels to between 8.5 to less than 10 g/dL (28%) and to less than 8.5 g/dL (3%), whereas in subjects receiving Pegasys 180 mcg/Copegus these decreases occurred in 26% and 4% of subjects, respectively.
+Hemoglobin levels became stable by treatment Weeks 4 to 6 on average.
+The typical pattern observed was a decrease in hemoglobin levels by treatment Week 4 followed by stabilization and a plateau, which was maintained to the end of treatment.
+In the PegIntron monotherapy trial, hemoglobin decreases were generally mild and dose modifications were rarely necessary [see Dosage and Administration (2.3)].
+ Neutrophils.
+Decreases in neutrophil counts were observed in a majority of subjects treated with PegIntron alone (70%) or as combination therapy with REBETOL in Study 2 (85%) and INTRON A/REBETOL (60%).
+Severe potentially life-threatening neutropenia (less than 0.5 x 109/L) occurred in 1% of subjects treated with PegIntron monotherapy, 2% of subjects treated with INTRON A/REBETOL, and in approximately 4% of subjects treated with PegIntron/REBETOL in Study 2.
+Two percent of subjects receiving PegIntron monotherapy and 18% of subjects receiving PegIntron/REBETOL in Study 2 required modification of interferon dosage.
+Few subjects (less than 1%) required permanent discontinuation of treatment.
+Neutrophil counts generally returned to pretreatment levels 4 weeks after cessation of therapy [see Dosage and Administration (2.3)].
+ Platelets.
+Platelet counts decreased to less than 100,000/mm3 in approximately 20% of subjects treated with PegIntron alone or with REBETOL and in 6% of subjects treated with INTRON A/REBETOL.
+Severe decreases in platelet counts (less than 50,000/mm3) occur in less than 4% of subjects.
+Patients may require discontinuation or dose modification as a result of platelet decreases [see Dosage and Administration (2.3)].
+In Study 2, 1% or 3% of subjects required dose modification of INTRON A or PegIntron, respectively.
+Platelet counts generally returned to pretreatment levels 4 weeks after the cessation of therapy.
+    14
+  Triglycerides.
+Elevated triglyceride levels have been observed in patients treated with interferon alphas, including PegIntron [see Warnings and Precautions (5.17)].
+ Thyroid Function.
+Development of TSH abnormalities, with or without clinical manifestations, is associated with interferon therapies.
+In Study 2, clinically apparent thyroid disorders occurred among subjects treated with either INTRON A or PegIntron (with or without REBETOL) at a similar incidence (5% for hypothyroidism and 3% for hyperthyroidism).
+Subjects developed new-onset TSH abnormalities while on treatment and during the follow-up period.
+At the end of the follow-up period, 7% of subjects still had abnormal TSH values [see Warnings and Precautions (5.4)].
+ Bilirubin and Uric Acid.
+In Study 2, 10% to 14% of subjects developed hyperbilirubinemia and 33% to 38% developed hyperuricemia in association with hemolysis.
+Six subjects developed mild to moderate gout.
+ Pediatric Subjects   Decreases in hemoglobin, white blood cells, platelets, and neutrophils may require dose reduction or permanent discontinuation from therapy [see Dosage and Administration (2.3)].
+Changes in selected laboratory values during treatment of 107 pediatric subjects with PegIntron/REBETOL combination therapy are described in Table 11.
+Most of the changes in laboratory values in this trial were mild or moderate.
+      Table 11: Selected Laboratory Abnormalities during Treatment Phase with PegIntron Plus REBETOL in Previously Untreated Pediatric Subjects
+ Laboratory Parameter* All Subjects (N=107)
+ Hemoglobin (g/dL)     9.5 to &lt;11.0  30%    8.0 to &lt;9.5  2% WBC (x 109/L)
+     2.0-2.9  39%
+    1.5 to &lt;2.0  3%
+ Platelets (x 109/L)
+     70-100  1%
+    50 to &lt;70  &#x20ac;&#x201d;
+    25 to &lt;50  1%
+ Neutrophils (x 109/L)
+     1.0-1.5  35%
+    0.75 to &lt;1.0  26%
+    0.5 to &lt;0.75  13%
+    &lt;0.5  3%
+ Total Bilirubin
+      1.26-2.59 x ULN&#x20ac; 7%
+ Evidence of Hepatic Failure &#x20ac;&#x201d; *  The table summarizes the worst category observed within the period per subject per laboratory test.
+Only subjects with at least one treatment value for a given laboratory test are included.
+&#x20ac; ULN=Upper limit of normal.
+  6.2 Immunogenicity  As with all therapeutic proteins, there is potential for immunogenicity.
+Approximately 2% of subjects receiving PegIntron (32/1759) or INTRON A (11/728) with or without REBETOL developed low-titer (less than or equal to 160) neutralizing antibodies to PegIntron or INTRON A. The clinical and pathological significance of the appearance of serum-neutralizing antibodies is unknown.
+The incidence of antibody formation is highly dependent on the sensitivity and specificity of the assay.
+Additionally, the observed incidence of antibody (including neutralizing antibody) positivity in an assay may be influenced by several factors, including assay methodology, sample handling, timing of sample collection, concomitant medications, and underlying disease.
+For these reasons, comparison of the incidence of antibodies to PegIntron with the incidence of antibodies to other products may be misleading.
+ 6.3 Postmarketing Experience  The following adverse reactions have been identified during post-approval use of PegIntron therapy.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure.
+Blood and Lymphatic System Disorders
+ Pure red cell aplasia, thrombotic thrombocytopenic purpura Cardiac Disorders
+ Palpitations Ear and Labyrinth Disorders
+ Hearing loss, vertigo, hearing impairment Endocrine Disorders
+ Diabetic ketoacidosis, diabetes Eye Disorders
+  Vogt-Koyanagi-Harada syndrome, serous retinal detachment Gastrointestinal Disorders
+ Aphthous stomatitis General Disorders and Administration Site Conditions
+ Asthenic conditions (including asthenia, malaise, fatigue) Immune System Disorders
+    15
+ Cases of acute hypersensitivity reactions (including anaphylaxis, angioedema, urticaria); Stevens-Johnson syndrome, toxic epidermal necrolysis, systemic lupus erythematosus, erythema multiforme
+ Infections and Infestations Bacterial infection including sepsis
+ Metabolism and Nutrition Disorders Dehydration, hypertriglyceridemia
+ Musculoskeletal and Connective Tissue Disorders Rhabdomyolysis, myositis
+ Nervous System Disorders Seizures, memory loss, peripheral neuropathy, paraesthesia, migraine headache
+ Psychiatric Disorders Homicidal ideation
+ Respiratory, Thoracic, and Mediastinal Disorders Pulmonary hypertension
+ Renal and Urinary Disorders Renal failure, renal insufficiency
+ Skin and Subcutaneous Tissue Disorders Psoriasis
+ Vascular Disorders Hypertension, hypotension
+   7 DRUG INTERACTIONS  7.1 Drugs Metabolized by Cytochrome P-450  When administering PegIntron with medications metabolized by CYP2C8/9 (e.g., warfarin and phenytoin) or CYP2D6 (e.g., flecainide), the therapeutic effect of these substrates may be decreased [see Clinical Pharmacology (12.3)].
+ 7.2 Methadone  PegIntron may increase methadone concentrations [see Clinical Pharmacology (12.3)].
+The clinical significance of this finding is unknown; however, patients should be monitored for signs and symptoms of increased narcotic effect.
+ 7.3 Use with Ribavirin (Nucleoside Analogues)  Hepatic decompensation (some fatal) has occurred in cirrhotic HIV/HCV co-infected patients receiving combination antiretroviral therapy for HIV and interferon alpha and ribavirin.
+Adding treatment with alpha interferons alone or in combination with ribavirin may increase the risk in this patient subset.
+Patients receiving interferon with ribavirin and nucleoside reverse transcriptase inhibitors (NRTIs) should be closely monitored for treatment- associated toxicities, especially hepatic decompensation and anemia.
+Discontinuation of NRTIs should be considered as medically appropriate [see labeling for individual NRTI product].
+Dose reduction or discontinuation of interferon, ribavirin, or both should also be considered if worsening clinical toxicities are observed, including hepatic decompensation (e.g., Child-Pugh greater than 6).
+ Stavudine, Lamivudine, and Zidovudine  In vitro studies have shown ribavirin can reduce the phosphorylation of pyrimidine nucleoside analogues such as stavudine, lamivudine, and zidovudine.
+In a trial with another pegylated interferon alpha, no evidence of a pharmacokinetic or pharmacodynamic (e.g., loss of HIV/HCV virologic suppression) interaction was seen when ribavirin was co-administered with zidovudine, lamivudine, or stavudine in HIV/HCV co-infected subjects [see Clinical Pharmacology (12.3)].
+ HIV/HCV co-infected subjects who were administered zidovudine in combination with pegylated interferon alpha and ribavirin developed severe neutropenia (ANC less than 500) and severe anemia (hemoglobin less than 8 g/dL) more frequently than similar subjects not receiving zidovudine.
+  Didanosine  Co-administration of ribavirin and didanosine is not recommended.
+Reports of fatal hepatic failure, as well as peripheral neuropathy, pancreatitis, and symptomatic hyperlactatemia/lactic acidosis have been reported in clinical trials [see Clinical Pharmacology (12.3)].
+  8 USE IN SPECIFIC POPULATIONS  8.1 Pregnancy PegIntron Monotherapy  Pregnancy Category C: Nonpegylated interferon alfa-2b has been shown to have abortifacient effects in Macaca mulatta (rhesus monkeys) at 15 and 30 million IU/kg (estimated human equivalent of 5 and 10 million IU/kg, based on body surface area adjustment for a 60-kg adult).
+PegIntron should be assumed to also have abortifacient potential.
+There are no adequate and well-controlled trials in pregnant women.
+PegIntron therapy is to be used during pregnancy only if the potential benefit justifies the potential risk to the fetus.
+Therefore, PegIntron is recommended for use in fertile women only when they are using effective contraception during the treatment period.
+ Use with Ribavirin  Pregnancy Category X: Significant teratogenic and/or embryocidal effects have been demonstrated in all animal species exposed to ribavirin.
+Ribavirin therapy is contraindicated in women who are pregnant and in the male partners of women who are pregnant [see Contraindications (4) and ribavirin labeling].
+ A Ribavirin Pregnancy Registry has been established to monitor maternal-fetal outcomes of pregnancies in female patients and female partners of male patients exposed to ribavirin during treatment and for 6 months following cessation of treatment.
+Physicians and patients are encouraged to report such cases by calling 1-800-593-2214.
+ 8.3 Nursing Mothers  It is not known whether the components of PegIntron and/or ribavirin are excreted in human milk.
+Studies in mice have shown that mouse interferons are excreted in breast milk.
+Because of the potential for adverse reactions from the drug in nursing infants, a decision must be made whether to discontinue nursing or discontinue the PegIntron and ribavirin treatment, taking into account the importance of the therapy to the mother.
+ 8.4 Pediatric Use
+    16
+  Safety and effectiveness in pediatric patients below the age of 3 years have not been established.
+Clinical trials in pediatric subjects less than 3 years of age are not considered feasible due to the small proportion of patients in this age group requiring treatment for CHC.
+  Long-term follow-up data in pediatric subjects indicates that PegIntron in combination with REBETOL may induce a growth inhibition that results in reduced height in some patients [see Warnings and Precautions (5.18) and Adverse Reactions (6.1)].
+ 8.5 Geriatric Use  In general, younger patients tend to respond better than older patients to interferon-based therapies.
+Clinical trials of PegIntron alone or in combination with REBETOL did not include sufficient numbers of subjects aged 65 and over to determine whether they respond differently than younger subjects.
+Treatment with alpha interferons, including PegIntron, is associated with neuropsychiatric, cardiac, pulmonary, GI, and systemic (flu-like) adverse effects.
+Because these adverse reactions may be more severe in the elderly, caution should be exercised in the use of PegIntron in this population.
+This drug is known to be substantially excreted by the kidney.
+Because elderly patients are more likely to have decreased renal function, the risk of toxic reactions to this drug may be greater in patients with impaired renal function [see Clinical Pharmacology (12.3)].
+When using PegIntron/ ribavirin therapy, refer also to the ribavirin labeling.
+ 8.6 Organ Transplant Recipients  The safety and efficacy of PegIntron alone or in combination with ribavirin for the treatment of hepatitis C in liver or other organ transplant recipients have not been studied.
+In a small (n=16) single-center, uncontrolled case experience, renal failure in renal allograft recipients receiving interferon alpha and ribavirin combination therapy was more frequent than expected from the center's previous experience with renal allograft recipients not receiving combination therapy.
+The relationship of the renal failure to renal allograft rejection is not clear.
+ 8.7 HIV or HBV Co-infection  The safety and efficacy of PegIntron/ ribavirin for the treatment of patients with HCV co-infected with HIV or HBV have not been established.
+ 10 OVERDOSAGE  There is limited experience with overdosage.
+In the clinical trials, a few subjects accidentally received a dose greater than that prescribed.
+There were no instances in which a participant in the monotherapy or combination therapy trials received more than 10.5 times the intended dose of PegIntron.
+The maximum dose received by any subject was 3.45 mcg/kg weekly over a period of approximately 12 weeks.
+The maximum known overdosage of ribavirin was an intentional ingestion of 10 g (fifty 200 mg capsules).
+There were no serious reactions attributed to these overdosages.
+In cases of overdosing, symptomatic treatment and close observation of the patient are recommended.
+ 11 DESCRIPTION  PegIntron, peginterferon alfa-2b, is a covalent conjugate of recombinant alfa-2b interferon with monomethoxy polyethylene glycol (PEG).
+The average molecular weight of the PEG portion of the molecule is 12,000 daltons.
+The average molecular weight of the PegIntron molecule is approximately 31,000 daltons.
+The specific activity of peginterferon alfa-2b is approximately 0.7 x 108 IU/mg protein.
+  Interferon alfa-2b is a water-soluble protein with a molecular weight of 19,271 daltons produced by recombinant DNA techniques.
+It is obtained from the bacterial fermentation of a strain of Escherichia coli bearing a genetically engineered plasmid containing an interferon gene from human leukocytes.
+  PegIntron is supplied in both vials and the REDIPEN single-use pre-filled pen for subcutaneous use.
+ Vials  Each vial contains either 74 mcg, 118.4 mcg, 177.6 mcg, or 222 mcg of PegIntron as a white to off-white tablet-like solid that is whole/in pieces or as a loose powder, and 1.11 mg dibasic sodium phosphate anhydrous, 1.11 mg monobasic sodium phosphate dihydrate, 59.2 mg sucrose, and 0.074 mg polysorbate 80.
+Following reconstitution with 0.7 mL of the supplied Sterile Water for Injection USP, each vial contains PegIntron at strengths of either 50 mcg per 0.5 mL, 80 mcg per 0.5 mL, 120 mcg per 0.5 mL, or 150 mcg per 0.5 mL.
+ REDIPEN single-use pre-filled pen  REDIPEN pre-filled pen is a dual-chamber glass cartridge containing lyophilized PegIntron as a white to off-white tablet or powder that is whole or in pieces in the sterile active chamber and a second chamber containing Sterile Water for Injection USP.
+Each PegIntron REDIPEN pre-filled pen contains either 67.5 mcg, 108 mcg, 162 mcg, or 202.5 mcg of PegIntron, and 1.013 mg dibasic sodium phosphate anhydrous, 1.013 mg monobasic sodium phosphate dihydrate, 54 mg sucrose, and 0.0675 mg polysorbate 80.
+Each cartridge is reconstituted to allow for the administration of up to 0.5 mL of solution.
+Following reconstitution, each REDIPEN pre-filled pen contains PegIntron at strengths of either 50 mcg per 0.5 mL, 80 mcg per 0.5 mL, 120 mcg per 0.5 mL, or 150 mcg per 0.5 mL for a single use.
+Because a small volume of reconstituted solution is lost during preparation of PegIntron, each REDIPEN pre-filled pen contains an excess amount of PegIntron powder and diluent to ensure delivery of the labeled dose.
+ 12 CLINICAL PHARMACOLOGY  12.1 Mechanism of Action  Pegylated recombinant human interferon alfa-2b is an inducer of the innate antiviral immune response [see Microbiology (12.4)].
+ 12.2 Pharmacodynamics  The pharmacodynamic effects of peginterferon alfa-2b include inhibition of viral replication in virus-infected cells, the suppression of cell cycle progression/cell proliferation, induction of apoptosis, anti-angiogenic activities, and numerous immunomodulating activities, such as enhancement of the phagocytic activity of macrophages, activation of NK cells, stimulation of cytotoxic T-lymphocytes, and the upregulation of the Th1 T-helper cell subset.
+ PegIntron raises concentrations of effector proteins such as serum neopterin and 2'5' oligoadenylate synthetase, raises body temperature, and causes reversible decreases in leukocyte and platelet counts.
+The correlation between the in vitro and in vivo pharmacologic and pharmacodynamic and clinical effects is unknown.
+ 12.3 Pharmacokinetics  Following a single subcutaneous dose of PegIntron, the mean absorption half-life (t  ka) was 4.6 hours.
+Maximal serum concentrations (Cmax) occur between 15 and 44 hours postdose, and are sustained for up to 48 to 72 hours.
+The Cmax and AUC measurements of PegIntron increase in a dose-related manner.
+After multiple dosing, there is an increase in bioavailability of PegIntron.
+Week 48 mean trough concentrations (320 pg/mL; range 0, 2960) are approximately 3-fold higher than Week 4 mean trough concentrations (94 pg/mL; range 0, 416).
+The mean PegIntron elimination half-life is approximately 40 hours (range 22-60 hours) in patients with HCV infection.
+The apparent clearance of PegIntron is estimated to be approximately 22 mL/hrkg.
+Renal elimination accounts for 30% of the clearance.
+  Pegylation of interferon alfa-2b produces a product (PegIntron) whose clearance is lower than that of nonpegylated interferon alfa-2b.
+When compared to INTRON A, PegIntron (1 mcg/kg) has approximately a 7-fold lower mean apparent clearance and a 5-fold greater mean half-life, permitting
+    17
+ a reduced dosing frequency.
+At effective therapeutic doses, PegIntron has approximately 10-fold greater Cmax and 50-fold greater AUC than interferon alfa-2b.
+   Renal Dysfunction   Following multiple dosing of PegIntron (1 mcg/kg subcutaneously given every week for 4 weeks) the clearance of PegIntron is reduced by a mean of 17% in subjects with moderate renal impairment (creatinine clearance 30-49 mL/min) and by a mean of 44% in subjects with severe renal impairment (creatinine clearance 10-29 mL/min) compared to subjects with normal renal function.
+Clearance was similar in subjects with severe renal impairment not on dialysis and subjects who are receiving hemodialysis.
+The dose of PegIntron for monotherapy should be reduced in patients with moderate or severe renal impairment [see Dosage and Administration (2.3) and REBETOL labeling].
+REBETOL should not be used in patients with creatinine clearance less than 50 mL/min [see REBETOL labeling, WARNINGS].
+ Gender  During the 48-week treatment period with PegIntron, no differences in the pharmacokinetic profiles were observed between male and female subjects with chronic hepatitis C infection.
+ Geriatric Patients  The pharmacokinetics of geriatric subjects (65 years of age and older) treated with a single subcutaneous dose of 1 mcg/kg of PegIntron were similar in Cmax, AUC, clearance, or elimination half-life as compared to younger subjects (28-44 years of age).
+  Pediatric Patients  Population pharmacokinetics for PegIntron and REBETOL (capsules and oral solution) were evaluated in pediatric subjects with chronic hepatitis C between 3 and 17 years of age.
+In pediatric patients receiving PegIntron 60 mcg/m2/week subcutaneously, exposure may be approximately 50% higher than observed in adults receiving 1.5 mcg/kg/week subcutaneously.
+The pharmacokinetics of REBETOL (dose-normalized) in this trial were similar to those reported in a prior trial of REBETOL in combination with INTRON A in pediatric subjects and in adults.
+ Effect of Food on Absorption of Ribavirin  Both AUCtf and Cmax increased by 70% when REBETOL capsules were administered with a high-fat meal (841 kcal, 53.8 g fat, 31.6 g protein, and 57.4 g carbohydrate) in a single-dose pharmacokinetic trial [see Dosage and Administration (2.1)].
+ Drug Interactions Drugs Metabolized by Cytochrome P-450  The pharmacokinetics of representative drugs metabolized by CYP1A2 (caffeine), CYP2C8/9 (tolbutamide), CYP2D6 (dextromethorphan), CYP3A4 (midazolam), and N-acetyltransferase (dapsone) were studied in 22 subjects with chronic hepatitis C who received PegIntron (1.5 mcg/kg) once weekly for 4 weeks.
+PegIntron treatment resulted in a 28% (mean) increase in a measure of CYP2C8/9 activity.
+PegIntron treatment also resulted in a 66% (mean) increase in a measure of CYP2D6 activity; however, the effect was variable as 13 subjects had an increase, 5 subjects had a decrease, and 4 subjects had no significant change [see Drug Interactions (7.1)].
+ No significant effect was observed on the pharmacokinetics of representative drugs metabolized by CYP1A2, CYP3A4, or N-acetyltransferase.
+The effects of PegIntron on CYP2C19 activity were not assessed.
+ Methadone  The pharmacokinetics of concomitant administration of methadone and PegIntron were evaluated in 18 PegIntron-naive chronic hepatitis C subjects receiving 1.5 mcg/kg PegIntron subcutaneously weekly.
+All subjects were on stable methadone maintenance therapy receiving greater than or equal to 40 mg/day prior to initiating PegIntron.
+Mean methadone AUC was approximately 16% higher after 4 weeks of PegIntron treatment as compared to baseline.
+In 2 subjects, methadone AUC was approximately double after 4 weeks of PegIntron treatment as compared to baseline [see Drug Interactions (7.2)].
+   Use with Ribavirin Zidovudine, Lamivudine, and Stavudine  Ribavirin has been shown in vitro to inhibit phosphorylation of zidovudine, lamivudine, and stavudine.
+However, in a trial with another pegylated interferon in combination with ribavirin, no pharmacokinetic (e.g., plasma concentrations or intracellular triphosphorylated active metabolite concentrations) or pharmacodynamic (e.g., loss of HIV/HCV virologic suppression) interaction was observed when ribavirin and lamivudine (n=18), stavudine (n=10), or zidovudine (n=6) were co-administered as part of a multi-drug regimen to HIV/HCV co-infected subjects [see Drug Interactions (7.3)].
+ Didanosine  Exposure to didanosine or its active metabolite (dideoxyadenosine 5'- triphosphate) is increased when didanosine is co-administered with ribavirin, which could cause or worsen clinical toxicities [see Drug Interactions (7.3)].
+    12.4 Microbiology Mechanism of Action  The biological activity of PegIntron is derived from its interferon alfa-2b moiety.
+Peginterferon alfa-2b binds to and activates the human type 1 interferon receptor.
+Upon binding, the receptor subunits dimerize, and activate multiple intracellular signal transduction pathways.
+Signal transduction is initially mediated by the JAK/STAT activation, which may occur in a wide variety of cells.
+Interferon receptor activation also activates NFB in many cell types.
+Given the diversity of cell types that respond to interferon alfa-2b, and the multiplicity of potential intracellular responses to interferon receptor activation, peginterferon alfa-2b is expected to have pleiotropic biological effects in the body.
+ The mechanism by which ribavirin contributes to its antiviral efficacy in the clinic is not fully understood.
+Ribavirin has direct antiviral activity in tissue culture against many RNA viruses.
+Ribavirin increases the mutation frequency in the genomes of several viruses and ribavirin triphosphate inhibits HCV polymerase in a biochemical reaction.
+   Antiviral Activity  The anti-HCV activity of interferon was demonstrated in cell culture using self-replicating HCV-RNA (HCV replicon cells) or HCV infection and resulted in an effective concentration (EC50) value of 1 to 10 IU/mL.
+  The antiviral activity of ribavirin in the HCV-replicon is not well understood and has not been defined because of the cellular toxicity of ribavirin.
+  Resistance
+    18
+  HCV genotypes show wide variability in their response to pegylated recombinant human interferon/ribavirin therapy.
+Genetic changes associated with the variable response have not been identified.
+ Cross-resistance  There is no reported cross-resistance between pegylated/nonpegylated interferons and ribavirin.
+   12.5 Pharmacogenomics  A retrospective genome-wide association analysis1,2 of 1671 subjects (1604 subjects from Study 4 [see Clinical Studies (14.1)] and 67 subjects from another clinical trial) was performed to identify human genetic contributions to anti-HCV treatment response in previously untreated HCV genotype 1 subjects.
+A single nucleotide polymorphism near the gene encoding interferon-lambda-3 (IL28B rs12979860) was associated with variable SVR rates.
+The rs12979860 genotype was categorized as CC, CT and TT.
+In the pooled analysis of Caucasian, African-American, and Hispanic subjects from these trials (n=1587), SVR rates by rs12979860 genotype were as follows: CC 66% vs. CT 30% vs. TT 22%.
+The genotype frequencies differed depending on racial/ethnic background, but the relationship of SVR to IL28B genotype was consistent across various racial/ethnic groups (see Table 12).
+Other variants near the IL28B gene (e.g., rs8099917 and rs8103142) have been identified; however, they have not been shown to independently influence SVR rates during treatment with pegylated interferon alpha therapies combined with ribavirin.1
+  Table 12: SVR Rates by IL28B Genotype* Population CC CT TT Caucasian 69% (301/436) 33% (196/596) 27% (38/139)
+ African-American 48% (20/42) 15% (22/146) 13% (15/112) Hispanic 56% (19/34) 38% (21/56) 27% (7/26)
+ * The SVR rates are the overall rates for subjects treated with PegIntron 1.0 mcg/kg/REBETOL, PegIntron 1.5 mcg/kg/REBETOL and Pegasys 180 mcg/Copegus according to self-reported race/ethnicity.
+  13 NONCLINICAL TOXICOLOGY  13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Carcinogenesis and Mutagenesis  PegIntron has not been tested for its carcinogenic potential.
+Neither PegIntron nor its components, interferon or methoxypolyethylene glycol, caused damage to DNA when tested in the standard battery of mutagenesis assays, in the presence and absence of metabolic activation.
+ Use with Ribavirin: See ribavirin labeling for additional warnings relevant to PegIntron therapy in combination with ribavirin.
+Impairment of Fertility  PegIntron may impair human fertility.
+Irregular menstrual cycles were observed in female cynomolgus monkeys given subcutaneous injections of 4239 mcg/m2 PegIntron alone every other day for 1 month (approximately 345 times the recommended weekly human dose based upon body surface area).
+These effects included transiently decreased serum levels of estradiol and progesterone, suggestive of anovulation.
+Normal menstrual cycles and serum hormone levels resumed in these animals 2 to 3 months following cessation of PegIntron treatment.
+Every other day dosing with 262 mcg/m2 (approximately 21 times the weekly human dose) had no effects on cycle duration or reproductive hormone status.
+The effects of PegIntron on male fertility have not been studied.
+ 14 CLINICAL STUDIES  14.1 Chronic Hepatitis C in Adults PegIntron Monotherapy &#x201a; Study 1  A randomized trial compared treatment with PegIntron (0.5, 1, or 1.5 mcg/kg once weekly subcutaneously) to treatment with INTRON A (3 million units 3 times weekly subcutaneously) in 1219 adults with chronic hepatitis from HCV infection.
+The subjects were not previously treated with interferon alpha, had compensated liver disease, detectable HCV-RNA, elevated ALT, and liver histopathology consistent with chronic hepatitis.
+Subjects were treated for 48 weeks and were followed for 24 weeks post-treatment.
+  Seventy percent of all subjects were infected with HCV genotype 1, and 74 percent of all subjects had high baseline levels of HCV-RNA (more than 2 million copies per mL of serum), two factors known to predict poor response to treatment.
+ Response to treatment was defined as undetectable HCV-RNA and normalization of ALT at 24 weeks post-treatment.
+The response rates to the 1 and 1.5 mcg/kg PegIntron doses were similar (approximately 24%) to each other and were both higher than the response rate to INTRON A (12%) (see Table 13).
+  Table 13: Rates of Response to Treatment - Study 1
+  A PegIntron
+ 0.5 mcg/kg (N=315)
+ B PegIntron 1 mcg/kg (N=298)
+ C INTRON A 3 MIU three times weekly
+ (N=307)
+ B - C (95% CI) Difference between
+  PegIntron 1 mcg/kg and
+ INTRON A Treatment Response  (Combined Virologic Response and ALT Normalization)
+ 17% 24% 12% 11 (5, 18)
+ Virologic Response* 18% 25% 12% 12 (6, 19) ALT Normalization 24% 29% 18% 11 (5, 18)
+ * Serum HCV is measured by a research-based quantitative polymerase chain reaction assay by a central laboratory.
+   Subjects with both viral genotype 1 and high serum levels of HCV-RNA at baseline were less likely to respond to treatment with PegIntron.
+Among subjects with the two unfavorable prognostic variables, 8% (12/157) responded to PegIntron treatment and 2% (4/169) responded to INTRON A. Doses
+    19
+ of PegIntron higher than the recommended dose did not result in higher response rates in these subjects.
+Subjects receiving PegIntron with viral genotype 1 had a response rate of 14% (28/199) while subjects with other viral genotypes had a 45% (43/96) response rate.
+   Ninety-six percent of the responders in the PegIntron groups and 100% of responders in the INTRON A group first cleared their viral RNA by Week 24 of treatment [see Dosage and Administration (2.1)].
+ The treatment response rates were similar in men and women.
+Response rates were lower in African-American and Hispanic subjects and higher in Asians compared to Caucasians.
+Although African Americans had a higher proportion of poor prognostic factors compared to Caucasians, the number of non-Caucasians studied (9% of the total) was insufficient to allow meaningful conclusions about differences in response rates after adjusting for prognostic factors.
+ Liver biopsies were obtained before and after treatment in 60% of subjects.
+A modest reduction in inflammation compared to baseline that was similar in all 4 treatment groups was observed.
+   PegIntron/REBETOL Combination Therapy &#x201a; Study 2  A randomized trial compared treatment with two PegIntron/REBETOL regimens [PegIntron 1.5 mcg/kg subcutaneously once weekly/REBETOL 800 mg orally daily (in divided doses); PegIntron 1.5 mcg/kg subcutaneously once weekly for 4 weeks then 0.5 mcg/kg subcutaneously once weekly for 44 weeks/REBETOL 1000 or 1200 mg orally daily (in divided doses)] with INTRON A [3 MIU subcutaneously thrice weekly/REBETOL 1000 or 1200 mg orally daily (in divided doses)] in 1530 adults with chronic hepatitis C. Interferon-naive subjects were treated for 48 weeks and followed for 24 weeks post-treatment.
+Eligible subjects had compensated liver disease, detectable HCV-RNA, elevated ALT, and liver histopathology consistent with chronic hepatitis.
+  Response to treatment was defined as undetectable HCV-RNA at 24 weeks post-treatment.
+The response rate to the PegIntron 1.5 mcg/kg plus REBETOL 800 mg dose was higher than the response rate to INTRON A/REBETOL (see Table 14).
+The response rate to PegIntron 1.5&#x201a;0.5 mcg/kg/REBETOL was essentially the same as the response to INTRON A/REBETOL (data not shown).
+  Table 14: Rates of Response to Treatment - Study 2  PegIntron 1.5 mcg/kg  once  weekly REBETOL 800 mg daily
+ INTRON A 3 MIU three times weekly REBETOL
+ 1000/1200 mg daily Overall response * &#x20ac; 52% (264/511) 46% (231/505)
+ Genotype 1 41% (141/348) 33% (112/343) Genotype 2-
+6 75% (123/163) 73% (119/162)
+ * Serum HCV-RNA is measured with a research-based quantitative polymerase chain reaction assay by a central laboratory.
+&#x20ac; Difference in overall treatment response (PegIntron/REBETOL vs. INTRON A/REBETOL) is 6% with 95% confidence interval of (0.18, 11.63) adjusted for viral genotype and presence of cirrhosis at baseline.
+Response to treatment was defined as undetectable HCV-RNA at 24 weeks post-treatment.
+   Subjects with viral genotype 1, regardless of viral load, had a lower response rate to PegIntron (1.5 mcg/kg)/REBETOL (800 mg) compared to
+ subjects with other viral genotypes.
+Subjects with both poor prognostic factors (genotype 1 and high viral load) had a response rate of 30% (78/256) compared to a response rate of 29% (71/247) with INTRON A/REBETOL.
+ Subjects with lower body weight tended to have higher adverse reaction rates [see Adverse Reactions (6.1)] and higher response rates than subjects with higher body weights.
+Differences in response rates between treatment arms did not substantially vary with body weight.
+ Treatment response rates with PegIntron/REBETOL were 49% in men and 56% in women.
+Response rates were lower in African American and Hispanic subjects and higher in Asians compared to Caucasians.
+Although African Americans had a higher proportion of poor prognostic factors compared to Caucasians, the number of non-Caucasians studied (11% of the total) was insufficient to allow meaningful conclusions about differences in response rates after adjusting for prognostic factors in this trial.
+ Liver biopsies were obtained before and after treatment in 68% of subjects.
+Compared to baseline, approximately two-thirds of subjects in all treatment groups were observed to have a modest reduction in inflammation.
+  PegIntron/REBETOL Combination Therapy &#x201a; Study 3 In a large United States community-based trial, 4913 subjects with chronic hepatitis C were randomized to receive PegIntron 1.5 mcg/kg
+ subcutaneously once weekly in combination with a REBETOL dose of 800 to 1400 mg (weight-based dosing [WBD]) or 800 mg (flat) orally daily (in divided doses) for 24 or 48 weeks based on genotype.
+Response to treatment was defined as undetectable HCV-RNA (based on an assay with a lower limit of detection of 125 IU/mL) at 24 weeks post-treatment.
+  Treatment with PegIntron 1.5 mcg/kg and REBETOL 800 to 1400 mg resulted in a higher sustained virologic response compared to PegIntron in combination with a flat 800 mg daily dose of REBETOL.
+Subjects weighing greater than 105 kg obtained the greatest benefit with WBD, although a modest benefit was also observed in subjects weighing greater than 85 to 105 kg (see Table 15).
+The benefit of WBD in subjects weighing greater than 85 kg was observed with HCV genotypes 1-3.
+Insufficient data were available to reach conclusions regarding other genotypes.
+Use of WBD resulted in an increased incidence of anemia [see Adverse Reactions (6.1)].
+  Table 15: SVR Rates by Treatment and Baseline Weight - Study 3
+ Treatment Group
+ Subject Baseline Weight
+ &lt;65 kg (&lt;143 lb)
+ 65-85 kg (143-188 lb)
+ &gt;85-105 kg (&gt;188-231 lb)
+ &gt;105 kg (&gt;231 lb)
+ WBD* 50% (173/348) 45%
+ (449/994) 42% (351/835) 47% (138/292)
+    20
+ Flat 51% (173/342) 44%
+ (443/1011) 39% (318/819) 33% (91/272)
+ * P=0.01, primary efficacy comparison (based on data from subjects weighing 65 kg or higher at baseline and utilizing a logistic regression analysis that includes treatment [WBD or Flat], genotype and presence/absence of advanced fibrosis, in the model).
+   A total of 1552 subjects weighing greater than 65 kg in Study 3 had genotype 2 or 3 and were randomized to 24 or 48 weeks of therapy.
+No additional benefit was observed with the longer treatment duration.
+ PegIntron/REBETOL Combination Therapy &#x201a; Study 4 A large randomized trial compared the safety and efficacy of treatment for 48 weeks with two PegIntron/REBETOL regimens [PegIntron 1.5 mcg/kg
+ and 1 mcg/kg subcutaneously once weekly both in combination with REBETOL 800 to 1400 mg PO daily (in two divided doses)] and Pegasys 180 mcg subcutaneously once weekly in combination with Copegus 1000 to 1200 mg PO daily (in two divided doses) in 3070 treatment-naive adults with chronic hepatitis C genotype 1.
+In this trial, lack of early virologic response (undetectable HCV-RNA or greater than or equal to 2 log10 reduction from baseline) by treatment Week 12 was the criterion for discontinuation of treatment.
+SVR was defined as undetectable HCV-RNA (Roche COBAS TaqMan assay, a lower limit of quantitation of 27 IU/mL) at 24 weeks post-treatment (see Table 16).
+  Table 16: SVR Rates by Treatment - Study 4
+  PegIntron 1.5 mcg/kg/ REBETOL PegIntron 1 mcg/kg/
+ REBETOL Pegasys
+ 180 mcg/Copegus SVR 40% (406/1019) 38% (386/1016) 41% (423/1035)
+     Overall SVR rates were similar among the three treatment groups.
+Regardless of treatment group, SVR rates were lower in subjects with poor prognostic factors.
+Subjects with poor prognostic factors randomized to PegIntron (1.5 mcg/kg)/REBETOL or Pegasys/Copegus, however, achieved higher SVR rates compared to similar subjects randomized to PegIntron 1 mcg/kg/REBETOL.
+For the PegIntron 1.5 mcg/kg plus REBETOL dose, SVR rates for subjects with and without the following prognostic factors were as follows: cirrhosis (10% vs. 42%), normal ALT levels (32% vs. 42%), baseline viral load greater than 600,000 IU/mL (35% vs. 61%), 40 years of age and older (38% vs. 50%), and African American race (23% vs. 44%).
+In subjects with undetectable HCV-RNA at Week 12 who received PegIntron (1.5 mcg/kg)/REBETOL, the SVR rate was 81% (328/407).
+ PegIntron/REBETOL Combination Therapy in Prior Treatment Failures &#x201a; Study 5  In a noncomparative trial, 2293 subjects with moderate to severe fibrosis who failed previous treatment with combination alpha interferon/ribavirin were re-treated with PegIntron, 1.5 mcg/kg subcutaneously, once weekly, in combination with weight adjusted ribavirin.
+Eligible subjects included prior nonresponders (subjects who were HCV-RNA positive at the end of a minimum 12 weeks of treatment) and prior relapsers (subjects who were HCV-RNA negative at the end of a minimum 12 weeks of treatment and subsequently relapsed after post-treatment follow-up).
+Subjects who were negative at Week 12 were treated for 48 weeks and followed for 24 weeks post-treatment.
+Response to treatment was defined as undetectable HCV-RNA at 24 weeks post-treatment (measured using a research-based test, limit of detection 125 IU/mL).
+The overall response rate was 22% (497/2293) (99% CI: 19.5, 23.9).
+Subjects with the following characteristics were less likely to benefit from re-treatment: previous nonresponse, previous pegylated interferon treatment, significant bridging fibrosis or cirrhosis, and genotype 1 infection.
+ The re-treatment sustained virologic response rates by baseline characteristics are summarized in Table 17.
+    Table 17: SVR Rates by Baseline Characteristics of Prior Treatment Failures
+ HCV Genotype/ Metavir Fibrosis Score
+ Overall SVR by Previous Response and Treatment
+  Nonresponder Relapser  alfa interferon/ribavirin
+ % (number of subjects)
+ peginterferon (2a and 2b combined)/ribavirin
+ % (number of subjects)
+ alfa interferon/ribavirin % (number of subjects)
+ peginterferon (2a and 2b combined)/ribavirin
+ % (number of subjects) Overall 18 (158/903) 6 (30/476) 43 (130/300) 35 (113/344) HCV 1 13 (98/761) 4 (19/431) 32 (67/208) 23 (56/243)               F2                  18 (36/202)                6 (7/117)                  42 (33/79)                  32 (23/72)               F3                  16 (38/233)                4 (4/112)                  28 (16/58)                  21 (14/67)               F4                  7 (24/325)                4 (8/202)                  26 (18/70)                  18 (19/104) HCV 2/3 49 (53/109) 36 (10/28) 67 (54/81) 57 (52/92)               F2                  68 (23/34)                56 (5/9)                76 (19/25)                61 (11/18)               F3                  39 (11/28)                38 (3/8)                67 (18/27)                62 (18/29)               F4                  40 (19/47)                18 (2/11)                59 (17/29)                51 (23/45) HCV 4 17 (5/29) 7 (1/15) 88 (7/8) 50 (4/8)
+      Achievement of an undetectable HCV-RNA at treatment Week 12 was a strong predictor of SVR.
+In this trial, 1470 (64%) subjects did not achieve an undetectable HCV-RNA at treatment Week 12, and were offered enrollment into long-term treatment trials, due to an inadequate treatment response.
+Of the 823 (36%) subjects who were HCV-RNA undetectable at treatment Week 12, those infected with genotype 1 had an SVR of 48% (245/507), with a range of responses by fibrosis scores (F4-F2) of 39-55%.
+Subjects infected with genotype 2/3 who were HCV-RNA undetectable at treatment Week 12 had an overall SVR of 70% (196/281), with a range of responses by fibrosis scores (F4-F2) of 60-83%.
+For all genotypes, higher fibrosis scores were associated with a decreased likelihood of achieving SVR.
+ 14.2 Chronic Hepatitis C in Pediatrics
+     21
+ PegIntron/REBETOL Combination Therapy &#x201a; Pediatric Trial  Previously untreated pediatric subjects 3 to 17 years of age with compensated chronic hepatitis C and detectable HCV-RNA were treated with
+ REBETOL 15 mg/kg/day plus PegIntron 60 mcg/m2 once weekly for 24 or 48 weeks based on HCV genotype and baseline viral load.
+ All subjects were to be followed for 24 weeks post-treatment.
+A total of 107 subjects received treatment, of which 52% were female, 89% were Caucasian, and 67% were infected with HCV genotype 1.
+Subjects infected with genotype 1, 4 or genotype 3 with HCV-RNA greater than or equal to 600,000 IU/mL received 48 weeks of therapy while those infected with genotype 2 or genotype 3 with HCV-RNA less than 600,000 IU/mL received 24 weeks of therapy.
+The trial results are summarized in Table 18.
+   Table 18: SVR Rates by Genotype and Treatment Duration - Pediatric Trial
+   15 REFERENCES  1.
+Ge, D., Fellay, J., Thompson, A.J., Simon, J.S., Shianna, K.V., Urban, T.J., Heinzen, E.L., Qiu, P., Bertelsen, A.H., Muir, A.J., Sulkowski, M.,
+ McHutchison, J.G., Goldstein, D.B., Genetic variation in IL28B predicts hepatitis C treatment-induced viral clearance, Nature 2009;461(7262):399-401.
+ 2.
+Thompson, A.J., Muir, A.J., Sulkowski, M.S., Ge, D., Fellay, J., Shianna, K.V., Urban, T., Afdhal, N.H., Jacobson, I.M., Esteban, R., Poordad, F., Lawitz, E.J., McCone, J., Shiffman, M.L., Galler, G.W., Lee, W.M., Reindollar, R., King, J.W., Kwo, P.Y., Ghalib, R.H., Freilich, B., Nyberg, L.M., Zeuzem, S., Poynard, T., Vock, D.M., Pieper, K.S., Patel, K., Tillmann, H.L., Noviello, S., Koury, K., Pedicone, L.D., Brass, C.A., Albrecht, J.K., Goldstein, D.B., McHutchison, J.G., Interlukin-28B polymorphism improves viral kinetics and is the strongest pretreatment predictor of sustained virologic response in genotype 1 hepatitis C virus, Gastroenterology 2010;139:120-129.
+  16 HOW SUPPLIED/STORAGE AND HANDLING  PegIntron REDIPEN
+ Each PegIntron REDIPEN Package Contains:
+   A box containing one 50 mcg per 0.5 mL PegIntron REDIPEN and 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1323-01)
+ A box containing one 80 mcg per 0.5 mL PegIntron REDIPEN and 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1316-01)
+ A box containing one 120 mcg per 0.5 mL PegIntron REDIPEN and 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1297-01)
+ A box containing one 150 mcg per 0.5 mL PegIntron REDIPEN and 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1370-01)
+  Each PegIntron REDIPEN PAK 4 Contains:
+   A box containing four 50 mcg per 0.5 mL PegIntron REDIPEN Units, each containing 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1323-02)
+ A box containing four 80 mcg per 0.5 mL PegIntron REDIPEN Units, each containing 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1316-02)
+ A box containing four 120 mcg per 0.5 mL PegIntron REDIPEN Units, each containing 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1297-02)
+   All Subjects N=107
+ 24 Weeks 48 Weeks
+ Virologic Response N* &#x20ac; (%)
+ Virologic Response N* &#x20ac; (%)
+ Genotype   All 26/27 (96.3) 44/80 (55.0) 1 &#x201a; 38/72 (52.8) 2 14/15 (93.3) &#x201a;3&#x20ac; 12/12 (100) 2/3 (66.7) 4 &#x201a; 4/5 (80.0)
+ *  Response to treatment was defined as undetectable HCV-RNA at 24 weeks post-treatment.
+&#x20ac;  N = number of responders/number of subjects with given genotype, and assigned treatment duration.
+&#x20ac;  Subjects with genotype 3 low viral load (less than 600,000 IU/mL) were to receive 24 weeks of treatment while those with genotype 3 and high viral load were to receive 48 weeks of treatment.
+     22
+ A box containing four 150 mcg per 0.5 mL PegIntron REDIPEN Units, each containing 1 BD needle and 2 alcohol swabs.
+ (NDC 0085-1370-02)
+  PegIntron Vials Each PegIntron Package Contains:  A box containing one 50 mcg per 0.5 mL vial of PegIntron Powder for Injection and one 1.25 mL vial of Diluent (Sterile Water for Injection USP), 2 BD Safety Lok syringes with a safety sleeve and 2 alcohol swabs.
+ (NDC 0085-1368-01)
+ A box containing one 80 mcg per 0.5 mL vial of PegIntron Powder for Injection and one 1.25 mL vial of Diluent (Sterile Water for Injection USP), 2 BD Safety Lok syringes with a safety sleeve and 2 alcohol swabs.
+ (NDC 0085-1291-01)
+ A box containing one 120 mcg per 0.5 mL vial of PegIntron Powder for Injection and one 1.25 mL vial of Diluent (Sterile Water for Injection USP), 2 BD Safety Lok syringes with a safety sleeve and 2 alcohol swabs.
+ (NDC 0085-1304-01)
+ A box containing one 150 mcg per 0.5 mL vial of PegIntron Powder for Injection and one 1.25 mL vial of Diluent (Sterile Water for Injection USP), 2 BD Safety Lok syringes with a safety sleeve and 2 alcohol swabs.
+ (NDC 0085-1279-01)
+  Storage PegIntron REDIPEN single-use pre-filled pen
+  PegIntron REDIPEN pre-filled pen should be stored at 2-8&#x201a;C (36-46&#x201a;F).
+ After reconstitution, the solution should be used immediately, but may be stored up to 24 hours at 2-8&#x201a;C (36-46&#x201a;F).
+The reconstituted solution contains no preservative, and is clear and colorless.
+DO NOT FREEZE.
+Keep away from heat.
+ PegIntron Vials  PegIntron should be stored at 25&#x201a;C (77&#x201a;F); excursions permitted to 15-30&#x201a;C (59-86&#x201a;F) [see USP Controlled Room Temperature].
+After reconstitution with supplied diluent, the solution should be used immediately but may be stored up to 24 hours at 2-8&#x201a;C (36-46&#x201a;F).
+The reconstituted solution contains no preservative, and is clear and colorless.
+DO NOT FREEZE.
+Keep away from heat.
+ Disposal Instructions  Patients should be thoroughly instructed in the importance of proper disposal.
+After preparation and administration of PegIntron for Injection, patients should be advised to use a puncture-resistant container for the disposal of used syringes, needles, and the REDIPEN pre-filled pen.
+The full container should be disposed of in accordance with state and local laws.
+Patients should also be cautioned against reusing or sharing needles, syringes, or the REDIPEN pre-filled pen.
+  17 PATIENT COUNSELING INFORMATION
+  &#x2022; Advise the patient to read the FDA-approved patient labeling (Medication Guide and Instructions for Use)   A patient should self-inject PegIntron only if it has been determined that it is appropriate, the patient agrees to medical follow-up as necessary, and training in proper injection technique has been given to him/her.
+ Pregnancy  Patients must be informed that REBETOL (ribavirin) may cause birth defects and death of the unborn child.
+Extreme care must be taken to avoid pregnancy in female patients and in female partners of male patients during treatment with combination PegIntron/ribavirin therapy and for 6 months post-therapy.
+Combination PegIntron/ribavirin therapy should not be initiated until a report of a negative pregnancy test has been obtained immediately prior to initiation of therapy.
+It is recommended that patients undergo monthly pregnancy tests during therapy and for 6 months post-therapy [see Contraindications (4), Use in Specific Populations (8.1), and ribavirin labeling].
+ HCV Transmission  Inform patients that there are no data regarding whether PegIntron therapy will prevent transmission of HCV infection to others.
+Also, it is not known if treatment with PegIntron will cure hepatitis C or prevent cirrhosis, liver failure, or liver cancer that may be the result of infection with the hepatitis C virus.
+ Laboratory Evaluations, Hydration, "Flu-like" Symptoms  Patients should be advised that laboratory evaluations are required before starting therapy and periodically thereafter [see Warnings and Precautions (5.15)].
+It is advised that patients be well hydrated, especially during the initial stages of treatment.
+"Flu-like" symptoms associated with administration of PegIntron may be minimized by bedtime administration of PegIntron or by use of antipyretics.
+  Patients developing fever, cough, shortness of breath or other symptoms of a lung problem during treatment with PegIntron may need to have a chest X-ray or other tests to adequately treat them.
+ Instructions for Use         Patients receiving PegIntron should be directed in its appropriate preparation, handling, measurement, and injection, and referred to the Instructions for Use for PegIntron Powder for Solution and PegIntron REDIPEN Single-use Pre-filled pen.
+    23
+   Patients should be directed to store PegIntron before mixing as follows:
+ &#x2022; PegIntron REDIPEN single-use pre-filled pens: store in the refrigerator between 36-46F (2-8C) &#x2022; PegIntron Powder for Solution: store at room temperature between 59-86F (15-30C)
+   Patients should be instructed on the importance of site selection for self-administering the injection, as well as the importance on rotating the injection sites.
+      For patent information: www.merck.com/product/patent/home.html  BD and Safety-Lok are registered trademarks of Becton, Dickinson and Company.
+ Copyright  2001, 2013 Schering Corporation, a subsidiary of Merck &amp; Co., Inc.
+ All rights reserved.
+ uspi-mk4031-mf-1.25ml-1501r078
+   

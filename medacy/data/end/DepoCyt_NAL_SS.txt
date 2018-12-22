@@ -1,0 +1,647 @@
+DEPOCYT (cytarabine liposome injection) Label
+   HIGHLIGHTS OF PRESCRIBING INFORMATION
+ These highlights do not include all the information needed to use
+ DEPOCYT safely and effectively.
+See full prescribing information for
+ DEPOCYT.
+ DEPOCYT (cytarabine liposome injection)
+ For Intrathecal Use Only
+ Initial U.S. Approval: 1999
+ WARNING: CHEMICAL ARACHNOIDITIS ADVERSE REACTIONS
+ See full prescribing information for complete boxed warning
+ Chemical arachnoiditis, a syndrome manifested primarily by nausea,
+ vomiting, headache and fever, was a common adverse event in all clinical
+ studies.
+If left untreated, chemical arachnoiditis may be fatal.
+Patients
+ receiving DepoCyt should be treated concurrently with dexamethasone to
+ mitigate the symptoms of chemical arachnoiditis.
+(5.1, 5.2))
+ ----------------------------INDICATIONS AND USAGE---------------------------
+DepoCyt is indicated for the intrathecal treatment of lymphomatous  meningitis.
+(1)
+ ----------------------DOSAGE AND ADMINISTRATION-----------------------
+DepoCyt is for intrathecal use only.
+(2.3)
+ &#x2022; Induction therapy: DepoCyt, 50 mg, administer intrathecally (intraventricular or lumbar puncture) every 14 days for 2 doses
+ (weeks 1 and 3) (2.4)
+ &#x2022; Consolidation therapy: DepoCyt, 50 mg, administer intrathecally (intraventricular or lumbar puncture) every 14 days for 3 doses (weeks 5, 7 and 9) followed by 1 additional dose at week 13 (2.4)
+ &#x2022; Maintenance: DepoCyt, 50 mg, administer intrathecally (intraventricular or lumbar puncture) every 28 days for 4 doses (weeks 17, 21, 25 and 29) (2.4)
+ Initiate dexamethasone 4 mg twice a day either by mouth or intravenously
+ for 5 days beginning on the day of DepoCyt injection.
+If drug related neurotoxicity develops, reduce DepoCyt to 25 mg.
+If neurotoxicity persists,
+ discontinue DepoCyt.
+(2.4)
+ ---------------------DOSAGE FORMS AND STRENGTHS---------------------
+&#x2022;  Single-dose vial containing 50 mg/5 mL (10 mg/mL) of cytarabine liposome injection (3)
+ -------------------------------CONTRAINDICATIONS-----------------------------
+&#x2022;  Hypersensitive to cytarabine or any component of the formulation with active meningeal infection.
+(4)
+ -----------------------WARNINGS AND PRECAUTIONS-----------------------
+&#x2022; Neurotoxicity: Myelopathy and other neurologic toxicity may occur.
+Reduce the dose or discontinue DepoCyt.
+(5.2)
+ &#x2022; Embryo-fetal Toxicity: May cause fetal harm.
+Advise women of potential harm to a fetus and to avoid pregnancy if receiving DepoCyt.
+(5.4)
+ ------------------------------ADVERSE REACTIONS------------------------------
+Most common adverse reactions (incidence &#x2265;20%) are headache, arachnoiditis, confusion, abnormal gait , convulsions, weakness, pyrexia,
+ fatigue, nausea, vomiting , constipation, and back pain.
+(6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact Sigma-Tau  Pharmaceuticals, Inc.
+at 1-888-393-4584 or FDA at 1-800-FDA-1088 or
+ www.fda.gov/medwatch.
+ See 17 for PATIENT COUNSELING INFORMATION
+ Revised: 12/2014
+ FULL PRESCRIBING INFORMATION: CONTENTS*
+ WARNING: CHEMICAL ARACHNOIDITIS
+ 1 INDICATIONS AND USAGE
+ 2 DOSAGE AND ADMINISTRATION
+ 2.1 Preparation and Administration Precautions
+ 2.2 Preparation and Administration
+ 2.3 Dosing Precautions 2.4 Dosing Regimen
+ 3 DOSAGE FORMS AND STRENGTHS
+ 4 CONTRAINDICATIONS
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 Chemical Arachnoiditis
+ 5.2 Neurotoxicity 5.3 Transient Elevations in CSF Protein and CSF White Blood Cells
+ 5.4 Embryo-fetal Toxicity
+ 6 ADVERSE REACTIONS
+ 6.1 Most Frequently Reported Reactions
+ 6.2 Clinical Trials Experience
+ 7 DRUG INTERACTIONS
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy Category D 8.3 Nursing Mothers
+ 8.4 Pediatric Use
+ 8.6 Hepatic and Renal Impairment
+ 10 OVERDOSAGE
+ 11 DESCRIPTION
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.3 Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL STUDIES
+ 14.1 Study 1 - Solid Tumors, Lymphoma, or Leukemia 14.2 Study 2 - Lymphoma
+ 15 REFERENCES
+ 16 HOW SUPPLIED/STORAGE AND HANDLING
+ 17 PATIENT COUNSELING INFORMATION
+ *Sections or subsections omitted from the full prescribing
+ information are not listed.
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                  FULL PRESCRIBING INFORMATION
+ WARNING: CHEMICAL ARACHNOIDITIS ADVERSE REACTIONS
+ Chemical arachnoiditis, a syndrome manifested primarily by nausea, vomiting, headache and fever, was a
+ common adverse event in all clinical studies.
+If left untreated, chemical arachnoiditis may be fatal.
+Patients
+ receiving DepoCyt should be treated concurrently with dexamethasone to mitigate the symptoms of chemical  arachnoiditis.
+[see Warnings and Precautions (5.1, 5.2)]
+ 1 INDICATIONS AND USAGE
+ DepoCyt
+ (cytarabine liposome injection) is indicated for the intrathecal treatment of lymphomatous   meningitis.
+  2 DOSAGE AND ADMINISTRATION
+ 2.1 Preparation and Administration Precautions
+ DepoCyt is a cytotoxic anticancer drug and, as with other potentially toxic compounds, caution should be
+ used in handling DepoCyt.
+The use of gloves is recommended.
+If DepoCyt suspension contacts the skin,
+ wash immediately with soap and water.
+If it contacts mucous membranes, flush thoroughly with water .
+ 2.2 Preparation and Administration
+ No further reconstitution or dilution is required.
+DepoCyt particles have a tendency to settle with time.
+ Vials of DepoCyt should be allowed to warm to room temperature and gently agitated or inverted to re
+suspend the particles immediately prior to withdrawal from the vial.
+Avoid aggressive agitation.
+ DepoCyt should be withdrawn from the vial immediately before administration.
+DepoCyt is a single dose
+ vial and does not contain any preservative.
+DepoCyt should be used within 4 hours of withdrawal from the
+ vial.
+Unused portions of each vial should be discarded properly [see How Supplied/ Storage and Handling
+ (16)].
+Do not save any unused portions for later administration.
+Do not mix DepoCyt with any other
+ medications.
+ 2.3 Dosing Precautions
+ In-line filters must not be used when administering DepoCyt.
+DepoCyt is administered directly into the
+ cerebrospinal fluid (CSF) via an intraventricular reservoir or by direct injection into the lumbar sac.
+ DepoCyt should be injected slowly over a period of 1-5 minutes.
+Following drug administration by lumbar
+ puncture, the patient should be instructed to lie flat for 1 hour.
+Patients should be ob served by the physician
+ for immediate toxic reactions.
+ 2.4 Dosing Regimen
+ For the treatment of lymphomatous meningitis, DepoCyt 50 mg (one vial of DepoCyt) is recommended to be
+ given according to the following schedule:
+ Induction therapy DepoCyt, 50 mg, administered intrathecally (intraventricular or lumbar  puncture) every 14 days for 2 doses (weeks 1 and 3).
+ Consolidation therapy DepoCyt, 50 mg, administered intrathecally (intraventricular or lumbar  puncture) every 14 days for 3 doses (weeks 5, 7 and 9) followed by 1
+ additional dose at week 13.
+ Maintenance DepoCyt, 50 mg, administered intrathecally (intraventricular or lumbar  puncture) every 28 days for 4 doses (weeks 17, 21, 25 and 29).
+ Patients should be started on dexamethasone 4 mg twice a day either by mouth or intravenously for 5 days
+ beginning on the day of DepoCyt injection.
+ If drug related neurotoxicity develops, the dose should be reduced to 25 mg.
+If it persists, treatment with
+ DepoCyt should be discontinued.
+ 2
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    3 DOSAGE FORMS AND STRENGTHS
+ Ready-to-use, single dose vial containing 50 mg/5 mL (10 mg/mL) of cytarabine liposome injection.
+  4 CONTRAINDICATIONS
+ DepoCyt
+ (cytarabine liposome injection) is contraindicated in patients who are hypersensitive to cytarabine or
+ any component of the formulation, and in patients with active meningeal infection.
+ 5 WARNINGS AND PRECAUTIONS
+ 5.1 Chemical Arachnoiditis
+ Chemical arachnoiditis, a syndrome manifested primarily by nausea, vomiting, headache and fever, has been
+ a common adverse event in all studies.
+If chemical arachnoiditis is suspected, exclude other inflammatory,
+ infectious, or neoplastic conditions.
+If left untreated, chemical arachnoiditis may be fatal.
+The incidence
+ and severity of chemical arachnoiditis can be reduced by coadministration of dexamethasone.
+Patients
+ receiving DepoCyt should be treated concurrently with dexamethasone to mitigate the symptoms of
+ chemical arachnoiditis [see Dosage and Administration (2)].
+ Toxic effects may be related to a single dose or to cumulative administration.
+Because toxic effects can
+ occur at any time during therapy (although they are most likely to occur within 5 days of drug
+ administration), patients receiving intrathecal therapy with DepoCyt should be monitored continuously for
+ the development of neurotoxicity.
+If patients develop neurotoxicity, reduce subsequent doses of DepoCyt.
+If
+ neurotoxicity persists, discontinue DepoCyt [see Warnings and Precautions (5.3)]
+ Hydrocephalus has also been reported, possibly precipitated by arachnoiditis.
+ Arachnoiditis is an expected and well-documented side effect of both neoplastic meningitis and of
+ intrathecal chemotherapy.
+The incidence of severe and life-threatening arachnoiditis in patients receiving
+ DepoCyt was 19% (48/257) in all patients and 30% (10/33) in patients with lymphomatous meningitis.
+In
+ the early dose-finding study, chemical arachnoiditis was observed in 100% of cycles without dexamethasone
+ prophylaxis.
+When concurrent dexamethasone was administered, chemical arachnoiditis was observed in
+ 33% of cycles.
+ 5.2 Neurotoxicity
+ Intrathecal administration of cytarabine may cause myelopathy and other neurologic toxicity and can rarely
+ lead to a permanent neurologic deficit.
+Administration of intrathecal cytarabine in combination with other
+ chemotherapeutic agents or with cranial/spinal irradiation may increase this risk of neurotoxicity.
+ Blockage to CSF flow may result in increased free cytarabine concentrations in the CSF and an increased
+ risk of neurotoxicity.
+Therefore, as with any intrathecal cytotoxic therapy, consideration should be given to
+ the need for assessment of CSF flow before treatment is started.
+ Following intrathecal administration of DepoCyt, central nervous system toxicity, including persistent  extreme somnolence, hemiplegia, visual disturbances including blindness which may be total and
+ permanent, deafness and cranial nerve palsies have been reported.
+Symptoms and signs of peripheral  neuropathy, such as pain, numbness, paresthesia, weakness, and impaired bowel and bladder control have
+ also been observed.
+In some cases, a combination of neurological signs and symptoms has been reported as
+ Cauda Equina Syndrome.
+ If patients develop neurotoxicity, reduce subsequent doses of DepoCyt or discontinue DepoCyt Headache,
+ nausea, and fever are expected in early signs of neurotoxicity.
+ 5.3 Transient Elevations in CSF Protein and CSF White Blood Cells
+ Transient elevations in CSF protein and white blood cell counts have been observed in patients following
+ DepoCyt administration.
+ 5.4 Embryo-fetal Toxicity
+ Cytarabine, the active component of DepoCyt, can cause fetal harm if a pregnant woman is exposed to the
+ drug systemically.
+The systemic exposure of cytarabine following intrathecal administration of DepoCyt is
+ 3
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          negligible.
+Cytarabine was teratogenic in mice and rats.
+Cytarabine was embryotoxic in mice when
+ administered during the period of organogenesis.
+If this drug is used during pregnancy or if the patient
+ becomes pregnant while taking this drug, the patient should be apprised of the potential harm to a fetus.
+ [See Use in Specific Populations, Sec.
+8.1]
+ 6 ADVERSE REACTIONS
+ The following serious adverse reactions are described in greater detail in other sections of the label:
+ &#x2022; Chemical Arachnoiditis [see Warnings and Precautions (5.1)]
+ &#x2022; Neurotoxicity [see Warnings and Precautions (5.2)]
+ &#x2022; Transient elevations in CSF protein and CSF white blood cells [see Warnings and Precautions (5.3)]
+ 6.1 Most Frequently Reported Reactions
+ After intrathecal administration of cytarabine the most frequently reported reactions (&#x2265; 10%) are headache NOS, nausea, vomiting NOS, arachnoiditis, weakness, confusion, pyrexia, fatigue, constipation, back pain,
+ gait abnormal NOS, convulsions NOS, dizziness NOS, lethargy, pain in limb, insomnia, urinary tract  infection NOS, neck pain, death NOS, pain, memory impairment, dehydration, anemia NOS, diarrhea NOS,
+ appetite decreased NOS, thrombocytopenia, edema peripheral, arthralgia, neck stiffness, vision blurred,
+ muscle weakness, neutropenia, hypoesthesia, agitation, and dyspnea NOS.
+  6.2 Clinical Trials Experience
+ Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the
+ clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not
+ reflect the rates observed in practice.
+The toxicity database consists of the observations made during Phase
+ 1-4 studies.
+The most common adverse reactions in all patients and in patients with lymphoma are shown in
+ Table 1.
+The incidences of symptoms possibly reflecting meningeal irritation are shown in Table 2.
+ Table 1.
+Incidence of adverse reactions occurring in &gt; 10% of patients in all Phase 1-4 adult study patients
+ and in patients with lymphomatous meningitis receiving DepoCyt 50 mg or an active comparator
+ Lymphoma
+ System Organ Class / Preferred Term All DepoCyt
+ (N=257)
+ DepoCyt
+ (N=33)
+ Ara-C
+ (N=28)
+ Nervous System Disorders
+ Headache NOS 144 (56%) 17 (52%) 9 (32%)
+ Arachnoiditis 108 (42%) 14 (42%) 10 (36%)
+ Confusion 86 (33%) 12 (36%) 3 (11 %)
+ Gait abnormal NOS 60 (23%) 7 (21 %) 8 (29%)
+ Convulsions NOS 52 (20%) 7 (21%) 1 (4%)
+ Dizziness NOS 47 (18%) 7 (21%) 6 (21%)
+ Memory impairment 36 (14%) 4 (12%) 1 (4%)
+ Hypoesthesia 26 (10%) 4 (12%) 3 (11%)
+ Tremor 22 (9%) 5 (15%) 5 (18%)
+ Peripheral neuropathy NOS 9 (4%) 4 (12%) 1 (4%)
+ Syncope 8 (3%) 0 (0%) 3 (11 %)
+ Neuropathy NOS 7 (3%) 3 (9%) 3 (11 %)
+ Peripheral sensory neuropathy 7 (3%) 2 (6%) 3 (11 %)
+ Reflexes abnormal 7 (3%) 0 (0%) 3 (11 %)
+ General Disorders and Administration Site
+ Conditions
+ Weakness 103 (40%) 13 (39%) 15 (54%)
+ Pyrexia 81 (32%) 15 (45%) 12 (43%)
+ Fatigue 64 (25%) 9 (27%) 13 (46%)
+ Lethargy 41 (16%) 4 (12%) 4 (14%)
+ Death NOS 35 (14%) 9 (27%) 5 (18%)
+ 4
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               Lymphoma
+ System Organ Class / Preferred Term All DepoCyt
+ (N=257)
+ DepoCyt
+ (N=33)
+ Ara-C
+ (N=28)
+ Pain NOS 35 (14%) 3 (9%) 5 (18%)
+ Edema peripheral 27 (11 %) 6 (18%) 7 (25%)
+ Fall 12 (5%) 0 (0%) 3 (11%)
+ Mucosal inflammation NOS 8 (3%) 4 (12%) 2 (7%)
+ Edema NOS 6 (2%) 1 (3%) 6 (21%)
+ Gastrointestinal Disorders
+ Nausea 117 (46%) 11 (33%) 15 (54%)
+ Vomiting NOS 112 (44%) 11 (33%) 9 (32%)
+ Constipation 64 (25%) 8 (24%) 7 (25%)
+ Diarrhea NOS 31 (12%) 9 (27%) 9 (32%)
+ Abdominal pain NOS 22 (9%) 5 (15%) 4 (14%)
+ Dysphagia 20 (8%) 3 (9%) 3 (11 %)
+ Hemorrhoids 8 (3%) 0 (0%) 3 (11 %)
+ Musculoskeletal and Connective Tissue
+ Disorders
+ Back pain 61 (24%) 7 (21%) 5 (18%)
+ Pain in limb 39 (15%) 4 (12%) 8 (29%)
+ Neck pain 36 (14%) 5 (15%) 3 (11%)
+ Arthralgia 29 (11%) 3 (9%) 4 (14%)
+ Neck stiffness 28 (11%) 2 (6%) 4 (14%)
+ Muscle weakness NOS 25 (10%) 5 (15%) 2 (7%)
+ Psychiatric Disorders
+ Insomnia 35 (14%) 6 (18%) 7 (25%)
+ Agitation 26 (10%) 5 (15%) 2 (7%)
+ Depression 21 (8%) 6 (18%) 4 (14%)
+ Anxiety 17 (7%) 1 (3%) 3 (11%)
+ Infections and Infestations
+ Urinary tract infection NOS 35 (14%) 6 (18%) 5 (18%)
+ Pneumonia NOS 16 (6%) 2 (6%) 3 (11%)
+ Metabolism and Nutrition Disorders
+ Dehydration 33 (13%) 6 (18%) 3 (11%)
+ Appetite decreased NOS 29 (11%) 4 (12%) 3 (11%)
+ Hyponatremia 18 (7%) 4 (12%) 1 (4%)
+ Hypokalemia 17 (7%) 5 (15%) 2 (7%)
+ Hyperglycemia 15 (6%) 4 (12%) 2 (7%)
+ Anorexia 14 (5%) 1 (3%) 5 (18%)
+ Investigations
+ Platelet count decreased 8 (3%) 0 (0%) 3 (11 %)
+ Renal and Urinary Disorders
+ Incontinence NOS 19 (7%) 3 (9%) 5 (18%)
+ Urinary retention 14 (5%) 0 (0%) 3 (11%)
+ Respiratory, Thoracic and Mediastinal
+ Disorders
+ Dyspnea NOS 25 (10%) 4 (12%) 6 (21%)
+ Cough 17 (7%) 3 (9%) 6 (21%)
+ Eye Disorders
+ Vision blurred 29 (11%) 4 (12%) 4 (14%)
+ Blood and Lymphatic Disorders
+ Anemia NOS 31 (12%) 6 (18%) 5 (18%)
+ Thrombocytopenia 27 (11%) 8 (24%) 9 (32%)
+ 5
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                                    Lymphoma
+ System Organ Class / Preferred Term All DepoCyt
+ (N=257)
+ DepoCyt
+ (N=33)
+ Ara-C
+ (N=28)
+ Neutropenia 26 (10%) 12 (36%) 7 (25%)
+ Skin and Subcutaneous Tissue
+ Disorders
+ Contusion 6 (2%) 1 (3%) 3 (11 %)
+ Pruritus NOS 6 (2%) 0 (0%) 4 (14%)
+ Sweating increased 6 (2%) 1 (3%) 3 (11 %)
+ Vascular Disorders
+ Hypotension NOS 21 (8%) 6 (18%) 2 (7%)
+ Hypertension NOS 15 (6%) 5 (15%) 1 (4%)
+ Ear and Labyrinth Disorders
+ Hypacusis 15 (6%) 6 (18%) 3 (11%)
+ Cardiac Disorders
+ Tachycardia NOS 22 (9%) 0 (0%) 5 (18%)
+ Neoplasms Benign, Malignant and
+ Unspecified (Incl Cysts and Polyps)
+ Diffuse Large B-Cell Lymphoma NOS 1 (0%) 1 (3%) 3 (11%)
+ Table 2.
+Incidence of adverse reactions possibly reflecting meningeal irritation occurring in &gt; 10% of all
+ studied adult patients receiving DepoCyt 50 mg or an active comparator *
+ DepoCyt MTX Ara-C System Organ Class / Preferred Term
+ (N=257) (N=78) (N=28)
+ Nervous System Disorders
+ Headache NOS 145 (56%) 33 (42%) 9 (32%)
+ Arachnoiditis 108 (42%) 15 (19%) 10 (36%)
+ Convulsions NOS 56 (22%) 11 (14%) 1 (4%)
+ Gastrointestinal Disorders
+ Nausea
+ Vomiting NOS
+ Musculoskeletal and Connective Tissue
+ Disorders
+ 117
+ 112
+ (46%)
+ (44%)
+ 24
+ 22
+ (31%)
+ (28%)
+ 15
+ 9
+ (54%)
+ (32%)
+ Back pain
+ Neck pain
+ Neck stiffness
+ General Disorders and Administration
+ Site Conditions
+ Pyrexia
+ 61
+ 36
+ 28
+ 81
+ (24%)
+ (14%)
+ (11%)
+ (32%)
+ 15
+ 6
+ 1
+ 15
+ (19%)
+ (8%)
+ (1%)
+ (19%)
+ 5
+ 3
+ 4
+ 12
+ (18%)
+ (11%)
+ (14%)
+ (43%)
+ * Hydrocephalus acquired, CSF pleocytosis and meningism occurred in &#x2264; 10% of all studied adult patients receiving DepoCyt or an active comparator
+ During the clinical studies, 2 deaths related to DepoCyt were reported.
+One patient at the 125 mg dose level
+ died of encephalopathy 36 hours after receiving an intraventricular dose of DepoCyt.
+This patient, however,
+ was also receiving concomitant whole brain irradiation and had previously received intraventricular
+ methotrexate.
+The other patient received DepoCyt, 50 mg by the intraventricular route and developed focal  seizures progressing to status epilepticus.
+This patient died approximately 8 weeks after the last dose of study
+ medication.
+In the controlled lymphoma study, the patient incidence of seizures was higher in the DepoCyt
+ group (4/17, 23.5%) than in the cytarabine group (1/16, 6.3%).
+The death of 1 additional patient was
+ considered "possibly" related to DepoCyt.
+He was a 63-year-old with extensive lymphoma involving the
+ 6
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   nasopharynx, brain, and meninges with multiple neurologic deficits who died of apparent disease progression 4
+ days after his second dose of DepoCyt.
+ 7 DRUG INTERACTIONS
+ No formal assessments of pharmacokinetic drug-drug interactions between DepoCyt and other agents have been
+ conducted.
+Concomitant administration of DepoCyt with other antineoplastic agents administered by the
+ intrathecal route has not been studied.
+With intrathecal cytarabine and other cytotoxic agents administered
+ intrathecally, enhanced neurotoxicity has been associated with coadministration of drugs.
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy Category D [see Warnings and Precautions (5.8)]
+ Risk Summary
+ There are no studies assessing the reproductive toxicity of DepoCyt.
+The systemic exposure of cytarabine
+ following intrathecal administration of DepoCyt is negligible.
+Cytarabine can cause fetal harm if a pregnant
+ woman is exposed to the drug systemically.
+Three anecdotal cases of major limb malformations have been
+ reported in infants after their mothers received intravenous cytarabine, alone or in combination with other
+ agents, during the first trimester.
+Advise women of childbearing potential to avoid becoming pregnant
+ while receiving DepoCyt.
+ If this drug is used during pregnancy or if the patient becomes pregnant while
+ taking this drug, the patient should be apprised of the potential harm to a fetus.
+ Animal Data
+ Cytarabine was teratogenic in mice (cleft palate, phocomelia, deformed appendages, skeletal abnormalities)
+ when doses &#x2265;2 mg/kg/day were administered IP during the period of organogenesis (about 0.2 times the recommended human dose on a mg/m
+2 basis), and in rats (deformed appendages) when 20 mg/kg was
+ administered as a single IP dose on day 12 of gestation (about 4 times the recommended human dose on a
+ mg/m2
+ basis).
+Single IP doses of 50 mg/kg in rats (about 10 times the recommended human dose on a
+ mg/m2
+ basis) on day 14 of gestation reduced prenatal and postnatal brain size and permanent impairment of
+  learning ability.
+  Cytarabine was embryotoxic in mice when administered during the period of organogenesis.
+  Embryotoxicity was characterized by decreased fetal weight at 0.5 mg/kg/day (about 0.05 times the
+ recommended human dose on mg/m2 basis), and increased early and late resorptions and decreased live litter
+  sizes at 8 mg/kg/day (approximately equal to the recommended human dose on mg/m2
+ basis).
+  8.3 Nursing Mothers
+ It is not known whether cytarabine is excreted in human milk following intrathecal DepoCyt administration.
+ The systemic exposure to free cytarabine following intrathecal treatment with DepoCyt was negligible.
+ Because many drugs are excreted in human milk and because of the potential for serious adverse reactions in
+ nursing infants, a decision should be made whether to discontinue nursing or to discontinue the drug, taking
+ into account the importance of the drug to the mother.
+ 8.4 Pediatric Use
+ The safety and efficacy of DepoCyt in pediatric patients has not been established.
+ 8.6 Hepatic and Renal Impairment
+ The effects of hepatic or renal impairment on the pharmacokinetics of DepoCyt have not been studied.
+ 10 OVERDOSAGE
+ No overdosages with DepoCyt
+ (cytarabine liposome injection) have been reported.
+An overdose with
+  DepoCyt may be associated with severe chemical arachnoiditis including encephalopathy.
+In an early
+  uncontrolled study without dexamethasone prophylaxis, single doses up to 125 mg were administered.
+  There is no antidote for overdose of intrathecal DepoCyt or unencapsulated cytarabine released from DepoCyt.
+ Exchange of CSF with isotonic saline has been carried out in a case of intrathecal overdose of free cytarabine,
+  and such a procedure may be considered in the case of DepoCyt overdose.
+Management of overdose should be
+ directed at maintaining vital functions.
+  7
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                       11 DESCRIPTION
+ DepoCyt
+ (cytarabine liposome injection) is a sterile, injectable suspension of the antimetabolite cytarabine for
+ intrathecal administration.
+ The chemical name of cytarabine is 4-amino-1--D-arabinofuranosyl-2(1H)pyrimidinone and is also known as cytosine arabinoside.
+It has a molecular formula of C9H13N3O5 and a
+ molecular weight 243.22 g/mol.
+Cytarabine has the following structural formula:
+ DepoCyt is available as a single-dose vial containing 50 mg/5 mL (10 mg/mL) of cytarabine.
+DepoCyt is
+ formulated as a sterile, non-pyrogenic, white to off-white suspension of cytarabine liposomes in 0.9% w/v
+ sodium chloride in water for injection.
+ Each mL contains 10 mg cytarabine, 4.4 mg cholesterol, 1.2 mg triolein,
+ 5.7 mg dioleoylphosphatidylcholine (DOPC), and 1.0 mg dipalmitoylphosphatidylglycerol (DPPG).
+DepoCyt
+ is preservative-free.
+The pH of the product falls within the range from 5.5 to 8.5.
+ Liposome drug products may behave differently from nonliposome drug products.
+Dep oCyt (cytarabine
+ liposome injection) is not equivalent to, and cannot be substituted for, other drug products containing
+ cytarabine.
+ 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ DepoCyt
+ (cytarabine liposome injection) is a sustained-release formulation of the active ingredient
+ cytarabine designed for direct administration into the cerebrospinal fluid (CSF).
+Cytarabine is a cell cycle
+ phase-specific antineoplastic agent, affecting cells only during the S-phase of cell division.
+Intracellularly,
+ cytarabine is converted into cytarabine-5-triphosphate (ara-CTP), which is the active metabolite.
+The
+ mechanism of action is not completely understood, but it appears that ara -CTP acts primarily through
+ inhibition of DNA polymerase.
+Incorporation into DNA and RNA may also contribute to cytarabine
+ cytotoxicity.
+Cytarabine is cytotoxic to proliferating mammalian cells in culture.
+ 12.3 Pharmacokinetics
+ Following intrathecal administration of DepoCyt 50 mg, peak levels of free CSF cytarabine were observed
+ within 1 hour of dosing and ranged from 30 to 50 mcg/mL.
+The terminal half-life for the free CSF
+ cytarabine ranged from of 5.9 to 82.4 hours.
+Systemic exposure to cytarabine was negligible following
+ intrathecal administration of DepoCyt 50 mg.
+ Metabolism and Elimination
+ The primary route of elimination of cytarabine is metabolism to the inactive compound ara-U, followed by
+ urinary excretion of ara-U. In contrast to systemically administered cytarabine, which is rapidly
+ metabolized to ara-U, conversion to ara-U in the CSF is negligible after intrathecal administration because
+ of the significantly lower cytidine deaminase activity in the CNS tissues and CSF.
+The CSF clearance rate
+ of cytarabine is similar to the CSF bulk flow rate of 0.24 mL/min.
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ No carcinogenicity, mutagenicity or impairment of fertility studies have been conducted with DepoCyt.
+ Cytarabine was mutagenic in in vitro tests and was clastogenic in vitro (chromosome aberrations and SCE
+ in human leukocytes) and in vivo (chromosome aberrations and SCE assay in rodent bone marrow, mouse
+ 8
+ Reference ID: 3677517
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                micronucleus assay).
+Cytarabine caused the transformation of hamster embryo cells and rat H43 cells in
+ vitro.
+ No studies assessing the impact of cytarabine on fertility are available in the literature.
+Cytarabine was
+ clastogenic to meiotic cells; a dose-dependent increase in sperm-head abnormalities and chromosomal
+ aberrations occurred in mice given IP cytarabine.
+Because the systemic exposure to free cytarabine
+ following intrathecal treatment with DepoCyt was negligible, the risk of impaired fertility after intrathecal
+ DepoCyt is likely to be low.
+ 14 CLINICAL STUDIES
+ DepoCyt (cytarabine liposome injection) was studied in 2 controlled clinical studies that enrolled patients
+ with neoplastic meningitis.
+ 14.1 Study 1 - Solid Tumors, Lymphoma, or Leukemia
+ The first study, which was a randomized, multi-center, multi-arm study involving a total of 99 treated
+ patients, compared 50 mg of DepoCyt administered every 2 weeks to standard intrathecal chemotherapy
+ administered twice a week to patients with solid tumors, lymphoma, or leukemia.
+For patients with
+ lymphoma, standard therapy consisted of 50 mg of unencapsulated cytarabine given twice a week.
+Thirty-
+three lymphoma patients (17 DepoCyt, 16 cytarabine) were treated.
+Patients went off study if they had not
+ achieved a complete response defined as clearing of the CSF from all previously positive sites in the
+ absence of progression of neurological symptoms, after 4 weeks of treatment with study drug.
+ In the first study, complete response was prospectively defined as (1) conversion, confirmed by a blinded
+ central pathologist, from a positive examination of the CSF for malignant cells to a negative examination
+ on two separate occasions (at least 3 days apart, on day 29 and later) at all initially positive sites, together
+ with (2) an absence of neurological progression during the treatment period.
+ The complete response rates in the first study of lymphoma are shown in Table 3.
+Although there was a
+ plan for central pathology review of the data, in 4 of the 7 responding patients on the DepoCyt arm this was
+ not accomplished and these cases were considered to have had a complete response based on the reading of
+ an unblinded pathologist.
+The median overall survival of all treated patients was 99.5 days in the DepoCyt
+ group and 63 days in the cytarabine group.
+In both groups the majority of patients died from progressive
+ systemic disease, not neoplastic meningitis.
+ 14.2 Study 2 - Lymphoma
+ The second study was a randomized, multi-center, multi-arm study involving a total of 124 treated patients
+ with either solid tumors or lymphomas.
+In this study, 24 patients with lymphoma were randomized and
+ treated with DepoCyt or cytarabine.
+Patients received 6 two-week induction cycles of DepoCyt 50 mg
+ every 2 weeks or cytarabine 50 mg twice weekly.
+Patients then received four maintenance cycles of
+ DepoCyt 50 mg every 4 weeks, or cytarabine 50 mg weekly for 4 weeks.
+In both studies, patients received
+ concurrent treatment with dexamethasone to minimize symptoms associated with chemical arachnoiditis
+ [see Warnings and Precautions (5) and Dosage and Administration (2)].
+In this study, cytological response
+ was assessed in a blinded fashion utilizing a similar definition as in the first study.
+The results in patients
+ with lymphomatous meningitis are shown in Table 3.
+ Table 3: Complete Cytological Responses in
+  Patients with Lymphomatous Meningitis
+  DepoCyt
+ Cytarabine
+ Study 1 7/17 (41%) 1/16 (6%)
+ 95% CI (18%, 67%) (0%, 30%)
+ Study 2 4/12 (33%) 2/12 (17%)
+ 95% CI (10%, 65%) (2%, 48%)
+ 9
+ Reference ID: 3677517
+                                                                                                                                                                                          15  REFERENCES
+ OSHA Hazardous Drugs.
+OSHA.
+[Accessed on November 4, 2014, from
+  http://www.osha.gov/SLTC/hazardousdrugs/index.html].
+  16  HOW SUPPLIED/STORAGE AND HANDLING
+ DepoCyt
+ (cytarabine liposome injection) is supplied as a sterile, white to off-white suspension in 5 mL glass,
+  single dose vials.
+  Store refrigerated at 2 to 8C (36 to 46F).
+Protect from freezing and avoid aggressive agitation.
+  Available in individual carton containing one ready to use vial.
+NDC 57665-331-01.
+  Do not use beyond expiration date printed on the label.
+  DepoCyt is a genotoxic drug.
+Follow special handling and disposal procedures [see References (15)].
+  17  PATIENT COUNSELING INFORMATION
+ &#x2022;  Advise patients of the following expected adverse events:  headache, nausea, vomiting, and fever, and about the early signs and symptoms of neurotoxicity.
+ &#x2022;  Advise patients of the importance of concurrent dexamethasone administration should be emphasized at the initiation of each cycle of DepoCyt
+ treatment.
+ &#x2022;  Instruct patients to seek medical attention if signs or symptoms of neurotoxicity develop, or if oral
+ dexamethasone is not well tolerated.
+  For additional information, contact Sigma-Tau Pharmaceuticals, Inc.
+at: 1-888-393-4584.
+  Manufactured by:
+  Pacira Pharmaceuticals, Inc., San Diego, CA 92121
+  Distributed by: Sigma-Tau Pharmaceuticals, Inc., Gaithersburg, MD 20878
+  U.S. patent Nos.
+ 5,807,572
+ 5,723,147
+ 5,455,044
+ 5,891,467
+ 10
+ Reference ID: 3677517
+  

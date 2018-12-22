@@ -2,21 +2,27 @@ from spacy.tokens.underscore import Underscore
 
 class FeatureExtractor:
     """
-    Extracting training data for use in a CRF.
-    Features are given as rich dictionaries as described in:
-    https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html#features
+        Extracting training data for use in a CRF.
+        Features are given as rich dictionaries as described in:
+        https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html#features
 
-    sklearn CRF suite is a wrapper for CRF suite that gives it a sci-kit compatability.
-    """
+        sklearn CRF suite is a wrapper for CRF suite that gives it a sci-kit compatability.
+        """
 
     def __init__(self, window_size=2, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']):
         """
+        Initializes a FeatureExtractor. This class allows for full control of both spacy features that exist on tokens
+        and custom medacy overlayed features. The current implementation is designed solely for use with sequence
+        classifiers such as discriminative conditional random fields.
+
+        Custom medaCy features are pulled from spacy custom token attributes that begin with 'feature_'.
 
         :param window_size: window size to pull features from on a given token, default 2 on both sides.
         :param spacy_features: Default token attributes that spacy sets to utilize as features
         """
         self.window_size = window_size
-        self.all_custom_features = list(Underscore.token_extensions.keys()) #do not ask how long this took to find.
+        # do not ask how long this took to find.
+        self.all_custom_features = [attribute for attribute in list(Underscore.token_extensions.keys()) if attribute.startswith('feature_')]
         self.spacy_features = spacy_features
 
     def __call__(self, doc):
@@ -24,15 +30,22 @@ class FeatureExtractor:
         features = [self._sent_to_feature_dicts(sent) for sent in doc.sents]
         labels = [self._sent_to_labels(sent) for sent in doc.sents]
 
-        return (features, labels)
+        return features, labels
 
     def get_features_with_span_indices(self, doc):
+        """
+        Given a document this method orchestrates the organization of features and labels for the sequences to classify.
+        Sequences for classification are determined by the sentence boundaries set by spaCy. These can be modified.
+        :param doc: an annoted spacy Doc object
+        :return: Tuple of parallel arrays - 'features' an array of feature dictionaries for each sequence (spaCy determined sentence)
+                 and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
+        """
 
         features = [self._sent_to_feature_dicts(sent) for sent in doc.sents]
 
         indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
 
-        return (features, indices)
+        return features, indices
 
 
 
@@ -44,6 +57,7 @@ class FeatureExtractor:
 
     def mapper_for_crf_wrapper(self, text):
         """
+        CURRENTLY UNUSED.
         CRF wrapper uses regexes to extract the output of the underlying C++ code.
         The inclusion of \n and space characters mess up these regexes, hence we map them to text here.
         :return:
