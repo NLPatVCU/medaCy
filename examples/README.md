@@ -26,4 +26,4 @@ to overlay rich medical concept information onto text. Components are chained or
 | [Nanomedicine Drug Labels](/examples/models/nanomedicine_drug_labels.md) | [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) | Nanoparticle, Company, Adverse Reaction, Active Ingredient, Surface Coating, etc. |
 
 ### How medaCy uses spaCy
-[SpaCy](https://github.com/explosion/spaCy) is an open source python package built with cython that allows for lighting fast text processing. MedaCy combines spaCy's memory efficient text processing architecture with tools, ideas and principles from both machine learning and medical computational linguistics to provide a unified ground for researchers and practioners alike to advance the state of medical text processing.
+[SpaCy](https://github.com/explosion/spaCy) is an open source python package built with cython that allows for lighting fast text processing. MedaCy combines spaCy's memory efficient text processing architecture with tools, ideas and principles from both machine learning and medical computational linguistics to provide a unified framework for researchers and practioners alike to advance medical text mining.
