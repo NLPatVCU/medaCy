@@ -24,8 +24,8 @@ Medacy can be installed for general use or for pipeline development / research p
 
 | Application | Run           |
 | ----------- |:-------------:|
-| Prediction and Model Training (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
-| Prediction and Model Training (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
+| Model Training and Prediction (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
+| Model Training and Prediction (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
