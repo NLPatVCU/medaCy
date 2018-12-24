@@ -19,6 +19,29 @@ to overlay rich medical concept information onto text. Components are chained or
 ### Building a custom medaCy pipeline
 
 ### Utilizing Pre-trained NER models
+To run a medaCy pre-trained model over your own data, simply install the package associated with the model by following the links below.
+For example, assuming you have medaCy installed:
+
+Run:
+
+`pip install git+https://github.com/NanoNLP/medaCy_clinical_note_model.git`
+
+then the code snippet
+
+```python
+import medacy_clinical_note_model
+
+model = medacy_clinical_note_model.load()
+
+model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
+```
+will output:
+```python
+{'entities': {'T3': ('Drug', 40, 45, 'Advil'), 'T1': ('Dosage', 27, 28, '1'), 'T2': ('Form', 29, 36, 'capsule'), 'T4': ('Duration', 46, 56, 'for 5 days')}, 'relations': []}
+```
+*NOTE: If you are doing bulk prediction over many files at once, it is advisable to utilize the bulk prediction functionality.*
+
+#### List of medaCy pre-trained models
 | Application | Dataset Trained Over | Entities |
 | :---------: | :----------------: |:-------------:|
 | [Clinical Notes](/examples/models/clinical_notes_model.md)| [N2C2 2018](https://n2c2.dbmi.hms.harvard.edu/) | Drug, Form, Route, ADE, Reason, Frequency, Duration, Dosage, Strength  |
