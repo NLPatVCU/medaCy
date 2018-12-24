@@ -10,7 +10,8 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 # :star2: Features
 - Highly predictive, shared-task dominating out-of-the-box trained models for medical named entity recognition.
 - Customizable pipelines with detailed development instructions and documentation.
-- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
+- Direct integration with free, open-source annotation tools such as [BRAT](http://brat.nlplab.org/).
+- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still maintaining data privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
 
 ## :thought_balloon: Where to ask questions
@@ -24,8 +25,8 @@ Medacy can be installed for general use or for pipeline development / research p
 
 | Application | Run           |
 | ----------- |:-------------:|
-| Prediction and Model Training (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
-| Prediction and Model Training (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
+| Model Training and Prediction (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
+| Model Training and Prediction (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
