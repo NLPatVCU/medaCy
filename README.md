@@ -8,7 +8,7 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 
 # :star2: Features
-- Highly predictive, shared-task dominating out-of-the-box trained models for medical named entity recognition.
+- Highly predictive, shared-task dominating out-of-the-box [trained models](/examples/README.md#utilizing-pre-trained-ner-models) for medical named entity recognition.
 - Customizable pipelines with detailed development instructions and documentation.
 - Direct integration with free, open-source annotation tools such as [BRAT](http://brat.nlplab.org/).
 - Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still maintaining data privacy.
