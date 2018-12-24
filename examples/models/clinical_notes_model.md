@@ -10,7 +10,8 @@ Two versions of this model are available for installation:
 
 
 # Generalization Ability
-Below generalization results are computed on the evaluation set provided by organizers of the N2C2 2018 Shared Tasks. This set contains 202 Clinical records.
+The model generalization results below are computed on the evaluation set provided by organizers of the N2C2 2018 Shared Tasks. This evaluation set contains 202 clinical records.
+
                       ------- strict -------    ------ lenient -------
                       Prec.   Rec.    F(b=1)    Prec.   Rec.    F(b=1)
                 Drug  0.8576  0.7907  0.8228    0.9525  0.8680  0.9083
