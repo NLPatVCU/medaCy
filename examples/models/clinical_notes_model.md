@@ -1,7 +1,16 @@
 # Clinical Notes Model
-medaCy comes equipped with a powerful model for entity extraction from clinical notes
+medaCy comes equipped with a powerful model for entity extraction from clinical notes.
 
-# Generalization Ability (TODO: needs formatting)
+Two versions of this model are available for installation:
+
+| Type | Command | Description |
+| :-------: | :----------------: |:-------------:|
+|Light| `pip install git+https://github.com/NanoNLP/medaCy_clinical_note_model` | Does not contain a Metamap layer (drop of around 3% in micro F-measure)|
+|Heavy| Not yet available for download | Contains full predictive pipeline|
+
+
+# Generalization Ability
+Below generalization results are computed on the evaluation set provided by organizers of the N2C2 2018 Shared Tasks. This set contains 202 Clinical records.
                       ------- strict -------    ------ lenient -------
                       Prec.   Rec.    F(b=1)    Prec.   Rec.    F(b=1)
                 Drug  0.8576  0.7907  0.8228    0.9525  0.8680  0.9083
