@@ -28,7 +28,7 @@ class BaseComponent(ABC):
     def get_component_dependencies(self):
         """
         Retrieves a list of dependencies this component has.
-        :return: a list of dependencies
+        :return: a list of component dependencies.
         """
         return self.dependencies
 
