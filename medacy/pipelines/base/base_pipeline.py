@@ -74,6 +74,13 @@ class BasePipeline(ABC):
 
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
+    def get_components(self):
+        """
+        Retrieves a listing of all components currently in the pipeline.
+        :return: a list of components inside the pipeline.
+        """
+        return [component_name for component_name, _ in self.spacy_pipeline.pipeline
+                           if component_name != 'ner']
     def __call__(self, doc, predict=False):
         """
         Passes a single document through the pipeline.

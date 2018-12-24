@@ -88,8 +88,6 @@ class Model:
         assert isinstance(documents, DataLoader) or isinstance(documents, str), "Must pass in an instance of DataLoader containing your examples to be used for prediction"
         assert self.model is not None, "Must fit or load a pickled model before predicting"
 
-        if isinstance(documents, str): #TODO Implement prediction over a single string
-            raise AttributeError("Not yet implement, only bulk predictions with a data loader allowed")
 
         model = self.model
         medacy_pipeline = self.pipeline
@@ -120,7 +118,17 @@ class Model:
                 annotations.to_ann(write_location=os.path.join(prediction_directory,data_file.file_name+".ann"))
 
         if isinstance(documents, str):
-            raise NotImplementedError("Currently only DataLoaders can be predicted on.")
+            assert 'metamap_annotator' not in self.pipeline.get_components(), \
+                "Cannot currently predict on the fly when metamap_component is in pipeline."
+
+            doc = medacy_pipeline.spacy_pipeline.make_doc(documents)
+            doc.set_extension('file_name', default="STRING_INPUT", force=True)
+            doc = medacy_pipeline(doc, predict=True)
+            annotations = predict_document(model, doc, medacy_pipeline)
+            return annotations
+
+
+
 
 
     def cross_validate(self, num_folds=10):
