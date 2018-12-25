@@ -8,7 +8,7 @@ This directory contains common workflows for using medaCy
 4. [Interaction with spaCy](#how-medacy-uses-spacy)
 
 ### How medaCy Works
-MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
+MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical text mining.
 MedaCy consists of a set of lightning-fast pipelines that are specialized for learning specific types of medical entities and relations. A pipeline consists
 of a stackable and interchangeable set of PipelineComponents - these are bite-sized code blocks that each overlay a feature onto the text being processed. 
 
