@@ -1,0 +1,378 @@
+T1	tradename 112 120	Feraheme
+T2	tradename 182 201	Feraheme. FERAHEME
+T3	nanoparticle 203 215	ferumoxytol)
+T4	routeofadministration 230 246	Intravenous (IV)
+T5	fdaapprovaldate 274 278	2009
+T6	adversereaction 388 422	Serious Hypersensitivity Reactions
+T7	adversereaction 456 503	SERIOUS HYPERSENSITIVITY/ANAPHYLAXIS REACTIONS
+T8	adversereaction 578 612	serious hypersensitivity reactions
+T9	adversereaction 623 634	anaphylaxis
+T10	tradename 671 680	Feraheme.
+T11	adversereaction 711 784	hypotension, syncope, unresponsiveness, cardiac/cardiorespiratory arrest.
+T12	tradename 812 820	Feraheme
+T13	adversereaction 897 908	anaphylaxis
+T14	adversereaction 919 946	hypersensitivity reactions.
+T15	adversereaction 997 1023	hypersensitivity reactions
+T16	tradename 1069 1077	Feraheme
+T17	tradename 1153 1161	Feraheme
+T18	adversereaction 1195 1221	Hypersensitivity reactions
+T19	tradename 1267 1275	Feraheme
+T20	tradename 1325 1333	Feraheme
+T21	indication 1396 1418	iron deficiency anemia
+T22	indication 1442 1471	chronic kidney disease (CKD).
+T23	tradename 1553 1561	Feraheme
+T24	dose 1576 1582	510 mg
+T25	dose 1609 1615	510 mg
+T26	tradename 1662 1670	Feraheme
+T27	routeofadministration 1677 1688	intravenous
+T28	inactiveingredient 1716 1731	Sodium Chloride
+T29	inactiveingredient 1753 1761	Dextrose
+T30	tradename 1997 2005	Feraheme
+T31	routeofadministration 2077 2088	intravenous
+T32	adversereaction 2186 2197	anaphylaxis
+T33	adversereaction 2258 2270	Hypotension:
+T34	tradename 2271 2279	Feraheme
+T35	adversereaction 2290 2302	hypotension.
+T36	adversereaction 2337 2348	hypotension
+T37	tradename 2382 2391	Feraheme.
+T38	adversereaction 2409 2423	Iron Overload:
+T39	tradename 2471 2479	Feraheme
+T40	tradename 2507 2515	Feraheme
+T41	adversereaction 2533 2547	iron overload.
+T42	tradename 2593 2601	Feraheme
+T43	tradename 2799 2807	Feraheme
+T44	adversereaction 2812 2867	diarrhea, nausea, dizziness, hypotension, constipation,
+T45	adversereaction 2872 2889	peripheral edema.
+T46	tradename 2940 2949	Feraheme,
+T47	company 2958 2984	AMAG Pharmaceuticals, Inc.
+T48	adversereaction 3325 3359	Serious Hypersensitivity Reactions
+T49	adversereaction 3364 3375	Hypotension
+T50	adversereaction 3380 3393	Iron overload
+T51	adversereaction 4258 4304	SERIOUS HYPERSENSITIVITY/ANAPHYLAXIS REACTIONS
+T52	adversereaction 4316 4350	serious hypersensitivity reactions
+T53	adversereaction 4361 4372	anaphylaxis
+T54	tradename 4409 4418	Feraheme.
+T55	adversereaction 4449 4522	hypotension, syncope, unresponsiveness, cardiac/cardiorespiratory arrest.
+T56	tradename 4550 4558	Feraheme
+T57	adversereaction 4635 4646	anaphylaxis
+T58	adversereaction 4657 4683	hypersensitivity reactions
+T59	adversereaction 4766 4792	hypersensitivity reactions
+T60	tradename 4838 4846	Feraheme
+T61	tradename 4922 4930	Feraheme
+T62	adversereaction 4995 5021	Hypersensitivity reactions
+T63	tradename 5067 5075	Feraheme
+T64	tradename 5159 5167	Feraheme
+T65	indication 5202 5224	iron deficiency anemia
+T66	indication 5248 5277	chronic kidney disease (CKD).
+T67	tradename 5332 5340	Feraheme
+T68	dose 5355 5361	510 mg
+T69	dose 5388 5394	510 mg
+T70	tradename 5431 5439	Feraheme
+T71	routeofadministration 5446 5457	intravenous
+T72	inactiveingredient 5485 5500	Sodium Chloride
+T73	inactiveingredient 5522 5530	Dextrose
+T74	tradename 5646 5655	Feraheme,
+T75	inactiveingredient 5719 5734	Sodium Chloride
+T76	inactiveingredient 5773 5781	Dextrose
+T77	activeingredient 5826 5840	elemental iron
+T78	activeingredient 5997 6012	elemental iron,
+T79	tradename 6029 6037	Feraheme
+T80	activeingredient 6058 6073	elemental iron.
+T81	tradename 6204 6212	Feraheme
+T82	tradename 6240 6248	Feraheme
+T83	indication 6317 6340	iron deficiency anemia.
+T84	tradename 6390 6398	Feraheme
+T85	tradename 6559 6567	Feraheme
+T86	tradename 6631 6639	Feraheme
+T87	adversereaction 6717 6743	hypersensitivity reactions
+T88	adversereaction 6751 6763	hypotension,
+T89	tradename 7109 7117	Feraheme
+T90	activeingredient 7191 7205	elemental iron
+T91	tradename 7253 7261	Feraheme
+T92	tradename 7335 7343	Feraheme
+T93	routeofadministration 7414 7425	intravenous
+T94	adversereaction 7518 7552	serious hypersensitivity reactions
+T95	adversereaction 7563 7575	anaphylaxis,
+T96	adversereaction 7592 7626	cardiac/ cardiorespiratory arrest,
+T97	adversereaction 7650 7671	hypotension, syncope,
+T98	adversereaction 7675 7691	unresponsiveness
+T99	tradename 7728 7736	Feraheme
+T100	adversereaction 7810 7826	hypersensitivity
+T101	adversereaction 7842 7868	pruritus, rash, urticaria,
+T102	adversereaction 7873 7882	wheezing)
+T103	tradename 7990 7998	Feraheme
+T104	adversereaction 8098 8109	anaphylaxis
+T105	tradename 8215 8223	Feraheme
+T106	tradename 8260 8268	Feraheme
+T107	adversereaction 8345 8356	anaphylaxis
+T108	adversereaction 8367 8394	hypersensitivity reactions.
+T109	tradename 8529 8537	Feraheme
+T110	indication 8725 8729	CKD,
+T111	tradename 8819 8828	Feraheme.
+T112	adversereaction 8881 8897	hypersensitivity
+T113	adversereaction 8905 8930	pruritus, rash, urticaria
+T114	adversereaction 8934 8943	wheezing)
+T115	indication 9052 9056	CKD,
+T116	adversereaction 9069 9102	severe hypersensitivity reactions
+T117	tradename 9160 9169	Feraheme.
+T118	adversereaction 9223 9250	anaphylactic type reactions
+T119	adversereaction 9267 9301	cardiac/ cardiorespiratory arrest,
+T120	adversereaction 9325 9346	hypotension, syncope,
+T121	adversereaction 9351 9367	unresponsiveness
+T122	adversereaction 9461 9487	hypersensitivity reactions
+T123	adversereaction 9495 9506	hypotension
+T124	tradename 9535 9543	Feraheme
+T125	adversereaction 9797 9808	Hypotension
+T126	adversereaction 9861 9872	hypotension
+T127	adversereaction 9914 9925	hypotension
+T128	adversereaction 10001 10043	serious hypotensive reactions. Hypotension
+T129	tradename 10241 10249	Feraheme
+T130	adversereaction 10455 10480	iatrogenic hemosiderosis.
+T131	tradename 10610 10618	Feraheme
+T132	tradename 10696 10705	Feraheme,
+T133	tradename 10813 10821	Feraheme
+T134	tradename 10887 10895	Feraheme
+T135	tradename 11039 11048	Feraheme.
+T136	tradename 11133 11141	Feraheme
+T137	tradename 11197 11205	Feraheme
+T138	tradename 11292 11300	Feraheme
+T139	tradename 11428 11437	Feraheme.
+T140	tradename 11535 11543	Feraheme
+T141	tradename 11597 11605	Feraheme
+T142	tradename 11813 11821	Feraheme
+T143	adversereaction 11847 11881	serious hypersensitivity reactions
+T144	adversereaction 11886 11897	hypotension
+T145	tradename 11995 12004	Feraheme;
+T146	indication 12024 12027	CKD
+T147	indication 12049 12053	CKD.
+T148	dose 12672 12678	510 mg
+T149	tradename 12682 12690	Feraheme
+T150	dose 12735 12742	200 mg/
+T151	frequency 12742 12745	day
+T152	routeofadministration 12749 12753	oral
+T153	duration 12763 12771	21 days.
+T154	tradename 12809 12817	Feraheme
+T155	tradename 12897 12905	Feraheme
+T156	tradename 12937 12953	Feraheme-treated
+T157	adversereaction 13020 13028	Diarrhea
+T158	adversereaction 13037 13049	constipation
+T159	adversereaction 13061 13073	hypertension
+T160	tradename 13108 13124	Feraheme-treated
+T161	tradename 13167 13175	Feraheme
+T162	indication 13216 13219	CKD
+T163	tradename 13239 13247	Feraheme
+T164	dose 13252 13258	510 mg
+T165	routeofadministration 13270 13274	Oral
+T166	adversereaction 13291 13297	Nausea
+T167	adversereaction 13308 13317	Dizziness
+T168	adversereaction 13328 13339	Hypotension
+T169	adversereaction 13350 13366	Peripheral Edema
+T170	adversereaction 13377 13385	Headache
+T171	adversereaction 13396 13401	Edema
+T172	adversereaction 13412 13420	Vomiting
+T173	adversereaction 13431 13445	Abdominal Pain
+T174	adversereaction 13456 13466	Chest Pain
+T175	adversereaction 13477 13482	Cough
+T176	adversereaction 13493 13501	Pruritus
+T177	adversereaction 13512 13519	Pyrexia
+T178	adversereaction 13530 13539	Back Pain
+T179	adversereaction 13548 13561	Muscle Spasms
+T180	adversereaction 13572 13579	Dyspnea
+T181	adversereaction 13590 13594	Rash
+T182	tradename 13709 13725	Feraheme-treated
+T183	adversereaction 13744 13890	hypotension, infusion site swelling, increased serum ferritin level, chest pain, diarrhea, dizziness, ecchymosis, pruritus, chronic renal failure,
+T184	adversereaction 13895 13905	urticaria.
+T185	dose 14003 14009	510 mg
+T186	routeofadministration 14010 14021	intravenous
+T187	tradename 14036 14044	Feraheme
+T188	dose 14077 14084	2.04 g)
+T189	tradename 14127 14135	Feraheme
+T190	routeofadministration 14225 14236	intravenous
+T191	indication 14311 14314	CKD
+T192	dose 14333 14339	510 mg
+T193	tradename 14348 14357	Feraheme.
+T194	tradename 14947 14956	Feraheme:
+T195	adversereaction 14957 15257	fatal, life-threatening, and serious anaphylactic-type reactions, cardiac/cardiorespiratory arrest, clinically significant hypotension, syncope, unresponsiveness, loss of consciousness, tachycardia/rhythm abnormalities, angioedema, ischemic myocardial events, congestive heart failure, pulse absent,
+T196	adversereaction 15262 15271	cyanosis.
+T197	tradename 15364 15373	Feraheme.
+T198	tradename 15446 15455	Feraheme.
+T199	tradename 15513 15521	Feraheme
+T200	tradename 15542 15550	Feraheme
+T201	tradename 15724 15732	Feraheme
+T202	nanoparticle 15771 15782	ferumoxytol
+T203	tradename 15911 15919	Feraheme
+T204	nanoparticle 16029 16040	ferumoxytol
+T205	dose 16075 16089	31.6 mg Fe/kg/
+T206	frequency 16089 16092	day
+T207	dose 16105 16119	16.5 mg Fe/kg/
+T208	frequency 16119 16122	day
+T209	nanoparticle 16305 16316	ferumoxytol
+T210	dose 16368 16381	100 mg Fe/kg/
+T211	frequency 16381 16385	day,
+T212	nanoparticle 16533 16544	ferumoxytol
+T213	dose 16596 16608	45 mg Fe/kg/
+T214	frequency 16608 16612	day,
+T215	tradename 16837 16845	Feraheme
+T216	tradename 17058 17067	Feraheme,
+T217	tradename 17106 17114	Feraheme
+T218	tradename 17334 17342	Feraheme
+T219	tradename 17524 17533	Feraheme.
+T220	adversereaction 17992 18018	hypersensitivity reactions
+T221	adversereaction 18026 18037	hypotension
+T222	tradename 18066 18074	Feraheme
+T223	tradename 18142 18150	Feraheme
+T224	adversereaction 18250 18284	Serious Hypersensitivity Reactions
+T225	tradename 18386 18394	Feraheme
+T226	tradename 18428 18436	Feraheme
+T227	adversereaction 18510 18524	hemosiderosis.
+T228	tradename 18543 18551	Feraheme
+T229	tradename 18634 18643	Feraheme,
+T230	corecomposition 18697 18706	magnetite
+T231	nanoparticle 18708 18737	superparamagnetic iron oxide)
+T232	surfacecoating 18750 18790	polyglucose sorbitol carboxymethylether.
+T233	nanoparticle 18803 18812	colloidal
+T234	particlediameter 18830 18838	17-31 nm
+T235	tradename 18876 18884	Feraheme
+T236	molecularweight 18959 18967	750 kDa.
+T237	tradename 18969 18977	Feraheme
+T238	inactiveingredient 19044 19053	mannitol.
+T239	activeingredient 19150 19165	elemental iron.
+T240	nanoparticle 19189 19198	colloidal
+T241	tradename 19211 19219	Feraheme
+T242	activeingredient 19248 19262	elemental iron
+T243	inactiveingredient 19276 19285	mannitol,
+T244	tradename 19508 19516	Feraheme
+T245	nanoparticle 19531 19559	superparamagnetic iron oxide
+T246	surfacecoating 19582 19601	carbohydrate shell,
+T247	activeingredient 19639 19643	iron
+T248	nanoparticle 19677 19702	iron-carbohydrate complex
+T249	activeingredient 19911 19915	iron
+T250	nanoparticle 19937 19962	iron-carbohydrate complex
+T251	activeingredient 19999 20003	Iron
+T252	tradename 20373 20381	Feraheme
+T253	dose 20383 20389	1.02 g
+T254	dose 20403 20409	510 mg
+T255	dose 20462 20468	400 mg
+T256	tradename 20536 20544	Feraheme
+T257	tradename 20606 20614	Feraheme
+T258	tradename 20704 20712	Feraheme
+T259	indication 20772 20775	CKD
+T260	tradename 20802 20810	Feraheme
+T261	plasmahalflife 20912 20920	15 hours
+T262	tradename 20991 21000	Feraheme.
+T263	dose 21228 21234	510 mg
+T264	tradename 21244 21252	Feraheme
+T265	routeofadministration 21266 21279	intravenously
+T266	clearance 21301 21311	69.1 mL/hr
+T267	volumeofdistribution 21316 21323	3.16 L,
+T268	cmax 21393 21403	206 mcg/mL
+T269	tmax 21408 21416	0.32 hr,
+T270	tradename 21468 21476	Feraheme
+T271	tradename 21517 21525	Feraheme
+T272	tradename 21555 21563	Feraheme
+T273	nanoparticle 21683 21694	Ferumoxytol
+T274	nanoparticle 21768 21779	ferumoxytol
+T275	nanoparticle 22054 22065	Ferumoxytol
+T276	tradename 22199 22207	Feraheme
+T277	indication 22238 22260	iron deficiency anemia
+T278	indication 22278 22281	CKD
+T279	indication 22471 22493	iron deficiency anemia
+T280	dose 22523 22529	510 mg
+T281	routeofadministration 22530 22541	intravenous
+T282	tradename 22556 22565	Feraheme.
+T283	indication 22943 22946	CKD
+T284	indication 22951 22973	iron deficiency anemia
+T285	tradename 23008 23016	Feraheme
+T286	routeofadministration 23020 23024	oral
+T287	tradename 23031 23039	Feraheme
+T288	dose 23064 23070	510 mg
+T289	routeofadministration 23071 23082	intravenous
+T290	routeofadministration 23100 23104	oral
+T291	frequency 23157 23162	daily
+T292	dose 23171 23177	200 mg
+T293	activeingredient 23178 23192	elemental iron
+T294	frequency 23193 23198	daily
+T295	duration 23203 23211	21 days.
+T296	indication 23357 23360	CKD
+T297	tradename 23580 23588	Feraheme
+T298	routeofadministration 23593 23597	oral
+T299	tradename 23874 23882	Feraheme
+T300	indication 24496 24499	CKD
+T301	indication 24522 24525	CKD
+T302	indication 24535 24538	CKD
+T303	tradename 24552 24560	Feraheme
+T304	routeofadministration 24571 24575	Oral
+T305	tradename 24590 24598	Feraheme
+T306	routeofadministration 24609 24613	Oral
+T307	tradename 24628 24636	Feraheme
+T308	routeofadministration 24647 24651	Oral
+T309	dose 25667 25673	510 mg
+T310	routeofadministration 25674 25685	intravenous
+T311	tradename 25700 25708	Feraheme
+T312	dose 25740 25747	2.04 g.
+T313	dose 25795 25801	510 mg
+T314	routeofadministration 25802 25813	intravenous
+T315	tradename 25828 25837	Feraheme,
+T316	tradename 26245 26253	Feraheme
+T317	tradename 26340 26348	Feraheme
+T318	tradename 26750 26758	Feraheme
+T319	routeofadministration 26839 26850	intravenous
+T320	activeingredient 26851 26855	iron
+T321	tradename 26939 26948	Feraheme.
+T322	tradename 27079 27087	Feraheme
+T323	adversereaction 27112 27163	rash, itching, dizziness, lightheadedness, swelling
+T324	adversereaction 27168 27187	breathing problems.
+T325	u.s.patent 27305 27359	6,599,498 B1; 7,553,479 B2; 7,871,597 B2; 8,501,158 B2
+T326	company 27378 27404	AMAG Pharmaceuticals, Inc.
+T327	tradename 27982 27990	Feraheme
+T328	nanoparticle 28007 28019	ferumoxytol)
+T329	tradename 28089 28107	Feraheme? Feraheme
+T330	adversereaction 28210 28236	Serious allergic reactions
+T331	tradename 28296 28304	Feraheme
+T332	adversereaction 28499 28525	serious allergic reactions
+T333	tradename 28529 28538	Feraheme.
+T334	adversereaction 28645 28649	rash
+T335	adversereaction 28659 28666	itching
+T336	adversereaction 28671 28680	dizziness
+T337	adversereaction 28684 28699	lightheadedness
+T338	adversereaction 28702 28710	swelling
+T339	adversereaction 28737 28745	wheezing
+T340	adversereaction 28749 28766	trouble breathing
+T341	tradename 28815 28824	Feraheme?
+T342	tradename 28875 28893	Feraheme? Feraheme
+T343	indication 28935 28957	iron deficiency anemia
+T344	indication 28973 29002	chronic kidney disease (CKD).
+T345	tradename 29022 29030	Feraheme
+T346	tradename 29115 29124	Feraheme?
+T347	tradename 29148 29156	Feraheme
+T348	tradename 29190 29198	Feraheme
+T349	tradename 29228 29237	Feraheme.
+T350	tradename 29306 29315	Feraheme.
+T351	routeofadministration 29400 29416	intravenous (IV)
+T352	tradename 29444 29453	Feraheme,
+T353	tradename 29710 29718	Feraheme
+T354	tradename 29816 29824	Feraheme
+T355	tradename 29923 29931	Feraheme
+T356	tradename 30143 30161	Feraheme? Feraheme
+T357	routeofadministration 30201 30217	intravenous (IV)
+T358	tradename 30374 30383	Feraheme.
+T359	tradename 30422 30440	Feraheme? Feraheme
+T360	tradename 30557 30566	Feraheme?
+T361	adversereaction 30577 30595	Low blood pressure
+T362	adversereaction 30597 30609	hypotension)
+T363	tradename 30637 30645	Feraheme
+T364	adversereaction 30743 30754	hypotension
+T365	tradename 30766 30774	Feraheme
+T366	adversereaction 30794 30808	Iron overload.
+T367	tradename 30902 30911	Feraheme.
+T368	tradename 30944 30952	Feraheme
+T369	adversereaction 30962 31004	diarrhea, nausea, dizziness, constipation,
+T370	adversereaction 31009 31017	swelling
+T371	tradename 31104 31113	Feraheme.
+T372	tradename 31280 31289	Feraheme.
+T373	tradename 31540 31548	Feraheme
+T374	tradename 31619 31628	Feraheme?
+T375	nanoparticle 31648 31659	ferumoxytol
+T376	inactiveingredient 31681 31689	mannitol
+T377	company 31706 31732	AMAG Pharmaceuticals, Inc.
+T378	company 31768 31803	Patheon Manufacturing Services LLC,

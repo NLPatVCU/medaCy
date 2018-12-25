@@ -7,41 +7,38 @@ import logging
 
 class UnitComponent(BaseComponent):
     """
-    A pipeline component that tags units
-    Begins by first tagging all mass, volume, time, and form units.
+    A pipeline component that tags units.
+    Begins by first tagging all mass, volume, time, and form units then aggregates as necessary.
     """
-
-    #TODO Split into files mass_annotator_component, volume_annotator_component
-    #TODO time_annotator_component, etc.
 
     name="unit_annotator"
     dependencies = []
 
     def __init__(self, nlp):
         self.nlp = nlp
-        Token.set_extension('feature_is_mass_unit', default=False)
+        Token.set_extension('feature_is_mass_unit', default=False, force=True)
         nlp.entity.add_label('mass_unit')
 
-        Token.set_extension('feature_is_volume_unit', default=False)
+        Token.set_extension('feature_is_volume_unit', default=False, force=True)
         nlp.entity.add_label('volume_unit')
 
-        Token.set_extension('feature_is_time_unit', default=False)
+        Token.set_extension('feature_is_time_unit', default=False, force=True)
         nlp.entity.add_label('time_unit')
 
-        Token.set_extension('feature_is_route_type', default=False)
+        Token.set_extension('feature_is_route_type', default=False, force=True)
         nlp.entity.add_label('route_type')
 
-        Token.set_extension('feature_is_form_unit', default=False)
+        Token.set_extension('feature_is_form_unit', default=False, force=True)
         nlp.entity.add_label('form_unit')
 
-        Token.set_extension('feature_is_frequency_indicator', default=False)
+        Token.set_extension('feature_is_frequency_indicator', default=False, force=True)
         nlp.entity.add_label('frequency_indicator')
 
 
-        Token.set_extension('feature_is_measurement_unit', default=False)
+        Token.set_extension('feature_is_measurement_unit', default=False, force=True)
         nlp.entity.add_label('measurement_unit')
 
-        Token.set_extension('feature_is_measurement', default=False)
+        Token.set_extension('feature_is_measurement', default=False, force=True)
         nlp.entity.add_label('measurement')
 
         Token.set_extension('feature_is_duration_pattern', default=False)

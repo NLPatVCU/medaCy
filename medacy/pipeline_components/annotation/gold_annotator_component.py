@@ -1,5 +1,5 @@
 from ..base import BaseComponent
-from medacy.tools.ann_to_json import ann_to_json
+from medacy.tools import Annotations
 from spacy.tokens import Token
 import logging
 
@@ -26,6 +26,7 @@ class GoldAnnotatorComponent(BaseComponent):
         self.labels = labels
         self.failed_overlay_count = 0
         self.failed_identifying_span_count = 0
+        Token.set_extension('gold_label', default="O", force=True)
 
     def find_span(self, start, end, label, span, doc):
         """
@@ -41,7 +42,11 @@ class GoldAnnotatorComponent(BaseComponent):
         if greedy_searched_span is not None:
             return greedy_searched_span
 
-        #increase boundaries incrementally until a valid span is found
+        greedy_searched_span = doc.char_span(start, end-1) #annotation may have extended over an ending blank space
+        if greedy_searched_span is not None:
+            return greedy_searched_span
+
+        #No clue - increase boundaries incrementally until a valid span is found.
         i = 0
         while greedy_searched_span is None and i <= 20:
             if i % 2 == 0:
@@ -57,24 +62,31 @@ class GoldAnnotatorComponent(BaseComponent):
 
     def __call__(self, doc):
         nlp = self.nlp
-        logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+
+        if hasattr(doc._, 'file_name'):
+            logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+
+        if logging.getLogger().getEffectiveLevel() == logging.DEBUG: #print document tokenization
+            for token in doc:
+                logging.debug(str(token))
 
         #check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
             raise ValueError("No extension doc._.gold_annotation_file is present.")
 
-        with open(doc._.gold_annotation_file, 'r') as gold_annotations:
-            gold_annotations = ann_to_json(gold_annotations.read())
+        gold_annotations = Annotations(doc._.gold_annotation_file, annotation_type='ann')
 
         # for label in set([label for _,_,label in [gold['entities'][key] for key in gold['entities']]]):
-        Token.set_extension('gold_label', default="O", force=True)
+
         # for token in doc:
         #     print(token.text, token.idx)
-        for e_start, e_end, e_label in [gold_annotations['entities'][key] for key in gold_annotations['entities']]:
+        for e_label, e_start, e_end, _ in gold_annotations.get_entity_annotations():
+            #print(e_label, e_start, e_end)
             if e_start > e_end:
                 logging.critical("%s: Broken annotation - start is greater than end: (%i,%i,%s)",doc._.file_name, e_start, e_end, e_label)
                 continue
             span = doc.char_span(e_start, e_end)
+
             if span is None:
                 self.failed_overlay_count += 1
                 self.failed_identifying_span_count += 1
@@ -92,8 +104,10 @@ class GoldAnnotatorComponent(BaseComponent):
                 logging.warning("%s: Could not fix annotation: (%i,%i,%s)",doc._.file_name, e_start, e_end, e_label)
                 logging.warning("%s: Total Failed Annotations: %i", doc._.file_name, self.failed_identifying_span_count)
 
-        if self.failed_overlay_count > .3*len(gold_annotations['entities']) :
+        if self.failed_overlay_count > .3*gold_annotations.get_entity_count() :
             logging.warning("%s: Annotations may mis-aligned as more than 30 percent failed to overlay: %s", doc._.file_name, doc._.gold_annotation_file)
+
+
         return doc
 
 

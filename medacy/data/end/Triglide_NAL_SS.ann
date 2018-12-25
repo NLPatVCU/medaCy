@@ -1,0 +1,411 @@
+T1	tradename 112 120	TRIGLIDE
+T2	tradename 183 202	TRIGLIDE. TRIGLIDE
+T3	activeingredient 204 216	fenofibrate)
+T4	routeofadministration 230 234	oral
+T5	fdaapprovaldate 262 266	1993
+T6	tradename 345 353	Triglide
+T7	indication 562 582	hypercholesterolemia
+T8	indication 592 605	dyslipidemia.
+T9	indication 690 711	hypertriglyceridemia.
+T10	activeingredient 743 754	Fenofibrate
+T11	indication 1017 1037	hypertriglyceridemia
+T12	indication 1048 1061	dyslipidemia:
+T13	dose 1062 1068	160 mg
+T14	frequency 1069 1076	per day
+T15	indication 1100 1121	Hypertriglyceridemia:
+T16	dose 1121 1133	50 to 160 mg
+T17	frequency 1134 1142	per day;
+T18	dose 1260 1265	50 mg
+T19	frequency 1266 1273	per day
+T20	activeingredient 1781 1792	fenofibrate
+T21	adversereaction 1880 1888	Myopathy
+T22	adversereaction 1893 1907	rhabdomyolysis
+T23	activeingredient 1946 1958	fenofibrate.
+T24	adversereaction 1981 1996	muscle toxicity
+T25	activeingredient 2122 2133	Fenofibrate
+T26	adversereaction 2138 2167	increase serum transaminases.
+T27	activeingredient 2250 2261	Fenofibrate
+T28	adversereaction 2273 2307	increases serum creatinine levels.
+T29	activeingredient 2394 2405	Fenofibrate
+T30	adversereaction 2472 2487	cholelithiasis.
+T31	adversereaction 2491 2505	cholelithiasis
+T32	co-administereddrug 2618 2642	coumarin anticoagulants.
+T33	adversereaction 2924 2990	abnormal liver tests, increased AST, increased ALT, increased CPK,
+T34	adversereaction 2995 3004	rhinitis.
+T35	company 3059 3067	Shionogi
+T36	indication 3810 3830	Hypercholesterolemia
+T37	indication 3840 3852	Dyslipidemia
+T38	indication 3865 3885	Hypertriglyceridemia
+T39	indication 3991 4011	Hypercholesterolemia
+T40	indication 4021 4033	Dyslipidemia
+T41	indication 4046 4066	Hypertriglyceridemia
+T42	indication 5150 5170	Hypercholesterolemia
+T43	indication 5222 5234	Dyslipidemia
+T44	indication 5562 5582	Hypercholesterolemia
+T45	indication 5592 5604	Dyslipidemia
+T46	tradename 5606 5614	Triglide
+T47	indication 5888 5908	hypercholesterolemia
+T48	indication 5918 5931	dyslipidemia.
+T49	indication 5945 5965	Hypertriglyceridemia
+T50	tradename 5966 5974	Triglide
+T51	indication 6068 6089	hypertriglyceridemia.
+T52	activeingredient 6440 6451	fenofibrate
+T53	activeingredient 6549 6560	Fenofibrate
+T54	tradename 6891 6900	Triglide,
+T55	tradename 6953 6971	Triglide. Triglide
+T56	tradename 7056 7064	Triglide
+T57	indication 7147 7159	dyslipidemia
+T58	indication 7304 7324	hypertriglyceridemia
+T59	indication 7458 7479	hypercholesterolemia,
+T60	indication 7731 7752	hypertriglyceridemia.
+T61	indication 7866 7887	hypertriglyceridemia.
+T62	tradename 7995 8003	Triglide
+T63	dose 8209 8215	160 mg
+T64	frequency 8216 8227	once daily.
+T65	indication 8242 8262	Hypercholesterolemia
+T66	indication 8272 8284	Dyslipidemia
+T67	tradename 8297 8305	Triglide
+T68	dose 8309 8315	160 mg
+T69	frequency 8316 8327	once daily.
+T70	indication 8340 8360	Hypertriglyceridemia
+T71	dose 8381 8393	50 to 160 mg
+T72	frequency 8394 8402	per day.
+T73	dose 8587 8593	160 mg
+T74	frequency 8594 8605	once daily.
+T75	tradename 8650 8658	Triglide
+T76	dose 8692 8697	50 mg
+T77	frequency 8698 8705	per day
+T78	tradename 8975 8983	Triglide
+T79	tradename 9518 9526	Triglide
+T80	activeingredient 10006 10017	fenofibrate
+T81	tradename 10238 10246	Triglide
+T82	activeingredient 10569 10581	fenofibrate.
+T83	activeingredient 10628 10639	Fenofibrate
+T84	activeingredient 11344 11355	Fenofibrate
+T85	activeingredient 11525 11549	fenofibrate. Fenofibrate
+T86	activeingredient 12016 12027	fenofibrate
+T87	tradename 12125 12133	Triglide
+T88	activeingredient 12135 12146	fenofibrate
+T89	tradename 12315 12324	Triglide.
+T90	activeingredient 14644 14656	Fenofibrates
+T91	adversereaction 14678 14686	myopathy
+T92	adversereaction 14717 14732	rhabdomyolysis.
+T93	adversereaction 14755 14770	muscle toxicity
+T94	adversereaction 14946 14960	rhabdomyolysis
+T95	co-administereddrug 15044 15081	HMG-CoA reductase inhibitor (statin).
+T96	adversereaction 15277 15285	Myopathy
+T97	tradename 15658 15666	Triglide
+T98	adversereaction 15739 15756	myopathy/myositis
+T99	adversereaction 15781 15790	myopathy,
+T100	adversereaction 15801 15816	rhabdomyolysis,
+T101	activeingredient 15841 15853	fenofibrates
+T102	co-administereddrug 15874 15885	colchicine,
+T103	activeingredient 15935 15946	fenofibrate
+T104	co-administereddrug 15952 15962	colchicine
+T105	activeingredient 16015 16026	Fenofibrate
+T106	adversereaction 16031 16060	increase serum transaminases
+T107	activeingredient 16237 16248	fenofibrate
+T108	adversereaction 16482 16508	increases in transaminases
+T109	activeingredient 16520 16531	fenofibrate
+T110	dose 16741 16747	134 mg
+T111	dose 16751 16757	200 mg
+T112	activeingredient 16758 16769	fenofibrate
+T113	frequency 16770 16777	per day
+T114	dose 16807 16813	160 mg
+T115	tradename 16814 16823	Triglide)
+T116	dose 16876 16881	34 mg
+T117	dose 16885 16890	67 mg
+T118	activeingredient 16902 16913	fenofibrate
+T119	frequency 16914 16922	per day,
+T120	activeingredient 17099 17110	fenofibrate
+T121	tradename 17405 17413	Triglide
+T122	adversereaction 17523 17550	Serum Creatinine Elevations
+T123	activeingredient 17605 17617	fenofibrate.
+T124	activeingredient 17692 17704	fenofibrate.
+T125	tradename 17829 17838	Triglide.
+T126	tradename 17903 17911	Triglide
+T127	adversereaction 17997 18011	Cholelithiasis
+T128	activeingredient 18012 18024	Fenofibrate,
+T129	adversereaction 18120 18135	cholelithiasis.
+T130	adversereaction 18139 18153	cholelithiasis
+T131	tradename 18203 18211	Triglide
+T132	co-administereddrug 18273 18296	Coumarin Anticoagulants
+T133	tradename 18375 18383	Triglide
+T134	co-administereddrug 18416 18444	coumarin-type anti-coagulant
+T135	adversereaction 18811 18836	Pancreatitis Pancreatitis
+T136	activeingredient 18874 18886	fenofibrate,
+T137	indication 18993 19014	hypertriglyceridemia,
+T138	adversereaction 19167 19186	Hematologic Changes
+T139	activeingredient 19315 19326	fenofibrate
+T140	activeingredient 19485 19497	fenofibrate.
+T141	tradename 19592 19600	Triglide
+T142	adversereaction 19622 19648	Hypersensitivity Reactions
+T143	adversereaction 19655 19681	hypersensitivity reactions
+T144	adversereaction 19690 19715	Stevens-Johnson syndrome,
+T145	adversereaction 19720 19746	toxic epidermal necrolysis
+T146	activeingredient 19857 19870	fenofibrates.
+T147	adversereaction 19872 19881	Urticaria
+T148	adversereaction 19910 19914	rash
+T149	activeingredient 19934 19945	fenofibrate
+T150	adversereaction 20008 20034	Venothromboembolic Disease
+T151	activeingredient 20147 20159	fenofibrate-
+T152	activeingredient 20284 20295	fenofibrate
+T153	activeingredient 20378 20389	fenofibrate
+T154	activeingredient 20489 20500	fenofibrate
+T155	activeingredient 22196 22207	fenofibrate
+T156	activeingredient 22392 22403	fenofibrate
+T157	activeingredient 22530 22541	fenofibrate
+T158	activeingredient 22672 22683	Fenofibrate
+T159	activeingredient 22791 22803	Fenofibrate*
+T160	adversereaction 22849 22863	Abdominal Pain
+T161	adversereaction 22877 22886	Back Pain
+T162	adversereaction 22900 22908	Headache
+T163	adversereaction 22933 22939	Nausea
+T164	adversereaction 22953 22965	Constipation
+T165	adversereaction 23016 23036	Abnormal Liver Tests
+T166	adversereaction 23052 23065	Increased AST
+T167	adversereaction 23081 23094	Increased ALT
+T168	adversereaction 23108 23140	Increased Creatine Phosphokinase
+T169	adversereaction 23166 23186	Respiratory Disorder
+T170	adversereaction 23200 23208	Rhinitis
+T171	dose 23244 23250	200 mg
+T172	activeingredient 23251 23262	fenofibrate
+T173	dose 23306 23312	160 mg
+T174	tradename 23313 23322	Triglide.
+T175	activeingredient 23474 23486	fenofibrate:
+T176	adversereaction 23487 23614	myalgia, rhabdomyolysis, pancreatitis, muscle spasms, acute renal failure, hepatitis, cirrhosis, anemia, arthralgia, asthenia,
+T177	adversereaction 23619 23661	severely depressed HDL-cholesterol levels.
+T178	co-administereddrug 23988 24011	Coumarin Anticoagulants
+T179	co-administereddrug 24029 24056	coumarin-type anticoagulant
+T180	co-administereddrug 24150 24173	coumarin anticoagulants
+T181	tradename 24204 24213	Triglide.
+T182	co-administereddrug 24503 24540	Immunosuppressants Immunosuppressants
+T183	co-administereddrug 24549 24561	cyclosporine
+T184	co-administereddrug 24566 24576	tacrolimus
+T185	adversereaction 24589 24603	nephrotoxicity
+T186	tradename 24763 24772	Triglide,
+T187	tradename 24887 24895	Triglide
+T188	co-administereddrug 24901 24919	immunosuppressants
+T189	co-administereddrug 25067 25091	Bile-Acid Binding Resins
+T190	co-administereddrug 25098 25122	bile acid binding resins
+T191	tradename 25185 25193	Triglide
+T192	co-administereddrug 25242 25265	bile acid binding resin
+T193	co-administereddrug 25305 25315	Colchicine
+T194	adversereaction 25326 25335	myopathy,
+T195	adversereaction 25346 25361	rhabdomyolysis,
+T196	activeingredient 25386 25398	fenofibrates
+T197	co-administereddrug 25420 25431	colchicine,
+T198	activeingredient 25481 25492	fenofibrate
+T199	co-administereddrug 25498 25509	colchicine.
+T200	activeingredient 25683 25694	fenofibrate
+T201	activeingredient 25714 25725	Fenofibrate
+T202	routeofadministration 25853 25857	oral
+T203	dose 25875 25896	15, 75, and 300 mg/kg
+T204	frequency 25896 25900	/day
+T205	activeingredient 25904 25915	fenofibrate
+T206	routeofadministration 26121 26125	oral
+T207	dose 26143 26165	14, 127, and 361 mg/kg
+T208	frequency 26165 26169	/day
+T209	dose 26282 26291	14 mg/kg/
+T210	frequency 26291 26294	day
+T211	routeofadministration 26478 26482	oral
+T212	dose 26499 26521	15, 150, and 300 mg/kg
+T213	frequency 26521 26525	/day
+T214	dose 26642 26651	150 mg/kg
+T215	frequency 26651 26655	/day
+T216	dose 26767 26775	15 mg/kg
+T217	frequency 26775 26779	/day
+T218	routeofadministration 26884 26888	oral
+T219	dose 26906 26927	15, 75, and 300 mg/kg
+T220	frequency 26927 26931	/day
+T221	activeingredient 27199 27210	Fenofibrate
+T222	tradename 28098 28107	Triglide.
+T223	tradename 28141 28149	Triglide
+T224	tradename 28501 28509	Triglide
+T225	tradename 28696 28705	Triglide.
+T226	activeingredient 29019 29030	fenofibrate
+T227	tradename 29123 29131	Triglide
+T228	activeingredient 29133 29145	fenofibrate)
+T229	routeofadministration 29208 29212	oral
+T230	activeingredient 29269 29281	fenofibrate.
+T231	activeingredient 29304 29315	fenofibrate
+T232	molecularweight 29500 29507	360.83;
+T233	activeingredient 29508 29519	fenofibrate
+T234	activeingredient 29575 29586	Fenofibrate
+T235	inactiveingredient 29790 29986	crospovidone, lactose monohydrate, mannitol, maltodextrin, carboxymethylcellulose sodium, egg lecithin, croscarmellose sodium, sodium lauryl sulfate, colloidal silicon dioxide, magnesium stearate,
+T236	inactiveingredient 29991 30018	monobasic sodium phosphate.
+T237	tradename 30092 30100	Triglide
+T238	routeofadministration 30233 30237	oral
+T239	activeingredient 30256 30268	fenofibrate.
+T240	activeingredient 30531 30542	fenofibrate
+T241	activeingredient 31181 31192	Fenofibrate
+T242	activeingredient 32038 32050	fenofibrate,
+T243	activeingredient 32238 32249	fenofibrate
+T244	tradename 32364 32372	Triglide
+T245	dose 32373 32379	160 mg
+T246	dose 32452 32458	200 mg
+T247	activeingredient 32459 32470	fenofibrate
+T248	activeingredient 32493 32504	Fenofibrate
+T249	activeingredient 32567 32578	Fenofibrate
+T250	activeingredient 32751 32762	fenofibrate
+T251	activeingredient 32864 32875	Fenofibrate
+T252	activeingredient 32973 32984	fenofibrate
+T253	activeingredient 32999 33010	fenofibrate
+T254	routeofadministration 33072 33076	oral
+T255	activeingredient 33167 33178	fenofibrate
+T256	tmax 33351 33358	3 hours
+T257	tradename 33410 33418	Triglide
+T258	tradename 33516 33524	Triglide
+T259	activeingredient 34059 34070	Fenofibrate
+T260	co-administereddrug 34127 34139	Atorvastatin
+T261	dose 34142 34147	20 mg
+T262	frequency 34148 34170	once daily for 10 days
+T263	activeingredient 34174 34185	Fenofibrate
+T264	dose 34186 34192	160 mg
+T265	routeofadministration 34257 34261	oral
+T266	activeingredient 34278 34289	fenofibrate
+T267	activeingredient 34381 34392	fenofibrate
+T268	activeingredient 34720 34731	fenofibrate
+T269	activeingredient 34863 34874	fenofibrate
+T270	activeingredient 35032 35044	fenofibrate,
+T271	eliminationhalflife 35197 35206	16 hours,
+T272	routeofadministration 35350 35354	oral
+T273	activeingredient 35363 35374	fenofibrate
+T274	clearance 35379 35387	1.2 L/h,
+T275	clearance 35406 35413	1.1 L/h
+T276	tradename 35674 35682	Triglide
+T277	activeingredient 35814 35826	fenofibrate.
+T278	activeingredient 35884 35895	fenofibrate
+T279	activeingredient 35927 35938	fenofibrate
+T280	tradename 36729 36737	Triglide
+T281	activeingredient 37117 37128	fenofibrate
+T282	activeingredient 37496 37507	fenofibrate
+T283	activeingredient 37619 37630	Fenofibrate
+T284	co-administereddrug 37797 37808	Pravastatin
+T285	dose 37809 37814	40 mg
+T286	co-administereddrug 37833 37844	Fluvastatin
+T287	dose 37845 37850	40 mg
+T288	co-administereddrug 37891 37902	Glimepiride
+T289	dose 37903 37907	1 mg
+T290	co-administereddrug 37926 37935	Metformin
+T291	dose 37936 37942	850 mg
+T292	frequency 37943 37972	three times daily for 10 days
+T293	co-administereddrug 37974 37987	Rosiglitazone
+T294	dose 37988 37992	8 mg
+T295	frequency 37993 38014	once daily for 5 days
+T296	activeingredient 38026 38038	fenofibrate)
+T297	activeingredient 38062 38074	fenofibrate)
+T298	frequency 38101 38123	once daily for 10 days
+T299	activeingredient 38125 38136	Fenofibrate
+T300	activeingredient 38206 38217	Fenofibrate
+T301	dose 38218 38225	160 mg1
+T302	activeingredient 38285 38296	Fenofibrate
+T303	dose 38297 38304	145 mg1
+T304	frequency 38306 38328	once daily for 10 days
+T305	activeingredient 38368 38379	Fenofibrate
+T306	dose 38380 38386	54 mg1
+T307	frequency 38388 38417	three times daily for 10 days
+T308	activeingredient 38458 38469	Fenofibrate
+T309	dose 38470 38477	145 mg1
+T310	frequency 38479 38501	once daily for 14 days
+T311	activeingredient 38562 38573	Fenofibrate
+T312	activeingredient 38698 38709	Fenofibrate
+T313	activeingredient 38772 38783	Fenofibrate
+T314	dose 38784 38791	160 mg1
+T315	frequency 38792 38814	once daily for 10 days
+T316	activeingredient 38816 38827	Fenofibrate
+T317	activeingredient 38858 38869	Fenofibrate
+T318	dose 38870 38877	160 mg1
+T319	activeingredient 38919 38930	Fenofibrate
+T320	dose 38931 38938	145 mg1
+T321	frequency 38939 38961	once daily for 10 days
+T322	activeingredient 38963 38974	Fenofibrate
+T323	dose 38975 38981	54 mg1
+T324	frequency 38982 39012	three times daily for 10 days
+T325	activeingredient 39014 39025	Fenofibrate
+T326	dose 39026 39033	145 mg1
+T327	frequency 39034 39056	once daily for 14 days
+T328	co-administereddrug 39058 39071	Atorvastatin,
+T329	dose 39072 39077	20 mg
+T330	frequency 39078 39100	once daily for 10 days
+T331	co-administereddrug 39102 39114	Pravastatin,
+T332	dose 39115 39120	40 mg
+T333	co-administereddrug 39139 39151	Fluvastatin,
+T334	dose 39152 39157	40 mg
+T335	co-administereddrug 39176 39188	Glimepiride,
+T336	dose 39189 39193	1 mg
+T337	co-administereddrug 39212 39222	Metformin,
+T338	dose 39223 39229	850 mg
+T339	frequency 39230 39259	three times daily for 10 days
+T340	co-administereddrug 39261 39275	Rosiglitazone,
+T341	dose 39276 39280	8 mg
+T342	frequency 39281 39302	once daily for 5 days
+T343	co-administereddrug 39304 39316	Atorvastatin
+T344	co-administereddrug 39341 39352	Pravastatin
+T345	co-administereddrug 39394 39420	3-Hydroxyl-iso-pravastatin
+T346	co-administereddrug 39469 39483	5S-Fluvastatin
+T347	co-administereddrug 39525 39536	Glimepiride
+T348	co-administereddrug 39578 39587	Metformin
+T349	co-administereddrug 39627 39640	Rosiglitazone
+T350	activeingredient 39689 39701	fenofibrate)
+T351	routeofadministration 39702 39706	oral
+T352	activeingredient 39724 39736	fenofibrate)
+T353	routeofadministration 39737 39741	oral
+T354	activeingredient 39988 40000	fenofibrate.
+T355	activeingredient 40059 40070	fenofibrate
+T356	dose 40074 40094	10, 45 and 200 mg/kg
+T357	frequency 40094 40099	/day,
+T358	dose 40238 40247	200 mg/kg
+T359	frequency 40247 40251	/day
+T360	dose 40669 40684	10 and 60 mg/kg
+T361	frequency 40684 40688	/day
+T362	activeingredient 40970 40981	fenofibrate
+T363	dose 40982 40997	10 and 60 mg/kg
+T364	frequency 40997 41001	/day
+T365	dose 41042 41052	400 mg/kg;
+T366	dose 41095 41105	250 mg/kg;
+T367	activeingredient 41161 41172	Fenofibrate
+T368	activeingredient 41508 41519	fenofibrate
+T369	dose 41520 41540	10, 45 and 200 mg/kg
+T370	frequency 41540 41544	/day
+T371	dose 41736 41756	10, 60 and 200 mg/kg
+T372	frequency 41756 41761	/day,
+T373	activeingredient 41762 41773	fenofibrate
+T374	activeingredient 41970 41981	fenofibrate
+T375	activeingredient 42327 42338	Fenofibrate
+T376	routeofadministration 42587 42591	oral
+T377	activeingredient 42609 42621	fenofibrate,
+T378	dose 42777 42786	300 mg/kg
+T379	frequency 42786 42790	/day
+T380	indication 42904 42924	Hypercholesterolemia
+T381	indication 42976 42988	Dyslipidemia
+T382	activeingredient 43005 43016	fenofibrate
+T383	tradename 43041 43049	Triglide
+T384	dose 43050 43056	160 mg
+T385	frequency 43057 43064	per day
+T386	activeingredient 43309 43320	Fenofibrate
+T387	activeingredient 43380 43391	Fenofibrate
+T388	activeingredient 44523 44534	Fenofibrate
+T389	indication 44697 44717	Hypertriglyceridemia
+T390	activeingredient 44733 44744	fenofibrate
+T391	indication 45113 45133	hypertriglyceridemia
+T392	activeingredient 45214 45225	fenofibrate
+T393	dose 45251 45257	160 mg
+T394	tradename 45258 45266	Triglide
+T395	frequency 45267 45274	per day
+T396	activeingredient 45597 45608	Fenofibrate
+T397	indication 45633 45653	Hypertriglyceridemia
+T398	activeingredient 45670 45682	Fenofibrate*
+T399	activeingredient 46139 46151	Fenofibrate*
+T400	tradename 46650 46658	Triglide
+T401	tradename 46674 46682	Triglide
+T402	tradename 47301 47310	Triglide.
+T403	tradename 47332 47340	Triglide
+T404	activeingredient 47381 47392	fenofibrate
+T405	tradename 47483 47492	Triglide.
+T406	tradename 47596 47604	Triglide
+T407	tradename 47926 47935	Triglide.
+T408	tradename 48016 48025	Triglide.
+T409	tradename 48043 48051	Triglide
+T410	company 48340 48353	Shionogi Inc.
+T411	company 48402 48415	Shionogi Inc.

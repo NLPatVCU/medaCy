@@ -1,6 +1,6 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from ..pipeline_components import CharacterTokenizer
+from ..pipeline_components import CharacterTokenizer, SystematicReviewTokenizer
 from medacy.model.feature_extractor import FeatureExtractor
 
 from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent
@@ -21,7 +21,11 @@ class SystematicReviewPipeline(BasePipeline):
         """
         description="""Pipeline tuned for the recognition of systematic review related entities from the TAC 2018 SRIE track"""
 
-        super().__init__("systematic_review_pipeline", spacy_pipeline=spacy.load("en_core_web_sm"),  description=description)
+        super().__init__("systematic_review_pipeline",
+                         spacy_pipeline=spacy.load("en_core_web_sm"),
+                         description=description,
+                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
+                         organization="NLP@VCU")
 
 
         self.entities = entities
@@ -41,11 +45,11 @@ class SystematicReviewPipeline(BasePipeline):
         ))
 
     def get_tokenizer(self):
-        tokenizer = CharacterTokenizer(self.spacy_pipeline)
+        tokenizer = SystematicReviewTokenizer(self.spacy_pipeline)
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size=2, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num'])
+        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text'])
         return extractor
 
 

@@ -1,0 +1,1209 @@
+HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use CIMZIA safely and effectively.
+ See full prescribing information for CIMZIA.
+ CIMZIA (certolizumab pegol) for injection, for subcutaneous use CIMZIA (certolizumab pegol) injection, for subcutaneous use Initial U.S. Approval: 2008
+ WARNING: SERIOUS INFECTIONS AND MALIGNANCY See full prescribing information for complete boxed warning.
+ &#x2022;  Increased risk of serious infections leading to hospitalization or death including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens (5.1).
+ &#x2022;  CIMZIA should be discontinued if a patient develops a serious infection or sepsis (5.1).
+ &#x2022;  Perform test for latent TB; if positive, start treatment for TB prior to starting CIMZIA (5.1).
+ &#x2022;  Monitor all patients for active TB during treatment, even if initial latent TB test is negative (5.1)
+ &#x2022;  Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers, of which CIMZIA is a member (5.2).
+CIMZIA is not indicated for use in pediatric patients.
+(8.4)
+ ----------------------------RECENT MAJOR CHANGES-------------------------Indications and Usage (1.3) 09/2013 Indications and Usage (1.4)) 10/2013 Dosage and Administration (2.3, 2.7) 09/2013 Dosage and Administration (2.4, 2.8) 10/2013 Warnings and Precautions, (5.2, 5.4)  10/2013
+ ----------------------------INDICATIONS AND USAGE--------------------------CIMZIA is a tumor necrosis factor (TNF) blocker indicated for: &#x2022;  Reducing signs and symptoms of Crohn's disease and maintaining clinical
+ response in adult patients with moderately to severely active disease who have had an inadequate response to conventional therapy (1.1)
+ &#x2022;  Treatment of adults with moderately to severely active rheumatoid arthritis (1.2)
+ &#x2022;  Treatment of adult patients with active psoriatic arthritis.
+(1.3) &#x2022;  Treatment of adults with active ankylosing spondylitis (1.4)
+ -----------------------DOSAGE AND ADMINISTRATION----------------------CIMZIA is administered by subcutaneous injection.
+ The initial dose of CIMZIA is 400 mg (given as two subcutaneous injections of 200 mg)(2).
+Crohn's Disease (2.1) &#x2022;  400 mg initially and at Weeks 2 and 4.
+ If response occurs, follow with
+ 400 mg every four weeks Rheumatoid Arthritis (2.2) &#x2022;  400 mg initially and at Weeks 2 and 4, followed by 200 mg every other  week; for maintenance dosing, 400 mg every 4 weeks can be considered Psoriatic Arthritis (2.3) &#x2022;  400 mg initially and at week 2 and 4, followed by 200 mg every other
+ week; for maintenance dosing, 400 mg every 4 weeks can be considered.
+Ankylosing Spondylitis (2.4)
+ &#x2022;  400 mg (given as 2 subcutaneous injections of 200 mg each) initially and at weeks 2 and 4, followed by 200 mg every other week or 400 mg every 4 weeks.
+ ----------------------DOSAGE FORMS AND STRENGTHS--------------------&#x2022;  For injection: 200 mg lyophilized powder for reconstitution in a single use
+ vial, with 1 mL of sterile Water for Injection (3) &#x2022;  Injection: 200 mg/mL solution in a single-use prefilled syringe (3)
+ ------------------------------CONTRAINDICATIONS------------------------------&#x2022;  None (4)
+ ------------------------WARNINGS AND PRECAUTIONS----------------------&#x2022;  Serious infections - do not start CIMZIA during an active infection.
+ If an
+ infection develops, monitor carefully, and stop CIMZIA if infection becomes serious (5.1)
+ &#x2022;  Invasive fungal infections - for patients who develop a systemic illness on CIMZIA, consider empiric antifungal therapy for those who reside or travel to regions where mycoses are endemic (5.1)
+ &#x2022;  Cases of lymphoma and other malignancies have been observed among patients receiving TNF blockers (5.2)
+ &#x2022;  Heart failure, worsening or new onset may occur (5.3) &#x2022;  Anaphylaxis or serious allergic reactions may occur (5.4) &#x2022;  Hepatitis B virus reactivation - test for HBV infection before starting
+ CIMZIA.
+ Monitor HBV carriers during and several months after therapy.
+If reactivation occurs, stop CIMZIA and begin anti-viral therapy (5.5)
+ &#x2022;  Demyelinating disease, exacerbation or new onset, may occur (5.6) &#x2022;  Cytopenias, pancytopenia - advise patients to seek immediate medical
+ attention if symptoms develop, and consider stopping CIMZIA (5.7) &#x2022;  Lupus-like syndrome - stop CIMZIA if syndrome develops (5.9)
+ ------------------------------ADVERSE REACTIONS-----------------------------The most common adverse reactions (incidence &#x2265;7% and higher than placebo): upper respiratory tract infection, rash, and urinary tract infection (6.1)
+ To report SUSPECTED ADVERSE REACTIONS, contact UCB, Inc.
+at 1-866-822-0068 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.
+ ------------------------------DRUG INTERACTIONS-----------------------------&#x2022;  Use with Biological DMARDs - increased risk of serious infections (5.8,
+ 7.1) &#x2022;  Live vaccines - avoid use with CIMZIA (5.10, 7.2) &#x2022;  Laboratory tests - may interfere with aPTT tests (7.3)
+ See 17 for PATIENT COUNSELING INFORMATION and Medication Guide.
+ Revised: 10/2013
+ 1
+ Reference ID: 3391827
+                                                                                                                                                                           ______________________________________________________________________________
+ FULL PRESCRIBING INFORMATION: CONTENTS*
+ WARNING: SERIOUS INFECTIONS AND MALIGNANCY 1 INDICATIONS AND USAGE
+ 1.1 Crohn's Disease
+ 1.2 Rheumatoid Arthritis
+ 1.3 Psoriatic Arthritis
+ 1.4 Ankylosing Spondylitis
+  2 DOSAGE AND ADMINISTRATION 2.1 Crohn's Disease
+ 2.2 Rheumatoid Arthritis
+ 2.3 Psoriatic Arthritis
+ 2.4 Ankylosing Spondylitis
+ 2.5 Preparation and Administration of CIMZIA Using
+ the Lyophilized Powder for Injection
+ 2.6 Preparation and Administration of CIMZIA Using
+ the Prefilled Syringe
+ 2.7 Monitoring to Assess Safety
+ 2.8 Concomitant Medications
+  3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 Risk of Serious Infections
+ 5.2 Malignancies
+ 5.3 Heart Failure
+ 5.4 Hypersensitivity Reactions
+ 5.5 Hepatitis B Virus Reactivation
+ 5.6 Neurologic Reactions
+ 5.7 Hematological Reactions
+ 5.8 Use with Biological Disease-Modifying
+ Antirheumatic Drugs (Biological DMARDs)
+ 5.9 Autoimmunity
+ 5.10 Immunizations
+ 5.11 Immunosuppression
+  6 ADVERSE REACTIONS 6.1 Clinical Trials Experience
+ 6.2 Postmarketing Experience
+ 7 DRUG INTERACTIONS 7.1 Use with Anakinra, Abatacept, Rituximab and
+ Natalizumab
+ 7.2 Live Vaccines
+ 7.3 Laboratory Tests
+  8 USE IN SPECIFIC POPULATIONS 8.1 Pregnancy
+ 8.3 Nursing Mothers
+ 8.4 Pediatric Use
+ 8.5 Geriatric Use
+  10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action
+ 12.2 Pharmacodynamics
+ 12.3 Pharmacokinetics
+  13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, and Impairment of
+ Fertility
+  14 CLINICAL STUDIES 14.1 Crohn's Disease
+ 14.2 Rheumatoid Arthritis
+ 14.3 Psoriatic Arthritis
+ 14.4 Ankylosing Spondylitis
+  15 REFERENCES 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ 17.1 Patient Counseling
+ 17.2 Instruction on Prefilled Syringe Self-Injection
+ Technique
+  *Sections or subsections omitted from the full prescribing information are not listed.
+ 2
+ Reference ID: 3391827
+                                                                                                                                               FULL PRESCRIBING INFORMATION
+  WARNING: SERIOUS INFECTIONS AND MALIGNANCY
+ SERIOUS INFECTIONS Patients treated with CIMZIA are at increased risk for developing serious infections that may lead to hospitalization or death [see Warnings and Precautions (5.1) and Adverse Reactions (6.1)].
+Most patients who developed these infections were taking concomitant immunosuppressants such as methotrexate or corticosteroids.
+ CIMZIA should be discontinued if a patient develops a serious infection or sepsis.
+ Reported infections include: &#x2022;  Active tuberculosis, including reactivation of latent tuberculosis.
+ Patients with tuberculosis
+ have frequently presented with disseminated or extrapulmonary disease.
+Patients should be tested for latent tuberculosis before CIMZIA use and during therapy.
+ Treatment for latent infection should be initiated prior to CIMZIA use.
+ &#x2022;  Invasive fungal infections, including histoplasmosis, coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and pneumocystosis.
+Patients with histoplasmosis or other invasive fungal infections may present with disseminated, rather than localized disease.
+ Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection.
+Empiric anti-fungal therapy should be considered in patients at risk for invasive fungal infections who develop severe systemic illness.
+ &#x2022;  Bacterial, viral and other infections due to opportunistic pathogens, including Legionella and Listeria.
+ The risks and benefits of treatment with CIMZIA should be carefully considered prior to initiating therapy in patients with chronic or recurrent infection.
+ Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with CIMZIA, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy.
+[see Warnings and Precautions (5.1) and Adverse Reactions (6.1)].
+ MALIGNANCY Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF blockers, of which CIMZIA is a member [see Warnings and Precautions (5.2)].
+CIMZIA is not indicated for use in pediatric patients.
+ 1 INDICATIONS AND USAGE
+ 1.1 Crohn's Disease CIMZIA is indicated for reducing signs and symptoms of Crohn's disease and maintaining clinical
+ response in adult patients with moderately to severely active disease who have had an inadequate response to conventional therapy.
+ 1.2 Rheumatoid Arthritis CIMZIA is indicated for the treatment of adults with moderately to severely active rheumatoid  arthritis (RA).
+ 3
+ Reference ID: 3391827
+                                                                                                                                                      1.3  Psoriatic Arthritis CIMZIA is indicated for the treatment of adult patients with active psoriatic arthritis (PsA).
+ 1.4  Ankylosing Spondylitis CIMZIA is indicated for the treatment of adults with active ankylosing spondylitis (AS).
+[see
+ Clinical Studies (14.4)]
+ 2 DOSAGE AND ADMINISTRATION CIMZIA is administered by subcutaneous injection.
+Injection sites should be rotated and injections
+ should not be given into areas where the skin is tender, bruised, red or hard.
+ When a 400 mg dose is needed (given as two subcutaneous injections of 200 mg), injections should occur at separate sites in the thigh or abdomen.
+ The solution should be carefully inspected visually for particulate matter and discoloration prior to administration.
+The solution should be a clear colorless to yellow liquid, essentially free from particulates and should not be used if cloudy or if foreign particulate matter is present.
+ CIMZIA does not contain preservatives; therefore, unused portions of drug remaining in the syringe or vial should be discarded.
+ 2.1  Crohn's Disease The recommended initial adult dose of CIMZIA is 400 mg (given as two subcutaneous injections
+ of 200 mg) initially, and at Weeks 2 and 4.
+ In patients who obtain a clinical response, the recommended maintenance regimen is 400 mg every four weeks.
+ 2.2  Rheumatoid Arthritis The recommended dose of CIMZIA for adult patients with rheumatoid arthritis is 400 mg (given
+ as two subcutaneous injections of 200 mg) initially and at Weeks 2 and 4, followed by 200 mg every other week.
+ For maintenance dosing, CIMZIA 400 mg every 4 weeks can be considered [see Clinical Studies (14.2)].
+ 2.3  Psoriatic Arthritis The recommended dose of CIMZIA for adult patients with psoriatic arthritis is 400 mg (given as
+ 2 subcutaneous injections of 200 mg each) initially and at week 2 and 4, followed by 200 mg every other week.
+ For maintenance dosing, CIMZIA 400 mg every 4 weeks can be considered [see Clinical Studies (14.3)].
+ 2.4  Ankylosing Spondylitis The recommended dose of CIMZIA for adult patients with ankylosing spondylitis is 400 mg
+ (given as 2 subcutaneous injections of 200 mg each) initially and at weeks 2 and 4, followed by 200 mg every 2 weeks or 400 mg every 4 weeks.
+ 2.5  Preparation and Administration of CIMZIA Using the Lyophilized Powder for Injection CIMZIA Lyophilized powder should be prepared and administered by a health care professional.
+ CIMZIA is provided in a package that contains everything required to reconstitute and inject the drug [see How Supplied/Storage and Handling (16)].
+ Step-by-step preparation and administration instructions are provided below.
+ Preparation and Storage a.
+ CIMZIA should be brought to room temperature before reconstituting.
+b.  Use appropriate aseptic technique when preparing and administering CIMZIA.
+c.
+ Reconstitute the vial(s) of CIMZIA with 1 mL of Sterile Water for Injection, USP using
+ the 20-gauge needle provided.
+ 4
+ Reference ID: 3391827
+                                                                                                                                                             d.
+ Gently swirl each vial of CIMZIA without shaking, assuring that all of the powder comes in contact with the Sterile Water for Injection.
+ e.
+ Leave the vial(s) undisturbed to fully reconstitute, which may take approximately 30 minutes.
+ f.
+ The final reconstituted solution contains 200 mg/mL and should be clear to opalescent, colorless to pale yellow liquid essentially free from particulates.
+ g.
+ Once reconstituted, CIMZIA can be stored in the vials for up to 24 hours between 2 to 8 C (36 to 46 F) prior to injection.
+ Do not freeze.
+ Administration a.
+ Prior to injecting, reconstituted CIMZIA should be at room temperature but do not leave
+ reconstituted CIMZIA at room temperature for more than two hours prior to administration.
+ b.  Withdraw the reconstituted solution into a separate syringe for each vial using a new 20gauge needle for each vial so that each syringe contains 1 mL of CIMZIA (200 mg of certolizumab pegol).
+ c.
+ Replace the 20-gauge needle(s) on the syringes with a 23-gauge(s) for administration.
+d.
+ Inject the full contents of the syringe(s) subcutaneously into thigh or abdomen.
+ Where a
+ 400 mg dose is required, two injections are required, therefore, separate sites should be used for each 200 mg injection.
+ 2.6  Preparation and Administration of CIMZIA Using the Prefilled Syringe After proper training in subcutaneous injection technique, a patient may self-inject with the
+ CIMZIA Prefilled Syringe if a physician determines that it is appropriate.
+Patients using the CIMZIA Prefilled Syringe should be instructed to inject the full amount in the
+ syringe (1 mL), according to the directions provided in the Instructions for Use booklet.
+ 2.7  Monitoring to Assess Safety Before initiation of therapy with CIMZIA, all patients must be evaluated for both active and
+ inactive (latent) tuberculosis infection.
+ The possibility of undetected latent tuberculosis should be considered in patients who have immigrated from or traveled to countries with a high prevalence of tuberculosis or had close contact with a person with active tuberculosis.
+ Appropriate screening tests (e.g. tuberculin skin test and chest x-ray) should be performed in all patients.
+ 2.8  Concomitant Medications CIMZIA may be used as monotherapy or concomitantly with non-biological disease modifying
+ anti-rheumatic drugs (DMARDs).
+The use of CIMZIA in combination with biological DMARDs or other tumor necrosis factor
+ (TNF) blocker therapy is not recommended.
+ 3 DOSAGE FORMS AND STRENGTHS &#x2022; For Injection: Lyophilized Powder for Reconstitution
+ Sterile, white, lyophilized powder for reconstitution and then subcutaneous administration.
+ Each single-use vial provides approximately 200 mg of CIMZIA.
+ &#x2022; Injection: Prefilled Syringe A single-use, 1 mL prefilled glass syringe with a fixed 25 gauge  inch thin wall needle, providing 200 mg per 1 mL of CIMZIA.
+ 4 CONTRAINDICATIONS None.
+ 5
+ Reference ID: 3391827
+                                                                                                                                   5 WARNINGS AND PRECAUTIONS
+ 5.1 Risk of Serious Infections [see Boxed Warning] Patients treated with CIMZIA are at an increased risk for developing serious infections involving
+ various organ systems and sites that may lead to hospitalization or death.
+ Opportunistic infections due to bacterial, mycobacterial, invasive fungal, viral, parasitic, or other opportunistic pathogens including aspergillosis, blastomycosis, candidiasis, coccidioidomycosis, histoplasmosis, legionellosis, listeriosis, pneumocystosis and tuberculosis have been reported with TNF blockers.
+ Patients have frequently presented with disseminated rather than localized disease.
+ Treatment with CIMZIA should not be initiated in patients with an active infection, including clinically important localized infections.
+Patients greater than 65 years of age, patients with co-morbid conditions, and/or patients taking concomitant immunosuppressants (e.g. corticosteroids or methotrexate) may be at a greater risk of infection.
+The risks and benefits of treatment should be considered prior to initiating therapy in patients:
+ &#x2022; with chronic or recurrent infection
+ &#x2022; who have been exposed to tuberculosis
+ &#x2022; with a history of an opportunistic infection
+ &#x2022;  who have resided or traveled in areas of endemic tuberculosis or endemic mycoses, such as histoplasmosis, coccidioidomycosis, or blastomycosis
+ &#x2022; with underlying conditions that may predispose them to infection
+ Tuberculosis
+ Cases of reactivation of tuberculosis or new tuberculosis infections have been observed in patients receiving CIMZIA, including patients who have previously received treatment for latent or active tuberculosis.
+ Patients should be evaluated for tuberculosis risk factors and tested for latent infection prior to initiating CIMZIA and periodically during therapy.
+ Treatment of latent tuberculosis infection prior to therapy with TNF-blocking agents has been shown to reduce the risk of tuberculosis reactivation during therapy.
+ Induration of 5 mm or greater with tuberculin skin testing should be considered a positive test result when assessing if treatment for latent tuberculosis is needed prior to initiating CIMZIA, even for patients previously vaccinated with Bacille Calmette-Guerin (BCG).
+ Anti-tuberculosis therapy should also be considered prior to initiation of CIMZIA in patients with a past history of latent or active tuberculosis in whom an adequate course of treatment cannot be confirmed, and for patients with a negative test for latent tuberculosis but having risk factors for tuberculosis infection.
+ Consultation with a physician with expertise in the treatment of tuberculosis is recommended to aid in the decision of whether initiating anti-tuberculosis therapy is appropriate for an individual patient.
+ Tuberculosis should be strongly considered in patients who develop a new infection during CIMZIA treatment, especially in patients who have previously or recently traveled to countries with a high prevalence of tuberculosis, or who have had close contact with a person with active tuberculosis.
+ 6
+ Reference ID: 3391827
+                                                                                                                                                             Monitoring
+ Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with CIMZIA, including the development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy.
+Tests for latent tuberculosis infection may also be falsely negative while on therapy with CIMZIA.
+ CIMZIA should be discontinued if a patient develops a serious infection or sepsis.
+ A patient who develops a new infection during treatment with CIMZIA should be closely monitored, undergo a prompt and complete diagnostic workup appropriate for an immunocompromised patient, and appropriate antimicrobial therapy should be initiated.
+ Invasive Fungal Infections
+ For patients who reside or travel in regions where mycoses are endemic, invasive fungal infection should be suspected if they develop a serious systemic illness.
+ Appropriate empiric antifungal therapy should be considered while a diagnostic workup is being performed.
+ Antigen and antibody testing for histoplasmosis may be negative in some patients with active infection.
+When feasible, the decision to administer empiric antifungal therapy in these patients should be made in consultation with a physician with expertise in the diagnosis and treatment of invasive fungal infections and should take into account both the risk for severe fungal infection and risks of antifungal therapy.
+ 5.2 Ma l i g n a n ci es In the controlled portions of clinical studies of some TNF blockers, more cases of malignancies
+ have been observed among patients receiving TNF blockers compared to control patients.
+ During controlled and open-labeled portions of CIMZIA studies of Crohn's disease and other diseases, malignancies (excluding non-melanoma skin cancer) were observed at a rate (95% confidence interval) of 0.5 (0.4, 0.7) per 100 patient-years among 4,650 CIMZIA-treated patients versus a rate of 0.6 (0.1, 1.7) per 100 patient-years among 1,319 placebo-treated patients.
+The size of the control group and limited duration of the controlled portions of the studies precludes the ability to draw firm conclusions.
+ Malignancies, some fatal, have been reported among children, adolescents, and young adults who received treatment with TNF-blocking agents (initiation of therapy &#x2264; 18 years of age), of which CIMZIA is a member.
+ Approximately half the cases were lymphomas, including Hodgkin's and non-Hodgkin's lymphoma.
+ The other cases represented a variety of different malignancies and included rare malignancies usually associated with immunosuppression and malignancies that are not usually observed in children and adolescents.
+ The malignancies occurred after a median of 30 months of therapy (range 1 to 84 months).
+ Most of the patients were receiving concomitant immunosuppressants.
+These cases were reported post-marketing and are derived from a variety of sources including registries and spontaneous post-marketing reports.
+CIMZIA is not indicated for use in pediatric patients.
+ In the controlled portions of clinical trials of all the TNF blockers, more cases of lymphoma have been observed among patients receiving TNF blockers compared to control patients.
+ In controlled studies of CIMZIA for Crohn's disease and other investigational uses, there was one case of lymphoma among 2,657 Cimzia-treated patients and one case of Hodgkin's lymphoma among 1,319 placebo-treated patients.
+ In the CIMZIA RA clinical trials (placebo-controlled and open label) a total of three cases of lymphoma were observed among 2,367 patients.
+This is approximately 2-fold higher than expected in the general population.
+Patients with RA, particularly those with highly active disease, are at a higher risk for the development of lymphoma.
+ Rates in clinical studies for CIMZIA cannot be compared to the rates of clinical trials of other TNF blockers and may not predict the rates observed when CIMZIA is used in a broader patient population.
+ 7
+ Reference ID: 3391827
+                                                                                                                                                                       Patients with Crohn's disease that require chronic exposure to immunosuppressant therapies may be at higher risk than the general population for the development of lymphoma, even in the absence of TNF blocker therapy [see Adverse Reactions (6.1)].
+The potential role of TNF blocker therapy in the development of malignancies in adults is not known.
+ Postmarketing cases of hepatosplenic T-cell lymphoma (HSTCL), a rare type of T-cell lymphoma that has a very aggressive disease course and is usually fatal, have been reported in patients treated with TNF blockers, including CIMZIA.
+The majority of reported TNF blocker cases occurred in adolescent and young adult males with Crohn's disease or ulcerative colitis.
+ Almost all of these patients had received  treatment with the immunosuppressants azathioprine and/or 6-mercaptopurine (6-MP) concomitantly with a TNF blocker at or prior to diagnosis.
+It is uncertain whether the occurrence of HSTCL is related to use of a TNF blocker or a TNF blocker in combination with these other immunosuppressants.
+The potential risk of using a TNF blocker in combination with azathioprine or 6MP should be carefully considered.
+ Cases of acute and chronic leukemia have been reported in association with post-marketing TNF-blocker use in RA and other indications.
+ Even in the absence of TNF-blocker therapy, patients with RA may be at a higher risk (approximately 2-fold) than the general population for the development of leukemia.
+ Periodic skin examinations are recommended for all patients, particularly those with risk factors for skin cancer.
+ 5.3 Heart Failure Cases of worsening congestive heart failure (CHF) and new onset CHF have been reported with
+ TNF blockers, including CIMZIA.
+ CIMZIA has not been formally studied in patients with CHF; however, in clinical studies in patients with CHF with another TNF blocker, worsening congestive heart failure (CHF) and increased mortality due to CHF were observed.
+ Exercise caution in patients with heart failure and monitor them carefully [see Adverse Reactions (6.1)].
+ 5.4 Hypersensitivity Reactions The following symptoms that could be compatible with hypersensitivity reactions have been
+ reported rarely following CIMZIA administration to patients:  angioedema, dyspnea, hypotension, rash, serum sickness, and urticaria.
+Some of these reactions occurred after the first administration of CIMZIA.
+If such reactions occur, discontinue further administration of CIMZIA and institute appropriate therapy.
+ There are no data on the risks of using CIMZIA in patients who have experienced a severe hypersensitivity reaction towards another TNF blocker; in these patients caution is needed [see Adverse Reactions (6.1)].
+ 5.5 Hepatitis B Virus Reactivation Use of TNF blockers, including CIMZIA, has been associated with reactivation of hepatitis B virus  (HBV) in patients who are chronic carriers of this virus.
+In some instances, HBV reactivation occurring in conjunction with TNF blocker therapy has been fatal.
+ The majority of reports have occurred in patients concomitantly receiving other medications that suppress the immune system, which may also contribute to HBV reactivation.
+ Test patients for HBV infection before initiating treatment with CIMZIA.
+ For patients who test positive for HBV infection, consultation with a physician with expertise in the treatment of hepatitis B is recommended.
+ Adequate data are not available on the safety or efficacy of treating patients who are carriers of HBV with anti-viral therapy in conjunction with TNF blocker therapy to prevent HBV reactivation.
+ Patients who are carriers of HBV and require treatment with CIMZIA should be closely monitored for clinical and laboratory signs of active HBV infection throughout therapy and for several months following termination of therapy.
+ In patients who develop HBV reactivation, discontinue CIMZIA and initiate effective anti-viral therapy with appropriate supportive treatment.
+The safety of resuming TNF blocker therapy after HBV
+ 8
+ Reference ID: 3391827
+                                                                                                                                                    reactivation is controlled is not known.
+ Therefore, exercise caution when considering resumption of CIMZIA therapy in this situation and monitor patients closely.
+ 5.6 Neurologic Reactions Use of TNF blockers, of which CIMZIA is a member, has been associated with rare cases of new
+ onset or exacerbation of clinical symptoms and/or radiographic evidence of central nervous system demyelinating disease, including multiple sclerosis, and with peripheral demyelinating disease, including Guillain-Barre syndrome .
+ Exercise caution in considering the use of CIMZIA in patients with preexisting or recent-onset central or peripheral nervous system demyelinating disorders.
+ Rare cases of neurological disorders, including seizure disorder, optic neuritis, and peripheral neuropathy have been reported in patients treated with CIMZIA [see Adverse Reactions (6.1)].
+ 5.7 Hematological Reactions Rare reports of pancytopenia, including aplastic anemia, have been reported with TNF blockers.
+ Adverse reactions of the hematologic system, including medically significant cytopenia (e.g., leukopenia, pancytopenia, thrombocytopenia) have been infrequently reported with CIMZIA [see Adverse Reactions (6.1)].
+The causal relationship of these events to CIMZIA remains unclear.
+ Although no high risk group has been identified, exercise caution in patients being treated with CIMZIA who have ongoing, or a history of, significant hematologic abnormalities.
+ Advise all patients to seek immediate medical attention if they develop signs and symptoms suggestive of blood dyscrasias or infection (e.g., persistent fever, bruising, bleeding, pallor) while on CIMZIA.
+ Consider discontinuation of CIMZIA therapy in patients with confirmed significant hematologic abnormalities.
+ 5.8 Use with Biological Disease-Modifying Antirheumatic Drugs (Biological DMARDs) Serious infections were seen in clinical studies with concurrent use of anakinra (an interleukin-1
+ antagonist) and another TNF blocker, etanercept, with no added benefit compared to etanercept alone.
+ A higher risk of serious infections was also observed in combination use of TNF blockers with abatacept and rituximab.
+ Because of the nature of the adverse events seen with this combination therapy, similar toxicities may also result from the use of CIMZIA in this combination.
+ Therefore, the use of CIMZIA in combination with other biological DMARDs is not recommended [see Drug Interactions (7.1)].
+ 5.9 Autoimmunity Treatment with CIMZIA may result in the formation of autoantibodies and rarely, in the
+ development of a lupus-like syndrome.
+ If a patient develops symptoms suggestive of a lupus-like syndrome following treatment with CIMZIA, discontinue treatment [see Adverse Reactions (6.1)].
+ 5.10 Immunizations Patients treated with CIMZIA may receive vaccinations, except for live or live attenuated vaccines.
+ No data are available on the response to live vaccinations or the secondary transmission of infection by live vaccines in patients receiving CIMZIA.
+ In a placebo-controlled clinical trial of patients with rheumatoid arthritis, no difference was detected in antibody response to vaccine between CIMZIA and placebo treatment groups when the pneumococcal polysaccharide vaccine and influenza vaccine were administered concurrently with CIMZIA.
+Similar proportions of patients developed protective levels of anti-vaccine antibodies between CIMZIA and placebo treatment groups; however patients receiving CIMZIA and concomitant methotrexate had a lower humoral response compared with patients receiving CIMZIA alone.
+The clinical significance of this is unknown.
+ 5.11 Immunosuppression Since TNF mediates inflammation and modulates cellular immune responses, the possibility exists
+ for TNF blockers, including CIMZIA, to affect host defenses against infections and malignancies.
+The
+ 9
+ Reference ID: 3391827
+                                                                                                                                 impact of treatment with CIMZIA on the development and course of malignancies, as well as active and/or chronic infections, is not fully understood [see Warnings and Precautions (5.1, 5.2, 5.5) and Adverse Reactions (6.1)].
+The safety and efficacy of CIMZIA in patients with immunosuppression has not been formally evaluated.
+ 6 ADVERSE REACTIONS
+ 6.1 Clinical Trials Experience The most serious adverse reactions were: &#x2022; Serious Infections [see Warnings and Precautions (5.1)] &#x2022; Malignancies [see Warnings and Precautions (5.2)] &#x2022; Heart Failure [see Warnings and Precautions (5.3)]
+ Because clinical studies are conducted under widely varying and controlled conditions, adverse reaction rates observed in clinical studies of a drug cannot be directly compared to rates in the clinical studies of another drug, and may not predict the rates observed in a broader patient population in clinical practice.
+ In premarketing controlled trials of all patient populations combined the most common adverse reactions (&#x2265; 8%) were upper respiratory infections (18%), rash (9%) and urinary tract infections (8%).
+ Adverse Reactions Most Commonly Leading to Discontinuation of Treatment in Premarketing Controlled Trials
+ The proportion of patients with Crohn's disease who discontinued treatment due to adverse reactions in the controlled clinical studies was 8% for CIMZIA and 7% for placebo.
+ The most common adverse reactions leading to the discontinuation of CIMZIA (for at least 2 patients and with a higher incidence than placebo) were abdominal pain (0.4% CIMZIA, 0.2% placebo), diarrhea (0.4% CIMZIA, 0% placebo), and intestinal obstruction (0.4% CIMZIA, 0% placebo).
+ The proportion of patients with rheumatoid arthritis who discontinued treatment due to adverse reactions in the controlled clinical studies was 5% for CIMZIA and 2.5% for placebo.
+ The most common adverse reactions leading to discontinuation of CIMZIA were tuberculosis infections (0.5%); and pyrexia, urticaria, pneumonia, and rash (0.3%).
+ Controlled Studies with Crohn's Disease The data described below reflect exposure to CIMZIA at 400 mg subcutaneous dosing in studies
+ of patients with Crohn's disease.
+ In the safety population in controlled studies, a total of 620 patients with Crohn's disease received CIMZIA at a dose of 400 mg, and 614 subjects received placebo (including subjects randomized to placebo in Study CD2 following open label dosing of CIMZIA at Weeks 0, 2, 4).
+ In controlled and uncontrolled studies, 1,564 patients received CIMZIA at some dose level, of whom 1,350 patients received 400 mg CIMZIA.
+ Approximately 55% of subjects were female, 45% were male, and 94% were Caucasian.
+The majority of patients in the active group were between the ages of 18 and 64.
+ During controlled clinical studies, the proportion of patients with serious adverse reactions was 10% for CIMZIA and 9% for placebo.
+ The most common adverse reactions (occurring in &#x2265; 5% of CIMZIA-treated patients, and with a higher incidence compared to placebo) in controlled clinical studies with CIMZIA were upper respiratory infections (e.g. nasopharyngitis, laryngitis, viral infection) in 20% of CIMZIA-treated patients and 13% of placebo-treated patients, urinary tract infections (e.g. bladder infection, bacteriuria, cystitis) in 7% of CIMZIA-treated patients and in 6% of placebo-treated patients, and arthralgia (6% CIMZIA, 4% placebo).
+ 10
+ Reference ID: 3391827
+                                                                                                                            Other Adverse Reactions The most commonly occurring adverse reactions in controlled trials of Crohn's disease were
+ described above.
+ Other serious or significant adverse reactions reported in controlled and uncontrolled studies in Crohn's disease and other diseases, occurring in patients receiving CIMZIA at doses of 400 mg or other doses include:
+ Blood and lymphatic system disorders: Anemia, leukopenia, lymphadenopathy, pancytopenia, and thrombophilia.
+ Cardiac disorders: Angina pectoris, arrhythmias, atrial fibrillation, cardiac failure, hypertensive heart disease, myocardial infarction, myocardial ischemia, pericardial effusion, pericarditis, stroke and transient ischemic attack.
+ Eye disorders: Optic neuritis, retinal hemorrhage, and uveitis.
+ General disorders and administration site conditions: Bleeding and injection site reactions.
+ Hepatobiliary disorders: Elevated liver enzymes and hepatitis.
+ Immune system disorders: Alopecia totalis.
+ Psychiatric disorders: Anxiety, bipolar disorder, and suicide attempt.
+ Renal and urinary disorders: Nephrotic syndrome and renal failure.
+ Reproductive system and breast disorders: Menstrual disorder.
+ Skin and subcutaneous tissue disorders: Dermatitis, erythema nodosum, and urticaria.
+ Vascular disorders: Thrombophlebitis, vasculitis.
+ Controlled Studies with Rheumatoid Arthritis CIMZIA was studied primarily in placebo-controlled trials and in long-term follow-up studies.
+ The
+ data described below reflect the exposure to CIMZIA in 2,367 RA patients, including 2,030 exposed for at least 6 months, 1,663 exposed for at least one year and 282 for at least 2 years; and 1,774 in adequate and well-controlled studies.
+In placebo-controlled studies, the population had a median age of 53 years at entry; approximately 80% were females, 93% were Caucasian and all patients were suffering from active rheumatoid arthritis, with a median disease duration of 6.2 years.
+ Most patients received the recommended dose of CIMZIA or higher.
+ Table 1 summarizes the reactions reported at a rate of at least 3% in patients treated with CIMZIA 200 mg every other week compared to placebo (saline formulation), given concomitantly with methotrexate.
+ Table 1: Adverse Reactions Reported by &#x2265;3% of Patients Treated with CIMZIA Dosed Every Other Week during Placebo-Controlled Period of Rheumatoid Arthritis Studies, with Concomitant Methotrexate.
+ 11
+ Reference ID: 3391827
+                                                                                                                                                      Adverse Reaction Placebo+ MTX# (%) CIMZIA 200 mg EOW + MTX(%) (Preferred Term) N =324 N =640
+ Upper respiratory tract 2 6 infection Headache 4 5 Hypertension 2 5 Nasopharyngitis 1 5 Back pain 1 4 Pyrexia 2 3 Pharyngitis 1 3 Rash 1 3 Acute bronchitis 1 3 Fatigue 2 3
+ #EOW = Every other Week, MTX = Methotrexate.
+ Hypertensive adverse reactions were observed more frequently in patients receiving CIMZIA than in controls.
+These adverse reactions occurred more frequently among patients with a baseline history of hypertension and among patients receiving concomitant corticosteroids and non-steroidal anti-inflammatory drugs.
+ Patients receiving CIMZIA 400 mg as monotherapy every 4 weeks in rheumatoid arthritis controlled clinical trials had similar adverse reactions to those patients receiving CIMZIA 200 mg every other week.
+ Other Adverse Reactions Other infrequent adverse reactions (occurring in less than 3% of RA patients) were similar to
+ those seen in Crohn's disease patients.
+ Psoriatic Arthritis Clinical Study CIMZIA has been studied in 409 patients with psoriatic arthritis (PsA) in a placebo-controlled trial.
+The safety profile for patients with PsA treated with CIMZIA was similar to the safety profile seen in patients with RA and previous experience with CIMZIA.
+ Ankylosing Spondylitis Clinical Study CIMZIA has been studied in 325 patients with axial spondyloarthritis of whom the majority had ankylosing spondylitis (AS) in a placebo-controlled study (AS-1).
+The safety profile for patients in study AS-1 treated with CIMZIA was similar to the safety profile seen in patients with RA.
+ Infections The incidence of infections in controlled studies in Crohn's disease was 38% for CIMZIA-treated
+ patients and 30% for placebo-treated patients.
+ The infections consisted primarily of upper respiratory infections (20% for CIMZIA, 13% for placebo).
+ The incidence of serious infections during the controlled clinical studies was 3% per patient-year for CIMZIA-treated patients and 1% for placebo-treated patients.
+Serious infections observed included bacterial and viral infections, pneumonia, and pyelonephritis.
+ The incidence of new cases of infections in controlled clinical studies in rheumatoid arthritis was 0.91 per patient-year for all CIMZIA-treated patients and 0.72 per patient-year for placebo-treated patients.
+ The infections consisted primarily of upper respiratory tract infections, herpes infections, urinary tract infections, and lower respiratory tract infections.
+ In the controlled rheumatoid arthritis studies, there were more new cases of serious infection adverse reactions in the CIMZIA treatment groups, compared to the placebo groups (0.06 per patient-year for all CIMZIA doses vs. 0.02 per patient-year for placebo).
+ Rates of serious infections in the 200 mg every other week dose group were 0.06 per
+ 12
+ Reference ID: 3391827
+                                                                                                                                                               patient-year and in the 400 mg every 4 weeks dose group were 0.04 per patient-year.
+Serious infections included tuberculosis, pneumonia, cellulitis, and pyelonephritis.
+ In the placebo group, no serious infection occurred in more than one subject.
+ There is no evidence of increased risk of infections with continued exposure over time [see Warnings and Precautions (5.1)].
+ Tuberculosis and Opportunistic Infections In completed and ongoing global clinical studies in all indications including 5,118 CIMZIA-treated
+ patients, the overall rate of tuberculosis is approximately 0.61 per 100 patient-years across all indications.
+The majority of cases occurred in countries with high endemic rates of TB.
+ Reports include cases
+ of miliary, lymphatic, peritoneal, as well as pulmonary TB.
+ The median time to onset of TB for all patients exposed to CIMZIA across all indications was 345 days.
+ In the studies with CIMZIA in RA, there were 36 cases of TB among 2,367 exposed patients, including some fatal cases.
+ Rare cases of opportunistic infections have also been reported in these clinical trials.
+[see Warnings and Precautions (5.1)].
+ Malignancies In clinical studies of CIMZIA, the overall incidence rate of malignancies was similar for
+ CIMZIA-treated and control patients.
+ For some TNF blockers, more cases of malignancies have been observed among patients receiving those TNF blockers compared to control patients.
+[see Warnings and Precautions (5.2)]
+ Heart Failure In placebo-controlled and open-label rheumatoid arthritis studies, cases of new or worsening
+ heart failure have been reported for CIMZIA-treated patients.
+ The majority of these cases were mild to moderate and occurred during the first year of exposure.
+[see Warnings and Precautions (5.3)].
+ Autoantibodies In clinical studies in Crohn's disease, 4% of patients treated with CIMZIA and 2% of patients
+ treated with placebo that had negative baseline ANA titers developed positive titers during the studies.
+ One of the 1,564 Crohn's disease patients treated with CIMZIA developed symptoms of a lupus-like syndrome.
+ In clinical trials of TNF blockers, including CIMZIA, in patients with RA, some patients have developed ANA.
+ Four patients out of 2,367 patients treated with CIMZIA in RA clinical studies developed clinical signs suggestive of a lupus-like syndrome.
+ The impact of long-term treatment with CIMZIA on the development of autoimmune diseases is unknown [see Warnings and Precautions (5.9)].
+ Immunogenicity Patients were tested at multiple time points for antibodies to certolizumab pegol during Studies
+ CD1 and CD2.
+ The overall percentage of antibody positive patients was 8% in patients continuously exposed to CIMZIA, approximately 6% were neutralizing in vitro.
+No apparent correlation of antibody development to adverse events or efficacy was observed.
+ Patients treated with concomitant immunosuppressants had a lower rate of antibody development than patients not taking immunosuppressants at baseline (3% and 11%, respectively).
+ The following adverse events were reported in Crohn's disease patients who were antibody-positive (N = 100) at an incidence at least 3% higher compared to antibody-negative patients (N = 1,242): abdominal pain, arthralgia, edema peripheral, erythema nodosum, injection site erythema, injection site pain, pain in extremity, and upper respiratory tract infection.
+ The overall percentage of patients with antibodies to certolizumab pegol detectable on at least one occasion was 7% (105 of 1,509) in the rheumatoid arthritis placebo-controlled trials.
+Approximately one third (3%, 39 of 1,509) of these patients had antibodies with neutralizing activity in vitro.
+ Patients treated with concomitant immunosuppressants (MTX) had a lower rate of antibody development than patients not
+ 13
+ Reference ID: 3391827
+                                                                                                                           taking immunosuppressants at baseline.
+ Patients treated with concomitant immunosuppressant therapy (MTX) in RA-I, RA-II, RA-III had a lower rate of neutralizing antibody formation overall than patients treated with CIMZIA monotherapy in RA-IV (2% vs. 8%).
+ Both the loading dose of 400 mg every other week at Weeks 0, 2 and 4 and concomitant use of MTX were associated with reduced immunogenicity.
+ Antibody formation was associated with lowered drug plasma concentration and reduced efficacy.
+ In patients receiving the recommended CIMZIA dosage of 200 mg every other week with concomitant MTX, the ACR20 response was lower among antibody positive patients than among antibody-negative patients (Study RA-I, 48% versus 60%; Study RA-II 35% versus 59%, respectively).
+ In Study RA-III, too few patients developed antibodies to allow for meaningful analysis of ACR20 response by antibody status.
+ In Study RA-IV (monotherapy), the ACR20 response was 33% versus 56%, antibody-positive versus antibody-negative status, respectively.
+[see Clinical Pharmacology (12.3)].
+No association was seen between antibody development and the development of adverse events.
+ The data reflect the percentage of patients whose test results were considered positive for antibodies to certolizumab pegol in an ELISA, and are highly dependent on the sensitivity and specificity of the assay.
+ The observed incidence of antibody (including neutralizing antibody) positivity in an assay is highly dependent on several factors, including assay sensitivity and specificity, assay methodology, sample handling, timing of sample collection, concomitant medications, and underlying disease.
+ For these reasons, comparison of the incidence of antibodies to certolizumab pegol with the incidence of antibodies to other products may be misleading.
+ Hypersensitivity Reactions The following symptoms that could be compatible with hypersensitivity reactions have been
+ reported rarely following CIMZIA administration to patients: angioedema, dermatitis allergic, dizziness (postural), dyspnea, hot flush, hypotension, injection site reactions, malaise, pyrexia, rash, serum sickness, and (vasovagal) syncope [see Warnings and Precautions (5.4)].
+ 6.2 Postmarketing Experience
+ The following adverse reactions have been identified during post-approval use of CIMZIA.
+Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to estimate reliably their frequency or establish a causal relationship to drug exposure.
+ Vascular disorder: systemic vasculitis has been identified during post-approval use of TNF blockers.
+ Skin: case of severe skin reactions, including Stevens-Johnson syndrome, toxic epidermal necrolysis, erythema multiforme, and new or worsening psoriasis (all sub-types including pustular and palmoplantar) have been identified during post-approval use of TNF blockers.
+ Immune System Disorders: sarcoidosis
+ 7 DRUG INTERACTIONS
+ 7.1 Use with Anakinra, Abatacept, Rituximab, and Natalizumab An increased risk of serious infections has been seen in clinical studies of other TNF-blocking
+ agents used in combination with anakinra or abatacept, with no added benefit.
+ Formal drug interaction studies have not been performed with rituximab or natalizumab.
+ Because of the nature of the adverse events seen with these combinations with TNF blocker therapy, similar toxicities may also result from the use of CIMZIA in these combinations.
+There is not enough information to assess the safety and efficacy
+ 14
+ Reference ID: 3391827
+                                                                                                                                          of such combination therapy.
+ Therefore, the use of CIMZIA in combination with anakinra, abatacept, rituximab, or natalizumab is not recommended [see Warnings and Precautions (5.8)].
+ 7.2 Live Vaccines Avoid use of live (including attenuated) vaccines concurrently with CIMZIA [see Warnings and
+ Precautions (5.10)].
+ 7.3 Laboratory Tests Interference with certain coagulation assays has been detected in patients treated with CIMZIA.
+ Certolizumab pegol may cause erroneously elevated activated partial thromboplastin time (aPTT) assay results in patients without coagulation abnormalities.
+This effect has been observed with the PTT-Lupus Anticoagulant (LA) test and Standard Target Activated Partial Thromboplastin time (STA-PTT) Automate tests from Diagnostica Stago, and the HemosIL APTT-SP liquid and HemosIL lyophilized silica tests from Instrumentation Laboratories.
+ Other aPTT assays may be affected as well.
+ Interference with thrombin time (TT) and prothrombin time (PT) assays has not been observed.
+ There is no evidence that CIMZIA therapy has an effect on in vivo coagulation.
+ 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy Pregnancy Category B
+ Risk Summary Adequate and well-controlled studies with CIMZIA have not been conducted in pregnant women.
+Certolizumab pegol plasma concentrations obtained from 10 women treated with CIMZIA during
+ pregnancy and their newborn infants demonstrated low placental transfer of certolizumab pegol.
+ CIMZIA may be eliminated at a slower rate in exposed infants than in adult patients.
+ No fetal harm was observed in animal reproduction studies.
+ Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed.
+ There is a pregnancy exposure registry that monitors pregnancy outcomes in women exposed to CIMZIA during pregnancy.
+ To enroll, healthcare providers or patients can call 1-877-311-8972.
+ Human Data In an independent clinical study conducted in 10 pregnant women with Crohn's disease treated
+ with CIMZIA, certolizumab pegol concentrations were measured in maternal blood as well as in cord and infant blood (n=12) at the day of birth.
+The last dose of CIMZIA (400 mg for every mother) was given on average 19 days prior to delivery (range 5-42 days).
+Plasma certolizumab pegol concentrations were &lt;0.41 -1.66 g/mL in cord blood, &lt;0.41 - 1.58 g/mL in infant blood, and 1.87-59.57 g/mL in maternal blood.
+Plasma certolizumab pegol concentrations were lower (by at least 75%) in the infants than in mothers suggesting low placental transfer of certolizumab pegol.
+In one infant, the plasma certolizumab pegol concentration declined from 1.02 to 0.84 g /mL over 4 weeks suggesting that CIMZIA may be eliminated at a slower rate in infants than adults.
+ Animal Data Because certolizumab pegol does not cross-react with mouse or rat TNF&#x3b1;, reproduction studies
+ were performed in rats using a rodent anti-murine TNF&#x3b1; pegylated Fab' fragment (cTN3 PF) similar to certolizumab pegol.
+ Reproduction studies have been performed in rats at doses up to 100 mg/kg and have revealed no evidence of impaired fertility or harm to the fetus due to cTN3 PF.
+ 8.3 Nursing Mothers It is not known whether certolizumab pegol is excreted in human milk.
+Because many drugs are
+ excreted in human milk and because of the potential for serious adverse reactions in nursing infants from
+ 15
+ Reference ID: 3391827
+                                                                                                                                       CIMZIA, a decision should be made whether to discontinue nursing or discontinue the drug, taking into account the importance of the drug to the mother.
+ 8.4 Pediatric Use Safety and effectiveness in pediatric patients have not been established.
+Due to its inhibition of TNF&#x3b1;, CIMZIA administered during pregnancy could affect immune responses in the in utero-exposed newborn and infant.
+Although certolizumab pegol levels were low in 12 infants exposed to CIMZIA in utero, the clinical significance of these low levels is unknown.
+Additional data available from one exposed infant suggests that CIMZIA may be eliminated at a slower rate in infants than in adults [see Use in Specific Populations (8.1)].
+The safety of administering live or live-attenuated vaccines in exposed infants is unknown.
+Risks and benefits should be considered prior to vaccinating (live or live-attenuated) exposed infants.
+ 8.5 Geriatric Use Clinical studies of CIMZIA did not include sufficient numbers of patients aged 65 and over to
+ determine whether they respond differently from younger subjects.
+ Other reported clinical experience has not identified differences in responses between the elderly and younger patients.
+ Population pharmacokinetic analyses of patients enrolled in CIMZIA clinical studies concluded that there was no apparent difference in drug concentration regardless of age.
+ Because there is a higher incidence of infections in the elderly population in general, use caution when treating the elderly with CIMZIA [see Warnings and Precautions (5.1)].
+ 10 OVERDOSAGE The maximum tolerated dose of certolizumab pegol has not been established.
+ Doses of up to 800  mg subcutaneous and 20 mg/kg intravenous have been administered without evidence of dose-limiting toxicities.
+ In cases of overdosage, it is recommended that patients be monitored closely for any adverse reactions or effects, and appropriate symptomatic treatment instituted immediately.
+ 11 DESCRIPTION CIMZIA (certolizumab pegol) is a TNF blocker.
+ CIMZIA is a recombinant, humanized antibody  Fab' fragment, with specificity for human tumor necrosis factor alpha (TNF&#x3b1;), conjugated to an approximately 40kDa polyethylene glycol (PEG2MAL40K).
+ The Fab' fragment is manufactured in E. coli and is subsequently subjected to purification and conjugation to PEG2MAL40K, to generate certolizumab pegol.
+ The Fab' fragment is composed of a light chain with 214 amino acids and a heavy chain with 229 amino acids.
+ The molecular weight of certolizumab pegol is approximately 91 kiloDaltons.
+ CIMZIA is supplied as either a sterile, white, lyophilized powder for solution or as a sterile, solution in a single-use prefilled 1 mL glass syringe for subcutaneous injection.
+ After reconstitution of the lyophilized powder with 1 mL sterile Water for Injection, USP, the resulting pH is approximately 5.2.
+ Each single-use vial provides approximately 200 mg certolizumab pegol, 0.9 mg lactic acid, 0.1 mg polysorbate, and 100 mg sucrose.
+ Each single-use prefilled syringe of CIMZIA delivers 200 mg in 1 mL of solution with a pH of approximately 4.7 for subcutaneous use.
+ Each 1 mL syringe of CIMZIA contains certolizumab pegol (200 mg), sodium acetate (1.36 mg), sodium chloride (7.31 mg), and Water for Injection, USP.
+ CIMZIA is a clear to opalescent solution that is colorless to pale yellow and essentially free from particulates.
+ No preservatives are present.
+ 16
+ Reference ID: 3391827
+                                                                                                                                                        12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action Certolizumab pegol binds to human TNF&#x3b1; with a KD of 90pM.
+ TNF&#x3b1; is a key pro-inflammatory
+ cytokine with a central role in inflammatory processes.
+ Certolizumab pegol selectively neutralizes TNF&#x3b1; (IC90 of 4 ng/mL for inhibition of human TNF&#x3b1; in the in vitro L929 murine fibrosarcoma cytotoxicity assay) but does not neutralize lymphotoxin &#x3b1; (TNF).
+ Certolizumab pegol cross-reacts poorly with TNF from rodents and rabbits, therefore in vivo efficacy was evaluated using animal models in which human TNF&#x3b1; was the physiologically active molecule.
+ Certolizumab pegol was shown to neutralize membrane-associated and soluble human TNF&#x3b1; in a dose-dependent manner.
+ Incubation of monocytes with certolizumab pegol resulted in a dose-dependent inhibition of LPS-induced TNF&#x3b1; and IL-1 production in human monocytes.
+ Certolizumab pegol does not contain a fragment crystallizable (Fc) region, which is normally present in a complete antibody, and therefore does not fix complement or cause antibody-dependent cell-mediated cytotoxicity in vitro.
+It does not induce apoptosis in vitro in human peripheral blood-derived monocytes or lymphocytes, nor does certolizumab pegol induce neutrophil degranulation.
+ A tissue reactivity study was carried out ex vivo to evaluate potential cross-reactivity of certolizumab pegol with cryosections of normal human tissues.
+ Certolizumab pegol showed no reactivity with a designated standard panel of normal human tissues.
+ 12.2 Pharmacodynamics Biological activities ascribed to TNF&#x3b1; include the upregulation of cellular adhesion molecules and
+ chemokines, upregulation of major histocompatibility complex (MHC) class I and class II molecules, and direct leukocyte activation.
+ TNF&#x3b1; stimulates the production of downstream inflammatory mediators, including interleukin-1, prostaglandins, platelet activating factor, and nitric oxide.
+ Elevated levels of TNF&#x3b1; have been implicated in the pathology of Crohn's disease and rheumatoid arthritis.
+ Certolizumab pegol binds to TNF&#x3b1;, inhibiting its role as a key mediator of inflammation.
+ TNF&#x3b1; is strongly expressed in the bowel wall in areas involved by Crohn's disease and fecal concentrations of TNF&#x3b1; in patients with Crohn's disease have been shown to reflect clinical severity of the disease.
+After treatment with certolizumab pegol, patients with Crohn's disease demonstrated a decrease in the levels of C-reactive protein (CRP).
+ Increased TNF&#x3b1; levels are found in the synovial fluid of rheumatoid arthritis patients and play an important role in the joint destruction that is a hallmark of this disease.
+ 12.3 Pharmacokinetics &#x2022; Absorption
+ A total of 126 healthy subjects received doses of up to 800 mg certolizumab pegol subcutaneously (sc) and up to 10 mg/kg intravenously (IV) in four pharmacokinetic studies.
+Data from these studies demonstrate that single intravenous and subcutaneous doses of certolizumab pegol have predictable dose-related plasma concentrations with a linear relationship between the dose administered and the maximum plasma concentration (Cmax), and the Area Under the certolizumab pegol plasma concentration versus time Curve (AUC).
+A mean Cmax of approximately 43 to 49 mcg/mL occurred at Week 5 during the initial loading dose period using the recommended dose regimen for the treatment of patients with rheumatoid arthritis (400 mg sc at Weeks 0, 2 and 4 followed by 200 mg every other week).
+ Certolizumab pegol plasma concentrations were broadly dose-proportional and pharmacokinetics observed in patients with rheumatoid arthritis and Crohn's disease were consistent with those seen in healthy subjects.
+ Following subcutaneous administration, peak plasma concentrations of certolizumab pegol were attained between 54 and 171 hours post-injection.
+ Certolizumab pegol has bioavailability (F) of
+ 17
+ Reference ID: 3391827
+                                                                                                                                    approximately 80% (ranging from 76% to 88%) following subcutaneous administration compared to intravenous administration.
+ &#x2022; Distribution The steady state volume of distribution (Vss) was estimated as 6 to 8 L in the population
+ pharmacokinetic analysis for patients with Crohn's disease and patients with rheumatoid arthritis.
+ &#x2022; Metabolism The metabolism of certolizumab pegol has not been studied in human subjects.
+Data from animals
+ indicate that once cleaved from the Fab' fragment the PEG moiety is mainly excreted in urine without further metabolism.
+ &#x2022; Elimination PEGylation, the covalent attachment of PEG polymers to peptides, delays the metabolism and
+ elimination of these entities from the circulation by a variety of mechanisms, including decreased renal clearance, proteolysis, and immunogenicity.
+ Accordingly, certolizumab pegol is an antibody Fab' fragment conjugated with PEG in order to extend the terminal plasma elimination half-life (t1/2) of the Fab'.
+The terminal elimination phase half-life (t1/2) was approximately 14 days for all doses tested.
+The clearance following IV administration to healthy subjects ranged from 9.21 mL/h to 14.38 mL/h.
+The clearance following sc dosing was estimated 17 mL/h in the Crohn's disease population PK analysis with an inter-subject variability of 38% (CV) and an inter-occasion variability of 16%.
+  Similarly, the clearance following sc dosing was estimated as 21.0 mL/h in the RA population PK analysis, with an inter-subject variability of 30.8% (%CV) and inter-occasion variability 22.0%.
+ The route of elimination of certolizumab pegol has not been studied in human subjects.
+Studies in animals indicate that the major route of elimination of the PEG component is via urinary excretion.
+ &#x2022; Special Populations Population pharmacokinetic analysis was conducted on data from patients with rheumatoid arthritis
+ and patients with Crohn's disease, to evaluate the effect of age, race, gender, methotrexate use, concomitant medication, creatinine clearance and presence of anti-certolizumab antibodies on pharmacokinetics of certolizumab pegol.
+ Only bodyweight and presence of anti-certolizumab antibodies significantly affected certolizumab pegol pharmacokinetics.
+Pharmacokinetic exposure was inversely related to body weight but pharmacodynamic exposure-response analysis showed that no additional therapeutic benefit would be expected from a weight-adjusted dose regimen.
+The presence of anti-certolizumab antibodies was associated with a 3.6-fold increase in clearance.
+ Age: Pharmacokinetics of certolizumab pegol was not different in elderly compared to young adults.
+ Gender: Pharmacokinetics of certolizumab pegol was similar in male and female subjects.
+ Renal Impairment: Specific clinical studies have not been performed to assess the effect of renal impairment on the pharmacokinetics of CIMZIA.
+The pharmacokinetics of the PEG (polyethylene glycol) fraction of certolizumab pegol is expected to be dependent on renal function but has not been assessed in renal impairment.
+There are insufficient data to provide a dosing recommendation in moderate and severe renal impairment.
+ Race: A specific clinical study showed no difference in pharmacokinetics between Caucasian and Japanese subjects.
+ 18
+ Reference ID: 3391827
+                                                                                                                     &#x2022; Drug Interaction Studies Methotrexate pharmacokinetics is not altered by concomitant administration with CIMZIA in
+ patients with rheumatoid arthritis.
+The effect of methotrexate on CIMZIA pharmacokinetics was not studied.
+However, methotrexate-treated patients have lower incidence of antibodies to CIMZIA.
+Thus, therapeutic plasma levels are more likely to be sustained when CIMZIA is administered with methotrexate in patients with rheumatoid arthritis.
+Formal drug-drug interaction studies have not been conducted with CIMZIA upon concomitant administration with corticosteroids, nonsteroidal anti-inflammatory drugs, analgesics or immunosuppressants.
+ 13 NONCLINICAL TOXICOLOGY
+ 13.1 Carcinogenesis, Mutagenesis, and Impairment of Fertility Long-term animal studies of CIMZIA have not been conducted to assess its carcinogenic
+ potential.
+ Certolizumab pegol was not genotoxic in the Ames test, the human peripheral blood lymphocytes chromosomal aberration assay, or the mouse bone marrow micronucleus assay.
+ Since certolizumab pegol does not cross-react with mouse or rat TNF&#x3b1;, reproduction studies were performed in rats using a rodent anti-murine TNF&#x3b1; pegylated Fab fragment (cTN3 PF), similar to certolizumab pegol.
+ The cTN3 PF had no effects on the fertility and general reproductive performance of male and female rats at intravenous doses up 100 mg/kg, administered twice weekly.
+ 14 CLINICAL STUDIES
+ 14.1 Crohn's Disease The efficacy and safety of CIMZIA were assessed in two double-blind, randomized, placebo-
+controlled studies in patients aged 18 years and older with moderately to severely active Crohn's disease, as defined by a Crohn's Disease Activity Index (CDAI1) of 220 to 450 points, inclusive.
+ CIMZIA was administered subcutaneously at a dose of 400 mg in both studies.
+ Stable concomitant medications for Crohn's disease were permitted.
+ Study CD1 Study CD1 was a randomized placebo-controlled study in 662 patients with active Crohn's  disease.
+ CIMZIA or placebo was administered at Weeks 0, 2, and 4 and then every four weeks to Week 24.
+ Assessments were done at Weeks 6 and 26.
+ Clinical response was defined as at least a 100-point reduction in CDAI score compared to baseline, and clinical remission was defined as an absolute CDAI score of 150 points or lower.
+ The results for Study CD1 are provided in Table 2.
+ At Week 6, the proportion of clinical responders was statistically significantly greater for CIMZIA-treated patients compared to controls.
+The difference in clinical remission rates was not statistically significant at Week 6.
+ The difference in the proportion of patients who were in clinical response at both Weeks 6 and 26 was also statistically significant, demonstrating maintenance of clinical response.
+ 19
+ Reference ID: 3391827
+                                                                                                                                                                      Table 2 Study CD1 - Clinical Response and Remission, Overall Study Population
+ Timepoint % Response or Remission (95% CI)
+ Placebo (N = 328)
+ CIMZIA 400 mg (N = 331)
+ Week 6 Clinical Response# 27% (22%, 32%) 35% (30%, 40%)* Clinical Remission# 17% (13%, 22%) 22% (17%, 26%)
+ Week 26 Clinical Response 27% (22%, 31%) 37% (32%, 42%)* Clinical Remission 18% (14%, 22%) 29% (25%, 34%)*
+ Both Weeks 6 &amp; 26 Clinical Response 16% (12%, 20%) 23% (18%, 28%)* Clinical Remission 10% (7%, 13%) 14% (11%, 18%)
+ * p-value &lt; 0.05 logistic regression test # Clinical response is defined as decrease in CDAI of at least 100 points, and clinical remission
+ is defined as CDAI &#x2264; 150 points
+ Study CD2 Study CD2 was a randomized treatment-withdrawal study in patients with active Crohn's disease.
+ All patients who entered the study were dosed initially with CIMZIA 400 mg at Weeks 0, 2, and 4 and then assessed for clinical response at Week 6 (as defined by at least a 100-point reduction in CDAI score).
+ At Week 6, a group of 428 clinical responders was randomized to receive either CIMZIA 400 mg or placebo, every four weeks starting at Week 8, as maintenance therapy through Week 24.
+ Non-responders at Week 6 were withdrawn from the study.
+ Final evaluation was based on the CDAI score at Week 26.
+Patients who withdrew or who received rescue therapy were considered not to be in clinical response.
+Three randomized responders received no study injections, and were excluded from the ITT analysis.
+ The results for clinical response and remission are shown in Table 3.
+ At Week 26, a statistically significantly greater proportion of Week 6 responders were in clinical response and in clinical remission in the CIMZIA-treated group compared to the group treated with placebo.
+ Table 3 Study CD2 - Clinical Response and Clinical Remission
+ % Response or Remission (95% CI) CIMZIA 400 mg x3 +
+ Placebo N = 210
+ CIMZIA 400 mg N = 215
+ Week 26 Clinical Response# 36% (30%, 43%) 63% (56%, 69%)* Clinical Remission# 29% (22%, 35%) 48% (41%, 55%)*
+ * p &lt; 0.05# Clinical response is defined as decrease in CDAI of at least 100 points, and clinical
+ remission is defined as CDAI &#x2264; 150 points
+ Baseline use of immunosuppressants or corticosteroids had no impact on the clinical response to CIMZIA.
+ 20
+ Reference ID: 3391827
+                                                                                                                                                                                                                                                               14.2 Rheumatoid Arthritis The efficacy and safety of CIMZIA were assessed in four randomized, placebo-controlled, double-
+blind studies (RA-I, RA-II, RA-III, and RA-IV ) in patients &#x2265; 18 years of age with moderately to severely active rheumatoid arthritis diagnosed according to the American College of Rheumatology (ACR) criteria.
+Patients had &#x2265; 9 swollen and tender joints and had active RA for at least 6 months prior to baseline.
+ CIMZIA was administered subcutaneously in combination with MTX at stable doses of at least 10 mg weekly in Studies RA-I, RA-II, and RA-III.
+ CIMZIA was administered as monotherapy in Study RA-IV.
+ Study RA-I and Study RA-II evaluated patients who had received MTX for at least 6 months prior to study medication, but had an incomplete response to MTX alone.
+ Patients were treated with a loading dose of 400 mg at Weeks 0, 2 and 4 (for both treatment arms) or placebo followed by either 200 mg or 400 mg of CIMZIA or placebo every other week, in combination with MTX for 52 weeks in Study RA-I and for 24 weeks in Study RA-II.
+ Patients were evaluated for signs and symptoms and structural damage using the ACR20 response at Week 24 (RA-I and RA-II) and modified Total Sharp Score (mTSS) at Week 52 (RA-I).
+ The open-label extension follow-up study enrolled 846 patients who received 400 mg of CIMZIA every other week.
+ Study RA-III evaluated 247 patients who had active disease despite receiving MTX for at least 6 months prior to study enrollment.
+Patients received 400 mg of CIMZIA every four weeks for 24 weeks without a prior loading dose.
+Patients were evaluated for signs and symptoms of RA using the ACR20 at Week 24.
+ Study RA-IV (monotherapy) evaluated 220 patients who had failed at least one DMARD use prior to receiving CIMZIA.
+ Patients were treated with CIMZIA 400 mg or placebo every 4 weeks for 24 weeks.
+ Patients were evaluated for signs and symptoms of active RA using the ACR20 at Week 24.
+ Clinical Response The percent of CIMZIA-treated patients achieving ACR20, 50, and 70 responses in Studies RA-I
+ and RA-IV are shown in Table 4.
+CIMZIA-treated patients had higher ACR20, 50 and 70 response rates at 6 months compared to placebo-treated patients.
+The results in study RA-II (619 patients) were similar to the results in RA-I at Week 24.
+The results in study RA-III (247 patients) were similar to those seen in study RA-IV.
+Over the one-year Study RA-I, 13% of CIMZIA-treated patients achieved a major clinical response, defined as achieving an ACR70 response over a continuous 6-month period, compared to 1% of placebo-treated patients.
+ Table 4: ACR Responses in Studies RA-I, and RA-IV (Percent of Patients)
+ Response
+ Study RA-I Methotrexate Combination
+ (24 and 52 weeks)
+ Study RA-IV Monotherapy
+ (24 weeks) Placebo +
+ MTX
+ N=199
+ CIMZIA(a) 200 mg + MTX q 2 weeks
+ N=393
+ CIMZIA(a) 200 mg + MTX 
+Placebo + MTX (95% CI)(d)
+ Placebo
+ N=109
+ CIMZIA(b) 400 mg
+ q 4 weeks N=111
+ CIMZIA(b) 400 mg - Placebo (95% CI)(d)
+ ACR20 Week 24 Week 52
+ 14% 59% 45% (38%, 52%) 13% 53% 40% (33%, 47%)
+ 9% N/A
+ 46% 36% (25%, 47%) N/A
+ ACR50 Week 24 Week 52
+ 8% 37% 30% (24%, 36%) 8% 38% 30% (24%, 37%)
+ 4% N/A
+ 23% 19% (10%, 28%) N/A
+ ACR70 Week 24 3% 21% 18% (14%, 23%) 0% 6% 6% (1%, 10%)
+ 21
+ Reference ID: 3391827
+     Week 52  4%  21%  18% (13%, 22%)  N/A  N/A   Major        Clinical 1%  13%  12% (8%, 15%)  Response(c)
+        (a) CIMZIA administered every 2  weeks  preceded by a loading dose of 400 mg at Weeks 0, 2 and 4  (b) CIMZIA administered every 4  weeks  not  preceded by a loading dose regimen  (c) Major clinical response is defined as achieving ACR70 response over a continuous 6-month period (d) 95% Confidence Intervals constructed using the large sample approximation to the Normal Distribution.
+ 22
+  Reference ID: 3391827
+                                                                                                                                                                                Table 5:  Components of ACR Response in Studies RA-I and RA-IV
+ Parameter+ Study RA-I Study RA-IV
+ Placebo + MTX N=199
+ CIMZIA(a) 200 mg + MTX q 2 weeks
+ N=393
+ Placebo + MTX N=109
+ CIMZIA(b) 400 mg  q 4 weeks
+ Monotherapy N=111
+ Baseline Week 24 Baseline Week 24 Baseline Week 24 Baseline Week 24 Number of tender joints (0-68)
+ 28 27 29 9 28 (12.5) 24 (15.4) 30 (13.7) 16 (15.8)
+ Number of swollen joints (0-66)
+ 20 19 20 4 20 (9.3) 16 (12.5) 21 (10.1) 12 (11.2)
+ Physician global assessment(c)
+ 66 56 65 25 4 (0.6) 3 (1.0) 4 (0.7) 3 (1.1)
+ Patient global assessment(c)
+ 67 60 64 32 3 (0.8) 3 (1.0) 3 (0.8) 3 (1.0)
+ Pain(c)(d) 65 60 65 32 55 (20.8) 60 (26.7) 58 (21.9) 39 (29.6) Disability index (HAQ)(e)
+ 1.75 1.63 1.75 1.00 1.55 (0.65) 1.62 (0.68) 1.43 (0.63) 1.04 (0.74)
+ CRP (mg/L) 16.0 14.0 16.0 4.0 11.3 13.5 11.6 6.4
+ (a) CIMZIA administered every 2 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (b) CIMZIA administered every 4 weeks not preceded by a loading dose regimen (c) Study RA-I - Visual Analog Scale: 0 = best, 100 = worst.
+ Study RA-IV - Five Point Scale: 1 = best, 5 = worst
+ (d) Patient Assessment of Arthritis Pain.
+Visual Analog Scale: 0 = best, 100 = worst (e) Health Assessment Questionnaire Disability Index; 0 = best, 3 = worst, measures the patient's ability to perform the following:  dress/groom, arise, eat, walk, reach, grip, maintain hygiene, and maintain daily activity All values are last observation carried forward.
++For Study RA-I, median is presented.
+For Study RA-IV, mean (SD) is presented except for CRP which presents geometric mean
+ 23
+ Reference ID: 3391827
+                                                         100
+ Patie
+nts
+ (%)
+ 80
+ 60
+ 40
+ 20
+ 0
+ Placebo + MTX (n=199)
+ CIMZIA 200 mg + MTX (n=393)
+ 0 4 8 12 16 20 24 28 32 36 40 44 48 52
+ Weeks
+     The percent of patients achieving ACR20 responses by visit for Study RA-I is shown in Figure 1.
+Among patients receiving CIMZIA, clinical responses were seen in some patients within one to two weeks after initiation of therapy.
+ Figure 1 Study RA-I ACR20 Response Over 52 Weeks*
+ * The same patients may not have responded at each time point
+ Radiographic Response
+ In Study RA-I, inhibition of progression of structural damage was assessed radiographically and expressed as the change in modified Total Sharp Score (mTSS) and its components, the Erosion Score (ES) and Joint Space Narrowing (JSN) score, at Week 52, compared to baseline.
+ CIMZIA inhibited the progression of structural damage compared to placebo plus MTX after 12 months of treatment as shown in Table 6.
+In the placebo group, 52% of patients experienced no radiographic progression (mTSS &#x2264;0.0) at Week 52 compared to 69% in the CIMZIA 200 mg every other week treatment group.
+ Study RA-II showed similar results at Week 24.
+ 24
+ Reference ID: 3391827
+                                                                                                                                                                              Table 6: Radiographic Changes at 6 and 12 months in Study RA-I
+ Placebo + CIMZIA 200 mg + CIMZIA 200 mg + MTX MTX MTX - N=199 N=393 Placebo + MTX
+ Mean (SD) Mean (SD) Mean Difference mTSS Baseline 40 (45) 38 (49) -Week 24 1.3 (3.8) 0.2 (3.2) -1.1 Week 52 2.8 (7.8) 0.4 (5.7) -2.4 Erosion Score Baseline 14 (21) 15 (24) -Week 24 0.7 (2.1) 0.0 (1.5) -0.7 Week 52 1.5 (4.3) 0.1 (2.5) -1.4 JSN Score Baseline 25 (27) 24 (28) -Week 24 0.7 (2.4) 0.2 (2.5) -0.5 Week 52 1.4 (5.0) 0.4 (4.2) -1.0
+ An ANCOVA was fitted to the ranked change from baseline for each measure with region and treatment as factors and rank baseline as a covariate.
+ Physical Function Response
+ In studies RA-I, RA-II, RA-III, and RA-IV, CIMZIA-treated patients achieved greater improvements from baseline than placebo-treated patients in physical function as assessed by the Health Assessment Questionnaire - Disability Index (HAQ-DI) at Week 24 (RA-II, RA-III and RA-IV) and at Week 52 (RA-I).
+ 14.3 Psoriatic Arthritis
+ The efficacy and safety of CIMZIA were assessed in a multi-center, randomized, double-blind, placebo controlled trial (PsA001) in 409 patients aged 18 years and older with active psoriatic arthritis despite DMARD therapy.
+Patients in this study had &#x2265; 3 swollen and tender joints and adult-onset PsA of at least 6 months' duration as defined by the Classification Criteria for Psoriatic Arthritis  (CASPAR) criteria, and increased acute phase reactants.
+Patients had failed one or more DMARDs.
+Previous treatment with one anti-TNF biologic therapy was allowed, and 20% of patients had prior anti-TNF biologic exposure.
+Patients receiving concomitant NSAIDs and conventional DMARDs were 73% and 70 % respectively.
+ Patients received a loading dose of CIMZIA 400 mg at Weeks 0, 2 and 4 (for both treatment
+ arms) or placebo followed by either CIMZIA 200 mg every other week or CIMZIA 400 mg every 4  weeks or placebo every other week.
+Patients were evaluated for signs and symptoms and structural
+ damage using the ACR20 response at Week 12 and modified Total Sharp Score (mTSS) at Week 24.
+  Clinical Response The percentage of CIMZIA-treated patients achieving ACR20, 50 and 70 responses in study
+ PsA001 are shown in Table 7.
+ACR20 response rates at weeks 12 and 24 were higher for each CIMZIA
+ 25
+ Reference ID: 3391827
+                                                                                                                                                                                                                 dose group relative to placebo (95% confidence intervals for CIMIZIA 200 mg minus placebo at weeks 12 and 24 of (23%, 45%) and (30%, 51%), respectively and 95% confidence intervals for CIMZIA 400 mg minus placebo at weeks 12 and 24 of (17%, 39%) and (22%, 44%), respectively).
+The results of the components of the ACR response criteria are shown in Table 8.
+ Patients with enthesitis at baseline were evaluated for mean improvement in Leeds Enthesitis Index (LEI).
+CIMZIA-treated patients receiving either 200 mg every 2 weeks or 400 mg every 4 weeks showed a reduction in enthesitis of 1.8 and 1.7, respectively as compared with a reduction in placebo-treated patients of 0.9 at week 12.
+Similar results were observed for this endpoint at week 24.
+Treatment with CIMZIA resulted in improvement in skin manifestations in patients with PsA.
+ However, the safety and efficacy of CIMZIA in the treatment of patients with plaque psoriasis has not been established.
+ Table 7: ACR Responses in Study PsA001 (Percent of Patients)
+ Response(c) Placebo CIMZIA(a)200 mg CIMZIA(b) 400 mg Q2W Q4W
+ N=136 N=138 N=135 ACR20 Week 12 24% 58% 52% Week 24 24% 64% 56% ACR50 Week 12 11% 36% 33% Week 24 13% 44% 40% ACR70 Week 12 3% 25% 13% Week 24 4% 28% 24%
+ (a) CIMZIA administered every 2 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (b) CIMZIA administered every 4 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (c) Results are from the randomized set.
+Non-responder Imputation (NRI) is used for patients who escaped therapy or had missing data.
+ Table 8: Components of ACR Response in Study PsA001 Parameter Placebo(c)
+ N=136 CIMZIA(a) 200 mg Q2W N=138
+ CIMZIA(b) 400 mg Q4W N=135
+ Baseline Week 12 Baseline Week 12 Baseline Week 12 Number of tender joints
+ (0-68)(d)
+ Number of swollen joints (0-66)(d)
+ Physician global assessment(d, e)
+ 20 17
+ 10 9
+ 59 44
+ 22 11
+ 11 4
+ 57 25
+ 20 11
+ 11 5
+ 58 29
+ 26
+ Reference ID: 3391827
+                                                                                                                                                     Patient global assessment(d, e)
+ Pain(d, f)
+ Disability index (HAQ)(d, g)
+ CRP (mg/L)
+ 57 50
+ 60 50
+ 1.30 1.15
+ 18.56 14.75
+ 60 33
+ 60 33
+ 1.33 0.87
+ 15.36 5.67
+ 60 40
+ 61 39
+ 1.29 0.90
+ 13.71 6.34
+ (a) CIMZIA administered every 2 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (b) CIMZIA administered every 4 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (c) Results are from the entire placebo group (d) Last Observation Carried Forward is used for missing data, early withdrawals or placebo escape (e) Patient and Physician Global Assessment of Disease Activity, VAS 0=best 100= worst (f) The Patient Assessment of Arthritis Pain, VAS 0=no pain and 100= most severe pain (g) The HAQ-DI, 4 point scale 0=without difficulty and 3=unable to do All values presented represent the mean Results are from the randomized set (either with imputation or observed case)
+ The percent of patients achieving ACR20 responses by visit for PsA001 is shown in Figure 2.
+ Figure 2: Study PsA001-ACR20 Response Over 24 Weeks*
+ Randomized Set.
+Non-responder imputation used for patients with missing data or those who escaped therapy.
+*The same patients may not have responded at each time point.
+ Radiographic Response In study PsA001, inhibition of progression of structural damage was assessed radiographically and expressed as the change in modified total Sharp score (mTSS) and its components, the Erosion Score (ES) and Joint Space Narrowing score (JSN) at week 24, compared to baseline.
+The mTSS score was modified for psoriatic arthritis by addition of hand distal interphalangeal (DIP) joints.
+ 27
+ Reference ID: 3391827
+                                                                                                              Patients treated with CIMZIA 200 mg every other week demonstrated greater reduction in radiographic progression compared with placebo-treated patients at Week 24 as measured by change from baseline in total modified mTSS Score (estimated mean score was 0.18 in the placebo group compared with -0.02 in the CIMZIA 200 mg group; 95% CI for the difference was (-0.38, -0.04)).
+Patients treated with CIMZIA 400 mg every four weeks did not demonstrate greater inhibition of radiographic progression compared with placebo-treated patients at Week 24.
+ Physical Function Response In Study PsA001, CIMZIA-treated patients showed improvement in physical function as assessed by the Health Assessment Questionnaire - Disability Index (HAQ-DI) at Week 24 as compared to placebo (estimated mean change from baseline was 0.19 in the placebo group compared with 0.54 in the CIMZIA 200 mg group; 95% CI for the difference was (-0.47, -0.22) and 0.46 in the CIMZIA 400 mg group; 95% CI for the difference was (-0.39, -0.14)).
+ 14.4 Ankylosing Spondylitis
+ The efficacy and safety of CIMZIA were assessed in one multicenter, randomized, double-blind, placebo-controlled study (AS-1) in 325 patients &#x2265;18 years of age with adult-onset active axial spondyloarthritis for at least 3 months.
+The majority of patients in the study had active AS.
+ Patients had active disease as defined by the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI) &#x2265;4, and spinal pain &#x2265;4 on a 0 to 10 Numerical Rating Scale (NRS).
+ Patients must have been intolerant to or had an inadequate response to at least one NSAID.
+ Patients were treated with a loading dose of CIMZIA 400 mg at Weeks 0, 2 and 4 (for both treatment arms) or placebo followed by either 200 mg of CIMZIA every 2 weeks or 400 mg of CIMZIA every 4 weeks or placebo.
+Concomitant NSAIDs were received by 91% of the AS patients.
+The primary efficacy variable was the proportion of patients achieving an ASAS20 response at Week 12.
+ Clinical Response
+ In study AS-1, at Week 12, a greater proportion of AS patients treated with CIMZIA 200mg every 2 weeks or 400mg every 4 weeks achieved ASAS 20 response compared to AS patients treated with placebo  (Table 9).
+ Responses were similar in patients receiving CIMZIA 200 mg every 2 weeks and CIMZIA 400 mg every 4 weeks.
+ The results of the components of the ASAS response criteria and other measures of disease activity are shown in Table 10.
+ 28
+ Reference ID: 3391827
+                                                                                                                                                                        Table 9: ASAS Responses in AS patients at Weeks 12 and 24 in study AS-1 Parameters Placebo
+ N=57 CIMZIA(a) 200mg every 2 weeks N=65
+ CIMZIA(b) 400mg every 4 weeks N=56
+ ASAS20 Week 12 37% 57% 64% Week 24 33% 68% 70% ASAS40 Week 12 19% 40% 50% Week 24 16% 48% 59% (a)CIMZIA administered every 2 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (b) CIMZIA administered every 4 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4
+ All percents reflect the proportion of patients who responded in the full analysis set
+ Table 10: Components of the ASAS response criteria and other measures of disease activity in AS patients at baseline and Week 12 in study AS-1
+ Placebo N=57
+ CIMZIA(a) 200mg every 2 weeks
+ N=65
+ CIMZIA(b) 400mg every 4 weeks
+ N=56 Baseline Week 12 Baseline Week 12 Baseline Week
+ 12 ASAS20 response criteria
+ -Patient Global Assessment (010)
+ 6.9 5.6 7.3 4.2 6.8 3.8
+ -Total spinal pain (0-10) 7.3 5.8 7.0 4.3 6.9 4.0 -BASFI (0-10)(c) 6.0 5.2 5.6 3.8 5.7 3.8 -Inflammation (0-10) 6.7 5.5 6.7 3.8 6.4 3.4
+ BASDAI (0-10)(d) 6.4 5.4 6.5 4.0 6.2 3.7 BASMI (e) 4.8 4.4 4.2 3.6 4.3 3.9 (a)CIMZIA administered every 2 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4(b)CIMZIA administered every 4 weeks preceded by a loading dose of 400 mg at Weeks 0, 2 and 4 (c)BASFI is Bath Ankylosing Spondylitis Functional Index(d)BASDAI is Bath Ankylosing Spondylitis Disease Activity Index (e)BASMI is Bath Ankylosing Spondylitis Metrology Index All values presented represent the mean in the full analysis set
+ The percent of AS patients achieving ASAS20 responses by visit for Study AS001 is shown in Figure 3.
+ Among patients receiving CIMZIA, clinical responses were seen in some AS patients within one to two weeks after initiation of therapy.
+ 29
+ Reference ID: 3391827
+                                                                                            Figure 3: Study AS-1: ASAS20 response over 24 weeks in AS patients *
+ 15 REFERENCES
+ 1.
+ Best WR, Becktel JM, Singleton JW, Kern F: Development of a Crohn's Disease Activity Index, National Cooperative Crohn's Disease Study.
+ Gastroenterology 1976; 70(3): 439-444
+ 16 HOW SUPPLIED/STORAGE AND HANDLING Storage and Stability Refrigerate intact carton between 2 to 8 C (36 to 46 F).
+ Do not freeze.
+ Do not separate contents of carton prior to use.
+ Do not use beyond expiration date, which is located on the drug label and carton.
+ Protect solution from light.
+ &#x2022;  Lyophilized Powder for Reconstitution: NDC 50474-700-62
+ Pack Content Qty.
+Item
+ 2 Type I glass vials with rubber stopper and overseals each containing 200 mg of lyophilized CIMZIA for reconstitution.
+ 2 2 mL Type I glass vials containing 1 mL sterile Water for Injection 2 3 mL plastic syringes 4 20 gauge luer-lock needles (1 inch) 2 23 gauge luer-lock needles (1 inch) 8 Alcohol swabs
+ &#x2022;  Prefilled Syringe
+ 30
+ Reference ID: 3391827
+                                                                                                                                                      NDC 50474-710-79 2 alcohol swabs and 2 single use prefilled glass syringes with a fixed 25  gauge thin-wall needle,
+ each containing 200 mg (1 mL) of CIMZIA.
+ &#x2022; Prefilled Syringe Starter Kit NDC 50474-710-81 6 alcohol swabs and 6 single use prefilled glass syringes with a fixed 25  gauge thin-wall needle.
+ The Starter Kit contains 3 sets of 2 prefilled syringes to provide sufficient drug supply for the initial 3 induction doses at the start of treatment.
+Each prefilled syringe contains 200 mg (1 mL) of CIMZIA.
+ 17 PATIENT COUNSELING INFORMATION See FDA-approved patient labeling (Medication Guide)
+ 17.1 Patient Counseling Advise patients of the potential risks and benefits of CIMZIA therapy.
+ Be sure that patients
+ receive the Medication Guide and allow them time to read it prior to starting CIMZIA therapy and to review it periodically.
+ Any questions resulting from the patient's reading of the Medication Guide should be discussed.
+ Because caution should be exercised in prescribing CIMZIA to patients with clinically important active infections, advise patients of the importance of informing their health care providers about all aspects of their health.
+ &#x2022; Immunosuppression Inform patients that CIMZIA may lower the ability of the immune system to fight infections.
+ Instruct
+ patients of the importance of contacting their doctor if they develop any symptoms of infection, including tuberculosis and reactivation of hepatitis B virus infections.
+ Counsel patients about the possible risk of lymphoma and other malignancies while receiving CIMZIA.
+ &#x2022; Allergic Reactions Advise patients to seek immediate medical attention if they experience any symptoms of severe
+ allergic reactions.
+The prefilled syringe components do not contain any latex or dry natural rubber.
+ &#x2022; Other Medical Conditions Advise patients to report any signs of new or worsening medical conditions such as heart disease,
+ neurological disease, or autoimmune disorders.
+ Advise patients to report promptly any symptoms suggestive of a cytopenia such as bruising, bleeding, or persistent fever.
+ 17.2 Instruction on Prefilled Syringe Self-Injection Technique After proper training by a qualified healthcare professional in subcutaneous injection technique, a patient may self inject with CIMZIA using the Prefilled Syringe if a healthcare provider determines that it is appropriate.
+A patient's ability to administer CIMZIA subcutaneous injections should be checked to ensure correct administration.
+ Suitable sites for injection include the thigh or abdomen.
+ CIMZIA should be injected when the liquid is at room temperature.
+ Full injection instructions are provided in the Instructions for Use booklet for the Prefilled Syringe, packaged in each CIMZIA Prefilled Syringe kit.
+ To avoid needle-stick injury, patients and healthcare providers should not attempt to place the needle cover back on the syringe or otherwise recap the needle.
+ Be sure to properly dispose of needles and syringes in a puncture-proof container, and instruct patients and caregivers in proper syringe and needle
+ 31
+ Reference ID: 3391827
+                                                                         disposal technique.
+Actively discourage any reuse of the injection materials.
+  Manufactured by:
+ UCB, Inc.
+ 1950 Lake Park Drive
+ Smyrna, GA 30080
+  US License No.
+1736
+  32
+  Reference ID: 3391827
+                                                                                                       Medication Guide
+  CIMZIA (CIM-zee-uh)
+  (certolizumab pegol)
+  lyophilized powder or solution for subcutaneous use
+  Read the Medication Guide that comes with CIMZIA before you start using it, and before each injection of CIMZIA.
+This Medication Guide does not take the place of talking with your healthcare provider about your medical condition or treatment.
+ What is the most important information I should know about CIMZIA?
+ CIMZIA is a medicine that affects your immune system.
+CIMZIA can lower the ability of the immune system to fight infections.
+ Serious infections have happened in patients taking CIMZIA.
+ These infections include tuberculosis (TB) and infections caused by viruses, fungi or bacteria that have spread throughout the body.
+ Some patients have died from these infections.
+ o  Your healthcare provider should test you for TB before starting CIMZIA.
+ o  Your healthcare provider should monitor you closely for signs and symptoms of TB during treatment with CIMZIA.
+ You should not start receiving CIMZIA if you have any kind of infection unless your healthcare provider says it is okay.
+ Before you receive CIMZIA, tell your healthcare provider if you:
+  Think you have an infection, flu-like symptoms, or have any other symptoms of an infection such as:
+ o  fever, sweat, or chills o  warm, red, or painful skin or
+ o  muscle aches sores on your body o  cough o  diarrhea or stomach pain o  shortness of breath o  burning when you urinate or
+ urinate more often than o  blood in phlegm normal
+ o  weight loss o  feeling very tired &#x2022;  are being treated for an infection
+ &#x2022;  get a lot of infections or have infections that keep coming back
+ &#x2022;  have diabetes, HIV, or a weak immune system.
+ People with these conditions have a higher chance for infections.
+ 33
+ Reference ID: 3391827
+                                                                                                   &#x2022;  have tuberculosis (TB), or have been in close contact with someone with TB
+ &#x2022;  were born in, lived in, or traveled to countries where there is more risk for getting TB.
+ Ask your healthcare provider if you are not sure.
+ &#x2022;  live or have lived in certain parts of the country (such as the Ohio and Mississippi River valleys) where there is an increased risk for getting certain kinds of fungal infections (histoplasmosis, coccidioidomycosis, blastomycosis).
+ These infections may develop or become more severe if you take CIMZIA.
+If you do not know if you have lived in an area where histoplasmosis, coccidioidomycosis, or blastomycosis is common, ask your healthcare provider.
+ &#x2022;  have or have had hepatitis B
+ &#x2022;  use the medicine Kineret (anakinra), Orencia (abatacept), Rituxan (rituximab), or Tysabri (natalizumab)
+ After starting CIMZIA, if you get an infection, any sign of an infection including a fever, cough, flu-like symptoms, or have open cuts or sores on your body, call your healthcare provider right away.
+ CIMZIA can make you more likely to get infections or make any infection that you may have worse.
+ Certain types of Cancer
+ &#x2022;  There have been cases of unusual cancers in children and teenage patients using TNF-blocking agents.
+ &#x2022;  For people taking TNF-blocker medicines, including CIMZIA, the chances of getting lymphoma or other cancers may increase.
+ &#x2022;  People with RA, especially more serious RA, may have a higher chance for getting a kind of cancer called lymphoma.
+ What is CIMZIA?
+ CIMZIA is a prescription medicine called a Tumor Necrosis Factor (TNF) blocker.
+CIMZIA is used in adult patients to:
+ &#x2022;  Lessen the signs and symptoms of moderately to severely active Crohn's disease (CD) in patients who have not been helped enough by usual treatments
+ &#x2022;  Treat moderately to severely active rheumatoid arthritis (RA)
+ &#x2022;  Treat active psoriatic arthritis
+ &#x2022;  Treat active ankylosing spondylitis
+ 34
+ Reference ID: 3391827
+                                                                                                            What should I tell my healthcare provider before starting treatment with CIMZIA?
+ CIMZIA may not be right for you.
+ Before starting CIMZIA, tell your healthcare provider about all of your medical conditions, including if you:
+ &#x2022;  have an infection.
+(See, "What is the most important information I should know about CIMZIA?")
+ &#x2022;  have or have had any type of cancer.
+ &#x2022;  have congestive heart failure.
+ &#x2022;  have seizures, any numbness or tingling,  or a disease that affects your nervous system such as multiple sclerosis.
+ &#x2022;  are scheduled to receive a vaccine.
+Do not receive a live vaccine while taking CIMZIA.
+ &#x2022;  are allergic to any of the ingredients in CIMZIA.
+See the end of this Medication Guide for a list of the ingredients in CIMZIA.
+ &#x2022;  are pregnant or planning to become pregnant.
+It is not known if CIMZIA will harm your unborn baby.
+Tell your healthcare provider right away if you become pregnant while receiving CIMZIA.
+ Pregnancy Registry: If you become pregnant while taking CIMZIA, talk to your healthcare provider about registering in the pregnancy exposure registry for CIMZIA.
+You can enroll in this registry by calling 1-877-311-8972.
+The purpose of this registry is to collect information about the safety of CIMZIA during pregnancy.
+ &#x2022;  are breastfeeding or plan to breastfeed.
+It is not known if CIMZIA passes into your breast milk.
+You and your healthcare provider should decide if you will receive CIMZIA or breastfeed.
+ Tell your healthcare provider about all the medicines you take, including prescription and over-the-counter medicines, vitamins and herbal supplements.
+Especially tell your healthcare provider if you take the following medicines due to a higher chance for serious infections:
+ &#x2022;  Kineret (anakinra), Orencia (abatacept), Rituxan (rituximab), or Tysabri
+ (natalizumab).
+ &#x2022;  medicines called Tumor Necrosis Factor (TNF) blockers such as Remicade
+ (infliximab), Humira (adalimumab), Enbrel (etanercept), or Simponi
+ (golimumab).
+ 35
+ Reference ID: 3391827
+                                                                                       Ask your healthcare provider if you are not sure.
+  You should not take CIMZIA while you take any of these medicines.
+  How should I receive CIMZIA?
+ &#x2022;  CIMZIA comes as lyophilized powder or as a solution in a prefilled syringe for injection.
+ &#x2022;  If your healthcare provider prescribes the CIMZIA powder, your CIMZIA should be injected by a healthcare provider.
+Each dose of CIMZIA will be given as 1 or 2 separate injections under the skin in your stomach area or upper thighs.
+ &#x2022;  If your healthcare provider prescribes the CIMZIA prefilled syringe, you will be trained on how to inject CIMZIA.
+ &#x2022;  You will receive a CIMZIA Prefilled Syringe Kit including a complete "Instructions for Use" booklet for the right way to inject CIMZIA.
+ &#x2022;  Read the detailed Instructions for Use booklet for instructions about how to prepare and inject your dose of CIMZIA, and how to properly throw away used syringes containing the needle.
+ &#x2022;  Do not give yourself an injection of CIMZIA unless you have been shown by your healthcare provider.
+A family member or friend can also be trained to help you give your injection.
+ Talk to your healthcare provider if you have questions.
+ &#x2022;  CIMZIA is given by an injection under the skin.
+ Your healthcare provider will tell you how much and how often to inject CIMZIA.
+Do not use more CIMZIA or inject more often than prescribed.
+ &#x2022;  You may need more than 1 injection at a time depending on your prescribed dose of CIMZIA.
+ &#x2022;  CIMZIA may be injected into your stomach or upper thighs.
+ If you are prescribed more than 1 injection, each injection should be given at a different site in your stomach or upper thighs.
+ &#x2022;  Make sure the solution in the prefilled syringe is clear to colorless to light yellow.
+The solution should be mostly free from particles.
+Do not use the CIMZIA prefilled syringe if the medicine looks cloudy or if there are large or colored particles.
+ &#x2022;  Do not miss any doses of CIMZIA.
+ If you miss a dose, call your healthcare provider or pharmacist for instructions.
+ &#x2022;  Make sure to keep all follow-up appointments with your healthcare provider.
+ 36
+ Reference ID: 3391827
+                                                                               What are the possible side effects of CIMZIA?
+CIMZIA can cause serious side effects including: &#x2022;  See "What is the most important information I should know about
+ CIMZIA?" &#x2022;  Heart Failure including new heart failure or worsening of heart failure you
+ already have.
+Symptoms include shortness of breath, swelling of your ankles or feet, or sudden weight gain.
+ &#x2022;  Allergic Reactions.
+Signs of an allergic reaction include a skin rash, swelling or itching of the face, tongue, lips, or throat, or trouble breathing.
+ &#x2022;  Hepatitis B virus reactivation in patients who carry the virus in their blood.
+In some cases patients have died as a result of hepatitis B virus being reactivated.
+Your doctor should monitor you carefully before and during treatment with CIMZIA to see if you carry the hepatitis B virus in your blood.
+Tell your doctor if you have any of the following symptoms:
+ o  feel unwell o  skin or eyes look yellow o  tiredness (fatigue) o  poor appetite or vomiting o  pain on the right side of your stomach (abdomen)
+ &#x2022;  New or worsening nervous system problems, such as multiple sclerosis (MS), Guillain-Barre syndrome, seizures, or inflammation of the nerves of the eyes.
+ Symptoms may include:
+ o  dizziness o  numbness or tingling o  problems with your vision o  weakness in your arms or legs
+ 37
+ Reference ID: 3391827
+                                                                                         &#x2022;  Blood Problems.
+Your body may not make enough of the blood cells that help fight infections or help stop bleeding.
+ Symptoms include a fever that doesn't go away, bruising or bleeding very easily, or looking very pale.
+ &#x2022;  Immune reactions including a lupus-like syndrome.
+Symptoms include shortness of breath, joint pain, or a rash on the cheeks or arms that worsens with sun exposure.
+ Call your healthcare provider right away if you have any serious side effects listed above.
+ The most common side effects of CIMZIA include:
+ &#x2022;  upper respiratory infections (flu, cold)
+ &#x2022;  rash
+ &#x2022;  urinary tract infections (bladder infections)
+ Tell your healthcare provider about any side effect that bothers you or does not go away.
+ These are not all of the possible side effects of CIMZIA.
+For more information, ask your healthcare provider or pharmacist.
+ Call your doctor for medical advice about side effects.
+ You may report side effects to FDA at 1-800-FDA-1088.
+ How should I store CIMZIA?
+ &#x2022;  Keep CIMZIA in the refrigerator between 36F to 46F (2C to 8C).
+ &#x2022;  Do not freeze CIMZIA.
+ &#x2022;  Protect CIMZIA from light.
+Store CIMZIA in the carton it came in.
+ &#x2022;  Do not use CIMZIA if the medicine is expired.
+Check the expiration date on the prefilled syringe or carton.
+ &#x2022;  The CIMZIA prefilled syringe is made of glass.
+Do not drop or crush the syringe.
+ Keep CIMZIA and all medicines out of the reach of children.
+ General information about the safe and effective use of CIMZIA.
+ 38
+ Reference ID: 3391827
+                                                                                  Medicines are sometimes prescribed for purposes other than those listed in a Medication Guide.
+Do not use CIMZIA for a condition for which it was not prescribed.
+ Do not give CIMZIA to other people, even if they have the same symptoms that you have.
+It may harm them.
+ This Medication Guide summarizes the most important information about CIMZIA.
+If you would like more information, talk with your healthcare provider.
+You can ask your pharmacist or healthcare provider for information about CIMZIA that is written for health professionals.
+ For more information, go to www.CIMZIA.com or call 1-866-424-6942.
+ What are the ingredients in CIMZIA?
+ CIMZIA lyophilized powder:
+ Active ingredient: certolizumab pegol
+ Inactive ingredients: lactic acid, polysorbate, sucrose
+ CIMZIA lyophilized powder is mixed with sterile Water for Injection.
+ CIMZIA prefilled syringe:
+ Active ingredient: certolizumab pegol
+  Inactive ingredients: sodium acetate, sodium chloride, Water for
+ Injection
+  CIMZIA has no preservatives.
+  This Medication Guide has been approved by the U.S. Food and Drug
+ Administration.
+  Product manufactured by:
+  UCB, Inc.
+  1950 Lake Park Drive
+  Smyrna, GA 30080
+  US License No.
+1736
+  Revised: October 2013
+  39
+ Reference ID: 3391827
+                                                                                           Instructions for Use
+  CIMZIA (CIM-zee-uh)
+ (certolizumab pegol)
+  solution for subcutaneous use
+ Prefilled Syringes
+  Read this Instructions for Use booklet that comes with CIMZIA before you start receiving it, and before each injection of CIMZIA.
+This Instructions for Use booklet does not take the place of talking with your healthcare provider about your medical condition or treatment.
+These instructions are for 1 injection only.
+ You may need more than 1 injection at a time depending on your prescribed dose of CIMZIA.
+ Do not share your CIMZIA Prefilled Syringe with needle attached with another person.
+You may give another person an infection or get an infection from them.
+ Supplies you will need to give your CIMZIA injection: See Figure A and Figure B.
+ &#x2022;  1 CIMZIA prefilled syringe with
+ needle attached.
+You may need 2
+ CIMZIA prefilled syringes with
+ needles attached to give higher
+ doses.
+  &#x2022;  1 or 2 alcohol swabs &#x2022;  1 or 2 clean cotton balls or gauze
+ pads &#x2022;  1 puncture-resistant sharps
+ disposal container.
+See "Disposal of your syringes with needles attached" at the end of this Instructions for Use booklet.
+ CIMZIA comes in a tray containing 2 prefilled glass syringes.
+Use a new CIMZIA syringe for each injection.
+ Reference ID: 3391827
+                                                                                               Setting up for your CIMZIA injection:
+ Step 1.
+Take the carton containing the prefilled syringes of CIMZIA out of the refrigerator.
+Check the expiration date on the syringe carton and label.
+See Figure C.
+ If the expiration date has passed, do not use the syringe.
+Call your pharmacist for questions about the expiration date.
+Do not use if the tamper evident seals are missing or broken on the top and bottom of the carton when you receive it.
+ If this is the case, contact your pharmacist.
+ Step 2.
+Remove the prefilled syringe from the box and let it warm to room temperature.
+Do not warm the syringe in any other way.
+If you are not using the second syringe, put the carton containing the remaining prefilled syringe back in the refrigerator.
+ Step 3.
+Find a clean, flat work surface, such as a table.
+ Step 4.
+Make sure the liquid medicine in the prefilled syringe is clear to pale yellow and free from particles..
+  Do not inject the medicine if it is cloudy or discolored.
+Call your healthcare provider or pharmacist if you have any questions about your CIMZIA prefilled syringe.
+ Step 5.
+Gather all the supplies you will need for your injection.
+ Step 6.
+Wash your hands with soap and warm water and dry thoroughly with a clean towel.
+ Reference ID: 3391827
+                                                                                            Selecting and preparing your injection site:
+ Step 7.
+ Choose your injection site(s) on your stomach or upper thighs.
+See Figure
+ D.
+ &#x2022;  Choose a new injection site each time you use CIMZIA.
+&#x2022;  Each new injection should be given at least 1 inch from the site you used
+ before.
+If you choose your stomach, avoid the 2 inches around your belly button (navel).
+ &#x2022;  Do not inject into areas where your
+ skin is tender, bruised, red or hard,
+ or where you have scars or stretch
+ marks.
+  &#x2022;  Change injection sites between your
+ stomach and upper thighs to reduce
+ the chance of having a skin reaction.
+  &#x2022;  You may want to write down the site
+ you use for your injection to help you
+ remember to use a different site each
+ time you inject.
+  Step 8.
+Clean your injection site with an alcohol swab.
+Let the area dry completely.
+ Giving your CIMZIA injection:
+ Step 9.
+Pick up the prefilled syringe with 1 hand and hold it with the needle pointing
+ up.
+With your other hand, remove the needle cover by pulling straight up on
+ the plastic ring.
+See Figure E.
+  Do not touch the needle and do not let the
+ needle touch any surface.
+ Place the needle cover to the side.
+  Reference ID: 3391827
+     Step  10.
+ Hold  the  syringe  so  the  needle  is  pointing up.
+Lightly tap the syringe  to push any  small  air bubbles to the top.
+  See Figure F.   Gently  push the  plunger slowly  to  remove  any  bubbles.
+  Stop  pushing  the  plunger when  all o f  the air bubbles are gone.
+                  Step 11.
+ Hold the syringe  in  1  hand.
+ With your  other hand,  gently pinch a fold of  skin  at the cleaned injection site.
+  See Figure G.         Step 12.
+  With a quick, "dart-like" motion,  insert the  needle into your skin  at about a 45 degree  angle.
+ Release the pinched skin, keeping the  syringe  in position.
+Slowly push on the plunger all the way down until the syringe  is empty.
+  See Figure H.
+     ce ID: 3391827 Referen
+                                                                                     Step 13.
+When the syringe is empty, pull the needle out of your skin while carefully keeping the needle at the same angle as inserted.
+See Figure I.
+ Step 14.
+Place a dry cotton ball or gauze pad over the injection site for several seconds.
+See Figure J.
+ Do not rub the injection site.
+Do not use an alcohol swab as it may cause stinging.
+ If there is a little bleeding, cover the injection site with a small bandage.
+ To avoid a needle-stick injury, do not try to
+ recap the needle.
+ Do not reuse any of your injection supplies.
+  Reference ID: 3391827
+                                                                  Disposal of your syringes with needles attached:
+ &#x2022;  Put your used syringes with needle attached in a FDA-cleared sharps disposal container right away after use.
+See Figure K.
+ Do not throw away (dispose of) loose syringes and needles in your household trash.
+ &#x2022;  If you do not have a FDA-cleared sharps disposal container, you may use a household container that is:
+ o  made of a heavy-duty plastic o  can be closed with a tight-fitting, puncture-resistant lid, without
+ sharps being able to come out o  upright and stable during use o  leak-resistant o  properly labeled to warn of hazardous waste inside the container
+ &#x2022;  When your sharps disposal container is almost full, you will need to follow your community guidelines for the right way to dispose of your sharps disposal container.
+ There may be state or local laws about how you should throw away used needles and syringes.
+ For more information about safe sharps disposal, and for specific information about sharps disposal in the state that you live in, go to the FDA's website at: http://www.fda.gov/safesharpsdisposal.
+ Do not dispose of your used sharps disposal container in your household trash unless your community guidelines permit this.
+Do not recycle your used sharps disposal container.
+ Reference ID: 3391827
+                  This Instructions for Use has been approved by the U.S. Food and
+ Drug Administration.
+  Product manufactured by:
+ UCB, Inc.
+ 1950 Lake Park Drive
+ Smyrna, GA 30080
+  Revised: 10/2013
+  Reference ID: 3391827
+  

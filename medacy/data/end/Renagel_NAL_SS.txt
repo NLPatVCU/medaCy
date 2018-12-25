@@ -1,0 +1,348 @@
+ HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use Renagel safely and effectively.
+ See full prescribing information for Renagel.
+ Renagel (sevelamer hydrochloride) Tablet for Oral use Initial U.S. Approval: 2000  ----------------------------INDICATIONS AND USAGE--------------------------- &#x2022; Renagel is a phosphate binder indicated for the control of serum  phosphorus in patients with chronic kidney disease on dialysis.
+(1)  ----------------------DOSAGE AND ADMINISTRATION----------------------- &#x2022; Starting dose is one or two 800 mg or two to four 400 mg tablets three  times per day with meals.
+(2) &#x2022; Adjust by one tablet per meal in two week intervals as needed to obtain
+ serum phosphorus target (3.5 to 5.5 mg/dL).
+(2)  ---------------------DOSAGE FORMS AND STRENGTHS---------------------- &#x2022; Tablets:  800 mg and 400 mg (3)  ---------------------------CONTRAINDICATIONS---------------------------------- &#x2022; In patients with bowel obstruction.
+(4)  -----------------------WARNINGS AND PRECAUTIONS------------------------ &#x2022; Serious cases of dysphagia, bowel obstruction, and perforation have
+ been associated with sevelamer use, some requiring hospitalization and surgery.
+ (5.1)
+  ------------------------------ADVERSE REACTIONS------------------------------- &#x2022; The most common reasons for discontinuing treatment were
+ gastrointestinal adverse reactions.
+(6.1) &#x2022; In a parallel design study, of 12 weeks duration, treatment emergent
+ adverse reactions to Renagel Tablets in peritoneal dialysis patients included dyspepsia (12%), peritonitis (8%), diarrhea (5%), nausea (5%), constipation (4%), pruritus (4%), abdominal distension (3%), vomiting (3%), fatigue (3%), anorexia (3%), and arthralgia (3%).
+(6.1)
+ &#x2022; Similar reactions at similar rates occurred in hemodialysis and peritoneal dialysis patients.
+(6.1)
+ &#x2022; Cases of fecal impaction and, less commonly, ileus, bowel obstruction, and bowel perforation have been reported.
+(6.2)
+   To report SUSPECTED ADVERSE REACTIONS, contact Genzyme Corporation at 1-800-847-0069 and or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch  ------------------------------DRUG INTERACTIONS------------------------------- &#x2022; When clinically significant drug interactions are expected, consider
+ separation of the timing of administration and/or monitor clinical responses or blood levels of the concomitant medication.
+(7)
+ &#x2022; Sevelamer did not alter the pharmacokinetics of digoxin, enalapril, iron, metoprolol and warfarin.
+(7)
+ &#x2022; Sevelamer has demonstrated interaction with ciprofloxacin and mycophenolate mofetil, and therefore these drugs should be dosed separately from Renagel.
+(7)
+  See 17 for PATIENT COUNSELING INFORMATION
+      Revised: 11/2014
+  _______________________________________________________________________________________________________________________________________ FULL PRESCRIBING INFORMATION: CONTENTS*  1 INDICATIONS AND USAGE 2 DOSAGE AND ADMINISTRATION 3 DOSAGE FORMS AND STRENGTHS 4 CONTRAINDICATIONS 5 WARNINGS AND PRECAUTIONS
+ 5.1 Gastrointestinal Adverse Events 5.2 Monitor Serum Chemistries 5.3 Monitor for Reduced Vitamins D, E, K (clotting factors) and Folic   Acid Levels
+ 6 ADVERSE REACTIONS 6.1 Clinical Trials Experience 6.2 Postmarketing Experience
+ 7 DRUG INTERACTIONS 8 USE IN SPECIFIC POPULATIONS
+ 8.1 Pregnancy 8.2 Labor and Delivery 8.4 Pediatric Use 8.5 Geriatric Use
+  10 OVERDOSAGE 11 DESCRIPTION 12 CLINICAL PHARMACOLOGY
+ 12.1 Mechanism of Action 12.2  Pharmacodynamics 12.3 Pharmacokinetics
+ 13 NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility
+ 14 CLINICAL STUDIES 14.1 Active-Control, Cross-Over Study in Hemodialysis Patients 14.2 Active-Control, Parallel Study in Hemodialysis Patients 14.3 Active-Control, Parallel Study in  Peritoneal Dialysis Patients
+ 16 HOW SUPPLIED/STORAGE AND HANDLING 17 PATIENT COUNSELING INFORMATION
+ 17.1 Dosing Recommendations 17.2  Adverse Reactions
+  *Sections or subsections omitted from the full prescribing information are not listed
+____________________________________________________________________________________________________________
+Reference ID: 3664526
+    1.
+INDICATIONS AND USAGE
+ RENAGEL (sevelamer hydrochloride) is indicated for the control of serum phosphorus in patients with chronic kidney disease (CKD) on dialysis.
+ The safety and efficacy of Renagel in CKD patients who are not on dialysis have not been studied.
+ 2.
+DOSAGE AND ADMINISTRATION
+ Patients Not Taking a Phosphate Binder.
+ The recommended starting dose of Renagel is 800 to 1600 mg, which can be administered as one or two 800 mg Renagel Tablets or two to four 400 mg Renagel Tablets, with meals based on serum phosphorus level.
+ Table 1 provides recommended starting doses of Renagel for patients not taking a phosphate binder.
+ Table 1.
+Starting Dose for Dialysis Patients Not Taking a Phosphate Binder
+ Serum Phosphorus Renagel 800 mg Renagel 400 mg
+ &gt; 5.5 and &lt; 7.5 mg/dL 1 tablet three times daily  with meals
+ 2 tablets three times daily  with meals
+ &#x2265; 7.5 and &lt; 9.0 mg/dL 2 tablets three times daily  with meals
+ 3 tablets three times daily  with meals
+ &#x2265; 9.0 mg/dL 2 tablets three times daily  with meals
+ 4 tablets three times daily  with meals
+ Patients Switching From Calcium Acetate.
+ In a study in 84 CKD patients on hemodialysis, a similar reduction in serum phosphorus was seen with equivalent doses (approximately mg for mg) of Renagel and calcium acetate.
+ Table 2 gives recommended starting doses of Renagel based on a patient's current calcium acetate dose.
+ Reference ID: 3664526
+    Table 2.
+Starting Dose for Dialysis Patients Switching From Calcium Acetate to Renagel
+ Calcium Acetate 667 mg (Tablets per meal)
+ Renagel 800 mg (Tablets per meal)
+ Renagel 400 mg  (Tablets per meal)
+ 1 tablet 1 tablet 2 tablets
+ 2 tablets 2 tablets 3 tablets
+ 3 tablets 3 tablets 5 tablets
+ Dose Titration for All Patients Taking Renagel.
+ Dosage should be adjusted based on the serum phosphorus concentration with a goal of lowering serum phosphorus to 5.5 mg/dL or less.
+ The dose may be increased or decreased by one tablet per meal at two week intervals as necessary.
+ Table 3 gives a dose titration guideline.
+ The average dose in a Phase 3 trial designed to lower serum phosphorus to 5.0 mg/dL or less was approximately three Renagel 800 mg tablets per meal.
+ The maximum average daily Renagel dose studied was 13 grams.
+ Table 3.
+Dose Titration Guideline
+ Serum Phosphorus Renagel Dose
+ &gt;5.5 mg/dL Increase 1 tablet per meal at 2 week intervals
+ 3.5 - 5.5 mg/dL Maintain current dose
+ &lt;3.5 mg/dL Decrease 1 tablet per meal
+ 3.
+DOSAGE FORMS AND STRENGTHS
+ 800 mg and 400 mg Tablets.
+ 4.
+CONTRAINDICATIONS
+  Renagel is contraindicated in patients with bowel obstruction.
+ 5.
+WARNINGS AND PRECAUTIONS 5.1 Gastrointestinal Adverse Events
+ Cases of dysphagia and esophageal tablet retention have been reported in association with use of the tablet formulation of sevelamer, some requiring hospitalization and intervention.
+ Consider using sevelamer suspension in patients with a history of swallowing disorders.
+   Cases of bowel obstruction and perforation have also been reported with sevelamer use.
+   Reference ID: 3664526
+    Patients with dysphagia, swallowing disorders, severe gastrointestinal (GI) motility disorders including severe constipation, or major GI tract surgery were not included in the Renagel clinical studies.
+   5.2 Monitor Serum Chemistries
+ Bicarbonate and chloride levels should be monitored.
+ 5.3 Monitor for Reduced Vitamins D, E, K (clotting factors) and Folic Acid Levels
+ In preclinical studies in rats and dogs, sevelamer hydrochloride reduced vitamins D, E, and K (coagulation parameters) and folic acid levels at doses of 6-10 times the recommended human dose.
+ In short-term clinical trials, there was no evidence of reduction in serum levels of vitamins.
+ However, in a one-year clinical trial, 25-hydroxyvitamin D (normal range 10 to 55 ng/mL) fell from 39  22 ng/mL to 34  22 ng/mL (p&lt;0.01) with sevelamer hydrochloride treatment.
+ Most (approximately 75%) patients in sevelamer hydrochloride clinical trials received vitamin supplements, which is typical of patients on dialysis.
+ 6.
+ADVERSE REACTIONS 6.1 Clinical Trials Experience
+ Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug can not be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.
+ In a parallel design study of sevelamer hydrochloride with treatment duration of 52 weeks, adverse reactions reported for sevelamer hydrochloride (n=99) were similar to those reported for the active-control group (n=101).
+ Overall adverse reactions among those treated with sevelamer hydrochloride occurring in &gt; 5% of patients included:  vomiting (22%), nausea (20%), diarrhea (19%), dyspepsia (16%), abdominal pain (9%), flatulence (8%) and constipation (8%).
+A total of 27 patients treated with sevelamer and 10 patients treated with comparator withdrew from the study due to adverse reactions.
+  Based on studies of 8-52 weeks, the most common reason for withdrawal from Renagel was gastrointestinal adverse reactions (3-16%).
+ Reference ID: 3664526
+    In one hundred and forty-three peritoneal dialysis patients studied for 12 weeks most adverse reactions were similar to adverse reactions observed in hemodialysis patients.
+ The most frequently occurring treatment emergent serious adverse reaction was peritonitis (8 reactions in 8 patients [8%] in the sevelamer group and 2 reactions in 2 patients [4%] on active-control).
+ Thirteen patients (14%) in the sevelamer group and 9 patients (20%) in the active-control group discontinued, mostly for gastrointestinal adverse reactions.
+Patients on peritoneal dialysis should be closely monitored to ensure the reliable use of appropriate aseptic technique with the prompt recognition and management of any signs and symptoms associated with peritonitis.
+ 6.2 Postmarketing Experience
+ The following adverse reactions have been identified during post-approval use of sevelamer hydrochloride (Renagel): pruritus, rash, abdominal pain, fecal impaction and uncommon cases of ileus, intestinal obstruction, and intestinal perforation.
+ Appropriate medical management should be given to patients who develop constipation or have worsening of existing constipation to avoid severe complications.
+ Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to estimate their frequency or to establish a causal relationship to drug exposure.
+ 7.
+DRUG INTERACTIONS
+ There are no empirical data on avoiding drug interactions between Renvela and most concomitant oral drugs.
+For oral medication where a reduction in the bioavailability of that medication would have a clinically significant effect on its safety or efficacy (e.g., cyclosporine, tacrolimus, levothyroxine), consider separation of the timing of the administration of the two drugs [see Clinical Pharmacology (12.3)].
+ The duration of separation depends upon the absorption characteristics of the medication concomitantly administered, such as the time to reach peak systemic levels and whether the drug is an immediate release or an extended release product.
+Where possible consider monitoring clinical responses and/or blood levels of concomitant drugs that have a narrow therapeutic range.
+   Reference ID: 3664526
+    Table 4.
+ Sevelamer Drug Interactions
+ Oral drugs for which sevelamer did not alter the pharmacokinetics when administered concomitantly
+ Digoxin Enalapril Iron Metoprolol Warfarin
+ Oral drugs that have demonstrated interaction with sevelamer and are to be dosed separately from Renagel
+  Ciprofloxacin Mycophenolate mofetil
+  Dosing Recommendations Take at least 2 hours before or 6 hours after sevelamer Take at least 2 hours before sevelamer
+ 8.
+USE IN SPECIFIC POPULATIONS 8.1 Pregnancy Pregnancy Category C: The effect of Renagel on the absorption of vitamins and other
+ nutrients has not been studied in pregnant women.
+ Requirements for vitamins and other
+ nutrients are increased in pregnancy.
+In pregnant rats given doses of Renagel during
+ organogenesis, reduced or irregular ossification of fetal bones, probably due to a reduced
+ absorption of fat-soluble vitamin D, occurred.
+ In pregnant rabbits given oral doses of
+ Renagel by gavage during organogenesis, an increase of early resorptions occurred.
+[See
+ NONCLINICAL TOXICOLOGY (13.1)]
+ 8.2 Labor and Delivery
+ No Renagel treatment-related effects on labor and delivery were seen in animal studies.
+ The effects of Renagel on labor and delivery in humans are not known.
+[See NONCLINICAL TOXICOLOGY (13.1)]
+ 8.4 Pediatric Use
+ The safety and efficacy of Renagel has not been established in pediatric patients.
+ 8.5 Geriatric Use  Clinical studies of Renagel did not include sufficient numbers of subjects aged 65 and
+ over to determine whether they respond differently from younger subjects.
+ Other
+ reported clinical experience has not identified differences in responses between the
+ Reference ID: 3664526
+    elderly and younger patients.
+ In general, dose selection for an elderly patient should be
+ cautious, usually starting at the low end of the dosing range.
+ 10.
+OVERDOSAGE
+ Renagel has been given to normal healthy volunteers in doses of up to 14 grams per day for eight days with no adverse effects.
+ Renagel has been given in average doses up to 13 grams per day to hemodialysis patients.
+ There are no reports of overdosage with Renagel in patients.
+ Since Renagel is not absorbed, the risk of systemic toxicity is low.
+ Reference ID: 3664526
+ 11.
+DESCRIPTION
+The active ingredient in Renagel Tablets is sevelamer hydrochloride, a polymeric aminethat binds phosphate and is meant for oral administration.
+ Sevelamer hydrochloride ispoly(allylamine hydrochloride) crosslinked with epichlorohydrin in which forty percentof the amines are protonated.
+ It is known chemically as poly(allylamine-co-N,N&#x2019;-diallyl-1,3-diamino-2-hydroxypropane) hydrochloride.
+ Sevelamer hydrochloride is hydrophilic,but insoluble in water.
+ The structure is represented in Figure 1.
+      Figure 1.
+Chemical Structure of Sevelamer Hydrochloride
+The primary amine groups shown in the structure are derived directly from poly(ally-lamine hydrochloride).
+ The crosslinking groups consist of two secondary amine groupsderived from poly(allylamine hydrochloride) and one molecule of epichlorohydrin.
+ Renagel Tablets: Each film-coated tablet of Renagel contains either 800 mg or 400mg of sevelamer hydrochloride on an anhydrous basis.
+ The inactive ingredients arehypromellose, diacetylated monoglyceride, colloidal silicon dioxide, and stearic acid.The tablet imprint contains iron oxide black ink.
+  12.
+CLINICAL PHARMACOLOGY
+ Patients with chronic kidney disease (CKD) on dialysis retain phosphorus and can develop hyperphosphatemia.
+ High serum phosphorus can precipitate serum calcium resulting in ectopic calcification.
+ When the product of serum calcium and phosphorus concentrations (Ca x P) exceeds 55 mg2/dL2, there is an increased risk that ectopic calcification will occur.
+ Hyperphosphatemia plays a role in the development of secondary hyperparathyroidism in renal insufficiency.
+ Treatment of hyperphosphatemia includes reduction in dietary intake of phosphate, inhibition of intestinal phosphate absorption with phosphate binders, and removal of phosphate with dialysis.
+ Renagel taken with meals has been shown to decrease serum phosphorus concentrations in patients with CKD who are on dialysis.
+ 12.1 Mechanism of Action
+ Renagel contains sevelamer hydrochloride, a non-absorbed binding crosslinked polymer.
+ It contains multiple amines separated by one carbon from the polymer backbone.
+ These amines exist in a protonated form in the intestine and interact with phosphate molecules through ionic and hydrogen bonding.
+ By binding phosphate in the dietary tract and decreasing absorption, sevelamer hydrochloride lowers the phosphate concentration in the serum.
+ 12.2 Pharmacodynamics
+ In addition to effects on serum phosphate levels, sevelamer hydrochloride has been shown to bind bile acids in vitro and in vivo in experimental animal models.
+ Bile acid binding by ion exchange resins is a well-established method of lowering blood cholesterol.
+ Because sevelamer binds bile acids, it may interfere with normal fat absorption and thus may reduce absorption of fat-soluble vitamins such as A, D and K.  In clinical trials of sevelamer hydrochloride, both the mean total and LDL cholesterol declined by 15-31%.
+ This effect is observed after 2 weeks.
+ Triglycerides, HDL cholesterol and albumin did not change.
+ 12.3 Pharmacokinetics
+ A mass balance study using 14C-sevelamer hydrochloride in 16 healthy male and female volunteers showed that sevelamer hydrochloride is not systemically absorbed.
+ No absorption studies have been performed in patients with renal disease.
+ Drug Interactions
+ In vivo
+ Reference ID: 3664526
+    Sevelamer carbonate has been studied in human drug-drug interaction studies (9.6 grams once daily with a meal) with warfarin and digoxin.
+Sevelamer hydrochloride, which contains the same active moiety as sevelamer carbonate, has been studied in human drug-drug interaction studies (2.4-2.8 grams single dose or three times daily with meals or two times daily without meals) with ciprofloxacin, digoxin, enalapril, iron, metoprolol, mycophenolate mofetil and warfarin.
+ Co-administered single dose of 2.8 grams of sevelamer hydrochloride in fasted state decreased the bioavailability of ciprofloxacin by approximately 50% in healthy subjects.
+ Concomitant administration of sevelamer and mycophenolate mofetil in adult and pediatric patients decreased the mean MPA Cmax and AUC0-12h by 36% and 26% respectively.
+ Sevelamer carbonate or sevelamer hydrochloride did not alter the pharmacokinetics of a single dose of enalapril, digoxin, iron, metoprolol and warfarin when co-administered.
+ During postmarketing experience, cases of increased thyroid stimulating hormone (TSH) levels have been reported in patients co-administered sevelamer hydrochloride and levothyroxine.
+Reduction in concentrations of cyclosporine and tacrolimus leading to dose increases has also been reported in transplant patients when co-administered with sevelamer hydrochloride without any clinical consequences (for example, graft rejection).
+The possibility of an interaction cannot be excluded with these drugs.
+ Reference ID: 3664526
+    13.
+NONCLINICAL TOXICOLOGY 13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility Standard lifetime carcinogenicity bioassays were conducted in mice and rats.
+ Rats were
+ given sevelamer hydrochloride by diet at 0.3, 1, or 3 g/kg/day.
+There was an increased
+ incidence of urinary bladder transitional cell papilloma in male rats of the high dose
+ group (human equivalent dose twice the maximum clinical trial dose of 13 g).
+ Mice
+ received dietary administration of sevelamer hydrochloride at doses of up to 9 g/kg/day
+ (human equivalent dose 3 times the maximum clinical trial dose).
+ There was no
+ increased incidence of tumors observed in mice.
+ In an in vitro mammalian cytogenetic test with metabolic activation, sevelamer
+ hydrochloride caused a statistically significant increase in the number of structural
+ chromosome aberrations.
+ Sevelamer hydrochloride was not mutagenic in the Ames
+ bacterial mutation assay.
+ Sevelamer hydrochloride did not impair the fertility of male or female rats in a dietary
+ administration study in which the females were treated from 14 days prior to mating
+ through gestation and the males were treated for 28 days prior to mating.
+ The highest
+ dose in this study was 4.5 g/kg/day (human equivalent dose 3 times the maximum clinical
+ trial dose of 13 g).
+ In pregnant rats given dietary doses of 0.5, 1.5 or 4.5 g/kg/day of sevelamer
+ hydrochloride during organogenesis, reduced or irregular ossification of fetal bones,
+ probably due to a reduced absorption of fat-soluble vitamin D, occurred in mid- and high-
+dose groups (human equivalent doses less than the maximum clinical trial dose of 13 g).
+  In pregnant rabbits given oral doses of 100, 500 or 1000 mg/kg/day of sevelamer
+ hydrochloride by gavage during organogenesis, an increase of early resorptions occurred
+ in the high-dose group (human equivalent dose twice the maximum clinical trial dose).
+ Reference ID: 3664526
+    14.
+CLINICAL STUDIES
+ The ability of Renagel to lower serum phosphorus in CKD patients on dialysis was demonstrated in six clinical trials:  one double-blind placebo controlled 2-week study (Renagel N=24); two open-label uncontrolled 8-week studies (Renagel N=220) and three active-controlled open-label studies with treatment durations of 8 to 52 weeks (Renagel N=256).
+ Three of the active-controlled studies are described here.
+ One is a crossover study with two 8-week periods comparing Renagel to an active-control.
+ The second is a 52-week parallel study comparing Renagel with active-control.
+ The third is a 12-week parallel study comparing Renagel and active-control in peritoneal dialysis patients.
+ 14.1 Active-Control, Cross-Over Study in Hemodialysis Patients
+ Eighty-four CKD patients on hemodialysis who were hyperphosphatemic (serum phosphorus &gt; 6.0 mg/dL) following a two-week phosphate binder washout period received Renagel and active-control for eight weeks each in random order.
+ Treatment periods were separated by a two-week phosphate binder washout period.
+ Patients started on treatment three times per day with meals.
+ Over each eight-week treatment period, at three separate time points the dose of Renagel could be titrated up 1 capsule or tablet per meal (3 per day) to control serum phosphorus, the dose of active-control could also be altered to attain phosphate control.
+ Both treatments significantly decreased mean serum phosphorus by about 2 mg/dL (Table 5).
+ Table 5.
+Mean Serum Phosphorus (mg/dL) at Baseline and Endpoint
+  Renagel
+ (N=81) Active-Control
+ (N=83)
+ Baseline at End of Washout 8.4 8.0
+ Endpoint 6.4 5.9 Change from Baseline at Endpoint (95% Confidence Interval)
+ -2.0*  (-2.5, -1.5)
+ -2.1*  (-2.6, -1.7)
+ *p&lt;0.0001, within treatment group comparison  The distribution of responses is shown in Figure 2.
+The distributions are similar for sevelamer hydrochloride and active control.
+The median response is a reduction of about 2 mg/dL in both groups.
+About 50% of subjects have reductions between 1 and 3 mg/dL.
+   Figure 2.
+Percentage of patients (Y-axis) attaining a phosphorus reduction from
+ baseline (mg/dL) at least as great as the value of the X-axis.
+ Reference ID: 3664526
+                      Average daily Renagel dose at the end of treatment was 4.9 g (range of 0.0 to 12.6 g).
+ 14.2 Active-Control, Parallel Study in Hemodialysis Patients
+ Two hundred CKD patients on hemodialysis who were hyperphosphatemic (serum phosphorus &gt;5.5 mg/dL) following a two-week phosphate binder washout period were randomized to receive Renagel 800 mg tablets (N=99) or an active-control (N=101).
+ The two treatments produced similar decreases in serum phosphorus.
+ At week 52, using last-observation-carried-forward, Renagel and active-control both significantly decreased mean serum phosphorus (Table 6).
+ Table 6.
+Mean Serum Phosphorus (mg/dL) and Ion Product at Baseline and Change from Baseline to End of Treatment
+  Renagel (N=94)
+ Active-Control
+ (N=98)
+ Phosphorus Baseline Change from Baseline at Endpoint
+  7.5 -2.1
+  7.3 -1.8
+ Ca x Phosphorus Ion Product Baseline Change from Baseline at Endpoint
+  70.5  -19.4
+  68.4  -14.2
+ Reference ID: 3664526
+    Sixty-one percent of Renagel patients and 73% of the control patients completed the full 52 weeks of treatment.
+   Figure 3, a plot of the phosphorus change from baseline for the completers, illustrates the durability of response for patients who are able to remain on treatment.
+  Figure 3.
+Mean Phosphorus Change from Baseline for Patients who Completed 52 Weeks of Treatment
+    Average daily Renagel dose at the end of treatment was 6.5 g (range of 0.8 to 13 g).
+   14.3 Active-Control, Parallel Study in Peritoneal Dialysis Patients
+ One hundred and forty-three patients on peritoneal dialysis who were hyperphosphatemic (serum phosphorus &gt; 5.5 mg/dL) following a two-week phosphate binder washout period were randomized to receive Renagel (N=97) or active-control (N=46) open label for 12 weeks.
+ Average daily Renagel dose at the end of treatment was 5.9 g (range 0.8 to 14.3 g).
+ There were statistically significant changes in serum phosphorus (p&lt;0.001) for Renagel (-1.6 mg/dL from baseline of 7.5 mg/dL), similar to the active-control.
+ 16.
+HOW SUPPLIED/STORAGE AND HANDLING
+ Renagel 800 mg Tablets are supplied as oval, film-coated, compressed tablets, imprinted with "RENAGEL 800" containing 800 mg of sevelamer hydrochloride on an anhydrous basis, hypromellose, diacetylated monoglyceride, colloidal silicon dioxide, and stearic acid.
+ Renagel 800 mg Tablets are packaged in bottles of 180 tablets.
+ 0 2 6 10 14 18 22 26 30 34 38 42 46 52 Study Week
+ -5
+ -4
+ -3
+ -2
+ -1
+ 0
+ 1
+ 2
+ Phos
+phor
+us C
+hang
+e fr
+om B
+asel
+ine
+   TRT: Sevelamer Hydrochloride Active-Control
+ Reference ID: 3664526
+    Renagel 400 mg Tablets are supplied as oval, film-coated, compressed tablets, imprinted with "RENAGEL 400" containing 400 mg of sevelamer hydrochloride on an anhydrous basis, hypromellose, diacetylated monoglyceride, colloidal silicon dioxide, and stearic acid.
+ Renagel 400 mg Tablets are packaged in bottles of 360 tablets.
+ 1 Bottle of 30 ct 800 mg Tablets (NDC 58468-0021-3)
+ 1 Bottle of 180 ct 800 mg Tablets (NDC 58468-0021-1)
+ 1 Bottle of 360 ct 400 mg Tablets (NDC 58468-0020-1)
+ Storage Store at 25C (77F):  excursions permitted to 15-30C (59-86F).
+ Do not use Renagel after the expiration date on the bottle.
+ [See USP controlled room temperature]
+ Protect from moisture.
+ 17 PATIENT COUNSELING INFORMATION 17.1 Dosing Recommendations
+ The prescriber should inform patients to take Renagel with meals and adhere to their prescribed diets.
+ Instructions should be given on concomitant medications that should be dosed apart from Renagel.
+   17.2 Adverse Reactions
+ Renagel may cause constipation that if left untreated, may lead to severe complications.
+Patients should be cautioned to report new onset or worsening of existing constipation promptly to their physician.
+ Distributed by: Genzyme Corporation 500 Kendall Street Cambridge, MA 02142 USA
+ 1 Renagel is a Registered Trademark of Genzyme Corporation.
+ Reference ID: 3664526
+---------------------------------------------------------------------------------------------------------
+This is a representation of an electronic record that was signedelectronically and this page is the manifestation of the electronicsignature.---------------------------------------------------------------------------------------------------------
+/s/----------------------------------------------------
+MARY R SOUTHWORTH11/26/2014
+Reference ID: 3664526
+ 
