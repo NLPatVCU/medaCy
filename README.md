@@ -65,7 +65,7 @@ train_loader.metamap(metamap)
 test_loader.metamap(metamap)
 
 # Choose which pipeline to use and what entities to classify
-pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
+pipeline = ClinicalPipeline(metamap=metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
 
 # Initialize a Model with the pipeline it will use to preprocess the data
 # The algorithm used for prediction is specified in the pipeline - ClinicalPipeline uses CRF(Conditional Random Field)
