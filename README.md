@@ -8,15 +8,14 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 
 # :star2: Features
-- Highly predictive, shared-task dominating out-of-the-box [trained models](/examples/README.md#utilizing-pre-trained-ner-models) for medical named entity recognition.
+- Highly predictive, shared-task dominating out-of-the-box trained models for medical named entity recognition.
 - Customizable pipelines with detailed development instructions and documentation.
-- Direct integration with free, open-source annotation tools such as [BRAT](http://brat.nlplab.org/).
-- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still maintaining data privacy.
+- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
 
 ## :thought_balloon: Where to ask questions
 
-MedaCy is actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
+MedaCy actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
 receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](/CONTRIBUTING.md).
 
@@ -25,13 +24,12 @@ Medacy can be installed for general use or for pipeline development / research p
 
 | Application | Run           |
 | ----------- |:-------------:|
-| Model Training and Prediction (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
-| Model Training and Prediction (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
+| Prediction and Model Training (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
+| Prediction and Model Training (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
 **Note:** Make sure you have at the least spaCy's small model installed.
-
 `pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz`
 
 
@@ -110,7 +108,7 @@ This package is licensed under the GNU General Public License
 
 Authors
 =======
-Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, and Bridget McInnes
+Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, and Bridget T McInnes
 
 Acknowledgments
 ===============
