@@ -47,6 +47,9 @@ setup(
         'Topic :: Text Processing :: Linguistic',
         'Intended Audience :: Science/Research'
     ],
+    dependency_links=[
+        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.0.tar.gz#egg=medacy_dataset_end-1.0.0'
+    ],
     install_requires=[
         'spacy>=2.0.13',
         'scikit-learn>=0.20.0',
@@ -56,7 +59,7 @@ setup(
         'tabulate>=0.8.2',
         'pathos>=0.2.2.1'
     ],
-    tests_require=["pytest"],
+    tests_require=["pytest", "medacy_dataset_end"],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False
