@@ -1,2 +1,2 @@
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 __authors__ = "Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes"
