@@ -17,8 +17,43 @@ we refer to this as a *training dataset*.
 
 ## Creating a Dataset
 MedaCy provides two functionalities for loading data:
-1. [Loading an external medaCy compatible dataset]()
-2. [Loading data on your local file ]
+1. [Loading data from your machine](#loading-data-locally).
+2. [Loading an existing medaCy compatible dataset](#loading-a-medacy-compatible-dataset).
 
+
+## Loading data locally
+
+
+## Loading a medaCy compatible dataset
+Using a *medaCy compatible dataset* package to manage your training data insures that data is easy and efficient to access, versioned for replicability, and distributable (selectively!).
+
+An *medaCy compatible dataset* is python package wrapping data that can be hooked into medaCy. We can install a *medaCy compatible dataset* just like any python package. For instance,
+
+
+`pip install https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.2.tar.gz#egg=medacy_dataset_end-1.0.2`
+
+will install `v1.0.02` of the [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) dataset. Alternatively,
+
+`pip install git+https://github.com/NanoNLP/medaCy_dataset_end.git`
+
+will install the latest version of the [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) dataset.
+
+After you have installed a *medaCy compatible dataset*, loading it returns a configured `Dataset` object alongside meta-data in a `tuple` as follows:
+
+```python
+from medacy.data import Dataset
+
+dataset, entities = Dataset.load_external('medacy_dataset_end')
+
+```
+
+alternatively, import the datasets package and directly call the load method:
+
+```python
+import medacy_dataset_end
+
+dataset, entities = medacy_dataset_end.load()
+
+```
 
 ### Loading
