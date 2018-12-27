@@ -59,7 +59,7 @@ setup(
         'joblib>=0.12.5',
         'tabulate>=0.8.2',
         'pathos>=0.2.2.1',
-        'en_core_web_sm==2.0.0'
+        'en_core_web_sm'
     ],
     tests_require=["pytest", "medacy_dataset_end"],
     cmdclass={"pytest": PyTest},
