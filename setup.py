@@ -52,7 +52,7 @@ setup(
         'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
     ],
     install_requires=[
-        'spacy>=2.0.13',
+        'spacy==2.0.13',
         'scikit-learn>=0.20.0',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
