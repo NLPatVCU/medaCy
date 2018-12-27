@@ -2,16 +2,15 @@
 A medaCy named entity recognition model wraps together three functionalities
 """
 
-import logging, os, joblib, time
+import logging, os, joblib, time, importlib
+from medacy.data import Dataset
+from .stratified_k_fold import SequenceStratifiedKFold
+from medacy.pipelines.base.base_pipeline import BasePipeline
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
+from ._model import predict_document
+from sklearn_crfsuite import metrics
 from tabulate import tabulate
 from statistics import mean
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
-from sklearn_crfsuite import metrics
-from .stratified_k_fold import SequenceStratifiedKFold
-
-from medacy.pipelines.base.base_pipeline import BasePipeline
-from ._model import predict_document
-from ..tools import DataLoader
 
 
 
@@ -37,21 +36,21 @@ class Model:
         doc = self.pipeline(medacy_pipeline.spacy_pipeline.make_doc("Initialize"), predict=True)
         assert doc is not None, "Model could not be initialized with the set pipeline"
 
-    def fit(self, training_data_loader):
+    def fit(self, dataset):
         """
-            Runs training data through our pipeline and fits it using the CRF algorithm
-            :param training_data_loader: Instance of DataLoader containing training files
-            :return model: Trained model
+        Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
+        :param training_data_loader: Instance of Dataset.
+        :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
-        assert isinstance(training_data_loader, DataLoader), "Must pass in an instance of DataLoader containing your training files"
+        assert isinstance(dataset, Dataset), "Must pass in an instance of Dataset containing your training files"
         assert isinstance(self.pipeline, BasePipeline), "Model object must contain a medacy pipeline to pre-process data"
 
 
         pool = Pool(nodes = self.n_jobs)
 
-        results = [pool.apipe(self._extract_features, data_file, self.pipeline, training_data_loader.is_metamapped())
-                   for data_file in training_data_loader.get_files()]
+        results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
+                   for data_file in dataset.get_data_files()]
 
         while any([i.ready() == False for i in results]):
             time.sleep(1)
@@ -77,32 +76,32 @@ class Model:
 
 
 
-    def predict(self, documents, prediction_directory = None):
+    def predict(self, dataset, prediction_directory = None):
         """
 
-        :param documents: a document (string) or collection of documents contained in a DataLoader
-        :param prediction_directory: the directory to write predictions to if corpus is a DataLoader
+        :param documents: a string or Dataset to predict
+        :param prediction_directory: the directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
         :return:
         """
 
-        assert isinstance(documents, DataLoader) or isinstance(documents, str), "Must pass in an instance of DataLoader containing your examples to be used for prediction"
+        assert isinstance(dataset, Dataset) or isinstance(dataset, str), "Must pass in an instance of Dataset containing your examples to be used for prediction"
         assert self.model is not None, "Must fit or load a pickled model before predicting"
 
 
         model = self.model
         medacy_pipeline = self.pipeline
 
-        if isinstance(documents, DataLoader):
+        if isinstance(dataset, Dataset):
             # create directory to write predictions to
             if prediction_directory is None:
-                prediction_directory = documents.data_directory + "/predictions/"
+                prediction_directory = dataset.data_directory + "/predictions/"
 
             if os.path.isdir(prediction_directory):
                 logging.warning("Overwritting existing predictions")
             else:
                 os.makedirs(prediction_directory)
 
-            for data_file in documents.get_files():
+            for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
                 with open(data_file.raw_path, 'r') as raw_text:
                     doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
@@ -117,11 +116,11 @@ class Model:
                 logging.debug("Writing to: %s", os.path.join(prediction_directory,data_file.file_name+".ann"))
                 annotations.to_ann(write_location=os.path.join(prediction_directory,data_file.file_name+".ann"))
 
-        if isinstance(documents, str):
+        if isinstance(dataset, str):
             assert 'metamap_annotator' not in self.pipeline.get_components(), \
                 "Cannot currently predict on the fly when metamap_component is in pipeline."
 
-            doc = medacy_pipeline.spacy_pipeline.make_doc(documents)
+            doc = medacy_pipeline.spacy_pipeline.make_doc(dataset)
             doc.set_extension('file_name', default="STRING_INPUT", force=True)
             doc = medacy_pipeline(doc, predict=True)
             annotations = predict_document(model, doc, medacy_pipeline)
@@ -312,6 +311,18 @@ class Model:
                 ]
 
         return "\n".join(text)
+
+    @staticmethod
+    def load_external(package_name):
+        """
+        Loads an external medaCy compatible Model. Require's the models package to be installed
+        Alternatively, you can import the package directly and call it's .load() method.
+        :param package_name: the package name of the model
+        :return: an instance of Model that is configured and loaded - ready for prediction.
+        """
+        if importlib.util.find_spec(package_name) is None:
+            raise ImportError("Package not installed: %s" % package_name)
+        return importlib.import_module(package_name).load()
 
     def __str__(self):
         return self.get_info()

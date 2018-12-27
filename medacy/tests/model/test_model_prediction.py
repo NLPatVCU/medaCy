@@ -1,57 +1,54 @@
 from unittest import TestCase
 from medacy.model import Model
 from medacy.pipelines import TestingPipeline
-from medacy.tools import DataLoader, Annotations
-from medacy.pipeline_components import MetaMap
-from medacy.data import load_END
-import tempfile, shutil, os
+from medacy.tools import Annotations
+from medacy.data import Dataset
+import os, importlib, pkg_resources, tempfile, shutil
 
 
-class TestModelBulk(TestCase):
+class TestModelTrainingAndPrediction(TestCase):
+    """
+    Tests model training and prediction in bulk
+    """
 
     @classmethod
     def setUpClass(cls):
-        cls.train_dir = tempfile.mkdtemp() #set up train directory
-        cls.test_dir = tempfile.mkdtemp()  # set up predict directory
-        files, entities = load_END()
-        cls.entities = entities
-        cls.ann_files = []
 
-        #fill directory of training files
-        for file_name, raw_text, ann_text in files:
-            cls.ann_files.append(file_name + '.ann')
-            with open(os.path.join(cls.train_dir, "%s.txt" % file_name), 'w') as f:
-                f.write(raw_text)
-            with open(os.path.join(cls.train_dir, "%s.ann" % file_name), 'w') as f:
-                f.write(ann_text)
+        if importlib.util.find_spec('medacy_dataset_end') is None:
+            raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
 
-            #place same files into evalutation directory.
-            with open(os.path.join(cls.test_dir, "%s.txt" % file_name), 'w') as f:
-                f.write(raw_text)
-            with open(os.path.join(cls.test_dir, "%s.ann" % file_name), 'w') as f:
-                f.write(ann_text)
+        cls.train_dataset, cls.entities = Dataset.load_external('medacy_dataset_end')
+        cls.train_dataset.set_data_limit(1)
+
+        cls.test_dataset, _ = Dataset.load_external('medacy_dataset_end')
+        cls.test_dataset.set_data_limit(2)
+
+        cls.prediction_directory = tempfile.mkdtemp() #directory to store predictions
+
+
 
     @classmethod
     def tearDownClass(cls):
-        shutil.rmtree(cls.train_dir)
-        shutil.rmtree(cls.test_dir)
+        pkg_resources.cleanup_resources()
+        shutil.rmtree(cls.prediction_directory)
 
 
-    def test_prediction_with_clinical_pipeline(self):
+    def test_prediction_with_testing_pipeline(self):
         """
         Constructs a model that memorizes an entity, predicts it on same file, writes to ann
         :return:
         """
 
-        train_loader = DataLoader(self.train_dir, limit=1)
-        test_loader = DataLoader(self.test_dir, limit=1)
-
         pipeline = TestingPipeline(entities=['tradename'])
 
+        #train on Abelcet.ann
         model = Model(pipeline, n_jobs=1)
-        model.fit(train_loader)
+        model.fit(self.train_dataset)
 
-        model.predict(test_loader)
-        annotations = Annotations(os.path.join(self.test_dir, "predictions",self.ann_files[0]), annotation_type='ann')
+        #predict on both
+        model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
 
+        second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
+        annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file), annotation_type='ann')
+        print(annotations)
         self.assertIsInstance(annotations, Annotations)
