@@ -8,35 +8,35 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 
 # :star2: Features
-- Highly predictive, shared-task dominating out-of-the-box trained models for medical named entity recognition.
+- Highly predictive, shared-task dominating out-of-the-box [trained models](/examples/README.md#utilizing-pre-trained-ner-models) for medical named entity recognition.
 - Customizable pipelines with detailed development instructions and documentation.
-- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
+- Direct integration with free, open-source annotation tools such as [BRAT](http://brat.nlplab.org/).
+- Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still maintaining data privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
 
 ## :thought_balloon: Where to ask questions
 
-MedaCy actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar>)
+MedaCy is actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
 receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](/CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
-Medacy can be installed for general use or for pipeline development / research purpose.
+Medacy can be installed for general use or for pipeline development / research purposes.
 
 | Application | Run           |
 | ----------- |:-------------:|
-| Prediction and Model Training (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
-| Prediction and Model Training (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
+| Model Training and Prediction (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git` |
+| Model Training and Prediction (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development` |
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
 **Note:** Make sure you have at the least spaCy's small model installed.
-```python
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
-```
+
+`pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz`
 
 
 # :books: User Guide
-Using medaCy is simple: 
+Using medaCy is simple and [detailed examples](/examples) are provided: 
 1. Select a pipeline or build your own.
 2. Load training data (raw text and annotations)
 3. Instantiate a Model with your chosen pipeline, train on your annotated data, and retrieve a model for prediction! 
@@ -65,7 +65,7 @@ train_loader.metamap(metamap)
 test_loader.metamap(metamap)
 
 # Choose which pipeline to use and what entities to classify
-pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
+pipeline = ClinicalPipeline(metamap=metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
 
 # Initialize a Model with the pipeline it will use to preprocess the data
 # The algorithm used for prediction is specified in the pipeline - ClinicalPipeline uses CRF(Conditional Random Field)
@@ -83,32 +83,13 @@ model.predict(test_loader)
 
 ```
 
-One can also dump fitted models into a specified directory.
+One can also dump/load fitted models into a specified directory.
 ```python
 model.fit(train_loader)
 model.dump('/path/to/dump/to') # Trained model is now stored at specified directory
+model.load('/path/to/dump/to') # Trained model is loaded back into medaCy
 
 ``` 
-
-Note, the ClinicalPipeline requires spaCy's small model - install it with pip:
-```python
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
-```
-
-
-How medaCy works
-================
-MedaCy leverages the text-processing power of spaCy with state-of-the-art research tools and techniques in medical named entity recognition.
-MedaCy consists of a set of lightning-fast pipelines that are specialized for learning specific types of medical entities. A pipeline consists
-of a stackable and interchangeable set of PipelineComponents - these are bite-sized code blocks that each overlay a feature onto the text being processed.
-
-Components
-==========
-You can write your own PipelineComponents to utilize in custom pipelines by interfacing the BasePipeline and BaseComponent classes. Alternatively
-use the components already included with medaCy. Some more powerful components require outside software - an example is the MetaMapComponent which interfaces with MetaMap
-to overlay rich medical concept information onto text. Components are chained or stacked in pipelines and can themselves depend on the outputs of previous components to function.
-
-
 
 
 Reference

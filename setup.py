@@ -1,11 +1,32 @@
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
 from medacy import __version__, __authors__
+import sys
 
 packages = find_packages()
 
 def readme():
     with open('README.md') as f:
         return f.read()
+
+class PyTest(TestCommand):
+    """
+    Custom Test Configuration Class
+    Read here for details: https://docs.pytest.org/en/latest/goodpractices.html
+    """
+    user_options = [("pytest-args=", "a", "Arguments to pass to pytest")]
+
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args = ""
+
+    def run_tests(self):
+        import shlex
+        # import here, cause outside the eggs aren't loaded
+        import pytest
+
+        errno = pytest.main(shlex.split(self.pytest_args))
+        sys.exit(errno)
 
 setup(
     name='medacy',
@@ -27,7 +48,7 @@ setup(
         'Intended Audience :: Science/Research'
     ],
     install_requires=[
-        'spacy>=2.0.12',
+        'spacy>=2.0.13',
         'scikit-learn>=0.20.0',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
@@ -36,8 +57,8 @@ setup(
         'pathos>=0.2.2.1',
         'sphinx>=1.8.2'
     ],
-    test_suite='nose.collector',
-    tests_require=['nose'],
+    tests_require=["pytest"],
+    cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False
 

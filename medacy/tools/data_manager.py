@@ -2,28 +2,14 @@
 Manages training data
 """
 import os, json, logging, math
-
+from .data_file import DataFile
 import multiprocessing, warnings
 from joblib import Parallel, delayed
 
 
-class DataFile:
-    def __init__(self, file_name, raw_text_fp, ann_path):
-        self.file_name = file_name
-        self.raw_path = raw_text_fp
-        self.ann_path = ann_path
-        self.metamapped_path = None
-
-    def __repr__(self):
-        return self.file_name
-
-    def __str__(self):
-        return self.file_name
-
-
 class DataLoader:
 
-    def __init__(self, data_directory, raw_text_file_extension="txt", limit=None):
+    def __init__(self, data_directory, raw_text_file_extension="txt", annotation_file_extension="ann",  limit=None):
         """
         Manages directory of training data along with other relevant files.
         A directory must consist of at-least A.txt , A.ann file pairs. Specifically, the DataLoader interfaces
@@ -32,49 +18,62 @@ class DataLoader:
         files for each text file in the parent directory.
 
         :param data_directory: Directory containing training data consisting of raw and annotated text pairs
-        :param raw_text_file_extension: extension of annotated text files
+        :param raw_text_file_extension: the file extension of the text files
+        :param annotation_file_extension: the file extension of the annotation files
         :param limit: number of documents to utilize (defaults to all in directory)
         """
         self.data_directory = data_directory
         self.raw_text_file_extension = raw_text_file_extension
         self.all_files = []
         files = os.listdir(data_directory)
-        if limit is not None and 0 < limit and limit <= len(files):
-            files = files[:limit]
-        assert any(File.endswith(".%s" % raw_text_file_extension) for File in os.listdir(data_directory)), "Directory contains no %s files" % raw_text_file_extension
 
-        is_training_directory = any(File.endswith(".ann") for File in os.listdir(data_directory))
+        #start by filtering all raw_text files, both training and prediction directories will have these
+        raw_text_files = sorted([file for file in files if file.endswith(raw_text_file_extension)])
+
+        assert raw_text_files is not None, "No raw text files exist in directory: %s" % self.data_directory
+
+        if limit is not None and 0<limit and limit <= len(raw_text_files):
+            raw_text_files = raw_text_files[0:limit]
+
+        #required ann files for this to be a training directory
+        ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension) for file in raw_text_files]
+
+        #only a training directory if every text file has a corresponding ann_file
+        is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
+
 
         #set all file attributes except metamap_path as it is optional.
-        for file in files:
-            if file.endswith(".%s" % raw_text_file_extension):
-                file_name = file.replace(".%s" % raw_text_file_extension, "")
-                raw_text_path = os.path.join(data_directory, file)
+        for file in raw_text_files:
+            file_name = file[:-len(raw_text_file_extension)-1]
+            raw_text_path = os.path.join(data_directory, file)
 
-                if is_training_directory:
-                    ann_path = os.path.join(data_directory, file.replace(".%s" % raw_text_file_extension, ".ann"))
-
-                    if not os.path.isfile(ann_path):
-                        raise FileNotFoundError("Could not find file: %s" % ann_path)
-                else:
-                    ann_path = None
-                self.all_files.append(DataFile(file_name, raw_text_path, ann_path))
+            if is_training_directory:
+                ann_path = os.path.join(data_directory, file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension))
+            else:
+                ann_path = None
+            self.all_files.append(DataFile(file_name, raw_text_path, ann_path) )
 
         if self.is_metamapped():
             for file in self.all_files:
                 file.metamapped_path = os.path.join(self.data_directory + "/metamapped",
                                                     file.raw_path.split(os.path.sep)[-1].replace(
                                                         ".%s" % self.raw_text_file_extension, ".metamapped"))
+        logging.debug("Loaded %i files for %s", len(raw_text_files), "training" if is_training_directory else "prediction")
 
     def get_files(self):
         """
-        Returns a list of all files processed by DataLoader
-        :return:
+        Retrieves an organized list containing the files processed.
+        :return: a list of DataFile objects
         """
         return self.all_files
 
     def _parallel_run(self, files, i):
-
+        """
+        Facilitates Metamapping in parallel by forking off processes to Metamap each file individually
+        :param files: an array of file paths to the file to map
+        :param i: index in the array used to determine the file that the called process will be responsible for mapping
+        :return:
+        """
         file = files[i].split(os.path.sep)[-1]
         file_path = files[i]
         logging.info("Attempting to Metamap: %s", file_path)
@@ -92,7 +91,9 @@ class DataLoader:
                     max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
                 except BaseException as e:
                     metamap_dict = None
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
                     logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)
             logging.info("Successfully Metamapped: %s" % file_path)
@@ -102,25 +103,25 @@ class DataLoader:
     def is_metamapped(self):
         return os.path.isdir(self.data_directory+"/metamapped/")
 
-
-    def metamap(self, metamap, num_cores = multiprocessing.cpu_count()-1):
+    def metamap(self, metamap, n_jobs = multiprocessing.cpu_count()-1):
         """
         Metamaps training data and places it in a new sub_directory 'metamapped'
-        :param num_cores: number of cores to spawn metamap processes on. Default is to use all cores.
+        :param n_jobs: number metamap processes to fork. Default is to use all cores.
         Will add metamap file path to the returned paths
         """
         self.metamap = metamap
         metamapped_files_directory = self.data_directory+"/metamapped/"
 
-        if self.is_metamapped():
-            logging.warning("Metamap directory already exists, please delete if you are attempting to re-map. Exiting mapping.")
-            return
-        os.makedirs(metamapped_files_directory)
+        if not self.is_metamapped():
+            os.makedirs(metamapped_files_directory)
+            # logging.warning("Metamap directory already exists, please delete if you are attempting to re-map. Exiting mapping.")
+            # return
 
-        files = [file.raw_path for file in self.all_files]
+        already_metamapped = [file[:file.find('.')] for file in os.listdir(metamapped_files_directory)]
+        files = [file.raw_path for file in self.all_files if not file.file_name in already_metamapped]
+        logging.info("Number of files to MetaMap: %i" % len(files))
 
-
-        Parallel(n_jobs=num_cores)(delayed(self._parallel_run)(files, i) for i in range(len(files)))
+        Parallel(n_jobs=n_jobs)(delayed(self._parallel_run)(files, i) for i in range(len(files)))
 
         for file in self.all_files:
             file.metamapped_path = os.path.join(self.data_directory+"/metamapped", file.raw_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped"))

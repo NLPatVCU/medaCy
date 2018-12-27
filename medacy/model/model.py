@@ -1,13 +1,18 @@
+"""
+A medaCy named entity recognition model wraps together three functionalities
+"""
+
 import logging, os, joblib, time
 from tabulate import tabulate
 from statistics import mean
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
 from .stratified_k_fold import SequenceStratifiedKFold
 
 from medacy.pipelines.base.base_pipeline import BasePipeline
+from ._model import predict_document
 from ..tools import DataLoader
-from ..tools import model_to_ann
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
+
 
 
 
@@ -72,48 +77,58 @@ class Model:
 
 
 
-    def predict(self, new_data_loader, prediction_directory = None):
+    def predict(self, documents, prediction_directory = None):
         """
-        Predicts on the new data using the trained model, if model is not yet trained will return none.
-        Outputs predictions to a /predictions directory where new example data is located.
-        :param new_data_loader: DataLoader instance containing examples to predict on
+
+        :param documents: a document (string) or collection of documents contained in a DataLoader
+        :param prediction_directory: the directory to write predictions to if corpus is a DataLoader
         :return:
         """
 
-        assert isinstance(new_data_loader, DataLoader), "Must pass in an instance of DataLoader containing your examples to be used for prediction"
+        assert isinstance(documents, DataLoader) or isinstance(documents, str), "Must pass in an instance of DataLoader containing your examples to be used for prediction"
+        assert self.model is not None, "Must fit or load a pickled model before predicting"
 
-        if self.model is None:
-            return None
-        else:
-            model = self.model
 
+        model = self.model
         medacy_pipeline = self.pipeline
 
-        # create directory to write predictions to
-        if prediction_directory is None:
-            prediction_directory = new_data_loader.data_directory + "/predictions/"
+        if isinstance(documents, DataLoader):
+            # create directory to write predictions to
+            if prediction_directory is None:
+                prediction_directory = documents.data_directory + "/predictions/"
 
+            if os.path.isdir(prediction_directory):
+                logging.warning("Overwritting existing predictions")
+            else:
+                os.makedirs(prediction_directory)
 
-        if os.path.isdir(prediction_directory):
-            logging.warning("Overwritting existing predictions")
-        else:
-            os.makedirs(prediction_directory)
+            for data_file in documents.get_files():
+                logging.info("Predicting file: %s", data_file.file_name)
+                with open(data_file.raw_path, 'r') as raw_text:
+                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                    doc.set_extension('file_name', default=data_file.file_name, force=True)
+                    if data_file.metamapped_path is not None:
+                        doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
-        for data_file in new_data_loader.get_files():
-            logging.info("Predicting file: %s", data_file.file_name)
+                # run through the pipeline
+                doc = medacy_pipeline(doc, predict=True)
 
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                annotations = predict_document(model, doc, medacy_pipeline)
+                logging.debug("Writing to: %s", os.path.join(prediction_directory,data_file.file_name+".ann"))
+                annotations.to_ann(write_location=os.path.join(prediction_directory,data_file.file_name+".ann"))
 
-            if data_file.metamapped_path is not None:
-                doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+        if isinstance(documents, str):
+            assert 'metamap_annotator' not in self.pipeline.get_components(), \
+                "Cannot currently predict on the fly when metamap_component is in pipeline."
 
-            # run through the pipeline
+            doc = medacy_pipeline.spacy_pipeline.make_doc(documents)
+            doc.set_extension('file_name', default="STRING_INPUT", force=True)
             doc = medacy_pipeline(doc, predict=True)
+            annotations = predict_document(model, doc, medacy_pipeline)
+            return annotations
 
-            ann_file_contents = model_to_ann(model, medacy_pipeline, doc)
-            with open(prediction_directory+data_file.file_name+".ann", "a+") as f:
-                f.write(ann_file_contents)
+
+
 
 
     def cross_validate(self, num_folds=10):
@@ -238,7 +253,12 @@ class Model:
         # run 'er through
         doc = medacy_pipeline(doc)
 
-        doc
+        # print()
+        # print("Training on")
+        # for token in doc:
+        #     print(token, token._.feature_is_mass_unit, token.like_num, token._.feature_is_measurement,
+        #           token._.gold_label)
+        # print()
 
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc)
