@@ -117,9 +117,6 @@ class Annotations:
                 raise NotImplementedError("Normalization annotations are not implemented in medaCy")
 
 
-
-
-
     def __str__(self):
         return str(self.annotations)
 
