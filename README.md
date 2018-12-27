@@ -34,9 +34,9 @@ Medacy can be installed for general use or for pipeline development / research p
 
 
 # :books: User Guide
-Using medaCy is simple and [detailed examples](/examples) are provided: 
-1. Select a pipeline or build your own.
-2. Load training data (raw text and annotations)
+Using medaCy is simple and [detailed examples](examples/README.md) are provided:
+1. Select a pipeline (or [build your own](examples/guide/README.md)).
+2. [Load training data](examples/guide/data_management.md).
 3. Instantiate a Model with your chosen pipeline, train on your annotated data, and retrieve a model for prediction! 
 
 Training and using a Named Entity Recognition model for Clinical Text using medaCy:
@@ -63,7 +63,7 @@ train_loader.metamap(metamap)
 test_loader.metamap(metamap)
 
 # Choose which pipeline to use and what entities to classify
-pipeline = ClinicalPipeline(metamap=metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
+pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
 
 # Initialize a Model with the pipeline it will use to preprocess the data
 # The algorithm used for prediction is specified in the pipeline - ClinicalPipeline uses CRF(Conditional Random Field)
@@ -77,8 +77,7 @@ model.fit(train_loader)
 model.cross_validate(num_folds=10) 
 
 # Predictions appear in a /predictions subdirectory of your test data
-model.predict(test_loader) 
-
+model.predict(test_loader)
 ```
 
 One can also dump/load fitted models into a specified directory.
@@ -92,14 +91,15 @@ model.load('/path/to/dump/to') # Trained model is loaded back into medaCy
 
 Reference
 =========
-
-> @ARTICLE {,
->     author  = "Andriy Mulyar, Natassja Lewinski and Bridget McInnes",
->     title   = "TAC SRIE 2018: Extracting Systematic Review Information with MedaCy",
->     journal = "National Institute of Standards and Technology (NIST) 2018 Systematic Review Information Extraction (SRIE) > Text Analysis Conference",
->     year    = "2018",
->     month   = "nov"
-> }
+```
+@ARTICLE {
+    author  = "Andriy Mulyar, Natassja Lewinski and Bridget McInnes",
+    title   = "TAC SRIE 2018: Extracting Systematic Review Information with MedaCy",
+    journal = "National Institute of Standards and Technology (NIST) 2018 Systematic Review Information Extraction (SRIE) > Text Analysis Conference",
+    year    = "2018",
+    month   = "nov"
+}
+```
 
 License
 =======

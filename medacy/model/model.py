@@ -3,15 +3,14 @@ A medaCy named entity recognition model wraps together three functionalities
 """
 
 import logging, os, joblib, time
+from medacy.data import Dataset
+from .stratified_k_fold import SequenceStratifiedKFold
+from medacy.pipelines.base.base_pipeline import BasePipeline
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
+from ._model import predict_document
+from sklearn_crfsuite import metrics
 from tabulate import tabulate
 from statistics import mean
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
-from sklearn_crfsuite import metrics
-from .stratified_k_fold import SequenceStratifiedKFold
-
-from medacy.pipelines.base.base_pipeline import BasePipeline
-from ._model import predict_document
-from medacy.data import Dataset
 
 
 

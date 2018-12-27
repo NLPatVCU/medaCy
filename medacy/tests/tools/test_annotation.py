@@ -1,10 +1,8 @@
 import shutil,tempfile, pkg_resources
-
 from unittest import TestCase
-from os.path import join
 from medacy.data import Dataset
 from medacy.tools import Annotations
-
+from os.path import join
 
 class TestAnnotation(TestCase):
 

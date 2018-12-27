@@ -221,10 +221,8 @@ class Dataset:
         """
         return self.data_directory
 
-
-
-
-
+    def __str__(self):
+        return "[%s]" % ",".join(self.get_data_files())
 
 
     @staticmethod

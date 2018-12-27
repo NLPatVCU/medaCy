@@ -1,4 +1,3 @@
-
 class DataFile:
     """DataFile wraps all relevent information needed to manage a text document and it's corresponding annotation"""
 

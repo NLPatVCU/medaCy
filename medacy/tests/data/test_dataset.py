@@ -1,6 +1,7 @@
+import shutil, tempfile, os, importlib, pkg_resources
 from unittest import TestCase
 from medacy.data import Dataset
-import shutil, tempfile, os, importlib, pkg_resources
+
 
 class TestDatasetLocal(TestCase):
     """
@@ -107,6 +108,7 @@ class TestDatasetExternal(TestCase):
         :return:
         """
         self.assertTrue(self.dataset.is_metamapped())
+
     def test_limit(self):
         """
         Tests limiting a file
@@ -114,6 +116,7 @@ class TestDatasetExternal(TestCase):
         """
         self.dataset.set_data_limit(5)
         self.assertEqual(len(self.dataset.get_data_files()), 5)
+
 
 
 
