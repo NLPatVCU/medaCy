@@ -17,7 +17,7 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 MedaCy actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
-receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](/CONTRIBUTING.md).
+receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
 Medacy can be installed for general use or for pipeline development / research purposes.
@@ -29,65 +29,21 @@ Medacy can be installed for general use or for pipeline development / research p
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
-**Note:** Make sure you have at the least spaCy's small model installed.
-`pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz`
-
-
-# :books: User Guide
-Using medaCy is simple and [detailed examples](examples/README.md) are provided:
-1. Select a pipeline (or [build your own](examples/guide/README.md)).
-2. [Load training data](examples/guide/data_management.md).
-3. Instantiate a Model with your chosen pipeline, train on your annotated data, and retrieve a model for prediction! 
-
-Training and using a Named Entity Recognition model for Clinical Text using medaCy:
+# :books: Power of medaCy
+After installing medaCy and [medaCy's clinical model](examples/models/clinical_notes_model.md), simply run:
 
 ```python
 from medacy.model import Model
-from medacy.pipelines import ClinicalPipeline
-from medacy.tools import DataLoader
-from medacy.pipeline_components import MetaMap
-import logging, sys
 
-# See what medaCy is doing at any part of the learning or prediction process
-logging.basicConfig(stream=sys.stdout,level=logging.INFO) #set level=logging.DEBUG for more information
-
-# Load in and organize traiing and testing files
-train_loader = DataLoader("/training/directory")
-test_loader = DataLoader("/evaluation/directory")
-
-# MetaMap is required for powerful ClinicalPipeline performance, configure to your MetaMap path
-metamap = MetaMap(metamap_path="/home/share/programs/metamap/2016/public_mm/bin/metamap")
-
-# Optionally pre-MetaMap data to speed up performance
-train_loader.metamap(metamap)
-test_loader.metamap(metamap)
-
-# Choose which pipeline to use and what entities to classify
-pipeline = ClinicalPipeline(metamap, entities=['Drug', 'Form', 'Route', 'ADE', 'Reason', 'Frequency', 'Duration', 'Dosage', 'Strength'])
-
-# Initialize a Model with the pipeline it will use to preprocess the data
-# The algorithm used for prediction is specified in the pipeline - ClinicalPipeline uses CRF(Conditional Random Field)
-model = Model(pipeline)
-
-#  Run training docs through pipeline and fit the model
-model.fit(train_loader) 
-
-# Perform 10-fold stratified cross-validation on the data used to fit the model
-# Can also pass in a DataLoader instance to instead cross validate on new data
-model.cross_validate(num_folds=10) 
-
-# Predictions appear in a /predictions subdirectory of your test data
-model.predict(test_loader)
+model = Model.load_external('medacy_model_clinical_notes')
+annotation = model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
+print(annotation)
 ```
-
-One can also dump/load fitted models into a specified directory.
+and recieve instant predictions:
 ```python
-model.fit(train_loader)
-model.dump('/path/to/dump/to') # Trained model is now stored at specified directory
-model.load('/path/to/dump/to') # Trained model is loaded back into medaCy
-
-``` 
-
+{'entities': {'T3': ('Drug', 40, 45, 'Advil'), 'T1': ('Dosage', 27, 28, '1'), 'T2': ('Form', 29, 36, 'capsule'), 'T4': ('Duration', 46, 56, 'for 5 days')}, 'relations': []}
+```
+To explore medaCy's other models or train your, visit the [examples section](examples).
 
 Reference
 =========
