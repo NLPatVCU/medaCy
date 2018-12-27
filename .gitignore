@@ -165,6 +165,9 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+# VSCode Settings
+.vscode
+
 *.pyc
 *.egg-info
 *.eggs/
