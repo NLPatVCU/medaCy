@@ -4,16 +4,16 @@ A Dataset object provides a wrapper for a unix file directory containing trainin
 data. If a Dataset, at training time, is fed into a pipeline requiring auxilary files
 (Metamap for instance) the Dataset will automatically create those files in the most efficient way possible.
 
-= Training
+# Training
 When a directory contains **both** raw text files alongside annotation files, an instantiated Dataset
 detects and facilitates access to those files.
 
-= Prediction
+# Prediction
 When a directory contains **only** raw text files, an instantiated Dataset object interprets this as
 a directory of files that need to be predicted. This means that the internal Datafile that aggregates
 meta-data for a given prediction file does not have fields for annotation_file_path set.
 
-= External Datasets
+# External Datasets
 An actual dataset can be versioned and distributed by interfacing this class as described in the
 Dataset examples. Existing Datasets can be imported by installing the relevant python packages that
 wrap them.
@@ -32,14 +32,14 @@ class Dataset:
                  raw_text_file_extension="txt",
                  annotation_file_extension="ann",
                  metamapped_files_directory = None,
-                 limit=None):
+                 data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
         :param data_directory: Directory containing data for training or prediction.
         :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
         :param annotation_file_extension: The file extension of annotation files in the data_directory (default: *.ann*)
         :param metamapped_files_directory: Location to store metamapped files (default: a sub-directory named *metamapped*)
-        :param limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
+        :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
         self.data_directory = data_directory
         self.raw_text_file_extension = raw_text_file_extension
@@ -57,11 +57,14 @@ class Dataset:
 
         if raw_text_files is None:
             raise ValueError("No raw text files exist in directory: %s" % self.data_directory)
-        if limit is not None and (limit < 1 or limit > len(raw_text_files)):
-            raise ValueError("Parameter 'limit' must be between 1 and number of raw text files in data_directory")
 
-        if limit is not None and 0 < limit and limit <= len(raw_text_files):
-            raw_text_files = raw_text_files[0:limit]
+        if data_limit is not None:
+            self.data_limit = data_limit
+        else:
+            self.data_limit = len(raw_text_files)
+
+        if self.data_limit < 1 or self.data_limit > len(raw_text_files):
+            raise ValueError("Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
 
         # required ann files for this to be a training directory
         ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension) for file in
@@ -91,12 +94,12 @@ class Dataset:
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
 
-    def get_files(self):
+    def get_data_files(self):
         """
         Retrieves an list containing all the files registered by a Dataset.
         :return: a list of DataFile objects.
         """
-        return self.all_data_files
+        return self.all_data_files[0:self.data_limit]
 
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
         """
@@ -176,16 +179,14 @@ class Dataset:
 
     def is_metamapped(self):
         """
-        Verifies if all files in the Dataset are metamapped.
+        Verifies if all fil es in the Dataset are metamapped.
         :return: True if all data files are metamapped, False otherwise.
         """
-
         if not os.path.isdir(self.metamapped_files_directory):
             return False
 
         for file in self.all_data_files:
-            potential_file_path = os.path.join(self.metamapped_files_directory,
-                                               file.file_name.replace(".%s" % self.raw_text_file_extension, ".metamapped"))
+            potential_file_path = os.path.join(self.metamapped_files_directory, "%s.metamapped" % file.file_name)
             if not os.path.isfile(potential_file_path):
                 return False
 
@@ -205,6 +206,25 @@ class Dataset:
         """
         return self.is_training_directory
 
+    def set_data_limit(self, data_limit):
+        """
+        A limit to the number of files in the Dataset that medaCy works with
+        This is useful for preliminary experimentation when working with an entire Dataset takes time.
+        :return:
+        """
+        self.data_limit = data_limit
+
+    def get_data_directory(self):
+        """
+        Retrieves the directory this Dataset abstracts from.
+        :return:
+        """
+        return self.data_directory
+
+
+
+
+
 
 
     @staticmethod
@@ -215,9 +235,8 @@ class Dataset:
         :param package_name: the package name of the dataset
         :return: an instance of Dataset that wraps the re
         """
-        spec = importlib.util.find_spec(package_name)
-        if spec is None:
-            raise ValueError("Package not installed: %s" % package_name)
+        if importlib.util.find_spec(package_name) is None:
+            raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
 
 

@@ -48,7 +48,7 @@ setup(
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.1.tar.gz#egg=medacy_dataset_end-1.0.1'
+        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.2.tar.gz#egg=medacy_dataset_end-1.0.2'
     ],
     install_requires=[
         'spacy>=2.0.13',
