@@ -39,7 +39,7 @@ model = Model.load_external('medacy_model_clinical_notes')
 annotation = model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
 print(annotation)
 ```
-and recieve instant predictions:
+and receive instant predictions:
 ```python
 {'entities': {'T3': ('Drug', 40, 45, 'Advil'), 'T1': ('Dosage', 27, 28, '1'), 'T2': ('Form', 29, 36, 'capsule'), 'T4': ('Duration', 46, 56, 'for 5 days')}, 'relations': []}
 ```
