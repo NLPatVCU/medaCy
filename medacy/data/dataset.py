@@ -231,7 +231,7 @@ class Dataset:
         Loads an external medaCy compatible dataset. Requires the dataset's associated package to be installed.
         Alternatively, you can import the package directly and call it's .load() method.
         :param package_name: the package name of the dataset
-        :return: an instance of Dataset that wraps the re
+        :return: an instance of Dataset that contains the dataset encapsulated in package_name
         """
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)

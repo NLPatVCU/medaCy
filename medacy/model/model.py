@@ -2,7 +2,7 @@
 A medaCy named entity recognition model wraps together three functionalities
 """
 
-import logging, os, joblib, time
+import logging, os, joblib, time, importlib
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
 from medacy.pipelines.base.base_pipeline import BasePipeline
@@ -311,6 +311,18 @@ class Model:
                 ]
 
         return "\n".join(text)
+
+    @staticmethod
+    def load_external(package_name):
+        """
+        Loads an external medaCy compatible Model. Require's the models package to be installed
+        Alternatively, you can import the package directly and call it's .load() method.
+        :param package_name: the package name of the model
+        :return: an instance of Model that is configured and loaded - ready for prediction.
+        """
+        if importlib.util.find_spec(package_name) is None:
+            raise ImportError("Package not installed: %s" % package_name)
+        return importlib.import_module(package_name).load()
 
     def __str__(self):
         return self.get_info()
