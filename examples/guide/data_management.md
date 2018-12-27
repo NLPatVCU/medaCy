@@ -15,6 +15,10 @@ is referred to as a *prediction dataset*. A [Dataset](../../medacy/data/dataset.
 be used for training if and only if each raw text file has a corresponding annotation file - hence,
 we refer to this as a *training dataset*.
 
+## Table of contents
+1. [Creating a Dataset](#creating-a-dataset)
+2. [Using a Dataset](#using-a-dataset)
+
 ## Creating a Dataset
 MedaCy provides two functionalities for loading data:
 1. [Loading data from your machine](#loading-data-locally).
@@ -22,6 +26,68 @@ MedaCy provides two functionalities for loading data:
 
 
 ## Loading data locally
+To create a *Dataset*, simply instantiate one with a path to the directory containing your data.
+
+```python
+from medacy.data import Dataset
+
+data = Dataset('/home/medacy/data')
+```
+
+MedaCy **does not** alter the data you load in any way - it only reads from it.
+
+A common data work flow might look like this.
+
+Assuming your directory is structured as follows:
+
+```
+home/medacy/data
+├── file_one.ann
+├── file_one.txt
+├── file_two.ann
+└── file_two.txt
+```
+
+running:
+
+```python
+from medacy.data import Dataset
+from medacy.pipeline_components import MetaMap
+
+data = Dataset('/home/medacy/data')
+for data_file in data.get_data_files():
+  print(data_file.file_name)
+print(data)
+print(data.is_metamapped())
+
+metamap = Metamap('/home/path/to/metamap/binary')
+data.metamap(metamap)
+print(data.is_metamapped())
+```
+
+outputs:
+
+```python
+file_one
+file_two
+['file_one.txt', file_two]
+False
+True
+```
+
+If all your data metamapped successfully, your directory will look like this:
+
+```
+data
+├── file_one.ann
+├── file_one.txt
+├── file_two.ann
+├── file_two.txt
+└── metamapped
+    ├── file_one.metamapped
+    └── file_two.metamapped
+```
+
 
 
 ## Loading a medaCy compatible dataset
@@ -56,4 +122,5 @@ dataset, entities = medacy_dataset_end.load()
 
 ```
 
-### Loading
+## Using a Dataset
+
