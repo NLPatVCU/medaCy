@@ -78,7 +78,7 @@ True
 If all your data metamapped successfully, your directory will look like this:
 
 ```
-data
+home/medacy/data
 ├── file_one.ann
 ├── file_one.txt
 ├── file_two.ann
