@@ -70,7 +70,7 @@ def find_line_num(text_, start):
 def get_relative_index(text_: str, line_, absolute_index):
     """
     Takes the index of a phrase (the phrase itself is not a parameter) relative to the start of its
-    file and returns its index relative to the start of the line that it's on. Assumes that the text_
+    file and returns its index relative to the start of the line that it's on. Assumes that the line_
     argument is long enough that (and thus so specific that) it only occurs once.
     :param text_: The text of the file, not separated by lines
     :param line_: The text of the line being searched for
