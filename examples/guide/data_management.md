@@ -123,4 +123,11 @@ dataset, entities = medacy_dataset_end.load()
 ```
 
 ## Using a Dataset
+A *Dataset* is utilized for two main tasks:
 
+1. [Model Training](#model-training)
+2. [Model Prediction](#model-prediction)
+
+### Model Training
+
+### Model Prediction
