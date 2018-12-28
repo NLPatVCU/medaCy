@@ -48,7 +48,7 @@ class Annotations:
                 raise FileNotFoundError("annotation_data is not a valid file path")
 
             if annotation_type not in self.supported_file_types:
-                raise InvalidAnnotationError("medaCy currently only supports %s annotation files"
+                raise NotImplementedError("medaCy currently only supports %s annotation files"
                                              % (str(self.supported_file_types)))
             if annotation_type == 'ann':
                 self.from_ann(annotation_data)
