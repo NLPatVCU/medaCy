@@ -15,6 +15,15 @@ is referred to as a *prediction dataset*. A [Dataset](../../medacy/data/dataset.
 be used for training if and only if each raw text file has a corresponding annotation file - hence,
 we refer to this as a *training dataset*.
 
+For the following examples, assume your data directory *home/medacy/data* is structure as follows:
+```
+home/medacy/data
+├── file_one.ann
+├── file_one.txt
+├── file_two.ann
+└── file_two.txt
+```
+
 ## Table of contents
 1. [Creating a Dataset](#creating-a-dataset)
 2. [Using a Dataset](#using-a-dataset)
@@ -38,24 +47,14 @@ MedaCy **does not** alter the data you load in any way - it only reads from it.
 
 A common data work flow might look like this.
 
-Assuming your directory is structured as follows:
-
-```
-home/medacy/data
-├── file_one.ann
-├── file_one.txt
-├── file_two.ann
-└── file_two.txt
-```
-
 running:
 
 ```python
 from medacy.data import Dataset
 from medacy.pipeline_components import MetaMap
 
-data = Dataset('/home/medacy/data')
-for data_file in data.get_data_files():
+dataset = Dataset('/home/medacy/data')
+for data_file in dataset.get_data_files():
   print(data_file.file_name)
 print(data)
 print(data.is_metamapped())
@@ -70,12 +69,12 @@ outputs:
 ```python
 file_one
 file_two
-['file_one.txt', file_two]
+['file_one.txt', 'file_two.txt']
 False
 True
 ```
 
-If all your data metamapped successfully, your directory will look like this:
+If all your data metamapped successfully, your data directory will look like this:
 
 ```
 home/medacy/data
@@ -93,7 +92,7 @@ home/medacy/data
 ## Loading a medaCy compatible dataset
 Using a *medaCy compatible dataset* package to manage your training data insures that data is easy and efficient to access, versioned for replicability, and distributable (selectively!).
 
-An *medaCy compatible dataset* is python package wrapping data that can be hooked into medaCy. We can install a *medaCy compatible dataset* just like any python package. For instance,
+A *medaCy compatible dataset* is python package wrapping data that can be hooked into medaCy. We can install a *medaCy compatible dataset* just like any python package. For instance,
 
 
 `pip install https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.2.tar.gz#egg=medacy_dataset_end-1.0.2`
@@ -129,5 +128,46 @@ A *Dataset* is utilized for two main tasks:
 2. [Model Prediction](#model-prediction)
 
 ### Model Training
+To utilize a *Dataset* for training insure that the data you're loading is valid training data in a supported annotation format. After creating a *Model* with a processing *Pipeline*, simply pass the *Dataset* in for prediction. Here is an example of training an NER model for extraction of information relevant to nano-particles.
+
+```python
+from medacy.data import Dataset
+from medacy.pipelines import FDANanoDrugLabelPipeline
+
+dataset = Dataset('/home/medacy/data')
+entities = ['Nanoparticle', 'Dose']
+pipeline = FDANanoDrugLabelPipeline(entities=entities)
+model = Model(pipeline, n_jobs=1)
+
+model.fit(dataset)
+```
+
+**Note**: Unless you have tuned your *Pipeline* to extract features relevant to your problem domain, the trained model will likely not be very predictive. See [Training a model](model_training.md).
 
 ### Model Prediction
+
+Once you have a trained or imported a model, pass in a Dataset object for bulk prediction of text.
+
+```python
+from medacy.data import Dataset
+from medacy.model import Model
+
+dataset = Dataset('/home/medacy/data')
+model = Model.load_external('medacy_model_clinical_notes')
+
+model.predict(dataset)
+```
+
+By default, this creates a sub-directory in your prediction dataset named *predictions*. Assuming the file structure described previously, your directory would look like this:
+
+```
+/home/medacy/data
+├── file_one.txt
+├── file_two.txt
+└── predictions
+    ├── file_one.ann
+    └── file_two.ann
+```
+
+where all files under *predictions* are the trained models predictions over your test data.
+
