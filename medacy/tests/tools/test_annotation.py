@@ -1,8 +1,10 @@
-import shutil,tempfile, pkg_resources
+import shutil, tempfile, pkg_resources
 from unittest import TestCase
 from medacy.data import Dataset
-from medacy.tools import Annotations
+from medacy.tools import Annotations, InvalidAnnotationError
 from os.path import join
+from medacy.tests.tools.con_test_data.con_test import con_text, source_text as con_source_text
+
 
 class TestAnnotation(TestCase):
 
@@ -12,7 +14,7 @@ class TestAnnotation(TestCase):
         Loads END dataset and writes files to temp directory
         :return:
         """
-        cls.test_dir = tempfile.mkdtemp() #set up temp directory
+        cls.test_dir = tempfile.mkdtemp()  # set up temp directory
         cls.dataset, cls.entities = Dataset.load_external('medacy_dataset_end')
         cls.ann_files = []
         # fill directory of training files
@@ -23,7 +25,6 @@ class TestAnnotation(TestCase):
         with open(join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:
             f.write("This is clearly not a valid ann file")
 
-
     @classmethod
     def tearDownClass(cls):
         """
@@ -31,7 +32,7 @@ class TestAnnotation(TestCase):
         :return:
         """
         pkg_resources.cleanup_resources()
-        shutil.rmtree(cls.test_dir) #remove temp directory and delete all files
+        shutil.rmtree(cls.test_dir)  # remove temp directory and delete all files
 
     def test_init_from_dict(self):
         """
@@ -46,7 +47,7 @@ class TestAnnotation(TestCase):
         Tests initialization from valid ann file
         :return:
         """
-        annotations = Annotations(join(self.dataset.get_data_directory(),self.ann_files[0]), annotation_type='ann')
+        annotations = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
         self.assertIsNotNone(annotations.get_entity_annotations())
 
     def test_init_from_invalid_dict(self):
@@ -54,25 +55,23 @@ class TestAnnotation(TestCase):
         Tests initialization from invalid dict file
         :return:
         """
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(InvalidAnnotationError):
             annotations = Annotations({})
-
 
     def test_init_from_invalid_ann(self):
         """
         Tests initialization from invalid annotation file
         :return:
         """
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(FileNotFoundError):
             annotations = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0][:-1]), annotation_type='ann')
-
 
     def test_init_from_non_dict_or_string(self):
         """
         Tests initialization from non-dictionary or string
         :return:
         """
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(InvalidAnnotationError):
             annotations = Annotations(list(), annotation_type='ann')
 
     def test_init_from_broken_ann_file(self):
@@ -80,8 +79,8 @@ class TestAnnotation(TestCase):
         Tests initialization from a correctly structured but ill-formated ann file
         :return:
         """
-        with self.assertRaises(AssertionError):
-            annotations = Annotations(join(self.test_dir,"broken_ann_file.ann"), annotation_type='ann')
+        with self.assertRaises(InvalidAnnotationError):
+            annotations = Annotations(join(self.test_dir, "broken_ann_file.ann"), annotation_type='ann')
 
     def test_ann_conversions(self):
         """
@@ -110,7 +109,29 @@ class TestAnnotation(TestCase):
         annotations = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
         self.assertIsInstance(annotations.get_entity_annotations(), list)
 
+    def test_good_con_data(self):
+        """Tests to see if valid con data can be used to instantiate an Annotations object."""
+        with open(join(self.test_dir, "test_con.con"), 'w+') as c,\
+                open(join(self.test_dir, "test_con_text.txt"), 'w+') as t:
+            c.write(con_text)
+            t.write(con_source_text)
 
+            annotations = Annotations(c.name, annotation_type='con', source_text_path=t.name)
+            self.assertIsInstance(annotations.get_entity_annotations(), list)
 
+    def test_bad_con_data(self):
+        """Tests to see if invalid con data will raise InvalidAnnotationError."""
+        with open(join(self.test_dir, "bad_con.con"), 'w+') as c,\
+                open(join(self.test_dir, "test_con_text.txt"), 'w+') as t:
+            c.write("This string wishes it was a valid con file.")
+            t.write("It doesn't matter what's in this file as long as it exists.")
 
+            Annotations(c.name, annotation_type='con', source_text_path=t.name)
+            self.assertRaises(InvalidAnnotationError)
 
+    def test_good_con_data_without_text(self):
+        """Tests to see if not having a source text file will raise FileNotFoundError."""
+        with open(join(self.test_dir, "test_con.con"), 'w+') as c:
+                c.write(con_text)
+                with self.assertRaises(FileNotFoundError):
+                    Annotations(c.name, annotation_type='con', source_text_path=None)
