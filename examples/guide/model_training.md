@@ -53,7 +53,7 @@ and parallel labels:
 [['Other', 'Other', 'Other', 'Other', 'Drug', 'Other, 'Other, 'Reason'], ['Other', 'Other', 'Other', 'Other', 'Other', 'ADE' ]]
 ```
 
-CRF's discriminatively approximate parameters to a probality distribution over labels with priors given by the corresponding features. Come time for prediction, the token label maximizing log-likelihood given its feature representation is selected as the model prediction.
+CRF's discriminatively approximate parameters to a probability distribution over labels with priors given by corresponding features. Come time for prediction, the token label maximizing log-likelihood given its feature representation is selected as the model prediction.
 
 By default, medaCy merges consecutive tokens with equivalent predicted labels into single predicted phrases.
 
