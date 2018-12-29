@@ -1,5 +1,5 @@
 # Training a medaCy Model
-The power of medaCy resides in its model training ability. While closely following spaCy's [Language](https://spacy.io/usage/adding-languages) architecture, medaCy allows the inclusion of features, machine learning algorithms, functionalities not supported by spaCy. Every medaCy pipeline is built overtop of a spaCy language and can thus interface and utilize any components of that Language (such as lemmatizers, POS tagges and dependency parsers).
+The power of medaCy resides in its model training ability. While closely following spaCy's [Language](https://spacy.io/usage/adding-languages) architecture, medaCy allows the inclusion of features, machine learning algorithms, functionalities not supported by spaCy. Every medaCy pipeline is built overtop of a spaCy Language and can thus interface and utilize any components of that Language (such as lemmatizers, POS taggers and dependency parsers).
 
 Any model trained with medaCy can be [saved, versioned, and easily distributed](packaging_a_medacy_model.md).
 
@@ -18,7 +18,7 @@ When a document enters medaCy, it is first tokenized. MedaCy does not work with 
 
 Proper document tokenization depends on the domain. In some domains text naturally lends to being tokenized by spaces (think plain english) while other domains require a bit more sophistication. For instance, medaCy's [Clinical Model](../models/clinical_notes_model.md) utilizes a character level tokenization. This means that the end learning algorithm classifies sequences of characters - not words.
 
-medaCy utilizes the tokenization functionality provided by spaCy. That is, a set of tokenization rules is defined and then utilized to transform the document text into a spaCy [Doc](https://spacy.io/api/doc) object. In short, a [Doc](https://spacy.io/api/doc) object wraps C code that allows for its ightning fast manipulation.
+medaCy utilizes the tokenization functionality provided by spaCy. That is, a set of tokenization rules is defined and then utilized to transform the document text into a spaCy [Doc](https://spacy.io/api/doc) object. In short, a [Doc](https://spacy.io/api/doc) object wraps C code that allows for its lightning fast manipulation.
 
 Select a medaCy pre-configured tokenizer or [build your own](building_a_custom_tokenizer.md).
 
@@ -31,5 +31,29 @@ Alongside overlaying features, pipeline components can be utilized for the mergi
 
 ## Feature Extraction
 
+As stated in the [previous section](#feature-overlaying-and-token-merging), a document composed of tokens emerges out of a pipeline with custom attributes set on each token. The medaCy *FeatureExtractor* utilizes these custom attributes as features alongside attributes that are set by spaCy. The *FeatureExtractor* identifies token attributes that are meant to used as features during model training by collecting all custom attributes prefixed with `feature_`. To give tokens context, for each  token the *FeatureExtractor* gathers attributes of neighboring tokens in a `window_size`. Varying the `window_size` parameter of the *FeatureExtractor* varies the contextual cues given to the underlying model: too small of a `window_size` and powerful contextual information is lost; to large, and model crippling noise overshadows meaningful attributes during model induction. Remember to keep in mind the tokenizer used by your pipeline when selecting an appropriate `window_size` - a tokenizer that atomizes your document into characters fed into a FeatureExtractor with a small `window_size` would clearly not be effective at even extracting single word entities let alone multi-word phrases. 
 
+## Model selection
+By default, medaCy utilizes a discriminative [Conditional Random Field](https://en.wikipedia.org/wiki/Conditional_random_field)(CRF's) for classification. CRF's are a class of machine learning algorithms capable of inducing highly predictive models when presented with sequence data rich in interdependency between labels and features. Sequence data is characterized by sequences of objects each with a corresponding label and set of observations. For instance consider the following sentences tokenized by spaces:
+
+```
+The patient was given tylenol for her headache. Later that day she experienced nausea.
+```
+
+the corresponding representation fed into the CRF would correspond to two token sequences:
+
+characterized by features
+
+```
+[[{'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}], [{'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}, {'feature1':value1, 'feature2':value2}]]
+```
+and parallel labels:
+
+```
+[['Other', 'Other', 'Other', 'Other', 'Drug', 'Other, 'Other, 'Reason'], ['Other', 'Other', 'Other', 'Other', 'Other', 'ADE' ]]
+```
+
+CRF's discriminatively approximate parameters to a probality distribution over labels with priors given by the corresponding features. Come time for prediction, the token label maximizing log-likelihood given its feature representation is selected as the model prediction.
+
+By default, medaCy merges consecutive tokens with equivalent predicted labels into single predicted phrases.
 
