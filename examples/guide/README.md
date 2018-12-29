@@ -6,6 +6,8 @@ medaCy has to offer.
 1. [Managing Data](data_management.md)
   + [Creating medaCy compatible datasets](creating_an_external_dataset.md)
 2. [Training a Model](model_training.md)
+  + [Building a custom tokenizer](building_a_custom_tokenizer.md)
+  + [Building a pipeline component]('building_a_custom_pipeline_component.md')
   + [Sharing your medaCy models](packaging_a_medacy_model.md)
 3. [Application of Models](model_utilization.md)
 
