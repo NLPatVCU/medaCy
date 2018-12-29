@@ -71,23 +71,24 @@ class Annotations:
 
     def to_ann(self, write_location=None):
         """
-        Formats the Annotations object into a valid ANN file. Optionally writes the formatted file to a destination.
+        Formats the Annotations object into a string representing a valid ANN file. Optionally writes the formatted
+        string to a destination.
         :param write_location: path of location to write ann file to
-        :return: returns string formatted as ann file, if write_location is valid path also writes to that path.
+        :return: returns string formatted as an ann file, if write_location is valid path also writes to that path.
         """
-        ann_file = ""
+        ann_string = ""
         entities = self.get_entity_annotations(return_dictionary=True)
         for key in sorted(entities.keys(), key= lambda element: int(element[1:])): #Sorts by entity number
             entity, first_start, last_end, labeled_text = entities[key]
-            ann_file += "%s\t%s %i %i\t%s\n" % (key, entity, first_start, last_end, labeled_text.replace('\n', ' '))
+            ann_string += "%s\t%s %i %i\t%s\n" % (key, entity, first_start, last_end, labeled_text.replace('\n', ' '))
 
         if write_location is not None:
             if os.path.isfile(write_location):
                 logging.warning("Overwriting file at: %s", write_location)
             with open(write_location, 'w') as file:
-                file.write(ann_file)
+                file.write(ann_string)
 
-        return ann_file
+        return ann_string
 
     def from_ann(self, ann_file):
         """
@@ -173,6 +174,30 @@ class Annotations:
         with open(temp_ann_file, "w+") as f:
             f.write(ann_from_con)
             self.from_ann(f.name)  # must pass the name to self.from_ann() to ensure compatibility
+
+    def diff(self, other_anno):
+        """
+        Identifies the difference between two Annotations objects. Useful for checking if an unverified annotation
+        matches an annotation known to be accurate.
+        :param other_anno: Another Annotations object.
+        :return: A list of tuples of non-matching annotation pairs.
+        """
+        if not isinstance(other_anno, Annotations):
+            raise ValueError("Annotations.diff() can only accept another Annotations object as an argument.")
+
+        these_entities = list(self.annotations['entities'].values())
+        other_entities = list(other_anno.annotations['entities'].values())
+
+        if these_entities.__len__() != other_entities.__len__():
+            raise ValueError("These annotations cannot be compared because they contain a different number of entities.")
+
+        non_matching_annos = []
+
+        for i in range(0, these_entities.__len__()):
+            if these_entities[i] != other_entities[i]:
+                non_matching_annos.append(tuple(these_entities[i], other_entities[i]))
+
+        return non_matching_annos
 
     def __str__(self):
         return str(self.annotations)
