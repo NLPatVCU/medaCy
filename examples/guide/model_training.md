@@ -9,6 +9,7 @@ In training a medaCy model you are concerned with three things:
 2. [Feature Overlaying and Token Merging](#feature-overlaying-and-token-merging)
 3. [Feature Extraction](#feature-extraction)
 4. [Model Selection and Tuning](#model-selection)
+5. [Bringing it all Together](#bringing-it-all-together)
 
 These components co-exist in a *Pipeline* - a medaCy model is hence simply a fine-tuned configuration of these components for the task at hand.
 
@@ -56,4 +57,91 @@ and parallel labels:
 CRF's discriminatively approximate parameters to a probability distribution over labels with priors given by corresponding features. Come time for prediction, the token label maximizing log-likelihood given its feature representation is selected as the model prediction.
 
 By default, medaCy merges consecutive tokens with equivalent predicted labels into single predicted phrases.
+
+
+## Bringing it all together
+The previously mentioned components make up a medaCy model. In summary training a medaCy model looks like this - this example utilizes the `ClinicalPipeline` included in medaCy without *MetaMap* enabled:
+
+```python
+from medacy.data import Dataset
+from medacy.pipelines import ClinicalPipeline
+from medacy.model import Model
+
+entities = ['Drug', 'Strength']
+
+training_dataset = Dataset('/home/medacy/clinical_training_data/')
+pipeline = ClinicalPipeline(metamap=None, entities=entities)
+model = Model(pipeline, n_jobs=30) #distribute documents between 30 processes during training and prediction
+
+model.fit(training_dataset)
+
+model.dump('/home/medacy/clinical_model.pickle')
+
+
+```
+
+The `ClinicalPipeline` source looks like this:
+
+```python
+import spacy, sklearn_crfsuite
+from .base import BasePipeline
+from ..pipeline_components import ClinicalTokenizer
+from medacy.model.feature_extractor import FeatureExtractor
+
+from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent, MetaMap
+
+class ClinicalPipeline(BasePipeline):
+    """
+    A pipeline for clinical named entity recognition. A special tokenizer that breaks down a clinical document
+    to character level tokens defines this pipeline.
+    """
+
+    def __init__(self, metamap=None, entities=[]):
+        """
+        Create a pipeline with the name 'clinical_pipeline' utilizing
+        by default spaCy's small english model.
+
+        :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
+        """
+        description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
+        super().__init__("clinical_pipeline",
+                         spacy_pipeline=spacy.load("en_core_web_sm"),
+                         description=description,
+                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
+                         organization="NLP@VCU"
+                         )
+
+        self.entities = entities
+
+        self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
+
+        self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
+
+        if metamap is not None and isinstance(metamap, MetaMap):
+            self.add_component(MetaMapComponent, metamap)
+
+        #self.add_component(UnitComponent)
+
+
+    def get_learner(self):
+        return ("CRF_l2sgd", sklearn_crfsuite.CRF(
+            algorithm='l2sgd',
+            c2=0.1,
+            max_iterations=100,
+            all_possible_transitions=True
+        ))
+
+    def get_tokenizer(self):
+        tokenizer = ClinicalTokenizer(self.spacy_pipeline)
+        return tokenizer.tokenizer
+
+    def get_feature_extractor(self):
+        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
+        return extractor
+```
+
+
+The `__init__` method defines pipeline meta-data along with initializing the sequence of components the pipeline will use to annotate custom token attributes over the document. The token attributes beginning with `feature_` are automically collection by the `FeatureExtractor` initialized in the `get_feature_extractor` method. Note the instantiation of the `FeatureExtractor` allows the definition of `spacy_features` to utilize - these can be any attribute of a spaCy [Token](https://spacy.io/api/token#attributes).
+
+
 
