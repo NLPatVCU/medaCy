@@ -119,4 +119,3 @@ class TestConToBrat(unittest.TestCase):
         """Assert that invalid brat text produces no output."""
         brat_output = convert_con_to_brat(self.bad_con_file_path, self.text_file_path)
         self.assertFalse(brat_output)
-
