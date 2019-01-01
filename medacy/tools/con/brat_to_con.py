@@ -137,7 +137,7 @@ def convert_brat_to_con(brat_file_path, text_file_path=None):
         end_word_num = get_end_word_index(d["data_item"], start_char_num, end_char_num)
         end_str = str(end_line_num + 1) + ':' + str(end_word_num)
 
-        con_line = "c=\"%s\" %s %s||t=\"%s\"\n " % (d["data_item"], start_str, end_str, d['data_type'])
+        con_line = "c=\"%s\" %s %s||t=\"%s\"\n" % (d["data_item"], start_str, end_str, d['data_type'])
         output_lines += con_line
 
     return output_lines
