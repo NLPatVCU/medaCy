@@ -7,7 +7,7 @@ in the conversion process to the output directory.
 Function 'convert_con_to_brat()' can be imported independently and run on individual files.
 
 :author: Steele W. Farnsworth
-:date: 27 December, 2018
+:date: 30 December, 2018
 """
 
 from sys import argv as cmd_arg, exit
@@ -115,8 +115,7 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
         start_ind = get_absolute_index(text, text_lines, d["start_ind"])
         span_length = d["data_item"].__len__()
         end_ind = start_ind + span_length
-        output_line = "T" + str(t) + "\t" + d["data_type"] + " " + str(start_ind) + " " + str(end_ind) + "\t" \
-            + d["data_item"] + "\n"
+        output_line = "T%s\t%s %s %s\t%s\n" % (str(t), d["data_type"], str(start_ind), str(end_ind), d["data_item"])
         output_text += output_line
         t += 1
 

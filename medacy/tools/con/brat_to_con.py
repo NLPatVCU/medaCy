@@ -8,7 +8,7 @@ Also possible to import 'convert_brat_to_con()' directly and pass the paths to t
 for individual conversion.
 
 :author: Steele W. Farnsworth
-:date: 27 December, 2018
+:date: 30 December, 2018
 """
 
 from sys import argv as cmd_arg
@@ -20,9 +20,9 @@ import shutil
 def check_valid_line(item: str):
     """Returns a boolean value for whether or not a given line is in the BRAT format. Tests are not comprehensive."""
     if not isinstance(item, str): return False
+    elif '\t' not in item: return False
     elif item == "": return False
     elif item.startswith("#"): return False
-    elif '\t' not in item: return False
     else: return True
 
 
@@ -46,16 +46,6 @@ def switch_extension(name, ext):
     Takes the name of a file (str) and changes the extension to the one provided (str)
     """
     return os.path.splitext(name)[0] + ext
-
-
-def switch_format(items, start, end):
-    """
-    :param items: The dict of the original brat input data
-    :param start: The start indices for the data item, which are calculated by this program
-    :param end: The end indices, also
-    :return: The data formatted according to the con data format
-    """
-    return "c=\"" + items["data_item"] + '\" ' + start + " " + end + '||t=\"' + items["data_type"] + '\"\n'
 
 
 def find_line_num(text_, start):
@@ -147,7 +137,8 @@ def convert_brat_to_con(brat_file_path, text_file_path=None):
         end_word_num = get_end_word_index(d["data_item"], start_char_num, end_char_num)
         end_str = str(end_line_num + 1) + ':' + str(end_word_num)
 
-        output_lines += switch_format(d, start_str, end_str)
+        con_line = "c=\"%s\" %s %s||t=\"%s\"\n" % (d["data_item"], start_str, end_str, d['data_type'])
+        output_lines += con_line
 
     return output_lines
 

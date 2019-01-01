@@ -135,3 +135,24 @@ class TestAnnotation(TestCase):
                 c.write(con_text)
                 with self.assertRaises(FileNotFoundError):
                     Annotations(c.name, annotation_type='con', source_text_path=None)
+
+    def test_same_file_diff(self):
+        """Tests that when a given Annotations object uses the diff() method with another Annotations object created
+        from the same source file, that it returns an empty list."""
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        result = annotations1.diff(annotations2)
+        self.assertEquals(result, [])
+
+    def test_different_file_diff(self):
+        """Tests that when two different files are used in the diff() method, either ValueError is raised (because the
+        two Annotations cannot be compared) or that the output is a list with more than one value."""
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
+        if annotations1.annotations['entities'].values().__len__() != \
+                annotations2.annotations['entities'].values().__len__():
+            with self.assertRaises(ValueError):
+                annotations1.diff(annotations2)
+        else:
+            result = annotations1.diff(annotations2)
+            self.assertTrue(result.__len__() > 0)
