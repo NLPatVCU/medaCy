@@ -3,7 +3,7 @@ The power of medaCy resides in its model training ability. While closely followi
 
 Any model trained with medaCy can be [saved, versioned, and easily distributed](packaging_a_medacy_model.md).
 
-In training a medaCy model you are concerned with three things:
+In training a medaCy model you are concerned with the following:
 
 1. [Text tokenization](#tokenization)
 2. [Feature Overlaying and Token Merging](#feature-overlaying-and-token-merging)
@@ -60,7 +60,7 @@ By default, medaCy merges consecutive tokens with equivalent predicted labels in
 
 
 ## Bringing it all together
-The previously mentioned components make up a medaCy model. In summary training a medaCy model looks like this - this example utilizes the `ClinicalPipeline` included in medaCy without *MetaMap* enabled:
+The previously mentioned components make up a medaCy model. In summary training a medaCy model looks like this - this example utilizes the `ClinicalPipeline` included in medaCy *without* `MetaMap` enabled:
 
 ```python
 from medacy.data import Dataset
@@ -141,7 +141,15 @@ class ClinicalPipeline(BasePipeline):
 ```
 
 
-The `__init__` method defines pipeline meta-data along with initializing the sequence of components the pipeline will use to annotate custom token attributes over the document. The token attributes beginning with `feature_` are automically collection by the `FeatureExtractor` initialized in the `get_feature_extractor` method. Note the instantiation of the `FeatureExtractor` allows the definition of `spacy_features` to utilize - these can be any attribute of a spaCy [Token](https://spacy.io/api/token#attributes).
+The `__init__` method defines pipeline meta-data along with initializing the sequence of components the pipeline will use to annotate custom token attributes over the document. Components are imported and initialized as part of the pipeline by calling the `add_component` method. The first paramater is a component and the subsequent parameters are any arguments that are passed to the component on initialization. Token attributes beginning with `feature_` are automically collected by the `FeatureExtractor` initialized in the `get_feature_extractor` method.  Note the instantiation of the `FeatureExtractor` allows the definition of an array of `spacy_features` to utilize - these can be any attribute of a spaCy [Token](https://spacy.io/api/token#attributes).
+
+The `get_learner` method returns a configured instance of the machine learning algorithm to utilize for training a model. Currently only CRF models wrapped by the package [sklearn-crfsuite](https://sklearn-crfsuite.readthedocs.io/en/latest/) are allowed.
+
+The `get_tokenizer` method returns a configured medaCy tokenizer. An interface for building and maintaining a tokenizer is provided and the pattern from `ClinicalTokenizer` can be followed for engineering your own.
+
+The `get_feature_extractor` method returns a configured feature extractor. This defines how and what features from annotated documents are collected to be fed into the model during training or prediction. The example configuration means that all medaCy annotated features and the specified `spacy_features` are collected in a range of three tokens to the left and three tokens to the right of every token (ie. the `window_size`).
+
+
 
 
 
