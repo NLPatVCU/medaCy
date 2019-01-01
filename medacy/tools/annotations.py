@@ -156,8 +156,8 @@ class Annotations:
         if write_location:
             if os.path.isfile(write_location):
                 logging.warning("Overwriting file at: %s", write_location)
-            with open(write_location, 'w+') as file:
-                file.write(con_text)
+            with open(write_location, 'w+') as f:
+                f.write(con_text)
 
         return con_text
 
@@ -201,5 +201,4 @@ class Annotations:
 
     def __str__(self):
         return str(self.annotations)
-
 
