@@ -49,8 +49,7 @@ will output:
 
 
 ### Sharing your medaCy models
-
-*This section will discuss how to take a model trained with medaCy and ready it for distribution to others. Ideally, a model template might exist.*
+MedaCy models can be packaged and shared with anyone (or no one!) at ease. See [this example](/examples/guide/model_utilization.md) for details.
 
 ### How medaCy uses spaCy
 [SpaCy](https://github.com/explosion/spaCy) is an open source python package built with cython that allows for lighting fast text processing. MedaCy combines spaCy's memory efficient text processing architecture with tools, ideas and principles from both machine learning and medical computational linguistics to provide a unified framework for researchers and practioners alike to advance medical text mining.
