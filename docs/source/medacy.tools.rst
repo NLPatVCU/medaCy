@@ -1,29 +1,37 @@
-medacy\.tools package
-=====================
+medacy.tools package
+====================
 
 Submodules
 ----------
 
-medacy\.tools\.ann\_to\_json module
------------------------------------
+medacy.tools.ade\_to\_brat module
+---------------------------------
 
-.. automodule:: medacy.tools.ann_to_json
+.. automodule:: medacy.tools.ade_to_brat
     :members:
     :undoc-members:
     :show-inheritance:
 
-medacy\.tools\.data\_manager module
------------------------------------
+medacy.tools.annotations module
+-------------------------------
 
-.. automodule:: medacy.tools.data_manager
+.. automodule:: medacy.tools.annotations
     :members:
     :undoc-members:
     :show-inheritance:
 
-medacy\.tools\.model\_to\_ann module
-------------------------------------
+medacy.tools.data\_file module
+------------------------------
 
-.. automodule:: medacy.tools.model_to_ann
+.. automodule:: medacy.tools.data_file
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+medacy.tools.unicode\_to\_ascii module
+--------------------------------------
+
+.. automodule:: medacy.tools.unicode_to_ascii
     :members:
     :undoc-members:
     :show-inheritance:

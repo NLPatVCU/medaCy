@@ -1,5 +1,5 @@
-medacy\.pipeline\_components package
-====================================
+medacy.pipeline\_components package
+===================================
 
 Subpackages
 -----------

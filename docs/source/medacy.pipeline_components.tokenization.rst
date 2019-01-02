@@ -1,27 +1,27 @@
-medacy\.pipeline\_components\.tokenization package
-==================================================
+medacy.pipeline\_components.tokenization package
+================================================
 
 Submodules
 ----------
 
-medacy\.pipeline\_components\.tokenization\.character\_tokenizer module
------------------------------------------------------------------------
+medacy.pipeline\_components.tokenization.character\_tokenizer module
+--------------------------------------------------------------------
 
 .. automodule:: medacy.pipeline_components.tokenization.character_tokenizer
     :members:
     :undoc-members:
     :show-inheritance:
 
-medacy\.pipeline\_components\.tokenization\.clinical\_tokenizer module
-----------------------------------------------------------------------
+medacy.pipeline\_components.tokenization.clinical\_tokenizer module
+-------------------------------------------------------------------
 
 .. automodule:: medacy.pipeline_components.tokenization.clinical_tokenizer
     :members:
     :undoc-members:
     :show-inheritance:
 
-medacy\.pipeline\_components\.tokenization\.systematic\_review\_tokenizer module
---------------------------------------------------------------------------------
+medacy.pipeline\_components.tokenization.systematic\_review\_tokenizer module
+-----------------------------------------------------------------------------
 
 .. automodule:: medacy.pipeline_components.tokenization.systematic_review_tokenizer
     :members:
