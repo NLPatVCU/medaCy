@@ -3,7 +3,7 @@ This directory contains common workflows for using medaCy
 
 ## Table of contents
 1. [How medaCy Works](#how-medacy-works)
-2. [Building a medaCy Pipeline](#building-a-custom-medacy-pipeline)
+2. [Building a medaCy Pipeline](/examples/guide)
 3. [Pre-trained Models](#utilizing-pre-trained-ner-models)
 4. [Distributing Trained Models](#sharing-your-medacy-models)
 5. [Interaction with spaCy](#how-medacy-uses-spacy)
@@ -16,8 +16,6 @@ of a stackable and interchangeable set of PipelineComponents - these are bite-si
 #### Pipeline Components
 PipelineComponents can be developed to utilize in custom Pipelines by interfacing the [BaseComponent](medacy/pipeline_components/base/base_component.py) and [BasePipeline](medacy/pipelines/base/base_pipeline.py) classes respectively. Alternatively use components already implemented in medaCy. Some more powerful components require outside software - an example is the MetaMapComponent which interfaces with [MetaMap](https://metamap.nlm.nih.gov/)
 to overlay rich medical concept information onto text. Components are chained or stacked in pipelines and can themselves depend on the outputs of previous components to function. In the underlying implementation, a medaCy PipelineComponent is a wrapper over a spaCy component that includes a number of utilities specific to faciliting the training, utilization, and distribution process of medical domain text processing models.
-
-### Building a custom medaCy pipeline
 
 ### Utilizing Pre-trained NER models
 To run a medaCy pre-trained model over your own data, simply install the package associated with the model by following the links below. Models officially supported by medacy all start with the prefix *medacy_model*.
@@ -51,8 +49,7 @@ will output:
 
 
 ### Sharing your medaCy models
-
-*This section will discuss how to take a model trained with medaCy and ready it for distribution to others. Ideally, a model template might exist.*
+MedaCy models can be packaged and shared with anyone (or no one!) at ease. See [this example](/examples/guide/model_utilization.md) for details.
 
 ### How medaCy uses spaCy
 [SpaCy](https://github.com/explosion/spaCy) is an open source python package built with cython that allows for lighting fast text processing. MedaCy combines spaCy's memory efficient text processing architecture with tools, ideas and principles from both machine learning and medical computational linguistics to provide a unified framework for researchers and practioners alike to advance medical text mining.

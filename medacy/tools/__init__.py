@@ -1,2 +1,2 @@
-from .annotations import Annotations
+from .annotations import Annotations, InvalidAnnotationError
 from .data_file import DataFile
