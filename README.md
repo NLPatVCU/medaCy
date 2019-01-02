@@ -12,12 +12,13 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 - Customizable pipelines with detailed development instructions and documentation.
 - Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
+- [API](https://medacy.readthedocs.io/en/latest/)
 
 ## :thought_balloon: Where to ask questions
 
 MedaCy is actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
-receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
+receive immediate responses to any questions is to raise an issue. Make sure to first consult the [API](https://medacy.readthedocs.io/en/latest/).  See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
 Medacy can be installed for general use or for pipeline development / research purposes.
