@@ -291,17 +291,20 @@ class MetaMap:
         """Takes in a text string and converts it to ASCII,
         keeping track of each character change
 
-        Arguments:
-            text: string
-                - The text to be converted
+        The changes are recorded in a list of objects, each object
+        detailing the original non-ASCII character and the starting
+        index and length of the replacement in the new string (keys
+        ``original``, ``start``, and ``length``, respectively).
+
+        Args:
+            text (string): The text to be converted
         
         Returns:
-            text: string
-                - The converted text
-            diff: list of dicts with keys 'start', 'length', 'original'
-                - Record of all ASCII conversions, each entry
-                records the original non-ASCII character and
-                the starting index and length of the replacement
+            tuple: tuple containing:
+
+                **text** (*string*): The converted text
+
+                **diff** (*list*): Record of all ASCII conversions
         """
         diff = list()
         offset = 0
@@ -324,17 +327,15 @@ class MetaMap:
         and updates the character spans in the metamap dict to match
 
         Arguments:
-            text, diff: string, list of dicts with keys 'start', 'length', 'original'
-                - Outputs of `convert()` function
-            metamap_dict: dictionary
-                - Dictionary of metamap information obtained from text
+            text (string): Output of ``_convert_to_ascii()``
+            diff (list): Output of ``_convert_to_ascii()``
+            metamap_dict (dict): Dictionary of metamap information obtained from ``text``
         
         Returns:
-            text: string
-                - The input text with all of the changes listed in diff undone
-            metamap_dict: dictionary
-                - The input metamap_dict with all of its character spans updated to
-                    match the changes to the text
+            tuple: tuple containing:
+
+                **text** (*string*): The input with all of the changes listed in ``diff`` reversed
+                **metamap_dict** (*dict*): The input with all of its character spans updated to reflect the changes to ``text``
         """
         offset = 0
         for conv in diff: # Go through each recorded change to undo it & update metamap character spans accordingly
