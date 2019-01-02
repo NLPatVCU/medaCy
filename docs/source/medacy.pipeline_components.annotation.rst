@@ -1,11 +1,11 @@
-medacy\.pipeline\_components\.annotation package
-================================================
+medacy.pipeline\_components.annotation package
+==============================================
 
 Submodules
 ----------
 
-medacy\.pipeline\_components\.annotation\.gold\_annotator\_component module
----------------------------------------------------------------------------
+medacy.pipeline\_components.annotation.gold\_annotator\_component module
+------------------------------------------------------------------------
 
 .. automodule:: medacy.pipeline_components.annotation.gold_annotator_component
     :members:

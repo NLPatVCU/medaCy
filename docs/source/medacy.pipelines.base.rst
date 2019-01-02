@@ -1,11 +1,11 @@
-medacy\.pipelines\.base package
-===============================
+medacy.pipelines.base package
+=============================
 
 Submodules
 ----------
 
-medacy\.pipelines\.base\.base\_pipeline module
-----------------------------------------------
+medacy.pipelines.base.base\_pipeline module
+-------------------------------------------
 
 .. automodule:: medacy.pipelines.base.base_pipeline
     :members:
