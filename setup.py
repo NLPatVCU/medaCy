@@ -18,7 +18,7 @@ class PyTest(TestCommand):
 
     def initialize_options(self):
         TestCommand.initialize_options(self)
-        self.pytest_args = ""
+        self.pytest_args = "--cov-config .coveragerc --cov-report html --cov-report term --cov=medacy"
 
     def run_tests(self):
         import shlex
@@ -61,9 +61,10 @@ setup(
         'pathos>=0.2.2.1',
         'sphinx>=1.8.2',
         'msgpack>=0.3.0,<0.6',
+        'msgpack-numpy<0.4.4.0',
         'en_core_web_sm'
     ],
-    tests_require=["pytest", "medacy_dataset_end"],
+    tests_require=["pytest", "pytest-cov", "medacy_dataset_end"],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False
