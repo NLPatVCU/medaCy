@@ -78,7 +78,7 @@ class Annotations:
         """
         ann_string = ""
         entities = self.get_entity_annotations(return_dictionary=True)
-        for key in sorted(entities.keys(), key= lambda element: int(element[1:])): #Sorts by entity number
+        for key in sorted(entities.keys(), key=lambda element: int(element[1:])):  # Sorts by entity number
             entity, first_start, last_end, labeled_text = entities[key]
             ann_string += "%s\t%s %i %i\t%s\n" % (key, entity, first_start, last_end, labeled_text.replace('\n', ' '))
 
@@ -195,9 +195,67 @@ class Annotations:
 
         for i in range(0, these_entities.__len__()):
             if these_entities[i] != other_entities[i]:
-                non_matching_annos.append(tuple(these_entities[i], other_entities[i]))
+                non_matching_annos.append((these_entities[i], other_entities[i]))
 
         return non_matching_annos
+
+    def compare_to(self, gold_anno):
+        """
+        Compares a given Annotations object to another one by creating a data structure that looks like this:
+
+        {
+            'females': {
+                'this_anno': [('Sex', 1396, 1403), ('Sex', 295, 302), ('Sex', 3205, 3212)],
+                'gold_anno': [('Sex', 1396, 1403), ('Sex', 4358, 4365), ('Sex', 263, 270)]
+                }
+            'SALDOX': {
+                'this_anno': [('GroupName', 5408, 5414)],
+                'gold_anno': [('TestArticle', 5406, 5412)]
+                }
+            'MISSED_BY_PREDICTION':
+                [('GroupName', 8644, 8660, 'per animal group'), ('CellLine', 1951, 1968, 'on control diet (')]
+        }
+
+        The object itself should be the predicted Annotations and the argument should be the gold Annotations.
+
+        :param gold_anno: the Annotations object for the gold data.
+        :return: The data structure detailed above.
+        """
+        if not isinstance(gold_anno, Annotations):
+            raise ValueError("Annotations.compare_to() can only accept another Annotations object as an argument.")
+
+        these_entities = list(self.annotations['entities'].values())
+        gold_entities = list(gold_anno.annotations['entities'].values())
+
+        comparison = {"MISSED_BY_PREDICTION": []}
+
+        for e in these_entities:
+            entity = e[3]
+            # In this context, an annotation (lowercase) is the entity type and indices for an entity
+            entity_annotation = tuple(e[0:3])
+
+            # Create a key for each unique entity, regardless of how many times it appears in the Annotations
+            if entity not in comparison.keys():
+                comparison[entity] = {"this_anno": [entity_annotation], "gold_anno": []}
+            # If there's already a key for a matching entity, add it to the list of annotations for that entity
+            else:
+                comparison[entity]["gold_anno"].append(entity_annotation)
+
+        for e in gold_entities:
+            entity = e[3]
+            entity_annotation = tuple(e[0:3])
+
+            if entity in comparison.keys():
+                comparison[entity]["gold_anno"].append(entity_annotation)
+            else:
+                comparison["MISSED_BY_PREDICTION"].append(e)
+
+        return comparison
+
+
+
+    def statistics(self):
+        raise NotImplementedError("I haven't written this yet.")
 
     def __str__(self):
         return str(self.annotations)
