@@ -1,3 +1,3 @@
-from .data_manager import DataLoader
-from .annotations import Annotations
+from .annotations import Annotations, InvalidAnnotationError
 from .data_file import DataFile
+from .con import brat_to_con, con_to_brat

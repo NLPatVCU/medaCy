@@ -1,9 +1,7 @@
+import re
 from spacy.language import Language
 from spacy.tokenizer import Tokenizer
 from spacy.util import compile_infix_regex, compile_prefix_regex, compile_suffix_regex
-import re
-
-#TODO I simply transferred my exploratory code - it is a mess and needs to be cleaned.
 
 class SystematicReviewTokenizer():
     """

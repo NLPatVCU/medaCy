@@ -1,10 +1,8 @@
 """
 Utilities for methods of the Model class
 """
-
-from .feature_extractor import FeatureExtractor
-from medacy.tools import Annotations
 import logging
+from medacy.tools import Annotations
 
 
 def predict_document(model, doc, medacy_pipeline):
