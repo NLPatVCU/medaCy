@@ -1,7 +1,7 @@
+import re
 from spacy.language import Language
 from spacy.tokenizer import Tokenizer
-from spacy.util import compile_infix_regex, compile_prefix_regex, compile_suffix_regex
-import re
+from spacy.util import compile_infix_regex, compile_prefix_regex
 
 class CharacterTokenizer():
     """

@@ -12,7 +12,7 @@ class SystematicReviewPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, metamap, entities=[]):
+    def __init__(self, metamap=None, entities=[]):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -34,7 +34,7 @@ class SystematicReviewPipeline(BasePipeline):
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
         self.add_component(MetaMapComponent, metamap)
-        #self.add_component(UnitComponent)
+        self.add_component(UnitComponent)
 
     def get_learner(self):
         return ("CRF_l2sgd", sklearn_crfsuite.CRF(

@@ -64,7 +64,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+docs/build/
+docs/source/medacy*
 
 # PyBuilder
 target/
@@ -164,6 +165,9 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# VSCode Settings
+.vscode
 
 *.pyc
 *.egg-info
