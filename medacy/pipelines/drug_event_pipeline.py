@@ -24,7 +24,7 @@ class DrugEventPipeline(BasePipeline):
         #self.spacy_pipeline.tokenizer = self.get_tokenizer()  # Currently using SpaCy's default tokenizer
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
-        self.add_component(MetaMapComponent, metamap)
+        self.add_component(MetaMapComponent, metamap, semantic_type_labels=['sosy', 'phpr', 'orga', 'npop', 'mobd', 'inpo', 'comd', 'biof', 'bdsu', 'acab'])
 
     def get_learner(self):
         return ("CRF_l2sgd", sklearn_crfsuite.CRF(
@@ -39,5 +39,5 @@ class DrugEventPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text'])
+        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text', 'head'])
         return extractor

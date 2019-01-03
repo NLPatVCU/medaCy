@@ -1,4 +1,5 @@
 from spacy.tokens.underscore import Underscore
+from spacy.tokens import Token
 
 class FeatureExtractor:
     """
@@ -96,8 +97,12 @@ class FeatureExtractor:
                 current = {'%i:%s' % (i, feature) : token._.get(feature) for feature in self.all_custom_features}
 
                 #adds features that are overlayed from spacy token attributes
-                current.update({'%i:%s' % (i, feature) : getattr(token,feature) for feature in self.spacy_features})
-
+               # current.update({'%i:%s' % (i, feature) : getattr(token,feature) for feature in self.spacy_features})
+                for feature in self.spacy_features:
+                    if isinstance(Token, getattr(token, feature)):
+                        current.update({'%i:%s' % (i, feature) : getattr(token, feature.text)});
+                    else:
+                        current.update({'%i:%s' % (i, feature) : getattr(token, feature)});
 
 
                 features.update(current)
