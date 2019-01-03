@@ -99,8 +99,8 @@ class FeatureExtractor:
                 #adds features that are overlayed from spacy token attributes
                # current.update({'%i:%s' % (i, feature) : getattr(token,feature) for feature in self.spacy_features})
                 for feature in self.spacy_features:
-                    if isinstance(Token, getattr(token, feature)):
-                        current.update({'%i:%s' % (i, feature) : getattr(token, feature.text)});
+                    if isinstance(getattr(token, feature), Token):
+                        current.update({'%i:%s' % (i, feature) : getattr(token, feature).text});
                     else:
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature)});
 
