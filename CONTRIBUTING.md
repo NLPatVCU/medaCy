@@ -31,7 +31,7 @@ This section details a suggested set-up for efficient development, testing, and 
 4. Run the bash commands: `python --version` and `pip list`. Upgrade pip to the latest version as suggested. Your python version should be above 3.4 and your installed packages should be few in number - if both of these conditions do not hold return to *Step 3*.
 5. In a directory separate from the one created by the virtual envirorment set-up command, clone down your fork of medaCy.
 6. Whilst inside your cloned fork, insure you are in at-least the *development* branch or a branch of the *development* branch. This can be verified by running `git status` and branching can be done with `git checkout <branch-name>`
-7. Run `pip install -e .` This will install medaCy in editable mode inside of your virtual environment and will take several minutes to install dependencies - medaCy stands on the shoulders of giants! Errors one is likely to encounter here include the installation of sci-py and numpy. Google search the errors as they are easily fixable via the installation of some extra dependencies.
+7. Run `pip install -e . --process-dependency-links` This will install medaCy in editable mode inside of your virtual environment and will take several minutes to install dependencies - medaCy stands on the shoulders of giants! Errors one is likely to encounter here include the installation of sci-py and numpy. Google search the errors as they are easily fixable via the installation of some extra dependencies.
 
 **Part 2: Developing with PyCharm**
 PyCharm can streamline development efforts - especially if you are developing locally and running medaCy on a remote machine for model building.
