@@ -1,4 +1,3 @@
-import warnings, logging
 from medacy.pipeline_components.metamap.metamap import MetaMap
 from spacy.tokens import Token
 from ..base import BaseComponent
