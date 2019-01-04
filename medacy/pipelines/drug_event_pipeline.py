@@ -7,7 +7,7 @@ from ..pipeline_components.lexicon import LexiconComponent
 
 class DrugEventPipeline(BasePipeline):
 
-    def __init__(self, metamap, entities=[], lexicon={}):
+    def __init__(self, metamap=None, entities=[], lexicon={}):
         """
         Init a pipeline for processing data related to identifying adverse drug events
         :param metamap: instance of MetaMap
@@ -26,8 +26,10 @@ class DrugEventPipeline(BasePipeline):
         #self.spacy_pipeline.tokenizer = self.get_tokenizer()  # Currently using SpaCy's default tokenizer
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
-       # self.add_component(MetaMapComponent, metamap, semantic_type_labels=['sosy', 'phpr', 'orga', 'npop', 'mobd', 'inpo', 'comd', 'biof', 'bdsu', 'acab'])
-        self.add_component(LexiconComponent, lexicon)
+        if metamap is not None:
+            self.add_component(MetaMapComponent, metamap, semantic_type_labels=['sosy', 'phpr', 'orga', 'npop', 'mobd', 'inpo', 'comd', 'biof', 'bdsu', 'acab'])
+        if lexicon is not None:
+            self.add_component(LexiconComponent, lexicon)
 
     def get_learner(self):
         return ("CRF_l2sgd", sklearn_crfsuite.CRF(
