@@ -1,6 +1,13 @@
+"""
+:author: Andriy Mulyar, Steele W. Farnsworth
+:date: 3 January, 2019
+"""
+
 import os, logging, tempfile
 from medacy.tools.con.con_to_brat import convert_con_to_brat
 from medacy.tools.con.brat_to_con import convert_brat_to_con
+from math import floor, ceil
+import numpy as np
 
 
 class InvalidAnnotationError(ValueError):
@@ -199,9 +206,10 @@ class Annotations:
 
         return non_matching_annos
 
-    def compare_to(self, gold_anno):
+    def compare_by_entity(self, gold_anno):
         """
-        Compares a given Annotations object to another one by creating a data structure that looks like this:
+        Compares two Annotations for checking if an unverified annotation matches an accurate one by creating a data
+        structure that looks like this:
 
         {
             'females': {
@@ -222,7 +230,7 @@ class Annotations:
         :return: The data structure detailed above.
         """
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_to() can only accept another Annotations object as an argument.")
+            raise ValueError("Annotations.compare_by_entity() can only accept another Annotations object as an argument.")
 
         these_entities = list(self.annotations['entities'].values())
         gold_entities = list(gold_anno.annotations['entities'].values())
@@ -252,11 +260,97 @@ class Annotations:
 
         return comparison
 
+    def compare_by_index(self, gold_anno, strict=0.2):
+        """
+        Similar to compare_by_entity, but organized by start index. The two data sets used in the comparison will often
+        not have two annotations beginning at the same index, so the strict value is used to calculate within what
+        margin a matched pair can be separated.
+        :param gold_anno:
+        :param strict: Used to calculate within what range a possible match can be. The length of the entity is
+            multiplied by this number, and the product of those two numbers is the difference that the entity can
+            begin or end relative to the starting index of the entity in the gold dataset. Default is 0.2.
+        :return:
+        """
 
+        # Guarder conditions
+        if not isinstance(gold_anno, Annotations):
+            raise ValueError("Annotations.compare_by_index() can only accept another Annotations object "
+                             "as an argument.")
+        if not (isinstance(strict, int) or isinstance(strict, float)):
+            raise ValueError("strict must be an int or float.")
+        if strict < 0: raise ValueError("strict must be above 0.")
+
+        def find_closest_key(target: int, matches: list):
+            """
+            Used to approximate which entity in the predicted data matches a given entity in the gold data when
+            they do not have the same start index. (For example, there might be a leading punctuation mark
+            in one of the entities.)
+
+            Finds which match (from a list of matches, all ints) is closest to the target (also an int).
+            Used to map entities in the predicted data set to the closest entity in the gold dataset.
+            :param target: The key of an entity in the predicted dataset.
+            :param matches: A list of keys in the gold dataset.
+            :return: The key in the list of matches closest to the target.
+            """
+            matches_array = np.array(matches)
+            closest_ind = (np.abs(matches_array - target)).argmin()
+            return matches[closest_ind]
+
+        these_entities = list(self.annotations['entities'].values())
+        gold_entities = list(gold_anno.annotations['entities'].values())
+
+        comparison = {"NOT_MATCHED": []}
+
+        for e in gold_entities:
+            # start_ind must be an int for later calculations using the indices
+            start_ind = int(e[1])
+            comparison[start_ind] = {"gold_anno": e, "this_anno": []}
+
+        for e in these_entities:
+            start_ind = int(e[1])
+            entity = e[3]
+
+            if start_ind in comparison.keys():
+                comparison[start_ind]["this_anno"].append(e)
+            else:
+                # Create a range of indices that the match could be in, determined by the strict value
+                margin = len(entity) * strict
+                range_min = floor(start_ind - margin)
+                range_max = ceil(start_ind + margin)
+                # Get all the keys that are in the range; "NOT_MATCHED" is a key but is implicitly excluded because
+                # strings are not in a range of ints.
+                possible_keys = [k for k in comparison.keys() if k in range(range_min, range_max)]
+                if len(possible_keys) > 0:
+                    best_key = find_closest_key(start_ind, possible_keys)
+                    comparison[best_key]["this_anno"].append(e)
+                else:
+                    comparison["NOT_MATCHED"].append(e)
+
+        return comparison
 
     def statistics(self):
-        raise NotImplementedError("I haven't written this yet.")
+        """
+        Count the number of instances of a given entity type and the number of unique entities.
+        :return: a dict with keys "entity_counts": a dict matching entities to the number of times that entity appears
+            in the Annotations, and "unique_entity_num": an int of how many unique entities are in the Annotations.
+        """
+
+        # Create a list of entities from a list of annotation tuples
+        entities = [i[0] for i in self.annotations['entities'].values()]
+
+        stats = {"entity_counts": {}, "unique_entity_num": 0}
+
+        entity_counts = stats["entity_counts"]
+        unique_entity_num = stats["unique_entity_num"]
+
+        for e in entities:
+            if e not in entity_counts.keys():
+                entity_counts[e] = 1
+                unique_entity_num += 1
+            else:
+                entity_counts[e] += 1
+
+        return stats
 
     def __str__(self):
         return str(self.annotations)
-
