@@ -33,8 +33,8 @@ class TestLexicon(TestCase):
         :return:
         """
         lexicon_component = LexiconComponent(self.nlp, self.lexicon)
-        self.assertIs(Token.has_extension('feature_is_ADE'), False)
-        self.assertIs(Token.has_extension('feature_is_DRUG'), False)
+        self.assertIs(Token.has_extension('feature_is_ADE_from_lexicon'), False)
+        self.assertIs(Token.has_extension('feature_is_DRUG_from_lexicon'), False)
         doc = lexicon_component(self.doc)
-        self.assertIs(Token.has_extension('feature_is_ADE'), True)
-        self.assertIs(Token.has_extension('feature_is_DRUG'), True)
+        self.assertIs(Token.has_extension('feature_is_ADE_from_lexicon'), True)
+        self.assertIs(Token.has_extension('feature_is_DRUG_from_lexicon'), True)
