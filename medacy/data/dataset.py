@@ -160,18 +160,20 @@ class Dataset:
             metamap_dict = None
             # while current prune depth causes out of memory on document
             while metamap_dict is None or metamap_dict['metamap'] is None:
-                if max_prune_depth <= 0:
-                    logging.critical("Failed to to metamap after multiple attempts: %s", file_path)
-                    return
                 try:
                     metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth) #attempt to metamap
                     if metamap_dict['metamap'] is not None: #if successful
                         break
                     max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
                 except BaseException as e:
-                    metamap_dict = None
-                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                    logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+                    if max_prune_depth <= 0: # Lowest prune depth reached, abort MetaMapping
+                        logging.warning("Can not Metamap file %s, lowest prune depth reached", file_path)
+                        metamap_dict = ''
+                        break
+                    else:
+                        metamap_dict = None
+                        max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
+                        logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
 
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)

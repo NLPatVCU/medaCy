@@ -56,12 +56,12 @@ from medacy.pipeline_components import MetaMap
 dataset = Dataset('/home/medacy/data')
 for data_file in dataset.get_data_files():
   print(data_file.file_name)
-print(data)
-print(data.is_metamapped())
+print(dataset)
+print(dataset.is_metamapped())
 
-metamap = Metamap('/home/path/to/metamap/binary')
-data.metamap(metamap)
-print(data.is_metamapped())
+metamap = MetaMap('/home/path/to/metamap/binary')
+dataset.metamap(metamap)
+print(dataset.is_metamapped())
 ```
 
 outputs:

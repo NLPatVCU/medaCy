@@ -1,7 +1,8 @@
-import warnings, logging
 from medacy.pipeline_components.metamap.metamap import MetaMap
 from spacy.tokens import Token
 from ..base import BaseComponent
+import warnings,logging
+
 
 class MetaMapComponent(BaseComponent):
     """
@@ -64,7 +65,7 @@ class MetaMapComponent(BaseComponent):
             return doc
 
         # TODO refactor second part of if statement when implementing live model prediction
-        if metamap_dict['metamap'] is None:
+        if metamap_dict == '' or metamap_dict['metamap'] is None:
             if hasattr(doc._, 'metamapped_file'):
                 warnings.warn("%s: This metamap file is invalid and cannot be parsed in MetaMapComponent: %s \n Ignore this warning if this is a unittest - all may be fine." % (doc._.file_name,doc._.metamapped_file))
             else:
