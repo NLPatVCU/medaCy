@@ -1,14 +1,13 @@
 """
-Unit tests for annotations.py. Differs significantly from version in master fork; changes do not necessarily
-need to be kept.
+Unit tests for annotations.py.
 :author: Andriy Mulyar, Steele W. Farnsworth
-:date: 2 January, 2019
+:date: 7 January, 2019
 """
 
 import shutil, tempfile, pkg_resources
 from unittest import TestCase
 from medacy.tools import Annotations, InvalidAnnotationError
-from os.path import join
+from os.path import join, isfile
 from medacy.tests.tools.con_test_data.con_test import con_text, source_text as con_source_text
 
 
@@ -23,6 +22,9 @@ T8	Vehicle 486 496	60-day-old
 T9	Sex 497 501	male
 T10	Strain 502 509	ICR-CD1
 """
+
+ann_text_one_source = """None of the tests in this file currently require that the source text be accurate,
+just that it exists."""
 
 ann_text_one_modified = """T1	TimeUnits 13 25	hydroxyethyl
 T2	Car 25 114	)aminotris(hydroxymethyl)methane,
@@ -64,11 +66,13 @@ class TestAnnotation(TestCase):
         with open(cls.broken_ann_file_path, 'w') as f:
             f.write("This is clearly not a valid ann file")
 
-        # Files for hard-coded data included above the class
-
         cls.ann_file_path_one = join(cls.test_dir, "good_ann_file.ann")
         with open(cls.ann_file_path_one, "w+") as f:
             f.write(ann_text_one)
+
+        cls.ann_file_one_source_path = join(cls.test_dir, "good_ann_file_source.txt")
+        with open(cls.ann_file_one_source_path, "w+") as f:
+            f.write(ann_text_one_source)
 
         cls.ann_file_path_one_modified = join(cls.test_dir, "modified_ann_file.ann")
         with open(cls.ann_file_path_one_modified, "w+") as f:
@@ -78,6 +82,9 @@ class TestAnnotation(TestCase):
         with open(cls.ann_file_path_two, "w+") as f:
             f.write(ann_text_two)
 
+        # This file is created in the methods that use it; creating it in advance would cause the test
+        # to always pass.
+        cls.html_output_file_path = join(cls.test_dir, "html_output.html")
 
     @classmethod
     def tearDownClass(cls):
@@ -254,4 +261,21 @@ class TestAnnotation(TestCase):
         stats = annotations.statistics()
         num_entities = stats["entity_counts"]
         self.assertEqual(len(num_entities), 3)
+
+    def test_to_html_no_source_text(self):
+        """Tests that when to_html() is called on an annotation with no source_text_path, it throws ValueError."""
+        annotations = Annotations(self.ann_file_path_one, annotation_type='ann')
+        with self.assertRaises(ValueError):
+            annotations.to_html(self.html_output_file_path)
+
+    def test_to_html_with_source_text(self):
+        """Tests that when to_html() is called on a valid object with an output file path defined, that the outputted
+        HTML file is created (thus, that the method ran to completion)."""
+        if isfile(self.html_output_file_path):
+            raise BaseException("This test requires that the html output file does not exist when the test is"
+                                " initiated, but it already exists.")
+        annotations = Annotations(self.ann_file_path_one, annotation_type='ann',
+                                  source_text_path=self.ann_file_one_source_path)
+        annotations.to_html(self.html_output_file_path)
+        self.assertTrue(isfile(self.html_output_file_path))
 

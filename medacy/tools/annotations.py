@@ -1,6 +1,6 @@
 """
 :author: Andriy Mulyar, Steele W. Farnsworth
-:date: 3 January, 2019
+:date: 7 January, 2019
 """
 
 import os, logging, tempfile
@@ -8,6 +8,7 @@ from medacy.tools.con.con_to_brat import convert_con_to_brat
 from medacy.tools.con.brat_to_con import convert_brat_to_con
 from math import floor, ceil
 import numpy as np
+from spacy.displacy import EntityRenderer
 
 
 class InvalidAnnotationError(ValueError):
@@ -56,7 +57,7 @@ class Annotations:
 
             if annotation_type not in self.supported_file_types:
                 raise NotImplementedError("medaCy currently only supports %s annotation files"
-                                             % (str(self.supported_file_types)))
+                                          % (str(self.supported_file_types)))
             if annotation_type == 'ann':
                 self.from_ann(annotation_data)
             elif annotation_type == 'con':
@@ -310,9 +311,10 @@ class Annotations:
             start_ind = int(e[1])
             entity = e[3]
 
+            # If there's an exact match for a predicted start index and a gold start index:
             if start_ind in comparison.keys():
                 comparison[start_ind]["this_anno"].append(e)
-            else:
+            else:  # To find the closest key when there is not a 1:1 correlation:
                 # Create a range of indices that the match could be in, determined by the strict value
                 margin = len(entity) * strict
                 range_min = floor(start_ind - margin)
@@ -320,9 +322,12 @@ class Annotations:
                 # Get all the keys that are in the range; "NOT_MATCHED" is a key but is implicitly excluded because
                 # strings are not in a range of ints.
                 possible_keys = [k for k in comparison.keys() if k in range(range_min, range_max)]
-                if len(possible_keys) > 0:
+                # find_closest_key() is not very quick, so it's only called if there's more than one possible key.
+                if len(possible_keys) > 1:
                     best_key = find_closest_key(start_ind, possible_keys)
                     comparison[best_key]["this_anno"].append(e)
+                elif len(possible_keys) == 1:
+                    comparison[possible_keys[0]]["this_anno"].append(e)
                 else:
                     comparison["NOT_MATCHED"].append(e)
 
@@ -351,6 +356,48 @@ class Annotations:
                 entity_counts[e] += 1
 
         return stats
+
+    def to_html(self, output_file_path, title="medaCy"):
+        """
+        Convert the Annotations to a displaCy-formatted HTML representation. The Annotations must have the path
+        to the source file as one of its attributes. Does not return a value.
+        :param output_file_path: Where to write the HTML to.
+        :param title: What should appear in the header of the outputted HTML file; not very important
+        """
+
+        if self.source_text_path is None:
+            raise ValueError("to_html() can only be run on objects for which source_text_path is defined; this instance"
+                             " of Annotations was not created with its source_text_path defined.")
+
+        # Instantiate the EntityRenderer with a custom color scheme
+        # Only contains entities found in the golden TAC dataset with some colors used twice
+        color_scheme = {'SEX': '#7aecec', 'STRAIN': '#bfeeb7', 'SPECIES': '#feca74',
+                        'TESTARTICLE': '#ff9561', 'ENDPOINT': '#aa9cfc', 'ENDPOINTUNITOFMEASURE': '#c887fb',
+                        'GROUPNAME': '#9cc9cc', 'DOSEROUTE': '#ffeb80', 'DOSE': '#ff8197',
+                        'DOSEUNITS': '#ff8197', 'VEHICLE': '#f0d0ff',
+                        'TIMEATFIRSTDOSE': '#bfe1d9', 'TIMEATDOSE': '#bfe1d9', 'TIMEATLASTDOSE': '#e4e7d2',
+                        'TIMEUNITS': '#e4e7d2', 'TIMEENDPOINTASSESSED': '#e4e7d2',
+                        'GROUPSIZE': '#e4e7d2', 'TESTARTICLEPURITY': '#e4e7d2',
+                        'SAMPLESIZE': '#7aecec', 'DOSEDURATION': '#bfeeb7', 'DOSEDURATIONUNITS': '#feca74',
+                        'DOSEFREQUENCY': '#ff9561', 'CELLLINE': '#aa9cfc', 'TESTARTICLEVERIFICATION': '#c887fb'}
+        er = EntityRenderer(options={"colors": color_scheme})
+
+        # EntityRenderer must be passed a list of dictionaries in the format below. This section
+        # reformats the internal entity tuples into that format.
+        entity_tuples = self.get_entity_annotations()
+        displacy_list = []
+        for e in entity_tuples:
+            displacy_dict = {"start": int(e[1]), "end": int(e[2]), "label": e[0]}
+            displacy_list.append(displacy_dict)
+
+        # Get a string of the source text
+        with open(self.source_text_path, 'r') as f:
+            source_text = f.read()
+        # Do the actual HTML rendering
+        html = er.render_ents(source_text, displacy_list, title)
+        # Write it to file
+        with open(output_file_path, 'w+') as f:
+            f.write(html)
 
     def __str__(self):
         return str(self.annotations)
