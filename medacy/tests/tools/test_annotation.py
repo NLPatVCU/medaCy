@@ -1,7 +1,7 @@
 """
-Unit tests for annotations.py.
+Unit tests for annotations.py; contains hard-coded test data for ann files.
 :author: Andriy Mulyar, Steele W. Farnsworth
-:date: 7 January, 2019
+:date: 12 January, 2019
 """
 
 import shutil, tempfile, pkg_resources
@@ -56,10 +56,7 @@ class TestAnnotation(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """
-        Loads END dataset and writes files to temp directory
-        :return:
-        """
+        """Creates a temp directory and places the test data strings above into files."""
         cls.test_dir = tempfile.mkdtemp()  # set up temp directory
 
         cls.broken_ann_file_path = join(cls.test_dir, "broken_ann_file.ann")
@@ -88,58 +85,37 @@ class TestAnnotation(TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """
-        Removes test temp directory and deletes all files
-        :return:
-        """
+        """Removes test temp directory and deletes all files"""
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.test_dir)  # remove temp directory and delete all files
 
     def test_init_from_dict(self):
-        """
-        Tests initalization from a dictionary
-        :return:
-        """
+        """Tests initalization from a dictionary"""
         annotations = Annotations({'entities': {}, 'relations': []})
         self.assertIsInstance(annotations, Annotations)
 
     def test_init_from_ann_file(self):
-        """
-        Tests initialization from valid ann file
-        :return:
-        """
+        """Tests initialization from valid ann file"""
         annotations = Annotations(self.ann_file_path_one, annotation_type='ann')
         self.assertIsNotNone(annotations.get_entity_annotations())
 
     def test_init_from_invalid_dict(self):
-        """
-        Tests initialization from invalid dict file
-        :return:
-        """
+        """Tests initialization from invalid dict file"""
         with self.assertRaises(InvalidAnnotationError):
             Annotations({})
 
     def test_init_from_invalid_ann(self):
-        """
-        Tests initialization from invalid annotation file
-        :return:
-        """
+        """Tests initialization from invalid annotation file"""
         with self.assertRaises(InvalidAnnotationError):
             Annotations(self.broken_ann_file_path, annotation_type='ann')
 
     def test_init_from_non_dict_or_string(self):
-        """
-        Tests initialization from non-dictionary or string
-        :return:
-        """
+        """Tests initialization from non-dictionary or string"""
         with self.assertRaises(InvalidAnnotationError):
             Annotations(list(), annotation_type='ann')
 
     def test_init_from_broken_ann_path(self):
-        """
-        Tests initialization from a correctly structured but ill-formated ann file
-        :return:
-        """
+        """Tests initialization from an invalid file path"""
         with self.assertRaises(FileNotFoundError):
             Annotations("This is not a valid file path", annotation_type='ann')
 
@@ -252,13 +228,35 @@ class TestAnnotation(TestCase):
         comparison = annotations1.compare_by_index(annotations2, strict=1)
         self.assertListEqual(comparison["NOT_MATCHED"], [])
 
-    def test_statistics_returns_accurate_dict(self):
+    def test_compare_by_index_stats_equivalent_annotations_avg_accuracy_one(self):
         """
-        Tests that when statistics() is run on an annotation with three unique entities, the list
+        Tests that when compare_by_index_stats() is called on two Annotations representing the same dataset, the
+        average accuracy is one.
+        """
+        annotations1 = Annotations(self.ann_file_path_one)
+        annotations2 = Annotations(self.ann_file_path_one)
+        comparison = annotations1.compare_by_index_stats(annotations2)
+        actual = comparison["avg_accuracy"]
+        self.assertEqual(actual, 1)
+
+    def test_compare_by_index_stats_nearly_identical_annotations_avg_accuracy(self):
+        """
+        Tests that when compare_by_index_stats() is called with nearly identical Annotations, the average accuracy
+        is less than 1.
+        """
+        annotations1 = Annotations(self.ann_file_path_one_modified)
+        annotations2 = Annotations(self.ann_file_path_one)
+        comparison = annotations1.compare_by_index_stats(annotations2)
+        accuracy = comparison["avg_accuracy"]
+        self.assertLess(accuracy, 1)
+
+    def test_stats_returns_accurate_dict(self):
+        """
+        Tests that when stats() is run on an annotation with three unique entities, the list
         of keys in the entity counts is three.
         """
         annotations = Annotations(self.ann_file_path_two)  # Use file two because it contains three unique entities
-        stats = annotations.statistics()
+        stats = annotations.stats()
         num_entities = stats["entity_counts"]
         self.assertEqual(len(num_entities), 3)
 
@@ -269,8 +267,10 @@ class TestAnnotation(TestCase):
             annotations.to_html(self.html_output_file_path)
 
     def test_to_html_with_source_text(self):
-        """Tests that when to_html() is called on a valid object with an output file path defined, that the outputted
-        HTML file is created (thus, that the method ran to completion)."""
+        """
+        Tests that when to_html() is called on a valid object with an output file path defined, that the outputted
+        HTML file is created (thus, that the method ran to completion).
+        """
         if isfile(self.html_output_file_path):
             raise BaseException("This test requires that the html output file does not exist when the test is"
                                 " initiated, but it already exists.")
@@ -278,4 +278,3 @@ class TestAnnotation(TestCase):
                                   source_text_path=self.ann_file_one_source_path)
         annotations.to_html(self.html_output_file_path)
         self.assertTrue(isfile(self.html_output_file_path))
-

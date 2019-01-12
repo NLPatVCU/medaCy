@@ -1,6 +1,6 @@
 """
 :author: Andriy Mulyar, Steele W. Farnsworth
-:date: 7 January, 2019
+:date: 12 January, 2019
 """
 
 import os, logging, tempfile
@@ -9,6 +9,7 @@ from medacy.tools.con.brat_to_con import convert_brat_to_con
 from math import floor, ceil
 import numpy as np
 from spacy.displacy import EntityRenderer
+from statistics import mean
 
 
 class InvalidAnnotationError(ValueError):
@@ -26,6 +27,8 @@ class Annotations:
     contains a list of tuple relations where the first element of each tuple is the relation type and the last two
     elements correspond to keys in the 'entities' dictionary.
     """
+
+    __default_strict = 0.2  # Used in compare_by_index() and indirectly in compare_by_index_stats()
 
     def __init__(self, annotation_data, annotation_type='ann', source_text_path=None):
         """
@@ -98,17 +101,17 @@ class Annotations:
 
         return ann_string
 
-    def from_ann(self, ann_file):
+    def from_ann(self, ann_file_path):
         """
         Loads an ANN file given by ann_file
-        :param ann_file: the system path to the ann_file to load
+        :param ann_file_path: the system path to the ann_file to load
         :return: annotations object is loaded with the ann file.
         """
-        if not os.path.isfile(ann_file):
-            raise FileNotFoundError("ann_file is not a valid file path")
+        if not os.path.isfile(ann_file_path):
+            raise FileNotFoundError("ann_file_path is not a valid file path")
         self.annotations = {'entities': {}, 'relations': []}
         valid_IDs = ['T', 'R', 'E', 'A', 'M', 'N']
-        with open(ann_file, 'r') as file:
+        with open(ann_file_path, 'r') as file:
             annotation_text = file.read()
         for line in annotation_text.split("\n"):
             line = line.strip()
@@ -123,7 +126,7 @@ class Annotations:
                                              % valid_IDs)
             if 'T' == line[0][0]:
                 if len(line) == 2:
-                    logging.warning("Incorrectly formatted entity line in ANN file (%s): %s", ann_file, line)
+                    logging.warning("Incorrectly formatted entity line in ANN file (%s): %s", ann_file_path, line)
                 tags = line[1].split(" ")
                 entity_name = tags[0]
                 entity_start = int(tags[1])
@@ -261,12 +264,12 @@ class Annotations:
 
         return comparison
 
-    def compare_by_index(self, gold_anno, strict=0.2):
+    def compare_by_index(self, gold_anno, strict=__default_strict):
         """
         Similar to compare_by_entity, but organized by start index. The two data sets used in the comparison will often
         not have two annotations beginning at the same index, so the strict value is used to calculate within what
         margin a matched pair can be separated.
-        :param gold_anno:
+        :param gold_anno: The Annotation object representing an annotation set that is known to be accurate.
         :param strict: Used to calculate within what range a possible match can be. The length of the entity is
             multiplied by this number, and the product of those two numbers is the difference that the entity can
             begin or end relative to the starting index of the entity in the gold dataset. Default is 0.2.
@@ -277,7 +280,7 @@ class Annotations:
         if not isinstance(gold_anno, Annotations):
             raise ValueError("Annotations.compare_by_index() can only accept another Annotations object "
                              "as an argument.")
-        if not (isinstance(strict, int) or isinstance(strict, float)):
+        if not isinstance(strict, (int, float)):
             raise ValueError("strict must be an int or float.")
         if strict < 0: raise ValueError("strict must be above 0.")
 
@@ -297,6 +300,21 @@ class Annotations:
             closest_ind = (np.abs(matches_array - target)).argmin()
             return matches[closest_ind]
 
+        def calculate_accuracy(gold_start, gold_end, pred_start, pred_end):
+            start_difference_span = abs(gold_start - pred_start)
+            start_difference = abs(gold_start - start_difference_span)
+            start_accuracy = start_difference / gold_start
+            assert start_accuracy <= 1, "Something is wrong with my math; start_accuracy = %i" % start_accuracy
+
+            end_difference_span = abs(gold_end - pred_end)
+            end_difference = abs(gold_end - end_difference_span)
+            end_accuracy = end_difference / gold_end
+            assert end_accuracy <= 1, "Something is wrong with my math; end_accuracy = %i" % end_accuracy
+
+            overall_accuracy = (start_accuracy + end_accuracy) / 2
+            assert overall_accuracy <= 1, "Something is wrong with my math; overall_accuracy = %i" % overall_accuracy
+            return overall_accuracy
+
         these_entities = list(self.annotations['entities'].values())
         gold_entities = list(gold_anno.annotations['entities'].values())
 
@@ -305,7 +323,7 @@ class Annotations:
         for e in gold_entities:
             # start_ind must be an int for later calculations using the indices
             start_ind = int(e[1])
-            comparison[start_ind] = {"gold_anno": e, "this_anno": []}
+            comparison[start_ind] = {"gold_anno": e, "this_anno": None, "accuracy": 0}
 
         for e in these_entities:
             start_ind = int(e[1])
@@ -313,7 +331,8 @@ class Annotations:
 
             # If there's an exact match for a predicted start index and a gold start index:
             if start_ind in comparison.keys():
-                comparison[start_ind]["this_anno"].append(e)
+                comparison[start_ind]["this_anno"] = e
+                comparison[start_ind]["accuracy"] = 1
             else:  # To find the closest key when there is not a 1:1 correlation:
                 # Create a range of indices that the match could be in, determined by the strict value
                 margin = len(entity) * strict
@@ -325,25 +344,57 @@ class Annotations:
                 # find_closest_key() is not very quick, so it's only called if there's more than one possible key.
                 if len(possible_keys) > 1:
                     best_key = find_closest_key(start_ind, possible_keys)
-                    comparison[best_key]["this_anno"].append(e)
+                    matched_relation = comparison[best_key]
+                    # Take note if the unlikely event occurs that two entities in the predicted data are matched to the
+                    # same entity in the gold dataset
+                    if matched_relation["this_anno"] is not None:
+                        logging.log("Writing over previously matched entity at index %i" % best_key)
+                    matched_relation["this_anno"] = e
+                    gold_data = matched_relation["gold_anno"]
+                    matched_relation["accuracy"] = calculate_accuracy(gold_data[1], gold_data[2], e[1], e[2])
                 elif len(possible_keys) == 1:
-                    comparison[possible_keys[0]]["this_anno"].append(e)
+                    matching_relation = comparison[possible_keys[0]]
+                    matching_relation["this_anno"] = e
+                    gold_data = matching_relation["gold_anno"]
+                    matching_relation["accuracy"] = calculate_accuracy(gold_data[1], gold_data[2], e[1], e[2])
                 else:
                     comparison["NOT_MATCHED"].append(e)
 
         return comparison
 
-    def statistics(self):
+    def compare_by_index_stats(self, gold_anno, strict=__default_strict):
+
+        if not isinstance(gold_anno, Annotations):
+            raise ValueError("Annotations.compare_by_index_stats() can only accept another Annotations object "
+                             "as an argument.")
+        # Other conditions will be checked when compare_by_index() is called
+
+        # Initialze the object that will be returned
+        stats = {"num_not_matched": 0, "avg_accuracy": 0}
+
+        comparison = self.compare_by_index(gold_anno, strict)
+        not_matched = comparison.pop("NOT_MATCHED")
+        stats["num_not_matched"] = len(not_matched)
+
+        all_avgs = [a["accuracy"] for a in comparison.values()]
+        stats["avg_accuracy"] = mean(all_avgs)
+
+        return stats
+
+    def stats(self):
         """
         Count the number of instances of a given entity type and the number of unique entities.
-        :return: a dict with keys "entity_counts": a dict matching entities to the number of times that entity appears
-            in the Annotations, and "unique_entity_num": an int of how many unique entities are in the Annotations.
+        :return: a dict with keys:
+            "entity_counts": a dict matching entities to the number of times that entity appears
+                in the Annotations,
+            "unique_entity_num": an int of how many unique entities are in the Annotations,
+            "entity_list": a list of all the entities that appear in the list; each only appears once.
         """
 
         # Create a list of entities from a list of annotation tuples
         entities = [i[0] for i in self.annotations['entities'].values()]
 
-        stats = {"entity_counts": {}, "unique_entity_num": 0}
+        stats = {"entity_counts": {}, "unique_entity_num": 0, "entitiy_list": []}
 
         entity_counts = stats["entity_counts"]
         unique_entity_num = stats["unique_entity_num"]
@@ -354,6 +405,8 @@ class Annotations:
                 unique_entity_num += 1
             else:
                 entity_counts[e] += 1
+
+        stats["entity_list"] = stats["entity_counts"].keys()
 
         return stats
 
