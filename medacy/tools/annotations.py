@@ -300,19 +300,25 @@ class Annotations:
             closest_ind = (np.abs(matches_array - target)).argmin()
             return matches[closest_ind]
 
-        def calculate_accuracy(gold_start, gold_end, pred_start, pred_end):
+        def calculate_accuracy(gold_start, gold_end, pred_start, pred_end) -> float:
+            """
+            Calculates how closely the start and end indices of the predicted data match the start and end indices of
+            the gold data.
+            :param gold_start: The start index of the gold data.
+            :param gold_end: The end index of the gold data.
+            :param pred_start: The start index of the preidcted data.
+            :param pred_end: The end index of the predicted data.
+            :return: A float representing the percentage accuracy between 0 and 1.
+            """
             start_difference_span = abs(gold_start - pred_start)
             start_difference = abs(gold_start - start_difference_span)
             start_accuracy = start_difference / gold_start
-            assert start_accuracy <= 1, "Something is wrong with my math; start_accuracy = %i" % start_accuracy
 
             end_difference_span = abs(gold_end - pred_end)
             end_difference = abs(gold_end - end_difference_span)
             end_accuracy = end_difference / gold_end
-            assert end_accuracy <= 1, "Something is wrong with my math; end_accuracy = %i" % end_accuracy
 
             overall_accuracy = (start_accuracy + end_accuracy) / 2
-            assert overall_accuracy <= 1, "Something is wrong with my math; overall_accuracy = %i" % overall_accuracy
             return overall_accuracy
 
         these_entities = list(self.annotations['entities'].values())
@@ -363,6 +369,16 @@ class Annotations:
         return comparison
 
     def compare_by_index_stats(self, gold_anno, strict=__default_strict):
+        """
+        Runs compare_by_index() and returns a dict of related statistics.
+        :param gold_anno: See compare_by_index()
+        :param strict: See compare_by_index()
+        :return: A dictionary with keys:
+            "num_not_matched": The number of entites in the predicted data that are not matched to an entity in the
+                gold data,
+            "avg_accuracy": The average of all the decimal values representing how close to a 1:1 correlation there was
+                between the start and end indices in the gold and predicted data.
+        """
 
         if not isinstance(gold_anno, Annotations):
             raise ValueError("Annotations.compare_by_index_stats() can only accept another Annotations object "
