@@ -222,7 +222,7 @@ class Model:
                        format(statistics_all_folds[label]['f1_max'], ".3f")]
                       for label in named_entities + ['system']]
 
-        logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+        logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
 
 
