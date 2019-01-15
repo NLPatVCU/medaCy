@@ -11,7 +11,7 @@ class MetaMapComponent(BaseComponent):
     dependencies = []
 
 
-    def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels = ['orch', 'phsu']):
+    def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels = ['orch', 'phsu'], merge_tokens=False):
         """
         Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
         :param spacy_pipeline: an instance of a spacy language pipeline.
@@ -25,6 +25,7 @@ class MetaMapComponent(BaseComponent):
         self.metamap = metamap
         self.cuis = cuis
         self.semantic_type_labels = semantic_type_labels
+        self.merge_tokens = merge_tokens
 
 
 
@@ -84,37 +85,49 @@ class MetaMapComponent(BaseComponent):
             entity_tags = metamap.get_term_by_semantic_type(mapped_terms, include=[semantic_type_label])
             entity_annotations = metamap.mapped_terms_to_spacy_ann(entity_tags, semantic_type_label)
 
+            with doc.retokenize() as retokenizer:
+                for start, end, label in [entity_annotations['entities'][key] for key in entity_annotations['entities'].keys()]:
+                    span = doc.char_span(start, end, label=nlp.vocab.strings[entity_name])
 
-            for start, end, label in [entity_annotations['entities'][key] for key in entity_annotations['entities'].keys()]:
-                span = doc.char_span(start, end, label=nlp.vocab.strings[entity_name])
-
-                #TODO spans are none when indices and token boundaries don't line up.
-                if span not in spans:
-                    if span is not None:
-                        logging.debug("Found from metamap: (label=%s,raw_text=\"%s\",location=(%i, %i))" % (label,span.text, start, end ) )
-                        spans.append(span)
-                        for token in span:
-                            token._.set('feature_is_' + label, True)
-                    else:
-                        logging.debug("Metamap span could not be overlayed due to tokenization mis-match: (%i, %i)" % (start, end))
+                    #TODO spans are none when indices and token boundaries don't line up.
+                    if span not in spans:
+                        if span is not None:
+                            logging.debug("Found from metamap: (label=%s,raw_text=\"%s\",location=(%i, %i))" % (label,span.text, start, end ) )
+                            spans.append(span)
+                            for token in span:
+                                token._.set('feature_is_' + label, True)
+                            if self.merge_tokens:
+                                try:
+                                    retokenizer.merge(span)
+                                except BaseException:
+                                    continue
+                        else:
+                            logging.debug("Metamap span could not be overlayed due to tokenization mis-match: (%i, %i)" % (start, end))
 
         #adds labels for displaying NER output with displacy.
 
-        for span in spans:
-            try:
-                doc.ents = list(doc.ents) + [span]
-            except ValueError as error:
-                logging.warning(str(error)) #This gets called when the same token may match multiple semantic types
+        # for span in spans:
+        #     try:
+        #         doc.ents = list(doc.ents) + [span]
+        #     except ValueError as error:
+        #         logging.warning(str(error)) #This gets called when the same token may match multiple semantic types
 
         #Overlays CUI of each term
         if Token.has_extension('feature_cui'):
-            for term in mapped_terms:
-                cui = term['CandidateCUI']
-                start, end = metamap.get_span_by_term(term)[0]
-                span = doc.char_span(start, end)
-                if span is not None:
-                    for token in span:
-                        token._.set('feature_cui', cui)
+            with doc.retokenize() as retokenizer:
+                for term in mapped_terms:
+                    cui = term['CandidateCUI']
+                    start, end = metamap.get_span_by_term(term)[0]
+                    span = doc.char_span(start, end)
+                    if span is not None:
+                        for token in span:
+                            token._.set('feature_cui', cui)
+                        if self.merge_tokens:
+                            try:
+                                retokenizer.merge(span)
+                            except BaseException:
+                                continue
+
 
 
 
