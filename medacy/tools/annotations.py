@@ -130,9 +130,9 @@ class Annotations:
                 relation_end = tags[2].split(':')[1]
                 self.annotations['relations'].append((relation_name, relation_start, relation_end))
             if 'E' == line[0][0]:
-                raise NotImplementedError("Event annotations not implemented in medaCy")
+                logging.warning("Event annotations not implemented in medaCy")
             if 'A' == line[0][0] or 'M' == line[0][0]:
-                raise NotImplementedError("Attribute annotations are not implemented in medaCy")
+                logging.warning("Attribute annotations not implemented in medaCy")
             if 'N' == line[0][0]:
                 raise NotImplementedError("Normalization annotations are not implemented in medaCy")
 
