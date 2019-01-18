@@ -5,7 +5,7 @@ Two versions of this model are available for installation:
 
 | Type | Command | Description |
 | :-------: | :----------------: |:-------------:|
-|Light| `pip install git+https://github.com/NanoNLP/medaCy_model_clinical_notes.git` | Does not contain a Metamap layer (drop of around 3% in micro F-measure)|
+|Light| `pip install git+https://github.com/NLPatVCU/medaCy_model_clinical_notes.git` | Does not contain a Metamap layer (drop of around 3% in micro F-measure)|
 |Heavy| Not yet available for download | Contains full predictive pipeline|
 
 

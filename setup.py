@@ -35,7 +35,7 @@ setup(
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
     packages=packages,
-    url='https://github.com/NanoNLP/medaCy',
+    url='https://github.com/NLPatVCU/medaCy',
     author=__authors__,
     author_email='contact@andriymulyar.com',
     keywords='natural-language-processing medical-natural-language-processing machine-learning nlp-library metamap clinical-text-processing',
