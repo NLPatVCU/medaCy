@@ -47,7 +47,7 @@ MedaCy **does not** alter the data you load in any way - it only reads from it.
 
 A common data work flow might look like this.
 
-running:
+Running:
 
 ```python
 from medacy.data import Dataset
@@ -64,7 +64,7 @@ dataset.metamap(metamap)
 print(dataset.is_metamapped())
 ```
 
-outputs:
+Outputs:
 
 ```python
 file_one
@@ -133,6 +133,7 @@ To utilize a *Dataset* for training insure that the data you're loading is valid
 ```python
 from medacy.data import Dataset
 from medacy.pipelines import FDANanoDrugLabelPipeline
+from medacy.model import Model
 
 dataset = Dataset('/home/medacy/data')
 entities = ['Nanoparticle', 'Dose']

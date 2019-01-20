@@ -60,7 +60,7 @@ Reference
 
 License
 =======
-This package is licensed under the GNU General Public License
+This package is licensed under the GNU General Public License.
 
 
 Authors
