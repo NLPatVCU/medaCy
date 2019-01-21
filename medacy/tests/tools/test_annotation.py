@@ -143,7 +143,7 @@ class TestAnnotation(TestCase):
         annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
         annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
         result = annotations1.diff(annotations2)
-        self.assertEquals(result, [])
+        self.assertEqual(result, [])
 
     def test_different_file_diff(self):
         """Tests that when two different files are used in the diff() method, either ValueError is raised (because the
