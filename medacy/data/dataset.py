@@ -160,20 +160,18 @@ class Dataset:
             metamap_dict = None
             # while current prune depth causes out of memory on document
             while metamap_dict is None or metamap_dict['metamap'] is None:
+                if max_prune_depth <= 0:
+                    logging.critical("Failed to to metamap after multiple attempts: %s", file_path)
+                    return
                 try:
                     metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth) #attempt to metamap
                     if metamap_dict['metamap'] is not None: #if successful
                         break
                     max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
                 except BaseException as e:
-                    if max_prune_depth <= 0: # Lowest prune depth reached, abort MetaMapping
-                        logging.warning("Can not Metamap file %s, lowest prune depth reached", file_path)
-                        metamap_dict = ''
-                        break
-                    else:
-                        metamap_dict = None
-                        max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                        logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+                    metamap_dict = None
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
+                    logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
 
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)
@@ -233,7 +231,7 @@ class Dataset:
         Loads an external medaCy compatible dataset. Requires the dataset's associated package to be installed.
         Alternatively, you can import the package directly and call it's .load() method.
         :param package_name: the package name of the dataset
-        :return: an instance of Dataset that contains the dataset encapsulated in package_name
+        :return: A tuple containing a training set, evaluation set, and meta_data
         """
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
