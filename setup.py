@@ -65,7 +65,7 @@ setup(
         'msgpack-numpy<0.4.4.0',
         'en_core_web_sm'
     ],
-    tests_require=["pytest", "pytest-cov", "medacy_dataset_end"],
+    tests_require=["pytest", "pytest-cov", "medacy_dataset_end==1.0.3"],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False
