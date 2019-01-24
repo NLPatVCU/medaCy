@@ -33,7 +33,7 @@ class LexiconComponent(BaseComponent):
         """
         logging.debug("Called Lexicon Component")
 
-        matcher = PhraseMatcher(self.nlp.vocab, max_length=6)
+        matcher = PhraseMatcher(self.nlp.vocab, max_length=10)
         for label in self.lexicon:
             Token.set_extension('feature_is_' + label + '_from_lexicon', default=False, force=True)
             patterns = [self.nlp.make_doc(term) for term in self.lexicon[label]]
