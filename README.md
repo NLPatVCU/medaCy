@@ -23,10 +23,16 @@ receive immediate responses to any questions is to raise an issue. Make sure to 
 ## :computer: Installation Instructions
 Medacy can be installed for general use or for pipeline development / research purposes.
 
+First, make sure you have spaCy's small model installed: 
+
+`pip install git+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0`
+
+then
+
 | Application | Run           |
 | ----------- |:-------------:|
-| Prediction and Model Training (stable) | `pip install git+https://github.com/NLPatVCU/medaCy.git --process-dependency-links` |
-| Prediction and Model Training (latest) | `pip install git+https://github.com/NLPatVCU/medaCy.git@development --process-dependency-links` |
+| Prediction and Model Training (stable) | `pip install git+https://github.com/NLPatVCU/medaCy.git` |
+| Prediction and Model Training (latest) | `pip install git+https://github.com/NLPatVCU/medaCy.git@development` |
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
