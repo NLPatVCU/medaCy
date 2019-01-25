@@ -48,7 +48,7 @@ setup(
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.2.tar.gz#egg=medacy_dataset_end-1.0.2',
+        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3',
         'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
     ],
     install_requires=[
@@ -64,7 +64,7 @@ setup(
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0'
     ],
-    tests_require=["pytest", "pytest-cov", "medacy_dataset_end"],
+    tests_require=["pytest", "pytest-cov", "medacy_dataset_end==1.0.3"],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False
