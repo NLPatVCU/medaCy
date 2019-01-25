@@ -25,7 +25,7 @@ Medacy can be installed for general use or for pipeline development / research p
 
 First, make sure you have spaCy's small model installed: 
 
-`pip install git+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0`
+`pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0`
 
 then
 
