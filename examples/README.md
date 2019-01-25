@@ -36,7 +36,15 @@ model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
 ```
 will output:
 ```python
-{'entities': {'T3': ('Drug', 40, 45, 'Advil'), 'T1': ('Dosage', 27, 28, '1'), 'T2': ('Form', 29, 36, 'capsule'), 'T4': ('Duration', 46, 56, 'for 5 days')}, 'relations': []}
+{
+    'entities': {
+        'T3': ('Drug', 40, 45, 'Advil'),
+        'T1': ('Dosage', 27, 28, '1'), 
+        'T2': ('Form', 29, 36, 'capsule'), 
+        'T4': ('Duration', 46, 56, 'for 5 days')
+        }, 
+    'relations': []
+}
 ```
 *NOTE: If you are doing bulk prediction over many files at once, it is advisable to utilize the bulk prediction functionality.*
 
