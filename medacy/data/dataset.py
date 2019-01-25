@@ -222,7 +222,8 @@ class Dataset:
         return self.data_directory
 
     def __str__(self):
-        return "[%s]" % ",".join(self.get_data_files())
+        """Converts self.get_data_files() to a list of strs and combines them into one str"""
+        return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
 
 
     @staticmethod
