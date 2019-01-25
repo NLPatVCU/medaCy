@@ -40,8 +40,8 @@ class Annotations:
         self.supported_file_types = ['ann', 'con']  # change me when new annotation types are supported
         self.source_text_path = source_text_path
 
-        if not (isinstance(annotation_data, dict) or isinstance(annotation_data, str)):
-            raise InvalidAnnotationError("annotation_data must of type dict or str.")
+        if not (isinstance(annotation_data, (dict, str))):
+            raise TypeError("annotation_data must of type dict or str.")
 
         if isinstance(annotation_data, dict):
             if not ('entities' in annotation_data and isinstance(annotation_data['entities'], dict)):
@@ -54,7 +54,7 @@ class Annotations:
 
         if isinstance(annotation_data, str):
             if annotation_type is None:
-                raise InvalidAnnotationError("Must specify the type of annotation file representing by annotation_data")
+                raise ValueError("Must specify the type of annotation file representing by annotation_data")
             if not os.path.isfile(annotation_data):
                 raise FileNotFoundError("annotation_data is not a valid file path")
 
@@ -234,7 +234,7 @@ class Annotations:
         :return: The data structure detailed above.
         """
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_by_entity() can only accept another Annotations object as an argument.")
+            raise TypeError("Annotations.compare_by_entity() can only accept another Annotations object as an argument.")
 
         these_entities = list(self.annotations['entities'].values())
         gold_entities = list(gold_anno.annotations['entities'].values())
@@ -292,10 +292,10 @@ class Annotations:
 
         # Guarder conditions
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_by_index() can only accept another Annotations object "
+            raise TypeError("Annotations.compare_by_index() can only accept another Annotations object "
                              "as an argument.")
         if not isinstance(strict, (int, float)):
-            raise ValueError("strict must be an int or float.")
+            raise TypeError("strict must be an int or float.")
         if strict < 0: raise ValueError("strict must be above 0.")
 
         def find_closest_key(target: int, matches: list):
@@ -405,7 +405,7 @@ class Annotations:
         """
 
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_by_index_stats() can only accept another Annotations object "
+            raise TypeError("Annotations.compare_by_index_stats() can only accept another Annotations object "
                              "as an argument.")
         # Other conditions will be checked when compare_by_index() is called
 
