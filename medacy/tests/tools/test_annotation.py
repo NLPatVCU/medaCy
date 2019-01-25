@@ -111,7 +111,7 @@ class TestAnnotation(TestCase):
 
     def test_init_from_non_dict_or_string(self):
         """Tests initialization from non-dictionary or string"""
-        with self.assertRaises(InvalidAnnotationError):
+        with self.assertRaises(TypeError):
             Annotations(list(), annotation_type='ann')
 
     def test_init_from_broken_ann_path(self):
@@ -200,7 +200,7 @@ class TestAnnotation(TestCase):
         """
         annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
         annotations2 = "This is not an Annotations object"
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             annotations1.compare_by_index(annotations2)
 
     def test_compare_by_index_valid_data_return_dict(self):
