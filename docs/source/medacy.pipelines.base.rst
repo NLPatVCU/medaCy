@@ -1,22 +1,6 @@
 medacy.pipelines.base package
 =============================
 
-Submodules
-----------
+.. toctree::
 
-medacy.pipelines.base.base\_pipeline module
--------------------------------------------
-
-.. automodule:: medacy.pipelines.base.base_pipeline
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: medacy.pipelines.base
-    :members:
-    :undoc-members:
-    :show-inheritance:
+    medacy.pipelines.base.base_pipeline
