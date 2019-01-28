@@ -39,7 +39,7 @@ class FeatureExtractor:
         Sequences for classification are determined by the sentence boundaries set by spaCy. These can be modified.
         :param doc: an annoted spacy Doc object
         :return: Tuple of parallel arrays - 'features' an array of feature dictionaries for each sequence (spaCy determined sentence)
-                 and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
+        and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
         """
 
         features = [self._sent_to_feature_dicts(sent) for sent in doc.sents]
@@ -60,7 +60,7 @@ class FeatureExtractor:
         """
         CURRENTLY UNUSED.
         CRF wrapper uses regexes to extract the output of the underlying C++ code.
-        The inclusion of \n and space characters mess up these regexes, hence we map them to text here.
+        The inclusion of \\n and space characters mess up these regexes, hence we map them to text here.
         :return:
         """
         if text == r"\n":
