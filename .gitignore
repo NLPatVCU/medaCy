@@ -65,7 +65,6 @@ instance/
 
 # Sphinx documentation
 docs/build/
-docs/source/medacy*
 
 # PyBuilder
 target/
