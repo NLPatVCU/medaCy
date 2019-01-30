@@ -186,29 +186,70 @@ class Annotations:
             f.write(ann_from_con)
             self.from_ann(f.name)  # must pass the name to self.from_ann() to ensure compatibility
 
-    def diff(self, other_anno):
+    def difference(self, annotation, leniency=0):
         """
         Identifies the difference between two Annotations objects. Useful for checking if an unverified annotation
-        matches an annotation known to be accurate.
-        :param other_anno: Another Annotations object.
-        :return: A list of tuples of non-matching annotation pairs.
+        matches an annotation known to be accurate. This is done returning a list of all annotations in the operated on
+        Annotation object that do not exist in the passed in annotation object. This is a set difference.
+        :param annotation: Another Annotations object.
+        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as
+        different. A value of zero considers only exact character matches while a positive value considers entities that
+        differ by up to ceil(leniency * len(span)/2) on either side.
+        :return: A set of tuples of non-matching annotations.
         """
-        if not isinstance(other_anno, Annotations):
+        if not isinstance(annotation, Annotations):
             raise ValueError("Annotations.diff() can only accept another Annotations object as an argument.")
+        if leniency != 0:
+            if not  0 <= leniency <= 1:
+                raise ValueError("Leniency must be a floating point between [0,1]")
+        else:
+            return set(self.get_entity_annotations()).difference(annotation.get_entity_annotations())
 
-        these_entities = list(self.annotations['entities'].values())
-        other_entities = list(other_anno.annotations['entities'].values())
+        matches = set()
+        for label, start, end, text in self.get_entity_annotations():
+            window = ceil(leniency * (end-start))
+            for c_label, c_start, c_end, c_text in annotation.get_entity_annotations():
+                if label == c_label:
+                    if start - window <= c_start and end+window >= c_end:
+                        matches.add((label, start, end, text))
+                        break
 
-        if these_entities.__len__() != other_entities.__len__():
-            raise ValueError("These annotations cannot be compared because they contain a different number of entities.")
 
-        non_matching_annos = []
+        return set(self.get_entity_annotations()).difference(matches)
 
-        for i in range(0, these_entities.__len__()):
-            if these_entities[i] != other_entities[i]:
-                non_matching_annos.append((these_entities[i], other_entities[i]))
+    def intersection(self, annotation, leniency=0):
+        """
+        Computes the intersection of the operated annotation object with the operand annotation object.
+        :param annotation: Another Annotations object.
+        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as
+        a match. A value of zero considers only exact character matches while a positive value considers entities that
+        differ by up to ceil(leniency * len(span)/2) on either side.
+        :return A set of annotations that appear in both Annotation objects
+        """
+        if not isinstance(annotation, Annotations):
+            raise ValueError("Annotations.diff() can only accept another Annotations object as an argument.")
+        if leniency != 0:
+            if not  0 <= leniency <= 1:
+                raise ValueError("Leniency must be a floating point between [0,1]")
+        else:
+            return set(self.get_entity_annotations()).difference(annotation.get_entity_annotations())
 
-        return non_matching_annos
+        matches = set()
+        for label, start, end, text in self.get_entity_annotations():
+            window = ceil(leniency * (end-start))
+            for c_label, c_start, c_end, c_text in annotation.get_entity_annotations():
+                if label == c_label:
+                    if start - window <= c_start and end+window >= c_end:
+                        matches.add((label, start, end, text))
+                        break
+
+
+        return matches
+
+
+
+
+
 
     def compare_by_entity(self, gold_anno):
         """
