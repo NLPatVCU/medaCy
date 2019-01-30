@@ -23,7 +23,7 @@ For example, assuming you have medaCy installed:
 
 Run:
 
-`pip install https://github.com/NLPatVCU/medaCy_model_clinical_notes.git`
+`pip install git+https://github.com/NLPatVCU/medaCy_model_clinical_notes.git`
 
 then the code snippet
 
