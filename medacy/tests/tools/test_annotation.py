@@ -137,24 +137,46 @@ class TestAnnotation(TestCase):
                 with self.assertRaises(FileNotFoundError):
                     Annotations(c.name, annotation_type='con', source_text_path=None)
 
-    def test_same_file_diff(self):
+    def test_difference(self):
         """Tests that when a given Annotations object uses the diff() method with another Annotations object created
         from the same source file, that it returns an empty list."""
         annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
         annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
-        result = annotations1.diff(annotations2)
-        self.assertEqual(result, [])
+        result = annotations1.difference(annotations2)
+        self.assertFalse(result)
 
     def test_different_file_diff(self):
-        """
-        Tests that when two different files with the same number of annotations are used in the diff() method,
-        the output is a list with more than one value.
-        """
-        # Note that both of these files contain ten annotations
-        annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
-        annotations2 = Annotations(self.ann_file_path_two, annotation_type='ann')
-        result = annotations1.diff(annotations2)
-        self.assertGreater(len(result), 0)
+<<<<<<< HEAD
+        """Tests that when two different files are used in the diff() method, either ValueError is raised (because the
+        two Annotations cannot be compared) or that the output is a list with more than one value."""
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
+        result = annotations1.difference(annotations2)
+        self.assertTrue(result.__len__() > 0)
+
+    def test_compute_ambiguity(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        label, start, end, text = annotations2.get_entity_annotations()[0]
+        annotations2.add_entity('incorrect_label', start, end, text)
+        self.assertEqual(len(annotations1.compute_ambiguity(annotations2)), 1)
+
+
+    def test_confusion_matrix(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
+        annotations1.add_entity(*annotations2.get_entity_annotations()[0])
+
+        self.assertEqual(len(annotations1.compute_confusion_matrix(annotations2, self.entities)[0]), len(self.entities))
+        self.assertEqual(len(annotations1.compute_confusion_matrix(annotations2, self.entities)), len(self.entities))
+
+    def test_intersection(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
+        annotations1.add_entity(*annotations2.get_entity_annotations()[0])
+        annotations1.add_entity(*annotations2.get_entity_annotations()[1])
+        self.assertEqual(annotations1.intersection(annotations2), set([annotations2.get_entity_annotations()[0], annotations2.get_entity_annotations()[1]]))
+
 
     def test_compare_by_entity_valid_data_return_dict(self):
         """Tests that when compare_by_entity() is called with valid data that it returns a dict."""
