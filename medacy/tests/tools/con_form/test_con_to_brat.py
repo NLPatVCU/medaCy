@@ -4,7 +4,7 @@
 """
 
 import unittest, tempfile, os, shutil
-from medacy.tools.con.con_to_brat import convert_con_to_brat
+from medacy.tools.con_form.con_to_brat import convert_con_to_brat
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
