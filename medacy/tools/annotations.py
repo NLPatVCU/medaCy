@@ -69,6 +69,7 @@ class Annotations:
     def get_entity_annotations(self, return_dictionary=False):
         """
         Returns a list of entity annotation tuples
+
         :param return_dictionary: returns the dictionary storing the annotation mappings. Useful if also working with
         relationship extraction
         :return: a list of entities or underlying dictionary of entities
@@ -83,6 +84,7 @@ class Annotations:
     def add_entity(self, label, start, end, text=""):
         """
         Adds an entity to the Annotations
+
         :param label: the label of the annotation you are appending
         :param start: the start index in the document of the annotation you are appending.
         :param end: the end index in the document of the annotation you are appending
@@ -95,6 +97,7 @@ class Annotations:
         """
         Formats the Annotations object into a string representing a valid ANN file. Optionally writes the formatted
         string to a destination.
+
         :param write_location: path of location to write ann file to
         :return: returns string formatted as an ann file, if write_location is valid path also writes to that path.
         """
@@ -115,6 +118,7 @@ class Annotations:
     def from_ann(self, ann_file_path):
         """
         Loads an ANN file given by ann_file
+
         :param ann_file_path: the system path to the ann_file to load
         :return: annotations object is loaded with the ann file.
         """
@@ -161,6 +165,7 @@ class Annotations:
     def to_con(self, write_location=None):
         """
         Formats the Annotation object to a valid con file. Optionally writes the string to a specified location.
+
         :param write_location: Optional path to an output file; if provided but not an existing file, will be
             created. If this parameter is not provided, nothing will be written to file.
         :return: A string representation of the annotations in the con format.
@@ -189,6 +194,7 @@ class Annotations:
         from_ann() method in this class because the indices for the Annotations object must be those used in
         the BRAT format. The path to the source text for the annotations must be defined unless that file exists
         in the same directory as the con file.
+
         :param con_file_path: path to the con file being converted to an Annotations object.
         """
         ann_from_con = convert_con_to_brat(con_file_path, self.source_text_path)
@@ -203,6 +209,7 @@ class Annotations:
         matches an annotation known to be accurate. This is done returning a list of all annotations in the operated on
         Annotation object that do not exist in the passed in annotation object. This is a set difference.
         :param annotations: Another Annotations object.
+
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as
         different. A value of zero considers only exact character matches while a positive value considers entities that
         differ by up to ceil(leniency * len(span)/2) on either side.
@@ -231,6 +238,7 @@ class Annotations:
     def intersection(self, annotations, leniency=0):
         """
         Computes the intersection of the operated annotation object with the operand annotation object.
+
         :param annotations: Another Annotations object.
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as
         a match. A value of zero considers only exact character matches while a positive value considers entities that
@@ -260,6 +268,7 @@ class Annotations:
         Finds occurrences of predictions that intersect with an a span from this annoation but do not have that spans
         label. If 'annotation' comprises a models predictions, this method provides a strong indicators
         of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
+
         :param annotations: Another Annotations object.
         :return: a dictionary containing incorrect label predictions for given spans
         """
@@ -281,12 +290,14 @@ class Annotations:
 
 
 
+
     def compute_confusion_matrix(self, annotations, entities, leniency=0):
         """
         Computes a confusion matrix representing span level ambiguity between this annotation and the argument annotation.
         An annotation in 'annotations' is ambigous is it overlaps with a span in this Annotation but does not have the
         same entity label. The main diagonal of this matrix corresponds to entities in this Annotation that match spans
         in 'annotations' and have equivalent class label.
+
         :param annotations: Another Annotations object.
         :param entities: a list of entities to use in computing matrix ambiguity.
         :param leniency: leniency to utilize when computing overlapping entities.
