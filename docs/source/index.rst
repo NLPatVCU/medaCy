@@ -6,15 +6,12 @@
 Welcome to medaCy's documentation!
 ==================================
 
+[Info about what MedaCy is here]
+
+Contents
+--------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 3
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    medacy
