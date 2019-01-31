@@ -18,7 +18,7 @@ class PyTest(TestCommand):
 
     def initialize_options(self):
         TestCommand.initialize_options(self)
-        self.pytest_args = ""
+        self.pytest_args = "--cov-config .coveragerc --cov-report html --cov-report term --cov=medacy"
 
     def run_tests(self):
         import shlex
@@ -35,7 +35,7 @@ setup(
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
     packages=packages,
-    url='https://github.com/NanoNLP/medaCy',
+    url='https://github.com/NLPatVCU/medaCy',
     author=__authors__,
     author_email='contact@andriymulyar.com',
     keywords='natural-language-processing medical-natural-language-processing machine-learning nlp-library metamap clinical-text-processing',
@@ -48,22 +48,24 @@ setup(
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.2.tar.gz#egg=medacy_dataset_end-1.0.2',
+        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3',
         'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
     ],
     install_requires=[
         'spacy==2.0.13',
         'scikit-learn>=0.20.0',
+        'numpy',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
         'tabulate>=0.8.2',
         'pathos>=0.2.2.1',
         'sphinx>=1.8.2',
+        'sphinx-rtd-theme>=0.4.2',
         'msgpack>=0.3.0,<0.6',
-        'en_core_web_sm'
+        'msgpack-numpy<0.4.4.0'
     ],
-    tests_require=["pytest", "medacy_dataset_end"],
+    tests_require=["pytest", "pytest-cov", "medacy_dataset_end==1.0.3"],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False

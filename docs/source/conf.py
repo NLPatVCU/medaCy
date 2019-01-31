@@ -14,7 +14,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../medaCy'))
+sys.path.insert(0, os.path.abspath('../../medacy'))
 
 
 # -- Project information -----------------------------------------------------
@@ -26,7 +26,7 @@ author = 'Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget M
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.2'
+release = '0.6'
 
 
 # -- General configuration ---------------------------------------------------
@@ -42,10 +42,16 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.coverage',
+    'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
 ]
+
+autodoc_default_options = {
+    'members': None,
+    'private-members': None
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -80,13 +86,15 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'classic'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    "collapse_navigation": False
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

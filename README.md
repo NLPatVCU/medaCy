@@ -12,20 +12,27 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 - Customizable pipelines with detailed development instructions and documentation.
 - Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
+- Detailed [API](https://medacy.readthedocs.io/en/latest/)
 
 ## :thought_balloon: Where to ask questions
 
 MedaCy is actively maintained by [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
-receive immediate responses to any questions is to raise an issue. See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
+receive immediate responses to any questions is to raise an issue. Make sure to first consult the [API](https://medacy.readthedocs.io/en/latest/).  See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
 Medacy can be installed for general use or for pipeline development / research purposes.
 
+First, make sure you have spaCy's small model installed: 
+
+`pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0`
+
+then
+
 | Application | Run           |
 | ----------- |:-------------:|
-| Prediction and Model Training (stable) | `pip install git+https://github.com/NanoNLP/medaCy.git --process-dependency-links` |
-| Prediction and Model Training (latest) | `pip install git+https://github.com/NanoNLP/medaCy.git@development --process-dependency-links` |
+| Prediction and Model Training (stable) | `pip install git+https://github.com/NLPatVCU/medaCy.git` |
+| Prediction and Model Training (latest) | `pip install git+https://github.com/NLPatVCU/medaCy.git@development` |
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
@@ -67,7 +74,7 @@ Reference
 
 License
 =======
-This package is licensed under the GNU General Public License
+This package is licensed under the GNU General Public License.
 
 
 Authors

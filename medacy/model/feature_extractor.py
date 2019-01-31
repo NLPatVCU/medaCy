@@ -1,4 +1,5 @@
 from spacy.tokens.underscore import Underscore
+from spacy.tokens import Token
 
 class FeatureExtractor:
     """
@@ -38,7 +39,7 @@ class FeatureExtractor:
         Sequences for classification are determined by the sentence boundaries set by spaCy. These can be modified.
         :param doc: an annoted spacy Doc object
         :return: Tuple of parallel arrays - 'features' an array of feature dictionaries for each sequence (spaCy determined sentence)
-                 and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
+        and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
         """
 
         features = [self._sent_to_feature_dicts(sent) for sent in doc.sents]
@@ -59,7 +60,7 @@ class FeatureExtractor:
         """
         CURRENTLY UNUSED.
         CRF wrapper uses regexes to extract the output of the underlying C++ code.
-        The inclusion of \n and space characters mess up these regexes, hence we map them to text here.
+        The inclusion of \\n and space characters mess up these regexes, hence we map them to text here.
         :return:
         """
         if text == r"\n":
@@ -96,8 +97,11 @@ class FeatureExtractor:
                 current = {'%i:%s' % (i, feature) : token._.get(feature) for feature in self.all_custom_features}
 
                 #adds features that are overlayed from spacy token attributes
-                current.update({'%i:%s' % (i, feature) : getattr(token,feature) for feature in self.spacy_features})
-
+                for feature in self.spacy_features:
+                    if isinstance(getattr(token, feature), Token):
+                        current.update({'%i:%s' % (i, feature) : getattr(token, feature).text});
+                    else:
+                        current.update({'%i:%s' % (i, feature) : getattr(token, feature)});
 
 
                 features.update(current)

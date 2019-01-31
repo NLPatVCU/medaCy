@@ -23,9 +23,10 @@ For example, assuming you have medaCy installed:
 
 Run:
 
-`pip install https://github.com/NanoNLP/medaCy_model_clinical_notes.git`
+`pip install git+https://github.com/NLPatVCU/medaCy_model_clinical_notes.git`
 
 then the code snippet
+
 
 ```python
 import medacy_model_clinical_notes
