@@ -146,14 +146,105 @@ class TestAnnotation(TestCase):
         self.assertEqual(result, [])
 
     def test_different_file_diff(self):
-        """Tests that when two different files are used in the diff() method, either ValueError is raised (because the
-        two Annotations cannot be compared) or that the output is a list with more than one value."""
-        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
-        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
-        if annotations1.annotations['entities'].values().__len__() != \
-                annotations2.annotations['entities'].values().__len__():
-            with self.assertRaises(ValueError):
-                annotations1.diff(annotations2)
-        else:
-            result = annotations1.diff(annotations2)
-            self.assertTrue(result.__len__() > 0)
+        """
+        Tests that when two different files with the same number of annotations are used in the diff() method,
+        the output is a list with more than one value.
+        """
+        # Note that both of these files contain ten annotations
+        annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
+        annotations2 = Annotations(self.ann_file_path_two, annotation_type='ann')
+        result = annotations1.diff(annotations2)
+        self.assertGreater(len(result), 0)
+
+    def test_compare_by_entity_valid_data_return_dict(self):
+        """Tests that when compare_by_entity() is called with valid data that it returns a dict."""
+        annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
+        annotations2 = Annotations(self.ann_file_path_two, annotation_type='ann')
+        result = annotations1.compare_by_entity(annotations2)
+        self.assertIsInstance(result, dict)
+
+    def test_compare_by_index_wrong_type(self):
+        """
+        Tests that when a valid Annotations object calls the compare_by_entity() method with an object that is not an
+        Annotations, it raises ValueError.
+        """
+        annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
+        annotations2 = "This is not an Annotations object"
+        with self.assertRaises(TypeError):
+            annotations1.compare_by_index(annotations2)
+
+    def test_compare_by_index_valid_data_return_dict(self):
+        """Tests that when compare_by_index() is called with valid data, it returns a dict."""
+        annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
+        annotations2 = Annotations(self.ann_file_path_two, annotation_type='ann')
+        result = annotations1.compare_by_index(annotations2)
+        self.assertIsInstance(result, dict)
+
+    def test_compare_by_index_strict_lt_0(self):
+        """Tests that when compare_by_index() is called with a strict below 0, it raises ValueError."""
+        annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
+        annotations2 = Annotations(self.ann_file_path_two, annotation_type='ann')
+        with self.assertRaises(ValueError):
+            annotations1.compare_by_index(annotations2, strict=-1)
+
+    def test_compare_by_index_all_entities_matched(self):
+        """
+        Tests that when compare_by_index() is called with nearly-identical data, the calculations accurately pair
+        annotations that refer to the same instance of an entity but are not identical. Specifically, test that list
+        "NOT_MATCHED" is empty.
+        """
+        annotations1 = Annotations(self.ann_file_path_one_modified)
+        annotations2 = Annotations(self.ann_file_path_one)
+        comparison = annotations1.compare_by_index(annotations2, strict=1)
+        self.assertListEqual(comparison["NOT_MATCHED"], [])
+
+    def test_compare_by_index_stats_equivalent_annotations_avg_accuracy_one(self):
+        """
+        Tests that when compare_by_index_stats() is called on two Annotations representing the same dataset, the
+        average accuracy is one.
+        """
+        annotations1 = Annotations(self.ann_file_path_one)
+        annotations2 = Annotations(self.ann_file_path_one)
+        comparison = annotations1.compare_by_index_stats(annotations2)
+        actual = comparison["avg_accuracy"]
+        self.assertEqual(actual, 1)
+
+    def test_compare_by_index_stats_nearly_identical_annotations_avg_accuracy(self):
+        """
+        Tests that when compare_by_index_stats() is called with nearly identical Annotations, the average accuracy
+        is less than 1.
+        """
+        annotations1 = Annotations(self.ann_file_path_one_modified)
+        annotations2 = Annotations(self.ann_file_path_one)
+        comparison = annotations1.compare_by_index_stats(annotations2)
+        accuracy = comparison["avg_accuracy"]
+        self.assertLess(accuracy, 1)
+
+    def test_stats_returns_accurate_dict(self):
+        """
+        Tests that when stats() is run on an annotation with three unique entities, the list
+        of keys in the entity counts is three.
+        """
+        annotations = Annotations(self.ann_file_path_two)  # Use file two because it contains three unique entities
+        stats = annotations.stats()
+        num_entities = stats["entity_counts"]
+        self.assertEqual(len(num_entities), 3)
+
+    def test_to_html_no_source_text(self):
+        """Tests that when to_html() is called on an annotation with no source_text_path, it throws ValueError."""
+        annotations = Annotations(self.ann_file_path_one, annotation_type='ann')
+        with self.assertRaises(ValueError):
+            annotations.to_html(self.html_output_file_path)
+
+    def test_to_html_with_source_text(self):
+        """
+        Tests that when to_html() is called on a valid object with an output file path defined, that the outputted
+        HTML file is created (thus, that the method ran to completion).
+        """
+        if isfile(self.html_output_file_path):
+            raise BaseException("This test requires that the html output file does not exist when the test is"
+                                " initiated, but it already exists.")
+        annotations = Annotations(self.ann_file_path_one, annotation_type='ann',
+                                  source_text_path=self.ann_file_one_source_path)
+        annotations.to_html(self.html_output_file_path)
+        self.assertTrue(isfile(self.html_output_file_path))

@@ -16,7 +16,7 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 ## :thought_balloon: Where to ask questions
 
-MedaCy is actively maintained by  [@AndriyMulyar](https://github.com/AndriyMulyar)
+MedaCy is actively maintained by [@AndriyMulyar](https://github.com/AndriyMulyar)
 and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
 receive immediate responses to any questions is to raise an issue. Make sure to first consult the [API](https://medacy.readthedocs.io/en/latest/).  See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
 
@@ -48,7 +48,15 @@ print(annotation)
 ```
 and receive instant predictions:
 ```python
-{'entities': {'T3': ('Drug', 40, 45, 'Advil'), 'T1': ('Dosage', 27, 28, '1'), 'T2': ('Form', 29, 36, 'capsule'), 'T4': ('Duration', 46, 56, 'for 5 days')}, 'relations': []}
+{
+    'entities': {
+        'T3': ('Drug', 40, 45, 'Advil'),
+        'T1': ('Dosage', 27, 28, '1'), 
+        'T2': ('Form', 29, 36, 'capsule'),
+        'T4': ('Duration', 46, 56, 'for 5 days')
+     },
+     'relations': []
+}
 ```
 To explore medaCy's other models or train your own, visit the [examples section](examples).
 

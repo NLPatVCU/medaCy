@@ -40,8 +40,8 @@ class Annotations:
         self.supported_file_types = ['ann', 'con']  # change me when new annotation types are supported
         self.source_text_path = source_text_path
 
-        if not (isinstance(annotation_data, dict) or isinstance(annotation_data, str)):
-            raise InvalidAnnotationError("annotation_data must of type dict or str.")
+        if not (isinstance(annotation_data, (dict, str))):
+            raise TypeError("annotation_data must of type dict or str.")
 
         if isinstance(annotation_data, dict):
             if not ('entities' in annotation_data and isinstance(annotation_data['entities'], dict)):
@@ -54,7 +54,7 @@ class Annotations:
 
         if isinstance(annotation_data, str):
             if annotation_type is None:
-                raise InvalidAnnotationError("Must specify the type of annotation file representing by annotation_data")
+                raise ValueError("Must specify the type of annotation file representing by annotation_data")
             if not os.path.isfile(annotation_data):
                 raise FileNotFoundError("annotation_data is not a valid file path")
 
@@ -234,7 +234,7 @@ class Annotations:
         :return: The data structure detailed above.
         """
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_by_entity() can only accept another Annotations object as an argument.")
+            raise TypeError("Annotations.compare_by_entity() can only accept another Annotations object as an argument.")
 
         these_entities = list(self.annotations['entities'].values())
         gold_entities = list(gold_anno.annotations['entities'].values())
@@ -270,29 +270,43 @@ class Annotations:
         not have two annotations beginning at the same index, so the strict value is used to calculate within what
         margin a matched pair can be separated.
         :param gold_anno: The Annotation object representing an annotation set that is known to be accurate.
-        :param strict: Used to calculate within what range a possible match can be. The length of the entity is
-            multiplied by this number, and the product of those two numbers is the difference that the entity can
-            begin or end relative to the starting index of the entity in the gold dataset. Default is 0.2.
-        :return:
+        :param strict: Used to calculate within what range a possible match can be. The length of the entity_text is
+            multiplied by this number, and the product of those two numbers is the difference that the entity_text can
+            begin or end relative to the starting index of the entity_text in the gold dataset. Default is 0.2.
+        :return: A data structure that looks like this:
+            {
+                183: {
+                    'accuracy': 0.9148936170212766,
+                    'gold_anno': ('TestArticle', 183, 188, 'Cr(V)'),
+                    'this_anno': ('TestArticle', 183, 220, 'Cr(V) compound [CrV-BT]2-  [CrV-BT]2-')
+                },
+                198: {
+                    'accuracy': 0,
+                    'gold_anno': ('TestArticle', 198, 208, '[CrV-BT]2-'),
+                    'this_anno': None
+                },
+                'NOT_MATCHED': [('Dose', 3316, 3318, '20'), ('Dose', 3653, 3658, '400')]
+            }
+
         """
 
         # Guarder conditions
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_by_index() can only accept another Annotations object "
+            raise TypeError("Annotations.compare_by_index() can only accept another Annotations object "
                              "as an argument.")
         if not isinstance(strict, (int, float)):
-            raise ValueError("strict must be an int or float.")
+            raise TypeError("strict must be an int or float.")
         if strict < 0: raise ValueError("strict must be above 0.")
 
         def find_closest_key(target: int, matches: list):
             """
-            Used to approximate which entity in the predicted data matches a given entity in the gold data when
+            Used to approximate which entity_text in the predicted data matches a given entity_text in the gold data when
             they do not have the same start index. (For example, there might be a leading punctuation mark
             in one of the entities.)
 
             Finds which match (from a list of matches, all ints) is closest to the target (also an int).
-            Used to map entities in the predicted data set to the closest entity in the gold dataset.
-            :param target: The key of an entity in the predicted dataset.
+            Used to map entities in the predicted data set to the closest entity_text in the gold dataset.
+            :param target: The key of an entity_text in the predicted dataset.
             :param matches: A list of keys in the gold dataset.
             :return: The key in the list of matches closest to the target.
             """
@@ -302,23 +316,28 @@ class Annotations:
 
         def calculate_accuracy(gold_start, gold_end, pred_start, pred_end) -> float:
             """
-            Calculates how closely the start and end indices of the predicted data match the start and end indices of
-            the gold data.
+            Calculates how closely the start index and the span length of the predicted data match the start index
+            and span length of the gold data. Returned value is the average of those two scores.
             :param gold_start: The start index of the gold data.
             :param gold_end: The end index of the gold data.
             :param pred_start: The start index of the preidcted data.
             :param pred_end: The end index of the predicted data.
             :return: A float representing the percentage accuracy between 0 and 1.
             """
-            start_difference_span = abs(gold_start - pred_start)
-            start_difference = abs(gold_start - start_difference_span)
-            start_accuracy = start_difference / gold_start
 
-            end_difference_span = abs(gold_end - pred_end)
-            end_difference = abs(gold_end - end_difference_span)
-            end_accuracy = end_difference / gold_end
+            gold_len = gold_end - gold_start
+            pred_len = pred_end - pred_start
+            lens = [gold_len, pred_len]
 
-            overall_accuracy = (start_accuracy + end_accuracy) / 2
+            start_difference = abs(gold_start - pred_start)
+            start_accuracy = 1 - (start_difference / gold_len)
+
+            # Calculations using the end span are tricky because entities are paired using the start index,
+            # so their nearness is given, but the end index is often so different between the gold and predicted data
+            # that the end difference can be larger than the length of the annotation.
+            span_accuracy = min(lens) / max(lens)
+
+            overall_accuracy = (start_accuracy + span_accuracy) / 2
             return overall_accuracy
 
         these_entities = list(self.annotations['entities'].values())
@@ -327,21 +346,23 @@ class Annotations:
         comparison = {"NOT_MATCHED": []}
 
         for e in gold_entities:
-            # start_ind must be an int for later calculations using the indices
-            start_ind = int(e[1])
+            start_ind = e[1]
             comparison[start_ind] = {"gold_anno": e, "this_anno": None, "accuracy": 0}
 
         for e in these_entities:
-            start_ind = int(e[1])
-            entity = e[3]
+            start_ind = e[1]
+            entity_text = e[3]
 
             # If there's an exact match for a predicted start index and a gold start index:
             if start_ind in comparison.keys():
-                comparison[start_ind]["this_anno"] = e
-                comparison[start_ind]["accuracy"] = 1
-            else:  # To find the closest key when there is not a 1:1 correlation:
+                exact_start_match = comparison[start_ind]
+                exact_start_match["this_anno"] = e
+                # This doesn't mean that the entities end at the same index, so we will calculate the accuracy
+                gold_tuple = exact_start_match["gold_anno"]
+                exact_start_match["accuracy"] = calculate_accuracy(gold_tuple[1], gold_tuple[2], e[1], e[2])
+            else:  # To find the closest key when there is not a 1:1 correlation for the start indices:
                 # Create a range of indices that the match could be in, determined by the strict value
-                margin = len(entity) * strict
+                margin = len(entity_text) * strict
                 range_min = floor(start_ind - margin)
                 range_max = ceil(start_ind + margin)
                 # Get all the keys that are in the range; "NOT_MATCHED" is a key but is implicitly excluded because
@@ -352,9 +373,9 @@ class Annotations:
                     best_key = find_closest_key(start_ind, possible_keys)
                     matched_relation = comparison[best_key]
                     # Take note if the unlikely event occurs that two entities in the predicted data are matched to the
-                    # same entity in the gold dataset
+                    # same entity_text in the gold dataset
                     if matched_relation["this_anno"] is not None:
-                        logging.log("Writing over previously matched entity at index %i" % best_key)
+                        logging.log("Writing over previously matched entity_text at index %i" % best_key)
                     matched_relation["this_anno"] = e
                     gold_data = matched_relation["gold_anno"]
                     matched_relation["accuracy"] = calculate_accuracy(gold_data[1], gold_data[2], e[1], e[2])
@@ -375,26 +396,39 @@ class Annotations:
         :param strict: See compare_by_index()
         :return: A dictionary with keys:
             "num_not_matched": The number of entites in the predicted data that are not matched to an entity in the
-                gold data,
+                gold data.
             "avg_accuracy": The average of all the decimal values representing how close to a 1:1 correlation there was
-                between the start and end indices in the gold and predicted data.
+                between the start and end indices in the gold and predicted data, only considering those that were
+                matched at all.
+            "percent_matched": The percentage of entities in the predicted set that were matched to another entity.
+            "percent_entities_matched": The percentage of matches for which the entities were the same.
         """
 
         if not isinstance(gold_anno, Annotations):
-            raise ValueError("Annotations.compare_by_index_stats() can only accept another Annotations object "
+            raise TypeError("Annotations.compare_by_index_stats() can only accept another Annotations object "
                              "as an argument.")
         # Other conditions will be checked when compare_by_index() is called
 
-        # Initialze the object that will be returned
-        stats = {"num_not_matched": 0, "avg_accuracy": 0}
-
+        stats = {}
         comparison = self.compare_by_index(gold_anno, strict)
         not_matched = comparison.pop("NOT_MATCHED")
+        # Note that comparison no longer contains NOT_MATCHED
+
+        # num_not_matched
         stats["num_not_matched"] = len(not_matched)
 
+        # avg_accuracy
         all_avgs = [a["accuracy"] for a in comparison.values()]
         stats["avg_accuracy"] = mean(all_avgs)
 
+        # Logic for percent_matched
+        num_matches = len(comparison.keys())
+        total_entities = num_matches + len(not_matched)
+        stats["percent_matched"] = num_matches / total_entities
+
+        # percent_entities_matched
+        # for c in comparison:
+        #
         return stats
 
     def stats(self):
