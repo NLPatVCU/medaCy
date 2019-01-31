@@ -137,7 +137,7 @@ class TestAnnotation(TestCase):
                 with self.assertRaises(FileNotFoundError):
                     Annotations(c.name, annotation_type='con', source_text_path=None)
 
-    def test_same_file_diff(self):
+    def test_difference(self):
         """Tests that when a given Annotations object uses the diff() method with another Annotations object created
         from the same source file, that it returns an empty list."""
         annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
@@ -152,4 +152,28 @@ class TestAnnotation(TestCase):
         annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
         result = annotations1.difference(annotations2)
         self.assertTrue(result.__len__() > 0)
+
+    def test_compute_ambiguity(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        label, start, end, text = annotations2.get_entity_annotations()[0]
+        annotations2.add_entity('incorrect_label', start, end, text)
+        self.assertEqual(len(annotations1.compute_ambiguity(annotations2)), 1)
+
+
+    def test_confusion_matrix(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
+        annotations1.add_entity(*annotations2.get_entity_annotations()[0])
+
+        self.assertEqual(len(annotations1.compute_confusion_matrix(annotations2, self.entities)[0]), len(self.entities))
+        self.assertEqual(len(annotations1.compute_confusion_matrix(annotations2, self.entities)), len(self.entities))
+
+    def test_intersection(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
+        annotations1.add_entity(*annotations2.get_entity_annotations()[0])
+        annotations1.add_entity(*annotations2.get_entity_annotations()[1])
+        self.assertEqual(annotations1.intersection(annotations2), set([annotations2.get_entity_annotations()[0], annotations2.get_entity_annotations()[1]]))
+
 

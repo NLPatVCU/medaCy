@@ -80,6 +80,17 @@ class Annotations:
     def get_entity_count(self):
         return len(self.annotations['entities'].keys())
 
+    def add_entity(self, label, start, end, text=""):
+        """
+        Adds an entity to the Annotations
+        :param label: the label of the annotation you are appending
+        :param start: the start index in the document of the annotation you are appending.
+        :param end: the end index in the document of the annotation you are appending
+        :param text: the raw text of the annotation you are appending
+        :return:
+        """
+        self.annotations['entities'].update({'T%i' % (len(self.annotations['entities']) + 1) : (label, start, end, text)})
+
     def to_ann(self, write_location=None):
         """
         Formats the Annotations object into a string representing a valid ANN file. Optionally writes the formatted
@@ -186,29 +197,29 @@ class Annotations:
             f.write(ann_from_con)
             self.from_ann(f.name)  # must pass the name to self.from_ann() to ensure compatibility
 
-    def difference(self, annotation, leniency=0):
+    def difference(self, annotations, leniency=0):
         """
         Identifies the difference between two Annotations objects. Useful for checking if an unverified annotation
         matches an annotation known to be accurate. This is done returning a list of all annotations in the operated on
         Annotation object that do not exist in the passed in annotation object. This is a set difference.
-        :param annotation: Another Annotations object.
+        :param annotations: Another Annotations object.
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as
         different. A value of zero considers only exact character matches while a positive value considers entities that
         differ by up to ceil(leniency * len(span)/2) on either side.
         :return: A set of tuples of non-matching annotations.
         """
-        if not isinstance(annotation, Annotations):
+        if not isinstance(annotations, Annotations):
             raise ValueError("Annotations.diff() can only accept another Annotations object as an argument.")
         if leniency != 0:
             if not  0 <= leniency <= 1:
                 raise ValueError("Leniency must be a floating point between [0,1]")
         else:
-            return set(self.get_entity_annotations()).difference(annotation.get_entity_annotations())
+            return set(self.get_entity_annotations()).difference(annotations.get_entity_annotations())
 
         matches = set()
         for label, start, end, text in self.get_entity_annotations():
             window = ceil(leniency * (end-start))
-            for c_label, c_start, c_end, c_text in annotation.get_entity_annotations():
+            for c_label, c_start, c_end, c_text in annotations.get_entity_annotations():
                 if label == c_label:
                     if start - window <= c_start and end+window >= c_end:
                         matches.add((label, start, end, text))
@@ -217,27 +228,25 @@ class Annotations:
 
         return set(self.get_entity_annotations()).difference(matches)
 
-    def intersection(self, annotation, leniency=0):
+    def intersection(self, annotations, leniency=0):
         """
         Computes the intersection of the operated annotation object with the operand annotation object.
-        :param annotation: Another Annotations object.
+        :param annotations: Another Annotations object.
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as
         a match. A value of zero considers only exact character matches while a positive value considers entities that
         differ by up to ceil(leniency * len(span)/2) on either side.
         :return A set of annotations that appear in both Annotation objects
         """
-        if not isinstance(annotation, Annotations):
-            raise ValueError("Annotations.diff() can only accept another Annotations object as an argument.")
+        if not isinstance(annotations, Annotations):
+            raise ValueError("An Annotations object is requried as an argument.")
         if leniency != 0:
             if not  0 <= leniency <= 1:
                 raise ValueError("Leniency must be a floating point between [0,1]")
-        else:
-            return set(self.get_entity_annotations()).difference(annotation.get_entity_annotations())
 
         matches = set()
         for label, start, end, text in self.get_entity_annotations():
             window = ceil(leniency * (end-start))
-            for c_label, c_start, c_end, c_text in annotation.get_entity_annotations():
+            for c_label, c_start, c_end, c_text in annotations.get_entity_annotations():
                 if label == c_label:
                     if start - window <= c_start and end+window >= c_end:
                         matches.add((label, start, end, text))
@@ -245,6 +254,69 @@ class Annotations:
 
 
         return matches
+
+    def compute_ambiguity(self, annotations):
+        """
+        Finds occurrences of predictions that intersect with an a span from this annoation but do not have that spans
+        label. If 'annotation' comprises a models predictions, this method provides a strong indicators
+        of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
+        :param annotations: Another Annotations object.
+        :return: a dictionary containing incorrect label predictions for given spans
+        """
+        if not isinstance(annotations, Annotations):
+            raise ValueError("An Annotations object is required as an argument.")
+
+        ambiguity_dict = {}
+
+        for label, start, end, text in self.get_entity_annotations():
+            for c_label, c_start, c_end, c_text in annotations.get_entity_annotations():
+                if label == c_label:
+                    continue
+                overlap = max(0, min(end, c_end) - max(c_start, start))
+                if overlap != 0:
+                    ambiguity_dict[(label, start, end, text)] = []
+                    ambiguity_dict[(label, start, end, text)].append((c_label, c_start, c_end, c_text))
+
+        return ambiguity_dict
+
+
+
+    def compute_confusion_matrix(self, annotations, entities, leniency=0):
+        """
+        Computes a confusion matrix representing span level ambiguity between this annotation and the argument annotation.
+        An annotation in 'annotations' is ambigous is it overlaps with a span in this Annotation but does not have the
+        same entity label. The main diagonal of this matrix corresponds to entities in this Annotation that match spans
+        in 'annotations' and have equivalent class label.
+        :param annotations: Another Annotations object.
+        :param entities: a list of entities to use in computing matrix ambiguity.
+        :param leniency: leniency to utilize when computing overlapping entities.
+        :return: a square matrix with dimension len(entities) where matrix[i][j] indicates that entities[i]
+        in this annotation was predicted as entities[j] in 'annotation' matrix[i][j] times.
+        """
+        if not isinstance(annotations, Annotations):
+            raise ValueError("An Annotations object is required as an argument.")
+        if not isinstance(entities, list):
+            raise ValueError("A list of entities is required")
+
+        entity_encoding = {entity: int(i) for i, entity in enumerate(entities)}
+        confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
+
+        ambiguity_dict = self.compute_ambiguity(annotations)
+        intersection = self.intersection(annotations, leniency=1)
+
+        #Compute all off diagonal scores
+        for gold_span in ambiguity_dict:
+            gold_label, start, end, text = gold_span
+            for ambiguous_span in ambiguity_dict[gold_span]:
+                ambiguous_label, _, _, _ = ambiguous_span
+                confusion_matrix[entity_encoding[gold_label]][entity_encoding[ambiguous_label]] += 1
+
+        #Compute diagonal scores (correctly predicted entities with correct spans)
+        for matching_span in intersection:
+            matching_label, start, end, text = matching_span
+            confusion_matrix[entity_encoding[matching_label]][entity_encoding[matching_label]] += 1
+
+        return confusion_matrix
 
 
 
