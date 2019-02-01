@@ -4,8 +4,8 @@
 """
 
 import os, logging, tempfile
-from medacy.tools.con.con_to_brat import convert_con_to_brat
-from medacy.tools.con.brat_to_con import convert_brat_to_con
+from medacy.tools.con_form.con_to_brat import convert_con_to_brat
+from medacy.tools.con_form.brat_to_con import convert_brat_to_con
 from math import floor, ceil
 import numpy as np
 from spacy.displacy import EntityRenderer
