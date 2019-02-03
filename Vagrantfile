@@ -9,7 +9,7 @@ config.vm.provider "virtualbox" do |v|
   end
 
 config.vm.provider "virtualbox" do |v|
-  v.memory = 2048
+  v.memory = 3000
   v.cpus = 2
 end
 
@@ -19,5 +19,8 @@ config.vm.provision "shell", inline: <<-SHELL
     python3 -m pip install --upgrade pip
     pip3 install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0
     sudo -H pip3 install -e /vagrant
+
+    # Optional peripheral packages
+    sudo -H pip3 install git+https://github.com/NanoNLP/medaCy_dataset_end.git
 SHELL
 end
