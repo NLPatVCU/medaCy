@@ -7,6 +7,9 @@ This guide will instruct you on how to use Vagrant within PyCharm or from the co
 ## Installations
 
 The only additional software you need to utilize Vagrant is VirtualBox and Vagrant itself.
+This guide assumes that if you plan to use PyCharm, you have the professional edition
+and are already familiar with how to use its base features.
+The full user guide for PyCharm can be found [here](https://www.jetbrains.com/help/pycharm/meet-pycharm.html).
  
 ### Installing VirtualBox
 
@@ -29,16 +32,20 @@ Vagrantfile. MedaCy distributes with this file already configured.
 
 ### Vagrant up
 
+This step includes downloading an Ubuntu operating system and should be performed with a strong internet
+connection for fastest results.
+
 From the command line, navigate to the directory containing your clone of medaCy, and run this command:
 
 ```bash
 $ vagrant up
 ```
 
-This command will "turn on" your new medaCy VM. You will be using this command every time you want to
-start up your VM, but since this is its first activation, it will take a while.
+This command will create your new medaCy VM using the specifications in the Vagrantfile.
+You will be using this command every time you want to start up your VM, 
+but since this is its first activation, it will take a while.
 While you wait, the operating system for the medaCy VM (Ubuntu), Python 3, and medaCy and all its dependencies
-are being installed. Once these downloads complete, 
+are being downloaded and installed. Once these downloads complete, 
 you won't have to wait for them every time you run `vagrant up`.
 
 ### Let's take a look
@@ -58,7 +65,7 @@ vagrant@ubuntu-bionic:/$ cd vagrant
 vagrant@ubuntu-bionic:/vagrant$ ls
 ```
 
-After running the first command, you could run `$ ls` to see the root directory of your 
+After running the first command, you could run `ls` to see the root directory of your 
 VM, if you feel so inclined. We're interested in what's in the `/vagrant` subdirectory.
 It should look familiar, like the root directory of your medaCy project. Why is that?
 *Because it is!* The `/vagrant` directory of the VM is shared between the VM and the 
@@ -70,6 +77,18 @@ No. Think of your VM as an enhanced virtual environment. When the VM was created
  and all of its dependencies were installed on the base installation of Python 3.
  In theory, you'll only be using this VM for medaCy, so there's no need to 
  create a separate environment for it.
+ 
+### What now?
+
+Now that you have a medaCy-specific Ubuntu VM with a shared folder between the VM and your machine,
+you can edit any file you'd like in whatever text editor you choose, then run it within the VM from
+the command line. You won't need to worry about whether or not medaCy is compatible with your host machine.
+
+Because of how Python 3 was installed on the VM, you will need to use the command `Python3` rather than `Python`.
+
+Something to keep in mind is that the VM has limited resources and should only be used for developing
+medaCy itself and generating predictions. Model training requires significantly more resources and 
+should be done on a machine with a significant amount of memory.
 
 ### Exiting and turning off the VM
 
@@ -89,10 +108,10 @@ $ vagrant halt
 ### Tools > Vagrant > Up
 
 PyCharm Professional Edition provides features for interacting with Vagrant VMs.
-This guide assumes that you are familiar with PyCharm.
+This guide will cover the basics, but the developers of PyCharm provide a guide [here](https://www.jetbrains.com/help/pycharm/vagrant-support.html).
 
 Open your medaCy project in PyCharm and select Tools > Vagrant > Up. This is the same
-as running `$ vagrant up` from the terminal.
+as running `vagrant up` from the terminal.
 
 ### Tools > Start SSH session...
 
@@ -100,9 +119,13 @@ Likewise, Tools > Start SSH session... is the same as `$ vagrant ssh`. PyCharm w
 your Vagrant VM as an option to SSH into. You will then be able to interact with the VM at
 its own terminal.
 
+From Tools > Vagrant, you also have the option to select Halt.
+
 ### Configuring the interpreter
 
-While you're developing medaCy, you will probably want to utilize all of PyCharm's features.
+While you're developing medaCy in PyCharm, you probably don't want to run each script from the command line.
+This section details how to set the project interpreter to be the installation of Python 3 on the VM.
+
 Select File > Settings, and then on the settings menu, select Plugins. Enable the
 Remote Interpreter plugin. 
 
@@ -116,3 +139,10 @@ Select "Vagrant" on the left side of the new box. Set the Python interpreter pat
 
 ![Configuring the remote interpreter](./images/config_remote_interpreter.png)
 
+## Finishing up
+
+I hope that this guide was able to clarify how to configure Vagrant for medaCy.
+Should you encounter any issues, please follow the links throughout the guide
+to read the documentation for Vagrant and PyCharm. If you believe the problem is 
+specific to Vagrant is configured for this project, please [open a new issue](https://github.com/NLPatVCU/medaCy/issues)
+and I will get back to you as soon as I can.
