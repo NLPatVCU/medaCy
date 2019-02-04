@@ -36,6 +36,9 @@ then
 | Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
 
+Windows users should consider using Vagrant to run medaCy to ensure compatibility.
+A guide can be found [here](./guide/utilizing_vagrant.md). 
+
 # :books: Power of medaCy
 After installing medaCy and [medaCy's clinical model](examples/models/clinical_notes_model.md), simply run:
 
