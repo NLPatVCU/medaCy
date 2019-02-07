@@ -7,26 +7,22 @@ in the conversion process to the output directory.
 Function 'convert_con_to_brat()' can be imported independently and run on individual files.
 
 :author: Steele W. Farnsworth
-:date: 30 December, 2018
+:date: 6 February, 2019
 """
 
 from sys import argv as cmd_arg, exit
-from re import split, findall
+from re import split, findall, fullmatch
 import os
 import shutil
+import logging
 
 
-def check_valid_line(item: str):
-    """
-    Non-comprehensive tests to see if a given line is valid for conversion. Returns respective boolean value.
-    :param item: A string that is a line of text, hopefully in the con format.
-    :return: Boolean of whether or not the line appears to be in con format.
-    """
+def is_valid_con(item: str):
+    """Returns boolean value for whether or not a given line is in valid con format."""
+    con_form = "c=\".+\" \d+:\d+ \d+:\d+\|\|t=\".+\""
     if not isinstance(item, str): return False
-    elif '||' not in item: return False
-    elif findall(r'\d+:\d+', item).__len__() != 2: return False
-    elif findall(r'c="([^"]*)"', item).__len__() != 1: return False
-    else: return True
+    if fullmatch(con_form, item): return True
+    else: return False
 
 
 def line_to_dict(item):
@@ -110,7 +106,9 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
     output_text = ""
     t = 1
     for line in con_text_lines:
-        if not check_valid_line(line): continue
+        if not is_valid_con(line):
+            logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (con_file_path, line))
+            continue
         d = line_to_dict(line)
         start_ind = get_absolute_index(text, text_lines, d["start_ind"])
         span_length = d["data_item"].__len__()

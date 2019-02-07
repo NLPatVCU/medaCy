@@ -4,33 +4,31 @@
 """
 
 import unittest, tempfile, os, shutil
-from medacy.tools.con_form.con_to_brat import convert_con_to_brat
+from medacy.tools.con_form.con_to_brat import convert_con_to_brat, is_valid_con, line_to_dict
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
 T3	nanoparticle 24 37	Lipid Complex
-T4	tradename 66 66	
-T5	routeofadministration 110 121	intravenous
-T6	tradename 132 139	ABELCET
-T7	activeingredient 153 168	ampho-tericin B
-T8	corecomposition 246 307	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
-T9	corecomposition 312 361	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
-T10	tradename 397 404	ABELCET
-T11	nanoparticle 468 477	Liposomal
-T12	nanoparticle 514 527	lipid complex
-T13	nanoparticle 674 683	liposomal
-T14	nanoparticle 687 702	lipid-complexed
-T15	activeingredient 911 925	Amphotericin B
-T16	indication 940 950	antifungal
-T17	activeingredient 1009 1023	Amphotericin B
-T18	molecularweight 1397 1403	924.09
-T19	tradename 1470 1477	ABELCET
+T4	routeofadministration 110 121	intravenous
+T5	tradename 132 139	ABELCET
+T6	activeingredient 153 168	ampho-tericin B
+T7	corecomposition 246 307	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
+T8	corecomposition 312 361	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
+T9	tradename 397 404	ABELCET
+T10	nanoparticle 468 477	Liposomal
+T11	nanoparticle 514 527	lipid complex
+T12	nanoparticle 674 683	liposomal
+T13	nanoparticle 687 702	lipid-complexed
+T14	activeingredient 911 925	Amphotericin B
+T15	indication 940 950	antifungal
+T16	activeingredient 1009 1023	Amphotericin B
+T17	molecularweight 1397 1403	924.09
+T18	tradename 1470 1477	ABELCET
 """
 
 con_text = """c="ABELCET" 1:0 1:0||t="tradename"
 c="Amphotericin B" 1:9 1:22||t="activeingredient"
 c="Lipid Complex" 1:24 1:30||t="nanoparticle"
-c="" 1:66 1:66||t="tradename"
 c="intravenous" 1:110 1:110||t="routeofadministration"
 c="ABELCET" 2:0 2:0||t="tradename"
 c="ampho-tericin B" 2:21 2:35||t="activeingredient"
@@ -98,10 +96,41 @@ class TestConToBrat(unittest.TestCase):
     def tearDownClass(cls):
         shutil.rmtree(cls.test_dir)
 
+    def test_is_valid_con_valid_line_1(self):
+        """Tests that is_valid_con() returns True for a valid input."""
+        line = "c=\"intravenous\" 1:110 1:110||t=\"routeofadministration\""
+        result = is_valid_con(line)
+        self.assertTrue(result)
+
+    def test_is_valid_con_valid_line_2(self):
+        """Tests that is_valid_con() returns True for a valid input."""
+        line = "c=\"intra!     us\" 5:110 10:16||t=\"routeof admi nis'tration\""
+        result = is_valid_con(line)
+        self.assertTrue(result)
+
+    def test_is_valid_con_invalid_line_1(self):
+        """Tests that is_valid_con() returns False for an invalid input."""
+        line = "c=intra!us\" 5:110 10:16||t=\"routeof admi nis'tration\""
+        result = is_valid_con(line)
+        self.assertFalse(result)
+
+    def test_is_valid_con_invalid_line_2(self):
+        """Tests that is_valid_con() returns False for an invalid input."""
+        line = "c=intra!us\" 5:110  10:16 t=\"routeof admi nis'tration\""
+        result = is_valid_con(line)
+        self.assertFalse(result)
+
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
         brat_output = convert_con_to_brat(self.con_file_path, self.text_file_path)
         self.assertEqual(brat_output, brat_text)
+
+    def test_line_to_dict_valid_line(self):
+        """Tests that line_to_dict() accurately casts a line of con text to a dict."""
+        line = "c=\"Amphotericin B\" 1:9 1:22||t=\"activeingredient\""
+        expected = {"data_item": "Amphotericin B", "start_ind": "1:9", "end_ind": "1:22", "data_type": "activeingredient"}
+        actual = line_to_dict(line)
+        self.assertDictEqual(expected, actual)
 
     def test_invalid_file_path(self):
         """Passes an invalid file path to convert_con_to_brat()."""
