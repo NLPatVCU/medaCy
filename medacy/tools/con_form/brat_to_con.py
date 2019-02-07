@@ -8,28 +8,30 @@ Also possible to import 'convert_brat_to_con()' directly and pass the paths to t
 for individual conversion.
 
 :author: Steele W. Farnsworth
-:date: 30 December, 2018
+:date: 6 February, 2019
 """
 
-from sys import argv as cmd_arg
-from re import split
+from sys import argv
+from re import split, fullmatch, DOTALL
 import os
 import shutil
+import logging
 
 
-def check_valid_line(item: str):
-    """Returns a boolean value for whether or not a given line is in the BRAT format. Tests are not comprehensive."""
+def is_valid_brat(item: str):
+    """Returns a boolean value for whether or not a given line is in the BRAT format."""
+    # Define the regex pattern for BRAT.
+    # Note that this pattern allows for three to six spaces to count as a tab
+    brat_pattern = r"[TREAMN]\d+(\t| {3,6})\S+ \d+ \d+(\t| {3,6}).+"
     if not isinstance(item, str): return False
-    elif '\t' not in item: return False
-    elif item == "": return False
-    elif item.startswith("#"): return False
-    else: return True
+    if fullmatch(brat_pattern, item, DOTALL): return True
+    else: return False
 
 
 def line_to_dict(item):
     """
     Converts a string that is a line in brat format to a dictionary representation of that data.
-    Keys are: T; data_type; start_ind; end_ind; data_type.
+    Keys are: id_type, id_num, data_type, start_ind, end_ind, data_type.
     :param item: The line of con text (str).
     :return: The dictionary containing that data.
     """
@@ -37,7 +39,7 @@ def line_to_dict(item):
     split2 = split(" ", split1[1])
     split3 = [split1[0]] + split2 + [split1[2]]
     s = [i.rstrip() for i in split3]  # remove whitespace
-    return {"T": s[0], "data_type": s[1], "start_ind": int(s[2]), "end_ind": int(s[3]), "data_item": s[4]}
+    return {"id_type": s[0][0], "id_num": int(s[0][1:]), "data_type": s[1], "start_ind": int(s[2]), "end_ind": int(s[3]), "data_item": s[4]}
 
 
 def switch_extension(name, ext):
@@ -122,7 +124,9 @@ def convert_brat_to_con(brat_file_path, text_file_path=None):
 
     for line in brat_text_lines:
 
-        if not check_valid_line(line): continue
+        if not is_valid_brat(line):
+            logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (brat_file_path, line))
+            continue
 
         d = line_to_dict(line)
 
@@ -147,7 +151,7 @@ if __name__ == '__main__':
 
     # Get the input and output directories from the command line.
 
-    if not cmd_arg.__len__() >= 3:
+    if not argv.__len__() >= 3:
         # Command-line arguments must be provided for the input and output directories.
         # Else, prints instructions and aborts the program.
         print("Please run the program again, entering the input and output directories as command-line arguments"
@@ -156,14 +160,14 @@ if __name__ == '__main__':
         exit()
 
     try:
-        input_dir_name = cmd_arg[1]
+        input_dir_name = argv[1]
         input_dir = os.listdir(input_dir_name)
     except FileNotFoundError:  # dir doesn't exist
         while not os.path.isdir(input_dir_name):
             input_dir_name = input("Input directory not found; please try another directory:")
         input_dir = os.listdir(input_dir_name)
     try:
-        output_dir_name = cmd_arg[2]
+        output_dir_name = argv[2]
         output_dir = os.listdir(output_dir_name)
     except FileNotFoundError:
         while not os.path.isdir(output_dir_name):
@@ -184,7 +188,7 @@ if __name__ == '__main__':
 
     # Paste all the text files used in the conversion process to the output directory
     # if there's a fourth command line argument and that argument is -c
-    if cmd_arg.__len__() == 4 and cmd_arg[3] == "-c":
+    if argv.__len__() == 4 and argv[3] == "-c":
         text_files_with_match = [f for f in text_files if switch_extension(f, ".ann") in ann_files]
         for f in text_files_with_match:
             full_name = os.path.join(input_dir_name, f)

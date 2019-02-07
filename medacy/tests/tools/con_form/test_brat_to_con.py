@@ -1,15 +1,14 @@
 """
 :author: Steele W. Farnsworth
-:date: 28 December, 2018
+:date: 6 February, 2019
 """
 
 import unittest, tempfile, os, shutil
-from medacy.tools.con_form.brat_to_con import convert_brat_to_con
+from medacy.tools.con_form.brat_to_con import convert_brat_to_con, is_valid_brat, line_to_dict
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
 T3	nanoparticle 24 37	Lipid Complex
-T4	tradename 66 66	
 T5	routeofadministration 110 121	intravenous
 T6	tradename 132 139	ABELCET
 T7	activeingredient 153 168	ampho-tericin B
@@ -30,7 +29,6 @@ T19	tradename 1470 1477	ABELCET
 con_text = """c="ABELCET" 1:0 1:0||t="tradename"
 c="Amphotericin B" 1:9 1:22||t="activeingredient"
 c="Lipid Complex" 1:24 1:30||t="nanoparticle"
-c="" 1:66 1:66||t="tradename"
 c="intravenous" 1:110 1:110||t="routeofadministration"
 c="ABELCET" 2:0 2:0||t="tradename"
 c="ampho-tericin B" 2:21 2:35||t="activeingredient"
@@ -97,6 +95,39 @@ class TestBratToCon(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.test_dir)
+
+    def test_is_valid_brat_valid_line_1(self):
+        """Tests if is_valid_brat() returns True for a valid line with no newline character."""
+        line = "T2	activeingredient 9 23	Amphotericin B"
+        result = is_valid_brat(line)
+        self.assertTrue(result)
+
+    def test_is_valid_brat_valid_line_2(self):
+        """Tests if is_valid_brat() returns True for a valid line with special characters."""
+        line = "T10	tradename 397 404	ABELCET\n"
+        result = is_valid_brat(line)
+        self.assertTrue(result)
+
+    def test_is_valid_brat_invalid_line_1(self):
+        """Tests if is_valid_brat() returns False when the final index is a letter and there is
+        no new-line character."""
+        line = "T2	activeingredient 9 n	Amphotericin B"
+        result = is_valid_brat(line)
+        self.assertFalse(result)
+
+    def test_is_valid_brat_invalid_line_2(self):
+        """Tests if is_valid_brat() returns False when valid except the key is not one of the valid characters."""
+        line = "Z2	activeingredient 9 23	Amphotericin B\n"
+        result = is_valid_brat(line)
+        self.assertFalse(result)
+
+    def test_line_to_dict(self):
+        """Tests that line_to_dict() accurately casts a line to a dict."""
+        line = "T2	activeingredient 9 23	Amphotericin B"
+        expected = {"id_type": "T", "id_num": 2, "data_type": "activeingredient",
+                    "start_ind": 9, "end_ind": 23, "data_item": "Amphotericin B"}
+        actual = line_to_dict(line)
+        self.assertDictEqual(expected, actual)
 
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
