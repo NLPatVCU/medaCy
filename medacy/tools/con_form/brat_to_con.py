@@ -35,7 +35,7 @@ def line_to_dict(item):
     """
     split1 = split("\t", item)
     split2 = split(" ", split1[1])
-    split3 = [split1[0]] +  split2 + [split1[2]]
+    split3 = [split1[0]] + split2 + [split1[2]]
     s = [i.rstrip() for i in split3]  # remove whitespace
     return {"T": s[0], "data_type": s[1], "start_ind": int(s[2]), "end_ind": int(s[3]), "data_item": s[4]}
 

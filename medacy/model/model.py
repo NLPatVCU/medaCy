@@ -13,15 +13,12 @@ from tabulate import tabulate
 from statistics import mean
 
 
-
-
-
-
 class Model:
 
     def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
 
-        assert isinstance(medacy_pipeline, BasePipeline), "Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline"
+        if not isinstance(medacy_pipeline, BasePipeline):
+            raise TypeError("Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline")
 
         self.pipeline = medacy_pipeline
         self.model = model
@@ -31,10 +28,11 @@ class Model:
         self.y_data = []
         self.n_jobs = n_jobs
 
-        #Run an initializing document through the pipeline to register all token extensions.
-        #This allows the gathering of pipeline information prior to fitting with live data.
+        # Run an initializing document through the pipeline to register all token extensions.
+        # This allows the gathering of pipeline information prior to fitting with live data.
         doc = self.pipeline(medacy_pipeline.spacy_pipeline.make_doc("Initialize"), predict=True)
-        assert doc is not None, "Model could not be initialized with the set pipeline"
+        if doc is None:
+            raise IOError("Model could not be initialized with the set pipeline.")
 
     def fit(self, dataset):
         """
@@ -43,25 +41,25 @@ class Model:
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
-        assert isinstance(dataset, Dataset), "Must pass in an instance of Dataset containing your training files"
-        assert isinstance(self.pipeline, BasePipeline), "Model object must contain a medacy pipeline to pre-process data"
+        if not isinstance(dataset, Dataset):
+            raise TypeError("Must pass in an instance of Dataset containing your training files")
+        if not isinstance(self.pipeline, BasePipeline):
+            raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
-
-        pool = Pool(nodes = self.n_jobs)
+        pool = Pool(nodes=self.n_jobs)
 
         results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
                    for data_file in dataset.get_data_files()]
 
-        while any([i.ready() == False for i in results]):
+        while any([i.ready() is False for i in results]):
             time.sleep(1)
 
         for idx, i in enumerate(results):
-            X,y = i.get()
-            self.X_data+=X
-            self.y_data+=y
+            X, y = i.get()
+            self.X_data += X
+            self.y_data += y
 
         logging.info("Currently Waiting")
-
 
         learner_name, learner = self.pipeline.get_learner()
         logging.info("Training: %s", learner_name)
@@ -74,8 +72,6 @@ class Model:
         self.model = learner
         return self.model
 
-
-
     def predict(self, dataset, prediction_directory = None):
         """
 
@@ -84,9 +80,10 @@ class Model:
         :return:
         """
 
-        assert isinstance(dataset, Dataset) or isinstance(dataset, str), "Must pass in an instance of Dataset containing your examples to be used for prediction"
-        assert self.model is not None, "Must fit or load a pickled model before predicting"
-
+        if not isinstance(dataset, (Dataset, str)):
+            raise TypeError("Must pass in an instance of Dataset containing your examples to be used for prediction")
+        if self.model is None:
+            raise ValueError("Must fit or load a pickled model before predicting")
 
         model = self.model
         medacy_pipeline = self.pipeline
@@ -126,10 +123,6 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-
-
-
-
     def cross_validate(self, num_folds=10):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
@@ -137,7 +130,7 @@ class Model:
         :return: Prints out performance metrics
         """
 
-        assert num_folds > 1, "Number of folds for cross validation must be greater than 1"
+        if num_folds < 1: raise ValueError("Number of folds for cross validation must be greater than 1")
 
         assert self.model is not None, "Cannot cross validate a un-fit model"
         assert self.X_data is not None and self.y_data is not None, \
@@ -222,11 +215,8 @@ class Model:
                        format(statistics_all_folds[label]['f1_max'], ".3f")]
                       for label in named_entities + ['system']]
 
-        logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+        logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
-
-
-
 
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """

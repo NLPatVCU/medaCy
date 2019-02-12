@@ -15,12 +15,12 @@ class TestDatasetLocal(TestCase):
             raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
         cls.training_directory = tempfile.mkdtemp() #set up train directory
         cls.prediction_directory = tempfile.mkdtemp()  # set up predict directory
-        dataset, entities = Dataset.load_external('medacy_dataset_end')
-        cls.entities = entities
+        training_dataset, _, meta_data = Dataset.load_external('medacy_dataset_end')
+        cls.entities = meta_data['entities']
         cls.ann_files = []
 
         #fill directory of training files
-        for data_file in dataset.get_data_files():
+        for data_file in training_dataset.get_data_files():
             file_name, raw_text, ann_text = (data_file.file_name, data_file.raw_path, data_file.ann_path)
             cls.ann_files.append(file_name + '.ann')
             with open(os.path.join(cls.training_directory, "%s.txt" % file_name), 'w') as f:
@@ -81,7 +81,7 @@ class TestDatasetExternal(TestCase):
         if importlib.util.find_spec('medacy_dataset_end') is None:
             raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
 
-        cls.dataset, cls.entities = Dataset.load_external('medacy_dataset_end')
+        cls.dataset, _, cls.entities = Dataset.load_external('medacy_dataset_end')
 
     @classmethod
     def tearDownClass(cls):
