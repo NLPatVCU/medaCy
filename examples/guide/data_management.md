@@ -56,12 +56,12 @@ from medacy.pipeline_components import MetaMap
 dataset = Dataset('/home/medacy/data')
 for data_file in dataset.get_data_files():
   print(data_file.file_name)
-print(dataset)
-print(dataset.is_metamapped())
+print(data)
+print(data.is_metamapped())
 
-metamap = MetaMap('/home/path/to/metamap/binary')
-dataset.metamap(metamap)
-print(dataset.is_metamapped())
+metamap = Metamap('/home/path/to/metamap/binary')
+data.metamap(metamap)
+print(data.is_metamapped())
 ```
 
 outputs:
@@ -95,9 +95,9 @@ Using a *medaCy compatible dataset* package to manage your training data insures
 A *medaCy compatible dataset* is python package wrapping data that can be hooked into medaCy. We can install a *medaCy compatible dataset* just like any python package. For instance,
 
 
-`pip install https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.2.tar.gz#egg=medacy_dataset_end-1.0.2`
+`pip install https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3`
 
-will install `v1.0.02` of the [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) dataset. Alternatively,
+will install `v1.0.03` of the [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) dataset. Alternatively,
 
 `pip install git+https://github.com/NanoNLP/medaCy_dataset_end.git`
 
@@ -108,7 +108,7 @@ After you have installed a *medaCy compatible dataset*, loading it returns a con
 ```python
 from medacy.data import Dataset
 
-dataset, entities = Dataset.load_external('medacy_dataset_end')
+training_dataset, evaluation_dataset, meta_data = Dataset.load_external('medacy_dataset_end')
 
 ```
 
@@ -117,7 +117,14 @@ alternatively, import the datasets package and directly call the load method:
 ```python
 import medacy_dataset_end
 
-dataset, entities = medacy_dataset_end.load()
+training_dataset, evaluation_dataset, meta_data = medacy_dataset_end.load()
+
+print(meta_data['entities']) #entities this dataset annotates
+print(meta_data['relations']) #relations this dataset annotates (END has None)
+
+training_dataset = medacy_dataset_end.load_training_dataset() #access just training
+
+evaluation_dataset = medacy_dataset_end.load_evaluation_dataset() #access just evaluation
 
 ```
 
