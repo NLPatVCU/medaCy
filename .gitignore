@@ -172,3 +172,5 @@ fabric.properties
 *.egg-info
 *.eggs/
 venv/
+
+not_medacy/

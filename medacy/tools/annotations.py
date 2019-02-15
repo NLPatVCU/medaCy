@@ -218,7 +218,7 @@ class Annotations:
         if not isinstance(annotations, Annotations):
             raise ValueError("Annotations.diff() can only accept another Annotations object as an argument.")
         if leniency != 0:
-            if not  0 <= leniency <= 1:
+            if not 0 <= leniency <= 1:
                 raise ValueError("Leniency must be a floating point between [0,1]")
         else:
             return set(self.get_entity_annotations()).difference(annotations.get_entity_annotations())
@@ -231,8 +231,6 @@ class Annotations:
                     if start - window <= c_start and end+window >= c_end:
                         matches.add((label, start, end, text))
                         break
-
-
         return set(self.get_entity_annotations()).difference(matches)
 
     def intersection(self, annotations, leniency=0):
@@ -248,7 +246,7 @@ class Annotations:
         if not isinstance(annotations, Annotations):
             raise ValueError("An Annotations object is requried as an argument.")
         if leniency != 0:
-            if not  0 <= leniency <= 1:
+            if not 0 <= leniency <= 1:
                 raise ValueError("Leniency must be a floating point between [0,1]")
 
         matches = set()
@@ -259,8 +257,6 @@ class Annotations:
                     if start - window <= c_start and end+window >= c_end:
                         matches.add((label, start, end, text))
                         break
-
-
         return matches
 
     def compute_ambiguity(self, annotations):
@@ -288,9 +284,6 @@ class Annotations:
 
         return ambiguity_dict
 
-
-
-
     def compute_confusion_matrix(self, annotations, entities, leniency=0):
         """
         Computes a confusion matrix representing span level ambiguity between this annotation and the argument annotation.
@@ -315,24 +308,19 @@ class Annotations:
         ambiguity_dict = self.compute_ambiguity(annotations)
         intersection = self.intersection(annotations, leniency=1)
 
-        #Compute all off diagonal scores
+        # Compute all off diagonal scores
         for gold_span in ambiguity_dict:
             gold_label, start, end, text = gold_span
             for ambiguous_span in ambiguity_dict[gold_span]:
                 ambiguous_label, _, _, _ = ambiguous_span
                 confusion_matrix[entity_encoding[gold_label]][entity_encoding[ambiguous_label]] += 1
 
-        #Compute diagonal scores (correctly predicted entities with correct spans)
+        # Compute diagonal scores (correctly predicted entities with correct spans)
         for matching_span in intersection:
             matching_label, start, end, text = matching_span
             confusion_matrix[entity_encoding[matching_label]][entity_encoding[matching_label]] += 1
 
         return confusion_matrix
-
-
-
-
-
 
     def compare_by_entity(self, gold_anno):
         """
@@ -421,9 +409,6 @@ class Annotations:
         if not isinstance(strict, (int, float)):
             raise TypeError("strict must be an int or float.")
         if strict < 0: raise ValueError("strict must be above 0.")
-
-
-
 
         def find_closest_key(target: int, matches: list):
             """
