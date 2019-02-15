@@ -106,6 +106,9 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
     output_text = ""
     t = 1
     for line in con_text_lines:
+        if line.startswith("#") or not line:
+            # No warning needs to be produced for lines that pass these conditions
+            continue
         if not is_valid_con(line):
             logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (con_file_path, line))
             continue
@@ -151,6 +154,17 @@ if __name__ == '__main__':
     text_files = [f for f in input_dir if f.endswith(".txt")]
     # Get only the con files in input_dir that have a ".txt" equivalent
     con_files = [f for f in input_dir if f.endswith(".con") and switch_extension(f, ".txt") in text_files]
+
+    # Ensure user is aware if there are no files to convert
+    if len(con_files) < 1:
+        raise FileNotFoundError("There were no con files in the input directory with a corresponding text file. "
+                                "Please ensure that the input directory contains con files and that each file has "
+                                "a corresponding txt file (see help for this program).")
+        exit()
+
+    # Create the log file
+    log_file_path = os.path.join(output_dir_name + "conversion.log")
+    logging.basicConfig(filename=log_file_path, level=logging.WARNING)
 
     for input_file_name in con_files:
         full_file_path = os.path.join(input_dir_name, input_file_name)

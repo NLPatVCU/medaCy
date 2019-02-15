@@ -8,7 +8,7 @@ Also possible to import 'convert_brat_to_con()' directly and pass the paths to t
 for individual conversion.
 
 :author: Steele W. Farnsworth
-:date: 6 February, 2019
+:date: 15 February, 2019
 """
 
 from sys import argv
@@ -124,7 +124,9 @@ def convert_brat_to_con(brat_file_path, text_file_path=None):
 
     for line in brat_text_lines:
 
-        if line.startswith("#") or line == "": continue
+        if line.startswith("#") or not line:
+            # Comments and blank lines can be skipped without warning
+            continue
         elif not is_valid_brat(line):
             logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (brat_file_path, line))
             continue
@@ -175,14 +177,21 @@ if __name__ == '__main__':
             output_dir_name = input("Output directory not found; please try another directory:")
             output_dir = os.listdir(output_dir_name)
 
-    # Init logger
-    log_file_path = os.path.join(output_dir_name + "conversion_log.log")
-    logger = logging.basicConfig(filename=log_file_path, level=logging.DEBUG)
-
     # Create a list of only the .txt files in the input directory
     text_files = [f for f in input_dir if f.endswith(".txt")]
     # Create a list of all .ann files in the input directory that have a txt equivalent
     ann_files = [f for f in input_dir if f.endswith(".ann") and switch_extension(f, ".txt") in text_files]
+
+    # Ensure user is aware if there are no files to convert
+    if len(ann_files) < 1:
+        raise FileNotFoundError("There were no ann files in the input directory with a corresponding text file. "
+                                "Please ensure that the input directory contains ann files and that each file has "
+                                "a corresponding txt file (see help for this program).")
+        exit()
+
+    # Create the log file
+    log_file_path = os.path.join(output_dir_name + "conversion.log")
+    logging.basicConfig(filename=log_file_path, level=logging.WARNING)
 
     for input_file_name in ann_files:
         full_file_path = os.path.join(input_dir_name, input_file_name)

@@ -1,6 +1,6 @@
 """
 :author: Steele W. Farnsworth
-:date: 28 December, 2018
+:date: 6 February, 2019
 """
 
 import unittest, tempfile, os, shutil
