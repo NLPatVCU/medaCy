@@ -124,7 +124,8 @@ def convert_brat_to_con(brat_file_path, text_file_path=None):
 
     for line in brat_text_lines:
 
-        if not is_valid_brat(line):
+        if line.startswith("#") or line == "": continue
+        elif not is_valid_brat(line):
             logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (brat_file_path, line))
             continue
 
@@ -173,6 +174,10 @@ if __name__ == '__main__':
         while not os.path.isdir(output_dir_name):
             output_dir_name = input("Output directory not found; please try another directory:")
             output_dir = os.listdir(output_dir_name)
+
+    # Init logger
+    log_file_path = os.path.join(output_dir_name + "conversion_log.log")
+    logger = logging.basicConfig(filename=log_file_path, level=logging.DEBUG)
 
     # Create a list of only the .txt files in the input directory
     text_files = [f for f in input_dir if f.endswith(".txt")]

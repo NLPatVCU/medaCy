@@ -103,8 +103,8 @@ class TestBratToCon(unittest.TestCase):
         self.assertTrue(result)
 
     def test_is_valid_brat_valid_line_2(self):
-        """Tests if is_valid_brat() returns True for a valid line with special characters."""
-        line = "T10	tradename 397 404	ABELCET\n"
+        """Tests if is_valid_brat() returns True for a valid line with special characters and a new-line character."""
+        line = "T10	tradename 397 404	ABE!  LC^ET\n"
         result = is_valid_brat(line)
         self.assertTrue(result)
 
@@ -150,5 +150,3 @@ class TestBratToCon(unittest.TestCase):
         """Assert that invalid brat text produces no output."""
         con_output = convert_brat_to_con(self.bad_brat_file_path, self.text_file_path)
         self.assertFalse(con_output)
-
-
