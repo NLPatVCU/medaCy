@@ -1,6 +1,6 @@
 [![spaCy](https://img.shields.io/badge/built%20with-spaCy-09a3d5.svg)](https://spacy.io)
 # medaCy
-:hospital: Medical Natural Language Processing with spaCy :hospital:
+:hospital: Medical Text Mining and Information Extraction with spaCy :hospital:
 
 MedaCy is a text processing and learning framework built over [spaCy](https://spacy.io/) to support the lightning fast prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems.
 
@@ -12,7 +12,7 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 - Customizable pipelines with detailed development instructions and documentation.
 - Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
-- Detailed [API](https://medacy.readthedocs.io/en/latest/)
+- Detailed [API](https://medacy.readthedocs.io/en/latest/).
 
 ## :thought_balloon: Where to ask questions
 
