@@ -47,6 +47,8 @@ Once data is inserted into the appropriate folders (reference Step 2), renaming 
 - `/medacy_dataset_template/__init__.py`
 - `/medacy_dataset_template/medacy_dataset_template.py`
 
+Finally, in the `.py` file that loads the datasets, update the meta-data to include the entity names, relations and any other meta-data associated with your dataset.
+
 ## 4. Test your package
 Attempt to install your package with `pip`. If any errors are found, you did not fully update the template in the `setup.py`. Once installed, attempt to utilize the dataset as demonstrated in the `Dataset guide`. Any errors are due to not fully updating the template with strings
 
