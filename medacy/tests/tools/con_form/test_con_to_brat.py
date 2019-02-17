@@ -1,50 +1,48 @@
 """
 :author: Steele W. Farnsworth
-:date: 28 December, 2018
+:date: 17 February, 2019
 """
 
 import unittest, tempfile, os, shutil
-from medacy.tools.con_form.con_to_brat import convert_con_to_brat
+from medacy.tools.con_form.con_to_brat import *
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
 T3	nanoparticle 24 37	Lipid Complex
-T4	tradename 66 66	
-T5	routeofadministration 110 121	intravenous
-T6	tradename 132 139	ABELCET
-T7	activeingredient 153 168	ampho-tericin B
-T8	corecomposition 246 307	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
-T9	corecomposition 312 361	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
-T10	tradename 397 404	ABELCET
-T11	nanoparticle 468 477	Liposomal
-T12	nanoparticle 514 527	lipid complex
-T13	nanoparticle 674 683	liposomal
-T14	nanoparticle 687 702	lipid-complexed
-T15	activeingredient 911 925	Amphotericin B
-T16	indication 940 950	antifungal
-T17	activeingredient 1009 1023	Amphotericin B
-T18	molecularweight 1397 1403	924.09
-T19	tradename 1470 1477	ABELCET
+T4	routeofadministration 110 121	intravenous
+T5	tradename 132 139	ABELCET
+T6	activeingredient 153 168	ampho-tericin B
+T7	corecomposition 246 307	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
+T8	corecomposition 312 361	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
+T9	tradename 397 404	ABELCET
+T10	nanoparticle 468 477	Liposomal
+T11	nanoparticle 514 527	lipid complex
+T12	nanoparticle 674 683	liposomal
+T13	nanoparticle 687 702	lipid-complexed
+T14	activeingredient 911 925	Amphotericin B
+T15	indication 940 950	antifungal
+T16	activeingredient 1009 1023	Amphotericin B
+T17	molecularweight 1397 1403	924.09
+T18	tradename 1470 1477	ABELCET
 """
 
 con_text = """c="ABELCET" 1:0 1:0||t="tradename"
-c="Amphotericin B" 1:9 1:22||t="activeingredient"
-c="Lipid Complex" 1:24 1:30||t="nanoparticle"
-c="" 1:66 1:66||t="tradename"
-c="intravenous" 1:110 1:110||t="routeofadministration"
+c="Amphotericin B" 1:1 1:2||t="activeingredient"
+c="Lipid Complex" 1:3 1:4||t="nanoparticle"
+c="intravenous" 1:12 1:12||t="routeofadministration"
 c="ABELCET" 2:0 2:0||t="tradename"
-c="ampho-tericin B" 2:21 2:35||t="activeingredient"
-c="phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)" 3:8 3:63||t="corecomposition"
-c="L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG)," 3:74 3:116||t="corecomposition"
+c="ampho-tericin B" 2:3 2:4||t="activeingredient"
+c="phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)" 3:2 3:3||t="corecomposition"
+c="L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG)," 3:5 3:6||t="corecomposition"
 c="ABELCET" 4:0 4:0||t="tradename"
-c="Liposomal" 5:6 5:6||t="nanoparticle"
-c="lipid complex" 5:52 5:58||t="nanoparticle"
-c="liposomal" 6:22 6:22||t="nanoparticle"
-c="lipid-complexed" 6:35 6:35||t="nanoparticle"
-c="Amphotericin B" 7:72 7:85||t="activeingredient"
-c="antifungal" 7:101 7:101||t="indication"
-c="Amphotericin B" 7:170 7:183||t="activeingredient"
-c="924.09" 8:29 8:29||t="molecularweight"
+c="Liposomal" 5:1 5:1||t="nanoparticle"
+c="lipid complex" 5:7 5:8||t="nanoparticle"
+c="liposomal" 6:2 6:2||t="nanoparticle"
+c="lipid-complexed" 6:4 6:4||t="nanoparticle"
+c="Amphotericin B" 7:8 7:9||t="activeingredient"
+c="antifungal" 7:13 7:13||t="indication"
+c="Amphotericin B" 7:21 7:22||t="activeingredient"
+c="924.09" 8:6 8:6||t="molecularweight"
 c="ABELCET" 10:0 10:0||t="tradename"
 """
 
@@ -97,6 +95,37 @@ class TestConToBrat(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.test_dir)
+
+    def test_is_valid_con_valid_1(self):
+        """Test that is_valid_con() returns True for valid text without a new-line character."""
+        sample = "c=\"lipid complex\" 5:7 5:8||t=\"nanoparticle\""
+        result = is_valid_con(sample)
+        self.assertTrue(result)
+
+    def test_is_valid_con_valid_2(self):
+        """Test that is_valid_con() returns True for valid text with a new line character."""
+        sample = "c=\"antifungal\" 7:13 7:13||t=\"indication\"\n"
+        result = is_valid_con(sample)
+        self.assertTrue(result)
+
+    def test_is_valid_con_invalid_1(self):
+        """Test that is_valid_con() returns False for invalid text."""
+        sample = "c=\"lipid complex\" 5:n 5:8||t=\"nanoparticle\""
+        result = is_valid_con(sample)
+        self.assertFalse(result)
+
+    def test_is_valid_con_invalid_2(self):
+        """Test that is_valid_con() returns False for invalid text."""
+        sample = "c=\"antifungal 7:13 7:13||t=\"indication\"\n"
+        result = is_valid_con(sample)
+        self.assertFalse(result)
+
+    def test_line_to_dict(self):
+        """Test that line_to_dict() accurately converts a line of con text to a dict."""
+        sample = "c=\"Amphotericin B\" 7:8 7:9||t=\"activeingredient\""
+        expected = {"data_item": "Amphotericin B", "start_ind": "7:8", "end_ind": "7:9", "data_type": "activeingredient"}
+        actual = line_to_dict(sample)
+        self.assertDictEqual(expected, actual)
 
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
