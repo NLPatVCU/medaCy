@@ -104,7 +104,7 @@ class TestConToBrat(unittest.TestCase):
 
     def test_is_valid_con_valid_2(self):
         """Test that is_valid_con() returns True for valid text with a new line character."""
-        sample = "c=\"antifungal\" 7:13 7:13||t=\"indication\"\n"
+        sample = "c=\"antif\"ungal\" 7:13 7:13||t=\"indica\"tion\"\n"
         result = is_valid_con(sample)
         self.assertTrue(result)
 

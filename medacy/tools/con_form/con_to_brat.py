@@ -6,27 +6,28 @@ in the conversion process to the output directory.
 
 Function 'convert_con_to_brat()' can be imported independently and run on individual files.
 
+This version does not produce accurate output. Revisions are underway.
+
 :author: Steele W. Farnsworth
-:date: 30 December, 2018
+:date: 18 February, 2019
 """
 
 from sys import argv as cmd_arg, exit
-from re import split, findall
+from re import split, findall, fullmatch, DOTALL
 import os
 import shutil
 
 
-def check_valid_line(item: str):
+def is_valid_con(item: str):
     """
-    Non-comprehensive tests to see if a given line is valid for conversion. Returns respective boolean value.
+    Comprehensively tests to see if a given line is in valid con format. Returns respective boolean value.
     :param item: A string that is a line of text, hopefully in the con format.
-    :return: Boolean of whether or not the line appears to be in con format.
+    :return: Boolean of whether or not the line matches a con regular expression.
     """
     if not isinstance(item, str): return False
-    elif '||' not in item: return False
-    elif findall(r'\d+:\d+', item).__len__() != 2: return False
-    elif findall(r'c="([^"]*)"', item).__len__() != 1: return False
-    else: return True
+    con_pattern = "c=\".+\" \d+:\d+ \d+:\d+\|\|t=\".+\"(|\n)"
+    if fullmatch(con_pattern, item): return True
+    else: return False
 
 
 def line_to_dict(item):
@@ -110,7 +111,7 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
     output_text = ""
     t = 1
     for line in con_text_lines:
-        if not check_valid_line(line): continue
+        if not is_valid_con(line): continue
         d = line_to_dict(line)
         start_ind = get_absolute_index(text, text_lines, d["start_ind"])
         span_length = d["data_item"].__len__()
