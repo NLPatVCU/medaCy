@@ -4,47 +4,45 @@
 """
 
 import unittest, tempfile, os, shutil
-from medacy.tools.con_form.brat_to_con import convert_brat_to_con
+from medacy.tools.con_form.brat_to_con import *
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
 T3	nanoparticle 24 37	Lipid Complex
-T4	tradename 66 66	
-T5	routeofadministration 110 121	intravenous
-T6	tradename 132 139	ABELCET
-T7	activeingredient 153 168	ampho-tericin B
-T8	corecomposition 246 307	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
-T9	corecomposition 312 361	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
-T10	tradename 397 404	ABELCET
-T11	nanoparticle 468 477	Liposomal
-T12	nanoparticle 514 527	lipid complex
-T13	nanoparticle 674 683	liposomal
-T14	nanoparticle 687 702	lipid-complexed
-T15	activeingredient 911 925	Amphotericin B
-T16	indication 940 950	antifungal
-T17	activeingredient 1009 1023	Amphotericin B
-T18	molecularweight 1397 1403	924.09
-T19	tradename 1470 1477	ABELCET
+T4	routeofadministration 110 121	intravenous
+T5	tradename 132 139	ABELCET
+T6	activeingredient 153 168	ampho-tericin B
+T7	corecomposition 246 307	phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)
+T8	corecomposition 312 361	L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG),
+T9	tradename 397 404	ABELCET
+T10	nanoparticle 468 477	Liposomal
+T11	nanoparticle 514 527	lipid complex
+T12	nanoparticle 674 683	liposomal
+T13	nanoparticle 687 702	lipid-complexed
+T14	activeingredient 911 925	Amphotericin B
+T15	indication 940 950	antifungal
+T16	activeingredient 1009 1023	Amphotericin B
+T17	molecularweight 1397 1403	924.09
+T18	tradename 1470 1477	ABELCET
 """
 
 con_text = """c="ABELCET" 1:0 1:0||t="tradename"
-c="Amphotericin B" 1:9 1:22||t="activeingredient"
-c="Lipid Complex" 1:24 1:30||t="nanoparticle"
-c="" 1:66 1:66||t="tradename"
-c="intravenous" 1:110 1:110||t="routeofadministration"
+c="Amphotericin B" 1:1 1:2||t="activeingredient"
+c="Lipid Complex" 1:3 1:4||t="nanoparticle"
+c="intravenous" 1:12 1:12||t="routeofadministration"
 c="ABELCET" 2:0 2:0||t="tradename"
-c="ampho-tericin B" 2:21 2:35||t="activeingredient"
-c="phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)" 3:8 3:63||t="corecomposition"
-c="L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG)," 3:74 3:116||t="corecomposition"
+c="ampho-tericin B" 2:3 2:4||t="activeingredient"
+c="phospholipids,L-&#x3b1;-dimyristoylphosphatidylcholine (DMPC)" 3:2 3:3||t="corecomposition"
+c="L-&#x3b1;-dimyristoylphosphatidylglycerol (DMPG)," 3:5 3:6||t="corecomposition"
 c="ABELCET" 4:0 4:0||t="tradename"
-c="Liposomal" 5:6 5:6||t="nanoparticle"
-c="lipid complex" 5:52 5:58||t="nanoparticle"
-c="liposomal" 6:22 6:22||t="nanoparticle"
-c="lipid-complexed" 6:35 6:35||t="nanoparticle"
-c="Amphotericin B" 7:72 7:85||t="activeingredient"
-c="antifungal" 7:101 7:101||t="indication"
-c="Amphotericin B" 7:170 7:183||t="activeingredient"
-c="924.09" 8:29 8:29||t="molecularweight"
+c="Liposomal" 5:1 5:1||t="nanoparticle"
+c="lipid complex" 5:7 5:8||t="nanoparticle"
+c="liposomal" 6:2 6:2||t="nanoparticle"
+c="lipid-complexed" 6:4 6:4||t="nanoparticle"
+c="Amphotericin B" 7:8 7:9||t="activeingredient"
+c="antifungal" 7:13 7:13||t="indication"
+c="Amphotericin B" 7:21 7:22||t="activeingredient"
+c="924.09" 8:6 8:6||t="molecularweight"
 c="ABELCET" 10:0 10:0||t="tradename"
 """
 
@@ -98,6 +96,69 @@ class TestBratToCon(unittest.TestCase):
     def tearDownClass(cls):
         shutil.rmtree(cls.test_dir)
 
+    def is_valid_brat_valid_1(self):
+        """Tests that when is_valid_brat() gets called on a valid line without a new line character, it returns True."""
+        sample = "T3	nanoparticle 24 37	Lipid Complex"
+        result = is_valid_brat(sample)
+        self.assertTrue(result)
+
+    def is_valid_brat_valid_2(self):
+        """Tests that when is_valid_brat() is called on a valid line with a new line character, it returns True."""
+        sample = "T12	nanoparticle 674 683	liposomal\n"
+        result = is_valid_brat(sample)
+        self.assertTrue(result)
+
+    def is_valid_brat_invalid_1(self):
+        """Tests what when is_valid_brat() is called on an invalid line without a new line character, it returns False."""
+        sample = "T3	nanoparticle s 37	Lipid Complex"
+        result = is_valid_brat(sample)
+        self.assertFalse(result)
+
+    def is_valid_brat_invalid_2(self):
+        """Tests what when is_valid_brat() is called on an invalid line with a new line character, it returns False."""
+        sample = "T12 674 683	liposomal\n"
+        result = is_valid_brat(sample)
+        self.assertTrue(result)
+
+    def test_line_to_dict(self):
+        """Tests that line_to_dict() accurately converts a line of input text to an expected dict format."""
+        sample = "T3	nanoparticle 24 37	Lipid Complex"
+        expected = {"id_type": "T", "id_num": 3, "data_type": "nanoparticle", "start_ind": 24,
+                    "end_ind": 37, "data_item": "Lipid Complex"}
+        actual = line_to_dict(sample)
+        self.assertDictEqual(expected, actual)
+
+    def test_switch_extension(self):
+        """Tests that switch_extension() accurately switches the file extension."""
+        sample = "some_file.rar"
+        expected = "some_file.txt"
+        actual = switch_extension(sample, ".txt")
+        self.assertEqual(expected, actual)
+
+    def test_get_word_num_1(self):
+        """
+        Test that get_word_num() accurately identifies the word index for a given instance
+        of a word in a line; the word only occurs once in its line.
+        """
+        # The annotation used is "T5	tradename 132 139	ABELCET"
+        sample_line = "ABELCET  consists of ampho-tericin B complexed with two phospholipids in a 1:1 drug-to-lipid molar ratio."
+        line_index = get_line_index(source_text, sample_line)
+        expected = 0
+        actual = get_word_num(source_text, line_index, 132)
+        self.assertEqual(expected, actual)
+
+    def test_get_word_num_2(self):
+        """
+        Test that get_word_num() accurately identifies the word index for a given instance
+        of a word in a line when the word appears more than once in that line
+        """
+        # The annotation used is "T16	activeingredient 1009 1023	Amphotericin B"
+        sample_line = "Suchdifferences may affect functional properties of these drug products.Amphotericin B is a polyene, antifungal antibiotic produced from a strain of Streptomyces nodosus.Amphotericin B is designated chemically as [1R-(1R*, 3S*, 5R*, 6R*, 9R*, 11R*, 15S*, 16R*, 17R*,18S*, 19E, 21E, 23E, 25E, 27E, 29E, 31E, 33R*, 35S*, 36R*, 37S*)]-33-[(3-Amino-3, 6- D-mannopyranosyl) oxy]-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-14,39-dioxabicy-clo[33.3.1] nonatriaconta-19, 21, 23, 25, 27, 29, 31-heptaene-36-carboxylic acid."
+        line_index = get_line_index(source_text, sample_line)
+        expected = 21
+        actual = get_word_num(source_text, line_index, 1009)
+        self.assertEqual(expected, actual)
+
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
         con_output = convert_brat_to_con(self.brat_file_path, self.text_file_path)
@@ -119,5 +180,3 @@ class TestBratToCon(unittest.TestCase):
         """Assert that invalid brat text produces no output."""
         con_output = convert_brat_to_con(self.bad_brat_file_path, self.text_file_path)
         self.assertFalse(con_output)
-
-
