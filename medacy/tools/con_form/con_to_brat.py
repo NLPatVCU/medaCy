@@ -25,7 +25,7 @@ def is_valid_con(item: str):
     :return: Boolean of whether or not the line matches a con regular expression.
     """
     if not isinstance(item, str): return False
-    con_pattern = "c=\".+\" \d+:\d+ \d+:\d+\|\|t=\".+\"(|\n)"
+    con_pattern = "c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
     if fullmatch(con_pattern, item): return True
     else: return False
 
