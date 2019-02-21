@@ -1,1 +1,2 @@
+# Ensures new line char compatibility between Windows and Linux
 * text=auto eol=lf
