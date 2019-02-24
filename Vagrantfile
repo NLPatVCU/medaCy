@@ -17,5 +17,8 @@ config.vm.provision "shell", inline: <<-SHELL
     python3 -m pip install --upgrade pip
     sudo -H pip3 install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0
     pip3 install -e /vagrant
+
+    # Optional packages for testing (for those who want to develop medaCy)
+    pip3 install pytest pytest-cov
 SHELL
 end

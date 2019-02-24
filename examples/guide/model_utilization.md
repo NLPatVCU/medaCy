@@ -8,7 +8,7 @@ To predict with a trained learning model, it is required that documents be run t
 Once a CRF model has been trained and saved to disk, it can be loaded again for use by configuring a `Model` object with the pipeline used to train the CRF model. The below example shows how to configure the medaCy clinical model.
 
 ```python
-from medacy.pipeline import ClinicalPipeline
+from medacy.pipelines import ClinicalPipeline
 from medacy.model import Model
 
 pipeline = ClinicalPipeline(metamap=None, entities=['Drug'])
