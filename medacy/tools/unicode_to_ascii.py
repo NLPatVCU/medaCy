@@ -5,6 +5,9 @@ https://metamap.nlm.nih.gov/ReplaceUTF8.shtml
 
 
 UNICODE_TO_ASCII = {
+	'\u221E': " ",
+	'\u02C2': " ",
+	'\u2218': " ",
 	'\u0020': " ",
 	'\u0021': "!",
 	'\u0023': "#",
