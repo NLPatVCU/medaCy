@@ -348,35 +348,67 @@ class MetaMap:
             offset += delta
 
             # Check each metamap entry and update its character spans to reflect this change
-            for mapping in metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']['Phrases']['Phrase']['Mappings']['Mapping']:
-                for candidate in mapping['MappingCandidates']['Candidate']:
-                    match_start = int(candidate['ConceptPIs']['ConceptPI']['StartPos'])
-                    match_length = int(candidate['ConceptPIs']['ConceptPI']['Length'])
-                    match_end = match_start + match_length-1
+            # > I'm so sorry it looks like this, but because of the way we convert the xml
+            # > into a dict, there are some levels in the hierarchy that are usually a list
+            # > but turn into an object if they only contain one element, so that needs
+            # > to be checked for at every step or it crashes the whole program
+            if type(metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']) is not list:
+                metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance'] = [metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']]
 
-                    if match_start == conv_start and match_end == conv_end: # If match is equal to conversion (a [conversion] and some text)
-                        # print("Perfect match")
-                        match_length += delta
-                    elif match_start < conv_start and match_end < conv_end: # If match intersects conversion on left ([a con]version and some text)
-                        # print("Left intersect")
-                        match_length += delta + conv_start
-                    elif conv_start < match_start and conv_end < match_end: # If match intersects conversion on right (a conver[sion and som]e text)
-                        # print("Right intersect ")
-                        if conv_end + delta < match_start:
-                            print(match_end, conv_end)
-                            match_start = conv_end + delta + 1
-                            match_length = match_end - conv_end
-                        else:
-                            match_length += delta
-                    elif conv_end < match_start: # If match is totally to the right of the conversion (a conversion and a [match])
-                        # print("Full right")
-                        match_start += delta
-                    else: # If match is totally to right of conversion, no action needed (a [match] and a conversion)
-                        # print("Full left")
-                        pass
+            for utterance in metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']:
+                if int(utterance['Phrases']['@Count']) == 0: # Ensure this level contains something
+                    continue
+                if type(utterance['Phrases']['Phrase']) is not list: # Make sure this entry is a list
+                    utterance['Phrases']['Phrase'] = [utterance['Phrases']['Phrase']]
 
-                    # Update metamap entry with new indices
-                    candidate['MatchedWords']['MatchedWord'] = text[match_start:match_end+1]
-                    candidate['ConceptPIs']['ConceptPI']['StartPos'] = str(match_start)
-                    candidate['ConceptPIs']['ConceptPI']['Length'] = str(match_length)
+                for phrase in utterance['Phrases']['Phrase']:
+                    if int(phrase['Mappings']['@Count']) == 0: # Ensure this level contains something
+                        continue
+                    if type(phrase['Mappings']['Mapping']) is not list: # Make sure this entry is a list
+                        phrase['Mappings']['Mapping'] = [phrase['Mappings']['Mapping']]
+
+                    for mapping in phrase['Mappings']['Mapping']:
+                        if int(mapping['MappingCandidates']['@Total']) == 0: # Ensure this level contains something
+                            continue
+                        if type(mapping['MappingCandidates']['Candidate']) is not list: # Make sure this entry is a list
+                            mapping['MappingCandidates']['Candidate'] = [mapping['MappingCandidates']['Candidate']]
+
+                        # HERE'S THE IMPORTANT PART -----------------------------------------
+                        # Just accept it as iterating through every entry in the metamap_dict
+                        for candidate in mapping['MappingCandidates']['Candidate']:
+                            if int(candidate['ConceptPIs']['@Count']) == 0: # Ensure this level contains something
+                                continue
+                            if type(candidate['ConceptPIs']['ConceptPI']) is not list: # Make sure this entry is a list
+                                candidate['ConceptPIs']['ConceptPI'] = [candidate['ConceptPIs']['ConceptPI']]
+
+                            candidate['MatchedWords']['MatchedWord'] = []
+                            for conceptpi in candidate['ConceptPIs']['ConceptPI']:
+                                match_start = int(conceptpi['StartPos'])
+                                match_length = int(conceptpi['Length'])
+                                match_end = match_start + match_length-1
+
+                                if match_start == conv_start and match_end == conv_end: # If match is equal to conversion (a [conversion] and some text)
+                                    # print("Perfect match")
+                                    match_length += delta
+                                elif match_start < conv_start and match_end < conv_end: # If match intersects conversion on left ([a con]version and some text)
+                                    # print("Left intersect")
+                                    match_length += delta + conv_start
+                                elif conv_start < match_start and conv_end < match_end: # If match intersects conversion on right (a conver[sion and som]e text)
+                                    # print("Right intersect ")
+                                    if conv_end + delta < match_start:
+                                        match_start = conv_end + delta + 1
+                                        match_length = match_end - conv_end
+                                    else:
+                                        match_length += delta
+                                elif conv_end < match_start: # If match is totally to the right of the conversion (a conversion and a [match])
+                                    # print("Full right")
+                                    match_start += delta
+                                else: # If match is totally to right of conversion, no action needed (a [match] and a conversion)
+                                    # print("Full left")
+                                    pass
+
+                                # Update metamap entry with new indices
+                                candidate['MatchedWords']['MatchedWord'].append(text[match_start:match_end+1])
+                                conceptpi['StartPos'] = str(match_start)
+                                conceptpi['Length'] = str(match_length)
         return text, metamap_dict
