@@ -63,6 +63,7 @@ By default, medaCy merges consecutive tokens with equivalent predicted labels in
 The previously mentioned components make up a medaCy model. In summary training a medaCy model looks like this - this example utilizes the `ClinicalPipeline` included in medaCy *without* `MetaMap` enabled:
 
 ```python
+import os
 from medacy.data import Dataset
 from medacy.pipelines import ClinicalPipeline
 from medacy.model import Model
@@ -73,9 +74,13 @@ training_dataset = Dataset('/home/medacy/clinical_training_data/')
 pipeline = ClinicalPipeline(metamap=None, entities=entities)
 model = Model(pipeline, n_jobs=30) #distribute documents between 30 processes during training and prediction
 
+output_file_path = '/home/medacy/clinical_model.pickle'
+# Protect against running fit() without having a valid place to save it
+assert os.path.isfile(output_file_path)
+
 model.fit(training_dataset)
 
-model.dump('/home/medacy/clinical_model.pickle')
+model.dump(output_file_path)
 
 
 ```
