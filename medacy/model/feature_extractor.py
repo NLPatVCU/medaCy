@@ -1,5 +1,6 @@
 from spacy.tokens.underscore import Underscore
 from spacy.tokens import Token
+from itertools import cycle
 
 class FeatureExtractor:
     """
@@ -26,11 +27,20 @@ class FeatureExtractor:
         self.all_custom_features = [attribute for attribute in list(Underscore.token_extensions.keys()) if attribute.startswith('feature_')]
         self.spacy_features = spacy_features
 
-    def __call__(self, doc):
+    def __call__(self, doc, file_name):
+        """
+        Extract features, labels, and corresponding spans from a document
+        :param doc: Annotated Spacy Doc object
+        :param file_name: Filename to associate these sequences with
+        :return: List of tuples of form:
+            [(feature dictionaries for sequence, indices of tokens in seq, document label)]
+        """
 
         features = [self._sent_to_feature_dicts(sent) for sent in doc.sents]
         labels = [self._sent_to_labels(sent) for sent in doc.sents]
+        indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
 
+        features = list(zip(features, indices, cycle([file_name])))
         return features, labels
 
     def get_features_with_span_indices(self, doc):
@@ -103,6 +113,7 @@ class FeatureExtractor:
                     else:
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature)});
 
+                # Extract features from the vector representation of this token
 
                 features.update(current)
 

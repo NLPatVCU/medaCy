@@ -9,6 +9,8 @@ from .annotation.gold_annotator_component import GoldAnnotatorComponent
 
 from .lexicon import LexiconComponent
 
+from .patterns import TableMatcherComponent
+
 from .units.unit_component import UnitComponent
 from .units.mass_unit_component import MassUnitComponent
 from .units.volume_unit_component import VolumeUnitComponent
