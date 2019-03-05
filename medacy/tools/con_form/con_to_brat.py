@@ -54,7 +54,7 @@ def get_absolute_index(txt, txt_lns, ind):
     """
     Given one of the \d+:\d+ spans, which represent the index of a char relative to the start of the line it's on,
     returns the index of that char relative to the start of the file.
-    :param txt: The text file associated with the annotation.
+    :param txt: The text itself of the text file associated with the annotation.
     :param txt_lns: The same text file as a list broken by lines
     :param ind: The string in format \d+:\d+
     :return: The absolute index
@@ -63,12 +63,22 @@ def get_absolute_index(txt, txt_lns, ind):
     # convert ind to line_num and char_num
     nums = split(":", ind)
     line_num = int(nums[0]) - 1  # line nums in con start at 1 and not 0
-    char_num = int(nums[1])
+    word_num = int(nums[1])
 
     this_line = txt_lns[line_num]
     line_index = txt.index(this_line)  # get the absolute index of the entire line
-    abs_index = line_index + char_num
-    return abs_index
+
+    # Get index of word following n spaces
+
+    split_by_whitespace = split("( +|\t+)+", this_line)
+    split_by_ws_no_ws = [s for s in split_by_whitespace if not fullmatch("\s+", s)]
+    all_whitespace = findall("( +|\t+)+", this_line)
+    line_to_target_word = split_by_ws_no_ws[:word_num]
+    num_non_whitespace = sum([w.__len__() for w in line_to_target_word])
+    num_whitespace = sum([w.__len__() for w in all_whitespace[:word_num]])
+    num_chars = num_whitespace + num_non_whitespace
+
+    return num_chars + line_index
 
 
 def convert_con_to_brat(con_file_path, text_file_path=None):
@@ -116,7 +126,7 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
             logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (con_file_path, line))
             continue
         d = line_to_dict(line)
-        start_ind = get_absolute_index(text, text_lines, d["start_ind"])
+        start_ind = get_absolute_index(text, text_lines, d["start_ind"])  # TODO fix
         span_length = d["data_item"].__len__()
         end_ind = start_ind + span_length
         output_line = "T%s\t%s %s %s\t%s\n" % (str(t), d["data_type"], str(start_ind), str(end_ind), d["data_item"])

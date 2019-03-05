@@ -191,7 +191,7 @@ if __name__ == '__main__':
         exit()
 
     # Create the log file
-    log_file_path = os.path.join(output_dir_name + "conversion.log")
+    log_file_path = os.path.join(output_dir_name, "conversion.log")
     logging.basicConfig(filename=log_file_path, level=logging.WARNING)
 
     for input_file_name in ann_files:

@@ -130,7 +130,7 @@ class TestConToBrat(unittest.TestCase):
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
         brat_output = convert_con_to_brat(self.con_file_path, self.text_file_path)
-        self.assertEqual(brat_output, brat_text)
+        self.assertEqual(brat_text, brat_output)
 
     def test_invalid_file_path(self):
         """Passes an invalid file path to convert_con_to_brat()."""
@@ -142,7 +142,7 @@ class TestConToBrat(unittest.TestCase):
         Assert that the con output matches the sample con text when the automatic text-file-finding feature is utilized
         """
         brat_output = convert_con_to_brat(self.con_file_path)
-        self.assertEqual(brat_output, brat_text)
+        self.assertEqual(brat_text, brat_output)
 
     def test_invalid_brat_text(self):
         """Assert that invalid brat text produces no output."""
