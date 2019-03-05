@@ -12,10 +12,11 @@ This version does not produce accurate output. Revisions are underway.
 :date: 18 February, 2019
 """
 
-from sys import argv as cmd_arg, exit
+from sys import argv, exit
 from re import split, findall, fullmatch, DOTALL
 import os
 import shutil
+import logging
 
 
 def is_valid_con(item: str):
@@ -111,7 +112,9 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
     output_text = ""
     t = 1
     for line in con_text_lines:
-        if not is_valid_con(line): continue
+        if not is_valid_con(line):
+            logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (con_file_path, line))
+            continue
         d = line_to_dict(line)
         start_ind = get_absolute_index(text, text_lines, d["start_ind"])
         span_length = d["data_item"].__len__()
@@ -127,7 +130,7 @@ if __name__ == '__main__':
 
     # Get the input and output directories from the command line.
 
-    if not cmd_arg.__len__() >= 3:
+    if not argv.__len__() >= 3:
         # Command-line arguments must be provided for the input and output directories.
         # Else, prints instructions and aborts the program.
         print("Please run the program again, entering the input and output directories as command-line arguments"
@@ -136,19 +139,23 @@ if __name__ == '__main__':
         exit()
 
     try:
-        input_dir_name = cmd_arg[1]
+        input_dir_name = argv[1]
         input_dir = os.listdir(input_dir_name)
     except FileNotFoundError:  # dir doesn't exist
         while not os.path.isdir(input_dir_name):
             input_dir_name = input("Input directory not found; please try another directory:")
         input_dir = os.listdir(input_dir_name)
     try:
-        output_dir_name = cmd_arg[2]
+        output_dir_name = argv[2]
         output_dir = os.listdir(output_dir_name)
     except FileNotFoundError:
         while not os.path.isdir(output_dir_name):
             output_dir_name = input("Output directory not found; please try another directory:")
             output_dir = os.listdir(output_dir_name)
+
+    # Create the log
+    log_path = os.path.join(output_dir_name, "conversion_log.log")
+    logging.basicConfig(filename=log_path, level=logging.WARNING)
 
     # Get only the text files in input_dir
     text_files = [f for f in input_dir if f.endswith(".txt")]
@@ -165,7 +172,7 @@ if __name__ == '__main__':
 
     # Paste all the text files used in the conversion process to the output directory
     # if there's a fourth command line argument and that argument is -c
-    if cmd_arg.__len__() == 4 and cmd_arg[3] == "-c":
+    if argv.__len__() == 4 and argv[3] == "-c":
         text_files_with_match = [f for f in text_files if switch_extension(f, ".con") in con_files]
         for f in text_files_with_match:
             full_name = os.path.join(input_dir_name, f)
