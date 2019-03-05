@@ -60,8 +60,6 @@ setup(
         'joblib>=0.12.5',
         'tabulate>=0.8.2',
         'pathos>=0.2.2.1',
-        'sphinx>=1.8.2',
-        'sphinx-rtd-theme>=0.4.2',
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0'
     ],
