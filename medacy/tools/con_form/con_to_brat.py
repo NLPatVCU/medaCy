@@ -6,14 +6,12 @@ in the conversion process to the output directory.
 
 Function 'convert_con_to_brat()' can be imported independently and run on individual files.
 
-This version does not produce accurate output. Revisions are underway.
-
 :author: Steele W. Farnsworth
-:date: 18 February, 2019
+:date: 4 March, 2019
 """
 
 from sys import argv, exit
-from re import split, findall, fullmatch, DOTALL
+from re import split, findall, fullmatch
 import os
 import shutil
 import logging
@@ -50,13 +48,14 @@ def switch_extension(name, ext):
     return os.path.splitext(name)[0] + ext
 
 
-def get_absolute_index(txt, txt_lns, ind):
+def get_absolute_index(txt, txt_lns, ind, entity):
     """
-    Given one of the \d+:\d+ spans, which represent the index of a char relative to the start of the line it's on,
+    Given one of the \d+:\d+ spans, which represent the index of a word relative to the start of the line it's on,
     returns the index of that char relative to the start of the file.
     :param txt: The text itself of the text file associated with the annotation.
     :param txt_lns: The same text file as a list broken by lines
     :param ind: The string in format \d+:\d+
+    :param entity: The text of the entity
     :return: The absolute index
     """
 
@@ -69,16 +68,11 @@ def get_absolute_index(txt, txt_lns, ind):
     line_index = txt.index(this_line)  # get the absolute index of the entire line
 
     # Get index of word following n spaces
+    words = findall(r'\s*\S+\s*', this_line)
+    index_within_line = sum(map(len, words[:word_num])) + len(words[word_num]) - len(words[word_num].lstrip())
+    offset = this_line[index_within_line:].index(entity)  # adjusts if entity is not the first char in its "word"
 
-    split_by_whitespace = split("( +|\t+)+", this_line)
-    split_by_ws_no_ws = [s for s in split_by_whitespace if not fullmatch("\s+", s)]
-    all_whitespace = findall("( +|\t+)+", this_line)
-    line_to_target_word = split_by_ws_no_ws[:word_num]
-    num_non_whitespace = sum([w.__len__() for w in line_to_target_word])
-    num_whitespace = sum([w.__len__() for w in all_whitespace[:word_num]])
-    num_chars = num_whitespace + num_non_whitespace
-
-    return num_chars + line_index
+    return index_within_line + line_index + offset
 
 
 def convert_con_to_brat(con_file_path, text_file_path=None):
@@ -126,7 +120,7 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
             logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (con_file_path, line))
             continue
         d = line_to_dict(line)
-        start_ind = get_absolute_index(text, text_lines, d["start_ind"])  # TODO fix
+        start_ind = get_absolute_index(text, text_lines, d["start_ind"], d["data_item"])
         span_length = d["data_item"].__len__()
         end_ind = start_ind + span_length
         output_line = "T%s\t%s %s %s\t%s\n" % (str(t), d["data_type"], str(start_ind), str(end_ind), d["data_item"])
@@ -164,13 +158,20 @@ if __name__ == '__main__':
             output_dir = os.listdir(output_dir_name)
 
     # Create the log
-    log_path = os.path.join(output_dir_name, "conversion_log.log")
+    log_path = os.path.join(output_dir_name, "conversion.log")
     logging.basicConfig(filename=log_path, level=logging.WARNING)
 
     # Get only the text files in input_dir
     text_files = [f for f in input_dir if f.endswith(".txt")]
     # Get only the con files in input_dir that have a ".txt" equivalent
     con_files = [f for f in input_dir if f.endswith(".con") and switch_extension(f, ".txt") in text_files]
+
+    # Ensure user is aware if there are no files to convert
+    if len(con_files) < 1:
+        raise FileNotFoundError("There were no con files in the input directory with a corresponding text file. "
+                                "Please ensure that the input directory contains ann files and that each file has "
+                                "a corresponding txt file (see help for this program).")
+        exit()
 
     for input_file_name in con_files:
         full_file_path = os.path.join(input_dir_name, input_file_name)
