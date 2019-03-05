@@ -190,9 +190,9 @@ if __name__ == '__main__':
                                 "a corresponding txt file (see help for this program).")
         exit()
 
-    # Create the log file
-    log_file_path = os.path.join(output_dir_name, "conversion.log")
-    logging.basicConfig(filename=log_file_path, level=logging.WARNING)
+    # Create the log
+    log_path = os.path.join(output_dir_name, "conversion.log")
+    logging.basicConfig(filename=log_path, level=logging.WARNING)
 
     for input_file_name in ann_files:
         full_file_path = os.path.join(input_dir_name, input_file_name)
