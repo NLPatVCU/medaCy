@@ -32,7 +32,7 @@ def predict_document(model, doc, medacy_pipeline):
             continue
         entity = predictions[i]
         first_start, first_end = span_indices[i]
-        # insure that consecutive tokens with the same label are merged
+        # Ensure that consecutive tokens with the same label are merged
         while i < len(predictions)-1 and predictions[i+1] == entity: #If inside entity, keep incrementing
             i+=1
         last_start, last_end = span_indices[i]
@@ -44,4 +44,22 @@ def predict_document(model, doc, medacy_pipeline):
         annotations['entities']['T%i'%T_num] = (entity, first_start, last_end, labeled_text)
         T_num+=1
         i+=1
+    return Annotations(annotations)
+
+
+def construct_annotations_from_tuples(doc, predictions):
+    """
+    Converts predictions mapped to a document into an Annotations object
+    :param doc: SpaCy doc corresponding to predictions
+    :param predictions: List of tuples containing (entity, start offset, end offset)
+    :return: Annotations Object representing predicted entities for the given doc
+    """
+    predictions = sorted(predictions, key=lambda x: x[1])
+    annotations = {'entities': {}, 'relations': []}
+    T_num = 1
+    for prediction in predictions:
+        (entity, start, end) = prediction
+        labeled_text = doc.text[start:end]
+        annotations['entities']['T%i' % T_num] = (entity, start, end, labeled_text)
+        T_num += 1
     return Annotations(annotations)
