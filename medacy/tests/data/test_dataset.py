@@ -67,6 +67,16 @@ class TestDatasetLocal(TestCase):
         self.assertIsInstance(dataset, Dataset)
         self.assertFalse(dataset.is_training())
 
+    def test_iter(self):
+        """
+        Tests initialization of DataManager
+        :return:
+        """
+        dataset = Dataset(self.prediction_directory)
+
+        for data_file in dataset:
+            print(data_file)
+
 
 
 class TestDatasetExternal(TestCase):

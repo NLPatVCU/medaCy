@@ -37,6 +37,7 @@ class Model:
     def fit(self, dataset):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
+
         :param training_data_loader: Instance of Dataset.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
@@ -75,6 +76,7 @@ class Model:
 
     def predict(self, dataset, prediction_directory = None):
         """
+        Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
         :param documents: a string or Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
@@ -127,6 +129,7 @@ class Model:
     def cross_validate(self, num_folds=10, dataset=None, write_predictions=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
+
         :param num_folds: number of folds to split training data into for cross validation
         :param dataset: Dataset that sequences were extracted from
         :return: Prints out performance metrics
@@ -275,6 +278,7 @@ class Model:
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
+
         :param conn: pipe to pass back data to parent process
         :param data_file: an instance of DataFile
         :return: Updates queue with features for this given file.
@@ -312,6 +316,7 @@ class Model:
     def load(self, path):
         """
         Loads a pickled model.
+
         :param path: File path to directory where fitted model should be dumped
         :return:
         """
@@ -320,6 +325,7 @@ class Model:
     def dump(self, path):
         """
         Dumps a model into a pickle file
+
         :param path: Directory path to dump the model
         :return:
         """
@@ -331,6 +337,7 @@ class Model:
         """
         Retrieves information about a Model including details about the feature extraction pipeline, features utilized,
         and learning model.
+
         :param return_dict: Returns a raw dictionary of information as opposed to a formatted string
         :return: Returns structured information
         """
@@ -361,6 +368,7 @@ class Model:
         """
         Loads an external medaCy compatible Model. Require's the models package to be installed
         Alternatively, you can import the package directly and call it's .load() method.
+
         :param package_name: the package name of the model
         :return: an instance of Model that is configured and loaded - ready for prediction.
         """

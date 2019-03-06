@@ -10,6 +10,49 @@ Training
 When a directory contains **both** raw text files alongside annotation files, an instantiated Dataset
 detects and facilitates access to those files.
 
+Assuming your directory looks like this (where .ann files are in `BRAT <http://brat.nlplab.org/standoff.html>`_ format):
+::
+    home/medacy/data
+    ├── file_one.ann
+    ├── file_one.txt
+    ├── file_two.ann
+    └── file_two.txt
+
+A Dataset can be created like this:
+::
+    from medacy.data import Dataset
+
+    dataset = Dataset('/home/medacy/data')
+
+
+MedaCy **does not** alter the data you load in any way - it only reads from it.
+
+A common data work flow might look as follows.
+
+Running:
+::
+    from medacy.data import Dataset
+    from medacy.pipeline_components import MetaMap
+
+    dataset = Dataset('/home/medacy/data')
+    for data_file in dataset:
+        print((data_file.file_name, data_file.raw_path, dataset.ann_path))
+    print(dataset)
+    print(dataset.is_metamapped())
+
+    metamap = Metamap('/home/path/to/metamap/binary') #not necessary
+    dataset.metamap(metamap) #not necessary
+    print(dataset.is_metamapped())
+
+
+Outputs:
+::
+    (file_one, file_one.txt, file_one.ann)
+    (file_two, file_two.txt, file_two.ann)
+    ['file_one.txt', 'file_two.txt']
+    False
+    True
+
 Prediction
 ##########
 When a directory contains **only** raw text files, an instantiated Dataset object interprets this as
@@ -18,8 +61,11 @@ meta-data for a given prediction file does not have fields for annotation_file_p
 
 External Datasets
 #################
-An actual dataset can be versioned and distributed by interfacing this class as described in the
-Dataset examples. Existing Datasets can be imported by installing the relevant python packages that
+
+In the real world, datasets (regardless of domain) are evolving entities. Hence, it is essential to version them
+A medaCy compatible dataset can be created to facilitate this versioning. A medaCy compatible dataset lives a python
+packages that can be hooked into medaCy or used for any other purpose - it is simply a loose wrapper for this Dataset
+object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`.
 wrap them.
 """
 from medacy.tools import DataFile
@@ -106,6 +152,9 @@ class Dataset:
         :return: a list of DataFile objects.
         """
         return self.all_data_files[0:self.data_limit]
+
+    def __iter__(self):
+        return self.get_data_files().__iter__()
 
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
         """
