@@ -36,7 +36,7 @@ class ClinicalPipeline(BasePipeline):
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
 
-        self.add_component(UnitComponent)
+        #self.add_component(UnitComponent)
 
 
     def get_learner(self):
