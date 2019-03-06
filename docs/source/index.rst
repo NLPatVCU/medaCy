@@ -1,12 +1,26 @@
-.. medaCy documentation master file, created by
-   sphinx-quickstart on Mon Dec 10 03:32:34 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+MedaCy Documentation
+====================
+For the latest updates, please see the project on `github <https://github.com/NLPatVCU/medaCy>`_.
 
-Welcome to medaCy's documentation!
-==================================
+MedaCy is a medical text mining framework built over spaCy to facilitate the engineering, training and application
+of machine learning models for medical information extraction.
 
-[Info about what MedaCy is here]
+To confront the unique challenges posed by medical text
+medaCy provides interfaces to medical ontologies such as `Metamap <https://metamap.nlm.nih.gov/>`_ allowing their
+integration into text mining workflows. Additional help, examples and tutorials can be found in the examples section
+of the `repository <https://github.com/NLPatVCU/medaCy/tree/master/examples>`_.
+
+MedaCy does not officially support non-unix based operating systems (however we have found most functionality works on Windows).
+
+Trained Models
+--------------
+A complete listing of trained models can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples#utilizing-pre-trained-ner-models>`_.
+
+
+Datasets
+--------
+MedaCy implements a Dataset functionality that loosely wraps a working directory to manage and version training data.
+See more in the `examples <https://github.com/NLPatVCU/medaCy/tree/master/examples>`_.
 
 Contents
 --------

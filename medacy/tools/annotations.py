@@ -1,8 +1,12 @@
 """
-:author: Andriy Mulyar, Steele W. Farnsworth
-:date: 12 January, 2019
+This stores all relevant information needed as input to medaCy or as output.
+The Annotation object is utilized by medaCy to structure input to models and output from models.
+This object wraps a dictionary containing two keys at the root level: 'entities' and 'relations'.
+This structured dictionary is designed to interface easily with the BRAT ANN format. The key 'entities' contains
+as a value a dictionary with keys T1, T2, ... ,TN corresponding each to a single entity. The key 'relations'
+contains a list of tuple relations where the first element of each tuple is the relation type and the last two
+elements correspond to keys in the 'entities' dictionary.
 """
-
 import os, logging, tempfile
 from medacy.tools.con_form.con_to_brat import convert_con_to_brat
 from medacy.tools.con_form.brat_to_con import convert_brat_to_con
@@ -18,20 +22,14 @@ class InvalidAnnotationError(ValueError):
 
 
 class Annotations:
-    """
-    A medaCy annotation. This stores all relevant information needed as input to medaCy or as output.
-    The Annotation object is utilized by medaCy to structure input to models and output from models.
-    This object wraps a dictionary containing two keys at the root level: 'entities' and 'relations'.
-    This structured dictionary is designed to interface easily with the BRAT ANN format. The key 'entities' contains
-    as a value a dictionary with keys T1, T2, ... ,TN corresponding each to a single entity. The key 'relations'
-    contains a list of tuple relations where the first element of each tuple is the relation type and the last two
-    elements correspond to keys in the 'entities' dictionary.
-    """
+
 
     __default_strict = 0.2  # Used in compare_by_index() and indirectly in compare_by_index_stats()
 
     def __init__(self, annotation_data, annotation_type='ann', source_text_path=None):
         """
+        Creates a new Annotation object.
+
         :param annotation_data: dictionary formatted as described above or alternatively a file_path to an annotation file
         :param annotation_type: a string or None specifying the type or format of annotation_data given
         :param source_text_path: path to the text file from which the annotations were derived; optional for ann files
@@ -393,6 +391,7 @@ class Annotations:
         Similar to compare_by_entity, but organized by start index. The two data sets used in the comparison will often
         not have two annotations beginning at the same index, so the strict value is used to calculate within what
         margin a matched pair can be separated.
+
         :param gold_anno: The Annotation object representing an annotation set that is known to be accurate.
         :param strict: Used to calculate within what range a possible match can be. The length of the entity_text is
             multiplied by this number, and the product of those two numbers is the difference that the entity_text can
@@ -433,6 +432,7 @@ class Annotations:
 
             Finds which match (from a list of matches, all ints) is closest to the target (also an int).
             Used to map entities in the predicted data set to the closest entity_text in the gold dataset.
+
             :param target: The key of an entity_text in the predicted dataset.
             :param matches: A list of keys in the gold dataset.
             :return: The key in the list of matches closest to the target.
@@ -445,6 +445,7 @@ class Annotations:
             """
             Calculates how closely the start index and the span length of the predicted data match the start index
             and span length of the gold data. Returned value is the average of those two scores.
+
             :param gold_start: The start index of the gold data.
             :param gold_end: The end index of the gold data.
             :param pred_start: The start index of the preidcted data.
@@ -519,6 +520,7 @@ class Annotations:
     def compare_by_index_stats(self, gold_anno, strict=__default_strict):
         """
         Runs compare_by_index() and returns a dict of related statistics.
+
         :param gold_anno: See compare_by_index()
         :param strict: See compare_by_index()
         :return: A dictionary with keys:
@@ -561,6 +563,7 @@ class Annotations:
     def stats(self):
         """
         Count the number of instances of a given entity type and the number of unique entities.
+
         :return: a dict with keys:
             "entity_counts": a dict matching entities to the number of times that entity appears
                 in the Annotations,
@@ -587,47 +590,50 @@ class Annotations:
 
         return stats
 
-    def to_html(self, output_file_path, title="medaCy"):
-        """
-        Convert the Annotations to a displaCy-formatted HTML representation. The Annotations must have the path
-        to the source file as one of its attributes. Does not return a value.
-        :param output_file_path: Where to write the HTML to.
-        :param title: What should appear in the header of the outputted HTML file; not very important
-        """
 
-        if self.source_text_path is None:
-            raise ValueError("to_html() can only be run on objects for which source_text_path is defined; this instance"
-                             " of Annotations was not created with its source_text_path defined.")
-
-        # Instantiate the EntityRenderer with a custom color scheme
-        # Only contains entities found in the golden TAC dataset with some colors used twice
-        color_scheme = {'SEX': '#7aecec', 'STRAIN': '#bfeeb7', 'SPECIES': '#feca74',
-                        'TESTARTICLE': '#ff9561', 'ENDPOINT': '#aa9cfc', 'ENDPOINTUNITOFMEASURE': '#c887fb',
-                        'GROUPNAME': '#9cc9cc', 'DOSEROUTE': '#ffeb80', 'DOSE': '#ff8197',
-                        'DOSEUNITS': '#ff8197', 'VEHICLE': '#f0d0ff',
-                        'TIMEATFIRSTDOSE': '#bfe1d9', 'TIMEATDOSE': '#bfe1d9', 'TIMEATLASTDOSE': '#e4e7d2',
-                        'TIMEUNITS': '#e4e7d2', 'TIMEENDPOINTASSESSED': '#e4e7d2',
-                        'GROUPSIZE': '#e4e7d2', 'TESTARTICLEPURITY': '#e4e7d2',
-                        'SAMPLESIZE': '#7aecec', 'DOSEDURATION': '#bfeeb7', 'DOSEDURATIONUNITS': '#feca74',
-                        'DOSEFREQUENCY': '#ff9561', 'CELLLINE': '#aa9cfc', 'TESTARTICLEVERIFICATION': '#c887fb'}
-        er = EntityRenderer(options={"colors": color_scheme})
-
-        # EntityRenderer must be passed a list of dictionaries in the format below. This section
-        # reformats the internal entity tuples into that format.
-        entity_tuples = self.get_entity_annotations()
-        displacy_list = []
-        for e in entity_tuples:
-            displacy_dict = {"start": int(e[1]), "end": int(e[2]), "label": e[0]}
-            displacy_list.append(displacy_dict)
-
-        # Get a string of the source text
-        with open(self.source_text_path, 'r') as f:
-            source_text = f.read()
-        # Do the actual HTML rendering
-        html = er.render_ents(source_text, displacy_list, title)
-        # Write it to file
-        with open(output_file_path, 'w+') as f:
-            f.write(html)
+#Not implemented correctly. -Andriy
+    # def to_html(self, output_file_path, title="medaCy"):
+    #     """
+    #     Convert the Annotations to a displaCy-formatted HTML representation. The Annotations must have the path
+    #     to the source file as one of its attributes. Does not return a value.
+    #
+    #     :param output_file_path: Where to write the HTML to.
+    #     :param title: What should appear in the header of the outputted HTML file; not very important
+    #     """
+    #
+    #     if self.source_text_path is None:
+    #         raise ValueError("to_html() can only be run on objects for which source_text_path is defined; this instance"
+    #                          " of Annotations was not created with its source_text_path defined.")
+    #
+    #     # Instantiate the EntityRenderer with a custom color scheme
+    #     # Only contains entities found in the golden TAC dataset with some colors used twice
+    #     color_scheme = {'SEX': '#7aecec', 'STRAIN': '#bfeeb7', 'SPECIES': '#feca74',
+    #                     'TESTARTICLE': '#ff9561', 'ENDPOINT': '#aa9cfc', 'ENDPOINTUNITOFMEASURE': '#c887fb',
+    #                     'GROUPNAME': '#9cc9cc', 'DOSEROUTE': '#ffeb80', 'DOSE': '#ff8197',
+    #                     'DOSEUNITS': '#ff8197', 'VEHICLE': '#f0d0ff',
+    #                     'TIMEATFIRSTDOSE': '#bfe1d9', 'TIMEATDOSE': '#bfe1d9', 'TIMEATLASTDOSE': '#e4e7d2',
+    #                     'TIMEUNITS': '#e4e7d2', 'TIMEENDPOINTASSESSED': '#e4e7d2',
+    #                     'GROUPSIZE': '#e4e7d2', 'TESTARTICLEPURITY': '#e4e7d2',
+    #                     'SAMPLESIZE': '#7aecec', 'DOSEDURATION': '#bfeeb7', 'DOSEDURATIONUNITS': '#feca74',
+    #                     'DOSEFREQUENCY': '#ff9561', 'CELLLINE': '#aa9cfc', 'TESTARTICLEVERIFICATION': '#c887fb'}
+    #     er = EntityRenderer(options={"colors": color_scheme})
+    #
+    #     # EntityRenderer must be passed a list of dictionaries in the format below. This section
+    #     # reformats the internal entity tuples into that format.
+    #     entity_tuples = self.get_entity_annotations()
+    #     displacy_list = []
+    #     for e in entity_tuples:
+    #         displacy_dict = {"start": int(e[1]), "end": int(e[2]), "label": e[0]}
+    #         displacy_list.append(displacy_dict)
+    #
+    #     # Get a string of the source text
+    #     with open(self.source_text_path, 'r') as f:
+    #         source_text = f.read()
+    #     # Do the actual HTML rendering
+    #     html = er.render_ents(source_text, displacy_list, title)
+    #     # Write it to file
+    #     with open(output_file_path, 'w+') as f:
+    #         f.write(html)
 
     def __str__(self):
         return str(self.annotations)
