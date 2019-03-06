@@ -156,6 +156,7 @@ class Dataset:
     def __iter__(self):
         return self.get_data_files().__iter__()
 
+
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
         """
         Metamaps the files registered by a Dataset. Attempts to Metamap utilizing a max prune depth of 30, but on
