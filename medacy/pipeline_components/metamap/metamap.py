@@ -309,15 +309,25 @@ class MetaMap:
         diff = list()
         offset = 0
         for i, char in enumerate(text):
-            if char in UNICODE_TO_ASCII and UNICODE_TO_ASCII[char] is not char:
-                ascii = UNICODE_TO_ASCII[char]
-                text = text[:i+offset] + ascii + text[i+1+offset:]
-                diff.append({
-                    'start': i+offset,
-                    'length': len(ascii),
-                    'original': char
-                })
-                offset += len(ascii) - len(char)
+            if ord(char) >= 128: #non-ascii
+                if char in UNICODE_TO_ASCII and UNICODE_TO_ASCII[char] is not char:
+                    ascii = UNICODE_TO_ASCII[char]
+                    text = text[:i+offset] + ascii + text[i+1+offset:]
+                    diff.append({
+                        'start': i+offset,
+                        'length': len(ascii),
+                        'original': char
+                    })
+                    offset += len(ascii) - len(char)
+                else:
+                    ascii = '?'
+                    text = text[:i + offset] + ascii + text[i + 1 + offset:]
+                    diff.append({
+                        'start': i + offset,
+                        'length': len(ascii),
+                        'original': char
+                    })
+                    offset += len(ascii) - len(char)
         return text, diff
 
 
