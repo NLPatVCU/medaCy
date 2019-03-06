@@ -49,6 +49,7 @@ setup(
     ],
     dependency_links=[
         'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3',
+        'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
     ],
     install_requires=[
         'spacy==2.0.13',
