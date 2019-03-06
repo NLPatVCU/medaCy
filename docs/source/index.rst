@@ -1,12 +1,12 @@
-.. medaCy documentation master file, created by
-   sphinx-quickstart on Mon Dec 10 03:32:34 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to medaCy's documentation!
 ==================================
 
-[Info about what MedaCy is here]
+MedaCy is a medical text mining framework built over spaCy to facilitate the engineering, training and application
+of machine learning models for medical information extraction.
+
+To confront the unique challenges posed by medical text
+medaCy provides interfaces to medical ontologies such as `Metamap <https://metamap.nlm.nih.gov/>`_ allowing their
+integration into text mining workflows. Addit
 
 Contents
 --------

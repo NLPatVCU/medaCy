@@ -1,19 +1,23 @@
 """
-A Dataset facilities the management of data for both model training and model prediction.
+A medaCy Dataset facilities the management of data for both model training and model prediction.
+
 A Dataset object provides a wrapper for a unix file directory containing training/prediction
 data. If a Dataset, at training time, is fed into a pipeline requiring auxilary files
 (Metamap for instance) the Dataset will automatically create those files in the most efficient way possible.
 
-# Training
+Training
+#################
 When a directory contains **both** raw text files alongside annotation files, an instantiated Dataset
 detects and facilitates access to those files.
 
-# Prediction
+Prediction
+##########
 When a directory contains **only** raw text files, an instantiated Dataset object interprets this as
 a directory of files that need to be predicted. This means that the internal Datafile that aggregates
 meta-data for a given prediction file does not have fields for annotation_file_path set.
 
-# External Datasets
+External Datasets
+#################
 An actual dataset can be versioned and distributed by interfacing this class as described in the
 Dataset examples. Existing Datasets can be imported by installing the relevant python packages that
 wrap them.
@@ -35,6 +39,7 @@ class Dataset:
                  data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
+
         :param data_directory: Directory containing data for training or prediction.
         :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
         :param annotation_file_extension: The file extension of annotation files in the data_directory (default: *.ann*)
@@ -97,6 +102,7 @@ class Dataset:
     def get_data_files(self):
         """
         Retrieves an list containing all the files registered by a Dataset.
+
         :return: a list of DataFile objects.
         """
         return self.all_data_files[0:self.data_limit]
@@ -106,6 +112,7 @@ class Dataset:
         Metamaps the files registered by a Dataset. Attempts to Metamap utilizing a max prune depth of 30, but on
         failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
         More information can be found in the MetaMap documentation.
+
         :param metamap: an instance of MetaMap.
         :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
         :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
@@ -145,6 +152,7 @@ class Dataset:
     def _parallel_metamap(self, files, i):
         """
         Facilitates Metamapping in parallel by forking off processes to Metamap each file individually.
+
         :param files: an array of file paths to the file to map
         :param i: index in the array used to determine the file that the called process will be responsible for mapping
         :return: metamapped_files_directory now contains metamapped versions of the dataset files
@@ -180,6 +188,7 @@ class Dataset:
     def is_metamapped(self):
         """
         Verifies if all fil es in the Dataset are metamapped.
+
         :return: True if all data files are metamapped, False otherwise.
         """
         if not os.path.isdir(self.metamapped_files_directory):
@@ -202,6 +211,7 @@ class Dataset:
     def is_training(self):
         """
         Whether this Dataset can be used for training.
+
         :return: True if training dataset, false otherwise. A training dataset is a collection raw text and corresponding annotation files while a prediction dataset contains solely raw text files.
         """
         return self.is_training_directory
@@ -210,6 +220,7 @@ class Dataset:
         """
         A limit to the number of files in the Dataset that medaCy works with
         This is useful for preliminary experimentation when working with an entire Dataset takes time.
+
         :return:
         """
         self.data_limit = data_limit
@@ -217,12 +228,15 @@ class Dataset:
     def get_data_directory(self):
         """
         Retrieves the directory this Dataset abstracts from.
-        :return:
+
+        :return: the directory the Dataset object wraps.
         """
         return self.data_directory
 
     def __str__(self):
-        """Converts self.get_data_files() to a list of strs and combines them into one str"""
+        """
+        Converts self.get_data_files() to a list of strs and combines them into one str
+        """
         return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
 
 
@@ -231,6 +245,7 @@ class Dataset:
         """
         Loads an external medaCy compatible dataset. Requires the dataset's associated package to be installed.
         Alternatively, you can import the package directly and call it's .load() method.
+
         :param package_name: the package name of the dataset
         :return: A tuple containing a training set, evaluation set, and meta_data
         """
