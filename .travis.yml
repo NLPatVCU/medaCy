@@ -15,8 +15,7 @@ os:
 
 install:
   - pip install --upgrade pip
-  - python setup.py build_ext --inplace
-  - pip install .
+  - pip install -e .
 
 script:
   - "python setup.py test"
