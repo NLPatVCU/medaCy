@@ -1,6 +1,6 @@
 language: python
 
-sudo=false
+sudo: false
 
 dist: trusty
 group: edge
@@ -16,7 +16,7 @@ os:
 install:
   - pip install --upgrade pip
   - python setup.py build_ext --inplace
-  - pip install -e .
+  - pip install .
 
 script:
   - "python setup.py test"
