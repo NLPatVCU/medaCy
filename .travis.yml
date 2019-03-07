@@ -1,6 +1,5 @@
 language: python
 
-sudo: false
 dist: trusty
 group: edge
 
@@ -11,8 +10,6 @@ python:
 os:
   - linux
 
-env:
-  - VIA=compile
 
 install:
   - pip install --upgrade pip
