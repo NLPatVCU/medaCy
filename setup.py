@@ -54,7 +54,7 @@ setup(
     install_requires=[
         'spacy==2.0.13',
         'scikit-learn>=0.20.0',
-        'numpy=1.15.4',
+        'numpy==1.15.4',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
