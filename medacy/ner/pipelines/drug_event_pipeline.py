@@ -1,10 +1,10 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from medacy.model.feature_extractor import FeatureExtractor
+from medacy.ner.model.discrete_feature_extractor import FeatureExtractor
 
-from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, CharacterTokenizer
-from ..pipeline_components.lexicon import LexiconComponent
-from ..pipeline_components.patterns import TableMatcherComponent
+from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent, CharacterTokenizer
+from medacy.pipeline_components.lexicon import LexiconComponent
+from medacy.pipeline_components.patterns import TableMatcherComponent
 
 class DrugEventPipeline(BasePipeline):
 

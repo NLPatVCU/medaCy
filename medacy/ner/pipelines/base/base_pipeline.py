@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from ...pipeline_components.base import BaseComponent
+from medacy.pipeline_components.base import BaseComponent
 
 class BasePipeline(ABC):
     """

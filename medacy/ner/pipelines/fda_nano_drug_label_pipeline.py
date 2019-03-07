@@ -1,9 +1,9 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from ..pipeline_components import SystematicReviewTokenizer, ClinicalTokenizer
-from medacy.model.feature_extractor import FeatureExtractor
+from medacy.pipeline_components import ClinicalTokenizer
+from medacy.ner.model.discrete_feature_extractor import FeatureExtractor
 
-from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent
+from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
 
 
 class FDANanoDrugLabelPipeline(BasePipeline):
