@@ -68,7 +68,7 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`.
 wrap them.
 """
-from medacy.tools import DataFile
+from medacy.tools import DataFile, Annotations
 from joblib import Parallel, delayed
 import os, logging, multiprocessing, math, json, importlib
 
@@ -139,7 +139,6 @@ class Dataset:
         #If directory is already metamapped, use it.
         if self.is_metamapped():
             for data_file in self.all_data_files:
-
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
                                                          data_file.raw_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
@@ -290,6 +289,107 @@ class Dataset:
         return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
 
 
+    def compute_counts(self):
+        """
+        Computes entity and relation counts over all documents in this dataset.
+
+        :return: a dictionary of entity and relation counts.
+        """
+        dataset_counts = {
+            'entities': {},
+            'relations':{}
+        }
+
+        for data_file in self:
+            annotation = Annotations(data_file.ann_path)
+            annotation_counts = annotation.compute_counts()
+            dataset_counts['entities'] = {x: dataset_counts['entities'].get(x, 0) + annotation_counts['entities'].get(x, 0)
+                                          for x in set(dataset_counts['entities']).union(annotation_counts['entities'])}
+            dataset_counts['relations'] = {x: dataset_counts['relations'].get(x, 0) + annotation_counts['relations'].get(x, 0)
+                                          for x in set(dataset_counts['relations']).union(annotation_counts['relations'])}
+
+        return dataset_counts
+
+    def compute_confusion_matrix(self, dataset, leniency=0):
+        """
+        Generates a confusion matrix where this Dataset serves as the gold standard annotations and `dataset` serves
+        as the predicted annotations. A typical workflow would involve creating a Dataset object with the prediction directory
+        outputted by a model and then passing it into this method.
+
+        :param dataset: a Dataset object containing a predicted version of this dataset.
+        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
+        :return: two element tuple containing a label array (of entity names) and a matrix where rows are gold labels and columns are predicted labels. matrix[i][j] indicates that entities[i] in this dataset was predicted as entities[j] in 'annotation' matrix[i][j] times
+        """
+        if not isinstance(dataset, Dataset):
+            raise ValueError("dataset must be instance of Dataset")
+
+        #verify files are consistent
+        diff = set([file.ann_path for file in self]).difference(set([file.ann_path for file in dataset]))
+        if diff:
+            raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
+
+        #sort entities in ascending order by count.
+        entities = [key for key, _ in sorted(self.compute_counts()['entities'].items(), key=lambda x: x[1])]
+        confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
+
+        for gold_data_file in self:
+            prediction_iter = iter(dataset)
+            prediction_data_file = next(prediction_iter)
+            while str(gold_data_file) != str(prediction_data_file):
+                prediction_data_file = next(prediction_iter)
+
+            gold_annotation = Annotations(gold_data_file.ann_path)
+            pred_annotation = Annotations(prediction_data_file.ann_path)
+
+            #compute matrix on the Annotation file level
+            ann_confusion_matrix = gold_annotation.compute_confusion_matrix(pred_annotation, entities, leniency=leniency)
+            for i in range(len(confusion_matrix)):
+                for j in range(len(confusion_matrix)):
+                    confusion_matrix[i][j] += ann_confusion_matrix[i][j]
+
+        return entities, confusion_matrix
+
+    def compute_ambiguity(self, dataset):
+        """
+        Finds occurrences of spans from 'dataset' that intersect with a span from this annotation but do not have this spans label.
+        label. If 'dataset' comprises a models predictions, this method provides a strong indicators
+        of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
+
+        :param dataset: a Dataset object containing a predicted version of this dataset.
+        :return: a dictionary containing the ambiguity computations on each gold, predicted file pair
+        """
+        if not isinstance(dataset, Dataset):
+            raise ValueError("dataset must be instance of Dataset")
+
+        # verify files are consistent
+        diff = set([file.ann_path for file in self]).difference(set([file.ann_path for file in dataset]))
+        if diff:
+            raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
+
+        #Dictionary storing ambiguity over dataset
+        ambiguity_dict = {}
+
+        for gold_data_file in self:
+            prediction_iter = iter(dataset)
+            prediction_data_file = next(prediction_iter)
+            while str(gold_data_file) != str(prediction_data_file):
+                prediction_data_file = next(prediction_iter)
+
+            gold_annotation = Annotations(gold_data_file.ann_path)
+            pred_annotation = Annotations(prediction_data_file.ann_path)
+
+            # compute matrix on the Annotation file level
+            ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
+
+
+        return ambiguity_dict
+
+
+
+
+
+
+
     @staticmethod
     def load_external(package_name):
         """
@@ -302,6 +402,9 @@ class Dataset:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
+
+
+
 
 
 

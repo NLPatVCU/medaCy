@@ -51,5 +51,4 @@ class TestModelTrainingAndPrediction(TestCase):
 
         second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
         annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file), annotation_type='ann')
-        print(annotations)
         self.assertIsInstance(annotations, Annotations)
