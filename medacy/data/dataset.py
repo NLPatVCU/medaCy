@@ -59,13 +59,19 @@ When a directory contains **only** raw text files, an instantiated Dataset objec
 a directory of files that need to be predicted. This means that the internal Datafile that aggregates
 meta-data for a given prediction file does not have fields for annotation_file_path set.
 
+When a directory contains **only** ann files, an instantiated Dataset object interprets this as
+a directory of files that are predictions. Useful methods for analysis include :meth:`medacy.data.dataset.Dataset.compute_confusion_matrix`,
+:meth:`medacy.data.dataset.Dataset.compute_ambiguity` and :meth:`medacy.data.dataset.Dataset.compute_counts`.
+
+
+
 External Datasets
 #################
 
-In the real world, datasets (regardless of domain) are evolving entities. Hence, it is essential to version them
+In the real world, datasets (regardless of domain) are evolving entities. Hence, it is essential to version them.
 A medaCy compatible dataset can be created to facilitate this versioning. A medaCy compatible dataset lives a python
 packages that can be hooked into medaCy or used for any other purpose - it is simply a loose wrapper for this Dataset
-object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`.
+object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
 from medacy.tools import DataFile, Annotations
