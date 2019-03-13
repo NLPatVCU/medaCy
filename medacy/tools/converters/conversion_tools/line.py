@@ -53,8 +53,6 @@ class Line:
             global_start_ind = text_lines[-1].index
             global_line_num += 1
 
-            print(new_line)
-
         return text_lines
 
     def __str__(self):
