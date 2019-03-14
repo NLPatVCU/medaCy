@@ -6,17 +6,26 @@ in the conversion process to the output directory.
 
 Function 'convert_con_to_brat()' can be imported independently and run on individual files.
 
+This program can be used for conversion independently from medaCy if the Line class is copied
+and pasted into a copy of this program.
+
 :author: Steele W. Farnsworth
-:date: 5 March, 2019
+:date: 13 March, 2019
 """
 
 from sys import argv, exit
 from re import split, findall, fullmatch
+from medacy.tools.converters.conversion_tools.line import Line
+import re
 import os
 import shutil
 import logging
 import tabulate
 
+
+# Regex patterns
+whitespace_pattern = "( +|\t+)+"
+con_pattern = "c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
 
 # Used for stats at the end
 num_lines = 0
@@ -31,7 +40,6 @@ def is_valid_con(item: str):
     :return: Boolean of whether or not the line matches a con regular expression.
     """
     if not isinstance(item, str): return False
-    con_pattern = "c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
     if fullmatch(con_pattern, item): return True
     else: return False
 
@@ -55,12 +63,11 @@ def switch_extension(name, ext):
     return os.path.splitext(name)[0] + ext
 
 
-def get_absolute_index(txt, txt_lns, ind, entity):
+def get_absolute_index(txt_lns, ind, entity):
     """
     Given one of the \d+:\d+ spans, which represent the index of a word relative to the start of the line it's on,
     returns the index of that char relative to the start of the file.
-    :param txt: The text itself of the text file associated with the annotation.
-    :param txt_lns: The same text file as a list broken by lines
+    :param txt_lns: The list of Line objects for that file.
     :param ind: The string in format \d+:\d+
     :param entity: The text of the entity
     :return: The absolute index
@@ -72,28 +79,34 @@ def get_absolute_index(txt, txt_lns, ind, entity):
     word_num = int(nums[1])
 
     this_line = txt_lns[line_num]
-    line_index = txt.index(this_line)  # get the absolute index of the entire line
+    line_index = this_line.index
 
     # Get index of word following n space
-    split_by_whitespace = split("( +|\t+)+", this_line)
+    split_by_whitespace = split(whitespace_pattern, this_line.text)
     split_by_whitespace = [s for s in split_by_whitespace if s != '']
     split_by_ws_no_ws = [s for s in split_by_whitespace if not s.isspace()]
     all_whitespace = [s for s in split_by_whitespace if s.isspace()]
-    line_to_target_word = split_by_ws_no_ws[:word_num]
+
+    # Adjust word_num if first character cluster is whitespace
+    if split_by_whitespace[0].isspace():
+        line_to_target_word = split_by_ws_no_ws[:word_num - 1]
+    else:
+        line_to_target_word = split_by_ws_no_ws[:word_num]
+
     num_non_whitespace = sum([len(w) for w in line_to_target_word])
-
-    # Offsets the start index by number of leading whitespace chars
-    leading_whitespace = 0
-    for s in split_by_whitespace:
-        if not s.isspace(): break
-        else: leading_whitespace += 1
-
     num_whitespace = sum([len(w) for w in all_whitespace[:word_num]])
 
+    index_within_line = num_whitespace + num_non_whitespace
+    line_to_start_index = this_line.text[index_within_line:]
+    entity_pattern_escaped = re.escape(entity)
+    entity_pattern_spaced = re.sub(r"\\\s+", r"\s+", entity_pattern_escaped)
+
     try:
-        index_within_line = num_whitespace + num_non_whitespace
-        offset = this_line[index_within_line:].index(entity)  # adjusts if entity is not the first char in its "word"
-    except ValueError:
+        # Search for entity regardless of case or composition of intermediate spaces
+        # match = re.search(entity_pattern_spaced, this_line.text, re.IGNORECASE)[0]
+        match = re.search(entity_pattern_spaced, line_to_start_index, re.IGNORECASE)[0]
+        offset = line_to_start_index.index(match)  # adjusts if entity is not the first char in its "word"
+    except (ValueError, TypeError):
         logging.warning("""Entity not found in its expected line:
         \t"%s"
         \t"%s"
@@ -125,12 +138,12 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
                                     " directory")
         with open(text_file_path, 'r') as text_file:
             text = text_file.read()
-            text_lines = text.split('\n')
+            text_lines = Line.init_lines(text)
     # Else, open the file with the path passed to the function
     elif os.path.isfile(text_file_path):
         with open(text_file_path, 'r') as text_file:
             text = text_file.read()
-            text_lines = text.split('\n')
+            text_lines = Line.init_lines(text)
     else: raise FileNotFoundError("No text file path was provided or the file was not found."
                                   " Note that direct string input of the source text is not supported.")
 
@@ -155,7 +168,7 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
             num_skipped_regex += 1
             continue
         d = line_to_dict(line)
-        start_ind = get_absolute_index(text, text_lines, d["start_ind"], d["data_item"])
+        start_ind = get_absolute_index(text_lines, d["start_ind"], d["data_item"])
         if start_ind == -1:
             num_skipped_value_error += 1
             continue  # skips data that could not be converted
@@ -174,11 +187,9 @@ if __name__ == '__main__':
 
     if len(argv) < 3:
         # Command-line arguments must be provided for the input and output directories.
-        # Else, prints instructions and aborts the program.
-        print("Please run the program again, entering the input and output directories as command-line arguments"
-              " in that order. Optionally, enter '-c' as a final command line argument if you want to copy"
-              " the text files used in the conversion over to the output directory.")
-        exit()
+        raise IOError("Please run the program again, entering the input and output directories as command-line"
+                      " arguments in that order. Optionally, enter '-c' as a final command line argument if you want"
+                      " to copy the text files used in the conversion over to the output directory.")
 
     try:
         input_dir_name = argv[1]
@@ -221,7 +232,7 @@ if __name__ == '__main__':
 
     # Paste all the text files used in the conversion process to the output directory
     # if there's a fourth command line argument and that argument is -c
-    if len(argv) == 4 and argv[3] == "-c":
+    if len(argv) >= 4 and argv[3] == "-c":
         text_files_with_match = [f for f in text_files if switch_extension(f, ".con") in con_files]
         for f in text_files_with_match:
             full_name = os.path.join(input_dir_name, f)
