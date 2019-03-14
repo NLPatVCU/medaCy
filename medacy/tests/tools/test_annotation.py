@@ -2,8 +2,8 @@ import shutil, tempfile, pkg_resources
 from unittest import TestCase
 from medacy.data import Dataset
 from medacy.tools import Annotations, InvalidAnnotationError
-from os.path import join, isfile
-from medacy.tests.tools.con_test_data.con_test import con_text, source_text as con_source_text
+from os.path import join
+from medacy.tests.tools.converters.con_test_data.con_test import con_text, source_text as con_source_text
 
 
 class TestAnnotation(TestCase):
