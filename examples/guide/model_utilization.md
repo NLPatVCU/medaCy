@@ -9,7 +9,7 @@ Once a CRF model has been trained and saved to disk, it can be loaded again for 
 
 ```python
 from medacy.pipelines import ClinicalPipeline
-from medacy.model import Model
+from medacy.ner import Model
 
 pipeline = ClinicalPipeline(metamap=None, entities=['Drug'])
 model = Model(pipeline)
@@ -30,7 +30,7 @@ Once a model has been [packaged](packaging_a_medacy_model.md) and installed it c
 
 ```python
 import medacy_model_clinical_notes #import the python package wrapping the model
-from medacy.model import Model
+from medacy.ner import Model
 
 model = Model.load_external('medacy_model_clinical_notes')
 

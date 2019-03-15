@@ -4,7 +4,7 @@
 # it's own directory along the models build log and model/pipeline parameters to keep results easily referencable during run time.
 # Once a sufficent model is produced, consider wrapping it up into a medaCy compatible model as defined the example guide.
 
-from medacy.model import Model
+from medacy.ner import Model
 from medacy.pipelines import SystematicReviewPipeline
 from medacy.data import Dataset
 from medacy.pipeline_components import MetaMap

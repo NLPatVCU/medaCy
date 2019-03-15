@@ -66,7 +66,7 @@ The previously mentioned components make up a medaCy model. In summary training 
 import os
 from medacy.data import Dataset
 from medacy.pipelines import ClinicalPipeline
-from medacy.model import Model
+from medacy.ner import Model
 
 entities = ['Drug', 'Strength']
 
@@ -91,7 +91,7 @@ The `ClinicalPipeline` source looks like this:
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from ..pipeline_components import ClinicalTokenizer
-from medacy.model.feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extractor import FeatureExtractor
 
 from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent, MetaMap
 
