@@ -1,7 +1,7 @@
-medacy.model.stratified\_k\_fold module
+medacy.ner.model.stratified\_k\_fold module
 =======================================
 
-.. automodule:: medacy.model.stratified_k_fold
+.. automodule:: medacy.ner.model.stratified_k_fold
     :members:
     :undoc-members:
     :show-inheritance:

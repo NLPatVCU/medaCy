@@ -1,7 +1,7 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from medacy.pipeline_components import MetaMap, SystematicReviewTokenizer
-from medacy.ner.model.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
 
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
 

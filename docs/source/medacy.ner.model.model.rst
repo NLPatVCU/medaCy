@@ -1,7 +1,7 @@
-medacy.model.model module
+medacy.ner.model.model module
 =========================
 
-.. automodule:: medacy.model.model
+.. automodule:: medacy.ner.model.model
     :members:
     :undoc-members:
     :show-inheritance:

@@ -1,7 +1,7 @@
-medacy.pipelines.testing\_pipeline module
+medacy.ner.pipelines.testing\_pipeline module
 =========================================
 
-.. automodule:: medacy.pipelines.testing_pipeline
+.. automodule:: medacy.ner.pipelines.testing_pipeline
     :members:
     :undoc-members:
     :show-inheritance:

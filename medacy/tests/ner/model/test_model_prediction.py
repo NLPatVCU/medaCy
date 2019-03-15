@@ -1,6 +1,6 @@
 from unittest import TestCase
-from medacy.model import Model
-from medacy.pipelines import TestingPipeline
+from medacy.ner.model import Model
+from medacy.ner.pipelines import TestingPipeline
 from medacy.tools import Annotations
 from medacy.data import Dataset
 import os, importlib, pkg_resources, tempfile, shutil

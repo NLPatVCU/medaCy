@@ -1,5 +1,5 @@
 from unittest import TestCase
-from medacy.pipelines import ClinicalPipeline
+from medacy.ner.pipelines import ClinicalPipeline
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMap
 
 
