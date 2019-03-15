@@ -1,19 +1,18 @@
 from abc import ABC, abstractmethod
 from ...pipeline_components.base import BaseComponent
 
-
 class BasePipeline(ABC):
     """
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
+    def __init__(self,pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
         """
         Initializes a pipeline
         :param pipeline_name: The name of the pipeline
         :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
         :param description: a description of the pipeline
-        :param creators: the creator of the pipeline
+        :param creator: the creator of the pipeline
         :param organization: the organization the pipeline creator belongs to
         """
         self.pipeline_name = pipeline_name
@@ -21,6 +20,8 @@ class BasePipeline(ABC):
         self.description = description
         self.creators = creators
         self.organization = organization
+
+
 
     @abstractmethod
     def get_tokenizer(self):
@@ -46,6 +47,7 @@ class BasePipeline(ABC):
         """
         pass
 
+
     def get_language_pipeline(self):
         """
         Retrieves the associated spaCy Language pipeline that the medaCy pipeline wraps.
@@ -60,14 +62,16 @@ class BasePipeline(ABC):
         """
 
         current_components = [component_name for component_name, proc in self.spacy_pipeline.pipeline]
-        # print("Current Components:", current_components)
+        #print("Current Components:", current_components)
         dependencies = [x for x in component.dependencies]
-        # print("Dependencies:",dependencies)
+        #print("Dependencies:",dependencies)
 
         assert component.name not in current_components, "%s is already in the pipeline." % component.name
 
         for dependent in dependencies:
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
+
+
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
     def get_components(self):
@@ -76,8 +80,7 @@ class BasePipeline(ABC):
         :return: a list of components inside the pipeline.
         """
         return [component_name for component_name, _ in self.spacy_pipeline.pipeline
-                if component_name != 'ner']
-
+                           if component_name != 'ner']
     def __call__(self, doc, predict=False):
         """
         Passes a single document through the pipeline.
@@ -104,7 +107,7 @@ class BasePipeline(ABC):
         """
         information = {
             'components': [component_name for component_name, _ in self.spacy_pipeline.pipeline
-                           if component_name != 'ner'], # ner is the default ner component of spacy that is not utilized.
+                           if component_name != 'ner'], #ner is the default ner component of spacy that is not utilized.
             'learner_name': self.get_learner()[0],
             'description': self.description,
             'pipeline_name': self.pipeline_name,
@@ -113,3 +116,13 @@ class BasePipeline(ABC):
         }
 
         return information
+
+
+
+
+
+
+
+
+
+
