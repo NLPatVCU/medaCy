@@ -7,7 +7,7 @@ from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
 from medacy.pipelines.base.base_pipeline import BasePipeline
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
-from ._model import predict_document
+from ._model import predict_document, construct_annotations_from_tuples
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
 from statistics import mean
@@ -37,6 +37,7 @@ class Model:
     def fit(self, dataset):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
+
         :param training_data_loader: Instance of Dataset.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
@@ -66,7 +67,8 @@ class Model:
 
         assert self.X_data, "Training data is empty."
 
-        learner.fit(self.X_data, self.y_data)
+        train_data = [x[0] for x in self.X_data]
+        learner.fit(train_data, self.y_data)
         logging.info("Successfully Trained: %s", learner_name)
 
         self.model = learner
@@ -74,6 +76,7 @@ class Model:
 
     def predict(self, dataset, prediction_directory = None):
         """
+        Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
         :param documents: a string or Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
@@ -123,14 +126,16 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=10):
+    def cross_validate(self, num_folds=10, dataset=None, write_predictions=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
+
         :param num_folds: number of folds to split training data into for cross validation
+        :param dataset: Dataset that sequences were extracted from
         :return: Prints out performance metrics
         """
 
-        if num_folds < 1: raise ValueError("Number of folds for cross validation must be greater than 1")
+        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
 
         assert self.model is not None, "Cannot cross validate a un-fit model"
         assert self.X_data is not None and self.y_data is not None, \
@@ -158,9 +163,41 @@ class Model:
             y_test = [Y_data[index] for index in test_indices]
 
             logging.info("Training Fold %i", fold)
-            learner.fit(X_train, y_train)
-            y_pred = learner.predict(X_test)
+            train_data = [x[0] for x in X_train]
+            test_data = [x[0] for x in X_test]
+            learner.fit(train_data, y_train)
+            y_pred = learner.predict(test_data)
 
+            if write_predictions:
+                # Dict for storing mapping of sequences to their corresponding file
+                preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+
+                # Flattening nested structures into 2d lists
+                document_indices = []
+                span_indices = []
+                for sequence in X_test:
+                    document_indices += [sequence[2] for x in range(len(sequence[0]))]
+                    span_indices += [element for element in sequence[1]]
+                predictions = [element for sentence in y_pred for element in sentence]
+
+                # Map the predicted sequences to their corresponding documents
+                i=0
+                while i < len(predictions):
+                    if predictions[i] == 'O':
+                        i+=1
+                        continue
+                    entity = predictions[i]
+                    document = document_indices[i]
+                    first_start, first_end = span_indices[i]
+                    # Ensure that consecutive tokens with the same label are merged
+                    while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
+                        i += 1
+                    last_start, last_end = span_indices[i]
+
+                    preds_by_document[document].append((entity, first_start, last_end))
+                    i+=1
+
+            # Write the metrics for this fold.
             for label in named_entities:
                 fold_statistics[label] = {}
                 recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label])
@@ -178,6 +215,15 @@ class Model:
             fold_statistics['system']['precision'] = precision
             fold_statistics['system']['recall'] = recall
             fold_statistics['system']['f1'] = f1
+
+            table_data = [[label,
+                           format(fold_statistics[label]['precision'], ".3f"),
+                           format(fold_statistics[label]['recall'], ".3f"),
+                           format(fold_statistics[label]['f1'], ".3f")]
+                          for label in named_entities + ['system']]
+
+            logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+                                  tablefmt='orgtbl'))
 
             evaluation_statistics[fold] = fold_statistics
             fold += 1
@@ -218,9 +264,21 @@ class Model:
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
 
+        if write_predictions:
+            # Write annotations generated from cross-validation
+            prediction_directory = dataset.data_directory + "/predictions/"
+            for data_file in dataset.get_data_files():
+                logging.info("Predicting file: %s", data_file.file_name)
+                with open(data_file.raw_path, 'r') as raw_text:
+                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                    preds = preds_by_document[data_file.file_name]
+                    annotations = construct_annotations_from_tuples(doc, preds)
+                    annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
+
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
+
         :param conn: pipe to pass back data to parent process
         :param data_file: an instance of DataFile
         :return: Updates queue with features for this given file.
@@ -250,7 +308,7 @@ class Model:
         # print()
 
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
-        features, labels = feature_extractor(doc)
+        features, labels = feature_extractor(doc, data_file.file_name)
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
         return features, labels
@@ -258,6 +316,7 @@ class Model:
     def load(self, path):
         """
         Loads a pickled model.
+
         :param path: File path to directory where fitted model should be dumped
         :return:
         """
@@ -266,6 +325,7 @@ class Model:
     def dump(self, path):
         """
         Dumps a model into a pickle file
+
         :param path: Directory path to dump the model
         :return:
         """
@@ -277,6 +337,7 @@ class Model:
         """
         Retrieves information about a Model including details about the feature extraction pipeline, features utilized,
         and learning model.
+
         :param return_dict: Returns a raw dictionary of information as opposed to a formatted string
         :return: Returns structured information
         """
@@ -307,6 +368,7 @@ class Model:
         """
         Loads an external medaCy compatible Model. Require's the models package to be installed
         Alternatively, you can import the package directly and call it's .load() method.
+
         :param package_name: the package name of the model
         :return: an instance of Model that is configured and loaded - ready for prediction.
         """

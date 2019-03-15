@@ -23,6 +23,7 @@ class SequenceStratifiedKFold:
         """
         Returns an iterable [(X*,y*), ...] where each element contains the indices
         of the train and test set for the particular testing fold.
+
         :param X: a collection of sequences
         :param y: a collection of sequence labels
         :return:

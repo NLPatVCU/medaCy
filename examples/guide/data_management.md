@@ -54,7 +54,7 @@ from medacy.data import Dataset
 from medacy.pipeline_components import MetaMap
 
 dataset = Dataset('/home/medacy/data')
-for data_file in dataset.get_data_files():
+for data_file in dataset:
   print(data_file.file_name)
 print(data)
 print(data.is_metamapped())

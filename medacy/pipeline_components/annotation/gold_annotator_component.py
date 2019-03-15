@@ -104,7 +104,7 @@ class GoldAnnotatorComponent(BaseComponent):
                 logging.warning("%s: Could not fix annotation: (%i,%i,%s)",doc._.file_name, e_start, e_end, e_label)
                 logging.warning("%s: Total Failed Annotations: %i", doc._.file_name, self.failed_identifying_span_count)
 
-        if self.failed_overlay_count > .3*gold_annotations.get_entity_count() :
+        if self.failed_overlay_count > .3*len(gold_annotations.get_entity_annotations()) :
             logging.warning("%s: Annotations may mis-aligned as more than 30 percent failed to overlay: %s", doc._.file_name, doc._.gold_annotation_file)
 
 
