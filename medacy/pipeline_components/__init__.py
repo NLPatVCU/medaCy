@@ -17,3 +17,6 @@ from .units.volume_unit_component import VolumeUnitComponent
 from .units.time_unit_component import TimeUnitComponent
 from .units.frequency_unit_component import FrequencyUnitComponent
 from .units.measurement_unit_component import MeasurementUnitComponent
+
+
+from .feature_extraction.discrete_feature_extractor import FeatureExtractor

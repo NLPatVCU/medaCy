@@ -157,7 +157,7 @@ Once you have a trained or imported a model, pass in a Dataset object for bulk p
 
 ```python
 from medacy.data import Dataset
-from medacy.model import Model
+from medacy.ner.model import Model
 
 dataset = Dataset('/home/medacy/data')
 model = Model.load_external('medacy_model_clinical_notes')

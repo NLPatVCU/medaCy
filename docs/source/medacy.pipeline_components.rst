@@ -9,3 +9,4 @@ medacy.pipeline\_components package
     medacy.pipeline_components.metamap
     medacy.pipeline_components.tokenization
     medacy.pipeline_components.units
+    medacy.pipeline_components.feature_extraction
