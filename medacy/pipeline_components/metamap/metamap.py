@@ -252,17 +252,20 @@ class MetaMap:
         :param term: The full dictionary corresponding to a metamap term
         :return: the span of the referenced term in the document
         """
-        if int(term['ConceptPIs']['@Count']) == 1:
+        if isinstance(term['ConceptPIs']['ConceptPI'], list):
+            spans = []
+            for span in term['ConceptPIs']['ConceptPI']:
+                start = int(span['StartPos'])
+                length = int(span['Length'])
+                spans.append((start, start + length))
+            return spans
+        else:
             start = int(term['ConceptPIs']['ConceptPI']['StartPos'])
             length = int(term['ConceptPIs']['ConceptPI']['Length'])
-            return [(start, start+length)]
+            return [(start, start + length)]
 
-        spans = []
-        for span in term['ConceptPIs']['ConceptPI']:
-            start = int(span['StartPos'])
-            length = int(span['Length'])
-            spans.append((start, start+length))
-        return spans
+
+
 
     def get_semantic_types_by_term(self, term):
         """
