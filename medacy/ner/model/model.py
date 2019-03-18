@@ -267,6 +267,10 @@ class Model:
         if write_predictions:
             # Write annotations generated from cross-validation
             prediction_directory = dataset.data_directory + "/predictions/"
+            if os.path.isdir(prediction_directory):
+                logging.warning("Overwritting existing predictions")
+            else:
+                os.makedirs(prediction_directory)
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
                 with open(data_file.raw_path, 'r') as raw_text:
