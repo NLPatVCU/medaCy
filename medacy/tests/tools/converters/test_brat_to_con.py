@@ -170,7 +170,7 @@ class TestBratToCon(unittest.TestCase):
         """Passes an invalid file path to convert_brat_to_con()."""
         with self.assertRaises(FileNotFoundError):
             convert_brat_to_con("this isn't a valid file path", "neither is this")
-
+            
     def test_valid_brat_matching_text_name(self):
         """
         Assert that the con output matches the sample con text when the automatic text-file-finding feature is utilized

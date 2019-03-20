@@ -177,6 +177,10 @@ class TestAnnotation(TestCase):
         self.assertEqual(annotations1.intersection(annotations2), set([annotations2.get_entity_annotations()[0], annotations2.get_entity_annotations()[1]]))
 
 
+    def test_compute_counts(self):
+        annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
+        self.assertIsInstance(annotations1.compute_counts(), dict)
+
     # def test_compare_by_entity_valid_data_return_dict(self):
     #     """Tests that when compare_by_entity() is called with valid data that it returns a dict."""
     #     annotations1 = Annotations(self.ann_file_path_one, annotation_type='ann')
