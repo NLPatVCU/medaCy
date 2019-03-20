@@ -1,10 +1,10 @@
 """
 :author: Steele W. Farnsworth
-:date: 17 February, 2019
+:date: 13 March, 2019
 """
 
-import unittest, tempfile, os, shutil
-from medacy.tools.con_form.con_to_brat import *
+import unittest, tempfile
+from medacy.tools.converters.con_to_brat import *
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
@@ -126,25 +126,23 @@ class TestConToBrat(unittest.TestCase):
         expected = {"data_item": "Amphotericin B", "start_ind": "7:8", "end_ind": "7:9", "data_type": "activeingredient"}
         actual = line_to_dict(sample)
         self.assertDictEqual(expected, actual)
-        
-    @unittest.skip("Not currently working")
+
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
         brat_output = convert_con_to_brat(self.con_file_path, self.text_file_path)
-        self.assertEqual(brat_output, brat_text)
+        self.assertEqual(brat_text, brat_output)
 
     def test_invalid_file_path(self):
         """Passes an invalid file path to convert_con_to_brat()."""
         with self.assertRaises(FileNotFoundError):
             convert_con_to_brat("this isn't a valid file path", "neither is this")
-    
-    @unittest.skip("Not currently working")
+
     def test_valid_con_matching_text_name(self):
         """
         Assert that the con output matches the sample con text when the automatic text-file-finding feature is utilized
         """
         brat_output = convert_con_to_brat(self.con_file_path)
-        self.assertEqual(brat_output, brat_text)
+        self.assertEqual(brat_text, brat_output)
 
     def test_invalid_brat_text(self):
         """Assert that invalid brat text produces no output."""

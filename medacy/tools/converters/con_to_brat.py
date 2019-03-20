@@ -6,16 +6,31 @@ in the conversion process to the output directory.
 
 Function 'convert_con_to_brat()' can be imported independently and run on individual files.
 
-This version does not produce accurate output. Revisions are underway.
+This program can be used for conversion independently from medaCy if the Line class is copied
+and pasted into a copy of this program.
 
 :author: Steele W. Farnsworth
-:date: 18 February, 2019
+:date: 13 March, 2019
 """
 
-from sys import argv as cmd_arg, exit
-from re import split, findall, fullmatch, DOTALL
+from sys import argv, exit
+from re import split, findall, fullmatch
+from medacy.tools.converters.conversion_tools.line import Line
+import re
 import os
 import shutil
+import logging
+import tabulate
+
+
+# Regex patterns
+whitespace_pattern = "( +|\t+)+"
+con_pattern = "c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
+
+# Used for stats at the end
+num_lines = 0
+num_skipped_regex = 0
+num_skipped_value_error = 0
 
 
 def is_valid_con(item: str):
@@ -25,7 +40,6 @@ def is_valid_con(item: str):
     :return: Boolean of whether or not the line matches a con regular expression.
     """
     if not isinstance(item, str): return False
-    con_pattern = "c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
     if fullmatch(con_pattern, item): return True
     else: return False
 
@@ -49,25 +63,58 @@ def switch_extension(name, ext):
     return os.path.splitext(name)[0] + ext
 
 
-def get_absolute_index(txt, txt_lns, ind):
+def get_absolute_index(txt_lns, ind, entity):
     """
-    Given one of the \d+:\d+ spans, which represent the index of a char relative to the start of the line it's on,
+    Given one of the \d+:\d+ spans, which represent the index of a word relative to the start of the line it's on,
     returns the index of that char relative to the start of the file.
-    :param txt: The text file associated with the annotation.
-    :param txt_lns: The same text file as a list broken by lines
+    :param txt_lns: The list of Line objects for that file.
     :param ind: The string in format \d+:\d+
+    :param entity: The text of the entity
     :return: The absolute index
     """
 
-    # convert ind to line_num and char_num
+    # Convert ind to line_num and char_num
     nums = split(":", ind)
     line_num = int(nums[0]) - 1  # line nums in con start at 1 and not 0
-    char_num = int(nums[1])
+    word_num = int(nums[1])
 
     this_line = txt_lns[line_num]
-    line_index = txt.index(this_line)  # get the absolute index of the entire line
-    abs_index = line_index + char_num
-    return abs_index
+    line_index = this_line.index
+
+    # Get index of word following n space
+    split_by_whitespace = split(whitespace_pattern, this_line.text)
+    split_by_whitespace = [s for s in split_by_whitespace if s != '']
+    split_by_ws_no_ws = [s for s in split_by_whitespace if not s.isspace()]
+    all_whitespace = [s for s in split_by_whitespace if s.isspace()]
+
+    # Adjust word_num if first character cluster is whitespace
+    if split_by_whitespace[0].isspace():
+        line_to_target_word = split_by_ws_no_ws[:word_num - 1]
+    else:
+        line_to_target_word = split_by_ws_no_ws[:word_num]
+
+    num_non_whitespace = sum([len(w) for w in line_to_target_word])
+    num_whitespace = sum([len(w) for w in all_whitespace[:word_num]])
+
+    index_within_line = num_whitespace + num_non_whitespace
+    line_to_start_index = this_line.text[index_within_line:]
+    entity_pattern_escaped = re.escape(entity)
+    entity_pattern_spaced = re.sub(r"\\\s+", r"\s+", entity_pattern_escaped)
+
+    try:
+        # Search for entity regardless of case or composition of intermediate spaces
+        # match = re.search(entity_pattern_spaced, this_line.text, re.IGNORECASE)[0]
+        match = re.search(entity_pattern_spaced, line_to_start_index, re.IGNORECASE)[0]
+        offset = line_to_start_index.index(match)  # adjusts if entity is not the first char in its "word"
+    except (ValueError, TypeError):
+        logging.warning("""Entity not found in its expected line:
+        \t"%s"
+        \t"%s"
+        \tRevision of input data may be required; conversion for this item was skipped""" % (entity, this_line)
+        )
+        return -1
+
+    return index_within_line + line_index + offset
 
 
 def convert_con_to_brat(con_file_path, text_file_path=None):
@@ -81,6 +128,8 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
     :return: A string representation of the brat file, which can then be written to file if desired.
     """
 
+    global num_lines, num_skipped_regex, num_skipped_value_error
+
     # By default, find txt file with equivalent name
     if text_file_path is None:
         text_file_path = switch_extension(con_file_path, ".txt")
@@ -89,14 +138,16 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
                                     " directory")
         with open(text_file_path, 'r') as text_file:
             text = text_file.read()
-            text_lines = text.split('\n')
+            text_lines = Line.init_lines(text)
     # Else, open the file with the path passed to the function
     elif os.path.isfile(text_file_path):
         with open(text_file_path, 'r') as text_file:
             text = text_file.read()
-            text_lines = text.split('\n')
+            text_lines = Line.init_lines(text)
     else: raise FileNotFoundError("No text file path was provided or the file was not found."
                                   " Note that direct string input of the source text is not supported.")
+
+    num_lines += len(text_lines)
 
     # If con_file_path is actually a path, open it and split it into lines
     if os.path.isfile(con_file_path):
@@ -111,10 +162,17 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
     output_text = ""
     t = 1
     for line in con_text_lines:
-        if not is_valid_con(line): continue
+        if line == "" or line.startswith("#"): continue
+        elif not is_valid_con(line):
+            logging.warning("Incorrectly formatted line in %s was skipped: \"%s\"." % (con_file_path, line))
+            num_skipped_regex += 1
+            continue
         d = line_to_dict(line)
-        start_ind = get_absolute_index(text, text_lines, d["start_ind"])
-        span_length = d["data_item"].__len__()
+        start_ind = get_absolute_index(text_lines, d["start_ind"], d["data_item"])
+        if start_ind == -1:
+            num_skipped_value_error += 1
+            continue  # skips data that could not be converted
+        span_length = len(d["data_item"])
         end_ind = start_ind + span_length
         output_line = "T%s\t%s %s %s\t%s\n" % (str(t), d["data_type"], str(start_ind), str(end_ind), d["data_item"])
         output_text += output_line
@@ -127,33 +185,41 @@ if __name__ == '__main__':
 
     # Get the input and output directories from the command line.
 
-    if not cmd_arg.__len__() >= 3:
+    if len(argv) < 3:
         # Command-line arguments must be provided for the input and output directories.
-        # Else, prints instructions and aborts the program.
-        print("Please run the program again, entering the input and output directories as command-line arguments"
-              " in that order. Optionally, enter '-c' as a final command line argument if you want to copy"
-              " the text files used in the conversion over to the output directory.")
-        exit()
+        raise IOError("Please run the program again, entering the input and output directories as command-line"
+                      " arguments in that order. Optionally, enter '-c' as a final command line argument if you want"
+                      " to copy the text files used in the conversion over to the output directory.")
 
     try:
-        input_dir_name = cmd_arg[1]
+        input_dir_name = argv[1]
         input_dir = os.listdir(input_dir_name)
     except FileNotFoundError:  # dir doesn't exist
         while not os.path.isdir(input_dir_name):
             input_dir_name = input("Input directory not found; please try another directory:")
         input_dir = os.listdir(input_dir_name)
     try:
-        output_dir_name = cmd_arg[2]
+        output_dir_name = argv[2]
         output_dir = os.listdir(output_dir_name)
     except FileNotFoundError:
         while not os.path.isdir(output_dir_name):
             output_dir_name = input("Output directory not found; please try another directory:")
             output_dir = os.listdir(output_dir_name)
 
+    # Create the log
+    log_path = os.path.join(output_dir_name, "conversion.log")
+    logging.basicConfig(filename=log_path)
+
     # Get only the text files in input_dir
     text_files = [f for f in input_dir if f.endswith(".txt")]
     # Get only the con files in input_dir that have a ".txt" equivalent
     con_files = [f for f in input_dir if f.endswith(".con") and switch_extension(f, ".txt") in text_files]
+
+    # Ensure user is aware if there are no files to convert
+    if len(con_files) < 1:
+        raise FileNotFoundError("There were no con files in the input directory with a corresponding text file. "
+                                "Please ensure that the input directory contains ann files and that each file has "
+                                "a corresponding txt file (see help for this program).")
 
     for input_file_name in con_files:
         full_file_path = os.path.join(input_dir_name, input_file_name)
@@ -165,8 +231,23 @@ if __name__ == '__main__':
 
     # Paste all the text files used in the conversion process to the output directory
     # if there's a fourth command line argument and that argument is -c
-    if cmd_arg.__len__() == 4 and cmd_arg[3] == "-c":
+    if len(argv) >= 4 and argv[3] == "-c":
         text_files_with_match = [f for f in text_files if switch_extension(f, ".con") in con_files]
         for f in text_files_with_match:
             full_name = os.path.join(input_dir_name, f)
             shutil.copy(full_name, output_dir_name)
+
+    # Compile and print stats to log
+    stat_headers = ["Total lines", "Total converted", "Lines skipped", "Skipped due to value error",
+                    "Skipped did not match regex", "Percent converted"]
+    stat_data = [
+        num_lines,
+        num_lines - num_skipped_regex - num_skipped_value_error,
+        num_skipped_regex + num_skipped_value_error,
+        num_skipped_value_error,
+        num_skipped_regex,
+        (num_lines - num_skipped_regex - num_skipped_value_error) / num_lines
+    ]
+
+    conversion_stats = tabulate.tabulate(headers=stat_headers, tabular_data=[stat_data])
+    logging.warning("\n" + conversion_stats)

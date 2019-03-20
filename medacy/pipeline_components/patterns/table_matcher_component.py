@@ -37,4 +37,3 @@ class TableMatcherComponent(BaseComponent):
                 token._.set('feature_is_from_table', True)
 
         return doc
-

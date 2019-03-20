@@ -1,10 +1,10 @@
 """
 :author: Steele W. Farnsworth
-:date: 28 December, 2018
+:date: 13 March, 2019
 """
 
-import unittest, tempfile, os, shutil
-from medacy.tools.con_form.brat_to_con import *
+import unittest, tempfile
+from medacy.tools.converters.brat_to_con import *
 
 brat_text = """T1	tradename 0 7	ABELCET
 T2	activeingredient 9 23	Amphotericin B
@@ -92,33 +92,35 @@ class TestBratToCon(unittest.TestCase):
 
         cls.output_file_path = os.path.join(cls.test_dir, "output_file.txt")
 
+        cls.lines = Line.init_lines(source_text)
+
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.test_dir)
 
-    def is_valid_brat_valid_1(self):
+    def test_is_valid_brat_valid_1(self):
         """Tests that when is_valid_brat() gets called on a valid line without a new line character, it returns True."""
         sample = "T3	nanoparticle 24 37	Lipid Complex"
         result = is_valid_brat(sample)
         self.assertTrue(result)
 
-    def is_valid_brat_valid_2(self):
+    def test_is_valid_brat_valid_2(self):
         """Tests that when is_valid_brat() is called on a valid line with a new line character, it returns True."""
         sample = "T12	nanoparticle 674 683	liposomal\n"
         result = is_valid_brat(sample)
         self.assertTrue(result)
 
-    def is_valid_brat_invalid_1(self):
+    def test_is_valid_brat_invalid_1(self):
         """Tests what when is_valid_brat() is called on an invalid line without a new line character, it returns False."""
         sample = "T3	nanoparticle s 37	Lipid Complex"
         result = is_valid_brat(sample)
         self.assertFalse(result)
 
-    def is_valid_brat_invalid_2(self):
+    def test_is_valid_brat_invalid_2(self):
         """Tests what when is_valid_brat() is called on an invalid line with a new line character, it returns False."""
         sample = "T12 674 683	liposomal\n"
         result = is_valid_brat(sample)
-        self.assertTrue(result)
+        self.assertFalse(result)
 
     def test_line_to_dict(self):
         """Tests that line_to_dict() accurately converts a line of input text to an expected dict format."""
@@ -142,10 +144,10 @@ class TestBratToCon(unittest.TestCase):
         """
         # The annotation used is "T5	tradename 132 139	ABELCET"
         sample_line = "ABELCET  consists of ampho-tericin B complexed with two phospholipids in a 1:1 drug-to-lipid molar ratio."
-        line_index = get_line_index(source_text, sample_line)
+        this_line = self.lines[1]
         expected = 0
-        actual = get_word_num(source_text, line_index, 132)
-        self.assertEqual(expected, actual)
+        actual = get_word_num(this_line, 132)
+        self.assertEqual(actual, expected)
 
     def test_get_word_num_2(self):
         """
@@ -154,17 +156,16 @@ class TestBratToCon(unittest.TestCase):
         """
         # The annotation used is "T16	activeingredient 1009 1023	Amphotericin B"
         sample_line = "Suchdifferences may affect functional properties of these drug products.Amphotericin B is a polyene, antifungal antibiotic produced from a strain of Streptomyces nodosus.Amphotericin B is designated chemically as [1R-(1R*, 3S*, 5R*, 6R*, 9R*, 11R*, 15S*, 16R*, 17R*,18S*, 19E, 21E, 23E, 25E, 27E, 29E, 31E, 33R*, 35S*, 36R*, 37S*)]-33-[(3-Amino-3, 6- D-mannopyranosyl) oxy]-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-14,39-dioxabicy-clo[33.3.1] nonatriaconta-19, 21, 23, 25, 27, 29, 31-heptaene-36-carboxylic acid."
-        line_index = get_line_index(source_text, sample_line)
+        this_line = self.lines[6]
         expected = 21
-        actual = get_word_num(source_text, line_index, 1009)
+        actual = get_word_num(this_line, 1009)
         self.assertEqual(expected, actual)
-        
-    @unittest.skip("Not currently working")
+
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
         con_output = convert_brat_to_con(self.brat_file_path, self.text_file_path)
-        self.assertEqual(con_output, con_text)
-    
+        self.assertEqual(con_text, con_output)
+
     def test_invalid_file_path(self):
         """Passes an invalid file path to convert_brat_to_con()."""
         with self.assertRaises(FileNotFoundError):
@@ -175,7 +176,7 @@ class TestBratToCon(unittest.TestCase):
         Assert that the con output matches the sample con text when the automatic text-file-finding feature is utilized
         """
         con_output = convert_brat_to_con(self.brat_file_path)
-        self.assertEqual(con_output, con_text)
+        self.assertEqual(con_text, con_output)
 
     def test_invalid_brat_text(self):
         """Assert that invalid brat text produces no output."""
