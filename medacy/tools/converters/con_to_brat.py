@@ -220,7 +220,6 @@ if __name__ == '__main__':
         raise FileNotFoundError("There were no con files in the input directory with a corresponding text file. "
                                 "Please ensure that the input directory contains ann files and that each file has "
                                 "a corresponding txt file (see help for this program).")
-        exit()
 
     for input_file_name in con_files:
         full_file_path = os.path.join(input_dir_name, input_file_name)
