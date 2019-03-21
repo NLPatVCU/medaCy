@@ -1,7 +1,6 @@
 from sys import argv
 import os
 import re
-import regex
 import logging
 from bs4 import BeautifulSoup
 
@@ -15,59 +14,75 @@ def convert_xml_to_brat(xml_file_path):
     with open(xml_file_path) as f:
         xml_text = f.read()
 
+    xml_text = re.sub("\&gt;", ">", xml_text)
     whole_soup = BeautifulSoup(xml_text, features="html.parser")
     abstract_in_tags = whole_soup.find("abstracttext")
     abstract_soup = BeautifulSoup(str(abstract_in_tags), features="html.parser")
 
+    # The text of the abstract without any tags
     abstract_text = abstract_soup.get_text()
 
     tags = set([tag.name for tag in abstract_soup.find_all()])
-
     tags.remove("abstracttext")
 
     infix = "( |<.*?>|)+"
+    circumfix = "<.*?>"
 
     all_annotations = []
 
     for tag in tags:
 
         all_for_tag = abstract_soup.find_all(tag)
-        matches_for_tag = []
+
+        escaped_patterns = []
         for tagged_item in all_for_tag:
             tag_pattern = re.escape(str(tagged_item))
-            iter_matches = re.finditer(tag_pattern, str(abstract_soup))
+            if tag_pattern not in escaped_patterns:
+                escaped_patterns.append(tag_pattern)
+
+        matches_for_tag = []
+        for pattern in escaped_patterns:
+            iter_matches = re.finditer(pattern, str(abstract_soup))
             for match in iter_matches:
                 matches_for_tag.append(match)
 
         # Get all the instances of that tag
         for tagged_item in matches_for_tag:
+            # We only want to search up to the end of the match we're looking at
             cap_index = tagged_item.span()[1]
             match_text = tagged_item.string[tagged_item.span()[0]:tagged_item.span()[1]]
-            match_soup = BeautifulSoup(match_text, features="lxml")
+            match_soup = BeautifulSoup(match_text, features="html.parser")
             match_tagless = match_soup.get_text()
+
             # Construct the regex pattern
             tagless_escaped = re.escape(match_tagless)
             spaced = re.sub(r"\\ ", infix, tagless_escaped)
             spaced = re.sub(r"\\-", infix + "-" + infix, spaced)
             spaced = re.sub(r"\\,", r"," + infix, spaced)
+            spaced = re.sub(r"\\/", infix + r"\\/" + infix, spaced)
+            circumfixed = circumfix + spaced + circumfix
+
             # Figure out how many matches come before the instance we're looking at, including itself
             search_text = str(abstract_soup)[:cap_index]
-            similar_matches = re.findall(spaced, search_text)
+            search_text = re.sub("\&gt;", ">", search_text)
+            similar_matches = list(re.finditer(circumfixed, search_text))
             specific_instance = len(similar_matches) - 1
+            assert specific_instance >= 0, "specific_instance should never be negative"
 
             # Find the same instance of the entity in the txt version
             parallel_matches = list(re.finditer(spaced, abstract_text))
             specific_match = parallel_matches[specific_instance]
 
-            new_annotation = {"entity": specific_match.string[specific_match.span()[0]:specific_match.span()[1]],
-                              "entity_type": tag,
-                              "start_ind": specific_match.span()[0],
-                              "end_ind": specific_match.span()[1],
-                              }
+            new_annotation = {
+                    "entity": specific_match.string[specific_match.span()[0]:specific_match.span()[1]],
+                    "entity_type": tag,
+                    "start_ind": specific_match.span()[0],
+                    "end_ind": specific_match.span()[1]
+                }
 
             all_annotations.append(new_annotation)
 
-    all_annotations = sorted(all_annotations, key=lambda x: x["start_ind"])
+    all_annotations = sorted(all_annotations, key=lambda x: (x["start_ind"], x["end_ind"]))
 
     brat_text = ""
     t = 1
@@ -86,8 +101,7 @@ if __name__ == "__main__":
     if len(argv) < 3:
         # Command-line arguments must be provided for the input and output directories.
         raise IOError("Please run the program again, entering the input and output directories as command-line"
-                      " arguments in that order. Optionally, enter '-c' as a final command line argument if you want"
-                      " to copy the text files used in the conversion over to the output directory.")
+                      " arguments in that order.")
 
     try:
         input_dir_name = argv[1]
