@@ -355,7 +355,7 @@ class Dataset:
 
         return entities, confusion_matrix
 
-    def compute_ambiguity(self, dataset, leniency=0):
+    def compute_ambiguity(self, dataset):
         """
         Finds occurrences of spans from 'dataset' that intersect with a span from this annotation but do not have this spans label.
         label. If 'dataset' comprises a models predictions, this method provides a strong indicators
@@ -386,7 +386,7 @@ class Dataset:
             pred_annotation = Annotations(prediction_data_file.ann_path)
 
             # compute matrix on the Annotation file level
-            ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation, leniency=leniency)
+            ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
 
 
         return ambiguity_dict
