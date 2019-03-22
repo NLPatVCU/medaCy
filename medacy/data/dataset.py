@@ -330,7 +330,7 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         #verify files are consistent
-        diff = set([file.ann_path for file in self]).difference(set([file.ann_path for file in dataset]))
+        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
         if diff:
             raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
 
@@ -369,7 +369,7 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set([file.ann_path for file in self]).difference(set([file.ann_path for file in dataset]))
+        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
