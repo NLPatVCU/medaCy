@@ -14,7 +14,7 @@ def convert_xml_to_brat(xml_file_path):
     with open(xml_file_path) as f:
         xml_text = f.read()
 
-    xml_text = re.sub("\&gt;", ">", xml_text)
+    xml_text = re.sub("&gt;", ">", xml_text)
     whole_soup = BeautifulSoup(xml_text, features="html.parser")
     abstract_in_tags = whole_soup.find("abstracttext")
     abstract_soup = BeautifulSoup(str(abstract_in_tags), features="html.parser")
@@ -54,7 +54,9 @@ def convert_xml_to_brat(xml_file_path):
             match_soup = BeautifulSoup(match_text, features="html.parser")
             match_tagless = match_soup.get_text()
 
-            # Construct the regex pattern
+            # Construct the regex pattern to get all instances of the phrase
+            # in the xml file (not the tagless version)
+            # regardless of whether there are tags in between words
             tagless_escaped = re.escape(match_tagless)
             spaced = re.sub(r"\\ ", infix, tagless_escaped)
             spaced = re.sub(r"\\-", infix + "-" + infix, spaced)
@@ -64,7 +66,7 @@ def convert_xml_to_brat(xml_file_path):
 
             # Figure out how many matches come before the instance we're looking at, including itself
             search_text = str(abstract_soup)[:cap_index]
-            search_text = re.sub("\&gt;", ">", search_text)
+            search_text = re.sub("&gt;", ">", search_text)
             similar_matches = list(re.finditer(circumfixed, search_text))
             specific_instance = len(similar_matches) - 1
             assert specific_instance >= 0, "specific_instance should never be negative"
