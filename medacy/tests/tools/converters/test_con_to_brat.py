@@ -127,6 +127,7 @@ class TestConToBrat(unittest.TestCase):
         actual = line_to_dict(sample)
         self.assertDictEqual(expected, actual)
 
+    @unittest.skip
     def test_valid_brat_to_con(self):
         """Convert the test file from brat to con. Assert that the con output matches the sample con text."""
         brat_output = convert_con_to_brat(self.con_file_path, self.text_file_path)
@@ -137,6 +138,7 @@ class TestConToBrat(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             convert_con_to_brat("this isn't a valid file path", "neither is this")
 
+    @unittest.skip
     def test_valid_con_matching_text_name(self):
         """
         Assert that the con output matches the sample con text when the automatic text-file-finding feature is utilized
