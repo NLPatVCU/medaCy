@@ -355,13 +355,14 @@ class Dataset:
 
         return entities, confusion_matrix
 
-    def compute_ambiguity(self, dataset):
+    def compute_ambiguity(self, dataset, leniency=0):
         """
         Finds occurrences of spans from 'dataset' that intersect with a span from this annotation but do not have this spans label.
         label. If 'dataset' comprises a models predictions, this method provides a strong indicators
         of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
 
         :param dataset: a Dataset object containing a predicted version of this dataset.
+        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: a dictionary containing the ambiguity computations on each gold, predicted file pair
         """
         if not isinstance(dataset, Dataset):
@@ -385,7 +386,7 @@ class Dataset:
             pred_annotation = Annotations(prediction_data_file.ann_path)
 
             # compute matrix on the Annotation file level
-            ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
+            ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation, leniency=leniency)
 
 
         return ambiguity_dict
