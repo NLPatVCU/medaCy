@@ -126,16 +126,26 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=10, dataset=None, write_predictions=False):
+    def cross_validate(self, num_folds=10, training_dataset=None, prediction_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
+        If the training dataset and prediction_directory are passed, intermediate predictions during cross validation
+        are written to the directory `write_predictions`. This allows one to construct a confusion matrix or to compute
+        the prediction ambiguity with the methods present in the Dataset class to support pipeline development without
+        a designated evaluation set.
+
         :param num_folds: number of folds to split training data into for cross validation
-        :param dataset: Dataset that sequences were extracted from
-        :return: Prints out performance metrics
+        :param training_dataset: Dataset that is being cross validated (optional)
+        :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
+        :return: Prints out performance metrics, if prediction_directory
         """
 
         if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
+
+        if prediction_directory is not None and training_dataset is None:
+            raise ValueError("Cannot generated predictions during cross validation if training dataset is not given."
+                             " Please pass the training dataset in the 'training_dataset' parameter.")
 
         assert self.model is not None, "Cannot cross validate a un-fit model"
         assert self.X_data is not None and self.y_data is not None, \
@@ -168,7 +178,7 @@ class Model:
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
 
-            if write_predictions:
+            if prediction_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
                 preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
 
@@ -264,20 +274,24 @@ class Model:
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
 
-        if write_predictions:
+        if prediction_directory:
             # Write annotations generated from cross-validation
-            prediction_directory = dataset.data_directory + "/predictions/"
+            if isinstance(prediction_directory, str):
+                prediction_directory = prediction_directory
+            else:
+                prediction_directory = training_dataset.data_directory + "/predictions/"
             if os.path.isdir(prediction_directory):
                 logging.warning("Overwritting existing predictions")
             else:
                 os.makedirs(prediction_directory)
-            for data_file in dataset.get_data_files():
+            for data_file in training_dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
                 with open(data_file.raw_path, 'r') as raw_text:
                     doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
                     preds = preds_by_document[data_file.file_name]
                     annotations = construct_annotations_from_tuples(doc, preds)
                     annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
+            return Dataset(data_directory=prediction_directory)
 
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
