@@ -92,6 +92,10 @@ class Dataset:
         """
         Manages directory of training data along with other medaCy generated files.
 
+        Only text files: considers a directory for managing metamapping.
+        Only ann files: considers a directory of predictions.
+        Both text and ann files: considers a directory for training.
+
         :param data_directory: Directory containing data for training or prediction.
         :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
         :param annotation_file_extension: The file extension of annotation files in the data_directory (default: *.ann*)
@@ -112,42 +116,59 @@ class Dataset:
         # start by filtering all raw_text files, both training and prediction directories will have these
         raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
 
-        if raw_text_files is None:
-            raise ValueError("No raw text files exist in directory: %s" % self.data_directory)
 
-        if data_limit is not None:
-            self.data_limit = data_limit
-        else:
-            self.data_limit = len(raw_text_files)
+        if not raw_text_files: #detected a prediction directory
+            ann_files = sorted([file for file in all_files_in_directory if file.endswith(annotation_file_extension)])
+            self.is_training_directory = False
 
-        if self.data_limit < 1 or self.data_limit > len(raw_text_files):
-            raise ValueError("Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
-
-        # required ann files for this to be a training directory
-        ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension) for file in
-                     raw_text_files]
-
-        # only a training directory if every text file has a corresponding ann_file
-        self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
-
-        # set all file attributes except metamap_path as it is optional.
-        for file in raw_text_files:
-            file_name = file[:-len(raw_text_file_extension) - 1]
-            raw_text_path = os.path.join(data_directory, file)
-
-            if self.is_training_directory:
-                annotation_path = os.path.join(data_directory, file.replace(".%s" % raw_text_file_extension,
-                                                                     ".%s" % annotation_file_extension))
+            if data_limit is not None:
+                self.data_limit = data_limit
             else:
-                annotation_path = None
-            self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
+                self.data_limit = len(ann_files)
 
-        #If directory is already metamapped, use it.
-        if self.is_metamapped():
-            for data_file in self.all_data_files:
-                data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                         data_file.raw_path.split(os.path.sep)[-1]
-                                                         .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
+            for file in ann_files:
+                annotation_path = os.path.join(data_directory, file)
+                file_name = file[:-len(annotation_file_extension) - 1]
+                self.all_data_files.append(DataFile(file_name, None, annotation_path))
+
+
+        else: #detected a training directory (raw text files exist)
+
+            if data_limit is not None:
+                self.data_limit = data_limit
+            else:
+                self.data_limit = len(raw_text_files)
+
+            if self.data_limit < 1 or self.data_limit > len(raw_text_files):
+                raise ValueError(
+                    "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
+
+            # required ann files for this to be a training directory
+            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension) for file
+                         in
+                         raw_text_files]
+            # only a training directory if every text file has a corresponding ann_file
+            self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
+
+
+            # set all file attributes except metamap_path as it is optional.
+            for file in raw_text_files:
+                file_name = file[:-len(raw_text_file_extension) - 1]
+                raw_text_path = os.path.join(data_directory, file)
+
+                if self.is_training_directory:
+                    annotation_path = os.path.join(data_directory, file.replace(".%s" % raw_text_file_extension,
+                                                                         ".%s" % annotation_file_extension))
+                else:
+                    annotation_path = None
+                self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
+
+            #If directory is already metamapped, use it.
+            if self.is_metamapped():
+                for data_file in self.all_data_files:
+                    data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
+                                                             data_file.raw_path.split(os.path.sep)[-1]
+                                                             .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
 
     def get_data_files(self):
@@ -330,7 +351,7 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         #verify files are consistent
-        diff = set([file.ann_path for file in self]).difference(set([file.ann_path for file in dataset]))
+        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
         if diff:
             raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
 
@@ -362,13 +383,14 @@ class Dataset:
         of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
 
         :param dataset: a Dataset object containing a predicted version of this dataset.
+        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: a dictionary containing the ambiguity computations on each gold, predicted file pair
         """
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set([file.ann_path for file in self]).difference(set([file.ann_path for file in dataset]))
+        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
