@@ -9,8 +9,8 @@ contains a list of tuple relations where the first element of each tuple is the 
 elements correspond to keys in the 'entities' dictionary.
 """
 import os, logging, tempfile
-from medacy.tools.con_form.con_to_brat import convert_con_to_brat
-from medacy.tools.con_form.brat_to_con import convert_brat_to_con
+from medacy.tools.converters.con_to_brat import convert_con_to_brat
+from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from math import floor, ceil
 import numpy as np
 from spacy.displacy import EntityRenderer
