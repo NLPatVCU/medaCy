@@ -61,6 +61,14 @@ class Annotations:
             elif annotation_type == 'con':
                 self.from_con(annotation_data)
 
+    def get_labels(self):
+        labels = set()
+
+        for entity in self.annotations['entities'].values():
+            labels.add(entity[0])
+
+        return labels
+
     def get_entity_annotations(self, return_dictionary=False, format='medacy'):
         """
         Returns a list of entity annotation tuples
@@ -74,21 +82,21 @@ class Annotations:
         if format == 'medacy':
             return [self.annotations['entities'][T] for T in self.annotations['entities'].keys()]
         elif format == 'spacy':
-            if self.source_text_path == None:
+            if not self.source_text_path:
                 raise FileNotFoundError("spaCy format requires the source text path")
-            else:
-                with open(self.source_text_path, 'r') as source_text_file:
-                    source_text = source_text_file.read().replace('\n', '')
-                
-                entities = []
 
-                for annotation in self.annotations['entities'].values():
-                    entity = annotation[0]
-                    start = annotation[1]
-                    end = annotation[2]
-                    entities.append((start, end, entity))
+            with open(self.source_text_path, 'r') as source_text_file:
+                source_text = source_text_file.read()
+            
+            entities = []
 
-                return (source_text, {"entities": entities})
+            for annotation in self.annotations['entities'].values():
+                entity = annotation[0]
+                start = annotation[1]
+                end = annotation[2]
+                entities.append((start, end, entity))
+
+            return (source_text, {"entities": entities})
         else:
             raise ValueError("'%s' is not a valid annotation format" % format)
 
