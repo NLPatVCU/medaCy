@@ -1,4 +1,5 @@
 import spacy, sklearn_crfsuite
+from medacy.pipeline_components import MetaMap
 from .base import BasePipeline
 from medacy.pipeline_components import ClinicalTokenizer
 from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
@@ -12,7 +13,7 @@ class FDANanoDrugLabelPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, metamap, entities=[]):
+    def __init__(self, metamap=None, entities=[]):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -34,7 +35,10 @@ class FDANanoDrugLabelPipeline(BasePipeline):
         self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
-        self.add_component(MetaMapComponent, metamap)
+
+        if metamap is not None and isinstance(metamap, MetaMap):
+            self.add_component(MetaMapComponent, metamap)
+
         #self.add_component(UnitComponent)
 
     def get_learner(self):
