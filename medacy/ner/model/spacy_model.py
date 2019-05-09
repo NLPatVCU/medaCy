@@ -3,6 +3,7 @@ from os.path import isfile, join, isdir
 import random
 from datetime import datetime
 import logging
+import joblib
 from pathlib import Path
 import spacy
 from spacy.util import minibatch, compounding
@@ -76,14 +77,10 @@ class SpacyModel:
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
                 print("Losses", losses)
 
-        # save model to current directory
-        output_dir = Path(new_model_name)
-        if not output_dir.exists():
-            output_dir.mkdir()
         nlp.meta["name"] = new_model_name  # rename model
         self.model = nlp
-        nlp.to_disk(output_dir)
-        print("Saved model to", output_dir)
+
+        return nlp
 
     def predict(self, dataset, prediction_directory=None):
         """
@@ -134,3 +131,22 @@ class SpacyModel:
             for ent in doc.ents:
                 entities.append((ent.label_, ent.text))
             return entities
+
+    def load(self, path):
+        """
+        Loads a pickled model.
+
+        :param path: File path to directory where fitted model should be dumped
+        :return:
+        """
+        self.model = joblib.load(path)
+
+    def dump(self, path):
+        """
+        Dumps a model into a pickle file
+
+        :param path: Directory path to dump the model
+        :return:
+        """
+        assert self.model is not None, "Must fit model before dumping."
+        joblib.dump(self.model, path)
