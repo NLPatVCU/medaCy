@@ -1,6 +1,8 @@
-from os import listdir
-from os.path import isfile, join
+from os import listdir, makedirs
+from os.path import isfile, join, isdir
 import random
+from datetime import datetime
+import logging
 from pathlib import Path
 import spacy
 from spacy.util import minibatch, compounding
@@ -8,17 +10,32 @@ from medacy.tools import Annotations, DataFile
 from medacy.data import Dataset
 
 class SpacyModel:
-    def fit(self, dataset, spacy_model_name, new_model_name, output_dir, iterations=30):
-        """ Updates a spaCy model with additional ner training. Currently only using a set of brat files as
-            the training data.
+    model = None
+
+    def __init__(self, model=None):
+        self.model = model
+
+    def fit(self, dataset, spacy_model_name, new_model_name=None, iterations=30):
+        """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
+
+        :param dataset: medaCy dataset object. Contain .ann and .txt files
+        :param spacy_model_name: String of the spaCy model to use
+        :param new_model_name: What the new model will be saved as. Defaults to a timestamp
+        :param iterations: Training iterations to do
+        :return model: A trained spaCy instance
         """
         data_files = dataset.get_data_files()
         labels = dataset.get_labels()
         train_data = dataset.get_training_data()
 
+        print('New labels:')
         print(labels)
 
-        """Set up the pipeline and entity recognizer, and train the new entity."""
+        if new_model_name is None:
+            timestamp = datetime.now().timestamp()
+            new_model_name = datetime.utcfromtimestamp(timestamp).strftime('%m-%d-%Y-%H%M%S')
+
+        # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
         if spacy_model_name is not None:
             nlp = spacy.load(spacy_model_name)  # load existing spaCy model
@@ -34,6 +51,7 @@ class SpacyModel:
         # otherwise, get it, so we can add labels to it
         else:
             ner = nlp.get_pipe("ner")
+            print('Original labels:')
             print(ner.labels)
 
         for label in labels:
@@ -58,27 +76,61 @@ class SpacyModel:
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
                 print("Losses", losses)
 
-        # test the trained model
-        test_text = "I prescribed them 128mg of adderall"
-        doc = nlp(test_text)
-        print("Entities in '%s'" % test_text)
-        for ent in doc.ents:
-            print(ent.label_, ent.text)
+        # save model to current directory
+        output_dir = Path(new_model_name)
+        if not output_dir.exists():
+            output_dir.mkdir()
+        nlp.meta["name"] = new_model_name  # rename model
+        self.model = nlp
+        nlp.to_disk(output_dir)
+        print("Saved model to", output_dir)
 
-        # save model to output directory
-        if output_dir is not None:
-            output_dir = Path(output_dir)
-            if not output_dir.exists():
-                output_dir.mkdir()
-            nlp.meta["name"] = new_model_name  # rename model
-            nlp.to_disk(output_dir)
-            print("Saved model to", output_dir)
+    def predict(self, dataset, prediction_directory=None):
+        """
+        Generates predictions over a string or a dataset utilizing the pipeline equipped to the
+        instance.
 
-            # test the saved model
-            print("Loading from", output_dir)
-            nlp2 = spacy.load(output_dir)
-            # Check the classes have loaded back consistently
-            assert nlp2.get_pipe("ner").move_names == move_names
-            doc2 = nlp2(test_text)
-            for ent in doc2.ents:
-                print(ent.label_, ent.text)
+        :param documents: a string or Dataset to predict
+        :param prediction_directory: the directory to write predictions if doing bulk prediction
+                                     (default: */prediction* sub-directory of Dataset)
+        :return:
+        """
+        if not isinstance(dataset, (Dataset, str)):
+            raise TypeError("Must pass in an instance of Dataset")
+        if self.model is None:
+            raise ValueError("must fit or load a pickled model before predicting")
+
+        nlp = self.model
+
+        if isinstance(dataset, Dataset):
+            if prediction_directory is None:
+                prediction_directory = str(dataset.data_directory) + "/predictions/"
+
+            if isdir(prediction_directory):
+                logging.warning("Overwriting existing predictions")
+            else:
+                makedirs(prediction_directory)
+
+            for data_file in dataset.get_data_files():
+                logging.info("Predicting file: %s", data_file.file_name)
+
+                with open(data_file.raw_path, 'r') as raw_text:
+                    doc = nlp(raw_text.read())
+
+                with open(data_file.get_text_path(), 'r') as source_text_file:
+                    text = source_text_file.read()
+
+                predictions = self.predict(text)
+
+                prediction_filename = join(prediction_directory, data_file.file_name + ".txt")
+                logging.debug("Writing to: %s", prediction_filename)
+
+                with open(prediction_filename, 'w') as prediction_file:
+                    print(predictions, file=prediction_file)
+
+        if isinstance(dataset, str):
+            doc = nlp(dataset)
+            entities = []
+            for ent in doc.ents:
+                entities.append((ent.label_, ent.text))
+            return entities

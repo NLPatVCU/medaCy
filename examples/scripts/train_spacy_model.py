@@ -19,19 +19,20 @@ from sys import exit
     spacy_model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
     new_model_name=("New model name for model meta.", "option", "nm", str),
     input_dir=("Directory of ann and txt files.", "option", "i", Path),
-    output_dir=("Optional output directory", "option", "o", Path),
     n_iter=("Number of training iterations", "option", "n", int),
 )
-def main(spacy_model_name=None, new_model_name="animal", input_dir=None, output_dir=None, n_iter=30):
+def main(input_dir, spacy_model_name=None, new_model_name=None, n_iter=30):
     dataset = Dataset(input_dir)
-
     model = SpacyModel()
+
     model.fit(
         dataset = dataset,
         spacy_model_name = spacy_model_name,
         new_model_name = new_model_name,
-        output_dir = output_dir
+        iterations = n_iter
     )
+
+    model.predict(dataset)
 
 
 if __name__ == "__main__":
