@@ -182,6 +182,32 @@ class Dataset:
     def __iter__(self):
         return self.get_data_files().__iter__()
 
+    def get_labels(self):
+        labels = set()
+        data_files = self.all_data_files
+
+        for datafile in data_files:
+            ann_path = datafile.get_annotation_path()
+            annotations = Annotations(ann_path)
+            labels.update(annotations.get_labels())
+
+        return labels
+
+    def get_training_data(self, format='spacy'):
+        if format != 'spacy':
+            raise TypeError("Format %s not supported" % format)
+
+        training_data = []
+
+        # Add each entry in dataset with annotation to train_data
+        for data_file in self.all_data_files:
+            txt_path = data_file.get_text_path()
+            ann_path = data_file.get_annotation_path()
+            annotations = Annotations(ann_path, source_text_path=txt_path)
+            training_data.append(annotations.get_entity_annotations(format='spacy'))
+
+        return training_data
+
 
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
         """
