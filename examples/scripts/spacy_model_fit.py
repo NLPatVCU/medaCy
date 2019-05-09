@@ -20,20 +20,20 @@ from sys import exit
     new_model_name=("New model name for model meta.", "option", "nm", str),
     input_dir=("Directory of ann and txt files.", "option", "i", Path),
     n_iter=("Number of training iterations", "option", "n", int),
+    revision_texts_path=("Revision text to use for pseudo rehearsal", "options, Path")
 )
-def main(input_dir, spacy_model_name=None, new_model_name=None, n_iter=30):
+def main(input_dir, spacy_model_name=None, new_model_name=None, n_iter=30, revision_texts=None):
     dataset = Dataset(input_dir)
     model = SpacyModel()
 
     model.fit(
         dataset = dataset,
         spacy_model_name = spacy_model_name,
-        new_model_name = new_model_name,
-        iterations = n_iter
+        iterations = n_iter,
+        revision_texts=revision_texts
     )
 
-    model.predict(dataset)
-
+    model.dump(new_model_name)
 
 if __name__ == "__main__":
     plac.call(main)

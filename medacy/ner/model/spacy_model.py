@@ -1,11 +1,11 @@
 from os import listdir, makedirs
 from os.path import isfile, join, isdir
 import random
-from datetime import datetime
 import logging
 import joblib
 from pathlib import Path
 import spacy
+from spacy.gold import GoldParse
 from spacy.util import minibatch, compounding
 from medacy.tools import Annotations, DataFile
 from medacy.data import Dataset
@@ -16,12 +16,11 @@ class SpacyModel:
     def __init__(self, model=None):
         self.model = model
 
-    def fit(self, dataset, spacy_model_name, new_model_name=None, iterations=30):
+    def fit(self, dataset, spacy_model_name, iterations=30, revision_texts=None):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
         :param dataset: medaCy dataset object. Contain .ann and .txt files
         :param spacy_model_name: String of the spaCy model to use
-        :param new_model_name: What the new model will be saved as. Defaults to a timestamp
         :param iterations: Training iterations to do
         :return model: A trained spaCy instance
         """
@@ -32,23 +31,22 @@ class SpacyModel:
         print('New labels:')
         print(labels)
 
-        if new_model_name is None:
-            timestamp = datetime.now().timestamp()
-            new_model_name = datetime.utcfromtimestamp(timestamp).strftime('%m-%d-%Y-%H%M%S')
-
         # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
-        if spacy_model_name is not None:
-            nlp = spacy.load(spacy_model_name)  # load existing spaCy model
-            print("Loaded model '%s'" % spacy_model_name)
-        else:
+
+        if spacy_model_name is None:
             nlp = spacy.blank("en")  # create blank Language class
             print("Created blank 'en' model")
+        else:
+            nlp = spacy.load(spacy_model_name)  # load existing spaCy model
+            print("Loaded model '%s'" % spacy_model_name)
+
         # Add entity recognizer to model if it's not in the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
         if "ner" not in nlp.pipe_names:
             ner = nlp.create_pipe("ner")
             nlp.add_pipe(ner)
+
         # otherwise, get it, so we can add labels to it
         else:
             ner = nlp.get_pipe("ner")
@@ -62,13 +60,29 @@ class SpacyModel:
             optimizer = nlp.begin_training()
         else:
             optimizer = nlp.resume_training()
-        move_names = list(ner.move_names)
+
         # get names of other pipes to disable them during training
         other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
+
+        # Add revision data to train data if applicable
+        # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
+        if revision_texts is not None:
+            revision_data = []
+
+            for doc in nlp.pipe(revision_texts):
+                tags = [w.tag_ for w in doc]
+                heads = [w.head.i for w in doc]
+                deps = [w.dep_ for w in doc]
+                entities = [(e.start_char, e.end_char, e.label_) for e in doc.ents]
+                revision_data.append((doc, GoldParse(doc, tags=tags, heads=heads,
+                                                    deps=deps, entities=entities)))
+
+            train_data = revision_data + train_data
+
         with nlp.disable_pipes(*other_pipes):  # only train NER
             sizes = compounding(1.0, 4.0, 1.001)
             # batch up the examples using spaCy's minibatch
-            for itn in range(iterations):
+            for _ in range(iterations):
                 random.shuffle(train_data)
                 batches = minibatch(train_data, size=sizes)
                 losses = {}
@@ -77,7 +91,6 @@ class SpacyModel:
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
                 print("Losses", losses)
 
-        nlp.meta["name"] = new_model_name  # rename model
         self.model = nlp
 
         return nlp
