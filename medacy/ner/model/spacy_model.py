@@ -31,6 +31,8 @@ class SpacyModel:
         # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
 
+        spacy.prefer_gpu()
+
         if spacy_model_name is None:
             nlp = spacy.blank("en")  # create blank Language class
             print("Created blank 'en' model")
@@ -149,6 +151,7 @@ class SpacyModel:
 
         :param path: Path to directory of spaCy model.
         """
+        spacy.prefer_gpu()
         nlp = spacy.load(path)
         self.model = nlp
 
