@@ -8,21 +8,19 @@ from medacy.tools import Annotations
 from medacy.data import Dataset
 from medacy.ner import SpacyModel
 
-from sys import exit
-
 # Note: If you're using an existing model, make sure to mix in examples of
 # other entity types that spaCy correctly recognized before. Otherwise, your
 # model might learn the new type, but "forget" what it previously knew.
 # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
 
 @plac.annotations(
-    spacy_model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
-    new_model_name=("New model name for model meta.", "option", "nm", str),
     input_dir=("Directory of ann and txt files.", "option", "i", Path),
+    spacy_model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
+    output_dir=("New model name for model meta.", "option", "o", str),
     n_iter=("Number of training iterations", "option", "n", int),
-    revision_texts_path=("Revision text to use for pseudo rehearsal", "options, Path")
+    revision_texts_path=("Revision text to use for pseudo rehearsal", "option", "r", Path)
 )
-def main(input_dir, spacy_model_name=None, new_model_name=None, n_iter=30, revision_texts=None):
+def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30, revision_texts_path=None):
     dataset = Dataset(input_dir)
     model = SpacyModel()
 
@@ -30,10 +28,11 @@ def main(input_dir, spacy_model_name=None, new_model_name=None, n_iter=30, revis
         dataset = dataset,
         spacy_model_name = spacy_model_name,
         iterations = n_iter,
-        revision_texts=revision_texts
+        revision_texts=revision_texts_path
     )
 
-    model.dump(new_model_name)
+    if output_dir is not None:
+        model.save(output_dir)
 
 if __name__ == "__main__":
     plac.call(main)

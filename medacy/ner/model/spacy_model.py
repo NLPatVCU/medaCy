@@ -13,9 +13,6 @@ from medacy.data import Dataset
 class SpacyModel:
     model = None
 
-    def __init__(self, model=None):
-        self.model = model
-
     def fit(self, dataset, spacy_model_name, iterations=30, revision_texts=None):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
@@ -39,7 +36,7 @@ class SpacyModel:
             print("Created blank 'en' model")
         else:
             nlp = spacy.load(spacy_model_name)  # load existing spaCy model
-            print("Loaded model '%s'" % spacy_model_name)
+            print("\nLoaded model '%s'" % spacy_model_name)
 
         # Add entity recognizer to model if it's not in the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -52,6 +49,7 @@ class SpacyModel:
             ner = nlp.get_pipe("ner")
             print('Original labels:')
             print(ner.labels)
+            print()
 
         for label in labels:
             ner.add_label(label)
@@ -100,7 +98,7 @@ class SpacyModel:
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the
         instance.
 
-        :param documents: a string or Dataset to predict
+        :param dataset: a string or Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction
                                      (default: */prediction* sub-directory of Dataset)
         :return:
@@ -108,7 +106,7 @@ class SpacyModel:
         if not isinstance(dataset, (Dataset, str)):
             raise TypeError("Must pass in an instance of Dataset")
         if self.model is None:
-            raise ValueError("must fit or load a pickled model before predicting")
+            raise ValueError("Must fit or load a pickled model before predicting")
 
         nlp = self.model
 
@@ -147,19 +145,21 @@ class SpacyModel:
 
     def load(self, path):
         """
-        Loads a pickled model.
+        Loads a spaCy model and sets it as new self.model.
 
-        :param path: File path to directory where fitted model should be dumped
-        :return:
+        :param path: Path to directory of spaCy model.
         """
-        self.model = joblib.load(path)
+        nlp = spacy.load(path)
+        self.model = nlp
 
-    def dump(self, path):
+    def save(self, path):
         """
-        Dumps a model into a pickle file
+        Saves the spacy model using the to_disk() function.
+        https://spacy.io/usage/saving-loading#models
 
-        :param path: Directory path to dump the model
-        :return:
+        :param path: Directory path to save the model
         """
-        assert self.model is not None, "Must fit model before dumping."
-        joblib.dump(self.model, path)
+        if self.model is None:
+            raise ValueError("No model to save.")
+
+        self.model.to_disk(path)

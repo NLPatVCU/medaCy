@@ -16,13 +16,13 @@ from sys import exit
 # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
 
 @plac.annotations(
-    spacy_model_name=("Name of pickle file to load as model", "option", "m", Path),
+    spacy_model_path=("Path to spaCy model to load", "option", "m", Path),
     input_dir=("Directory of ann and txt files to predict for", "option", "i", Path),
 )
-def main(input_dir, spacy_model_name):
+def main(spacy_model_path, input_dir):
     dataset = Dataset(input_dir)
     model = SpacyModel()
-    model.load(spacy_model_name)
+    model.load(spacy_model_path)
     model.predict(dataset)
 
 if __name__ == "__main__":
