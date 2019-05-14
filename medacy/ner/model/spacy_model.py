@@ -13,7 +13,7 @@ from medacy.data import Dataset
 class SpacyModel:
     model = None
 
-    def fit(self, dataset, spacy_model_name, iterations=30, revision_texts=None):
+    def fit(self, dataset, spacy_model_name, iterations=30, revision_texts=None, prefer_gpu=False):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
         :param dataset: medaCy dataset object. Contain .ann and .txt files
@@ -31,7 +31,8 @@ class SpacyModel:
         # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
 
-        # spacy.prefer_gpu()
+        if prefer_gpu:
+            spacy.prefer_gpu()
 
         if spacy_model_name is None:
             nlp = spacy.blank("en")  # create blank Language class
@@ -145,13 +146,14 @@ class SpacyModel:
                 entities.append((ent.label_, ent.text))
             return entities
 
-    def load(self, path):
+    def load(self, path, prefer_gpu=False):
         """
         Loads a spaCy model and sets it as new self.model.
 
         :param path: Path to directory of spaCy model.
         """
-        # spacy.prefer_gpu()
+        if prefer_gpu:
+            spacy.prefer_gpu()
         nlp = spacy.load(path)
         self.model = nlp
 
