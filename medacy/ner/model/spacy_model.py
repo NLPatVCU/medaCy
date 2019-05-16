@@ -5,10 +5,11 @@ import logging
 import joblib
 from pathlib import Path
 import spacy
-from spacy.gold import GoldParse
 from spacy.util import minibatch, compounding
 from medacy.tools import Annotations, DataFile
 from medacy.data import Dataset
+from .stratified_k_fold import SequenceStratifiedKFold
+from ._model import construct_annotations_from_tuples
 
 class SpacyModel:
     model = None
@@ -65,21 +66,6 @@ class SpacyModel:
         # get names of other pipes to disable them during training
         other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
 
-        # Add revision data to train data if applicable
-        # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
-        if revision_texts is not None:
-            revision_data = []
-
-            for doc in nlp.pipe(revision_texts):
-                tags = [w.tag_ for w in doc]
-                heads = [w.head.i for w in doc]
-                deps = [w.dep_ for w in doc]
-                entities = [(e.start_char, e.end_char, e.label_) for e in doc.ents]
-                revision_data.append((doc, GoldParse(doc, tags=tags, heads=heads,
-                                                    deps=deps, entities=entities)))
-
-            train_data = revision_data + train_data
-
         with nlp.disable_pipes(*other_pipes):  # only train NER
             sizes = compounding(1.0, 4.0, 1.001)
             # batch up the examples using spaCy's minibatch
@@ -133,18 +119,45 @@ class SpacyModel:
 
                 predictions = self.predict(text)
 
-                prediction_filename = join(prediction_directory, data_file.file_name + ".txt")
-                logging.debug("Writing to: %s", prediction_filename)
+                annotations = construct_annotations_from_tuples(text, predictions)
 
-                with open(prediction_filename, 'w') as prediction_file:
-                    print(predictions, file=prediction_file)
+                prediction_filename = join(prediction_directory, data_file.file_name + ".ann")
+                logging.debug("Writing to: %s", prediction_filename)
+                annotations.to_ann(write_location=prediction_filename)
 
         if isinstance(dataset, str):
             doc = nlp(dataset)
             entities = []
+
             for ent in doc.ents:
-                entities.append((ent.label_, ent.text))
+                entities.append((ent.label_, ent.start_char, ent.end_char, ent.text))
+
             return entities
+
+    def cross_validate(self, num_folds=10, training_dataset=None, spacy_model_name=None):
+        if num_folds <= 1:
+            raise ValueError("Number of folds for cross validation must be greater than 1")
+
+        if training_dataset is None:
+            raise ValueError("Need a dataset to evaluate")
+
+        train_data = training_dataset.get_training_data()
+
+        X_data, Y_data = zip(*train_data)
+
+        evaluation_statistics = {}
+
+        cv = SequenceStratifiedKFold(folds=num_folds)
+        fold = 1
+
+        for train_indices, test_indices in cv(X_data, Y_data):
+            print("\n----EVALUATING FOLD %d----" % fold)
+
+            subdataset = training_dataset.get_subdataset(train_indices)
+            self.fit(subdataset, spacy_model_name, 1)
+
+            fold += 1
+
 
     def load(self, path, prefer_gpu=False):
         """

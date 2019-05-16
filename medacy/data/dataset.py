@@ -208,6 +208,17 @@ class Dataset:
 
         return training_data
 
+    def get_subdataset(self, indices):
+        subdataset = Dataset(self.data_directory)
+        data_files = subdataset.get_data_files()
+        sub_data_files = []
+
+        for i in range(len(data_files)):
+            if i in indices:
+                sub_data_files.append(data_files[i])
+        
+        subdataset.all_data_files = sub_data_files
+        return subdataset
 
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
         """
