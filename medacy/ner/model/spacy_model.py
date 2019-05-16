@@ -3,9 +3,12 @@ from os.path import isfile, join, isdir
 import random
 import logging
 import joblib
+from statistics import mean
 from pathlib import Path
 import spacy
 from spacy.util import minibatch, compounding
+from spacy.scorer import Scorer
+from spacy.gold import GoldParse
 from medacy.tools import Annotations, DataFile
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
@@ -26,6 +29,7 @@ class SpacyModel:
         labels = dataset.get_labels()
         train_data = dataset.get_training_data()
 
+        print('Fitting new model...\n')
         print('New labels:')
         print(labels)
 
@@ -77,6 +81,7 @@ class SpacyModel:
                     texts, annotations = zip(*batch)
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
                 print("Losses", losses)
+                print()
 
         self.model = nlp
 
@@ -117,7 +122,12 @@ class SpacyModel:
                 with open(data_file.get_text_path(), 'r') as source_text_file:
                     text = source_text_file.read()
 
-                predictions = self.predict(text)
+                doc = nlp(text)
+
+                predictions = []
+
+                for ent in doc.ents:
+                    predictions.append((ent.label_, ent.start_char, ent.end_char, ent.text))
 
                 annotations = construct_annotations_from_tuples(text, predictions)
 
@@ -127,6 +137,7 @@ class SpacyModel:
 
         if isinstance(dataset, str):
             doc = nlp(dataset)
+
             entities = []
 
             for ent in doc.ents:
@@ -141,22 +152,62 @@ class SpacyModel:
         if training_dataset is None:
             raise ValueError("Need a dataset to evaluate")
 
+        if spacy_model_name is None:
+            raise ValueError("Need a spacy model to start with")
+
         train_data = training_dataset.get_training_data()
 
         X_data, Y_data = zip(*train_data)
 
-        evaluation_statistics = {}
+        precision_scores = []
+        recall_scores = []
+        f_scores = []
 
         cv = SequenceStratifiedKFold(folds=num_folds)
         fold = 1
 
         for train_indices, test_indices in cv(X_data, Y_data):
             print("\n----EVALUATING FOLD %d----" % fold)
+            self.model = None
 
-            subdataset = training_dataset.get_subdataset(train_indices)
-            self.fit(subdataset, spacy_model_name, 1)
+            x_subdataset = training_dataset.get_subdataset(train_indices)
+            self.fit(x_subdataset, spacy_model_name, 1)
 
+            nlp = self.model
+            scorer = Scorer()
+
+            y_subdataset = training_dataset.get_subdataset(test_indices)
+            
+            for data_file in y_subdataset.get_data_files():
+                print('Evaluating %s...' % data_file.get_text_path())
+
+                with open(data_file.get_text_path(), 'r') as source_text_file:
+                    text = source_text_file.read()
+                    doc = nlp(text)
+
+                doc = nlp(text)
+
+                entities = Annotations(data_file.get_annotation_path()).get_entities()
+
+                doc_gold_text = nlp.make_doc(text)
+                gold = GoldParse(doc_gold_text, entities=entities)
+                scorer.score(doc, gold)
+            
+            scores = scorer.scores
+            print(scores)
+            precision_scores.append(scores['ents_p'])
+            recall_scores.append(scores['ents_r'])
+            f_scores.append(scores['ents_f'])
             fold += 1
+
+        print(precision_scores)
+        print(recall_scores)
+        print(f_scores)
+
+        print('\n-----AVERAGE SCORES-----')
+        print('Precision: \t%f%%' % mean(precision_scores))
+        print('Recall: \t%f%%' % mean(recall_scores))
+        print('F Score: \t%f%%' % mean(f_scores))
 
 
     def load(self, path, prefer_gpu=False):

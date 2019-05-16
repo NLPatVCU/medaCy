@@ -69,6 +69,17 @@ class Annotations:
 
         return labels
 
+    def get_entities(self):
+        entities = []
+
+        for annotation in self.annotations['entities'].values():
+            entity = annotation[0]
+            start = annotation[1]
+            end = annotation[2]
+            entities.append((start, end, entity))
+
+        return entities
+
     def get_entity_annotations(self, return_dictionary=False, format='medacy'):
         """
         Returns a list of entity annotation tuples
