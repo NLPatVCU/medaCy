@@ -25,6 +25,9 @@ class SpacyModel:
         :param iterations: Training iterations to do
         :return model: A trained spaCy instance
         """
+        if iterations is None:
+            iterations = 30
+
         data_files = dataset.get_data_files()
         labels = dataset.get_labels()
         train_data = dataset.get_training_data()
@@ -81,7 +84,6 @@ class SpacyModel:
                     texts, annotations = zip(*batch)
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
                 print("Losses", losses)
-                print()
 
         self.model = nlp
 
@@ -145,7 +147,7 @@ class SpacyModel:
 
             return entities
 
-    def cross_validate(self, num_folds=10, training_dataset=None, spacy_model_name=None):
+    def cross_validate(self, num_folds=10, training_dataset=None, spacy_model_name=None, iterations=None):
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1")
 
@@ -171,7 +173,8 @@ class SpacyModel:
             self.model = None
 
             x_subdataset = training_dataset.get_subdataset(train_indices)
-            self.fit(x_subdataset, spacy_model_name, 1)
+            self.fit(x_subdataset, spacy_model_name, iterations)
+            print('Done training!\n')
 
             nlp = self.model
             scorer = Scorer()
@@ -199,10 +202,6 @@ class SpacyModel:
             recall_scores.append(scores['ents_r'])
             f_scores.append(scores['ents_f'])
             fold += 1
-
-        print(precision_scores)
-        print(recall_scores)
-        print(f_scores)
 
         print('\n-----AVERAGE SCORES-----')
         print('Precision: \t%f%%' % mean(precision_scores))
