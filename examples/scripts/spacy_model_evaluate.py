@@ -1,10 +1,7 @@
-from __future__ import unicode_literals, print_function
-
-import plac
+"""Example script for evaluating spaCy models.
+"""
 from pathlib import Path
-import spacy
-from spacy.util import minibatch, compounding
-from medacy.tools import Annotations
+import plac
 from medacy.data import Dataset
 from medacy.ner import SpacyModel
 
@@ -20,6 +17,8 @@ from medacy.ner import SpacyModel
     fit_iterations=("Number of training iterations per fold", "option", "mn", int)
 )
 def main(input_dir, spacy_model_name=None, n_folds=10, fit_iterations=30):
+    """Main function.
+    """
     dataset = Dataset(input_dir)
     model = SpacyModel()
 

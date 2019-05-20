@@ -151,6 +151,15 @@ class SpacyModel:
             return entities
 
     def cross_validate(self, num_folds=10, training_dataset=None, spacy_model_name=None, iterations=None):
+        """
+        Runs a cross validation.
+
+        :param num_folds: Number of fold to do for the cross validation.
+        :param training_dataset: Path to the directory of BRAT files to use for the training data.
+        :param spacy_model_name: Name of the spaCy model to start from.
+        :param iterations: Number of epochs to us for every fold training.
+        :return:
+        """
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1")
 
@@ -162,17 +171,17 @@ class SpacyModel:
 
         train_data = training_dataset.get_training_data()
 
-        X_data, Y_data = zip(*train_data)
+        x_data, y_data = zip(*train_data)
 
         precision_scores = []
         recall_scores = []
         f_scores = []
         skipped_files = []
 
-        cv = SequenceStratifiedKFold(folds=num_folds)
+        folds = SequenceStratifiedKFold(folds=num_folds)
         fold = 1
 
-        for train_indices, test_indices in cv(X_data, Y_data):
+        for train_indices, test_indices in folds(x_data, y_data):
             print("\n----EVALUATING FOLD %d----" % fold)
             self.model = None
 
@@ -216,7 +225,7 @@ class SpacyModel:
             f_scores.append(scores['ents_f'])
             fold += 1
 
-        if len(skipped_files) > 0:
+        if not skipped_files:
             print('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
             print(skipped_files)
         print('\n-----AVERAGE SCORES-----')

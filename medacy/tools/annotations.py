@@ -98,7 +98,7 @@ class Annotations:
 
             with open(self.source_text_path, 'r') as source_text_file:
                 source_text = source_text_file.read()
-            
+
             entities = []
 
             for annotation in self.annotations['entities'].values():
