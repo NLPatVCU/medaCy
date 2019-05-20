@@ -1,10 +1,10 @@
+"""
+Script for training the spaCy models.
+"""
 from __future__ import unicode_literals, print_function
 
-import plac
 from pathlib import Path
-import spacy
-from spacy.util import minibatch, compounding
-from medacy.tools import Annotations
+import plac
 from medacy.data import Dataset
 from medacy.ner import SpacyModel
 
@@ -18,17 +18,16 @@ from medacy.ner import SpacyModel
     spacy_model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
     output_dir=("New model name for model meta.", "option", "o", str),
     n_iter=("Number of training iterations", "option", "n", int),
-    revision_texts_path=("Revision text to use for pseudo rehearsal", "option", "r", Path)
 )
-def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30, revision_texts_path=None):
+def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30):
+    """Main function."""
     dataset = Dataset(input_dir)
     model = SpacyModel()
 
     model.fit(
-        dataset = dataset,
-        spacy_model_name = spacy_model_name,
-        iterations = n_iter,
-        revision_texts=revision_texts_path
+        dataset=dataset,
+        spacy_model_name=spacy_model_name,
+        iterations=n_iter,
     )
 
     if output_dir is not None:

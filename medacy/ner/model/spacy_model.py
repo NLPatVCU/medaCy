@@ -1,34 +1,38 @@
-from os import listdir, makedirs
-from os.path import isfile, join, isdir
+"""
+SpacyModel consists of convenience wrapper functions for pre-existing spaCy functionality.
+"""
+from os import makedirs
+from os.path import join, isdir
 import random
 import logging
-import joblib
 from statistics import mean
-from pathlib import Path
 import spacy
 from spacy.util import minibatch, compounding
 from spacy.scorer import Scorer
 from spacy.gold import GoldParse
-from medacy.tools import Annotations, DataFile
+from medacy.tools import Annotations
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
 from ._model import construct_annotations_from_tuples
 
 class SpacyModel:
+    """
+    Attributes:
+        model (spacy.Language): spaCy language. Usually appears as 'nlp' in documentation.
+    """
     model = None
 
-    def fit(self, dataset, spacy_model_name, iterations=30, revision_texts=None, prefer_gpu=False):
+    def fit(self, dataset, spacy_model_name, iterations=30, prefer_gpu=False):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
-        :param dataset: medaCy dataset object. Contain .ann and .txt files
-        :param spacy_model_name: String of the spaCy model to use
+        :param dataset: medaCy dataset object
+        :param spacy_model_name: String of the spaCy model name to use
         :param iterations: Training iterations to do
-        :return model: A trained spaCy instance
+        :return nlp: A trained spaCy model (language)
         """
         if iterations is None:
             iterations = 30
 
-        data_files = dataset.get_data_files()
         labels = dataset.get_labels()
         train_data = dataset.get_training_data()
 
@@ -91,10 +95,9 @@ class SpacyModel:
 
     def predict(self, dataset, prediction_directory=None):
         """
-        Generates predictions over a string or a dataset utilizing the pipeline equipped to the
-        instance.
+        Generates predictions over a string or a medaCy dataset
 
-        :param dataset: a string or Dataset to predict
+        :param dataset: a string or medaCy Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction
                                      (default: */prediction* sub-directory of Dataset)
         :return:
@@ -164,6 +167,7 @@ class SpacyModel:
         precision_scores = []
         recall_scores = []
         f_scores = []
+        skipped_files = []
 
         cv = SequenceStratifiedKFold(folds=num_folds)
         fold = 1
@@ -180,22 +184,31 @@ class SpacyModel:
             scorer = Scorer()
 
             y_subdataset = training_dataset.get_subdataset(test_indices)
-            
-            for data_file in y_subdataset.get_data_files():
-                print('Evaluating %s...' % data_file.get_text_path())
 
-                with open(data_file.get_text_path(), 'r') as source_text_file:
+            for data_file in y_subdataset.get_data_files():
+                txt_path = data_file.get_text_path()
+                ann_path = data_file.get_annotation_path()
+
+                print('Evaluating %s...' % txt_path)
+
+                with open(txt_path, 'r') as source_text_file:
                     text = source_text_file.read()
                     doc = nlp(text)
 
                 doc = nlp(text)
 
-                entities = Annotations(data_file.get_annotation_path()).get_entities()
+                entities = Annotations(ann_path).get_entities()
 
                 doc_gold_text = nlp.make_doc(text)
                 gold = GoldParse(doc_gold_text, entities=entities)
-                scorer.score(doc, gold)
-            
+
+                try:
+                    scorer.score(doc, gold)
+                except ValueError as error:
+                    print(error)
+                    print("Ran into BILUO error. Skipping %s..." % ann_path)
+                    skipped_files.append(ann_path)
+
             scores = scorer.scores
             print(scores)
             precision_scores.append(scores['ents_p'])
@@ -203,6 +216,9 @@ class SpacyModel:
             f_scores.append(scores['ents_f'])
             fold += 1
 
+        if len(skipped_files) > 0:
+            print('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
+            print(skipped_files)
         print('\n-----AVERAGE SCORES-----')
         print('Precision: \t%f%%' % mean(precision_scores))
         print('Recall: \t%f%%' % mean(recall_scores))
