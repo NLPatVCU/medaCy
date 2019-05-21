@@ -18,10 +18,9 @@ from ._model import construct_annotations_from_tuples
 class SpacyModel:
     """
     Attributes:
-        model (spacy.Language): spaCy language. Usually appears as 'nlp' in documentation.
+        model (spacy.Language): Trained model as spaCy language(). Usually appears as 'nlp' in
+                                spaCy documentation.
     """
-    model = None
-
     def fit(self, dataset, spacy_model_name, iterations=30, prefer_gpu=False):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
@@ -36,9 +35,9 @@ class SpacyModel:
         labels = dataset.get_labels()
         train_data = dataset.get_training_data()
 
-        print('Fitting new model...\n')
-        print('New labels:')
-        print(labels)
+        logging.info('Fitting new model...\n')
+        logging.info('New labels:')
+        logging.info(labels)
 
         # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
@@ -48,10 +47,10 @@ class SpacyModel:
 
         if spacy_model_name is None:
             nlp = spacy.blank("en")  # create blank Language class
-            print("Created blank 'en' model")
+            logging.info("Created blank 'en' model")
         else:
             nlp = spacy.load(spacy_model_name)  # load existing spaCy model
-            print("\nLoaded model '%s'" % spacy_model_name)
+            logging.info("\nLoaded model '%s'" % spacy_model_name)
 
         # Add entity recognizer to model if it's not in the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -62,9 +61,8 @@ class SpacyModel:
         # otherwise, get it, so we can add labels to it
         else:
             ner = nlp.get_pipe("ner")
-            print('Original labels:')
-            print(ner.labels)
-            print()
+            logging.info('Original labels:')
+            logging.info(ner.labels)
 
         for label in labels:
             ner.add_label(label)
@@ -87,7 +85,7 @@ class SpacyModel:
                 for batch in batches:
                     texts, annotations = zip(*batch)
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
-                print("Losses", losses)
+                logging.info("Losses", losses)
 
         self.model = nlp
 
@@ -100,7 +98,6 @@ class SpacyModel:
         :param dataset: a string or medaCy Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction
                                      (default: */prediction* sub-directory of Dataset)
-        :return:
         """
         if not isinstance(dataset, (Dataset, str)):
             raise TypeError("Must pass in an instance of Dataset")
@@ -158,7 +155,6 @@ class SpacyModel:
         :param training_dataset: Path to the directory of BRAT files to use for the training data.
         :param spacy_model_name: Name of the spaCy model to start from.
         :param iterations: Number of epochs to us for every fold training.
-        :return:
         """
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1")
@@ -182,12 +178,12 @@ class SpacyModel:
         fold = 1
 
         for train_indices, test_indices in folds(x_data, y_data):
-            print("\n----EVALUATING FOLD %d----" % fold)
+            logging.info("\n----EVALUATING FOLD %d----" % fold)
             self.model = None
 
             x_subdataset = training_dataset.get_subdataset(train_indices)
             self.fit(x_subdataset, spacy_model_name, iterations)
-            print('Done training!\n')
+            logging.info('Done training!\n')
 
             nlp = self.model
             scorer = Scorer()
@@ -198,7 +194,7 @@ class SpacyModel:
                 txt_path = data_file.get_text_path()
                 ann_path = data_file.get_annotation_path()
 
-                print('Evaluating %s...' % txt_path)
+                logging.info('Evaluating %s...' % txt_path)
 
                 with open(txt_path, 'r') as source_text_file:
                     text = source_text_file.read()
@@ -206,7 +202,7 @@ class SpacyModel:
 
                 doc = nlp(text)
 
-                entities = Annotations(ann_path).get_entities()
+                entities = Annotations(ann_path).get_spacy_entities()
 
                 doc_gold_text = nlp.make_doc(text)
                 gold = GoldParse(doc_gold_text, entities=entities)
@@ -214,24 +210,24 @@ class SpacyModel:
                 try:
                     scorer.score(doc, gold)
                 except ValueError as error:
-                    print(error)
-                    print("Ran into BILUO error. Skipping %s..." % ann_path)
+                    logging.warning(error)
+                    logging.warning("Ran into BILUO error. Skipping %s..." % ann_path)
                     skipped_files.append(ann_path)
 
             scores = scorer.scores
-            print(scores)
+            logging.info(scores)
             precision_scores.append(scores['ents_p'])
             recall_scores.append(scores['ents_r'])
             f_scores.append(scores['ents_f'])
             fold += 1
 
         if not skipped_files:
-            print('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
-            print(skipped_files)
-        print('\n-----AVERAGE SCORES-----')
-        print('Precision: \t%f%%' % mean(precision_scores))
-        print('Recall: \t%f%%' % mean(recall_scores))
-        print('F Score: \t%f%%' % mean(f_scores))
+            logging.info('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
+            logging.info(skipped_files)
+        logging.info('\n-----AVERAGE SCORES-----')
+        logging.info('Precision: \t%f%%' % mean(precision_scores))
+        logging.info('Recall: \t%f%%' % mean(recall_scores))
+        logging.info('F Score: \t%f%%' % mean(f_scores))
 
 
     def load(self, path, prefer_gpu=False):
