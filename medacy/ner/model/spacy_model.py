@@ -221,13 +221,13 @@ class SpacyModel:
             f_scores.append(scores['ents_f'])
             fold += 1
 
-        if not skipped_files:
+        if skipped_files:
             logging.info('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
             logging.info(skipped_files)
         logging.info('\n-----AVERAGE SCORES-----')
         logging.info('Precision: \t%f%%' % mean(precision_scores))
-        logging.info('Recall: \t\t%f%%' % mean(recall_scores))
-        logging.info('F Score: \t\t%f%%' % mean(f_scores))
+        logging.info('Recall: \t%f%%' % mean(recall_scores))
+        logging.info('F Score: \t%f%%' % mean(f_scores))
 
 
     def load(self, path, prefer_gpu=False):
