@@ -1,6 +1,9 @@
 """Example script for evaluating spaCy models.
 """
 from pathlib import Path
+from datetime import datetime
+import time
+import logging
 import plac
 from medacy.data import Dataset
 from medacy.ner import SpacyModel
@@ -22,11 +25,16 @@ def main(input_dir, spacy_model_name=None, n_folds=10, fit_iterations=30):
     dataset = Dataset(input_dir)
     model = SpacyModel()
 
+    current_time = datetime.fromtimestamp(time.time()).strftime('%Y_%m_%d_%H.%M.%S')
+    log_path = str(input_dir) + '/build_%s.log' % current_time
+    # logging.basicConfig(filename=log_path, level=logging.INFO)
+    logging.basicConfig(level=logging.INFO)
+
     model.cross_validate(
-        num_folds=n_folds,
+        folds=n_folds,
         training_dataset=dataset,
         spacy_model_name=spacy_model_name,
-        iterations=fit_iterations
+        epochs=fit_iterations
     )
 
 if __name__ == "__main__":

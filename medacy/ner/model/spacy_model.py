@@ -6,10 +6,11 @@ from os.path import join, isdir
 import random
 import logging
 from statistics import mean
+from sklearn_crfsuite import metrics
+from tabulate import tabulate
 import spacy
 from spacy.util import minibatch, compounding
-from spacy.scorer import Scorer
-from spacy.gold import GoldParse
+from spacy.gold import biluo_tags_from_offsets
 from medacy.tools import Annotations
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
@@ -18,7 +19,8 @@ from ._model import construct_annotations_from_tuples
 class SpacyModel:
     """
     Attributes:
-        model (spacy.Language): spaCy language. Usually appears as 'nlp' in documentation.
+        model (spacy.Language): Trained model as spaCy language(). Usually appears as 'nlp' in
+                                spaCy documentation.
     """
     model = None
 
@@ -36,9 +38,9 @@ class SpacyModel:
         labels = dataset.get_labels()
         train_data = dataset.get_training_data()
 
-        print('Fitting new model...\n')
-        print('New labels:')
-        print(labels)
+        logging.info('Fitting new model...\n')
+        logging.info('New labels:')
+        logging.info(labels)
 
         # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
@@ -48,10 +50,10 @@ class SpacyModel:
 
         if spacy_model_name is None:
             nlp = spacy.blank("en")  # create blank Language class
-            print("Created blank 'en' model")
+            logging.info("Created blank 'en' model")
         else:
             nlp = spacy.load(spacy_model_name)  # load existing spaCy model
-            print("\nLoaded model '%s'" % spacy_model_name)
+            logging.info("\nLoaded model '%s'", spacy_model_name)
 
         # Add entity recognizer to model if it's not in the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -62,9 +64,8 @@ class SpacyModel:
         # otherwise, get it, so we can add labels to it
         else:
             ner = nlp.get_pipe("ner")
-            print('Original labels:')
-            print(ner.labels)
-            print()
+            logging.info('Original labels:')
+            logging.info(ner.labels)
 
         for label in labels:
             ner.add_label(label)
@@ -87,7 +88,7 @@ class SpacyModel:
                 for batch in batches:
                     texts, annotations = zip(*batch)
                     nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
-                print("Losses", losses)
+                logging.info("Losses %s", str(losses))
 
         self.model = nlp
 
@@ -100,7 +101,6 @@ class SpacyModel:
         :param dataset: a string or medaCy Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction
                                      (default: */prediction* sub-directory of Dataset)
-        :return:
         """
         if not isinstance(dataset, (Dataset, str)):
             raise TypeError("Must pass in an instance of Dataset")
@@ -146,21 +146,20 @@ class SpacyModel:
             entities = []
 
             for ent in doc.ents:
-                entities.append((ent.label_, ent.start_char, ent.end_char, ent.text))
+                entities.append((ent.start_char, ent.end_char, ent.label_))
 
             return entities
 
-    def cross_validate(self, num_folds=10, training_dataset=None, spacy_model_name=None, iterations=None):
+    def cross_validate(self, folds=10, training_dataset=None, spacy_model_name=None, epochs=None):
         """
         Runs a cross validation.
 
-        :param num_folds: Number of fold to do for the cross validation.
+        :param folds: Number of fold to do for the cross validation.
         :param training_dataset: Path to the directory of BRAT files to use for the training data.
         :param spacy_model_name: Name of the spaCy model to start from.
-        :param iterations: Number of epochs to us for every fold training.
-        :return:
+        :param epochs: Number of epochs to us for every fold training.
         """
-        if num_folds <= 1:
+        if folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1")
 
         if training_dataset is None:
@@ -173,66 +172,141 @@ class SpacyModel:
 
         x_data, y_data = zip(*train_data)
 
-        precision_scores = []
-        recall_scores = []
-        f_scores = []
         skipped_files = []
+        evaluation_statistics = {}
 
-        folds = SequenceStratifiedKFold(folds=num_folds)
+        folds = SequenceStratifiedKFold(folds=folds)
         fold = 1
 
         for train_indices, test_indices in folds(x_data, y_data):
-            print("\n----EVALUATING FOLD %d----" % fold)
+            logging.info("\n----EVALUATING FOLD %d----", fold)
             self.model = None
+            fold_statistics = {}
 
             x_subdataset = training_dataset.get_subdataset(train_indices)
-            self.fit(x_subdataset, spacy_model_name, iterations)
-            print('Done training!\n')
+            self.fit(x_subdataset, spacy_model_name, epochs)
+            logging.info('Done training!\n')
 
             nlp = self.model
-            scorer = Scorer()
+            labels = list(x_subdataset.get_labels())
 
             y_subdataset = training_dataset.get_subdataset(test_indices)
 
-            for data_file in y_subdataset.get_data_files():
-                txt_path = data_file.get_text_path()
-                ann_path = data_file.get_annotation_path()
+            y_test = []
+            y_pred = []
 
-                print('Evaluating %s...' % txt_path)
+            for data_file in y_subdataset.get_data_files():
+                ann_path = data_file.get_annotation_path()
+                annotations = Annotations(ann_path)
+                txt_path = data_file.get_text_path()
 
                 with open(txt_path, 'r') as source_text_file:
                     text = source_text_file.read()
-                    doc = nlp(text)
 
                 doc = nlp(text)
 
-                entities = Annotations(ann_path).get_entities()
+                test_entities = annotations.get_spacy_entities()
+                test_entities = self.entities_to_biluo(doc, test_entities)
+                y_test.append(test_entities)
 
-                doc_gold_text = nlp.make_doc(text)
-                gold = GoldParse(doc_gold_text, entities=entities)
+                pred_entities = self.predict(text)
+                pred_entities = self.entities_to_biluo(doc, pred_entities)
+                y_pred.append(pred_entities)
 
-                try:
-                    scorer.score(doc, gold)
-                except ValueError as error:
-                    print(error)
-                    print("Ran into BILUO error. Skipping %s..." % ann_path)
-                    skipped_files.append(ann_path)
+            logging.debug('\n------y_test------')
+            logging.debug(y_test)
+            logging.debug('\n------y_pred------')
+            logging.debug(y_pred)
 
-            scores = scorer.scores
-            print(scores)
-            precision_scores.append(scores['ents_p'])
-            recall_scores.append(scores['ents_r'])
-            f_scores.append(scores['ents_f'])
+            # Write the metrics for this fold.
+            for label in labels:
+                fold_statistics[label] = {}
+                recall = metrics.flat_recall_score(
+                    y_test,
+                    y_pred,
+                    average='weighted',
+                    labels=[label]
+                )
+                precision = metrics.flat_precision_score(
+                    y_test,
+                    y_pred,
+                    average='weighted',
+                    labels=[label]
+                )
+                f1_score = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
+                fold_statistics[label]['precision'] = precision
+                fold_statistics[label]['recall'] = recall
+                fold_statistics[label]['f1'] = f1_score
+
+            # add averages
+            fold_statistics['system'] = {}
+            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=labels)
+            precision = metrics.flat_precision_score(
+                y_test,
+                y_pred,
+                average='weighted',
+                labels=labels
+            )
+            f1_score = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=labels)
+            fold_statistics['system']['precision'] = precision
+            fold_statistics['system']['recall'] = recall
+            fold_statistics['system']['f1'] = f1_score
+
+            table_data = [[label,
+                           format(fold_statistics[label]['precision'], ".3f"),
+                           format(fold_statistics[label]['recall'], ".3f"),
+                           format(fold_statistics[label]['f1'], ".3f")]
+                          for label in labels + ['system']]
+
+            logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+                                  tablefmt='orgtbl'))
+
+            evaluation_statistics[fold] = fold_statistics
             fold += 1
 
-        if not skipped_files:
-            print('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
-            print(skipped_files)
-        print('\n-----AVERAGE SCORES-----')
-        print('Precision: \t%f%%' % mean(precision_scores))
-        print('Recall: \t%f%%' % mean(recall_scores))
-        print('F Score: \t%f%%' % mean(f_scores))
+        if skipped_files:
+            logging.info('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')
+            logging.info(skipped_files)
 
+        statistics_all_folds = {}
+
+        for label in labels + ['system']:
+            statistics_all_folds[label] = {}
+            statistics_all_folds[label]['precision_average'] = mean(
+                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['precision_max'] = max(
+                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['precision_min'] = min(
+                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+
+            statistics_all_folds[label]['recall_average'] = mean(
+                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['recall_max'] = max(
+                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['recall_min'] = min(
+                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+
+            statistics_all_folds[label]['f1_average'] = mean(
+                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['f1_max'] = max(
+                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['f1_min'] = min(
+                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+
+        table_data = [[label,
+                       format(statistics_all_folds[label]['precision_average'], ".3f"),
+                       format(statistics_all_folds[label]['recall_average'], ".3f"),
+                       format(statistics_all_folds[label]['f1_average'], ".3f"),
+                       format(statistics_all_folds[label]['f1_min'], ".3f"),
+                       format(statistics_all_folds[label]['f1_max'], ".3f")]
+                      for label in labels + ['system']]
+
+        table_string = '\n' + tabulate(
+            table_data,
+            headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+            tablefmt='orgtbl'
+        )
+        logging.info(table_string)
 
     def load(self, path, prefer_gpu=False):
         """
@@ -256,3 +330,20 @@ class SpacyModel:
             raise ValueError("No model to save.")
 
         self.model.to_disk(path)
+
+    def entities_to_biluo(self, doc, entities):
+        """
+        Converts entity span tuples into a suitable BILUO format for metrics.
+
+        :param doc: spaCy doc of original text
+        :param entities: Tuples to be converted
+
+        :returns: List of new BILUO tags
+        """
+        spacy_biluo = biluo_tags_from_offsets(doc, entities)
+        medacy_biluo = []
+        for tag in spacy_biluo:
+            if tag != 'O':
+                tag = tag[2:]
+            medacy_biluo.append(tag)
+        return medacy_biluo

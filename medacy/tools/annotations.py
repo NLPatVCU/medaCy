@@ -62,6 +62,11 @@ class Annotations:
                 self.from_con(annotation_data)
 
     def get_labels(self):
+        """
+        Get the set of labels from this collection of annotations.
+
+        :return: The set of labels.
+        """
         labels = set()
 
         for entity in self.annotations['entities'].values():
@@ -69,7 +74,12 @@ class Annotations:
 
         return labels
 
-    def get_entities(self):
+    def get_spacy_entities(self):
+        """
+        Get just the entities in spacy format from a collection of annotations.
+
+        :return: The list of entities.
+        """
         entities = []
 
         for annotation in self.annotations['entities'].values():
@@ -85,7 +95,7 @@ class Annotations:
         Returns a list of entity annotation tuples
 
         :param return_dictionary: returns the dictionary storing the annotation mappings. Useful if also working with relationship extraction
-        :return: a list of entities or underlying dictionary of entities
+        :return: A list of entities or underlying dictionary of entities
         """
         if return_dictionary:
             return self.annotations['entities']
