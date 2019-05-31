@@ -97,7 +97,7 @@ class Model:
                 prediction_directory = dataset.data_directory + "/predictions/"
 
             if os.path.isdir(prediction_directory):
-                logging.warning("Overwritting existing predictions")
+                logging.warning("Overwriting existing predictions")
             else:
                 os.makedirs(prediction_directory)
 
@@ -106,7 +106,7 @@ class Model:
                 groundtruth_directory = dataset.data_directory + "/groundtruth/"
 
             if os.path.isdir(groundtruth_directory):
-                logging.warning("Overwritting existing Ground truth")
+                logging.warning("Overwriting existing Ground truth")
             else:
                 os.makedirs(groundtruth_directory)
 
