@@ -74,7 +74,7 @@ class Model:
         self.model = learner
         return self.model
 
-    def predict(self, dataset, prediction_directory = None):
+    def predict(self, dataset, prediction_directory = None, groundtruth_directory = None):
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
@@ -94,12 +94,23 @@ class Model:
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
             if prediction_directory is None:
+                print("I'm prediction dir")
                 prediction_directory = dataset.data_directory + "/predictions/"
 
             if os.path.isdir(prediction_directory):
-                logging.warning("Overwriting existing predictions")
+                logging.warning("Overwritting existing predictions")
             else:
                 os.makedirs(prediction_directory)
+
+            # create directory to write groundtruth to
+            if groundtruth_directory is None:
+                print("I'm ground truth dir")
+                groundtruth_directory = dataset.data_directory + "/groundtruth/"
+
+            if os.path.isdir(groundtruth_directory):
+                logging.warning("Overwritting existing Ground truth")
+            else:
+                os.makedirs(groundtruth_directory)
 
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
@@ -126,7 +137,7 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=10, training_dataset=None, prediction_directory=None):
+    def cross_validate(self, num_folds=10, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -144,7 +155,10 @@ class Model:
         if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
 
         if prediction_directory is not None and training_dataset is None:
-            raise ValueError("Cannot generated predictions during cross validation if training dataset is not given."
+            raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
+                             " Please pass the training dataset in the 'training_dataset' parameter.")
+        if groundtruth_directory is not None and training_dataset is None:
+            raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
         assert self.model is not None, "Cannot cross validate a un-fit model"
@@ -162,6 +176,10 @@ class Model:
 
         evaluation_statistics = {}
         fold = 1
+        # Dict for storing mapping of sequences to their corresponding file
+        groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+        preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+
         for train_indices, test_indices in cv(X_data, Y_data):
             fold_statistics = {}
             learner_name, learner = medacy_pipeline.get_learner()
@@ -178,9 +196,38 @@ class Model:
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
 
+            if groundtruth_directory is not None:
+                # Dict for storing mapping of sequences to their corresponding file
+                # groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+
+                # Flattening nested structures into 2d lists
+                document_indices = []
+                span_indices = []
+                for sequence in X_test:
+                    document_indices += [sequence[2] for x in range(len(sequence[0]))]
+                    span_indices += [element for element in sequence[1]]
+                # predictions = [element for sentence in y_pred for element in sentence]
+                groundtruth = [element for sentence in y_test for element in sentence]
+                # print("predssss:", pred_train)
+                # Map the predicted sequences to their corresponding documents
+                i=0
+                while i < len(groundtruth):
+                    if groundtruth[i] == 'O':
+                        i+=1
+                        continue
+                    entity = groundtruth[i]
+                    document = document_indices[i]
+                    first_start, first_end = span_indices[i]
+                    # Ensure that consecutive tokens with the same label are merged
+                    while i < len(groundtruth) - 1 and groundtruth[i + 1] == entity:  # If inside entity, keep incrementing
+                        i += 1
+                    last_start, last_end = span_indices[i]
+                    # print("Training Fold %i", fold, entity, first_start, last_end)
+                    groundtruth_by_document[document].append((entity, first_start, last_end))
+                    i+=1
             if prediction_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
-                preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+                # preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
 
                 # Flattening nested structures into 2d lists
                 document_indices = []
@@ -203,7 +250,7 @@ class Model:
                     while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
                         i += 1
                     last_start, last_end = span_indices[i]
-
+                    # print("Training Fold %i", fold, entity, first_start, last_end)
                     preds_by_document[document].append((entity, first_start, last_end))
                     i+=1
 
@@ -284,6 +331,25 @@ class Model:
                 logging.warning("Overwritting existing predictions")
             else:
                 os.makedirs(prediction_directory)
+
+            # Write medaCy ground truth generated from cross-validation
+            if isinstance(groundtruth_directory, str):
+                groundtruth_directory = groundtruth_directory
+            else:
+                groundtruth_directory = training_dataset.data_directory + "/groundtruth/"
+            if os.path.isdir(groundtruth_directory):
+                logging.warning("Overwritting existing groundtruth")
+            else:
+                os.makedirs(groundtruth_directory)
+
+            for data_file in training_dataset.get_data_files():
+                logging.info("Predicting groundtruth file: %s", data_file.file_name)
+                with open(data_file.raw_path, 'r') as raw_text:
+                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                    gtruth = groundtruth_by_document[data_file.file_name]
+                    annotations = construct_annotations_from_tuples(doc, gtruth)
+                    annotations.to_ann(write_location=os.path.join(groundtruth_directory, data_file.file_name + ".ann"))
+
             for data_file in training_dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
                 with open(data_file.raw_path, 'r') as raw_text:
@@ -292,6 +358,25 @@ class Model:
                     annotations = construct_annotations_from_tuples(doc, preds)
                     annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
             return Dataset(data_directory=prediction_directory)
+
+        # if groundtruth_directory:
+        #     # Write annotations generated of groundtruth
+        #     if isinstance(groundtruth_directory, str):
+        #         groundtruth_directory = groundtruth_directory
+        #     else:
+        #         groundtruth_directory = training_dataset.data_directory + "/groundtruth/"
+        #     if os.path.isdir(groundtruth_directory):
+        #         logging.warning("Overwritting existing groundtruth")
+        #     else:
+        #         os.makedirs(groundtruth_directory)
+        #     for data_file in training_dataset.get_data_files():
+        #         logging.info("Predicting groundtruth file: %s", data_file.file_name)
+        #         with open(data_file.raw_path, 'r') as raw_text:
+        #             doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+        #             gtruth = groundtruth_by_document[data_file.file_name]
+        #             annotations = construct_annotations_from_tuples(doc, gtruth)
+        #             annotations.to_ann(write_location=os.path.join(groundtruth_directory, data_file.file_name + ".ann"))
+        #     return Dataset(data_directory=groundtruth_directory)
 
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
