@@ -7,7 +7,7 @@ import os
 import unittest
 import shutil
 import tempfile
-from medacy.tools.converters.add_rel_to_brat import Entity, add_rel_to_brat, main
+from medacy.tools.converters.add_rel_to_brat import Entity, is_valid_rel, add_rel_to_brat, main
 from medacy.tests.tools.converters.samples.add_rel_to_brat_samples \
     import ann_sample, rel_sample, txt_sample, expected_ann
 
@@ -80,6 +80,18 @@ class TestAddRelToBrat(unittest.TestCase):
         expected = "T5\tBob 21 45\tHello world!\n"
         self.assertEqual(str(e1), expected)
 
+    def test_is_valid_rel_true(self):
+        """Test that is_valid_rel is accurate when given a valid line of rel data"""
+        sample = 'c="lotions" 124:3 124:3||r="TrNAP"||c="incisions" 124:10 124:10'
+        result = is_valid_rel(sample)
+        self.assertTrue(result)
+
+    def test_is_valid_rel_false(self):
+        """Test that is_valid_rel is accurate when given a line that is not rel data"""
+        sample = "This isn't rel"
+        result = is_valid_rel(sample)
+        self.assertFalse(result)
+
     def test_add_rel_to_brat(self):
         add_rel_to_brat(self.test_ann_path, self.test_rel_path, self.test_txt_path)
         with open(self.test_ann_path, "r") as f:
@@ -89,13 +101,13 @@ class TestAddRelToBrat(unittest.TestCase):
 
     def test_main_files_align(self):
         """Test that main runs without error when the input files are in the directories expected"""
-        main(["null", self.ann_txt_dir, self.rel_dir])
+        main([None, self.ann_txt_dir, self.rel_dir])
         self.assertTrue(True)
 
     def test_main_file_misalign(self):
         """Test that an error is raised when files are inputted in a different format than expected"""
         with self.assertRaises(FileNotFoundError):
-            main(["null", self.all_dir, self.null_dir])
+            main([None, self.all_dir, self.null_dir])
 
 
 if __name__ == '__main__':
