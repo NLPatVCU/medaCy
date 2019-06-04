@@ -57,16 +57,65 @@ class Annotations:
             elif annotation_type == 'con':
                 self.from_con(annotation_data)
 
-    def get_entity_annotations(self, return_dictionary=False):
+    def get_labels(self):
+        """
+        Get the set of labels from this collection of annotations.
+
+        :return: The set of labels.
+        """
+        labels = set()
+
+        for entity in self.annotations['entities'].values():
+            labels.add(entity[0])
+
+        return labels
+
+    def get_spacy_entities(self):
+        """
+        Get just the entities in spacy format from a collection of annotations.
+
+        :return: The list of entities.
+        """
+        entities = []
+
+        for annotation in self.annotations['entities'].values():
+            entity = annotation[0]
+            start = annotation[1]
+            end = annotation[2]
+            entities.append((start, end, entity))
+
+        return entities
+
+    def get_entity_annotations(self, return_dictionary=False, format='medacy'):
         """
         Returns a list of entity annotation tuples
 
         :param return_dictionary: returns the dictionary storing the annotation mappings. Useful if also working with relationship extraction
-        :return: a list of entities or underlying dictionary of entities
+        :return: A list of entities or underlying dictionary of entities
         """
         if return_dictionary:
             return self.annotations['entities']
-        return [self.annotations['entities'][T] for T in self.annotations['entities'].keys()]
+
+        if format == 'medacy':
+            return [self.annotations['entities'][T] for T in self.annotations['entities'].keys()]
+        elif format == 'spacy':
+            if not self.source_text_path:
+                raise FileNotFoundError("spaCy format requires the source text path")
+
+            with open(self.source_text_path, 'r') as source_text_file:
+                source_text = source_text_file.read()
+
+            entities = []
+
+            for annotation in self.annotations['entities'].values():
+                entity = annotation[0]
+                start = annotation[1]
+                end = annotation[2]
+                entities.append((start, end, entity))
+
+            return (source_text, {"entities": entities})
+        else:
+            raise ValueError("'%s' is not a valid annotation format" % format)
 
     def get_relation_annotations(self):
         """

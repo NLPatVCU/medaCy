@@ -6,7 +6,7 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self,pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
+    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
         """
         Initializes a pipeline
         :param pipeline_name: The name of the pipeline

@@ -182,6 +182,63 @@ class Dataset:
     def __iter__(self):
         return self.get_data_files().__iter__()
 
+    def get_labels(self):
+        """
+        Get all of the entities/labels used in the dataset.
+
+        :return: A set of strings. Each string is a label used.
+        """
+        labels = set()
+        data_files = self.all_data_files
+
+        for datafile in data_files:
+            ann_path = datafile.get_annotation_path()
+            annotations = Annotations(ann_path)
+            labels.update(annotations.get_labels())
+
+        return labels
+
+    def get_training_data(self, data_format='spacy'):
+        """
+        Get training data in a specified format.
+
+        :param data_format: The specified format as a string.
+
+        :return: The requested data in the requested format.
+        """
+        # Only spaCy format is currently supported.
+        if data_format != 'spacy':
+            raise TypeError("Format %s not supported" % format)
+
+        training_data = []
+
+        # Add each entry in dataset with annotation to train_data
+        for data_file in self.all_data_files:
+            txt_path = data_file.get_text_path()
+            ann_path = data_file.get_annotation_path()
+            annotations = Annotations(ann_path, source_text_path=txt_path)
+            training_data.append(annotations.get_entity_annotations(format='spacy'))
+
+        return training_data
+
+    def get_subdataset(self, indices):
+        """
+        Get a subdataset of data files based on indices.
+
+        :param indices: List of ints that represent the indexes of the data files to split off.
+
+        :return: Dataset object with only the specified data files.
+        """
+        subdataset = Dataset(self.data_directory)
+        data_files = subdataset.get_data_files()
+        sub_data_files = []
+
+        for i in range(len(data_files)):
+            if i in indices:
+                sub_data_files.append(data_files[i])
+
+        subdataset.all_data_files = sub_data_files
+        return subdataset
 
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
         """
