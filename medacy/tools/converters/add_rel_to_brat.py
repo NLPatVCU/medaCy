@@ -1,11 +1,16 @@
 """
+Adds relation annotations in the .rel format to pre-existing brat (.ann) files. Requires two command-line arguments:
+1) The directory containing the .ann and .txt files
+2) The directory containing the .rel files
+
 :author: Steele W. Farnsworth
-:date: 28 May, 2019
+:date: 31 May, 2019
 """
 
 import os
 import re
 from sys import argv
+import logging
 from medacy.tools.converters.conversion_tools.line import Line
 from medacy.tools.converters.con_to_brat import get_absolute_index, switch_extension
 from medacy.tools.converters.brat_to_con import line_to_dict
@@ -23,8 +28,15 @@ class Entity:
         return True if self.start == other.start and self.end == other.end and self.text == other.text else False
 
     def __str__(self):
-        return "T%i\t%s %i %i\t%s\n" % (self.t, self.ent_type, self.start, self.end, self.text)
+        return f"T{self.t}\t{self.ent_type} {self.start} {self.end}\t{self.text}\n"
 
+
+rel_pattern = r'c="([^"]*)" \d+:\d+ \d+:\d+\|\|r="([^"]*)"\|\|c="([^"]*)" \d+:\d+ \d+:\d+'
+
+def is_valid_rel(sample: str):
+    if not isinstance(sample, str): return False
+    if re.fullmatch(rel_pattern, sample, re.DOTALL): return True
+    else: return False
 
 def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2="null"):
     """
@@ -44,7 +56,7 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
         input file.
     :param null_ent_2: What type of entity the second item in a relation pair should be called if not found in the
         input file.
-    :return:
+    :return: None
     """
 
     # Get the text of the old ann file
@@ -56,7 +68,6 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
     t = 0
 
     # Go to the last line of the old ann file to figure out what T number we're starting at
-    # Ask me if this doesn't make sense
     for line in reversed(old_ann_text_lines):
         if line.startswith("T"):
             t = int(re.findall("T\d+", line)[0][1:]) + 1
@@ -80,16 +91,18 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
     # Get the text file that we have the annotations of
     with open(txt_path, "r") as f:
         text = f.read()
-    # Create line objects for that file; don't worry about how this works
+    # Create line objects for that file
     text_lines = Line.init_lines(text)
 
-    # This is the string we'll be appending
     output_text = ""
     r = 1
 
     # Iterate over all the relation lines
     for line in rel_text.split("\n"):
         if line == "": continue  # Skip blank lines
+        if not is_valid_rel(line):
+            logging.warning("Invalid rel text was skipped: %s" % line)
+            continue
         # Using regex to pick apart the line of input
         c_items = re.findall(r'c="([^"]*)"', line)
         c1, c2 = c_items[0], c_items[1]
@@ -131,7 +144,7 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
             output_text += str(new_ent_1)
 
         # Whether the entities are new or not, we still need to add the new relationship data
-        output_text += "R%i\t%s Arg1:T%i Arg2:T%i\n" % (r, r_item, new_ent_1.t, new_ent_2.t)
+        output_text += f"R{r}\t{r_item} Arg1:T{new_ent_1.t} Arg2:T{new_ent_2.t}\n"
         r += 1
 
     # Write the new data to file, and we're done
@@ -139,6 +152,8 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
         f.write(output_text)
 
 def main(cmd_arg: list):
+    """The function called when run from the command line; ensures that all the txt and rel files associated
+    with each incoming ann files exist and then loops through them."""
 
     if len(cmd_arg) < 3:
         raise IOError(""""Please run the program again with command line arguments for two directories:
@@ -163,6 +178,10 @@ def main(cmd_arg: list):
 
         new_tuple = (full_ann_path, full_rel_path, full_ann_path)
         all_file_tuples.append(new_tuple)
+
+    # Create the log
+    log_path = os.path.join(ann_txt_dir_path, "add_rel.log")
+    logging.basicConfig(filename=log_path, level=logging.WARNING)
 
     for a, r, t in all_file_tuples:
         add_rel_to_brat(a, r, t)
