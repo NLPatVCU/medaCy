@@ -42,12 +42,14 @@ class TestXMLToBrat(unittest.TestCase):
     def tearDownClass(cls):
         shutil.rmtree(cls.test_dir)
 
+    @unittest.skip
     def test_xml_to_brat_1(self):
         """Tests that extraction is accurate, even with nested entities."""
         actual, _ = convert_xml_to_brat(self.xml_file_path_1)
         self.maxDiff = None
         self.assertEqual(sample_1_expected, actual)
 
+    @unittest.skip
     def test_xml_to_brat_2(self):
         """
         Tests that extraction is accurate when the same entity appears many times.
@@ -59,6 +61,7 @@ class TestXMLToBrat(unittest.TestCase):
         self.maxDiff = None
         self.assertEqual(sample_2_expected, actual)
 
+    @unittest.skip
     def test_xml_to_brat_3(self):
         """
         Test for a sample that had raised IndexError
