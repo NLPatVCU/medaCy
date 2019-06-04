@@ -166,6 +166,7 @@ c="a amiodarone gtt" 75:11 75:13||r="TrAP"||c="burst of atrial fibrillation" 75:
 c="antibiotics" 80:15 80:15||r="TrAP"||c="left arm phlebitis" 80:8 80:10
 c="creams" 124:1 124:1||r="TrNAP"||c="incisions" 124:10 124:10
 c="cath" 19:14 19:14||r="TeCP"||c="abnormal ett" 19:9 19:10
+This is not a valid line of rel text
 c="powders" 124:5 124:5||r="TrNAP"||c="incisions" 124:10 124:10
 c="lotions" 124:3 124:3||r="TrNAP"||c="incisions" 124:10 124:10
 c="ointments" 124:8 124:8||r="TrNAP"||c="incisions" 124:10 124:10
