@@ -205,7 +205,7 @@ class Annotations:
             if 'A' == line[0][0] or 'M' == line[0][0]:
                 logging.warning("Attribute annotations not implemented in medaCy")
             if 'N' == line[0][0]:
-                raise NotImplementedError("Normalization annotations are not implemented in medaCy")
+                logging.warning("Normalization annotations are not implemented in medaCy")
 
     def to_con(self, write_location=None):
         """
