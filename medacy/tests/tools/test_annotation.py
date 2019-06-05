@@ -41,10 +41,6 @@ class TestAnnotation(TestCase):
         with open(cls.ann_file_path_source, "w+") as f:
             f.write(ann_text_one_source)
 
-        # This file is created in the methods that use it; creating it in advance would cause the test
-        # to always pass.
-        cls.html_output_file_path = join(cls.test_dir, "html_output.html")
-
     @classmethod
     def tearDownClass(cls):
         """Removes test temp directory and deletes all files"""
@@ -140,7 +136,7 @@ class TestAnnotation(TestCase):
         annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
         annotations2 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[1]), annotation_type='ann')
         result = annotations1.difference(annotations2)
-        self.assertTrue(result.__len__() > 0)
+        self.assertGreater(len(result), 0)
 
     def test_compute_ambiguity(self):
         annotations1 = Annotations(join(self.dataset.get_data_directory(), self.ann_files[0]), annotation_type='ann')
