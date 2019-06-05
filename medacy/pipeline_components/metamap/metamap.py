@@ -68,7 +68,7 @@ class MetaMap:
         except:
             raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
-        metamap_dict = self._run_metamap('%s --XMLf --blanklines 0 --silent --prune %i' % (self.args,max_prune_depth), contents)
+        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth,self.args), contents)
 
         if self.cache_directory is not None:
             with open(cached_file_path, 'w') as mapped_file:
