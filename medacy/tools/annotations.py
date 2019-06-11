@@ -1,4 +1,6 @@
 import os, logging, tempfile
+import spacy
+from spacy.gold import biluo_tags_from_offsets
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from math import ceil
@@ -114,6 +116,39 @@ class Annotations:
                 entities.append((start, end, entity))
 
             return (source_text, {"entities": entities})
+        elif format == 'pytorch':
+            if not self.source_text_path:
+                raise FileNotFoundError("pytorch format requires the source text path")
+
+            with open(self.source_text_path, 'r') as source_text_file:
+                source_text = source_text_file.read()
+
+            nlp = spacy.load('en_core_web_sm')
+            doc = nlp(source_text)
+            tokens = []
+
+            for token in doc:
+                tokens.append(str(token))
+
+            entities = []
+
+            for annotation in self.annotations['entities'].values():
+                entity = annotation[0]
+                start = annotation[1]
+                end = annotation[2]
+                entities.append((start, end, entity))
+
+            biluo = biluo_tags_from_offsets(doc, entities)
+            biluo_simple = []
+
+            for tag in biluo:
+                if tag == '-':
+                    tag = 'O'
+                if tag != 'O':
+                    tag = tag[2:]
+                biluo_simple.append(tag)
+
+            return (tokens, biluo_simple)
         else:
             raise ValueError("'%s' is not a valid annotation format" % format)
 

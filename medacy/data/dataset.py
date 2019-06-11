@@ -198,6 +198,16 @@ class Dataset:
 
         return labels
 
+    def get_annotations(self):
+        annotations = []
+
+        for data_file in self.all_data_files:
+            txt_path = data_file.get_text_path()
+            ann_path = data_file.get_annotation_path()
+            annotations.append(Annotations(ann_path, source_text_path=txt_path))
+
+        return annotations
+
     def get_training_data(self, data_format='spacy'):
         """
         Get training data in a specified format.
@@ -206,18 +216,15 @@ class Dataset:
 
         :return: The requested data in the requested format.
         """
-        # Only spaCy format is currently supported.
-        if data_format != 'spacy':
+        supported_formats = ['spacy', 'pytorch']
+
+        if data_format not in supported_formats:
             raise TypeError("Format %s not supported" % format)
 
         training_data = []
 
-        # Add each entry in dataset with annotation to train_data
-        for data_file in self.all_data_files:
-            txt_path = data_file.get_text_path()
-            ann_path = data_file.get_annotation_path()
-            annotations = Annotations(ann_path, source_text_path=txt_path)
-            training_data.append(annotations.get_entity_annotations(format='spacy'))
+        for annotations in self.get_annotations():
+            training_data.append(annotations.get_entity_annotations(format=data_format))
 
         return training_data
 
