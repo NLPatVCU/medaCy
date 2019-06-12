@@ -23,7 +23,7 @@ def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30):
     """Main function."""
     dataset = Dataset(input_dir)
     model = PytorchModel()
-    model.fit(dataset)
+    model.fit(dataset, n_iter)
 
     # model.fit(
     #     dataset=dataset,

@@ -7,6 +7,8 @@ from spacy.gold import biluo_tags_from_offsets
 from medacy.data import Dataset
 from medacy.tools import Annotations
 
+import sys
+
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
         super(LSTMTagger, self).__init__()
@@ -34,7 +36,7 @@ class PytorchModel:
 
         torch.manual_seed(1)
 
-    def prepare_sequence(self, sequence, to_index):
+    def vectorize(self, sequence, to_index):
         indexes = [to_index[w] for w in sequence]
         return torch.tensor(indexes, dtype=torch.long)
 
@@ -49,11 +51,17 @@ class PytorchModel:
             
         return tags
 
-    def fit(self, dataset):
-        if not isinstance(dataset, Dataset):
-            raise TypeError("Must pass in an instance of Dataset containing your training files")
+    def get_segments(self, source, segment_size):
+        segments = []
 
+        for i in range(0, len(source), segment_size):
+            segments.append(source[i:i + segment_size])
+
+        return segments
+
+    def get_training_data(self, dataset):
         labels = dataset.get_labels()
+        labels.add('O')
         training_data = dataset.get_training_data('pytorch')
 
         word_to_ix = {}
@@ -61,17 +69,29 @@ class PytorchModel:
             for word in sent:
                 if word not in word_to_ix:
                     word_to_ix[word] = len(word_to_ix)
-        # print('WORD TO IX')
-        # print(word_to_ix)
 
-        # tag_to_ix = {"DET": 0, "NN": 1, "V": 2}
-        tag_to_ix = {"O": 0}
+        tag_to_ix = {}
 
         for label in labels:
             tag_to_ix[label] = len(tag_to_ix)
 
-        # print('TAG TO IX')
-        # print(tag_to_ix)
+        preprocessed_data = []
+
+        for document, tags in training_data:
+            segment_size = 100
+            sentences = self.get_segments(document, segment_size)
+            tag_segments = self.get_segments(tags, segment_size)
+
+            for i in range(len(sentences)):
+                preprocessed_data.append((sentences[i], tag_segments[i]))
+
+        return (preprocessed_data, labels, word_to_ix, tag_to_ix)
+
+    def fit(self, dataset, epochs=30):
+        if not isinstance(dataset, Dataset):
+            raise TypeError("Must pass in an instance of Dataset containing your training files")
+
+        (training_data, labels, word_to_ix, tag_to_ix) = self.get_training_data(dataset)
 
         # These will usually be more like 32 or 64 dimensional.
         # We will keep them small, so we can see how the weights change as we train.
@@ -79,21 +99,15 @@ class PytorchModel:
         HIDDEN_DIM = 64
 
         model = LSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_ix), len(tag_to_ix), self.bidirectional)
-        loss_function = nn.NLLLoss()
+        loss_weights = torch.ones(len(tag_to_ix))
+        # loss_weights[0] = 0.1 # Reduce weighting towards 'O' label
+        loss_function = nn.NLLLoss(loss_weights)
         optimizer = optim.SGD(model.parameters(), lr=0.1)
 
-        # See what the scores are before training
-        # Note that element i,j of the output is the score for tag j for word i.
-        # Here we don't need to train, so the code is wrapped in torch.no_grad()
-        with torch.no_grad():
-            inputs = self.prepare_sequence(training_data[0][0], word_to_ix)
-            tag_scores = model(inputs)
-            print('TAG SCORES')
-            print(tag_scores)
-
-        for epoch in range(100):  # again, normally you would NOT do 300 epochs, it is toy data
+        for epoch in range(epochs):
             print('Epoch %d' % epoch)
             losses = []
+            i = 0
             for sentence, tags in training_data:
                 # Step 1. Remember that Pytorch accumulates gradients.
                 # We need to clear them out before each instance
@@ -101,8 +115,8 @@ class PytorchModel:
 
                 # Step 2. Get our inputs ready for the network, that is, turn them into
                 # Tensors of word indices.
-                sentence_in = self.prepare_sequence(sentence, word_to_ix)
-                targets = self.prepare_sequence(tags, tag_to_ix)
+                sentence_in = self.vectorize(sentence, word_to_ix)
+                targets = self.vectorize(tags, tag_to_ix)
 
                 # Step 3. Run our forward pass.
                 tag_scores = model(sentence_in)
@@ -112,7 +126,9 @@ class PytorchModel:
                 loss = loss_function(tag_scores, targets)
                 loss.backward()
                 optimizer.step()
-                # print(loss)
+                if i % 100 == 0:
+                    print(loss)
+                i += 1
                 losses.append(loss)
 
             average_loss = sum(losses) / len(losses)
@@ -120,19 +136,51 @@ class PytorchModel:
 
         # See what the scores are after training
         with torch.no_grad():
-            inputs = self.prepare_sequence(training_data[0][0], word_to_ix)
+            inputs = self.vectorize(training_data[0][0], word_to_ix)
             print(inputs)
             tag_scores = model(inputs)
 
-            # The sentence is "the dog ate the apple".  i,j corresponds to score for tag j
-            # for word i. The predicted tag is the maximum scoring tag.
-            # Here, we can see the predicted sequence below is 0 1 2 0 1
-            # since 0 is index of the maximum value of row 1,
-            # 1 is the index of maximum value of row 2, etc.
-            # Which is DET NOUN VERB DET NOUN, the correct sequence!
             print('SECOND TAG SCORES')
             print(tag_scores)
             print('----TRAINING------')
             print(training_data[0][1])
             print('----PREDICTION----')
-            print(self.devectorize(tag_scores, tag_to_ix))
+            devectorized_tag_scores = self.devectorize(tag_scores, tag_to_ix)
+            print(devectorized_tag_scores)
+            length = len(tag_scores)
+
+            f1_scores = []
+
+            for label in labels:
+                false_positives = 0
+                true_positives = 0
+                false_negatives = 0
+                true_negatives = 0
+
+                for i in range(length):
+                    prediction = devectorized_tag_scores[i]
+                    correct_tag = training_data[0][1][i]
+
+                    if correct_tag == label:
+                        if prediction == label:
+                            true_positives += 1
+                        else:
+                            false_negatives += 1
+                    else:
+                        if prediction == label:
+                            false_positives += 1
+                        else:
+                            true_negatives += 1
+
+                precision = true_positives / (true_positives + false_positives + 0.00001)
+                recall = true_positives / (true_positives + false_negatives + 0.00001)
+                f1 = 2 * ((precision * recall) / (precision + recall + 0.00001))
+                f1_scores.append(f1)
+                print('Sentence 0 %s Scores:' % label)
+                print('Precision: %f' % precision)
+                print('Recall: %f' % recall)
+                print('F1: %f' % f1)
+                print('-')
+
+            f1_average = sum(f1_scores) / len(f1_scores)
+            print('Sentence 0 F1 Average: %f' % f1_average)
