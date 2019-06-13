@@ -52,6 +52,7 @@ setup(
         'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
     ],
     install_requires=[
+        'allennlp',
         'spacy==2.1.3',
         'scikit-learn>=0.20.0',
         'numpy==1.16.1',

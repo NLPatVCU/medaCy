@@ -20,9 +20,8 @@ Assuming your directory looks like this (where .ann files are in `BRAT <http://b
 
 A Dataset can be created like this:
 ::
-    from medacy.data import Dataset
-
-    dataset = Dataset('/home/medacy/data')
+    >>> from medacy.data import Dataset
+    >>> dataset = Dataset('/home/medacy/data')
 
 
 MedaCy **does not** alter the data you load in any way - it only reads from it.
@@ -31,27 +30,22 @@ A common data work flow might look as follows.
 
 Running:
 ::
-    from medacy.data import Dataset
-    from medacy.pipeline_components import MetaMap
+    >>> from medacy.data import Dataset
+    >>> from medacy.pipeline_components import MetaMap
 
-    dataset = Dataset('/home/medacy/data')
-    for data_file in dataset:
-        print((data_file.file_name, data_file.raw_path, dataset.ann_path))
-    print(dataset)
-    print(dataset.is_metamapped())
-
-    metamap = Metamap('/home/path/to/metamap/binary') #not necessary
-    dataset.metamap(metamap) #not necessary
-    print(dataset.is_metamapped())
-
-
-Outputs:
-::
+    >>> dataset = Dataset('/home/medacy/data')
+    >>> for data_file in dataset:
+    ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
     (file_one, file_one.txt, file_one.ann)
-    (file_two, file_two.txt, file_two.ann)
+    >>> dataset
     ['file_one.txt', 'file_two.txt']
+    >>> dataset.is_metamapped()
     False
+    >>> metamap = Metamap('/home/path/to/metamap/binary')  # not necessary
+    >>> dataset.metamap(metamap)  # not necessary
+    >>> dataset.is_metamapped()
     True
+
 
 Prediction
 ##########
@@ -64,7 +58,6 @@ a directory of files that are predictions. Useful methods for analysis include :
 :meth:`medacy.data.dataset.Dataset.compute_ambiguity` and :meth:`medacy.data.dataset.Dataset.compute_counts`.
 
 
-
 External Datasets
 #################
 
@@ -74,6 +67,7 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
+
 from medacy.tools import DataFile, Annotations
 from joblib import Parallel, delayed
 import os, logging, multiprocessing, math, json, importlib
@@ -170,7 +164,6 @@ class Dataset:
                                                              data_file.raw_path.split(os.path.sep)[-1]
                                                              .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
-
     def get_data_files(self):
         """
         Retrieves an list containing all the files registered by a Dataset.
@@ -180,7 +173,7 @@ class Dataset:
         return self.all_data_files[0:self.data_limit]
 
     def __iter__(self):
-        return self.get_data_files().__iter__()
+        return iter(self.get_data_files())
 
     def get_labels(self):
         """
@@ -280,7 +273,6 @@ class Dataset:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
                                                          data_file.raw_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
-
 
     def _parallel_metamap(self, files, i):
         """
@@ -469,12 +461,6 @@ class Dataset:
 
         return ambiguity_dict
 
-
-
-
-
-
-
     @staticmethod
     def load_external(package_name):
         """
@@ -487,15 +473,3 @@ class Dataset:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
-
-
-
-
-
-
-
-
-
-
-
-
