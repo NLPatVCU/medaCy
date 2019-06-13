@@ -9,6 +9,9 @@ from medacy.tools import Annotations
 
 import sys
 
+# Constants
+SEGMENT_SIZE = 100
+
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
         super(LSTMTagger, self).__init__()
@@ -31,6 +34,12 @@ class LSTMTagger(nn.Module):
         return tag_scores
 
 class PytorchModel:
+    # Properties
+    model = None
+    labels = []
+    word_to_index = {}
+    tag_to_index = {}
+
     def __init__(self, bidirectional=False):
         self.bidirectional = bidirectional
 
@@ -51,11 +60,11 @@ class PytorchModel:
             
         return tags
 
-    def get_segments(self, source, segment_size):
+    def get_segments(self, source):
         segments = []
 
-        for i in range(0, len(source), segment_size):
-            segments.append(source[i:i + segment_size])
+        for i in range(0, len(source), SEGMENT_SIZE):
+            segments.append(source[i:i + SEGMENT_SIZE])
 
         return segments
 
@@ -64,42 +73,48 @@ class PytorchModel:
         labels.add('O')
         training_data = dataset.get_training_data('pytorch')
 
-        word_to_ix = {}
+        word_to_index = {}
         for sent, tags in training_data:
             for word in sent:
-                if word not in word_to_ix:
-                    word_to_ix[word] = len(word_to_ix)
+                if word not in word_to_index:
+                    word_to_index[word] = len(word_to_index)
 
-        tag_to_ix = {}
+        tag_to_index = {}
 
         for label in labels:
-            tag_to_ix[label] = len(tag_to_ix)
+            tag_to_index[label] = len(tag_to_index)
 
         preprocessed_data = []
 
         for document, tags in training_data:
-            segment_size = 100
-            sentences = self.get_segments(document, segment_size)
-            tag_segments = self.get_segments(tags, segment_size)
+            sentences = self.get_segments(document)
+            tag_segments = self.get_segments(tags)
 
             for i in range(len(sentences)):
                 preprocessed_data.append((sentences[i], tag_segments[i]))
 
-        return (preprocessed_data, labels, word_to_ix, tag_to_ix)
+        self.labels = labels
+        self.word_to_index = word_to_index
+        self.tag_to_index = tag_to_index
+
+        return preprocessed_data
 
     def fit(self, dataset, epochs=30):
         if not isinstance(dataset, Dataset):
             raise TypeError("Must pass in an instance of Dataset containing your training files")
 
-        (training_data, labels, word_to_ix, tag_to_ix) = self.get_training_data(dataset)
+        training_data = self.get_training_data(dataset)
+
+        word_to_index = self.word_to_index
+        tag_to_index = self.tag_to_index
 
         # These will usually be more like 32 or 64 dimensional.
         # We will keep them small, so we can see how the weights change as we train.
         EMBEDDING_DIM = 64
         HIDDEN_DIM = 64
 
-        model = LSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_ix), len(tag_to_ix), self.bidirectional)
-        loss_weights = torch.ones(len(tag_to_ix))
+        model = LSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_index), len(tag_to_index), self.bidirectional)
+        loss_weights = torch.ones(len(tag_to_index))
         # loss_weights[0] = 0.1 # Reduce weighting towards 'O' label
         loss_function = nn.NLLLoss(loss_weights)
         optimizer = optim.SGD(model.parameters(), lr=0.1)
@@ -115,8 +130,8 @@ class PytorchModel:
 
                 # Step 2. Get our inputs ready for the network, that is, turn them into
                 # Tensors of word indices.
-                sentence_in = self.vectorize(sentence, word_to_ix)
-                targets = self.vectorize(tags, tag_to_ix)
+                sentence_in = self.vectorize(sentence, word_to_index)
+                targets = self.vectorize(tags, tag_to_index)
 
                 # Step 3. Run our forward pass.
                 tag_scores = model(sentence_in)
@@ -136,7 +151,7 @@ class PytorchModel:
 
         # See what the scores are after training
         with torch.no_grad():
-            inputs = self.vectorize(training_data[0][0], word_to_ix)
+            inputs = self.vectorize(training_data[0][0], word_to_index)
             print(inputs)
             tag_scores = model(inputs)
 
@@ -145,13 +160,13 @@ class PytorchModel:
             print('----TRAINING------')
             print(training_data[0][1])
             print('----PREDICTION----')
-            devectorized_tag_scores = self.devectorize(tag_scores, tag_to_ix)
+            devectorized_tag_scores = self.devectorize(tag_scores, tag_to_index)
             print(devectorized_tag_scores)
             length = len(tag_scores)
 
             f1_scores = []
 
-            for label in labels:
+            for label in self.labels:
                 false_positives = 0
                 true_positives = 0
                 false_negatives = 0
@@ -184,3 +199,71 @@ class PytorchModel:
 
             f1_average = sum(f1_scores) / len(f1_scores)
             print('Sentence 0 F1 Average: %f' % f1_average)
+
+        self.model = model
+
+    def predict(self, dataset):
+        """
+        Generates predictions over a string or a medaCy dataset
+
+        :param dataset: a string or medaCy Dataset to predict
+        :param prediction_directory: the directory to write predictions if doing bulk prediction
+                                     (default: */prediction* sub-directory of Dataset)
+        """
+        if not isinstance(dataset, (Dataset, str)):
+            raise TypeError("Must pass in an instance of Dataset")
+        if self.model is None:
+            raise ValueError("Must fit or load a pickled model before predicting")
+
+        model = self.model
+
+        if isinstance(dataset, Dataset):
+            if prediction_directory is None:
+                prediction_directory = str(dataset.data_directory) + "/predictions/"
+
+            if isdir(prediction_directory):
+                logging.warning("Overwriting existing predictions")
+            else:
+                makedirs(prediction_directory)
+
+            for data_file in dataset.get_data_files():
+                logging.info("Predicting file: %s", data_file.file_name)
+
+                with open(data_file.get_text_path(), 'r') as source_text_file:
+                    text = source_text_file.read()
+
+                doc = nlp(text)
+
+                tokens = []
+                for token in doc:
+                    tokens.append(str(token))
+
+                segmented_tokens = self.get_segments(tokens)
+
+                predictions = []
+
+                for ent in doc.ents:
+                    predictions.append((ent.label_, ent.start_char, ent.end_char, ent.text))
+
+                annotations = construct_annotations_from_tuples(text, predictions)
+
+                prediction_filename = join(prediction_directory, data_file.file_name + ".ann")
+                logging.debug("Writing to: %s", prediction_filename)
+                annotations.to_ann(write_location=prediction_filename)
+
+        if isinstance(dataset, str):
+            doc = nlp(dataset)
+
+            entities = []
+
+            for ent in doc.ents:
+                entities.append((ent.start_char, ent.end_char, ent.label_))
+
+            return entities
+
+    def save(self, path='nameless-model.pt'):
+        torch.save(self.model, path)
+
+    def load(self, path='nameless-model.pt'):
+        model = torch.load(path)
+        model.eval()

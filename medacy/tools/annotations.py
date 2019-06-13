@@ -1,10 +1,9 @@
 import os, logging, tempfile
 import spacy
-from spacy.gold import biluo_tags_from_offsets
+from medacy.tools import BiluoTokenizer
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from math import ceil
-
 
 class InvalidAnnotationError(ValueError):
     """Raised when a given input is not in the valid format for that annotation type."""
@@ -123,13 +122,6 @@ class Annotations:
             with open(self.source_text_path, 'r') as source_text_file:
                 source_text = source_text_file.read()
 
-            nlp = spacy.load('en_core_web_sm')
-            doc = nlp(source_text)
-            tokens = []
-
-            for token in doc:
-                tokens.append(str(token))
-
             entities = []
 
             for annotation in self.annotations['entities'].values():
@@ -138,17 +130,12 @@ class Annotations:
                 end = annotation[2]
                 entities.append((start, end, entity))
 
-            biluo = biluo_tags_from_offsets(doc, entities)
-            biluo_simple = []
+            biluo_tokenizer = BiluoTokenizer(source_text)
 
-            for tag in biluo:
-                if tag == '-':
-                    tag = 'O'
-                if tag != 'O':
-                    tag = tag[2:]
-                biluo_simple.append(tag)
+            tokens = biluo_tokenizer.get_tokens()
+            biluo_labels = biluo_tokenizer.get_labels(entities)
 
-            return (tokens, biluo_simple)
+            return (tokens, biluo_labels)
         else:
             raise ValueError("'%s' is not a valid annotation format" % format)
 

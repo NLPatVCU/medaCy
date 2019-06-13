@@ -121,9 +121,6 @@ class SpacyModel:
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
 
-                with open(data_file.raw_path, 'r') as raw_text:
-                    doc = nlp(raw_text.read())
-
                 with open(data_file.get_text_path(), 'r') as source_text_file:
                     text = source_text_file.read()
 
