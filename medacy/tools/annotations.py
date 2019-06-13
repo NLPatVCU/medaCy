@@ -1,5 +1,4 @@
 import os, logging, tempfile
-import spacy
 from medacy.tools import BiluoTokenizer
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con

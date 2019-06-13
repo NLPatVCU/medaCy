@@ -1,3 +1,6 @@
+from os import makedirs
+from os.path import join, isdir
+import logging
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -5,12 +8,12 @@ import torch.optim as optim
 import spacy
 from spacy.gold import biluo_tags_from_offsets
 from medacy.data import Dataset
-from medacy.tools import Annotations
+from medacy.tools import Annotations, BiluoTokenizer
 
 import sys
 
 # Constants
-SEGMENT_SIZE = 100
+SEGMENT_SIZE = 10000
 
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
@@ -115,7 +118,7 @@ class PytorchModel:
 
         model = LSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_index), len(tag_to_index), self.bidirectional)
         loss_weights = torch.ones(len(tag_to_index))
-        # loss_weights[0] = 0.1 # Reduce weighting towards 'O' label
+        loss_weights[0] = 0.01 # Reduce weighting towards 'O' label
         loss_function = nn.NLLLoss(loss_weights)
         optimizer = optim.SGD(model.parameters(), lr=0.1)
 
@@ -149,60 +152,9 @@ class PytorchModel:
             average_loss = sum(losses) / len(losses)
             print('AVG LOSS: %f' % average_loss)
 
-        # See what the scores are after training
-        with torch.no_grad():
-            inputs = self.vectorize(training_data[0][0], word_to_index)
-            print(inputs)
-            tag_scores = model(inputs)
-
-            print('SECOND TAG SCORES')
-            print(tag_scores)
-            print('----TRAINING------')
-            print(training_data[0][1])
-            print('----PREDICTION----')
-            devectorized_tag_scores = self.devectorize(tag_scores, tag_to_index)
-            print(devectorized_tag_scores)
-            length = len(tag_scores)
-
-            f1_scores = []
-
-            for label in self.labels:
-                false_positives = 0
-                true_positives = 0
-                false_negatives = 0
-                true_negatives = 0
-
-                for i in range(length):
-                    prediction = devectorized_tag_scores[i]
-                    correct_tag = training_data[0][1][i]
-
-                    if correct_tag == label:
-                        if prediction == label:
-                            true_positives += 1
-                        else:
-                            false_negatives += 1
-                    else:
-                        if prediction == label:
-                            false_positives += 1
-                        else:
-                            true_negatives += 1
-
-                precision = true_positives / (true_positives + false_positives + 0.00001)
-                recall = true_positives / (true_positives + false_negatives + 0.00001)
-                f1 = 2 * ((precision * recall) / (precision + recall + 0.00001))
-                f1_scores.append(f1)
-                print('Sentence 0 %s Scores:' % label)
-                print('Precision: %f' % precision)
-                print('Recall: %f' % recall)
-                print('F1: %f' % f1)
-                print('-')
-
-            f1_average = sum(f1_scores) / len(f1_scores)
-            print('Sentence 0 F1 Average: %f' % f1_average)
-
         self.model = model
 
-    def predict(self, dataset):
+    def predict(self, dataset, prediction_directory=None):
         """
         Generates predictions over a string or a medaCy dataset
 
@@ -226,30 +178,37 @@ class PytorchModel:
             else:
                 makedirs(prediction_directory)
 
+            predictions = []
+
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
 
                 with open(data_file.get_text_path(), 'r') as source_text_file:
                     text = source_text_file.read()
 
-                doc = nlp(text)
-
-                tokens = []
-                for token in doc:
-                    tokens.append(str(token))
-
+                biluo_tokenizer = BiluoTokenizer(text)
+                tokens = biluo_tokenizer.get_tokens()
                 segmented_tokens = self.get_segments(tokens)
 
-                predictions = []
+                with torch.no_grad():
+                    devectorized_tags = []
+                    for sequence in segmented_tokens:
+                        inputs = self.vectorize(sequence, self.word_to_index)
+                        tag_scores = model(inputs)
+                        devectorized_tags.extend(self.devectorize(tag_scores, self.tag_to_index))
+                    # entities = biluo_tokenizer.get_entities(devectorized_tags)
+                    predictions.append(devectorized_tags)
 
-                for ent in doc.ents:
-                    predictions.append((ent.label_, ent.start_char, ent.end_char, ent.text))
+            return predictions
 
-                annotations = construct_annotations_from_tuples(text, predictions)
+                # for ent in doc.ents:
+                #     predictions.append((ent.label_, ent.start_char, ent.end_char, ent.text))
 
-                prediction_filename = join(prediction_directory, data_file.file_name + ".ann")
-                logging.debug("Writing to: %s", prediction_filename)
-                annotations.to_ann(write_location=prediction_filename)
+                # annotations = construct_annotations_from_tuples(text, predictions)
+
+                # prediction_filename = join(prediction_directory, data_file.file_name + ".ann")
+                # logging.debug("Writing to: %s", prediction_filename)
+                # annotations.to_ann(write_location=prediction_filename)
 
         if isinstance(dataset, str):
             doc = nlp(dataset)
@@ -261,9 +220,90 @@ class PytorchModel:
 
             return entities
 
+    def evaluate(self, prediction, actual):
+        model = self.model
+
+        # See what the scores are after training
+        with torch.no_grad():
+            scores = {'system': {
+                'precision': 0,
+                'recall': 0,
+                'f1': 0
+            }}
+
+            for label in self.labels:
+                false_positives = 0
+                true_positives = 0
+                false_negatives = 0
+                true_negatives = 0
+
+                for tag_prediction, correct_tag in zip(prediction, actual):
+                    if correct_tag == label:
+                        if tag_prediction == label:
+                            true_positives += 1
+                        else:
+                            false_negatives += 1
+                    else:
+                        if tag_prediction == label:
+                            false_positives += 1
+                        else:
+                            true_negatives += 1
+
+                precision = true_positives / (true_positives + false_positives + 0.00001)
+                recall = true_positives / (true_positives + false_negatives + 0.00001)
+                f1 = 2 * ((precision * recall) / (precision + recall + 0.00001))
+
+                label_scores = {
+                    'precision': precision,
+                    'recall': recall,
+                    'f1': f1
+                }
+                scores[label] = label_scores
+
+                scores['system']['precision'] += precision
+                scores['system']['recall'] += recall
+                scores['system']['f1'] += f1
+
+            length = len(self.labels)
+            scores['system']['precision'] /= length
+            scores['system']['recall'] /= length
+            scores['system']['f1'] /= length
+
+            return scores
+
+    def cross_validate(self, dataset):
+        model = self.model
+
+        training_data = dataset.get_training_data('pytorch')
+        actuals = [tags for (_, tags) in training_data]
+        predictions = self.predict(dataset)
+
+        f1_scores = []
+
+        for prediction, actual in zip(predictions, actuals):
+            scores = self.evaluate(prediction, actual)
+            print(scores)
+            print()
+            f1_scores.append(scores['system']['f1'])
+
+        f1_average = sum(f1_scores) / len(f1_scores)
+        print('\nF1 Average: %f' % f1_average)
+
     def save(self, path='nameless-model.pt'):
-        torch.save(self.model, path)
+        torch.save({
+            'model': self.model,
+            'word_to_index': self.word_to_index,
+            'tag_to_index': self.tag_to_index,
+            'labels': self.labels
+        }, path)
 
     def load(self, path='nameless-model.pt'):
-        model = torch.load(path)
+        saved_data = torch.load(path)
+        
+        self.word_to_index = saved_data['word_to_index']
+        self.tag_to_index = saved_data['tag_to_index']
+        self.labels = saved_data['labels']
+
+        model = saved_data['model']
         model.eval()
+        self.model = model

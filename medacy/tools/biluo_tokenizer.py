@@ -1,9 +1,10 @@
 import spacy
 from spacy.gold import biluo_tags_from_offsets
+from spacy.gold import offsets_from_biluo_tags
 
 class BiluoTokenizer:
     doc = None
-    
+
     def __init__(self, text):
         nlp = spacy.load('en_core_web_sm')
         self.doc = nlp(text)
@@ -19,21 +20,15 @@ class BiluoTokenizer:
         start = token.idx
         end = token.idx + len(token.text)
 
-        print('Looking for an entity that splits (%d, %d, %s)' % (start, end, token.text))
-
         for i, entity in enumerate(entities):
             # If entity start cuts off token, shift start to beginning of token
             if entity[0] > start and entity[0] <= end:
-                print('Original entity ' + str(entity))
                 entity = (start, entity[1], entity[2])
-                print('Fixed entity' + str(entity))
                 fixed_entity = True
 
             # If entity end cuts off token, shift end to end of token
             if entity[1] >= start and entity[1] < end:
-                print('Original entity ' + str(entity))
                 entity = (entity[0], end, entity[2])
-                print('Fixed entity' + str(entity))
                 fixed_entity = True
 
             entities[i] = entity
@@ -52,7 +47,6 @@ class BiluoTokenizer:
             label = biluo_labels[i]
 
             if label == '-':
-                print('\nFOUND - at token ' + str(token.text))
                 entities = self.fix_entities(entities, i)
                 return self.get_labels(entities)
 
@@ -64,3 +58,48 @@ class BiluoTokenizer:
             biluo_simple.append(label)
 
         return biluo_simple
+
+    def get_entities(self, tags):
+        doc = self.doc
+
+        b_indexes = []
+        i_indexes = []
+        l_indexes = []
+        u_indexes = []
+
+        for i, tag in enumerate(tags):
+            if tag != 'O':
+                if i == 0:
+                    if tags[i+1] == 'O':
+                        u_indexes.append(i)
+                    else:
+                        b_indexes.append(i)
+                elif i == len(tags) - 1:
+                    if tags[i-1] == 'O':
+                        u_indexes.append(i)
+                    else:
+                        l_indexes.append(i)
+                elif tags[i-1] == 'O' and tags[i+1] == 'O':
+                    u_indexes.append(i)
+                elif tags[i-1] == 'O':
+                    b_indexes.append(i)
+                elif tags[i+1] == 'O':
+                    l_indexes.append(i)
+                else:
+                    i_indexes.append(i)
+        
+        action_dictionary = {
+            'B-': b_indexes,
+            'I-': i_indexes,
+            'L-': l_indexes,
+            'I-': i_indexes,
+            'U-': u_indexes
+        }
+
+        for action, indexes in action_dictionary.items():
+            for index in indexes:
+                tags[index] = action + tags[index]
+
+        entities = offsets_from_biluo_tags(doc, tags)
+
+        return entities

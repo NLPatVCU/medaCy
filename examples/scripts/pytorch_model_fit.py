@@ -23,16 +23,13 @@ def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30):
     """Main function."""
     dataset = Dataset(input_dir)
     model = PytorchModel()
-    model.fit(dataset, n_iter)
 
-    # model.fit(
-    #     dataset=dataset,
-    #     spacy_model_name=spacy_model_name,
-    #     iterations=n_iter,
-    # )
+    # model.fit(dataset, n_iter)
+    # model.save()
 
-    # if output_dir is not None:
-    #     model.save(output_dir)
+    model.load()
+    # print(model.predict(dataset))
+    model.cross_validate(dataset)
 
 if __name__ == "__main__":
     plac.call(main)
