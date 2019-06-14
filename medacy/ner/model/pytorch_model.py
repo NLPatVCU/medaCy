@@ -1,6 +1,7 @@
 from os import makedirs
 from os.path import join, isdir
 import logging
+from statistics import mean
 from tabulate import tabulate
 from sklearn_crfsuite import metrics
 import torch
@@ -11,6 +12,8 @@ import spacy
 from spacy.gold import biluo_tags_from_offsets
 from medacy.data import Dataset
 from medacy.tools import Annotations, BiluoTokenizer
+from .stratified_k_fold import SequenceStratifiedKFold
+from ._model import construct_annotations_from_tuples
 
 import sys
 
@@ -105,10 +108,14 @@ class PytorchModel:
         return preprocessed_data
 
     def fit(self, dataset, epochs=30):
-        if not isinstance(dataset, Dataset):
-            raise TypeError("Must pass in an instance of Dataset containing your training files")
+        training_data = None
 
-        training_data = self.get_training_data(dataset)
+        if isinstance(dataset, Dataset):
+            training_data = self.get_training_data(dataset)
+        elif isinstance(dataset, list):
+            training_data = dataset
+        else:
+            raise TypeError("Must pass Dataset or list of training data")
 
         word_to_index = self.word_to_index
         tag_to_index = self.tag_to_index
@@ -120,7 +127,7 @@ class PytorchModel:
 
         model = LSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_index), len(tag_to_index), self.bidirectional)
         loss_weights = torch.ones(len(tag_to_index))
-        loss_weights[0] = 0.01 # Reduce weighting towards 'O' label
+        # loss_weights[-1] = 0.01 # Reduce weighting towards 'O' label
         loss_function = nn.NLLLoss(loss_weights)
         optimizer = optim.SGD(model.parameters(), lr=0.1)
 
@@ -164,8 +171,8 @@ class PytorchModel:
         :param prediction_directory: the directory to write predictions if doing bulk prediction
                                      (default: */prediction* sub-directory of Dataset)
         """
-        if not isinstance(dataset, (Dataset, str)):
-            raise TypeError("Must pass in an instance of Dataset")
+        # if not isinstance(dataset, (Dataset, str)):
+        #     raise TypeError("Must pass in an instance of Dataset")
         if self.model is None:
             raise ValueError("Must fit or load a pickled model before predicting")
 
@@ -198,7 +205,6 @@ class PytorchModel:
                         inputs = self.vectorize(sequence, self.word_to_index)
                         tag_scores = model(inputs)
                         devectorized_tags.extend(self.devectorize(tag_scores, self.tag_to_index))
-                    # entities = biluo_tokenizer.get_entities(devectorized_tags)
                     predictions.append(devectorized_tags)
 
             return predictions
@@ -211,6 +217,20 @@ class PytorchModel:
                 # prediction_filename = join(prediction_directory, data_file.file_name + ".ann")
                 # logging.debug("Writing to: %s", prediction_filename)
                 # annotations.to_ann(write_location=prediction_filename)
+
+        elif isinstance(dataset, list):
+            segmented_tokens = self.get_segments(dataset)
+            predictions = []
+
+            with torch.no_grad():
+                devectorized_tags = []
+                for sequence in segmented_tokens:
+                    inputs = self.vectorize(sequence, self.word_to_index)
+                    tag_scores = model(inputs)
+                    devectorized_tags.extend(self.devectorize(tag_scores, self.tag_to_index))
+                predictions.append(devectorized_tags)
+
+            return predictions
 
         if isinstance(dataset, str):
             doc = nlp(dataset)
@@ -248,7 +268,6 @@ class PytorchModel:
 
         return scores
 
-
     def evaluate(self, predictions, actuals):
         labels = list(self.labels)
         labels.remove('O')
@@ -262,35 +281,88 @@ class PytorchModel:
 
         return scores
 
-    def cross_validate(self, dataset):
-        model = self.model
-        labels = list(self.labels)
-        labels.remove('O')
-        logging.info(labels)
-
+    def cross_validate(self, dataset, folds, epochs=30):
         logging.info('Getting training data...')
-        training_data = dataset.get_training_data('pytorch')
+        training_data = self.get_training_data(dataset)
         logging.info('Finished fixing annotations.')
 
-        actuals = [tags for (_, tags) in training_data]
-        predictions = self.predict(dataset)
+        x_data, y_data = zip(*training_data)
+        folds = SequenceStratifiedKFold(folds=folds)
+        fold = 1
+        fold_scores = {}
 
-        scores = self.evaluate(predictions, actuals)
-        
-        table_data = []
+        for train_indices, test_indices in folds(x_data, y_data):
+            logging.info("\n----EVALUATING FOLD %d----" % fold)
+            self.model = None
 
-        for label in labels + ['system']:
-            entry = [
-                label,
-                format(scores[label]['precision'], ".3f"),
-                format(scores[label]['recall'], ".3f"),
-                format(scores[label]['f1'], ".3f")
-            ]
+            training_subdata = [training_data[i] for i in train_indices]
+            self.fit(training_subdata, epochs)
 
-            table_data.append(entry)
+            logging.info('Done training!\n')
 
-        logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
-                                tablefmt='orgtbl'))
+            labels = list(self.labels)
+            labels.remove('O')
+            testing_subdata = [training_data[i] for i in test_indices]
+
+            tokens, actuals = zip(*testing_subdata)
+
+            predictions = []
+            for document_tokens in tokens:
+                prediction = self.predict(document_tokens)
+                predictions.extend(prediction)
+
+            scores = self.evaluate(predictions, actuals)
+            
+            table_data = []
+
+            for label in labels + ['system']:
+                entry = [
+                    label,
+                    format(scores[label]['precision'], ".3f"),
+                    format(scores[label]['recall'], ".3f"),
+                    format(scores[label]['f1'], ".3f")
+                ]
+
+                table_data.append(entry)
+
+            logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+                                    tablefmt='orgtbl'))
+            fold_scores[fold] = scores
+            fold += 1
+
+        labels = list(self.labels) + ['system']
+        labels.remove('O')
+        final_scores = {}
+
+        for label in labels:
+            final_scores[label] = {}
+
+            final_scores[label]['precision'] = mean(
+                [fold_scores[fold][label]['precision'] for fold in fold_scores]
+            )
+            final_scores[label]['recall'] = mean(
+                [fold_scores[fold][label]['recall'] for fold in fold_scores]
+            )
+
+            f1_fold_scores = [fold_scores[fold][label]['f1'] for fold in fold_scores]
+            final_scores[label]['f1'] = mean(f1_fold_scores)
+            final_scores[label]['f1_max'] = max(f1_fold_scores)
+            final_scores[label]['f1_min'] = min(f1_fold_scores)
+
+        table_data = [[label,
+                       format(final_scores[label]['precision'], ".3f"),
+                       format(final_scores[label]['recall'], ".3f"),
+                       format(final_scores[label]['f1'], ".3f"),
+                       format(final_scores[label]['f1_min'], ".3f"),
+                       format(final_scores[label]['f1_max'], ".3f")]
+                      for label in labels]
+
+        table_string = '\n' + tabulate(
+            table_data,
+            headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+            tablefmt='orgtbl'
+        )
+        logging.info(table_string)
 
     def save(self, path='nameless-model.pt'):
         torch.save({

@@ -20,14 +20,16 @@ from medacy.ner import PytorchModel
     input_dir=("Directory of ann and txt files.", "option", "i", Path),
     spacy_model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
     output_dir=("New model name for model meta.", "option", "o", str),
+    folds=("Folds for cross validation", "option", "f", int),
     n_iter=("Number of training iterations", "option", "n", int),
 )
-def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30):
+def main(input_dir, spacy_model_name=None, output_dir=None, folds=5, n_iter=30):
     """Main function."""
     logging.basicConfig(filename='pytorch.log', level=logging.INFO)
     # logging.basicConfig(level=logging.INFO)
 
-    current_time = datetime.fromtimestamp(time.time()).strftime('%Y_%m_%d_%H.%M.%S')
+    start_time = time.time()
+    current_time = datetime.fromtimestamp(start_time).strftime('%Y_%m_%d_%H.%M.%S')
     logging.info('START TIME: ' + current_time)
 
     dataset = Dataset(input_dir)
@@ -36,11 +38,18 @@ def main(input_dir, spacy_model_name=None, output_dir=None, n_iter=30):
     # model.fit(dataset, n_iter)
     # model.save()
 
-    model.load('first-try.pt')
-    model.cross_validate(dataset)
+    # model.load('second-try.pt')
+    # model.evaluate_prediction(dataset)
+    model.cross_validate(dataset, folds, n_iter)
     
-    current_time = datetime.fromtimestamp(time.time()).strftime('%Y_%m_%d_%H.%M.%S')
+    end_time = time.time()
+    current_time = datetime.fromtimestamp(end_time).strftime('%Y_%m_%d_%H.%M.%S')
     logging.info('END TIME: ' + current_time)
+
+    seconds_elapsed = end_time - start_time
+    minutes_elapsed = seconds_elapsed / 60.0
+    hours_elapsed = minutes_elapsed / 60.0
+    logging.info('HOURS ELAPSED: %.0f:%.02f' % (hours_elapsed, minutes_elapsed))
 
 if __name__ == "__main__":
     plac.call(main)
