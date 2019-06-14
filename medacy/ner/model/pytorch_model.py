@@ -1,6 +1,8 @@
 from os import makedirs
 from os.path import join, isdir
 import logging
+from tabulate import tabulate
+from sklearn_crfsuite import metrics
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -13,7 +15,7 @@ from medacy.tools import Annotations, BiluoTokenizer
 import sys
 
 # Constants
-SEGMENT_SIZE = 10000
+SEGMENT_SIZE = 100
 
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
@@ -220,74 +222,76 @@ class PytorchModel:
 
             return entities
 
-    def evaluate(self, prediction, actual):
-        model = self.model
+    def get_scores(self, predictions, actuals, labels):
+        scores = {}
 
+        scores['recall'] = metrics.flat_recall_score(
+            actuals,
+            predictions,
+            average='weighted',
+            labels=labels
+        )
+
+        scores['precision'] = metrics.flat_precision_score(
+            actuals,
+            predictions,
+            average='weighted',
+            labels=labels
+        )
+
+        scores['f1'] = metrics.flat_f1_score(
+            actuals,
+            predictions,
+            average='weighted',
+            labels=labels
+        )
+
+        return scores
+
+
+    def evaluate(self, predictions, actuals):
+        labels = list(self.labels)
+        labels.remove('O')
+        scores = {}
+        
         # See what the scores are after training
-        with torch.no_grad():
-            scores = {'system': {
-                'precision': 0,
-                'recall': 0,
-                'f1': 0
-            }}
+        for label in self.labels:
+            scores[label] = self.get_scores(predictions, actuals, [label])
 
-            for label in self.labels:
-                false_positives = 0
-                true_positives = 0
-                false_negatives = 0
-                true_negatives = 0
+        scores['system'] = self.get_scores(predictions, actuals, labels)
 
-                for tag_prediction, correct_tag in zip(prediction, actual):
-                    if correct_tag == label:
-                        if tag_prediction == label:
-                            true_positives += 1
-                        else:
-                            false_negatives += 1
-                    else:
-                        if tag_prediction == label:
-                            false_positives += 1
-                        else:
-                            true_negatives += 1
-
-                precision = true_positives / (true_positives + false_positives + 0.00001)
-                recall = true_positives / (true_positives + false_negatives + 0.00001)
-                f1 = 2 * ((precision * recall) / (precision + recall + 0.00001))
-
-                label_scores = {
-                    'precision': precision,
-                    'recall': recall,
-                    'f1': f1
-                }
-                scores[label] = label_scores
-
-                scores['system']['precision'] += precision
-                scores['system']['recall'] += recall
-                scores['system']['f1'] += f1
-
-            length = len(self.labels)
-            scores['system']['precision'] /= length
-            scores['system']['recall'] /= length
-            scores['system']['f1'] /= length
-
-            return scores
+        return scores
 
     def cross_validate(self, dataset):
         model = self.model
+        labels = list(self.labels)
+        labels.remove('O')
+        print(labels)
 
+        print('Getting training data...')
         training_data = dataset.get_training_data('pytorch')
+        print('Finished fixing annotations.')
+
         actuals = [tags for (_, tags) in training_data]
         predictions = self.predict(dataset)
 
-        f1_scores = []
+        scores = self.evaluate(predictions, actuals)
+        
+        table_data = []
 
-        for prediction, actual in zip(predictions, actuals):
-            scores = self.evaluate(prediction, actual)
-            print(scores)
-            print()
-            f1_scores.append(scores['system']['f1'])
+        for label in labels + ['system']:
+            entry = [
+                label,
+                format(scores[label]['precision'], ".3f"),
+                format(scores[label]['recall'], ".3f"),
+                format(scores[label]['f1'], ".3f")
+            ]
 
-        f1_average = sum(f1_scores) / len(f1_scores)
-        print('\nF1 Average: %f' % f1_average)
+            table_data.append(entry)
+
+        print()
+        print(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+                                tablefmt='orgtbl'))
 
     def save(self, path='nameless-model.pt'):
         torch.save({
