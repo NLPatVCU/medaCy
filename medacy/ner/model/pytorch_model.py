@@ -125,7 +125,7 @@ class PytorchModel:
         optimizer = optim.SGD(model.parameters(), lr=0.1)
 
         for epoch in range(epochs):
-            print('Epoch %d' % epoch)
+            logging.info('Epoch %d' % epoch)
             losses = []
             i = 0
             for sentence, tags in training_data:
@@ -147,12 +147,12 @@ class PytorchModel:
                 loss.backward()
                 optimizer.step()
                 if i % 100 == 0:
-                    print(loss)
+                    logging.info(loss)
                 i += 1
                 losses.append(loss)
 
             average_loss = sum(losses) / len(losses)
-            print('AVG LOSS: %f' % average_loss)
+            logging.info('AVG LOSS: %f' % average_loss)
 
         self.model = model
 
@@ -266,11 +266,11 @@ class PytorchModel:
         model = self.model
         labels = list(self.labels)
         labels.remove('O')
-        print(labels)
+        logging.info(labels)
 
-        print('Getting training data...')
+        logging.info('Getting training data...')
         training_data = dataset.get_training_data('pytorch')
-        print('Finished fixing annotations.')
+        logging.info('Finished fixing annotations.')
 
         actuals = [tags for (_, tags) in training_data]
         predictions = self.predict(dataset)
@@ -289,8 +289,7 @@ class PytorchModel:
 
             table_data.append(entry)
 
-        print()
-        print(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+        logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                 tablefmt='orgtbl'))
 
     def save(self, path='nameless-model.pt'):

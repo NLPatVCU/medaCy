@@ -1,3 +1,4 @@
+import logging
 import spacy
 from spacy.gold import biluo_tags_from_offsets
 from spacy.gold import offsets_from_biluo_tags
@@ -47,6 +48,11 @@ class BiluoTokenizer:
             label = biluo_labels[i]
 
             if label == '-':
+                logging.info('Found issue at (%d, %d, %s)' % (
+                    token.idx,
+                    token.idx + len(token),
+                    token.text
+                ))
                 entities = self.fix_entities(entities, i)
                 return self.get_labels(entities)
 
