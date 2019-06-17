@@ -18,7 +18,7 @@ from ._model import construct_annotations_from_tuples
 import sys
 
 # Constants
-SEGMENT_SIZE = 200
+SEGMENT_SIZE = 100
 
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
