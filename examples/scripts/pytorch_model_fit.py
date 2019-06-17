@@ -18,12 +18,12 @@ from medacy.ner import PytorchModel
 
 @plac.annotations(
     input_dir=("Directory of ann and txt files.", "option", "i", Path),
-    spacy_model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
+    model_name=("Model name. Defaults to blank 'en' model.", "option", "m", str),
     output_dir=("New model name for model meta.", "option", "o", str),
     folds=("Folds for cross validation", "option", "f", int),
     n_iter=("Number of training iterations", "option", "n", int),
 )
-def main(input_dir, spacy_model_name=None, output_dir=None, folds=5, n_iter=30):
+def main(input_dir, model_name=None, output_dir=None, folds=5, n_iter=30):
     """Main function."""
     logging.basicConfig(filename='pytorch.log', level=logging.INFO)
     # logging.basicConfig(level=logging.INFO)
@@ -33,7 +33,7 @@ def main(input_dir, spacy_model_name=None, output_dir=None, folds=5, n_iter=30):
     logging.info('START TIME: ' + current_time)
 
     dataset = Dataset(input_dir)
-    model = PytorchModel()
+    model = PytorchModel(True)
 
     # model.fit(dataset, n_iter)
     # model.save()

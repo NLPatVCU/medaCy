@@ -18,7 +18,7 @@ from ._model import construct_annotations_from_tuples
 import sys
 
 # Constants
-SEGMENT_SIZE = 100
+SEGMENT_SIZE = 200
 
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
@@ -32,7 +32,10 @@ class LSTMTagger(nn.Module):
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, bidirectional=bidirectional)
 
         # The linear layer that maps from hidden state space to tag space
-        self.hidden2tag = nn.Linear(hidden_dim, tagset_size)
+        if bidirectional:
+            self.hidden2tag = nn.Linear(hidden_dim*2, tagset_size)
+        else:
+            self.hidden2tag = nn.Linear(hidden_dim, tagset_size)
 
     def forward(self, sentence):
         embeds = self.word_embeddings(sentence)
@@ -134,7 +137,6 @@ class PytorchModel:
         for epoch in range(epochs):
             logging.info('Epoch %d' % epoch)
             losses = []
-            i = 0
             for sentence, tags in training_data:
                 # Step 1. Remember that Pytorch accumulates gradients.
                 # We need to clear them out before each instance
@@ -153,9 +155,6 @@ class PytorchModel:
                 loss = loss_function(tag_scores, targets)
                 loss.backward()
                 optimizer.step()
-                if i % 100 == 0:
-                    logging.info(loss)
-                i += 1
                 losses.append(loss)
 
             average_loss = sum(losses) / len(losses)
