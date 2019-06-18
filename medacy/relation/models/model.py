@@ -1,5 +1,10 @@
+#Author : Samantha Mahendran for RelaCy
+
 from keras.preprocessing.text import Tokenizer
+from tabulate import _table_formats, tabulate
 from sklearn.preprocessing import LabelBinarizer
+from sklearn.metrics import precision_recall_fscore_support as score
+from sklearn.metrics import confusion_matrix
 
 import os, logging, tempfile
 
@@ -13,24 +18,15 @@ class Model:
         test_data = self.read_from_file("sentence_test")
         test_labels = self.read_from_file("labels_test")
 
-        # dataset object that returns all the pre-processed data
-        self.model_data = {'x_train': [], 'y_train': [], 'x_val': [], 'y_val': [], 'x_test': [], 'y_test': []}
         # tokens = self.find_unique_tokens(train_data)
 
-        one_hot_train, one_hot_test, word_index_train = self.one_hot_encoding(train_data, 5000, test_data)
+        #returns one-hot encoded train and test data and binarized train and test labels
+        self.train, self.x_test, word_index_train = self.one_hot_encoding(train_data, 5000, test_data)
+        self.train_label = self.binarize_labels(train_labels)
+        self.y_test = self.binarize_labels(test_labels)
 
-        binary_train_label = self.binarize_labels(train_labels)
-        binary_test_label = self.binarize_labels(test_labels)
-
-        self.x_train, self.x_val, self.y_train, self.y_val = self.create_validation_data(one_hot_train, binary_train_label)
-
-        # Add lists of pre-processed data to the dataset object
-        self.model_data['x_train'].extend(self.x_train)
-        self.model_data['y_train'].extend(self.y_train)
-        self.model_data['x_val'].extend(self.x_val)
-        self.model_data['y_val'].extend(self.y_val)
-        self.model_data['x_test'].extend(one_hot_test)
-        self.model_data['y_test'].extend(binary_test_label)
+        #divides train data into partial train and validation data
+        self.x_train, self.x_val, self.y_train, self.y_val = self.create_validation_data(self.train, self.train_label)
 
     def read_from_file(self, file):
         """
@@ -86,6 +82,7 @@ class Model:
         # sequences = tokenizer.texts_to_sequences(content_list)
 
         one_hot_train = tokenizer.texts_to_matrix(train_list, mode='binary')
+
         if test_list is not None:
             one_hot_test = tokenizer.texts_to_matrix(test_list, mode='binary')
         # To recover the word index that was computed
@@ -125,3 +122,14 @@ class Model:
         y_train = train_label[num_data:]
 
         return x_train, x_val, y_train, y_val
+
+    def compute_evaluation_metrics(self, y_true, y_pred):
+        precision, recall, fscore, support = score(y_true, y_pred)
+        # logging.info(tabulate(table_data, headers=['Relation_class', 'Precision', 'Recall', 'F1'],
+        #                       tablefmt='orgtbl'))
+        return precision, recall, fscore
+
+    def compute_confusion_matrix(self, y_true, y_pred):
+        matrix = confusion_matrix(y_true, y_pred)
+        matrix.diagonal() / matrix.sum(axis=1)
+        return matrix
