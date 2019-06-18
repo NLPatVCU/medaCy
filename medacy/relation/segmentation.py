@@ -13,7 +13,6 @@ class Segmentation:
         self.segments = {'seg_preceeding': [], 'seg_concept1': [], 'seg_concept2': [], 'seg_middle': [], 'seg_succeeding': [], 'sentence': [], 'label': []}
 
         for datafile in dataset:
-            print(datafile)
             self.ann_path = datafile.get_annotation_path()
             self.txt_path = datafile.get_text_path()
             self.ann_obj = Annotations(self.ann_path)
@@ -23,22 +22,33 @@ class Segmentation:
             self.doc = self.nlp_model(content)
             segment = self.get_Segments(self.ann_obj )
 
-            self.segments['seg_preceeding'].append(segment['preceeding'])
-            self.segments['seg_concept1'].append(segment['concept1'])
-            self.segments['seg_middle'].append(segment['middle'])
-            self.segments['seg_concept2'].append(segment['concept2'])
-            self.segments['seg_succeeding'].append(segment['succeeding'])
-            self.segments['sentence'].append(segment['sentence'])
-            self.segments['label'].append(segment['label'])
+            #Add lists of segments to the segments object for the dataset
+            self.segments['seg_preceeding'].extend(segment['preceeding'])
+            self.segments['seg_concept1'].extend(segment['concept1'])
+            self.segments['seg_middle'].extend(segment['middle'])
+            self.segments['seg_concept2'].extend(segment['concept2'])
+            self.segments['seg_succeeding'].extend(segment['succeeding'])
+            self.segments['sentence'].extend(segment['sentence'])
+            self.segments['label'].extend(segment['label'])
+
+            #To add lists of segments to the segments object for the dataset while maintaining the list separate
+            # self.segments['seg_preceeding'].append(segment['preceeding'])
+            # self.segments['seg_preceeding'].append(segment['preceeding'])
+            # self.segments['seg_concept1'].append(segment['concept1'])
+            # self.segments['seg_middle'].append(segment['middle'])
+            # self.segments['seg_concept2'].append(segment['concept2'])
+            # self.segments['seg_succeeding'].append(segment['succeeding'])
+            # self.segments['sentence'].append(segment['sentence'])
+            # self.segments['label'].append(segment['label'])
 
         #write the segments to a file
-
+        self.list_to_file('sentence_train', self.segments['sentence'])
         # self.list_to_file('preceeding_seg', self.segments['seg_preceeding'])
         # self.list_to_file('concept1_seg', self.segments['seg_concept1'])
         # self.list_to_file('middle_seg', self.segments['seg_middle'])
         # self.list_to_file('concept2_seg', self.segments['seg_concept2'])
         # self.list_to_file('suceeding_seg', self.segments['seg_succeeding'])
-        # self.list_to_file('labels', self.segments['seg_label'])
+        self.list_to_file('labels_train', self.segments['label'])
 
 
     def remove_Punctuation(self, string):
@@ -88,12 +98,11 @@ class Segmentation:
         segment = {'preceeding': [], 'concept1': [], 'concept2': [], 'middle': [],'succeeding': [], 'sentence': [], 'label': []}
 
         for label_rel, entity1, entity2 in ann.annotations['relations']:
-            print(label_rel, entity1, entity2)
-            print(ann.annotations['entities'][entity1])
+            # if label_rel
+
             start_C1 = ann.annotations['entities'][entity1][1]
             end_C1 = ann.annotations['entities'][entity1][2]
 
-            print(ann.annotations['entities'][entity2])
             start_C2 = ann.annotations['entities'][entity2][1]
             end_C2 = ann.annotations['entities'][entity2][2]
 
@@ -117,13 +126,12 @@ class Segmentation:
             else:
                 sentence = sentence_C1 + " " + sentence_C2
 
-            print(sentence)
             sentence = self.remove_Punctuation(str(sentence).strip())
             concept_1 = self.remove_Punctuation(str(concept_1).strip())
             concept_2 = self.remove_Punctuation(str(concept_2).strip())
             segment['concept1'].append(concept_1)
             segment['concept2'].append(concept_2)
-            segment['sentence'].append(sentence)
+            segment['sentence'].append(sentence.replace('\n', ' '))
 
             preceeding, middle, succeeding = self.extract_Segments(sentence, concept_1, concept_2)
             segment['preceeding'].append(preceeding)
