@@ -1,4 +1,5 @@
 from medacy.relation.NN import Simple_NN
+from medacy.relation.NN import CNN
 from medacy.relation.NN import Embeddings
 from medacy.relation.models import Model
 
@@ -45,11 +46,33 @@ embedding_path = "glove/glove.200d.txt"
 # #evaluate on the test
 # nn.evaluate_Model(model, data_pad.x_test, data_pad.y_test)
 
-#Model 5:
-embedding = Embeddings(embedding_path)
-nn = Simple_NN()
+#Model 5: Train CNN on all the train data and test directly on the test data with padded sequences
+#
+# cnn = CNN()
+# #build model
+# model = cnn.build_Model(8)
+# model, loss, acc = cnn.fit_Model (model, data_pad.train, data_pad.train_label)
+# #evaluate on the test
+# cnn.evaluate_Model(model, data_pad.x_test, data_pad.y_test)
+
+#Model 6: Train CNN on partial train and validation data and test on the test data with padded sequences
+cnn = CNN()
 #build model
-model = nn.build_external_Embedding_Model(8)
-model, loss, acc = nn.fit_Model (model, data_pad.train, data_pad.train_label)
+model = cnn.build_Model(8)
+model, loss, val_loss, acc, val_acc, max_epoch = cnn.fit_Model (model, data_pad.x_train, data_pad.y_train, 20, 512, validation=(data_pad.x_val, data_pad.y_val))
+#Train the model with all train data until the epoch that acheived max accuracy with the validation data
+model, loss, acc = cnn.fit_Model (model, data_pad.train, data_pad.train_label, max_epoch, 512)
 #evaluate on the test
-nn.evaluate_Model(model, data_pad.x_test, data_pad.y_test)
+cnn.evaluate_Model(model, data_pad.x_test, data_pad.y_test)
+
+
+
+
+#Model
+# embedding = Embeddings(embedding_path)
+# nn = Simple_NN()
+# #build model
+# model = nn.build_external_Embedding_Model(8)
+# model, loss, acc = nn.fit_Model (model, data_pad.train, data_pad.train_label)
+# #evaluate on the test
+# nn.evaluate_Model(model, data_pad.x_test, data_pad.y_test)

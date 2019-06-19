@@ -12,7 +12,7 @@ class Simple_NN:
 
     def __init__(self):
         self.data_model = Model()
-        self.embed = Embeddings()
+        # self.embed = Embeddings()
 
     def build_Model(self, output_classes, train_data, hidden_units = 64, hidden_activation = 'relu',
                     output_activation = 'softmax', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy'] ):
@@ -39,21 +39,21 @@ class Simple_NN:
 
         return model
 
-    def build_external_Embedding_Model(self, output_classes, hidden_units = 64, hidden_activation = 'relu',
-                    output_activation = 'softmax', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy'] ):
-
-        model = models.Sequential()
-        model.add(layers.Embedding(self.data_model.common_words, self.data_model.embedding_dim, input_length=self.data_model.maxlen))
-        model.add(layers.Flatten())
-        model.add(layers.Dense(hidden_units, activation= hidden_activation))
-        model.add(layers.Dense(output_classes, activation= output_activation))
-
-        model.layers[0].set_weights([self.embed.embedding_matrix])
-        model.layers[0].trainable = False
-
-        model.compile(optimizer= optimizer,loss= loss, metrics= metrics)
-
-        return model
+    # def build_external_Embedding_Model(self, output_classes, hidden_units = 64, hidden_activation = 'relu',
+    #                 output_activation = 'softmax', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy'] ):
+    #
+    #     model = models.Sequential()
+    #     model.add(layers.Embedding(self.data_model.common_words, self.data_model.embedding_dim, input_length=self.data_model.maxlen))
+    #     model.add(layers.Flatten())
+    #     model.add(layers.Dense(hidden_units, activation= hidden_activation))
+    #     model.add(layers.Dense(output_classes, activation= output_activation))
+    #
+    #     model.layers[0].set_weights([self.embed.embedding_matrix])
+    #     model.layers[0].trainable = False
+    #
+    #     model.compile(optimizer= optimizer,loss= loss, metrics= metrics)
+    #
+    #     return model
 
     def fit_Model(self, model, x_train, y_train, no_epochs = 20, batch_Size = 512, validation = None):
 
