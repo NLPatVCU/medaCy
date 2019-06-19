@@ -202,7 +202,7 @@ class SpacyModel:
 
                 doc = nlp(text)
 
-                test_entities = annotations.get_spacy_entities()
+                test_entities = annotations.get_entities(format='spacy')[1]['entities']
                 test_entities = self.entities_to_biluo(doc, test_entities)
                 y_test.append(test_entities)
 

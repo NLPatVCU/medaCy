@@ -3,4 +3,5 @@ from .systematic_review_pipeline import SystematicReviewPipeline
 from .fda_nano_drug_label_pipeline import FDANanoDrugLabelPipeline
 from .drug_event_pipeline import DrugEventPipeline
 from .testing_pipeline import TestingPipeline
+from .lstm_clinical_pipeline import LstmClinicalPipeline
 from .base.base_pipeline import BasePipeline

@@ -77,7 +77,7 @@ wrap them.
 from medacy.tools import DataFile, Annotations
 from joblib import Parallel, delayed
 import os, logging, multiprocessing, math, json, importlib
-
+import spacy
 
 class Dataset:
     """
@@ -222,9 +222,10 @@ class Dataset:
             raise TypeError("Format %s not supported" % format)
 
         training_data = []
+        nlp = spacy.load('en_core_web_sm')
 
         for annotations in self.get_annotations():
-            training_data.append(annotations.get_entity_annotations(format=data_format))
+            training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
 
         return training_data
 
@@ -475,12 +476,6 @@ class Dataset:
 
 
         return ambiguity_dict
-
-
-
-
-
-
 
     @staticmethod
     def load_external(package_name):

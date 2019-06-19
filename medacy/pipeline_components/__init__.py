@@ -6,6 +6,7 @@ from .tokenization.systematic_review_tokenizer import SystematicReviewTokenizer
 
 from .metamap.metamap_component import MetaMapComponent
 from .annotation.gold_annotator_component import GoldAnnotatorComponent
+from .annotation.biluo_annotator_component import BiluoAnnotatorComponent
 
 from .lexicon import LexiconComponent
 
@@ -20,3 +21,4 @@ from .units.measurement_unit_component import MeasurementUnitComponent
 
 
 from .feature_extraction.discrete_feature_extractor import FeatureExtractor
+from .feature_extraction.word_only_feature_extractor import WordOnlyFeatureExtractor

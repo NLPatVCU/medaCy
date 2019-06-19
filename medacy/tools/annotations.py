@@ -1,4 +1,5 @@
 import os, logging, tempfile
+import spacy
 from medacy.tools import BiluoTokenizer
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con
@@ -70,23 +71,7 @@ class Annotations:
 
         return labels
 
-    def get_spacy_entities(self):
-        """
-        Get just the entities in spacy format from a collection of annotations.
-
-        :return: The list of entities.
-        """
-        entities = []
-
-        for annotation in self.annotations['entities'].values():
-            entity = annotation[0]
-            start = annotation[1]
-            end = annotation[2]
-            entities.append((start, end, entity))
-
-        return entities
-
-    def get_entity_annotations(self, return_dictionary=False, format='medacy'):
+    def get_entity_annotations(self, return_dictionary=False, format='medacy', nlp=None):
         """
         Returns a list of entity annotation tuples
 
@@ -117,6 +102,8 @@ class Annotations:
         elif format == 'pytorch':
             if not self.source_text_path:
                 raise FileNotFoundError("pytorch format requires the source text path")
+            elif not nlp:
+                raise TypeError('pytorch format requires nlp to be supplied')
 
             with open(self.source_text_path, 'r') as source_text_file:
                 source_text = source_text_file.read()
@@ -129,7 +116,8 @@ class Annotations:
                 end = annotation[2]
                 entities.append((start, end, entity))
 
-            biluo_tokenizer = BiluoTokenizer(source_text)
+            doc = nlp(source_text)
+            biluo_tokenizer = BiluoTokenizer(doc)
 
             tokens = biluo_tokenizer.get_tokens()
             biluo_labels = biluo_tokenizer.get_labels(entities)

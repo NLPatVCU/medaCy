@@ -6,9 +6,8 @@ from spacy.gold import offsets_from_biluo_tags
 class BiluoTokenizer:
     doc = None
 
-    def __init__(self, text):
-        nlp = spacy.load('en_core_web_sm')
-        self.doc = nlp(text)
+    def __init__(self, doc):
+        self.doc = doc
 
     def get_tokens(self):
         return [str(token) for token in self.doc]
