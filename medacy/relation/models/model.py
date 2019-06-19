@@ -1,19 +1,22 @@
 #Author : Samantha Mahendran for RelaCy
 
 from keras.preprocessing.text import Tokenizer
-from tabulate import _table_formats, tabulate
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import precision_recall_fscore_support as score
 from sklearn.metrics import confusion_matrix
 from keras.preprocessing.sequence import pad_sequences
-
+import matplotlib.pyplot as plt
 import os, logging, tempfile
 
 class Model:
 
-    def __init__(self, padding = False):
+    def __init__(self, padding = False, common_words = 10000, maxlen = 100, embedding_dim =200 ):
 
         self.padding = padding
+        self.embedding_dim = embedding_dim
+        self.common_words = common_words
+        self.maxlen = maxlen
+
 
         #read dataset from external files
         train_data = self.read_from_file("sentence_train")
@@ -24,12 +27,14 @@ class Model:
         # tokens = self.find_unique_tokens(train_data)
 
         #returns one-hot encoded train and test data and binarized train and test labels
-        self.train, self.x_test, word_index_train = self.vectorizing_words(train_data, test_data, 5000)
+        self.train, self.x_test, self.word_index = self.vectorizing_words(train_data, test_data)
         self.train_label = self.binarize_labels(train_labels)
         self.y_test = self.binarize_labels(test_labels)
 
         #divides train data into partial train and validation data
         self.x_train, self.x_val, self.y_train, self.y_val = self.create_validation_data(self.train, self.train_label)
+
+
 
     def read_from_file(self, file):
         """
@@ -64,7 +69,7 @@ class Model:
                     token_index[word] = len(token_index) + 1
         return token_index
 
-    def vectorizing_words(self, train_list,  test_list, num_common_words=10000, maxlen = 100):
+    def vectorizing_words(self, train_list,  test_list):
 
         """
         Function takes train and test lists as the input and creates a Keras tokenizer configured to only take
@@ -77,15 +82,17 @@ class Model:
         :return list:list with the outputs the one-hot encoding of the input list
         :return list:list with a unique index to each unique word
         """
-        tokenizer = Tokenizer(num_common_words)
+        tokenizer = Tokenizer(self.common_words)
         # This builds the word index
         tokenizer.fit_on_texts(train_list)
 
         if self.padding:
             # Turns strings into lists of integer indices.
-            sequences = tokenizer.texts_to_sequences(train_list)
-            padded_train = pad_sequences(sequences, maxlen=maxlen)
-            padded_test = pad_sequences(sequences, maxlen=maxlen)
+            train_sequences = tokenizer.texts_to_sequences(train_list)
+            test_sequences = tokenizer.texts_to_sequences(test_list)
+            padded_train = pad_sequences(train_sequences, maxlen=self.maxlen)
+            padded_test = pad_sequences(test_sequences, maxlen=self.maxlen)
+
         else:
             one_hot_train = tokenizer.texts_to_matrix(train_list, mode='binary')
             one_hot_test = tokenizer.texts_to_matrix(test_list, mode='binary')
@@ -137,3 +144,16 @@ class Model:
         matrix = confusion_matrix(y_true, y_pred)
         matrix.diagonal() / matrix.sum(axis=1)
         return matrix
+
+    def plot_graphs(self, x_var, y_var, xlabel, ylabel, x_title, y_title, title):
+
+        x_range = range(1, len(x_var) + 1)
+
+        plt.plot(x_range, x_var, 'bo', label= x_title)
+        plt.plot(x_range, y_var, 'b', label= y_title)
+        plt.title(title)
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+        plt.legend()
+
+        plt.show()
