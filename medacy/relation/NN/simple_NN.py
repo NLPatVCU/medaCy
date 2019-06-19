@@ -25,6 +25,19 @@ class Simple_NN:
 
         return model
 
+    def build_Embedding_Model(self, output_classes, max_words = 10000, embedding_dim = 200, maxlen = 100, hidden_units = 64, hidden_activation = 'relu',
+                    output_activation = 'softmax', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy'] ):
+
+        model = models.Sequential()
+        model.add(layers.Embedding(max_words, embedding_dim, input_length=maxlen))
+        model.add(layers.Flatten())
+        model.add(layers.Dense(hidden_units, activation= hidden_activation))
+        model.add(layers.Dense(output_classes, activation= output_activation))
+
+        model.compile(optimizer= optimizer,loss= loss, metrics= metrics)
+
+        return model
+
 
     def fit_Model(self, model, x_train, y_train, no_epochs = 20, batch_Size = 512, validation = None):
 

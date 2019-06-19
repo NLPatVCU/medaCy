@@ -5,12 +5,15 @@ from tabulate import _table_formats, tabulate
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import precision_recall_fscore_support as score
 from sklearn.metrics import confusion_matrix
+from keras.preprocessing.sequence import pad_sequences
 
 import os, logging, tempfile
 
 class Model:
 
-    def __init__(self):
+    def __init__(self, padding = False):
+
+        self.padding = padding
 
         #read dataset from external files
         train_data = self.read_from_file("sentence_train")
@@ -21,7 +24,7 @@ class Model:
         # tokens = self.find_unique_tokens(train_data)
 
         #returns one-hot encoded train and test data and binarized train and test labels
-        self.train, self.x_test, word_index_train = self.one_hot_encoding(train_data, 5000, test_data)
+        self.train, self.x_test, word_index_train = self.vectorizing_words(train_data, test_data, 5000)
         self.train_label = self.binarize_labels(train_labels)
         self.y_test = self.binarize_labels(test_labels)
 
@@ -61,7 +64,7 @@ class Model:
                     token_index[word] = len(token_index) + 1
         return token_index
 
-    def one_hot_encoding(self, train_list, num_common_words=10000, test_list = None):
+    def vectorizing_words(self, train_list,  test_list, num_common_words=10000, maxlen = 100):
 
         """
         Function takes train and test lists as the input and creates a Keras tokenizer configured to only take
@@ -78,19 +81,22 @@ class Model:
         # This builds the word index
         tokenizer.fit_on_texts(train_list)
 
-        # Turns strings into lists of integer indices.
-        # sequences = tokenizer.texts_to_sequences(content_list)
-
-        one_hot_train = tokenizer.texts_to_matrix(train_list, mode='binary')
-
-        if test_list is not None:
+        if self.padding:
+            # Turns strings into lists of integer indices.
+            sequences = tokenizer.texts_to_sequences(train_list)
+            padded_train = pad_sequences(sequences, maxlen=maxlen)
+            padded_test = pad_sequences(sequences, maxlen=maxlen)
+        else:
+            one_hot_train = tokenizer.texts_to_matrix(train_list, mode='binary')
             one_hot_test = tokenizer.texts_to_matrix(test_list, mode='binary')
+
         # To recover the word index that was computed
         word_index = tokenizer.word_index
 
-        if test_list is not None:
+        if self.padding:
+            return padded_train, padded_test, word_index
+        else:
             return one_hot_train, one_hot_test, word_index
-        return one_hot_train, word_index
 
     def binarize_labels(self, label_list):
 
@@ -125,8 +131,6 @@ class Model:
 
     def compute_evaluation_metrics(self, y_true, y_pred):
         precision, recall, fscore, support = score(y_true, y_pred)
-        # logging.info(tabulate(table_data, headers=['Relation_class', 'Precision', 'Recall', 'F1'],
-        #                       tablefmt='orgtbl'))
         return precision, recall, fscore
 
     def compute_confusion_matrix(self, y_true, y_pred):
