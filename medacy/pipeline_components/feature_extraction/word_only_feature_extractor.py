@@ -2,6 +2,7 @@
 One Hot Feature extraction for testing new networks.
 """
 from spacy.tokens import Token
+from itertools import cycle
 
 import sys
 
@@ -25,7 +26,10 @@ class WordOnlyFeatureExtractor:
         labels = [self.sequence_to_labels(sequence) for sequence in sequences]
         indices = [[(token.idx, token.idx+len(token)) for token in sequence] for sequence in sequences]
 
-        features = list(zip(features, indices, file_name))
+        # Need to fix model so we don't have to return redundant data
+        # features = list(zip(features, [None for _ in range(len(features))]))
+        features = list(zip(features, indices, cycle([file_name])))
+
         return features, labels
 
     def sequence_to_features(self, sequence):

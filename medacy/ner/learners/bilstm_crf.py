@@ -1,8 +1,12 @@
 import logging
+import random
+
 import torch
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
+
+import sys
 
 # Constants
 LEARNING_RATE = 0.1
@@ -30,7 +34,7 @@ class BiLstmCrfNetwork(nn.Module):
         return tag_scores
 
 class BiLstmCrfLearner:
-    network = None
+    model = None
     token_to_index = {}
     tag_to_index = {}
 
@@ -42,9 +46,8 @@ class BiLstmCrfLearner:
         tags = []
 
         for vector in tags_vectors:
-            # max_value = max(vector)
-            # index = list(vector).index(max_value)
-            index = max(list(vector))
+            max_value = max(vector)
+            index = list(vector).index(max_value)
             tags.append(to_tag[index])
             
         return tags
@@ -58,8 +61,16 @@ class BiLstmCrfLearner:
         return to_index
 
     def vectorize(self, sequence, to_index):
-        indexes = [to_index[w] for w in sequence]
-        return torch.tensor(indexes, dtype=torch.long)
+        # indices = [to_index[w] for w in sequence]
+        indices = []
+
+        for item in sequence:
+            if item in to_index:
+                indices.append(to_index[item])
+            else: # TODO Only here for testing until we switch to word embeddings
+                indices.append(random.randrange(len(to_index)))
+
+        return torch.tensor(indices, dtype=torch.long)
 
     def fit(self, x_data, y_data):
         self.token_to_index = self.create_index_dictionary(x_data)
@@ -67,13 +78,12 @@ class BiLstmCrfLearner:
 
         vocab_size = len(self.token_to_index)
         tagset_size = len(self.tag_to_index)
-        network = BiLstmCrfNetwork(vocab_size, tagset_size)
+        model = BiLstmCrfNetwork(vocab_size, tagset_size)
         loss_weights = torch.ones(tagset_size) # TODO Change to something else
         # loss_weights[-1] = 0.01 # Reduce weighting towards 'O' label
         loss_function = nn.NLLLoss(loss_weights)
-        optimizer = optim.SGD(network.parameters(), lr=LEARNING_RATE)
+        optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
-        losses = []
         for tokens, correct_tags in zip(x_data, y_data):
             # Step 1. Remember that Pytorch accumulates gradients.
             # We need to clear them out before each instance
@@ -83,21 +93,31 @@ class BiLstmCrfLearner:
             # Tensors of word indices.
             # sentence_in = self.vectorize(sentence, word_to_index)
             # targets = self.vectorize(tags, tag_to_index)
-
             tokens_vector = self.vectorize(tokens, self.token_to_index)
             correct_tags_vector = self.vectorize(correct_tags, self.tag_to_index)
 
             # Step 3. Run our forward pass.
-            prediction_scores = network(tokens_vector)
+            prediction_scores = model(tokens_vector)
 
             # Step 4. Compute the loss, gradients, and update the parameters by
             #  calling optimizer.step()
             loss = loss_function(prediction_scores, correct_tags_vector)
             loss.backward()
             optimizer.step()
-            losses.append(loss)
 
-        average_loss = sum(losses) / len(losses)
-        logging.info('AVG LOSS: %f' % average_loss)
+        self.model = model
 
-        self.network = network
+    def predict(self, sequences):
+        if not self.token_to_index:
+            raise RuntimeError('There is no token_to_index. Model must not have been fit yet'
+                'or was loaded improperly.')
+        
+        with torch.no_grad():
+            predictions = []
+            for sequence in sequences:
+                vectorized_tokens = self.vectorize(sequence, self.token_to_index)
+                tag_scores = self.model(vectorized_tokens)
+                predictions.append(self.devectorize_tags(tag_scores))
+            # predictions.append(devectorized_tags)
+
+        return predictions

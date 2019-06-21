@@ -47,7 +47,7 @@ class BiluoTokenizer:
             label = biluo_labels[i]
 
             if label == '-':
-                logging.info('Found issue at (%d, %d, %s)' % (
+                logging.debug('Found issue at (%d, %d, %s)' % (
                     token.idx,
                     token.idx + len(token),
                     token.text

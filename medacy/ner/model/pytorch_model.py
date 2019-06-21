@@ -12,6 +12,7 @@ import spacy
 from spacy.gold import biluo_tags_from_offsets
 from medacy.data import Dataset
 from medacy.tools import Annotations, BiluoTokenizer
+# from medacy.ner.learners import BiLstmCrf
 from .stratified_k_fold import SequenceStratifiedKFold
 from ._model import construct_annotations_from_tuples
 
@@ -20,30 +21,6 @@ import sys
 # Constants
 SEGMENT_SIZE = 100
 
-class LSTMTagger(nn.Module):
-    def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size, bidirectional):
-        super(LSTMTagger, self).__init__()
-        self.hidden_dim = hidden_dim
-
-        self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
-
-        # The LSTM takes word embeddings as inputs, and outputs hidden states
-        # with dimensionality hidden_dim.
-        self.lstm = nn.LSTM(embedding_dim, hidden_dim, bidirectional=bidirectional)
-
-        # The linear layer that maps from hidden state space to tag space
-        if bidirectional:
-            self.hidden2tag = nn.Linear(hidden_dim*2, tagset_size)
-        else:
-            self.hidden2tag = nn.Linear(hidden_dim, tagset_size)
-
-    def forward(self, sentence):
-        embeds = self.word_embeddings(sentence)
-        lstm_out, _ = self.lstm(embeds.view(len(sentence), 1, -1))
-        tag_space = self.hidden2tag(lstm_out.view(len(sentence), -1))
-        tag_scores = F.log_softmax(tag_space, dim=1)
-        return tag_scores
-
 class PytorchModel:
     # Properties
     model = None
@@ -51,9 +28,7 @@ class PytorchModel:
     word_to_index = {}
     tag_to_index = {}
 
-    def __init__(self, bidirectional=False):
-        self.bidirectional = bidirectional
-
+    def __init__(self):
         torch.manual_seed(1)
 
     def vectorize(self, sequence, to_index):
@@ -123,12 +98,16 @@ class PytorchModel:
         word_to_index = self.word_to_index
         tag_to_index = self.tag_to_index
 
+        print(training_data)
+        import sys
+        sys.exit()
+
         # These will usually be more like 32 or 64 dimensional.
         # We will keep them small, so we can see how the weights change as we train.
         EMBEDDING_DIM = 64
         HIDDEN_DIM = 64
 
-        model = LSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_index), len(tag_to_index), self.bidirectional)
+        model = BiLstmCrf(EMBEDDING_DIM, HIDDEN_DIM, len(word_to_index), len(tag_to_index))
         loss_weights = torch.ones(len(tag_to_index))
         # loss_weights[-1] = 0.01 # Reduce weighting towards 'O' label
         loss_function = nn.NLLLoss(loss_weights)

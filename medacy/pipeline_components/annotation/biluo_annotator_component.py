@@ -53,7 +53,7 @@ class BiluoAnnotatorComponent(BaseComponent):
 
             if tag == '-':
                 broken_indices.append(i)
-                logging.info('Found issue at (%d, %d, %s)' % (
+                logging.debug('Found issue at (%d, %d, %s)' % (
                     token.idx,
                     token.idx + len(token),
                     token.text
