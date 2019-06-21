@@ -1,6 +1,6 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
-from medacy.pipeline_components import ClinicalTokenizer
+from spacy.tokenizer import Tokenizer
 from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent, MetaMap
 
@@ -8,6 +8,9 @@ from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent,
 class ScispacyPipeline(BasePipeline):
     """
     A pipeline for named entity recognition using ScispaCy, see https://allenai.github.io/scispacy/
+
+    This pipeline differs from the ClinicalPipeline in that it uses AllenAI's 'en_core_sci_md' model and
+    the tokenizer is simply spaCy's tokenizer.
     """
 
     def __init__(self, metamap=None, entities=[]):
@@ -25,9 +28,7 @@ class ScispacyPipeline(BasePipeline):
                          )
 
         self.entities = entities
-
         self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
-
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
         if metamap is not None and isinstance(metamap, MetaMap):
@@ -44,9 +45,7 @@ class ScispacyPipeline(BasePipeline):
             )
 
     def get_tokenizer(self):
-        tokenizer = ClinicalTokenizer(self.spacy_pipeline)
-        return tokenizer.tokenizer
+        return Tokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
-        return extractor
+        return FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
