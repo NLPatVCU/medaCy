@@ -47,18 +47,29 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
-        pool = Pool(nodes=self.n_jobs)
+        try:
+            pool = Pool(nodes=self.n_jobs)
 
-        results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
-                   for data_file in dataset.get_data_files()]
+            results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
+                    for data_file in dataset.get_data_files()]
 
-        while any([i.ready() is False for i in results]):
-            time.sleep(1)
+            while any([i.ready() is False for i in results]):
+                time.sleep(1)
 
-        for idx, i in enumerate(results):
-            X, y = i.get()
-            self.X_data += X
-            self.y_data += y
+            for idx, i in enumerate(results):
+                X, y = i.get()
+                self.X_data += X
+                self.y_data += y
+
+        except TypeError as error:
+            if str(error) == "can not serialize 'cupy.core.core.ndarray' object":
+                logging.info('Ran into GPU error. Switching to synchronous preprocessing...')
+            self.X_data == []
+            self.y_data == []
+            for data_file in dataset.get_data_files():
+                features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+                self.X_data += features
+                self.y_data += labels
 
         logging.info("Currently Waiting")
 
