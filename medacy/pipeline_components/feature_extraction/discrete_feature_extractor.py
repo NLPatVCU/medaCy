@@ -8,17 +8,21 @@ These extracted features CANNOT be used in sequence to sequence models expecting
 
 `sklearn-crfsuite <https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html#features>`_ is a wrapper for a C CRF implementation that gives it a sci-kit compatability.
 """
+
 from spacy.tokens.underscore import Underscore
 from spacy.tokens import Token
 from itertools import cycle
 
 class FeatureExtractor:
+    """
+    This class allows for full control of both spacy features that exist on tokens
+    and custom medacy overlayed features. The current implementation is designed solely for use with sequence
+    classifiers such as discriminative conditional random fields.
+    """
 
     def __init__(self, window_size=2, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']):
         """
-        Initializes a FeatureExtractor. This class allows for full control of both spacy features that exist on tokens
-        and custom medacy overlayed features. The current implementation is designed solely for use with sequence
-        classifiers such as discriminative conditional random fields.
+        Initializes a FeatureExtractor.
 
         Custom medaCy features are pulled from spacy custom token attributes that begin with 'feature_'.
 
@@ -58,12 +62,9 @@ class FeatureExtractor:
         """
 
         features = [self._sequence_to_feature_dicts(sent) for sent in doc.sents]
-
         indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
 
         return features, indices
-
-
 
     def _sequence_to_feature_dicts(self, sequence):
         """
@@ -76,13 +77,11 @@ class FeatureExtractor:
 
     def _sequence_to_labels(self, sequence, attribute='gold_label'):
         """
-
         :param sequence: a sequence of tokens to retrieve labels from
         :param attribute: the name of the attribute that is holding the tokens label. This defaults to 'gold_label' which was set in the GoldAnnotator Component.
         :return: a list of token labels.
         """
         return [token._.get(attribute) for token in sequence]
-
 
     def _token_to_feature_dict(self, index, sentence):
         """
@@ -93,20 +92,20 @@ class FeatureExtractor:
         :return: a dictionary with a feature representation of the spaCy token object.
         """
 
-        #This should automatically gather features that are set on tokens
-        #by looping over all attributes set on sentence[index] that begin with 'feature'
+        # This should automatically gather features that are set on tokens
+        # by looping over all attributes set on sentence[index] that begin with 'feature'
 
         features = {
             'bias': 1.0
         }
         for i in range(-self.window_size, self.window_size+1): #loop through our window
-            if 0 <= (index + i) and  (index + i) < len(sentence): #for each index in the window size
+            if 0 <= (index + i) < len(sentence): #for each index in the window size
                 token = sentence[index+i]
 
-                #adds features from medacy pipeline
+                # adds features from medacy pipeline
                 current = {'%i:%s' % (i, feature) : token._.get(feature) for feature in self.all_custom_features}
 
-                #adds features that are overlayed from spacy token attributes
+                # adds features that are overlayed from spacy token attributes
                 for feature in self.spacy_features:
                     if isinstance(getattr(token, feature), Token):
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature).text})
@@ -114,12 +113,6 @@ class FeatureExtractor:
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature)})
 
                 # Extract features from the vector representation of this token
-
                 features.update(current)
 
         return features
-
-
-
-
-
