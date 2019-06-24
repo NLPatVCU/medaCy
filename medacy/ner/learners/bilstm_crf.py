@@ -129,6 +129,9 @@ class BiLstmCrfLearner:
             'tag_to_index': self.tag_to_index
         }
 
+        if path[-4:] != '.pth':
+            path += '.pth'
+
         torch.save(properties, path)
 
     def load(self, path):

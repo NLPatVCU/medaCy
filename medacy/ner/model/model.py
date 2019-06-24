@@ -150,7 +150,7 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=10, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
+    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 

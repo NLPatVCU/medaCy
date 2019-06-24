@@ -24,7 +24,7 @@ class SpacyModel:
     """
     model = None
 
-    def fit(self, dataset, spacy_model_name, iterations=30, prefer_gpu=False):
+    def fit(self, dataset, spacy_model_name='en_core_web_lg', iterations=30, prefer_gpu=False):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
         :param dataset: medaCy dataset object
@@ -147,7 +147,7 @@ class SpacyModel:
 
             return entities
 
-    def cross_validate(self, folds=10, training_dataset=None, spacy_model_name=None, epochs=None):
+    def cross_validate(self, folds=5, training_dataset=None, spacy_model_name='en_core_web_lg', epochs=None):
         """
         Runs a cross validation.
 
@@ -161,9 +161,6 @@ class SpacyModel:
 
         if training_dataset is None:
             raise ValueError("Need a dataset to evaluate")
-
-        if spacy_model_name is None:
-            raise ValueError("Need a spacy model to start with")
 
         train_data = training_dataset.get_training_data()
 
@@ -305,18 +302,17 @@ class SpacyModel:
         )
         logging.info(table_string)
 
-    def load(self, path, prefer_gpu=False):
+    def load(self, path):
         """
         Loads a spaCy model and sets it as new self.model.
 
         :param path: Path to directory of spaCy model.
         """
-        if prefer_gpu:
-            spacy.prefer_gpu()
+        spacy.prefer_gpu()
         nlp = spacy.load(path)
         self.model = nlp
 
-    def save(self, path):
+    def dump(self, path):
         """
         Saves the spacy model using the to_disk() function.
         https://spacy.io/usage/saving-loading#models

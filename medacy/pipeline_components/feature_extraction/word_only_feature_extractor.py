@@ -58,3 +58,20 @@ class WordOnlyFeatureExtractor:
             segments.append(source[i:i + segment_size])
 
         return segments
+
+    def get_features_with_span_indices(self, doc):
+        """
+        Given a document this method orchestrates the organization of features and labels for the sequences to classify.
+        Sequences for classification are determined by the sentence boundaries set by spaCy. These can be modified.
+
+        :param doc: an annoted spacy Doc object
+        :return: Tuple of parallel arrays - 'features' an array of feature dictionaries for each sequence (spaCy determined sentence)
+        and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
+        """
+        sequences = self.get_segments(doc)
+
+        features = [self.sequence_to_features(sequence) for sequence in sequences]
+
+        indices = [[(token.idx, token.idx+len(token)) for token in sequence] for sequence in sequences]
+
+        return features, indices
