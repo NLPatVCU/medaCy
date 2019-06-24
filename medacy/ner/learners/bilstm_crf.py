@@ -10,8 +10,9 @@ import sys
 
 # Constants
 LEARNING_RATE = 0.1
-EMBEDDING_DIM = 64
-HIDDEN_DIM = 64
+EMBEDDING_DIM = 50
+HIDDEN_DIM = 300
+EPOCHS = 10
 
 class BiLstmCrfNetwork(nn.Module):
     def __init__(self, vocab_size, tagset_size):
@@ -79,31 +80,30 @@ class BiLstmCrfLearner:
         vocab_size = len(self.token_to_index)
         tagset_size = len(self.tag_to_index)
         model = BiLstmCrfNetwork(vocab_size, tagset_size)
-        loss_weights = torch.ones(tagset_size) # TODO Change to something else
-        # loss_weights[-1] = 0.01 # Reduce weighting towards 'O' label
-        loss_function = nn.NLLLoss(loss_weights)
+        loss_function = nn.NLLLoss()
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
-        for tokens, correct_tags in zip(x_data, y_data):
-            # Step 1. Remember that Pytorch accumulates gradients.
-            # We need to clear them out before each instance
-            optimizer.zero_grad()
+        for i in range(EPOCHS):
+            epoch_losses = []
+            for tokens, correct_tags in zip(x_data, y_data):
+                # Reset optimizer weights
+                optimizer.zero_grad()
 
-            # Step 2. Get our inputs ready for the network, that is, turn them into
-            # Tensors of word indices.
-            # sentence_in = self.vectorize(sentence, word_to_index)
-            # targets = self.vectorize(tags, tag_to_index)
-            tokens_vector = self.vectorize(tokens, self.token_to_index)
-            correct_tags_vector = self.vectorize(correct_tags, self.tag_to_index)
+                # Vectorize input and test data
+                tokens_vector = self.vectorize(tokens, self.token_to_index)
+                correct_tags_vector = self.vectorize(correct_tags, self.tag_to_index)
 
-            # Step 3. Run our forward pass.
-            prediction_scores = model(tokens_vector)
+                # Run prediction
+                prediction_scores = model(tokens_vector)
 
-            # Step 4. Compute the loss, gradients, and update the parameters by
-            #  calling optimizer.step()
-            loss = loss_function(prediction_scores, correct_tags_vector)
-            loss.backward()
-            optimizer.step()
+                # Compute loss and train network based on it
+                loss = loss_function(prediction_scores, correct_tags_vector)
+                loss.backward()
+                optimizer.step()
+                epoch_losses.append(loss)
+            average_loss = sum(epoch_losses) / len(epoch_losses)
+            logging.info('Epoch %d average loss: %f' % (i, average_loss))
+
 
         self.model = model
 

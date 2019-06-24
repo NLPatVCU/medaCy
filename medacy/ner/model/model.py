@@ -34,19 +34,7 @@ class Model:
         if doc is None:
             raise IOError("Model could not be initialized with the set pipeline.")
 
-    def fit(self, dataset):
-        """
-        Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
-
-        :param training_data_loader: Instance of Dataset.
-        :return model: a trained instance of a sklearn_crfsuite.CRF model.
-        """
-
-        if not isinstance(dataset, Dataset):
-            raise TypeError("Must pass in an instance of Dataset containing your training files")
-        if not isinstance(self.pipeline, BasePipeline):
-            raise TypeError("Model object must contain a medacy pipeline to pre-process data")
-
+    def preprocess(self, dataset):
         try:
             pool = Pool(nodes=self.n_jobs)
 
@@ -70,6 +58,22 @@ class Model:
                 features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
                 self.X_data += features
                 self.y_data += labels
+
+
+    def fit(self, dataset):
+        """
+        Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
+
+        :param training_data_loader: Instance of Dataset.
+        :return model: a trained instance of a sklearn_crfsuite.CRF model.
+        """
+
+        if not isinstance(dataset, Dataset):
+            raise TypeError("Must pass in an instance of Dataset containing your training files")
+        if not isinstance(self.pipeline, BasePipeline):
+            raise TypeError("Model object must contain a medacy pipeline to pre-process data")
+
+        self.preprocess(dataset)
 
         logging.info("Currently Waiting")
 
@@ -171,7 +175,8 @@ class Model:
             raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
-        assert self.model is not None, "Cannot cross validate a un-fit model"
+        # assert self.model is not None, "Cannot cross validate a un-fit model"
+        self.preprocess(training_dataset)
         assert self.X_data is not None and self.y_data is not None, \
             "Must have features and labels extracted for cross validation"
 
