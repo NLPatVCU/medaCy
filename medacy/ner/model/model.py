@@ -408,7 +408,13 @@ class Model:
         :param path: File path to directory where fitted model should be dumped
         :return:
         """
-        self.model = joblib.load(path)
+        model_name, model = self.pipeline.get_learner()
+
+        if model_name == 'BiLSTM+CRF':
+            model.load(path)
+            self.model = model
+        else:
+            self.model = joblib.load(path)
 
     def dump(self, path):
         """
@@ -418,8 +424,12 @@ class Model:
         :return:
         """
         assert self.model is not None, "Must fit model before dumping."
-        joblib.dump(self.model, path)
+        model_name, _ = self.pipeline.get_learner()
 
+        if model_name == 'BiLSTM+CRF':
+            self.model.save(path)
+        else:
+            joblib.dump(self.model, path)
 
     def get_info(self, return_dict=False):
         """

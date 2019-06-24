@@ -121,3 +121,22 @@ class BiLstmCrfLearner:
             # predictions.append(devectorized_tags)
 
         return predictions
+
+    def save(self, path):
+        properties = {
+            'model': self.model,
+            'token_to_index': self.token_to_index,
+            'tag_to_index': self.tag_to_index
+        }
+
+        torch.save(properties, path)
+
+    def load(self, path):
+        saved_data = torch.load(path)
+        
+        self.token_to_index = saved_data['token_to_index']
+        self.tag_to_index = saved_data['tag_to_index']
+
+        model = saved_data['model']
+        model.eval()
+        self.model = model
