@@ -28,7 +28,7 @@ class ScispacyPipeline(BasePipeline):
                          )
 
         self.entities = entities
-        self.spacy_pipeline.tokenizer = Tokenizer(self.spacy_pipeline)
+        self.spacy_pipeline.tokenizer = Tokenizer(self.spacy_pipeline.vocab)
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
         if metamap is not None and isinstance(metamap, MetaMap):
