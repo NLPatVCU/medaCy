@@ -28,7 +28,7 @@ class ScispacyPipeline(BasePipeline):
                          )
 
         self.entities = entities
-        self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
+        self.spacy_pipeline.tokenizer = Tokenizer(self.spacy_pipeline)
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
         if metamap is not None and isinstance(metamap, MetaMap):
@@ -45,7 +45,7 @@ class ScispacyPipeline(BasePipeline):
             )
 
     def get_tokenizer(self):
-        return Tokenizer(self.spacy_pipeline)
+        return self.spacy_pipeline.tokenizer
 
     def get_feature_extractor(self):
         return FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
