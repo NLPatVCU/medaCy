@@ -22,6 +22,8 @@ START_TAG = '<START>'
 STOP_TAG = '<STOP>'
 
 class BiLstmCrfNetwork(nn.Module):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
     def __init__(self, vocab_size, tag_to_index):
         super(BiLstmCrfNetwork, self).__init__()
 
@@ -50,8 +52,8 @@ class BiLstmCrfNetwork(nn.Module):
 
     def init_hidden(self):
         hidden = (
-            torch.randn(2, 1, HIDDEN_DIM),
-            torch.randn(2, 1, HIDDEN_DIM)
+            torch.randn(2, 1, HIDDEN_DIM, device=self.device),
+            torch.randn(2, 1, HIDDEN_DIM, device=self.device)
         )
         return hidden
 
@@ -236,7 +238,8 @@ class BiLstmCrfLearner:
 
         vocab_size = len(self.token_to_index)
         model = BiLstmCrfNetwork(vocab_size, self.tag_to_index)
-        if self.device == 'cuda':
+        if torch.cuda.is_available():
+            logging.info('GPU available. Moving model to CUDA.')
             model = model.cuda()
         loss_function = nn.NLLLoss()
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
