@@ -22,6 +22,8 @@ START_TAG = '<START>'
 STOP_TAG = '<STOP>'
 
 class BiLstmCrfNetwork(nn.Module):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
     def __init__(self, vocab_size, tag_to_index):
         super(BiLstmCrfNetwork, self).__init__()
 
@@ -112,7 +114,7 @@ class BiLstmCrfNetwork(nn.Module):
     def _score_sentence(self, features, tags):
         # Gives the score of a provided tag sequence
         score = torch.zeros(1)
-        tags = torch.cat([torch.tensor([self.tag_to_index[START_TAG]], dtype=torch.long), tags])
+        tags = torch.cat([torch.tensor([self.tag_to_index[START_TAG]], dtype=torch.long, device=self.device), tags])
         for i, feature in enumerate(features):
             score += self.transitions[tags[i + 1], tags[i]] + feature[tags[i + 1]]
         score += self.transitions[self.tag_to_index[STOP_TAG], tags[-1]]
@@ -185,6 +187,7 @@ class BiLstmCrfNetwork(nn.Module):
         return score, tag_seq
 
 class BiLstmCrfLearner:
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = None
     token_to_index = {}
     tag_to_index = {}
@@ -227,7 +230,7 @@ class BiLstmCrfLearner:
             else: # TODO Only here for testing until we switch to word embeddings
                 indices.append(random.randrange(len(to_index)))
 
-        return torch.tensor(indices, dtype=torch.long)
+        return torch.tensor(indices, dtype=torch.long, device=self.device)
 
     def fit(self, x_data, y_data):
         self.token_to_index = self.create_index_dictionary(x_data)
