@@ -1,7 +1,7 @@
 #Author : Samantha Mahendran for RelaCy
 
 from keras.preprocessing.text import Tokenizer
-from sklearn.preprocessing import LabelBinarizer
+from sklearn import preprocessing
 from sklearn.metrics import precision_recall_fscore_support as score
 from sklearn.metrics import confusion_matrix
 from keras.preprocessing.sequence import pad_sequences
@@ -10,8 +10,9 @@ import os, logging, tempfile
 
 class Model:
 
-    def __init__(self, padding = False, common_words = 10000, maxlen = 100, embedding_dim =200 ):
+    def __init__(self, label, padding = False, common_words = 10000, maxlen = 100, embedding_dim =200 ):
 
+        self.label = label
         self.padding = padding
         self.embedding_dim = embedding_dim
         self.common_words = common_words
@@ -114,8 +115,10 @@ class Model:
         :param list: list of text labels
         :return list:list of binarized labels
         """
-        encoder = LabelBinarizer()
-        binary_label = encoder.fit_transform(label_list)
+        self.encoder = preprocessing.LabelBinarizer()
+        self.encoder.fit(label_list)
+        print(self.encoder.classes_)
+        binary_label = self.encoder.transform(label_list)
 
         return binary_label
 

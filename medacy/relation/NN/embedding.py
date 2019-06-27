@@ -6,8 +6,8 @@ import numpy as np
 
 class Embeddings:
 
-    def __init__(self, path):
-        self.data_model = Model()
+    def __init__(self, path, model):
+        self.data_model = model
         self.path = path
 
     def read_embeddings_from_file(self):

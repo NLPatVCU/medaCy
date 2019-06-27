@@ -9,10 +9,10 @@ from keras import layers
 import numpy as np
 
 class CNN:
-    def __init__(self):
-        self.data_model = Model()
+    def __init__(self, model):
+        self.data_model = model
 
-    def build_Model(self, output_classes, hidden_units = 32, filter_conv = 3, filter_maxPool = 5, hidden_activation = 'relu',
+    def build_Model(self, output_classes, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation = 'relu',
                     output_activation = 'softmax', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
         model = Sequential()
         model.add(layers.Embedding(self.data_model.common_words, self.data_model.embedding_dim,
