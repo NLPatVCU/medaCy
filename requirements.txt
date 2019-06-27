@@ -8,7 +8,6 @@ chardet==3.0.4
 cycler==0.10.0
 cymem==2.0.2
 dill==0.2.9
-en-core-web-sm==2.1.0
 gast==0.2.2
 grpcio==1.21.1
 h5py==2.9.0
