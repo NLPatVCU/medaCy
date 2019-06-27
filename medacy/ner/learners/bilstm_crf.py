@@ -25,6 +25,9 @@ class BiLstmCrfNetwork(nn.Module):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     def __init__(self, vocab_size, tag_to_index):
+        if torch.cuda.is_available():
+            torch.set_default_tensor_type('torch.cuda.FloatTensor')
+
         super(BiLstmCrfNetwork, self).__init__()
 
         self.tag_to_index = tag_to_index
@@ -52,8 +55,8 @@ class BiLstmCrfNetwork(nn.Module):
 
     def init_hidden(self):
         hidden = (
-            torch.randn(2, 1, HIDDEN_DIM, device=self.device),
-            torch.randn(2, 1, HIDDEN_DIM, device=self.device)
+            torch.randn(2, 1, HIDDEN_DIM),
+            torch.randn(2, 1, HIDDEN_DIM)
         )
         return hidden
 
@@ -114,7 +117,7 @@ class BiLstmCrfNetwork(nn.Module):
     def _score_sentence(self, features, tags):
         # Gives the score of a provided tag sequence
         score = torch.zeros(1)
-        tags = torch.cat([torch.tensor([self.tag_to_index[START_TAG]], dtype=torch.long), tags])
+        tags = torch.cat([torch.tensor([self.tag_to_index[START_TAG]], dtype=torch.long, device=self.device), tags])
         for i, feature in enumerate(features):
             score += self.transitions[tags[i + 1], tags[i]] + feature[tags[i + 1]]
         score += self.transitions[self.tag_to_index[STOP_TAG], tags[-1]]
