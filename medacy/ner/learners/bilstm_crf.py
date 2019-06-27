@@ -22,8 +22,6 @@ START_TAG = '<START>'
 STOP_TAG = '<STOP>'
 
 class BiLstmCrfNetwork(nn.Module):
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
     def __init__(self, vocab_size, tag_to_index):
         super(BiLstmCrfNetwork, self).__init__()
 
@@ -114,7 +112,7 @@ class BiLstmCrfNetwork(nn.Module):
     def _score_sentence(self, features, tags):
         # Gives the score of a provided tag sequence
         score = torch.zeros(1)
-        tags = torch.cat([torch.tensor([self.tag_to_index[START_TAG]], dtype=torch.long, device=self.device), tags])
+        tags = torch.cat([torch.tensor([self.tag_to_index[START_TAG]], dtype=torch.long), tags])
         for i, feature in enumerate(features):
             score += self.transitions[tags[i + 1], tags[i]] + feature[tags[i + 1]]
         score += self.transitions[self.tag_to_index[STOP_TAG], tags[-1]]
@@ -238,6 +236,8 @@ class BiLstmCrfLearner:
 
         vocab_size = len(self.token_to_index)
         model = BiLstmCrfNetwork(vocab_size, self.tag_to_index)
+        if self.device == 'cuda':
+            model = model.cuda()
         loss_function = nn.NLLLoss()
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
