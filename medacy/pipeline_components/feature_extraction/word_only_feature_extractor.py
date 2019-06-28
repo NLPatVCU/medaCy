@@ -7,6 +7,7 @@ from itertools import cycle
 import sys
 
 class WordOnlyFeatureExtractor:
+    # TODO Remove segmentation if it ends up unused
     segment_size = 100
 
     def __init__(self, segment_size):
@@ -20,11 +21,9 @@ class WordOnlyFeatureExtractor:
         :return: List of tuples of form:
             [(feature dictionaries for sequence, indices of tokens in seq, document label)]
         """
-        sequences = self.get_segments(doc)
-
-        features = [self.sequence_to_features(sequence) for sequence in sequences]
-        labels = [self.sequence_to_labels(sequence) for sequence in sequences]
-        indices = [[(token.idx, token.idx+len(token)) for token in sequence] for sequence in sequences]
+        features = [self.sequence_to_features(sent) for sent in doc.sents]
+        labels = [self.sequence_to_labels(sent) for sent in doc.sents]
+        indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
 
         # Need to fix model so we don't have to return redundant data
         # features = list(zip(features, [None for _ in range(len(features))]))

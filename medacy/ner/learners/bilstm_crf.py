@@ -83,20 +83,12 @@ class BiLstmCrfNetwork(nn.Module):
         for feature in features:
             alphas_t = []  # The forward tensors at this timestep
 
-            for next_tag in range(self.tagset_size):
-                # broadcast the emission score: it is the same regardless of
-                # the previous tag
-                emit_score = feature[next_tag].view(
-                    1, -1).expand(1, self.tagset_size)
-                # the ith entry of trans_score is the score of transitioning to
-                # next_tag from i
-                trans_score = self.transitions[next_tag].view(1, -1)
-                # The ith entry of next_tag_var is the value for the
-                # edge (i -> next_tag) before we do log-sum-exp
-                next_tag_var = forward_var + trans_score + emit_score
-                # The forward variable for this tag is log-sum-exp of all the
-                # scores.
-                alphas_t.append(self.log_sum_exp(next_tag_var).view(1))
+            # Forward tensor + transition values + emissions scores (reshaped into a column instead of row)
+            next_tag_var = forward_var + self.transitions + feature.view(self.tagset_size, -1)
+            for row in next_tag_var:
+                row = row.view(1, -1)
+                log_sum = self.log_sum_exp(row).view(1)
+                alphas_t.append(log_sum)
 
             forward_var = torch.cat(alphas_t).view(1, -1)
 
