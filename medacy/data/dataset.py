@@ -307,8 +307,8 @@ class Dataset:
                     logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
 
             mapped_file.write(json.dumps(metamap_dict))
-            logging.info("Successfully Metamapped: %s" % file_path)
-            logging.info("Successfully Metamapped: %s" % file_path)
+            logging.info("Successfully Metamapped: %s", file_path)
+            logging.info("Successfully Metamapped: %s", file_path)
 
     def is_metamapped(self):
         """
