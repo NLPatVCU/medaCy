@@ -457,12 +457,12 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
     evaluator_s = MultipleEvaluator(corpora, tags=entities, relations=relations, verbose=verbose)  # TODO check
     evaluator_l = MultipleEvaluator(corpora, tags=entities, relations=relations, mode='lenient', verbose=verbose)
     output_str = "Entities\n"
-    output_str += ",Prec.,Rec.,F_1\n"
+    output_str += "\tPrec.\tRec.\tF_1\n"
 
     for tag in evaluator_s.tags:
         evaluator_tag_s = MultipleEvaluator(corpora, tags=tag, verbose=verbose)
         evaluator_tag_l = MultipleEvaluator(corpora, tags=tag, mode='lenient', verbose=verbose)
-        output_str += 'Strict,{},{:<5.4f},{:<5.4f},{:<5.4f}\nLenient,{},{:<5.4f},{:<5.4f},{:<5.4f}\n'.format(
+        output_str += 'Strict\t{}\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\t{}\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n'.format(
             tag.capitalize(),
             evaluator_tag_s.scores['tags']['micro']['precision'],
             evaluator_tag_s.scores['tags']['micro']['recall'],
@@ -473,7 +473,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
             evaluator_tag_l.scores['tags']['micro']['f1']
         )
 
-    output_str += "Strict,Overall (micro),{:<5.4f},{:<5.4f},{:<5.4f}\nLenient,Overall (macro),{:<5.4f},{:<5.4f},{:<5.4f}\n".format(
+    output_str += "Strict\tOverall (micro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\tOverall (macro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n".format(
         evaluator_s.scores['tags']['micro']['precision'],
         evaluator_s.scores['tags']['micro']['recall'],
         evaluator_s.scores['tags']['micro']['f1'],
@@ -482,7 +482,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
         evaluator_l.scores['tags']['micro']['f1']
     )
 
-    output_str += 'Strict,Overall (macro),{:<5.4f},{:<5.4f},{:<5.4f}\n,Lenient,Overall (micro),{:<5.4f},{:<5.4f},{:<5.4f}\n'.format(
+    output_str += 'Strict\tOverall (macro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\tOverall (micro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n'.format(
         evaluator_s.scores['tags']['macro']['precision'],
         evaluator_s.scores['tags']['macro']['recall'],
         evaluator_s.scores['tags']['macro']['f1'],
@@ -495,7 +495,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
     for rel in evaluator_s.relations:
         evaluator_tag_s = MultipleEvaluator(corpora, relations=rel, mode='strict', verbose=verbose)
         evaluator_tag_l = MultipleEvaluator(corpora, relations=rel, mode='lenient', verbose=verbose)
-        output_str += 'Strict,{},{:<5.4f},{:<5.4f},{:<5.4f}\nLenient,{},{:<5.4f},{:<5.4f},{:<5.4f}\n'.format(
+        output_str += 'Strict\t{}\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\t{}\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n'.format(
             '{} -> {}'.format(rel.split('-')[0], rel.split('-')[1].capitalize()),
             evaluator_tag_s.scores['relations']['micro']['precision'],
             evaluator_tag_s.scores['relations']['micro']['recall'],
@@ -506,7 +506,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
             evaluator_tag_l.scores['relations']['micro']['f1']
         )
 
-    output_str += 'Strict,Overall (micro),{:<5.4f},{:<5.4f},{:<5.4f}\nLenient,Overall (micro),{:<5.4f},{:<5.4f},{:<5.4f}\n'.format(
+    output_str += 'Strict\tOverall (micro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\tOverall (micro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n'.format(
         evaluator_s.scores['relations']['micro']['precision'],
         evaluator_s.scores['relations']['micro']['recall'],
         evaluator_s.scores['relations']['micro']['f1'],
@@ -514,7 +514,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
         evaluator_l.scores['relations']['micro']['recall'],
         evaluator_l.scores['relations']['micro']['f1']
     )
-    output_str += 'Strict,Overall (macro),{:<5.4f},{:<5.4f},{:<5.4f}\nLenient,Overall (macro),{:<5.4f},{:<5.4f},{:<5.4f}\n'.format(
+    output_str += 'Strict\tOverall (macro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\tOverall (macro)\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n'.format(
         evaluator_s.scores['relations']['macro']['precision'],
         evaluator_s.scores['relations']['macro']['recall'],
         evaluator_s.scores['relations']['macro']['f1'],
