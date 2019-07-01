@@ -30,8 +30,15 @@ def setup(args):
     return dataset, model
 
 def train(args, dataset, model):
-    model.fit(dataset)
-    model.dump(args.filename)
+    if args.filename is None:
+        response = input('No filename given. Continue without saving the model at the end? (y/n) ')
+        if response.lower() == 'y':
+            model.fit(dataset)
+        else:
+            print('Cancelling. Add filename with -f or --filename.')
+    else:
+        model.fit(dataset)
+        model.dump(args.filename)
 
 def predict(args, dataset, model):
     model.load(args.model_path)
@@ -50,7 +57,7 @@ def main():
 
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
-    parser_train.add_argument('-f', '--filename', required=True, help='Filename to use for saved model.')
+    parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
     parser_train.set_defaults(func=train)
 
     # Predict arguments
@@ -66,7 +73,7 @@ def main():
     args = parser.parse_args()
 
     # Logging
-    logging.basicConfig(filename='medacy.log', level=logging.INFO)
+    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s',level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
@@ -84,9 +91,10 @@ def main():
 
     # Calculate/print time elapsed
     seconds_elapsed = end_time - start_time
-    minutes_elapsed = seconds_elapsed / 60.0
-    hours_elapsed = minutes_elapsed / 60.0
-    logging.info('HOURS ELAPSED: %.0f:%.02f' % (hours_elapsed, minutes_elapsed))
+    minutes_elapsed, seconds_elapsed = divmod(seconds_elapsed, 60)
+    hours_elapsed, minutes_elapsed = divmod(minutes_elapsed, 60)
+
+    logging.info('H:M:S ELAPSED: %d:%d:%d' % (hours_elapsed, minutes_elapsed, seconds_elapsed))
 
 if __name__ == '__main__':
     main()
