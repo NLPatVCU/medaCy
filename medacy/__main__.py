@@ -7,17 +7,21 @@ from medacy.data import Dataset
 from medacy.ner import Model
 from medacy.ner import SpacyModel
 from medacy.ner.pipelines import LstmClinicalPipeline
+from medacy.ner.pipelines import ClinicalPipeline
 
 def setup(args):
     dataset = Dataset(args.dataset)
 
     pipeline = None
-    if args.pipeline == 'bilstmcrf':
+    if args.pipeline == 'bilstm-clinical':
         labels = list(dataset.get_labels())
         pipeline = LstmClinicalPipeline(entities=labels)
     elif args.pipeline == 'spacy':
         model = SpacyModel()
         return dataset, model
+    elif args.pipeline == 'clinical':
+        labels = list(dataset.get_labels())
+        pipeline = ClinicalPipeline(entities=labels)
     else:
         raise TypeError('%s is not a supported pipeline.' % args.pipeline)
 
@@ -40,7 +44,7 @@ def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
-    parser.add_argument('-pl', '--pipeline', choices=['bilstmcrf', 'spacy'], default='bilstmcrf', help='Pipeline to use for training.')
+    parser.add_argument('-pl', '--pipeline', choices=['bilstm-clinical','clinical', 'spacy'], default='bilstmcrf', help='Pipeline to use for training.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     subparsers = parser.add_subparsers()
 
