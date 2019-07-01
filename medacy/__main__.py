@@ -13,17 +13,20 @@ def setup(args):
     dataset = Dataset(args.dataset)
 
     pipeline = None
-    if args.pipeline == 'bilstm-clinical':
-        labels = list(dataset.get_labels())
-        pipeline = LstmClinicalPipeline(entities=labels)
-    elif args.pipeline == 'spacy':
-        model = SpacyModel()
-        return dataset, model
-    elif args.pipeline == 'clinical':
-        labels = list(dataset.get_labels())
-        pipeline = ClinicalPipeline(entities=labels)
+
+    if args.pipeline == 'spacy':
+        model = SpacyModel
+        return dataset,model
+
     else:
-        raise TypeError('%s is not a supported pipeline.' % args.pipeline)
+        labels = list(dataset.get_labels())
+
+        if args.pipeline == 'bilstm-clinical':
+            pipeline = LstmClinicalPipeline(entities=labels)
+        elif args.pipeline == 'clinical':
+            pipeline = ClinicalPipeline(entities=labels)
+        else:
+            raise TypeError('%s is not a supported pipeline.' % args.pipeline)
 
     model = Model(pipeline)
 
