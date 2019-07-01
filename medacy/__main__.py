@@ -7,12 +7,6 @@ import importlib
 from medacy.data import Dataset
 from medacy.ner import Model
 from medacy.ner import SpacyModel
-from medacy.ner.pipelines import LstmClinicalPipeline
-from medacy.ner.pipelines import ClinicalPipeline
-from medacy.ner.pipelines import SystematicReviewPipeline
-from medacy.ner.pipelines import FDANanoDrugLabelPipeline
-from medacy.ner.pipelines import DrugEventPipeline
-from medacy.ner.pipelines import TestingPipeline
 
 def setup(args):
     dataset = Dataset(args.dataset)
@@ -23,36 +17,15 @@ def setup(args):
         model = SpacyModel
         return dataset, model
 
-    else:
-        
-        pipeline_arg = args.pipeline
-        pipeline_arg = pipeline_arg.replace("-"," ")
-        pipeline_arg = pipeline_arg.title()
-        pipeline_arg = pipeline_arg.replace("Fda","FDA")
-        pipeline_arg = pipeline_arg.replace(" ","")
-        
-        
+    else:      
         labels = list(dataset.get_labels())
-
+        pipeline_args = args.pipeline
+        
+        #Parse the argument as a class name in module medacy.ner.pipelines
         module = importlib.import_module("medacy.ner.pipelines")
-        pipeline_class = getattr(module, pipeline_arg+"Pipeline")
+        pipeline_class = getattr(module, pipeline_arg)
+        
         pipeline = pipeline_class(entities=labels)
-
-
-        # if args.pipeline == 'bilstm-clinical':
-        #     pipeline = LstmClinicalPipeline(entities=labels)
-        # elif args.pipeline == 'clinical':
-        #     pipeline = ClinicalPipeline(entities=labels)
-        # elif args.pipeline == 'systematic-review':
-        #     pipeline = SystematicReviewPipeline(entities=labels)
-        # elif args.pipeline == 'fda-nano-drug-label':
-        #     pipeline = FDANanoDrugLabelPipeline(entities=labels)
-        # elif args.pipeline == 'drug-event':
-        #     pipeline = DrugEventPipeline(entities=labels)
-        # elif args.pipeline == 'testing':
-        #     pipeline = TestingPipeline(entities=labels)
-        # else:
-        #     raise TypeError('%s is not a supported pipeline.' % args.pipeline)
 
     model = Model(pipeline)
 
@@ -83,11 +56,11 @@ def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
-    parser.add_argument('-pl', '--pipeline', default='clinical', help='Pipeline to use for training.')
+    parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     subparsers = parser.add_subparsers()
     
-    #, choices=['lstm-clinical','clinical','systematic-review','fda-nano-drug-label','drug-event','testing', 'spacy']
+   
 
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
