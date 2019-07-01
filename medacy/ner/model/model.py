@@ -108,10 +108,10 @@ class Model:
 
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
-            self.create_predictions(prediction_directory,dataset)
+            self.create_annotation_directory(prediction_directory,dataset, "predictions")
 
             # create directory to write groundtruth to
-            self.create_groundtruth(groundtruth_directory,dataset)
+            self.create_annotation_directory(groundtruth_directory,dataset, "groundtruth")
 
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
@@ -332,59 +332,42 @@ class Model:
             # Write medaCy ground truth generated from cross-validation
             self.create_groundtruth(prediction_directory,training_dataset)
             
-            annotations = self.predict_groundtruth_crossval(groundtruth_directory,training_dataset)
+            #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
+            annotations = self.predict_annotation_evaluation(groundtruth_directory,training_dataset,"groundtruth")
 
-            annotations = self.predict_annotations_crossval(prediction_directory,training_dataset)
+            annotations = self.predict_annotation_evaluation(prediction_directory,training_dataset,"predictions")
 
             
             return Dataset(data_directory=prediction_directory)
 
-    def create_groundtruth(groundtruth_directory, training_dataset):
-        if isinstance(groundtruth_directory, str):
-            groundtruth_directory = groundtruth_directory
+    def create_annotation_directory(directory, training_dataset, option):
+        if isinstance(directory, str):
+            directory = directory
         else:
-            groundtruth_directory = training_dataset.data_directory + "/groundtruth/"
-        if os.path.isdir(groundtruth_directory):
-            logging.warning("Overwriting existing groundtruth")
+            directory = training_dataset.data_directory + "/"+option+"/"
+        if os.path.isdir(directory):
+            logging.warning("Overwriting existing %s",option)
         else:
-            os.makedirs(groundtruth_directory)
+            os.makedirs(directory)
         return void
     
-    def create_predictions(prediction_directory, training_dataset):
-        
-        if isinstance(prediction_directory, str):
-                prediction_directory = prediction_directory
-        else:
-                prediction_directory = training_dataset.data_directory + "/predictions/"
-        if os.path.isdir(prediction_directory):
-                logging.warning("Overwriting existing predictions")
-        else:
-                os.makedirs(prediction_directory)    
-        return void
     
-    def predict_groundtruth_crossval(groundtruth_directory, training_dataset):
+    def predict_annotation_evaluation(directory, training_dataset, option):
 
         for data_file in training_dataset.get_data_files():
-            logging.info("Predicting groundtruth file: %s", data_file.file_name)
+            logging.info("Predicting %s file: %s", option, data_file.file_name)
             with open(data_file.raw_path, 'r') as raw_text:
                 doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                gtruth = groundtruth_by_document[data_file.file_name]
-                annotations = construct_annotations_from_tuples(doc, gtruth)
-                annotations.to_ann(write_location=os.path.join(groundtruth_directory, data_file.file_name + ".ann"))        
-        
-        return annotations
-    
-    def predict_annotations_crossval(prediction_directory, training_dataset):
-        
-        for data_file in training_dataset.get_data_files():
-            logging.info("Predicting file: %s", data_file.file_name)
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                preds = preds_by_document[data_file.file_name]
+                
+                if option == "groundtruth":
+                    preds = groundtruth_by_document[data_file.file_name]
+                else:
+                    preds = preds_by_document[data_file.file_name]
                 annotations = construct_annotations_from_tuples(doc, preds)
-                annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
-    
+                annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))        
+        
         return annotations
+    
     
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
