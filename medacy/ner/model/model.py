@@ -327,10 +327,10 @@ class Model:
 
         if prediction_directory:
             # Write annotations generated from cross-validation
-            self.create_predictions(groundtruth_directory,training_dataset)
+            self.create_annotation_directory(groundtruth_directory,training_dataset, "predictions")
 
             # Write medaCy ground truth generated from cross-validation
-            self.create_groundtruth(prediction_directory,training_dataset)
+            self.create_annotation_directory(prediction_directory,training_dataset,"predictions")
             
             #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
             annotations = self.predict_annotation_evaluation(groundtruth_directory,training_dataset,"groundtruth")
