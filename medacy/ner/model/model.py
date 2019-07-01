@@ -108,22 +108,10 @@ class Model:
 
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
-            if prediction_directory is None:
-                prediction_directory = dataset.data_directory + "/predictions/"
-
-            if os.path.isdir(prediction_directory):
-                logging.warning("Overwriting existing predictions")
-            else:
-                os.makedirs(prediction_directory)
+            self.create_predictions(prediction_directory,dataset)
 
             # create directory to write groundtruth to
-            if groundtruth_directory is None:
-                groundtruth_directory = dataset.data_directory + "/groundtruth/"
-
-            if os.path.isdir(groundtruth_directory):
-                logging.warning("Overwriting existing Ground truth")
-            else:
-                os.makedirs(groundtruth_directory)
+            self.create_groundtruth(groundtruth_directory,dataset)
 
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
@@ -333,43 +321,65 @@ class Model:
 
         if prediction_directory:
             # Write annotations generated from cross-validation
-            if isinstance(prediction_directory, str):
-                prediction_directory = prediction_directory
-            else:
-                prediction_directory = training_dataset.data_directory + "/predictions/"
-            if os.path.isdir(prediction_directory):
-                logging.warning("Overwritting existing predictions")
-            else:
-                os.makedirs(prediction_directory)
+            self.create_predictions(groundtruth_directory,training_dataset)
 
             # Write medaCy ground truth generated from cross-validation
-            if isinstance(groundtruth_directory, str):
-                groundtruth_directory = groundtruth_directory
-            else:
-                groundtruth_directory = training_dataset.data_directory + "/groundtruth/"
-            if os.path.isdir(groundtruth_directory):
-                logging.warning("Overwritting existing groundtruth")
-            else:
-                os.makedirs(groundtruth_directory)
+            self.create_groundtruth(prediction_directory,training_dataset)
+            
+            annotations = self.predict_groundtruth_crossval(groundtruth_directory,training_dataset)
 
-            for data_file in training_dataset.get_data_files():
-                logging.info("Predicting groundtruth file: %s", data_file.file_name)
-                with open(data_file.raw_path, 'r') as raw_text:
-                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                    gtruth = groundtruth_by_document[data_file.file_name]
-                    annotations = construct_annotations_from_tuples(doc, gtruth)
-                    annotations.to_ann(write_location=os.path.join(groundtruth_directory, data_file.file_name + ".ann"))
+            annotations = self.predict_annotations_crossval(prediction_directory,training_dataset)
 
-            for data_file in training_dataset.get_data_files():
-                logging.info("Predicting file: %s", data_file.file_name)
-                with open(data_file.raw_path, 'r') as raw_text:
-                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                    preds = preds_by_document[data_file.file_name]
-                    annotations = construct_annotations_from_tuples(doc, preds)
-                    annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
+            
             return Dataset(data_directory=prediction_directory)
 
+    def create_groundtruth(groundtruth_directory, training_dataset):
+        if isinstance(groundtruth_directory, str):
+            groundtruth_directory = groundtruth_directory
+        else:
+            groundtruth_directory = training_dataset.data_directory + "/groundtruth/"
+        if os.path.isdir(groundtruth_directory):
+            logging.warning("Overwriting existing groundtruth")
+        else:
+            os.makedirs(groundtruth_directory)
+        return void
+    
+    def create_predictions(prediction_directory, training_dataset):
+        
+        if isinstance(prediction_directory, str):
+                prediction_directory = prediction_directory
+        else:
+                prediction_directory = training_dataset.data_directory + "/predictions/"
+        if os.path.isdir(prediction_directory):
+                logging.warning("Overwriting existing predictions")
+        else:
+                os.makedirs(prediction_directory)    
+        return void
+    
+    def predict_groundtruth_crossval(groundtruth_directory, training_dataset):
 
+        for data_file in training_dataset.get_data_files():
+            logging.info("Predicting groundtruth file: %s", data_file.file_name)
+            with open(data_file.raw_path, 'r') as raw_text:
+                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                gtruth = groundtruth_by_document[data_file.file_name]
+                annotations = construct_annotations_from_tuples(doc, gtruth)
+                annotations.to_ann(write_location=os.path.join(groundtruth_directory, data_file.file_name + ".ann"))        
+        
+        return annotations
+    
+    def predict_annotations_crossval(prediction_directory, training_dataset):
+        
+        for data_file in training_dataset.get_data_files():
+            logging.info("Predicting file: %s", data_file.file_name)
+            with open(data_file.raw_path, 'r') as raw_text:
+                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                preds = preds_by_document[data_file.file_name]
+                annotations = construct_annotations_from_tuples(doc, preds)
+                annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
+    
+        return annotations
+    
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
