@@ -199,6 +199,12 @@ class Model:
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
 
+            if groundtruth_directory is None:
+                groundtruth_directory=training_dataset.data_directory + "/groundtruth/"
+            if prediction_directory is None:
+                prediction_directory=training_dataset.data_directory + "/predictions/"
+
+
             if groundtruth_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
 

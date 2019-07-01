@@ -61,7 +61,7 @@ def predict(args, dataset, model):
 
 def cross_validate(args, dataset, model):
     print (args.dataset)
-    model.cross_validate(num_folds=5, training_dataset=dataset, prediction_directory = args.dataset+"/predictions/", groundtruth_directory = args.dataset+"/groundtruth/")
+    model.cross_validate(num_folds=5, training_dataset=dataset)
 
 def main():
     # Argparse setup
