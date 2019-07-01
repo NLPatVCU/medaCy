@@ -20,7 +20,7 @@ def setup(args):
 
     if args.pipeline == 'spacy':
         model = SpacyModel
-        return dataset,model
+        return dataset, model
 
     else:
         labels = list(dataset.get_labels())
@@ -113,4 +113,3 @@ def main():
 
 if __name__ == '__main__':
     main()
- 
