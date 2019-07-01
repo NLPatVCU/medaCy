@@ -190,15 +190,9 @@ class BiLstmCrfLearner:
     def __init__(self):
         torch.manual_seed(1)
 
-    def devectorize_tags(self, tags_vectors):
+    def devectorize_tag(self, tag_indices):
         to_tag = {y:x for x, y in self.tag_to_index.items()}
-        tags = []
-
-        for vector in tags_vectors:
-            max_value = max(vector)
-            index = list(vector).index(max_value)
-            tags.append(to_tag[index])
-            
+        tags = [to_tag[index] for index in tag_indices]
         return tags
 
     def create_index_dictionary(self, sequences):
@@ -274,9 +268,8 @@ class BiLstmCrfLearner:
             predictions = []
             for sequence in sequences:
                 vectorized_tokens = self.vectorize(sequence, self.token_to_index)
-                tag_scores = self.model(vectorized_tokens)
-                predictions.append(self.devectorize_tags(tag_scores))
-            # predictions.append(devectorized_tags)
+                _, tag_indices= self.model(vectorized_tokens)
+                predictions.append(self.devectorize_tag(tag_indices))
 
         return predictions
 

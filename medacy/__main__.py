@@ -69,7 +69,7 @@ def main():
     args = parser.parse_args()
 
     # Logging
-    logging.basicConfig(filename='medacy.log', format='%(message)s',level=logging.INFO)
+    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s',level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
