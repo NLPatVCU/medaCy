@@ -19,7 +19,7 @@ def setup(args):
 
     else:      
         labels = list(dataset.get_labels())
-        pipeline_args = args.pipeline
+        pipeline_arg = args.pipeline
         
         #Parse the argument as a class name in module medacy.ner.pipelines
         module = importlib.import_module("medacy.ner.pipelines")
@@ -47,7 +47,6 @@ def predict(args, dataset, model):
     model.predict(dataset)
 
 def cross_validate(args, dataset, model):
-    print (args.dataset)
     model.cross_validate(num_folds=5, training_dataset=dataset)
 
 
