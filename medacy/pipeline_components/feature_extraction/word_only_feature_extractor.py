@@ -1,5 +1,5 @@
 """
-One Hot Feature extraction for testing new networks.
+Word only feature extraction for testing new networks.
 """
 from spacy.tokens import Token
 from itertools import cycle
@@ -40,15 +40,6 @@ class WordOnlyFeatureExtractor:
         :return: a list of token labels.
         """
         return [token._.get(attribute) for token in sequence]
-
-    def get_segments(self, source):
-        segment_size = self.segment_size
-        segments = []
-
-        for i in range(0, len(source), segment_size):
-            segments.append(source[i:i + segment_size])
-
-        return segments
 
     def get_features_with_span_indices(self, doc):
         """

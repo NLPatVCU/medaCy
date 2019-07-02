@@ -3,7 +3,7 @@ from .base import BasePipeline
 from spacy.tokenizer import Tokenizer
 from medacy.ner.learners import BiLstmCrfLearner
 from medacy.pipeline_components import ClinicalTokenizer
-from medacy.pipeline_components import WordOnlyFeatureExtractor
+from medacy.pipeline_components import FeatureExtractor
 
 from medacy.pipeline_components import BiluoAnnotatorComponent
 
@@ -46,5 +46,6 @@ class LstmClinicalPipeline(BasePipeline):
         return tokenizer
 
     def get_feature_extractor(self):
-        extractor = WordOnlyFeatureExtractor()
+        # extractor = WordOnlyFeatureExtractor()
+        extractor = FeatureExtractor(window_size=1, spacy_features=['text', 'norm_'])
         return extractor
