@@ -14,7 +14,7 @@ class LstmClinicalPipeline(BasePipeline):
     to character level tokens defines this pipeline.
     """
 
-    def __init__(self, entities=[]):
+    def __init__(self, entities=[], word_embeddings=None):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -32,13 +32,13 @@ class LstmClinicalPipeline(BasePipeline):
                          )
 
         self.entities = entities
-
+        self.word_embeddings = word_embeddings
         self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
 
         self.add_component(BiluoAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
     def get_learner(self):
-        learner = BiLstmCrfLearner()
+        learner = BiLstmCrfLearner(self.word_embeddings)
         return ('BiLSTM+CRF', learner)
 
     def get_tokenizer(self):

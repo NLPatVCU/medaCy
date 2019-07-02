@@ -186,11 +186,17 @@ class BiLstmCrfLearner:
     token_to_index = {}
     tag_to_index = {}
 
-    def __init__(self):
+    def __init__(self, word_embeddings):
         torch.manual_seed(1)
+        self.load_word_embeddings(word_embeddings)
+
+    def load_word_embeddings(self, word_embeddings):
+        if word_embeddings is None:
+            raise ValueError('BiLSTM+CRF learner requires word embeddings.')
+
         logging.info('Preparing mimic word embeddings...')
 
-        with open('/Users/jorgevargas/repos/medaCy/examples/scripts/mm3_vectors.nc.200.bin') as mimic_file:
+        with open(word_embeddings) as mimic_file:
             token_to_index = {}
             mimic_embeddings = []
 

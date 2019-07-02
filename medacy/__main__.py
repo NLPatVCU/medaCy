@@ -26,7 +26,7 @@ def setup(args):
         labels = list(dataset.get_labels())
 
         if args.pipeline == 'bilstm-clinical':
-            pipeline = LstmClinicalPipeline(entities=labels)
+            pipeline = LstmClinicalPipeline(entities=labels, word_embeddings=args.word_embeddings)
         elif args.pipeline == 'clinical':
             pipeline = ClinicalPipeline(entities=labels)
         elif args.pipeline == 'systematic-review':
@@ -73,6 +73,7 @@ def main():
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
     parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
+    parser_train.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser_train.set_defaults(func=train)
 
     # Predict arguments
