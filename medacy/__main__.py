@@ -41,7 +41,7 @@ def predict(args, dataset, model):
     model.predict(dataset)
 
 def cross_validate(args, dataset, model):
-    model.cross_validate(num_folds=5, training_dataset=dataset)
+    model.cross_validate(num_folds=args.k_folds, training_dataset=dataset)
 
 def main():
     # Argparse setup
@@ -63,13 +63,14 @@ def main():
 
     # Cross Validation arguments
     parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
+    parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
     parser_validate.set_defaults(func=cross_validate)
 
     # Parse initial args
     args = parser.parse_args()
 
     # Logging
-    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s',level=logging.INFO)
+    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s', level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()

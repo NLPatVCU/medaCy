@@ -46,5 +46,5 @@ class LstmClinicalPipeline(BasePipeline):
         return tokenizer
 
     def get_feature_extractor(self):
-        extractor = WordOnlyFeatureExtractor(100)
+        extractor = WordOnlyFeatureExtractor()
         return extractor
