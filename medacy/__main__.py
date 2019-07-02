@@ -68,12 +68,12 @@ def main():
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', choices=['bilstm-clinical','clinical','systematic-review','fda-nano-drug-label','drug-event','testing', 'spacy'], default='clinical', help='Pipeline to use for training.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
+    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     subparsers = parser.add_subparsers()
 
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
     parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
-    parser_train.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser_train.set_defaults(func=train)
 
     # Predict arguments
