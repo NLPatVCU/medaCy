@@ -2,16 +2,11 @@ import argparse
 import logging
 from datetime import datetime
 import time
+import importlib
 
 from medacy.data import Dataset
 from medacy.ner import Model
 from medacy.ner import SpacyModel
-from medacy.ner.pipelines import LstmClinicalPipeline
-from medacy.ner.pipelines import ClinicalPipeline
-from medacy.ner.pipelines import SystematicReviewPipeline
-from medacy.ner.pipelines import FDANanoDrugLabelPipeline
-from medacy.ner.pipelines import DrugEventPipeline
-from medacy.ner.pipelines import TestingPipeline
 
 def setup(args):
     dataset = Dataset(args.dataset)
@@ -22,23 +17,17 @@ def setup(args):
         model = SpacyModel
         return dataset, model
 
-    else:
+    else:      
         labels = list(dataset.get_labels())
 
-        if args.pipeline == 'bilstm-clinical':
-            pipeline = LstmClinicalPipeline(entities=labels, word_embeddings=args.word_embeddings)
-        elif args.pipeline == 'clinical':
-            pipeline = ClinicalPipeline(entities=labels)
-        elif args.pipeline == 'systematic-review':
-            pipeline = SystematicReviewPipeline(entities=labels)
-        elif args.pipeline == 'fda-nano-drug-label':
-            pipeline = FDANanoDrugLabelPipeline(entities=labels)
-        elif args.pipeline == 'drug-event':
-            pipeline = DrugEventPipeline(entities=labels)
-        elif args.pipeline == 'testing':
-            pipeline = TestingPipeline(entities=labels)
-        else:
-            raise TypeError('%s is not a supported pipeline.' % args.pipeline)
+        pipeline_arg = args.pipeline
+        
+        #Parse the argument as a class name in module medacy.ner.pipelines
+        module = importlib.import_module("medacy.ner.pipelines")
+        pipeline_class = getattr(module, pipeline_arg)
+        
+        pipeline = pipeline_class(entities=labels)
+
 
     model = Model(pipeline)
 
@@ -62,14 +51,18 @@ def predict(args, dataset, model):
 def cross_validate(args, dataset, model):
     model.cross_validate(num_folds=args.k_folds, training_dataset=dataset)
 
+
+
 def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
-    parser.add_argument('-pl', '--pipeline', choices=['bilstm-clinical','clinical','systematic-review','fda-nano-drug-label','drug-event','testing', 'spacy'], default='clinical', help='Pipeline to use for training.')
+    parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     subparsers = parser.add_subparsers()
+    
+   
 
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
