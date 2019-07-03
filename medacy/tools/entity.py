@@ -7,7 +7,7 @@ class Entity:
     """Representation of an individual entity in an annotation document. This abstraction is not used in the Annotations
     class, but can be used to keep track of what entities are present in a document during dataset manipulation."""
 
-    t = 0
+    t = 1
 
     def __init__(self, ent_type: str, start: int, end: int, text: str, num: int = 0):
         self.num = num
@@ -77,3 +77,6 @@ class Entity:
 
     def __repr__(self):
         return str(self)
+
+    def __hash__(self):
+        return hash((self.start, self.end, self.text))

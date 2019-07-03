@@ -245,7 +245,7 @@ class SingleEvaluator(object):
         """Initialize."""
         assert isinstance(doc1, RecordTrack2) or isinstance(doc1, RecordTrack1)
         assert isinstance(doc2, RecordTrack2) or isinstance(doc2, RecordTrack1)
-        assert mode in ('strict', 'lenient')
+        if mode not in ('strict', 'lenient'): raise ValueError("mode must be 'strict' or 'lenient'.")
         assert doc1.basename == doc2.basename
         self.scores = {
             'tags': {'tp': 0, 'fp': 0, 'fn': 0, 'tn': 0},
