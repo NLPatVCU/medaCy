@@ -108,10 +108,10 @@ class Model:
 
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
-            self.create_annotation_directory(prediction_directory,dataset, "predictions")
+            self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
 
             # create directory to write groundtruth to
-            self.create_annotation_directory(groundtruth_directory,dataset, "groundtruth")
+            self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset, option="groundtruth")
 
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
@@ -199,10 +199,6 @@ class Model:
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
 
-            if groundtruth_directory is None:
-                groundtruth_directory=training_dataset.data_directory + "/groundtruth/"
-            if prediction_directory is None:
-                prediction_directory=training_dataset.data_directory + "/predictions/"
 
 
             if groundtruth_directory is not None:
@@ -326,21 +322,25 @@ class Model:
                        tablefmt='orgtbl'))
 
         if prediction_directory:
+            
+            prediction_directory = training_dataset.get_data_directory() + "/predictions"
+            groundtruth_directory = training_dataset.get_data_directory() + "/groundtruth"
+            
             # Write annotations generated from cross-validation
-            self.create_annotation_directory(groundtruth_directory,training_dataset, "predictions")
+            self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
 
             # Write medaCy ground truth generated from cross-validation
-            self.create_annotation_directory(prediction_directory,training_dataset,"predictions")
+            self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
             
             #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
-            annotations = self.predict_annotation_evaluation(groundtruth_directory,training_dataset,"groundtruth")
+            annotations = self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document, option="groundtruth")
 
-            annotations = self.predict_annotation_evaluation(prediction_directory,training_dataset,"predictions")
+            annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
 
             
             return Dataset(data_directory=prediction_directory)
 
-    def create_annotation_directory(directory, training_dataset, option):
+    def create_annotation_directory(self, directory, training_dataset, option):
         if isinstance(directory, str):
             directory = directory
         else:
@@ -349,10 +349,10 @@ class Model:
             logging.warning("Overwriting existing %s",option)
         else:
             os.makedirs(directory)
-        return void
     
     
-    def predict_annotation_evaluation(directory, training_dataset, option):
+    
+    def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
 
         for data_file in training_dataset.get_data_files():
             logging.info("Predicting %s file: %s", option, data_file.file_name)
