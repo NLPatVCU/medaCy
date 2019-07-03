@@ -1,18 +1,10 @@
 """
-One Hot Feature extraction for testing new networks.
+Word only feature extraction for testing new networks.
 """
 from spacy.tokens import Token
 from itertools import cycle
 
-import sys
-
 class WordOnlyFeatureExtractor:
-    # TODO Remove segmentation if it ends up unused
-    segment_size = 100
-
-    def __init__(self, segment_size):
-        self.segment_size = segment_size
-
     def __call__(self, doc, file_name):
         """
         Extract features, labels, and corresponding spans from a document
@@ -49,15 +41,6 @@ class WordOnlyFeatureExtractor:
         """
         return [token._.get(attribute) for token in sequence]
 
-    def get_segments(self, source):
-        segment_size = self.segment_size
-        segments = []
-
-        for i in range(0, len(source), segment_size):
-            segments.append(source[i:i + segment_size])
-
-        return segments
-
     def get_features_with_span_indices(self, doc):
         """
         Given a document this method orchestrates the organization of features and labels for the sequences to classify.
@@ -67,10 +50,8 @@ class WordOnlyFeatureExtractor:
         :return: Tuple of parallel arrays - 'features' an array of feature dictionaries for each sequence (spaCy determined sentence)
         and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
         """
-        sequences = self.get_segments(doc)
-
-        features = [self.sequence_to_features(sequence) for sequence in sequences]
-
-        indices = [[(token.idx, token.idx+len(token)) for token in sequence] for sequence in sequences]
+        features = [self.sequence_to_features(sent) for sent in doc.sents]
+        
+        indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
 
         return features, indices

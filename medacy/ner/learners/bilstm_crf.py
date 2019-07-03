@@ -14,7 +14,6 @@ import torch.nn.functional as F
 
 # Constants
 LEARNING_RATE = 0.1
-EMBEDDING_DIM = 50
 HIDDEN_DIM = 300
 EPOCHS = 10
 
@@ -24,7 +23,7 @@ STOP_TAG = '<STOP>'
 class BiLstmCrfNetwork(nn.Module):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    def __init__(self, vocab_size, tag_to_index):
+    def __init__(self, mimic_embeddings, tag_to_index):
         if torch.cuda.is_available():
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
@@ -33,11 +32,11 @@ class BiLstmCrfNetwork(nn.Module):
         self.tag_to_index = tag_to_index
         self.tagset_size = len(tag_to_index)
 
-        self.word_embeddings = nn.Embedding(vocab_size, EMBEDDING_DIM)
+        self.word_embeddings = nn.Embedding.from_pretrained(mimic_embeddings)
 
         # The LSTM takes word embeddings as inputs, and outputs hidden states
         # with dimensionality hidden_dim.
-        self.lstm = nn.LSTM(EMBEDDING_DIM, HIDDEN_DIM, bidirectional=True)
+        self.lstm = nn.LSTM(len(mimic_embeddings[0]), HIDDEN_DIM, bidirectional=True)
 
         # The linear layer that maps from hidden state space to tag space
         self.hidden2tag = nn.Linear(HIDDEN_DIM*2, self.tagset_size)
@@ -186,9 +185,44 @@ class BiLstmCrfLearner:
     model = None
     token_to_index = {}
     tag_to_index = {}
+    mimic_embeddings = []
 
-    def __init__(self):
+    def __init__(self, word_embeddings):
         torch.manual_seed(1)
+        self.load_word_embeddings(word_embeddings)
+
+    def load_word_embeddings(self, word_embeddings):
+        if word_embeddings is None:
+            raise ValueError('BiLSTM+CRF learner requires word embeddings.')
+
+        logging.info('Preparing mimic word embeddings...')
+
+        with open(word_embeddings) as mimic_file:
+            token_to_index = {}
+            mimic_embeddings = []
+
+            # Read first line so it's not included in the loop
+            mimic_file.readline()
+
+            for line in mimic_file:
+                values = line.split(' ')
+
+                token = values[0]
+
+                embeddings = values[1:]
+                if '\n' in embeddings:
+                    embeddings.remove('\n')
+                embeddings = list(map(float, embeddings))
+
+                token_to_index[token] = len(token_to_index)
+                mimic_embeddings.append(embeddings)
+
+        mimic_embeddings.append([float(0) for _ in range(200)])
+        token_to_index['ZERO EMBEDDING'] = len(token_to_index)
+
+        mimic_embeddings = torch.FloatTensor(mimic_embeddings)
+        self.token_to_index = token_to_index
+        self.mimic_embeddings = mimic_embeddings
 
     def devectorize_tag(self, tag_indices):
         to_tag = {y:x for x, y in self.tag_to_index.items()}
@@ -216,21 +250,38 @@ class BiLstmCrfLearner:
         for item in sequence:
             if item in to_index:
                 indices.append(to_index[item])
-            else: # TODO Only here for testing until we switch to word embeddings
-                indices.append(random.randrange(len(to_index)))
 
         return torch.tensor(indices, dtype=torch.long, device=self.device)
 
+    def vectorize_tokens(self, tokens):
+        tokens_vector = []
+
+        for token in tokens:
+            token_vector = []
+
+            token_text = token['0:norm_']
+            token_text = ''.join(c for c in token_text if c.isalnum())
+
+            # TODO Find correct way to handle this
+            if token_text not in self.token_to_index:
+                embedding_index = self.token_to_index['ZERO EMBEDDING']
+            else:
+                embedding_index = self.token_to_index[token_text]
+
+            token_vector.append(embedding_index)
+
+            tokens_vector.append(token_vector)
+
+        return torch.tensor(tokens_vector, dtype=torch.long, device=self.device)
+
+
     def fit(self, x_data, y_data):
-        self.token_to_index = self.create_index_dictionary(x_data)
         self.tag_to_index = self.create_tag_dictionary(y_data)
 
-        vocab_size = len(self.token_to_index)
-        model = BiLstmCrfNetwork(vocab_size, self.tag_to_index)
+        model = BiLstmCrfNetwork(self.mimic_embeddings, self.tag_to_index)
         if torch.cuda.is_available():
             logging.info('GPU available. Moving model to CUDA.')
             model = model.cuda()
-        loss_function = nn.NLLLoss()
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
         for i in range(EPOCHS):
@@ -240,11 +291,11 @@ class BiLstmCrfLearner:
                 optimizer.zero_grad()
 
                 # Vectorize input and test data
-                tokens_vector = self.vectorize(tokens, self.token_to_index)
+                tokens_vector = self.vectorize_tokens(tokens)
                 correct_tags_vector = self.vectorize(correct_tags, self.tag_to_index)
 
                 # Run prediction
-                prediction_scores = model(tokens_vector)
+                # prediction_scores = model(tokens_vector)
 
                 # Compute loss and train network based on it
                 # loss = loss_function(prediction_scores, correct_tags_vector)
@@ -268,7 +319,7 @@ class BiLstmCrfLearner:
             predictions = []
             for sequence in sequences:
                 vectorized_tokens = self.vectorize(sequence, self.token_to_index)
-                _, tag_indices= self.model(vectorized_tokens)
+                _, tag_indices = self.model(vectorized_tokens)
                 predictions.append(self.devectorize_tag(tag_indices))
 
         return predictions

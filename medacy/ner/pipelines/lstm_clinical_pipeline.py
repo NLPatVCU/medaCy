@@ -3,7 +3,7 @@ from .base import BasePipeline
 from spacy.tokenizer import Tokenizer
 from medacy.ner.learners import BiLstmCrfLearner
 from medacy.pipeline_components import ClinicalTokenizer
-from medacy.pipeline_components import WordOnlyFeatureExtractor
+from medacy.pipeline_components import FeatureExtractor
 
 from medacy.pipeline_components import BiluoAnnotatorComponent
 
@@ -14,7 +14,7 @@ class LstmClinicalPipeline(BasePipeline):
     to character level tokens defines this pipeline.
     """
 
-    def __init__(self, entities=[]):
+    def __init__(self, entities=[], word_embeddings=None):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -32,13 +32,13 @@ class LstmClinicalPipeline(BasePipeline):
                          )
 
         self.entities = entities
-
+        self.word_embeddings = word_embeddings
         self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
 
         self.add_component(BiluoAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
     def get_learner(self):
-        learner = BiLstmCrfLearner()
+        learner = BiLstmCrfLearner(self.word_embeddings)
         return ('BiLSTM+CRF', learner)
 
     def get_tokenizer(self):
@@ -46,5 +46,6 @@ class LstmClinicalPipeline(BasePipeline):
         return tokenizer
 
     def get_feature_extractor(self):
-        extractor = WordOnlyFeatureExtractor(100)
+        # extractor = WordOnlyFeatureExtractor()
+        extractor = FeatureExtractor(window_size=1, spacy_features=['text', 'norm_'])
         return extractor

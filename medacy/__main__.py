@@ -19,6 +19,7 @@ def setup(args):
 
     else:      
         labels = list(dataset.get_labels())
+
         pipeline_arg = args.pipeline
         
         #Parse the argument as a class name in module medacy.ner.pipelines
@@ -26,6 +27,7 @@ def setup(args):
         pipeline_class = getattr(module, pipeline_arg)
         
         pipeline = pipeline_class(entities=labels)
+
 
     model = Model(pipeline)
 
@@ -47,7 +49,7 @@ def predict(args, dataset, model):
     model.predict(dataset)
 
 def cross_validate(args, dataset, model):
-    model.cross_validate(num_folds=5, training_dataset=dataset)
+    model.cross_validate(num_folds=args.k_folds, training_dataset=dataset)
 
 
 
@@ -57,6 +59,7 @@ def main():
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
+    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     subparsers = parser.add_subparsers()
     
    
@@ -73,13 +76,14 @@ def main():
 
     # Cross Validation arguments
     parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
+    parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
     parser_validate.set_defaults(func=cross_validate)
 
     # Parse initial args
     args = parser.parse_args()
 
     # Logging
-    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s',level=logging.INFO)
+    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s', level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
