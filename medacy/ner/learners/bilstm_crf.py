@@ -16,14 +16,13 @@ import torch.nn.functional as F
 LEARNING_RATE = 0.1
 HIDDEN_DIM = 300
 EPOCHS = 10
-
 START_TAG = '<START>'
 STOP_TAG = '<STOP>'
 
 class BiLstmCrfNetwork(nn.Module):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    def __init__(self, mimic_embeddings, tag_to_index):
+    def __init__(self, mimic_embeddings, other_features, tag_to_index):
         if torch.cuda.is_available():
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
@@ -36,7 +35,8 @@ class BiLstmCrfNetwork(nn.Module):
 
         # The LSTM takes word embeddings as inputs, and outputs hidden states
         # with dimensionality hidden_dim.
-        self.lstm = nn.LSTM(len(mimic_embeddings[0]), HIDDEN_DIM, bidirectional=True)
+        lstm_input_size = len(mimic_embeddings[0]) + other_features
+        self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
         # The linear layer that maps from hidden state space to tag space
         self.hidden2tag = nn.Linear(HIDDEN_DIM*2, self.tagset_size)
@@ -96,13 +96,22 @@ class BiLstmCrfNetwork(nn.Module):
         return alpha
 
     def _get_lstm_features(self, sentence):
+        embedding_indices = [token[0] for token in sentence]
+        embedding_indices = torch.tensor(embedding_indices, device=self.device)
+
         self.hidden = self.init_hidden()
-        embeds = self.word_embeddings(sentence)
+        embeds = self.word_embeddings(embedding_indices)
+
+        other_features = [token[1:] for token in sentence]
+        other_features = torch.tensor(other_features, dtype=torch.float, device=self.device)
+        embeds = torch.cat((embeds, other_features), 1)
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
-        embeds = embeds.view(len(sentence), 1, -1) 
+        embeds = embeds.view(len(sentence), 1, -1)
+
         lstm_out, self.hidden = self.lstm(embeds, self.hidden)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
         lstm_features = self.hidden2tag(lstm_out)
+
         return lstm_features
 
     def _score_sentence(self, features, tags):
@@ -158,13 +167,6 @@ class BiLstmCrfNetwork(nn.Module):
         best_path.reverse()
         return path_score, best_path
 
-    # def forward(self, sentence):
-    #     embeds = self.word_embeddings(sentence)
-    #     lstm_out, _ = self.lstm(embeds.view(len(sentence), 1, -1))
-    #     tag_space = self.hidden2tag(lstm_out.view(len(sentence), -1))
-    #     tag_scores = F.log_softmax(tag_space, dim=1)
-    #     return tag_scores
-
     def neg_log_likelihood(self, sentence, tags):
         features = self._get_lstm_features(sentence)
         forward_score = self._forward_alg(features)
@@ -186,6 +188,9 @@ class BiLstmCrfLearner:
     token_to_index = {}
     tag_to_index = {}
     mimic_embeddings = []
+    untrained_tokens = set()
+    other_features = []
+    window_size = 0
 
     def __init__(self, word_embeddings):
         torch.manual_seed(1)
@@ -217,10 +222,10 @@ class BiLstmCrfLearner:
                 token_to_index[token] = len(token_to_index)
                 mimic_embeddings.append(embeddings)
 
-        mimic_embeddings.append([float(0) for _ in range(200)])
-        token_to_index['ZERO EMBEDDING'] = len(token_to_index)
+        mimic_embeddings.append([float(1) for _ in range(200)])
+        token_to_index['UNTRAINED'] = len(token_to_index)
 
-        mimic_embeddings = torch.FloatTensor(mimic_embeddings)
+        mimic_embeddings = torch.FloatTensor(mimic_embeddings, device=self.device)
         self.token_to_index = token_to_index
         self.mimic_embeddings = mimic_embeddings
 
@@ -253,32 +258,102 @@ class BiLstmCrfLearner:
 
         return torch.tensor(indices, dtype=torch.long, device=self.device)
 
+    def find_window_size(self, x_data):
+        """ Only supports single digit window sizes
+        """
+        test_token = None
+        longest_length = 0
+        for sentence in x_data:
+            if len(sentence) > longest_length:
+                longest_length = len(sentence)
+                test_token = sentence[int(longest_length/2)]
+
+        lowest = 0
+        highest = 0
+
+        for key in test_token:
+            if key[0] == '-':
+                index = int(key[:2])
+                if index < lowest:
+                    lowest = index
+            elif key[0].isnumeric():
+                index = int(key[0])
+                if index > highest:
+                    highest = index
+
+        assert -lowest == highest, 'Word feature window is asymmetrical'
+
+        return highest
+
+    def find_window_indices(self, token):
+        window = []
+        window_range = range(-self.window_size, self.window_size + 1)
+
+        for i in window_range:
+            test_key = self.other_features[0]
+            test_key = '%d:%s' % (i, test_key)
+            if test_key in token:
+                window.append(i)
+
+        return window
+
     def vectorize_tokens(self, tokens):
         tokens_vector = []
 
         for token in tokens:
             token_vector = []
 
+            # Add text index for looking up word embedding
             token_text = token['0:norm_']
-            token_text = ''.join(c for c in token_text if c.isalnum())
+            token_text = ''.join(c for c in token_text if c.isalpha())
 
             # TODO Find correct way to handle this
             if token_text not in self.token_to_index:
-                embedding_index = self.token_to_index['ZERO EMBEDDING']
+                if token_text != '' and token_text != ' ' and not token_text.isnumeric():
+                    self.untrained_tokens.add(token_text)
+                embedding_index = self.token_to_index['UNTRAINED']
             else:
                 embedding_index = self.token_to_index[token_text]
 
             token_vector.append(embedding_index)
 
+            # Find window indices
+            window = self.find_window_indices(token)
+
+            # Add features to vector in order
+            for i in window:
+                for feature in self.other_features:
+                    key = '%d:%s' % (i, feature)
+                    feature = float(token[key])
+                    token_vector.append(feature)
+
+            # Pad vector when the sequence is shorter than the window size
+            # Features * possible indices + 1 for embedding index
+            expected_length = len(self.other_features) * (self.window_size * 2 + 1) + 1
+            if len(token_vector) < expected_length:
+                missing_values = expected_length - len(token_vector)
+                token_vector.extend([float(0) for _ in range(missing_values)])
+
             tokens_vector.append(token_vector)
 
-        return torch.tensor(tokens_vector, dtype=torch.long, device=self.device)
-
+        # return torch.tensor(tokens_vector, dtype=torch.long, device=self.device)
+        return tokens_vector
 
     def fit(self, x_data, y_data):
         self.tag_to_index = self.create_tag_dictionary(y_data)
 
-        model = BiLstmCrfNetwork(self.mimic_embeddings, self.tag_to_index)
+        # Find other feature names
+        for key in x_data[0][0]:
+            if key[:2] == '0:' and key != '0:norm_':
+                self.other_features.append(key[2:])
+
+        # Calculate window size
+        self.window_size = self.find_window_size(x_data)
+
+        other_features_length = len(self.other_features) * (self.window_size * 2 + 1)
+
+        model = BiLstmCrfNetwork(self.mimic_embeddings, other_features_length, self.tag_to_index)
+
         if torch.cuda.is_available():
             logging.info('GPU available. Moving model to CUDA.')
             model = model.cuda()
@@ -298,15 +373,14 @@ class BiLstmCrfLearner:
                 # prediction_scores = model(tokens_vector)
 
                 # Compute loss and train network based on it
-                # loss = loss_function(prediction_scores, correct_tags_vector)
                 loss = model.neg_log_likelihood(tokens_vector, correct_tags_vector)
 
-                loss.backward()
+                # loss.backward()
                 optimizer.step()
                 epoch_losses.append(loss)
             average_loss = sum(epoch_losses) / len(epoch_losses)
             logging.info('Epoch %d average loss: %f' % (i, average_loss))
-
+            logging.debug(self.untrained_tokens)
 
         self.model = model
 
@@ -318,7 +392,7 @@ class BiLstmCrfLearner:
         with torch.no_grad():
             predictions = []
             for sequence in sequences:
-                vectorized_tokens = self.vectorize(sequence, self.token_to_index)
+                vectorized_tokens = self.vectorize_tokens(sequence)
                 _, tag_indices = self.model(vectorized_tokens)
                 predictions.append(self.devectorize_tag(tag_indices))
 

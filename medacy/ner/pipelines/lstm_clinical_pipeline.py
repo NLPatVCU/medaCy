@@ -46,6 +46,9 @@ class LstmClinicalPipeline(BasePipeline):
         return tokenizer
 
     def get_feature_extractor(self):
-        # extractor = WordOnlyFeatureExtractor()
-        extractor = FeatureExtractor(window_size=1, spacy_features=['text', 'norm_'])
+        extractor = FeatureExtractor(
+            window_size=3,
+            spacy_features=['pos', 'shape', 'prefix', 'suffix', 'norm_']
+        )
+
         return extractor

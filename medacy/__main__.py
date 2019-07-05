@@ -26,7 +26,10 @@ def setup(args):
         module = importlib.import_module("medacy.ner.pipelines")
         pipeline_class = getattr(module, pipeline_arg)
         
-        pipeline = pipeline_class(entities=labels)
+        if args.word_embeddings is not None:
+            pipeline = pipeline_class(entities=labels, word_embeddings=args.word_embeddings)
+        else:
+            pipeline = pipeline_class(entities=labels)
 
 
     model = Model(pipeline)
@@ -51,8 +54,6 @@ def predict(args, dataset, model):
 def cross_validate(args, dataset, model):
     model.cross_validate(num_folds=args.k_folds, training_dataset=dataset, prediction_directory=args.predictions,groundtruth_directory=args.groundtruth)
 
-
-
 def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
@@ -62,8 +63,6 @@ def main():
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     subparsers = parser.add_subparsers()
     
-   
-
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
     parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
