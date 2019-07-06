@@ -89,7 +89,7 @@ class Model:
         self.model = learner
         return self.model
 
-    def predict(self, dataset, prediction_directory = None, groundtruth_directory = None):
+    def predict(self, dataset, prediction_directory=None, groundtruth_directory=None):
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
@@ -108,10 +108,10 @@ class Model:
 
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
-            self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
+            prediction_directory = self.create_annotation_directory(directory=prediction_directory, training_dataset=dataset, option="predictions")
 
             # create directory to write groundtruth to
-            self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset, option="groundtruth")
+            groundtruth_directory = self.create_annotation_directory(directory=groundtruth_directory, training_dataset=dataset, option="groundtruth")
 
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
@@ -125,8 +125,8 @@ class Model:
                 doc = medacy_pipeline(doc, predict=True)
 
                 annotations = predict_document(model, doc, medacy_pipeline)
-                logging.debug("Writing to: %s", os.path.join(prediction_directory,data_file.file_name+".ann"))
-                annotations.to_ann(write_location=os.path.join(prediction_directory,data_file.file_name+".ann"))
+                logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
+                annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
         if isinstance(dataset, str):
             assert 'metamap_annotator' not in self.pipeline.get_components(), \
@@ -349,11 +349,9 @@ class Model:
             logging.warning("Overwriting existing %s",option)
         else:
             os.makedirs(directory)
-    
-    
-    
-    def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
+        return directory
 
+    def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
         for data_file in training_dataset.get_data_files():
             logging.info("Predicting %s file: %s", option, data_file.file_name)
             with open(data_file.raw_path, 'r') as raw_text:

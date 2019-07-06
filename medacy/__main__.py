@@ -49,7 +49,7 @@ def train(args, dataset, model):
 
 def predict(args, dataset, model):
     model.load(args.model_path)
-    model.predict(dataset, prediction_directory=args.predictions,groundtruth_directory=args.groundtruth)
+    model.predict(dataset, prediction_directory=args.predictions, groundtruth_directory=args.groundtruth)
 
 def cross_validate(args, dataset, model):
     model.cross_validate(num_folds=args.k_folds, training_dataset=dataset, prediction_directory=args.predictions,groundtruth_directory=args.groundtruth)
@@ -71,6 +71,8 @@ def main():
     # Predict arguments
     parser_predict = subparsers.add_parser('predict', help='Run predictions on the dataset using a trained model.')
     parser_predict.add_argument('-m', '--model_path', required=True, help='Trained model to load.')
+    parser_predict.add_argument('-gt', '--groundtruth', action='store_true', help='Use to store groundtruth files.')
+    parser_predict.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
     parser_predict.set_defaults(func=predict)
 
     # Cross Validation arguments
