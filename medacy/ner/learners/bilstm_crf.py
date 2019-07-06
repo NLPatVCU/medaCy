@@ -48,9 +48,8 @@ class BiLstmCrfNetwork(nn.Module):
         embedding_indices = torch.tensor(embedding_indices, device=self.device)
 
         other_features = [token[1:] for token in sentence]
-        other_features = torch.tensor(other_features, dtype=torch.float, device=self.device)
+        other_features = torch.tensor(other_features, device=self.device)
 
-        # self.hidden = self.init_hidden()
         embeds = self.word_embeddings(embedding_indices)
         
         embeds = torch.cat((embeds, other_features), 1)
@@ -113,7 +112,7 @@ class BiLstmCrfLearner:
         mimic_embeddings.append([float(1) for _ in range(200)])
         token_to_index['UNTRAINED'] = len(token_to_index)
 
-        mimic_embeddings = torch.FloatTensor(mimic_embeddings, device=self.device)
+        mimic_embeddings = torch.tensor(mimic_embeddings, device=self.device)
         self.token_to_index = token_to_index
         self.mimic_embeddings = mimic_embeddings
 
@@ -138,8 +137,6 @@ class BiLstmCrfLearner:
 
     def create_tag_dictionary(self, tags):
         tag_to_index = self.create_index_dictionary(tags)
-        tag_to_index[START_TAG] = len(tag_to_index)
-        tag_to_index[STOP_TAG] = len(tag_to_index)
         return tag_to_index
 
     def vectorize(self, sequence, to_index):
