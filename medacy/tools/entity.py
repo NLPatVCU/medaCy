@@ -20,12 +20,13 @@ class Entity:
         return self.start == other.start and self.end == other.end and self.text == other.text
 
     @classmethod
-    def init_from_re_match(cls, match: Match, ent_class, num=None):
+    def init_from_re_match(cls, match: Match, ent_class, num=None, increment_t=False):
         """
         Creates a new Entity from a regex Match.
         :param match: A Match object
         :param ent_class: The type of entity this is
         :param num: The number for this entity; defaults to the current entity count held by the class.
+        :param increment_t: Whether or not to increment the T number
         :return: A new Entity
         """
         if not isinstance(match, Match): raise TypeError("Argument is not a Match object.")
@@ -36,10 +37,15 @@ class Entity:
             end=match.end(),
             text=match.string[match.start():match.end()],
         )
-        if num is not None:
+        if num is None and increment_t:
             # Increment the counter
             cls.t += 1
         return new_entity
+
+    def set_t(self):
+        """Sets the T value based on the class's counter and increments the counter"""
+        self.num = self.__class__.t
+        self.__class__.t += 1
 
     @classmethod
     def init_from_doc(cls, doc):
@@ -67,7 +73,7 @@ class Entity:
                 text=line_dict["data_item"],
             )
             entities.append(new_entity)
-        cls.t = max([ent.num for ent in entities])
+        cls.t = 1 + max([ent.num for ent in entities])
         return entities
 
     def __str__(self):
