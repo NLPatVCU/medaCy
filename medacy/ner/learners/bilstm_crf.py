@@ -212,18 +212,17 @@ class BiLstmCrfLearner:
             window = self.find_window_indices(token)
 
             # Add features to vector in order
-            for i in window:
-                for feature in self.other_features:
-                    key = '%d:%s' % (i, feature)
-                    feature = float(token[key])
-                    token_vector.append(feature)
-
-            # Pad vector when the sequence is shorter than the window size
-            # Features * possible indices + 1 for embedding index
-            expected_length = len(self.other_features) * (self.window_size * 2 + 1) + 1
-            if len(token_vector) < expected_length:
-                missing_values = expected_length - len(token_vector)
-                token_vector.extend([float(0) for _ in range(missing_values)])
+            window_range = range(-self.window_size, self.window_size + 1)
+            for i in window_range:
+                if i in window:
+                    for feature in self.other_features:
+                        key = '%d:%s' % (i, feature)
+                        feature = float(token[key])
+                        token_vector.append(feature)
+                else:
+                    for feature in self.other_features:
+                        feature = 0.0
+                        token_vector.append(feature)
 
             tokens_vector.append(token_vector)
 
