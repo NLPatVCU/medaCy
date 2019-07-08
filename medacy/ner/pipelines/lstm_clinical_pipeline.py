@@ -47,8 +47,8 @@ class LstmClinicalPipeline(BasePipeline):
 
     def get_feature_extractor(self):
         extractor = FeatureExtractor(
-            window_size=3,
-            spacy_features=['pos', 'shape', 'prefix', 'suffix', 'norm_']
+            window_size=0,
+            spacy_features=['norm_']
         )
 
         return extractor

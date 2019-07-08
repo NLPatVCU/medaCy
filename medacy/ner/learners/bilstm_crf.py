@@ -2,8 +2,9 @@
 BiLSTM+CRF PyTorch network and model.
 
 Original LSTM code was based off of tutorial found at https://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html
-CRF code based off of tutorial found at https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html
-Further customizations guided by https://arxiv.org/pdf/1508.01991.pdf
+Further customizations guided by:
+- https://arxiv.org/pdf/1508.01991.pdf
+- https://www.sciencedirect.com/science/article/pii/S1532046417300977
 """
 import logging
 import random
@@ -15,7 +16,7 @@ import torch.nn.functional as F
 from torchcrf import CRF
 
 # Constants
-LEARNING_RATE = 0.1
+LEARNING_RATE = 0.01
 HIDDEN_DIM = 300
 EPOCHS = 10
 
@@ -28,7 +29,6 @@ class BiLstmCrfNetwork(nn.Module):
 
         super(BiLstmCrfNetwork, self).__init__()
 
-        self.tag_to_index = tag_to_index
         self.tagset_size = len(tag_to_index)
 
         self.word_embeddings = nn.Embedding.from_pretrained(mimic_embeddings)
@@ -117,10 +117,16 @@ class BiLstmCrfLearner:
         self.mimic_embeddings = mimic_embeddings
 
     def find_other_features(self, example):
+        contains_norm = False
         # Find other feature names
         for key in example:
-            if key[:2] == '0:' and key != '0:norm_':
+            if key == '0:norm_':
+                contains_norm = True
+            elif key[:2] == '0:':
                 self.other_features.append(key[2:])
+
+        if not contains_norm:
+            raise ValueError('BiLSTM-CRF requires the "0:norm_" spaCy feature.')
 
     def devectorize_tag(self, tag_indices):
         to_tag = {y:x for x, y in self.tag_to_index.items()}
@@ -181,7 +187,7 @@ class BiLstmCrfLearner:
         window_range = range(-self.window_size, self.window_size + 1)
 
         for i in window_range:
-            test_key = self.other_features[0]
+            test_key = '0:norm_'
             test_key = '%d:%s' % (i, test_key)
             if test_key in token:
                 window.append(i)
@@ -243,8 +249,9 @@ class BiLstmCrfLearner:
         model = BiLstmCrfNetwork(self.mimic_embeddings, other_features_length, self.tag_to_index)
 
         if torch.cuda.is_available():
-            logging.info('GPU available. Moving model to CUDA.')
+            logging.info('CUDA available. Moving model to GPU.')
             model = model.cuda()
+
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
         for i in range(EPOCHS):
