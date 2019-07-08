@@ -8,6 +8,8 @@ Further customizations guided by:
 """
 import logging
 import random
+import string
+import unicodedata
 
 import torch
 import torch.optim as optim
@@ -18,6 +20,7 @@ from torchcrf import CRF
 # Constants
 LEARNING_RATE = 0.01
 HIDDEN_DIM = 300
+CHARACTER_HIDDEN_DIM = 100
 EPOCHS = 10
 
 class BiLstmCrfNetwork(nn.Module):
@@ -29,35 +32,53 @@ class BiLstmCrfNetwork(nn.Module):
 
         super(BiLstmCrfNetwork, self).__init__()
 
-        self.tagset_size = len(tag_to_index)
+        # Setup character embedding layers
+        self.character_embeddings = nn.Embedding(len(string.printable), CHARACTER_HIDDEN_DIM)
+        self.character_lstm = nn.LSTM(CHARACTER_HIDDEN_DIM, CHARACTER_HIDDEN_DIM, bidirectional=True)
 
+        # Setup word embedding layers
+        self.tagset_size = len(tag_to_index)
         self.word_embeddings = nn.Embedding.from_pretrained(mimic_embeddings)
 
         # The LSTM takes word embeddings as inputs, and outputs hidden states
         # with dimensionality hidden_dim.
-        lstm_input_size = len(mimic_embeddings[0]) + other_features
+        lstm_input_size = len(mimic_embeddings[0]) + CHARACTER_HIDDEN_DIM*2 + other_features
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
         # The linear layer that maps from hidden state space to tag space
         self.hidden2tag = nn.Linear(HIDDEN_DIM*2, self.tagset_size)
 
         self.crf = CRF(self.tagset_size)
+        
 
     def _get_lstm_features(self, sentence):
+        # Create tensor of word embeddings
         embedding_indices = [token[0] for token in sentence]
         embedding_indices = torch.tensor(embedding_indices, device=self.device)
+        word_embeddings = self.word_embeddings(embedding_indices)
 
-        other_features = [token[1:] for token in sentence]
+        # Send each token through its own LSTM to get its character embeddings
+        character_vectors = []
+        for token in sentence:
+            character_indices = [character for character in token[1]]
+            character_indices = torch.tensor(character_indices, device=self.device).unsqueeze(0)
+            character_embeddings = self.character_embeddings(character_indices).view(len(token[1]), 1, -1)
+            _, (h_n, _) = self.character_lstm(character_embeddings)
+            character_vector = h_n.view(1, CHARACTER_HIDDEN_DIM*2)
+            character_vectors.append(character_vector)
+        character_vectors = torch.cat(character_vectors)
+
+        # Turn rest of features into a tensor
+        other_features = [token[2:] for token in sentence]
         other_features = torch.tensor(other_features, device=self.device)
 
-        embeds = self.word_embeddings(embedding_indices)
-        
-        embeds = torch.cat((embeds, other_features), 1)
+        # Combine into one final input vector for LSTM
+        token_vector = torch.cat((word_embeddings, character_vectors, other_features), 1)
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
-        embeds = embeds.view(len(sentence), 1, -1)
+        token_vector = token_vector.view(len(sentence), 1, -1)
 
         # lstm_out, self.hidden = self.lstm(embeds, self.hidden)
-        lstm_out, _ = self.lstm(embeds)
+        lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
         # lstm_out = torch.cat((lstm_out, other_features), 1)
 
@@ -81,6 +102,7 @@ class BiLstmCrfLearner:
 
     def __init__(self, word_embeddings):
         torch.manual_seed(1)
+        self.character_to_index = {character:index for index, character in enumerate(string.printable)}
         self.load_word_embeddings(word_embeddings)
 
     def load_word_embeddings(self, word_embeddings):
@@ -117,16 +139,16 @@ class BiLstmCrfLearner:
         self.mimic_embeddings = mimic_embeddings
 
     def find_other_features(self, example):
-        contains_norm = False
+        contains_text = False
         # Find other feature names
         for key in example:
-            if key == '0:norm_':
-                contains_norm = True
+            if key == '0:text':
+                contains_text = True
             elif key[:2] == '0:':
                 self.other_features.append(key[2:])
 
-        if not contains_norm:
-            raise ValueError('BiLSTM-CRF requires the "0:norm_" spaCy feature.')
+        if not contains_text:
+            raise ValueError('BiLSTM-CRF requires the "0:text" spaCy feature.')
 
     def devectorize_tag(self, tag_indices):
         to_tag = {y:x for x, y in self.tag_to_index.items()}
@@ -194,6 +216,14 @@ class BiLstmCrfLearner:
 
         return window
 
+    # Turn a Unicode string to plain ASCII, thanks to https://stackoverflow.com/a/518232/2809427
+    def unicodeToAscii(self, s):
+        return ''.join(
+            c for c in unicodedata.normalize('NFD', s)
+            if unicodedata.category(c) != 'Mn'
+            and c in string.printable
+        )
+    
     def vectorize_tokens(self, tokens):
         tokens_vector = []
 
@@ -201,18 +231,30 @@ class BiLstmCrfLearner:
             token_vector = []
 
             # Add text index for looking up word embedding
-            token_text = token['0:norm_']
-            token_text = ''.join(c for c in token_text if c.isalpha())
+            token_text = token['0:text']
+            normalized_text = ''.join(c.lower() for c in token_text if c.isalpha())
 
+            # Look up word embedding index
             # TODO Find correct way to handle this
-            if token_text not in self.token_to_index:
-                if token_text != '' and token_text != ' ' and not token_text.isnumeric():
-                    self.untrained_tokens.add(token_text)
+            if normalized_text not in self.token_to_index:
                 embedding_index = self.token_to_index['UNTRAINED']
+
+                # Only for logging untrained tokens
+                if normalized_text != '' and normalized_text != ' ' and not normalized_text.isnumeric():
+                    self.untrained_tokens.add(token_text)
+                
             else:
-                embedding_index = self.token_to_index[token_text]
+                embedding_index = self.token_to_index[normalized_text]
 
             token_vector.append(embedding_index)
+
+            # Add list of character indices as second item
+            character_indices = []
+            for character in token_text:
+                ascii_character = self.unicodeToAscii(character)
+                index = self.character_to_index[ascii_character]
+                character_indices.append(index)
+            token_vector.append(character_indices)
 
             # Find window indices
             window = self.find_window_indices(token)
