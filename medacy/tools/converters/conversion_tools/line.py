@@ -1,6 +1,6 @@
 """
 :author: Steele Farnsworth
-:date: 13 March, 2019
+:date: 8 July, 2019
 """
 
 
@@ -15,8 +15,8 @@ class Line:
         self.num = line_num
         self.index = line_index
 
-    @staticmethod
-    def init_lines(full_text: str):
+    @classmethod
+    def init_lines(cls, full_text: str):
         """
         Creates all the Line objects for a given text file, storing them in a list where index n is the nth - 1
         line of the document.
@@ -47,7 +47,7 @@ class Line:
             else:  # The line is unique so str.index() will be accurate
                 start_ind = full_text.index(given_line)
 
-            new_line = Line(given_line, global_line_num, start_ind)
+            new_line = cls(given_line, global_line_num, start_ind)
             text_lines.append(new_line)
 
             global_start_ind = text_lines[-1].index
@@ -56,5 +56,8 @@ class Line:
         return text_lines
 
     def __str__(self):
-        """String representation of a line, with its index and text separated by a pipe."""
-        return "%i | %s" % (self.index, self.text)
+        """Returns the line text itself"""
+        return self.text
+
+    def __repr__(self):
+        return f"Line(\"{self.text}\",{self.num}, {self.index})"
