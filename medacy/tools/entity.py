@@ -17,9 +17,7 @@ class Entity:
         self.text = text
 
     def __eq__(self, other):
-        if self.start == other.start and self.end == other.end and self.text == other.text:
-            return True
-        else: return False
+        return self.start == other.start and self.end == other.end and self.text == other.text
 
     @classmethod
     def init_from_re_match(cls, match: Match, ent_class, num=None):
@@ -73,10 +71,12 @@ class Entity:
         return entities
 
     def __str__(self):
+        """Returns the BRAT representation of this Entity"""
         return f"T{self.num}\t{self.ent_type} {self.start} {self.end}\t{self.text}\n"
 
     def __repr__(self):
-        return str(self)
+        """Returns __str__ without a new-line character"""
+        return f"T{self.num}\t{self.ent_type} {self.start} {self.end}\t{self.text}"
 
     def __hash__(self):
         return hash((self.start, self.end, self.text))
