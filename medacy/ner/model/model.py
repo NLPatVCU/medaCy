@@ -52,12 +52,12 @@ class Model:
         except TypeError as error:
             if str(error) == "can not serialize 'cupy.core.core.ndarray' object":
                 logging.info('Ran into GPU error. Switching to synchronous preprocessing...')
-            self.X_data == []
-            self.y_data == []
-            for data_file in dataset.get_data_files():
-                features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
-                self.X_data += features
-                self.y_data += labels
+                self.X_data == []
+                self.y_data == []
+                for data_file in dataset.get_data_files():
+                    features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+                    self.X_data += features
+                    self.y_data += labels
 
 
     def fit(self, dataset):
