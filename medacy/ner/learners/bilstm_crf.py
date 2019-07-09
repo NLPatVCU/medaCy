@@ -19,8 +19,9 @@ from torchcrf import CRF
 
 # Constants
 LEARNING_RATE = 0.01
-HIDDEN_DIM = 300
+HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
+CHARACTER_EMBEDDING_SIZE = 30
 EPOCHS = 10
 
 class BiLstmCrfNetwork(nn.Module):
@@ -33,8 +34,8 @@ class BiLstmCrfNetwork(nn.Module):
         super(BiLstmCrfNetwork, self).__init__()
 
         # Setup character embedding layers
-        self.character_embeddings = nn.Embedding(len(string.printable), CHARACTER_HIDDEN_DIM)
-        self.character_lstm = nn.LSTM(CHARACTER_HIDDEN_DIM, CHARACTER_HIDDEN_DIM, bidirectional=True)
+        self.character_embeddings = nn.Embedding(len(string.printable) + 1, CHARACTER_EMBEDDING_SIZE, padding_idx=0)
+        self.character_lstm = nn.LSTM(CHARACTER_EMBEDDING_SIZE, CHARACTER_HIDDEN_DIM, bidirectional=True)
 
         # Setup word embedding layers
         self.tagset_size = len(tag_to_index)
@@ -50,7 +51,27 @@ class BiLstmCrfNetwork(nn.Module):
         self.hidden2tag = nn.Linear(HIDDEN_DIM*2, self.tagset_size)
 
         self.crf = CRF(self.tagset_size)
-        
+
+    def _get_character_features(self, sentence):
+        # Send each token through its own LSTM to get its character embeddings
+
+        # Separate and pad character indices into a batch
+        longest_token_length = max([len(token[1]) for token in sentence])
+        character_indices = []
+        for token in sentence:
+            indices = [character for character in token[1]]
+            if len(indices) < longest_token_length:
+                padding = longest_token_length - len(indices)
+                indices += [0] * padding
+            character_indices.append(indices)
+        character_indices = torch.tensor(character_indices)
+
+        character_embeddings = self.character_embeddings(character_indices)
+        character_embeddings = character_embeddings.permute(1, 0, 2)
+
+        _, (hidden_output, _) = self.character_lstm(character_embeddings)
+        character_vectors = hidden_output.permute(1, 0, 2).contiguous().view(-1, CHARACTER_HIDDEN_DIM*2)
+        return character_vectors
 
     def _get_lstm_features(self, sentence):
         # Create tensor of word embeddings
@@ -58,16 +79,7 @@ class BiLstmCrfNetwork(nn.Module):
         embedding_indices = torch.tensor(embedding_indices, device=self.device)
         word_embeddings = self.word_embeddings(embedding_indices)
 
-        # Send each token through its own LSTM to get its character embeddings
-        character_vectors = []
-        for token in sentence:
-            character_indices = [character for character in token[1]]
-            character_indices = torch.tensor(character_indices, device=self.device).unsqueeze(0)
-            character_embeddings = self.character_embeddings(character_indices).view(len(token[1]), 1, -1)
-            _, (h_n, _) = self.character_lstm(character_embeddings)
-            character_vector = h_n.view(1, CHARACTER_HIDDEN_DIM*2)
-            character_vectors.append(character_vector)
-        character_vectors = torch.cat(character_vectors)
+        character_vectors = self._get_character_features(sentence)
 
         # Turn rest of features into a tensor
         other_features = [token[2:] for token in sentence]
@@ -102,7 +114,7 @@ class BiLstmCrfLearner:
 
     def __init__(self, word_embeddings):
         torch.manual_seed(1)
-        self.character_to_index = {character:index for index, character in enumerate(string.printable)}
+        self.character_to_index = {character:(index + 1) for index, character in enumerate(string.printable)}
         self.load_word_embeddings(word_embeddings)
 
     def load_word_embeddings(self, word_embeddings):
@@ -131,7 +143,7 @@ class BiLstmCrfLearner:
                 token_to_index[token] = len(token_to_index)
                 mimic_embeddings.append(embeddings)
 
-        mimic_embeddings.append([float(1) for _ in range(200)])
+        mimic_embeddings.append([float(0) for _ in range(200)])
         token_to_index['UNTRAINED'] = len(token_to_index)
 
         mimic_embeddings = torch.tensor(mimic_embeddings, device=self.device)
@@ -296,7 +308,7 @@ class BiLstmCrfLearner:
 
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
-        for i in range(EPOCHS):
+        for i in range(1, EPOCHS + 1):
             epoch_losses = []
             for tokens, correct_tags in zip(x_data, y_data):
                 # Reset optimizer weights
