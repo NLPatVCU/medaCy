@@ -40,7 +40,7 @@ class BiLstmCrfNetwork(nn.Module):
         # Setup word embedding layers
         self.tagset_size = len(tag_to_index)
         self.word_embeddings = nn.Embedding.from_pretrained(mimic_embeddings)
-        self.dropout = nn.Dropout()
+        # self.dropout = nn.Dropout()
 
         # The LSTM takes word embeddings concatenated with character verctors as inputs and
         # outputs hidden states with dimensionality hidden_dim.
@@ -89,7 +89,7 @@ class BiLstmCrfNetwork(nn.Module):
         token_vector = torch.cat((word_embeddings, character_vectors, other_features), 1)
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
-        token_vector = self.dropout(token_vector)
+        # token_vector = self.dropout(token_vector)
 
         lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
