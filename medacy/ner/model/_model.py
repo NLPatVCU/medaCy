@@ -58,8 +58,14 @@ def construct_annotations_from_tuples(doc, predictions):
     annotations = {'entities': {}, 'relations': []}
     T_num = 1
     for prediction in predictions:
-        (entity, start, end) = prediction
-        labeled_text = doc.text[start:end]
+        if len(prediction) == 3:
+            (entity, start, end) = prediction
+            labeled_text = doc.text[start:end]
+        elif len(prediction) == 4:
+            (entity, start, end, labeled_text) = prediction
+        else:
+            raise ValueError("Incorrect prediction length.")
+
         annotations['entities']['T%i' % T_num] = (entity, start, end, labeled_text)
         T_num += 1
     return Annotations(annotations)
