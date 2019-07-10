@@ -34,6 +34,32 @@ class Model:
         if doc is None:
             raise IOError("Model could not be initialized with the set pipeline.")
 
+    def preprocess(self, dataset):
+        try:
+            pool = Pool(nodes=self.n_jobs)
+
+            results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
+                    for data_file in dataset.get_data_files()]
+
+            while any([i.ready() is False for i in results]):
+                time.sleep(1)
+
+            for idx, i in enumerate(results):
+                X, y = i.get()
+                self.X_data += X
+                self.y_data += y
+
+        except TypeError as error:
+            if str(error) == "can not serialize 'cupy.core.core.ndarray' object":
+                logging.info('Ran into GPU error. Switching to synchronous preprocessing...')
+                self.X_data == []
+                self.y_data == []
+                for data_file in dataset.get_data_files():
+                    features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+                    self.X_data += features
+                    self.y_data += labels
+
+
     def fit(self, dataset):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
@@ -47,18 +73,7 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
-        pool = Pool(nodes=self.n_jobs)
-
-        results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
-                   for data_file in dataset.get_data_files()]
-
-        while any([i.ready() is False for i in results]):
-            time.sleep(1)
-
-        for idx, i in enumerate(results):
-            X, y = i.get()
-            self.X_data += X
-            self.y_data += y
+        self.preprocess(dataset)
 
         logging.info("Currently Waiting")
 
@@ -74,7 +89,7 @@ class Model:
         self.model = learner
         return self.model
 
-    def predict(self, dataset, prediction_directory = None, groundtruth_directory = None):
+    def predict(self, dataset, prediction_directory=None, groundtruth_directory=None):
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
@@ -93,22 +108,10 @@ class Model:
 
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
-            if prediction_directory is None:
-                prediction_directory = dataset.data_directory + "/predictions/"
-
-            if os.path.isdir(prediction_directory):
-                logging.warning("Overwriting existing predictions")
-            else:
-                os.makedirs(prediction_directory)
+            prediction_directory = self.create_annotation_directory(directory=prediction_directory, training_dataset=dataset, option="predictions")
 
             # create directory to write groundtruth to
-            if groundtruth_directory is None:
-                groundtruth_directory = dataset.data_directory + "/groundtruth/"
-
-            if os.path.isdir(groundtruth_directory):
-                logging.warning("Overwriting existing Ground truth")
-            else:
-                os.makedirs(groundtruth_directory)
+            groundtruth_directory = self.create_annotation_directory(directory=groundtruth_directory, training_dataset=dataset, option="groundtruth")
 
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
@@ -122,8 +125,8 @@ class Model:
                 doc = medacy_pipeline(doc, predict=True)
 
                 annotations = predict_document(model, doc, medacy_pipeline)
-                logging.debug("Writing to: %s", os.path.join(prediction_directory,data_file.file_name+".ann"))
-                annotations.to_ann(write_location=os.path.join(prediction_directory,data_file.file_name+".ann"))
+                logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
+                annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
         if isinstance(dataset, str):
             assert 'metamap_annotator' not in self.pipeline.get_components(), \
@@ -135,7 +138,7 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=10, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
+    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -160,7 +163,8 @@ class Model:
             raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
-        assert self.model is not None, "Cannot cross validate a un-fit model"
+        # assert self.model is not None, "Cannot cross validate a un-fit model"
+        self.preprocess(training_dataset)
         assert self.X_data is not None and self.y_data is not None, \
             "Must have features and labels extracted for cross validation"
 
@@ -194,6 +198,8 @@ class Model:
             test_data = [x[0] for x in X_test]
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
+
+
 
             if groundtruth_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
@@ -316,44 +322,51 @@ class Model:
                        tablefmt='orgtbl'))
 
         if prediction_directory:
+            
+            prediction_directory = training_dataset.get_data_directory() + "/predictions"
+            groundtruth_directory = training_dataset.get_data_directory() + "/groundtruth"
+            
             # Write annotations generated from cross-validation
-            if isinstance(prediction_directory, str):
-                prediction_directory = prediction_directory
-            else:
-                prediction_directory = training_dataset.data_directory + "/predictions/"
-            if os.path.isdir(prediction_directory):
-                logging.warning("Overwritting existing predictions")
-            else:
-                os.makedirs(prediction_directory)
+            self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
 
             # Write medaCy ground truth generated from cross-validation
-            if isinstance(groundtruth_directory, str):
-                groundtruth_directory = groundtruth_directory
-            else:
-                groundtruth_directory = training_dataset.data_directory + "/groundtruth/"
-            if os.path.isdir(groundtruth_directory):
-                logging.warning("Overwritting existing groundtruth")
-            else:
-                os.makedirs(groundtruth_directory)
+            self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
+            
+            #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
+            annotations = self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document, option="groundtruth")
 
-            for data_file in training_dataset.get_data_files():
-                logging.info("Predicting groundtruth file: %s", data_file.file_name)
-                with open(data_file.raw_path, 'r') as raw_text:
-                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                    gtruth = groundtruth_by_document[data_file.file_name]
-                    annotations = construct_annotations_from_tuples(doc, gtruth)
-                    annotations.to_ann(write_location=os.path.join(groundtruth_directory, data_file.file_name + ".ann"))
+            annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
 
-            for data_file in training_dataset.get_data_files():
-                logging.info("Predicting file: %s", data_file.file_name)
-                with open(data_file.raw_path, 'r') as raw_text:
-                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                    preds = preds_by_document[data_file.file_name]
-                    annotations = construct_annotations_from_tuples(doc, preds)
-                    annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
+            
             return Dataset(data_directory=prediction_directory)
 
+    def create_annotation_directory(self, directory, training_dataset, option):
+        if isinstance(directory, str):
+            directory = directory
+        else:
+            directory = training_dataset.data_directory + "/"+option+"/"
+        if os.path.isdir(directory):
+            logging.warning("Overwriting existing %s",option)
+        else:
+            os.makedirs(directory)
+        return directory
 
+    def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
+        for data_file in training_dataset.get_data_files():
+            logging.info("Predicting %s file: %s", option, data_file.file_name)
+            with open(data_file.raw_path, 'r') as raw_text:
+                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                
+                if option == "groundtruth":
+                    preds = groundtruth_by_document[data_file.file_name]
+                else:
+                    preds = preds_by_document[data_file.file_name]
+                annotations = construct_annotations_from_tuples(doc, preds)
+                annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))        
+        
+        return annotations
+    
+    
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
@@ -403,7 +416,6 @@ class Model:
         """
         assert self.model is not None, "Must fit model before dumping."
         joblib.dump(self.model, path)
-
 
     def get_info(self, return_dict=False):
         """
