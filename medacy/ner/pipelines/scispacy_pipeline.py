@@ -11,6 +11,10 @@ class ScispacyPipeline(BasePipeline):
 
     This pipeline differs from the ClinicalPipeline in that it uses AllenAI's 'en_core_sci_md' model and
     the tokenizer is simply spaCy's tokenizer.
+
+    Requirements:
+    scispacy
+    https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.0/en_core_sci_md-0.2.0.tar.gz
     """
 
     def __init__(self, metamap=None, entities=[]):
