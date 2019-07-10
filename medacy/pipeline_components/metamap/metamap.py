@@ -13,7 +13,7 @@ from ...tools.unicode_to_ascii import UNICODE_TO_ASCII
 
 class MetaMap:
 
-    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None, convert_ascii=True):
+    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None, convert_ascii=True, args=""):
         """
 
         A python wrapper for metamap that includes built in caching of metamap output.
@@ -41,6 +41,7 @@ class MetaMap:
         self.cache_directory = cache_directory
         self.metamap_path = metamap_path
         self.convert_ascii = convert_ascii
+        self.args = args
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
@@ -67,7 +68,7 @@ class MetaMap:
         except:
             raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
-        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, contents)
+        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth,self.args), contents)
 
         if self.cache_directory is not None:
             with open(cached_file_path, 'w') as mapped_file:
