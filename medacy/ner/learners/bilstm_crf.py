@@ -21,7 +21,7 @@ from torchcrf import CRF
 LEARNING_RATE = 0.01
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
-CHARACTER_EMBEDDING_SIZE = 30
+CHARACTER_EMBEDDING_SIZE = 100
 EPOCHS = 10
 
 class BiLstmCrfNetwork(nn.Module):
@@ -87,6 +87,7 @@ class BiLstmCrfNetwork(nn.Module):
 
         # Combine into one final input vector for LSTM
         token_vector = torch.cat((word_embeddings, character_vectors, other_features), 1)
+
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
         # token_vector = self.dropout(token_vector)
@@ -151,16 +152,13 @@ class BiLstmCrfLearner:
         self.mimic_embeddings = mimic_embeddings
 
     def find_other_features(self, example):
-        contains_text = False
+        if '0:text' not in example:
+            raise ValueError('BiLSTM-CRF requires the "0:text" spaCy feature.')
+
         # Find other feature names
         for key in example:
-            if key == '0:text':
-                contains_text = True
-            elif key[:2] == '0:':
+            if key[:2] == '0:' and key != '0:text':
                 self.other_features.append(key[2:])
-
-        if not contains_text:
-            raise ValueError('BiLSTM-CRF requires the "0:text" spaCy feature.')
 
     def devectorize_tag(self, tag_indices):
         to_tag = {y:x for x, y in self.tag_to_index.items()}
@@ -221,7 +219,7 @@ class BiLstmCrfLearner:
         window_range = range(-self.window_size, self.window_size + 1)
 
         for i in window_range:
-            test_key = '0:norm_'
+            test_key = 'text'
             test_key = '%d:%s' % (i, test_key)
             if test_key in token:
                 window.append(i)
