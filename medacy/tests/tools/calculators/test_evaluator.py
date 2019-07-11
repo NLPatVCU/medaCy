@@ -1,6 +1,6 @@
 import unittest
 import os
-from medacy.tools.evaluator import evaluate_annotation_agreement
+from medacy.tools.calculators.evaluator import evaluate_annotation_agreement
 
 class TestEvaluator(unittest.TestCase):
 
