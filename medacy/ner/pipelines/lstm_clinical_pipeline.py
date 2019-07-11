@@ -25,7 +25,7 @@ class LstmClinicalPipeline(BasePipeline):
         
         description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
         super().__init__("lstm_clinical_pipeline",
-                         spacy_pipeline=spacy.load("en_core_web_sm"),
+                         spacy_pipeline=spacy.load("en_core_web_lg"),
                          description=description,
                          creators="Jorge Vargas", #append if multiple creators
                          organization="NLP@VCU"
@@ -33,7 +33,7 @@ class LstmClinicalPipeline(BasePipeline):
 
         self.entities = entities
         self.word_embeddings = word_embeddings
-        self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
+        # self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
 
         self.add_component(BiluoAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
@@ -42,7 +42,8 @@ class LstmClinicalPipeline(BasePipeline):
         return ('BiLSTM+CRF', learner)
 
     def get_tokenizer(self):
-        tokenizer = Tokenizer(self.spacy_pipeline.vocab)
+        tokenizer = self.spacy_pipeline.tokenizer
+        # tokenizer = Tokenizer(self.spacy_pipeline.vocab)
         return tokenizer
 
     def get_feature_extractor(self):

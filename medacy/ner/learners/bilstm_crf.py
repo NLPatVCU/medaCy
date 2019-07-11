@@ -10,6 +10,7 @@ import logging
 import random
 import string
 import unicodedata
+import re
 
 import torch
 import torch.optim as optim
@@ -242,7 +243,10 @@ class BiLstmCrfLearner:
 
             # Add text index for looking up word embedding
             token_text = token['0:text']
-            normalized_text = ''.join(c.lower() for c in token_text if c.isalpha())
+            # normalized_text = ''.join(c.lower() for c in token_text if c.isalpha())
+            p = re.compile(r'[A-z]*')
+            normalized_text = p.match(token_text).group()
+            normalized_text = ''.join(c.lower() for c in normalized_text)
 
             # Look up word embedding index
             # TODO Find correct way to handle this
@@ -296,6 +300,17 @@ class BiLstmCrfLearner:
         # Calculate window size
         self.window_size = self.find_window_size(x_data)
 
+        # Vectorize data
+        sentences = []
+        correct_tags = []
+
+        for sentence, sentence_tags in zip(x_data, y_data):
+            tokens_vector = self.vectorize_tokens(sentence)
+            correct_tags_vector = self.vectorize(sentence_tags, self.tag_to_index)
+            sentences.append(tokens_vector)
+            correct_tags.append(correct_tags_vector)
+
+
         other_features_length = len(self.other_features) * (self.window_size * 2 + 1)
 
         model = BiLstmCrfNetwork(self.mimic_embeddings, other_features_length, self.tag_to_index)
@@ -308,19 +323,13 @@ class BiLstmCrfLearner:
 
         for i in range(1, EPOCHS + 1):
             epoch_losses = []
-            for tokens, correct_tags in zip(x_data, y_data):
-                # Reset optimizer weights
-                optimizer.zero_grad()
-
-                # Vectorize input and test data
-                tokens_vector = self.vectorize_tokens(tokens)
-                correct_tags_vector = self.vectorize(correct_tags, self.tag_to_index)
-
+            for sentence, sentence_tags in zip(sentences, correct_tags):
                 # Training loop:
-                prediction = model(tokens_vector).unsqueeze(1)
-                correct_tags_vector = correct_tags_vector.unsqueeze(1)
-                loss = -model.crf(prediction, correct_tags_vector)
+                emissions = model(sentence).unsqueeze(1)
+                sentence_tags = sentence_tags.unsqueeze(1)
+                loss = -model.crf(emissions, sentence_tags)
 
+                optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
                 epoch_losses.append(loss)
@@ -339,8 +348,8 @@ class BiLstmCrfLearner:
             predictions = []
             for sequence in sequences:
                 vectorized_tokens = self.vectorize_tokens(sequence)
-                lstm_features = self.model(vectorized_tokens).unsqueeze(1)
-                tag_indices = self.model.crf.decode(lstm_features)
+                emissions = self.model(vectorized_tokens).unsqueeze(1)
+                tag_indices = self.model.crf.decode(emissions)
                 predictions.append(self.devectorize_tag(tag_indices))
 
         return predictions
