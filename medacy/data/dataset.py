@@ -461,6 +461,10 @@ class Dataset:
 
         return ambiguity_dict
 
+    def __len__(self):
+        """Return the number of ann-txt pairs in the dataset."""
+        return len(self.all_data_files)
+
     @staticmethod
     def load_external(package_name):
         """
