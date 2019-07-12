@@ -86,3 +86,13 @@ class Entity:
 
     def __hash__(self):
         return hash((self.start, self.end, self.text))
+
+    def lenient_eq(self, other):
+        """Returns True if one entity is fully within or fully outside the other"""
+        return (self.end > other.start and self.start < other.end) or (self.start < other.end and other.start < self.end)
+        # leniency_len = self.text * leniency
+        # start_lenient = other.start - leniency_len < self.start < other.start + leniency_len
+        # end_lenient = other.end - leniency_len < self.end < other.end + leniency_len
+        # return start_lenient and end_lenient
+
+
