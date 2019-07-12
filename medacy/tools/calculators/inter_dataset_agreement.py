@@ -4,6 +4,7 @@ import itertools
 from medacy.data.dataset import Dataset
 from medacy.tools.entity import Entity
 from statistics import mean
+from pprint import pprint
 
 def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: Dataset, different_entity_mappings: dict):
     """
@@ -34,15 +35,14 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
     # Create the mapping dictionaries
     gold_to_pred = different_entity_mappings
     pred_to_gold = {}
-    for k, v in different_entity_mappings.items():
+    for k, v in gold_to_pred.items():
         if isinstance(v, str):
             pred_to_gold[v] = k
         elif isinstance(v, tuple):
-        for w in v:
-            pred_to_gold[w] = k
+            for w in v:
+                pred_to_gold[w] = k
 
-    print(pred_to_gold)
-    exit()
+    # pprint(pred_to_gold)
 
     predicted_entities = predicted_dataset.get_labels()
     gold_entities = gold_dataset.get_labels()
@@ -50,7 +50,7 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
     # Map the entities that are the same in both datasets to themselves;
     # if the entity exists in both datasets but is mapped, don't map it to itself
     mapped_in_gold = set(itertools.chain(*gold_to_pred.values()))
-    mapped_in_pred = set(i[0] for i in gold_to_pred)
+    mapped_in_pred = gold_to_pred.values()
     unmapped_in_gold = gold_entities.difference(mapped_in_gold)
     unmapped_in_pred = predicted_entities.difference(mapped_in_pred)
 
@@ -63,16 +63,22 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
         "ta": 0  # total attempts; ie sum of true and false positives
     }
     data_dict = {k: copy.copy(entity_dict) for k in same_in_both}
+    # pprint(data_dict); exit()
+    pprint(mapped_in_pred); exit()
+
     for k in mapped_in_pred:
         data_dict[k] = copy.copy(entity_dict)
 
-    # Zip the two datasets into a single list
-    for file in predicted_dataset:
-        if file.file_name not in gold_dataset:
-            raise ValueError("File '%s' exists in the predicted dataset, but not in the gold dataset" % file.file_name)
 
-    predicted_data_files = sorted([os.path.join(predicted_dataset.data_directory, f.file_name) for f in predicted_dataset])
-    gold_data_files = sorted([os.path.join(gold_dataset.data_directory, f.file_name) for f in gold_dataset])
+    # pprint(data_dict)
+
+    # Zip the two datasets into a single list
+    # for file in predicted_dataset:
+    #     if file.file_name not in gold_dataset:
+    #         raise ValueError("File '%s' exists in the predicted dataset, but not in the gold dataset" % file.file_name)
+
+    predicted_data_files = sorted([os.path.join(predicted_dataset.data_directory, f.file_name + ".ann") for f in predicted_dataset])
+    gold_data_files = sorted([os.path.join(gold_dataset.data_directory, f.file_name + ".ann") for f in gold_dataset])
     all_file_pairs = zip(predicted_data_files, gold_data_files)
 
     for predicted, gold in all_file_pairs:
@@ -80,10 +86,12 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
         gold_entities = Entity.init_from_doc(gold)
 
         for instance in predicted_entities:
+            # if instance.ent_type not in data_dict.keys():
+            #     continue
+            data_dict[instance.ent_type]["ta"] += 1
             for possible_match in gold_entities:
                 if instance == possible_match and possible_match.ent_type == pred_to_gold[instance.ent_type]:
                     data_dict[instance.ent_type]["tp"] += 1
-                data_dict[instance.ent_type]["ta"] += 1
 
         for instance in gold_entities:
             if instance.ent_type in data_dict.keys():
