@@ -1,10 +1,11 @@
 import os
 import copy
+import itertools
 from medacy.data.dataset import Dataset
 from medacy.tools.entity import Entity
 from statistics import mean
 
-def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: Dataset, different_entity_mappings: [tuple]):
+def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: Dataset, different_entity_mappings: dict):
     """
     Given a gold dataset and a dataset of predictions on that dataset, calculate the precision, recall, and f1 of the
     predicted dataset.
@@ -12,59 +13,59 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
     :param gold_dataset: The gold dataset
     :param different_entity_mappings: A mapping of entity class names that are not the same in each dataset given as a
     list of tuples, where the first value in the tuple is name of that class in the predicted dataset and the
-    second value is the name of that class in the gold dataset.
+    second value is the name of that class in the gold dataset. If there is more than one name in the gold dataset,
+    give the second value in the tuple as another tuple
     :return: The tab-delimited values
     """
-    # Get the list of entities in each dataset
+    if isinstance(predicted_dataset, str) and os.path.isdir(predicted_dataset):
+        predicted_dataset = Dataset(predicted_dataset)
+    elif not isinstance(predicted_dataset, Dataset):
+        raise TypeError("predicted_dataset must be type Dataset or a str referring to a valid directory")
+
+    if isinstance(gold_dataset, str) and os.path.isdir(gold_dataset):
+        gold_dataset = Dataset(gold_dataset)
+    elif not isinstance(gold_dataset, Dataset):
+        raise TypeError("gold_dataset must be type Dataset or a str referring to a valid directory")
+
+    if len(predicted_dataset) != len(gold_dataset):
+        raise ValueError("Both datasets must contain parallel copies of the same files, but the two datasets "
+                         "are different lengths")
+
+    # Create the mapping dictionaries
+    gold_to_pred = different_entity_mappings
+    temp_pred_to_gold = {v: k for k, v in gold_to_pred.items()}
+    pred_to_gold = {}
+    for k, v in temp_pred_to_gold.items():
+        for w in v:
+            pred_to_gold[w] = k
+
+    print(pred_to_gold)
+    exit()
+
     predicted_entities = predicted_dataset.get_labels()
     gold_entities = gold_dataset.get_labels()
 
-    # Define the default mappings, which will be any time the same entity type appears in both datasets
-    matching_entities = predicted_entities.intersection(gold_entities)
-    entity_mappings = {e: e for e in matching_entities}
+    # Map the entities that are the same in both datasets to themselves;
+    # if the entity exists in both datasets but is mapped, don't map it to itself
+    mapped_in_gold = set(itertools.chain(*gold_to_pred.values()))
+    mapped_in_pred = set(i[0] for i in gold_to_pred)
+    unmapped_in_gold = gold_entities.difference(mapped_in_gold)
+    unmapped_in_pred = predicted_entities.difference(mapped_in_pred)
 
-    # Get the entity counts in the gold dataset
-    gold_entity_counts = gold_dataset.compute_counts()
-    predicted_entity_counts = predicted_dataset.compute_counts()
+    same_in_both = unmapped_in_gold.intersection(unmapped_in_pred)
 
-    # Create the data dictionary
+    # Create the data structure that will be added to
     entity_dict = {
         "ti": 0,  # total instances in the gold dataset
         "tp": 0,  # true positives in the predicted set
         "ta": 0  # total attempts; ie sum of true and false positives
     }
-
-    data_dict = {e: copy.copy(entity_dict) for e in matching_entities}
-
-    for item in different_entity_mappings:
-        if not isinstance(item, tuple) or len(item) != 2:
-            raise ValueError("different_entity_mappings must be a list of doubles (2-tuples) only")
-
-    for entity in predicted_entities:
-        if entity not in gold_entities:
-            if entity not in [f[0] for f in different_entity_mappings]:
-                raise ValueError("Entity classes that do not appear in both datasets must have a mapping given, "
-                                 "but '%s' was not given a mapping" % entity)
-            for i, e in enumerate([f[0] for f in different_entity_mappings]):
-                # Iterate over the predicted entity names until you get to the right one,
-                # then map that entity to the one its paired to in its tuple
-                if e == entity:
-                    mapped_entity = entity_mappings[entity] = different_entity_mappings[i][1]
-                    data_dict[entity] = copy.copy(entity_dict)
-                    # Map the total possible instances of that predicted entity in the gold dataset
-                    # to the number of occurrences of the mapped entity in the gold dataset
-                    data_dict[entity]["ti"] = gold_entity_counts[mapped_entity]
-                    break  # there will always be a match, else error is raised earlier
-        else:
-            # If the entity type appears in both datasets with the same name, set the total attempts
-            # to the number of occurrences in the predicted dataset
-            data_dict[entity]["ta"] = predicted_entity_counts[entity]
+    data_dict = {k: copy.copy(entity_dict) for k in same_in_both}
+    for k in mapped_in_pred:
+        data_dict[k] = copy.copy(entity_dict)
 
     # Zip the two datasets into a single list
     for file in predicted_dataset:
-        if len(predicted_dataset) != len(gold_dataset):
-            raise ValueError("Both datasets must contain parallel copies of the same files, but the two datasets "
-                             "are different lengths")
         if file.file_name not in gold_dataset:
             raise ValueError("File '%s' exists in the predicted dataset, but not in the gold dataset" % file.file_name)
 
@@ -78,9 +79,13 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
 
         for instance in predicted_entities:
             for possible_match in gold_entities:
-                if instance == possible_match and instance.ent_type == entity_mappings[instance.ent_type]:
+                if instance == possible_match and possible_match.ent_type == pred_to_gold[instance.ent_type]:
                     data_dict[instance.ent_type]["tp"] += 1
-                    break
+                data_dict[instance.ent_type]["ta"] += 1
+
+        for instance in gold_entities:
+            if instance.ent_type in data_dict.keys():
+                data_dict[instance.ent_type]["ti"] += 1
 
     all_precision = []
     all_recall = []
@@ -101,10 +106,7 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
         except ZeroDivisionError: f1 = 0
         all_f1.append(f1)
 
-        if entity == entity_mappings[entity]:
-            output_str += f"{entity}\t{precision}\t{recall}\t{f1}\n"
-        else:
-            output_str += f"{entity}->{entity_mappings[entity]}\t{precision}\t{recall}\t{f1}\n"
+        output_str += f"{entity}\t{precision}\t{recall}\t{f1}\n"
 
     system_precision = mean(all_precision)
     system_recall = mean(all_recall)
