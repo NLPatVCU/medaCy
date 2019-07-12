@@ -33,9 +33,11 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
 
     # Create the mapping dictionaries
     gold_to_pred = different_entity_mappings
-    temp_pred_to_gold = {v: k for k, v in gold_to_pred.items()}
     pred_to_gold = {}
-    for k, v in temp_pred_to_gold.items():
+    for k, v in different_entity_mappings.items():
+        if isinstance(v, str):
+            pred_to_gold[v] = k
+        elif isinstance(v, tuple):
         for w in v:
             pred_to_gold[w] = k
 
