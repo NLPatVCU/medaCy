@@ -245,6 +245,7 @@ class BiLstmCrfLearner:
 
             # Add text index for looking up word embedding
             token_text = token['0:text']
+            token_text = self.unicodeToAscii(token_text)
             # normalized_text = ''.join(c.lower() for c in token_text if c.isalpha())
             p = re.compile(r'[A-z]*')
             normalized_text = p.match(token_text).group()
@@ -266,10 +267,13 @@ class BiLstmCrfLearner:
 
             # Add list of character indices as second item
             character_indices = []
-            ascii_text = self.unicodeToAscii(token_text)
-            for character in ascii_text:
+            for character in token_text:
                 index = self.character_to_index[character]
                 character_indices.append(index)
+            # If there were no indices ex. special characters only
+            if not character_indices:
+                # Append the padding index
+                character_indices.append(0)
             token_vector.append(character_indices)
 
             # Find window indices
@@ -311,7 +315,6 @@ class BiLstmCrfLearner:
             correct_tags_vector = self.vectorize(sentence_tags, self.tag_to_index)
             sentences.append(tokens_vector)
             correct_tags.append(correct_tags_vector)
-
 
         other_features_length = len(self.other_features) * (self.window_size * 2 + 1)
 
