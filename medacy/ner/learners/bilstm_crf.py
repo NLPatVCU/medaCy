@@ -229,6 +229,8 @@ class BiLstmCrfLearner:
 
     # Turn a Unicode string to plain ASCII, thanks to https://stackoverflow.com/a/518232/2809427
     def unicodeToAscii(self, s):
+        s = re.sub(u"\u2013", "-", s) # em dash
+
         return ''.join(
             c for c in unicodedata.normalize('NFD', s)
             if unicodedata.category(c) != 'Mn'
@@ -264,9 +266,9 @@ class BiLstmCrfLearner:
 
             # Add list of character indices as second item
             character_indices = []
-            for character in token_text:
-                ascii_character = self.unicodeToAscii(character)
-                index = self.character_to_index[ascii_character]
+            ascii_text = self.unicodeToAscii(token_text)
+            for character in ascii_text:
+                index = self.character_to_index[character]
                 character_indices.append(index)
             token_vector.append(character_indices)
 

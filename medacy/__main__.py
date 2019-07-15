@@ -91,7 +91,7 @@ def main():
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
     current_time = datetime.fromtimestamp(start_time).strftime('%Y_%m_%d_%H.%M.%S')
-    logging.info('\nSTART TIME: ' + current_time)
+    logging.info('\n\nSTART TIME: ' + current_time)
 
     # Run proper function
     dataset, model = setup(args)
