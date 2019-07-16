@@ -3,7 +3,6 @@ import tempfile
 import shutil
 import re
 from medacy.data.dataset import Dataset
-from medacy.tools.entity import Entity
 from medacy.tools.calculators.evaluator import evaluate_annotation_agreement
 
 
@@ -13,8 +12,8 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
     than their names in the predicted dataset.
     :param predicted_dataset: The dataset to be evaluated
     :param gold_dataset: The gold dataset
-    :param different_entity_mappings: A dict where the predicted entities are mapped to a str or tuple of their entity
-    name in the gold dataset
+    :param different_entity_mappings: A dict where a tuple of the entity type names in the gold dataset are mapped to
+    their analog in the predicted dataset
     :return: The tab-delimited values
     """
     if isinstance(predicted_dataset, str) and os.path.isdir(predicted_dataset):
@@ -58,7 +57,9 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
             f.write(text)
 
     # Pass the two directories to the evaluation calculator
-    evaluate_annotation_agreement(predicted_dataset.data_directory, temp_dataset_dir, mappings.values(), relations=[])
+    data = evaluate_annotation_agreement(predicted_dataset.data_directory, temp_dataset_dir, mappings.values(), relations=[])
 
     # Delete the temp dir
     shutil.rmtree(temp_dataset_dir)
+
+    return data
