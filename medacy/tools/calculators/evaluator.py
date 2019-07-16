@@ -146,20 +146,15 @@ class RecordTrack2(object):
                     print(self.path)
                     print(line)
                 tag_start, tag_end = int(tag_start), int(tag_end)
-                annotations['tags'][tag_id] = ClinicalConcept(tag_id,
-                                                              tag_start,
-                                                              tag_end,
-                                                              tag_type,
-                                                              tag_text)
-            for line_num, line in enumerate(lines):
-                if line.strip().startswith('R'):
-                    rel_id, rel_m = line.strip().split('\t')
-                    rel_type, rel_arg1, rel_arg2 = rel_m.split(' ')
-                    rel_arg1 = rel_arg1.split(':')[1]
-                    rel_arg2 = rel_arg2.split(':')[1]
-                    arg1 = annotations['tags'][rel_arg1]
-                    arg2 = annotations['tags'][rel_arg2]
-                    annotations['relations'][rel_id] = Relation(rel_id, arg1, arg2, rel_type)
+                annotations['tags'][tag_id] = ClinicalConcept(tag_id, tag_start, tag_end, tag_type, tag_text)
+            if line.strip().startswith('R'):
+                rel_id, rel_m = line.strip().split('\t')
+                rel_type, rel_arg1, rel_arg2 = rel_m.split(' ')
+                rel_arg1 = rel_arg1.split(':')[1]
+                rel_arg2 = rel_arg2.split(':')[1]
+                arg1 = annotations['tags'][rel_arg1]
+                arg2 = annotations['tags'][rel_arg2]
+                annotations['relations'][rel_id] = Relation(rel_id, arg1, arg2, rel_type)
 
         return annotations
 
@@ -457,9 +452,9 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
     evaluator_s = MultipleEvaluator(corpora, tags=entities, relations=relations, verbose=verbose)  # TODO check
     evaluator_l = MultipleEvaluator(corpora, tags=entities, relations=relations, mode='lenient', verbose=verbose)
     output_str = "Entities\n"
-    output_str += "\tPrec.\tRec.\tF_1\n"
+    output_str += "\t\tPrec.\tRec.\tF_1\n"
 
-    for tag in evaluator_s.tags:
+    for tag in set(evaluator_s.tags):
         evaluator_tag_s = MultipleEvaluator(corpora, tags=tag, verbose=verbose)
         evaluator_tag_l = MultipleEvaluator(corpora, tags=tag, mode='lenient', verbose=verbose)
         output_str += 'Strict\t{}\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\nLenient\t{}\t{:<5.4f}\t{:<5.4f}\t{:<5.4f}\n'.format(
@@ -523,6 +518,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
         evaluator_l.scores['relations']['macro']['f1']
     )
     print('{:20}{:^48}'.format('', '  {} files found  '.format(len(corpora.docs))))
+    print(output_str)
     return output_str
 
 
@@ -559,17 +555,39 @@ class Corpora(object):
             self.docs.append((g, s))
 
 
-def evaluate_annotation_agreement(data_path_1, data_path_2, entities: list, relations: list, track=2, verbose=False):
+def evaluate_annotation_agreement(predicted_path, gold_path, entities: list, relations: list, track=2, verbose=False):
     """
     Prints the comparison between two datasets to the console
-    :param data_path_1: Directory containing the first dataset
-    :param data_path_2: Directory containing the second dataset
+    :param predicted_path: Directory containing the predicted dataset
+    :param gold_path: Directory containing the gold dataset
     :param entities: The list of entities you want to calculate for
     :param relations: The list of relations you want to calculate for
     :param track:
     :param verbose: Whether or not to be verbose
     :return: None
     """
-    corpora = Corpora(data_path_1, data_path_2, track)
+    corpora = Corpora(gold_path, predicted_path, track)
     if corpora.docs:
         return evaluate(corpora, entities=entities, relations=relations, verbose=verbose)
+
+
+if __name__ == '__main__':
+    import argparse, json
+    parser = argparse.ArgumentParser(description='Inter-annotation agreement calculator.')
+    parser.add_argument('prediction_folder', help='Predicted data files directory path')
+    parser.add_argument('gold_folder', help='Gold data files directory path')
+    parser.add_argument('config', help="Path to a JSON for entities and relations")
+    args = parser.parse_args()
+
+    with open(args.config) as f:
+        config = json.loads(f.read())
+
+    entities = config["entities"]
+    relations = config["relations"]
+
+    evaluate_annotation_agreement(
+        predicted_path=os.path.abspath(args.predicted_folder),
+        gold_path=os.path.abspath(args.gold_folder),
+        entities=entities,
+        relations=relations
+    )
