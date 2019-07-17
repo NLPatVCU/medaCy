@@ -28,7 +28,7 @@ def ann_to_tsv(ann_file, output_dir):
     output_str = ""
 
     for e in ents:
-        output_str += f"T{e.t}\t{e.ent_type}\t{e.start}\t{e.end}\t{e.text}\n"
+        output_str += f"T{e.num}\t{e.ent_type}\t{e.start}\t{e.end}\t{e.text}\n"
 
     print(output_str)
 
