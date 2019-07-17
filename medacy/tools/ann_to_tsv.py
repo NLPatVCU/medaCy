@@ -16,12 +16,10 @@ def ann_to_tsv(ann_file, output_dir):
     if isinstance(ann_file, DataFile):
         output_file_name = ann_file.file_name + ".tsv"
         ann_file_path = ann_file.ann_path
-        ents = Entity.init_from_doc(ann_file)
+        ents = Entity.init_from_doc(ann_file_path)
     elif isinstance(ann_file, str):
-        with open(ann_file) as f:
-            ann_content = f.read()
-        output_file_name = os.path.basename(ann_file) + ".tsv"
-        ents = Entity.init_from_doc(ann_content)
+        output_file_name = os.path.basename(ann_file)[:-4] + ".tsv"
+        ents = Entity.init_from_doc(ann_file)
     else: raise TypeError("ann_file must be DataFile or str")
 
     output_file_path = os.path.join(output_dir, output_file_name)
