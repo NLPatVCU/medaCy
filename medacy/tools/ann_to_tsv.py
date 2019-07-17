@@ -1,7 +1,6 @@
 """Converts an ANN file to tab delimited values"""
 
 import os
-import re
 from medacy.data.dataset import Dataset
 from medacy.tools.data_file import DataFile
 from medacy.tools.entity import Entity
@@ -29,7 +28,7 @@ def ann_to_tsv(ann_file, output_dir):
     output_str = ""
 
     for e in ents:
-        output_str += re.sub(" ", "\t", str(e))
+        output_str += f"T{e.t}\t{e.ent_type}\t{e.start}\t{e.end}\t{e.text}\n"
 
     print(output_str)
 
