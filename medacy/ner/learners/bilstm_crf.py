@@ -12,6 +12,7 @@ import string
 import unicodedata
 import re
 
+from gensim.models import KeyedVectors
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -28,24 +29,28 @@ EPOCHS = 10
 class BiLstmCrfNetwork(nn.Module):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    def __init__(self, mimic_embeddings, other_features, tag_to_index):
+    def __init__(self, wv, other_features, tag_to_index):
         if torch.cuda.is_available():
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
         super(BiLstmCrfNetwork, self).__init__()
 
+        # Setup embedding variables
+        self.tagset_size = len(tag_to_index)
+        word_vectors = torch.tensor(wv.vectors)
+        word_vectors = torch.cat((word_vectors, torch.zeros(1, 200)))
+        vector_size = wv.vector_size
+
         # Setup character embedding layers
         self.character_embeddings = nn.Embedding(len(string.printable) + 1, CHARACTER_EMBEDDING_SIZE, padding_idx=0)
         self.character_lstm = nn.LSTM(CHARACTER_EMBEDDING_SIZE, CHARACTER_HIDDEN_DIM, bidirectional=True)
 
-        # Setup word embedding layers
-        self.tagset_size = len(tag_to_index)
-        self.word_embeddings = nn.Embedding.from_pretrained(mimic_embeddings)
-        # self.dropout = nn.Dropout()
+        # Setup word embedding layer
+        self.word_embeddings = nn.Embedding.from_pretrained(word_vectors)
 
         # The LSTM takes word embeddings concatenated with character verctors as inputs and
         # outputs hidden states with dimensionality hidden_dim.
-        lstm_input_size = len(mimic_embeddings[0]) + CHARACTER_HIDDEN_DIM*2 + other_features
+        lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2 + other_features
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
         # The linear layer that maps from hidden state space to tag space
@@ -107,50 +112,23 @@ class BiLstmCrfNetwork(nn.Module):
 class BiLstmCrfLearner:
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = None
-    token_to_index = {}
     tag_to_index = {}
-    mimic_embeddings = []
     untrained_tokens = set()
     other_features = []
     window_size = 0
+    wv = None
 
     def __init__(self, word_embeddings):
         torch.manual_seed(1)
         self.character_to_index = {character:(index + 1) for index, character in enumerate(string.printable)}
-        self.load_word_embeddings(word_embeddings)
+        self.word_embeddings_file = word_embeddings
+        # self.load_word_embeddings(word_embeddings)
 
-    def load_word_embeddings(self, word_embeddings):
-        if word_embeddings is None:
+    def load_word_embeddings(self):
+        if self.word_embeddings_file is None:
             raise ValueError('BiLSTM+CRF learner requires word embeddings.')
 
-        logging.info('Preparing mimic word embeddings...')
-
-        with open(word_embeddings) as mimic_file:
-            token_to_index = {}
-            mimic_embeddings = []
-
-            # Read first line so it's not included in the loop
-            mimic_file.readline()
-
-            for line in mimic_file:
-                values = line.split(' ')
-
-                token = values[0]
-
-                embeddings = values[1:]
-                if '\n' in embeddings:
-                    embeddings.remove('\n')
-                embeddings = list(map(float, embeddings))
-
-                token_to_index[token] = len(token_to_index)
-                mimic_embeddings.append(embeddings)
-
-        mimic_embeddings.append([float(0) for _ in range(200)])
-        token_to_index['UNTRAINED'] = len(token_to_index)
-
-        mimic_embeddings = torch.tensor(mimic_embeddings, device=self.device)
-        self.token_to_index = token_to_index
-        self.mimic_embeddings = mimic_embeddings
+        self.wv = KeyedVectors.load_word2vec_format(self.word_embeddings_file, binary=True)
 
     def find_other_features(self, example):
         if '0:text' not in example:
@@ -246,22 +224,21 @@ class BiLstmCrfLearner:
             # Add text index for looking up word embedding
             token_text = token['0:text']
             token_text = self.unicodeToAscii(token_text)
-            # normalized_text = ''.join(c.lower() for c in token_text if c.isalpha())
-            p = re.compile(r'[A-z]*')
-            normalized_text = p.match(token_text).group()
-            normalized_text = ''.join(c.lower() for c in normalized_text)
+            # p = re.compile(r'[A-z]*')
+            # normalized_text = p.match(token_text).group()
+            # normalized_text = ''.join(c.lower() for c in normalized_text)
 
             # Look up word embedding index
             # TODO Find correct way to handle this
-            if normalized_text not in self.token_to_index:
-                embedding_index = self.token_to_index['UNTRAINED']
+            try:
+                # embedding_index = self.wv[token_text]
+                embedding_index = self.wv.vocab[token_text].index
+            except KeyError:
+                embedding_index = len(self.wv.vocab)
 
                 # Only for logging untrained tokens
-                if normalized_text != '' and normalized_text != ' ' and not normalized_text.isnumeric():
-                    self.untrained_tokens.add(token_text)
-                
-            else:
-                embedding_index = self.token_to_index[normalized_text]
+                # if normalized_text != '' and normalized_text != ' ' and not normalized_text.isnumeric():
+                self.untrained_tokens.add(token_text)
 
             token_vector.append(embedding_index)
 
@@ -298,6 +275,9 @@ class BiLstmCrfLearner:
         return tokens_vector
 
     def fit(self, x_data, y_data):
+        if self.wv is None:
+            self.load_word_embeddings()
+
         self.tag_to_index = self.create_tag_dictionary(y_data)
 
         # Find other feature names
@@ -318,7 +298,7 @@ class BiLstmCrfLearner:
 
         other_features_length = len(self.other_features) * (self.window_size * 2 + 1)
 
-        model = BiLstmCrfNetwork(self.mimic_embeddings, other_features_length, self.tag_to_index)
+        model = BiLstmCrfNetwork(self.wv, other_features_length, self.tag_to_index)
 
         if torch.cuda.is_available():
             logging.info('CUDA available. Moving model to GPU.')
@@ -345,9 +325,8 @@ class BiLstmCrfLearner:
         self.model = model
 
     def predict(self, sequences):
-        if not self.token_to_index:
-            raise RuntimeError('There is no token_to_index. Model must not have been fit yet'
-                'or was loaded improperly.')
+        if not self.wv:
+            raise RuntimeError('Loading word embeddings is required.')
         
         with torch.no_grad():
             predictions = []
@@ -362,7 +341,6 @@ class BiLstmCrfLearner:
     def save(self, path):
         properties = {
             'model': self.model,
-            'token_to_index': self.token_to_index,
             'tag_to_index': self.tag_to_index,
             'other_features': self.other_features,
             'window_size': self.window_size
@@ -376,7 +354,6 @@ class BiLstmCrfLearner:
     def load(self, path):
         saved_data = torch.load(path)
         
-        self.token_to_index = saved_data['token_to_index']
         self.tag_to_index = saved_data['tag_to_index']
         self.other_features = saved_data['other_features']
         self.window_size = saved_data['window_size']
@@ -384,3 +361,4 @@ class BiLstmCrfLearner:
         model = saved_data['model']
         model.eval()
         self.model = model
+        self.load_word_embeddings()
