@@ -451,8 +451,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
     if mode not in ('strict', 'lenient'): raise ValueError("mode must be 'strict' or 'lenient'.")
     evaluator_s = MultipleEvaluator(corpora, tags=entities, relations=relations, verbose=verbose)  # TODO check
     evaluator_l = MultipleEvaluator(corpora, tags=entities, relations=relations, mode='lenient', verbose=verbose)
-    output_str = "Entities\n"
-    output_str += "\t\tPrec.\tRec.\tF_1\n"
+    output_str = "Entities\n\t\tPrec.\tRec.\tF_1\n"
 
     for tag in set(evaluator_s.tags):
         evaluator_tag_s = MultipleEvaluator(corpora, tags=tag, verbose=verbose)
@@ -486,7 +485,7 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
         evaluator_l.scores['tags']['macro']['f1']
     )
 
-    output_str += "Relations\n"
+    output_str += "Relations\n\t\tPrec.\tRec.\tF_1\n"
     for rel in evaluator_s.relations:
         evaluator_tag_s = MultipleEvaluator(corpora, relations=rel, mode='strict', verbose=verbose)
         evaluator_tag_l = MultipleEvaluator(corpora, relations=rel, mode='lenient', verbose=verbose)
@@ -517,8 +516,8 @@ def evaluate(corpora, entities, relations, mode='strict', verbose=False):
         evaluator_l.scores['relations']['macro']['recall'],
         evaluator_l.scores['relations']['macro']['f1']
     )
-    print('{:20}{:^48}'.format('', '  {} files found  '.format(len(corpora.docs))))
     print(output_str)
+    print('{:20}{:^48}'.format('', '  {} files found  '.format(len(corpora.docs))))
     return output_str
 
 
@@ -580,7 +579,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     with open(args.config) as f:
-        config = json.loads(f.read())
+        config = json.load(f)
 
     entities = config["entities"]
     relations = config["relations"]
