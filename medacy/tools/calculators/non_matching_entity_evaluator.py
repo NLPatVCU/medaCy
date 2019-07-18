@@ -51,13 +51,13 @@ def calculate_inter_dataset_agreement(predicted_dataset: Dataset, gold_dataset: 
             k = re.escape(k)
             pattern = r"\t" + k + " "
             while re.search(pattern, text):
-                text = re.sub(pattern, r"\t" + v + " ", text)
+                text = re.sub(pattern, r"\t" + re.escape(v) + " ", text)
 
         with open(os.path.join(temp_dataset_dir, file), "w+") as f:
             f.write(text)
 
     # Pass the two directories to the evaluation calculator
-    data = evaluate_annotation_agreement(predicted_dataset.data_directory, temp_dataset_dir, mappings.values(), relations=[])
+    data = evaluate_annotation_agreement(predicted_dataset.data_directory, temp_dataset_dir, set(mappings.values()), relations=[])
 
     # Delete the temp dir
     shutil.rmtree(temp_dataset_dir)
