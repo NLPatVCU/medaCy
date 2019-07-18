@@ -2,7 +2,7 @@ import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from spacy.tokenizer import Tokenizer
 from medacy.ner.learners import BiLstmCrfLearner
-from medacy.pipeline_components import ClinicalTokenizer
+from medacy.pipeline_components import ClinicalTokenizer, SystematicReviewTokenizer
 from medacy.pipeline_components import FeatureExtractor
 
 from medacy.pipeline_components import BiluoAnnotatorComponent
@@ -42,8 +42,9 @@ class LstmClinicalPipeline(BasePipeline):
         return ('BiLSTM+CRF', learner)
 
     def get_tokenizer(self):
-        tokenizer = self.spacy_pipeline.tokenizer
+        # tokenizer = self.spacy_pipeline.tokenizer
         # tokenizer = Tokenizer(self.spacy_pipeline.vocab)
+        tokenizer = SystematicReviewTokenizer(self.spacy_pipeline)
         return tokenizer
 
     def get_feature_extractor(self):

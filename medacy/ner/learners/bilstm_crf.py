@@ -24,7 +24,7 @@ LEARNING_RATE = 0.01
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
 CHARACTER_EMBEDDING_SIZE = 100
-EPOCHS = 10
+EPOCHS = 20
 
 class BiLstmCrfNetwork(nn.Module):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -295,6 +295,7 @@ class BiLstmCrfLearner:
             correct_tags_vector = self.vectorize(sentence_tags, self.tag_to_index)
             sentences.append(tokens_vector)
             correct_tags.append(correct_tags_vector)
+        data = list(zip(sentences, correct_tags))
 
         other_features_length = len(self.other_features) * (self.window_size * 2 + 1)
 
@@ -307,8 +308,9 @@ class BiLstmCrfLearner:
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
 
         for i in range(1, EPOCHS + 1):
+            random.shuffle(data)
             epoch_losses = []
-            for sentence, sentence_tags in zip(sentences, correct_tags):
+            for sentence, sentence_tags in data:
                 # Training loop:
                 emissions = model(sentence).unsqueeze(1)
                 sentence_tags = sentence_tags.unsqueeze(1)
