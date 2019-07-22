@@ -21,6 +21,7 @@ args = parser.parse_args()
 
 gold_dataset = Dataset(args.folder1)
 prediction_dataset = Dataset(args.folder2)
+global_tags = tuple(gold_dataset.get_labels().intersection(prediction_dataset.get_labels()))
 
 
 class ClinicalCriteria(object):
@@ -169,16 +170,21 @@ class RecordTrack2(object):
                                                                   tag_end,
                                                                   tag_type,
                                                                   tag_text)
-            for line_num, line in enumerate(lines):
-                if line.strip().startswith('R'):
-                    rel_id, rel_m = line.strip().split('\t')
-                    rel_type, rel_arg1, rel_arg2 = rel_m.split(' ')
-                    rel_arg1 = rel_arg1.split(':')[1]
-                    rel_arg2 = rel_arg2.split(':')[1]
-                    arg1 = annotations['tags'][rel_arg1]
-                    arg2 = annotations['tags'][rel_arg2]
-                    annotations['relations'][rel_id] = Relation(rel_id, arg1,
-                                                                arg2, rel_type)
+            # for line_num, line in enumerate(lines):
+            #     if line.strip().startswith('E'):
+            #         t_split = line.split('\t')
+            #         e_id = t_split[0]
+            #         annotations["events"][e_id] = {}  # Placeholder for if this is implemented in the future
+            # for line_num, line in enumerate(lines):
+            #     if line.strip().startswith('R'):
+            #         rel_id, rel_m = line.strip().split('\t')
+            #         rel_type, rel_arg1, rel_arg2 = rel_m.split(' ')
+            #         rel_arg1 = rel_arg1.split(':')[1]
+            #         rel_arg2 = rel_arg2.split(':')[1]
+            #         arg1 = annotations['tags'][rel_arg1]
+            #         arg2 = annotations['tags'][rel_arg2]
+            #         annotations['relations'][rel_id] = Relation(rel_id, arg1,
+            #                                                     arg2, rel_type)
         return annotations
 
     def _get_text(self):
@@ -431,7 +437,7 @@ class MultipleEvaluator(object):
                                      'macro': {'precision': 0,
                                                'recall': 0,
                                                'f1': 0}}}
-        self.tags = tuple(gold_dataset.get_labels())
+        self.tags = global_tags
         self.relations = ('Strength-Drug', 'Dosage-Drug', 'Duration-Drug',
                           'Frequency-Drug', 'Form-Drug', 'Route-Drug',
                           'Reason-Drug', 'ADE-Drug')
@@ -475,7 +481,7 @@ def evaluate(corpora, mode='strict', verbose=False):
                                                             ' overall '))
         print('{:20}  {:6}  {:6}  {:6}  {:6}    {:6}  {:6}  {:6}    {:6}  {:6}'.format(
             '', 'Prec.', 'Rec.', 'Speci.', 'F(b=1)', 'Prec.', 'Rec.', 'F(b=1)', 'F(b=1)', 'AUC'))
-        for tag in evaluator_s.tags:
+        for tag in sorted(evaluator_s.tags):
             print('{:>20}  {:<5.4f}  {:<5.4f}  {:<5.4f}  {:<5.4f}    {:<5.4f}  {:<5.4f}  {:<5.4f}    {:<5.4f}  {:<5.4f}'.format(
                 tag.capitalize(),
                 evaluator_s.scores[(tag, 'met', 'p')],
