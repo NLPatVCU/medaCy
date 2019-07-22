@@ -170,21 +170,16 @@ class RecordTrack2(object):
                                                                   tag_end,
                                                                   tag_type,
                                                                   tag_text)
-            # for line_num, line in enumerate(lines):
-            #     if line.strip().startswith('E'):
-            #         t_split = line.split('\t')
-            #         e_id = t_split[0]
-            #         annotations["events"][e_id] = {}  # Placeholder for if this is implemented in the future
-            # for line_num, line in enumerate(lines):
-            #     if line.strip().startswith('R'):
-            #         rel_id, rel_m = line.strip().split('\t')
-            #         rel_type, rel_arg1, rel_arg2 = rel_m.split(' ')
-            #         rel_arg1 = rel_arg1.split(':')[1]
-            #         rel_arg2 = rel_arg2.split(':')[1]
-            #         arg1 = annotations['tags'][rel_arg1]
-            #         arg2 = annotations['tags'][rel_arg2]
-            #         annotations['relations'][rel_id] = Relation(rel_id, arg1,
-            #                                                     arg2, rel_type)
+            for line_num, line in enumerate(lines):
+                if line.strip().startswith('R'):
+                    rel_id, rel_m = line.strip().split('\t')
+                    rel_type, rel_arg1, rel_arg2 = rel_m.split(' ')
+                    rel_arg1 = rel_arg1.split(':')[1]
+                    rel_arg2 = rel_arg2.split(':')[1]
+                    arg1 = annotations['tags'][rel_arg1]
+                    arg2 = annotations['tags'][rel_arg2]
+                    annotations['relations'][rel_id] = Relation(rel_id, arg1,
+                                                                arg2, rel_type)
         return annotations
 
     def _get_text(self):
@@ -632,7 +627,6 @@ def main(f1, f2, track, verbose):
     corpora = Corpora(f1, f2, track)
     if corpora.docs:
         evaluate(corpora, verbose=verbose)
-
 
 
 main(os.path.abspath(args.folder1), os.path.abspath(args.folder2), 2, False)
