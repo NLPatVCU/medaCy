@@ -1,7 +1,3 @@
-"""
-A medaCy named entity recognition model wraps together three functionalities
-"""
-
 import logging, os, joblib, time, importlib
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
@@ -14,6 +10,9 @@ from statistics import mean
 
 
 class Model:
+    """
+    A medaCy named entity recognition model wraps together three functionalities.
+    """
 
     def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
 
@@ -39,7 +38,7 @@ class Model:
             pool = Pool(nodes=self.n_jobs)
 
             results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
-                    for data_file in dataset.get_data_files()]
+                    for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -52,19 +51,18 @@ class Model:
         except TypeError as error:
             if str(error) == "can not serialize 'cupy.core.core.ndarray' object":
                 logging.info('Ran into GPU error. Switching to synchronous preprocessing...')
-                self.X_data == []
-                self.y_data == []
-                for data_file in dataset.get_data_files():
+                self.X_data = []
+                self.y_data = []
+                for data_file in dataset:
                     features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
                     self.X_data += features
                     self.y_data += labels
-
 
     def fit(self, dataset):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
-        :param training_data_loader: Instance of Dataset.
+        :param dataset: Instance of Dataset.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
@@ -93,7 +91,7 @@ class Model:
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
-        :param documents: a string or Dataset to predict
+        :param dataset: a string or Dataset to predict
         :param prediction_directory: the directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
         :return:
         """
@@ -138,7 +136,7 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
+    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -147,23 +145,16 @@ class Model:
         the prediction ambiguity with the methods present in the Dataset class to support pipeline development without
         a designated evaluation set.
 
+        :param training_dataset: Dataset that is being cross validated
         :param num_folds: number of folds to split training data into for cross validation
-        :param training_dataset: Dataset that is being cross validated (optional)
         :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
-        :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
+        :param groundtruth_directory: directory to write the ground truth medaCy evaluates on
         :return: Prints out performance metrics, if prediction_directory
         """
 
-        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
+        if num_folds <= 1 or not isinstance(num_folds, int):
+            raise ValueError("Number of folds for cross validation must be an int greater than 1, but is %i" % num_folds)
 
-        if prediction_directory is not None and training_dataset is None:
-            raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
-                             " Please pass the training dataset in the 'training_dataset' parameter.")
-        if groundtruth_directory is not None and training_dataset is None:
-            raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
-                             " Please pass the training dataset in the 'training_dataset' parameter.")
-
-        # assert self.model is not None, "Cannot cross validate a un-fit model"
         self.preprocess(training_dataset)
         assert self.X_data is not None and self.y_data is not None, \
             "Must have features and labels extracted for cross validation"
@@ -198,8 +189,6 @@ class Model:
             test_data = [x[0] for x in X_test]
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
-
-
 
             if groundtruth_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
@@ -365,8 +354,7 @@ class Model:
                 annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))        
         
         return annotations
-    
-    
+
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
