@@ -21,6 +21,7 @@ args = parser.parse_args()
 
 gold_dataset = Dataset(args.folder1)
 prediction_dataset = Dataset(args.folder2)
+global_tags = tuple(gold_dataset.get_labels().intersection(prediction_dataset.get_labels()))
 
 
 class ClinicalCriteria(object):
@@ -431,7 +432,7 @@ class MultipleEvaluator(object):
                                      'macro': {'precision': 0,
                                                'recall': 0,
                                                'f1': 0}}}
-        self.tags = tuple(gold_dataset.get_labels())
+        self.tags = global_tags
         self.relations = ('Strength-Drug', 'Dosage-Drug', 'Duration-Drug',
                           'Frequency-Drug', 'Form-Drug', 'Route-Drug',
                           'Reason-Drug', 'ADE-Drug')
@@ -475,7 +476,7 @@ def evaluate(corpora, mode='strict', verbose=False):
                                                             ' overall '))
         print('{:20}  {:6}  {:6}  {:6}  {:6}    {:6}  {:6}  {:6}    {:6}  {:6}'.format(
             '', 'Prec.', 'Rec.', 'Speci.', 'F(b=1)', 'Prec.', 'Rec.', 'F(b=1)', 'F(b=1)', 'AUC'))
-        for tag in evaluator_s.tags:
+        for tag in sorted(evaluator_s.tags):
             print('{:>20}  {:<5.4f}  {:<5.4f}  {:<5.4f}  {:<5.4f}    {:<5.4f}  {:<5.4f}  {:<5.4f}    {:<5.4f}  {:<5.4f}'.format(
                 tag.capitalize(),
                 evaluator_s.scores[(tag, 'met', 'p')],
@@ -626,7 +627,6 @@ def main(f1, f2, track, verbose):
     corpora = Corpora(f1, f2, track)
     if corpora.docs:
         evaluate(corpora, verbose=verbose)
-
 
 
 main(os.path.abspath(args.folder1), os.path.abspath(args.folder2), 2, False)
