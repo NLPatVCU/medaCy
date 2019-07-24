@@ -36,6 +36,8 @@ class Model:
 
     def preprocess(self, dataset, asynchronous=False):
         if asynchronous:
+            self.X_data = []
+            self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
             results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
@@ -50,8 +52,8 @@ class Model:
                 self.y_data += y
 
         else:
-            self.X_data == []
-            self.y_data == []
+            self.X_data = []
+            self.y_data = []
             for data_file in dataset.get_data_files():
                 features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
                 self.X_data += features
@@ -160,7 +162,6 @@ class Model:
             raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
-        # assert self.model is not None, "Cannot cross validate a un-fit model"
         self.preprocess(training_dataset, asynchronous)
         assert self.X_data is not None and self.y_data is not None, \
             "Must have features and labels extracted for cross validation"
@@ -172,6 +173,7 @@ class Model:
 
         cv = SequenceStratifiedKFold(folds=num_folds)
 
+        medacy_pipeline.entities = list(set(self.y_data))
         named_entities = medacy_pipeline.entities
 
         evaluation_statistics = {}

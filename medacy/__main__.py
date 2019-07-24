@@ -27,18 +27,16 @@ def setup(args):
         return dataset, model
 
     else:
-        labels = list(dataset.get_labels())
-
-        pipeline_arg = args.pipeline
+        # labels = list(dataset.get_labels())
 
         #Parse the argument as a class name in module medacy.ner.pipelines
         module = importlib.import_module("medacy.ner.pipelines")
-        pipeline_class = getattr(module, pipeline_arg)
+        pipeline_class = getattr(module, args.pipeline)
 
         if args.word_embeddings is not None:
-            pipeline = pipeline_class(entities=labels, word_embeddings=args.word_embeddings)
+            pipeline = pipeline_class(word_embeddings=args.word_embeddings)
         else:
-            pipeline = pipeline_class(entities=labels)
+            pipeline = pipeline_class()
 
 
     model = Model(pipeline)

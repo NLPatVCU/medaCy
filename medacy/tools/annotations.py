@@ -180,6 +180,8 @@ class Annotations:
             raise FileNotFoundError("ann_file_path is not a valid file path")
         self.annotations = {'entities': {}, 'relations': []}
         valid_IDs = ['T', 'R', 'E', 'A', 'M', 'N']
+        log_warning = {ID:False for ID in valid_IDs}
+
         with open(ann_file_path, 'r') as file:
             annotation_text = file.read()
         for line in annotation_text.split("\n"):
@@ -209,12 +211,18 @@ class Annotations:
                 relation_start = tags[1].split(':')[1]
                 relation_end = tags[2].split(':')[1]
                 self.annotations['relations'].append((relation_name, relation_start, relation_end))
-            if 'E' == line[0][0]:
-                logging.warning("Event annotations not implemented in medaCy")
-            if 'A' == line[0][0] or 'M' == line[0][0]:
-                logging.warning("Attribute annotations not implemented in medaCy")
-            if 'N' == line[0][0]:
-                logging.warning("Normalization annotations are not implemented in medaCy")
+
+            if line[0][0] in ['E', 'A', 'N']:
+                log_warning[line[0][0]] = True
+        
+        for ID, should_log in log_warning.items():
+            if should_log:
+                if ID == 'E':
+                    logging.warning("Event annotations not implemented in medaCy")
+                elif ID == 'A':
+                    logging.warning("Attribute annotations not implemented in medaCy")
+                elif ID == 'N':
+                    logging.warning("Normalization annotations are not implemented in medaCy")
 
     def to_con(self, write_location=None):
         """
