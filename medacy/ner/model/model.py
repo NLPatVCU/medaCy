@@ -175,7 +175,13 @@ class Model:
 
         cv = SequenceStratifiedKFold(folds=num_folds)
 
-        medacy_pipeline.entities = list(set(Y_data))
+        labels = set()
+        for tags in Y_data:
+            for tag in tags:
+                labels.add(tag)
+        labels = list(labels)
+
+        medacy_pipeline.entities = labels
         named_entities = medacy_pipeline.entities
 
         evaluation_statistics = {}
