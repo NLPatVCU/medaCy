@@ -38,7 +38,7 @@ class BiLstmCrfNetwork(nn.Module):
         # Setup embedding variables
         self.tagset_size = len(tag_to_index)
         word_vectors = torch.tensor(wv.vectors)
-        word_vectors = torch.cat((word_vectors, torch.zeros(1, 200)))
+        word_vectors = torch.cat((word_vectors, torch.zeros(1, wv.vector_size)))
         vector_size = wv.vector_size
 
         # Setup character embedding layers
@@ -122,13 +122,15 @@ class BiLstmCrfLearner:
         torch.manual_seed(1)
         self.character_to_index = {character:(index + 1) for index, character in enumerate(string.printable)}
         self.word_embeddings_file = word_embeddings
-        # self.load_word_embeddings(word_embeddings)
 
     def load_word_embeddings(self):
         if self.word_embeddings_file is None:
             raise ValueError('BiLSTM+CRF learner requires word embeddings.')
 
-        self.wv = KeyedVectors.load_word2vec_format(self.word_embeddings_file, binary=True)
+        if self.word_embeddings_file[-4] == '.bin':
+            self.wv = KeyedVectors.load_word2vec_format(self.word_embeddings_file, binary=True)
+        else:
+            self.wv = KeyedVectors.load_word2vec_format(self.word_embeddings_file, binary=False)
 
     def find_other_features(self, example):
         if '0:text' not in example:
@@ -306,15 +308,22 @@ class BiLstmCrfLearner:
             model = model.cuda()
 
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
+        loss_function = nn.NLLLoss()
 
         for i in range(1, EPOCHS + 1):
             random.shuffle(data)
             epoch_losses = []
             for sentence, sentence_tags in data:
                 # Training loop:
-                emissions = model(sentence).unsqueeze(1)
-                sentence_tags = sentence_tags.unsqueeze(1)
-                loss = -model.crf(emissions, sentence_tags)
+
+                if i < 11:
+                    emissions = model(sentence)
+                    predictions = F.log_softmax(emissions, dim=1)
+                    loss = loss_function(predictions, sentence_tags)
+                else:
+                    emissions = model(sentence).unsqueeze(1)
+                    sentence_tags = sentence_tags.unsqueeze(1)
+                    loss = -model.crf(emissions, sentence_tags)
 
                 optimizer.zero_grad()
                 loss.backward()

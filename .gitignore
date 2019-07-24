@@ -1,6 +1,7 @@
 # medaCy
 *.ann
 *.txt
+debug/
 
 # macOS
 .DS_Store

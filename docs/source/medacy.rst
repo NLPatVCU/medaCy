@@ -2,7 +2,7 @@ medacy package
 ==============
 
 .. toctree::
-
+    medacy.__main__
     medacy.data
     medacy.ner
     medacy.relation
