@@ -6,18 +6,17 @@ from sklearn.metrics import precision_recall_fscore_support as score
 from sklearn.metrics import confusion_matrix
 from keras.preprocessing.sequence import pad_sequences
 import matplotlib.pyplot as plt
+import numpy as np
 import os, logging, tempfile
 
 class Model:
 
-    def __init__(self, label, padding = False, common_words = 10000, maxlen = 100, embedding_dim =200 ):
+    def __init__(self, label, padding = False, common_words = 10000, maxlen = 100 ):
 
         self.label = label
         self.padding = padding
-        self.embedding_dim = embedding_dim
         self.common_words = common_words
         self.maxlen = maxlen
-
 
         #read dataset from external files
         train_data = self.read_from_file("sentence_train")
@@ -25,17 +24,15 @@ class Model:
         test_data = self.read_from_file("sentence_test")
         test_labels = self.read_from_file("labels_test")
 
-        # tokens = self.find_unique_tokens(train_data)
-
         #returns one-hot encoded train and test data and binarized train and test labels
         self.train, self.x_test, self.word_index = self.vectorizing_words(train_data, test_data)
+        self.train_onehot, self.x_test_onehot, self.token_index= self.one_hot_encoding(train_data, test_data)
         self.train_label = self.binarize_labels(train_labels)
         self.y_test = self.binarize_labels(test_labels)
 
         #divides train data into partial train and validation data
         self.x_train, self.x_val, self.y_train, self.y_val = self.create_validation_data(self.train, self.train_label)
-
-
+        self.x_train_onehot, self.x_val_onehot, self.y_train, self.y_val = self.create_validation_data(self.train_onehot, self.train_label)
 
     def read_from_file(self, file):
         """
@@ -45,7 +42,6 @@ class Model:
         :param string: name of the input file.
         :return list:content of the file in list
         """
-
         if not os.path.isfile(file):
             raise FileNotFoundError("Not a valid file path")
 
@@ -55,27 +51,45 @@ class Model:
 
         return content
 
-    def find_unique_tokens(self, content_list):
+    def one_hot_encoding(self, train_list,  test_list):
         """
         Function takes a list as the input and tokenizes the samples via the `split` method.
-        Assigns a unique index to each unique word and returns a dictionary of unique tokens
+        Assigns a unique index to each unique word and returns a dictionary of unique tokens.
+        Then vectorize the train and test data passed and store the results in a matrix
 
-        :param list: name of the list.
-        :return dictionary:dictionary with a unique index to each unique word
+        :param test_list:
+        :param train_list:
+        :param lists: train data, test data
+        :return matrix:matrix with one-hot encoding
         """
         token_index = {}
-        for content in content_list:
+        for content in train_list:
             for word in content.split():
                 if word not in token_index:
                     token_index[word] = len(token_index) + 1
-        return token_index
+
+        #One_hot_encoding for train data
+        one_hot_train = np.zeros((len(train_list), self.maxlen, max(token_index.values()) + 1))
+        for i, sample in enumerate(train_list):
+            for j, word in list(enumerate(sample.split()))[:self.maxlen]:
+                index = token_index.get(word)
+                one_hot_train[i, j, index] = 1.
+
+        # One_hot_encoding for test data
+        one_hot_test = np.zeros((len(test_list), self.maxlen, max(token_index.values()) + 1))
+        for i, sample in enumerate(test_list):
+            for j, word in list(enumerate(sample.split()))[:self.maxlen]:
+                index = token_index.get(word)
+                one_hot_test[i, j, index] = 1.
+
+        return one_hot_train, one_hot_test, token_index
 
     def vectorizing_words(self, train_list,  test_list):
 
         """
         Function takes train and test lists as the input and creates a Keras tokenizer configured to only take
         into account the top given number most common words in the training data and builds the word index. Passing test data is optional.
-        If test data is passed it will be tokenized using the tokenizer and output the ohe-hot-encoding
+        If test data is passed it will be tokenized using the tokenizer and output the one-hot-encoding
         Then directly outputs the one-hot encoding of the train, test and the word index
 
         :param list: name of the list
@@ -117,7 +131,6 @@ class Model:
         """
         self.encoder = preprocessing.LabelBinarizer()
         self.encoder.fit(label_list)
-        print(self.encoder.classes_)
         binary_label = self.encoder.transform(label_list)
 
         return binary_label
@@ -143,6 +156,7 @@ class Model:
         precision, recall, fscore, support = score(y_true, y_pred)
         return precision, recall, fscore
 
+
     def compute_confusion_matrix(self, y_true, y_pred):
         matrix = confusion_matrix(y_true, y_pred)
         matrix.diagonal() / matrix.sum(axis=1)
@@ -152,8 +166,8 @@ class Model:
 
         x_range = range(1, len(x_var) + 1)
 
-        plt.plot(x_range, x_var, 'bo', label= x_title)
-        plt.plot(x_range, y_var, 'b', label= y_title)
+        plt.plot(x_range, x_var, 'bo', label=x_title)
+        plt.plot(x_range, y_var, 'b', label=y_title)
         plt.title(title)
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)

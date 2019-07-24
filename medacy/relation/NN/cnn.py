@@ -9,19 +9,40 @@ from keras import layers
 import numpy as np
 
 class CNN:
-    def __init__(self, model):
-        self.data_model = model
 
-    def build_Model(self, output_classes, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation = 'relu',
-                    output_activation = 'softmax', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
+    def __init__(self, model, embedding = False):
+        self.data_model = model
+        self.embedding = embedding
+
+    def build_Model(self, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation = 'relu',
+                    output_activation = 'sigmoid', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
         model = Sequential()
-        model.add(layers.Embedding(self.data_model.common_words, self.data_model.embedding_dim,
+        model.add(layers.Embedding(self.data_model.common_words, self.embedding.embedding_dim,
                                    input_length=self.data_model.maxlen))
         model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
         model.add(layers.MaxPooling1D(filter_maxPool))
         model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
         model.add(layers.GlobalMaxPooling1D())
-        model.add(layers.Dense(output_classes, activation=output_activation))
+        model.add(layers.Dense(len(self.data_model.label), activation=output_activation))
+
+        model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+
+        return model
+
+    def build_external_Embedding_Model(self, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation = 'relu',
+                    output_activation = 'sigmoid', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
+        model = Sequential()
+        model.add(layers.Embedding(self.data_model.common_words, self.embedding.embedding_dim,
+                                   input_length=self.data_model.maxlen))
+        model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
+        model.add(layers.MaxPooling1D(filter_maxPool))
+        model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
+        model.add(layers.GlobalMaxPooling1D())
+        model.add(layers.Dense(len(self.data_model.label), activation=output_activation))
+        print(model.summary())
+        if self.embedding:
+            model.layers[0].set_weights([self.embedding.embedding_matrix])
+            model.layers[0].trainable = False
 
         model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
 
@@ -52,6 +73,10 @@ class CNN:
         test_loss, test_acc = model.evaluate(x_test, y_test)
         print ("Accuracy :", test_acc)
         print ("Loss : ", test_loss)
-        print (classification_report(y_true, y_pred))
+        print (classification_report(y_true, y_pred, target_names=self.data_model.label))
         matrix = confusion_matrix(y_true, y_pred)
         print (matrix)
+
+
+
+

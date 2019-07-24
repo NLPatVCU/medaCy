@@ -6,9 +6,11 @@ import numpy as np
 
 class Embeddings:
 
-    def __init__(self, path, model):
+    def __init__(self, path, model, embedding_dim = 200):
         self.data_model = model
         self.path = path
+        self.embedding_dim = embedding_dim
+        self.build_embedding_layer()
 
     def read_embeddings_from_file(self):
         """
@@ -21,6 +23,7 @@ class Embeddings:
 
         embeddings_index = {}
         with open(self.path) as f:
+            next(f)
             for line in f:
                 values = line.split()
                 word = values[0]
@@ -28,19 +31,23 @@ class Embeddings:
                 embeddings_index[word] = coefs
             f.close()
 
+        # print(embeddings_index.shapes)
         return embeddings_index
 
-    def build_embedding_layer(self, word_index):
+    def build_embedding_layer(self):
 
         embeddings_index = self.read_embeddings_from_file()
-        self.embedding_matrix = np.zeros((self.data_model.common_words, self.data_model.embedding_dim))
+        self.embedding_matrix = np.zeros((self.data_model.common_words, self.embedding_dim))
 
-        for word, i in word_index.items():
+        for word, i in self.data_model.word_index.items():
             embedding_vector = embeddings_index.get(word)
-            if i < self.data_model.max_words:
+            if i < self.data_model.common_words:
                 if embedding_vector is not None:
                     # Words not found in embedding index will be all-zeros.
                     self.embedding_matrix[i] = embedding_vector
+
+        print(self.embedding_matrix.shape)
+        return self
 
 
 
