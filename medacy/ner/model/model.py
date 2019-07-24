@@ -34,8 +34,8 @@ class Model:
         if doc is None:
             raise IOError("Model could not be initialized with the set pipeline.")
 
-    def preprocess(self, dataset):
-        try:
+    def preprocess(self, dataset, asynchronous=False):
+        if asynchronous:
             pool = Pool(nodes=self.n_jobs)
 
             results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
@@ -49,18 +49,15 @@ class Model:
                 self.X_data += X
                 self.y_data += y
 
-        except TypeError as error:
-            if str(error) == "can not serialize 'cupy.core.core.ndarray' object":
-                logging.info('Ran into GPU error. Switching to synchronous preprocessing...')
-                self.X_data == []
-                self.y_data == []
-                for data_file in dataset.get_data_files():
-                    features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
-                    self.X_data += features
-                    self.y_data += labels
+        else:
+            self.X_data == []
+            self.y_data == []
+            for data_file in dataset.get_data_files():
+                features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+                self.X_data += features
+                self.y_data += labels
 
-
-    def fit(self, dataset):
+    def fit(self, dataset, asynchronous=False):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
@@ -73,7 +70,7 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
-        self.preprocess(dataset)
+        self.preprocess(dataset, asynchronous)
 
         logging.info("Currently Waiting")
 
@@ -138,7 +135,7 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None):
+    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -164,7 +161,7 @@ class Model:
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
         # assert self.model is not None, "Cannot cross validate a un-fit model"
-        self.preprocess(training_dataset)
+        self.preprocess(training_dataset, asynchronous)
         assert self.X_data is not None and self.y_data is not None, \
             "Must have features and labels extracted for cross validation"
 

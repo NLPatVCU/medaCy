@@ -56,11 +56,11 @@ def train(args, dataset, model):
     if args.filename is None:
         response = input('No filename given. Continue without saving the model at the end? (y/n) ')
         if response.lower() == 'y':
-            model.fit(dataset)
+            model.fit(dataset, args.asynchronous)
         else:
             print('Cancelling. Add filename with -f or --filename.')
     else:
-        model.fit(dataset)
+        model.fit(dataset, args.asynchronous)
         model.dump(args.filename)
 
 def predict(args, dataset, model):
@@ -90,7 +90,8 @@ def cross_validate(args, dataset, model):
         num_folds=args.k_folds,
         training_dataset=dataset,
         prediction_directory=args.predictions,
-        groundtruth_directory=args.groundtruth
+        groundtruth_directory=args.groundtruth,
+        asynchronous=args.asynchronous
     )
 
 def main():
@@ -103,6 +104,7 @@ def main():
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
+    parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     subparsers = parser.add_subparsers()
 
     # Train arguments
