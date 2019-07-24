@@ -23,7 +23,7 @@ def setup(args):
     pipeline = None
 
     if args.pipeline == 'spacy':
-        model = SpacyModel
+        model = SpacyModel()
         return dataset, model
 
     else:
