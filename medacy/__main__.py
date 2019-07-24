@@ -23,12 +23,14 @@ def setup(args):
     pipeline = None
 
     if args.pipeline == 'spacy':
+        logging.info('Using spacy model')
         model = SpacyModel()
 
     else:
         #Parse the argument as a class name in module medacy.ner.pipelines
         module = importlib.import_module("medacy.ner.pipelines")
         pipeline_class = getattr(module, args.pipeline)
+        logging.info('Using %s', args.pipeline)
 
         if args.word_embeddings is not None:
             pipeline = pipeline_class(word_embeddings=args.word_embeddings)
@@ -128,7 +130,7 @@ def main():
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
-    current_time = datetime.fromtimestamp(start_time).strftime('%Y_%m_%d_%H.%M.%S')
+    current_time = datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')
     logging.info('\n\nSTART TIME: %s', current_time)
 
     # Run proper function
@@ -137,7 +139,7 @@ def main():
 
     # Calculate/print end time
     end_time = time.time()
-    current_time = datetime.fromtimestamp(end_time).strftime('%Y_%m_%d_%H.%M.%S')
+    current_time = datetime.fromtimestamp(end_time).strftime('%Y-%m-%d %H:%M:%S')
     logging.info('END TIME: %s', current_time)
 
     # Calculate/print time elapsed
