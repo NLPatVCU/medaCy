@@ -36,6 +36,7 @@ class Model:
 
     def preprocess(self, dataset, asynchronous=False):
         if asynchronous:
+            logging.info('Preprocessing data asynchronously...')
             self.X_data = []
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
@@ -52,6 +53,7 @@ class Model:
                 self.y_data += y
 
         else:
+            logging.info('Preprocessing data synchronously...')
             self.X_data = []
             self.y_data = []
             for data_file in dataset.get_data_files():
@@ -173,7 +175,7 @@ class Model:
 
         cv = SequenceStratifiedKFold(folds=num_folds)
 
-        medacy_pipeline.entities = list(set(self.y_data))
+        medacy_pipeline.entities = list(set(Y_data))
         named_entities = medacy_pipeline.entities
 
         evaluation_statistics = {}

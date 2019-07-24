@@ -24,11 +24,8 @@ def setup(args):
 
     if args.pipeline == 'spacy':
         model = SpacyModel()
-        return dataset, model
 
     else:
-        # labels = list(dataset.get_labels())
-
         #Parse the argument as a class name in module medacy.ner.pipelines
         module = importlib.import_module("medacy.ner.pipelines")
         pipeline_class = getattr(module, args.pipeline)
@@ -38,8 +35,7 @@ def setup(args):
         else:
             pipeline = pipeline_class()
 
-
-    model = Model(pipeline)
+        model = Model(pipeline)
 
     return dataset, model
 
