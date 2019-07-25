@@ -182,9 +182,7 @@ class Dataset:
         :return: A set of strings. Each string is a label used.
         """
         labels = set()
-        data_files = self.all_data_files
-
-        for datafile in data_files:
+        for datafile in self.all_data_files:
             ann_path = datafile.get_annotation_path()
             annotations = Annotations(ann_path)
             labels.update(annotations.get_labels())
