@@ -27,17 +27,17 @@ CHARACTER_EMBEDDING_SIZE = 100
 EPOCHS = 40
 
 class BiLstmCrfNetwork(nn.Module):
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    def __init__(self, wv, other_features, tag_to_index, device):
+        self.device = device
 
-    def __init__(self, wv, other_features, tag_to_index):
-        if torch.cuda.is_available():
+        if device.type != 'cpu':
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
         super(BiLstmCrfNetwork, self).__init__()
 
         # Setup embedding variables
         self.tagset_size = len(tag_to_index)
-        word_vectors = torch.tensor(wv.vectors)
+        word_vectors = torch.tensor(wv.vectors, device=device)
         word_vectors = torch.cat((word_vectors, torch.zeros(1, wv.vector_size)))
         vector_size = wv.vector_size
 
@@ -70,7 +70,7 @@ class BiLstmCrfNetwork(nn.Module):
                 padding = longest_token_length - len(indices)
                 indices += [0] * padding
             character_indices.append(indices)
-        character_indices = torch.tensor(character_indices)
+        character_indices = torch.tensor(character_indices, device=self.device)
 
         character_embeddings = self.character_embeddings(character_indices)
         character_embeddings = character_embeddings.permute(1, 0, 2)
@@ -110,7 +110,7 @@ class BiLstmCrfNetwork(nn.Module):
         return lstm_features
 
 class BiLstmCrfLearner:
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = None
     model = None
     tag_to_index = {}
     untrained_tokens = set()
@@ -118,16 +118,19 @@ class BiLstmCrfLearner:
     window_size = 0
     wv = None
 
-    def __init__(self, word_embeddings):
+    def __init__(self, word_embeddings, cuda_device):
         torch.manual_seed(1)
         self.character_to_index = {character:(index + 1) for index, character in enumerate(string.printable)}
         self.word_embeddings_file = word_embeddings
+
+        device_string = 'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
+        self.device = torch.device(device_string)
 
     def load_word_embeddings(self):
         if self.word_embeddings_file is None:
             raise ValueError('BiLSTM+CRF learner requires word embeddings.')
 
-        if self.word_embeddings_file[-4] == '.bin':
+        if self.word_embeddings_file[-4:] == '.bin':
             self.wv = KeyedVectors.load_word2vec_format(self.word_embeddings_file, binary=True)
         else:
             self.wv = KeyedVectors.load_word2vec_format(self.word_embeddings_file, binary=False)
@@ -301,11 +304,11 @@ class BiLstmCrfLearner:
 
         other_features_length = len(self.other_features) * (self.window_size * 2 + 1)
 
-        model = BiLstmCrfNetwork(self.wv, other_features_length, self.tag_to_index)
+        model = BiLstmCrfNetwork(self.wv, other_features_length, self.tag_to_index, self.device)
 
-        if torch.cuda.is_available():
+        if self.device.type != 'cpu':
             logging.info('CUDA available. Moving model to GPU.')
-            model = model.cuda()
+            model = model.to(self.device)
 
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
         loss_function = nn.NLLLoss()

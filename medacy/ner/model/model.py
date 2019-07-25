@@ -178,7 +178,8 @@ class Model:
         labels = set()
         for tags in Y_data:
             for tag in tags:
-                labels.add(tag)
+                if tag != 'O' and tag != '':
+                    labels.add(tag)
         labels = list(labels)
 
         medacy_pipeline.entities = labels
