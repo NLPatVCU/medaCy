@@ -24,7 +24,7 @@ LEARNING_RATE = 0.01
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
 CHARACTER_EMBEDDING_SIZE = 100
-EPOCHS = 20
+EPOCHS = 40
 
 class BiLstmCrfNetwork(nn.Module):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -310,13 +310,15 @@ class BiLstmCrfLearner:
         optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
         loss_function = nn.NLLLoss()
 
+        logging.info('Training BiLSTM...')
+
         for i in range(1, EPOCHS + 1):
             random.shuffle(data)
             epoch_losses = []
             for sentence, sentence_tags in data:
                 # Training loop:
 
-                if i < 11:
+                if i < 21:
                     emissions = model(sentence)
                     predictions = F.log_softmax(emissions, dim=1)
                     loss = loss_function(predictions, sentence_tags)
@@ -332,6 +334,31 @@ class BiLstmCrfLearner:
             average_loss = sum(epoch_losses) / len(epoch_losses)
             logging.info('Epoch %d average loss: %f' % (i, average_loss))
             logging.debug(self.untrained_tokens)
+
+        # for i, child in enumerate(model.children()):
+        #     # Don't freeze CRF (child 5)
+        #     if i < 5:
+        #         for param in child.parameters():
+        #             param.requires_grad = False
+
+        # logging.info('Training CRF...')
+
+        # for i in range(1, EPOCHS + 1):
+        #     random.shuffle(data)
+        #     epoch_losses = []
+        #     for sentence, sentence_tags in data:
+        #         # Training loop:
+        #         emissions = model(sentence).unsqueeze(1)
+        #         sentence_tags = sentence_tags.unsqueeze(1)
+        #         loss = -model.crf(emissions, sentence_tags)
+
+        #         optimizer.zero_grad()
+        #         loss.backward()
+        #         optimizer.step()
+        #         epoch_losses.append(loss)
+        #     average_loss = sum(epoch_losses) / len(epoch_losses)
+        #     logging.info('Epoch %d average loss: %f' % (i, average_loss))
+        #     logging.debug(self.untrained_tokens)
 
         self.model = model
 
