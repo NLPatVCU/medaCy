@@ -1,66 +1,102 @@
-#Author : Samantha Mahendran for RelaCy
-
 from tabulate import tabulate
 from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import classification_report, confusion_matrix
 from keras.models import *
-from keras import layers
 from keras.layers import *
+from keras import layers
 from statistics import mean
 import numpy as np
 import logging
 
-class CNN:
+class Segment_CNN:
 
     def __init__(self, model, embedding = False):
         self.data_model = model
         self.embedding = embedding
 
-    def build_Model(self, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation = 'relu',
-                    output_activation = 'sigmoid', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
-        model = Sequential()
-        model.add(layers.Embedding(self.data_model.common_words, self.embedding.embedding_dim,
-                                   input_length=self.data_model.maxlen))
-        model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
-        model.add(layers.MaxPooling1D(filter_maxPool))
-        model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
-        model.add(layers.GlobalMaxPooling1D())
-        model.add(layers.Dense(len(self.data_model.label), activation=output_activation))
+    # define the model
+    def define_model(self):
 
-        model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+        # channel 1
+        inputs1 = Input(shape=(self.data_model.maxlen,))
+        embedding1 = Embedding(self.data_model.common_words, self.embedding.embedding_dim )(inputs1)
+        # embedding1 = Embedding(self.data_model.common_words, self.embedding.embedding_dim,self.embedding.embedding_matrix, False )(inputs1)
+        conv1 = Conv1D(filters=32, kernel_size=4, activation='relu')(embedding1)
+        drop1 = Dropout(0.5)(conv1)
+        pool1 = MaxPooling1D(pool_size=2)(drop1)
+        flat1 = Flatten()(pool1)
 
+        # channel 2
+        inputs2 = Input(shape=(self.data_model.maxlen,))
+        embedding2 = Embedding(self.data_model.common_words, self.embedding.embedding_dim)(inputs2)
+        conv2 = Conv1D(filters=32, kernel_size=6, activation='relu')(embedding2)
+        drop2 = Dropout(0.5)(conv2)
+        pool2 = MaxPooling1D(pool_size=2)(drop2)
+        flat2 = Flatten()(pool2)
+
+        # channel 3
+        inputs3 = Input(shape=(self.data_model.maxlen,))
+        embedding3 = Embedding(self.data_model.common_words, self.embedding.embedding_dim)(inputs3)
+        conv3 = Conv1D(filters=32, kernel_size=8, activation='relu')(embedding3)
+        drop3 = Dropout(0.5)(conv3)
+        pool3 = MaxPooling1D(pool_size=2)(drop3)
+        flat3 = Flatten()(pool3)
+
+        # channel 4
+        inputs4 = Input(shape=(self.data_model.maxlen,))
+        embedding4 = Embedding(self.data_model.common_words, self.embedding.embedding_dim)(inputs4)
+        conv4 = Conv1D(filters=32, kernel_size=8, activation='relu')(embedding4)
+        drop4 = Dropout(0.5)(conv4)
+        pool4 = MaxPooling1D(pool_size=2)(drop4)
+        flat4 = Flatten()(pool4)
+
+        # channel 5
+        inputs5 = Input(shape=(self.data_model.maxlen,))
+        embedding5 = Embedding(self.data_model.common_words, self.embedding.embedding_dim)(inputs5)
+        conv5 = Conv1D(filters=32, kernel_size=8, activation='relu')(embedding5)
+        drop5 = Dropout(0.5)(conv5)
+        pool5 = MaxPooling1D(pool_size=2)(drop5)
+        flat5 = Flatten()(pool5)
+
+        # merge
+        merged = concatenate([flat1, flat2, flat3, flat4, flat5])
+
+        # interpretation
+        dense1 = Dense(18, activation='relu')(merged)
+        outputs = Dense(11, activation='sigmoid')(dense1)
+        model = Model(inputs=[inputs1, inputs2, inputs3, inputs4, inputs5], outputs=outputs)
+
+        # compile
+        model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+
+        # summarize
+        print(model.summary())
         return model
 
 
-
-    def define_Embedding_Model(self, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation ='relu',
-                               output_activation = 'sigmoid', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
+    def define_Embedding_Model(self, hidden_units = 64, filter_conv = 1, filter_maxPool = 5, hidden_activation = 'relu'):
         model = Sequential()
         model.add(layers.Embedding(self.data_model.common_words, self.embedding.embedding_dim,
                                    input_length=self.data_model.maxlen))
-        model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
+        model.add(layers.Conv1D(hidden_units, filter_conv, activation=hidden_activation))
         model.add(layers.Dropout(0.5))
         model.add(layers.MaxPooling1D(filter_maxPool))
-        # model.add(layers.Conv1D(hidden_units, filter_conv, activation=hidden_activation))
-        # model.add(layers.Dropout(0.5))
-        # model.add(layers.MaxPooling1D(filter_maxPool))
-        model.add(layers.Conv1D(hidden_units, filter_conv, activation= hidden_activation))
+        model.add(layers.Conv1D(hidden_units, filter_conv, activation=hidden_activation))
         model.add(layers.GlobalMaxPooling1D())
-        # model.add(layers.Flatten())
-        model.add(layers.Dense(len(self.data_model.label), activation=output_activation))
 
         print(model.summary())
         if self.embedding:
             model.layers[0].set_weights([self.embedding.embedding_matrix])
             model.layers[0].trainable = False
 
-        model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-
         return model
 
-    def fit_Model(self, model, x_train, y_train, no_epochs = 20, batch_Size = 512, validation = None):
+    def fit_Model(self, model, x_train, y_train, no_epochs = 20, batch_Size = 512, validation = None,
+                  output_activation = 'sigmoid', optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics=['accuracy']):
+        model.add(layers.Dense(len(self.data_model.label), activation=output_activation))
+        model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
 
         history = model.fit(x_train, y_train, epochs= no_epochs,
                             batch_size= batch_Size, validation_data=validation)
@@ -100,36 +136,39 @@ class CNN:
         matrix = confusion_matrix(y_true, y_pred)
         print (matrix)
 
-    def cross_validate(self, X_data, Y_data, num_folds = 5):
+    def cross_validate(self, Pre_data, Mid_data, Suc_data, C1_data, C2_data, Y_data, num_folds = 5):
 
         if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
 
-        assert X_data is not None and Y_data is not None, \
-            "Must have features and labels extracted for cross validation"
-
-        num_val_samples = len(X_data) // num_folds
+        num_val_samples = len(C1_data) // num_folds
         evaluation_statistics = {}
+
         for i in range(num_folds):
             fold_statistics = {}
 
             print('processing fold #', i)
             # Prepare the validation data: data from partition # k
-            x_test = X_data[i * num_val_samples: (i + 1) * num_val_samples]
+            pre_test = Pre_data[i * num_val_samples: (i + 1) * num_val_samples]
+            mid_test = Mid_data[i * num_val_samples: (i + 1) * num_val_samples]
+            suc_test = Suc_data[i * num_val_samples: (i + 1) * num_val_samples]
+            c1_test = C1_data[i * num_val_samples: (i + 1) * num_val_samples]
+            c2_test = C2_data[i * num_val_samples: (i + 1) * num_val_samples]
             y_test = Y_data[i * num_val_samples: (i + 1) * num_val_samples]
 
             # Prepare the training data: data from all other partitions
-            x_train = np.concatenate(
-                [X_data[:i * num_val_samples],
-                 X_data[(i + 1) * num_val_samples:]],
-                axis=0)
-            y_train = np.concatenate(
-                [Y_data[:i * num_val_samples],
-                 Y_data[(i + 1) * num_val_samples:]],
-                axis=0)
+            pre_train = np.concatenate([Pre_data[:i * num_val_samples],Pre_data[(i + 1) * num_val_samples:]],axis=0)
+            mid_train = np.concatenate([Mid_data[:i * num_val_samples], Mid_data[(i + 1) * num_val_samples:]], axis=0)
+            suc_train = np.concatenate([Suc_data[:i * num_val_samples], Suc_data[(i + 1) * num_val_samples:]], axis=0)
+            c1_train = np.concatenate([C1_data[:i * num_val_samples], C1_data[(i + 1) * num_val_samples:]], axis=0)
+            c2_train = np.concatenate([C2_data[:i * num_val_samples], C2_data[(i + 1) * num_val_samples:]], axis=0)
+            y_train = np.concatenate([Y_data[:i * num_val_samples],Y_data[(i + 1) * num_val_samples:]],axis=0)
 
-            model_CNN = self.define_Embedding_Model()
-            model, loss, acc = self.fit_Model (model_CNN, x_train, y_train)
-            y_pred, y_true = self.predict(model,x_test, y_test)
+            # model = self.build_external_Embedding_Model()
+            model = self.define_model()
+            model.fit([pre_train, mid_train, suc_train, c1_train, c2_train], y_train, epochs=10, batch_size=16)
+            # model, loss, acc = self.fit_Model (model, x_train, y_train)
+            y_pred, y_true = self.predict(model,[pre_test, mid_test, suc_test, c1_test, c2_test], y_test)
+
 
             # Write the metrics for this fold.
             for label in self.data_model.label:

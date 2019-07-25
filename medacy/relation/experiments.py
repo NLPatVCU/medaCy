@@ -1,5 +1,6 @@
 from medacy.relation.NN import Simple_NN
 from medacy.relation.NN import CNN
+from medacy.relation.NN import Segment_CNN
 from medacy.relation.NN import Embeddings
 from medacy.relation.models import Model
 
@@ -14,8 +15,8 @@ embedding_path = "glove.6B.200d.txt"
 
 #create dataset
 data = Model(label, False, True)
-data_pad = Model(label, True, True)
-# embedding = Embeddings(embedding_path, data_pad, 200)
+data_pad = Model(label, True, True, False)
+embedding = Embeddings(embedding_path, data_pad, 200)
 nn = Simple_NN(data)
 
 # Model 1 : Train on all the train data and test directly on the test data using one-hot vector inputs
@@ -55,15 +56,19 @@ nn = Simple_NN(data)
 # Model 6: Train CNN on all the train data and test directly on the test data using one-hot vector inputs
 
 # cnn = CNN(data_pad, embedding)
-# model_cnn = cnn.build_external_Embedding_Model()
+# model_cnn = cnn.define_Embedding_Model()
 # model, loss, acc = cnn.fit_Model (model_cnn, data_pad.train, data_pad.train_label)
 # y_pred, y_true = cnn.predict(model, data_pad.x_test, data_pad.y_test)
-# cnn.evaluate_Model(y_pred, y_true )
+# cnn.evaluate_Model(y_pred, y_true)
 
 # Model 7: Train NN on all the train data and test directly on the test data using sentence - vector inputs
 
-nn.cross_validate( data.train, data.train_label)
+# nn.cross_validate( data.train, data.train_label)
 
 # Model 8: Train CNN on all the train data and test directly on the test data using sentence - vector inputs
 # cnn = CNN(data_pad, embedding)
 # cnn.cross_validate(data_pad.train, data_pad.train_label)
+
+# Model 9: Train seg_CNN on all the train data and test directly on the test data using sentence - vector inputs
+seg_cnn = Segment_CNN(data_pad, embedding)
+seg_cnn.cross_validate(data_pad.preceding, data_pad.middle, data_pad.succeeding, data_pad.concept1, data_pad.concept2, data_pad.train_label)

@@ -90,8 +90,8 @@ class Model:
         train_labels = read_from_file("new/labels_train")
 
         if self.test:
-            test_data = read_from_file("new/sentence_test")
-            test_labels = read_from_file("new/labels_test")
+            test_data = read_from_file("old/sentence_test")
+            test_labels = read_from_file("old/labels_test")
         else:
             test_data = None
             test_labels = None
@@ -116,7 +116,7 @@ class Model:
             train_concept1 = read_from_file("new/concept1_seg")
             train_concept2 = read_from_file("new/concept2_seg")
 
-            self.preceding, self.middle, self.succeeding, self.concept1, self.concept2, self.word_index = self.vectorize_words(train_data, train_preceding,train_middle, train_succeeding, train_concept1, train_concept2)
+            self.preceding, self.middle, self.succeeding, self.concept1, self.concept2, self.word_index = self.vectorize_segments(train_data, train_preceding,train_middle, train_succeeding, train_concept1, train_concept2)
 
     def one_hot_encoding(self, train_list,  test_list = None):
         """
