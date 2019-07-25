@@ -377,7 +377,6 @@ class Model:
         """
         A multi-processed method for extracting features from a given DataFile instance.
 
-        :param conn: pipe to pass back data to parent process
         :param data_file: an instance of DataFile
         :return: Updates queue with features for this given file.
         """
@@ -403,25 +402,6 @@ class Model:
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
         return features, labels
-
-    def load(self, path):
-        """
-        Loads a pickled model.
-
-        :param path: File path to directory where fitted model should be dumped
-        :return:
-        """
-        self.model = joblib.load(path)
-
-    def dump(self, path):
-        """
-        Dumps a model into a pickle file
-
-        :param path: Directory path to dump the model
-        :return:
-        """
-        assert self.model is not None, "Must fit model before dumping."
-        joblib.dump(self.model, path)
 
     def get_info(self, return_dict=False):
         """
@@ -453,6 +433,25 @@ class Model:
 
         return "\n".join(text)
 
+    def load(self, path):
+        """
+        Loads a pickled model.
+
+        :param path: File path to directory where fitted model should be dumped
+        :return:
+        """
+        self.model = joblib.load(path)
+
+    def dump(self, path):
+        """
+        Dumps a model into a pickle file
+
+        :param path: Directory path to dump the model
+        :return:
+        """
+        assert self.model is not None, "Must fit model before dumping."
+        joblib.dump(self.model, path)
+
     @staticmethod
     def load_external(package_name):
         """
@@ -465,6 +464,9 @@ class Model:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.pipeline}, {self.model})"
 
     def __str__(self):
         return self.get_info()
