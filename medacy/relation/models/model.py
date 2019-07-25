@@ -1,4 +1,4 @@
-#Author : Samantha Mahendran for RelaCy
+# Author : Samantha Mahendran for RelaCy
 
 from keras.preprocessing.text import Tokenizer
 from sklearn import preprocessing
@@ -9,49 +9,116 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os, logging, tempfile
 
+
+def read_from_file(file):
+    """
+    Function to read external files and insert the content to a list. It also removes whitespace
+    characters like `\n` at the end of each line
+
+    :param file: name of the input file.
+    :return list:content of the file in list
+    """
+    if not os.path.isfile(file):
+        raise FileNotFoundError("Not a valid file path")
+
+    with open(file) as f:
+        content = f.readlines()
+    content = [x.strip() for x in content]
+
+    return content
+
+
+def create_validation_data(train_data, train_label, num_data=1000):
+
+    """
+    Function takes the training data as the input and splits the data into training and validation.
+    By default it takes first 1000 as the validation.
+
+    :param num_data: number of files split as validation data
+    :param train_label: list of the labels of the training data
+    :param train_data: list of the training data
+    :return:train samples, validation samples
+    """
+
+    x_val = train_data[:num_data]
+    x_train = train_data[num_data:]
+
+    y_val = train_label[:num_data]
+    y_train = train_label[num_data:]
+
+    return x_train, x_val, y_train, y_val
+
+
+def compute_evaluation_metrics(y_true, y_pred):
+    precision, recall, f_score, support = score(y_true, y_pred)
+    return precision, recall, f_score
+
+
+def compute_confusion_matrix(y_true, y_pred):
+    matrix = confusion_matrix(y_true, y_pred)
+    matrix.diagonal() / matrix.sum(axis=1)
+    return matrix
+
+
+def plot_graphs(x_var, y_var, x_label, y_label, x_title, y_title, title):
+
+    x_range = range(1, len(x_var) + 1)
+
+    plt.plot(x_range, x_var, 'bo', label=x_title)
+    plt.plot(x_range, y_var, 'b', label=y_title)
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.legend()
+
+    plt.show()
+
+
 class Model:
 
-    def __init__(self, label, padding = False, common_words = 10000, maxlen = 100 ):
+    def __init__(self, label, padding = False, segment = True, test = False, common_words = 10000, maxlen = 100 ):
 
         self.label = label
         self.padding = padding
+        self.segment = segment
+        self.test = test
         self.common_words = common_words
         self.maxlen = maxlen
 
         #read dataset from external files
-        train_data = self.read_from_file("sentence_train")
-        train_labels = self.read_from_file("labels_train")
-        test_data = self.read_from_file("sentence_test")
-        test_labels = self.read_from_file("labels_test")
+        train_data = read_from_file("new/sentence_train")
+        train_labels = read_from_file("new/labels_train")
 
-        #returns one-hot encoded train and test data and binarized train and test labels
-        self.train, self.x_test, self.word_index = self.vectorizing_words(train_data, test_data)
-        self.train_onehot, self.x_test_onehot, self.token_index= self.one_hot_encoding(train_data, test_data)
+        if self.test:
+            test_data = read_from_file("new/sentence_test")
+            test_labels = read_from_file("new/labels_test")
+        else:
+            test_data = None
+            test_labels = None
+
         self.train_label = self.binarize_labels(train_labels)
-        self.y_test = self.binarize_labels(test_labels)
+        if self.test:
+            self.train, self.x_test, self.word_index = self.vectorize_words(train_data, test_data)
+            self.train_onehot, self.x_test_onehot, self.token_index= self.one_hot_encoding(train_data, test_data)
+            self.y_test = self.binarize_labels(test_labels)
+        else:
+            self.train_onehot, self.token_index = self.one_hot_encoding(train_data, test_data)
+            self.train, self.word_index = self.vectorize_words(train_data, test_data)
 
         #divides train data into partial train and validation data
-        self.x_train, self.x_val, self.y_train, self.y_val = self.create_validation_data(self.train, self.train_label)
-        self.x_train_onehot, self.x_val_onehot, self.y_train, self.y_val = self.create_validation_data(self.train_onehot, self.train_label)
+        self.x_train, self.x_val, self.y_train, self.y_val = create_validation_data(self.train, self.train_label)
+        self.x_train_onehot, self.x_val_onehot, self.y_train, self.y_val = create_validation_data(self.train_onehot, self.train_label)
 
-    def read_from_file(self, file):
-        """
-        Function to read external files and insert the content to a list. It also removes whitespace
-        characters like `\n` at the end of each line
+        if segment:
+            train_preceding = read_from_file("new/preceding_seg")
+            train_middle = read_from_file("new/middle_seg")
+            train_succeeding = read_from_file("new/succeeding_seg")
+            train_concept1 = read_from_file("new/concept1_seg")
+            train_concept2 = read_from_file("new/concept2_seg")
 
-        :param string: name of the input file.
-        :return list:content of the file in list
-        """
-        if not os.path.isfile(file):
-            raise FileNotFoundError("Not a valid file path")
+            self.preceding, self.middle, self.succeeding, self.concept1, self.concept2, self.word_index = self.vectorize_words(train_data, train_preceding,train_middle, train_succeeding, train_concept1, train_concept2)
 
-        with open(file) as f:
-            content = f.readlines()
-        content = [x.strip() for x in content]
-
-        return content
-
-    def one_hot_encoding(self, train_list,  test_list):
+    def one_hot_encoding(self, train_list,  test_list = None):
         """
         Function takes a list as the input and tokenizes the samples via the `split` method.
         Assigns a unique index to each unique word and returns a dictionary of unique tokens.
@@ -75,16 +142,19 @@ class Model:
                 index = token_index.get(word)
                 one_hot_train[i, j, index] = 1.
 
-        # One_hot_encoding for test data
-        one_hot_test = np.zeros((len(test_list), self.maxlen, max(token_index.values()) + 1))
-        for i, sample in enumerate(test_list):
-            for j, word in list(enumerate(sample.split()))[:self.maxlen]:
-                index = token_index.get(word)
-                one_hot_test[i, j, index] = 1.
+        if self.test:
+            # One_hot_encoding for test data
+            one_hot_test = np.zeros((len(test_list), self.maxlen, max(token_index.values()) + 1))
+            for i, sample in enumerate(test_list):
+                for j, word in list(enumerate(sample.split()))[:self.maxlen]:
+                    index = token_index.get(word)
+                    one_hot_test[i, j, index] = 1.
 
-        return one_hot_train, one_hot_test, token_index
+            return one_hot_train, one_hot_test, token_index
+        else:
+            return one_hot_train, token_index
 
-    def vectorizing_words(self, train_list,  test_list):
+    def vectorize_words(self, train_list, test_list = None):
 
         """
         Function takes train and test lists as the input and creates a Keras tokenizer configured to only take
@@ -104,21 +174,53 @@ class Model:
         if self.padding:
             # Turns strings into lists of integer indices.
             train_sequences = tokenizer.texts_to_sequences(train_list)
-            test_sequences = tokenizer.texts_to_sequences(test_list)
             padded_train = pad_sequences(train_sequences, maxlen=self.maxlen)
-            padded_test = pad_sequences(test_sequences, maxlen=self.maxlen)
+            if self.test:
+                test_sequences = tokenizer.texts_to_sequences(test_list)
+                padded_test = pad_sequences(test_sequences, maxlen=self.maxlen)
 
         else:
             one_hot_train = tokenizer.texts_to_matrix(train_list, mode='binary')
-            one_hot_test = tokenizer.texts_to_matrix(test_list, mode='binary')
+            if self.test:
+                one_hot_test = tokenizer.texts_to_matrix(test_list, mode='binary')
 
         # To recover the word index that was computed
         word_index = tokenizer.word_index
 
         if self.padding:
-            return padded_train, padded_test, word_index
+            if self.test:
+                return padded_train, padded_test, word_index
+            else:
+                return padded_train, word_index
         else:
-            return one_hot_train, one_hot_test, word_index
+            if self.test:
+                return one_hot_train, one_hot_test, word_index
+            else:
+                return one_hot_train, word_index
+
+    def vectorize_segments(self, sentences, preceding, middle, succeeding, concept1, concept2):
+
+        tokenizer = Tokenizer(self.common_words)
+        # This builds the word index
+        tokenizer.fit_on_texts(sentences)
+
+        preceding_sequences = tokenizer.texts_to_sequences(preceding)
+        padded_preceding = pad_sequences(preceding_sequences, maxlen=self.maxlen)
+        middle_sequences = tokenizer.texts_to_sequences(middle)
+        padded_middle = pad_sequences(middle_sequences, maxlen=self.maxlen)
+        succeeding_sequences = tokenizer.texts_to_sequences(succeeding)
+        padded_succeeding = pad_sequences(succeeding_sequences, maxlen=self.maxlen)
+        concept1_sequences = tokenizer.texts_to_sequences(concept1)
+        padded_concept1 = pad_sequences(concept1_sequences, maxlen=self.maxlen)
+        concept2_sequences = tokenizer.texts_to_sequences(concept2)
+        padded_concept2 = pad_sequences(concept2_sequences, maxlen=self.maxlen)
+
+        # To recover the word index that was computed
+        word_index = tokenizer.word_index
+
+        return padded_preceding, padded_middle, padded_succeeding, padded_concept1, padded_concept2, word_index
+
+
 
     def binarize_labels(self, label_list):
 
@@ -135,42 +237,3 @@ class Model:
 
         return binary_label
 
-    def create_validation_data(self, train_data, train_label, num_data=1000):
-
-        """
-        Function takes the training data as the input and splits the data into training and validation.
-        By default it takes first 1000 as the validation.
-        :param list: train data
-        :return lists:train samples, validation samples
-        """
-
-        x_val = train_data[:num_data]
-        x_train = train_data[num_data:]
-
-        y_val = train_label[:num_data]
-        y_train = train_label[num_data:]
-
-        return x_train, x_val, y_train, y_val
-
-    def compute_evaluation_metrics(self, y_true, y_pred):
-        precision, recall, fscore, support = score(y_true, y_pred)
-        return precision, recall, fscore
-
-
-    def compute_confusion_matrix(self, y_true, y_pred):
-        matrix = confusion_matrix(y_true, y_pred)
-        matrix.diagonal() / matrix.sum(axis=1)
-        return matrix
-
-    def plot_graphs(self, x_var, y_var, xlabel, ylabel, x_title, y_title, title):
-
-        x_range = range(1, len(x_var) + 1)
-
-        plt.plot(x_range, x_var, 'bo', label=x_title)
-        plt.plot(x_range, y_var, 'b', label=y_title)
-        plt.title(title)
-        plt.xlabel(xlabel)
-        plt.ylabel(ylabel)
-        plt.legend()
-
-        plt.show()

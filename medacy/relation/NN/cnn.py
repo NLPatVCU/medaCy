@@ -1,12 +1,15 @@
 #Author : Samantha Mahendran for RelaCy
 
-from .embedding import Embeddings
-from medacy.relation.models import Model
+from tabulate import tabulate
+from sklearn.metrics import f1_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
 from sklearn.metrics import classification_report, confusion_matrix
 from keras.models import Sequential
 from keras import layers
-
+from statistics import mean
 import numpy as np
+import logging
 
 class CNN:
 
@@ -65,18 +68,122 @@ class CNN:
 
         return model, loss, acc
 
-    def evaluate_Model(self, model, x_test, y_test ):
+    def predict(self, model, x_test, y_test ):
 
         pred = model.predict(x_test)
         y_pred = np.argmax(pred, axis=1)
         y_true = np.argmax(y_test, axis=1)
         test_loss, test_acc = model.evaluate(x_test, y_test)
+
         print ("Accuracy :", test_acc)
         print ("Loss : ", test_loss)
-        print (classification_report(y_true, y_pred, target_names=self.data_model.label))
+
+        return y_pred, y_true
+
+    def evaluate_Model(self, y_pred, y_true ):
+
+        print (classification_report(y_true, y_pred))
+        # print (classification_report(y_true, y_pred, target_names=self.data_model.label))
+        print(f1_score(y_true, y_pred, average='micro'))
+        print(f1_score(y_true, y_pred, average='macro'))
+        print(f1_score(y_true, y_pred, average='weighted') )
+
         matrix = confusion_matrix(y_true, y_pred)
         print (matrix)
 
+    def cross_validate(self, X_data, Y_data, num_folds = 5):
 
+        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
 
+        assert X_data is not None and Y_data is not None, \
+            "Must have features and labels extracted for cross validation"
 
+        num_val_samples = len(X_data) // num_folds
+        evaluation_statistics = {}
+        for i in range(num_folds):
+            fold_statistics = {}
+
+            print('processing fold #', i)
+            # Prepare the validation data: data from partition # k
+            x_test = X_data[i * num_val_samples: (i + 1) * num_val_samples]
+            y_test = Y_data[i * num_val_samples: (i + 1) * num_val_samples]
+
+            # Prepare the training data: data from all other partitions
+            x_train = np.concatenate(
+                [X_data[:i * num_val_samples],
+                 X_data[(i + 1) * num_val_samples:]],
+                axis=0)
+            y_train = np.concatenate(
+                [Y_data[:i * num_val_samples],
+                 Y_data[(i + 1) * num_val_samples:]],
+                axis=0)
+
+            model_CNN = self.build_external_Embedding_Model()
+            model, loss, acc = self.fit_Model (model_CNN, x_train, y_train)
+            y_pred, y_true = self.predict(model,x_test, y_test)
+
+            # Write the metrics for this fold.
+            for label in self.data_model.label:
+                fold_statistics[label] = {}
+                f1 = f1_score(y_true, y_pred, average='micro', labels=[label])
+                precision = precision_score(y_true, y_pred, average='macro', labels=[label])
+                recall = recall_score(y_true, y_pred, average='micro', labels=[label])
+                fold_statistics[label]['precision'] = precision
+                fold_statistics[label]['recall'] = recall
+                fold_statistics[label]['f1'] = f1
+
+            # add averages
+            fold_statistics['system'] = {}
+            f1 = f1_score(y_true, y_pred, average='micro')
+            precision = precision_score(y_true, y_pred, average='macro')
+            recall = recall_score(y_true, y_pred, average='micro')
+            fold_statistics['system']['precision'] = precision
+            fold_statistics['system']['recall'] = recall
+            fold_statistics['system']['f1'] = f1
+
+            table_data = [[label,
+                           format(fold_statistics[label]['precision'], ".3f"),
+                           format(fold_statistics[label]['recall'], ".3f"),
+                           format(fold_statistics[label]['f1'], ".3f")]
+                          for label in self.data_model.label + ['system']]
+
+            print(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+                                  tablefmt='orgtbl'))
+
+            evaluation_statistics[i+1] = fold_statistics
+
+        statistics_all_folds = {}
+
+        for label in self.data_model.label + ['system']:
+            statistics_all_folds[label] = {}
+            statistics_all_folds[label]['precision_average'] = mean(
+                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['precision_max'] = max(
+                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['precision_min'] = min(
+                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+
+            statistics_all_folds[label]['recall_average'] = mean(
+                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['recall_max'] = max(
+                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['recall_min'] = min(
+                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+
+            statistics_all_folds[label]['f1_average'] = mean(
+                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['f1_max'] = max(
+                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+            statistics_all_folds[label]['f1_min'] = min(
+                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+
+        table_data = [[label,
+                       format(statistics_all_folds[label]['precision_average'], ".3f"),
+                       format(statistics_all_folds[label]['recall_average'], ".3f"),
+                       format(statistics_all_folds[label]['f1_average'], ".3f"),
+                       format(statistics_all_folds[label]['f1_min'], ".3f"),
+                       format(statistics_all_folds[label]['f1_max'], ".3f")]
+                      for label in self.data_model.label + ['system']]
+
+        logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+                       tablefmt='orgtbl'))

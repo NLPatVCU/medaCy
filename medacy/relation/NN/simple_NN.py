@@ -109,7 +109,8 @@ class Simple_NN:
 
     def evaluate_Model(self, y_pred, y_true ):
 
-        print (classification_report(y_true, y_pred, target_names=self.data_model.label))
+        print (classification_report(y_true, y_pred))
+        # print (classification_report(y_true, y_pred, target_names=self.data_model.label))
         print(f1_score(y_true, y_pred, average='micro'))
         print(f1_score(y_true, y_pred, average='macro'))
         print(f1_score(y_true, y_pred, average='weighted') )

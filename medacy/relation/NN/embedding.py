@@ -18,6 +18,7 @@ class Embeddings:
         to their vector representation (as number vectors).
         :return dictionary: word vectors
         """
+        print("Reading external embedding file ......")
         if not os.path.isfile(self.path):
             raise FileNotFoundError("Not a valid file path")
 
@@ -31,7 +32,6 @@ class Embeddings:
                 embeddings_index[word] = coefs
             f.close()
 
-        # print(embeddings_index.shapes)
         return embeddings_index
 
     def build_embedding_layer(self):
@@ -39,6 +39,7 @@ class Embeddings:
         embeddings_index = self.read_embeddings_from_file()
         self.embedding_matrix = np.zeros((self.data_model.common_words, self.embedding_dim))
 
+        print("Building embedding matrix ....")
         for word, i in self.data_model.word_index.items():
             embedding_vector = embeddings_index.get(word)
             if i < self.data_model.common_words:
@@ -46,7 +47,7 @@ class Embeddings:
                     # Words not found in embedding index will be all-zeros.
                     self.embedding_matrix[i] = embedding_vector
 
-        print(self.embedding_matrix.shape)
+        print("Finished building embedding matrix ....")
         return self
 
 
