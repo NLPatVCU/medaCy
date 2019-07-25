@@ -1,12 +1,16 @@
-import logging, os, joblib, time, importlib
+import logging
+import os
+import joblib
+import time
+import importlib
+from tabulate import tabulate
+from statistics import mean
+from sklearn_crfsuite import metrics
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
 from medacy.ner.pipelines import BasePipeline
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from ._model import predict_document, construct_annotations_from_tuples
-from sklearn_crfsuite import metrics
-from tabulate import tabulate
-from statistics import mean
 
 
 class Model:
@@ -57,6 +61,7 @@ class Model:
                     features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
                     self.X_data += features
                     self.y_data += labels
+            else: raise error
 
     def fit(self, dataset):
         """
@@ -322,10 +327,23 @@ class Model:
             self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
             
             #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
-            annotations = self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document, option="groundtruth")
+            annotations_groundtruth = self.predict_annotation_evaluation(
+                directory=groundtruth_directory,
+                option="groundtruth",
+                training_dataset=training_dataset,
+                medacy_pipeline= medacy_pipeline,
+                preds_by_document=preds_by_document,
+                groundtruth_by_document=groundtruth_by_document,
+            )
 
-            annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
-
+            annotations_prediction = self.predict_annotation_evaluation(
+                directory=prediction_directory,
+                option="predictions",
+                training_dataset=training_dataset,
+                medacy_pipeline= medacy_pipeline,
+                preds_by_document=preds_by_document,
+                groundtruth_by_document=groundtruth_by_document
+            )
             
             return Dataset(data_directory=prediction_directory)
 
