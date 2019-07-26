@@ -6,16 +6,16 @@ import warnings,logging
 
 class MetaMapComponent(BaseComponent):
     """
-    A pipeline component for SpaCy that overlays Metamap output as token attributes
+    A pipeline component for spaCy that overlays Metamap output as token attributes.
     """
+
     name = "metamap_annotator"
     dependencies = []
 
-
     def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels = ['orch', 'phsu'], merge_tokens=False):
         """
-        Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
-        :param spacy_pipeline: an instance of a spacy language pipeline.
+        Initializes a pipeline component that annotates MetaMap output onto a spaCy doc object.
+        :param spacy_pipeline: an instance of a spaCy language pipeline.
         :param metamap: an instance of MetaMap.
         :param cuis: Overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis.
         :param semantic_type_labels: Semantic type labels to check for- generates a feature for each semantic type label.
@@ -28,12 +28,10 @@ class MetaMapComponent(BaseComponent):
         self.semantic_type_labels = semantic_type_labels
         self.merge_tokens = merge_tokens
 
-
-
     def __call__(self, doc):
         """
         Runs a document to the metamap_annotator pipeline component. This overlays rich medical features by utilizing
-        MetaMap output and aligning it with a passed spacy Doc object. By medaCy conventions, each overlayed feature
+        MetaMap output and aligning it with a passed spaCy Doc object. By medaCy conventions, each overlayed feature
         is available as a token extension starting with 'feature_'. This component overlays 'feature_cui' and a
         separate boolean feature for each semantic type to detect available under 'feature_is_{type}". This component
         was originally designed to increase recall on Drug entities hence by default 'feature_is_orch' and
@@ -129,11 +127,4 @@ class MetaMapComponent(BaseComponent):
                             except BaseException:
                                 continue
 
-
-
-
         return doc
-
-
-
-
