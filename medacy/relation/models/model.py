@@ -86,12 +86,12 @@ class Model:
         self.maxlen = maxlen
 
         #read dataset from external files
-        train_data = read_from_file("new/sentence_train")
-        train_labels = read_from_file("new/labels_train")
+        train_data = read_from_file("cur/sentence_train")
+        train_labels = read_from_file("cur/labels_train")
 
         if self.test:
-            test_data = read_from_file("old/sentence_test")
-            test_labels = read_from_file("old/labels_test")
+            test_data = read_from_file("cur/sentence_test")
+            test_labels = read_from_file("cur/labels_test")
         else:
             test_data = None
             test_labels = None
@@ -110,11 +110,11 @@ class Model:
         self.x_train_onehot, self.x_val_onehot, self.y_train, self.y_val = create_validation_data(self.train_onehot, self.train_label)
 
         if segment:
-            train_preceding = read_from_file("new/preceding_seg")
-            train_middle = read_from_file("new/middle_seg")
-            train_succeeding = read_from_file("new/succeeding_seg")
-            train_concept1 = read_from_file("new/concept1_seg")
-            train_concept2 = read_from_file("new/concept2_seg")
+            train_preceding = read_from_file("cur/preceding_seg")
+            train_middle = read_from_file("cur/middle_seg")
+            train_succeeding = read_from_file("cur/succeeding_seg")
+            train_concept1 = read_from_file("cur/concept1_seg")
+            train_concept2 = read_from_file("cur/concept2_seg")
 
             self.preceding, self.middle, self.succeeding, self.concept1, self.concept2, self.word_index = self.vectorize_segments(train_data, train_preceding,train_middle, train_succeeding, train_concept1, train_concept2)
 
@@ -206,12 +206,16 @@ class Model:
 
         preceding_sequences = tokenizer.texts_to_sequences(preceding)
         padded_preceding = pad_sequences(preceding_sequences, maxlen=self.maxlen)
+
         middle_sequences = tokenizer.texts_to_sequences(middle)
         padded_middle = pad_sequences(middle_sequences, maxlen=self.maxlen)
+
         succeeding_sequences = tokenizer.texts_to_sequences(succeeding)
         padded_succeeding = pad_sequences(succeeding_sequences, maxlen=self.maxlen)
+
         concept1_sequences = tokenizer.texts_to_sequences(concept1)
         padded_concept1 = pad_sequences(concept1_sequences, maxlen=self.maxlen)
+
         concept2_sequences = tokenizer.texts_to_sequences(concept2)
         padded_concept2 = pad_sequences(concept2_sequences, maxlen=self.maxlen)
 
@@ -219,8 +223,6 @@ class Model:
         word_index = tokenizer.word_index
 
         return padded_preceding, padded_middle, padded_succeeding, padded_concept1, padded_concept2, word_index
-
-
 
     def binarize_labels(self, label_list):
 

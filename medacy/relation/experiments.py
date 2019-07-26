@@ -6,8 +6,8 @@ from medacy.relation.models import Model
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-label = [0,1,2,3,4,5,6,7]
-# label = [0,1,2,3,4,5,6,7,8,9,10]
+# label = [0,1,2,3,4,5,6,7]
+label = [0,1,2,3,4,5]
 # label = ['PIP','TeCP', 'TeRP','TrAP', 'TrCP','TrIP', 'TrNAP','TrWP']
 # embedding_path = "mm3_vectors.nc.200.txt"
 embedding_path = "glove.6B.200d.txt"
