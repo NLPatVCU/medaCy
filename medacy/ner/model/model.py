@@ -175,15 +175,14 @@ class Model:
 
         cv = SequenceStratifiedKFold(folds=num_folds)
 
-        labels = set()
+        tagset = set()
         for tags in Y_data:
             for tag in tags:
                 if tag != 'O' and tag != '':
-                    labels.add(tag)
-        labels = list(labels)
-
-        medacy_pipeline.entities = labels
-        named_entities = medacy_pipeline.entities
+                    tagset.add(tag)
+        tagset = list(tagset)
+        medacy_pipeline.entities = tagset
+        logging.info('Tagset: %s', tagset)
 
         evaluation_statistics = {}
         fold = 1
@@ -206,8 +205,6 @@ class Model:
             test_data = [x[0] for x in X_test]
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
-
-
 
             if groundtruth_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
@@ -263,7 +260,7 @@ class Model:
                     i+=1
 
             # Write the metrics for this fold.
-            for label in named_entities:
+            for label in tagset:
                 fold_statistics[label] = {}
                 recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label])
                 precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label])
@@ -274,9 +271,9 @@ class Model:
 
             # add averages
             fold_statistics['system'] = {}
-            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=named_entities)
-            precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=named_entities)
-            f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=named_entities)
+            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset)
+            precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset)
+            f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
             fold_statistics['system']['precision'] = precision
             fold_statistics['system']['recall'] = recall
             fold_statistics['system']['f1'] = f1
@@ -285,7 +282,7 @@ class Model:
                            format(fold_statistics[label]['precision'], ".3f"),
                            format(fold_statistics[label]['recall'], ".3f"),
                            format(fold_statistics[label]['f1'], ".3f")]
-                          for label in named_entities + ['system']]
+                          for label in tagset + ['system']]
 
             logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                   tablefmt='orgtbl'))
@@ -295,7 +292,7 @@ class Model:
 
         statistics_all_folds = {}
 
-        for label in named_entities + ['system']:
+        for label in tagset + ['system']:
             statistics_all_folds[label] = {}
             statistics_all_folds[label]['precision_average'] = mean(
                 [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
@@ -324,7 +321,7 @@ class Model:
                        format(statistics_all_folds[label]['f1_average'], ".3f"),
                        format(statistics_all_folds[label]['f1_min'], ".3f"),
                        format(statistics_all_folds[label]['f1_max'], ".3f")]
-                      for label in named_entities + ['system']]
+                      for label in tagset + ['system']]
 
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))

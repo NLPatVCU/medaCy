@@ -101,7 +101,7 @@ def main():
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
-    parser.add_argument('-c', '--cuda', type=int, help='Cuda device to use. -1 to use CPU.')
+    parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
     subparsers = parser.add_subparsers()
 
     # Train arguments
