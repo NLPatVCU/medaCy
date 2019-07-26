@@ -81,11 +81,11 @@ class BasePipeline(ABC):
         """
         return [component_name for component_name, _ in self.spacy_pipeline.pipeline
                            if component_name != 'ner']
+
     def __call__(self, doc, predict=False):
         """
         Passes a single document through the pipeline.
         All relevant document attributes should be set prior to this call.
-        :param self:
         :param doc: the document to annotate over
         :return: the annotated document
         """
