@@ -47,7 +47,6 @@ class BasePipeline(ABC):
         """
         pass
 
-
     def get_language_pipeline(self):
         """
         Retrieves the associated spaCy Language pipeline that the medaCy pipeline wraps.
@@ -66,11 +65,13 @@ class BasePipeline(ABC):
         dependencies = [x for x in component.dependencies]
         #print("Dependencies:",dependencies)
 
-        assert component.name not in current_components, "%s is already in the pipeline." % component.name
+        # No need to change anything if the component is already there
+        if component.name in current_components:
+            # "%s is already in the pipeline." % component.name
+            return
 
         for dependent in dependencies:
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
-
 
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
@@ -116,13 +117,3 @@ class BasePipeline(ABC):
         }
 
         return information
-
-
-
-
-
-
-
-
-
-
