@@ -40,7 +40,7 @@ class FeatureExtractor:
         """
         Extract features, labels, and corresponding spans from a document
 
-        :param doc: Annotated Spacy Doc object
+        :param doc: Annotated spaCy Doc object
         :param file_name: Filename to associate these sequences with
         :return: List of tuples of form:
             [(feature dictionaries for sequence, indices of tokens in seq, document label)]
@@ -70,7 +70,7 @@ class FeatureExtractor:
 
     def _sequence_to_feature_dicts(self, sequence):
         """
-        Transforms a given sequence of spaCy token objects into a discrete feature dictionary for us in a CRF.
+        Transforms a given sequence of spaCy token objects into a discrete feature dictionary for use in a CRF.
 
         :param sequence:
         :return: a list of feature dictionaries corresponding to the token.
