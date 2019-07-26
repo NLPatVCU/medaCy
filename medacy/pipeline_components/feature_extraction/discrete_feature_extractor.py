@@ -20,19 +20,21 @@ class FeatureExtractor:
     classifiers such as discriminative conditional random fields.
     """
 
-    def __init__(self, window_size=2, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']):
+    def __init__(self, window_size=2, spacy_features=None):
         """
         Initializes a FeatureExtractor.
-
-        Custom medaCy features are pulled from spacy custom token attributes that begin with 'feature_'.
+        Custom medaCy features are pulled from spaCy custom token attributes that begin with 'feature_'.
 
         :param window_size: window size to pull features from on a given token, default 2 on both sides.
-        :param spacy_features: Default token attributes that spacy sets to utilize as features
+        :param spacy_features: Default token attributes that spaCy sets to utilize as features
         """
         self.window_size = window_size
         # do not ask how long this took to find.
-        self.all_custom_features = [attribute for attribute in list(Underscore.token_extensions.keys()) if attribute.startswith('feature_')]
-        self.spacy_features = spacy_features
+        self.all_custom_features = [attribute for attribute in list(Underscore.token_extensions.keys())
+                                    if attribute.startswith('feature_')]
+        if spacy_features is None:
+            self.spacy_features = ['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']
+        else: self.spacy_features = spacy_features
 
     def __call__(self, doc, file_name):
         """
@@ -56,14 +58,14 @@ class FeatureExtractor:
         Given a document this method orchestrates the organization of features and labels for the sequences to classify.
         Sequences for classification are determined by the sentence boundaries set by spaCy. These can be modified.
 
-        :param doc: an annoted spacy Doc object
-        :return: Tuple of parallel arrays - 'features' an array of feature dictionaries for each sequence (spaCy determined sentence)
-        and 'indices' which are arrays of character offsets corresponding to each extracted sequence of features.
+        :param doc: an annotated spaCy Doc object
+        :return: Tuple of parallel arrays: 'features' as an array of feature dictionaries for each sequence (spaCy
+        determined sentence) and 'indices' which are arrays of character offsets corresponding to each extracted
+        sequence of features.
         """
 
         features = [self._sequence_to_feature_dicts(sent) for sent in doc.sents]
         indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
-
         return features, indices
 
     def _sequence_to_feature_dicts(self, sequence):
@@ -71,7 +73,7 @@ class FeatureExtractor:
         Transforms a given sequence of spaCy token objects into a discrete feature dictionary for us in a CRF.
 
         :param sequence:
-        :return: a sequence of feature dictionaries corresponding to the token.
+        :return: a list of feature dictionaries corresponding to the token.
         """
         return [self._token_to_feature_dict(i, sequence) for i in range(len(sequence))]
 
@@ -98,8 +100,8 @@ class FeatureExtractor:
         features = {
             'bias': 1.0
         }
-        for i in range(-self.window_size, self.window_size+1): #loop through our window
-            if 0 <= (index + i) < len(sentence): #for each index in the window size
+        for i in range(-self.window_size, self.window_size+1):  # loop through our window
+            if 0 <= (index + i) < len(sentence):  # for each index in the window size
                 token = sentence[index+i]
 
                 # adds features from medacy pipeline
