@@ -21,8 +21,6 @@ class BasePipeline(ABC):
         self.creators = creators
         self.organization = organization
 
-
-
     @abstractmethod
     def get_tokenizer(self):
         """
