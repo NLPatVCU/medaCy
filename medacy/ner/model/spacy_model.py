@@ -23,8 +23,22 @@ class SpacyModel:
                                 spaCy documentation.
     """
     model = None
+    nlp = None
+    new = True
 
-    def fit(self, dataset, spacy_model_name='en_core_web_lg', iterations=30, prefer_gpu=False):
+    def __init__(self, spacy_model_name=None, cuda=-1):
+        if cuda >= 0:
+            spacy.prefer_gpu()
+
+        if spacy_model_name is None:
+            self.nlp = spacy.blank("en")  # create blank Language class
+            logging.info("Created blank 'en' model")
+        else:
+            self.nlp = spacy.load(spacy_model_name)  # load existing spaCy model
+            self.new = False
+            logging.info("\nLoaded model '%s'", spacy_model_name)
+
+    def fit(self, dataset, iterations=20, asynchronous=False, labels=None):
         """ Train a spaCy model using a medaCy dataset. Can be new or continued training.
 
         :param dataset: medaCy dataset object
@@ -32,28 +46,23 @@ class SpacyModel:
         :param iterations: Training iterations to do
         :return nlp: A trained spaCy model (language)
         """
-        if iterations is None:
-            iterations = 30
-
-        labels = dataset.get_labels()
         train_data = dataset.get_training_data()
 
+        if labels is None:
+            labels = set()
+            for document in train_data:
+                for entity in document[1]['entities']:
+                    tag = entity[2]
+                    labels.add(tag)
+            labels = list(labels)
+            labels.sort()
+            logging.info('Labels: %s', labels)
+
         logging.info('Fitting new model...\n')
-        logging.info('New labels:')
-        logging.info(labels)
 
         # Set up the pipeline and entity recognizer, and train the new entity.
         random.seed(0)
-
-        if prefer_gpu:
-            spacy.prefer_gpu()
-
-        if spacy_model_name is None:
-            nlp = spacy.blank("en")  # create blank Language class
-            logging.info("Created blank 'en' model")
-        else:
-            nlp = spacy.load(spacy_model_name)  # load existing spaCy model
-            logging.info("\nLoaded model '%s'", spacy_model_name)
+        nlp = self.nlp
 
         # Add entity recognizer to model if it's not in the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -70,7 +79,7 @@ class SpacyModel:
         for label in labels:
             ner.add_label(label)
 
-        if spacy_model_name is None:
+        if self.new:
             optimizer = nlp.begin_training()
         else:
             optimizer = nlp.resume_training()
@@ -94,7 +103,7 @@ class SpacyModel:
 
         return nlp
 
-    def predict(self, dataset, prediction_directory=None):
+    def predict(self, dataset, prediction_directory=None, groundtruth_directory=None):
         """
         Generates predictions over a string or a medaCy dataset
 
@@ -147,7 +156,7 @@ class SpacyModel:
 
             return entities
 
-    def cross_validate(self, folds=5, training_dataset=None, spacy_model_name='en_core_web_lg', epochs=None):
+    def cross_validate(self, num_folds=5, training_dataset=None, epochs=20, prediction_directory=None, groundtruth_directory=None, asynchronous=None):
         """
         Runs a cross validation.
 
@@ -156,7 +165,7 @@ class SpacyModel:
         :param spacy_model_name: Name of the spaCy model to start from.
         :param epochs: Number of epochs to us for every fold training.
         """
-        if folds <= 1:
+        if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1")
 
         if training_dataset is None:
@@ -164,12 +173,21 @@ class SpacyModel:
 
         train_data = training_dataset.get_training_data()
 
+        labels = set()
+        for document in train_data:
+            for entity in document[1]['entities']:
+                tag = entity[2]
+                labels.add(tag)
+        labels = list(labels)
+        labels.sort()
+        logging.info('Labels: %s', labels)
+
         x_data, y_data = zip(*train_data)
 
         skipped_files = []
         evaluation_statistics = {}
 
-        folds = SequenceStratifiedKFold(folds=folds)
+        folds = SequenceStratifiedKFold(folds=num_folds)
         fold = 1
 
         for train_indices, test_indices in folds(x_data, y_data):
@@ -178,11 +196,10 @@ class SpacyModel:
             fold_statistics = {}
 
             x_subdataset = training_dataset.get_subdataset(train_indices)
-            self.fit(x_subdataset, spacy_model_name, epochs)
+            self.fit(x_subdataset, iterations=epochs, labels=labels)
             logging.info('Done training!\n')
 
             nlp = self.model
-            labels = list(x_subdataset.get_labels())
 
             y_subdataset = training_dataset.get_subdataset(test_indices)
 
@@ -190,16 +207,17 @@ class SpacyModel:
             y_pred = []
 
             for data_file in y_subdataset.get_data_files():
-                ann_path = data_file.get_annotation_path()
-                annotations = Annotations(ann_path)
                 txt_path = data_file.get_text_path()
+                ann_path = data_file.get_annotation_path()
+                annotations = Annotations(ann_path, source_text_path=txt_path)
 
                 with open(txt_path, 'r') as source_text_file:
                     text = source_text_file.read()
 
                 doc = nlp(text)
 
-                test_entities = annotations.get_entities(format='spacy')[1]['entities']
+                # test_entities = annotations.get_entities(format='spacy')[1]['entities']
+                test_entities = annotations.get_entity_annotations(format='spacy')[1]['entities']
                 test_entities = self.entities_to_biluo(doc, test_entities)
                 y_test.append(test_entities)
 
@@ -308,7 +326,6 @@ class SpacyModel:
 
         :param path: Path to directory of spaCy model.
         """
-        spacy.prefer_gpu()
         nlp = spacy.load(path)
         self.model = nlp
 

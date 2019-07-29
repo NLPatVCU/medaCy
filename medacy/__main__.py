@@ -24,7 +24,8 @@ def setup(args):
 
     if args.pipeline == 'spacy':
         logging.info('Using spacy model')
-        model = SpacyModel()
+
+        model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
 
     else:
         #Parse the argument as a class name in module medacy.ner.pipelines
@@ -52,7 +53,7 @@ def train(args, dataset, model):
     if args.filename is None:
         response = input('No filename given. Continue without saving the model at the end? (y/n) ')
         if response.lower() == 'y':
-            model.fit(dataset, args.asynchronous)
+            model.fit(dataset, asynchronous=args.asynchronous)
         else:
             print('Cancelling. Add filename with -f or --filename.')
     else:
@@ -67,6 +68,11 @@ def predict(args, dataset, model):
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
     """
+    if args.predictions == False:
+        args.predictions = None
+    if args.groundtruth == False:
+        args.groundtruth = None
+
     model.load(args.model_path)
     model.predict(
         dataset,
@@ -102,6 +108,7 @@ def main():
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
+    parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
     subparsers = parser.add_subparsers()
 
     # Train arguments

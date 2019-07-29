@@ -74,10 +74,10 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-from medacy.tools import DataFile, Annotations
-from joblib import Parallel, delayed
 import os, logging, multiprocessing, math, json, importlib
+from joblib import Parallel, delayed
 import spacy
+from medacy.tools import DataFile, Annotations
 
 class Dataset:
     """
@@ -87,7 +87,7 @@ class Dataset:
     def __init__(self, data_directory,
                  raw_text_file_extension="txt",
                  annotation_file_extension="ann",
-                 metamapped_files_directory = None,
+                 metamapped_files_directory=None,
                  data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
@@ -218,9 +218,9 @@ class Dataset:
         data_files = subdataset.get_data_files()
         sub_data_files = []
 
-        for i in range(len(data_files)):
-            if i in indices:
-                sub_data_files.append(data_files[i])
+        for index, data_file in enumerate(data_files):
+            if index in indices:
+                sub_data_files.append(data_file)
 
         subdataset.all_data_files = sub_data_files
         return subdataset
@@ -301,7 +301,6 @@ class Dataset:
 
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)
-            logging.info("Successfully Metamapped: %s" % file_path)
 
     def is_metamapped(self):
         """

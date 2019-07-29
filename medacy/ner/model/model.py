@@ -181,6 +181,7 @@ class Model:
                 if tag != 'O' and tag != '':
                     tagset.add(tag)
         tagset = list(tagset)
+        tagset.sort()
         medacy_pipeline.entities = tagset
         logging.info('Tagset: %s', tagset)
 
