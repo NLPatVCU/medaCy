@@ -2,6 +2,7 @@ import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from medacy.pipeline_components import MetaMap, SystematicReviewTokenizer
 from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.embeddings.embedding_component import EmbeddingComponent
 
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
 
@@ -12,7 +13,7 @@ class SystematicReviewPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, metamap=None, entities=[]):
+    def __init__(self, word_embeddings, metamap=None, entities=[]):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -32,9 +33,8 @@ class SystematicReviewPipeline(BasePipeline):
 
         self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
 
-        self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
-
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
+        self.add_component(EmbeddingComponent, word_embeddings)
 
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
