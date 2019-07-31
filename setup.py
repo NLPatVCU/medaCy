@@ -56,7 +56,7 @@ setup(
     ],
     install_requires=[
         'spacy==2.1.4',
-        'scispacy==0.2.2',
+        'scispacy',
         'scikit-learn>=0.20.0',
         'numpy==1.16.1',
         'sklearn-crfsuite',
