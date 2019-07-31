@@ -1,4 +1,3 @@
-import importlib
 from spacy.tokens import Doc, Token
 from gensim.models import KeyedVectors
 from medacy.pipeline_components.base import BaseComponent
@@ -22,6 +21,7 @@ class EmbeddingComponent(BaseComponent):
             return []
 
     def __call__(self, doc: Doc):
+        Token.set_extension("feature_embedding", getter=self._lookup_embedding)
         for token in doc:
-            Token.set_extension("feature_embedding", getter=self._lookup_embedding)
+            token._.set('feature_embedding', self._lookup_embedding(token))
         return doc
