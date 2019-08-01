@@ -187,7 +187,6 @@ class Dataset:
         Get training data in a specified format.
 
         :param data_format: The specified format as a string.
-
         :return: The requested data in the requested format.
         """
         supported_formats = ['spacy']

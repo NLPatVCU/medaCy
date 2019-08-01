@@ -35,6 +35,11 @@ class Model:
             raise IOError("Model could not be initialized with the set pipeline.")
 
     def preprocess(self, dataset, asynchronous=False):
+        """Preprocess dataset into a list of sequences and tags.
+
+        :param dataset: Dataset object to preprocess.
+        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
+        """
         if asynchronous:
             logging.info('Preprocessing data asynchronously...')
             self.X_data = []
@@ -66,6 +71,7 @@ class Model:
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
         :param training_data_loader: Instance of Dataset.
+        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
@@ -94,8 +100,9 @@ class Model:
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
-        :param documents: a string or Dataset to predict
-        :param prediction_directory: the directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
+        :param documents: A string or Dataset to predict
+        :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
+        :param groundtruth_directory: The directory to write groundtruth to.
         :return:
         """
 
@@ -152,6 +159,7 @@ class Model:
         :param training_dataset: Dataset that is being cross validated (optional)
         :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
         :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
+        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
         """
 
