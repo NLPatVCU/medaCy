@@ -13,6 +13,7 @@ from spacy.tokens.underscore import Underscore
 from spacy.tokens import Token
 from itertools import cycle
 
+
 class FeatureExtractor:
     """
     This class allows for full control of both spacy features that exist on tokens
