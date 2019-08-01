@@ -78,8 +78,7 @@ class BasePipeline(ABC):
         Retrieves a listing of all components currently in the pipeline.
         :return: a list of components inside the pipeline.
         """
-        return [component_name for component_name, _ in self.spacy_pipeline.pipeline
-                           if component_name != 'ner']
+        return [component_name for component_name, _ in self.spacy_pipeline.pipeline if component_name != 'ner']
 
     def __call__(self, doc, predict=False):
         """
