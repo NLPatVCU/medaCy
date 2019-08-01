@@ -39,6 +39,7 @@ class Model:
 
     def preprocess(self, dataset):
         try:
+            # raise TypeError("can not serialize 'cupy.core.core.ndarray' object")
             pool = Pool(nodes=self.n_jobs)
 
             results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped())
