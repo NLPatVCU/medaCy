@@ -1,14 +1,14 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from spacy.tokenizer import Tokenizer
-from medacy.ner.learners import BiLstmCrfLearner
+from medacy.pipeline_components import BiLstmCrfLearner
 from medacy.pipeline_components import ClinicalTokenizer, SystematicReviewTokenizer
 from medacy.pipeline_components import FeatureExtractor
 
 from medacy.pipeline_components import BiluoAnnotatorComponent
 
 
-class LstmClinicalPipeline(BasePipeline):
+class LstmSystematicReviewPipeline(BasePipeline):
     """
     A pipeline for clinical named entity recognition. A special tokenizer that breaks down a clinical document
     to character level tokens defines this pipeline.

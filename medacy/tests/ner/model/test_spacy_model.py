@@ -42,8 +42,7 @@ class TestSpacyModel(TestCase):
         model = SpacyModel()
         model.fit(
             dataset=self.train_dataset,
-            spacy_model_name='en_core_web_sm',
-            iterations=2
+            iterations=1
         )
 
         model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
