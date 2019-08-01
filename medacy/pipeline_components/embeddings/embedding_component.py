@@ -16,12 +16,10 @@ class EmbeddingComponent(BaseComponent):
 
     def _lookup_embedding(self, token):
         try:
-            return list(self.model[token.text])
+            return [bytes(n) for n in self.model[token.text]]
         except KeyError:
             return []
 
     def __call__(self, doc: Doc):
-        Token.set_extension("feature_embedding", getter=self._lookup_embedding)
-        for token in doc:
-            token._.set('feature_embedding', self._lookup_embedding(token))
+        Token.set_extension("feature_embedding", getter=self._lookup_embedding, force=True)
         return doc
