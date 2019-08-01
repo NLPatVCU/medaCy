@@ -4,8 +4,7 @@ from spacy.tokenizer import Tokenizer
 from medacy.pipeline_components import BiLstmCrfLearner
 from medacy.pipeline_components import ClinicalTokenizer, SystematicReviewTokenizer
 from medacy.pipeline_components import FeatureExtractor
-
-from medacy.pipeline_components import BiluoAnnotatorComponent
+from medacy.pipeline_components import GoldAnnotatorComponent
 
 
 class LstmSystematicReviewPipeline(BasePipeline):
@@ -37,15 +36,13 @@ class LstmSystematicReviewPipeline(BasePipeline):
         self.cuda_device = cuda_device
         # self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
 
-        self.add_component(BiluoAnnotatorComponent, entities) #add overlay for GoldAnnotation
+        self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
 
     def get_learner(self):
         learner = BiLstmCrfLearner(self.word_embeddings, self.cuda_device)
         return ('BiLSTM+CRF', learner)
 
     def get_tokenizer(self):
-        # tokenizer = self.spacy_pipeline.tokenizer
-        # tokenizer = Tokenizer(self.spacy_pipeline.vocab)
         tokenizer = SystematicReviewTokenizer(self.spacy_pipeline)
         return tokenizer
 

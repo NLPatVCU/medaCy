@@ -1,6 +1,5 @@
 import os, logging, tempfile
 import spacy
-from medacy.tools import BiluoTokenizer
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from math import ceil
@@ -99,30 +98,6 @@ class Annotations:
                 entities.append((start, end, entity))
 
             return (source_text, {"entities": entities})
-        elif format == 'pytorch':
-            if not self.source_text_path:
-                raise FileNotFoundError("pytorch format requires the source text path")
-            elif not nlp:
-                raise TypeError('pytorch format requires nlp to be supplied')
-
-            with open(self.source_text_path, 'r') as source_text_file:
-                source_text = source_text_file.read()
-
-            entities = []
-
-            for annotation in self.annotations['entities'].values():
-                entity = annotation[0]
-                start = annotation[1]
-                end = annotation[2]
-                entities.append((start, end, entity))
-
-            doc = nlp(source_text)
-            biluo_tokenizer = BiluoTokenizer(doc)
-
-            tokens = biluo_tokenizer.get_tokens()
-            biluo_labels = biluo_tokenizer.get_labels(entities)
-
-            return (tokens, biluo_labels)
         else:
             raise ValueError("'%s' is not a valid annotation format" % format)
 

@@ -1,9 +1,7 @@
 """Import pipeline components"""
 from .annotation.gold_annotator_component import GoldAnnotatorComponent
-from .annotation.biluo_annotator_component import BiluoAnnotatorComponent
 
 from .feature_extraction.discrete_feature_extractor import FeatureExtractor
-from .feature_extraction.word_only_feature_extractor import WordOnlyFeatureExtractor
 
 from .learners.bilstm_crf_learner import BiLstmCrfLearner
 
