@@ -2,6 +2,8 @@
 
 from medacy.tools import DataFile, Annotations
 from operator import itemgetter
+from spacy.pipeline import Sentencizer
+from spacy.lang.en import English
 import spacy
 
 
@@ -100,9 +102,21 @@ def extract_Segments(sentence, span1, span2):
 
 class Segmentation:
 
-    def __init__(self, dataset=None):
+    def __init__(self, dataset=None, sentence_align = False):
         self.dataset = dataset
-        self.nlp_model = spacy.load('en_core_web_sm')
+        self.nlp_model = English()
+        # self.nlp_model = spacy.load('en_core_web_sm')
+
+        """
+        Simple pipeline component, to allow custom sentence boundary detection logic that doesn’t require the dependency parse.
+        A simpler, rule-based strategy that doesn’t require a statistical model to be loaded
+        """
+        if sentence_align:
+            sentencizer = Sentencizer(punct_chars=["\n"])
+        else:
+            sentencizer = Sentencizer(punct_chars=["\n", ".", "?"])
+
+        self.nlp_model.add_pipe(sentencizer)
 
         # global segmentation object that returns all segments and the label
         self.segments = {'seg_preceding': [], 'seg_concept1': [], 'seg_concept2': [], 'seg_middle': [],
@@ -116,10 +130,11 @@ class Segmentation:
 
             content = open(self.txt_path).read()
             # content_text = replace_Punctuation(content)
+
             self.doc = self.nlp_model(content)
 
             segment = self.get_Segments_from_sentence(self.ann_obj)
-            # segment = self.get_Segments(self.ann_obj )
+            # segment = self.get_Segments_from_relations(self.ann_obj )
 
             # Add lists of segments to the segments object for the dataset
             self.segments['seg_preceding'].extend(segment['preceding'])
@@ -139,6 +154,9 @@ class Segmentation:
             # self.segments['seg_succeeding'].append(segment['succeeding'])
             # self.segments['sentence'].append(segment['sentence'])
             # self.segments['label'].append(segment['label'])
+
+        #print the number of instances of each relation classes
+        print([(i, self.segments['label'].count(i)) for i in set(self.segments['label'])])
 
         # write the segments to a file
         list_to_file('sentence_train', self.segments['sentence'])
@@ -230,12 +248,14 @@ class Segmentation:
         concept 2 - (tokenize words in the second concept)
         Succeeding - (tokenize words after the second concept)
 
-        :return segments and label: preceding, concept_1, middle, concept_2, succeeding, label
+        :param ann: annotation object
+        :return: segments and label: preceding, concept_1, middle, concept_2, succeeding, label
 
         """
         # object to store the segments of a relation object for a file
         doc_segments = {'preceding': [], 'concept1': [], 'concept2': [], 'middle': [], 'succeeding': [], 'sentence': [],
                         'label': []}
+
         # list to store the identified relation pair for problem-problem
         self.entity_holder = []
 
@@ -286,6 +306,7 @@ class Segmentation:
                                 doc_segments = add_file_segments(doc_segments, segment)
                                 token = False
                                 break
+
                         # No problem-problem relations
                         if token:
                             label_rel = 'NPP'
@@ -323,8 +344,8 @@ class Segmentation:
             concept_2 = self.doc.char_span(start_C1, end_C1)
 
         # get the sentence the entity is located
-        sentence_C1 = str(concept_1.sent)
-        sentence_C2 = str(concept_2.sent)
+        sentence_C1 = str(concept_1.sent.text)
+        sentence_C2 = str(concept_2.sent.text)
 
         # if both entities are located in the same sentence return the sentence or
         # concatenate the individual sentences where the entities are located in to one sentence
@@ -348,12 +369,12 @@ class Segmentation:
             sentence = remove_Punctuation(str(sentence).strip())
             concept_1 = remove_Punctuation(str(concept_1).strip())
             concept_2 = remove_Punctuation(str(concept_2).strip())
-            segment['concept1'].append(concept_1)
-            segment['concept2'].append(concept_2)
-            # remove the next line character in the extracted segment
-            segment['sentence'].append(sentence.replace('\n', ' '))
-
             preceding, middle, succeeding = extract_Segments(sentence, concept_1, concept_2)
+
+            # remove the next line character in the extracted segment by replacing the '\n' with ' '
+            segment['concept1'].append(concept_1.replace('\n', ' '))
+            segment['concept2'].append(concept_2.replace('\n', ' '))
+            segment['sentence'].append(sentence.replace('\n', ' '))
             segment['preceding'].append(preceding.replace('\n', ' '))
             segment['middle'].append(middle.replace('\n', ' '))
             segment['succeeding'].append(succeeding.replace('\n', ' '))
