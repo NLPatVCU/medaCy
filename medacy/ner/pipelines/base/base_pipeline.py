@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import spacy
 from medacy.pipeline_components.base import BaseComponent
 
 class BasePipeline(ABC):
