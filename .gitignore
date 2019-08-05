@@ -1,6 +1,7 @@
 # medaCy
 *.ann
 *.txt
+!test_word_embeddings.txt
 debug/
 
 # macOS
