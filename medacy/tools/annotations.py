@@ -1,8 +1,8 @@
 import os, logging, tempfile
+import spacy
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from math import ceil
-
 
 class InvalidAnnotationError(ValueError):
     """Raised when a given input is not in the valid format for that annotation type."""
@@ -70,23 +70,7 @@ class Annotations:
 
         return labels
 
-    def get_spacy_entities(self):
-        """
-        Get just the entities in spacy format from a collection of annotations.
-
-        :return: The list of entities.
-        """
-        entities = []
-
-        for annotation in self.annotations['entities'].values():
-            entity = annotation[0]
-            start = annotation[1]
-            end = annotation[2]
-            entities.append((start, end, entity))
-
-        return entities
-
-    def get_entity_annotations(self, return_dictionary=False, format='medacy'):
+    def get_entity_annotations(self, return_dictionary=False, format='medacy', nlp=None):
         """
         Returns a list of entity annotation tuples
 
@@ -171,6 +155,8 @@ class Annotations:
             raise FileNotFoundError("ann_file_path is not a valid file path")
         self.annotations = {'entities': {}, 'relations': []}
         valid_IDs = ['T', 'R', 'E', 'A', 'M', 'N']
+        log_warning = {ID:False for ID in valid_IDs}
+
         with open(ann_file_path, 'r') as file:
             annotation_text = file.read()
         for line in annotation_text.split("\n"):
@@ -200,12 +186,18 @@ class Annotations:
                 relation_start = tags[1].split(':')[1]
                 relation_end = tags[2].split(':')[1]
                 self.annotations['relations'].append((relation_name, relation_start, relation_end))
-            if 'E' == line[0][0]:
-                logging.warning("Event annotations not implemented in medaCy")
-            if 'A' == line[0][0] or 'M' == line[0][0]:
-                logging.warning("Attribute annotations not implemented in medaCy")
-            if 'N' == line[0][0]:
-                logging.warning("Normalization annotations are not implemented in medaCy")
+
+            if line[0][0] in ['E', 'A', 'N']:
+                log_warning[line[0][0]] = True
+        
+        for ID, should_log in log_warning.items():
+            if should_log:
+                if ID == 'E':
+                    logging.warning("Event annotations not implemented in medaCy")
+                elif ID == 'A':
+                    logging.warning("Attribute annotations not implemented in medaCy")
+                elif ID == 'N':
+                    logging.warning("Normalization annotations are not implemented in medaCy")
 
     def to_con(self, write_location=None):
         """

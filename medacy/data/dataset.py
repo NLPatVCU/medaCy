@@ -74,10 +74,10 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-from medacy.tools import DataFile, Annotations
-from joblib import Parallel, delayed
 import os, logging, multiprocessing, math, json, importlib
-
+from joblib import Parallel, delayed
+import spacy
+from medacy.tools import DataFile, Annotations
 
 class Dataset:
     """
@@ -87,7 +87,7 @@ class Dataset:
     def __init__(self, data_directory,
                  raw_text_file_extension="txt",
                  annotation_file_extension="ann",
-                 metamapped_files_directory = None,
+                 metamapped_files_directory=None,
                  data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
@@ -182,42 +182,26 @@ class Dataset:
     def __iter__(self):
         return self.get_data_files().__iter__()
 
-    def get_labels(self):
-        """
-        Get all of the entities/labels used in the dataset.
-
-        :return: A set of strings. Each string is a label used.
-        """
-        labels = set()
-        data_files = self.all_data_files
-
-        for datafile in data_files:
-            ann_path = datafile.get_annotation_path()
-            annotations = Annotations(ann_path)
-            labels.update(annotations.get_labels())
-
-        return labels
-
     def get_training_data(self, data_format='spacy'):
         """
         Get training data in a specified format.
 
         :param data_format: The specified format as a string.
-
         :return: The requested data in the requested format.
         """
-        # Only spaCy format is currently supported.
-        if data_format != 'spacy':
+        supported_formats = ['spacy']
+
+        if data_format not in supported_formats:
             raise TypeError("Format %s not supported" % format)
 
         training_data = []
+        nlp = spacy.load('en_core_web_sm')
 
-        # Add each entry in dataset with annotation to train_data
         for data_file in self.all_data_files:
             txt_path = data_file.get_text_path()
             ann_path = data_file.get_annotation_path()
             annotations = Annotations(ann_path, source_text_path=txt_path)
-            training_data.append(annotations.get_entity_annotations(format='spacy'))
+            training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
 
         return training_data
 
@@ -233,9 +217,9 @@ class Dataset:
         data_files = subdataset.get_data_files()
         sub_data_files = []
 
-        for i in range(len(data_files)):
-            if i in indices:
-                sub_data_files.append(data_files[i])
+        for index, data_file in enumerate(data_files):
+            if index in indices:
+                sub_data_files.append(data_file)
 
         subdataset.all_data_files = sub_data_files
         return subdataset
@@ -316,7 +300,6 @@ class Dataset:
 
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)
-            logging.info("Successfully Metamapped: %s" % file_path)
 
     def is_metamapped(self):
         """
@@ -468,12 +451,6 @@ class Dataset:
 
 
         return ambiguity_dict
-
-
-
-
-
-
 
     @staticmethod
     def load_external(package_name):

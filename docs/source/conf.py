@@ -20,11 +20,11 @@ sys.path.insert(0, os.path.abspath('../../medacy'))
 # -- Project information -----------------------------------------------------
 
 project = 'medaCy'
-copyright = '2018, Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes'
-author = 'Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes'
+copyright = '2019, Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes'
+author = 'Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes'
 
 # The short X.Y version
-version = ''
+version = '0.1.1'
 # The full version, including alpha/beta/rc tags
 release = '0.6'
 
@@ -143,7 +143,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'medaCy.tex', 'medaCy Documentation',
-     'Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes', 'manual'),
+     'Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes', 'manual'),
 ]
 
 

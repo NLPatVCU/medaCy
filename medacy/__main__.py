@@ -1,3 +1,6 @@
+"""
+MedaCy CLI Setup
+"""
 import argparse
 import logging
 from datetime import datetime
@@ -9,60 +12,105 @@ from medacy.ner import Model
 from medacy.ner import SpacyModel
 
 def setup(args):
+    """
+    Sets up dataset and pipeline/model since it gets used by every command.
+
+    :param args: Argparse args object.
+    :return dataset, model: The dataset and model objects created.
+    """
     dataset = Dataset(args.dataset)
 
     pipeline = None
 
     if args.pipeline == 'spacy':
-        model = SpacyModel
-        return dataset, model
+        logging.info('Using spacy model')
 
-    else:      
-        labels = list(dataset.get_labels())
+        model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
 
-        pipeline_arg = args.pipeline
-        
+    else:
         #Parse the argument as a class name in module medacy.ner.pipelines
         module = importlib.import_module("medacy.ner.pipelines")
-        pipeline_class = getattr(module, pipeline_arg)
-        
+        pipeline_class = getattr(module, args.pipeline)
+        logging.info('Using %s', args.pipeline)
+
         if args.word_embeddings is not None:
-            pipeline = pipeline_class(entities=labels, word_embeddings=args.word_embeddings)
+            pipeline = pipeline_class(word_embeddings=args.word_embeddings, cuda_device=args.cuda)
         else:
-            pipeline = pipeline_class(entities=labels)
+            pipeline = pipeline_class(cuda_device=args.cuda)
 
-
-    model = Model(pipeline)
+        model = Model(pipeline)
 
     return dataset, model
 
 def train(args, dataset, model):
+    """
+    Used for training new models.
+
+    :param args: Argparse args object.
+    :param dataset: Dataset to use for training.
+    :param model: Untrained model object to use.
+    """
     if args.filename is None:
         response = input('No filename given. Continue without saving the model at the end? (y/n) ')
         if response.lower() == 'y':
-            model.fit(dataset)
+            model.fit(dataset, asynchronous=args.asynchronous)
         else:
             print('Cancelling. Add filename with -f or --filename.')
     else:
-        model.fit(dataset)
+        model.fit(dataset, args.asynchronous)
         model.dump(args.filename)
 
 def predict(args, dataset, model):
+    """
+    Used for running predictions on new datasets.
+
+    :param args: Argparse args object.
+    :param dataset: Dataset to run prediction over.
+    :param model: Trained model to use for predictions.
+    """
+    if args.predictions == False:
+        args.predictions = None
+    if args.groundtruth == False:
+        args.groundtruth = None
+
     model.load(args.model_path)
-    model.predict(dataset, prediction_directory=args.predictions, groundtruth_directory=args.groundtruth)
+    model.predict(
+        dataset,
+        prediction_directory=args.predictions,
+        groundtruth_directory=args.groundtruth
+    )
 
 def cross_validate(args, dataset, model):
-    model.cross_validate(num_folds=args.k_folds, training_dataset=dataset, prediction_directory=args.predictions,groundtruth_directory=args.groundtruth)
+    """
+    Used for running k-fold cross validations.
+
+    :param args: Argparse args object.
+    :param dataset: Dataset to use for training.
+    :param model: Untrained model objec to use.
+    """
+    model.cross_validate(
+        num_folds=args.k_folds,
+        training_dataset=dataset,
+        prediction_directory=args.predictions,
+        groundtruth_directory=args.groundtruth,
+        asynchronous=args.asynchronous
+    )
 
 def main():
+    """
+    Main function where initial argument parsing happens.
+    """
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
+    parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
+    parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
+    parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
     subparsers = parser.add_subparsers()
-    
+
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
     parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
@@ -90,8 +138,8 @@ def main():
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
-    current_time = datetime.fromtimestamp(start_time).strftime('%Y_%m_%d_%H.%M.%S')
-    logging.info('\nSTART TIME: ' + current_time)
+    current_time = datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')
+    logging.info('\n\nSTART TIME: %s', current_time)
 
     # Run proper function
     dataset, model = setup(args)
@@ -99,15 +147,15 @@ def main():
 
     # Calculate/print end time
     end_time = time.time()
-    current_time = datetime.fromtimestamp(end_time).strftime('%Y_%m_%d_%H.%M.%S')
-    logging.info('END TIME: ' + current_time)
+    current_time = datetime.fromtimestamp(end_time).strftime('%Y-%m-%d %H:%M:%S')
+    logging.info('END TIME: %s', current_time)
 
     # Calculate/print time elapsed
     seconds_elapsed = end_time - start_time
     minutes_elapsed, seconds_elapsed = divmod(seconds_elapsed, 60)
     hours_elapsed, minutes_elapsed = divmod(minutes_elapsed, 60)
 
-    logging.info('H:M:S ELAPSED: %d:%d:%d' % (hours_elapsed, minutes_elapsed, seconds_elapsed))
+    logging.info('H:M:S ELAPSED: %d:%d:%d', hours_elapsed, minutes_elapsed, seconds_elapsed)
 
 if __name__ == '__main__':
     main()

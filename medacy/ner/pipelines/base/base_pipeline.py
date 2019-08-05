@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import spacy
 from medacy.pipeline_components.base import BaseComponent
 
 class BasePipeline(ABC):
@@ -6,7 +7,7 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
+    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization="", cuda_device=-1):
         """
         Initializes a pipeline
         :param pipeline_name: The name of the pipeline
@@ -20,8 +21,10 @@ class BasePipeline(ABC):
         self.description = description
         self.creators = creators
         self.organization = organization
+        self.cuda_device = cuda_device
 
-
+        if cuda_device >= 0:
+            spacy.require_gpu()
 
     @abstractmethod
     def get_tokenizer(self):

@@ -55,6 +55,8 @@ setup(
         'spacy==2.1.4',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
+        'torch==1.1.0',
+        'pytorch-crf==0.7.2',
         'numpy==1.16.1',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
@@ -63,6 +65,7 @@ setup(
         'pathos>=0.2.2.1',
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0',
+        'gensim==3.8.0',
         'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm-2.1.0'
     ],
     tests_require=["pytest", "pytest-cov", "medacy_dataset_end==1.0.3"],
