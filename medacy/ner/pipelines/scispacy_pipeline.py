@@ -17,7 +17,7 @@ class ScispacyPipeline(BasePipeline):
     https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.0/en_core_sci_md-0.2.0.tar.gz
     """
 
-    def __init__(self, metamap=None, entities=[]):
+    def __init__(self, metamap=None, entities=[], cuda_device=-1):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.

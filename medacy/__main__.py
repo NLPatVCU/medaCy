@@ -36,7 +36,7 @@ def setup(args):
         if args.word_embeddings is not None:
             pipeline = pipeline_class(word_embeddings=args.word_embeddings, cuda_device=args.cuda)
         else:
-            pipeline = pipeline_class()
+            pipeline = pipeline_class(cuda_device=args.cuda)
 
         model = Model(pipeline)
 

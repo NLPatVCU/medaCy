@@ -35,6 +35,9 @@ class BiLstmCrfLearner:
         :param word_embeddings: Path to word embeddings file to use.
         :param cuda_device: Index of cuda device to use. Use -1 to use CPU.
         """
+        if word_embeddings is None:
+            raise ValueError('BiLSTM-CRF requires word embeddings.')
+
         torch.manual_seed(1)
         self.character_to_index = {
             character:(index + 1) for index, character in enumerate(string.printable)
@@ -64,9 +67,6 @@ class BiLstmCrfLearner:
     def load_word_embeddings(self):
         """Uses self.word_embeddings_file and gensim to load word embeddings into memory.
         """
-        if self.word_embeddings_file is None:
-            raise ValueError('BiLSTM+CRF learner requires word embeddings.')
-
         embeddings_file = self.word_embeddings_file
         is_binary = True if self.word_embeddings_file[-4:] == '.bin' else False
         self.word_vectors = KeyedVectors.load_word2vec_format(embeddings_file, binary=is_binary)
