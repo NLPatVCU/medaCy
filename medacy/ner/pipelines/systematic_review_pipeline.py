@@ -12,13 +12,14 @@ class SystematicReviewPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, word_embeddings=None, metamap=None, entities=None):
+    def __init__(self, word_embeddings=None, metamap=None, entities=None, embedding_extractor=False):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
         :param word_embeddings: the path to a binary of gensim-compatible word embeddings
         :param metamap: an instance of MetaMap
+        :param embedding_extractor: set to True if you want to use the embedding feature extractor
         """
 
         super().__init__("systematic_review_pipeline",
@@ -33,11 +34,17 @@ class SystematicReviewPipeline(BasePipeline):
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
 
+        if word_embeddings or embedding_extractor:
+            from gensim.models import KeyedVectors
+            self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
+
         if word_embeddings is not None:
-            self.add_component(EmbeddingComponent, word_embeddings)
+            self.add_component(EmbeddingComponent, self.word_embeddings)
 
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
+
+        self.use_embedding_extractor = embedding_extractor
 
     def get_learner(self):
         return ("CRF_l2sgd",
@@ -53,5 +60,11 @@ class SystematicReviewPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size=10, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
-        return extractor
+        if self.use_embedding_extractor:
+            from medacy.pipeline_components.feature_extraction.embedding_feature_extractor import EmbeddingFeatureExtractor
+            return EmbeddingFeatureExtractor(
+                self.word_embeddings,
+                window_size=10,
+                spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text']
+                )
+        else: return FeatureExtractor(window_size=10, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
