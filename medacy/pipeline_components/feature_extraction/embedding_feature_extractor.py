@@ -6,6 +6,13 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
     """A feature extractor that overlays the distance between word vectors."""
 
     def __init__(self, vectors, window_size=2, spacy_features=None):
+        """
+        Note that custom medaCy features are pulled from spaCy custom token attributes that begin with 'feature_'.
+
+        :param vectors: an already-loaded gensim KeyedVectors object
+        :param window_size: window size to pull features from on a given token, default 2 on both sides.
+        :param spacy_features: Default token attributes that spaCy sets to utilize as features (list)
+        """
         super().__init__(
             window_size=window_size,
             spacy_features=spacy_features
@@ -24,16 +31,20 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
         :return: a dictionary with a feature representation of the spaCy token object.
         """
 
-        # This should automatically gather features that are set on tokens
-        # by looping over all attributes set on sentence[index] that begin with 'feature'
-
-        named_entity = sentence[index].text
-        if named_entity not in self.vectors.keys():
-            return super()._token_to_feature_dict(index, sentence)
-
         features = {
             'bias': 1.0
         }
+
+        # Get the text of entity and see if it's in the vocabulary, else use standard feature extractor for this ent
+        named_entity = sentence[index].text
+        try:
+            self.vectors[named_entity]  # We're just seeing if it's there
+        except KeyError:
+            return super()._token_to_feature_dict(index, sentence)
+
+        # This should automatically gather features that are set on tokens
+        # by looping over all attributes set on sentence[index] that begin with 'feature'
+
         for i in range(-self.window_size, self.window_size+1):  # loop through our window
             if 0 <= (index + i) < len(sentence):  # for each index in the window size
                 token = sentence[index+i]
@@ -48,7 +59,11 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
                     else:
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature)})
 
-                similarity = self.vectors.similarity(named_entity, token)
+                # Try and get the similarity to each word in the window, else set similarity to zero
+                try:
+                    similarity = self.vectors.similarity(named_entity, token)
+                except KeyError:
+                    similarity = 0
 
                 current.update({
                     f"{i}:similarity": similarity
