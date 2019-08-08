@@ -1,5 +1,4 @@
 from spacy.tokens import Doc, Token
-from gensim.models import KeyedVectors
 import numpy as np
 from medacy.pipeline_components.base import BaseComponent
 
@@ -13,7 +12,7 @@ class EmbeddingComponent(BaseComponent):
     def __init__(self, spacy_pipeline, word_embeddings):
         super().__init__(component_name="embedding_component")
         self.spacy_pipeline = spacy_pipeline
-        self.model = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
+        self.model = word_embeddings
 
     def _lookup_embedding(self, token):
         try:
