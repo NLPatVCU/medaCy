@@ -1,5 +1,5 @@
-from spacy.tokens import Doc, Token
 import numpy as np
+from spacy.tokens import Doc, Token
 from medacy.pipeline_components.base import BaseComponent
 
 
@@ -10,6 +10,10 @@ class EmbeddingComponent(BaseComponent):
     name = "embedding_component"
 
     def __init__(self, spacy_pipeline, word_embeddings):
+        """
+        :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
+        :param word_embeddings: an already-loaded gensim KeyedVectors object
+        """
         super().__init__(component_name="embedding_component")
         self.spacy_pipeline = spacy_pipeline
         self.model = word_embeddings
