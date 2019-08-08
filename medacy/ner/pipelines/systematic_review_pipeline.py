@@ -17,9 +17,16 @@ class SystematicReviewPipeline(BasePipeline):
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
+        You can use Gensim word embedding themselves can be used as a feature, or the embedding extractor that uses
+        the distance between tokens as a feature, or both.
+
+        If word embedding features only or both, set word_embeddings to the path to the word vector binary.
+        If using the embedding extractor only, set embedding_extractor to the path to the word vector binary.
+
         :param word_embeddings: the path to a binary of gensim-compatible word embeddings
         :param metamap: an instance of MetaMap
-        :param embedding_extractor: set to True if you want to use the embedding feature extractor
+        :param embedding_extractor: set to True if you want to use the embedding feature extractor, or path to
+            gensim binary if using embedding extractor without word embeddings themselves as a feature
         """
 
         super().__init__("systematic_review_pipeline",
@@ -36,7 +43,10 @@ class SystematicReviewPipeline(BasePipeline):
 
         if word_embeddings or embedding_extractor:
             from gensim.models import KeyedVectors
-            self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
+            if isinstance(word_embeddings, str):
+                self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
+            elif isinstance(embedding_extractor, str):
+                self.word_embeddings = KeyedVectors.load_word2vec_format(embedding_extractor, binary=True)
 
         if word_embeddings is not None:
             self.add_component(EmbeddingComponent, self.word_embeddings)
