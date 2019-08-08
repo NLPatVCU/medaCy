@@ -1,5 +1,6 @@
 from spacy.tokens import Doc, Token
 from gensim.models import KeyedVectors
+import numpy as np
 from medacy.pipeline_components.base import BaseComponent
 
 
@@ -16,7 +17,12 @@ class EmbeddingComponent(BaseComponent):
 
     def _lookup_embedding(self, token):
         try:
-            return [bytes(n) for n in self.model[token.text]]
+            word_vector = self.model[token.text]
+            norm = np.linalg.norm(word_vector)
+            if norm == 0:
+                return [bytes(n) for n in word_vector]
+            else:
+                return [bytes(n) for n in word_vector / norm]
         except KeyError:
             return []
 
