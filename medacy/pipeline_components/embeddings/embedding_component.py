@@ -32,3 +32,19 @@ class EmbeddingComponent(BaseComponent):
     def __call__(self, doc: Doc):
         Token.set_extension("feature_embedding", getter=self._lookup_embedding, force=True)
         return doc
+
+
+class EmbeddingMaxComponent(EmbeddingComponent):
+    """Returns the index of the top five dimensions instead of the whole word embedding."""
+
+    dependencies = []
+    name = "embedding_max_component"
+
+    def _lookup_embedding(self, token):
+        """Return the index of the top 5 dimensions in the embedding"""
+        try:
+            word_vector = list(self.model[token.text])
+            top_5 = sorted(range(len(word_vector)), key=lambda i: word_vector[i])[:5]
+            return [bytes(n) for n in top_5]
+        except KeyError:
+            return []
