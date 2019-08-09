@@ -31,27 +31,23 @@ A common data work flow might look as follows.
 
 Running:
 ::
-    from medacy.data import Dataset
-    from medacy.pipeline_components import MetaMap
+    >>> from medacy.data import Dataset
+    >>> from medacy.pipeline_components import MetaMap
 
-    dataset = Dataset('/home/medacy/data')
-    for data_file in dataset:
-        print((data_file.file_name, data_file.raw_path, dataset.ann_path))
-    print(dataset)
-    print(dataset.is_metamapped())
-
-    metamap = Metamap('/home/path/to/metamap/binary') #not necessary
-    dataset.metamap(metamap) #not necessary
-    print(dataset.is_metamapped())
-
-
-Outputs:
-::
+    >>> dataset = Dataset('/home/medacy/data')
+    ... for data_file in dataset:
+    ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
     (file_one, file_one.txt, file_one.ann)
-    (file_two, file_two.txt, file_two.ann)
+    >>> dataset
     ['file_one.txt', 'file_two.txt']
+    >>> dataset.is_metamapped()
     False
+
+    >>> metamap = Metamap('/home/path/to/metamap/binary') #not necessary
+    >>> dataset.metamap(metamap) #not necessary
+    >>> dataset.is_metamapped()
     True
+
 
 Prediction
 ##########
@@ -78,6 +74,7 @@ import os, logging, multiprocessing, math, json, importlib
 from joblib import Parallel, delayed
 import spacy
 from medacy.tools import DataFile, Annotations
+
 
 class Dataset:
     """
@@ -116,7 +113,6 @@ class Dataset:
         # start by filtering all raw_text files, both training and prediction directories will have these
         raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
 
-
         if not raw_text_files: #detected a prediction directory
             ann_files = sorted([file for file in all_files_in_directory if file.endswith(annotation_file_extension)])
             self.is_training_directory = False
@@ -131,9 +127,7 @@ class Dataset:
                 file_name = file[:-len(annotation_file_extension) - 1]
                 self.all_data_files.append(DataFile(file_name, None, annotation_path))
 
-
         else: #detected a training directory (raw text files exist)
-
             if data_limit is not None:
                 self.data_limit = data_limit
             else:
@@ -149,7 +143,6 @@ class Dataset:
                          raw_text_files]
             # only a training directory if every text file has a corresponding ann_file
             self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
-
 
             # set all file attributes except metamap_path as it is optional.
             for file in raw_text_files:
@@ -170,7 +163,6 @@ class Dataset:
                                                              data_file.raw_path.split(os.path.sep)[-1]
                                                              .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
-
     def get_data_files(self):
         """
         Retrieves an list containing all the files registered by a Dataset.
@@ -180,7 +172,7 @@ class Dataset:
         return self.all_data_files[0:self.data_limit]
 
     def __iter__(self):
-        return self.get_data_files().__iter__()
+        return iter(self.get_data_files())
 
     def get_training_data(self, data_format='spacy'):
         """
@@ -355,6 +347,20 @@ class Dataset:
         """
         return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
 
+    def get_labels(self):
+        """
+        Get all of the entities/labels used in the dataset.
+        :return: A set of strings. Each string is a label used.
+        """
+        labels = set()
+        data_files = self.all_data_files
+
+        for datafile in data_files:
+            ann_path = datafile.get_annotation_path()
+            annotations = Annotations(ann_path)
+            labels.update(annotations.get_labels())
+
+        return labels
 
     def compute_counts(self):
         """
@@ -464,15 +470,3 @@ class Dataset:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
-
-
-
-
-
-
-
-
-
-
-
-
