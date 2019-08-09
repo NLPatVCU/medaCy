@@ -1,22 +1,19 @@
-import logging
-import os
-import joblib
-import time
-import importlib
-from tabulate import tabulate
-from statistics import mean
-from sklearn_crfsuite import metrics
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
+"""
+A medaCy named entity recognition model wraps together three functionalities
+"""
+
+import logging, os, joblib, time, importlib
 from medacy.data import Dataset
 from .stratified_k_fold import SequenceStratifiedKFold
 from medacy.ner.pipelines import BasePipeline
+from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from ._model import predict_document, construct_annotations_from_tuples
+from sklearn_crfsuite import metrics
+from tabulate import tabulate
+from statistics import mean
 
 
 class Model:
-    """
-    A medaCy named entity recognition model wraps together three functionalities.
-    """
 
     def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
 
@@ -37,13 +34,20 @@ class Model:
         if doc is None:
             raise IOError("Model could not be initialized with the set pipeline.")
 
-    def preprocess(self, dataset):
-        try:
-            # raise TypeError("can not serialize 'cupy.core.core.ndarray' object")
+    def preprocess(self, dataset, asynchronous=False):
+        """Preprocess dataset into a list of sequences and tags.
+
+        :param dataset: Dataset object to preprocess.
+        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
+        """
+        if asynchronous:
+            logging.info('Preprocessing data asynchronously...')
+            self.X_data = []
+            self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped())
-                    for data_file in dataset]
+            results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
+                    for data_file in dataset.get_data_files()]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -53,22 +57,21 @@ class Model:
                 self.X_data += X
                 self.y_data += y
 
-        except TypeError as error:
-            if str(error) == "can not serialize 'cupy.core.core.ndarray' object":
-                logging.info('Ran into GPU error. Switching to synchronous preprocessing...')
-                self.X_data = []
-                self.y_data = []
-                for data_file in dataset:
-                    features, labels = self._extract_features(data_file, dataset.is_metamapped())
-                    self.X_data += features
-                    self.y_data += labels
-            else: raise error
+        else:
+            logging.info('Preprocessing data synchronously...')
+            self.X_data = []
+            self.y_data = []
+            for data_file in dataset.get_data_files():
+                features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+                self.X_data += features
+                self.y_data += labels
 
-    def fit(self, dataset):
+    def fit(self, dataset, asynchronous=False):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
-        :param dataset: Instance of Dataset.
+        :param training_data_loader: Instance of Dataset.
+        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
@@ -77,7 +80,7 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
-        self.preprocess(dataset)
+        self.preprocess(dataset, asynchronous)
 
         logging.info("Currently Waiting")
 
@@ -97,8 +100,9 @@ class Model:
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
-        :param dataset: a string or Dataset to predict
-        :param prediction_directory: the directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
+        :param documents: A string or Dataset to predict
+        :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
+        :param groundtruth_directory: The directory to write groundtruth to.
         :return:
         """
 
@@ -142,7 +146,7 @@ class Model:
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
 
-    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None):
+    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -151,17 +155,24 @@ class Model:
         the prediction ambiguity with the methods present in the Dataset class to support pipeline development without
         a designated evaluation set.
 
-        :param training_dataset: Dataset that is being cross validated
         :param num_folds: number of folds to split training data into for cross validation
+        :param training_dataset: Dataset that is being cross validated (optional)
         :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
-        :param groundtruth_directory: directory to write the ground truth medaCy evaluates on
+        :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
+        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
         """
 
-        if num_folds <= 1 or not isinstance(num_folds, int):
-            raise ValueError("Number of folds for cross validation must be an int greater than 1, but is %i" % num_folds)
+        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
 
-        self.preprocess(training_dataset)
+        if prediction_directory is not None and training_dataset is None:
+            raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
+                             " Please pass the training dataset in the 'training_dataset' parameter.")
+        if groundtruth_directory is not None and training_dataset is None:
+            raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
+                             " Please pass the training dataset in the 'training_dataset' parameter.")
+
+        self.preprocess(training_dataset, asynchronous)
         assert self.X_data is not None and self.y_data is not None, \
             "Must have features and labels extracted for cross validation"
 
@@ -172,7 +183,15 @@ class Model:
 
         cv = SequenceStratifiedKFold(folds=num_folds)
 
-        named_entities = medacy_pipeline.entities
+        tagset = set()
+        for tags in Y_data:
+            for tag in tags:
+                if tag != 'O' and tag != '':
+                    tagset.add(tag)
+        tagset = list(tagset)
+        tagset.sort()
+        medacy_pipeline.entities = tagset
+        logging.info('Tagset: %s', tagset)
 
         evaluation_statistics = {}
         fold = 1
@@ -250,7 +269,7 @@ class Model:
                     i+=1
 
             # Write the metrics for this fold.
-            for label in named_entities:
+            for label in tagset:
                 fold_statistics[label] = {}
                 recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label])
                 precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label])
@@ -261,9 +280,9 @@ class Model:
 
             # add averages
             fold_statistics['system'] = {}
-            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=named_entities)
-            precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=named_entities)
-            f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=named_entities)
+            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset)
+            precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset)
+            f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
             fold_statistics['system']['precision'] = precision
             fold_statistics['system']['recall'] = recall
             fold_statistics['system']['f1'] = f1
@@ -272,7 +291,7 @@ class Model:
                            format(fold_statistics[label]['precision'], ".3f"),
                            format(fold_statistics[label]['recall'], ".3f"),
                            format(fold_statistics[label]['f1'], ".3f")]
-                          for label in named_entities + ['system']]
+                          for label in tagset + ['system']]
 
             logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                   tablefmt='orgtbl'))
@@ -282,7 +301,7 @@ class Model:
 
         statistics_all_folds = {}
 
-        for label in named_entities + ['system']:
+        for label in tagset + ['system']:
             statistics_all_folds[label] = {}
             statistics_all_folds[label]['precision_average'] = mean(
                 [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
@@ -311,7 +330,7 @@ class Model:
                        format(statistics_all_folds[label]['f1_average'], ".3f"),
                        format(statistics_all_folds[label]['f1_min'], ".3f"),
                        format(statistics_all_folds[label]['f1_max'], ".3f")]
-                      for label in named_entities + ['system']]
+                      for label in tagset + ['system']]
 
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
@@ -328,23 +347,10 @@ class Model:
             self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
             
             #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
-            annotations_groundtruth = self.predict_annotation_evaluation(
-                directory=groundtruth_directory,
-                option="groundtruth",
-                training_dataset=training_dataset,
-                medacy_pipeline= medacy_pipeline,
-                preds_by_document=preds_by_document,
-                groundtruth_by_document=groundtruth_by_document,
-            )
+            annotations = self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document, option="groundtruth")
 
-            annotations_prediction = self.predict_annotation_evaluation(
-                directory=prediction_directory,
-                option="predictions",
-                training_dataset=training_dataset,
-                medacy_pipeline= medacy_pipeline,
-                preds_by_document=preds_by_document,
-                groundtruth_by_document=groundtruth_by_document
-            )
+            annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
+
             
             return Dataset(data_directory=prediction_directory)
 
@@ -373,16 +379,18 @@ class Model:
                 annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))        
         
         return annotations
-
-    def _extract_features(self, data_file, is_metamapped):
+    
+    
+    def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
 
+        :param conn: pipe to pass back data to parent process
         :param data_file: an instance of DataFile
         :return: Updates queue with features for this given file.
         """
-        nlp = self.pipeline.spacy_pipeline
-        feature_extractor = self.pipeline.get_feature_extractor()
+        nlp = medacy_pipeline.spacy_pipeline
+        feature_extractor = medacy_pipeline.get_feature_extractor()
         logging.info("Processing file: %s", data_file.file_name)
 
         with open(data_file.raw_path, 'r') as raw_text:
@@ -396,13 +404,43 @@ class Model:
             doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
         # run 'er through
-        doc = self.pipeline(doc)
+        doc = medacy_pipeline(doc)
 
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc, data_file.file_name)
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
         return features, labels
+
+    def load(self, path):
+        """
+        Loads a pickled model.
+
+        :param path: File path to directory where fitted model should be dumped
+        :return:
+        """
+        model_name, model = self.pipeline.get_learner()
+
+        if model_name == 'BiLSTM+CRF':
+            model.load(path)
+            self.model = model
+        else:
+            self.model = joblib.load(path)
+
+    def dump(self, path):
+        """
+        Dumps a model into a pickle file
+
+        :param path: Directory path to dump the model
+        :return:
+        """
+        assert self.model is not None, "Must fit model before dumping."
+        model_name, _ = self.pipeline.get_learner()
+
+        if model_name == 'BiLSTM+CRF':
+            self.model.save(path)
+        else:
+            joblib.dump(self.model, path)
 
     def get_info(self, return_dict=False):
         """
@@ -434,25 +472,6 @@ class Model:
 
         return "\n".join(text)
 
-    def load(self, path):
-        """
-        Loads a pickled model.
-
-        :param path: File path to directory where fitted model should be dumped
-        :return:
-        """
-        self.model = joblib.load(path)
-
-    def dump(self, path):
-        """
-        Dumps a model into a pickle file
-
-        :param path: Directory path to dump the model
-        :return:
-        """
-        assert self.model is not None, "Must fit model before dumping."
-        joblib.dump(self.model, path)
-
     @staticmethod
     def load_external(package_name):
         """
@@ -465,9 +484,6 @@ class Model:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
-
-    def __repr__(self):
-        return f"{self.__class__.__name__}({self.pipeline}, {self.model})"
 
     def __str__(self):
         return self.get_info()

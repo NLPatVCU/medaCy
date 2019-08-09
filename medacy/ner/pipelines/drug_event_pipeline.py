@@ -8,7 +8,7 @@ from medacy.pipeline_components.patterns import TableMatcherComponent
 
 class DrugEventPipeline(BasePipeline):
 
-    def __init__(self, metamap=None, entities=[], lexicon={}):
+    def __init__(self, metamap=None, entities=[], lexicon={}, cuda_device=-1):
         """
         Init a pipeline for processing data related to identifying adverse drug events
         :param metamap: instance of MetaMap

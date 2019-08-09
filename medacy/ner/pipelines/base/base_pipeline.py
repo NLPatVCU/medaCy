@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import spacy
 from medacy.pipeline_components.base import BaseComponent
 
 class BasePipeline(ABC):
@@ -6,7 +7,7 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization=""):
+    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization="", cuda_device=-1):
         """
         Initializes a pipeline
         :param pipeline_name: The name of the pipeline
@@ -20,6 +21,10 @@ class BasePipeline(ABC):
         self.description = description
         self.creators = creators
         self.organization = organization
+        self.cuda_device = cuda_device
+
+        if cuda_device >= 0:
+            spacy.require_gpu()
 
     @abstractmethod
     def get_tokenizer(self):
@@ -45,6 +50,7 @@ class BasePipeline(ABC):
         """
         pass
 
+
     def get_language_pipeline(self):
         """
         Retrieves the associated spaCy Language pipeline that the medaCy pipeline wraps.
@@ -63,13 +69,11 @@ class BasePipeline(ABC):
         dependencies = [x for x in component.dependencies]
         #print("Dependencies:",dependencies)
 
-        # No need to change anything if the component is already there
-        if component.name in current_components:
-            # "%s is already in the pipeline." % component.name
-            return
+        assert component.name not in current_components, "%s is already in the pipeline." % component.name
 
         for dependent in dependencies:
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
+
 
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
@@ -78,12 +82,13 @@ class BasePipeline(ABC):
         Retrieves a listing of all components currently in the pipeline.
         :return: a list of components inside the pipeline.
         """
-        return [component_name for component_name, _ in self.spacy_pipeline.pipeline if component_name != 'ner']
-
+        return [component_name for component_name, _ in self.spacy_pipeline.pipeline
+                           if component_name != 'ner']
     def __call__(self, doc, predict=False):
         """
         Passes a single document through the pipeline.
         All relevant document attributes should be set prior to this call.
+        :param self:
         :param doc: the document to annotate over
         :return: the annotated document
         """
@@ -114,3 +119,13 @@ class BasePipeline(ABC):
         }
 
         return information
+
+
+
+
+
+
+
+
+
+

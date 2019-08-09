@@ -20,8 +20,9 @@ Assuming your directory looks like this (where .ann files are in `BRAT <http://b
 
 A Dataset can be created like this:
 ::
-    >>> from medacy.data import Dataset
-    >>> dataset = Dataset('/home/medacy/data')
+    from medacy.data import Dataset
+
+    dataset = Dataset('/home/medacy/data')
 
 
 MedaCy **does not** alter the data you load in any way - it only reads from it.
@@ -30,22 +31,27 @@ A common data work flow might look as follows.
 
 Running:
 ::
-    >>> from medacy.data import Dataset
-    >>> from medacy.pipeline_components import MetaMap
+    from medacy.data import Dataset
+    from medacy.pipeline_components import MetaMap
 
-    >>> dataset = Dataset('/home/medacy/data')
-    >>> for data_file in dataset:
-    ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
+    dataset = Dataset('/home/medacy/data')
+    for data_file in dataset:
+        print((data_file.file_name, data_file.raw_path, dataset.ann_path))
+    print(dataset)
+    print(dataset.is_metamapped())
+
+    metamap = Metamap('/home/path/to/metamap/binary') #not necessary
+    dataset.metamap(metamap) #not necessary
+    print(dataset.is_metamapped())
+
+
+Outputs:
+::
     (file_one, file_one.txt, file_one.ann)
-    >>> dataset
+    (file_two, file_two.txt, file_two.ann)
     ['file_one.txt', 'file_two.txt']
-    >>> dataset.is_metamapped()
     False
-    >>> metamap = Metamap('/home/path/to/metamap/binary')  # not necessary
-    >>> dataset.metamap(metamap)  # not necessary
-    >>> dataset.is_metamapped()
     True
-
 
 Prediction
 ##########
@@ -58,6 +64,7 @@ a directory of files that are predictions. Useful methods for analysis include :
 :meth:`medacy.data.dataset.Dataset.compute_ambiguity` and :meth:`medacy.data.dataset.Dataset.compute_counts`.
 
 
+
 External Datasets
 #################
 
@@ -67,11 +74,10 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-
-from medacy.tools import DataFile, Annotations
-from joblib import Parallel, delayed
 import os, logging, multiprocessing, math, json, importlib
-
+from joblib import Parallel, delayed
+import spacy
+from medacy.tools import DataFile, Annotations
 
 class Dataset:
     """
@@ -81,7 +87,7 @@ class Dataset:
     def __init__(self, data_directory,
                  raw_text_file_extension="txt",
                  annotation_file_extension="ann",
-                 metamapped_files_directory = None,
+                 metamapped_files_directory=None,
                  data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
@@ -164,6 +170,7 @@ class Dataset:
                                                              data_file.raw_path.split(os.path.sep)[-1]
                                                              .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
+
     def get_data_files(self):
         """
         Retrieves an list containing all the files registered by a Dataset.
@@ -173,42 +180,28 @@ class Dataset:
         return self.all_data_files[0:self.data_limit]
 
     def __iter__(self):
-        return iter(self.get_data_files())
-
-    def get_labels(self):
-        """
-        Get all of the entities/labels used in the dataset.
-
-        :return: A set of strings. Each string is a label used.
-        """
-        labels = set()
-        for datafile in self.all_data_files:
-            ann_path = datafile.get_annotation_path()
-            annotations = Annotations(ann_path)
-            labels.update(annotations.get_labels())
-
-        return labels
+        return self.get_data_files().__iter__()
 
     def get_training_data(self, data_format='spacy'):
         """
         Get training data in a specified format.
 
         :param data_format: The specified format as a string.
-
         :return: The requested data in the requested format.
         """
-        # Only spaCy format is currently supported.
-        if data_format != 'spacy':
+        supported_formats = ['spacy']
+
+        if data_format not in supported_formats:
             raise TypeError("Format %s not supported" % format)
 
         training_data = []
+        nlp = spacy.load('en_core_web_sm')
 
-        # Add each entry in dataset with annotation to train_data
         for data_file in self.all_data_files:
             txt_path = data_file.get_text_path()
             ann_path = data_file.get_annotation_path()
             annotations = Annotations(ann_path, source_text_path=txt_path)
-            training_data.append(annotations.get_entity_annotations(format='spacy'))
+            training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
 
         return training_data
 
@@ -224,9 +217,9 @@ class Dataset:
         data_files = subdataset.get_data_files()
         sub_data_files = []
 
-        for i in range(len(data_files)):
-            if i in indices:
-                sub_data_files.append(data_files[i])
+        for index, data_file in enumerate(data_files):
+            if index in indices:
+                sub_data_files.append(data_file)
 
         subdataset.all_data_files = sub_data_files
         return subdataset
@@ -272,6 +265,7 @@ class Dataset:
                                                          data_file.raw_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
+
     def _parallel_metamap(self, files, i):
         """
         Facilitates Metamapping in parallel by forking off processes to Metamap each file individually.
@@ -305,7 +299,6 @@ class Dataset:
                     logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
 
             mapped_file.write(json.dumps(metamap_dict))
-            logging.info("Successfully Metamapped: %s", file_path)
             logging.info("Successfully Metamapped: %s", file_path)
 
     def is_metamapped(self):
@@ -459,10 +452,6 @@ class Dataset:
 
         return ambiguity_dict
 
-    def __len__(self):
-        """Return the number of ann-txt pairs in the dataset."""
-        return len(self.all_data_files)
-
     @staticmethod
     def load_external(package_name):
         """
@@ -475,3 +464,15 @@ class Dataset:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
+
+
+
+
+
+
+
+
+
+
+
+
