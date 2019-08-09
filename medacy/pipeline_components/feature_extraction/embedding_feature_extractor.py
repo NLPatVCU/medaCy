@@ -61,7 +61,7 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
 
                 # Try and get the similarity to each word in the window, else set similarity to zero
                 try:
-                    similarity = self.vectors.similarity(named_entity, token)
+                    similarity = self.vectors.similarity(named_entity, token.text)
                 except KeyError:
                     similarity = 0
 
