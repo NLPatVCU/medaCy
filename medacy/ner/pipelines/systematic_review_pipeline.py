@@ -1,9 +1,11 @@
 import spacy, sklearn_crfsuite
 from .base import BasePipeline
+from gensim.models import KeyedVectors
 from medacy.pipeline_components import MetaMap, SystematicReviewTokenizer
 from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.embeddings.embedding_component import EmbeddingComponent
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
+from medacy.pipeline_components.feature_extraction.embedding_feature_extractor import EmbeddingFeatureExtractor
+from medacy.pipeline_components.embeddings.embedding_component import EmbeddingComponent
 
 
 class SystematicReviewPipeline(BasePipeline):
@@ -20,8 +22,7 @@ class SystematicReviewPipeline(BasePipeline):
         You can use Gensim word embedding themselves can be used as a feature, or the embedding extractor that uses
         the distance between tokens as a feature, or both.
 
-        If word embedding features only or both, set word_embeddings to the path to the word vector binary.
-        If using the embedding extractor only, set embedding_extractor to the path to the word vector binary.
+        Pass the path to the gensim binary as either word_embeddinngs or embedding_extractor.
 
         :param word_embeddings: the path to a binary of gensim-compatible word embeddings
         :param metamap: an instance of MetaMap
@@ -42,7 +43,6 @@ class SystematicReviewPipeline(BasePipeline):
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
 
         if word_embeddings or embedding_extractor:
-            from gensim.models import KeyedVectors
             if isinstance(word_embeddings, str):
                 self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
             elif isinstance(embedding_extractor, str):
@@ -54,7 +54,7 @@ class SystematicReviewPipeline(BasePipeline):
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
 
-        self.use_embedding_extractor = embedding_extractor
+        self.use_embedding_extractor = bool(embedding_extractor)
 
     def get_learner(self):
         return ("CRF_l2sgd",
@@ -71,7 +71,6 @@ class SystematicReviewPipeline(BasePipeline):
 
     def get_feature_extractor(self):
         if self.use_embedding_extractor:
-            from medacy.pipeline_components.feature_extraction.embedding_feature_extractor import EmbeddingFeatureExtractor
             return EmbeddingFeatureExtractor(
                 self.word_embeddings,
                 window_size=10,
