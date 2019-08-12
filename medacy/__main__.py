@@ -99,7 +99,7 @@ def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
-    parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
+    parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class. Default medacy clinical pipeline.')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
