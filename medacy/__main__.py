@@ -68,16 +68,12 @@ def predict(args, dataset, model):
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
     """
-    if args.predictions == False:
-        args.predictions = None
-    if args.groundtruth == False:
-        args.groundtruth = None
 
     model.load(args.model_path)
     model.predict(
         dataset,
-        prediction_directory=args.predictions,
-        groundtruth_directory=args.groundtruth
+        prediction_directory=True,
+        groundtruth_directory=True
     )
 
 def cross_validate(args, dataset, model):
@@ -91,8 +87,8 @@ def cross_validate(args, dataset, model):
     model.cross_validate(
         num_folds=args.k_folds,
         training_dataset=dataset,
-        prediction_directory=args.predictions,
-        groundtruth_directory=args.groundtruth,
+        prediction_directory=True,
+        groundtruth_directory=True,
         asynchronous=args.asynchronous
     )
 
@@ -119,15 +115,11 @@ def main():
     # Predict arguments
     parser_predict = subparsers.add_parser('predict', help='Run predictions on the dataset using a trained model.')
     parser_predict.add_argument('-m', '--model_path', required=True, help='Trained model to load.')
-    parser_predict.add_argument('-gt', '--groundtruth', action='store_true', help='Use to store groundtruth files.')
-    parser_predict.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
     parser_predict.set_defaults(func=predict)
 
     # Cross Validation arguments
     parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
     parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
-    parser_validate.add_argument('-gt', '--groundtruth', action='store_true', help='Use to store groundtruth files.')
-    parser_validate.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
     parser_validate.set_defaults(func=cross_validate)
 
     # Parse initial args

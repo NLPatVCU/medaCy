@@ -5,4 +5,5 @@ from .scispacy_pipeline import ScispacyPipeline
 from .drug_event_pipeline import DrugEventPipeline
 from .testing_pipeline import TestingPipeline
 from .lstm_systematic_review_pipeline import LstmSystematicReviewPipeline
+
 from .base.base_pipeline import BasePipeline
