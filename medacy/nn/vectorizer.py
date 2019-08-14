@@ -173,14 +173,26 @@ class Vectorizer:
             token_vector.append(embedding_index)
 
             # Add list of character indices as second item
+            # character_indices = []
+            # for character in token_text:
+            #     if character in self.character_to_index:
+            #         index = self.character_to_index[character]
+            #         character_indices.append(index)
+            #     else:
+            #         # Append the padding index
+            #         character_indices.append(0)
+            # token_vector.append(character_indices)
+
+            # Add list of character indices as second item
             character_indices = []
             for character in token_text:
-                if character in self.character_to_index:
-                    index = self.character_to_index[character]
-                    character_indices.append(index)
-                else:
-                    # Append the padding index
-                    character_indices.append(0)
+                index = self.character_to_index[character]
+                character_indices.append(index)
+
+            # If there were no indices ex. special characters only
+            if not character_indices:
+                # Append the padding index
+                character_indices.append(0)
             token_vector.append(character_indices)
 
             # Find window indices
