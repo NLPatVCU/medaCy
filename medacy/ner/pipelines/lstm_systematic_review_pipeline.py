@@ -22,7 +22,7 @@ class LstmSystematicReviewPipeline(BasePipeline):
         """
         description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
         super().__init__("lstm_clinical_pipeline",
-                         spacy_pipeline=spacy.load("en_core_web_lg"),
+                         spacy_pipeline=spacy.load("en_core_web_sm"),
                          description=description,
                          creators="Jorge Vargas", #append if multiple creators
                          organization="NLP@VCU",
@@ -44,7 +44,7 @@ class LstmSystematicReviewPipeline(BasePipeline):
     def get_feature_extractor(self):
         extractor = FeatureExtractor(
             window_size=0,
-            spacy_features=['text']
+            spacy_features=['text', 'pos', 'shape', 'prefix', 'suffix']
         )
 
         return extractor

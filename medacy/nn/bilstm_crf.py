@@ -18,7 +18,7 @@ class BiLstmCrf(nn.Module):
     :ivar device: Pytorch device.
     :ivar tagset_size: Number of labels that the network is being trained for.
     """
-    def __init__(self, word_vectors, other_features, tag_to_index, device):
+    def __init__(self, word_vectors, other_features, tagset_size, device):
         """Init model.
 
         :param word_vectors: Gensim word vector object to use as word embeddings.
@@ -34,7 +34,7 @@ class BiLstmCrf(nn.Module):
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables
-        self.tagset_size = len(tag_to_index)
+        self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
