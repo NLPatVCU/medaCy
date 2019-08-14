@@ -57,11 +57,12 @@ class BiLstmCrf(nn.Module):
 
         # The LSTM takes word embeddings concatenated with character verctors as inputs and
         # outputs hidden states with dimensionality hidden_dim.
-        lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2 + other_features
+        lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
         # The linear layer that maps from hidden state space to tag space
-        self.hidden2tag = nn.Linear(HIDDEN_DIM*2, self.tagset_size)
+        linear_input_size = HIDDEN_DIM*2 + other_features
+        self.hidden2tag = nn.Linear(linear_input_size, self.tagset_size)
 
         self.crf = CRF(self.tagset_size)
 
@@ -111,7 +112,7 @@ class BiLstmCrf(nn.Module):
         other_features = torch.tensor(other_features, device=self.device)
 
         # Combine into one final input vector for LSTM
-        token_vector = torch.cat((word_embeddings, character_vectors, other_features), 1)
+        token_vector = torch.cat((word_embeddings, character_vectors), 1)
 
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
@@ -119,6 +120,7 @@ class BiLstmCrf(nn.Module):
 
         lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
+        lstm_out = torch.cat((lstm_out, other_features), 1)
 
         lstm_features = self.hidden2tag(lstm_out)
 

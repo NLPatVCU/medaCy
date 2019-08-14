@@ -84,7 +84,7 @@ class BiLstmCrfLearner:
         optimizer = optim.SGD(model.parameters(), lr=self.learning_rate)
         loss_function = nn.NLLLoss()
 
-        logging.info('Training BiLSTM...')
+        logging.info('Training BiLSTM-CRF...')
 
         # Training loop
         for i in range(1, self.epochs + 1):
