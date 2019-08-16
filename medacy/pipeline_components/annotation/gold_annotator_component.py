@@ -1,5 +1,5 @@
 from ..base import BaseComponent
-from medacy.tools import Annotations
+from medacy.data.annotations import Annotations
 from spacy.tokens import Token
 import logging
 
