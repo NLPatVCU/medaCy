@@ -1,19 +1,24 @@
-"""
-A medaCy named entity recognition model wraps together three functionalities
-"""
+import importlib
+import joblib
+import logging
+import os
+import time
+from statistics import mean
 
-import logging, os, joblib, time, importlib
-from medacy.data import Dataset
-from .stratified_k_fold import SequenceStratifiedKFold
-from medacy.ner.pipelines import BasePipeline
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
-from ._model import predict_document, construct_annotations_from_tuples
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
-from statistics import mean
+
+from medacy.data import Dataset
+from medacy.ner.pipelines import BasePipeline
+from ._model import predict_document, construct_annotations_from_tuples
+from .stratified_k_fold import SequenceStratifiedKFold
 
 
 class Model:
+    """
+    A medaCy named entity recognition model wraps together three functionalities
+    """
 
     def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
 
@@ -35,7 +40,8 @@ class Model:
             raise IOError("Model could not be initialized with the set pipeline.")
 
     def preprocess(self, dataset, asynchronous=False):
-        """Preprocess dataset into a list of sequences and tags.
+        """
+        Preprocess dataset into a list of sequences and tags.
 
         :param dataset: Dataset object to preprocess.
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
@@ -52,7 +58,7 @@ class Model:
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
 
-            for idx, i in enumerate(results):
+            for i in results:
                 X, y = i.get()
                 self.X_data += X
                 self.y_data += y
@@ -70,9 +76,9 @@ class Model:
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
-        :param training_data_loader: Instance of Dataset.
+        :param dataset: Instance of Dataset.
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
-        :return model: a trained instance of a sklearn_crfsuite.CRF model.
+        :return: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
         if not isinstance(dataset, Dataset):
@@ -351,7 +357,6 @@ class Model:
 
             annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
 
-            
             return Dataset(data_directory=prediction_directory)
 
     def create_annotation_directory(self, directory, training_dataset, option):
@@ -379,8 +384,7 @@ class Model:
                 annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))        
         
         return annotations
-    
-    
+
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
