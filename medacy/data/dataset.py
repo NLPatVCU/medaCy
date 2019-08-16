@@ -180,7 +180,10 @@ class Dataset:
         return self.all_data_files[0:self.data_limit]
 
     def __iter__(self):
-        return iter(self.get_data_files())
+        return iter(self.all_data_files)
+
+    def __len__(self):
+        return len(self.all_data_files)
 
     def get_training_data(self, data_format='spacy'):
         """
@@ -264,7 +267,6 @@ class Dataset:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
                                                          data_file.raw_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
-
 
     def _parallel_metamap(self, files, i):
         """
@@ -361,11 +363,9 @@ class Dataset:
         :return: A set of strings. Each string is a label used.
         """
         labels = set()
-        data_files = self.all_data_files
 
-        for datafile in data_files:
-            ann_path = datafile.get_annotation_path()
-            annotations = Annotations(ann_path)
+        for datafile in self:
+            annotations = Annotations(datafile.ann_path)
             labels.update(annotations.get_labels())
 
         return labels
@@ -378,7 +378,7 @@ class Dataset:
         """
         dataset_counts = {
             'entities': {},
-            'relations':{}
+            'relations': {}
         }
 
         for data_file in self:
@@ -401,6 +401,7 @@ class Dataset:
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: two element tuple containing a label array (of entity names) and a matrix where rows are gold labels and columns are predicted labels. matrix[i][j] indicates that entities[i] in this dataset was predicted as entities[j] in 'annotation' matrix[i][j] times
         """
+
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
@@ -462,7 +463,6 @@ class Dataset:
 
             # compute matrix on the Annotation file level
             ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
-
 
         return ambiguity_dict
 
