@@ -1,21 +1,22 @@
-"""
-A utility class to Metamap medical text documents.
-Metamap a file  and utilize it the output or manipulate stored metamap output
-
-"""
-import subprocess
-import xmltodict
 import json
-import tempfile, os, warnings
+import os
+import subprocess
+import tempfile
+import warnings
+
+import xmltodict
 
 from ...tools.unicode_to_ascii import UNICODE_TO_ASCII
 
 
 class MetaMap:
+    """
+    A utility class to Metamap medical text documents.
+    Metamap a file and utilize it the output or manipulate stored metamap output
+    """
 
-    def __init__(self, metamap_path=None, cache_output = False, cache_directory = None, convert_ascii=True, args=""):
+    def __init__(self, metamap_path, cache_output=False, cache_directory=None, convert_ascii=True, args=""):
         """
-
         A python wrapper for metamap that includes built in caching of metamap output.
 
         :param cache_output: Whether to cache output as it run through metamap, will by default store in a
@@ -24,8 +25,6 @@ class MetaMap:
         :param metamap_path: The location of the metamap executable.
                             (ex. /home/share/programs/metamap/2016/public_mm/bin/metamap)
         """
-        if metamap_path is None:
-            raise ValueError("metamap_path is not set. Insure Metamap is running and a path to the metamap executable is being given (ex. metamap/2016/public_mm/bin/metamap)")
 
         if cache_output:
             if cache_directory is None: #set cache directory to tmp directory, creating if not exists
@@ -33,7 +32,7 @@ class MetaMap:
                 files = [filename for filename in os.listdir(tmp) if filename.startswith("medacy")]
 
                 if files:
-                    cache_directory = os.path.join(tmp,files[0])
+                    cache_directory = os.path.join(tmp, files[0])
                 else:
                     tmp_dir = tempfile.mkdtemp(prefix="medacy")
                     cache_directory = os.path.join(tmp, tmp_dir)
@@ -65,7 +64,7 @@ class MetaMap:
         try:
             with open(file_to_map, 'r') as file:
                 contents = file.read()
-        except:
+        except FileNotFoundError:
             raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
 
         metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth,self.args), contents)
@@ -99,10 +98,7 @@ class MetaMap:
         :param n_job: number of cores to utilize at once while mapping - this may use a large amount of memory
         :return:
         """
-
-
         raise NotImplementedError() #TODO implement utilizing code for parallel process mapper from n2c2
-
 
     def _run_metamap(self, args, document):
         """
@@ -149,8 +145,6 @@ class MetaMap:
             for item in json_input:
                 yield from self._item_generator(item, lookup_key)
 
-
-
     def extract_mapped_terms(self, metamap_dict):
         """
         Extracts an array of term dictionaries from metamap_dict
@@ -161,11 +155,8 @@ class MetaMap:
             warnings.warn("Metamap output is none for a file in the pipeline. Exiting.")
             return
 
-
         utterances = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']
         mapped_terms = []
-
-
 
         mapped_terms = list(self._item_generator(metamap_dict, 'Candidate'))
 
@@ -177,9 +168,7 @@ class MetaMap:
             if isinstance(term, list):
                 all_terms = all_terms + term
 
-
         return all_terms
-
 
     def mapped_terms_to_spacy_ann(self, mapped_terms, entity_label=None):
         """
@@ -201,13 +190,9 @@ class MetaMap:
                     annotations['entities'][count] = (entity_start, entity_end, self.get_semantic_types_by_term(term)[0])
                 else:
                     annotations['entities'][count] = (entity_start, entity_end, entity_label)
-                count+=1
+                count += 1
 
         return annotations
-
-
-
-
 
     def get_term_by_semantic_type(self, mapped_terms, include=[], exclude=None):
         """
@@ -236,17 +221,15 @@ class MetaMap:
             if int(term['SemTypes']['@Count']) > 1:
                 found_types = term['SemTypes']['SemType']
 
-
             if exclude is not None and set(exclude).issubset(set(found_types)):
                 continue
 
             if set(include).issubset(set(found_types)):
                 matches.append(term)
 
-
         return matches
 
-    def get_span_by_term(self,term):
+    def get_span_by_term(self, term):
         """
         Takes a given utterance dictionary (term) and extracts out the character indices of the utterance
 
@@ -265,9 +248,6 @@ class MetaMap:
             length = int(term['ConceptPIs']['ConceptPI']['Length'])
             return [(start, start + length)]
 
-
-
-
     def get_semantic_types_by_term(self, term):
         """
         Returns an array of the semantic types of a given term
@@ -279,7 +259,6 @@ class MetaMap:
 
         return term['SemTypes']['SemType']
 
-
     def __call__(self, file_path):
         """
         Metamaps a file and returns an array of mapped terms from the file
@@ -289,7 +268,6 @@ class MetaMap:
         metamap_dict = self.map_file(file_path)
 
         return self.extract_mapped_terms(metamap_dict)
-
 
     def _convert_to_ascii(self, text):
         """Takes in a text string and converts it to ASCII,
@@ -333,7 +311,6 @@ class MetaMap:
                     })
                     offset += len(ascii) - len(char)
         return text, diff
-
 
     def _restore_from_ascii(self, text, diff, metamap_dict):
         """Takes in non-ascii text and the list of changes made to it from the `convert()` function,
