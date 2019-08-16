@@ -246,4 +246,16 @@ class Model:
         self.encoder.fit(label_list)
         binary_label = self.encoder.transform(label_list)
         no_classes = len(self.encoder.classes_)
-        return binary_label
+
+        true_binary_label = []
+
+        if len(binary_label[0]) == 1:
+            for label in binary_label:
+                if label == 0:
+                    true_binary_label.append([1, 0])
+                else:
+                    true_binary_label.append([0, 1])
+
+        true_binary_label = np.array(true_binary_label)
+
+        return true_binary_label
