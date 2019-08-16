@@ -85,7 +85,9 @@ class MetaMap:
         self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, text)
         return self.metamap_dict
 
-    def load(self, file_to_load):
+    @staticmethod
+    def load(file_to_load):
+        """Loads a saved metamap file and returns it as a json"""
         with open(file_to_load, 'r') as f:
             return json.load(f)
 
