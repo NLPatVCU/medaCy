@@ -5,7 +5,7 @@ from .discrete_feature_extractor import FeatureExtractor
 class EmbeddingFeatureExtractor(FeatureExtractor):
     """A feature extractor that overlays the distance between word vectors."""
 
-    def __init__(self, vectors, window_size=2, spacy_features=None):
+    def __init__(self, vectors, window_size=2, spacy_features=None, use_embedding=True, use_distance=True):
         """
         Note that custom medaCy features are pulled from spaCy custom token attributes that begin with 'feature_'.
 
@@ -18,6 +18,8 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
             spacy_features=spacy_features
         )
         self.vectors = vectors
+        self.use_embedding = use_embedding
+        self.use_distance = use_distance
 
     def _token_to_feature_dict(self, index, sentence):
         """
@@ -59,25 +61,27 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
                     else:
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature)})
 
-                # # Try and get the similarity to each word in the window, else set similarity to zero
-                # try:
-                #     similarity = self.vectors.similarity(named_entity, token.text)
-                # except KeyError:
-                #     similarity = 0
-                #
-                # current.update({
-                #     f"{i}:similarity": similarity
-                # })
+                if self.use_distance:
+                    # Try and get the similarity to each word in the window, else set similarity to zero
+                    try:
+                        similarity = self.vectors.similarity(named_entity, token.text)
+                    except KeyError:
+                        similarity = 0
 
-                # Try and get the word vector, then make every index its own feature
-                try:
-                    word_embedding = self.vectors[token.text]
-                    word_features = {}
-                    for n, idx in enumerate(float(x) for x in word_embedding):
-                        word_features[f"{i}:embedding-{idx}"] = n
-                    current.update(word_features)
-                except KeyError:
-                    pass
+                    current.update({
+                        f"{i}:similarity": similarity
+                    })
+
+                if self.use_embedding:
+                    # Try and get the word vector, then make every index its own feature
+                    try:
+                        word_embedding = self.vectors[token.text]
+                        word_features = {}
+                        for n, idx in enumerate(float(x) for x in word_embedding):
+                            word_features[f"{i}:embedding-{idx}"] = n
+                        current.update(word_features)
+                    except KeyError:
+                        pass
 
                 # Extract features from the vector representation of this token
                 features.update(current)
