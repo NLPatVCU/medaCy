@@ -5,7 +5,7 @@ import string
 
 import torch
 import torch.nn as nn
-from torchcrf import CRF
+from TorchCRF import CRF
 
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100

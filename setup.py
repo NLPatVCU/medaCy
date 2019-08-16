@@ -56,6 +56,7 @@ setup(
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
         'torch==1.1.0',
+        'TorchCRF',
         'pytorch-crf==0.7.2',
         'numpy==1.16.1',
         'sklearn-crfsuite',
