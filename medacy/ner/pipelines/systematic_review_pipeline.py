@@ -2,10 +2,8 @@ import spacy, sklearn_crfsuite
 from .base import BasePipeline
 from gensim.models import KeyedVectors
 from medacy.pipeline_components import MetaMap, SystematicReviewTokenizer
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
 from medacy.pipeline_components.feature_extraction.embedding_feature_extractor import EmbeddingFeatureExtractor
-from medacy.pipeline_components.embeddings.embedding_component import EmbeddingComponent
 
 
 class SystematicReviewPipeline(BasePipeline):
@@ -14,26 +12,21 @@ class SystematicReviewPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, word_embeddings=None, metamap=None, entities=None, embedding_extractor=False):
+    def __init__(self, metamap=None, entities=None, word_embeddings=None, use_embeddings=False, use_distance=False):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
-        You can use Gensim word embedding themselves can be used as a feature, or the embedding extractor that uses
-        the distance between tokens as a feature, or both.
-
-        Pass the path to the gensim binary as either word_embeddinngs or embedding_extractor.
-
         :param word_embeddings: the path to a binary of gensim-compatible word embeddings
         :param metamap: an instance of MetaMap
-        :param embedding_extractor: set to True if you want to use the embedding feature extractor, or path to
-            gensim binary if using embedding extractor without word embeddings themselves as a feature
+        :param use_embeddings: bool for if to use word embeddings as a feature
+        :param use_distance: bool for if to use distance between words as a feature
         """
 
         super().__init__("systematic_review_pipeline",
                          spacy_pipeline=spacy.load("en_core_web_sm"),
                          description="Pipeline tuned for the recognition of systematic review related entities from the TAC 2018 SRIE track",
-                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
+                         creators="Andriy Mulyar (andriymulyar.com), Steele Farnsworth", #append if multiple creators
                          organization="NLP@VCU")
 
         self.entities = entities if entities is not None else []
@@ -42,19 +35,17 @@ class SystematicReviewPipeline(BasePipeline):
 
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
 
-        if word_embeddings or embedding_extractor:
-            if isinstance(word_embeddings, str):
-                self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
-            elif isinstance(embedding_extractor, str):
-                self.word_embeddings = KeyedVectors.load_word2vec_format(embedding_extractor, binary=True)
+        if word_embeddings and not (use_embeddings and use_distance):
+            raise Exception("The parameter word_embeddings is set, but neither use_embeddings or use_distance is True")
+
+        self.use_word_embeddings = use_embeddings
+        self.use_distance = use_distance
 
         if word_embeddings is not None:
-            self.add_component(EmbeddingComponent, self.word_embeddings)
+            self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
 
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
-
-        self.use_embedding_extractor = bool(embedding_extractor)
 
     def get_learner(self):
         return ("CRF_l2sgd",
@@ -70,10 +61,10 @@ class SystematicReviewPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        if self.use_embedding_extractor:
-            return EmbeddingFeatureExtractor(
-                self.word_embeddings,
-                window_size=10,
-                spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text']
-                )
-        else: return FeatureExtractor(window_size=10, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
+        return EmbeddingFeatureExtractor(
+            self.word_embeddings,
+            window_size=10,
+            spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'],
+            use_distance=self.use_distance,
+            use_embedding=self.use_word_embeddings
+        )
