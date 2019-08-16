@@ -493,4 +493,4 @@ class Model:
         return self.get_info()
 
     def __repr__(self):
-        return f"{type(self).__name__}(medacy_pipeline={self.medacy_pipeline}, model={self.model})"
+        return f"{type(self).__name__}(medacy_pipeline={self.pipeline}, model={self.model})"
