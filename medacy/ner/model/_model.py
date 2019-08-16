@@ -2,7 +2,7 @@
 Utilities for methods of the Model class
 """
 import logging
-from medacy.tools import Annotations
+from medacy.data.annotations import Annotations
 
 
 def predict_document(model, doc, medacy_pipeline):
