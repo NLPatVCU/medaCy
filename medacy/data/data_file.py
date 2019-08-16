@@ -1,9 +1,8 @@
-"""
-DataFile wraps all relevant information needed to manage a text document and it's corresponding annotation. Specifically,
-a Datafile keeps track of the filepath of the raw text, annotation file, and metamapped file for each document.
-"""
-
 class DataFile:
+    """
+    DataFile wraps all relevant information needed to manage a text document and it's corresponding annotation. Specifically,
+    a Datafile keeps track of the filepath of the raw text, annotation file, and metamapped file for each document.
+    """
 
     def __init__(self, file_name, raw_text_file_path, annotation_file_path, metamapped_path=None):
         """
@@ -42,7 +41,6 @@ class DataFile:
         :return: file path of the metamap output document.
         """
         return self.metamapped_path
-
 
     def __repr__(self):
         return self.file_name
