@@ -7,6 +7,8 @@ import torch
 import torch.nn as nn
 from torchcrf import CRF
 
+from medacy.nn import CharacterLSTM
+
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
 CHARACTER_EMBEDDING_SIZE = 100
@@ -40,16 +42,10 @@ class BiLstmCrf(nn.Module):
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
 
         # Setup character embedding layers
-        self.character_embeddings = nn.Embedding(
-            len(string.printable) + 1,
-            CHARACTER_EMBEDDING_SIZE,
-            padding_idx=0
-        )
-
-        self.character_lstm = nn.LSTM(
-            CHARACTER_EMBEDDING_SIZE,
-            CHARACTER_HIDDEN_DIM,
-            bidirectional=True
+        self.character_lstm = CharacterLSTM(
+            embedding_dim=CHARACTER_EMBEDDING_SIZE,
+            padding_idx=0,
+            hidden_size=CHARACTER_HIDDEN_DIM
         )
 
         # Setup word embedding layer
@@ -84,13 +80,7 @@ class BiLstmCrf(nn.Module):
             character_indices.append(indices)
         character_indices = torch.tensor(character_indices, device=self.device)
 
-        # Get character embeddings based on indices
-        character_embeddings = self.character_embeddings(character_indices)
-        character_embeddings = character_embeddings.permute(1, 0, 2)
-
-        # Run embeddings through character BiLSTM
-        _, (hidden_output, _) = self.character_lstm(character_embeddings)
-        features = hidden_output.permute(1, 0, 2).contiguous().view(-1, CHARACTER_HIDDEN_DIM*2)
+        features = self.character_lstm(character_indices)
 
         return features
 
