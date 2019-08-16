@@ -491,3 +491,6 @@ class Model:
 
     def __str__(self):
         return self.get_info()
+
+    def __repr__(self):
+        return f"{type(self).__name__}(medacy_pipeline={self.medacy_pipeline}, model={self.model})"
