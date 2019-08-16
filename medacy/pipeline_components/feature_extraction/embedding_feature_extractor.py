@@ -77,8 +77,8 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
                     try:
                         word_embedding = self.vectors[token.text]
                         word_features = {}
-                        for n, idx in enumerate(float(x) for x in word_embedding):
-                            word_features[f"{i}:embedding-{idx}"] = n
+                        for n, idx in enumerate(word_embedding):
+                            word_features[f"{i}:embedding-{idx}"] = float(n)
                         current.update(word_features)
                     except KeyError:
                         pass
