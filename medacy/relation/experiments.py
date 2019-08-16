@@ -4,18 +4,16 @@ from medacy.relation.NN import Segment_CNN
 from medacy.relation.NN import Embeddings
 from medacy.relation.models import Model
 
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-# label = [0,1,2,3,4,5,6,7]
-label = [0,1,2,3,4,5]
-# label = ['PIP','TeCP', 'TeRP','TrAP', 'TrCP','TrIP', 'TrNAP','TrWP']
+# import os
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 # embedding_path = "mm3_vectors.nc.200.txt"
+# embedding_path = "mimic3_d400.txt"
 embedding_path = "glove.6B.200d.txt"
 
-
 #create dataset
-data = Model(label, False, True)
-data_pad = Model(label, True, True, False)
+data = Model(False, True)
+data_pad = Model(True, True, maxlen = 100)
 embedding = Embeddings(embedding_path, data_pad, 200)
 nn = Simple_NN(data)
 
@@ -66,9 +64,9 @@ nn = Simple_NN(data)
 # nn.cross_validate( data.train, data.train_label)
 
 # Model 8: Train CNN on all the train data and test directly on the test data using sentence - vector inputs
-# cnn = CNN(data_pad, embedding)
-# cnn.cross_validate(data_pad.train, data_pad.train_label)
+cnn = CNN(data_pad, embedding)
+cnn.cross_validate(data_pad.train, data_pad.train_label)
 
 # Model 9: Train seg_CNN on all the train data and test directly on the test data using sentence - vector inputs
-seg_cnn = Segment_CNN(data_pad, embedding)
-seg_cnn.cross_validate(data_pad.preceding, data_pad.middle, data_pad.succeeding, data_pad.concept1, data_pad.concept2, data_pad.train_label)
+# seg_cnn = Segment_CNN(data_pad, embedding)
+# seg_cnn.cross_validate(data_pad.preceding, data_pad.middle, data_pad.succeeding, data_pad.concept1, data_pad.concept2, data_pad.train_label)
