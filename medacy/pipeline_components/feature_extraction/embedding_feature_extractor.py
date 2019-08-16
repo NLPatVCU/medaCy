@@ -59,15 +59,25 @@ class EmbeddingFeatureExtractor(FeatureExtractor):
                     else:
                         current.update({'%i:%s' % (i, feature) : getattr(token, feature)})
 
-                # Try and get the similarity to each word in the window, else set similarity to zero
-                try:
-                    similarity = self.vectors.similarity(named_entity, token.text)
-                except KeyError:
-                    similarity = 0
+                # # Try and get the similarity to each word in the window, else set similarity to zero
+                # try:
+                #     similarity = self.vectors.similarity(named_entity, token.text)
+                # except KeyError:
+                #     similarity = 0
+                #
+                # current.update({
+                #     f"{i}:similarity": similarity
+                # })
 
-                current.update({
-                    f"{i}:similarity": similarity
-                })
+                # Try and get the word vector, then make every index its own feature
+                try:
+                    word_embedding = self.vectors[token.text]
+                    word_features = {}
+                    for n, idx in enumerate(float(x) for x in word_embedding):
+                        word_features[f"{i}:embedding-{idx}"] = n
+                    current.update(word_features)
+                except KeyError:
+                    pass
 
                 # Extract features from the vector representation of this token
                 features.update(current)
