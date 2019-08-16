@@ -2,7 +2,7 @@
 
 import os
 from medacy.data.dataset import Dataset
-from medacy.tools.data_file import DataFile
+from medacy.data.data_file import DataFile
 from medacy.tools.entity import Entity
 
 

@@ -1,4 +1,4 @@
-from medacy.tools.data_file import DataFile
+from medacy.data.data_file import DataFile
 from medacy.tools.converters.brat_to_con import is_valid_brat, line_to_dict
 from typing import Match
 

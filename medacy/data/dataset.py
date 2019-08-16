@@ -20,9 +20,8 @@ Assuming your directory looks like this (where .ann files are in `BRAT <http://b
 
 A Dataset can be created like this:
 ::
-    from medacy.data import Dataset
-
-    dataset = Dataset('/home/medacy/data')
+   >>> from medacy.data import Dataset
+   >>> dataset = Dataset('/home/medacy/data')
 
 
 MedaCy **does not** alter the data you load in any way - it only reads from it.
@@ -70,10 +69,19 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-import os, logging, multiprocessing, math, json, importlib
-from joblib import Parallel, delayed
+
+import importlib
+import json
+import logging
+import math
+import multiprocessing
+import os
+
 import spacy
-from medacy.tools import DataFile, Annotations
+from joblib import Parallel, delayed
+
+from medacy.data.annotations import Annotations
+from medacy.data.data_file import DataFile
 
 
 class Dataset:
