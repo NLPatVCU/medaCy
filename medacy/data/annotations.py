@@ -1,8 +1,11 @@
-import os, logging, tempfile
-import spacy
-from medacy.tools.converters.con_to_brat import convert_con_to_brat
-from medacy.tools.converters.brat_to_con import convert_brat_to_con
+import logging
+import os
+import tempfile
 from math import ceil
+
+from medacy.tools.converters.brat_to_con import convert_brat_to_con
+from medacy.tools.converters.con_to_brat import convert_con_to_brat
+
 
 class InvalidAnnotationError(ValueError):
     """Raised when a given input is not in the valid format for that annotation type."""
@@ -255,11 +258,11 @@ class Annotations:
             if not  0 <= leniency <= 1:
                 raise ValueError("Leniency must be a floating point between [0,1]")
         else:
-            return set(self.get_entity_annotations()).difference(annotations.get_entity_annotations())
+            return set(self.get_entity_annotations()) - annotations.get_entity_annotations()
 
         matches = set()
         for label, start, end, text in self.get_entity_annotations():
-            window = ceil(leniency * (end-start))
+            window = ceil(leniency * (end - start))
             for c_label, c_start, c_end, c_text in annotations.get_entity_annotations():
                 if label == c_label:
                     if start - window <= c_start and end+window >= c_end:
@@ -267,7 +270,7 @@ class Annotations:
                         break
 
 
-        return set(self.get_entity_annotations()).difference(matches)
+        return set(self.get_entity_annotations()) - matches
 
     def intersection(self, annotations, leniency=0):
         """
