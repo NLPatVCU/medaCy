@@ -124,11 +124,7 @@ class Dataset:
         if not raw_text_files: #detected a prediction directory
             ann_files = sorted([file for file in all_files_in_directory if file.endswith(annotation_file_extension)])
             self.is_training_directory = False
-
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(ann_files)
+            self.data_limit = data_limit if data_limit is not None else len(ann_files)
 
             for file in ann_files:
                 annotation_path = os.path.join(data_directory, file)
@@ -136,10 +132,7 @@ class Dataset:
                 self.all_data_files.append(DataFile(file_name, None, annotation_path))
 
         else: #detected a training directory (raw text files exist)
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(raw_text_files)
+            self.data_limit = data_limit if data_limit is not None else len(raw_text_files)
 
             if self.data_limit < 1 or self.data_limit > len(raw_text_files):
                 raise ValueError(
@@ -211,7 +204,6 @@ class Dataset:
         Get a subdataset of data files based on indices.
 
         :param indices: List of ints that represent the indexes of the data files to split off.
-
         :return: Dataset object with only the specified data files.
         """
         subdataset = Dataset(self.data_directory)
