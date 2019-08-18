@@ -177,13 +177,13 @@ class Dataset:
 
         :return: a list of DataFile objects.
         """
-        return self.all_data_files[0:self.data_limit]
+        return self.all_data_files[:self.data_limit]
 
     def __iter__(self):
-        return iter(self.all_data_files)
+        return iter(self.all_data_files[:self.data_limit])
 
     def __len__(self):
-        return len(self.all_data_files)
+        return len(self.all_data_files[:self.data_limit])
 
     def get_training_data(self, data_format='spacy'):
         """
