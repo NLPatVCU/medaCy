@@ -343,8 +343,8 @@ class Model:
 
         if prediction_directory:
             
-            prediction_directory = training_dataset.get_data_directory() + "/predictions"
-            groundtruth_directory = training_dataset.get_data_directory() + "/groundtruth"
+            prediction_directory = os.path.join(training_dataset.data_directory, "predictions")
+            groundtruth_directory = os.path.join(training_dataset.data_directory, "groundtruth")
             
             # Write annotations generated from cross-validation
             self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
