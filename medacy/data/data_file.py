@@ -1,3 +1,6 @@
+import os
+
+
 class DataFile:
     """
     DataFile wraps all relevant information needed to manage a text document and it's corresponding annotation. Specifically,
@@ -38,6 +41,11 @@ class DataFile:
     @property
     def metamapped_path(self):
         return self._metamapped_path
+
+    @metamapped_path.setter
+    def metamapped_path(self, path):
+        if not os.path.isfile(path): raise FileNotFoundError(f"'{path}'' is not a file")
+        self._metamapped_path = path
 
     def __repr__(self):
         return self.file_name
