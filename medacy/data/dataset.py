@@ -254,7 +254,7 @@ class Dataset:
             #Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
 
-        files_to_metamap = [data_file.raw_path for data_file in self.all_data_files if not data_file.file_name in already_metamapped]
+        files_to_metamap = [data_file.txt_path for data_file in self.all_data_files if not data_file.file_name in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
@@ -263,7 +263,7 @@ class Dataset:
         if self.is_metamapped():
             for data_file in self.all_data_files:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                         data_file.raw_path.split(os.path.sep)[-1]
+                                                         data_file.txt_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
     def _parallel_metamap(self, files, i):
@@ -404,9 +404,9 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         #verify files are consistent
-        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
-            raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
+            raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
         #sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts()['entities'].items(), key=lambda x: x[1])]
@@ -443,7 +443,7 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
