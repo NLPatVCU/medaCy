@@ -34,8 +34,8 @@ Running:
     >>> from medacy.pipeline_components import MetaMap
 
     >>> dataset = Dataset('/home/medacy/data')
-    ... for data_file in dataset:
-    ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
+    >>> for data_file in dataset:
+    ...    (data_file.file_name, data_file.txt_path, data_file.ann_path)
     (file_one, file_one.txt, file_one.ann)
     >>> dataset
     ['file_one.txt', 'file_two.txt']
