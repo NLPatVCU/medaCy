@@ -44,3 +44,9 @@ class DataFile:
 
     def __str__(self):
         return self.file_name
+
+    def __eq__(self, other):
+        return self._file_name == other._file_name if isinstance(other, DataFile) else False
+
+    def __hash__(self):
+        return hash(self._file_name)
