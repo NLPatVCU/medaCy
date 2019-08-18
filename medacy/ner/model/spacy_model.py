@@ -130,7 +130,7 @@ class SpacyModel:
             for data_file in dataset.get_data_files():
                 logging.info("Predicting file: %s", data_file.file_name)
 
-                with open(data_file.get_text_path(), 'r') as source_text_file:
+                with open(data_file.txt_path, 'r') as source_text_file:
                     text = source_text_file.read()
 
                 doc = nlp(text)
@@ -207,9 +207,8 @@ class SpacyModel:
             y_pred = []
 
             for data_file in y_subdataset.get_data_files():
-                txt_path = data_file.get_text_path()
-                ann_path = data_file.get_annotation_path()
-                annotations = Annotations(ann_path, source_text_path=txt_path)
+                txt_path = data_file.txt_path
+                annotations = Annotations(data_file.ann_path, source_text_path=txt_path)
 
                 with open(txt_path, 'r') as source_text_file:
                     text = source_text_file.read()

@@ -201,9 +201,7 @@ class Dataset:
         nlp = spacy.load('en_core_web_sm')
 
         for data_file in self.all_data_files:
-            txt_path = data_file.get_text_path()
-            ann_path = data_file.get_annotation_path()
-            annotations = Annotations(ann_path, source_text_path=txt_path)
+            annotations = Annotations(data_file.ann_path, source_text_path=data_file.txt_path)
             training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
 
         return training_data
