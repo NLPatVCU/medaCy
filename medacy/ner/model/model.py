@@ -397,7 +397,7 @@ class Model:
         feature_extractor = medacy_pipeline.get_feature_extractor()
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.raw_path, 'r') as raw_text:
+        with open(data_file.txt_path, 'r') as raw_text:
             doc = nlp.make_doc(raw_text.read())
         # Link ann_path to doc
         doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)

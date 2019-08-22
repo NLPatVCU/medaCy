@@ -161,7 +161,7 @@ class Dataset:
             if self.is_metamapped():
                 for data_file in self.all_data_files:
                     data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                             data_file.raw_path.split(os.path.sep)[-1]
+                                                             data_file.txt_path.split(os.path.sep)[-1]
                                                              .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
     def get_data_files(self):
