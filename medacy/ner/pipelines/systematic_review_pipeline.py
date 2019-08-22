@@ -3,6 +3,7 @@ from .base import BasePipeline
 from gensim.models import KeyedVectors
 from medacy.pipeline_components import MetaMap, SystematicReviewTokenizer
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
+from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_extraction.embedding_feature_extractor import EmbeddingFeatureExtractor
 
 
@@ -43,6 +44,8 @@ class SystematicReviewPipeline(BasePipeline):
 
         if word_embeddings is not None:
             self.word_embeddings = KeyedVectors.load_word2vec_format(word_embeddings, binary=True)
+        else:
+            self.word_embeddings = None
 
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
@@ -61,10 +64,16 @@ class SystematicReviewPipeline(BasePipeline):
         return tokenizer.tokenizer
 
     def get_feature_extractor(self):
-        return EmbeddingFeatureExtractor(
-            self.word_embeddings,
-            window_size=10,
-            spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'],
-            use_distance=self.use_distance,
-            use_embedding=self.use_word_embeddings
-        )
+        if self.use_word_embeddings or self.use_distance:
+            return EmbeddingFeatureExtractor(
+                self.word_embeddings,
+                window_size=10,
+                spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'],
+                use_distance=self.use_distance,
+                use_embedding=self.use_word_embeddings
+            )
+        else:
+            return FeatureExtractor(
+                window_size=10,
+                spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text']
+            )
