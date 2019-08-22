@@ -1,9 +1,10 @@
-import spacy, sklearn_crfsuite
-from .base import BasePipeline
-from medacy.pipeline_components import ClinicalTokenizer
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+import sklearn_crfsuite
+import spacy
 
+from medacy.pipeline_components import ClinicalTokenizer
 from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent, MetaMap
+from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from .base import BasePipeline
 
 
 class ClinicalPipeline(BasePipeline):
@@ -12,7 +13,7 @@ class ClinicalPipeline(BasePipeline):
     to character level tokens defines this pipeline.
     """
 
-    def __init__(self, metamap=None, entities=[], cuda_device=-1):
+    def __init__(self, entities, metamap=None, cuda_device=-1):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -29,23 +30,22 @@ class ClinicalPipeline(BasePipeline):
 
         self.entities = entities
 
-        self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
+        self.spacy_pipeline.tokenizer = self.get_tokenizer()
 
-        self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
+        self.add_component(GoldAnnotatorComponent, entities)
 
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
 
-        #self.add_component(UnitComponent)
-
-
     def get_learner(self):
-        return ("CRF_l2sgd", sklearn_crfsuite.CRF(
-            algorithm='l2sgd',
-            c2=0.1,
-            max_iterations=100,
-            all_possible_transitions=True
-        ))
+        return ("CRF_l2sgd",
+                sklearn_crfsuite.CRF(
+                    algorithm='l2sgd',
+                    c2=0.1,
+                    max_iterations=100,
+                    all_possible_transitions=True
+                    )
+                )
 
     def get_tokenizer(self):
         tokenizer = ClinicalTokenizer(self.spacy_pipeline)
@@ -54,10 +54,3 @@ class ClinicalPipeline(BasePipeline):
     def get_feature_extractor(self):
         extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
         return extractor
-
-
-
-
-
-
-
