@@ -1,5 +1,10 @@
-import shutil, tempfile, os, importlib, pkg_resources
+import importlib
+import os
+import pkg_resources
+import shutil
+import tempfile
 from unittest import TestCase
+
 from medacy.data import Dataset
 
 
@@ -37,7 +42,6 @@ class TestDatasetLocal(TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.training_directory)
         shutil.rmtree(cls.prediction_directory)
-
 
     def test_init_training(self):
         """
