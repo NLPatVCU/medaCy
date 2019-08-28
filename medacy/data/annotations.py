@@ -7,11 +7,6 @@ from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 
 
-class InvalidAnnotationError(ValueError):
-    """Raised when a given input is not in the valid format for that annotation type."""
-    pass
-
-
 class Annotations:
     """
     An Annotations object stores all relevant information needed to manage Annotations over a document.
@@ -39,10 +34,10 @@ class Annotations:
 
         if isinstance(annotation_data, dict):
             if not ('entities' in annotation_data and isinstance(annotation_data['entities'], dict)):
-                raise InvalidAnnotationError("The dictionary annotation_data must contain a key 'entities' "
+                raise ValueError("The dictionary annotation_data must contain a key 'entities' "
                                              "corresponding to a list of entity tuples")
             if 'relations' not in annotation_data and isinstance(annotation_data['relations'], list):
-                raise InvalidAnnotationError("The dictionary annotation_data must contain a key 'relations' "
+                raise ValueError("The dictionary annotation_data must contain a key 'relations' "
                                              "corresponding to a list of entity tuples")
             self.annotations = annotation_data
 
@@ -112,7 +107,6 @@ class Annotations:
         """
         return self.annotations['relations']
 
-
     def add_entity(self, label, start, end, text=""):
         """
         Adds an entity to the Annotations
@@ -167,12 +161,11 @@ class Annotations:
             if line == "" or line.startswith("#"):
                 continue
             if "\t" not in line:
-                raise InvalidAnnotationError("Line chunks in ANN files are separated by tabs, see BRAT guidelines. %s"
+                raise ValueError("Line chunks in ANN files are separated by tabs, see BRAT guidelines. %s"
                                              % line)
             line = line.split("\t")
             if not line[0][0] in valid_IDs:
-                raise InvalidAnnotationError("Ill formated annotation file, each line must contain of the IDs: %s"
-                                             % valid_IDs)
+                raise ValueError("Ill formated annotation file, each line must contain of the IDs: %s" % valid_IDs)
             if 'T' == line[0][0]:
                 if len(line) == 2:
                     logging.warning("Incorrectly formatted entity line in ANN file (%s): %s", ann_file_path, line)
@@ -269,7 +262,6 @@ class Annotations:
                         matches.add((label, start, end, text))
                         break
 
-
         return set(self.get_entity_annotations()) - matches
 
     def intersection(self, annotations, leniency=0):
@@ -294,7 +286,6 @@ class Annotations:
                     if start - window <= c_start and end+window >= c_end:
                         matches.add((label, start, end, text))
                         break
-
 
         return matches
 
@@ -368,13 +359,13 @@ class Annotations:
         """
 
         counts = {
-            'entities':{},
-            'relations':{}
+            'entities': {},
+            'relations': {}
         }
 
-        for entity,_,_,_ in self.get_entity_annotations():
+        for entity, _, _, _ in self.get_entity_annotations():
             counts['entities'][entity] = counts['entities'].get(entity, 0) + 1
-        for relation,_,_ in self.get_relation_annotations():
+        for relation, _ , _ in self.get_relation_annotations():
             counts['relations'][relation] = counts['relations'].get(relation, 0) + 1
 
         return counts
