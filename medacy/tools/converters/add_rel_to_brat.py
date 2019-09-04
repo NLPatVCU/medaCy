@@ -7,13 +7,15 @@ Adds relation annotations in the .rel format to pre-existing brat (.ann) files. 
 :date: 31 May, 2019
 """
 
+import logging
 import os
 import re
 from sys import argv
-import logging
-from medacy.tools.converters.conversion_tools.line import Line
-from medacy.tools.converters.con_to_brat import get_absolute_index, switch_extension
+
 from medacy.tools.converters.brat_to_con import line_to_dict
+from medacy.tools.converters.con_to_brat import get_absolute_index, switch_extension
+from medacy.tools.converters.conversion_tools.line import Line
+
 
 class Entity:
     """Represents an entity from an ann file."""

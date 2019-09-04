@@ -1,20 +1,13 @@
 """Import pipeline components"""
-from .annotation.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
 
-from .feature_extraction.discrete_feature_extractor import FeatureExtractor
+from .feature_extractors.discrete_feature_extractor import FeatureExtractor
 
 from .learners.bilstm_crf_learner import BiLstmCrfLearner
 
-from .lexicon import LexiconComponent
-
-from .metamap.metamap import MetaMap
-from .metamap.metamap_component import MetaMapComponent
-
-from .patterns import TableMatcherComponent
-
-from .tokenization.clinical_tokenizer import ClinicalTokenizer
-from .tokenization.character_tokenizer import CharacterTokenizer
-from .tokenization.systematic_review_tokenizer import SystematicReviewTokenizer
+from .tokenizers.clinical_tokenizer import ClinicalTokenizer
+from .tokenizers.character_tokenizer import CharacterTokenizer
+from .tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 
 from .units.unit_component import UnitComponent
 from .units.mass_unit_component import MassUnitComponent

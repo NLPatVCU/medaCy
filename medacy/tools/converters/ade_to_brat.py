@@ -23,9 +23,7 @@ class Entity:
         self.t = None
 
     def __eq__(self, other):
-        if self.start == other.start and self.end == other.end and self.text == other.text:
-            return True
-        else: return False
+        return self.start == other.start and self.end == other.end and self.text == other.text
 
     def add_t(self):
         self.t = self.__class__.t

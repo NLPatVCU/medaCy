@@ -5,7 +5,7 @@ import shutil
 import tempfile
 from unittest import TestCase
 
-from medacy.data import Dataset
+from medacy.data.dataset import Dataset
 
 
 class TestDatasetLocal(TestCase):
@@ -13,6 +13,7 @@ class TestDatasetLocal(TestCase):
     Tests working with a local datasets - imports an external dataset END and writes it locally
     Tests are run on the local versions.
     """
+
     @classmethod
     def setUpClass(cls):
 
@@ -72,7 +73,6 @@ class TestDatasetLocal(TestCase):
         self.assertFalse(dataset.is_training())
 
 
-
 class TestDatasetExternal(TestCase):
     """
     Tests working with of an external imported Dataset.
@@ -91,35 +91,22 @@ class TestDatasetExternal(TestCase):
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
 
-
     def test_is_training(self):
-        """
-        Tests initialization of DataManager
-        :return:
-        """
+        """Tests initialization of DataManager"""
         self.assertTrue(self.dataset.is_training())
 
     def test_file_count(self):
-        """
-        Tests the expected file count for our testing dataset
-        :return:
-        """
+        """Tests the expected file count for our testing dataset"""
         self.assertEqual(len(self.dataset.get_data_files()), 41)
 
     def test_is_metamapped(self):
-        """
-        Verifies that the dataset is metamapped
-        :return:
-        """
+        """Verifies that the dataset is metamapped"""
         self.assertTrue(self.dataset.is_metamapped())
 
     def test_limit(self):
-        """
-        Tests limiting a file
-        :return:
-        """
+        """Tests limiting a file"""
         self.dataset.set_data_limit(5)
-        self.assertEqual(len(self.dataset.get_data_files()), 5)
+        self.assertEqual(len(self.dataset), 5)
 
     def test_compute_counts(self):
         self.assertIsInstance(self.dataset.compute_counts(), dict)
@@ -135,9 +122,3 @@ class TestDatasetExternal(TestCase):
         ambiguity = self.dataset.compute_ambiguity(self.dataset)
         self.dataset.set_data_limit(41)
         self.assertIsInstance(ambiguity, dict)
-
-
-
-
-
-
