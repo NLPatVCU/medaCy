@@ -17,7 +17,7 @@ class SystematicReviewPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, metamap=None, entities=None, word_embeddings=None, use_embeddings=False, use_distance=False):
+    def __init__(self, metamap=None, entities=None, word_embeddings=None, use_embeddings=False, use_distance=False, cuba_device=-1):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -32,7 +32,8 @@ class SystematicReviewPipeline(BasePipeline):
                          spacy_pipeline=spacy.load("en_core_web_sm"),
                          description="Pipeline tuned for the recognition of systematic review related entities from the TAC 2018 SRIE track",
                          creators="Andriy Mulyar (andriymulyar.com), Steele Farnsworth", #append if multiple creators
-                         organization="NLP@VCU")
+                         organization="NLP@VCU",
+                         cuda_device=cuba_device)
 
         self.entities = entities if entities is not None else []
 
