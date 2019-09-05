@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 import spacy
 
 
@@ -13,7 +14,7 @@ class BasePipeline(ABC):
         :param pipeline_name: The name of the pipeline
         :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
         :param description: a description of the pipeline
-        :param creator: the creator of the pipeline
+        :param creators: the creator of the pipeline
         :param organization: the organization the pipeline creator belongs to
         """
         self.pipeline_name = pipeline_name
@@ -50,7 +51,6 @@ class BasePipeline(ABC):
         """
         pass
 
-
     def get_language_pipeline(self):
         """
         Retrieves the associated spaCy Language pipeline that the medaCy pipeline wraps.
@@ -74,7 +74,6 @@ class BasePipeline(ABC):
         for dependent in dependencies:
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
 
-
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
     def get_components(self):
@@ -82,8 +81,8 @@ class BasePipeline(ABC):
         Retrieves a listing of all components currently in the pipeline.
         :return: a list of components inside the pipeline.
         """
-        return [component_name for component_name, _ in self.spacy_pipeline.pipeline
-                           if component_name != 'ner']
+        return [component_name for component_name, _ in self.spacy_pipeline.pipeline if component_name != 'ner']
+
     def __call__(self, doc, predict=False):
         """
         Passes a single document through the pipeline.
@@ -119,13 +118,3 @@ class BasePipeline(ABC):
         }
 
         return information
-
-
-
-
-
-
-
-
-
-
