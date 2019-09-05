@@ -48,7 +48,7 @@ class DataFile:
         self._metamapped_path = path
 
     def __repr__(self):
-        return self.file_name
+        return f"{type(self).__name__}({self._file_name}, {self._raw_path}, {self._ann_path}, {self._metamapped_path})"
 
     def __str__(self):
         return self.file_name
