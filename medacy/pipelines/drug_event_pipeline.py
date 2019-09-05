@@ -1,10 +1,10 @@
 import sklearn_crfsuite
 import spacy
 
-from medacy.pipeline_components.lexicon import LexiconComponent
-from medacy.pipeline_components.patterns import TableMatcherComponent
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconComponent
+from medacy.pipeline_components.feature_overlayers.table_matcher_component import TableMatcherComponent
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
 from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
 from .base import BasePipeline
