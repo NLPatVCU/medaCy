@@ -7,9 +7,10 @@ from datetime import datetime
 import time
 import importlib
 
-from medacy.data import Dataset
-from medacy.ner import Model
-from medacy.ner import SpacyModel
+from medacy.data.dataset import Dataset
+from medacy.model.model import Model
+from medacy.model.spacy_model import SpacyModel
+
 
 def setup(args):
     """
@@ -28,8 +29,8 @@ def setup(args):
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
 
     else:
-        #Parse the argument as a class name in module medacy.ner.pipelines
-        module = importlib.import_module("medacy.ner.pipelines")
+        # Parse the argument as a class name in module medacy.pipelines
+        module = importlib.import_module("medacy.pipelines")
         pipeline_class = getattr(module, args.pipeline)
         logging.info('Using %s', args.pipeline)
 
@@ -41,6 +42,7 @@ def setup(args):
         model = Model(pipeline)
 
     return dataset, model
+
 
 def train(args, dataset, model):
     """
@@ -60,6 +62,7 @@ def train(args, dataset, model):
         model.fit(dataset, args.asynchronous)
         model.dump(args.filename)
 
+
 def predict(args, dataset, model):
     """
     Used for running predictions on new datasets.
@@ -68,9 +71,9 @@ def predict(args, dataset, model):
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
     """
-    if args.predictions == False:
+    if not args.predictions:
         args.predictions = None
-    if args.groundtruth == False:
+    if not args.groundtruth:
         args.groundtruth = None
 
     model.load(args.model_path)
@@ -79,6 +82,7 @@ def predict(args, dataset, model):
         prediction_directory=args.predictions,
         groundtruth_directory=args.groundtruth
     )
+
 
 def cross_validate(args, dataset, model):
     """
@@ -95,6 +99,7 @@ def cross_validate(args, dataset, model):
         groundtruth_directory=args.groundtruth,
         asynchronous=args.asynchronous
     )
+
 
 def main():
     """
@@ -156,6 +161,7 @@ def main():
     hours_elapsed, minutes_elapsed = divmod(minutes_elapsed, 60)
 
     logging.info('H:M:S ELAPSED: %d:%d:%d', hours_elapsed, minutes_elapsed, seconds_elapsed)
+
 
 if __name__ == '__main__':
     main()

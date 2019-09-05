@@ -2,7 +2,7 @@
 from spacy.tokens import Token
 from spacy.matcher import Matcher
 from spacy.tokens import Span
-from ..base import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseComponent
 
 class MassUnitComponent(BaseComponent):
     """

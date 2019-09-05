@@ -11,15 +11,17 @@ for individual conversion.
 :date: 13 March, 2019
 """
 
-from sys import argv
-from re import split, fullmatch, DOTALL, findall
-from medacy.tools.converters.conversion_tools.line import Line
-import re
-import os
-import shutil
+import argparse
 import logging
+import os
+import re
+import shutil
+from re import split, fullmatch, DOTALL, findall
+from sys import argv
+
 import tabulate
 
+from medacy.tools.converters.conversion_tools.line import Line
 
 # A regex pattern for consecutive whitespace other than a new line character
 whitespace_pattern = re.compile("( +|\t+)+")

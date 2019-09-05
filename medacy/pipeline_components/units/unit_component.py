@@ -1,9 +1,11 @@
+import logging
 
-from spacy.tokens import Token
 from spacy.matcher import Matcher
 from spacy.tokens import Span
-from ..base import BaseComponent
-import logging
+from spacy.tokens import Token
+
+from medacy.pipeline_components.feature_overlayers.base import BaseComponent
+
 
 class UnitComponent(BaseComponent):
     """
