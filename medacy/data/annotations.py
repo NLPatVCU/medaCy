@@ -20,7 +20,7 @@ class Annotations:
 
     def __init__(self, annotation_data, source_text_path=None):
         """
-        :param annotation_data: a file path to an annotation file
+        :param annotation_data: a file path to an annotation file, or a list of annotation tuples.
         :param source_text_path: path to the text file from which the annotations were derived; optional for ann files but necessary for conversion to or from con.
         """
         if isinstance(annotation_data, list):
@@ -76,10 +76,8 @@ class Annotations:
             with open(self.source_text_path, 'r') as source_text_file:
                 source_text = source_text_file.read()
 
-            entities = []
-
-            for tag, start, end, text in self.annotations:
-                entities.append((start, end, tag))
+            # (start, end, tag)
+            entities = [(e[1], e[2], e[0]) for e in self.annotations]
 
             return source_text, entities
         else:
@@ -193,8 +191,7 @@ class Annotations:
                     continue
                 overlap = max(0, min(end, c_end) - max(c_start, start))
                 if overlap != 0:
-                    ambiguity_dict[(label, start, end, text)] = []
-                    ambiguity_dict[(label, start, end, text)].append((c_label, c_start, c_end, c_text))
+                    ambiguity_dict[(label, start, end, text)] = [(c_label, c_start, c_end, c_text)]
 
         return ambiguity_dict
 

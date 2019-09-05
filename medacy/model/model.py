@@ -9,10 +9,10 @@ from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
-from medacy.data import Dataset
-from medacy.pipelines import BasePipeline
-from ._model import predict_document, construct_annotations_from_tuples
-from .stratified_k_fold import SequenceStratifiedKFold
+from medacy.data.dataset import Dataset
+from medacy.model._model import predict_document, construct_annotations_from_tuples
+from medacy.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
 class Model:
@@ -106,10 +106,10 @@ class Model:
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
-        :param documents: A string or Dataset to predict
+        :param dataset: A string or Dataset to predict
         :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
         :param groundtruth_directory: The directory to write groundtruth to.
-        :return:
+        :return: the Annotations object for the predictions
         """
 
         if not isinstance(dataset, (Dataset, str)):
@@ -127,7 +127,7 @@ class Model:
             # create directory to write groundtruth to
             groundtruth_directory = self.create_annotation_directory(directory=groundtruth_directory, training_dataset=dataset, option="groundtruth")
 
-            for data_file in dataset.get_data_files():
+            for data_file in dataset:
                 logging.info("Predicting file: %s", data_file.file_name)
                 with open(data_file.raw_path, 'r') as raw_text:
                     doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
@@ -142,15 +142,13 @@ class Model:
                 logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
                 annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
-        if isinstance(dataset, str):
-            assert 'metamap_annotator' not in self.pipeline.get_components(), \
-                "Cannot currently predict on the fly when metamap_component is in pipeline."
-
+        elif isinstance(dataset, str):
             doc = medacy_pipeline.spacy_pipeline.make_doc(dataset)
             doc.set_extension('file_name', default="STRING_INPUT", force=True)
             doc = medacy_pipeline(doc, predict=True)
             annotations = predict_document(model, doc, medacy_pipeline)
-            return annotations
+
+        return annotations
 
     def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
@@ -233,10 +231,10 @@ class Model:
                 groundtruth = [element for sentence in y_test for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
-                i=0
+                i = 0
                 while i < len(groundtruth):
                     if groundtruth[i] == 'O':
-                        i+=1
+                        i += 1
                         continue
                     entity = groundtruth[i]
                     document = document_indices[i]
@@ -246,7 +244,7 @@ class Model:
                         i += 1
                     last_start, last_end = span_indices[i]
                     groundtruth_by_document[document].append((entity, first_start, last_end))
-                    i+=1
+                    i += 1
             if prediction_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
 
@@ -259,10 +257,10 @@ class Model:
                 predictions = [element for sentence in y_pred for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
-                i=0
+                i = 0
                 while i < len(predictions):
                     if predictions[i] == 'O':
-                        i+=1
+                        i += 1
                         continue
                     entity = predictions[i]
                     document = document_indices[i]
@@ -353,9 +351,13 @@ class Model:
             self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
             
             #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
-            annotations = self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document, option="groundtruth")
+            self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset,
+                                               medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document,
+                                               groundtruth_by_document=groundtruth_by_document, option="groundtruth")
 
-            annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
+            self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset,
+                                               medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document,
+                                               groundtruth_by_document=groundtruth_by_document,option="predictions")
 
             return Dataset(data_directory=prediction_directory)
 
@@ -371,7 +373,7 @@ class Model:
         return directory
 
     def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
-        for data_file in training_dataset.get_data_files():
+        for data_file in training_dataset:
             logging.info("Predicting %s file: %s", option, data_file.file_name)
             with open(data_file.raw_path, 'r') as raw_text:
                 doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
