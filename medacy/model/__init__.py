@@ -1,2 +1,2 @@
-from .model import Model
-from .stratified_k_fold import SequenceStratifiedKFold
+from medacy.model.model import Model
+from medacy.model.stratified_k_fold import SequenceStratifiedKFold
