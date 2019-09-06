@@ -16,8 +16,8 @@ MedaCy is a text processing and learning framework built over [spaCy](https://sp
 
 ## :thought_balloon: Where to ask questions
 
-MedaCy is actively maintained by [@AndriyMulyar](https://github.com/AndriyMulyar)
-and [@CoreySutphin](https://github.com/CoreySutphin). The best way to
+MedaCy is actively maintained by [Jorge Vargas](https://github.com/jvargas2)
+and [Steele Farnsworth](https://github.com/swfarnsworth). The best way to
 receive immediate responses to any questions is to raise an issue. Make sure to first consult the [API](https://medacy.readthedocs.io/en/latest/).  See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
@@ -70,7 +70,7 @@ This package is licensed under the GNU General Public License.
 
 Authors
 =======
-Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, and Bridget T McInnes
+Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Steele Farnsworth, and Bridget T McInnes
 
 Acknowledgments
 ===============
