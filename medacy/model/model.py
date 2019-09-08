@@ -52,8 +52,8 @@ class Model:
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
-                    for data_file in dataset.get_data_files()]
+            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped())
+                    for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -67,8 +67,8 @@ class Model:
             logging.info('Preprocessing data synchronously...')
             self.X_data = []
             self.y_data = []
-            for data_file in dataset.get_data_files():
-                features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+            for data_file in dataset:
+                features, labels = self._extract_features(data_file, dataset.is_metamapped())
                 self.X_data += features
                 self.y_data += labels
 
@@ -274,22 +274,19 @@ class Model:
 
             # Write the metrics for this fold.
             for label in tagset:
-                fold_statistics[label] = {}
-                recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label])
-                precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label])
-                f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
-                fold_statistics[label]['precision'] = precision
-                fold_statistics[label]['recall'] = recall
-                fold_statistics[label]['f1'] = f1
+                fold_statistics[label] = {
+                    "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label]),
+                    "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label]),
+                    "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
+                }
 
             # add averages
-            fold_statistics['system'] = {}
-            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset)
-            precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset)
-            f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
-            fold_statistics['system']['precision'] = precision
-            fold_statistics['system']['recall'] = recall
-            fold_statistics['system']['f1'] = f1
+            fold_statistics['system'] = {
+                "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset),
+                "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset),
+                "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
+            }
+
 
             table_data = [[label,
                            format(fold_statistics[label]['precision'], ".3f"),
@@ -387,16 +384,15 @@ class Model:
         
         return annotations
 
-    def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
+    def _extract_features(self, data_file, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
 
-        :param conn: pipe to pass back data to parent process
         :param data_file: an instance of DataFile
         :return: Updates queue with features for this given file.
         """
-        nlp = medacy_pipeline.spacy_pipeline
-        feature_extractor = medacy_pipeline.get_feature_extractor()
+        nlp = self.pipeline.spacy_pipeline
+        feature_extractor = self.pipeline.get_feature_extractor()
         logging.info("Processing file: %s", data_file.file_name)
 
         with open(data_file.txt_path, 'r') as raw_text:
@@ -410,7 +406,7 @@ class Model:
             doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
         # run 'er through
-        doc = medacy_pipeline(doc)
+        doc = self.pipeline(doc)
 
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc, data_file.file_name)
@@ -419,12 +415,7 @@ class Model:
         return features, labels
 
     def load(self, path):
-        """
-        Loads a pickled model.
-
-        :param path: File path to directory where fitted model should be dumped
-        :return:
-        """
+        """Loads a pickled model"""
         model_name, model = self.pipeline.get_learner()
 
         if model_name == 'BiLSTM+CRF':
@@ -459,10 +450,11 @@ class Model:
         pipeline_information = self.pipeline.get_pipeline_information()
         feature_extractor = self.pipeline.get_feature_extractor()
         #TODO include tokenizer
-        pipeline_information['feature_extractors'] = {}
-        pipeline_information['feature_extractors']['medacy_features'] = feature_extractor.all_custom_features
-        pipeline_information['feature_extractors']['spacy_features'] = feature_extractor.spacy_features
-        pipeline_information['feature_extractors']['window_size'] = feature_extractor.window_size
+        pipeline_information['feature_extractors'] = {
+            "medacy_features": feature_extractor.all_custom_features,
+            "spacy_features": feature_extractor.spacy_features,
+            "window_size": feature_extractor.window_size,
+        }
 
         if return_dict:
             return pipeline_information
