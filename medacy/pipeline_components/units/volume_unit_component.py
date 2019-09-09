@@ -1,15 +1,16 @@
-
 from spacy.tokens import Token
 from spacy.matcher import Matcher
 from spacy.tokens import Span
-from medacy.pipeline_components.feature_overlayers.base import BaseComponent
 
-class VolumeUnitComponent(BaseComponent):
+from medacy.pipeline_components.base_components import BaseOverlayer
+
+
+class VolumeUnitComponent(BaseOverlayer):
     """
     A pipeline component that tags volume units
     """
 
-    name="volume_unit_annotator"
+    name = "volume_unit_annotator"
     dependencies = []
 
     def __init__(self, spacy_pipeline):

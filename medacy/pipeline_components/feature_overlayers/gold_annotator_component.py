@@ -3,10 +3,10 @@ import logging
 from spacy.tokens import Token
 
 from medacy.data.annotations import Annotations
-from medacy.pipeline_components.feature_overlayers.base import BaseComponent
+from medacy.pipeline_components.base_components import BaseOverlayer
 
 
-class GoldAnnotatorComponent(BaseComponent):
+class GoldAnnotatorComponent(BaseOverlayer):
     #TODO CLEAN ME
     #TODO Look into spacy GoldParse
     #TODO This code really needs a fixing but it is bootstrapped to work from development

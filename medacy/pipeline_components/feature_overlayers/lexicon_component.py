@@ -1,14 +1,15 @@
 import logging
+
 from spacy.tokens import Token, Span
 from spacy.matcher import PhraseMatcher
-from medacy.pipeline_components.feature_overlayers.base import BaseComponent
 
-class LexiconComponent(BaseComponent):
+from medacy.pipeline_components.base_components import BaseOverlayer
 
+
+class LexiconComponent(BaseOverlayer):
 
     name = "lexicon_component"
     dependencies = []
-
 
     def __init__(self, spacy_pipeline, lexicon):
         """

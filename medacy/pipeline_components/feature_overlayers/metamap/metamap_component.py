@@ -3,11 +3,11 @@ import warnings
 
 from spacy.tokens import Token
 
-from medacy.pipeline_components.feature_overlayers.base import BaseComponent
+from medacy.pipeline_components.base_components import BaseOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap import MetaMap
 
 
-class MetaMapComponent(BaseComponent):
+class MetaMapComponent(BaseOverlayer):
     """
     A pipeline component for spaCy that overlays Metamap output as token attributes.
     """
