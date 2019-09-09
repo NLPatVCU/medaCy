@@ -20,6 +20,7 @@ def setup(args):
     :return dataset, model: The dataset and model objects created.
     """
     dataset = Dataset(args.dataset)
+    labels = list(dataset.get_labels())
 
     pipeline = None
 
@@ -35,9 +36,9 @@ def setup(args):
         logging.info('Using %s', args.pipeline)
 
         if args.word_embeddings is not None:
-            pipeline = pipeline_class(word_embeddings=args.word_embeddings, cuda_device=args.cuda)
+            pipeline = pipeline_class(word_embeddings=args.word_embeddings, cuda_device=args.cuda, entities=labels)
         else:
-            pipeline = pipeline_class(cuda_device=args.cuda)
+            pipeline = pipeline_class(cuda_device=args.cuda, entities=labels)
 
         model = Model(pipeline)
 
