@@ -53,7 +53,7 @@ class Model:
             pool = Pool(nodes=self.n_jobs)
 
             results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
-                    for data_file in dataset.get_data_files()]
+                       for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -306,27 +306,16 @@ class Model:
         statistics_all_folds = {}
 
         for label in tagset + ['system']:
-            statistics_all_folds[label] = {}
-            statistics_all_folds[label]['precision_average'] = mean(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['precision_max'] = max(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['precision_min'] = min(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
-
-            statistics_all_folds[label]['recall_average'] = mean(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['recall_max'] = max(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['recall_min'] = min(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
-
-            statistics_all_folds[label]['f1_average'] = mean(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['f1_max'] = max(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['f1_min'] = min(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+            statistics_all_folds[label] = {
+                'precision_average': mean(evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics),
+                'precision_max': max(evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics),
+                'precision_min': min(evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics),
+                'recall_average': mean(evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics),
+                'recall_max': max(evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics),
+                'f1_average': mean(evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics),
+                'f1_max': max(evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics),
+                'f1_min': min(evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics),
+            }
 
         table_data = [[label,
                        format(statistics_all_folds[label]['precision_average'], ".3f"),
@@ -337,7 +326,7 @@ class Model:
                       for label in tagset + ['system']]
 
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
-                       tablefmt='orgtbl'))
+                                   tablefmt='orgtbl'))
 
         if prediction_directory:
             
