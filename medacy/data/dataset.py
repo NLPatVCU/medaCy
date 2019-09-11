@@ -366,18 +366,12 @@ class Dataset:
 
         :return: a dictionary of entity and relation counts.
         """
-        dataset_counts = {
-            'entities': {},
-            'relations': {}
-        }
+        dataset_counts = {}
 
-        for data_file in self:
+        for data_file in self.all_data_files:
             annotation = Annotations(data_file.ann_path)
             annotation_counts = annotation.compute_counts()
-            dataset_counts['entities'] = {x: dataset_counts['entities'].get(x, 0) + annotation_counts['entities'].get(x, 0)
-                                          for x in set(dataset_counts['entities']).union(annotation_counts['entities'])}
-            dataset_counts['relations'] = {x: dataset_counts['relations'].get(x, 0) + annotation_counts['relations'].get(x, 0)
-                                          for x in set(dataset_counts['relations']).union(annotation_counts['relations'])}
+            dataset_counts.update(annotation_counts)
 
         return dataset_counts
 
@@ -395,16 +389,16 @@ class Dataset:
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
-        #verify files are consistent
+        # verify files are consistent
         diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
-        #sort entities in ascending order by count.
-        entities = [key for key, _ in sorted(self.compute_counts()['entities'].items(), key=lambda x: x[1])]
+        # sort entities in ascending order by count.
+        entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
-        for gold_data_file in self:
+        for gold_data_file in self.all_data_files:
             prediction_iter = iter(dataset)
             prediction_data_file = next(prediction_iter)
             while str(gold_data_file) != str(prediction_data_file):
