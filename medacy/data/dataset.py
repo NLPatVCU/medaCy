@@ -415,21 +415,20 @@ class Dataset:
 
         return entities, confusion_matrix
 
-    def compute_ambiguity(self, dataset):
+    def compute_ambiguity(self, predicted_dataset):
         """
         Finds occurrences of spans from 'dataset' that intersect with a span from this annotation but do not have this spans label.
         label. If 'dataset' comprises a models predictions, this method provides a strong indicators
         of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
 
-        :param dataset: a Dataset object containing a predicted version of this dataset.
-        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
+        :param predicted_dataset: a Dataset object containing a predicted version of this dataset.
         :return: a dictionary containing the ambiguity computations on each gold, predicted file pair
         """
-        if not isinstance(dataset, Dataset):
+        if not isinstance(predicted_dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in predicted_dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
@@ -437,7 +436,7 @@ class Dataset:
         ambiguity_dict = {}
 
         for gold_data_file in self:
-            prediction_iter = iter(dataset)
+            prediction_iter = iter(predicted_dataset)
             prediction_data_file = next(prediction_iter)
             while str(gold_data_file) != str(prediction_data_file):
                 prediction_data_file = next(prediction_iter)
@@ -449,6 +448,11 @@ class Dataset:
             ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
 
         return ambiguity_dict
+
+    def generate_annotations(self):
+        """Generates Annotation objects for all the files in this Dataset"""
+        for file in self.all_data_files[:self.data_limit]:
+            yield Annotations(file.ann_path)
 
     @staticmethod
     def load_external(package_name):
