@@ -40,25 +40,25 @@ class BaseLearner(ABC):
 class BaseTokenizer(ABC):
     """Determines where word boundaries should be for the tokenization process."""
 
+    @abstractmethod
     def add_exceptions(self, exceptions):
         """
         Adds exception for tokenizer to ignore.
         :param exceptions: an array of terms to not split on during tokenizers
-        :return:
         """
-        raise NotImplementedError
+        pass
 
     @abstractmethod
     def _get_prefix_regex(self):
-        """Custom prefix tokenizers rules"""
+        """Custom prefix tokenizer rules"""
         pass
 
     @abstractmethod
     def _get_infix_regex(self):
-        """Custom infix tokenizers rules"""
+        """Custom infix tokenizer rules"""
         pass
 
     @abstractmethod
     def _get_suffix_regex(self):
-        """Custom suffix tokenizers rules"""
+        """Custom suffix tokenizer rules"""
         pass
