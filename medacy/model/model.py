@@ -52,8 +52,7 @@ class Model:
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped())
-                    for data_file in dataset]
+            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped()) for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -62,7 +61,6 @@ class Model:
                 X, y = i.get()
                 self.X_data += X
                 self.y_data += y
-
         else:
             logging.info('Preprocessing data synchronously...')
             self.X_data = []
@@ -129,7 +127,7 @@ class Model:
 
             for data_file in dataset:
                 logging.info("Predicting file: %s", data_file.file_name)
-                with open(data_file.raw_path, 'r') as raw_text:
+                with open(data_file.txt_path, 'r') as raw_text:
                     doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
                     doc.set_extension('file_name', default=data_file.file_name, force=True)
                     if data_file.metamapped_path is not None:
@@ -150,7 +148,7 @@ class Model:
 
         return annotations
 
-    def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
+    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -159,8 +157,8 @@ class Model:
         the prediction ambiguity with the methods present in the Dataset class to support pipeline development without
         a designated evaluation set.
 
+        :param training_dataset: Dataset that is being cross validated
         :param num_folds: number of folds to split training data into for cross validation
-        :param training_dataset: Dataset that is being cross validated (optional)
         :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
         :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
@@ -287,12 +285,13 @@ class Model:
                 "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
             }
 
-
-            table_data = [[label,
-                           format(fold_statistics[label]['precision'], ".3f"),
-                           format(fold_statistics[label]['recall'], ".3f"),
-                           format(fold_statistics[label]['f1'], ".3f")]
-                          for label in tagset + ['system']]
+            table_data = [
+                [label,
+                format(fold_statistics[label]['precision'], ".3f"),
+                format(fold_statistics[label]['recall'], ".3f"),
+                format(fold_statistics[label]['f1'], ".3f")
+                ] for label in tagset + ['system']
+            ]
 
             logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                   tablefmt='orgtbl'))
@@ -349,13 +348,12 @@ class Model:
 
             return Dataset(data_directory=prediction_directory)
 
-    def create_annotation_directory(self, directory, training_dataset, option):
-        if isinstance(directory, str):
-            directory = directory
-        else:
-            directory = training_dataset.data_directory + "/"+option+"/"
+    @staticmethod
+    def create_annotation_directory(directory, training_dataset, option):
+        if not isinstance(directory, str):
+            directory = os.path.join(training_dataset.data_directory, option)
         if os.path.isdir(directory):
-            logging.warning("Overwriting existing %s",option)
+            logging.warning("Overwriting existing %s", option)
         else:
             os.makedirs(directory)
         return directory
