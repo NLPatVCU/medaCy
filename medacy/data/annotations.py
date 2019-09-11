@@ -36,11 +36,6 @@ class Annotations:
         with open(annotation_data, 'r') as f:
             annotation_lines = f.read().split("\n")
 
-        for letter in ['R', 'E', 'A', 'M', 'N']:
-            if letter in [line[:1] for line in annotation_lines]:
-                logging.warning("Note that only entity annotations are implemented in medaCy")
-                break
-
         for line in annotation_lines:
             line = line.strip()
             if not is_valid_brat(line): continue
