@@ -197,7 +197,7 @@ class Model:
         medacy_pipeline.entities = tagset
         logging.info('Tagset: %s', tagset)
 
-        evaluation_statistics = {}
+        eval_stats = {}
         fold = 1
         # Dict for storing mapping of sequences to their corresponding file
         groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
@@ -297,30 +297,32 @@ class Model:
             logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                   tablefmt='orgtbl'))
 
-            evaluation_statistics[fold] = fold_statistics
+            eval_stats[fold] = fold_statistics
             fold += 1
 
         statistics_all_folds = {}
 
         for label in tagset + ['system']:
             statistics_all_folds[label] = {
-                'precision_average': mean(evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics),
-                'precision_max': max(evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics),
-                'precision_min': min(evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics),
-                'recall_average': mean(evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics),
-                'recall_max': max(evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics),
-                'f1_average': mean(evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics),
-                'f1_max': max(evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics),
-                'f1_min': min(evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics),
+                'precision_average': mean(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'precision_max': max(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'precision_min': min(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'recall_average': mean(eval_stats[fold][label]['recall'] for fold in eval_stats),
+                'recall_max': max(eval_stats[fold][label]['recall'] for fold in eval_stats),
+                'f1_average': mean(eval_stats[fold][label]['f1'] for fold in eval_stats),
+                'f1_max': max(eval_stats[fold][label]['f1'] for fold in eval_stats),
+                'f1_min': min(eval_stats[fold][label]['f1'] for fold in eval_stats),
             }
 
-        table_data = [[label,
-                       format(statistics_all_folds[label]['precision_average'], ".3f"),
-                       format(statistics_all_folds[label]['recall_average'], ".3f"),
-                       format(statistics_all_folds[label]['f1_average'], ".3f"),
-                       format(statistics_all_folds[label]['f1_min'], ".3f"),
-                       format(statistics_all_folds[label]['f1_max'], ".3f")]
-                      for label in tagset + ['system']]
+        table_data = [
+            [label,
+            format(statistics_all_folds[label]['precision_average'], ".3f"),
+            format(statistics_all_folds[label]['recall_average'], ".3f"),
+            format(statistics_all_folds[label]['f1_average'], ".3f"),
+            format(statistics_all_folds[label]['f1_min'], ".3f"),
+            format(statistics_all_folds[label]['f1_max'], ".3f")
+            ] for label in tagset + ['system']
+        ]
 
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                                    tablefmt='orgtbl'))
