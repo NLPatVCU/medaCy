@@ -76,6 +76,7 @@ import logging
 import math
 import multiprocessing
 import os
+from collections import Counter
 
 import spacy
 from joblib import Parallel, delayed
@@ -366,12 +367,11 @@ class Dataset:
 
         :return: a dictionary of entity and relation counts.
         """
-        dataset_counts = {}
+        dataset_counts = Counter()
 
-        for data_file in self.all_data_files:
-            annotation = Annotations(data_file.ann_path)
-            annotation_counts = annotation.compute_counts()
-            dataset_counts.update(annotation_counts)
+        for ann in self.generate_annotations():
+            dataset_counts += ann.compute_counts()
+            # '+=' merges counts from two Counter objects
 
         return dataset_counts
 
