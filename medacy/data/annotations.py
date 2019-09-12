@@ -152,16 +152,18 @@ class Annotations:
         """
         if not isinstance(other, Annotations):
             raise ValueError("An Annotations object is requried as an argument.")
-        if leniency != 0:
-            if not  0 <= leniency <= 1:
-                raise ValueError("Leniency must be a floating point between [0,1]")
+        if leniency == 0:
+            return set(self.annotations) & set(other.annotations)
+        if not  0 <= leniency <= 1:
+            raise ValueError("Leniency must be a floating point between [0,1]")
 
         matches = set()
-        for label, start, end, text in self.annotations:
+        for ann in self.annotations:
+            label, start, end, text = ann
             window = ceil(leniency * (end - start))
             for c_label, c_start, c_end, c_text in other.get_entity_annotations():
                 if label == c_label and start - window <= c_start and end + window >= c_end:
-                    matches.add((label, start, end, text))
+                    matches.add(ann)
                     break
 
         return matches
