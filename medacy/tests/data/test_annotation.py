@@ -20,8 +20,8 @@ class TestAnnotation(TestCase):
         with open(join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:
             f.write("This is clearly not a valid ann file")
 
-        cls.ann_1 = Annotations(cls.good_dataset.all_data_files[0].ann_path)
-        cls.ann_2 = Annotations(cls.good_dataset.all_data_files[1].ann_path)
+        cls.ann_1 = Annotations(cls.good_dataset.data_files[0].ann_path)
+        cls.ann_2 = Annotations(cls.good_dataset.data_files[1].ann_path)
 
     @classmethod
     def tearDownClass(cls):

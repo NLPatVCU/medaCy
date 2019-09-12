@@ -110,7 +110,7 @@ class Dataset:
         """
         self.data_directory = data_directory
         self.raw_text_file_extension = raw_text_file_extension
-        self.all_data_files = []
+        self.data_files = []
 
         if metamapped_files_directory is not None:
             self.metamapped_files_directory = metamapped_files_directory
@@ -130,7 +130,7 @@ class Dataset:
             for file in ann_files:
                 annotation_path = os.path.join(data_directory, file)
                 file_name = file[:-len(annotation_file_extension) - 1]
-                self.all_data_files.append(DataFile(file_name, None, annotation_path))
+                self.data_files.append(DataFile(file_name, None, annotation_path))
 
         else: #detected a training directory (raw text files exist)
             self.data_limit = data_limit if data_limit is not None else len(raw_text_files)
@@ -155,11 +155,11 @@ class Dataset:
                                                                          ".%s" % annotation_file_extension))
                 else:
                     annotation_path = None
-                self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
+                self.data_files.append(DataFile(file_name, raw_text_path, annotation_path))
 
             #If directory is already metamapped, use it.
             if self.is_metamapped():
-                for data_file in self.all_data_files:
+                for data_file in self.data_files:
                     data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
                                                              data_file.txt_path.split(os.path.sep)[-1]
                                                              .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
@@ -170,13 +170,13 @@ class Dataset:
 
         :return: a list of DataFile objects.
         """
-        return self.all_data_files[:self.data_limit]
+        return self.data_files[:self.data_limit]
 
     def __iter__(self):
-        return iter(self.all_data_files[:self.data_limit])
+        return iter(self.data_files[:self.data_limit])
 
     def __len__(self):
-        return len(self.all_data_files[:self.data_limit])
+        return len(self.data_files[:self.data_limit])
 
     def get_training_data(self, data_format='spacy'):
         """
@@ -193,7 +193,7 @@ class Dataset:
         training_data = []
         nlp = spacy.load('en_core_web_sm')
 
-        for data_file in self.all_data_files:
+        for data_file in self.data_files:
             annotations = Annotations(data_file.ann_path, source_text_path=data_file.txt_path)
             training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
 
@@ -207,14 +207,14 @@ class Dataset:
         :return: Dataset object with only the specified data files.
         """
         subdataset = Dataset(self.data_directory)
-        data_files = subdataset.all_data_files
+        data_files = subdataset.data_files
         sub_data_files = []
 
         for index, data_file in enumerate(data_files):
             if index in indices:
                 sub_data_files.append(data_file)
 
-        subdataset.all_data_files = sub_data_files
+        subdataset.data_files = sub_data_files
         return subdataset
 
     def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
@@ -246,14 +246,14 @@ class Dataset:
             #Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
 
-        files_to_metamap = [data_file.txt_path for data_file in self.all_data_files if not data_file.file_name in already_metamapped]
+        files_to_metamap = [data_file.txt_path for data_file in self.data_files if not data_file.file_name in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
         Parallel(n_jobs=n_jobs)(delayed(self._parallel_metamap)(files_to_metamap, i) for i in range(len(files_to_metamap)))
 
         if self.is_metamapped():
-            for data_file in self.all_data_files:
+            for data_file in self.data_files:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
                                                          data_file.txt_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
@@ -302,7 +302,7 @@ class Dataset:
         if not os.path.isdir(self.metamapped_files_directory):
             return False
 
-        for file in self.all_data_files:
+        for file in self.data_files:
             potential_file_path = os.path.join(self.metamapped_files_directory, "%s.metamapped" % file.file_name)
             if not os.path.isfile(potential_file_path):
                 return False
@@ -317,7 +317,7 @@ class Dataset:
         return True
 
     def __str__(self):
-        return str(self.all_data_files)
+        return str(self.data_files)
 
     def get_labels(self):
         """
@@ -368,7 +368,7 @@ class Dataset:
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
-        for gold_data_file in self.all_data_files:
+        for gold_data_file in self.data_files:
             prediction_iter = iter(dataset)
             prediction_data_file = next(prediction_iter)
             while str(gold_data_file) != str(prediction_data_file):
@@ -421,7 +421,7 @@ class Dataset:
 
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
-        for file in self.all_data_files[:self.data_limit]:
+        for file in self.data_files[:self.data_limit]:
             yield Annotations(file.ann_path)
 
     @staticmethod
