@@ -51,7 +51,7 @@ class TestDatasetLocal(TestCase):
         """
         dataset = Dataset(self.training_directory)
         self.assertIsInstance( dataset , Dataset)
-        self.assertTrue(dataset.is_training())
+        self.assertTrue(dataset.is_training_directory)
 
     def test_init_with_data_limit(self):
         """
@@ -70,7 +70,7 @@ class TestDatasetLocal(TestCase):
         dataset = Dataset(self.prediction_directory)
 
         self.assertIsInstance(dataset, Dataset)
-        self.assertFalse(dataset.is_training())
+        self.assertFalse(dataset.is_training_directory)
 
 
 class TestDatasetExternal(TestCase):
@@ -93,7 +93,7 @@ class TestDatasetExternal(TestCase):
 
     def test_is_training(self):
         """Tests initialization of DataManager"""
-        self.assertTrue(self.dataset.is_training())
+        self.assertTrue(self.dataset.is_training_directory)
 
     def test_file_count(self):
         """Tests the expected file count for our testing dataset"""

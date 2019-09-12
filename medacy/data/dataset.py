@@ -317,14 +317,6 @@ class Dataset:
 
         return True
 
-    def is_training(self):
-        """
-        Whether this Dataset can be used for training.
-
-        :return: True if training dataset, false otherwise. A training dataset is a collection raw text and corresponding annotation files while a prediction dataset contains solely raw text files.
-        """
-        return self.is_training_directory
-
     def __str__(self):
         return str(self.all_data_files)
 
