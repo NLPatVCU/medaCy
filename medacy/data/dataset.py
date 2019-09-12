@@ -188,14 +188,10 @@ class Dataset:
         supported_formats = ['spacy']
 
         if data_format not in supported_formats:
-            raise TypeError("Format %s not supported" % format)
+            raise ValueError("Annotation format '%s' not supported" % data_format)
 
-        training_data = []
         nlp = spacy.load('en_core_web_sm')
-
-        for data_file in self.data_files:
-            annotations = Annotations(data_file.ann_path, source_text_path=data_file.txt_path)
-            training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
+        training_data = [ann.get_entity_annotations(format=data_format, nlp=nlp) for ann in self.generate_annotations()]
 
         return training_data
 
@@ -233,20 +229,20 @@ class Dataset:
         if self.is_metamapped():
             return True
 
-        #make metamap directory if it doesn't exist.
+        # make metamap directory if it doesn't exist.
         if not os.path.isdir(self.metamapped_files_directory):
             os.makedirs(self.metamapped_files_directory)
 
-        #A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
+        # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
         if retry_possible_corruptions:
-            #Do not metamap files that are already metamapped and above 200 bytes in size
+            # Do not metamap files that are already metamapped and above 200 bytes in size
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)
                                   if os.path.getsize(os.path.join(self.metamapped_files_directory, file)) > 200]
         else:
-            #Do not metamap files that are already metamapped
+            # Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
 
-        files_to_metamap = [data_file.txt_path for data_file in self.data_files if not data_file.file_name in already_metamapped]
+        files_to_metamap = [data_file.txt_path for data_file in self.data_files if data_file.file_name not in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
@@ -319,6 +315,9 @@ class Dataset:
     def __str__(self):
         return str(self.data_files)
 
+    def __repr__(self):
+        return f"{type(self).__name__}({self.data_directory})"
+
     def get_labels(self):
         """
         Get all of the entities/labels used in the dataset.
@@ -333,9 +332,7 @@ class Dataset:
 
     def compute_counts(self):
         """
-        Computes entity and relation counts over all documents in this dataset.
-
-        :return: a Counter of entity and relation counts.
+        :return: a Counter of entity counts for the whole dataset.
         """
         dataset_counts = Counter()
 
@@ -345,22 +342,22 @@ class Dataset:
 
         return dataset_counts
 
-    def compute_confusion_matrix(self, dataset, leniency=0):
+    def compute_confusion_matrix(self, other, leniency=0):
         """
         Generates a confusion matrix where this Dataset serves as the gold standard annotations and `dataset` serves
         as the predicted annotations. A typical workflow would involve creating a Dataset object with the prediction directory
         outputted by a model and then passing it into this method.
 
-        :param dataset: a Dataset object containing a predicted version of this dataset.
+        :param other: a Dataset object containing a predicted version of this dataset.
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: two element tuple containing a label array (of entity names) and a matrix where rows are gold labels and columns are predicted labels. matrix[i][j] indicates that entities[i] in this dataset was predicted as entities[j] in 'annotation' matrix[i][j] times
         """
 
-        if not isinstance(dataset, Dataset):
+        if not isinstance(other, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in other)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
@@ -369,7 +366,7 @@ class Dataset:
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
         for gold_data_file in self.data_files:
-            prediction_iter = iter(dataset)
+            prediction_iter = iter(other)
             prediction_data_file = next(prediction_iter)
             while str(gold_data_file) != str(prediction_data_file):
                 prediction_data_file = next(prediction_iter)
@@ -422,7 +419,7 @@ class Dataset:
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.data_files[:self.data_limit]:
-            yield Annotations(file.ann_path)
+            yield Annotations(file.ann_path, source_text_path=file.txt_path)
 
     @staticmethod
     def load_external(package_name):
