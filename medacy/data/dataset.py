@@ -140,9 +140,8 @@ class Dataset:
                     "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
 
             # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension) for file
-                         in
-                         raw_text_files]
+            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
+                         for file in raw_text_files]
             # only a training directory if every text file has a corresponding ann_file
             self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
 
@@ -167,7 +166,7 @@ class Dataset:
 
     def get_data_files(self):
         """
-        Retrieves an list containing all the files registered by a Dataset.
+        Retrieves an list containing all the files registered by a Dataset, up to the data limit.
 
         :return: a list of DataFile objects.
         """
@@ -208,7 +207,7 @@ class Dataset:
         :return: Dataset object with only the specified data files.
         """
         subdataset = Dataset(self.data_directory)
-        data_files = subdataset.get_data_files()
+        data_files = subdataset.all_data_files
         sub_data_files = []
 
         for index, data_file in enumerate(data_files):
