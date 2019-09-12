@@ -115,7 +115,7 @@ class Model:
         if not isinstance(dataset, (Dataset, str)):
             raise TypeError("Must pass in an instance of Dataset containing your examples to be used for prediction")
         if self.model is None:
-            raise ValueError("Must fit or load a pickled model before predicting")
+            raise RuntimeError("Must fit or load a pickled model before predicting")
 
         model = self.model
         medacy_pipeline = self.pipeline
