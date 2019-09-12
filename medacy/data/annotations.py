@@ -247,3 +247,12 @@ class Annotations:
 
     def __getitem__(self, item):
         return self.annotations[item]
+
+    def __and__(self, other):
+        return set(self.annotations) & set(other.annotations)
+
+    def __or__(self, other):
+        return set(self.annotations) | set(other.annotations)
+
+    def __sub__(self, other):
+        return set(self.annotations) - set(other.annotations)
