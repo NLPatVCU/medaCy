@@ -105,20 +105,20 @@ class TestDatasetExternal(TestCase):
 
     def test_limit(self):
         """Tests limiting a file"""
-        self.dataset.set_data_limit(5)
+        self.dataset.data_limit = 5
         self.assertEqual(len(self.dataset), 5)
 
     def test_compute_counts(self):
         self.assertIsInstance(self.dataset.compute_counts(), dict)
 
     def test_compute_confusion_matrix(self):
-        self.dataset.set_data_limit(3)
+        self.dataset.data_limit = 3
         entities, confusion_matrix = self.dataset.compute_confusion_matrix(self.dataset)
-        self.dataset.set_data_limit(41)
+        self.dataset.data_limit = 41
         self.assertIsInstance(confusion_matrix, list)
 
     def test_compute_ambiguity(self):
-        self.dataset.set_data_limit(3)
+        self.dataset.data_limit = 3
         ambiguity = self.dataset.compute_ambiguity(self.dataset)
-        self.dataset.set_data_limit(41)
+        self.dataset.data_limit = 41
         self.assertIsInstance(ambiguity, dict)

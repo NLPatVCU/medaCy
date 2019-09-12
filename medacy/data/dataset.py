@@ -325,28 +325,8 @@ class Dataset:
         """
         return self.is_training_directory
 
-    def set_data_limit(self, data_limit):
-        """
-        A limit to the number of files in the Dataset that medaCy works with
-        This is useful for preliminary experimentation when working with an entire Dataset takes time.
-
-        :return:
-        """
-        self.data_limit = data_limit
-
-    def get_data_directory(self):
-        """
-        Retrieves the directory this Dataset abstracts from.
-
-        :return: the directory the Dataset object wraps.
-        """
-        return self.data_directory
-
     def __str__(self):
-        """
-        Converts self.get_data_files() to a list of strs and combines them into one str
-        """
-        return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
+        return str(self.all_data_files)
 
     def get_labels(self):
         """
@@ -355,9 +335,8 @@ class Dataset:
         """
         labels = set()
 
-        for datafile in self:
-            annotations = Annotations(datafile.ann_path)
-            labels.update(annotations.get_labels())
+        for ann in self.generate_annotations():
+            labels.update(ann.get_labels())
 
         return labels
 
