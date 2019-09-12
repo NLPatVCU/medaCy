@@ -31,7 +31,7 @@ A common data work flow might look as follows.
 Running:
 ::
     >>> from medacy.data import Dataset
-    >>> from medacy.pipeline_components import MetaMap
+    >>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
     >>> dataset = Dataset('/home/medacy/data')
     >>> for data_file in dataset:
@@ -42,7 +42,7 @@ Running:
     >>> dataset.is_metamapped()
     False
 
-    >>> metamap = Metamap('/home/path/to/metamap/binary') #not necessary
+    >>> metamap = MetaMap('/home/path/to/metamap/binary') #not necessary
     >>> dataset.metamap(metamap) #not necessary
     >>> dataset.is_metamapped()
     True
@@ -336,7 +336,7 @@ class Dataset:
         """
         Computes entity and relation counts over all documents in this dataset.
 
-        :return: a dictionary of entity and relation counts.
+        :return: a Counter of entity and relation counts.
         """
         dataset_counts = Counter()
 
