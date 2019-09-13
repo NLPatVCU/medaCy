@@ -100,7 +100,7 @@ class Annotations:
         ann_string = ""
         for num, tup in enumerate(self.annotations, 1):
             entity, first_start, last_end, labeled_text = tup
-            ann_string += "%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
+            ann_string += "T%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
 
         if write_location is not None:
             if os.path.isfile(write_location):

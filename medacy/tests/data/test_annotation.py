@@ -59,9 +59,10 @@ class TestAnnotation(TestCase):
 
     def test_compute_ambiguity(self):
         label, start, end, text = self.ann_1.annotations[0]
-        ann_2_copy = Annotations(self.good_dataset.data_files[1].ann_path)
-        ann_2_copy.add_entity('incorrect_label', start, end, text)
-        self.assertEqual(len(self.ann_1.compute_ambiguity(ann_2_copy)), 1)
+        ann_1_copy = Annotations(self.good_dataset.data_files[0].ann_path)
+        ann_1_copy.add_entity('incorrect_label', start, end, text)
+        ambiguity = self.ann_1.compute_ambiguity(ann_1_copy)
+        self.assertEqual(len(ambiguity), 1)
 
     @skip("Not currently working")
     def test_confusion_matrix(self):
