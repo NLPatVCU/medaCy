@@ -7,7 +7,7 @@ from math import ceil
 
 def is_valid_brat(item: str):
     """Returns a boolean value for whether or not a given line is a BRAT entity."""
-    return isinstance(item, str) and re.fullmatch(r"T\d+\t\S+ \d+ \d+\t.+", item, re.DOTALL)
+    return isinstance(item, str) and re.fullmatch(r"T\d+\t\S+ \d+ \d+\t.+('\n'|)", item, re.DOTALL)
 
 
 class Annotations:
@@ -27,7 +27,7 @@ class Annotations:
             self.annotations = annotation_data
             return
         elif not os.path.isfile(annotation_data):
-            raise ValueError("annotation_data must be a list or a valid file path, but is %s" % repr(annotation_data))
+            raise FileNotFoundError("annotation_data must be a list or a valid file path, but is %s" % repr(annotation_data))
 
         self.ann_path = annotation_data
         self.source_text_path = source_text_path
@@ -100,7 +100,7 @@ class Annotations:
         ann_string = ""
         for num, tup in enumerate(self.annotations, 1):
             entity, first_start, last_end, labeled_text = tup
-            ann_string += "%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
+            ann_string += "T%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
 
         if write_location is not None:
             if os.path.isfile(write_location):
