@@ -58,9 +58,9 @@ class MetaMapComponent(BaseOverlayer):
         #check if pre-metamapped file has been assigned to the document
         if hasattr(doc._, 'metamapped_file'):
             metamap_dict = metamap.load(doc._.metamapped_file)
+        elif hasattr(doc._, 'file_name'):
+            logging.debug("%s: Could not find metamap file for document." % doc._.file_name)
         else:
-            if hasattr(doc._, 'file_name'):
-                logging.debug("%s: Could not find metamap file for document." % doc._.file_name)
             metamap_dict = metamap.map_text(doc.text) #TODO metamap.map_text is broken currently
 
         if not hasattr(doc._, 'file_name'): #TODO REMOVE when implemnting live model prediction
@@ -76,35 +76,37 @@ class MetaMapComponent(BaseOverlayer):
 
         mapped_terms = metamap.extract_mapped_terms(metamap_dict) #parse terms out of mappings dictionary
 
-        spans = [] #for displaying NER output with displacy
+        spans = [] # for displaying NER output with displacy
 
-        #Overlays semantic type presence if the given semantic type is set in metamap span.
+        # Overlays semantic type presence if the given semantic type is set in metamap span.
         for semantic_type_label in semantic_type_labels:
 
             entity_name = semantic_type_label
-            nlp.entity.add_label(entity_name) #register entity label
+            nlp.entity.add_label(entity_name)  # register entity label
 
             entity_tags = metamap.get_term_by_semantic_type(mapped_terms, include=[semantic_type_label])
             entity_annotations = metamap.mapped_terms_to_spacy_ann(entity_tags, semantic_type_label)
 
             with doc.retokenize() as retokenizer:
-                for start, end, label in [entity_annotations['entities'][key] for key in entity_annotations['entities'].keys()]:
+                for start, end, label in entity_annotations.values():
                     span = doc.char_span(start, end, label=nlp.vocab.strings[entity_name])
 
                     #TODO spans are none when indices and token boundaries don't line up.
-                    if span not in spans:
-                        if span is not None:
-                            logging.debug("Found from metamap: (label=%s,raw_text=\"%s\",location=(%i, %i))" % (label,span.text, start, end ) )
-                            spans.append(span)
-                            for token in span:
-                                token._.set('feature_is_' + label, True)
-                            if self.merge_tokens:
-                                try:
-                                    retokenizer.merge(span)
-                                except BaseException:
-                                    continue
-                        else:
-                            logging.debug("Metamap span could not be overlayed due to tokenizers mis-match: (%i, %i)" % (start, end))
+                    if span in spans:
+                        logging.debug(
+                            "Metamap span could not be overlayed due to tokenizers mis-match: (%i, %i)" % (start, end))
+                        continue
+                    if span is not None:
+                        logging.debug("Found from metamap: (label=%s,raw_text=\"%s\",location=(%i, %i))" % (label, span.text, start, end ) )
+                        spans.append(span)
+                        for token in span:
+                            token._.set('feature_is_' + label, True)
+                        if self.merge_tokens:
+                            try:
+                                retokenizer.merge(span)
+                            except BaseException:
+                                continue
+
 
         #adds labels for displaying NER output with displacy.
 

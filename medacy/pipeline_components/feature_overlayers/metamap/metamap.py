@@ -181,7 +181,7 @@ class MetaMap:
         :return: a annotation formatted to spacy's specifications
         """
 
-        annotations = {'entities': {}}
+        annotations = {}
 
         count = 0
         for term in mapped_terms:
@@ -189,9 +189,9 @@ class MetaMap:
 
                 entity_start, entity_end = span
                 if entity_label is None:
-                    annotations['entities'][count] = (entity_start, entity_end, self.get_semantic_types_by_term(term)[0])
+                    annotations[count] = (entity_start, entity_end, self.get_semantic_types_by_term(term)[0])
                 else:
-                    annotations['entities'][count] = (entity_start, entity_end, entity_label)
+                    annotations[count] = (entity_start, entity_end, entity_label)
                 count += 1
 
         return annotations
