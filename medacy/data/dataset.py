@@ -74,10 +74,18 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-import os, logging, multiprocessing, math, json, importlib
-from joblib import Parallel, delayed
+import importlib
+import json
+import logging
+import math
+import multiprocessing
+import os
+from collections import Counter
+
 import spacy
+from joblib import Parallel, delayed
 from medacy.tools import DataFile, Annotations
+
 
 class Dataset:
     """
@@ -180,7 +188,7 @@ class Dataset:
         return self.all_data_files[0:self.data_limit]
 
     def __iter__(self):
-        return self.get_data_files().__iter__()
+        return iter(self.get_data_files())
 
     def get_training_data(self, data_format='spacy'):
         """
@@ -353,7 +361,7 @@ class Dataset:
         """
         Converts self.get_data_files() to a list of strs and combines them into one str
         """
-        return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
+        return str(self.get_data_files())
 
 
     def compute_counts(self):
@@ -363,17 +371,12 @@ class Dataset:
         :return: a dictionary of entity and relation counts.
         """
         dataset_counts = {
-            'entities': {},
-            'relations':{}
+            'entities': Counter(),
+            'relations': {}
         }
 
-        for data_file in self:
-            annotation = Annotations(data_file.ann_path)
-            annotation_counts = annotation.compute_counts()
-            dataset_counts['entities'] = {x: dataset_counts['entities'].get(x, 0) + annotation_counts['entities'].get(x, 0)
-                                          for x in set(dataset_counts['entities']).union(annotation_counts['entities'])}
-            dataset_counts['relations'] = {x: dataset_counts['relations'].get(x, 0) + annotation_counts['relations'].get(x, 0)
-                                          for x in set(dataset_counts['relations']).union(annotation_counts['relations'])}
+        for ann in self.generate_annotations():
+            dataset_counts['entities'] += ann.compute_counts()["entities"]
 
         return dataset_counts
 
@@ -465,14 +468,19 @@ class Dataset:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
 
+    def get_labels(self):
+        """
+        Get all of the entities/labels used in the dataset.
+        :return: A set of strings. Each string is a label used.
+        """
+        labels = set()
 
+        for ann in self.generate_annotations():
+            labels.update(ann.get_labels())
 
+        return labels
 
-
-
-
-
-
-
-
-
+    def generate_annotations(self):
+        """Generates Annotation objects for all the files in this Dataset"""
+        for file in self.get_data_files():
+            yield Annotations(file.ann_path, source_text_path=file.raw_path)

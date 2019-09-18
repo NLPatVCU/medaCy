@@ -3,6 +3,7 @@ import spacy
 from medacy.tools.converters.con_to_brat import convert_con_to_brat
 from medacy.tools.converters.brat_to_con import convert_brat_to_con
 from math import ceil
+from collections import Counter
 
 class InvalidAnnotationError(ValueError):
     """Raised when a given input is not in the valid format for that annotation type."""
@@ -365,12 +366,10 @@ class Annotations:
         """
 
         counts = {
-            'entities':{},
-            'relations':{}
+            'entities': Counter(e[0] for e in self.get_entity_annotations()),
+            'relations': {}
         }
 
-        for entity,_,_,_ in self.get_entity_annotations():
-            counts['entities'][entity] = counts['entities'].get(entity, 0) + 1
         for relation,_,_ in self.get_relation_annotations():
             counts['relations'][relation] = counts['relations'].get(relation, 0) + 1
 
