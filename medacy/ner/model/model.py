@@ -163,7 +163,7 @@ class Model:
         :return: Prints out performance metrics, if prediction_directory
         """
 
-        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1")
+        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
 
         if prediction_directory is not None and training_dataset is None:
             raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
@@ -193,7 +193,7 @@ class Model:
         medacy_pipeline.entities = tagset
         logging.info('Tagset: %s', tagset)
 
-        evaluation_statistics = {}
+        eval_stats = {}
         fold = 1
         # Dict for storing mapping of sequences to their corresponding file
         groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
@@ -296,7 +296,7 @@ class Model:
             logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                   tablefmt='orgtbl'))
 
-            evaluation_statistics[fold] = fold_statistics
+            eval_stats[fold] = fold_statistics
             fold += 1
 
         statistics_all_folds = {}
@@ -304,25 +304,25 @@ class Model:
         for label in tagset + ['system']:
             statistics_all_folds[label] = {}
             statistics_all_folds[label]['precision_average'] = mean(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['precision'] for fold in eval_stats])
             statistics_all_folds[label]['precision_max'] = max(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['precision'] for fold in eval_stats])
             statistics_all_folds[label]['precision_min'] = min(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['precision'] for fold in eval_stats])
 
             statistics_all_folds[label]['recall_average'] = mean(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['recall'] for fold in eval_stats])
             statistics_all_folds[label]['recall_max'] = max(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['recall'] for fold in eval_stats])
             statistics_all_folds[label]['recall_min'] = min(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['recall'] for fold in eval_stats])
 
             statistics_all_folds[label]['f1_average'] = mean(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['f1'] for fold in eval_stats])
             statistics_all_folds[label]['f1_max'] = max(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['f1'] for fold in eval_stats])
             statistics_all_folds[label]['f1_min'] = min(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
+                [eval_stats[fold][label]['f1'] for fold in eval_stats])
 
         table_data = [[label,
                        format(statistics_all_folds[label]['precision_average'], ".3f"),
@@ -351,8 +351,10 @@ class Model:
 
             annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
 
-            
             return Dataset(data_directory=prediction_directory)
+        else:
+            return statistics_all_folds
+
 
     def create_annotation_directory(self, directory, training_dataset, option):
         if isinstance(directory, str):
