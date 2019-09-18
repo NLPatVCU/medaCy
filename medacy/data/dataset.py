@@ -200,7 +200,7 @@ class Dataset:
         supported_formats = ['spacy']
 
         if data_format not in supported_formats:
-            raise TypeError("Format %s not supported" % format)
+            raise TypeError("Format %s not supported" % data_format)
 
         training_data = []
         nlp = spacy.load('en_core_web_sm')
@@ -218,7 +218,6 @@ class Dataset:
         Get a subdataset of data files based on indices.
 
         :param indices: List of ints that represent the indexes of the data files to split off.
-
         :return: Dataset object with only the specified data files.
         """
         subdataset = Dataset(self.data_directory)
@@ -363,7 +362,6 @@ class Dataset:
         """
         return str(self.get_data_files())
 
-
     def compute_counts(self):
         """
         Computes entity and relation counts over all documents in this dataset.
@@ -393,8 +391,8 @@ class Dataset:
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
-        #verify files are consistent
-        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
+        # verify files are consistent
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
 
@@ -433,7 +431,7 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
