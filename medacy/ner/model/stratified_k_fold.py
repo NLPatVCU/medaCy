@@ -1,23 +1,19 @@
-"""
-Partitions a data set of sequence labels and classifications into 10 stratified folds.
-See Dietterich, 1997 "Approximate Statistical Tests for Comparing Supervised Classification
-Algorithms" for in-depth analysis.
-
-Each partition should have an evenly distributed representation of sequence labels.
-Without stratification, under-representated labels may not appear in some folds.
-"""
-import numpy as np
 from itertools import cycle
+
+import numpy as np
+
 
 class SequenceStratifiedKFold:
     """
+    Partitions a data set of sequence labels and classifications into 10 stratified folds.
+    See Dietterich, 1997 "Approximate Statistical Tests for Comparing Supervised Classification
+    Algorithms" for in-depth analysis.
 
+    Each partition should have an evenly distributed representation of sequence labels.
+    Without stratification, under-representated labels may not appear in some folds.
     """
-
-    def __init__(self, folds = 10):
+    def __init__(self, folds=10):
         self.folds = folds
-
-
 
     def __call__(self, X, y):
         """
@@ -36,7 +32,6 @@ class SequenceStratifiedKFold:
         added = np.ones(len(y), dtype=bool)
         partitions = [[] for fold in range(self.folds)]
         partition_cycler = cycle(partitions)
-
 
         for label in labels:
             possible_sequences = [index for index, sequence in enumerate(y) if label in sequence]
