@@ -100,7 +100,7 @@ class Model:
         """
         Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
 
-        :param documents: A string or Dataset to predict
+        :param dataset: A string or Dataset to predict
         :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
         :param groundtruth_directory: The directory to write groundtruth to.
         :return:
@@ -145,6 +145,58 @@ class Model:
             doc = medacy_pipeline(doc, predict=True)
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
+
+        # Only calculate metrics if dataset is pre-annotated
+        if dataset.is_training_directory is True:
+
+            X_data = self.X_data
+            Y_data = self.y_data
+
+            medacy_pipeline = self.pipeline
+
+            tagset = set()
+            for tags in Y_data:
+                for tag in tags:
+                    if tag != 'O' and tag != '':
+                        tagset.add(tag)
+            tagset = list(tagset)
+            tagset.sort()
+            medacy_pipeline.entities = tagset
+            logging.info('Tagset: %s', tagset)
+
+            prediction_statistics = {}
+
+            # Write the metrics for these predictions.
+            for label in tagset:
+                prediction_statistics[label] = {}
+                recall = metrics.flat_recall_score(X_data, Y_data, average='weighted', labels=[label])
+                precision = metrics.flat_precision_score(X_data, Y_data, average='weighted', labels=[label])
+                f1 = metrics.flat_f1_score(X_data, Y_data, average='weighted', labels=[label])
+                prediction_statistics[label]['precision'] = precision
+                prediction_statistics[label]['recall'] = recall
+                prediction_statistics[label]['f1'] = f1
+
+            # Add averages
+            prediction_statistics['system'] = {}
+            recall = metrics.flat_recall_score(X_data, Y_data, average='weighted', labels=tagset)
+            precision = metrics.flat_precision_score(X_data, Y_data, average='weighted', labels=tagset)
+            f1 = metrics.flat_f1_score(X_data, Y_data, average='weighted', labels=tagset)
+            prediction_statistics['system']['precision'] = precision
+            prediction_statistics['system']['recall'] = recall
+            prediction_statistics['system']['f1'] = f1
+
+            # Create metrics table
+            table_data = [[label,
+                           format(prediction_statistics[label]['precision'], ".3f"),
+                           format(prediction_statistics[label]['recall'], ".3f"),
+                           format(prediction_statistics[label]['f1'], ".3f")]
+                          for label in tagset + ['system']]
+
+            # Output metrics
+            logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
+                                  tablefmt='orgtbl'))
+
+
 
     def cross_validate(self, num_folds=5, training_dataset=None, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """

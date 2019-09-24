@@ -127,3 +127,4 @@ class BiLstmCrf(nn.Module):
     def forward(self, sentence):
         lstm_features = self._get_lstm_features(sentence)
         return lstm_features
+

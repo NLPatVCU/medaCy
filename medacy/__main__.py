@@ -130,6 +130,14 @@ def main():
     parser_validate.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
     parser_validate.set_defaults(func=cross_validate)
 
+    # Evaluate arguments
+    parser_validate = subparsers.add_parser('evaluate', help='Cross validate a model on a given dataset.')
+    parser_validate.add_argument('-k', '--k_folds', default=5, type=int,
+                                 help='Number of folds to use for cross-validation.')
+    parser_validate.add_argument('-gt', '--groundtruth', action='store_true', help='Use to store groundtruth files.')
+    parser_validate.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
+    parser_validate.set_defaults(func=cross_validate)
+
     # Parse initial args
     args = parser.parse_args()
 
