@@ -1,13 +1,14 @@
-import os, logging, tempfile
-import spacy
-from medacy.tools.converters.con_to_brat import convert_con_to_brat
-from medacy.tools.converters.brat_to_con import convert_brat_to_con
-from math import ceil
+import logging
+import os
+import re
 from collections import Counter
 
-class InvalidAnnotationError(ValueError):
-    """Raised when a given input is not in the valid format for that annotation type."""
-    pass
+from math import ceil
+
+
+def is_valid_brat_ent(item: str):
+    """Returns a boolean value for whether or not a given line is in the BRAT format."""
+    return isinstance(item, str) and re.fullmatch(r"T\d+\t\S+ \d+ \d+\t.+", item, re.DOTALL)
 
 
 class Annotations:
@@ -37,10 +38,10 @@ class Annotations:
 
         if isinstance(annotation_data, dict):
             if not ('entities' in annotation_data and isinstance(annotation_data['entities'], dict)):
-                raise InvalidAnnotationError("The dictionary annotation_data must contain a key 'entities' "
+                raise ValueError("The dictionary annotation_data must contain a key 'entities' "
                                              "corresponding to a list of entity tuples")
             if 'relations' not in annotation_data and isinstance(annotation_data['relations'], list):
-                raise InvalidAnnotationError("The dictionary annotation_data must contain a key 'relations' "
+                raise ValueError("The dictionary annotation_data must contain a key 'relations' "
                                              "corresponding to a list of entity tuples")
             self.annotations = annotation_data
 
@@ -61,15 +62,9 @@ class Annotations:
     def get_labels(self):
         """
         Get the set of labels from this collection of annotations.
-
-        :return: The set of labels.
         """
-        labels = set()
 
-        for entity in self.annotations['entities'].values():
-            labels.add(entity[0])
-
-        return labels
+        return set(e[0] for e in self.annotations['entities'].values())
 
     def get_entity_annotations(self, return_dictionary=False, format='medacy', nlp=None):
         """
@@ -82,7 +77,7 @@ class Annotations:
             return self.annotations['entities']
 
         if format == 'medacy':
-            return [self.annotations['entities'][T] for T in self.annotations['entities'].keys()]
+            return list(self.annotations['entities'].values())
         elif format == 'spacy':
             if not self.source_text_path:
                 raise FileNotFoundError("spaCy format requires the source text path")
@@ -98,18 +93,13 @@ class Annotations:
                 end = annotation[2]
                 entities.append((start, end, entity))
 
-            return (source_text, {"entities": entities})
+            return source_text, {"entities": entities}
         else:
             raise ValueError("'%s' is not a valid annotation format" % format)
 
     def get_relation_annotations(self):
-        """
-        Returns a list of entity annotation tuples
-
-        :return: a list of relations
-        """
+        """Returns a list of entity annotation tuples"""
         return self.annotations['relations']
-
 
     def add_entity(self, label, start, end, text=""):
         """
@@ -154,91 +144,20 @@ class Annotations:
         """
         if not os.path.isfile(ann_file_path):
             raise FileNotFoundError("ann_file_path is not a valid file path")
+
         self.annotations = {'entities': {}, 'relations': []}
-        valid_IDs = ['T', 'R', 'E', 'A', 'M', 'N']
-        log_warning = {ID:False for ID in valid_IDs}
 
         with open(ann_file_path, 'r') as file:
-            annotation_text = file.read()
-        for line in annotation_text.split("\n"):
-            line = line.strip()
-            if line == "" or line.startswith("#"):
-                continue
-            if "\t" not in line:
-                raise InvalidAnnotationError("Line chunks in ANN files are separated by tabs, see BRAT guidelines. %s"
-                                             % line)
-            line = line.split("\t")
-            if not line[0][0] in valid_IDs:
-                raise InvalidAnnotationError("Ill formated annotation file, each line must contain of the IDs: %s"
-                                             % valid_IDs)
-            if 'T' == line[0][0]:
-                if len(line) == 2:
-                    logging.warning("Incorrectly formatted entity line in ANN file (%s): %s", ann_file_path, line)
+            for line in file:
+                line.strip()
+                if not is_valid_brat_ent(line):
+                    continue
+                line = line.split("\t")
                 tags = line[1].split(" ")
                 entity_name = tags[0]
                 entity_start = int(tags[1])
                 entity_end = int(tags[-1])
                 self.annotations['entities'][line[0]] = (entity_name, entity_start, entity_end, line[-1])
-
-            if 'R' == line[0][0]:  # TODO TEST THIS
-                tags = line[1].split(" ")
-                assert len(tags) == 3, "Incorrectly formatted relation line in ANN file"
-                relation_name = tags[0]
-                relation_start = tags[1].split(':')[1]
-                relation_end = tags[2].split(':')[1]
-                self.annotations['relations'].append((relation_name, relation_start, relation_end))
-
-            if line[0][0] in ['E', 'A', 'N']:
-                log_warning[line[0][0]] = True
-        
-        for ID, should_log in log_warning.items():
-            if should_log:
-                if ID == 'E':
-                    logging.warning("Event annotations not implemented in medaCy")
-                elif ID == 'A':
-                    logging.warning("Attribute annotations not implemented in medaCy")
-                elif ID == 'N':
-                    logging.warning("Normalization annotations are not implemented in medaCy")
-
-    def to_con(self, write_location=None):
-        """
-        Formats the Annotation object to a valid con file. Optionally writes the string to a specified location.
-
-        :param write_location: Optional path to an output file; if provided but not an existing file, will be created. If this parameter is not provided, nothing will be written to file.
-        :return: A string representation of the annotations in the con format.
-        """
-        if not self.source_text_path:
-            raise FileNotFoundError("The annotation can not be converted to the con format without the source text."
-                                    " Please provide the path to the source text as source_text_path in the object's"
-                                    " constructor.")
-
-        temp_ann_file = tempfile.mktemp()
-        with open(temp_ann_file, 'w+') as f:
-            self.to_ann(f.name)
-            con_text = convert_brat_to_con(f.name, self.source_text_path)
-
-        if write_location:
-            if os.path.isfile(write_location):
-                logging.warning("Overwriting file at: %s", write_location)
-            with open(write_location, 'w+') as f:
-                f.write(con_text)
-
-        return con_text
-
-    def from_con(self, con_file_path):
-        """
-        Converts a con file from a given path to an Annotations object. The conversion takes place through the
-        from_ann() method in this class because the indices for the Annotations object must be those used in
-        the BRAT format. The path to the source text for the annotations must be defined unless that file exists
-        in the same directory as the con file.
-
-        :param con_file_path: path to the con file being converted to an Annotations object.
-        """
-        ann_from_con = convert_con_to_brat(con_file_path, self.source_text_path)
-        temp_ann_file = tempfile.mktemp()
-        with open(temp_ann_file, "w+") as f:
-            f.write(ann_from_con)
-            self.from_ann(f.name)  # must pass the name to self.from_ann() to ensure compatibility
 
     def difference(self, annotations, leniency=0):
         """
@@ -256,7 +175,7 @@ class Annotations:
             if not  0 <= leniency <= 1:
                 raise ValueError("Leniency must be a floating point between [0,1]")
         else:
-            return set(self.get_entity_annotations()).difference(annotations.get_entity_annotations())
+            return set(self.get_entity_annotations()) - annotations.get_entity_annotations()
 
         matches = set()
         for label, start, end, text in self.get_entity_annotations():
@@ -267,8 +186,7 @@ class Annotations:
                         matches.add((label, start, end, text))
                         break
 
-
-        return set(self.get_entity_annotations()).difference(matches)
+        return set(self.get_entity_annotations()) - matches
 
     def intersection(self, annotations, leniency=0):
         """
@@ -286,13 +204,12 @@ class Annotations:
 
         matches = set()
         for label, start, end, text in self.get_entity_annotations():
-            window = ceil(leniency * (end-start))
+            window = ceil(leniency * (end - start))
             for c_label, c_start, c_end, c_text in annotations.get_entity_annotations():
                 if label == c_label:
                     if start - window <= c_start and end+window >= c_end:
                         matches.add((label, start, end, text))
                         break
-
 
         return matches
 
@@ -365,15 +282,10 @@ class Annotations:
         :return: a dictionary containing counts
         """
 
-        counts = {
+        return {
             'entities': Counter(e[0] for e in self.get_entity_annotations()),
             'relations': {}
         }
-
-        for relation,_,_ in self.get_relation_annotations():
-            counts['relations'][relation] = counts['relations'].get(relation, 0) + 1
-
-        return counts
 
     def __str__(self):
         return str(self.annotations)
