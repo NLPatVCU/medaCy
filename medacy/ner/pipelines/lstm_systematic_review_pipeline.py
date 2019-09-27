@@ -22,9 +22,9 @@ class LstmSystematicReviewPipeline(BasePipeline):
         """
         description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
         super().__init__("lstm_clinical_pipeline",
-                         spacy_pipeline=spacy.load("en_core_web_lg"),
+                         spacy_pipeline=spacy.load('en_core_web_lg'),
                          description=description,
-                         creators="Jorge Vargas", #append if multiple creators
+                         creators="Jorge Vargas",  #append if multiple creators
                          organization="NLP@VCU",
                          cuda_device=cuda_device
                          )
