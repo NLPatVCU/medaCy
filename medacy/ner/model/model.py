@@ -1,19 +1,24 @@
-"""
-A medaCy named entity recognition model wraps together three functionalities
-"""
+import importlib
+import joblib
+import logging
+import os
+import time
+from statistics import mean
 
-import logging, os, joblib, time, importlib
-from medacy.data import Dataset
-from .stratified_k_fold import SequenceStratifiedKFold
-from medacy.ner.pipelines import BasePipeline
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
-from ._model import predict_document, construct_annotations_from_tuples
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
-from statistics import mean
+
+from medacy.data.dataset import Dataset
+from medacy.ner.pipelines.base.base_pipeline import BasePipeline
+from medacy.ner.model._model import predict_document, construct_annotations_from_tuples
+from medacy.ner.model.stratified_k_fold import SequenceStratifiedKFold
 
 
 class Model:
+    """
+    A medaCy named entity recognition model wraps together three functionalities
+    """
 
     def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
 
@@ -35,7 +40,8 @@ class Model:
             raise IOError("Model could not be initialized with the set pipeline.")
 
     def preprocess(self, dataset, asynchronous=False):
-        """Preprocess dataset into a list of sequences and tags.
+        """
+        Preprocess dataset into a list of sequences and tags.
 
         :param dataset: Dataset object to preprocess.
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
@@ -70,7 +76,7 @@ class Model:
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
-        :param training_data_loader: Instance of Dataset.
+        :param dataset: Instance of Dataset.
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
@@ -163,7 +169,8 @@ class Model:
         :return: Prints out performance metrics, if prediction_directory
         """
 
-        if num_folds <= 1: raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
+        if num_folds <= 1:
+            raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
 
         if prediction_directory is not None and training_dataset is None:
             raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
@@ -173,8 +180,9 @@ class Model:
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
         self.preprocess(training_dataset, asynchronous)
-        assert self.X_data is not None and self.y_data is not None, \
-            "Must have features and labels extracted for cross validation"
+
+        if not (self.X_data and self.y_data):
+            raise RuntimeError("Must have features and labels extracted for cross validation")
 
         X_data = self.X_data
         Y_data = self.y_data
@@ -227,10 +235,10 @@ class Model:
                 groundtruth = [element for sentence in y_test for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
-                i=0
+                i = 0
                 while i < len(groundtruth):
                     if groundtruth[i] == 'O':
-                        i+=1
+                        i += 1
                         continue
                     entity = groundtruth[i]
                     document = document_indices[i]
@@ -240,7 +248,7 @@ class Model:
                         i += 1
                     last_start, last_end = span_indices[i]
                     groundtruth_by_document[document].append((entity, first_start, last_end))
-                    i+=1
+                    i += 1
             if prediction_directory is not None:
                 # Dict for storing mapping of sequences to their corresponding file
 
@@ -253,10 +261,10 @@ class Model:
                 predictions = [element for sentence in y_pred for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
-                i=0
+                i = 0
                 while i < len(predictions):
                     if predictions[i] == 'O':
-                        i+=1
+                        i += 1
                         continue
                     entity = predictions[i]
                     document = document_indices[i]
@@ -266,32 +274,30 @@ class Model:
                         i += 1
                     last_start, last_end = span_indices[i]
                     preds_by_document[document].append((entity, first_start, last_end))
-                    i+=1
+                    i += 1
 
             # Write the metrics for this fold.
             for label in tagset:
-                fold_statistics[label] = {}
-                recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label])
-                precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label])
-                f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
-                fold_statistics[label]['precision'] = precision
-                fold_statistics[label]['recall'] = recall
-                fold_statistics[label]['f1'] = f1
+                fold_statistics[label] = {
+                    "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label]),
+                    "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label]),
+                    "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
+                }
 
             # add averages
-            fold_statistics['system'] = {}
-            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset)
-            precision = metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset)
-            f1 = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
-            fold_statistics['system']['precision'] = precision
-            fold_statistics['system']['recall'] = recall
-            fold_statistics['system']['f1'] = f1
+            fold_statistics['system'] = {
+                "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset),
+                "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset),
+                "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
+            }
 
-            table_data = [[label,
-                           format(fold_statistics[label]['precision'], ".3f"),
-                           format(fold_statistics[label]['recall'], ".3f"),
-                           format(fold_statistics[label]['f1'], ".3f")]
-                          for label in tagset + ['system']]
+            table_data = [
+                [label,
+                format(fold_statistics[label]['precision'], ".3f"),
+                format(fold_statistics[label]['recall'], ".3f"),
+                format(fold_statistics[label]['f1'], ".3f")
+                ] for label in tagset + ['system']
+            ]
 
             logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
                                   tablefmt='orgtbl'))
@@ -302,35 +308,26 @@ class Model:
         statistics_all_folds = {}
 
         for label in tagset + ['system']:
-            statistics_all_folds[label] = {}
-            statistics_all_folds[label]['precision_average'] = mean(
-                [eval_stats[fold][label]['precision'] for fold in eval_stats])
-            statistics_all_folds[label]['precision_max'] = max(
-                [eval_stats[fold][label]['precision'] for fold in eval_stats])
-            statistics_all_folds[label]['precision_min'] = min(
-                [eval_stats[fold][label]['precision'] for fold in eval_stats])
+            statistics_all_folds[label] = {
+                'precision_average': mean(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'precision_max': max(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'precision_min': min(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'recall_average': mean(eval_stats[fold][label]['recall'] for fold in eval_stats),
+                'recall_max': max(eval_stats[fold][label]['recall'] for fold in eval_stats),
+                'f1_average': mean(eval_stats[fold][label]['f1'] for fold in eval_stats),
+                'f1_max': max(eval_stats[fold][label]['f1'] for fold in eval_stats),
+                'f1_min': min(eval_stats[fold][label]['f1'] for fold in eval_stats),
+            }
 
-            statistics_all_folds[label]['recall_average'] = mean(
-                [eval_stats[fold][label]['recall'] for fold in eval_stats])
-            statistics_all_folds[label]['recall_max'] = max(
-                [eval_stats[fold][label]['recall'] for fold in eval_stats])
-            statistics_all_folds[label]['recall_min'] = min(
-                [eval_stats[fold][label]['recall'] for fold in eval_stats])
-
-            statistics_all_folds[label]['f1_average'] = mean(
-                [eval_stats[fold][label]['f1'] for fold in eval_stats])
-            statistics_all_folds[label]['f1_max'] = max(
-                [eval_stats[fold][label]['f1'] for fold in eval_stats])
-            statistics_all_folds[label]['f1_min'] = min(
-                [eval_stats[fold][label]['f1'] for fold in eval_stats])
-
-        table_data = [[label,
-                       format(statistics_all_folds[label]['precision_average'], ".3f"),
-                       format(statistics_all_folds[label]['recall_average'], ".3f"),
-                       format(statistics_all_folds[label]['f1_average'], ".3f"),
-                       format(statistics_all_folds[label]['f1_min'], ".3f"),
-                       format(statistics_all_folds[label]['f1_max'], ".3f")]
-                      for label in tagset + ['system']]
+        table_data = [
+            [label,
+            format(statistics_all_folds[label]['precision_average'], ".3f"),
+            format(statistics_all_folds[label]['recall_average'], ".3f"),
+            format(statistics_all_folds[label]['f1_average'], ".3f"),
+            format(statistics_all_folds[label]['f1_min'], ".3f"),
+            format(statistics_all_folds[label]['f1_max'], ".3f")
+            ] for label in tagset + ['system']
+        ]
 
         logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
                        tablefmt='orgtbl'))
@@ -346,15 +343,28 @@ class Model:
             # Write medaCy ground truth generated from cross-validation
             self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
             
-            #Add predicted/known annotations to the folders containing groundtruth and predictions respectively
-            annotations = self.predict_annotation_evaluation(directory=groundtruth_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document, option="groundtruth")
+            # Add predicted/known annotations to the folders containing groundtruth and predictions respectively
+            self.predict_annotation_evaluation(
+                directory=groundtruth_directory,
+                training_dataset=training_dataset,
+                medacy_pipeline=medacy_pipeline,
+                preds_by_document=preds_by_document,
+                groundtruth_by_document=groundtruth_by_document,
+                option="groundtruth"
+            )
 
-            annotations = self.predict_annotation_evaluation(directory=prediction_directory,training_dataset=training_dataset, medacy_pipeline= medacy_pipeline, preds_by_document=preds_by_document, groundtruth_by_document=groundtruth_by_document,option="predictions")
+            self.predict_annotation_evaluation(
+                directory=prediction_directory,
+                training_dataset=training_dataset,
+                medacy_pipeline= medacy_pipeline,
+                preds_by_document=preds_by_document,
+                groundtruth_by_document=groundtruth_by_document,
+                option="predictions"
+            )
 
             return Dataset(data_directory=prediction_directory)
         else:
             return statistics_all_folds
-
 
     def create_annotation_directory(self, directory, training_dataset, option):
         if isinstance(directory, str):
@@ -373,16 +383,16 @@ class Model:
             with open(data_file.raw_path, 'r') as raw_text:
                 doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
                 
-                if option == "groundtruth":
-                    preds = groundtruth_by_document[data_file.file_name]
-                else:
-                    preds = preds_by_document[data_file.file_name]
-                annotations = construct_annotations_from_tuples(doc, preds)
-                annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))        
+            if option == "groundtruth":
+                preds = groundtruth_by_document[data_file.file_name]
+            else:
+                preds = preds_by_document[data_file.file_name]
+
+            annotations = construct_annotations_from_tuples(doc, preds)
+            annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))
         
         return annotations
-    
-    
+
     def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
@@ -436,7 +446,9 @@ class Model:
         :param path: Directory path to dump the model
         :return:
         """
-        assert self.model is not None, "Must fit model before dumping."
+        if self.model is None:
+            raise RuntimeError("Must fit model before dumping.")
+
         model_name, _ = self.pipeline.get_learner()
 
         if model_name == 'BiLSTM+CRF':

@@ -1,23 +1,24 @@
-"""
-SpacyModel consists of convenience wrapper functions for pre-existing spaCy functionality.
-"""
+import logging
+import random
 from os import makedirs
 from os.path import join, isdir
-import random
-import logging
 from statistics import mean
-from sklearn_crfsuite import metrics
-from tabulate import tabulate
+
 import spacy
-from spacy.util import minibatch, compounding
+from sklearn_crfsuite import metrics
 from spacy.gold import biluo_tags_from_offsets
-from medacy.tools import Annotations
+from spacy.util import minibatch, compounding
+from tabulate import tabulate
+
 from medacy.data import Dataset
-from .stratified_k_fold import SequenceStratifiedKFold
-from ._model import construct_annotations_from_tuples
+from medacy.tools import Annotations
+from medacy.ner.model._model import construct_annotations_from_tuples
+from medacy.ner.model.stratified_k_fold import SequenceStratifiedKFold
+
 
 class SpacyModel:
     """
+    SpacyModel consists of convenience wrapper functions for pre-existing spaCy functionality.
     Attributes:
         model (spacy.Language): Trained model as spaCy language(). Usually appears as 'nlp' in
                                 spaCy documentation.
