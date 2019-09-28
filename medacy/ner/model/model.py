@@ -11,8 +11,78 @@ from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
 from medacy.ner.pipelines.base.base_pipeline import BasePipeline
-from medacy.ner.model._model import predict_document, construct_annotations_from_tuples
 from medacy.ner.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.tools.annotations import Annotations
+
+
+def predict_document(model, doc, medacy_pipeline):
+    """
+    Generates an dictionary of predictions of the given model over the corresponding document. The passed document
+    is assumed to be annotated by the same pipeline utilized when training the model.
+    :param model: A loaded medaCy NER model
+    :param doc: A spacy document
+    :param medacy_pipeline: An instance of a medacy pipeline
+    :return: an Annotations object containing the model predictions
+    """
+    #assert isinstance(feature_extractor, FeatureExtractor), "feature_extractor must be an instance of FeatureExtractor"
+
+    feature_extractor = medacy_pipeline.get_feature_extractor()
+
+    features, indices = feature_extractor.get_features_with_span_indices(doc)
+    predictions = model.predict(features)
+    predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
+    span_indices = [element for sentence in indices for element in sentence] #parallel array containing indices
+    annotations = {'entities': {}, 'relations': []}
+
+    T_num = 1
+    i = 0
+
+    while i < len(predictions):
+        if predictions[i] == "O":
+            i+=1
+            continue
+        entity = predictions[i]
+        first_start, first_end = span_indices[i]
+
+        # Ensure that consecutive tokens with the same label are merged
+        while i < len(predictions)-1 and predictions[i+1] == entity: #If inside entity, keep incrementing
+            i+=1
+
+        last_start, last_end = span_indices[i]
+        labeled_text = doc.text[first_start:last_end]
+        logging.debug("%s: Predicted %s at (%i, %i) %s", doc._.file_name, entity, first_start, last_end ,labeled_text.replace('\n', ''))
+        annotations['entities']['T%i'%T_num] = (entity, first_start, last_end, labeled_text)
+
+        T_num += 1
+        i += 1
+
+    return Annotations(annotations)
+
+
+def construct_annotations_from_tuples(doc, predictions):
+    """
+    Converts predictions mapped to a document into an Annotations object
+    :param doc: SpaCy doc corresponding to predictions
+    :param predictions: List of tuples containing (entity, start offset, end offset)
+    :return: Annotations Object representing predicted entities for the given doc
+    """
+    predictions = sorted(predictions, key=lambda x: x[1])
+    annotations = {'entities': {}, 'relations': []}
+    T_num = 1
+
+    for prediction in predictions:
+        if len(prediction) == 3:
+            (entity, start, end) = prediction
+            labeled_text = doc.text[start:end]
+        elif len(prediction) == 4:
+            (entity, start, end, labeled_text) = prediction
+        else:
+            raise ValueError("Incorrect prediction length.")
+
+        annotations['entities']['T%i' % T_num] = (entity, start, end, labeled_text)
+        T_num += 1
+
+    return Annotations(annotations)
 
 
 class Model:
@@ -203,6 +273,7 @@ class Model:
 
         eval_stats = {}
         fold = 1
+
         # Dict for storing mapping of sequences to their corresponding file
         groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
         preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
@@ -236,42 +307,50 @@ class Model:
 
                 # Map the predicted sequences to their corresponding documents
                 i = 0
+
                 while i < len(groundtruth):
                     if groundtruth[i] == 'O':
                         i += 1
                         continue
+
                     entity = groundtruth[i]
                     document = document_indices[i]
                     first_start, first_end = span_indices[i]
                     # Ensure that consecutive tokens with the same label are merged
                     while i < len(groundtruth) - 1 and groundtruth[i + 1] == entity:  # If inside entity, keep incrementing
                         i += 1
+
                     last_start, last_end = span_indices[i]
                     groundtruth_by_document[document].append((entity, first_start, last_end))
                     i += 1
-            if prediction_directory is not None:
-                # Dict for storing mapping of sequences to their corresponding file
 
+            if prediction_directory is not None:
                 # Flattening nested structures into 2d lists
                 document_indices = []
                 span_indices = []
+
                 for sequence in X_test:
                     document_indices += [sequence[2] for x in range(len(sequence[0]))]
                     span_indices += [element for element in sequence[1]]
+
                 predictions = [element for sentence in y_pred for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
                 i = 0
+
                 while i < len(predictions):
                     if predictions[i] == 'O':
                         i += 1
                         continue
+
                     entity = predictions[i]
                     document = document_indices[i]
                     first_start, first_end = span_indices[i]
+
                     # Ensure that consecutive tokens with the same label are merged
                     while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
                         i += 1
+
                     last_start, last_end = span_indices[i]
                     preds_by_document[document].append((entity, first_start, last_end))
                     i += 1
@@ -467,10 +546,11 @@ class Model:
         pipeline_information = self.pipeline.get_pipeline_information()
         feature_extractor = self.pipeline.get_feature_extractor()
         #TODO include tokenizer
-        pipeline_information['feature_extraction'] = {}
-        pipeline_information['feature_extraction']['medacy_features'] = feature_extractor.all_custom_features
-        pipeline_information['feature_extraction']['spacy_features'] = feature_extractor.spacy_features
-        pipeline_information['feature_extraction']['window_size'] = feature_extractor.window_size
+        pipeline_information['feature_extraction'] = {
+            "medacy_features": feature_extractor.all_custom_features,
+            "spacy_features": feature_extractor.spacy_features,
+            "window_size": feature_extractor.window_size
+        }
 
         if return_dict:
             return pipeline_information
