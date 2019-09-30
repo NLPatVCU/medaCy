@@ -1,1 +1,1 @@
-from .base_pipeline import BasePipeline
+from medacy.ner.pipelines.base.base_pipeline import BasePipeline
