@@ -3,7 +3,7 @@ import warnings
 
 from spacy.tokens import Token
 
-from medacy.pipeline_components.feature_overlayers.metamap import MetaMap
+from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.base.base_component import BaseComponent
 
 

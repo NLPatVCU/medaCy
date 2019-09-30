@@ -10,8 +10,8 @@ from spacy.gold import biluo_tags_from_offsets
 from spacy.util import minibatch, compounding
 from tabulate import tabulate
 
-from medacy.data import Dataset
-from medacy.tools import Annotations
+from medacy.data.dataset import Dataset
+from medacy.data.annotations import Annotations
 from medacy.model._model import construct_annotations_from_tuples
 from medacy.model.stratified_k_fold import SequenceStratifiedKFold
 
