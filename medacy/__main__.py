@@ -1,15 +1,16 @@
 """
 MedaCy CLI Setup
 """
+import importlib
 import argparse
 import logging
-from datetime import datetime
 import time
-import importlib
+from datetime import datetime
 
-from medacy.data import Dataset
-from medacy.ner import Model
-from medacy.ner import SpacyModel
+from medacy.data.dataset import Dataset
+from medacy.ner.model.model import Model
+from medacy.ner.model.spacy_model import SpacyModel
+
 
 def setup(args):
     """
@@ -68,9 +69,9 @@ def predict(args, dataset, model):
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
     """
-    if args.predictions == False:
+    if not args.predictions:
         args.predictions = None
-    if args.groundtruth == False:
+    if not args.groundtruth:
         args.groundtruth = None
 
     model.load(args.model_path)
@@ -86,7 +87,7 @@ def cross_validate(args, dataset, model):
 
     :param args: Argparse args object.
     :param dataset: Dataset to use for training.
-    :param model: Untrained model objec to use.
+    :param model: Untrained model object to use.
     """
     model.cross_validate(
         num_folds=args.k_folds,
