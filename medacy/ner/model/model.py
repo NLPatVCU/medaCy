@@ -378,8 +378,7 @@ class Model:
                 ] for label in tagset + ['system']
             ]
 
-            logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
-                                  tablefmt='orgtbl'))
+            logging.info('\n' + tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'], tablefmt='orgtbl'))
 
             eval_stats[fold] = fold_statistics
             fold += 1
