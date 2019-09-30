@@ -9,7 +9,7 @@ from unittest import TestCase
 import pkg_resources
 
 from medacy.data.dataset import Dataset
-from medacy.ner.model.spacy_model import SpacyModel
+from medacy.model.spacy_model import SpacyModel
 from medacy.data.annotations import Annotations
 
 

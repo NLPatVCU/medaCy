@@ -7,8 +7,8 @@ from unittest import TestCase
 import pkg_resources
 
 from medacy.data.dataset import Dataset
-from medacy.ner.model import Model
-from medacy.ner.pipelines.lstm_systematic_review_pipeline import LstmSystematicReviewPipeline
+from medacy.model import Model
+from medacy.pipelines import LstmSystematicReviewPipeline
 from medacy.data.annotations import Annotations
 
 

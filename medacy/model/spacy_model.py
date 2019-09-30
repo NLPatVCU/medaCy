@@ -12,8 +12,8 @@ from tabulate import tabulate
 
 from medacy.data import Dataset
 from medacy.tools import Annotations
-from medacy.ner.model._model import construct_annotations_from_tuples
-from medacy.ner.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.model._model import construct_annotations_from_tuples
+from medacy.model.stratified_k_fold import SequenceStratifiedKFold
 
 
 class SpacyModel:

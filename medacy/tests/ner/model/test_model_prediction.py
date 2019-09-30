@@ -6,8 +6,8 @@ import tempfile
 from unittest import TestCase
 
 from medacy.data.dataset import Dataset
-from medacy.ner.model import Model
-from medacy.ner.pipelines import TestingPipeline
+from medacy.model import Model
+from medacy.pipelines import TestingPipeline
 from medacy.tools import Annotations
 
 

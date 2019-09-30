@@ -8,8 +8,8 @@ import time
 from datetime import datetime
 
 from medacy.data.dataset import Dataset
-from medacy.ner.model.model import Model
-from medacy.ner.model.spacy_model import SpacyModel
+from medacy.model.model import Model
+from medacy.model.spacy_model import SpacyModel
 
 
 def setup(args):

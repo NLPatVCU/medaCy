@@ -2,7 +2,7 @@ import logging
 
 from spacy.tokens import Token
 
-from medacy.tools import Annotations
+from medacy.data.annotations import Annotations
 from medacy.pipeline_components.base.base_component import BaseComponent
 
 

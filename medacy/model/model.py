@@ -10,8 +10,8 @@ from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
-from medacy.ner.pipelines.base.base_pipeline import BasePipeline
-from medacy.ner.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.pipelines.base.base_pipeline import BasePipeline
+from medacy.model.stratified_k_fold import SequenceStratifiedKFold
 from medacy.data.annotations import Annotations
 
 

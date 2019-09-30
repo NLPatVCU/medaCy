@@ -1,7 +1,7 @@
 import sklearn_crfsuite
 import spacy
 
-from medacy.ner.pipelines.base.base_pipeline import BasePipeline
+from medacy.pipelines.base import BasePipeline
 from medacy.pipeline_components.tokenization.clinical_tokenizer import ClinicalTokenizer
 from medacy.pipeline_components.annotation.gold_annotator_component import GoldAnnotatorComponent
 from medacy.pipeline_components.metamap.metamap_component import MetaMapComponent
