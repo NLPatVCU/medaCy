@@ -1,7 +1,10 @@
-from ..base import BaseComponent
-from medacy.tools import Annotations
-from spacy.tokens import Token
 import logging
+
+from spacy.tokens import Token
+
+from medacy.tools import Annotations
+from medacy.pipeline_components.base.base_component import BaseComponent
+
 
 class GoldAnnotatorComponent(BaseComponent):
     #TODO CLEAN ME

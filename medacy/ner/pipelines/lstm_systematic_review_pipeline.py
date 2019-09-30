@@ -1,10 +1,10 @@
-import spacy, sklearn_crfsuite
-from .base import BasePipeline
-from spacy.tokenizer import Tokenizer
-from medacy.pipeline_components import BiLstmCrfLearner
-from medacy.pipeline_components import ClinicalTokenizer, SystematicReviewTokenizer
-from medacy.pipeline_components import FeatureExtractor
-from medacy.pipeline_components import GoldAnnotatorComponent
+import spacy
+
+from medacy.ner.pipelines.base.base_pipeline import BasePipeline
+from medacy.pipeline_components.annotation.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
+from medacy.pipeline_components.tokenization.systematic_review_tokenizer import SystematicReviewTokenizer
 
 
 class LstmSystematicReviewPipeline(BasePipeline):
@@ -24,7 +24,7 @@ class LstmSystematicReviewPipeline(BasePipeline):
         super().__init__("lstm_clinical_pipeline",
                          spacy_pipeline=spacy.load("en_core_web_lg"),
                          description=description,
-                         creators="Jorge Vargas", #append if multiple creators
+                         creators="Jorge Vargas",  # append if multiple creators
                          organization="NLP@VCU",
                          cuda_device=cuda_device
                          )

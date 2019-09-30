@@ -3,12 +3,15 @@ A utility class to Metamap medical text documents.
 Metamap a file  and utilize it the output or manipulate stored metamap output
 
 """
+import os
+import tempfile
+import warnings
+
+import json
 import subprocess
 import xmltodict
-import json
-import tempfile, os, warnings
 
-from ...tools.unicode_to_ascii import UNICODE_TO_ASCII
+from medacy.tools.unicode_to_ascii import UNICODE_TO_ASCII
 
 
 class MetaMap:

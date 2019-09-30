@@ -1,9 +1,12 @@
-import spacy, sklearn_crfsuite
-from .base import BasePipeline
-from medacy.pipeline_components import ClinicalTokenizer
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+import sklearn_crfsuite
+import spacy
 
-from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent, MetaMap
+from medacy.ner.pipelines.base.base_pipeline import BasePipeline
+from medacy.pipeline_components.tokenization.clinical_tokenizer import ClinicalTokenizer
+from medacy.pipeline_components.annotation.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.metamap.metamap import MetaMap
+from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
 
 
 class ClinicalPipeline(BasePipeline):
@@ -19,11 +22,13 @@ class ClinicalPipeline(BasePipeline):
 
         :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
         """
-        description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
+
+        description="Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"
+
         super().__init__("clinical_pipeline",
                          spacy_pipeline=spacy.load("en_core_web_sm"),
                          description=description,
-                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
+                         creators="Andriy Mulyar (andriymulyar.com)",  # append if multiple creators
                          organization="NLP@VCU"
                          )
 
@@ -33,19 +38,18 @@ class ClinicalPipeline(BasePipeline):
 
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
-        if metamap is not None and isinstance(metamap, MetaMap):
+        if isinstance(metamap, MetaMap):
             self.add_component(MetaMapComponent, metamap)
 
-        #self.add_component(UnitComponent)
-
-
     def get_learner(self):
-        return ("CRF_l2sgd", sklearn_crfsuite.CRF(
-            algorithm='l2sgd',
-            c2=0.1,
-            max_iterations=100,
-            all_possible_transitions=True
-        ))
+        return ("CRF_l2sgd",
+                sklearn_crfsuite.CRF(
+                    algorithm='l2sgd',
+                    c2=0.1,
+                    max_iterations=100,
+                    all_possible_transitions=True
+                )
+            )
 
     def get_tokenizer(self):
         tokenizer = ClinicalTokenizer(self.spacy_pipeline)
@@ -54,10 +58,3 @@ class ClinicalPipeline(BasePipeline):
     def get_feature_extractor(self):
         extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
         return extractor
-
-
-
-
-
-
-

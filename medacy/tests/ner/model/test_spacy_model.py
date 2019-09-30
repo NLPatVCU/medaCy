@@ -1,14 +1,16 @@
 """Test file for the spaCy model class.
 """
-import os
 import importlib
-import tempfile
+import os
 import shutil
+import tempfile
 from unittest import TestCase
+
 import pkg_resources
-from medacy.ner import SpacyModel
-from medacy.data import Dataset
-from medacy.tools import Annotations
+
+from medacy.data.dataset import Dataset
+from medacy.ner.model.spacy_model import SpacyModel
+from medacy.tools.annotations import Annotations
 
 
 class TestSpacyModel(TestCase):

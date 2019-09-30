@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import spacy
-from medacy.pipeline_components.base import BaseComponent
+from medacy.pipeline_components.base.base_component import BaseComponent
 
 class BasePipeline(ABC):
     """
@@ -49,7 +49,6 @@ class BasePipeline(ABC):
         :return: An instant of FeatureExtractor
         """
         pass
-
 
     def get_language_pipeline(self):
         """
@@ -119,13 +118,3 @@ class BasePipeline(ABC):
         }
 
         return information
-
-
-
-
-
-
-
-
-
-

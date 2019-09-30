@@ -1,7 +1,10 @@
-import logging, re
-from spacy.tokens import Token, Span
-from spacy.matcher import PhraseMatcher
-from ..base import BaseComponent
+import logging
+import re
+
+from spacy.tokens import Token
+
+from medacy.pipeline_components.base.base_component import BaseComponent
+
 
 class TableMatcherComponent(BaseComponent):
 

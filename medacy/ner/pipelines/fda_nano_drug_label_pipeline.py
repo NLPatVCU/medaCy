@@ -1,10 +1,12 @@
-import spacy, sklearn_crfsuite
-from medacy.pipeline_components import MetaMap
-from .base import BasePipeline
-from medacy.pipeline_components import ClinicalTokenizer
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+import sklearn_crfsuite
+import spacy
 
-from medacy.pipeline_components import GoldAnnotatorComponent, MetaMapComponent
+from medacy.ner.pipelines.base import BasePipeline
+from medacy.pipeline_components.annotation.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.metamap.metamap import MetaMap
+from medacy.pipeline_components.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.tokenization.clinical_tokenizer import ClinicalTokenizer
 
 
 class FDANanoDrugLabelPipeline(BasePipeline):
@@ -42,12 +44,14 @@ class FDANanoDrugLabelPipeline(BasePipeline):
         #self.add_component(UnitComponent)
 
     def get_learner(self):
-        return ("CRF_l2sgd", sklearn_crfsuite.CRF(
-            algorithm='l2sgd',
-            c2=0.1,
-            max_iterations=100,
-            all_possible_transitions=True
-        ))
+        return ("CRF_l2sgd",
+                sklearn_crfsuite.CRF(
+                    algorithm='l2sgd',
+                    c2=0.1,
+                    max_iterations=100,
+                    all_possible_transitions=True
+                )
+            )
 
     def get_tokenizer(self):
         tokenizer = ClinicalTokenizer(self.spacy_pipeline) #Best run with SystematicReviewTokenizer
@@ -56,10 +60,3 @@ class FDANanoDrugLabelPipeline(BasePipeline):
     def get_feature_extractor(self):
         extractor = FeatureExtractor(window_size=6, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text'])
         return extractor
-
-
-
-
-
-
-

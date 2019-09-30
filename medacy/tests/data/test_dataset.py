@@ -1,6 +1,11 @@
-import shutil, tempfile, os, importlib, pkg_resources
+import importlib
+import os
+import pkg_resources
+import shutil
+import tempfile
 from unittest import TestCase
-from medacy.data import Dataset
+
+from medacy.data.dataset import Dataset
 
 
 class TestDatasetLocal(TestCase):
@@ -38,35 +43,24 @@ class TestDatasetLocal(TestCase):
         shutil.rmtree(cls.training_directory)
         shutil.rmtree(cls.prediction_directory)
 
-
     def test_init_training(self):
-        """
-        Tests initialization of DataManager
-        :return:
-        """
+        """Tests initialization of DataManager"""
         dataset = Dataset(self.training_directory)
-        self.assertIsInstance( dataset , Dataset)
+        self.assertIsInstance(dataset , Dataset)
         self.assertTrue(dataset.is_training())
 
     def test_init_with_data_limit(self):
-        """
-        Tests initialization of DataManager
-        :return:
-        """
+        """Tests initialization of DataManager"""
         dataset = Dataset(self.training_directory, data_limit=6)
 
         self.assertEqual(len(dataset.get_data_files()), 6)
 
     def test_init_prediction(self):
-        """
-        Tests initialization of DataManager
-        :return:
-        """
+        """Tests initialization of DataManager"""
         dataset = Dataset(self.prediction_directory)
 
         self.assertIsInstance(dataset, Dataset)
         self.assertFalse(dataset.is_training())
-
 
 
 class TestDatasetExternal(TestCase):
@@ -87,53 +81,34 @@ class TestDatasetExternal(TestCase):
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
 
-
     def test_is_training(self):
-        """
-        Tests initialization of DataManager
-        :return:
-        """
+        """Tests initialization of DataManager"""
         self.assertTrue(self.dataset.is_training())
 
     def test_file_count(self):
-        """
-        Tests the expected file count for our testing dataset
-        :return:
-        """
+        """Tests the expected file count for our testing dataset"""
         self.assertEqual(len(self.dataset.get_data_files()), 41)
 
     def test_is_metamapped(self):
-        """
-        Verifies that the dataset is metamapped
-        :return:
-        """
+        """Verifies that the dataset is metamapped"""
         self.assertTrue(self.dataset.is_metamapped())
 
     def test_limit(self):
-        """
-        Tests limiting a file
-        :return:
-        """
-        self.dataset.set_data_limit(5)
+        """Tests limiting a file"""
+        self.dataset.data_limit = 5
         self.assertEqual(len(self.dataset.get_data_files()), 5)
 
     def test_compute_counts(self):
         self.assertIsInstance(self.dataset.compute_counts(), dict)
 
     def test_compute_confusion_matrix(self):
-        self.dataset.set_data_limit(3)
+        self.dataset.data_limit = 3
         entities, confusion_matrix = self.dataset.compute_confusion_matrix(self.dataset)
-        self.dataset.set_data_limit(41)
+        self.dataset.data_limit = 41
         self.assertIsInstance(confusion_matrix, list)
 
     def test_compute_ambiguity(self):
-        self.dataset.set_data_limit(3)
+        self.dataset.data_limit = 3
         ambiguity = self.dataset.compute_ambiguity(self.dataset)
-        self.dataset.set_data_limit(41)
+        self.dataset.data_limit = 41
         self.assertIsInstance(ambiguity, dict)
-
-
-
-
-
-

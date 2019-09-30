@@ -8,9 +8,11 @@ These extracted features CANNOT be used in sequence to sequence models expecting
 
 `sklearn-crfsuite <https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html#features>`_ is a wrapper for a C CRF implementation that gives it a sci-kit compatability.
 """
-from spacy.tokens.underscore import Underscore
-from spacy.tokens import Token
 from itertools import cycle
+
+from spacy.tokens import Token
+from spacy.tokens.underscore import Underscore
+
 
 class FeatureExtractor:
 
@@ -83,7 +85,6 @@ class FeatureExtractor:
         """
         return [token._.get(attribute) for token in sequence]
 
-
     def _token_to_feature_dict(self, index, sentence):
         """
         Extracts features of a given token
@@ -118,8 +119,3 @@ class FeatureExtractor:
                 features.update(current)
 
         return features
-
-
-
-
-

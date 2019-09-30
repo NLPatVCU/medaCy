@@ -1,14 +1,15 @@
 import logging
-from spacy.tokens import Token, Span
+
 from spacy.matcher import PhraseMatcher
-from ..base import BaseComponent
+from spacy.tokens import Token, Span
+
+from medacy.pipeline_components.base.base_component import BaseComponent
+
 
 class LexiconComponent(BaseComponent):
 
-
     name = "lexicon_component"
     dependencies = []
-
 
     def __init__(self, spacy_pipeline, lexicon):
         """
