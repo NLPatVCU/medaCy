@@ -1,9 +1,15 @@
+import importlib
+import os
+import shutil
+import tempfile
 from unittest import TestCase
+
+import pkg_resources
+
+from medacy.data.dataset import Dataset
 from medacy.ner.model import Model
-from medacy.ner.pipelines import LstmSystematicReviewPipeline
-from medacy.tools import Annotations
-from medacy.data import Dataset
-import os, importlib, pkg_resources, tempfile, shutil
+from medacy.ner.pipelines.lstm_systematic_review_pipeline import LstmSystematicReviewPipeline
+from medacy.tools.annotations import Annotations
 
 
 class TestBiLstmCrf(TestCase):
