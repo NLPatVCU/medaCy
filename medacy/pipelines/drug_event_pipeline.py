@@ -3,11 +3,11 @@ import spacy
 
 from medacy.pipelines.base import BasePipeline
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconComponent
 from medacy.pipeline_components.feature_overlayers.metamap import MetaMapComponent
 from medacy.pipeline_components.feature_overlayers.table_matcher_component import TableMatcherComponent
-from medacy.pipeline_components.tokenization.character_tokenizer import CharacterTokenizer
+from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
 
 
 class DrugEventPipeline(BasePipeline):

@@ -2,9 +2,9 @@ import spacy
 
 from medacy.pipelines.base import BasePipeline
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
-from medacy.pipeline_components.tokenization.systematic_review_tokenizer import SystematicReviewTokenizer
+from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 
 
 class LstmSystematicReviewPipeline(BasePipeline):

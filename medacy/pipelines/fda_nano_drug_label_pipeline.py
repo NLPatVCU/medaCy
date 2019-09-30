@@ -3,10 +3,10 @@ import spacy
 
 from medacy.pipelines.base import BasePipeline
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
-from medacy.pipeline_components.feature_extraction.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap import MetaMapComponent
-from medacy.pipeline_components.tokenization.clinical_tokenizer import ClinicalTokenizer
+from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
 
 
 class FDANanoDrugLabelPipeline(BasePipeline):
