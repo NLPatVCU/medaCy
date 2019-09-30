@@ -22,28 +22,27 @@ def predict_document(model, doc, medacy_pipeline):
     predictions = model.predict(features)
     predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
     span_indices = [element for sentence in indices for element in sentence] #parallel array containing indices
-    annotations = {'entities': {}, 'relations': []}
+    annotations = []
 
-    T_num=1
-    i=0
+    i = 0
     while i < len(predictions):
         if predictions[i] == "O":
-            i+=1
+            i += 1
             continue
         entity = predictions[i]
         first_start, first_end = span_indices[i]
         # Ensure that consecutive tokens with the same label are merged
         while i < len(predictions)-1 and predictions[i+1] == entity: #If inside entity, keep incrementing
-            i+=1
+            i += 1
         last_start, last_end = span_indices[i]
 
         labeled_text = doc.text[first_start:last_end]
 
         logging.debug("%s: Predicted %s at (%i, %i) %s", doc._.file_name, entity, first_start, last_end ,labeled_text.replace('\n', ''))
 
-        annotations['entities']['T%i'%T_num] = (entity, first_start, last_end, labeled_text)
-        T_num+=1
-        i+=1
+        annotations.append((entity, first_start, last_end, labeled_text))
+        i += 1
+
     return Annotations(annotations)
 
 
@@ -55,8 +54,8 @@ def construct_annotations_from_tuples(doc, predictions):
     :return: Annotations Object representing predicted entities for the given doc
     """
     predictions = sorted(predictions, key=lambda x: x[1])
-    annotations = {'entities': {}, 'relations': []}
-    T_num = 1
+    annotations = []
+
     for prediction in predictions:
         if len(prediction) == 3:
             (entity, start, end) = prediction
@@ -66,6 +65,6 @@ def construct_annotations_from_tuples(doc, predictions):
         else:
             raise ValueError("Incorrect prediction length.")
 
-        annotations['entities']['T%i' % T_num] = (entity, start, end, labeled_text)
-        T_num += 1
+        annotations.append((entity, start, end, labeled_text))
+
     return Annotations(annotations)

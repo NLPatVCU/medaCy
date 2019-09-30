@@ -52,7 +52,7 @@ class SpacyModel:
         if labels is None:
             labels = set()
             for document in train_data:
-                for entity in document[1]['entities']:
+                for entity in document[1]:
                     tag = entity[2]
                     labels.add(tag)
             labels = list(labels)

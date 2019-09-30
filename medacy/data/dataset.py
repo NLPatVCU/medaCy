@@ -184,6 +184,9 @@ class Dataset:
     def __iter__(self):
         return iter(self.get_data_files())
 
+    def __len__(self):
+        return len(self.get_data_files())
+
     def get_training_data(self, data_format='spacy'):
         """
         Get training data in a specified format.
@@ -348,26 +351,20 @@ class Dataset:
         return self.data_directory
 
     def __str__(self):
-        """
-        Converts self.get_data_files() to a list of strs and combines them into one str
-        """
         return str(self.get_data_files())
 
     def compute_counts(self):
         """
-        Computes entity and relation counts over all documents in this dataset.
+        Computes entity counts over all documents in this dataset.
 
-        :return: a dictionary of entity and relation counts.
+        :return: a Counter of entity counts
         """
-        dataset_counts = {
-            'entities': Counter(),
-            'relations': {}
-        }
+        total = Counter()
 
         for ann in self.generate_annotations():
-            dataset_counts['entities'] += ann.compute_counts()["entities"]
+            total += ann.compute_counts()
 
-        return dataset_counts
+        return total
 
     def compute_confusion_matrix(self, dataset, leniency=0):
         """
@@ -388,7 +385,7 @@ class Dataset:
             raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
 
         #sort entities in ascending order by count.
-        entities = [key for key, _ in sorted(self.compute_counts()['entities'].items(), key=lambda x: x[1])]
+        entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
         for gold_data_file in self:

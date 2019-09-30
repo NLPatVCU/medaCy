@@ -127,9 +127,9 @@ class Model:
             # create directory to write groundtruth to
             groundtruth_directory = self.create_annotation_directory(directory=groundtruth_directory, training_dataset=dataset, option="groundtruth")
 
-            for data_file in dataset.get_data_files():
+            for data_file in dataset:
                 logging.info("Predicting file: %s", data_file.file_name)
-                with open(data_file.raw_path, 'r') as raw_text:
+                with open(data_file.txt_path, 'r') as raw_text:
                     doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
                     doc.set_extension('file_name', default=data_file.file_name, force=True)
                     if data_file.metamapped_path is not None:

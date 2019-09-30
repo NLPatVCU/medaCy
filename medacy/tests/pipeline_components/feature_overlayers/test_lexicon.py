@@ -1,7 +1,9 @@
-import shutil, tempfile, spacy
 from unittest import TestCase
-from medacy.pipeline_components import LexiconComponent
+
+import spacy
 from spacy.tokens import Token
+
+from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconComponent
 
 
 class TestLexicon(TestCase):

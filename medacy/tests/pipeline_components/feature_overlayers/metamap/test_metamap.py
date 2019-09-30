@@ -1,6 +1,6 @@
 from unittest import TestCase
 import os.path
-from medacy.pipeline_components import MetaMap
+from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
 #TODO Cannot test metamap due to issue with processes communication during unit tests - we could place pre-metamapped
 #TODO files in the data directory and utilize those simply not testing the interfacing code. But these will have to be

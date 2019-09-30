@@ -77,7 +77,7 @@ class GoldAnnotatorComponent(BaseComponent):
         if not hasattr(doc._, 'gold_annotation_file'):
             raise ValueError("No extension doc._.gold_annotation_file is present.")
 
-        gold_annotations = Annotations(doc._.gold_annotation_file, annotation_type='ann')
+        gold_annotations = Annotations(doc._.gold_annotation_file)
 
         # for label in set([label for _,_,label in [gold['entities'][key] for key in gold['entities']]]):
 

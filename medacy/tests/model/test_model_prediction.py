@@ -1,14 +1,15 @@
 import importlib
 import os
-import pkg_resources
 import shutil
 import tempfile
 from unittest import TestCase
 
+import pkg_resources
+
+from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
 from medacy.model import Model
-from medacy.pipelines import TestingPipeline
-from medacy.tools import Annotations
+from medacy.pipelines.testing_pipeline import TestingPipeline
 
 
 class TestModelTrainingAndPrediction(TestCase):
@@ -55,5 +56,5 @@ class TestModelTrainingAndPrediction(TestCase):
         model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
 
         second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
-        annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file), annotation_type='ann')
+        annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file))
         self.assertIsInstance(annotations, Annotations)

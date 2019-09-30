@@ -26,7 +26,7 @@ class TestDatasetLocal(TestCase):
 
         #fill directory of training files
         for data_file in training_dataset.get_data_files():
-            file_name, raw_text, ann_text = (data_file.file_name, data_file.raw_path, data_file.ann_path)
+            file_name, raw_text, ann_text = (data_file.file_name, data_file.txt_path, data_file.ann_path)
             cls.ann_files.append(file_name + '.ann')
             with open(os.path.join(cls.training_directory, "%s.txt" % file_name), 'w') as f:
                 f.write(raw_text)
