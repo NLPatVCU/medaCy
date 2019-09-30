@@ -170,7 +170,7 @@ class Dataset:
                 for data_file in self.all_data_files:
                     data_file.metamapped_path = os.path.join(
                         self.metamapped_files_directory,
-                        data_file.raw_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped")
+                        data_file.txt_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped")
                     )
 
     def get_data_files(self):
@@ -251,7 +251,7 @@ class Dataset:
             # Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
 
-        files_to_metamap = [data_file.raw_path for data_file in self.all_data_files if not data_file.file_name in already_metamapped]
+        files_to_metamap = [data_file.txt_path for data_file in self.all_data_files if data_file.file_name not in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
@@ -260,7 +260,7 @@ class Dataset:
         if self.is_metamapped():
             for data_file in self.all_data_files:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                         data_file.raw_path.split(os.path.sep)[-1]
+                                                         data_file.txt_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
 
@@ -472,4 +472,4 @@ class Dataset:
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.get_data_files():
-            yield Annotations(file.ann_path, source_text_path=file.raw_path)
+            yield Annotations(file.ann_path, source_text_path=file.txt_path)

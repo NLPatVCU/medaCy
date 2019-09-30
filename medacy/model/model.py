@@ -1,17 +1,18 @@
 import importlib
-import joblib
 import logging
 import os
 import time
 from statistics import mean
 
+import joblib
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
-from medacy.pipelines.base.base_pipeline import BasePipeline
+from medacy.model._model import construct_annotations_from_tuples, predict_document
 from medacy.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
 class Model:
@@ -412,7 +413,7 @@ class Model:
         feature_extractor = medacy_pipeline.get_feature_extractor()
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.raw_path, 'r') as raw_text:
+        with open(data_file.txt_path, 'r') as raw_text:
             doc = nlp.make_doc(raw_text.read())
         # Link ann_path to doc
         doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)

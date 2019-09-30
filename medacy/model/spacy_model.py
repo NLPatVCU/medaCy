@@ -186,7 +186,7 @@ class SpacyModel:
         x_data, y_data = zip(*train_data)
 
         skipped_files = []
-        evaluation_statistics = {}
+        eval_stats = {}
 
         folds = SequenceStratifiedKFold(folds=num_folds)
         fold = 1
@@ -207,18 +207,15 @@ class SpacyModel:
             y_test = []
             y_pred = []
 
-            for data_file in y_subdataset.get_data_files():
-                txt_path = data_file.get_text_path()
-                ann_path = data_file.get_annotation_path()
-                annotations = Annotations(ann_path, source_text_path=txt_path)
+            for ann in y_subdataset.generate_annotations():
 
-                with open(txt_path, 'r') as source_text_file:
+                with open(ann.source_text_path, 'r') as source_text_file:
                     text = source_text_file.read()
 
                 doc = nlp(text)
 
                 # test_entities = annotations.get_entities(format='spacy')[1]['entities']
-                test_entities = annotations.get_entity_annotations(format='spacy')[1]['entities']
+                test_entities = ann.get_entity_annotations(format='spacy')[1]['entities']
                 test_entities = self.entities_to_biluo(doc, test_entities)
                 y_test.append(test_entities)
 
@@ -233,48 +230,30 @@ class SpacyModel:
 
             # Write the metrics for this fold.
             for label in labels:
-                fold_statistics[label] = {}
-                recall = metrics.flat_recall_score(
-                    y_test,
-                    y_pred,
-                    average='weighted',
-                    labels=[label]
-                )
-                precision = metrics.flat_precision_score(
-                    y_test,
-                    y_pred,
-                    average='weighted',
-                    labels=[label]
-                )
-                f1_score = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
-                fold_statistics[label]['precision'] = precision
-                fold_statistics[label]['recall'] = recall
-                fold_statistics[label]['f1'] = f1_score
+                fold_statistics[label] = {
+                    'recall': metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label]),
+                    'precision': metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label]),
+                    'f1': metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=[label])
+                }
 
             # add averages
-            fold_statistics['system'] = {}
-            recall = metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=labels)
-            precision = metrics.flat_precision_score(
-                y_test,
-                y_pred,
-                average='weighted',
-                labels=labels
-            )
-            f1_score = metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=labels)
-            fold_statistics['system']['precision'] = precision
-            fold_statistics['system']['recall'] = recall
-            fold_statistics['system']['f1'] = f1_score
+            fold_statistics['system'] = {
+                'recall': metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=labels),
+                'precision': metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=labels),
+                'f1': metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=labels)
+            }
 
-            table_data = [[label,
-                           format(fold_statistics[label]['precision'], ".3f"),
-                           format(fold_statistics[label]['recall'], ".3f"),
-                           format(fold_statistics[label]['f1'], ".3f")]
-                          for label in labels + ['system']]
+            table_data = [
+                [label,
+                format(fold_statistics[label]['precision'], ".3f"),
+                format(fold_statistics[label]['recall'], ".3f"),
+                format(fold_statistics[label]['f1'], ".3f")
+                ] for label in labels + ['system']
+            ]
 
-            logging.info(tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'],
-                                  tablefmt='orgtbl'))
+            logging.info('\n' + tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'], tablefmt='orgtbl'))
 
-            evaluation_statistics[fold] = fold_statistics
+            eval_stats[fold] = fold_statistics
             fold += 1
 
         if skipped_files:
@@ -284,35 +263,26 @@ class SpacyModel:
         statistics_all_folds = {}
 
         for label in labels + ['system']:
-            statistics_all_folds[label] = {}
-            statistics_all_folds[label]['precision_average'] = mean(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['precision_max'] = max(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['precision_min'] = min(
-                [evaluation_statistics[fold][label]['precision'] for fold in evaluation_statistics])
+            statistics_all_folds[label] = {
+                'precision_average': mean(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'precision_max': max(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'precision_min': min(eval_stats[fold][label]['precision'] for fold in eval_stats),
+                'recall_average': mean(eval_stats[fold][label]['recall'] for fold in eval_stats),
+                'recall_max': max(eval_stats[fold][label]['recall'] for fold in eval_stats),
+                'f1_average': mean(eval_stats[fold][label]['f1'] for fold in eval_stats),
+                'f1_max': max(eval_stats[fold][label]['f1'] for fold in eval_stats),
+                'f1_min': min(eval_stats[fold][label]['f1'] for fold in eval_stats),
+            }
 
-            statistics_all_folds[label]['recall_average'] = mean(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['recall_max'] = max(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['recall_min'] = min(
-                [evaluation_statistics[fold][label]['recall'] for fold in evaluation_statistics])
-
-            statistics_all_folds[label]['f1_average'] = mean(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['f1_max'] = max(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
-            statistics_all_folds[label]['f1_min'] = min(
-                [evaluation_statistics[fold][label]['f1'] for fold in evaluation_statistics])
-
-        table_data = [[label,
-                       format(statistics_all_folds[label]['precision_average'], ".3f"),
-                       format(statistics_all_folds[label]['recall_average'], ".3f"),
-                       format(statistics_all_folds[label]['f1_average'], ".3f"),
-                       format(statistics_all_folds[label]['f1_min'], ".3f"),
-                       format(statistics_all_folds[label]['f1_max'], ".3f")]
-                      for label in labels + ['system']]
+        table_data = [
+            [label,
+            format(statistics_all_folds[label]['precision_average'], ".3f"),
+            format(statistics_all_folds[label]['recall_average'], ".3f"),
+            format(statistics_all_folds[label]['f1_average'], ".3f"),
+            format(statistics_all_folds[label]['f1_min'], ".3f"),
+            format(statistics_all_folds[label]['f1_max'], ".3f")
+            ] for label in labels + ['system']
+        ]
 
         table_string = '\n' + tabulate(
             table_data,
