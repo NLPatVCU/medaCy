@@ -12,7 +12,7 @@ from tabulate import tabulate
 from medacy.data.dataset import Dataset
 from medacy.ner.pipelines.base.base_pipeline import BasePipeline
 from medacy.ner.model.stratified_k_fold import SequenceStratifiedKFold
-from medacy.tools.annotations import Annotations
+from medacy.data.annotations import Annotations
 
 
 def predict_document(model, doc, medacy_pipeline):

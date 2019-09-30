@@ -9,7 +9,7 @@ import pkg_resources
 from medacy.data.dataset import Dataset
 from medacy.ner.model import Model
 from medacy.ner.pipelines.lstm_systematic_review_pipeline import LstmSystematicReviewPipeline
-from medacy.tools.annotations import Annotations
+from medacy.data.annotations import Annotations
 
 
 class TestBiLstmCrf(TestCase):

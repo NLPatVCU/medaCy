@@ -80,8 +80,8 @@ from collections import Counter
 import spacy
 from joblib import Parallel, delayed
 
-from medacy.tools.annotations import Annotations
-from medacy.tools.data_file import DataFile
+from medacy.data.annotations import Annotations
+from medacy.data.data_file import DataFile
 
 
 class Dataset:

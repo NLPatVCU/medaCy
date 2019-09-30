@@ -10,7 +10,7 @@ import pkg_resources
 
 from medacy.data.dataset import Dataset
 from medacy.ner.model.spacy_model import SpacyModel
-from medacy.tools.annotations import Annotations
+from medacy.data.annotations import Annotations
 
 
 class TestSpacyModel(TestCase):
