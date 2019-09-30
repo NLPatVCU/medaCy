@@ -29,8 +29,8 @@ def setup(args):
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
 
     else:
-        #Parse the argument as a class name in module medacy.ner.pipelines
-        module = importlib.import_module("medacy.ner.pipelines")
+        # Parse the argument as a class name in module medacy.pipelines
+        module = importlib.import_module("medacy.pipelines")
         pipeline_class = getattr(module, args.pipeline)
         logging.info('Using %s', args.pipeline)
 
@@ -42,6 +42,7 @@ def setup(args):
         model = Model(pipeline)
 
     return dataset, model
+
 
 def train(args, dataset, model):
     """
@@ -60,6 +61,7 @@ def train(args, dataset, model):
     else:
         model.fit(dataset, args.asynchronous)
         model.dump(args.filename)
+
 
 def predict(args, dataset, model):
     """
@@ -81,6 +83,7 @@ def predict(args, dataset, model):
         groundtruth_directory=args.groundtruth
     )
 
+
 def cross_validate(args, dataset, model):
     """
     Used for running k-fold cross validations.
@@ -96,6 +99,7 @@ def cross_validate(args, dataset, model):
         groundtruth_directory=args.groundtruth,
         asynchronous=args.asynchronous
     )
+
 
 def main():
     """
