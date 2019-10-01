@@ -39,9 +39,7 @@ class BiLstmCrfLearner:
             raise ValueError('BiLSTM-CRF requires word embeddings.')
 
         torch.manual_seed(1)
-        self.character_to_index = {
-            character:(index + 1) for index, character in enumerate(string.printable)
-        }
+        self.character_to_index = {character: index for index, character in enumerate(string.printable, 1)}
         self.word_embeddings_file = word_embeddings
 
         device_string = 'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
