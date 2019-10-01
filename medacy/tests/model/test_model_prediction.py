@@ -25,10 +25,10 @@ class TestModelTrainingAndPrediction(TestCase):
 
         cls.train_dataset, _,  meta_data = Dataset.load_external('medacy_dataset_end')
         cls.entities = meta_data['entities']
-        cls.train_dataset.set_data_limit(1)
+        cls.train_dataset.data_limit = 1
 
         cls.test_dataset, _, _ = Dataset.load_external('medacy_dataset_end')
-        cls.test_dataset.set_data_limit(2)
+        cls.test_dataset.data_limit = 2
 
         cls.prediction_directory = tempfile.mkdtemp() #directory to store predictions
 

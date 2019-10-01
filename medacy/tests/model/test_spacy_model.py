@@ -27,10 +27,10 @@ class TestSpacyModel(TestCase):
 
         cls.train_dataset, _, meta_data = Dataset.load_external('medacy_dataset_end')
         cls.entities = meta_data['entities']
-        cls.train_dataset.set_data_limit(1)
+        cls.train_dataset.data_limit = 1
 
         cls.test_dataset, _, _ = Dataset.load_external('medacy_dataset_end')
-        cls.test_dataset.set_data_limit(2)
+        cls.test_dataset.data_limit = 2
 
         cls.prediction_directory = tempfile.mkdtemp() #directory to store predictions
 
@@ -52,6 +52,5 @@ class TestSpacyModel(TestCase):
         second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
         annotations = Annotations(
             os.path.join(self.prediction_directory, second_ann_file),
-            annotation_type='ann'
         )
         self.assertIsInstance(annotations, Annotations)

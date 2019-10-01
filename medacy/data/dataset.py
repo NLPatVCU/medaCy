@@ -32,7 +32,7 @@ A common data work flow might look as follows.
 Running:
 ::
     >>> from medacy.data import Dataset
-    >>> from medacy.pipeline_components import MetaMap
+    >>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
     >>> dataset = Dataset('/home/medacy/data')
     >>> for data_file in dataset:
@@ -324,31 +324,6 @@ class Dataset:
                                 (file.file_name, file_size_in_bytes, potential_file_path))
 
         return True
-
-    def is_training(self):
-        """
-        Whether this Dataset can be used for training.
-
-        :return: True if training dataset, false otherwise. A training dataset is a collection raw text and corresponding annotation files while a prediction dataset contains solely raw text files.
-        """
-        return self.is_training_directory
-
-    def set_data_limit(self, data_limit):
-        """
-        A limit to the number of files in the Dataset that medaCy works with
-        This is useful for preliminary experimentation when working with an entire Dataset takes time.
-
-        :return:
-        """
-        self.data_limit = data_limit
-
-    def get_data_directory(self):
-        """
-        Retrieves the directory this Dataset abstracts from.
-
-        :return: the directory the Dataset object wraps.
-        """
-        return self.data_directory
 
     def __str__(self):
         return str(self.get_data_files())

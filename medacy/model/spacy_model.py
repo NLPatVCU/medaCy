@@ -48,16 +48,8 @@ class SpacyModel:
         :return nlp: A trained spaCy model (language)
         """
         train_data = dataset.get_training_data()
-
-        if labels is None:
-            labels = set()
-            for document in train_data:
-                for entity in document[1]:
-                    tag = entity[2]
-                    labels.add(tag)
-            labels = list(labels)
-            labels.sort()
-            logging.info('Labels: %s', labels)
+        labels = sorted(list(dataset.get_labels()))
+        logging.info('Labels: %s', labels)
 
         logging.info('Fitting new model...\n')
 
