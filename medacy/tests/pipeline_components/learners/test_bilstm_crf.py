@@ -43,9 +43,11 @@ class TestBiLstmCrf(TestCase):
         :return:
         """
 
+        from medacy.tests import sample_data
+
         pipeline = LstmSystematicReviewPipeline(
             entities=['tradename'],
-            word_embeddings='medacy/tests/sample_data/test_word_embeddings.txt',
+            word_embeddings='../../sample_data/test_word_embeddings.txt',
             cuda_device=-1
         )
 
@@ -57,5 +59,5 @@ class TestBiLstmCrf(TestCase):
         model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
 
         second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
-        annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file), annotation_type='ann')
+        annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file))
         self.assertIsInstance(annotations, Annotations)
