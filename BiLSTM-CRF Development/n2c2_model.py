@@ -17,13 +17,7 @@ model.cross_validate(training_dataset=n2c2_dataset, num_folds=2)
 
 # model.predict(testing, prediction_directory = "")
 # prediction_datasets = Dataset("path")
-# testing.compute_confustion_matrix(prediction_datasets)
-
-
-# for file in training:
-#     print(file.get_annotation_path)
-
-#pprint(training.compute_counts())
+# testing.compute_confusion_matrix(prediction_datasets)
 
 
 #word_embeddings='/Users/annaconte/NLPatVCU/Datasets/mimic3_d200.bin'
