@@ -4,10 +4,10 @@ from medacy.ner.pipelines import LstmSystematicReviewPipeline
 import logging, sys
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
-n2c2_dataset = Dataset(data_directory="/Users/annaconte/NLPatVCU/Datasets/N2C2_Data", data_limit=1)
+n2c2_dataset = Dataset(data_directory="/home/share/N2C2", data_limit=1)
 
 pipeline = LstmSystematicReviewPipeline(entities=['ADE', 'Dosage', 'Drug'],
-                                        word_embeddings='/Users/annaconte/NLPatVCU/medaCy/medacy/tests/ner/model/test_word_embeddings.txt')
+                                        word_embeddings='/home/conteam/mimic3_d200.bin')
 
 model = Model(pipeline)
 
@@ -20,7 +20,8 @@ model.cross_validate(training_dataset=n2c2_dataset, num_folds=2)
 # testing.compute_confusion_matrix(prediction_datasets)
 
 
-#word_embeddings='/Users/annaconte/NLPatVCU/Datasets/mimic3_d200.bin'
+#word_embeddings='/Users/annaconte/NLPatVCU/Datasets/cd ..
+
 
 
 
