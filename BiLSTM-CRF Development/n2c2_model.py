@@ -8,7 +8,6 @@ n2c2_dataset = Dataset(data_directory="/home/share/N2C2")
 
 pipeline = LstmSystematicReviewPipeline(entities=['ADE', 'Dosage', 'Drug'],
                                         word_embeddings='/home/conteam/mimic3_d200.bin')
-
 model = Model(pipeline)
 
 model.cross_validate(training_dataset=n2c2_dataset, num_folds=2)

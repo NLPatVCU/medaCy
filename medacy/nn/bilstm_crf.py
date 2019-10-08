@@ -115,7 +115,7 @@ class BiLstmCrf(nn.Module):
 
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
-        # token_vector = self.dropout(token_vector)
+        token_vector = self.dropout(token_vector)
 
         lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
