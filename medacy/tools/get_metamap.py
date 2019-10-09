@@ -1,8 +1,8 @@
 import json
 import os
 
-
-_config_path = "config.json"
+_this_dir = os.path.dirname(__file__)
+_config_path = os.path.join(_this_dir, "../../config.json")
 
 
 def _validate_path(path):
