@@ -2,11 +2,12 @@ import sklearn_crfsuite
 import spacy
 from spacy.tokenizer import Tokenizer
 
-from medacy.pipelines.base import BasePipeline
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
 from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
+from medacy.pipelines.base.base_pipeline import BasePipeline
+from medacy.tools.get_metamap import get_metamap
 
 
 class ScispacyPipeline(BasePipeline):
@@ -21,7 +22,7 @@ class ScispacyPipeline(BasePipeline):
     https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.0/en_core_sci_md-0.2.0.tar.gz
     """
 
-    def __init__(self, metamap=None, entities=[], cuda_device=-1):
+    def __init__(self, entities, cuda_device=-1):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -39,8 +40,9 @@ class ScispacyPipeline(BasePipeline):
         self.spacy_pipeline.tokenizer = Tokenizer(self.spacy_pipeline.vocab)
         self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
 
-        if metamap is not None and isinstance(metamap, MetaMap):
-            self.add_component(MetaMapComponent, metamap)
+        metamap_path = get_metamap()
+        metamap = MetaMap(metamap_path)
+        self.add_component(MetaMapComponent, metamap)
 
     def get_learner(self):
         return ("CRF_l2sgd",
