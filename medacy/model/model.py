@@ -409,7 +409,6 @@ class Model:
         :return: Updates queue with features for this given file.
         """
         nlp = self.pipeline.spacy_pipeline
-        feature_extractor = self.pipeline.get_feature_extractor()
         logging.info("Processing file: %s", data_file.file_name)
 
         with open(data_file.txt_path, 'r') as raw_text:
@@ -426,6 +425,7 @@ class Model:
         doc = self.pipeline(doc)
 
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
+        feature_extractor = self.pipeline.get_feature_extractor()
         features, labels = feature_extractor(doc, data_file.file_name)
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
