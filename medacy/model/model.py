@@ -52,8 +52,7 @@ class Model:
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, self.pipeline, dataset.is_metamapped())
-                    for data_file in dataset.get_data_files()]
+            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped()) for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -67,8 +66,8 @@ class Model:
             logging.info('Preprocessing data synchronously...')
             self.X_data = []
             self.y_data = []
-            for data_file in dataset.get_data_files():
-                features, labels = self._extract_features(data_file, self.pipeline, dataset.is_metamapped())
+            for data_file in dataset:
+                features, labels = self._extract_features(data_file, dataset.is_metamapped())
                 self.X_data += features
                 self.y_data += labels
 
@@ -401,16 +400,16 @@ class Model:
         
         return annotations
 
-    def _extract_features(self, data_file, medacy_pipeline, is_metamapped):
+    def _extract_features(self, data_file, is_metamapped):
         """
         A multi-processed method for extracting features from a given DataFile instance.
 
-        :param conn: pipe to pass back data to parent process
         :param data_file: an instance of DataFile
+        :param is_metamapped: if the Dataset is metamapped
         :return: Updates queue with features for this given file.
         """
-        nlp = medacy_pipeline.spacy_pipeline
-        feature_extractor = medacy_pipeline.get_feature_extractor()
+        nlp = self.pipeline.spacy_pipeline
+        feature_extractor = self.pipeline.get_feature_extractor()
         logging.info("Processing file: %s", data_file.file_name)
 
         with open(data_file.txt_path, 'r') as raw_text:
@@ -424,7 +423,7 @@ class Model:
             doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
         # run 'er through
-        doc = medacy_pipeline(doc)
+        doc = self.pipeline(doc)
 
         # The document has now been run through the pipeline. All annotations are overlayed - pull features.
         features, labels = feature_extractor(doc, data_file.file_name)
