@@ -60,14 +60,18 @@ After installing medaCy for development, make sure that `pytest` is installed. T
 
 Once you have made desired changes and ran unit tests, complete the following steps:
 
-1) Commit the changes to the local repository using the command:
- 
-    `git commit -a "message about change"`.
+1) Add the changed file to the local repository using the command: 
 
-2) Push changes to the remote repository using the command:
+    `git add <file_name>`.
+
+2) Commit the changes to the local repository using the command:
+ 
+    `git commit -m "message about change"`.
+
+3) Push changes to the remote repository using the command:
 
     `git push origin <created_branch_name>`.
 
-After pushing into the remote repository, make sure to submmit a new pull request.
+After pushing into the remote repository, make sure to submit a new pull request.
 
 
