@@ -11,6 +11,7 @@ This contribution guide is designed to inform:
 1. [Issues and Bug Reports](#issues-and-bug-reports)
 2. [Development Set-up](#development-environment-setup)
 3. [Running Unit Tests](#running-unit-tests)
+4. [Push Changes to Repository](#push-changes-to-repository)
 
 ## Issues And Bug Reports
 Please do a search before posting an issue/bug report - your problem may already be solved! If your search comes up for not - congratulations, you may have something to contribute!
@@ -54,5 +55,19 @@ After installing medaCy for development, make sure that `pytest` is installed. T
     `pytest -s tests/tools/test_data_manager.py -o log_cli=True --log-cli-level=INFO`.
 
     This will show log output during tests and allow you to adust logging level for the test file being run. Read the pytest documentation for details.
+
+## Push Changes to Repository
+
+Once you have made desired changes and ran unit tests, complete the following steps:
+
+1) Commit the changes to the local repository using the command:
+ 
+    `git commit -a "message about change"`.
+
+2) Push changes to the remote repository using the command:
+
+    `git push origin <created_branch_name>`.
+
+After pushing into the remote repository, make sure to submmit a new pull request.
 
 
