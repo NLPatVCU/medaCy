@@ -55,7 +55,7 @@ class BiLstmCrf(nn.Module):
         # Setup word embedding layer
         self.word_embeddings = nn.Embedding.from_pretrained(word_vectors)
 
-        # The LSTM takes word embeddings concatenated with character verctors as inputs and
+        # The LSTM takes word embeddings concatenated with character vectors as inputs and
         # outputs hidden states with dimensionality hidden_dim.
         lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2 + other_features
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
@@ -115,7 +115,8 @@ class BiLstmCrf(nn.Module):
 
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
-        token_vector = self.dropout(token_vector)
+        dropout = nn.Dropout(p = 0.5)
+        token_vector = dropout(token_vector)
 
         lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
