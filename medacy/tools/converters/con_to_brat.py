@@ -12,15 +12,16 @@ and pasted into a copy of this program.
 :author: Steele W. Farnsworth
 """
 
-from sys import argv, exit
-from re import split, findall, fullmatch
-from medacy.tools.converters.conversion_tools.line import Line
-import re
-import os
-import shutil
 import logging
+import os
+import re
+import shutil
+from re import split, findall, fullmatch
+from sys import argv
+
 import tabulate
 
+from medacy.tools.converters.conversion_tools.line import Line
 
 # Regex patterns
 whitespace_pattern = "( +|\t+)+"
@@ -39,6 +40,7 @@ def is_valid_con(item: str):
     :return: Boolean of whether or not the line matches a con regular expression.
     """
     return isinstance(item, str) and fullmatch(con_pattern, item)
+
 
 def line_to_dict(item):
     """
@@ -119,7 +121,7 @@ def get_absolute_index(txt_lns, ind, entity):
     index_within_line = num_whitespace + num_non_whitespace
     line_to_start_index = this_line.text[index_within_line:]
     entity_pattern_escaped = re.escape(entity)
-    entity_pattern_spaced = re.sub(r"\\\s+", r"\s+", entity_pattern_escaped)
+    entity_pattern_spaced = re.sub(r"\\\s+", "\\\s+", entity_pattern_escaped)
 
     try:
         # Search for entity regardless of case or composition of intermediate spaces
@@ -235,7 +237,7 @@ if __name__ == '__main__':
 
     # Create the log
     log_path = os.path.join(output_dir_name, "conversion.log")
-    logging.basicConfig(filename=log_path)
+    logging.basicConfig(filename=log_path, level=logging.INFO)
 
     # Get only the text files in input_dir
     text_files = [f for f in input_dir if f.endswith(".txt")]
