@@ -57,8 +57,9 @@ After installing medaCy for development, make sure that `pytest` is installed. T
     This will show log output during tests and allow you to adust logging level for the test file being run. Read the pytest documentation for details.
 
 ## Push Changes to Repository
+Make sure that you are in the development branch of medaCy and from there create a branch within development with the command: `git -b <new_branch_name>`.
 
-Once you have made desired changes and ran unit tests, complete the following steps:
+Once you have made desired changes, complete the following steps:
 
 1) Add the changed file to the local repository using the command: 
 
