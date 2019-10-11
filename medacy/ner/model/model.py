@@ -421,7 +421,10 @@ class Model:
         """
         model_name, model = self.pipeline.get_learner()
 
-        if model_name == 'BiLSTM+CRF':
+        if model_name in 'BiLSTM+CRF':
+            model.load(path)
+            self.model = model
+        elif model_name == 'BERT':
             model.load(path)
             self.model = model
         else:

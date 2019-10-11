@@ -2,8 +2,10 @@
 from .annotation.gold_annotator_component import GoldAnnotatorComponent
 
 from .feature_extraction.discrete_feature_extractor import FeatureExtractor
+from .feature_extraction.text_extractor import TextExtractor
 
 from .learners.bilstm_crf_learner import BiLstmCrfLearner
+from .learners.bert_learner import BertLearner
 
 from .lexicon import LexiconComponent
 
