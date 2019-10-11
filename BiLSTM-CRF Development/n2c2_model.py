@@ -10,13 +10,4 @@ pipeline = LstmSystematicReviewPipeline(entities=['ADE', 'Dosage', 'Drug'],
                                         word_embeddings='/home/conteam/mimic3_d200.bin')
 model = Model(pipeline)
 
-model.cross_validate(training_dataset=n2c2_dataset, num_folds=2)
-
-# If evaluation data is available, validate as follows:
-
-# model.predict(testing, prediction_directory = "")
-# prediction_datasets = Dataset("path")
-# testing.compute_confusion_matrix(prediction_datasets)
-
-
-#word_embeddings='/Users/annaconte/NLPatVCU/Datasets/cd ..
+model.cross_validate(training_dataset=n2c2_dataset)
