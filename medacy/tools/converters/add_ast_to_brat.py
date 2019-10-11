@@ -10,16 +10,15 @@ T1     problem  55 70     prostate cancer
 A1     present T1
 """
 
-import os
 import argparse
-import re
 import logging
+import os
+import re
 
-from medacy.tools.converters.con_to_brat import get_absolute_index, line_to_dict
 from medacy.tools.converters.brat_to_con import switch_extension
-from medacy.tools.entity import Entity
+from medacy.tools.converters.con_to_brat import get_absolute_index, line_to_dict
 from medacy.tools.converters.conversion_tools.line import Line
-
+from medacy.tools.entity import Entity
 
 assertion_pattern = r'c="([^"]*)" \d+:\d+ \d+:\d+\|\|t="([^"]*)"\|\|a="([^"]*)"'
 
@@ -30,30 +29,39 @@ def is_valid_assert(sample):
 
 
 def add_ast_to_brat(ast_file_path, ann_file_path, txt_file_path):
+    """
+    Adds the assertion annotations to a given ann file
+    :param ast_file_path: The assertion file to get the assertion annotations from
+    :param ann_file_path: The ann file to add the assertion annotations to
+    :param txt_file_path: The text file that the previous two are annotating
+    :return: None
+    """
 
-    print(ast_file_path, ann_file_path, txt_file_path)
     with open(txt_file_path) as f:
         text = f.read()
     text_lines = Line.init_lines(text)
 
     with open(ast_file_path) as f:
         ast_text = f.read()
-        if ast_text == "":
-            logging.info(f"There were no assertions in file {ast_file_path}, no conversion was performed")
-            return
-        assertions = f.read().split('\n')
 
+    if ast_text == "":
+        logging.info(f"There were no assertions in file {ast_file_path}, no conversion was performed")
+        return
+
+    assertions = ast_text.split('\n')
     entities = Entity.init_from_doc(ann_file_path)
 
     a = 1  # used to keep track of the assertion number
     add_to_ann = ""
 
     for line in assertions:
+
         if not is_valid_assert(line):
+            logging.warning(f"Invalid line of ast text in file {ast_file_path} was skipped: {line}")
             continue
-            # TODO logging
 
         # Get the part of the assertion annotation that is an entity (up to the '||a')
+        print(line)
         a_part_index = line.index('||a')
         assertion_text = line[a_part_index + 5:-1]
         entity_part = line[:a_part_index]
@@ -93,6 +101,7 @@ def add_ast_to_brat(ast_file_path, ann_file_path, txt_file_path):
         # End for
 
     with open(ann_file_path, 'a') as f:
+        print("WRITING", add_to_ann)
         f.write(add_to_ann)
 
 
@@ -107,14 +116,7 @@ def main():
 
     file_tuples = []
 
-    txt_files = os.listdir(args.txt_file_dir)
-    txt_files_abs = [os.path.join(args.txt_file_dir, p) for p in txt_files]
-
     ast_files = os.listdir(args.ast_file_dir)
-    ast_files_abs = [os.path.join(args.ast_file_dir, p) for p in ast_files]
-
-    ann_files = os.listdir(args.ann_file_dir)
-    ann_files_abs = [os.path.join(args.ann_file_dir, p) for p in ann_files]
 
     for file_name in ast_files:
         txt_file_name = switch_extension(file_name, ".txt")
