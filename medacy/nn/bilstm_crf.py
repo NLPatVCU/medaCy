@@ -60,6 +60,7 @@ class BiLstmCrf(nn.Module):
         lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2 + other_features
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
+
         # The linear layer that maps from hidden state space to tag space
         self.hidden2tag = nn.Linear(HIDDEN_DIM*2, self.tagset_size)
 
@@ -115,8 +116,6 @@ class BiLstmCrf(nn.Module):
 
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
-        dropout = nn.Dropout(p = 0.5)
-        token_vector = dropout(token_vector)
 
         lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
