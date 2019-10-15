@@ -1,8 +1,9 @@
-import pkg_resources
 import shutil
 import tempfile
 from os.path import join
-from unittest import TestCase, skip
+from unittest import TestCase
+
+import pkg_resources
 
 from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
@@ -14,7 +15,7 @@ class TestAnnotation(TestCase):
     def setUpClass(cls):
         """Loads END dataset and writes files to temp directory"""
         cls.test_dir = tempfile.mkdtemp()  # set up temp directory
-        cls.good_dataset, _, _ = Dataset.load_external('medacy_dataset_end')
+        cls.good_dataset, _ = Dataset.load_external('medacy_dataset_end')
         cls.entities = list(cls.good_dataset.get_labels())
 
         with open(join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:

@@ -423,7 +423,7 @@ class Dataset:
         Alternatively, you can import the package directly and call it's .load() method.
 
         :param package_name: the package name of the dataset
-        :return: A tuple containing a training set, evaluation set, and meta_data
+        :return: A tuple containing a training set, evaluation set
         """
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)

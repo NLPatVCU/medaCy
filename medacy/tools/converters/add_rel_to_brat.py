@@ -2,21 +2,21 @@
 Adds relation annotations in the .rel format to pre-existing brat (.ann) files. Requires two command-line arguments:
 1) The directory containing the .ann and .txt files
 2) The directory containing the .rel files
-
-:author: Steele W. Farnsworth
-:date: 31 May, 2019
 """
 
+import logging
 import os
 import re
 from sys import argv
-import logging
-from medacy.tools.converters.conversion_tools.line import Line
-from medacy.tools.converters.con_to_brat import get_absolute_index, switch_extension
+
 from medacy.tools.converters.brat_to_con import line_to_dict
+from medacy.tools.converters.con_to_brat import get_absolute_index, switch_extension
+from medacy.tools.converters.conversion_tools.line import Line
+
 
 class Entity:
     """Represents an entity from an ann file."""
+
     def __init__(self, t: int, ent_type: str, start: int, end: int, text: str):
         self.ent_type = ent_type
         self.start = start
@@ -25,7 +25,7 @@ class Entity:
         self.t = t
 
     def __eq__(self, other):
-        return True if self.start == other.start and self.end == other.end and self.text == other.text else False
+        return self.start == other.start and self.end == other.end and self.text == other.text
 
     def __str__(self):
         return f"T{self.t}\t{self.ent_type} {self.start} {self.end}\t{self.text}\n"
@@ -33,10 +33,10 @@ class Entity:
 
 rel_pattern = r'c="([^"]*)" \d+:\d+ \d+:\d+\|\|r="([^"]*)"\|\|c="([^"]*)" \d+:\d+ \d+:\d+'
 
+
 def is_valid_rel(sample: str):
-    if not isinstance(sample, str): return False
-    if re.fullmatch(rel_pattern, sample, re.DOTALL): return True
-    else: return False
+    return isinstance(sample, str) and re.fullmatch(rel_pattern, sample, re.DOTALL)
+
 
 def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2="null"):
     """
@@ -110,11 +110,18 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
         r_item = re.findall(r'r="([^"]*)"', line)[0]
 
         start_ind_1 = get_absolute_index(text_lines, all_spans[0], c1)
+        end_ind_1 = start_ind_1 + len(c1)
         start_ind_2 = get_absolute_index(text_lines, all_spans[2], c2)
+        end_ind_2 = start_ind_2 + len(c2)
+
+        # Get the text of c1 and c2 directly from the document,
+        # in case (for example) the capitalization doesn't match in the txt document
+        c1 = text[start_ind_1:end_ind_1]
+        c2 = text[start_ind_2:end_ind_2]
 
         # Create new Entity objects for the incoming data, which don't come with T numbers or entity types
-        new_ent_1 = Entity(0, null_ent_1, start_ind_1, start_ind_1 + len(c1), c1)
-        new_ent_2 = Entity(0, null_ent_2, start_ind_2, start_ind_2 + len(c2), c2)
+        new_ent_1 = Entity(0, null_ent_1, start_ind_1, end_ind_1, c1)
+        new_ent_2 = Entity(0, null_ent_2, start_ind_2, end_ind_2, c2)
 
         # These are booleans for if we're dealing with new data. We're going to check to see if these entities
         # already appear in our data.
@@ -151,6 +158,7 @@ def add_rel_to_brat(ann_path, rel_path, txt_path, null_ent_1="null", null_ent_2=
     with open(ann_path, "a") as f:
         f.write(output_text)
 
+
 def main(cmd_arg: list):
     """The function called when run from the command line; ensures that all the txt and rel files associated
     with each incoming ann files exist and then loops through them."""
@@ -176,7 +184,7 @@ def main(cmd_arg: list):
         if not os.path.isfile(full_rel_path):
             raise FileNotFoundError("Ann file %s did not have an associated rel file." % ann)
 
-        new_tuple = (full_ann_path, full_rel_path, full_ann_path)
+        new_tuple = (full_ann_path, full_rel_path, full_txt_path)
         all_file_tuples.append(new_tuple)
 
     # Create the log
@@ -188,4 +196,5 @@ def main(cmd_arg: list):
 
 
 if __name__ == "__main__":
+    # TODO transition to using argparse
     main(argv)

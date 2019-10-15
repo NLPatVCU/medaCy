@@ -5,6 +5,7 @@ import unicodedata
 from gensim.models import KeyedVectors
 import torch
 
+
 class Vectorizer:
     def __init__(self, device):
         self.device = device
@@ -13,13 +14,12 @@ class Vectorizer:
         self.other_features = {}
 
         self.character_to_index = {
-            character:(index + 1) for index, character in enumerate(string.printable)
+            character: index for index, character in enumerate(string.printable, 1)
         }
 
     def load_word_embeddings(self, embeddings_file):
-        """Uses self.word_embeddings_file and gensim to load word embeddings into memory.
-        """
-        is_binary = True if embeddings_file[-4:] == '.bin' else False
+        """Uses self.word_embeddings_file and gensim to load word embeddings into memory."""
+        is_binary = embeddings_file.endswith('.bin')
         word_vectors = KeyedVectors.load_word2vec_format(embeddings_file, binary=is_binary)
         self.word_vectors = word_vectors
 
@@ -59,7 +59,7 @@ class Vectorizer:
 
         # Find other feature names
         for key in example:
-            if key[:2] == '0:' and key != '0:text':
+            if key.startswith('0:') and key != '0:text':
                 feature = key[2:]
                 self.other_features[feature] = {}
 
