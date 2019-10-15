@@ -88,7 +88,7 @@ class TestDatasetExternal(TestCase):
 
     def test_file_count(self):
         """Tests the expected file count for our testing dataset"""
-        self.assertEqual(len(self.dataset), 41)
+        self.assertEqual(38, len(self.dataset))
 
     def test_is_metamapped(self):
         """Verifies that the dataset is metamapped"""
