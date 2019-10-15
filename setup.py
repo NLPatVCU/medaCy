@@ -68,7 +68,11 @@ setup(
         'gensim==3.8.0',
         'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm-2.1.0'
     ],
-    tests_require=["pytest", "pytest-cov", "medacy_dataset_end==1.0.3"],
+    tests_require=[
+        "pytest",
+        "pytest-cov",
+        "medacy_dataset_end==3.0.0"
+    ],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False
