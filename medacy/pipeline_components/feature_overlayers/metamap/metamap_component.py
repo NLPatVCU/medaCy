@@ -87,7 +87,7 @@ class MetaMapComponent(BaseComponent):
             entity_annotations = metamap.mapped_terms_to_spacy_ann(entity_tags, semantic_type_label)
 
             with doc.retokenize() as retokenizer:
-                for start, end, label in [entity_annotations['entities'][key] for key in entity_annotations['entities'].keys()]:
+                for start, end, label in entity_annotations:
                     span = doc.char_span(start, end, label=nlp.vocab.strings[entity_name])
 
                     #TODO spans are none when indices and token boundaries don't line up.
