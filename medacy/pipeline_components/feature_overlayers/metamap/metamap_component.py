@@ -11,16 +11,16 @@ class MetaMapComponent(BaseComponent):
     """
     A pipeline component for SpaCy that overlays Metamap output as token attributes
     """
+    
     name = "metamap_annotator"
     dependencies = []
 
-
-    def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels = ['orch', 'phsu'], merge_tokens=False):
+    def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels=['orch', 'phsu'], merge_tokens=False):
         """
         Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
         :param spacy_pipeline: an instance of a spacy language pipeline.
         :param metamap: an instance of MetaMap.
-        :param cuis: Overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis.
+        :param cuis: Whether or not to overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis.
         :param semantic_type_labels: Semantic type labels to check for- generates a feature for each semantic type label.
         """
         super().__init__(self.name, self.dependencies)
@@ -30,8 +30,6 @@ class MetaMapComponent(BaseComponent):
         self.cuis = cuis
         self.semantic_type_labels = semantic_type_labels
         self.merge_tokens = merge_tokens
-
-
 
     def __call__(self, doc):
         """
@@ -50,22 +48,21 @@ class MetaMapComponent(BaseComponent):
         nlp = self.nlp
         semantic_type_labels = self.semantic_type_labels
 
-        #register all extensions
+        # register all extensions
         if self.cuis:
             Token.set_extension('feature_cui', default="-1", force=True) #cui feature
-        for semantic_type_label in semantic_type_labels: #is_semantic type features
+        for semantic_type_label in semantic_type_labels:  # is_semantic type features
             Token.set_extension('feature_is_' + semantic_type_label, default=False, force=True)
 
-
-        #check if pre-metamapped file has been assigned to the document
+        # check if pre-metamapped file has been assigned to the document
         if hasattr(doc._, 'metamapped_file'):
             metamap_dict = metamap.load(doc._.metamapped_file)
         else:
             if hasattr(doc._, 'file_name'):
                 logging.debug("%s: Could not find metamap file for document." % doc._.file_name)
-            metamap_dict = metamap.map_text(doc.text) #TODO metamap.map_text is broken currently
+            metamap_dict = metamap.map_text(doc.text)  # TODO metamap.map_text is broken currently
 
-        if not hasattr(doc._, 'file_name'): #TODO REMOVE when implemnting live model prediction
+        if not hasattr(doc._, 'file_name'):  # TODO REMOVE when implemnting live model prediction
             return doc
 
         # TODO refactor second part of if statement when implementing live model prediction
@@ -108,15 +105,7 @@ class MetaMapComponent(BaseComponent):
                         else:
                             logging.debug("Metamap span could not be overlayed due to tokenization mis-match: (%i, %i)" % (start, end))
 
-        #adds labels for displaying NER output with displacy.
-
-        # for span in spans:
-        #     try:
-        #         doc.ents = list(doc.ents) + [span]
-        #     except ValueError as error:
-        #         logging.warning(str(error)) #This gets called when the same token may match multiple semantic types
-
-        #Overlays CUI of each term
+        # Overlays CUI of each term
         if Token.has_extension('feature_cui'):
             with doc.retokenize() as retokenizer:
                 for term in mapped_terms:
@@ -131,12 +120,4 @@ class MetaMapComponent(BaseComponent):
                                 retokenizer.merge(span)
                             except BaseException:
                                 continue
-
-
-
-
         return doc
-
-
-
-

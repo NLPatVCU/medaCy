@@ -1,7 +1,6 @@
 """
 A utility class to Metamap medical text documents.
 Metamap a file  and utilize it the output or manipulate stored metamap output
-
 """
 import json
 import os
@@ -17,16 +16,14 @@ from medacy.tools.unicode_to_ascii import UNICODE_TO_ASCII
 class MetaMap:
     """A python wrapper for metamap that includes built in caching of metamap output."""
 
-    def __init__(self, metamap_path=None, cache_output=False, cache_directory=None, convert_ascii=True, args=""):
+    def __init__(self, metamap_path, cache_output=False, cache_directory=None, convert_ascii=True, args=""):
         """
+        :param metamap_path: The location of the metamap executable.
+                            (ex. /home/share/programs/metamap/2016/public_mm/bin/metamap)
         :param cache_output: Whether to cache output as it run through metamap, will by default store in a
                              temp directory tmp/medacy*/
         :param cache_directory: alternatively, specify a directory to cache metamapped files to
-        :param metamap_path: The location of the metamap executable.
-                            (ex. /home/share/programs/metamap/2016/public_mm/bin/metamap)
         """
-        if metamap_path is None:
-            raise ValueError("metamap_path is not set. Insure Metamap is running and a path to the metamap executable is being given (ex. metamap/2016/public_mm/bin/metamap)")
 
         if cache_output:
             if cache_directory is None: #set cache directory to tmp directory, creating if not exists
@@ -169,9 +166,7 @@ class MetaMap:
             if isinstance(term, list):
                 all_terms = all_terms + term
 
-
         return all_terms
-
 
     def mapped_terms_to_spacy_ann(self, mapped_terms, entity_label=None):
         """
@@ -204,9 +199,9 @@ class MetaMap:
         """
 
         if exclude is not None:
-            intersection = set(include).intersection(exclude)
+            intersection = set(include) & exclude
             if intersection:
-                raise Exception("Include and exclude overlap with the following semantic types: "+", ".join(intersection))
+                raise Exception("Include and exclude overlap with the following semantic types: " + ", ".join(intersection))
         matches = []
 
         for term in mapped_terms:
@@ -270,7 +265,6 @@ class MetaMap:
 
         return self.extract_mapped_terms(metamap_dict)
 
-
     def _convert_to_ascii(self, text):
         """Takes in a text string and converts it to ASCII,
         keeping track of each character change
@@ -313,7 +307,6 @@ class MetaMap:
                     })
                     offset += len(ascii) - len(char)
         return text, diff
-
 
     def _restore_from_ascii(self, text, diff, metamap_dict):
         """Takes in non-ascii text and the list of changes made to it from the `convert()` function,
