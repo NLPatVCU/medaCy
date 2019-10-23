@@ -4,7 +4,7 @@ from medacy.ner.pipelines import LstmSystematicReviewPipeline
 import logging, sys
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
-n2c2_dataset = Dataset(data_directory="/Users/annaconte/NLPatVCU/Datasets/N2C2_Data", data_limit= 1)
+n2c2_dataset = Dataset(data_directory="/Users/annaconte/NLPatVCU/Datasets/N2C2_Data", data_limit=1)
 
 pipeline = LstmSystematicReviewPipeline(entities=['ADE', 'Dosage', 'Drug'],
                                         word_embeddings='/Users/annaconte/NLPatVCU/medaCy/medacy/tests/ner/model/test_word_embeddings.txt')
