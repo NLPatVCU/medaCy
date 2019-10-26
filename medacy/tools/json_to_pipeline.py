@@ -1,5 +1,6 @@
 import json
 
+import spacy
 import sklearn_crfsuite
 
 from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
@@ -59,7 +60,7 @@ def json_to_pipeline(json_path):
         def __init__(self):
             super().__init__(
                 "custom pipeline",
-                spacy_pipeline=input_json['spacy_pipeline']
+                spacy_pipeline=spacy.load(input_json['spacy_pipeline'])
             )
 
             self.entities = input_json['entities']
@@ -79,7 +80,7 @@ def json_to_pipeline(json_path):
             selection = input_json['tokenizer']
 
             if selection == 'clinical':
-                return ClinicalTokenizer(self.spacy_pipeline)
+                return ClinicalTokenizer(self.spacy_pipeline).tokenizer
             elif selection == 'systematic_review':
                 return SystematicReviewTokenizer(self.spacy_pipeline).tokenizer
             elif selection == 'character':
