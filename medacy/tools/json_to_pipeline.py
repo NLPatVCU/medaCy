@@ -2,19 +2,18 @@ import json
 
 import sklearn_crfsuite
 
-from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
 from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
+from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
 from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
-
 required_keys = [
     'learner',
-    'tokenizer',
     'entities',
     'spacy_pipeline',
     'spacy_features',
@@ -32,14 +31,14 @@ def json_to_pipeline(json_path):
         if 'learner' is 'BiLSTM', two additional keys are required:
             'cuda_device': the GPU to use (or -1 for the CPU)
             'word_embeddings': path to the word embeddings file
-    'tokenizer': 'clinical' or 'systematic_review'
     'entities': a list of strings
     'spacy_pipeline': the spaCy model to use
     'spacy_features': a list of features that exist as spaCy token annotations
     'window_size': the number of words +/- the target word whose features should be used along with the target word
 
-    The following key is optional:
+    The following keys are optional:
     'metamap': the path to the MetaMap binary; MetaMap will only be used if this key is present
+    'tokenizer': 'clinical', 'systematic_review', or 'character'; defaults to the spaCy model's tokenizer
 
     :param json_path: the path to the json file
     :return: a custom pipeline class
@@ -74,14 +73,19 @@ def json_to_pipeline(json_path):
                 self.add_component(MetaMapComponent, metamap)
 
         def get_tokenizer(self):
-            tokenizers = {
-                'clinical': ClinicalTokenizer,
-                'systematic_review': SystematicReviewTokenizer
-            }
+            if 'tokenizer' not in input_json.keys():
+                return self.spacy_pipeline.tokenizer
 
-            SelectedTokenizer = tokenizers[input_json['tokenizer']]
+            selection = input_json['tokenizer']
 
-            return SelectedTokenizer(self.spacy_pipeline).tokenizer
+            if selection == 'clinical':
+                return ClinicalTokenizer(self.spacy_pipeline)
+            elif selection == 'systematic_review':
+                return SystematicReviewTokenizer(self.spacy_pipeline).tokenizer
+            elif selection == 'character':
+                return CharacterTokenizer(self.spacy_pipeline).tokenizer
+            else:
+                raise ValueError(f"Tokenizer selection '{selection}' not an option, see json_to_pipeline documentation")
 
         def get_learner(self):
             learner_selection = input_json['learner']
