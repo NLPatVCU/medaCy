@@ -45,13 +45,17 @@ class Annotations:
                 text = line[-1]
                 self.annotations.append((entity_name, entity_start, entity_end, text))
 
-    def get_labels(self):
+    def get_labels(self, as_list=False):
         """
         Get the set of labels from this collection of annotations.
-        :return: The list of labels.
+        :param as_list: bool for if to return the results as a list; defaults to False
+        :return: The set of labels.
         """
         labels = set(e[0] for e in self.annotations)
-        return list(labels)
+
+        if as_list:
+            return list(labels)
+        return labels
 
     def get_entity_annotations(self, format='medacy', nlp=None):
         """

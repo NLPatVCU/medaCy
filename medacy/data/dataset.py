@@ -429,9 +429,10 @@ class Dataset:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
 
-    def get_labels(self):
+    def get_labels(self, as_list=False):
         """
         Get all of the entities/labels used in the dataset.
+        :param as_list: bool for if to return the results as a list; defaults to False
         :return: A set of strings. Each string is a label used.
         """
         labels = set()
@@ -439,6 +440,8 @@ class Dataset:
         for ann in self.generate_annotations():
             labels.update(ann.get_labels())
 
+        if as_list:
+            return list(labels)
         return labels
 
     def generate_annotations(self):
