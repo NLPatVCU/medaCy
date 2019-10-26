@@ -2,8 +2,8 @@ import json
 
 import sklearn_crfsuite
 
-from medacy.pipeline_components.metamap.metamap import MetaMap
-from medacy.pipeline_components.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
 from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
