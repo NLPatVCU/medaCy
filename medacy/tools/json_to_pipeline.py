@@ -30,7 +30,7 @@ def json_to_pipeline(json_path):
 
     'learner': 'CRF' or 'BiLSTM'
         if 'learner' is 'BiLSTM', two additional keys are required:
-            'cuda_device': the GPU to use
+            'cuda_device': the GPU to use (or -1 for the CPU)
             'word_embeddings': path to the word embeddings file
     'tokenizer': 'clinical' or 'systematic_review'
     'entities': a list of strings
@@ -48,9 +48,13 @@ def json_to_pipeline(json_path):
     with open(json_path, 'rb') as f:
         input_json = json.load(f)
 
+    missing_keys = []
     for key in required_keys:
         if key not in input_json.keys():
-            raise ValueError(f"Required key '{key}' was not found in the json file.")
+            missing_keys.append(key)
+
+    if missing_keys:
+        raise ValueError(f"Required key(s) '{missing_keys}' was/were not found in the json file.")
 
     class CustomPipeline(BasePipeline):
         def __init__(self):
@@ -84,18 +88,18 @@ def json_to_pipeline(json_path):
 
             if learner_selection == 'CRF':
                 return ("CRF_l2sgd",
-                    sklearn_crfsuite.CRF(
-                        algorithm='l2sgd',
-                        c2=0.1,
-                        max_iterations=100,
-                        all_possible_transitions=True
-                    )
-                )
+                        sklearn_crfsuite.CRF(
+                            algorithm='l2sgd',
+                            c2=0.1,
+                            max_iterations=100,
+                            all_possible_transitions=True
+                            )
+                        )
             if learner_selection == 'BiLSTM':
                 for k in ['word_embeddings', 'cuda_device']:
                     if k not in input_json.keys():
                         raise ValueError(f"'{k}' must be specified when the learner is BiLSTM")
-                return'BiLSTM+CRF', BiLstmCrfLearner(input_json['word_embeddings'], input_json['cuda_device'])
+                return 'BiLSTM+CRF', BiLstmCrfLearner(input_json['word_embeddings'], input_json['cuda_device'])
             else:
                 raise ValueError(f"'learner' must be 'CRF' or 'BiLSTM")
 

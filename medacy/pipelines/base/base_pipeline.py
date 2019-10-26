@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
-import spacy
-from medacy.pipeline_components.base.base_component import BaseComponent
+
 
 class BasePipeline(ABC):
     """
@@ -13,7 +12,7 @@ class BasePipeline(ABC):
         :param pipeline_name: The name of the pipeline
         :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
         :param description: a description of the pipeline
-        :param creator: the creator of the pipeline
+        :param creators: the creators of the pipeline
         :param organization: the organization the pipeline creator belongs to
         """
         self.pipeline_name = pipeline_name
@@ -23,39 +22,26 @@ class BasePipeline(ABC):
         self.organization = organization
         self.cuda_device = cuda_device
 
-        if cuda_device >= 0:
-            spacy.require_gpu()
+        # The following code was causing GPU errors because you cannot specify which GPU spaCy will use;
+        # You may uncomment this code if you know you have access to the GPU that spaCy will use.
+
+        # if cuda_device >= 0:
+        #     spacy.require_gpu()
 
     @abstractmethod
     def get_tokenizer(self):
-        """
-        Returns an instance of a tokenizer
-        :return:
-        """
+        """Returns an instance of a tokenizer"""
         pass
 
     @abstractmethod
     def get_learner(self):
-        """
-        Retrieves an instance of a sci-kit learn compatible learning algorithm.
-        :return: model
-        """
+        """Retrieves an instance of a sci-kit learn compatible learning algorithm."""
         pass
 
     @abstractmethod
     def get_feature_extractor(self):
-        """
-        Returns an instant of FeatureExtractor with all configs set.
-        :return: An instant of FeatureExtractor
-        """
+        """Returns an instant of FeatureExtractor with all configs set."""
         pass
-
-    def get_language_pipeline(self):
-        """
-        Retrieves the associated spaCy Language pipeline that the medaCy pipeline wraps.
-        :return: spacy_pipeline
-        """
-        return self.spacy_pipeline
 
     def add_component(self, component, *argv, **kwargs):
         """
@@ -81,8 +67,8 @@ class BasePipeline(ABC):
         Retrieves a listing of all components currently in the pipeline.
         :return: a list of components inside the pipeline.
         """
-        return [component_name for component_name, _ in self.spacy_pipeline.pipeline
-                           if component_name != 'ner']
+        return [component_name for component_name, _ in self.spacy_pipeline.pipeline if component_name != 'ner']
+
     def __call__(self, doc, predict=False):
         """
         Passes a single document through the pipeline.

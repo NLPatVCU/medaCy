@@ -23,11 +23,11 @@ class TestBiLstmCrf(TestCase):
         if importlib.util.find_spec('medacy_dataset_end') is None:
             raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
 
-        cls.train_dataset, _,  meta_data = Dataset.load_external('medacy_dataset_end')
-        cls.entities = meta_data['entities']
+        cls.train_dataset, _ = Dataset.load_external('medacy_dataset_end')
+        cls.entities = list(cls.train_dataset.get_labels())
         cls.train_dataset.data_limit = 1
 
-        cls.test_dataset, _, _ = Dataset.load_external('medacy_dataset_end')
+        cls.test_dataset, _ = Dataset.load_external('medacy_dataset_end')
         cls.test_dataset.data_limit = 2
 
         cls.prediction_directory = tempfile.mkdtemp()  # directory to store predictions
