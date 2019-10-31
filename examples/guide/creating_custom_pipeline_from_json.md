@@ -46,3 +46,9 @@ The entities in a given dataset can be printed to the command line with this com
 
 where `data` is the path to the data directory containing `.txt` and `.ann` files. The output of this command can be 
 copied directly into the JSON file.
+
+## Usage
+The following command will run five-fold cross validation using a custom JSON pipeline:
+```bash
+(medacy_venv) $ python -m medacy -d /path/to/your/dataset -cpl /path/to/your/pipeline.json validate
+```
