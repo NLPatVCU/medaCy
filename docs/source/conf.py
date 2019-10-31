@@ -24,7 +24,7 @@ copyright = '2019, Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Steel
 author = 'Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Steele Farnsworth, Bridget McInnes'
 
 # The short X.Y version
-version = '0.1.1'
+version = '0.2.0'
 # The full version, including alpha/beta/rc tags
 release = '0.6'
 
