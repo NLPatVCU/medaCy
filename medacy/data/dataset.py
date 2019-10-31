@@ -231,6 +231,12 @@ class Dataset:
         failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
         More information can be found in the MetaMap documentation.
 
+        Example usage:
+        >>> metamap = MetaMap("/path/to/metamap")
+        >>> data = Dataset("/path/to/data")
+        >>> with metamap:
+        ...     data.metamap(metamap)
+
         :param metamap: an instance of MetaMap.
         :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
         :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
@@ -297,7 +303,7 @@ class Dataset:
                 except BaseException as e:
                     metamap_dict = None
                     max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                    logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+                    logging.warning(f"Error Metamapping: {file_path} after raising {type(e).__name__}: {str(e)}")
 
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)
