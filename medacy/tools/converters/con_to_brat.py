@@ -10,22 +10,22 @@ This program can be used for conversion independently from medaCy if the Line cl
 and pasted into a copy of this program.
 
 :author: Steele W. Farnsworth
-:date: 13 March, 2019
 """
 
-from sys import argv, exit
-from re import split, findall, fullmatch
-from medacy.tools.converters.conversion_tools.line import Line
-import re
-import os
-import shutil
 import logging
+import os
+import re
+import shutil
+from re import split, findall, fullmatch
+from sys import argv
+
 import tabulate
 
+from medacy.tools.converters.conversion_tools.line import Line
 
 # Regex patterns
 whitespace_pattern = "( +|\t+)+"
-con_pattern = "c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
+con_pattern = r"c=\".+?\" \d+:\d+ \d+:\d+\|\|t=\".+?\"(|\n)"
 
 # Used for stats at the end
 num_lines = 0
@@ -39,9 +39,7 @@ def is_valid_con(item: str):
     :param item: A string that is a line of text, hopefully in the con format.
     :return: Boolean of whether or not the line matches a con regular expression.
     """
-    if not isinstance(item, str): return False
-    if fullmatch(con_pattern, item): return True
-    else: return False
+    return isinstance(item, str) and fullmatch(con_pattern, item)
 
 
 def line_to_dict(item):
@@ -61,6 +59,30 @@ def line_to_dict(item):
 def switch_extension(name, ext):
     """Takes the name of a file (str) and changes the extension to the one provided (str)"""
     return os.path.splitext(name)[0] + ext
+
+
+def check_same_text(ent_text, start_ind, end_ind, doc_text):
+    """
+    Checks that the entity text in the BRAT annotations matches the text of the document at
+    the indices calculated in this program; for example, if the casing is different in the
+    txt document than in the ann file, this function would return the casing used in the txt
+    document.
+
+    :param ent_text: the text of the annotation in the CON annotation
+    :param start_ind: the character index where the annotation starts
+    :param end_ind: the character index where the annotaiton ends
+    :param doc_text: the text of the txt document
+    :return: the text between the indices in the document
+    """
+
+    # Get the text between the annotations in the document,
+    # even if it's different from the provided text
+    text_in_doc = doc_text[start_ind:end_ind]
+
+    if ent_text == text_in_doc:
+        return True
+
+    return text_in_doc
 
 
 def get_absolute_index(txt_lns, ind, entity):
@@ -99,7 +121,7 @@ def get_absolute_index(txt_lns, ind, entity):
     index_within_line = num_whitespace + num_non_whitespace
     line_to_start_index = this_line.text[index_within_line:]
     entity_pattern_escaped = re.escape(entity)
-    entity_pattern_spaced = re.sub(r"\\\s+", r"\s+", entity_pattern_escaped)
+    entity_pattern_spaced = re.sub(r"\\\s+", "\\\s+", entity_pattern_escaped)
 
     try:
         # Search for entity regardless of case or composition of intermediate spaces
@@ -174,6 +196,13 @@ def convert_con_to_brat(con_file_path, text_file_path=None):
             continue  # skips data that could not be converted
         span_length = len(d["data_item"])
         end_ind = start_ind + span_length
+
+        # Check that the text of the annotation matches what's between its spans in the text document
+        is_match = check_same_text(d['data_item'], start_ind, end_ind, text)
+        if isinstance(is_match, str):
+            logging.info(f"Annotation in file '{con_file_path}' did not match text between spans: '{d['data_item']}' != '{is_match}'")
+            d['data_item'] = is_match
+
         output_line = "T%s\t%s %s %s\t%s\n" % (str(t), d["data_type"], str(start_ind), str(end_ind), d["data_item"])
         output_text += output_line
         t += 1
@@ -208,7 +237,7 @@ if __name__ == '__main__':
 
     # Create the log
     log_path = os.path.join(output_dir_name, "conversion.log")
-    logging.basicConfig(filename=log_path)
+    logging.basicConfig(filename=log_path, level=logging.INFO)
 
     # Get only the text files in input_dir
     text_files = [f for f in input_dir if f.endswith(".txt")]

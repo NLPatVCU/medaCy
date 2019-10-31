@@ -1,9 +1,12 @@
-
-from spacy.tokens import Token
 from spacy.matcher import Matcher
 from spacy.tokens import Span
-from ..base import BaseComponent
-from ...pipeline_components import MassUnitComponent, TimeUnitComponent, VolumeUnitComponent
+from spacy.tokens import Token
+
+from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.units.mass_unit_component import MassUnitComponent
+from medacy.pipeline_components.units.time_unit_component import TimeUnitComponent
+from medacy.pipeline_components.units.volume_unit_component import VolumeUnitComponent
+
 
 class MeasurementUnitComponent(BaseComponent):
     """
