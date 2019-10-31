@@ -43,11 +43,11 @@ class TestBiLstmCrf(TestCase):
         :return:
         """
 
-        from medacy.tests import sample_data
+        cwd = os.path.dirname(os.path.abspath(__file__))
 
         pipeline = LstmSystematicReviewPipeline(
             entities=['tradename'],
-            word_embeddings='../../sample_data/test_word_embeddings.txt',
+            word_embeddings=cwd+'/../../sample_data/test_word_embeddings.txt',
             cuda_device=-1
         )
 
