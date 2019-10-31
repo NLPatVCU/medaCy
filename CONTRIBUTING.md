@@ -57,7 +57,7 @@ After installing medaCy for development, make sure that `pytest` is installed. T
     This will show log output during tests and allow you to adust logging level for the test file being run. Read the pytest documentation for details.
 
 ## Push Changes to Repository
-You are able to both create and checkout a new branch using a single command: `git checkout -b <new_branch_name>`.
+You are able to both create and checkout a new branch using the single command: `git checkout -b <new_branch_name>`.
 
 Once you have made desired changes, complete the following steps:
 
