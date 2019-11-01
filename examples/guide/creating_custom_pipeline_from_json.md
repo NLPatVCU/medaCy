@@ -29,7 +29,7 @@ with the target word; set to `0` to only consider the target word
 * `"learner"`: `"CRF"` or `"BiLSTM"`
 
 When the learner is BiLSTM, two additional keys are required:
-* `"cuda_device"`: the number of the GPU core to use
+* `"cuda_device"`: the number of the GPU core to use, or `-1` to use the CPU
 * `"word_embeddings"`: the path to the word embeddings to use with the BiLSTM
 
 These keys are optional, and have default behavior if the key is not present:
