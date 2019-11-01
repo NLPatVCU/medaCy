@@ -55,7 +55,7 @@ model = Model(pipeline, n_jobs=1)
 # Write information about model before training
 with open(model_directory+"/model_information.txt", 'w') as model_info:
     model_info.write("Entities: [%s]\n" % ", ".join(entities))
-    model_info.write("Training Files: %i\n" % len(train_dataset.get_data_files()) )
+    model_info.write("Training Files: %i\n" % len(train_dataset.get_data_files()))
     model_info.write(model_notes+"\n")
     model_info.write(str(model))
 
