@@ -90,20 +90,23 @@ class FeatureExtractor:
             'bias': 1.0
         }
 
-        for i in range(-self.window_size, self.window_size+1):  # loop through our window
-            if 0 <= index + i < len(sentence):  # for each index in the window size
-                token = sentence[index+i]
+        for i in range(-self.window_size, self.window_size+1):
+            # loop through our window, ignoring tokens that aren't there
+            if not 0 <= index + i < len(sentence):
+                continue
 
-                # adds features from medacy pipeline
-                current = {'%i:%s' % (i, feature): token._.get(feature) for feature in self.all_custom_features}
+            token = sentence[index+i]
 
-                # adds features that are overlayed from spacy token attributes
-                for feature in self.spacy_features:
-                    if isinstance(getattr(token, feature), Token):
-                        current['%i:%s' % (i, feature)] = getattr(token, feature).text
-                    else:
-                        current['%i:%s' % (i, feature)] = getattr(token, feature)
+            # adds features from medacy pipeline
+            current = {'%i:%s' % (i, feature): token._.get(feature) for feature in self.all_custom_features}
 
-                features.update(current)
+            # adds features that are overlayed from spacy token attributes
+            for feature in self.spacy_features:
+                if isinstance(getattr(token, feature), Token):
+                    current['%i:%s' % (i, feature)] = getattr(token, feature).text
+                else:
+                    current['%i:%s' % (i, feature)] = getattr(token, feature)
+
+            features.update(current)
 
         return features
