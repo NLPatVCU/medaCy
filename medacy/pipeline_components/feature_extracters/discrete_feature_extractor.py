@@ -6,24 +6,15 @@ from spacy.tokens.underscore import Underscore
 
 class FeatureExtractor:
     """
-    Extracting training data for use in a CRF.
-    Features are extracted as discrete dictionaries as described in
-    `sklearn-crfsuite <https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html#features>`_.
+    This class allows for full control of both spaCy features that exist on tokens
+    and custom medaCy overlayed features. The current implementation is designed solely for use with sequence
+    classifiers such as discriminative conditional random fields.
 
-
-    These extracted features CANNOT be used in sequence to sequence models expecting continuous inputs (e.g. word vectors).
-
-    `sklearn-crfsuite <https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html#features>`_ is a wrapper for a C CRF implementation that gives it a sci-kit compatability.
+    Custom medaCy features are pulled from spaCy custom token attributes that begin with 'feature_'.
     """
 
     def __init__(self, window_size=2, spacy_features=None):
         """
-        Initializes a FeatureExtractor. This class allows for full control of both spaCy features that exist on tokens
-        and custom medaCy overlayed features. The current implementation is designed solely for use with sequence
-        classifiers such as discriminative conditional random fields.
-
-        Custom medaCy features are pulled from spaCy custom token attributes that begin with 'feature_'.
-
         :param window_size: window size to pull features from on a given token, default 2 on both sides.
         :param spacy_features: Default token attributes that spaCy sets to utilize as features
         """
