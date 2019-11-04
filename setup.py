@@ -55,7 +55,7 @@ setup(
         'spacy==2.1.4',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
-        'numpy==1.16.1',
+        'numpy>=1.16.1',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
