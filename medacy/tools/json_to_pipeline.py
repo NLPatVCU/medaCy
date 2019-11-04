@@ -78,15 +78,17 @@ def json_to_pipeline(json_path):
                 return self.spacy_pipeline.tokenizer
 
             selection = input_json['tokenizer']
+            options = {
+                'clinical': ClinicalTokenizer,
+                'systematic_review': SystematicReviewTokenizer,
+                'character': CharacterTokenizer
+            }
 
-            if selection == 'clinical':
-                return ClinicalTokenizer(self.spacy_pipeline).tokenizer
-            elif selection == 'systematic_review':
-                return SystematicReviewTokenizer(self.spacy_pipeline).tokenizer
-            elif selection == 'character':
-                return CharacterTokenizer(self.spacy_pipeline).tokenizer
-            else:
-                raise ValueError(f"Tokenizer selection '{selection}' not an option, see json_to_pipeline documentation")
+            if selection not in options:
+                raise ValueError(f"Tokenizer selection '{selection}' not an option")
+
+            Tokenizer = options[selection]
+            return Tokenizer(self.spacy_pipeline).tokenizer
 
         def get_learner(self):
             learner_selection = input_json['learner']

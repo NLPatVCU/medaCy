@@ -2,6 +2,7 @@
 A utility class to Metamap medical text documents.
 Metamap a file  and utilize it the output or manipulate stored metamap output
 """
+
 import json
 import os
 import subprocess
@@ -14,12 +15,12 @@ from medacy.tools.unicode_to_ascii import UNICODE_TO_ASCII
 
 
 class MetaMap:
-    """A python wrapper for metamap that includes built in caching of metamap output."""
+    """A python wrapper for MetaMap that includes built in caching of MetaMap output."""
 
     def __init__(self, metamap_path, cache_output=False, cache_directory=None, convert_ascii=True, args=""):
         """
-        :param metamap_path: The location of the metamap executable.
-                            (ex. /home/share/programs/metamap/2016/public_mm/bin/metamap)
+        :param metamap_path: The location of the MetaMap executable.
+                            (ex. /home/programs/metamap/2016/public_mm/bin/metamap)
         :param cache_output: Whether to cache output as it run through metamap, will by default store in a
                              temp directory tmp/medacy*/
         :param cache_directory: alternatively, specify a directory to cache metamapped files to
@@ -40,6 +41,19 @@ class MetaMap:
         self.metamap_path = metamap_path
         self.convert_ascii = convert_ascii
         self.args = args
+
+    def __enter__(self):
+        """Activates MetaMap for metamapping files"""
+        bin_dir = os.path.dirname(self.metamap_path)
+        program_name = os.path.join(bin_dir, "skrmedpostctl")
+        subprocess.call([program_name, 'start'])
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Turns MetaMap off"""
+        bin_dir = os.path.dirname(self.metamap_path)
+        program_name = os.path.join(bin_dir, "skrmedpostctl")
+        subprocess.call([program_name, 'stop'])
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
@@ -71,7 +85,6 @@ class MetaMap:
         if self.cache_directory is not None:
             with open(cached_file_path, 'w') as mapped_file:
                 try:
-                    #print("Writing to", os.path.join(self.cache_directory, file_name))
                     mapped_file.write(json.dumps(metamap_dict))
                 except Exception as e:
                     mapped_file.write(str(e))
@@ -84,7 +97,8 @@ class MetaMap:
         self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, text)
         return self.metamap_dict
 
-    def load(self, file_to_load):
+    @staticmethod
+    def load(file_to_load):
         with open(file_to_load, 'rb') as f:
             return json.load(f)
 
@@ -97,7 +111,7 @@ class MetaMap:
         :param n_job: number of cores to utilize at once while mapping - this may use a large amount of memory
         :return:
         """
-        raise NotImplementedError() #TODO implement utilizing code for parallel process mapper from n2c2
+        raise NotImplementedError()  # TODO implement utilizing code for parallel process mapper from n2c2
 
     def _run_metamap(self, args, document):
         """
@@ -137,7 +151,6 @@ class MetaMap:
                 if k == lookup_key:
                     yield v
                 else:
-
                     yield from self._item_generator(v, lookup_key)
         elif isinstance(json_input, list):
             for item in json_input:
@@ -181,7 +194,6 @@ class MetaMap:
 
         for term in mapped_terms:
             for span in self.get_span_by_term(term):  # if a single entity corresonds to a disjunct span
-
                 entity_start, entity_end = span
                 if entity_label is None:
                     annotations.append((entity_start, entity_end, self.get_semantic_types_by_term(term)[0]))
@@ -225,7 +237,7 @@ class MetaMap:
 
         return matches
 
-    def get_span_by_term(self,term):
+    def get_span_by_term(self, term):
         """
         Takes a given utterance dictionary (term) and extracts out the character indices of the utterance
 
@@ -343,29 +355,29 @@ class MetaMap:
                 metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance'] = [metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']]
 
             for utterance in metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']:
-                if int(utterance['Phrases']['@Count']) == 0: # Ensure this level contains something
+                if int(utterance['Phrases']['@Count']) == 0:  # Ensure this level contains something
                     continue
-                if type(utterance['Phrases']['Phrase']) is not list: # Make sure this entry is a list
+                if type(utterance['Phrases']['Phrase']) is not list:  # Make sure this entry is a list
                     utterance['Phrases']['Phrase'] = [utterance['Phrases']['Phrase']]
 
                 for phrase in utterance['Phrases']['Phrase']:
-                    if int(phrase['Mappings']['@Count']) == 0: # Ensure this level contains something
+                    if int(phrase['Mappings']['@Count']) == 0:  # Ensure this level contains something
                         continue
-                    if type(phrase['Mappings']['Mapping']) is not list: # Make sure this entry is a list
+                    if type(phrase['Mappings']['Mapping']) is not list:  # Make sure this entry is a list
                         phrase['Mappings']['Mapping'] = [phrase['Mappings']['Mapping']]
 
                     for mapping in phrase['Mappings']['Mapping']:
-                        if int(mapping['MappingCandidates']['@Total']) == 0: # Ensure this level contains something
+                        if int(mapping['MappingCandidates']['@Total']) == 0:  # Ensure this level contains something
                             continue
-                        if type(mapping['MappingCandidates']['Candidate']) is not list: # Make sure this entry is a list
+                        if type(mapping['MappingCandidates']['Candidate']) is not list:  # Make sure this entry is a list
                             mapping['MappingCandidates']['Candidate'] = [mapping['MappingCandidates']['Candidate']]
 
                         # HERE'S THE IMPORTANT PART -----------------------------------------
                         # Just accept it as iterating through every entry in the metamap_dict
                         for candidate in mapping['MappingCandidates']['Candidate']:
-                            if int(candidate['ConceptPIs']['@Count']) == 0: # Ensure this level contains something
+                            if int(candidate['ConceptPIs']['@Count']) == 0:  # Ensure this level contains something
                                 continue
-                            if type(candidate['ConceptPIs']['ConceptPI']) is not list: # Make sure this entry is a list
+                            if type(candidate['ConceptPIs']['ConceptPI']) is not list:  # Make sure this entry is a list
                                 candidate['ConceptPIs']['ConceptPI'] = [candidate['ConceptPIs']['ConceptPI']]
 
                             candidate['MatchedWords']['MatchedWord'] = []
@@ -374,23 +386,23 @@ class MetaMap:
                                 match_length = int(conceptpi['Length'])
                                 match_end = match_start + match_length-1
 
-                                if match_start == conv_start and match_end == conv_end: # If match is equal to conversion (a [conversion] and some text)
+                                if match_start == conv_start and match_end == conv_end:  # If match is equal to conversion (a [conversion] and some text)
                                     # print("Perfect match")
                                     match_length += delta
-                                elif match_start < conv_start and match_end < conv_end: # If match intersects conversion on left ([a con]version and some text)
+                                elif match_start < conv_start and match_end < conv_end:  # If match intersects conversion on left ([a con]version and some text)
                                     # print("Left intersect")
                                     match_length += delta + conv_start
-                                elif conv_start < match_start and conv_end < match_end: # If match intersects conversion on right (a conver[sion and som]e text)
+                                elif conv_start < match_start and conv_end < match_end:  # If match intersects conversion on right (a conver[sion and som]e text)
                                     # print("Right intersect ")
                                     if conv_end + delta < match_start:
                                         match_start = conv_end + delta + 1
                                         match_length = match_end - conv_end
                                     else:
                                         match_length += delta
-                                elif conv_end < match_start: # If match is totally to the right of the conversion (a conversion and a [match])
+                                elif conv_end < match_start:  # If match is totally to the right of the conversion (a conversion and a [match])
                                     # print("Full right")
                                     match_start += delta
-                                else: # If match is totally to right of conversion, no action needed (a [match] and a conversion)
+                                else:  # If match is totally to right of conversion, no action needed (a [match] and a conversion)
                                     # print("Full left")
                                     pass
 
