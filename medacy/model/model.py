@@ -461,7 +461,7 @@ class Model:
 
         model_name, _ = self.pipeline.get_learner()
 
-        if model_name == 'BiLSTM+CRF':
+        if model_name == 'BiLSTM+CRF' or model_name == 'BERT':
             self.model.save(path)
         else:
             joblib.dump(self.model, path)

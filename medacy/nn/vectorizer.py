@@ -12,6 +12,7 @@ class Vectorizer:
         self.word_vectors = None
         self.untrained_tokens = set()
         self.other_features = {}
+        self.window_size = 0
 
         self.character_to_index = {
             character: index for index, character in enumerate(string.printable, 1)
@@ -117,7 +118,7 @@ class Vectorizer:
         :return: List of tags.
         """
         to_tag = {y:x for x, y in self.tag_to_index.items()}
-        tags = [to_tag[index] for index in tag_indices[0]]
+        tags = [to_tag[index] for index in tag_indices]
         return tags
 
     def find_window_indices(self, token):

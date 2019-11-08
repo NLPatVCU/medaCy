@@ -126,7 +126,7 @@ class BiLstmCrfLearner:
                 vectorized_tokens = self.vectorizer.vectorize_tokens(sequence)
                 emissions = self.model(vectorized_tokens).unsqueeze(1)
                 tag_indices = self.model.crf.decode(emissions)
-                predictions.append(self.vectorizer.devectorize_tag(tag_indices))
+                predictions.append(self.vectorizer.devectorize_tag(tag_indices[0]))
 
         return predictions
 

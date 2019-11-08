@@ -1,11 +1,11 @@
 import spacy, sklearn_crfsuite
-from .base import BasePipeline
+from medacy.pipelines.base.base_pipeline import BasePipeline
 from spacy.tokenizer import Tokenizer
 from medacy.pipeline_components import BertLearner
-from medacy.pipeline_components import ClinicalTokenizer, SystematicReviewTokenizer
-from medacy.pipeline_components import TextExtractor
-from medacy.pipeline_components import GoldAnnotatorComponent
 
+from medacy.pipeline_components.feature_extracters.text_extractor import TextExtractor
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 
 class BertPipeline(BasePipeline):
     """
