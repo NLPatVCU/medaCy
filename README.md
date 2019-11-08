@@ -34,7 +34,7 @@ Medacy can be installed for general use or for pipeline development / research p
 After installing medaCy and [medaCy's clinical model](examples/models/clinical_notes_model.md), simply run:
 
 ```python
-from medacy.ner.model import Model
+from medacy.model import Model
 
 model = Model.load_external('medacy_model_clinical_notes')
 annotation = model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")

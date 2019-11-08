@@ -31,26 +31,21 @@ A common data work flow might look as follows.
 
 Running:
 ::
-    from medacy.data import Dataset
-    from medacy.pipeline_components import MetaMap
+    >>> from medacy.data import Dataset
+    >>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
-    dataset = Dataset('/home/medacy/data')
-    for data_file in dataset:
-        print((data_file.file_name, data_file.raw_path, dataset.ann_path))
-    print(dataset)
-    print(dataset.is_metamapped())
-
-    metamap = Metamap('/home/path/to/metamap/binary') #not necessary
-    dataset.metamap(metamap) #not necessary
-    print(dataset.is_metamapped())
-
-
-Outputs:
-::
+    >>> dataset = Dataset('/home/medacy/data')
+    >>> for data_file in dataset:
+    ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
     (file_one, file_one.txt, file_one.ann)
     (file_two, file_two.txt, file_two.ann)
+    >>> dataset
     ['file_one.txt', 'file_two.txt']
+    >>>> dataset.is_metamapped()
     False
+    >>> metamap = Metamap('/home/path/to/metamap/binary') #not necessary
+    >>> dataset.metamap(metamap) #not necessary
+    >>> dataset.is_metamapped()
     True
 
 Prediction
@@ -74,10 +69,20 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-import os, logging, multiprocessing, math, json, importlib
-from joblib import Parallel, delayed
+import importlib
+import json
+import logging
+import math
+import multiprocessing
+import os
+from collections import Counter
+
 import spacy
-from medacy.tools import DataFile, Annotations
+from joblib import Parallel, delayed
+
+from medacy.data.annotations import Annotations
+from medacy.data.data_file import DataFile
+
 
 class Dataset:
     """
@@ -116,8 +121,7 @@ class Dataset:
         # start by filtering all raw_text files, both training and prediction directories will have these
         raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
 
-
-        if not raw_text_files: #detected a prediction directory
+        if not raw_text_files:  # detected a prediction directory
             ann_files = sorted([file for file in all_files_in_directory if file.endswith(annotation_file_extension)])
             self.is_training_directory = False
 
@@ -131,9 +135,7 @@ class Dataset:
                 file_name = file[:-len(annotation_file_extension) - 1]
                 self.all_data_files.append(DataFile(file_name, None, annotation_path))
 
-
-        else: #detected a training directory (raw text files exist)
-
+        else:  # detected a training directory (raw text files exist)
             if data_limit is not None:
                 self.data_limit = data_limit
             else:
@@ -144,12 +146,10 @@ class Dataset:
                     "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
 
             # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension) for file
-                         in
-                         raw_text_files]
+            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
+                         for file in raw_text_files]
             # only a training directory if every text file has a corresponding ann_file
             self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
-
 
             # set all file attributes except metamap_path as it is optional.
             for file in raw_text_files:
@@ -157,8 +157,10 @@ class Dataset:
                 raw_text_path = os.path.join(data_directory, file)
 
                 if self.is_training_directory:
-                    annotation_path = os.path.join(data_directory, file.replace(".%s" % raw_text_file_extension,
-                                                                         ".%s" % annotation_file_extension))
+                    annotation_path = os.path.join(
+                        data_directory,
+                        file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
+                    )
                 else:
                     annotation_path = None
                 self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
@@ -166,10 +168,10 @@ class Dataset:
             #If directory is already metamapped, use it.
             if self.is_metamapped():
                 for data_file in self.all_data_files:
-                    data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                             data_file.raw_path.split(os.path.sep)[-1]
-                                                             .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
-
+                    data_file.metamapped_path = os.path.join(
+                        self.metamapped_files_directory,
+                        data_file.txt_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped")
+                    )
 
     def get_data_files(self):
         """
@@ -180,7 +182,10 @@ class Dataset:
         return self.all_data_files[0:self.data_limit]
 
     def __iter__(self):
-        return self.get_data_files().__iter__()
+        return iter(self.get_data_files())
+
+    def __len__(self):
+        return len(self.get_data_files())
 
     def get_training_data(self, data_format='spacy'):
         """
@@ -192,16 +197,13 @@ class Dataset:
         supported_formats = ['spacy']
 
         if data_format not in supported_formats:
-            raise TypeError("Format %s not supported" % format)
+            raise TypeError("Format %s not supported" % data_format)
 
         training_data = []
         nlp = spacy.load('en_core_web_sm')
 
-        for data_file in self.all_data_files:
-            txt_path = data_file.get_text_path()
-            ann_path = data_file.get_annotation_path()
-            annotations = Annotations(ann_path, source_text_path=txt_path)
-            training_data.append(annotations.get_entity_annotations(format=data_format, nlp=nlp))
+        for ann in self.generate_annotations():
+            training_data.append(ann.get_entity_annotations(format=data_format, nlp=nlp))
 
         return training_data
 
@@ -210,7 +212,6 @@ class Dataset:
         Get a subdataset of data files based on indices.
 
         :param indices: List of ints that represent the indexes of the data files to split off.
-
         :return: Dataset object with only the specified data files.
         """
         subdataset = Dataset(self.data_directory)
@@ -240,20 +241,20 @@ class Dataset:
         if self.is_metamapped():
             return True
 
-        #make metamap directory if it doesn't exist.
+        # make metamap directory if it doesn't exist.
         if not os.path.isdir(self.metamapped_files_directory):
             os.makedirs(self.metamapped_files_directory)
 
-        #A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
+        # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
         if retry_possible_corruptions:
-            #Do not metamap files that are already metamapped and above 200 bytes in size
+            # Do not metamap files that are already metamapped and above 200 bytes in size
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)
                                   if os.path.getsize(os.path.join(self.metamapped_files_directory, file)) > 200]
         else:
-            #Do not metamap files that are already metamapped
+            # Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
 
-        files_to_metamap = [data_file.raw_path for data_file in self.all_data_files if not data_file.file_name in already_metamapped]
+        files_to_metamap = [data_file.txt_path for data_file in self.all_data_files if data_file.file_name not in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
@@ -262,7 +263,7 @@ class Dataset:
         if self.is_metamapped():
             for data_file in self.all_data_files:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                         data_file.raw_path.split(os.path.sep)[-1]
+                                                         data_file.txt_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
 
@@ -324,58 +325,21 @@ class Dataset:
 
         return True
 
-    def is_training(self):
-        """
-        Whether this Dataset can be used for training.
-
-        :return: True if training dataset, false otherwise. A training dataset is a collection raw text and corresponding annotation files while a prediction dataset contains solely raw text files.
-        """
-        return self.is_training_directory
-
-    def set_data_limit(self, data_limit):
-        """
-        A limit to the number of files in the Dataset that medaCy works with
-        This is useful for preliminary experimentation when working with an entire Dataset takes time.
-
-        :return:
-        """
-        self.data_limit = data_limit
-
-    def get_data_directory(self):
-        """
-        Retrieves the directory this Dataset abstracts from.
-
-        :return: the directory the Dataset object wraps.
-        """
-        return self.data_directory
-
     def __str__(self):
-        """
-        Converts self.get_data_files() to a list of strs and combines them into one str
-        """
-        return "[%s]" % ", ".join([str(x) for x in self.get_data_files()])
-
+        return str(self.get_data_files())
 
     def compute_counts(self):
         """
-        Computes entity and relation counts over all documents in this dataset.
+        Computes entity counts over all documents in this dataset.
 
-        :return: a dictionary of entity and relation counts.
+        :return: a Counter of entity counts
         """
-        dataset_counts = {
-            'entities': {},
-            'relations':{}
-        }
+        total = Counter()
 
-        for data_file in self:
-            annotation = Annotations(data_file.ann_path)
-            annotation_counts = annotation.compute_counts()
-            dataset_counts['entities'] = {x: dataset_counts['entities'].get(x, 0) + annotation_counts['entities'].get(x, 0)
-                                          for x in set(dataset_counts['entities']).union(annotation_counts['entities'])}
-            dataset_counts['relations'] = {x: dataset_counts['relations'].get(x, 0) + annotation_counts['relations'].get(x, 0)
-                                          for x in set(dataset_counts['relations']).union(annotation_counts['relations'])}
+        for ann in self.generate_annotations():
+            total += ann.compute_counts()
 
-        return dataset_counts
+        return total
 
     def compute_confusion_matrix(self, dataset, leniency=0):
         """
@@ -390,13 +354,13 @@ class Dataset:
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
-        #verify files are consistent
-        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
+        # verify files are consistent
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
 
         #sort entities in ascending order by count.
-        entities = [key for key, _ in sorted(self.compute_counts()['entities'].items(), key=lambda x: x[1])]
+        entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
         for gold_data_file in self:
@@ -430,7 +394,7 @@ class Dataset:
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set([file.ann_path.split(os.sep)[-1] for file in self]).difference(set([file.ann_path.split(os.sep)[-1] for file in dataset]))
+        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
         if diff:
             raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
 
@@ -459,20 +423,28 @@ class Dataset:
         Alternatively, you can import the package directly and call it's .load() method.
 
         :param package_name: the package name of the dataset
-        :return: A tuple containing a training set, evaluation set, and meta_data
+        :return: A tuple containing a training set, evaluation set
         """
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
 
+    def get_labels(self, as_list=False):
+        """
+        Get all of the entities/labels used in the dataset.
+        :param as_list: bool for if to return the results as a list; defaults to False
+        :return: A set of strings. Each string is a label used.
+        """
+        labels = set()
 
+        for ann in self.generate_annotations():
+            labels.update(ann.get_labels())
 
+        if as_list:
+            return list(labels)
+        return labels
 
-
-
-
-
-
-
-
-
+    def generate_annotations(self):
+        """Generates Annotation objects for all the files in this Dataset"""
+        for file in self.get_data_files():
+            yield Annotations(file.ann_path, source_text_path=file.txt_path)

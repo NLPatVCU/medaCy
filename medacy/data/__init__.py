@@ -1,1 +1,1 @@
-from .dataset import Dataset
+from medacy.data.dataset import Dataset

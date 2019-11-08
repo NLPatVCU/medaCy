@@ -2,14 +2,16 @@
 MedaCy CLI Setup
 """
 import argparse
-import logging
-from datetime import datetime
-import time
 import importlib
+import logging
+import time
+from datetime import datetime
 
-from medacy.data import Dataset
-from medacy.ner import Model
-from medacy.ner import SpacyModel
+from medacy.data.dataset import Dataset
+from medacy.model.model import Model
+from medacy.model.spacy_model import SpacyModel
+from medacy.tools.json_to_pipeline import json_to_pipeline
+
 
 def setup(args):
     """
@@ -19,28 +21,35 @@ def setup(args):
     :return dataset, model: The dataset and model objects created.
     """
     dataset = Dataset(args.dataset)
+    entities = list(dataset.get_labels())
 
     pipeline = None
 
     if args.pipeline == 'spacy':
         logging.info('Using spacy model')
-
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
-
+    elif args.custom_pipeline is not None:
+        # Construct a pipeline class (not an instance) based on the provided json path;
+        # args.custom_pipeline is that path
+        Pipeline = json_to_pipeline(args.custom_pipeline)
+        # All parameters are part of the class, thus nothing needs to be set when instantiating
+        pipeline = Pipeline()
+        model = Model(pipeline)
     else:
-        #Parse the argument as a class name in module medacy.ner.pipelines
-        module = importlib.import_module("medacy.ner.pipelines")
-        pipeline_class = getattr(module, args.pipeline)
+        # Parse the argument as a class name in module medacy.pipelines
+        module = importlib.import_module("medacy.pipelines")
+        Pipeline = getattr(module, args.pipeline)
         logging.info('Using %s', args.pipeline)
 
         if args.word_embeddings is not None:
-            pipeline = pipeline_class(word_embeddings=args.word_embeddings, cuda_device=args.cuda)
+            pipeline = Pipeline(entities=entities, word_embeddings=args.word_embeddings, cuda_device=args.cuda)
         else:
-            pipeline = pipeline_class(cuda_device=args.cuda)
+            pipeline = Pipeline(entities=entities, cuda_device=args.cuda)
 
         model = Model(pipeline)
 
     return dataset, model
+
 
 def train(args, dataset, model):
     """
@@ -60,6 +69,7 @@ def train(args, dataset, model):
         model.fit(dataset, args.asynchronous)
         model.dump(args.filename)
 
+
 def predict(args, dataset, model):
     """
     Used for running predictions on new datasets.
@@ -68,9 +78,9 @@ def predict(args, dataset, model):
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
     """
-    if args.predictions == False:
+    if not args.predictions:
         args.predictions = None
-    if args.groundtruth == False:
+    if not args.groundtruth:
         args.groundtruth = None
 
     model.load(args.model_path)
@@ -80,13 +90,14 @@ def predict(args, dataset, model):
         groundtruth_directory=args.groundtruth
     )
 
+
 def cross_validate(args, dataset, model):
     """
     Used for running k-fold cross validations.
 
     :param args: Argparse args object.
     :param dataset: Dataset to use for training.
-    :param model: Untrained model objec to use.
+    :param model: Untrained model object to use.
     """
     model.cross_validate(
         num_folds=args.k_folds,
@@ -96,6 +107,7 @@ def cross_validate(args, dataset, model):
         asynchronous=args.asynchronous
     )
 
+
 def main():
     """
     Main function where initial argument parsing happens.
@@ -104,6 +116,7 @@ def main():
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
+    parser.add_argument('-cpl', '--custom_pipeline', default=None, help='Path to a json file of a custom pipeline')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
@@ -156,6 +169,7 @@ def main():
     hours_elapsed, minutes_elapsed = divmod(minutes_elapsed, 60)
 
     logging.info('H:M:S ELAPSED: %d:%d:%d', hours_elapsed, minutes_elapsed, seconds_elapsed)
+
 
 if __name__ == '__main__':
     main()

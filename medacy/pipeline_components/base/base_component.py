@@ -1,4 +1,5 @@
-from abc import ABC, abstractmethod
+from abc import ABC
+
 
 class BaseComponent(ABC):
     """
@@ -18,12 +19,8 @@ class BaseComponent(ABC):
 
         self.dependencies = dependencies
 
-
-
     def get_component_name(self):
         return self.component_name
-
-
 
     def get_component_dependencies(self):
         """
@@ -33,7 +30,7 @@ class BaseComponent(ABC):
         return self.dependencies
 
     def __repr__(self):
-        return self.__str__()
+        return str(self)
 
     def __str__(self):
         return self.get_component_name()
