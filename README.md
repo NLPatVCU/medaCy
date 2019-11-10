@@ -34,7 +34,7 @@ Medacy can be installed for general use or for pipeline development / research p
 After installing medaCy and [medaCy's clinical model](examples/models/clinical_notes_model.md), simply run:
 
 ```python
-from medacy.model import Model
+from medacy.model.model import Model
 
 model = Model.load_external('medacy_model_clinical_notes')
 annotation = model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
@@ -42,15 +42,12 @@ print(annotation)
 ```
 and receive instant predictions:
 ```python
-{
-    'entities': {
-        'T3': ('Drug', 40, 45, 'Advil'),
-        'T1': ('Dosage', 27, 28, '1'), 
-        'T2': ('Form', 29, 36, 'capsule'),
-        'T4': ('Duration', 46, 56, 'for 5 days')
-     },
-     'relations': []
-}
+[
+    ('Drug', 40, 45, 'Advil'),
+    ('Dosage', 27, 28, '1'), 
+    ('Form', 29, 36, 'capsule'),
+    ('Duration', 46, 56, 'for 5 days')
+]
 ```
 To explore medaCy's other models or train your own, visit the [examples section](examples).
 
@@ -70,10 +67,9 @@ License
 =======
 This package is licensed under the GNU General Public License.
 
-
 Authors
 =======
-Andriy Mulyar, Corey Sutphin, Bobby Best, Steele Farnsworth, and Bridget T McInnes
+Andriy Mulyar, Jorge Vargas, Corey Sutphin, Steele Farnsworth, Bobby Best, and Bridget T. McInnes
 
 Acknowledgments
 ===============

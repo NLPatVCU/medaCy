@@ -204,7 +204,7 @@ class Annotations:
         if not isinstance(entities, list):
             raise ValueError("entities must be a list of entities, but is %s" % repr(entities))
 
-        entity_encoding = {entity: int(i) for i, entity in enumerate(entities)}
+        entity_encoding = {entity: i for i, entity in enumerate(entities)}
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
         ambiguity_dict = self.compute_ambiguity(other)
@@ -226,8 +226,8 @@ class Annotations:
 
     def compute_counts(self):
         """
-        Computes counts of each entity type and relation type in this annotation.
-        :return: a dictionary containing counts
+        Computes counts of each entity type in this annotation.
+        :return: a Counter of the entity counts
         """
         return Counter(e[0] for e in self.annotations)
 

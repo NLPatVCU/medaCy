@@ -48,18 +48,14 @@ def json_to_pipeline(json_path):
     with open(json_path, 'rb') as f:
         input_json = json.load(f)
 
-    missing_keys = []
-    for key in required_keys:
-        if key not in input_json.keys():
-            missing_keys.append(key)
-
+    missing_keys = [key for key in required_keys if key not in input_json.keys()]
     if missing_keys:
         raise ValueError(f"Required key(s) '{missing_keys}' was/were not found in the json file.")
 
     class CustomPipeline(BasePipeline):
         def __init__(self):
             super().__init__(
-                "custom pipeline",
+                "custom_pipeline",
                 spacy_pipeline=spacy.load(input_json['spacy_pipeline'])
             )
 
@@ -78,15 +74,17 @@ def json_to_pipeline(json_path):
                 return self.spacy_pipeline.tokenizer
 
             selection = input_json['tokenizer']
+            options = {
+                'clinical': ClinicalTokenizer,
+                'systematic_review': SystematicReviewTokenizer,
+                'character': CharacterTokenizer
+            }
 
-            if selection == 'clinical':
-                return ClinicalTokenizer(self.spacy_pipeline).tokenizer
-            elif selection == 'systematic_review':
-                return SystematicReviewTokenizer(self.spacy_pipeline).tokenizer
-            elif selection == 'character':
-                return CharacterTokenizer(self.spacy_pipeline).tokenizer
-            else:
-                raise ValueError(f"Tokenizer selection '{selection}' not an option, see json_to_pipeline documentation")
+            if selection not in options:
+                raise ValueError(f"Tokenizer selection '{selection}' not an option")
+
+            Tokenizer = options[selection]
+            return Tokenizer(self.spacy_pipeline).tokenizer
 
         def get_learner(self):
             learner_selection = input_json['learner']
@@ -100,6 +98,7 @@ def json_to_pipeline(json_path):
                             all_possible_transitions=True
                             )
                         )
+
             if learner_selection == 'BiLSTM':
                 for k in ['word_embeddings', 'cuda_device']:
                     if k not in input_json.keys():
