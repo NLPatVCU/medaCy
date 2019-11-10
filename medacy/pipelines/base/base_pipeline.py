@@ -50,15 +50,11 @@ class BasePipeline(ABC):
         """
 
         current_components = [component_name for component_name, proc in self.spacy_pipeline.pipeline]
-        #print("Current Components:", current_components)
-        dependencies = [x for x in component.dependencies]
-        #print("Dependencies:",dependencies)
 
         assert component.name not in current_components, "%s is already in the pipeline." % component.name
 
-        for dependent in dependencies:
+        for dependent in component.dependencies:
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
-
 
         self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
 
