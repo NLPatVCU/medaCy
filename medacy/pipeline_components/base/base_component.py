@@ -1,14 +1,13 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class BaseComponent(ABC):
     """
-    A base medacy pipeline component that wraps over a spacy component
+    A base medacy pipeline component that wraps over a spaCy component
     """
 
-    def __init__(self, component_name="DEFAULT_COMPONENT_NAME", dependencies=[]):
+    def __init__(self, component_name, dependencies):
         """
-
         :param component_name: The name of the component
         :param dependencies: Other components that this component depends on
         """
@@ -19,18 +18,17 @@ class BaseComponent(ABC):
 
         self.dependencies = dependencies
 
-    def get_component_name(self):
-        return self.component_name
-
-    def get_component_dependencies(self):
+    @abstractmethod
+    def __call__(self, doc):
         """
-        Retrieves a list of dependencies this component has.
-        :return: a list of component dependencies
+        Overlays features onto a Doc object and/or the Token objects it contains
+        :param doc: a spaCy Doc object (not a string of the doc text)
+        :return: the Doc object that was passed to it (which was modified by this call)
         """
-        return self.dependencies
+        pass
 
     def __repr__(self):
         return str(self)
 
     def __str__(self):
-        return self.get_component_name()
+        return self.component_name
