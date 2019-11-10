@@ -205,21 +205,22 @@ class Annotations:
             raise ValueError("entities must be a list of entities, but is %s" % repr(entities))
 
         entity_encoding = {entity: i for i, entity in enumerate(entities)}
+        # Create 2-d array of len(entities) ** 2
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
         ambiguity_dict = self.compute_ambiguity(other)
         intersection = self.intersection(other, leniency=leniency)
 
         # Compute all off diagonal scores
-        for gold_span in ambiguity_dict:
-            gold_label, start, end, text = gold_span
-            for ambiguous_span in ambiguity_dict[gold_span]:
-                ambiguous_label, _, _, _ = ambiguous_span
+        for gold_annotation in ambiguity_dict:
+            gold_label, start, end, text = gold_annotation
+            for ambiguous_annotation in ambiguity_dict[gold_annotation]:
+                ambiguous_label = ambiguous_annotation[0]
                 confusion_matrix[entity_encoding[gold_label]][entity_encoding[ambiguous_label]] += 1
 
         # Compute diagonal scores (correctly predicted entities with correct spans)
-        for matching_span in intersection:
-            matching_label, start, end, text = matching_span
+        for matching_annotation in intersection:
+            matching_label, start, end, text = matching_annotation
             confusion_matrix[entity_encoding[matching_label]][entity_encoding[matching_label]] += 1
 
         return confusion_matrix
