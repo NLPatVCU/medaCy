@@ -49,7 +49,7 @@ class TestSpacyModel(TestCase):
 
         model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
 
-        second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
+        second_ann_file = "%s.ann" % self.test_dataset.all_data_files[1].file_name
         annotations = Annotations(
             os.path.join(self.prediction_directory, second_ann_file)
         )
