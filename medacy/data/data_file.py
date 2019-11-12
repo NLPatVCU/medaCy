@@ -52,7 +52,7 @@ class DataFile:
         return self.file_name
 
     def __eq__(self, other):
-        return self._file_name == other._file_name if isinstance(other, DataFile) else False
+        return isinstance(other, DataFile) and self._file_name == other._file_name
 
     def __hash__(self):
         return hash(self._file_name)
