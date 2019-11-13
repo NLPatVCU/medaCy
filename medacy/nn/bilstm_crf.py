@@ -106,13 +106,10 @@ class BiLstmCrf(nn.Module):
         if self.use_character_embeddings:
             character_vectors = self._get_character_features(sentence)
             token_vector = torch.cat((word_embeddings, character_vectors), 1)
+            # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
+            token_vector = token_vector.view(len(sentence), 1, -1)
         else:
-            # token_vector = torch.cat(word_embeddings, 1)
             token_vector = word_embeddings
-
-        # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
-        token_vector = token_vector.view(len(sentence), 1, -1)
-        # token_vector = self.dropout(token_vector)
 
         lstm_out, _ = self.lstm(token_vector)
         lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
