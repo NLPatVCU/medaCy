@@ -15,24 +15,37 @@ class Annotations:
     An Annotations object stores all relevant information needed to manage Annotations over a document.
     The Annotation object is utilized by medaCy to structure input to models and output from models.
     This object wraps a list of tuples representing the entities in a document.
+
+    :ivar ann_path: the path to the .ann file
+    :ivar source_text_path: path to the related .txt file
+    :ivar annotations: a list of annotation tuples
     """
 
     def __init__(self, annotation_data, source_text_path=None):
         """
         :param annotation_data: a file path to an annotation file, or a list of annotation tuples.
-        :param source_text_path: path to the text file from which the annotations were derived; optional for ann files but necessary for conversion to or from con.
+        Construction from a list of tuples is intended for internal use.
+        :param source_text_path: optional; path to the text file from which the annotations were derived.
         """
-        if isinstance(annotation_data, list):
+        if isinstance(annotation_data, list) and all(isinstance(e, tuple) for e in annotation_data):
             self.annotations = annotation_data
             return
         elif not os.path.isfile(annotation_data):
-            raise FileNotFoundError("annotation_data must be a list or a valid file path, but is %s" % repr(annotation_data))
+            raise FileNotFoundError("annotation_data must be a list of tuples or a valid file path, but is %s" % repr(annotation_data))
 
         self.ann_path = annotation_data
         self.source_text_path = source_text_path
-        self.annotations = []
+        self.annotations = self._init_from_file(annotation_data)
 
-        with open(annotation_data, 'r') as f:
+    @staticmethod
+    def _init_from_file(file_path):
+        """
+        Creates a list of annotation tuples from a file path
+        :param file_path: the path to an ann file
+        :return: a list of annotation tuples
+        """
+        annotations = []
+        with open(file_path, 'r') as f:
             for line in f:
                 line = line.strip()
                 if not is_valid_brat(line): continue
@@ -43,7 +56,9 @@ class Annotations:
                 entity_start = int(tags[1])
                 entity_end = int(tags[-1])
                 text = line[-1]
-                self.annotations.append((entity_name, entity_start, entity_end, text))
+                annotations.append((entity_name, entity_start, entity_end, text))
+
+        return annotations
 
     def get_labels(self, as_list=False):
         """
@@ -70,8 +85,8 @@ class Annotations:
             if not self.source_text_path:
                 raise FileNotFoundError("spaCy format requires the source text path")
 
-            with open(self.source_text_path, 'r') as source_text_file:
-                source_text = source_text_file.read()
+            with open(self.source_text_path, 'r') as f:
+                source_text = f.read()
 
             # (start, end, tag)
             entities = [(e[1], e[2], e[0]) for e in self.annotations]
@@ -103,8 +118,8 @@ class Annotations:
         if write_location is not None:
             if os.path.isfile(write_location):
                 logging.warning("Overwriting file at: %s", write_location)
-            with open(write_location, 'w') as file:
-                file.write(ann_string)
+            with open(write_location, 'w') as f:
+                f.write(ann_string)
 
         return ann_string
 
@@ -204,30 +219,31 @@ class Annotations:
         if not isinstance(entities, list):
             raise ValueError("entities must be a list of entities, but is %s" % repr(entities))
 
-        entity_encoding = {entity: int(i) for i, entity in enumerate(entities)}
+        entity_encoding = {entity: i for i, entity in enumerate(entities)}
+        # Create 2-d array of len(entities) ** 2
         confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
 
         ambiguity_dict = self.compute_ambiguity(other)
         intersection = self.intersection(other, leniency=leniency)
 
         # Compute all off diagonal scores
-        for gold_span in ambiguity_dict:
-            gold_label, start, end, text = gold_span
-            for ambiguous_span in ambiguity_dict[gold_span]:
-                ambiguous_label, _, _, _ = ambiguous_span
+        for gold_annotation in ambiguity_dict:
+            gold_label, start, end, text = gold_annotation
+            for ambiguous_annotation in ambiguity_dict[gold_annotation]:
+                ambiguous_label = ambiguous_annotation[0]
                 confusion_matrix[entity_encoding[gold_label]][entity_encoding[ambiguous_label]] += 1
 
         # Compute diagonal scores (correctly predicted entities with correct spans)
-        for matching_span in intersection:
-            matching_label, start, end, text = matching_span
+        for matching_annotation in intersection:
+            matching_label, start, end, text = matching_annotation
             confusion_matrix[entity_encoding[matching_label]][entity_encoding[matching_label]] += 1
 
         return confusion_matrix
 
     def compute_counts(self):
         """
-        Computes counts of each entity type and relation type in this annotation.
-        :return: a dictionary containing counts
+        Computes counts of each entity type in this annotation.
+        :return: a Counter of the entity counts
         """
         return Counter(e[0] for e in self.annotations)
 
@@ -239,6 +255,3 @@ class Annotations:
 
     def __iter__(self):
         return iter(self.annotations)
-
-    def __getitem__(self, item):
-        return self.annotations[item]

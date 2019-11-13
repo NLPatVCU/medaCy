@@ -48,18 +48,14 @@ def json_to_pipeline(json_path):
     with open(json_path, 'rb') as f:
         input_json = json.load(f)
 
-    missing_keys = []
-    for key in required_keys:
-        if key not in input_json.keys():
-            missing_keys.append(key)
-
+    missing_keys = [key for key in required_keys if key not in input_json.keys()]
     if missing_keys:
         raise ValueError(f"Required key(s) '{missing_keys}' was/were not found in the json file.")
 
     class CustomPipeline(BasePipeline):
         def __init__(self):
             super().__init__(
-                "custom pipeline",
+                "custom_pipeline",
                 spacy_pipeline=spacy.load(input_json['spacy_pipeline'])
             )
 
@@ -102,6 +98,7 @@ def json_to_pipeline(json_path):
                             all_possible_transitions=True
                             )
                         )
+
             if learner_selection == 'BiLSTM':
                 for k in ['word_embeddings', 'cuda_device']:
                     if k not in input_json.keys():

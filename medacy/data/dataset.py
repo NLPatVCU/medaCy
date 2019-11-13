@@ -332,7 +332,11 @@ class Dataset:
         return True
 
     def __str__(self):
-        return str(self.get_data_files())
+        """
+        Prints a list-like string of the names of the Datafile objects up to the data limit
+        (can't be used if copied and pasted)
+        """
+        return str([d.file_name for d in self.get_data_files()])
 
     def compute_counts(self):
         """
