@@ -12,6 +12,7 @@ import torch.nn.functional as F
 from medacy.nn import BiLstmCrf
 from medacy.nn import Vectorizer
 
+
 class BiLstmCrfLearner:
     """
     BiLSTM-CRF model class for using the network. Currently handles all vectorization as well.
@@ -24,13 +25,15 @@ class BiLstmCrfLearner:
     :ivar window_size: Range of surrounding word's features that were extracted.
     :ivar word_embeddings_file: File to load word embeddings from.
     :ivar word_vectors: Gensim word vectors object for use in configuring word embeddings.
+    :ivar use_character_embeddings: bool for if the learner is using character embeddings
     """
 
-    def __init__(self, word_embeddings, cuda_device):
+    def __init__(self, word_embeddings, cuda_device, use_character_embeddings=True):
         """Init BiLstmCrfLearner object.
 
         :param word_embeddings: Path to word embeddings file to use.
         :param cuda_device: Index of cuda device to use. Use -1 to use CPU.
+        :param use_character_embeddings: bool for if to use character embeddings, defaults to True.
         """
         torch.manual_seed(1)
         device_string = 'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
@@ -38,11 +41,9 @@ class BiLstmCrfLearner:
 
         self.vectorizer = Vectorizer(self.device)
 
-        if word_embeddings is None:
-            raise ValueError('BiLSTM-CRF requires word embeddings.')
-        else:
-            self.word_embeddings_file = word_embeddings
-            self.word_vectors = None
+        self.word_embeddings_file = word_embeddings
+        self.word_vectors = None
+        self.use_character_embeddings = use_character_embeddings
 
         # Other instance attributes
         self.model = None
@@ -72,7 +73,8 @@ class BiLstmCrfLearner:
             self.vectorizer.word_vectors,
             len(data[0][0][0][2:]),
             len(self.vectorizer.tag_to_index),
-            self.device
+            self.device,
+            use_character_embeddings=self.use_character_embeddings
         )
 
         # Move to GPU if possible
