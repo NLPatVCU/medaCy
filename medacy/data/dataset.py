@@ -18,15 +18,6 @@ Assuming your directory looks like this (where .ann files are in `BRAT <http://b
     ├── file_two.ann
     └── file_two.txt
 
-A Dataset can be created like this:
-::
-    from medacy.data import Dataset
-
-    dataset = Dataset('/home/medacy/data')
-
-
-MedaCy **does not** alter the data you load in any way - it only reads from it.
-
 A common data work flow might look as follows.
 
 Running:
@@ -34,19 +25,22 @@ Running:
     >>> from medacy.data import Dataset
     >>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
-    >>> dataset = Dataset('/home/medacy/data')
+    >>> dataset = Dataset('/home/datasets/some_dataset')
     >>> for data_file in dataset:
     ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
     (file_one, file_one.txt, file_one.ann)
     (file_two, file_two.txt, file_two.ann)
     >>> dataset
-    ['file_one.txt', 'file_two.txt']
+    ['file_one', 'file_two']
     >>>> dataset.is_metamapped()
     False
-    >>> metamap = Metamap('/home/path/to/metamap/binary') #not necessary
-    >>> dataset.metamap(metamap) #not necessary
+    >>> metamap = MetaMap('/home/path/to/metamap/binary')
+    >>> with metamap:
+    ...     dataset.metamap(metamap)
     >>> dataset.is_metamapped()
     True
+
+MedaCy **does not** alter the data you load in any way - it only reads from it.
 
 Prediction
 ##########
@@ -57,8 +51,6 @@ meta-data for a given prediction file does not have fields for annotation_file_p
 When a directory contains **only** ann files, an instantiated Dataset object interprets this as
 a directory of files that are predictions. Useful methods for analysis include :meth:`medacy.data.dataset.Dataset.compute_confusion_matrix`,
 :meth:`medacy.data.dataset.Dataset.compute_ambiguity` and :meth:`medacy.data.dataset.Dataset.compute_counts`.
-
-
 
 External Datasets
 #################
@@ -271,7 +263,6 @@ class Dataset:
                 data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
                                                          data_file.txt_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
-
 
     def _parallel_metamap(self, files, i):
         """
