@@ -195,6 +195,7 @@ class Model:
             for tag in tags:
                 if tag != 'O' and tag != '':
                     tagset.add(tag)
+
         tagset = list(tagset)
         tagset.sort()
         medacy_pipeline.entities = tagset
@@ -204,8 +205,8 @@ class Model:
         fold = 1
 
         # Dict for storing mapping of sequences to their corresponding file
-        groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
-        preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+        groundtruth_by_document = {filename: [] for filename in {x[2] for x in X_data}}
+        preds_by_document = {filename: [] for filename in {x[2] for x in X_data}}
 
         for train_indices, test_indices in cv(X_data, Y_data):
             fold_statistics = {}
@@ -301,10 +302,10 @@ class Model:
 
             table_data = [
                 [label,
-                format(fold_statistics[label]['precision'], ".3f"),
-                format(fold_statistics[label]['recall'], ".3f"),
-                format(fold_statistics[label]['f1'], ".3f")
-                ] for label in tagset + ['system']
+                 format(fold_statistics[label]['precision'], ".3f"),
+                 format(fold_statistics[label]['recall'], ".3f"),
+                 format(fold_statistics[label]['f1'], ".3f")
+                 ] for label in tagset + ['system']
             ]
 
             logging.info('\n' + tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'], tablefmt='orgtbl'))
@@ -326,29 +327,43 @@ class Model:
                 'f1_min': min(eval_stats[fold][label]['f1'] for fold in eval_stats),
             }
 
+        entity_counts = training_dataset.compute_counts()
+
         table_data = [
-            [label,
-            format(statistics_all_folds[label]['precision_average'], ".3f"),
-            format(statistics_all_folds[label]['recall_average'], ".3f"),
-            format(statistics_all_folds[label]['f1_average'], ".3f"),
-            format(statistics_all_folds[label]['f1_min'], ".3f"),
-            format(statistics_all_folds[label]['f1_max'], ".3f")
-            ] for label in tagset + ['system']
+            [f"{label} ({entity_counts[label]})",  # Entity (Count)
+             format(statistics_all_folds[label]['precision_average'], ".3f"),
+             format(statistics_all_folds[label]['recall_average'], ".3f"),
+             format(statistics_all_folds[label]['f1_average'], ".3f"),
+             format(statistics_all_folds[label]['f1_min'], ".3f"),
+             format(statistics_all_folds[label]['f1_max'], ".3f")
+             ] for label in tagset + ['system']
         ]
 
-        logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
-                       tablefmt='orgtbl'))
+        logging.info("\n" + tabulate(
+            table_data,
+            headers=['Entity (Count)', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+            tablefmt='orgtbl'
+            )
+        )
 
         if prediction_directory:
             
-            prediction_directory = training_dataset.get_data_directory() + "/predictions"
-            groundtruth_directory = training_dataset.get_data_directory() + "/groundtruth"
+            prediction_directory = os.path.join(training_dataset.data_directory, "predictions")
+            groundtruth_directory = os.path.join(training_dataset.data_directory, "groundtruth")
             
             # Write annotations generated from cross-validation
-            self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
+            self.create_annotation_directory(
+                directory=prediction_directory,
+                training_dataset=training_dataset,
+                option="predictions"
+            )
 
             # Write medaCy ground truth generated from cross-validation
-            self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
+            self.create_annotation_directory(
+                directory=groundtruth_directory,
+                training_dataset=training_dataset,
+                option="groundtruth"
+            )
             
             # Add predicted/known annotations to the folders containing groundtruth and predictions respectively
             self.predict_annotation_evaluation(
@@ -369,7 +384,7 @@ class Model:
                 option="predictions"
             )
 
-            return Dataset(data_directory=prediction_directory)
+            return Dataset(prediction_directory)
         else:
             return statistics_all_folds
 
