@@ -13,6 +13,7 @@ HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
 CHARACTER_EMBEDDING_SIZE = 100
 
+
 class BiLstmCrf(nn.Module):
     """
     BiLSTM and CRF pytorch layers.
@@ -20,15 +21,17 @@ class BiLstmCrf(nn.Module):
     :ivar device: Pytorch device.
     :ivar tagset_size: Number of labels that the network is being trained for.
     """
-    def __init__(self, word_vectors, other_features, tagset_size, device):
+    def __init__(self, word_vectors, other_features, tagset_size, device, use_character_embeddings=True):
         """Init model.
 
         :param word_vectors: Gensim word vector object to use as word embeddings.
         :param other_features: Number of other word features being used.
         :param tag_to_index: Dictionary for mapping tag/label to an index for vectorization.
         :param device: Pytorch device to use.
+        :param use_character_embeddings: bool for if to use character embeddings, defaults to True
         """
         self.device = device
+        self.use_character_embeddings = use_character_embeddings
 
         if device.type != 'cpu':
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
@@ -46,18 +49,18 @@ class BiLstmCrf(nn.Module):
             embedding_dim=CHARACTER_EMBEDDING_SIZE,
             padding_idx=0,
             hidden_size=CHARACTER_HIDDEN_DIM
-        )
+        ) if self.use_character_embeddings else None
 
         # Setup word embedding layer
         self.word_embeddings = nn.Embedding.from_pretrained(word_vectors)
 
         # The LSTM takes word embeddings concatenated with character verctors as inputs and
         # outputs hidden states with dimensionality hidden_dim.
-        lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2
+        lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM * 2
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
         # The linear layer that maps from hidden state space to tag space
-        linear_input_size = HIDDEN_DIM*2 + other_features
+        linear_input_size = HIDDEN_DIM * 2 + other_features
         self.hidden2tag = nn.Linear(linear_input_size, self.tagset_size)
 
         self.crf = CRF(self.tagset_size)
@@ -95,14 +98,17 @@ class BiLstmCrf(nn.Module):
         embedding_indices = torch.tensor(embedding_indices, device=self.device)
         word_embeddings = self.word_embeddings(embedding_indices)
 
-        character_vectors = self._get_character_features(sentence)
-
         # Turn rest of features into a tensor
         other_features = [token[2:] for token in sentence]
         other_features = torch.tensor(other_features, device=self.device)
 
         # Combine into one final input vector for LSTM
-        token_vector = torch.cat((word_embeddings, character_vectors), 1)
+        if self.use_character_embeddings:
+            character_vectors = self._get_character_features(sentence)
+            token_vector = torch.cat((word_embeddings, character_vectors), 1)
+        else:
+            # token_vector = torch.cat(word_embeddings, 1)
+            token_vector = word_embeddings
 
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
         token_vector = token_vector.view(len(sentence), 1, -1)
