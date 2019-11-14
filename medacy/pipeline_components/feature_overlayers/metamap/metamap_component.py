@@ -3,8 +3,8 @@ import warnings
 
 from spacy.tokens import Token
 
-from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
 
 class MetaMapComponent(BaseComponent):
@@ -44,51 +44,44 @@ class MetaMapComponent(BaseComponent):
         :return:
         """
         logging.debug("Called MetaMap Component")
-        metamap = self.metamap
-        nlp = self.nlp
-        semantic_type_labels = self.semantic_type_labels
 
         # register all extensions
         if self.cuis:
             Token.set_extension('feature_cui', default="-1", force=True) #cui feature
-        for semantic_type_label in semantic_type_labels:  # is_semantic type features
-            Token.set_extension('feature_is_' + semantic_type_label, default=False, force=True)
+        for label in self.semantic_type_labels:  # is_semantic type features
+            Token.set_extension('feature_is_' + label, default=False, force=True)
 
         # check if pre-metamapped file has been assigned to the document
-        if hasattr(doc._, 'metamapped_file'):
-            metamap_dict = metamap.load(doc._.metamapped_file)
+        if hasattr(doc._, 'metamapped_file') and doc._.metamapped_file is not None:
+            metamap_dict = self.metamap.load(doc._.metamapped_file)
+        elif hasattr(doc._, 'file_name') and doc._.file_name == 'STRING_INPUT':
+            metamap_dict = self.metamap.map_text(str(doc))
         else:
-            if hasattr(doc._, 'file_name'):
-                logging.debug("%s: Could not find metamap file for document." % doc._.file_name)
-            metamap_dict = metamap.map_text(doc.text)  # TODO metamap.map_text is broken currently
-
-        if not hasattr(doc._, 'file_name'):  # TODO REMOVE when implemnting live model prediction
             return doc
 
         # TODO refactor second part of if statement when implementing live model prediction
         if metamap_dict == '' or metamap_dict['metamap'] is None:
-            if hasattr(doc._, 'metamapped_file'):
-                warnings.warn("%s: This metamap file is invalid and cannot be parsed in MetaMapComponent: %s \n Ignore this warning if this is a unittest - all may be fine." % (doc._.file_name,doc._.metamapped_file))
-            else:
-                warnings.warn("Metamapping text on the fly failed - aborting. Try to pre-metamap with DataLoader.")
+            if hasattr(doc._, 'file_name'):
+                warnings.warn(f"MetaMap produced no output for given file: {doc._.file_name}")
+            warnings.warn("MetaMap failed")
             return doc
 
-        mapped_terms = metamap.extract_mapped_terms(metamap_dict) #parse terms out of mappings dictionary
+        mapped_terms = self.metamap.extract_mapped_terms(metamap_dict)  # parse terms out of mappings dictionary
 
-        spans = [] #for displaying NER output with displacy
+        spans = []  # for displaying NER output with displacy
 
-        #Overlays semantic type presence if the given semantic type is set in metamap span.
-        for semantic_type_label in semantic_type_labels:
+        # Overlays semantic type presence if the given semantic type is set in metamap span.
+        for semantic_type_label in self.semantic_type_labels:
 
             entity_name = semantic_type_label
-            nlp.entity.add_label(entity_name) #register entity label
+            self.nlp.entity.add_label(entity_name)  # register entity label
 
-            entity_tags = metamap.get_term_by_semantic_type(mapped_terms, include=[semantic_type_label])
-            entity_annotations = metamap.mapped_terms_to_spacy_ann(entity_tags, semantic_type_label)
+            entity_tags = self.metamap.get_term_by_semantic_type(mapped_terms, include=[semantic_type_label])
+            entity_annotations = self.metamap.mapped_terms_to_spacy_ann(entity_tags, semantic_type_label)
 
             with doc.retokenize() as retokenizer:
                 for start, end, label in entity_annotations:
-                    span = doc.char_span(start, end, label=nlp.vocab.strings[entity_name])
+                    span = doc.char_span(start, end, label=self.nlp.vocab.strings[entity_name])
 
                     #TODO spans are none when indices and token boundaries don't line up.
                     if span not in spans:
@@ -110,7 +103,7 @@ class MetaMapComponent(BaseComponent):
             with doc.retokenize() as retokenizer:
                 for term in mapped_terms:
                     cui = term['CandidateCUI']
-                    start, end = metamap.get_span_by_term(term)[0]
+                    start, end = self.metamap.get_span_by_term(term)[0]
                     span = doc.char_span(start, end)
                     if span is not None:
                         for token in span:
