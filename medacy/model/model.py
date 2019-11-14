@@ -7,6 +7,7 @@ from statistics import mean
 import joblib
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
+from spacy.tokens import Doc
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
@@ -152,11 +153,8 @@ class Model:
                 annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
         if isinstance(dataset, str):
-            if 'metamap_annotator' in self.pipeline.get_components():
-                raise RuntimeError("Cannot currently predict on the fly when metamap_component is in pipeline.")
-
+            Doc.set_extension('file_name', default="STRING_INPUT", force=True)
             doc = medacy_pipeline.spacy_pipeline.make_doc(dataset)
-            doc.set_extension('file_name', default="STRING_INPUT", force=True)
             doc = medacy_pipeline(doc, predict=True)
             annotations = predict_document(model, doc, medacy_pipeline)
             return annotations
@@ -429,15 +427,20 @@ class Model:
         nlp = self.pipeline.spacy_pipeline
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.txt_path, 'r') as raw_text:
-            doc = nlp.make_doc(raw_text.read())
+        with open(data_file.txt_path, 'r') as f:
+            doc = nlp.make_doc(f.read())
+
         # Link ann_path to doc
         doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
         doc.set_extension('file_name', default=data_file.file_name, force=True)
 
         # Link metamapped file to doc for use in MetamapComponent if exists
         if is_metamapped:
-            doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+            # Default MetaMapped path needs to be None so that on-the-fly predictions
+            # do not attempt to use the MetMap output of the last DataFile to pass
+            # through this function
+            doc.set_extension('metamapped_file', default=None, force=True)
+            setattr(doc._, 'metamapped_file', data_file.metamapped_path)
 
         # run 'er through
         doc = self.pipeline(doc)
