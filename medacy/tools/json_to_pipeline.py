@@ -1,11 +1,12 @@
 import json
 
-import spacy
 import sklearn_crfsuite
+import spacy
 
 from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesComponent
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
 from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
@@ -39,6 +40,8 @@ def json_to_pipeline(json_path):
 
     The following keys are optional:
     'metamap': the path to the MetaMap binary; MetaMap will only be used if this key is present
+        if 'metamap' is a key, 'semantic_types' must also be a key, with value 'all', 'none', or
+        a list of semantic type strings
     'tokenizer': 'clinical', 'systematic_review', or 'character'; defaults to the spaCy model's tokenizer
 
     :param json_path: the path to the json file
@@ -66,8 +69,19 @@ def json_to_pipeline(json_path):
             self.add_component(GoldAnnotatorComponent, self.entities)
 
             if 'metamap' in input_json.keys():
+                if 'semantic_types' not in input_json.keys():
+                    raise ValueError("'semantic_types' must be a key when 'metamap' is a key.")
+
                 metamap = MetaMap(input_json['metamap'])
-                self.add_component(MetaMapComponent, metamap)
+
+                if input_json['semantic_types'] == 'all':
+                    self.add_component(MetaMapAllTypesComponent, metamap)
+                elif input_json['semantic_types'] == 'none':
+                    self.add_component(MetaMapComponent, metamap, semantic_type_labels=[])
+                elif isinstance(input_json['semantic_types'], list):
+                    self.add_component(MetaMapComponent, metamap, semantic_type_labels=input_json['semantic_types'])
+                else:
+                    raise ValueError("'semantic_types' must be 'all', 'none', or a list of strings")
 
         def get_tokenizer(self):
             if 'tokenizer' not in input_json.keys():

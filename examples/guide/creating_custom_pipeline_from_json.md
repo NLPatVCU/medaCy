@@ -28,7 +28,7 @@ These keys are required:
 with the target word; set to `0` to only consider the target word
 * `"learner"`: `"CRF"` or `"BiLSTM"`
 
-When the learner is BiLSTM, two additional keys are required:
+When the learner is `"BiLSTM"`, two additional keys are required:
 * `"cuda_device"`: the number of the GPU core to use, or `-1` to use the CPU
 * `"word_embeddings"`: the path to the word embeddings to use with the BiLSTM
 
@@ -36,6 +36,9 @@ These keys are optional, and have default behavior if the key is not present:
 * `"tokenizer"`: defaults to using the tokenizer from the selected spaCy pipeline; custom options are `"clinical"`,
 `"systematic_review"`, or `"character"`
 * `"metamap"`: MetaMap will only be used if this key is present; the value should be the path to the MetaMap binary file
+
+Finally, `"metamap"` requires the key `"semantic_types"`, which can be `"all"` to use all semantic types found in the dataset,
+`"none"` to not use them, or a list of semantic types to use.
 
 ## Getting the Entities
 The entities in a given dataset can be printed to the command line with this command:
