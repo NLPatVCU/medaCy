@@ -34,7 +34,7 @@ class BertPipeline(BasePipeline):
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
 
     def get_learner(self):
-        learner = BertLearner(self.cuda_device)
+        learner = BertLearner(self.cuda_device, pretrained_model='bert-large-cased')
         return ('BERT', learner)
 
     def get_tokenizer(self):

@@ -9,7 +9,7 @@ from transformers import BertTokenizer, BertForTokenClassification
 from medacy.nn import Vectorizer
 
 class BertLearner:
-    def __init__(self, cuda_device=-1):
+    def __init__(self, cuda_device=-1, pretrained_model='bert-large-cased'):
         torch.manual_seed(1)
         device_string = 'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
         self.device = torch.device(device_string)
@@ -17,6 +17,7 @@ class BertLearner:
         self.model = None
         self.tokenizer = None
         self.vectorizer = Vectorizer(self.device)
+        self.pretrained_model = pretrained_model
 
     def encode_sequences(self, sequences, labels=[]):
         encoded_sequences = []
@@ -130,7 +131,7 @@ class BertLearner:
 
     def load(self, path):
         self.model = BertForTokenClassification.from_pretrained(path)
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
+        self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_model)
         vectorizer_values = torch.load(path + '/vectorizer.pt')
         self.vectorizer = Vectorizer(device=self.device)
         self.vectorizer.load_values(vectorizer_values)
