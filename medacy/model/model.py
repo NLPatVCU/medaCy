@@ -68,7 +68,7 @@ class Model:
             self.X_data = []
             self.y_data = []
             for data_file in dataset:
-                features, labels = self._extract_features(data_file, dataset.is_metamapped())
+                features, labels = self._extract_features(data_file)
                 self.X_data += features
                 self.y_data += labels
 
@@ -416,12 +416,11 @@ class Model:
         
         return annotations
 
-    def _extract_features(self, data_file, is_metamapped):
+    def _extract_features(self, data_file):
         """
         A multi-processed method for extracting features from a given DataFile instance.
 
         :param data_file: an instance of DataFile
-        :param is_metamapped: if the Dataset is metamapped
         :return: Updates queue with features for this given file.
         """
         nlp = self.pipeline.spacy_pipeline
@@ -431,16 +430,11 @@ class Model:
             doc = nlp.make_doc(f.read())
 
         # Link ann_path to doc
-        doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
-        doc.set_extension('file_name', default=data_file.file_name, force=True)
+        doc.set_extension('gold_annotation_file', default=None, force=True)
+        doc.set_extension('file_name', default=None, force=True)
 
-        # Link metamapped file to doc for use in MetamapComponent if exists
-        if is_metamapped:
-            # Default MetaMapped path needs to be None so that on-the-fly predictions
-            # do not attempt to use the MetMap output of the last DataFile to pass
-            # through this function
-            doc.set_extension('metamapped_file', default=None, force=True)
-            setattr(doc._, 'metamapped_file', data_file.metamapped_path)
+        doc._.gold_annotation_file = data_file.ann_path
+        doc._.file_name = data_file.txt_path
 
         # run 'er through
         doc = self.pipeline(doc)

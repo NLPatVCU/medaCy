@@ -1,10 +1,25 @@
 import logging
 import warnings
+import os
 
 from spacy.tokens import Token
 
 from medacy.pipeline_components.base.base_component import BaseComponent
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
+
+
+def _get_metamapped_path(txt_file_path):
+    """
+    MedaCy assumes that for a given txt file, the related metamapped file exists with the same file name,
+    the extension '.metamapped', and that the file is located in a subdirectory named 'metamapped';
+    this function takes the full path to a txt file and returns the expected path of the metamapped file.
+    :param txt_file_path: the full path to a txt file
+    :return: the full path to the metamapped file
+    """
+    training_dir = os.path.dirname(txt_file_path)
+    txt_file_name_ext = os.path.basename(txt_file_path)
+    txt_file_name, _ = os.path.splitext(txt_file_name_ext)
+    return os.path.join(training_dir, 'metamapped', txt_file_name + '.metamapped')
 
 
 class MetaMapComponent(BaseComponent):
@@ -51,13 +66,20 @@ class MetaMapComponent(BaseComponent):
         for label in self.semantic_type_labels:  # is_semantic type features
             Token.set_extension('feature_is_' + label, default=False, force=True)
 
-        # check if pre-metamapped file has been assigned to the document
-        if hasattr(doc._, 'metamapped_file') and doc._.metamapped_file is not None:
-            metamap_dict = self.metamap.load(doc._.metamapped_file)
-        elif hasattr(doc._, 'file_name') and doc._.file_name == 'STRING_INPUT':
+        if not hasattr(doc._, 'file_name'):
             metamap_dict = self.metamap.map_text(str(doc))
-        else:
-            return doc
+        elif doc._.file_name is None or doc._.file_name == 'STRING_INPUT':
+            metamap_dict = self.metamap.map_text(str(doc))
+        elif os.path.isfile(doc._.file_name):
+            # Check if pre-metamapped file exists at expected location
+            txt_file_path = doc._.file_name
+            metamapped_path = _get_metamapped_path(txt_file_path)
+            if not os.path.isfile(metamapped_path):
+                warnings.warn(f"No metamapped file was found for '{txt_file_path}'; attempting to run MetaMap over document (results in slower runtime); ensure MetaMap is running")
+                metamap_dict = self.metamap.map_text(str(doc))
+            else:
+                # This branch of the decision tree is reached if the file is already metamapped
+                metamap_dict = self.metamap.load(metamapped_path)
 
         # TODO refactor second part of if statement when implementing live model prediction
         if metamap_dict == '' or metamap_dict['metamap'] is None:
