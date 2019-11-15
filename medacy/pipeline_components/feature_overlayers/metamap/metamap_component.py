@@ -24,23 +24,22 @@ def _get_metamapped_path(txt_file_path):
 
 class MetaMapComponent(BaseComponent):
     """
-    A pipeline component for SpaCy that overlays Metamap output as token attributes
+    A pipeline component for spaCy that overlays Metamap output as token attributes
     """
     
     name = "metamap_annotator"
     dependencies = []
 
-    def __init__(self, spacy_pipeline, metamap, cuis=True, semantic_type_labels=['orch', 'phsu'], merge_tokens=False):
+    def __init__(self, spacy_pipeline, metamap: MetaMap, cuis=True, semantic_type_labels=['orch', 'phsu'], merge_tokens=False):
         """
         Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
         :param spacy_pipeline: an instance of a spacy language pipeline.
         :param metamap: an instance of MetaMap.
-        :param cuis: Whether or not to overlay CUIS from metamap output - one feature taking on multiple categorical values representing cuis.
-        :param semantic_type_labels: Semantic type labels to check for- generates a feature for each semantic type label.
+        :param cuis: Whether or not to overlay CUIs from MetaMap output.
+        :param semantic_type_labels: list of semantic type labels to check for- generates a feature for each semantic type label.
         """
         super().__init__(self.name, self.dependencies)
         self.nlp = spacy_pipeline
-        assert isinstance(metamap, MetaMap), "MetamapComponent requires a MetaMap instance as an argument."
         self.metamap = metamap
         self.cuis = cuis
         self.semantic_type_labels = semantic_type_labels
@@ -55,8 +54,8 @@ class MetaMapComponent(BaseComponent):
         was originally designed to increase recall on Drug entities hence by default 'feature_is_orch' and
         'feature_is_phsu' where orch and phsu are semantic types corresponding to organic chemicals and pharmalogical
         substances respectively.
-        :param doc: document to run through pipeline
-        :return:
+        :param doc: spaCy Doc object to run through pipeline
+        :return: the same Doc object
         """
         logging.debug("Called MetaMap Component")
 
