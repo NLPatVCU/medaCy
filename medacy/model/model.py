@@ -53,7 +53,7 @@ class Model:
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped()) for data_file in dataset]
+            results = [pool.apipe(self._extract_features, data_file) for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
@@ -67,8 +67,11 @@ class Model:
             logging.info('Preprocessing data synchronously...')
             self.X_data = []
             self.y_data = []
-            for data_file in dataset:
-                features, labels = self._extract_features(data_file)
+            # Run all Docs through the pipeline before extracting features, allowing for pipeline components
+            # that require inter-dependent doc objects
+            docs = [self._run_through_pipeilne(data_file) for data_file in dataset]
+            for doc in docs:
+                features, labels = self._extract_features(doc)
                 self.X_data += features
                 self.y_data += labels
 
@@ -416,12 +419,11 @@ class Model:
         
         return annotations
 
-    def _extract_features(self, data_file):
+    def _run_through_pipeilne(self, data_file):
         """
-        A multi-processed method for extracting features from a given DataFile instance.
-
-        :param data_file: an instance of DataFile
-        :return: Updates queue with features for this given file.
+        Runs a DataFile through the pipeline, returning the resulting Doc object
+        :param data_file: instance of DataFile
+        :return: a Doc object
         """
         nlp = self.pipeline.spacy_pipeline
         logging.info("Processing file: %s", data_file.file_name)
@@ -437,13 +439,19 @@ class Model:
         doc._.file_name = data_file.txt_path
 
         # run 'er through
-        doc = self.pipeline(doc)
+        return self.pipeline(doc)
 
-        # The document has now been run through the pipeline. All annotations are overlayed - pull features.
+    def _extract_features(self, doc):
+        """
+        Extracts features from a Doc
+        :param doc: an instance of Doc
+        :return: a tuple of the feature dict and label list
+        """
+
         feature_extractor = self.pipeline.get_feature_extractor()
-        features, labels = feature_extractor(doc, data_file.file_name)
+        features, labels = feature_extractor(doc, doc._.file_name)
 
-        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
+        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (doc._.file_name, len(labels)))
         return features, labels
 
     def load(self, path):
