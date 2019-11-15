@@ -115,7 +115,6 @@ class BertLearner:
             sequence = torch.tensor(sequence, device=self.device).unsqueeze(0)
             scores = self.model(sequence)[0].squeeze()
             tag_indices = torch.max(scores, 1)[1].tolist()
-            tag_indices[1] = 5
             encoded_tag_indices.append(tag_indices)
 
         predictions = self.decode_labels(encoded_tag_indices, mappings)

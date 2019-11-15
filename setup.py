@@ -59,6 +59,7 @@ setup(
         'scikit-learn>=0.20.0',
         'torch==1.2.0',
         'pytorch-crf==0.7.2',
+        'transformers==2.1.1',
         'numpy==1.16.1',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
