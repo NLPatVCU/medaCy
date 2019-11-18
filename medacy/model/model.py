@@ -17,10 +17,19 @@ from medacy.pipelines.base.base_pipeline import BasePipeline
 
 class Model:
     """
-    A medaCy named entity recognition model wraps together three functionalities
+    A medaCy Model allows the fitting of a named entity recognition model to a given dataset according to the
+    configuration of a given medaCy pipeline. Once fitted, Model instances can be used to predict over documents.
+    Also included is a function for cross validating over a dataset for measuring the performance of a pipeline.
+
+    :ivar pipeline: a medaCy pipeline, must be a subclass of BasePipeline (see medacy.pipelines.base.BasePipeline)
+    :ivar model: weights, if the model has been fitted
+    :ivar n_jobs: the number of CPU cores to be used by processes of this instance, defaults to the number of CPUs on
+    the machine it's running on
+    :ivar X_data: X_data from the pipeline; primarily for internal use
+    :ivar y_data: y_data from the pipeline; primarily for internal use
     """
 
-    def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
+    def __init__(self, medacy_pipeline, model=None, n_jobs=cpu_count()):
 
         if not isinstance(medacy_pipeline, BasePipeline):
             raise TypeError("Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline")
@@ -114,10 +123,7 @@ class Model:
         if not isinstance(dataset, (Dataset, str)):
             raise TypeError("Must pass in an instance of Dataset containing your examples to be used for prediction")
         if self.model is None:
-            raise ValueError("Must fit or load a pickled model before predicting")
-
-        model = self.model
-        medacy_pipeline = self.pipeline
+            raise RuntimeError("Must fit or load a pickled model before predicting")
 
         if isinstance(dataset, Dataset):
             # create directory to write predictions to
@@ -138,16 +144,16 @@ class Model:
                 logging.info("Predicting file: %s", data_file.file_name)
 
                 with open(data_file.txt_path, 'r') as raw_text:
-                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+                    doc = self.pipeline.spacy_pipeline.make_doc(raw_text.read())
 
                 doc.set_extension('file_name', default=data_file.file_name, force=True)
                 if data_file.metamapped_path is not None:
                     doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
 
                 # run through the pipeline
-                doc = medacy_pipeline(doc, predict=True)
+                doc = self.pipeline(doc, predict=True)
 
-                annotations = predict_document(model, doc, medacy_pipeline)
+                annotations = predict_document(self.model, doc, self.pipeline)
                 logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
                 annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
@@ -155,10 +161,10 @@ class Model:
             if 'metamap_annotator' in self.pipeline.get_components():
                 raise RuntimeError("Cannot currently predict on the fly when metamap_component is in pipeline.")
 
-            doc = medacy_pipeline.spacy_pipeline.make_doc(dataset)
+            doc = self.pipeline.spacy_pipeline.make_doc(dataset)
             doc.set_extension('file_name', default="STRING_INPUT", force=True)
-            doc = medacy_pipeline(doc, predict=True)
-            annotations = predict_document(model, doc, medacy_pipeline)
+            doc = self.pipeline(doc, predict=True)
+            annotations = predict_document(self.model, doc, self.pipeline)
             return annotations
 
     def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
@@ -196,12 +202,10 @@ class Model:
         X_data = self.X_data
         Y_data = self.y_data
 
-        medacy_pipeline = self.pipeline
-
         cv = SequenceStratifiedKFold(folds=num_folds)
 
         tags = sorted(training_dataset.get_labels(as_list=True))
-        medacy_pipeline.entities = tags
+        self.pipeline.entities = tags
         logging.info('Tagset: %s', tags)
 
         eval_stats = {}
@@ -213,7 +217,7 @@ class Model:
 
         for train_indices, test_indices in cv(X_data, Y_data):
             fold_statistics = {}
-            learner_name, learner = medacy_pipeline.get_learner()
+            learner_name, learner = self.pipeline.get_learner()
 
             X_train = [X_data[index] for index in train_indices]
             y_train = [Y_data[index] for index in train_indices]
@@ -263,8 +267,8 @@ class Model:
                 span_indices = []
 
                 for sequence in X_test:
-                    document_indices += [sequence[2] for x in range(len(sequence[0]))]
-                    span_indices += [element for element in sequence[1]]
+                    document_indices += [sequence[2]] * len(sequence[0])
+                    span_indices += list(sequence[1])
 
                 predictions = [element for sentence in y_pred for element in sentence]
 
@@ -372,7 +376,6 @@ class Model:
             self.predict_annotation_evaluation(
                 directory=groundtruth_directory,
                 training_dataset=training_dataset,
-                medacy_pipeline=medacy_pipeline,
                 preds_by_document=preds_by_document,
                 groundtruth_by_document=groundtruth_by_document,
                 option="groundtruth"
@@ -381,7 +384,6 @@ class Model:
             self.predict_annotation_evaluation(
                 directory=prediction_directory,
                 training_dataset=training_dataset,
-                medacy_pipeline= medacy_pipeline,
                 preds_by_document=preds_by_document,
                 groundtruth_by_document=groundtruth_by_document,
                 option="predictions"
@@ -402,11 +404,11 @@ class Model:
             os.makedirs(directory)
         return directory
 
-    def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
-        for data_file in training_dataset.get_data_files():
+    def predict_annotation_evaluation(self, directory, training_dataset, preds_by_document, groundtruth_by_document, option):
+        for data_file in training_dataset:
             logging.info("Predicting %s file: %s", option, data_file.file_name)
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+            with open(data_file.txt_path, 'r') as f:
+                doc = self.pipeline.spacy_pipeline.make_doc(f.read())
                 
             if option == "groundtruth":
                 preds = groundtruth_by_document[data_file.file_name]
@@ -416,7 +418,7 @@ class Model:
             annotations = construct_annotations_from_tuples(doc, preds)
             annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))
         
-        return annotations
+        return Dataset(directory)
 
     def _extract_features(self, data_file, is_metamapped):
         """
