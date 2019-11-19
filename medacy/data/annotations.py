@@ -5,11 +5,6 @@ from collections import Counter
 from math import ceil
 
 
-def is_valid_brat(item: str):
-    """Returns a boolean value for whether or not a given line is a BRAT entity."""
-    return isinstance(item, str) and re.fullmatch(r"T\d+\t\S+ \d+ \d+\t.+('\n'|)", item, re.DOTALL)
-
-
 class Annotations:
     """
     An Annotations object stores all relevant information needed to manage Annotations over a document.
@@ -48,14 +43,26 @@ class Annotations:
         with open(file_path, 'r') as f:
             for line in f:
                 line = line.strip()
-                if not is_valid_brat(line): continue
-                line = line.split("\t")
-
-                tags = line[1].split(" ")
-                entity_name = tags[0]
-                entity_start = int(tags[1])
-                entity_end = int(tags[-1])
-                text = line[-1]
+                if re.fullmatch(r"T\d+\t\S+ \d+ \d+\t.+('\n'|)", line, re.DOTALL):
+                    # Entity has a contiguous span
+                    line = line.split("\t")
+                    tags = line[1].split(" ")
+                    entity_name = tags[0]
+                    text = line[-1]
+                    entity_start = int(tags[1])
+                    entity_end = int(tags[-1])
+                elif re.fullmatch(r"T\d+\t\S+ (\d+ \d+;)+\d+ \d+\t.+('\n'|)", line, re.DOTALL):
+                    # Entity has a non-contiguous span
+                    split_line = line.split("\t")
+                    tags = split_line[1].split(" ")
+                    entity_name = tags[0]
+                    text = line[-1]
+                    # Special logic to get the beginning of the first span and the end of the last span
+                    span_indices = re.findall(r'\d+', line)
+                    entity_start = int(span_indices[0])
+                    entity_end = int(span_indices[-1])
+                else:
+                    continue
                 annotations.append((entity_name, entity_start, entity_end, text))
 
         return annotations
@@ -66,7 +73,7 @@ class Annotations:
         :param as_list: bool for if to return the results as a list; defaults to False
         :return: The set of labels.
         """
-        labels = set(e[0] for e in self.annotations)
+        labels = {e[0] for e in self.annotations}
 
         if as_list:
             return list(labels)

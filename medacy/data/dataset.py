@@ -81,11 +81,7 @@ class Dataset:
     A facilitation class for data management.
     """
 
-    def __init__(self, data_directory,
-                 raw_text_file_extension="txt",
-                 annotation_file_extension="ann",
-                 metamapped_files_directory=None,
-                 data_limit=None):
+    def __init__(self, data_directory, raw_text_file_extension="txt", metamapped_files_directory=None, data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
 
@@ -95,7 +91,6 @@ class Dataset:
 
         :param data_directory: Directory containing data for training or prediction.
         :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
-        :param annotation_file_extension: The file extension of annotation files in the data_directory (default: *.ann*)
         :param metamapped_files_directory: Location to store metamapped files (default: a sub-directory named *metamapped*)
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
@@ -114,7 +109,7 @@ class Dataset:
         raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
 
         if not raw_text_files:  # detected a prediction directory
-            ann_files = sorted([file for file in all_files_in_directory if file.endswith(annotation_file_extension)])
+            ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
             self.is_training_directory = False
 
             if data_limit is not None:
@@ -124,7 +119,7 @@ class Dataset:
 
             for file in ann_files:
                 annotation_path = os.path.join(data_directory, file)
-                file_name = file[:-len(annotation_file_extension) - 1]
+                file_name = file[:-len('.ann') - 1]
                 self.all_data_files.append(DataFile(file_name, None, annotation_path))
 
         else:  # detected a training directory (raw text files exist)
@@ -138,10 +133,9 @@ class Dataset:
                     "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
 
             # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
-                         for file in raw_text_files]
+            ann_files = [file.replace(".%s" % raw_text_file_extension, ".ann") for file in raw_text_files]
             # only a training directory if every text file has a corresponding ann_file
-            self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
+            self.is_training_directory = all(os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files)
 
             # set all file attributes except metamap_path as it is optional.
             for file in raw_text_files:
@@ -151,7 +145,7 @@ class Dataset:
                 if self.is_training_directory:
                     annotation_path = os.path.join(
                         data_directory,
-                        file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
+                        file.replace(".%s" % raw_text_file_extension, '.ann')
                     )
                 else:
                     annotation_path = None
@@ -449,3 +443,13 @@ class Dataset:
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.get_data_files():
             yield Annotations(file.ann_path, source_text_path=file.txt_path)
+
+    def __getitem__(self, item):
+        """
+        Creates and returns the Annotations object with the given file name, else raises FileNotFoundError;
+        useful for getting Annotations objects from parallel Datasets
+        :param item: the name of the file to be represented (not including the extension or parent directories)
+        :return: an Annotations object
+        """
+        path = os.path.join(self.data_directory, item, '.ann')
+        return Annotations(path)
