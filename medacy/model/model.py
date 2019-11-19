@@ -67,7 +67,7 @@ class Model:
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
 
-            for idx, i in enumerate(results):
+            for i in results:
                 X, y = i.get()
                 self.X_data += X
                 self.y_data += y
@@ -161,12 +161,14 @@ class Model:
                 logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
                 annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
-        if isinstance(dataset, str):
+        elif isinstance(dataset, str):
             doc = self.pipeline.spacy_pipeline.make_doc(dataset)
-            doc.set_extension('file_name', default="STRING_INPUT", force=True)
+            doc.set_extension('file_name', default=None, force=True)
+            doc._.file_name = 'STRING_INPUT'
             doc = self.pipeline(doc, predict=True)
             annotations = predict_document(self.model, doc, self.pipeline)
-            return annotations
+        
+        return annotations
 
     def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
