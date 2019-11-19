@@ -16,15 +16,13 @@ class POSDropFeatureExtractor(FeatureExtractor):
         """
         :param window_size: window size to pull features from on a given token, default 2 on both sides.
         :param spacy_features: Default token attributes that spaCy sets to utilize as features
+        :param ignored_pos: a list of parts of speech to ignore, using spaCy POS naming conventions
         """
         super().__init__(
             window_size=window_size,
             spacy_features=spacy_features
         )
         self.ignored_pos = ignored_pos or ['PREP']
-
-    def filter_ignored_pos(self, sentence):
-        return [token for token in sentence if token.pos_ not in self.ignored_pos]
 
     def _token_to_feature_dict(self, index, sentence):
         """
@@ -38,7 +36,8 @@ class POSDropFeatureExtractor(FeatureExtractor):
         # This should automatically gather features that are set on tokens
         # by looping over all attributes set on sentence[index] that begin with 'feature'
 
-        sentence = self.filter_ignored_pos(sentence)
+        target = sentence[index]
+        sentence = [token for token in sentence if token.pos_ not in self.ignored_pos or token is target]
 
         features = {
             'bias': 1.0
