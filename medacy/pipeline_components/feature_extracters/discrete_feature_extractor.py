@@ -19,12 +19,8 @@ class FeatureExtractor:
         :param spacy_features: Default token attributes that spaCy sets to utilize as features
         """
         self.window_size = window_size
-        # do not ask how long this took to find.
-        self.all_custom_features = [attribute for attribute in list(Underscore.token_extensions.keys()) if attribute.startswith('feature_')]
-        if spacy_features is not None:
-            self.spacy_features = spacy_features
-        else:
-            self.spacy_features = ['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']
+        self.all_custom_features = [attr for attr in list(Underscore.token_extensions.keys()) if attr.startswith('feature_')]
+        self.spacy_features = spacy_features or ['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']
 
     def __call__(self, doc, file_name):
         """
@@ -53,7 +49,7 @@ class FeatureExtractor:
         """
 
         features = [self._sequence_to_feature_dicts(sent) for sent in doc.sents]
-        indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
+        indices = [[(token.idx, token.idx + len(token)) for token in sent] for sent in doc.sents]
         return features, indices
 
     def _sequence_to_feature_dicts(self, sequence):
@@ -67,7 +63,6 @@ class FeatureExtractor:
 
     def _sequence_to_labels(self, sequence, attribute='gold_label'):
         """
-
         :param sequence: a sequence of tokens to retrieve labels from
         :param attribute: the name of the attribute that is holding the tokens label. This defaults to 'gold_label' which was set in the GoldAnnotator Component.
         :return: a list of token labels.
