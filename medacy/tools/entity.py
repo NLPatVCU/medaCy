@@ -1,18 +1,25 @@
 from typing import Match
 
 from medacy.data.data_file import DataFile
-from medacy.tools.converters.brat_to_con import is_valid_brat, line_to_dict
+from medacy.data.annotations import Annotations
 
 
 class Entity:
-    """Representation of an individual entity in an annotation document. This abstraction is not used in the Annotations
-    class, but can be used to keep track of what entities are present in a document during dataset manipulation."""
+    """
+    Representation of an individual entity in an annotation document. This abstraction is not used in the Annotations
+    class, but can be used to keep track of what entities are present in a document during dataset manipulation.
+
+    :ivar tag: the tag of this Entity
+    :ivar start: the start index
+    :ivar end: the end index
+    :ivar text: the text of the Entity
+    """
 
     t = 1
 
-    def __init__(self, ent_type: str, start: int, end: int, text: str, num: int = 0):
+    def __init__(self, tag: str, start: int, end: int, text: str, num: int = 0):
         self.num = num
-        self.ent_type = ent_type
+        self.tag = tag
         self.start = start
         self.end = end
         self.text = text
@@ -22,6 +29,14 @@ class Entity:
 
     def __hash__(self):
         return hash((self.start, self.end, self.text))
+
+    def __str__(self):
+        """Returns the BRAT representation of this Entity, without a new-line character"""
+        return f"T{self.num}\t{self.tag} {self.start} {self.end}\t{self.text}"
+
+    def __repr__(self):
+        """Return the constructor in string form"""
+        return f"{type(self).__name__}({self.tag}, {self.start}, {self.end}, {self.text}, {self.num})"
 
     @classmethod
     def init_from_re_match(cls, match: Match, ent_class, num=None, increment_t=False):
@@ -38,7 +53,7 @@ class Entity:
 
         new_entity = cls(
             num=cls.t if num is None else num,
-            ent_type=ent_class,
+            tag=ent_class,
             start=match.start(),
             end=match.end(),
             text=match.string[match.start():match.end()],
@@ -50,11 +65,6 @@ class Entity:
 
         return new_entity
 
-    def set_t(self):
-        """Sets the T value based on the class's counter and increments the counter"""
-        self.num = self.__class__.t
-        self.__class__.t += 1
-
     @classmethod
     def init_from_doc(cls, doc):
         """
@@ -62,34 +72,49 @@ class Entity:
         :param doc: can be a DataFile or str of a file path
         :return: a list of Entities
         """
-        entities = []
         if isinstance(doc, DataFile):
-            with open(doc.ann_path) as f:
-                text_lines = f.read().split("\n")
+            ann = Annotations(doc.ann_path, doc.txt_path)
         elif isinstance(doc, str):
-            with open(doc) as f:
-                text_lines = f.read().split("\n")
-        for line in text_lines:
-            if not is_valid_brat(line):
-                continue
-            line_dict = line_to_dict(line)
-            new_entity = cls(
-                num=line_dict["id_num"],
-                ent_type=line_dict["data_type"],
-                start=line_dict["start_ind"],
-                end=line_dict["end_ind"],
-                text=line_dict["data_item"],
-            )
-            entities.append(new_entity)
+            ann = Annotations(doc)
+        else:
+            raise ValueError(f"'doc'' must be DataFile or str, but is '{type(doc)}'")
 
-        cls.t = 1 + max(ent.num for ent in entities)
+        entities = []
+
+        for ent in ann:
+            # Entities are a tuple of (label, start, end, text)
+            new_ent = cls(
+                tag=ent[0],
+                start=ent[1],
+                end=ent[2],
+                text=ent[3]
+            )
+            entities.append(new_ent)
 
         return entities
 
-    def __str__(self):
-        """Returns the BRAT representation of this Entity, without a new-line character"""
-        return f"T{self.num}\t{self.ent_type} {self.start} {self.end}\t{self.text}"
+    def set_t(self):
+        """Sets the T value based on the class's counter and increments the counter"""
+        self.num = self.__class__.t
+        self.__class__.t += 1
 
-    def __repr__(self):
-        """Return the constructor in string form"""
-        return f"{type(self).__name__}({self.ent_type}, {self.start}, {self.end}, {self.text}, {self.num})"
+    def equals(self, other, mode='strict'):
+        """
+        Determines if two Entities match, based on if the spans match and the tag is the same.
+        If mode is set to 'lenient', two Entities match if the other span is fully within or fully
+        without the first Entity and the tag is the same.
+        :param other: another instance of Entity
+        :param mode: 'strict' or 'lenient'; defaults to 'strict'
+        :return: True or False
+        """
+        if not isinstance(other, Entity):
+            raise ValueError(f"'other' must be another instance of Entity, but is '{type(other)}'")
+
+        if mode == 'strict':
+            return self == other
+        if mode != 'lenient':
+            raise ValueError(f"'mode' must be 'strict' or 'lenient', but is '{mode}'")
+
+        # Lenient
+        return ((self.end > other.start and self.start < other.end) or (self.start < other.end and other.start < self.end)) and self.tag == other.tag
+
