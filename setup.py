@@ -5,9 +5,11 @@ import sys
 
 packages = find_packages()
 
+
 def readme():
     with open('README.md') as f:
         return f.read()
+
 
 class PyTest(TestCommand):
     """
@@ -55,7 +57,13 @@ setup(
         'spacy==2.1.4',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
+<<<<<<< HEAD
         'numpy>=1.16.1',
+=======
+        'torch==1.2.0',
+        'pytorch-crf==0.7.2',
+        'numpy==1.16.1',
+>>>>>>> development
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
@@ -63,9 +71,14 @@ setup(
         'pathos>=0.2.2.1',
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0',
+        'gensim==3.8.0',
         'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm-2.1.0'
     ],
-    tests_require=["pytest", "pytest-cov", "medacy_dataset_end==1.0.3"],
+    tests_require=[
+        "pytest",
+        "pytest-cov",
+        "medacy_dataset_end==3.0.0"
+    ],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
     zip_safe=False

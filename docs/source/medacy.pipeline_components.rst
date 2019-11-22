@@ -5,6 +5,7 @@ medacy.pipeline\_components package
 
     medacy.pipeline_components.annotation
     medacy.pipeline_components.base
+    medacy.pipeline_components.learners
     medacy.pipeline_components.lexicon
     medacy.pipeline_components.metamap
     medacy.pipeline_components.tokenization
