@@ -21,7 +21,12 @@ and follow the installation instructions that they provide.
 ### Installing Vagrant
 
 Go to the [installation page](https://www.vagrantup.com/downloads.html) for Vagrant and select the version
-appropriate for your machine.
+appropriate for your machine. You will likely need to restart your machine after this step.
+
+Please also run this command to allow for the customization of the Vagrant box's disk size:
+```bash
+$ vagrant plugin install vagrant-disksize
+```
 
 ## Vagrant for medaCy
 
