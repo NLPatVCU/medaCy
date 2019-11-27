@@ -12,10 +12,8 @@ from medacy.model.model import Model
 from medacy.pipelines.testing_pipeline import TestingPipeline
 
 
-class TestModelTrainingAndPrediction(TestCase):
-    """
-    Tests model training and prediction in bulk
-    """
+class TestModel(TestCase):
+    """Tests Model"""
 
     @classmethod
     def setUpClass(cls):
@@ -45,11 +43,11 @@ class TestModelTrainingAndPrediction(TestCase):
 
         pipeline = TestingPipeline(entities=['tradename'])
 
-        #train on Abelcet.ann
+        # train on Abelcet.ann
         model = Model(pipeline, n_jobs=1)
         model.fit(self.train_dataset)
 
-        #predict on both
+        # predict on both
         model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
 
         second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
