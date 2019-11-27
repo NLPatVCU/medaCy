@@ -43,3 +43,11 @@ def get_metamap():
         mm_path = new_path
 
     return mm_path
+
+
+def get_metamap_path():
+    """Returns the path to the MetaMap binary, or 0 if it has not been set."""
+    with open(_config_path, 'rb') as f:
+        config_data = json.load(f)
+
+    return config_data['metamap_path']
