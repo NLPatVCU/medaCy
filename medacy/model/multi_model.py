@@ -26,7 +26,8 @@ class MultiModel:
     present in memory."""
 
     def __init__(self):
-        """No values are needed to instantiate a new MultiModel"""
+        """No values are needed to instantiate a new MultiModel; You can set self.models to a list of pipeline and
+        pickle file path tuples, but this bypasses the validation performed by self.add_model()"""
         self.models = []
         self._labels = set()
 
