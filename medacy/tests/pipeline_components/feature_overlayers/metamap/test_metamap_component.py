@@ -19,16 +19,32 @@ reason = "This test can only be performed if the path to MetaMap has been config
 class TestMetaMapComponent(unittest.TestCase):
     """Unit tests for medacy.pipeline_components.feature_overlayers.metamap.metamap_component.MetaMapComponent"""
 
+    @classmethod
+    def setUpClass(cls) -> None:
+        """Instantiates MetaMap and activates it"""
+        if not have_metamap:
+            return
+        cls.metamap = MetaMap(metamap_path)
+        cls.metamap.activate()
+
+        cls.nlp = spacy.load('en_core_web_sm')
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        """Deactivates MetaMap"""
+        if not have_metamap:
+            return
+        cls.metamap.deactivate()
+
     @unittest.skipUnless(have_metamap, reason)
     def test_overlays_cuis(self):
-        """Tests that the MetaMapComponent overlays CUIs correctly"""
-        nlp = spacy.load('en_core_web_sm')
-        doc = nlp('I took Tylenol and it gave me nausea and chest pain')
+        """Tests that the MetaMapComponent overlays CUIs correctly given a document that hasn't been metamapped"""
+        doc = self.nlp('I took Tylenol and it gave me nausea and chest pain')
 
         self.assertFalse(Token.has_extension('feature_cui'))
 
         metamap = MetaMap(metamap_path)
-        metamap_component = MetaMapComponent(nlp, metamap)
+        metamap_component = MetaMapComponent(self.nlp, metamap)
 
         metamap_component(doc)
         self.assertTrue(Token.has_extension('feature_cui'))
