@@ -2,12 +2,12 @@ import importlib
 import logging
 import os
 import time
+from shutil import copyfile
 from statistics import mean
 
 import joblib
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
-from spacy.tokens import Doc
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
@@ -114,61 +114,67 @@ class Model:
         self.model = learner
         return self.model
 
-    def predict(self, dataset, prediction_directory=None, groundtruth_directory=None):
+    def predict(self, input_data, prediction_directory=None, groundtruth_directory=None):
         """
-        Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
+        Generates predictions over a string or a input_data utilizing the pipeline equipped to the instance.
 
-        :param documents: A string or Dataset to predict
-        :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
+        :param input_data: A string or Dataset to predict over.
+        :param prediction_directory: The directory to write predictions if doing bulk prediction
+            (default: */prediction* sub-directory of Dataset)
         :param groundtruth_directory: The directory to write groundtruth to.
-        :return:
+        :return: if input_data is a str, returns an Annotations of the predictions;
+            if input_data is a Dataset, returns a Dataset of the predictions.
         """
 
-        if not isinstance(dataset, (Dataset, str)):
+        if not isinstance(input_data, (Dataset, str)):
             raise TypeError("Must pass in an instance of Dataset containing your examples to be used for prediction")
         if self.model is None:
             raise RuntimeError("Must fit or load a pickled model before predicting")
 
-        if isinstance(dataset, Dataset):
+        if isinstance(input_data, Dataset):
             # create directory to write predictions to
             prediction_directory = self.create_annotation_directory(
                 directory=prediction_directory,
-                training_dataset=dataset,
+                training_dataset=input_data,
                 option="predictions"
             )
 
             # create directory to write groundtruth to
             groundtruth_directory = self.create_annotation_directory(
                 directory=groundtruth_directory,
-                training_dataset=dataset,
+                training_dataset=input_data,
                 option="groundtruth"
             )
 
-            for data_file in dataset:
+            for data_file in input_data:
                 logging.info("Predicting file: %s", data_file.file_name)
 
-                with open(data_file.txt_path, 'r') as raw_text:
-                    doc = self.pipeline.spacy_pipeline.make_doc(raw_text.read())
+                with open(data_file.txt_path, 'r') as f:
+                    doc = self.pipeline.spacy_pipeline.make_doc(f.read())
 
-                doc.set_extension('file_name', default=data_file.file_name, force=True)
-                if data_file.metamapped_path is not None:
-                    doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+                doc.set_extension('file_name', default=None, force=True)
+                doc._.file_name = data_file.txt_path
 
                 # run through the pipeline
                 doc = self.pipeline(doc, predict=True)
 
+                # Predict, creating a new Annotations object
                 annotations = predict_document(self.model, doc, self.pipeline)
                 logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
                 annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
 
-        elif isinstance(dataset, str):
-            doc = self.pipeline.spacy_pipeline.make_doc(dataset)
+                # Copy the txt file so that the output will also be a Dataset
+                copyfile(data_file.txt_path, os.path.join(prediction_directory, data_file.file_name + ".txt"))
+
+            return Dataset(prediction_directory)
+
+        elif isinstance(input_data, str):
+            doc = self.pipeline.spacy_pipeline.make_doc(input_data)
             doc.set_extension('file_name', default=None, force=True)
             doc._.file_name = 'STRING_INPUT'
             doc = self.pipeline(doc, predict=True)
             annotations = predict_document(self.model, doc, self.pipeline)
-        
-        return annotations
+            return annotations
 
     def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
