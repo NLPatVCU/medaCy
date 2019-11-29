@@ -1,8 +1,3 @@
-"""
-A utility class to Metamap medical text documents.
-Metamap a file  and utilize it the output or manipulate stored metamap output
-"""
-
 import json
 import os
 import subprocess
@@ -42,18 +37,26 @@ class MetaMap:
         self.convert_ascii = convert_ascii
         self.args = args
 
-    def __enter__(self):
+    def activate(self):
         """Activates MetaMap for metamapping files or strings"""
         bin_dir = os.path.dirname(self.metamap_path)
         program_name = os.path.join(bin_dir, "skrmedpostctl")
         subprocess.call([program_name, 'start'])
+
+    def __enter__(self):
+        """Activates MetaMap for metamapping files or strings"""
+        self.activate()
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def deactivate(self):
         """Deactivates MetaMap"""
         bin_dir = os.path.dirname(self.metamap_path)
         program_name = os.path.join(bin_dir, "skrmedpostctl")
         subprocess.call([program_name, 'stop'])
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Deactivates MetaMap"""
+        self.deactivate()
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
