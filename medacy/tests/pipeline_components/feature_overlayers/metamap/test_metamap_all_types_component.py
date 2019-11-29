@@ -6,7 +6,15 @@ from medacy.model.model import Model
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesComponent
 from medacy.pipelines.testing_pipeline import TestingPipeline
-from medacy.tools.get_metamap import get_metamap
+from medacy.tools.get_metamap import get_metamap_path
+
+
+# See if MetaMap has been set for this installation
+metamap_path = get_metamap_path()
+have_metamap = metamap_path != 0
+
+# Specify why MetaMap tests may be skipped
+reason = "This test can only be performed if the path to MetaMap has been configured for this installation"
 
 
 class TestMetaMapAllTypesComponent(unittest.TestCase):
@@ -15,7 +23,10 @@ class TestMetaMapAllTypesComponent(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         """Instantiates MetaMap and the pipeline for these tests"""
-        cls.metamap = MetaMap(get_metamap())
+        if not have_metamap:
+            return
+        cls.metamap = MetaMap(metamap_path)
+        cls.metamap.activate()
 
         class TestPipeline(TestingPipeline):
             def __init__(self, ents):
@@ -24,11 +35,14 @@ class TestMetaMapAllTypesComponent(unittest.TestCase):
 
         cls.Pipeline = TestPipeline
 
-    def test_create_metamap(self):
-        """Tests creating a MetaMap object from path in the config file"""
-        self.metamap = MetaMap(get_metamap())
-        self.assertIsInstance(self.metamap, MetaMap)
+    @classmethod
+    def tearDownClass(cls) -> None:
+        """Deactivates MetaMap"""
+        if not have_metamap:
+            return
+        cls.metamap.deactivate()
 
+    @unittest.skipUnless(have_metamap, reason)
     def test_has_all_types(self):
         """
         Tests that all tokens are given every semantic type label found in the dataset; this ensures that
