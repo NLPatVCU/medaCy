@@ -262,3 +262,14 @@ class Annotations:
 
     def __iter__(self):
         return iter(self.annotations)
+
+    def __or__(self, other):
+        """
+        Creates an Annotations object containing annotations from two instances
+        :param other: the other Annotations instance
+        :return: a new Annotations object containing entities from both
+        """
+        new_entities = list(set(self.annotations) | set(other.annotations))
+        new_annotations = Annotations(new_entities)
+        new_annotations.ann_path = 'None'
+        return new_annotations

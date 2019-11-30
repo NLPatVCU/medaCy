@@ -1,2 +1,3 @@
 include README.md
-include medacy/tests/data/end
+recursive-include medacy/tests/sample_data/
+include config.json

@@ -15,11 +15,12 @@ class ClinicalPipeline(BasePipeline):
     to character level tokens defines this pipeline.
     """
 
-    def __init__(self, metamap=None, entities=[], cuda_device=-1):
+    def __init__(self, entities, metamap=None, cuda_device=-1):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
+        :param entities: a list of entities to use in this pipeline.
         :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
         """
 

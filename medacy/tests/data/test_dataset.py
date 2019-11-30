@@ -8,16 +8,14 @@ from unittest import TestCase
 import pkg_resources
 
 from medacy.data.dataset import Dataset
+from medacy.data.annotations import Annotations
 
 
-class TestDatasetLocal(TestCase):
-    """
-    Tests working with a local datasets - imports an external dataset END and writes it locally
-    Tests are run on the local versions.
-    """
+class TestDataset(TestCase):
+    """Unit tests for Dataset"""
+
     @classmethod
     def setUpClass(cls):
-
         if importlib.util.find_spec('medacy_dataset_end') is None:
             raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
         cls.training_directory = tempfile.mkdtemp() #set up train directory
@@ -62,54 +60,17 @@ class TestDatasetLocal(TestCase):
         self.assertIsInstance(dataset, Dataset)
         self.assertFalse(dataset.is_training_directory)
 
-
-class TestDatasetExternal(TestCase):
-    """
-    Tests working with of an external imported Dataset.
-    The external dataset is loaded into a temporary cache directory by pkg_resources and
-    a Dataset object passed along that directory.
-    """
-    @classmethod
-    def setUpClass(cls):
-
-        if importlib.util.find_spec('medacy_dataset_end') is None:
-            raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
-
-        cls.dataset, _ = Dataset.load_external('medacy_dataset_end')
-        cls.entities = list(cls.dataset.get_labels())
-
-    @classmethod
-    def tearDownClass(cls):
-        pkg_resources.cleanup_resources()
-
-    def test_is_training(self):
-        """Tests initialization of DataManager"""
-        self.assertTrue(self.dataset.is_training_directory)
-
-    def test_file_count(self):
-        """Tests the expected file count for our testing dataset"""
-        self.assertEqual(38, len(self.dataset))
-
-    def test_is_metamapped(self):
-        """Verifies that the dataset is metamapped"""
-        self.assertTrue(self.dataset.is_metamapped())
-
-    def test_limit(self):
-        """Tests limiting a file"""
-        self.dataset.data_limit = 5
-        self.assertEqual(len(self.dataset), 5)
+    def test_generate_annotations(self):
+        """Tests that generate_annotations() creates Annotations objects"""
+        dataset = Dataset(self.prediction_directory)
+        for ann in dataset.generate_annotations():
+            self.assertIsInstance(ann, Annotations)
 
     def test_compute_counts(self):
-        self.assertIsInstance(self.dataset.compute_counts(), Counter)
+        """Tests that compute_counts() returns a Counter containing counts for all labels"""
+        dataset = Dataset(self.prediction_directory)
+        counts = dataset.compute_counts()
+        self.assertIsInstance(counts, Counter)
+        for label in dataset.get_labels():
+            self.assertIn(label, counts.keys())
 
-    def test_compute_confusion_matrix(self):
-        self.dataset.data_limit = 3
-        entities, confusion_matrix = self.dataset.compute_confusion_matrix(self.dataset)
-        self.dataset.data_limit = 41
-        self.assertIsInstance(confusion_matrix, list)
-
-    def test_compute_ambiguity(self):
-        self.dataset.data_limit = 3
-        ambiguity = self.dataset.compute_ambiguity(self.dataset)
-        self.dataset.data_limit = 41
-        self.assertIsInstance(ambiguity, dict)
