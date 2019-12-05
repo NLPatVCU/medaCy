@@ -24,6 +24,7 @@ class Annotations:
         """
         if isinstance(annotation_data, list) and all(isinstance(e, tuple) for e in annotation_data):
             self.annotations = annotation_data
+            self.source_text_path = source_text_path
             return
         elif not os.path.isfile(annotation_data):
             raise FileNotFoundError("annotation_data must be a list of tuples or a valid file path, but is %s" % repr(annotation_data))

@@ -82,7 +82,7 @@ class MultiModel:
         # Get all the txt files in the input directory
         txt_files = [f for f in os.listdir(data_directory) if f.endswith('.txt')]
         # Create a dictionary of empty Annotations objects to store the predictions
-        annotation_dict = {f: Annotations([]) for f in txt_files}
+        annotation_dict = {f: Annotations([], source_text_path=f) for f in txt_files}
 
         for model in self.generate_models():
             pipeline = model.pipeline
