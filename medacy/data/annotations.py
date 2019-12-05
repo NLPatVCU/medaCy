@@ -119,6 +119,9 @@ class Annotations:
         :return: returns string formatted as an ann file, if write_location is valid path also writes to that path.
         """
         ann_string = ""
+
+        # Sort tuples by starting index, or end index if two have the same start
+        self.annotations.sort(key=lambda x: (x[1], x[2]))
         for num, tup in enumerate(self.annotations, 1):
             entity, first_start, last_end, labeled_text = tup
             ann_string += "T%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
