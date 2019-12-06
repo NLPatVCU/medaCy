@@ -56,15 +56,12 @@ class MultiModel:
 
         self.models.append((pipeline, model_path))
 
-    def generate_models(self):
+    def __iter__(self):
         """
         Individually activates and returns usable Model instances one at a time
         """
         for pipeline, model_path in self.models:
             yield _activate_model(pipeline, model_path)
-
-    def __iter__(self):
-        raise NotImplementedError("Please use generate_models() when iterating over a MultiModel")
 
     def predict_directory(self, data_directory, prediction_directory):
         """
@@ -84,7 +81,7 @@ class MultiModel:
         # Create a dictionary of empty Annotations objects to store the predictions
         annotation_dict = {f: Annotations([], source_text_path=f) for f in txt_files}
 
-        for model in self.generate_models():
+        for model in self:
             pipeline = model.pipeline
             for file_name in txt_files:
                 with open(file_name) as f:
