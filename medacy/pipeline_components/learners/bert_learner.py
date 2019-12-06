@@ -78,17 +78,17 @@ class BertLearner:
         self.vectorizer.create_tag_dictionary(y_data)
 
         self.model = BertForTokenClassification.from_pretrained(
-            'bert-base-cased',
+            self.pretrained_model,
             num_labels=len(self.vectorizer.tag_to_index)
         )
         self.model.train()
         self.model.to(device=self.device)
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
+        self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_model)
         optimizer = Adam(self.model.parameters())
 
-        x_data, y_data, mappings = self.encode_sequences(x_data, y_data)
+        x_data, y_data, _ = self.encode_sequences(x_data, y_data)
         
-        for epoch in range(3):
+        for epoch in range(2):
             logging.info('Epoch %d' % epoch)
 
             for sequence, labels in zip(x_data, y_data):
@@ -110,7 +110,6 @@ class BertLearner:
         self.model.eval()
         encoded_sequences, _, mappings = self.encode_sequences(sequences)
         encoded_tag_indices = []
-        predictions = []
 
         for sequence in encoded_sequences:
             sequence = torch.tensor(sequence, device=self.device).unsqueeze(0)
