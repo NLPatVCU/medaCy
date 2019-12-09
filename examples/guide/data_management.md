@@ -38,8 +38,7 @@ MedaCy provides two functionalities for loading data:
 To create a *Dataset*, simply instantiate one with a path to the directory containing your data.
 
 ```python
-from medacy.data import Dataset
-
+from medacy.data.dataset import Dataset
 data = Dataset('/home/medacy/data')
 ```
 
@@ -49,28 +48,23 @@ A common data work flow might look like this.
 
 running:
 
-```python
-from medacy.data import Dataset
-from medacy.pipeline_components import MetaMap
-
-dataset = Dataset('/home/medacy/data')
-for data_file in dataset:
-  print(data_file.file_name)
-print(data)
-print(data.is_metamapped())
-
-metamap = Metamap('/home/path/to/metamap/binary')
-data.metamap(metamap)
-print(data.is_metamapped())
 ```
+>>> from medacy.data.datset import Dataset
+>>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
-outputs:
-
-```python
-file_one
-file_two
-['file_one.txt', 'file_two.txt']
+>>> dataset = Dataset('/home/medacy/data')
+>>> for data_file in dataset:
+...  data_file.file_name
+'file_one'
+'file_two'
+>>> data
+['file_one', 'file_two']
+>>> data.is_metamapped()
 False
+>>> metamap = Metamap('/home/path/to/metamap/binary')
+>>> with metamap:
+... data.metamap(metamap)
+data.is_metamapped()
 True
 ```
 
