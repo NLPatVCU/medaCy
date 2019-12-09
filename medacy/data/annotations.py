@@ -274,6 +274,6 @@ class Annotations:
         :return: a new Annotations object containing entities from both
         """
         new_entities = list(set(self.annotations) | set(other.annotations))
-        new_annotations = Annotations(new_entities)
-        new_annotations.ann_path = new_annotations.source_text_path = 'None'
+        new_annotations = Annotations(new_entities, source_text_path=self.source_text_path or other.source_text_path)
+        new_annotations.ann_path = 'None'
         return new_annotations
