@@ -48,8 +48,9 @@ class TestMultiModel(unittest.TestCase):
         resulting_data = multimodel.predict_directory(data_1.data_directory, self.temp_dir)
         labeled_items = resulting_data.get_labels()
 
-        # Test that labels from both models get predicted for
-        self.assertSetEqual(ents_1 | ents_2, labeled_items)
+        # Test that at least one label from each model is predicted
+        self.assertTrue(any(e in ents_1 for e in labeled_items))
+        self.assertTrue(any(e in ents_2 for e in labeled_items))
 
         # Test that all files get predicted for
         self.assertEqual(len(resulting_data), len(data_1))
