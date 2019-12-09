@@ -61,11 +61,6 @@ class MultiModel:
         if not issubclass(pipeline_class, BasePipeline):
             raise TypeError(f"'pipeline_class' must be a subclass of BasePipeline, but is '{repr(pipeline_class)}'")
 
-        has_entities = ('entities' in kwargs and all(isinstance(s, str) for s in kwargs['entities'])) \
-                       or (len(args) > 0 and isinstance(args[0], list) and all(isinstance(s, str) for s in args[0]))
-        if not has_entities:
-            raise ValueError("None of the parameters for this model appear to be a list of entities.")
-
         self.models.append((model_path, pipeline_class, args, kwargs))
 
     def __iter__(self):
@@ -95,20 +90,20 @@ class MultiModel:
         annotation_dict = {f: Annotations([], source_text_path=f) for f in txt_files}
 
         for model in self:
-            pipeline = model.pipeline
             for file_name in txt_files:
-                with open(file_name) as f:
+                file_path = os.path.join(data_directory, file_name)
+                with open(file_path) as f:
                     text = f.read()
-                doc = pipeline(text)
                 this_annotations = annotation_dict[file_name]
-                resulting_annotations = predict_document(model, doc, pipeline)
+                resulting_annotations = model.predict(text)
                 # Merge the two Annotations together and store them back in the dictionary
                 annotation_dict[file_name] = this_annotations | resulting_annotations
 
         # Create the new Dataset directory
         for path, ann in annotation_dict.items():
             # Get the name of the output ann file
-            base_name = os.path.basename(path)
+            path = os.path.join(data_directory, path)
+            base_name = os.path.basename(path)[:-4]
             output_ann = os.path.join(prediction_directory, base_name + '.ann')
             output_txt = os.path.join(prediction_directory, base_name + '.txt')
 
