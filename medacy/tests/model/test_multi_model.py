@@ -25,15 +25,15 @@ class TestMultiModel(unittest.TestCase):
         """Runs all tests for MultiModel"""
 
         data_1 = Dataset('TODO')
-        ents_1 = data_1.get_labels(as_list=True)
+        ents_1 = data_1.get_labels()
         data_2 = Dataset('TODO')
-        ents_2 = data_2.get_labels(as_list=True)
+        ents_2 = data_2.get_labels()
 
         multimodel = MultiModel()
         # Test that *args works
-        multimodel.add_model('TODO', ClinicalPipeline, ents_1)
+        multimodel.add_model('TODO', ClinicalPipeline, list(ents_1))
         # Test that **kwargs works
-        multimodel.add_model('TODO', TestingPipeline, entities=ents_2)
+        multimodel.add_model('TODO', TestingPipeline, entities=list(ents_2))
 
         # Test __len__
         self.assertEqual(len(multimodel), 2)
@@ -49,8 +49,7 @@ class TestMultiModel(unittest.TestCase):
         labeled_items = resulting_data.get_labels()
 
         # Test that labels from both models get predicted for
-        self.assertTrue(labeled_items <= set(ents_1))
-        self.assertTrue(labeled_items <= set(ents_2))
+        self.assertSetEqual(ents_1 | ents_2, labeled_items)
 
         # Test that all files get predicted for
         self.assertEqual(len(resulting_data), len(data_1))
