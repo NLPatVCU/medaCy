@@ -61,6 +61,11 @@ class MultiModel:
         if not issubclass(pipeline_class, BasePipeline):
             raise TypeError(f"'pipeline_class' must be a subclass of BasePipeline, but is '{repr(pipeline_class)}'")
 
+        has_entities = ('entities' in kwargs and all(isinstance(s, str) for s in kwargs['entities'])) \
+                       or (len(args) > 0 and isinstance(args[0], list) and all(isinstance(s, str) for s in args[0]))
+        if not has_entities:
+            raise ValueError("None of the parameters for this model appear to be a list of entities.")
+
         self.models.append((model_path, pipeline_class, args, kwargs))
 
     def __iter__(self):
