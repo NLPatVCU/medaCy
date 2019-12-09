@@ -22,7 +22,7 @@ class TestMultiModel(unittest.TestCase):
         shutil.rmtree(cls.temp_dir)
 
     def test_multi_model(self):
-        """Runs all tests for MultiModel"""
+        """Runs all tests for valid uses of MultiModel"""
 
         data_1 = Dataset('TODO')
         ents_1 = data_1.get_labels()
@@ -54,6 +54,26 @@ class TestMultiModel(unittest.TestCase):
 
         # Test that all files get predicted for
         self.assertEqual(len(resulting_data), len(data_1))
+
+    def test_errors(self):
+        """Tests that invalid inputs raise the appropriate errors"""
+        multimodel = MultiModel()
+
+        # Test add_model with a nonexisting model path
+        with self.assertRaises(FileNotFoundError):
+            multimodel.add_model('notafilepath', ClinicalPipeline, ['Drug', 'ADE'])
+
+        # Test add_model without passing a subclass of BasePipeline
+        with self.assertRaises(TypeError):
+            multimodel.add_model('TODO', 7, ['Drug', 'ADE'])
+
+        # Test add_model without a list of entities anywhere in args or kwargs
+        with self.assertRaises(ValueError):
+            multimodel.add_model('TODO', TestingPipeline)
+        with self.assertRaises(ValueError):
+            multimodel.add_model('TODO', TestingPipeline, [])
+        with self.assertRaises(ValueError):
+            multimodel.add_model('TODO', TestingPipeline, entities=[6, 8])
 
 
 if __name__ == '__main__':
