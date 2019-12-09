@@ -24,8 +24,21 @@ def _activate_model(model_path, pipeline_class, args, kwargs):
 
 
 class MultiModel:
-    """Allows for prediction with multiple models, ensuring that only the model being used at a given time is
-    present in memory."""
+    """
+    Allows for prediction with multiple models, ensuring that only the model being used at a given time and its pipeline
+    are present in memory.
+
+    An example use case:
+    >>> from medacy.model.multi_model import MultiModel
+    >>> from medacy.pipelines.clinical_pipeline import ClinicalPipeline
+    >>> from medacy.pipelines.scispacy_pipeline import ScispacyPipeline
+    >>> multimodel = MultiModel()
+    >>> multimodel.add_model('path/to/model_one.pkl' ClinicalPipeline, ['Drug', 'ADE'])
+    >>> multimodel.add_model('path/to/model_two.pkl' ScispacyPipeline, ['Dose', 'Frequency'])
+    >>> for model in multimodel:
+    ...     model.predict('The patient was prescribed 5mg of Tylenol and got a headache.')
+    >>> predicted_data = multimodel.predict_directory('path/to/input/data', 'path/to/output/directory')
+    """
 
     def __init__(self):
         """No values are needed to instantiate a new MultiModel."""
