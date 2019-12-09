@@ -275,5 +275,5 @@ class Annotations:
         """
         new_entities = list(set(self.annotations) | set(other.annotations))
         new_annotations = Annotations(new_entities)
-        new_annotations.ann_path = 'None'
+        new_annotations.ann_path = new_annotations.source_text_path = 'None'
         return new_annotations
