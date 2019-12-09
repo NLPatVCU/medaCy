@@ -61,19 +61,11 @@ class TestMultiModel(unittest.TestCase):
 
         # Test add_model with a nonexisting model path
         with self.assertRaises(FileNotFoundError):
-            multimodel.add_model('notafilepath', ClinicalPipeline, ['Drug', 'ADE'])
+            multimodel.add_model('notafilepath', ClinicalPipeline)
 
         # Test add_model without passing a subclass of BasePipeline
         with self.assertRaises(TypeError):
-            multimodel.add_model('TODO', 7, ['Drug', 'ADE'])
-
-        # Test add_model without a list of entities anywhere in args or kwargs
-        with self.assertRaises(ValueError):
-            multimodel.add_model('TODO', TestingPipeline)
-        with self.assertRaises(ValueError):
-            multimodel.add_model('TODO', TestingPipeline, [])
-        with self.assertRaises(ValueError):
-            multimodel.add_model('TODO', TestingPipeline, entities=[6, 8])
+            multimodel.add_model('TODO', 7)
 
 
 if __name__ == '__main__':
