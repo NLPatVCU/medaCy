@@ -3,8 +3,7 @@
 import logging
 import os
 import torch
-from torch.optim import Adam
-from transformers import BertTokenizer, BertForTokenClassification
+from transformers import AdamW, BertTokenizer, BertForTokenClassification
 
 from medacy.nn import Vectorizer
 
@@ -84,11 +83,19 @@ class BertLearner:
         self.model.train()
         self.model.to(device=self.device)
         self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_model)
-        optimizer = Adam(self.model.parameters())
+
+        # https://github.com/huggingface/transformers/blob/master/examples/run_ner.py
+        no_decay = ["bias", "LayerNorm.weight"]
+        optimizer_grouped_parameters = [
+            {"params": [p for n, p in self.model.named_parameters() if not any(nd in n for nd in no_decay)],
+            "weight_decay": 0.0},
+            {"params": [p for n, p in self.model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0}
+        ]
+        optimizer = AdamW(optimizer_grouped_parameters, lr=5e-5, eps=1e-8)
 
         x_data, y_data, _ = self.encode_sequences(x_data, y_data)
         
-        for epoch in range(2):
+        for epoch in range(3):
             logging.info('Epoch %d' % epoch)
 
             for sequence, labels in zip(x_data, y_data):
@@ -129,8 +136,8 @@ class BertLearner:
         torch.save(vectorizer_values, path + '/vectorizer.pt')
 
     def load(self, path):
-        self.model = BertForTokenClassification.from_pretrained(path)
         self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_model)
         vectorizer_values = torch.load(path + '/vectorizer.pt')
         self.vectorizer = Vectorizer(device=self.device)
         self.vectorizer.load_values(vectorizer_values)
+        self.model = BertForTokenClassification.from_pretrained(path, num_labels=len(self.vectorizer.tag_to_index))
