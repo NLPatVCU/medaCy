@@ -152,8 +152,9 @@ class BertLearner:
         x_data, y_data, _ = self.encode_sequences(x_data, y_data)
         
         # Only do 3 epochs as suggested in BERT paper
-        for epoch in range(3):
+        for epoch in range(4):
             logging.info('Epoch %d' % epoch)
+            training_loss = 0
 
             for sequence, labels in zip(x_data, y_data):
                 # Unsqueeze sequences and labels since we're doing a batch size of 1
@@ -165,8 +166,11 @@ class BertLearner:
 
                 # Train using the optimizer and loss
                 loss.backward()
+                training_loss += loss.item()
                 optimizer.step()
-                optimizer.zero_grad()
+                self.model.zero_grad()
+
+            logging.info('Loss: %f' % (training_loss / len(x_data)))
 
     def predict(self, sequences):
         """Use model to make predictions over a given dataset.
