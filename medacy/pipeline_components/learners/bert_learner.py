@@ -1,9 +1,10 @@
 import logging
 import os
 import torch
+from torch.utils.data import RandomSampler, DataLoader
 from transformers import AdamW, BertTokenizer, BertForTokenClassification
 
-from medacy.nn import Vectorizer
+from medacy.nn import Vectorizer, SequencesDataset
 
 class BertLearner:
     """Learner for running predictions and fine tuning BERT models.
@@ -150,19 +151,18 @@ class BertLearner:
 
         # Encode sequencesa and labels
         x_data, y_data, _ = self.encode_sequences(x_data, y_data)
+        dataset = SequencesDataset(self.device, x_data, y_data)
+        sampler = RandomSampler(dataset)
+        dataloader = DataLoader(dataset, sampler=sampler, batch_size=32, collate_fn=dataset.collate)
         
         # Only do 3 epochs as suggested in BERT paper
         for epoch in range(4):
             logging.info('Epoch %d' % epoch)
             training_loss = 0
 
-            for sequence, labels in zip(x_data, y_data):
-                # Unsqueeze sequences and labels since we're doing a batch size of 1
-                sequence = torch.tensor(sequence, device=self.device).unsqueeze(0)
-                labels = labels.unsqueeze(0)
-
+            for sequences, labels, masks in dataloader:
                 # Pass sequences through the model and get the loss
-                loss, _ = self.model(sequence, labels=labels)
+                loss, _ = self.model(sequences, labels=labels, attention_mask=masks)
 
                 # Train using the optimizer and loss
                 loss.backward()
