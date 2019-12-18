@@ -38,6 +38,9 @@ class Vectorizer:
 
         self.tag_to_index = tag_to_index
 
+    def add_tag(self, tag):
+        self.tag_to_index[tag] = len(self.tag_to_index)
+
     def create_feature_dictionary(self, feature_name, sentences):
         feature_to_index = {}
         feature_name = '0:' + feature_name

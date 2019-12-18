@@ -43,6 +43,8 @@ def setup(args):
 
         if args.word_embeddings is not None:
             pipeline = Pipeline(entities=entities, word_embeddings=args.word_embeddings, cuda_device=args.cuda)
+        elif args.batch_size is not None:
+            pipeline = Pipeline(entities=entities, cuda_device=args.cuda, batch_size=args.batch_size)
         else:
             pipeline = Pipeline(entities=entities, cuda_device=args.cuda)
 
@@ -122,6 +124,7 @@ def main():
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
+    parser.add_argument('-b', '--batch_size', type=int, default=None, help='Batch size. Only works with BERT pipeline.')
     subparsers = parser.add_subparsers()
 
     # Train arguments
@@ -145,6 +148,10 @@ def main():
 
     # Parse initial args
     args = parser.parse_args()
+
+    if args.batch_size is not None:
+        if 'bert' not in args.pipeline.lower() and 'bert' not in args.custom_pipeline.lower():
+            raise NotImplementedError('Batch size only implemented for BERT pipelines')
 
     # Logging
     logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s', level=logging.INFO)

@@ -13,7 +13,7 @@ class BertPipeline(BasePipeline):
     to character level tokens defines this pipeline.
     """
 
-    def __init__(self, entities=[], word_embeddings=None, cuda_device=-1):
+    def __init__(self, entities=[], word_embeddings=None, cuda_device=-1, batch_size=32):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -32,9 +32,14 @@ class BertPipeline(BasePipeline):
         self.entities = entities
         self.word_embeddings = word_embeddings
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
+        self.batch_size = batch_size
 
     def get_learner(self):
-        learner = BertLearner(self.cuda_device, pretrained_model='bert-large-cased')
+        learner = BertLearner(
+            self.cuda_device,
+            pretrained_model='bert-large-cased',
+            batch_size=self.batch_size
+        )
         return ('BERT', learner)
 
     def get_tokenizer(self):

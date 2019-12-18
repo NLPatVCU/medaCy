@@ -1,7 +1,7 @@
 import logging
 import os
 import torch
-from torch.utils.data import RandomSampler, DataLoader
+from torch.utils.data import RandomSampler, DataLoader, SequentialSampler
 from transformers import AdamW, BertTokenizer, BertForTokenClassification
 
 from medacy.nn import Vectorizer, SequencesDataset
@@ -10,7 +10,7 @@ class BertLearner:
     """Learner for running predictions and fine tuning BERT models.
     """
 
-    def __init__(self, cuda_device=-1, pretrained_model='bert-large-cased'):
+    def __init__(self, cuda_device=-1, pretrained_model='bert-large-cased', batch_size=32):
         """
         Initialize BertLearner.
 
@@ -28,6 +28,7 @@ class BertLearner:
         self.tokenizer = None # Transformers tokenizer
         self.vectorizer = Vectorizer(self.device) # medaCy vectorizer
         self.pretrained_model = pretrained_model # Name of Transformers pretrained model
+        self.batch_size=batch_size
 
     def encode_sequences(self, sequences, labels=[]):
         """
@@ -58,7 +59,6 @@ class BertLearner:
         # store them correctly in these variables along with a mapping of the original tokens.
         split_sequences = []
         split_sequence_labels = []
-        mappings = []
 
         # Iterate through encoded sequences and original labels. Each token in the sequnece is a
         # list that will be length 1 if the token wasn't split, but longer if it was.
@@ -66,35 +66,29 @@ class BertLearner:
             # First token is always encoding of [CLS]. Create new lists starting with it and the
             # proper label/mapping
             split_sequence = [sequence[0]]
-            split_labels = ['O']
-            mapping = [0]
+            split_labels = ['X']
 
             # Loop through ids and labels in sequences. Don't take first or last id lists from
             # sequence since we already added [CLS] and will add [SEP] later.
             for ids, label in zip(sequence[1:-1], sequence_labels):
-                map_value = 1 # First token id is the only one we want to classify
+                split_sequence.append(ids[0])
+                split_labels.append(label)
 
-                for token_id in ids:
+                for token_id in ids[1:]:
                     # Add proper token id and label to lists
                     split_sequence.append(token_id)
-                    split_labels.append(label)
-
-                    # Add map value of 1 the first time but 0 every other time
-                    mapping.append(map_value)
-                    map_value = 0
+                    split_labels.append('X')
 
             # Add the final token [SEP] with proper label/mapping
             split_sequence.append(sequence[-1])
-            split_labels.append('O')
-            mapping.append(0)
+            split_labels.append('X')
 
             # Append final forms of lists
             split_sequences.append(split_sequence)
             split_sequence_labels.append(self.vectorizer.vectorize_tags(split_labels))
-            mappings.append(mapping)
 
-        # Return the there lists that were created
-        return split_sequences, split_sequence_labels, mappings
+        # Return the two lists that were created
+        return split_sequences, split_sequence_labels
 
     def decode_labels(self, sequence_labels, mappings):
         """
@@ -106,13 +100,14 @@ class BertLearner:
             it in classification (1) or not (0)
         """
         decoded_labels = []
+        null_label = self.vectorizer.tag_to_index['X']
 
         for labels, mapping in zip(sequence_labels, mappings):
             remapped_labels = []
 
             for label, map_value in zip(labels, mapping):
                 # Only include label if map value is 1
-                if map_value == 1:
+                if map_value != null_label:
                     remapped_labels.append(label)
 
             # Decode list of label indices useing self.vectorizer
@@ -129,6 +124,7 @@ class BertLearner:
             Labels are represented by strings.
         """
         self.vectorizer.create_tag_dictionary(y_data)
+        self.vectorizer.add_tag('X')
 
         # Load pretrain BERT model, unfreeze layers, move it to GPU device, and create its tokenizer
         self.model = BertForTokenClassification.from_pretrained(
@@ -150,27 +146,34 @@ class BertLearner:
         optimizer = AdamW(optimizer_grouped_parameters, lr=5e-5, eps=1e-8)
 
         # Encode sequencesa and labels
-        x_data, y_data, _ = self.encode_sequences(x_data, y_data)
-        dataset = SequencesDataset(self.device, x_data, y_data)
+        sequences, labels = self.encode_sequences(x_data, y_data)
+        dataset = SequencesDataset(self.device, sequences, labels)
         sampler = RandomSampler(dataset)
-        dataloader = DataLoader(dataset, sampler=sampler, batch_size=32, collate_fn=dataset.collate)
+        dataloader = DataLoader(
+            dataset,
+            sampler=sampler,
+            batch_size=self.batch_size,
+            collate_fn=dataset.collate
+        )
         
         # Only do 3 epochs as suggested in BERT paper
-        for epoch in range(4):
+        for epoch in range(3):
             logging.info('Epoch %d' % epoch)
             training_loss = 0
+            batches = 0
 
-            for sequences, labels, masks in dataloader:
+            for sequences, masks, labels in dataloader:
                 # Pass sequences through the model and get the loss
                 loss, _ = self.model(sequences, labels=labels, attention_mask=masks)
 
                 # Train using the optimizer and loss
                 loss.backward()
                 training_loss += loss.item()
+                batches += 1
                 optimizer.step()
                 self.model.zero_grad()
 
-            logging.info('Loss: %f' % (training_loss / len(x_data)))
+            logging.info('Loss: %f' % (training_loss / batches))
 
     def predict(self, sequences):
         """Use model to make predictions over a given dataset.
@@ -179,17 +182,25 @@ class BertLearner:
         :return: List of list of predicted labels.
         """
         self.model.eval()
-        encoded_sequences, _, mappings = self.encode_sequences(sequences)
+        encoded_sequences, mappings = self.encode_sequences(sequences)
         encoded_tag_indices = []
 
-        for sequence in encoded_sequences:
-            sequence = torch.tensor(sequence, device=self.device).unsqueeze(0)
-            scores = self.model(sequence)[0].squeeze()
-            tag_indices = torch.max(scores, 1)[1].tolist()
-            encoded_tag_indices.append(tag_indices)
+        dataset = SequencesDataset(self.device, encoded_sequences)
+        sampler = SequentialSampler(dataset)
+        dataloader = DataLoader(
+            dataset,
+            sampler=sampler,
+            batch_size=self.batch_size,
+            collate_fn=dataset.collate
+        )
+
+        for batch in dataloader:
+            sequences, attention_masks = batch
+            scores = self.model(sequences, attention_mask=attention_masks)[0]
+            tag_indices = torch.max(scores, 2)[1].tolist()
+            encoded_tag_indices.extend(tag_indices)
 
         predictions = self.decode_labels(encoded_tag_indices, mappings)
-
         return predictions
 
     def save(self, path):
