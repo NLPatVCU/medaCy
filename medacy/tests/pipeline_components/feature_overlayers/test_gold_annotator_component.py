@@ -30,9 +30,9 @@ class TestGoldAnnotatorComponent(unittest.TestCase):
             text = f.read()
         doc: Doc = self.nlp(text)
 
-        doc.set_extension('file_name', default=None)
+        doc.set_extension('file_name', default=None, force=True)
         doc._.file_name = txt_file_path
-        doc.set_extension('gold_annotation_file', default=None)
+        doc.set_extension('gold_annotation_file', default=None, force=True)
         doc._.gold_annotation_file = ann_file_path
 
         ann = Annotations(ann_file_path)
