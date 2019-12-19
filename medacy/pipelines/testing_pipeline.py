@@ -1,7 +1,7 @@
 import sklearn_crfsuite
 import spacy
 
-from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline

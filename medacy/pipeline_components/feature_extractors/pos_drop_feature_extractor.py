@@ -1,6 +1,6 @@
 from spacy.tokens import Token
 
-from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 
 
 class POSDropFeatureExtractor(FeatureExtractor):

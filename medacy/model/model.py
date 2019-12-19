@@ -432,7 +432,7 @@ class Model:
         
         return Dataset(directory)
 
-    def _run_through_pipeilne(self, data_file):
+    def _run_through_pipeline(self, data_file):
         """
         Runs a DataFile through the pipeline, returning the resulting Doc object
         :param data_file: instance of DataFile
