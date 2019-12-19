@@ -57,7 +57,7 @@ class MultiModel:
         """
 
         if not os.path.isfile(model_path):
-            raise FileNotFoundError("'model path' is not a path to an existing file")
+            raise FileNotFoundError(f"'model path' is not a path to an existing file, but is {repr(model_path)}")
         if not issubclass(pipeline_class, BasePipeline):
             raise TypeError(f"'pipeline_class' must be a subclass of BasePipeline, but is '{repr(pipeline_class)}'")
 
