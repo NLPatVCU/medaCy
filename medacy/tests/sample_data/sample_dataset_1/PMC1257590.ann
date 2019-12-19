@@ -1,0 +1,135 @@
+
+T1	Sex 195 201	female
+T2	Strain 202 216	Sprague-Dawley
+T3	Species 217 221	rats
+T4	Species 298 302	rats
+T5	Species 674 678	rats
+T6	Species 701 706	rats)
+T7	Species 770 775	rats)
+T8	Species 817 823	rats).
+T9	Species 1032 1036	rats
+T10	Species 1073 1077	rats
+T11	Species 5709 5713	rats
+T30	TestArticle 581 589	estrogen
+T31	GroupSize 607 612	three
+T33	SampleSize 671 673	15
+T34	GroupSize 695 700	three
+T35	DoseRoute 712 735	injected subcutaneously
+T36	TestArticle 748 755	17β -E2
+T37	Dose 757 759	60
+T38	DoseUnits 760 765	μg/kg
+T39	GroupSize 767 769	12
+T40	Vehicle 783 793	sesame oil
+T41	Dose 803 806	200
+T42	DoseUnits 807 809	μL
+T43	GroupSize 811 816	three
+T44	GroupName 839 864	estradiol-treated animals
+T45	TestArticle 839 848	estradiol
+T46	Dose 916 918	40
+T47	Dose 920 923	120
+T48	Dose 929 932	400
+T49	DoseUnits 933 938	μg/kg
+T50	TestArticle 943 946	BPA
+T51	TestArticlePurity 948 953	> 99%
+T52	DoseRoute 1042 1065	injected subcutaneously
+T53	GroupSize 1067 1072	three
+T54	TestArticle 1098 1105	17α -E2
+T55	Dose 1107 1109	45
+T56	DoseUnits 1110 1115	μg/kg
+T57	TestArticle 1118 1121	BPA
+T58	Dose 1123 1126	300
+T59	DoseUnits 1127 1132	μg/kg
+T60	TestArticle 1152 1159	17α -E2
+T61	Dose 1161 1163	45
+T62	DoseUnits 1164 1169	μg/kg
+T63	TestArticle 1176 1179	BPA
+T64	Dose 1181 1184	300
+T65	DoseUnits 1185 1190	μg/kg
+T66	Vehicle 1200 1210	sesame oil
+T67	Dose 1220 1223	200
+T68	DoseUnits 1224 1226	μL
+T73	GroupSize 5730 5731	3
+T74	GroupName 6280 6295	treatment group
+T75	Endpoint 2266 2298	pyramidal cell density value (D)
+T82	Endpoint 4658 4672;4678 4683	spine synapses count
+T85	Species 5625 5628	Rat
+T87	SampleSize 5706 5708	12
+T88	TestArticle 5802 5809	17β -E2
+T89	Dose 5811 5813	60
+T90	DoseUnits 5814 5819	μg/kg
+T91	TestArticle 5822 5825	BPA
+T92	Dose 5827 5830	400
+T93	DoseUnits 5831 5836	μg/kg
+T94	TestArticle 5861 5864	BPA
+T95	Dose 5866 5869	400
+T96	DoseUnits 5870 5875	μg/kg
+T97	TestArticle 5881 5888	17β -E2
+T98	Dose 5890 5892	60
+T99	DoseUnits 5893 5898	μg/kg
+T100	DoseFrequency 5901 5906	daily
+T101	DoseDuration 5911 5912	3
+T102	DoseDurationUnits 5913 5917	days
+T103	GroupName 5919 5934	Control animals
+T104	Vehicle 5948 5958	sesame oil
+T105	Dose 5968 5971	200
+T106	DoseUnits 5972 5978	μL/day
+T107	TimeEndpointAssessed 5987 5990;5991 6021	Six hours after the last injection
+T109	Endpoint 6058 6063;6158 6165	uteri weighed
+T110	GroupSize 6262 6267	three
+T111	GroupSize 6330 6335	three
+T112	GroupName 6348 6363	treatment group
+T114	GroupSize 6685 6690	three
+T115	GroupName 7181 7197	treatment groups
+T116	GroupName 7209 7216	control
+T117	GroupName 7224 7233	treatment
+T118	TestArticle 7347 7350	BPA
+T28	SampleSize 1029 1031	12
+T32	TimeEndpointAssessed 1235 1241	Thirty
+T119	TimeUnits 1242 1265	minutes after injection
+T131	Endpoint 5662 5684	uterotrophic responses
+T132	TimeAtFirstDose 5745 5746;5747 5769	1 week after ovariectomy
+T134	DoseRoute 5775 5798	subcutaneous injections
+T138	Species 3100 3103	rat
+T27	EndpointUnitOfMeasure 2317 2325	D = N/sT
+T139	Endpoint 4505 4513;4519 4524	Synapses count
+T80	EndpointUnitOfMeasure 5571 5622	dividing Nv(syn) by the volume correction factor kv
+T142	Endpoint 5532 5536	PSSD
+T29	Endpoint 6642 6646	PSSD
+T79	Endpoint 6723 6727	PSSD
+T120	Endpoint 6820 6824	PSSD
+T122	Endpoint 7347 7369	BPA dose–response data
+T154	Vehicle 1360 1366	saline
+T70	Endpoint 2069 2094	number of pyramidal cells
+T71	EndpointUnitOfMeasure 2069 2075	number
+T12	EndpointUnitOfMeasure 6576 6581	count
+T20	Endpoint 6585 6597	CA1 synapses
+T23	Endpoint 5629 5643	uterine weight
+T26	Endpoint 5242 5260	number of synapses
+T69	Endpoint 5155 5180	density of spine synapses
+T72	EndpointUnitOfMeasure 5242 5248	number
+T81	EndpointUnitOfMeasure 5155 5162	density
+T83	EndpointUnitOfMeasure 4678 4683	count
+T84	EndpointUnitOfMeasure 4519 4524	count
+T14	Endpoint 3061 3091	volume of CA1 stratum radiatum
+T76	EndpointUnitOfMeasure 3061 3067	volume
+T13	Endpoint 2925 2954	Areas of CA1 stratum radiatum
+T77	EndpointUnitOfMeasure 2925 2929	Area
+T78	Endpoint 2685 2704	alterations in PSSD
+T15	DoseRoute 1256 1265	injection
+T16	DoseRoute 6012 6021	injection
+T17	TimeUnits 5747 5751	week
+T18	TimeUnits 5991 5996	hours
+A1	GROUP__TestArticleGroup-3 T54
+A2	GROUP__TestArticleGroup-3 T40
+A3	GROUP__TestArticleGroup-0 T36
+A4	GROUP__TestArticleGroup-0 T40
+A5	GROUP__TestArticleGroup-4 T51
+A6	GROUP__TestArticleGroup-4 T40
+A7	GROUP__TestArticleGroup-4 T57
+A8	GROUP__Equiv-0 T3
+A9	GROUP__Equiv-0 T138
+A10	GROUP__Equiv-1 T134
+A11	GROUP__Equiv-1 T35
+A12	GROUP__Animal-0 T3
+A13	GROUP__Animal-0 T2
+A14	GROUP__Animal-0 T1

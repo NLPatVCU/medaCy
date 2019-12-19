@@ -24,6 +24,7 @@ class Annotations:
         """
         if isinstance(annotation_data, list) and all(isinstance(e, tuple) for e in annotation_data):
             self.annotations = annotation_data
+            self.source_text_path = source_text_path
             return
         elif not os.path.isfile(annotation_data):
             raise FileNotFoundError("annotation_data must be a list of tuples or a valid file path, but is %s" % repr(annotation_data))
@@ -56,9 +57,9 @@ class Annotations:
                     split_line = line.split("\t")
                     tags = split_line[1].split(" ")
                     entity_name = tags[0]
-                    text = line[-1]
+                    text = split_line[-1]
                     # Special logic to get the beginning of the first span and the end of the last span
-                    span_indices = re.findall(r'\d+', line)
+                    span_indices = re.findall(r'\d+', split_line[1])
                     entity_start = int(span_indices[0])
                     entity_end = int(span_indices[-1])
                 else:
@@ -118,6 +119,9 @@ class Annotations:
         :return: returns string formatted as an ann file, if write_location is valid path also writes to that path.
         """
         ann_string = ""
+
+        # Sort tuples by starting index, or end index if two have the same start
+        self.annotations.sort(key=lambda x: (x[1], x[2]))
         for num, tup in enumerate(self.annotations, 1):
             entity, first_start, last_end, labeled_text = tup
             ann_string += "T%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
@@ -270,6 +274,6 @@ class Annotations:
         :return: a new Annotations object containing entities from both
         """
         new_entities = list(set(self.annotations) | set(other.annotations))
-        new_annotations = Annotations(new_entities)
+        new_annotations = Annotations(new_entities, source_text_path=self.source_text_path or other.source_text_path)
         new_annotations.ann_path = 'None'
         return new_annotations
