@@ -7,18 +7,19 @@ import pkg_resources
 
 from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
-from medacy.tests.sample_data import __file__ as sample_data_dir
+from medacy.tests.sample_data import test_dir
 
 
 class TestAnnotation(TestCase):
+    """Tests for medacy.data.annotations.Annotations"""
 
     @classmethod
     def setUpClass(cls):
-        """Loads END dataset and writes files to temp directory"""
+        """Loads sample dataset and sets up a temporary directory for IO tests"""
         cls.test_dir = tempfile.mkdtemp()  # set up temp directory
-        cls.sample_data_dir = os.path.join(os.path.dirname(sample_data_dir), 'sample_dataset_1')
+        cls.sample_data_dir = os.path.join(test_dir, 'sample_dataset_1')
         cls.dataset = Dataset(cls.sample_data_dir)
-        cls.entities = list(cls.dataset.get_labels())
+        cls.entities = cls.dataset.get_labels(as_list=True)
 
         with open(os.path.join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:
             f.write("This is clearly not a valid ann file")
@@ -42,17 +43,23 @@ class TestAnnotation(TestCase):
         with self.assertRaises(FileNotFoundError):
             Annotations("not_a_file_path")
 
-    def test_init_noncontiguous_span(self):
-        """Tests that an individual annotation can have non-contiguous spans"""
-        temp_path = os.path.join(self.test_dir, 'noncontig.ann')
+    def test_init_tuples(self):
+        """Tests the creation of individual annotation tuples, including ones with non-contiguous spans"""
+        temp_path = os.path.join(self.test_dir, 'tuples.ann')
 
-        with open(temp_path, 'w') as f:
-            f.write("T1\tThingy 66 77;88 99;100 188\tthis is some sample text\n")
+        samples = [
+            ("T1\tObject 66 77\tthis is some text\n", ('Object', 66, 77, 'this is some text')),
+            ("T2\tEntity 44 55;66 77\tI love NER\n", ('Entity', 44, 77, 'I love NER')),
+            ("T3\tThingy 66 77;88 99;100 188\tthis is some sample text\n", ('Thingy', 66, 188, 'this is some sample text'))
+        ]
 
-        resulting_ann = Annotations(temp_path)
-        actual = resulting_ann.annotations[0]
-        expected = ('Thingy', 66, 188, 'this is some sample text')
-        self.assertTupleEqual(actual, expected)
+        for string, expected in samples:
+            with open(temp_path, 'w') as f:
+                f.write(string)
+
+            resulting_ann = Annotations(temp_path)
+            actual = resulting_ann.annotations[0]
+            self.assertTupleEqual(actual, expected)
 
     def test_ann_conversions(self):
         """Tests converting and un-converting a valid Annotations object to an ANN file."""
