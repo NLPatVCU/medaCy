@@ -57,9 +57,9 @@ class Annotations:
                     split_line = line.split("\t")
                     tags = split_line[1].split(" ")
                     entity_name = tags[0]
-                    text = line[-1]
+                    text = split_line[-1]
                     # Special logic to get the beginning of the first span and the end of the last span
-                    span_indices = re.findall(r'\d+', line)
+                    span_indices = re.findall(r'\d+', split_line[1])
                     entity_start = int(span_indices[0])
                     entity_end = int(span_indices[-1])
                 else:
