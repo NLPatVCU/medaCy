@@ -1,0 +1,4 @@
+Both of these models were created on 18 December, 2019, using the sample dataset 1.
+
+'sample_clin_pipe.pkl' was trained using the Clinical Pipeline using entities ['Endpoints', 'Species', 'DoseUnits']
+'sample_test_pipe.pkl' was trained using the Testing Pipeline using entities ['TestArticle', 'Dose', 'Sex']

@@ -1,0 +1,197 @@
+
+T1	Sex 89 93	male
+T2	Sex 98 104	female
+T3	Species 105 109	rats
+T4	Species 487 491	Rats
+T5	Sex 761 765	Male
+T6	Sex 770 776	female
+T7	Species 777 781	rats
+T8	Sex 956 962	female
+T9	Species 963 967	rats
+T10	GroupSize 944 949	eight
+T11	Vehicle 1011 1043	tap water containing 2% Tween 80
+T12	Species 1245 1249	rats
+T13	Sex 1256 1260	male
+T14	Sex 1264 1270	female
+T15	Vehicle 1535 1553	tap water–Tween 80
+T16	Sex 1400 1406	female
+T17	Species 1407 1411	rats
+T18	TestArticle 1444 1517	9,10-dihy-droxy-12-octadecenoic acid [leukotoxin diol (LTX-diol)] isomers
+T19	Dose 1519 1520	2
+T20	DoseUnits 1521 1526	μg/mL
+T21	Endpoint 1888 1897	cyclicity
+T22	Sex 1987 1993	female
+T23	Species 1994 1998	rats
+T24	Sex 2372 2376	male
+T25	Species 2484 2488	rats
+T26	Species 2621 2625	rats
+T27	Species 3190 3194	rats
+T28	Species 11599 11603	rats
+T29	Sex 2456 2460	male
+T30	Sex 2608 2612	male
+T31	Sex 13699 13703	male
+T32	Strain 74 88	Sprague-Dawley
+T36	TestArticle 11233 11242	LTX-diols
+T37	TestArticle 11350 11359	LTX-diols
+T38	GroupSize 2434 2437	six
+T39	Strain 2461 2475	Sprague-Dawley
+T42	TestArticle 8655 8664	THF-diols
+T43	TestArticle 9132 9142	THF-diols.
+T44	TestArticle 11392 11402	THF-diols.
+T45	TestArticle 2786 2802	LTX-diol isomers
+T46	Dose 2804 2805	2
+T47	DoseUnits 2805 2810	μg/mL
+T48	DoseRoute 2814 2831	drinking solution
+T49	DoseDuration 2837 2840	1–4
+T50	DoseDurationUnits 2841 2846	weeks
+T51	Endpoint 2848 2863	Sexual behavior
+T52	Endpoint 2895 2911	number of mounts
+T53	Endpoint 2895 2904;2913 2926	number of intromissions
+T54	Endpoint 2895 2904;2928 2940	number of ejaculations
+T55	EndpointUnitOfMeasure 2968 2975	seconds
+T56	Endpoint 2942 2963	ejaculation latencies
+T57	Endpoint 2982 3002	grooming frequencies
+T58	Sex 3056 3062	female
+T59	Sex 3183 3189	female
+T60	Sex 11577 11583	female
+T61	Strain 3168 3182	Sprague-Dawley
+T74	CellLine 4670 4675	MCF-7
+T75	TestArticle 4748 4756	LTX-diol
+T77	Species 4766 4771	human
+T78	CellLine 4868 4873	MCF-7
+T79	CellLine 5098 5103	MCF-7
+T80	CellLine 10112 10117	MCF-7
+T81	CellLine 10365 10370	MCF-7
+T82	CellLine 10653 10658	MCF-7
+T84	TestArticle 5046 5062	LTX-diol isomers
+T85	TestArticle 5731 5739	LTX-diol
+T86	TestArticle 8334 8342	LTX-diol
+T87	TestArticle 8591 8599	LTX-diol
+T88	TestArticle 9236 9244	LTX-diol
+T89	TestArticle 9390 9398	LTX-diol
+T90	TestArticle 9545 9553	LTX-diol
+T91	TestArticle 9642 9650	LTX-diol
+T92	TestArticle 10047 10056	LTX-diol,
+T93	TestArticle 10083 10091	LTX-diol
+T94	TestArticle 10157 10165	LTX-diol
+T95	TestArticle 10431 10439	LTX-diol
+T96	TestArticle 10745 10753	LTX-diol
+T97	TestArticle 11457 11465	LTX-diol
+T98	TestArticle 12194 12202	LTX-diol
+T99	TestArticle 12540 12548	LTX-diol
+T100	TestArticle 13311 13320	LTX-diol,
+T102	EndpointUnitOfMeasure 5251 5257	number
+T104	TestArticle 5744 5795	12,13-dihy-droxy-9-octadecenoic acid (iso-LTX-diol)
+T105	TestArticle 8347 8360	iso-LTX-diol.
+T106	TestArticle 8604 8616	iso-LTX-diol
+T107	TestArticle 9249 9262	iso-LTX-diol.
+T108	TestArticle 9558 9571	iso-LTX-diol.
+T109	TestArticle 9655 9667	iso-LTX-diol
+T110	TestArticle 10030 10042	iso-LTX-diol
+T111	TestArticle 10096 10108	iso-LTX-diol
+T112	TestArticle 10443 10455	iso-LTX-diol
+T114	Species 10819 10822	rat
+T115	Species 11970 11973	rat
+T116	Strain 11584 11598	Sprague-Dawley
+T120	Endpoint 11814 11819;11885 11892	uteri weighed
+T121	Endpoint 12266 12294	[3H]estradiol binding to ERs
+T123	Endpoint 13063 13084;13154 13161	[3H]Estradiol binding for ERs
+T124	EndpointUnitOfMeasure 13150 13153	cpm
+T125	TimeEndpointAssessed 11782 11787	Seven
+T127	EndpointUnitOfMeasure 13226 13236;13338 13369	percentage relative to the vehicle control
+T128	Endpoint 13240 13278;13311 13319	[3H]estradiol bound in the presence of LTX-diol
+T129	Endpoint 13478 13490	body weights
+T130	Endpoint 13492 13509	fluid consumption
+T131	Endpoint 13704 13719	sexual behavior
+T134	DoseDurationUnits 1082 1086	days
+T135	Endpoint 1271 1286	sexual behavior
+T136	Endpoint 1224 1241	ovarian cyclicity
+T137	DoseDuration 1580 1582	30
+T138	DoseDurationUnits 1583 1587	days
+T132	DoseDuration 1846 1848	30
+T139	DoseDurationUnits 1849 1852	day
+T140	TimeEndpointAssessed 5273 5274	7
+T142	Endpoint 5895 5909	GC-MS analysis
+T143	Endpoint 10491 10502	cell number
+T144	TimeEndpointAssessed 10518 10519	7
+T145	TimeUnits 10520 10524	days
+T147	Endpoint 10628 10645	biologic activity
+T151	Vehicle 1299 1308	tap water
+T152	GroupName 1299 1317	tap water controls
+T153	GroupName 1100 1117	baseline controls
+T155	TimeEndpointAssessed 1795 1800	Daily
+T156	Endpoint 2042 2056	ovarian cycles
+T157	GroupName 2019 2027	controls
+T158	GroupName 2220 2228	controls
+T159	GroupName 2232 2247	treated animals
+T160	Endpoint 2372 2398	male reproductive function
+T161	DoseRoute 2757 2774	drinking solution
+T162	EndpointUnitOfMeasure 2895 2901	number
+T163	Endpoint 4698 4733	Mitogenic effects of HPLC fractions
+T164	Endpoint 4698 4718;4738 4756	Mitogenic effects of synthetic LTX-diol
+T76	CellLine 4760 4765	MCF-7
+T165	Endpoint 4816 4836	mitogenic activities
+T166	Species 5234 5238	calf
+T167	Endpoint 5246 5257	Cell number
+T170	Endpoint 10132 10150	cell proliferation
+T171	Dose 10472 10478	0.1–10
+T172	DoseUnits 10479 10484	μg/mL
+T175	Endpoint 10745 10794;10802 10815;10823 10848	LTX-diol competition for [3H]estradiol binding to type II sites uterine nuclear fractions
+T176	TestArticle 11137 11145	THF-diol
+T177	Endpoint 11457 11509;11521 11526	LTX-diol competition for [3H]estradiol binding to ER sites
+T178	Endpoint 11457 11506;11513 11526	LTX-diol competition for [3H]estradiol binding to type II sites
+T187	Endpoint 12947 12983	Radioactivity in the ethanol extract
+T189	Endpoint 13063 13084;13177 13194	[3H]Estradiol binding for type II sites
+T192	Endpoint 13240 13278;13321 13324	[3H]estradiol bound in the presence of DES
+T193	Endpoint 13240 13278;13329 13337	[3H]estradiol bound in the presence of luteolin
+T195	Endpoint 13454 13468	animal cycling
+T198	TimeEndpointAssessed 903 908	daily
+T199	DoseRoute 1057 1074	drinking solution
+T202	GroupName 2285 2293	controls
+T206	Dose 5011 5014	1–5
+T207	DoseUnits 5015 5017	μL
+T208	Vehicle 5066 5085	redistilled ethanol
+T211	Endpoint 5446 5464	mitogenic activity
+T212	Vehicle 5821 5840	redistilled ethanol
+T227	Endpoint 10928 10946	mitogenic activity
+T154	EndpointUnitOfMeasure 2991 3002	frequencies
+T72	Endpoint 9588 9607	biologic activities
+T73	Endpoint 10310 10328	cell proliferation
+T101	Endpoint 10659 10677	cell proliferation
+T103	Endpoint 11209 11225	biologic effects
+T113	Endpoint 10745 10797;10810 10815;10823 10848	LTX-diol competition for [3H]estradiol binding to ER sites uterine nuclear fractions
+T146	Endpoint 11946 11960;11974 11988	ER competition uterine tissue
+T122	Endpoint 12646 12684	[3H]estradiol binding to type II sites
+T148	EndpointUnitOfMeasure 13173 13176	cpm
+T149	Endpoint 13424 13442	cell proliferation
+T168	EndpointUnitOfMeasure 10496 10502	number
+T33	DoseRoute 1535 1544	tap water
+T34	DoseDuration 1079 1081	30
+T35	DoseFrequency 749 759	ad libitum
+T40	TimeUnits 5275 5279	days
+T41	TimeUnits 11788 11792	days
+A1	GROUP__TestArticleGroup-2 T208
+A2	GROUP__TestArticleGroup-2 T84
+A3	GROUP__TestArticleGroup-3 T212
+A4	GROUP__TestArticleGroup-3 T85
+A5	GROUP__TestArticleGroup-0 T11
+A6	GROUP__TestArticleGroup-1 T18
+A7	GROUP__TestArticleGroup-1 T15
+A8	GROUP__TestArticleGroup-4 T212
+A9	GROUP__TestArticleGroup-4 T104
+A10	GROUP__Equiv-2 T104
+A11	GROUP__Equiv-2 T105
+A12	GROUP__Equiv-3 T3
+A13	GROUP__Equiv-3 T114
+A14	GROUP__Equiv-0 T11
+A15	GROUP__Equiv-0 T15
+A16	GROUP__Equiv-1 T75
+A17	GROUP__Equiv-1 T18
+A18	GROUP__Equiv-1 T45
+A19	GROUP__Equiv-1 T36
+A20	GROUP__Animal-1 T32
+A21	GROUP__Animal-1 T2
+A22	GROUP__Animal-1 T3
+A23	GROUP__Animal-0 T1
+A24	GROUP__Animal-0 T32
+A25	GROUP__Animal-0 T3
