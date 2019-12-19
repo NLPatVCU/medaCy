@@ -34,8 +34,6 @@ class TestMetaMapComponent(unittest.TestCase):
         """Tests that the MetaMapComponent overlays CUIs correctly given a document that hasn't been metamapped"""
         doc = self.nlp('I took Tylenol and it gave me nausea and chest pain')
 
-        self.assertFalse(Token.has_extension('feature_cui'))
-
         metamap = MetaMap(metamap_path)
         metamap_component = MetaMapComponent(self.nlp, metamap)
 
