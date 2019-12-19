@@ -1,12 +1,13 @@
+import os
 import shutil
 import tempfile
-from os.path import join
 from unittest import TestCase
 
 import pkg_resources
 
 from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
+from medacy.tests.sample_data import __file__ as sample_data_dir
 
 
 class TestAnnotation(TestCase):
@@ -15,14 +16,15 @@ class TestAnnotation(TestCase):
     def setUpClass(cls):
         """Loads END dataset and writes files to temp directory"""
         cls.test_dir = tempfile.mkdtemp()  # set up temp directory
-        cls.good_dataset, _ = Dataset.load_external('medacy_dataset_end')
-        cls.entities = list(cls.good_dataset.get_labels())
+        cls.sample_data_dir = os.path.join(os.path.dirname(sample_data_dir), 'sample_dataset_1')
+        cls.dataset = Dataset(cls.sample_data_dir)
+        cls.entities = list(cls.dataset.get_labels())
 
-        with open(join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:
+        with open(os.path.join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:
             f.write("This is clearly not a valid ann file")
 
-        cls.ann_path_1 = cls.good_dataset.all_data_files[0].ann_path
-        cls.ann_path_2 = cls.good_dataset.all_data_files[1].ann_path
+        cls.ann_path_1 = cls.dataset.all_data_files[0].ann_path
+        cls.ann_path_2 = cls.dataset.all_data_files[1].ann_path
 
     @classmethod
     def tearDownClass(cls):
@@ -40,12 +42,25 @@ class TestAnnotation(TestCase):
         with self.assertRaises(FileNotFoundError):
             Annotations("not_a_file_path")
 
+    def test_init_noncontiguous_span(self):
+        """Tests that an individual annotation can have non-contiguous spans"""
+        temp_path = os.path.join(self.test_dir, 'noncontig.ann')
+
+        with open(temp_path, 'w') as f:
+            f.write("T1\tThingy 66 77;88 99;100 188\tthis is some sample text\n")
+
+        resulting_ann = Annotations(temp_path)
+        actual = resulting_ann.annotations[0]
+        expected = ('Thingy', 66, 188, 'this is some sample text')
+        self.assertTupleEqual(actual, expected)
+
     def test_ann_conversions(self):
         """Tests converting and un-converting a valid Annotations object to an ANN file."""
         self.maxDiff = None
         annotations = Annotations(self.ann_path_1)
-        annotations.to_ann(write_location=join(self.test_dir, "intermediary.ann"))
-        annotations2 = Annotations(join(self.test_dir, "intermediary.ann"))
+        temp_path = os.path.join(self.test_dir, "intermediary.ann")
+        annotations.to_ann(write_location=temp_path)
+        annotations2 = Annotations(temp_path)
         self.assertListEqual(annotations.annotations, annotations2.annotations)
 
     def test_difference(self):
@@ -65,11 +80,16 @@ class TestAnnotation(TestCase):
 
     def test_compute_ambiguity(self):
         ann_1 = Annotations(self.ann_path_1)
-        label, start, end, text = ann_1.annotations[0]
         ann_1_copy = Annotations(self.ann_path_1)
-        ann_1_copy.add_entity('incorrect_label', start, end, text)
         ambiguity = ann_1.compute_ambiguity(ann_1_copy)
-        self.assertEqual(len(ambiguity), 1)
+        # The number of overlapping spans for the selected ann file is known to be 25
+        self.assertEqual(25, len(ambiguity))
+        # Manually introduce ambiguity by changing the name of an entity in the copy
+        first_tuple = ann_1_copy.annotations[0]
+        ann_1_copy.annotations[0] = ('different_name', first_tuple[1], first_tuple[2], first_tuple[3])
+        ambiguity = ann_1.compute_ambiguity(ann_1_copy)
+        # See if this increased the ambiguity score by one
+        self.assertEqual(26, len(ambiguity))
 
     def test_confusion_matrix(self):
         ann_1 = Annotations(self.ann_path_1)
