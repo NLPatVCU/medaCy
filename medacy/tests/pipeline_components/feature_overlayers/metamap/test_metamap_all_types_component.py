@@ -1,20 +1,12 @@
 import re
 import unittest
 
-from medacy.data.dataset import Dataset
 from medacy.model.model import Model
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesComponent
 from medacy.pipelines.testing_pipeline import TestingPipeline
-from medacy.tools.get_metamap import get_metamap_path
-
-
-# See if MetaMap has been set for this installation
-metamap_path = get_metamap_path()
-have_metamap = metamap_path != 0
-
-# Specify why MetaMap tests may be skipped
-reason = "This test can only be performed if the path to MetaMap has been configured for this installation"
+from medacy.tests.pipeline_components.feature_overlayers.metamap import have_metamap, reason, metamap_path
+from medacy.tests.sample_data import sample_dataset
 
 
 class TestMetaMapAllTypesComponent(unittest.TestCase):
@@ -48,7 +40,7 @@ class TestMetaMapAllTypesComponent(unittest.TestCase):
         Tests that all tokens are given every semantic type label found in the dataset; this ensures that
         when a new semantic type is found, old Docs retroactively receive the corresponding annotation
         """
-        data = Dataset("/home/steele/projects/medaCy/medacy/tests/sample_data/sample_dataset")
+        data = sample_dataset
         ents = data.get_labels(as_list=True)
         pipe = self.Pipeline(ents=ents)
         model = Model(pipe)
