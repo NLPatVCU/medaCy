@@ -129,7 +129,7 @@ class BertLearner:
         # Load pretrain BERT model, unfreeze layers, move it to GPU device, and create its tokenizer
         self.model = BertForTokenClassification.from_pretrained(
             self.pretrained_model,
-            num_labels=len(self.vectorizer.tag_to_index)
+            num_labels=len(self.vectorizer.tag_to_index) - 1 # Don't include 'X'
         )
         self.model.train()
         self.model.to(device=self.device)
@@ -215,4 +215,7 @@ class BertLearner:
         vectorizer_values = torch.load(path + '/vectorizer.pt')
         self.vectorizer = Vectorizer(device=self.device)
         self.vectorizer.load_values(vectorizer_values)
-        self.model = BertForTokenClassification.from_pretrained(path, num_labels=len(self.vectorizer.tag_to_index))
+        self.model = BertForTokenClassification.from_pretrained(
+            path,
+            num_labels=len(self.vectorizer.tag_to_index) - 1 # Ignore 'X'
+        )
