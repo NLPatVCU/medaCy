@@ -451,5 +451,5 @@ class Dataset:
         :param item: the name of the file to be represented (not including the extension or parent directories)
         :return: an Annotations object
         """
-        path = os.path.join(self.data_directory, item, '.ann')
+        path = os.path.join(self.data_directory, item + '.ann')
         return Annotations(path)
