@@ -1,4 +1,3 @@
-import importlib
 import os
 import shutil
 import tempfile
@@ -10,46 +9,52 @@ from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
 from medacy.model.model import Model
 from medacy.pipelines.testing_pipeline import TestingPipeline
+from medacy.tests.sample_data import test_dir
 
 
 class TestModel(TestCase):
-    """Tests Model"""
+    """Tests for medacy.model.model.Model"""
 
     @classmethod
     def setUpClass(cls):
-
-        if importlib.util.find_spec('medacy_dataset_end') is None:
-            raise ImportError("medacy_dataset_end was not automatically installed for testing. See testing instructions for details.")
-
-        cls.train_dataset, _ = Dataset.load_external('medacy_dataset_end')
-        cls.entities = list(cls.train_dataset.get_labels())
-        cls.train_dataset.data_limit = 1
-
-        cls.test_dataset, _ = Dataset.load_external('medacy_dataset_end')
-        cls.test_dataset.data_limit = 2
-
-        cls.prediction_directory = tempfile.mkdtemp() #directory to store predictions
+        cls.dataset = Dataset(os.path.join(test_dir, 'sample_dataset_1'))
+        cls.entities = cls.dataset.get_labels(as_list=True)
+        cls.prediction_directory = tempfile.mkdtemp()  # directory to store predictions
 
     @classmethod
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
-    def test_prediction_with_testing_pipeline(self):
-        """
-        Constructs a model that memorizes an entity, predicts it on same file, writes to ann
-        :return:
-        """
+    def test_fit_predict_dump_load(self):
+        """Fits a model, tests that it predicts correctly, dumps and loads it, then tests that it still predicts"""
 
-        pipeline = TestingPipeline(entities=['tradename'])
+        pipeline = TestingPipeline(entities=self.entities)
+        model = Model(pipeline)
 
-        # train on Abelcet.ann
-        model = Model(pipeline, n_jobs=1)
-        model.fit(self.train_dataset)
+        # Test attempting to predict before fitting
+        with self.assertRaises(RuntimeError):
+            model.predict('Lorem ipsum dolor sit amet.')
 
-        # predict on both
-        model.predict(self.test_dataset, prediction_directory=self.prediction_directory)
+        model.fit(self.dataset)
+        # Test X and y data are set
+        self.assertTrue(model.X_data)
+        self.assertTrue(model.y_data)
 
-        second_ann_file = "%s.ann" % self.test_dataset.get_data_files()[1].file_name
-        annotations = Annotations(os.path.join(self.prediction_directory, second_ann_file))
-        self.assertIsInstance(annotations, Annotations)
+        # Test prediction over string
+        resulting_ann = model.predict('To exclude the possibility that alterations in PSSD might be a consequence of changes in the volume of reference, we used a subset of the vibratome sections')
+        self.assertIsInstance(resulting_ann, Annotations)
+
+        # Test prediction over directory
+        resulting_dataset = model.predict(self.dataset.data_directory, prediction_directory=self.prediction_directory)
+        self.assertIsInstance(resulting_dataset, Dataset)
+        self.assertEqual(len(self.dataset), len(resulting_dataset))
+
+        # Test pickling a model
+        pickle_path = os.path.join(self.prediction_directory, 'test.pkl')
+        model.dump(pickle_path)
+        new_model = Model(pipeline)
+        new_model.load(pickle_path)
+
+        resulting_ann = new_model.predict('To exclude the possibility that alterations in PSSD might be a consequence of changes in the volume of reference, we used a subset of the vibratome sections')
+        self.assertIsInstance(resulting_ann, Annotations)
