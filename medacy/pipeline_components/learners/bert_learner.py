@@ -28,7 +28,7 @@ class BertLearner:
         self.tokenizer = None # Transformers tokenizer
         self.vectorizer = Vectorizer(self.device) # medaCy vectorizer
         self.pretrained_model = pretrained_model # Name of Transformers pretrained model
-        self.batch_size=batch_size
+        self.batch_size = batch_size
 
     def encode_sequences(self, sequences, labels=[]):
         """
@@ -41,7 +41,8 @@ class BertLearner:
         """
         encoded_sequences = []
 
-        # If there are no labels then make all of the labels 'O'
+        # If there are no labels then make all of the labels 'O' so they can still be used for
+        # mapping during predictions
         if not labels:
             for sequence in sequences:
                 labels.append(['O'] * len(sequence))
@@ -55,18 +56,17 @@ class BertLearner:
             encoded_sequence = self.tokenizer.build_inputs_with_special_tokens(encoded_sequence)
             encoded_sequences.append(encoded_sequence)
 
-        # Encoding them this way makes it possible to track which tokens were split up. Now we can
-        # store them correctly in these variables along with a mapping of the original tokens.
+        # Encoding them this way makes it possible to track which tokens were split up
         split_sequences = []
         split_sequence_labels = []
 
         # Iterate through encoded sequences and original labels. Each token in the sequnece is a
-        # list that will be length 1 if the token wasn't split, but longer if it was.
+        # list that will be length 1 if the token wasn't split, but longer if it was
         for sequence, sequence_labels in zip(encoded_sequences, labels):
             # First token is always encoding of [CLS]. Create new lists starting with it and the
             # proper label/mapping
             split_sequence = [sequence[0]]
-            split_labels = ['X']
+            split_labels = ['O']
 
             # Loop through ids and labels in sequences. Don't take first or last id lists from
             # sequence since we already added [CLS] and will add [SEP] later.
@@ -77,11 +77,11 @@ class BertLearner:
                 for token_id in ids[1:]:
                     # Add proper token id and label to lists
                     split_sequence.append(token_id)
-                    split_labels.append('X')
+                    split_labels.append('X') # 'X' marks a token we should ignore
 
             # Add the final token [SEP] with proper label/mapping
             split_sequence.append(sequence[-1])
-            split_labels.append('X')
+            split_labels.append('O')
 
             # Append final forms of lists
             split_sequences.append(split_sequence)
@@ -105,7 +105,7 @@ class BertLearner:
         for labels, mapping in zip(sequence_labels, mappings):
             remapped_labels = []
 
-            for label, map_value in zip(labels, mapping):
+            for label, map_value in zip(labels[1:-1], mapping[1:-1]): # Ignore special tokens
                 # Only include label if map value is 1
                 if map_value != null_label:
                     remapped_labels.append(label)
@@ -145,9 +145,9 @@ class BertLearner:
         ]
         optimizer = AdamW(optimizer_grouped_parameters, lr=5e-5, eps=1e-8)
 
-        # Encode sequencesa and labels
+        # Encode sequences and labels
         sequences, labels = self.encode_sequences(x_data, y_data)
-        dataset = SequencesDataset(self.device, sequences, labels)
+        dataset = SequencesDataset(self.device, sequences, self.vectorizer.tag_to_index['X'] , sequence_labels=labels)
         sampler = RandomSampler(dataset)
         dataloader = DataLoader(
             dataset,

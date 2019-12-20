@@ -2,9 +2,10 @@ import torch
 from torch.utils.data import Dataset
 
 class SequencesDataset(Dataset):
-    def __init__(self, device, sequences, sequence_labels=None):
+    def __init__(self, device, sequences, mask_label, sequence_labels=None):
         self.device = device
         self.sequences = sequences
+        self.mask_label = mask_label
         self.sequence_labels = sequence_labels
 
     def __len__(self):
@@ -35,7 +36,9 @@ class SequencesDataset(Dataset):
             if self.sequence_labels is None:
                 attention_mask = [1] * len(sequence)
             else:
-                attention_mask = [int(x != labels[0]) for x in labels]
+                attention_mask = [int(x != self.mask_label) for x in labels]
+                attention_mask[0] = 1
+                attention_mask[-1] = 1
 
             padding = [0] * padding_length
             sequence.extend(padding)
