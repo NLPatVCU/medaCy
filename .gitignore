@@ -178,8 +178,6 @@ fabric.properties
 *.pyc
 *.egg-info
 *.eggs/
-venv/
 
 ubuntu-bionic-18.04-cloudimg-console.log
 .vagrant
-config.json

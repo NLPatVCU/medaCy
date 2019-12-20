@@ -1,8 +1,3 @@
-"""
-A utility class to Metamap medical text documents.
-Metamap a file  and utilize it the output or manipulate stored metamap output
-"""
-
 import json
 import os
 import subprocess
@@ -42,18 +37,26 @@ class MetaMap:
         self.convert_ascii = convert_ascii
         self.args = args
 
-    def __enter__(self):
-        """Activates MetaMap for metamapping files"""
+    def activate(self):
+        """Activates MetaMap for metamapping files or strings"""
         bin_dir = os.path.dirname(self.metamap_path)
         program_name = os.path.join(bin_dir, "skrmedpostctl")
         subprocess.call([program_name, 'start'])
+
+    def __enter__(self):
+        """Activates MetaMap for metamapping files or strings"""
+        self.activate()
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        """Turns MetaMap off"""
+    def deactivate(self):
+        """Deactivates MetaMap"""
         bin_dir = os.path.dirname(self.metamap_path)
         program_name = os.path.join(bin_dir, "skrmedpostctl")
         subprocess.call([program_name, 'stop'])
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Deactivates MetaMap"""
+        self.deactivate()
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
@@ -74,13 +77,10 @@ class MetaMap:
                 print(cached_file_path)
                 return self.load(cached_file_path)
 
-        try:
-            with open(file_to_map, 'r') as file:
-                contents = file.read()
-        except:
-            raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
+        with open(file_to_map, 'r') as f:
+            contents = f.read()
 
-        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth,self.args), contents)
+        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth, self.args), contents)
 
         if self.cache_directory is not None:
             with open(cached_file_path, 'w') as mapped_file:
@@ -92,8 +92,12 @@ class MetaMap:
         return metamap_dict
 
     def map_text(self, text, max_prune_depth=10):
-        # TODO add caching here as in map_file
-        # An example of this cachine is available in the map_file
+        """
+        Runs MetaMap over str input
+        :param text: A string to run MetaMap over
+        :param max_prune_depth: defaults to 10
+        :return: a MetaMap dict
+        """
         self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, text)
         return self.metamap_dict
 
@@ -101,17 +105,6 @@ class MetaMap:
     def load(file_to_load):
         with open(file_to_load, 'rb') as f:
             return json.load(f)
-
-    def map_corpus(self, documents, directory=None, n_job=-1):
-        """
-        Metamaps a large amount of files quickly by forking processes and utilizing multiple cores
-
-        :param documents: an array of documents to map
-        :param directory: location to map all files
-        :param n_job: number of cores to utilize at once while mapping - this may use a large amount of memory
-        :return:
-        """
-        raise NotImplementedError()  # TODO implement utilizing code for parallel process mapper from n2c2
 
     def _run_metamap(self, args, document):
         """
@@ -166,14 +159,9 @@ class MetaMap:
             warnings.warn("Metamap output is none for a file in the pipeline. Exiting.")
             return
 
-        utterances = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']
-        mapped_terms = []
-
-        mapped_terms = list(self._item_generator(metamap_dict, 'Candidate'))
-
         all_terms = []
 
-        for term in mapped_terms:
+        for term in self._item_generator(metamap_dict, 'Candidate'):
             if isinstance(term, dict):
                 all_terms.append(term)
             if isinstance(term, list):
@@ -222,13 +210,10 @@ class MetaMap:
 
             if int(term['SemTypes']['@Count']) == 0:
                 continue
-
             if int(term['SemTypes']['@Count']) == 1:
                 found_types.append(term['SemTypes']['SemType'])
-
             if int(term['SemTypes']['@Count']) > 1:
                 found_types = term['SemTypes']['SemType']
-
             if exclude is not None and set(exclude) <= set(found_types):
                 continue
 

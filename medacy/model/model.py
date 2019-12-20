@@ -2,6 +2,7 @@ import importlib
 import logging
 import os
 import time
+from shutil import copyfile
 from statistics import mean
 
 import joblib
@@ -61,12 +62,12 @@ class Model:
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped()) for data_file in dataset]
+            results = [pool.apipe(self._extract_features, data_file) for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
 
-            for idx, i in enumerate(results):
+            for i in results:
                 X, y = i.get()
                 self.X_data += X
                 self.y_data += y
@@ -75,8 +76,11 @@ class Model:
             logging.info('Preprocessing data synchronously...')
             self.X_data = []
             self.y_data = []
-            for data_file in dataset:
-                features, labels = self._extract_features(data_file, dataset.is_metamapped())
+            # Run all Docs through the pipeline before extracting features, allowing for pipeline components
+            # that require inter-dependent doc objects
+            docs = [self._run_through_pipeline(data_file) for data_file in dataset]
+            for doc in docs:
+                features, labels = self._extract_features(doc)
                 self.X_data += features
                 self.y_data += labels
 
@@ -110,62 +114,70 @@ class Model:
         self.model = learner
         return self.model
 
-    def predict(self, dataset, prediction_directory=None, groundtruth_directory=None):
+    def predict(self, input_data, prediction_directory=None):
         """
-        Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
+        Generates predictions over a string or a input_data utilizing the pipeline equipped to the instance.
 
-        :param documents: A string or Dataset to predict
-        :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
-        :param groundtruth_directory: The directory to write groundtruth to.
-        :return:
+        :param input_data: a string, Dataset, or directory path to predict over
+        :param prediction_directory: The directory to write predictions if doing bulk prediction
+            (default: */prediction* sub-directory of Dataset)
+        :return: if input_data is a str, returns an Annotations of the predictions;
+            if input_data is a Dataset or a valid directory path, returns a Dataset of the predictions.
+
+        Note that if input_data is supposed to be a directory path but the directory is not found, it will be predicted
+        over as a string. This can be prevented by validating inputs with os.path.isdir().
         """
 
-        if not isinstance(dataset, (Dataset, str)):
-            raise TypeError("Must pass in an instance of Dataset containing your examples to be used for prediction")
         if self.model is None:
             raise RuntimeError("Must fit or load a pickled model before predicting")
 
-        if isinstance(dataset, Dataset):
-            # create directory to write predictions to
-            prediction_directory = self.create_annotation_directory(
-                directory=prediction_directory,
-                training_dataset=dataset,
-                option="predictions"
-            )
-
-            # create directory to write groundtruth to
-            groundtruth_directory = self.create_annotation_directory(
-                directory=groundtruth_directory,
-                training_dataset=dataset,
-                option="groundtruth"
-            )
-
-            for data_file in dataset:
-                logging.info("Predicting file: %s", data_file.file_name)
-
-                with open(data_file.txt_path, 'r') as raw_text:
-                    doc = self.pipeline.spacy_pipeline.make_doc(raw_text.read())
-
-                doc.set_extension('file_name', default=data_file.file_name, force=True)
-                if data_file.metamapped_path is not None:
-                    doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
-
-                # run through the pipeline
-                doc = self.pipeline(doc, predict=True)
-
-                annotations = predict_document(self.model, doc, self.pipeline)
-                logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
-                annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
-
-        if isinstance(dataset, str):
-            if 'metamap_annotator' in self.pipeline.get_components():
-                raise RuntimeError("Cannot currently predict on the fly when metamap_component is in pipeline.")
-
-            doc = self.pipeline.spacy_pipeline.make_doc(dataset)
-            doc.set_extension('file_name', default="STRING_INPUT", force=True)
+        if isinstance(input_data, str) and not os.path.isdir(input_data):
+            doc = self.pipeline.spacy_pipeline.make_doc(input_data)
+            doc.set_extension('file_name', default=None, force=True)
+            doc._.file_name = 'STRING_INPUT'
             doc = self.pipeline(doc, predict=True)
             annotations = predict_document(self.model, doc, self.pipeline)
             return annotations
+
+        if isinstance(input_data, Dataset):
+            input_files = [d.txt_path for d in input_data]
+            # Change input_data to point to the Dataset's directory path so that we can use it
+            # to create the prediction directory
+            input_data = input_data.data_directory
+        elif os.path.isdir(input_data):
+            input_files = [os.path.join(input_data, f) for f in os.listdir(input_data) if f.endswith('.txt')]
+        else:
+            raise ValueError(f"'input_data' must be a string (which can be a directory path) or a Dataset, but is {repr(input_data)}")
+
+        if prediction_directory is None:
+            prediction_directory = os.path.join(input_data, 'predictions')
+            if os.path.isdir(prediction_directory):
+                logging.warning("Overwriting existing predictions at %s", prediction_directory)
+            else:
+                os.mkdir(prediction_directory)
+
+        for file_path in input_files:
+            file_name = os.path.basename(file_path).strip('.txt')
+            logging.info("Predicting file: %s", file_path)
+
+            with open(file_path, 'r') as f:
+                doc = self.pipeline.spacy_pipeline.make_doc(f.read())
+
+            doc.set_extension('file_name', default=None, force=True)
+            doc._.file_name = file_name
+
+            # run through the pipeline
+            doc = self.pipeline(doc, predict=True)
+
+            # Predict, creating a new Annotations object
+            annotations = predict_document(self.model, doc, self.pipeline)
+            logging.debug("Writing to: %s", os.path.join(prediction_directory, file_name + ".ann"))
+            annotations.to_ann(write_location=os.path.join(prediction_directory, file_name + ".ann"))
+
+            # Copy the txt file so that the output will also be a Dataset
+            copyfile(file_path, os.path.join(prediction_directory, file_name + ".txt"))
+
+        return Dataset(prediction_directory)
 
     def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
@@ -420,35 +432,39 @@ class Model:
         
         return Dataset(directory)
 
-    def _extract_features(self, data_file, is_metamapped):
+    def _run_through_pipeline(self, data_file):
         """
-        A multi-processed method for extracting features from a given DataFile instance.
-
-        :param data_file: an instance of DataFile
-        :param is_metamapped: if the Dataset is metamapped
-        :return: Updates queue with features for this given file.
+        Runs a DataFile through the pipeline, returning the resulting Doc object
+        :param data_file: instance of DataFile
+        :return: a Doc object
         """
         nlp = self.pipeline.spacy_pipeline
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.txt_path, 'r') as raw_text:
-            doc = nlp.make_doc(raw_text.read())
-        # Link ann_path to doc
-        doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
-        doc.set_extension('file_name', default=data_file.file_name, force=True)
+        with open(data_file.txt_path, 'r') as f:
+            doc = nlp.make_doc(f.read())
 
-        # Link metamapped file to doc for use in MetamapComponent if exists
-        if is_metamapped:
-            doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+        # Link ann_path to doc
+        doc.set_extension('gold_annotation_file', default=None, force=True)
+        doc.set_extension('file_name', default=None, force=True)
+
+        doc._.gold_annotation_file = data_file.ann_path
+        doc._.file_name = data_file.txt_path
 
         # run 'er through
-        doc = self.pipeline(doc)
+        return self.pipeline(doc)
 
-        # The document has now been run through the pipeline. All annotations are overlayed - pull features.
+    def _extract_features(self, doc):
+        """
+        Extracts features from a Doc
+        :param doc: an instance of Doc
+        :return: a tuple of the feature dict and label list
+        """
+
         feature_extractor = self.pipeline.get_feature_extractor()
-        features, labels = feature_extractor(doc, data_file.file_name)
+        features, labels = feature_extractor(doc, doc._.file_name)
 
-        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
+        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (doc._.file_name, len(labels)))
         return features, labels
 
     def load(self, path):
