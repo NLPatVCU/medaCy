@@ -46,14 +46,13 @@ setup(
     classifiers=[
         '( Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Natural Language :: English',
         'Topic :: Text Processing :: Linguistic',
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3',
-        'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
+        'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.0'
     ],
     install_requires=[
         'spacy==2.1.4',
@@ -70,12 +69,11 @@ setup(
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0',
         'gensim==3.8.0',
-        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm-2.1.0'
+        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz'
     ],
     tests_require=[
         "pytest",
         "pytest-cov",
-        "medacy_dataset_end==3.0.0"
     ],
     cmdclass={"pytest": PyTest},
     include_package_data=True,
