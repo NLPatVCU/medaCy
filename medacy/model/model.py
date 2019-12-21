@@ -250,8 +250,8 @@ class Model:
                 document_indices = []
                 span_indices = []
                 for sequence in X_test:
-                    document_indices += [sequence[2] for x in range(len(sequence[0]))]
-                    span_indices += [element for element in sequence[1]]
+                    document_indices += [sequence[2]] * len(sequence[0])
+                    span_indices += list(sequence[1])
                 groundtruth = [element for sentence in y_test for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
