@@ -409,7 +409,7 @@ class Model:
         if isinstance(directory, str):
             directory = directory
         else:
-            directory = training_dataset.data_directory + "/"+option+"/"
+            directory = os.path.join(training_dataset.data_directory, option)
         if os.path.isdir(directory):
             logging.warning("Overwriting existing %s",option)
         else:
