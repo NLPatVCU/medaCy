@@ -117,3 +117,22 @@ class TestAnnotation(TestCase):
     def test_compute_counts(self):
         ann_1 = Annotations(self.ann_path_1)
         self.assertIsInstance(ann_1.compute_counts(), dict)
+
+    def test_or(self):
+        """
+        Tests that the pipe operator correctly merges two Annotations and retains the source text path of
+        the left operand
+        """
+        tup_1 = ('Object', 66, 77, 'this is some text')
+        tup_2 = ('Entity', 44, 77, 'I love NER')
+        tup_3 = ('Thingy', 66, 188, 'this is some sample text')
+        file_name = 'some_file'
+
+        ann_1 = Annotations([tup_1, tup_2], source_text_path=file_name)
+        ann_2 = Annotations([tup_3])
+
+        result = ann_1 | ann_2
+        expected = {tup_1, tup_2, tup_3}
+        actual = set(result)
+        self.assertSetEqual(actual, expected)
+        self.assertEqual(file_name, result.source_text_path)
