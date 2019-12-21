@@ -131,8 +131,14 @@ class TestAnnotation(TestCase):
         ann_1 = Annotations([tup_1, tup_2], source_text_path=file_name)
         ann_2 = Annotations([tup_3])
 
+        # Test __or__
         result = ann_1 | ann_2
         expected = {tup_1, tup_2, tup_3}
         actual = set(result)
         self.assertSetEqual(actual, expected)
         self.assertEqual(file_name, result.source_text_path)
+
+        # Test __ior__
+        ann_1 |= ann_2
+        actual = set(ann_1)
+        self.assertSetEqual(actual, expected)

@@ -277,3 +277,8 @@ class Annotations:
         new_annotations = Annotations(new_entities, source_text_path=self.source_text_path or other.source_text_path)
         new_annotations.ann_path = 'None'
         return new_annotations
+
+    def __ior__(self, other):
+        self.annotations = list(set(self.annotations) | set(other.annotations))
+        self.ann_path = 'None'
+        return self
