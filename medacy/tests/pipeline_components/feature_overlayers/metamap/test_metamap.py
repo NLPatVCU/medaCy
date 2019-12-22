@@ -1,5 +1,9 @@
+import os
+import shutil
+import tempfile
 import unittest
 
+from medacy.data.dataset import Dataset
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.tests.pipeline_components.feature_overlayers.metamap import have_metamap, reason, metamap_path
 from medacy.tests.sample_data import sample_dataset
@@ -15,11 +19,20 @@ class TestMetaMap(unittest.TestCase):
         cls.metamap = MetaMap(metamap_path)
         cls.metamap.activate()
 
+        # Create an unmetamapped copy of the sample dataset
+        cls.temp_dataset_dir = tempfile.mkdtemp()
+        for df in sample_dataset:
+            shutil.copyfile(df.txt_path, os.path.join(cls.temp_dataset_dir, df.file_name + '.txt'))
+            shutil.copyfile(df.ann_path, os.path.join(cls.temp_dataset_dir, df.file_name + '.ann'))
+
+        cls.dataset = Dataset(cls.temp_dataset_dir)
+
     @classmethod
     def tearDownClass(cls) -> None:
         if not have_metamap:
             return
         cls.metamap.deactivate()
+        shutil.rmtree(cls.temp_dataset_dir)
 
     @unittest.skipUnless(have_metamap, reason)
     def test_map_file(self):
@@ -37,6 +50,13 @@ To correct for processing-induced changes in the volume of the tissue, we calcul
         mm_output = self.metamap.map_text(sample_str)
         self.assertIsInstance(mm_output, dict)
         self.assertIn('metamap', mm_output.keys())
+
+    @unittest.skipUnless(have_metamap, reason)
+    def test_map_dataset(self):
+        """Tests metamapping a Dataset object"""
+        self.assertFalse(self.dataset.is_metamapped())
+        self.metamap.metamap_dataset(self.dataset, 2)
+        self.assertTrue(self.dataset.is_metamapped())
 
 
 if __name__ == '__main__':

@@ -1,11 +1,14 @@
 import json
 import logging
+import multiprocessing
 import os
 import subprocess
 import tempfile
 import warnings
+import math
 
 import xmltodict
+from joblib import Parallel, delayed
 
 from medacy.tools.unicode_to_ascii import UNICODE_TO_ASCII
 
@@ -395,3 +398,85 @@ class MetaMap:
                                 conceptpi['StartPos'] = str(match_start)
                                 conceptpi['Length'] = str(match_length)
         return text, metamap_dict
+
+    def metamap_dataset(self, dataset, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
+        """
+         Metamaps the files registered by a Dataset. Attempts to Metamap utilizing a max prune depth of 30, but on
+         failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
+         More information can be found in the MetaMap documentation.
+
+         :param dataset: the Dataset to MetaMap.
+         :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
+         :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
+         :return: None
+         """
+
+        if dataset.is_metamapped():
+            logging.info(f"The following Dataset has already been metamapped: {repr(dataset)}")
+            return
+
+        mm_dir = dataset.metamapped_files_directory
+
+        # Make MetaMap directory if it doesn't exist.
+        if not os.path.isdir(mm_dir):
+            os.makedirs(mm_dir)
+
+        # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
+        if retry_possible_corruptions:
+            # Do not metamap files that are already metamapped and above 200 bytes in size
+            already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)
+                                  if os.path.getsize(os.path.join(mm_dir, file)) > 200]
+        else:
+            # Do not metamap files that are already metamapped
+            already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)]
+
+        files_to_metamap = [data_file.txt_path for data_file in dataset if data_file.file_name not in already_metamapped]
+
+        logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
+
+        Parallel(n_jobs=n_jobs)(
+            delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
+
+        if dataset.is_metamapped():
+            for data_file in dataset:
+                data_file.metamapped_path = os.path.join(
+                    mm_dir,
+                    data_file.txt_path.split(os.path.sep)[-1].replace(
+                        ".%s" % dataset.raw_text_file_extension, ".metamapped"
+                    )
+                )
+
+    def _parallel_metamap(self, file_path, mm_dir):
+        """
+        Facilitates metamapping in parallel by forking off processes to MetaMap each file individually.
+
+        :param file_path: the path of the txt file to metamap
+        :return: mm_dir now contains metamapped versions of the dataset files
+        """
+        file = file_path.split(os.path.sep)[-1]
+        logging.info("Attempting to Metamap: %s", file_path)
+        mapped_file_location = os.path.join(mm_dir, file.replace('txt', "metamapped"))
+
+        with open(mapped_file_location, 'w') as mapped_file:
+            max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
+
+            metamap_dict = None
+            # while current prune depth causes out of memory on document
+            while metamap_dict is None or metamap_dict['metamap'] is None:
+                if max_prune_depth <= 0:
+                    logging.critical("Failed to to metamap after multiple attempts: %s", file_path)
+                    return
+                try:
+                    metamap_dict = self.map_file(file_path, max_prune_depth=max_prune_depth)  # attempt to metamap
+                    if metamap_dict['metamap'] is not None:  # if successful
+                        break
+                    # Decrease prune depth by an order of magnitude
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5))
+                except BaseException as e:
+                    metamap_dict = None
+                    # Decrease prune depth by an order of magnitude
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5))
+                    logging.warning(f"Error Metamapping: {file_path} after raising {type(e).__name__}: {str(e)}")
+
+            mapped_file.write(json.dumps(metamap_dict))
+            logging.info("Successfully Metamapped: %s", file_path)
