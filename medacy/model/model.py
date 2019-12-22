@@ -210,9 +210,6 @@ class Model:
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")
 
-        X_data = self.X_data
-        Y_data = self.y_data
-
         tags = sorted(training_dataset.get_labels(as_list=True))
         self.pipeline.entities = tags
         logging.info('Tagset: %s', tags)
@@ -220,21 +217,21 @@ class Model:
         eval_stats = {}
 
         # Dict for storing mapping of sequences to their corresponding file
-        groundtruth_by_document = {filename: [] for filename in {x[2] for x in X_data}}
-        preds_by_document = {filename: [] for filename in {x[2] for x in X_data}}
+        groundtruth_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
+        preds_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
 
-        folds = create_folds(Y_data, num_folds)
+        folds = create_folds(self.y_data, num_folds)
 
         for fold_num, fold_data in enumerate(folds, 1):
             train_indices, test_indices = fold_data
             fold_statistics = {}
             learner_name, learner = self.pipeline.get_learner()
 
-            X_train = [X_data[index] for index in train_indices]
-            y_train = [Y_data[index] for index in train_indices]
+            X_train = [self.X_data[index] for index in train_indices]
+            y_train = [self.y_data[index] for index in train_indices]
 
-            X_test = [X_data[index] for index in test_indices]
-            y_test = [Y_data[index] for index in test_indices]
+            X_test = [self.X_data[index] for index in test_indices]
+            y_test = [self.y_data[index] for index in test_indices]
 
             logging.info("Training Fold %i", fold_num)
             train_data = [x[0] for x in X_train]
