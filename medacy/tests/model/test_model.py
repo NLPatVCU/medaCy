@@ -1,6 +1,7 @@
 import os
 import shutil
 import tempfile
+import logging
 from unittest import TestCase
 
 import pkg_resources
@@ -102,8 +103,16 @@ class TestModel(TestCase):
     def test_cross_validate(self):
         """Ensures that changes made in the package do not prevent cross_validate from running to completion"""
         model = Model(self.pipeline)
+
+        # Test that invalid fold counts raise ValueError
+        for num in [-1, 0, 1]:
+            with self.assertRaises(ValueError):
+                model.cross_validate(self.dataset, num)
+
         try:
-            model.cross_validate(self.dataset, 2)
+            resulting_data = model.cross_validate(self.dataset, 2)
+            # Checking the log can help verify that the results of cross validation are expectable
+            logging.debug(resulting_data)
         except:
             self.assertTrue(False)
 
