@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import subprocess
 import tempfile
@@ -15,33 +16,35 @@ class MetaMap:
     def __init__(self, metamap_path, cache_output=False, cache_directory=None, convert_ascii=True, args=""):
         """
         :param metamap_path: The location of the MetaMap executable.
-                            (ex. /home/programs/metamap/2016/public_mm/bin/metamap)
+            (ex. /home/programs/metamap/2016/public_mm/bin/metamap)
         :param cache_output: Whether to cache output as it run through metamap, will by default store in a
-                             temp directory tmp/medacy*/
+            temp directory tmp/medacy*/
         :param cache_directory: alternatively, specify a directory to cache metamapped files to
         """
 
-        if cache_output:
-            if cache_directory is None: #set cache directory to tmp directory, creating if not exists
-                tmp = tempfile.gettempdir()
-                files = [filename for filename in os.listdir(tmp) if filename.startswith("medacy")]
+        # Set cache directory to tmp directory, creating if not exists
+        if cache_output and cache_directory is None:
+            tmp = tempfile.gettempdir()
 
-                if files:
-                    cache_directory = os.path.join(tmp, files[0])
-                else:
-                    tmp_dir = tempfile.mkdtemp(prefix="medacy")
-                    cache_directory = os.path.join(tmp, tmp_dir)
+            files = [filename for filename in os.listdir(tmp) if filename.startswith("medacy")]
+            if files:
+                cache_directory = os.path.join(tmp, files[0])
+            else:
+                tmp_dir = tempfile.mkdtemp(prefix="medacy")
+                cache_directory = os.path.join(tmp, tmp_dir)
 
         self.cache_directory = cache_directory
         self.metamap_path = metamap_path
         self.convert_ascii = convert_ascii
         self.args = args
+        # Set path to the program that enables metamapping
+        self._program_name = os.path.join(os.path.dirname(self.metamap_path), 'skrmedpostctl')
+        self.recent_file = None
+        self.metamap_dict = {}
 
     def activate(self):
         """Activates MetaMap for metamapping files or strings"""
-        bin_dir = os.path.dirname(self.metamap_path)
-        program_name = os.path.join(bin_dir, "skrmedpostctl")
-        subprocess.call([program_name, 'start'])
+        subprocess.call([self._program_name, 'start'])
 
     def __enter__(self):
         """Activates MetaMap for metamapping files or strings"""
@@ -50,9 +53,7 @@ class MetaMap:
 
     def deactivate(self):
         """Deactivates MetaMap"""
-        bin_dir = os.path.dirname(self.metamap_path)
-        program_name = os.path.join(bin_dir, "skrmedpostctl")
-        subprocess.call([program_name, 'stop'])
+        subprocess.call([self._program_name, 'stop'])
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Deactivates MetaMap"""
@@ -61,20 +62,20 @@ class MetaMap:
     def map_file(self, file_to_map, max_prune_depth=10):
         """
         Maps a given document from a file_path and returns a formatted dict
-        :param file_to_map: the path of the file that will be metamapped
-        :param max_prune_depth: set to larger for better results. See metamap specs about pruning depth.
-        :return:
+        :param file_to_map: the path of the file to be metamapped
+        :param max_prune_depth: See metamap specs about pruning depth; defaults to 10; set to larger for better results.
+        :return: a dictionary of MetaMap data
         """
         self.recent_file = file_to_map
 
-        if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
+        if self.cache_directory is not None:  # Look up file if exists, otherwise continue metamapping
             cached_file_path = os.path.join(
                 self.cache_directory,
                 os.path.splitext(os.path.basename(file_to_map))[0] + ".metamapped"
             )
 
             if os.path.exists(cached_file_path):
-                print(cached_file_path)
+                logging.debug(cached_file_path)
                 return self.load(cached_file_path)
 
         with open(file_to_map, 'r') as f:
@@ -87,7 +88,7 @@ class MetaMap:
                 try:
                     mapped_file.write(json.dumps(metamap_dict))
                 except Exception as e:
-                    mapped_file.write(str(e))
+                    logging.error(str(e))
 
         return metamap_dict
 
@@ -116,14 +117,14 @@ class MetaMap:
         if self.convert_ascii:
             document, ascii_diff = self._convert_to_ascii(document)
 
-        bashCommand = 'bash %s %s' % (self.metamap_path, args)
-        process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        bash_command = 'bash %s %s' % (self.metamap_path, args)
+        process = subprocess.Popen(bash_command, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = process.communicate(input=bytes(document, 'UTF-8'))
         output = str(output.decode('utf-8'))
 
         xml = ""
         for line in output.split("\n")[1:]:
-            if 'DOCTYPE' not in line and 'xml' not in line:
+            if not all(item in line for item in ['DOCTYPE', 'xml']):
                 xml += line+'\n'
         xml = "<metamap>\n" + xml + "</metamap>"  # surround in single root tag - hacky.
         xml = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE MMOs PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://metamap.nlm.nih.gov/DTD/MMOtoXML_v5.dtd">\n'+xml
@@ -174,7 +175,7 @@ class MetaMap:
         Transforms an array of mapped_terms in a spacy annotation object. Label for each annotation
         defaults to first semantic type in semantic_type array
         :param mapped_terms: an array of mapped terms
-        :param label: the label to assign to each annotation, defaults to first semantic type of mapped_term
+        :param entity_label: the label to assign to each annotation, defaults to first semantic type of mapped_term
         :return: a annotation formatted to spacy's specifications
         """
 
@@ -192,8 +193,7 @@ class MetaMap:
 
     def get_term_by_semantic_type(self, mapped_terms, include=[], exclude=None):
         """
-        Returns Metamapped utterances that all contain a given set of semantic types found in include
-
+        Returns metamapped utterances that all contain a given set of semantic types found in include
         :param mapped_terms: An array of candidate dictionaries
         :return: the dictionaries that contain a term with all the semantic types in semantic_types
         """
@@ -225,7 +225,6 @@ class MetaMap:
     def get_span_by_term(self, term):
         """
         Takes a given utterance dictionary (term) and extracts out the character indices of the utterance
-
         :param term: The full dictionary corresponding to a metamap term
         :return: the span of the referenced term in the document
         """
