@@ -11,8 +11,7 @@ from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
-from medacy.model._model import construct_annotations_from_tuples, predict_document
-from medacy.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.model._model import construct_annotations_from_tuples, predict_document, create_folds
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
@@ -214,20 +213,20 @@ class Model:
         X_data = self.X_data
         Y_data = self.y_data
 
-        cv = SequenceStratifiedKFold(folds=num_folds)
-
         tags = sorted(training_dataset.get_labels(as_list=True))
         self.pipeline.entities = tags
         logging.info('Tagset: %s', tags)
 
         eval_stats = {}
-        fold = 1
 
         # Dict for storing mapping of sequences to their corresponding file
         groundtruth_by_document = {filename: [] for filename in {x[2] for x in X_data}}
         preds_by_document = {filename: [] for filename in {x[2] for x in X_data}}
 
-        for train_indices, test_indices in cv(X_data, Y_data):
+        folds = create_folds(Y_data, num_folds)
+
+        for fold_num, fold_data in enumerate(folds, 1):
+            train_indices, test_indices = fold_data
             fold_statistics = {}
             learner_name, learner = self.pipeline.get_learner()
 
@@ -237,15 +236,13 @@ class Model:
             X_test = [X_data[index] for index in test_indices]
             y_test = [Y_data[index] for index in test_indices]
 
-            logging.info("Training Fold %i", fold)
+            logging.info("Training Fold %i", fold_num)
             train_data = [x[0] for x in X_train]
             test_data = [x[0] for x in X_test]
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
 
             if groundtruth_directory is not None:
-                # Dict for storing mapping of sequences to their corresponding file
-
                 # Flattening nested structures into 2d lists
                 document_indices = []
                 span_indices = []
@@ -329,8 +326,7 @@ class Model:
 
             logging.info('\n' + tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'], tablefmt='orgtbl'))
 
-            eval_stats[fold] = fold_statistics
-            fold += 1
+            eval_stats[fold_num] = fold_statistics
 
         statistics_all_folds = {}
 

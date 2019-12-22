@@ -11,9 +11,7 @@ from spacy.util import minibatch, compounding
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
-from medacy.data.annotations import Annotations
-from medacy.model._model import construct_annotations_from_tuples
-from medacy.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.model._model import construct_annotations_from_tuples, create_folds
 
 
 class SpacyModel:
@@ -180,11 +178,11 @@ class SpacyModel:
         skipped_files = []
         eval_stats = {}
 
-        folds = SequenceStratifiedKFold(folds=num_folds)
-        fold = 1
+        folds = create_folds(y_data, num_folds)
 
-        for train_indices, test_indices in folds(x_data, y_data):
-            logging.info("\n----EVALUATING FOLD %d----", fold)
+        for fold_num, fold_data in enumerate(folds, 1):
+            train_indices, test_indices = fold_data
+            logging.info("\n----EVALUATING FOLD %d----", fold_num)
             self.model = None
             fold_statistics = {}
 
@@ -245,8 +243,7 @@ class SpacyModel:
 
             logging.info('\n' + tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'], tablefmt='orgtbl'))
 
-            eval_stats[fold] = fold_statistics
-            fold += 1
+            eval_stats[fold_num] = fold_statistics
 
         if skipped_files:
             logging.info('\nWARNING. SKIPPED THE FOLLOWING ANNOTATIONS:')

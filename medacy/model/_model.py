@@ -2,6 +2,10 @@
 Utilities for methods of the Model class
 """
 import logging
+from itertools import cycle
+
+import numpy as np
+
 from medacy.data.annotations import Annotations
 
 
@@ -68,3 +72,48 @@ def construct_annotations_from_tuples(doc, predictions):
         annotations.append((entity, start, end, labeled_text))
 
     return Annotations(annotations)
+
+
+def create_folds(y, num_folds=5):
+    """
+    Partitions a data set of sequence labels and classifications into a number of stratified folds. Each partition
+    should have an evenly distributed representation of sequence labels. Without stratification, under-representated
+    labels may not appear in some folds. Returns an iterable [(X*,y*), ...] where each element contains the indices
+    of the train and test set for the particular testing fold.
+
+    See Dietterich, 1997 "Approximate Statistical Tests for Comparing Supervised Classification
+    Algorithms" for in-depth analysis.
+
+    :param y: a collection of sequence labels
+    :param num_folds: the number of folds (defaults to five, but must be >= 2
+    :return: an iterable
+    """
+    if not isinstance(num_folds, int) or num_folds < 2:
+        raise ValueError(f"'num_folds' must be an int >= 2, but is {repr(num_folds)}")
+
+    # labels are ordered by most examples in data
+    labels = np.unique([label for sequence in y for label in sequence])
+    np.flip(labels)
+
+    added = np.ones(len(y), dtype=bool)
+    partitions = [[] for _ in range(num_folds)]
+    partition_cycler = cycle(partitions)
+
+    for label in labels:
+        possible_sequences = [index for index, sequence in enumerate(y) if label in sequence]
+        for index in possible_sequences:
+            if added[index]:
+                partition = next(partition_cycler)
+                partition.append(index)
+                added[index] = 0
+    train_test_array = []
+
+    for i, y in enumerate(partitions):
+        X = []
+        for j, partition in enumerate(partitions):
+            if i != j:
+                X += partition
+
+        train_test_array.append((X,y))
+
+    return train_test_array
