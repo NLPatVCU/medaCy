@@ -147,7 +147,13 @@ class BertLearner:
 
         # Encode sequences and labels
         sequences, labels = self.encode_sequences(x_data, y_data)
-        dataset = SequencesDataset(self.device, sequences, self.vectorizer.tag_to_index['X'] , sequence_labels=labels)
+        dataset = SequencesDataset(
+            self.device,
+            sequences,
+            self.vectorizer.tag_to_index['X'],
+            sequence_labels=labels,
+            o_label=self.vectorizer.tag_to_index['O']
+        )
         sampler = RandomSampler(dataset)
         dataloader = DataLoader(
             dataset,
@@ -175,17 +181,23 @@ class BertLearner:
 
             logging.info('Loss: %f' % (training_loss / batches))
 
-    def predict(self, sequences):
+    def predict(self, x_data):
         """Use model to make predictions over a given dataset.
 
         :param sequences: Sequences to predict labels for.
         :return: List of list of predicted labels.
         """
         self.model.eval()
-        encoded_sequences, mappings = self.encode_sequences(sequences)
+        encoded_sequences, mappings = self.encode_sequences(x_data, labels=[])
         encoded_tag_indices = []
 
-        dataset = SequencesDataset(self.device, encoded_sequences)
+        dataset = SequencesDataset(
+            device=self.device,
+            sequences=encoded_sequences,
+            mask_label=self.vectorizer.tag_to_index['X'],
+            sequence_labels=mappings,
+            o_label=self.vectorizer.tag_to_index['O']
+        )
         sampler = SequentialSampler(dataset)
         dataloader = DataLoader(
             dataset,
@@ -195,7 +207,7 @@ class BertLearner:
         )
 
         for batch in dataloader:
-            sequences, attention_masks = batch
+            sequences, attention_masks, _ = batch
             scores = self.model(sequences, attention_mask=attention_masks)[0]
             tag_indices = torch.max(scores, 2)[1].tolist()
             encoded_tag_indices.extend(tag_indices)
