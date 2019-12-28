@@ -492,37 +492,6 @@ class Model:
         else:
             joblib.dump(self.model, path)
 
-    def get_info(self, return_dict=False):
-        """
-        Retrieves information about a Model including details about the feature extraction pipeline, features utilized,
-        and learning model.
-
-        :param return_dict: Returns a raw dictionary of information as opposed to a formatted string
-        :return: Returns structured information
-        """
-        pipeline_information = self.pipeline.get_pipeline_information()
-        feature_extractor = self.pipeline.get_feature_extractor()
-        #TODO include tokenizer
-        pipeline_information['feature_extraction'] = {
-            "medacy_features": feature_extractor.all_custom_features,
-            "spacy_features": feature_extractor.spacy_features,
-            "window_size": feature_extractor.window_size
-        }
-
-        if return_dict:
-            return pipeline_information
-
-        text = ["Pipeline Name: %s" % pipeline_information['pipeline_name'],
-                "Learner Name: %s" % pipeline_information['learner_name'],
-                "Pipeline Description: %s" % pipeline_information['description'],
-                "Pipeline Components: [%s]" % ",".join(pipeline_information['components']),
-                "Spacy Features: [%s]" % ", ".join(pipeline_information['feature_extraction']['spacy_features']),
-                "Medacy Features: [%s]" % ", ".join(pipeline_information['feature_extraction']['medacy_features']).replace('feature_', ''),
-                "Window Size: (+-) %i" % pipeline_information['feature_extraction']['window_size']
-                ]
-
-        return "\n".join(text)
-
     @staticmethod
     def load_external(package_name):
         """
@@ -535,6 +504,3 @@ class Model:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
-
-    def __str__(self):
-        return self.get_info()
