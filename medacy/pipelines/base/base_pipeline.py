@@ -43,7 +43,7 @@ class BasePipeline(ABC):
 
     @abstractmethod
     def get_learner(self):
-        """Retrieves an instance of a sci-kit learn compatible learning algorithm."""
+        """Returns an instance of a sci-kit learn compatible learning algorithm."""
         pass
 
     @abstractmethod
@@ -54,7 +54,8 @@ class BasePipeline(ABC):
     def add_component(self, component, *argv, **kwargs):
         """
         Adds a given component to pipeline
-        :param component: a subclass of BaseOverlayer
+        :param component: a subclass of BaseOverlayer (the class itself; not an instance)
+        :param args, kwargs: arguments to pass to the constructor of the component
         """
 
         current_components = [component_name for component_name, proc in self.spacy_pipeline.pipeline]
@@ -64,9 +65,11 @@ class BasePipeline(ABC):
         for dependent in component.dependencies:
             assert dependent in current_components, "%s depends on %s but it hasn't been added to the pipeline" % (component, dependent)
 
-        self.spacy_pipeline.add_pipe(component(self.spacy_pipeline, *argv, **kwargs))
+        new_component = component(self.spacy_pipeline, *argv, **kwargs)
+        self.spacy_pipeline.add_pipe(new_component)
+        self.overlayers.append(new_component)
 
-    def get_components(self):
+    def get_component_names(self):
         """
         Retrieves a listing of all components currently in the pipeline.
         :return: a list of components inside the pipeline.
