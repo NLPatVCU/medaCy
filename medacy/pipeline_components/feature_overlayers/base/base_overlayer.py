@@ -28,7 +28,7 @@ class BaseOverlayer(ABC):
         """
         pass
 
-    def create_report(self):
+    def get_report(self):
         """
         Creates a report about the configuration of the overlayer instance; implementations in subclasses
         should contain all the information needed to reconstruct the instance

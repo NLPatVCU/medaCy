@@ -2,6 +2,9 @@ import inspect
 import time
 from abc import ABC, abstractmethod
 
+import spacy
+
+import medacy
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 
 
@@ -26,7 +29,8 @@ class BasePipeline(ABC):
         # Set tokenizer, if something other than the spaCy pipeline's tokenizer is specified in get_tokenizer()
         tokenizer = self.get_tokenizer()
         if tokenizer:
-            self.spacy_pipeline.tokenizer = tokenizer
+            # 'tokenizer' is a class with an attribute named 'tokenizer'
+            self.spacy_pipeline.tokenizer = tokenizer.tokenizer
 
         self.add_component(GoldAnnotatorOverlayer, entities)
 
@@ -107,26 +111,32 @@ class BasePipeline(ABC):
         learner_name, learner = self.get_learner()
         tokenizer = self.get_tokenizer()
         feature_extractor = self.get_feature_extractor()
+        spacy_metadata = self.spacy_pipeline.meta
 
         # Start the report with the name of the class and the docstring
         report = f"{type(self).__name__}\n{self.__doc__}\n\n"
 
         report += f"Report created at {time.asctime()}\n\n"
+        report += f"MedaCy Version: {medacy.__version__}\nSpaCy Version: {spacy.__version__}\n"
+        report += f"SpaCy Model: {spacy_metadata['name']}, version {spacy_metadata['version']}\n"
         report += f"Entities: {self.entities}\n\n"
 
         # Print data about the feature overlayers
         if self.overlayers:
             report += "Feature Overlayers:\n\n"
-            report += "\n\n".join(o.generate_report() for o in self.overlayers) + '\n\n'
+            report += "\n\n".join(o.get_report() for o in self.overlayers) + '\n\n'
 
         # Print data about the feature extractor
         report += f"Feature Extractor: {type(feature_extractor).__name__} at {inspect.getfile(type(feature_extractor))}\n"
         report += f"\tWindow Size: {feature_extractor.window_size}\n"
         report += f"\tSpaCy Features: {feature_extractor.spacy_features}\n"
 
-
         # Print the name and location of the remaining components
         report += f"Learner: {learner_name} at {inspect.getfile(type(learner))}\n"
-        report += f"Tokenizer: {type(tokenizer).__name__} at {inspect.getfile(type(tokenizer))}\n"
+
+        if self.get_tokenizer():
+            report += f"Tokenizer: {type(tokenizer).__name__} at {inspect.getfile(type(tokenizer))}\n"
+        else:
+            report += f"Tokenizer: spaCy pipeline default\n"
 
         return report

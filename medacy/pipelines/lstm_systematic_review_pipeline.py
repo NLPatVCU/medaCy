@@ -43,7 +43,7 @@ class LstmSystematicReviewPipeline(BasePipeline):
         return 'BiLSTM+CRF', learner
 
     def get_tokenizer(self):
-        return SystematicReviewTokenizer(self.spacy_pipeline).tokenizer
+        return SystematicReviewTokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
         return FeatureExtractor(

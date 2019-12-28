@@ -43,7 +43,7 @@ class ScispacyPipeline(BasePipeline):
             )
 
     def get_tokenizer(self):
-        return self.spacy_pipeline.tokenizer
+        return None
 
     def get_feature_extractor(self):
         return FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])

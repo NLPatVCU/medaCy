@@ -173,8 +173,7 @@ class DrugEventPipeline(BasePipeline):
             )
 
     def get_tokenizer(self):
-        tokenizer = CharacterTokenizer(self.spacy_pipeline)
-        return tokenizer.tokenizer
+        return CharacterTokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
         extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text', 'head'])

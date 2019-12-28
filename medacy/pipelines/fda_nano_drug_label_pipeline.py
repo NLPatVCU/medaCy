@@ -38,8 +38,7 @@ class FDANanoDrugLabelPipeline(BasePipeline):
             )
 
     def get_tokenizer(self):
-        tokenizer = ClinicalTokenizer(self.spacy_pipeline) #Best run with SystematicReviewTokenizer
-        return tokenizer.tokenizer
+        return ClinicalTokenizer(self.spacy_pipeline)  # Best run with SystematicReviewTokenizer
 
     def get_feature_extractor(self):
         extractor = FeatureExtractor(window_size=6, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num', 'text'])

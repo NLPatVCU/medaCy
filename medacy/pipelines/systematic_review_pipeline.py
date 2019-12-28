@@ -42,8 +42,7 @@ class SystematicReviewPipeline(BasePipeline):
                 )
 
     def get_tokenizer(self):
-        tokenizer = SystematicReviewTokenizer(self.spacy_pipeline)
-        return tokenizer.tokenizer
+        return SystematicReviewTokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
         return FeatureExtractor(window_size=10, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
