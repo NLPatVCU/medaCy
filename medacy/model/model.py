@@ -205,6 +205,8 @@ class Model:
             raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
+        pipeline_report = self.pipeline.get_report()
+
         self.preprocess(training_dataset, asynchronous)
 
         if not (self.X_data and self.y_data):
@@ -351,12 +353,18 @@ class Model:
              ] for label in tags + ['system']
         ]
 
-        logging.info("\n" + tabulate(
+        # Combine the pipeline report and the resulting data, then log it or print it (whichever ensures that it prints)
+
+        output_str = '\n' + pipeline_report + '\n\n' + tabulate(
             table_data,
             headers=['Entity (Count)', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
             tablefmt='orgtbl'
-            )
         )
+
+        if logging.root.level > logging.INFO:
+            print(output_str)
+        else:
+            logging.info(output_str)
 
         if prediction_directory:
             
