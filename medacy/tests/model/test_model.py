@@ -44,9 +44,10 @@ class TestModel(TestCase):
         self.assertTrue(model.X_data)
         self.assertTrue(model.y_data)
 
-        # Test prediction over string
+        # Test that there is at least one prediction
         resulting_ann = model.predict('To exclude the possibility that alterations in PSSD might be a consequence of changes in the volume of reference, we used a subset of the vibratome sections')
         self.assertIsInstance(resulting_ann, Annotations)
+        self.assertTrue(resulting_ann)
 
         # Test prediction over directory
         resulting_dataset = model.predict(self.dataset.data_directory, prediction_directory=self.prediction_directory)
@@ -59,8 +60,10 @@ class TestModel(TestCase):
         new_model = Model(self.pipeline)
         new_model.load(pickle_path)
 
+        # Test that there is at least one prediction
         resulting_ann = new_model.predict('To exclude the possibility that alterations in PSSD might be a consequence of changes in the volume of reference, we used a subset of the vibratome sections')
         self.assertIsInstance(resulting_ann, Annotations)
+        self.assertTrue(resulting_ann)
 
     def test_predict(self):
         """
