@@ -77,7 +77,8 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
 
         # check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
-            raise ValueError("No extension doc._.gold_annotation_file is present.")
+            logging.warning("No extension doc._.gold_annotation_file is present; it will not be possible to fit a model with this Doc")
+            return doc
 
         gold_annotations = Annotations(doc._.gold_annotation_file)
 
