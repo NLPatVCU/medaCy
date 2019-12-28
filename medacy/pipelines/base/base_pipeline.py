@@ -13,19 +13,22 @@ class BasePipeline(ABC):
     def __init__(self, entities, spacy_pipeline, cuda_device=-1):
         """
         Initializes a pipeline
-        :param entities: a list of entities, or an empty list if the pipeline is for a model that has already been fitted
+        :param entities: a list of entities, or an empty list (or None) if the pipeline is for a model that
+        has already been fitted
         :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
         :param cuda_device: the GPU to use, if any (defaults to -1 for using the CPU)
         """
-        self.entities = entities
+        self.entities = entities or []
         self.spacy_pipeline = spacy_pipeline
         self.cuda_device = cuda_device
         self.overlayers = []  # Stores feature overlayers
 
-        self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
+        # Set tokenizer, if something other than the spaCy pipeline's tokenizer is specified in get_tokenizer()
+        tokenizer = self.get_tokenizer()
+        if tokenizer:
+            self.spacy_pipeline.tokenizer = tokenizer
 
-        if entities:
-            self.add_component(GoldAnnotatorOverlayer, entities)
+        self.add_component(GoldAnnotatorOverlayer, entities)
 
         # The following code was causing GPU errors because you cannot specify which GPU spaCy will use;
         # You may uncomment this code if you know you have access to the GPU that spaCy will use.
