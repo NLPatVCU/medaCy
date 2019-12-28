@@ -1,3 +1,4 @@
+import inspect
 from abc import ABC, abstractmethod
 
 
@@ -26,6 +27,14 @@ class BaseOverlayer(ABC):
         :return: the Doc object that was passed to it (which was modified by this call)
         """
         pass
+
+    def create_report(self):
+        """
+        Creates a report about the configuration of the overlayer instance; implementations in subclasses
+        should contain all the information needed to reconstruct the instance
+        :return: str
+        """
+        return f"{type(self)} at {inspect.getfile(self)}"
 
     def __repr__(self):
         return str(self)
