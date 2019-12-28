@@ -67,7 +67,9 @@ class BasePipeline(ABC):
 
         new_component = component(self.spacy_pipeline, *argv, **kwargs)
         self.spacy_pipeline.add_pipe(new_component)
-        self.overlayers.append(new_component)
+
+        if component.name != "gold_annotator":
+            self.overlayers.append(new_component)
 
     def get_component_names(self):
         """
