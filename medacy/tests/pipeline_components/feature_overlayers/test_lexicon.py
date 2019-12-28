@@ -3,7 +3,7 @@ from unittest import TestCase
 import spacy
 from spacy.tokens import Token
 
-from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconComponent
+from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconOverlayer
 
 
 class TestLexicon(TestCase):
@@ -23,8 +23,8 @@ class TestLexicon(TestCase):
         Tests initialization with lexicon passed in
         :return:
         """
-        lexicon_component = LexiconComponent(self.nlp, self.lexicon)
-        self.assertIsInstance(lexicon_component, LexiconComponent)
+        lexicon_component = LexiconOverlayer(self.nlp, self.lexicon)
+        self.assertIsInstance(lexicon_component, LexiconOverlayer)
         self.assertIsNotNone(lexicon_component.lexicon)
 
     def test_call_lexicon_component(self):
@@ -32,7 +32,7 @@ class TestLexicon(TestCase):
         Test running a doc through the lexicon component and properly overlaying features from
         the lexicon.
         """
-        lexicon_component = LexiconComponent(self.nlp, self.lexicon)
+        lexicon_component = LexiconOverlayer(self.nlp, self.lexicon)
         self.assertFalse(Token.has_extension('feature_is_ADE_from_lexicon'))
         self.assertFalse(Token.has_extension('feature_is_DRUG_from_lexicon'))
 

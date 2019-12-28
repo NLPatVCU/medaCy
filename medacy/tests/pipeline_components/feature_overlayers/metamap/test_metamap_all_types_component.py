@@ -3,14 +3,14 @@ import unittest
 
 from medacy.model.model import Model
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesOverlayer
 from medacy.pipelines.testing_pipeline import TestingPipeline
 from medacy.tests.pipeline_components.feature_overlayers.metamap import have_metamap, reason, metamap_path
 from medacy.tests.sample_data import sample_dataset
 
 
 class TestMetaMapAllTypesComponent(unittest.TestCase):
-    """Test cases for MetaMapAllTypesComponent"""
+    """Test cases for MetaMapAllTypesOverlayer"""
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -23,7 +23,7 @@ class TestMetaMapAllTypesComponent(unittest.TestCase):
         class TestPipeline(TestingPipeline):
             def __init__(self, ents):
                 super().__init__(entities=ents)
-                self.add_component(MetaMapAllTypesComponent, cls.metamap)
+                self.add_component(MetaMapAllTypesOverlayer, cls.metamap)
 
         cls.Pipeline = TestPipeline
 

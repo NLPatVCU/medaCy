@@ -5,12 +5,12 @@ import warnings
 
 from spacy.tokens import Token
 
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import _get_metamapped_path
 
 
-class MetaMapAllTypesComponent(BaseComponent):
+class MetaMapAllTypesOverlayer(BaseOverlayer):
     """
     A pipeline component for spaCy that overlays MetaMap output as token attributes, using all semantic types
     in the dataset
@@ -46,7 +46,7 @@ class MetaMapAllTypesComponent(BaseComponent):
         :param doc: spaCy Doc object to run through pipeline
         :return: the same Doc object
         """
-        logging.debug("Called MetaMapAllTypesComponent")
+        logging.debug("Called MetaMapAllTypesOverlayer")
 
         # register all extensions
         if self.cuis:

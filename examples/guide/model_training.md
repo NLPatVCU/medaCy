@@ -93,7 +93,7 @@ from .base import BasePipeline
 from ..pipeline_components import ClinicalTokenizer
 from medacy.pipeline_components.feature_extractor import FeatureExtractor
 
-from ..pipeline_components import GoldAnnotatorComponent, MetaMapComponent, UnitComponent, MetaMap
+from ..pipeline_components import GoldAnnotatorOverlayer, MetaMapOverlayer, UnitOverlayer, MetaMap
 
 class ClinicalPipeline(BasePipeline):
     """
@@ -120,15 +120,15 @@ class ClinicalPipeline(BasePipeline):
 
         self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
 
-        self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
+        self.add_component(GoldAnnotatorOverlayer, entities) #add overlay for GoldAnnotation
 
         if metamap is not None and isinstance(metamap, MetaMap):
-            self.add_component(MetaMapComponent, metamap)
+            self.add_component(MetaMapOverlayer, metamap)
 
-        #self.add_component(UnitComponent)
+        UnitOverlayer
 
 
-    def get_learner(self):
+    UnitOverlayerer(self):
         return ("CRF_l2sgd", sklearn_crfsuite.CRF(
             algorithm='l2sgd',
             c2=0.1,

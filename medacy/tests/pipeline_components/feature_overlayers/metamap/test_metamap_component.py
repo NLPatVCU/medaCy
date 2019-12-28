@@ -5,12 +5,12 @@ import spacy
 from spacy.tokens import Token
 
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.tests.pipeline_components.feature_overlayers.metamap import have_metamap, reason, metamap_path
 
 
 class TestMetaMapComponent(unittest.TestCase):
-    """Unit tests for medacy.pipeline_components.feature_overlayers.metamap.metamap_component.MetaMapComponent"""
+    """Unit tests for medacy.pipeline_components.feature_overlayers.metamap.metamap_component.MetaMapOverlayer"""
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -31,11 +31,11 @@ class TestMetaMapComponent(unittest.TestCase):
 
     @unittest.skipUnless(have_metamap, reason)
     def test_overlays_cuis(self):
-        """Tests that the MetaMapComponent overlays CUIs correctly given a document that hasn't been metamapped"""
+        """Tests that the MetaMapOverlayer overlays CUIs correctly given a document that hasn't been metamapped"""
         doc = self.nlp('I took Tylenol and it gave me nausea and chest pain')
 
         metamap = MetaMap(metamap_path)
-        metamap_component = MetaMapComponent(self.nlp, metamap)
+        metamap_component = MetaMapOverlayer(self.nlp, metamap)
 
         metamap_component(doc)
         self.assertTrue(Token.has_extension('feature_cui'))

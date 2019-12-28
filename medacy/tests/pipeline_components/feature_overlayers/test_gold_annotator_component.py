@@ -4,12 +4,12 @@ import spacy
 from spacy.tokens import Doc
 
 from medacy.data.annotations import Annotations
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 from medacy.tests.sample_data import sample_dataset
 
 
 class TestGoldAnnotatorComponent(unittest.TestCase):
-    """Unit tests for medacy.pipeline_components.feature_overlayers.gold_annotator_component.GoldAnnotatorComponent"""
+    """Unit tests for medacy.pipeline_components.feature_overlayers.gold_annotator_component.GoldAnnotatorOverlayer"""
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -38,7 +38,7 @@ class TestGoldAnnotatorComponent(unittest.TestCase):
         ann = Annotations(ann_file_path)
         labels = ann.get_labels()
 
-        gold_annotator = GoldAnnotatorComponent(self.nlp, list(labels))
+        gold_annotator = GoldAnnotatorOverlayer(self.nlp, list(labels))
 
         doc = gold_annotator(doc)
 

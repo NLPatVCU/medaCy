@@ -3,9 +3,9 @@ import spacy
 from spacy.tokenizer import Tokenizer
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.pipelines.base.base_pipeline import BasePipeline
 from medacy.tools.get_metamap import get_metamap
 
@@ -38,11 +38,11 @@ class ScispacyPipeline(BasePipeline):
 
         self.entities = entities
         self.spacy_pipeline.tokenizer = Tokenizer(self.spacy_pipeline.vocab)
-        self.add_component(GoldAnnotatorComponent, entities) #add overlay for GoldAnnotation
+        self.add_component(GoldAnnotatorOverlayer, entities) #add overlay for GoldAnnotation
 
         metamap_path = get_metamap()
         metamap = MetaMap(metamap_path)
-        self.add_component(MetaMapComponent, metamap)
+        self.add_component(MetaMapOverlayer, metamap)
 
     def get_learner(self):
         return ("CRF_l2sgd",

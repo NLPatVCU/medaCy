@@ -2,9 +2,9 @@ import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
@@ -36,12 +36,12 @@ class FDANanoDrugLabelPipeline(BasePipeline):
 
         self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
 
-        self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
+        self.add_component(GoldAnnotatorOverlayer, entities)  # add overlay for GoldAnnotation
 
         if metamap is not None and isinstance(metamap, MetaMap):
-            self.add_component(MetaMapComponent, metamap)
+            self.add_component(MetaMapOverlayer, metamap)
 
-        #self.add_component(UnitComponent)
+        #self.add_component(UnitOverlayer)
 
     def get_learner(self):
         return ("CRF_l2sgd",

@@ -3,10 +3,10 @@ import logging
 from spacy.tokens import Token
 
 from medacy.data.annotations import Annotations
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 
 
-class GoldAnnotatorComponent(BaseComponent):
+class GoldAnnotatorOverlayer(BaseOverlayer):
     """
     A pipeline component that overlays gold annotations. This pipeline component sets the attribute 'gold_label'
     to all tokens to be used as the class value of the token when fed into a supervised learning algorithm.

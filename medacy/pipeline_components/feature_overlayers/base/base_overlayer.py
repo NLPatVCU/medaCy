@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class BaseComponent(ABC):
+class BaseOverlayer(ABC):
     """
     A base medacy pipeline component that wraps over a spaCy component
     """
@@ -14,7 +14,7 @@ class BaseComponent(ABC):
         self.component_name = component_name
 
         for component in dependencies:
-            assert isinstance(component, BaseComponent), "Dependencies must be other components."
+            assert isinstance(component, BaseOverlayer), "Dependencies must be other components."
 
         self.dependencies = dependencies
 

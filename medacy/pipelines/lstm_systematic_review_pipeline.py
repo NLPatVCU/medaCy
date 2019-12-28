@@ -1,9 +1,9 @@
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
 from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
@@ -37,11 +37,11 @@ class LstmSystematicReviewPipeline(BasePipeline):
 
         if use_metamap:
             metamap = MetaMap(get_metamap())
-            self.add_component(MetaMapComponent, metamap)
+            self.add_component(MetaMapOverlayer, metamap)
 
         self.entities = entities
         self.word_embeddings = word_embeddings
-        self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
+        self.add_component(GoldAnnotatorOverlayer, entities)  # add overlay for GoldAnnotation
 
     def get_learner(self):
         learner = BiLstmCrfLearner(self.word_embeddings, self.cuda_device)

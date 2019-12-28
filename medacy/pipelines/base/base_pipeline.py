@@ -46,7 +46,7 @@ class BasePipeline(ABC):
     def add_component(self, component, *argv, **kwargs):
         """
         Adds a given component to pipeline
-        :param component: a subclass of BaseComponent
+        :param component: a subclass of BaseOverlayer
         """
 
         current_components = [component_name for component_name, proc in self.spacy_pipeline.pipeline]

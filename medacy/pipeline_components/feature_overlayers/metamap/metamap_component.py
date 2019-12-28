@@ -4,7 +4,7 @@ import os
 
 from spacy.tokens import Token
 
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
 
@@ -22,7 +22,7 @@ def _get_metamapped_path(txt_file_path):
     return os.path.join(training_dir, 'metamapped', txt_file_name + '.metamapped')
 
 
-class MetaMapComponent(BaseComponent):
+class MetaMapOverlayer(BaseOverlayer):
     """
     A pipeline component for spaCy that overlays Metamap output as token attributes
     """
