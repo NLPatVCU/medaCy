@@ -89,7 +89,7 @@ class BasePipeline(ABC):
 
         return doc
 
-    def get_pipeline_report(self):
+    def get_report(self):
         """
         Generates a report about the pipeline class's configuration
         :return: str
@@ -101,9 +101,10 @@ class BasePipeline(ABC):
         feature_extractor = self.get_feature_extractor()
 
         # Start the report with the name of the class and the docstring
-        report = f"{type(self)}\n{self.__doc__}\n\n"
+        report = f"{type(self).__name__}\n{self.__doc__}\n\n"
 
-        report += f"Created at {time.asctime()}\n\n"
+        report += f"Report created at {time.asctime()}\n\n"
+        report += f"Entities: {self.entities}\n\n"
 
         # Print data about the feature overlayers
         if self.overlayers:
@@ -111,14 +112,13 @@ class BasePipeline(ABC):
             report += "\n\n".join(o.generate_report() for o in self.overlayers) + '\n\n'
 
         # Print data about the feature extractor
-        report += f"""Feature Extractor: {type(feature_extractor)} at {inspect.getfile(type(tokenizer))}
-        Window Size: {feature_extractor.window_size}
-        SpaCy Features: {feature_extractor.spacy_features}
-        """
+        report += f"Feature Extractor: {type(feature_extractor).__name__} at {inspect.getfile(type(feature_extractor))}\n"
+        report += f"\tWindow Size: {feature_extractor.window_size}\n"
+        report += f"\tSpaCy Features: {feature_extractor.spacy_features}\n"
+
 
         # Print the name and location of the remaining components
-        report += f"""Learner: {learner_name} at {inspect.getfile(type(learner))}
-        Tokenizer: {type(tokenizer)} at {inspect.getfile(type(tokenizer))}
-        """
+        report += f"Learner: {learner_name} at {inspect.getfile(type(learner))}\n"
+        report += f"Tokenizer: {type(tokenizer).__name__} at {inspect.getfile(type(tokenizer))}\n"
 
         return report
