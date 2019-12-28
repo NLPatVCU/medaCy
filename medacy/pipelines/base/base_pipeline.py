@@ -1,4 +1,8 @@
+import inspect
+import time
 from abc import ABC, abstractmethod
+
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 
 
 class BasePipeline(ABC):
@@ -6,21 +10,22 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self, pipeline_name, spacy_pipeline=None, description=None, creators="", organization="", cuda_device=-1):
+    def __init__(self, entities, spacy_pipeline, cuda_device=-1):
         """
         Initializes a pipeline
-        :param pipeline_name: The name of the pipeline
+        :param entities: a list of entities, or an empty list if the pipeline is for a model that has already been fitted
         :param spacy_pipeline: the corresponding spacy pipeline (language) to utilize.
-        :param description: a description of the pipeline
-        :param creators: the creators of the pipeline
-        :param organization: the organization the pipeline creator belongs to
+        :param cuda_device: the GPU to use, if any (defaults to -1 for using the CPU)
         """
-        self.pipeline_name = pipeline_name
+        self.entities = entities
         self.spacy_pipeline = spacy_pipeline
-        self.description = description
-        self.creators = creators
-        self.organization = organization
         self.cuda_device = cuda_device
+        self.overlayers = []  # Stores feature overlayers
+
+        self.spacy_pipeline.tokenizer = self.get_tokenizer()  # set tokenizer
+
+        if entities:
+            self.add_component(GoldAnnotatorOverlayer, entities)
 
         # The following code was causing GPU errors because you cannot specify which GPU spaCy will use;
         # You may uncomment this code if you know you have access to the GPU that spaCy will use.
@@ -84,19 +89,36 @@ class BasePipeline(ABC):
 
         return doc
 
-    def get_pipeline_information(self):
+    def get_pipeline_report(self):
         """
-        Retrieves information about the current pipeline in a structured dictionary
-        :return: a json dictionary containing information
+        Generates a report about the pipeline class's configuration
+        :return: str
         """
-        information = {
-            'components': [component_name for component_name, _ in self.spacy_pipeline.pipeline
-                           if component_name != 'ner'], #ner is the default ner component of spacy that is not utilized.
-            'learner_name': self.get_learner()[0],
-            'description': self.description,
-            'pipeline_name': self.pipeline_name,
-            'pipeline_creators': self.creators,
-            'pipeline_creator_organization': self.organization
-        }
 
-        return information
+        # Get data about these components
+        learner_name, learner = self.get_learner()
+        tokenizer = self.get_tokenizer()
+        feature_extractor = self.get_feature_extractor()
+
+        # Start the report with the name of the class and the docstring
+        report = f"{type(self)}\n{self.__doc__}\n\n"
+
+        report += f"Created at {time.asctime()}\n\n"
+
+        # Print data about the feature overlayers
+        if self.overlayers:
+            report += "Feature Overlayers:\n\n"
+            report += "\n\n".join(o.generate_report() for o in self.overlayers) + '\n\n'
+
+        # Print data about the feature extractor
+        report += f"""Feature Extractor: {type(feature_extractor)} at {inspect.getfile(type(tokenizer))}
+        Window Size: {feature_extractor.window_size}
+        SpaCy Features: {feature_extractor.spacy_features}
+        """
+
+        # Print the name and location of the remaining components
+        report += f"""Learner: {learner_name} at {inspect.getfile(type(learner))}
+        Tokenizer: {type(tokenizer)} at {inspect.getfile(type(tokenizer))}
+        """
+
+        return report

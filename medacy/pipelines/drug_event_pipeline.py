@@ -11,24 +11,21 @@ from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
 class DrugEventPipeline(BasePipeline):
+    """
+    Pipeline for recognition of adverse drug events from the 2018/19 FDA OSE drug label challenge
 
-    def __init__(self, metamap=None, entities=[], lexicon={}, cuda_device=-1):
+    Created by Corey Sutphin of NLP@VCU
+    """
+
+    def __init__(self, entities, metamap=None, lexicon={}):
         """
         Init a pipeline for processing data related to identifying adverse drug events
+        :param entities: a list of entities
         :param metamap: instance of MetaMap
         :param entities: entities to be identified, for this pipeline adverse drug events
         :param lexicon: Dictionary with labels and their corresponding lexicons to match on
         """
-
-        description = "Pipeline for recognition of adverse drug events from the 2018/19 FDA OSE drug label challenge"
-        super().__init__("drug_event_pipeline",
-                         spacy_pipeline=spacy.load("en_core_web_sm"),
-                         description=description,
-                         creators="Corey Sutphin",
-                         organization="NLP@VCU"
-                         )
-        self.entities = entities
-        self.add_component(GoldAnnotatorOverlayer, entities)  # add overlay for GoldAnnotation
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
 
         if metamap is not None:
             self.add_component(MetaMapOverlayer, metamap, semantic_type_labels=[

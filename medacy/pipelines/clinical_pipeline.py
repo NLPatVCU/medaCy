@@ -12,10 +12,13 @@ from medacy.pipelines.base.base_pipeline import BasePipeline
 class ClinicalPipeline(BasePipeline):
     """
     A pipeline for clinical named entity recognition. A special tokenizer that breaks down a clinical document
-    to character level tokens defines this pipeline.
+    to character level tokens defines this pipeline. It was created for the extraction of ADE related entities
+    from the 2018 N2C2 Shared Task.
+
+    Created by Andiy Mulyar (andriymulyar.com) of NLP@VCU
     """
 
-    def __init__(self, entities, metamap=None, cuda_device=-1):
+    def __init__(self, entities, metamap=None):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
@@ -24,20 +27,7 @@ class ClinicalPipeline(BasePipeline):
         :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
         """
 
-        description="Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"
-
-        super().__init__("clinical_pipeline",
-                         spacy_pipeline=spacy.load("en_core_web_sm"),
-                         description=description,
-                         creators="Andriy Mulyar (andriymulyar.com)",  # append if multiple creators
-                         organization="NLP@VCU"
-                         )
-
-        self.entities = entities
-
-        self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
-
-        self.add_component(GoldAnnotatorOverlayer, entities) #add overlay for GoldAnnotation
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
 
         if isinstance(metamap, MetaMap):
             self.add_component(MetaMapOverlayer, metamap)

@@ -2,7 +2,6 @@ import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
@@ -12,26 +11,15 @@ class TestingPipeline(BasePipeline):
     A pipeline for test running
     """
 
-    def __init__(self, entities=[], cuda_device=-1):
+    def __init__(self, entities):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
-        :param metamap: an instance of MetaMap
+        Created by Andiy Mulyar (andriymulyar.com) of NLP@VCU
         """
-        description="""Pipeline for unit tests"""
-        super().__init__("test_pipeline",
-                         spacy_pipeline=spacy.load("en_core_web_sm"),
-                         description=description,
-                         creators="Andriy Mulyar (andriymulyar.com)", #append if multiple creators
-                         organization="NLP@VCU"
-                         )
 
-        self.entities = entities
-
-        self.spacy_pipeline.tokenizer = self.get_tokenizer() #set tokenizer
-
-        self.add_component(GoldAnnotatorOverlayer, entities) #add overlay for GoldAnnotation
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
 
     def get_learner(self):
         return ("CRF_l2sgd", sklearn_crfsuite.CRF(
