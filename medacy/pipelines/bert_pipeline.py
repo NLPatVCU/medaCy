@@ -40,6 +40,7 @@ class BertPipeline(BasePipeline):
         self.learning_rate = kwargs['learning_rate'] if kwargs['learning_rate'] else 1e-5
         self.epochs = kwargs['epochs'] if kwargs['epochs'] else 3
         self.pretrained_model = kwargs['pretrained_model']
+        self.using_crf = kwargs['using_crf']
 
     def get_learner(self):
         learner = BertLearner(
@@ -47,7 +48,8 @@ class BertPipeline(BasePipeline):
             pretrained_model=self.pretrained_model,
             batch_size=self.batch_size,
             learning_rate=self.learning_rate,
-            epochs=self.epochs
+            epochs=self.epochs,
+            using_crf=self.using_crf
         )
         return ('BERT', learner)
 

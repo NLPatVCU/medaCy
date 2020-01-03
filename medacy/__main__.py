@@ -48,7 +48,8 @@ def setup(args):
             batch_size=args.batch_size,
             learning_rate=args.learning_rate,
             epochs=args.epochs,
-            pretrained_model=args.pretrained_model
+            pretrained_model=args.pretrained_model,
+            using_crf=args.using_crf
         )
 
         model = Model(pipeline)
@@ -131,6 +132,7 @@ def main():
     parser.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate. Only works with BERT pipeline.')
     parser.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for. Only works with BERT pipeline.')
     parser.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use for BERT')
+    parser.add_argument('-crf', '--using_crf', action='store_true', help='Use a CRF layer. Only works with BERT pipeline.')
     subparsers = parser.add_subparsers()
 
     # Train arguments

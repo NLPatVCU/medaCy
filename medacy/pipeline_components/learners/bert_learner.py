@@ -4,13 +4,21 @@ import torch
 from torch.utils.data import RandomSampler, DataLoader, SequentialSampler
 from transformers import AdamW, BertTokenizer, BertForTokenClassification
 
-from medacy.nn import Vectorizer, SequencesDataset
+from medacy.nn import Vectorizer, SequencesDataset, BertCrfForTokenClassification
 
 class BertLearner:
     """Learner for running predictions and fine tuning BERT models.
     """
 
-    def __init__(self, cuda_device=-1, pretrained_model='bert-large-cased', batch_size=8, learning_rate=1e-5, epochs=3):
+    def __init__(
+        self,
+        cuda_device=-1,
+        pretrained_model='bert-large-cased',
+        batch_size=8,
+        learning_rate=1e-5,
+        epochs=3,
+        using_crf=False
+    ):
         """
         Initialize BertLearner.
 
@@ -34,6 +42,7 @@ class BertLearner:
         self.batch_size = batch_size
         self.learning_rate = learning_rate
         self.epochs = epochs
+        self.using_crf = using_crf
 
     def encode_sequences(self, sequences, labels=[]):
         """
@@ -134,7 +143,8 @@ class BertLearner:
         self.vectorizer.add_tag('X')
 
         # Load pretrain BERT model, unfreeze layers, move it to GPU device, and create its tokenizer
-        self.model = BertForTokenClassification.from_pretrained(
+        model_class = BertCrfForTokenClassification if self.using_crf else BertForTokenClassification
+        self.model = model_class.from_pretrained(
             self.pretrained_model,
             num_labels=len(self.vectorizer.tag_to_index) - 1 # Don't include 'X'
         )
@@ -216,8 +226,13 @@ class BertLearner:
         for batch in dataloader:
             sequences, attention_masks, _ = batch
             scores = self.model(sequences, attention_mask=attention_masks)[0]
-            tag_indices = torch.max(scores, 2)[1].tolist()
-            encoded_tag_indices.extend(tag_indices)
+
+            if self.using_crf:
+                tag_indices = self.model.crf.decode(scores)
+                encoded_tag_indices.extend(tag_indices)
+            else:
+                tag_indices = torch.max(scores, 2)[1].tolist()
+                encoded_tag_indices.extend(tag_indices)
 
         predictions = self.decode_labels(encoded_tag_indices, mappings)
         return predictions
@@ -234,7 +249,8 @@ class BertLearner:
         vectorizer_values = torch.load(path + '/vectorizer.pt')
         self.vectorizer = Vectorizer(device=self.device)
         self.vectorizer.load_values(vectorizer_values)
-        self.model = BertForTokenClassification.from_pretrained(
+        model_class = BertCrfForTokenClassification if self.using_crf else BertForTokenClassification
+        self.model = model_class.from_pretrained(
             path,
             num_labels=len(self.vectorizer.tag_to_index) - 1 # Ignore 'X'
         )
