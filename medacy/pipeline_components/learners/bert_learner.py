@@ -71,6 +71,8 @@ class BertLearner:
             # Loop through ids and labels in sequences. Don't take first or last id lists from
             # sequence since we already added [CLS] and will add [SEP] later.
             for ids, label in zip(sequence[1:-1], sequence_labels):
+                if not ids:
+                    ids = [self.tokenizer.unk_token_id]
                 split_sequence.append(ids[0])
                 split_labels.append(label)
 
