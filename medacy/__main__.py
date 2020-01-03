@@ -47,7 +47,8 @@ def setup(args):
             word_embeddings=args.word_embeddings,
             batch_size=args.batch_size,
             learning_rate=args.learning_rate,
-            epochs=args.epochs
+            epochs=args.epochs,
+            pretrained_model=args.pretrained_model
         )
 
         model = Model(pipeline)
@@ -129,6 +130,7 @@ def main():
     parser.add_argument('-b', '--batch_size', type=int, default=None, help='Batch size. Only works with BERT pipeline.')
     parser.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate. Only works with BERT pipeline.')
     parser.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for. Only works with BERT pipeline.')
+    parser.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use for BERT')
     subparsers = parser.add_subparsers()
 
     # Train arguments
@@ -158,7 +160,8 @@ def main():
             raise NotImplementedError('Batch size only implemented for BERT pipelines')
 
     # Logging
-    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s', level=logging.INFO)
+    device = str(args.cuda) if args.cuda >= 0 else '_cpu'
+    logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()

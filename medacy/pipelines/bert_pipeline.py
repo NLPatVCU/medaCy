@@ -30,7 +30,6 @@ class BertPipeline(BasePipeline):
                          description=description,
                          creators="Jorge Vargas", #append if multiple creators
                          organization="NLP@VCU",
-                         cuda_device=cuda_device
                          )
 
         self.entities = entities
@@ -40,14 +39,15 @@ class BertPipeline(BasePipeline):
         self.batch_size = kwargs['batch_size'] if kwargs['batch_size'] else 8
         self.learning_rate = kwargs['learning_rate'] if kwargs['learning_rate'] else 1e-5
         self.epochs = kwargs['epochs'] if kwargs['epochs'] else 3
+        self.pretrained_model = kwargs['pretrained_model']
 
     def get_learner(self):
         learner = BertLearner(
             self.cuda_device,
-            pretrained_model='bert-large-cased',
+            pretrained_model=self.pretrained_model,
             batch_size=self.batch_size,
             learning_rate=self.learning_rate,
-            epochs=self.epochs
+            epochs=self.epochs,
         )
         return ('BERT', learner)
 
