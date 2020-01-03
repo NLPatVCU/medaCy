@@ -15,7 +15,7 @@ class FDANanoDrugLabelPipeline(BasePipeline):
     challenge.
     """
 
-    def __init__(self, metamap=None, entities=[], cuda_device=-1):
+    def __init__(self, metamap=None, entities=[], **kwargs):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.

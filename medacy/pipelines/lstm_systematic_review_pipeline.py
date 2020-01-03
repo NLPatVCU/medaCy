@@ -16,15 +16,14 @@ class LstmSystematicReviewPipeline(BasePipeline):
     to character level tokens defines this pipeline.
     """
 
-    def __init__(self, entities, word_embeddings, cuda_device=-1, use_metamap=False):
+    def __init__(self, entities, use_metamap=False, **kwargs):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
         :param entities: a list of entities to be used by this pipeline
-        :param word_embeddings: path to a word embeddings file
-        :param cuda_device: int for which GPU to use, defaults to using the CPU
         :param use_metamap: bool for if to use MetaMap
+        :param cuda_device: int for which GPU to use, defaults to using the CPU
         """
         description="""Pipeline tuned for the extraction of ADE related entities from the 2018 N2C2 Shared Task"""
         super().__init__("lstm_clinical_pipeline",
@@ -32,7 +31,6 @@ class LstmSystematicReviewPipeline(BasePipeline):
                          description=description,
                          creators="Jorge Vargas",  # append if multiple creators
                          organization="NLP@VCU",
-                         cuda_device=cuda_device
                          )
 
         if use_metamap:
@@ -40,8 +38,13 @@ class LstmSystematicReviewPipeline(BasePipeline):
             self.add_component(MetaMapComponent, metamap)
 
         self.entities = entities
-        self.word_embeddings = word_embeddings
         self.add_component(GoldAnnotatorComponent, entities)  # add overlay for GoldAnnotation
+
+        if not kwargs['word_embeddings']:
+            raise ValueError('This pipeline requires word embeddings.')
+
+        self.word_embeddings = kwargs['word_embeddings']
+        self.cuda_device = kwargs['cuda_device']
 
     def get_learner(self):
         learner = BiLstmCrfLearner(self.word_embeddings, self.cuda_device)

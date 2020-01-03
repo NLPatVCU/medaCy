@@ -12,7 +12,7 @@ from medacy.pipelines.base.base_pipeline import BasePipeline
 
 class DrugEventPipeline(BasePipeline):
 
-    def __init__(self, metamap=None, entities=[], lexicon={}, cuda_device=-1):
+    def __init__(self, metamap=None, entities=[], lexicon={}, **kwargs):
         """
         Init a pipeline for processing data related to identifying adverse drug events
         :param metamap: instance of MetaMap

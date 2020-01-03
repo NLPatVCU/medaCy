@@ -20,13 +20,6 @@ class BasePipeline(ABC):
         self.description = description
         self.creators = creators
         self.organization = organization
-        self.cuda_device = cuda_device
-
-        # The following code was causing GPU errors because you cannot specify which GPU spaCy will use;
-        # You may uncomment this code if you know you have access to the GPU that spaCy will use.
-
-        # if cuda_device >= 0:
-        #     spacy.require_gpu()
 
     @abstractmethod
     def get_tokenizer(self):

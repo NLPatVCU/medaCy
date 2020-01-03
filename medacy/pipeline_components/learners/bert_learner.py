@@ -10,13 +10,16 @@ class BertLearner:
     """Learner for running predictions and fine tuning BERT models.
     """
 
-    def __init__(self, cuda_device=-1, pretrained_model='bert-large-cased', batch_size=32):
+    def __init__(self, cuda_device=-1, pretrained_model='bert-large-cased', batch_size=8, learning_rate=1e-5, epochs=3):
         """
         Initialize BertLearner.
 
         :param cuda_device: CUDA device to use when running on a GPU. Use -1 for CPU.
         :param pretrained_model: Name of model to use for the Transformers pretrained_model. This
             is different from the medaCy fine-tuned model you may have created.
+        :param batch_size: Size of each batch during training or cross validation.
+        :param learning_rate: Learning rate to use for PyTorch optimizier
+        :param epochs: Number of epochs to train for.
         """
         torch.manual_seed(1) # Seed PyTorch for consistency
 
@@ -29,6 +32,8 @@ class BertLearner:
         self.vectorizer = Vectorizer(self.device) # medaCy vectorizer
         self.pretrained_model = pretrained_model # Name of Transformers pretrained model
         self.batch_size = batch_size
+        self.learning_rate = learning_rate
+        self.epochs = epochs
 
     def encode_sequences(self, sequences, labels=[]):
         """

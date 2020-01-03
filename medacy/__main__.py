@@ -41,12 +41,14 @@ def setup(args):
         Pipeline = getattr(module, args.pipeline)
         logging.info('Using %s', args.pipeline)
 
-        if args.word_embeddings is not None:
-            pipeline = Pipeline(entities=entities, word_embeddings=args.word_embeddings, cuda_device=args.cuda)
-        elif args.batch_size is not None:
-            pipeline = Pipeline(entities=entities, cuda_device=args.cuda, batch_size=args.batch_size)
-        else:
-            pipeline = Pipeline(entities=entities, cuda_device=args.cuda)
+        pipeline = Pipeline(
+            entities=entities,
+            cuda_device=args.cuda,
+            word_embeddings=args.word_embeddings,
+            batch_size=args.batch_size,
+            learning_rate=args.learning_rate,
+            epochs=args.epochs
+        )
 
         model = Model(pipeline)
 
@@ -125,6 +127,8 @@ def main():
     parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
     parser.add_argument('-b', '--batch_size', type=int, default=None, help='Batch size. Only works with BERT pipeline.')
+    parser.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate. Only works with BERT pipeline.')
+    parser.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for. Only works with BERT pipeline.')
     subparsers = parser.add_subparsers()
 
     # Train arguments

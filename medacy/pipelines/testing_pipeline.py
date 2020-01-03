@@ -12,7 +12,7 @@ class TestingPipeline(BasePipeline):
     A pipeline for test running
     """
 
-    def __init__(self, entities=[], cuda_device=-1):
+    def __init__(self, entities=[], **kwargs):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
