@@ -47,7 +47,7 @@ class BertPipeline(BasePipeline):
             pretrained_model=self.pretrained_model,
             batch_size=self.batch_size,
             learning_rate=self.learning_rate,
-            epochs=self.epochs,
+            epochs=self.epochs
         )
         return ('BERT', learner)
 

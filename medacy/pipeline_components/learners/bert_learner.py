@@ -170,7 +170,7 @@ class BertLearner:
         )
         
         # Only do 3 epochs as suggested in BERT paper
-        for epoch in range(3):
+        for epoch in range(self.epochs):
             logging.info('Epoch %d' % epoch)
             training_loss = 0
             batches = 0
