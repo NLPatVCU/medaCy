@@ -27,18 +27,15 @@ class BertCrfForTokenClassification(BertForTokenClassification):
             labels=labels
         )
 
+        # Note that that mutates labels. This is only okay because we don't use reuse labels in
+        # the learner. If this ever changes you can fix this by using labels.clone()
         if labels is not None:
-            mask = []
             for i in range(labels.shape[0]):
-                sequence_mask = []
                 for j in range(labels.shape[1]):
                     if labels[i][j] == self.crf.num_tags:
-                        sequence_mask.append(0)
+                        # Change 'X' label to 'O' so crf doesn't try to access wrong index
+                        # Using a mask does not fix this.
                         labels[i][j] = 0
-                    else:
-                        sequence_mask.append(1)
-                mask.append(sequence_mask)
-            mask = torch.tensor(mask, dtype=torch.uint8)
-            outputs = (self.crf(emissions=outputs[1], tags=labels, mask=mask), outputs[1])
+            outputs = (-self.crf(emissions=outputs[1], tags=labels), outputs[1])
 
         return outputs
