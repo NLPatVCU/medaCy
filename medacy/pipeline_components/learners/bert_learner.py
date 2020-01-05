@@ -160,7 +160,7 @@ class BertLearner:
             "weight_decay": 0.0},
             {"params": [p for n, p in self.model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0}
         ]
-        optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5, eps=1e-8)
+        optimizer = AdamW(optimizer_grouped_parameters, lr=self.learning_rate, eps=1e-8)
 
         # Encode sequences and labels
         sequences, labels = self.encode_sequences(x_data, y_data)
