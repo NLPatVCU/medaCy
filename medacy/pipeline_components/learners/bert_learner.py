@@ -187,7 +187,14 @@ class BertLearner:
 
             for sequences, masks, labels in dataloader:
                 # Pass sequences through the model and get the loss
-                loss, _ = self.model(sequences, labels=labels, attention_mask=masks)
+                # loss, _ = self.model(sequences, labels=labels, attention_mask=masks)
+                for i, sequence_labels in enumerate(labels):
+                    last_label = 0
+                    for j, label in enumerate(sequence_labels):
+                        if label == self.vectorizer.tag_to_index['X']:
+                            labels[i][j] = last_label
+                        last_label = labels[i][j]
+                loss, _ = self.model(sequences, labels=labels)
 
                 # Train using the optimizer and loss
                 loss.backward()
