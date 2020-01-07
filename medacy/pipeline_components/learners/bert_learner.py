@@ -1,3 +1,6 @@
+"""
+Learner for training and predicting with a BERT model.
+"""
 import logging
 import os
 import torch
@@ -11,14 +14,13 @@ class BertLearner:
     """
 
     def __init__(
-        self,
-        cuda_device=-1,
-        pretrained_model='bert-large-cased',
-        batch_size=8,
-        learning_rate=1e-5,
-        epochs=3,
-        using_crf=False
-    ):
+            self,
+            cuda_device=-1,
+            pretrained_model='bert-large-cased',
+            batch_size=8,
+            learning_rate=1e-5,
+            epochs=3,
+            using_crf=False):
         """
         Initialize BertLearner.
 
@@ -28,6 +30,7 @@ class BertLearner:
         :param batch_size: Size of each batch during training or cross validation.
         :param learning_rate: Learning rate to use for PyTorch optimizier
         :param epochs: Number of epochs to train for.
+        :param using_crf: Whether or not to use a CRF layer on the model.
         """
         torch.manual_seed(1) # Seed PyTorch for consistency
 
@@ -38,13 +41,13 @@ class BertLearner:
         self.model = None # Transformers/PyTorch model
         self.tokenizer = None # Transformers tokenizer
         self.vectorizer = Vectorizer(self.device) # medaCy vectorizer
-        self.pretrained_model = pretrained_model # Name of Transformers pretrained model
+        self.pretrained_model = pretrained_model
         self.batch_size = batch_size
         self.learning_rate = learning_rate
         self.epochs = epochs
         self.using_crf = using_crf
 
-    def encode_sequences(self, sequences, labels=[]):
+    def encode_sequences(self, sequences, labels=None):
         """
         Encode a list of text sequences into encoded sequences for the Transformers package
 
@@ -58,6 +61,7 @@ class BertLearner:
         # If there are no labels then make all of the labels 'O' so they can still be used for
         # mapping during predictions
         if not labels:
+            labels = []
             for sequence in sequences:
                 labels.append(['O'] * len(sequence))
 
@@ -85,11 +89,16 @@ class BertLearner:
             # Loop through ids and labels in sequences. Don't take first or last id lists from
             # sequence since we already added [CLS] and will add [SEP] later.
             for ids, label in zip(sequence[1:-1], sequence_labels):
+                # Depending on the pretrained model, some tokens may be removed. Replace them
+                # with unknown token id instead of removing
                 if not ids:
                     ids = [self.tokenizer.unk_token_id]
+
+                # Always add first id (which is the only id if the word was not split)
                 split_sequence.append(ids[0])
                 split_labels.append(label)
 
+                # If the token is split, loop through the rest of the ids
                 for token_id in ids[1:]:
                     # Add proper token id and label to lists
                     split_sequence.append(token_id)
@@ -103,7 +112,8 @@ class BertLearner:
             split_sequences.append(split_sequence)
             split_sequence_labels.append(self.vectorizer.vectorize_tags(split_labels))
 
-        # Return the two lists that were created
+        # Return the two lists that were created. Note that when no labels were supplied
+        # split_sequence_labels is only used to mark which tokens to predict for (mappings)
         return split_sequences, split_sequence_labels
 
     def decode_labels(self, sequence_labels, mappings):
@@ -111,9 +121,9 @@ class BertLearner:
         Decode list of label indices using mappings generated during self.encode_sequences()
 
         :param sequence_labels: List of list of label indices. Index corresponds to index of label
-            in self.vectorizer
+            in self.vectorizer.
         :param mappings: List of list of mappings. All mappings indicate whether we should include
-            it in classification (1) or not (0)
+            it in classification (0) or not (null_label id)
         """
         decoded_labels = []
         null_label = self.vectorizer.tag_to_index['X']
@@ -121,8 +131,10 @@ class BertLearner:
         for labels, mapping in zip(sequence_labels, mappings):
             remapped_labels = []
 
-            for label, map_value in zip(labels[1:-1], mapping[1:-1]): # Ignore special tokens
-                # Only include label if map value is 1
+            # Loop through labels and maps not including first and last items which are the
+            # special tokens [CLS] and [SEP]
+            for label, map_value in zip(labels[1:-1], mapping[1:-1]):
+                # Only include label if it was not given the null label ('X') during encoding
                 if map_value != null_label:
                     remapped_labels.append(label)
 
@@ -139,11 +151,15 @@ class BertLearner:
         :param y_data: List of list of labels. There's one label for each token in sequences.
             Labels are represented by strings.
         """
+        # Prepare label encodings
         self.vectorizer.create_tag_dictionary(y_data)
         self.vectorizer.add_tag('X')
 
+        # Decide on model class based on whether we're using a CRF layer or not
+        model_class = (BertCrfForTokenClassification if self.using_crf
+                       else BertForTokenClassification)
+
         # Load pretrain BERT model, unfreeze layers, move it to GPU device, and create its tokenizer
-        model_class = BertCrfForTokenClassification if self.using_crf else BertForTokenClassification
         self.model = model_class.from_pretrained(
             self.pretrained_model,
             num_labels=len(self.vectorizer.tag_to_index) - 1 # Don't include 'X'
@@ -154,20 +170,32 @@ class BertLearner:
 
         # Use Adam optimizer with weight decay options as shown in the link below:
         # https://github.com/huggingface/transformers/blob/master/examples/run_ner.py
+        # Currently not using any decay, but left this here for future reference.
         no_decay = ["bias", "LayerNorm.weight"]
         optimizer_grouped_parameters = [
-            {"params": [p for n, p in self.model.named_parameters() if not any(nd in n for nd in no_decay)],
-            "weight_decay": 0.0},
-            {"params": [p for n, p in self.model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0}
+            {
+                "params": [
+                    p for n,
+                    p in self.model.named_parameters() if not any(nd in n for nd in no_decay)
+                ],
+                "weight_decay": 0.0
+            },
+            {
+                "params": [
+                    p for n,
+                    p in self.model.named_parameters() if any(nd in n for nd in no_decay)
+                ],
+                "weight_decay": 0.0
+            }
         ]
         optimizer = AdamW(optimizer_grouped_parameters, lr=self.learning_rate, eps=1e-8)
 
-        # Encode sequences and labels
+        # Encode sequences and labels and prepare dataset/loader
         sequences, labels = self.encode_sequences(x_data, y_data)
         dataset = SequencesDataset(
-            self.device,
-            sequences,
-            self.vectorizer.tag_to_index['X'],
+            device=self.device,
+            sequences=sequences,
+            x_label=self.vectorizer.tag_to_index['X'],
             sequence_labels=labels,
             o_label=self.vectorizer.tag_to_index['O']
         )
@@ -178,10 +206,10 @@ class BertLearner:
             batch_size=self.batch_size,
             collate_fn=dataset.collate
         )
-        
-        # Only do 3 epochs as suggested in BERT paper
+
+        # Training loop
         for epoch in range(self.epochs):
-            logging.info('Epoch %d' % epoch)
+            logging.info('Epoch %d', epoch)
             training_loss = 0
             batches = 0
 
@@ -196,24 +224,29 @@ class BertLearner:
                 optimizer.step()
                 self.model.zero_grad()
 
-            logging.info('Loss: %f' % (training_loss / batches))
+            logging.info('Loss: %f', (training_loss / batches))
 
     def predict(self, x_data):
         """Use model to make predictions over a given dataset.
 
-        :param sequences: Sequences to predict labels for.
+        :param x_data: Sequences to predict labels for.
         :return: List of list of predicted labels.
         """
+        if self.model is None:
+            raise ValueError('Please load or train model first.')
+
+        # Freeze model weights
         self.model.eval()
+
+        # Encode sequences and prepare dataset/loader
         encoded_sequences, mappings = self.encode_sequences(x_data, labels=[])
         encoded_tag_indices = []
-
         dataset = SequencesDataset(
             device=self.device,
             sequences=encoded_sequences,
-            mask_label=self.vectorizer.tag_to_index['X'],
             sequence_labels=mappings,
-            o_label=self.vectorizer.tag_to_index['O']
+            o_label=self.vectorizer.tag_to_index['O'],
+            x_label=self.vectorizer.tag_to_index['X'],
         )
         sampler = SequentialSampler(dataset)
         dataloader = DataLoader(
@@ -223,21 +256,31 @@ class BertLearner:
             collate_fn=dataset.collate
         )
 
+        # Loop through batches to make predictions
         for batch in dataloader:
             sequences, attention_masks, _ = batch
+
+            # Get emission scores
             scores = self.model(sequences, attention_mask=attention_masks)[0]
 
             if self.using_crf:
+                # Use pytorch-crf package to do a Viterbi decode
                 tag_indices = self.model.crf.decode(scores)
                 encoded_tag_indices.extend(tag_indices)
             else:
+                # Predict label with max emission score for each token
                 tag_indices = torch.max(scores, 2)[1].tolist()
                 encoded_tag_indices.extend(tag_indices)
 
+        # Decode and return final label predictions
         predictions = self.decode_labels(encoded_tag_indices, mappings)
         return predictions
 
     def save(self, path):
+        """Save trained model and vectorizer.
+
+        :param path: Path of directory to save model in.
+        """
         if not os.path.exists(path):
             os.makedirs(path)
         self.model.save_pretrained(path)
@@ -245,11 +288,16 @@ class BertLearner:
         torch.save(vectorizer_values, path + '/vectorizer.pt')
 
     def load(self, path):
+        """Load saved model and vectorizer.
+
+        :param path: Path of directory where the model was saved.
+        """
         self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_model)
         vectorizer_values = torch.load(path + '/vectorizer.pt')
         self.vectorizer = Vectorizer(device=self.device)
         self.vectorizer.load_values(vectorizer_values)
-        model_class = BertCrfForTokenClassification if self.using_crf else BertForTokenClassification
+        model_class = (BertCrfForTokenClassification if self.using_crf
+                       else BertForTokenClassification)
         self.model = model_class.from_pretrained(
             path,
             num_labels=len(self.vectorizer.tag_to_index) - 1 # Ignore 'X'

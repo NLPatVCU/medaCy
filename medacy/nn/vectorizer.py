@@ -1,25 +1,44 @@
+"""
+Vectorizer for medaCy PyTorch classes.
+"""
 import re
 import string
 import unicodedata
-
 from gensim.models import KeyedVectors
 import torch
 
-
 class Vectorizer:
+    """Vectorizer for medaCy PyTorch data. Contains encoding methods and tracking encoding values.
+
+    :ivar device: PyTorch device to use.
+    :ivar word_vectors: Gensim Word2VecKeyedVectors for word embeddings.
+    :ivar untrained_tokens: Out of vocabulary tokens.
+    :ivar other_features: Features other than word embeddings or ids.
+    :ivar window_size: Number of tokens to include on either side of current token.
+    :ivar tag_to_index: Dictionary of label to id mappings.
+    :ivar character_to_index: Dictionary of character to id mappings.
+    """
     def __init__(self, device):
+        """Initialize Vectorizer.
+
+        :param device: PyTorch device to use.
+        """
         self.device = device
         self.word_vectors = None
         self.untrained_tokens = set()
         self.other_features = {}
         self.window_size = 0
+        self.tag_to_index = {}
 
         self.character_to_index = {
             character: index for index, character in enumerate(string.printable, 1)
         }
 
     def load_word_embeddings(self, embeddings_file):
-        """Uses self.word_embeddings_file and gensim to load word embeddings into memory."""
+        """Uses self.word_embeddings_file and gensim to load word embeddings into memory.
+
+        :param embeddings_file: Word embeddings file to use. Can be .bin or other common formats.
+        """
         is_binary = embeddings_file.endswith('.bin')
         word_vectors = KeyedVectors.load_word2vec_format(embeddings_file, binary=is_binary)
         self.word_vectors = word_vectors
@@ -27,7 +46,7 @@ class Vectorizer:
     def create_tag_dictionary(self, tags):
         """Setup self.tag_to_index
 
-        :param tags: List of list of tag names.
+        :param tags: List of list of tag names. Usually all true labels for a dataset.
         """
         tag_to_index = {}
 
@@ -39,9 +58,19 @@ class Vectorizer:
         self.tag_to_index = tag_to_index
 
     def add_tag(self, tag):
+        """Add tag to self.tag_to_index
+
+        :param tag: Tag to add.
+        """
         self.tag_to_index[tag] = len(self.tag_to_index)
 
     def create_feature_dictionary(self, feature_name, sentences):
+        """Get dictionary that maps all possible values of a specific feature to ids.
+
+        :param feature_name: Name of feature.
+        :param sentences: Sentences to get feature for.
+        :return: Dictionary for given feature.
+        """
         feature_to_index = {}
         feature_name = '0:' + feature_name
 
@@ -125,7 +154,7 @@ class Vectorizer:
         return tags
 
     def find_window_indices(self, token):
-        """Get relative indexes of window words. Avoids trying to access keys that don't exist.
+        """Get relative indices of window words. Avoids trying to access keys that don't exist.
 
         :param token: Token the indexes are relative to.
         :return: List of indices
@@ -142,6 +171,12 @@ class Vectorizer:
         return window
 
     def one_hot(self, index_dictionary, value):
+        """Get one-hot encoding vector for a specific value using a dictionary of all values.
+
+        :param index_dictionary: Mapping of all possible values to an arbitrary index.
+        :param value: Value to one-hot encode.
+        :return: Vector. Should be all zeros, except for a 1 where the value maps to.
+        """
         vector = [0] * len(index_dictionary)
 
         if value in index_dictionary:
@@ -175,17 +210,6 @@ class Vectorizer:
                 self.untrained_tokens.add(token_text)
 
             token_vector.append(embedding_index)
-
-            # Add list of character indices as second item
-            # character_indices = []
-            # for character in token_text:
-            #     if character in self.character_to_index:
-            #         index = self.character_to_index[character]
-            #         character_indices.append(index)
-            #     else:
-            #         # Append the padding index
-            #         character_indices.append(0)
-            # token_vector.append(character_indices)
 
             # Add list of character indices as second item
             character_indices = []
@@ -227,12 +251,18 @@ class Vectorizer:
         """Convert list of tag names into their indices.
 
         :param tags: List of tags to convert.
-        :returns: Torch tensor of indices.
+        :return: Torch tensor of indices.
         """
         indices = [self.tag_to_index[tag] for tag in tags]
         return torch.tensor(indices, dtype=torch.long, device=self.device)
 
     def vectorize_dataset(self, x_data, y_data):
+        """Vectorize entire dataset.
+
+        :param x_data: Sequences.
+        :param y_data: True labels.
+        :return: Vectorized data.
+        """
         self.create_tag_dictionary(y_data)
 
         # Find other feature names
@@ -258,6 +288,10 @@ class Vectorizer:
         return data
 
     def get_values(self):
+        """Get Vectorizer values so they can saved or migrated.
+
+        :return: Values to get.
+        """
         values = {
             'tag_to_index': self.tag_to_index,
             'character_to_index': self.character_to_index,
@@ -268,6 +302,9 @@ class Vectorizer:
         return values
 
     def load_values(self, values):
+        """Load saved Vectorizer values into this object.
+        :param values: Values to load.
+        """
         self.tag_to_index = values['tag_to_index']
         self.untrained_tokens = values['untrained_tokens']
         self.character_to_index = values['character_to_index']

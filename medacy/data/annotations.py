@@ -32,7 +32,7 @@ class Annotations:
         self.source_text_path = source_text_path
         self.annotations = []
 
-        with open(annotation_data, 'r') as f:
+        with open(annotation_data, 'r', encoding='utf-8') as f:
             for line in f:
                 line = line.strip()
                 if not is_valid_brat(line): continue
