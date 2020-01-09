@@ -2,19 +2,19 @@ from spacy.matcher import Matcher
 from spacy.tokens import Span
 from spacy.tokens import Token
 
-from medacy.pipeline_components.base.base_component import BaseComponent
-from medacy.pipeline_components.units.mass_unit_component import MassUnitComponent
-from medacy.pipeline_components.units.time_unit_component import TimeUnitComponent
-from medacy.pipeline_components.units.volume_unit_component import VolumeUnitComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
+from medacy.pipeline_components.units.mass_unit_component import MassUnitOverlayer
+from medacy.pipeline_components.units.time_unit_component import TimeUnitOverlayer
+from medacy.pipeline_components.units.volume_unit_component import VolumeUnitOverlayer
 
 
-class MeasurementUnitComponent(BaseComponent):
+class MeasurementUnitOverlayer(BaseOverlayer):
     """
     A pipeline component that tags Frequency units
     """
 
     name="measurement_unit_annotator"
-    dependencies = [MassUnitComponent, TimeUnitComponent, VolumeUnitComponent]
+    dependencies = [MassUnitOverlayer, TimeUnitOverlayer, VolumeUnitOverlayer]
 
     def __init__(self, spacy_pipeline):
         self.nlp = spacy_pipeline

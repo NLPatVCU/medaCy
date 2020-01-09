@@ -480,21 +480,36 @@ T156	test 971 973	vs
 T157	treatment 337 386	left internal mammary -> left anterior descending
 T158	problem 1165 1170	nt/nd
 T159	problem 1028 1031	nad
-R1	TrAP Arg1:T2 Arg2:T3
-R2	TrAP Arg1:T16 Arg2:T14
+T160	null 6242 6270	Coronary Artery Bypass Graft
+T160	null 6242 6270	Coronary Artery Bypass Graft
+R1	TrAP Arg1:T160 Arg2:T161
+T162	null 3476 3492	a Amiodarone gtt
+R2	TrAP Arg1:T162 Arg2:T14
 R3	TrAP Arg1:T17 Arg2:T18
 R4	TrNAP Arg1:T56 Arg2:T57
-R5	TeCP Arg1:T59 Arg2:T60
+T59	test 609 613	cath
+R5	TeCP Arg1:T59 Arg2:T163
 R6	TrNAP Arg1:T62 Arg2:T57
 R7	TrNAP Arg1:T66 Arg2:T57
 R8	TrNAP Arg1:T68 Arg2:T57
-R9	TrAP Arg1:T70 Arg2:T71
-R10	TrCP Arg1:T85 Arg2:T86
-R11	TeRP Arg1:T93 Arg2:T26
-R12	TeRP Arg1:T103 Arg2:T101
-R13	TrAP Arg1:T109 Arg2:T110
-R14	TrIP Arg1:T120 Arg2:T22
-R15	TeRP Arg1:T130 Arg2:T131
+T164	null 4653 4678	Oxycodone - Acetaminophen
+R9	TrAP Arg1:T164 Arg2:T71
+T165	null 178 183	Drugs
+T165	null 178 183	Drugs
+R10	TrCP Arg1:T165 Arg2:T166
+T167	null 616 620	Cath
+R11	TeRP Arg1:T167 Arg2:T26
+T168	null 2074 2077	CXR
+T168	null 2074 2077	CXR
+R12	TeRP Arg1:T168 Arg2:T169
+T170	null 948 952	CABG
+T170	null 948 952	CABG
+R13	TrAP Arg1:T170 Arg2:T171
+T172	null 3806 3819	po Amiodarone
+T172	null 3806 3819	po Amiodarone
+R14	TrIP Arg1:T172 Arg2:T173
+T174	null 1535 1577	Overall left ventricular systolic function
+R15	TeRP Arg1:T174 Arg2:T131
 R16	PIP Arg1:T142 Arg2:T143
 R17	PIP Arg1:T142 Arg2:T73
 R18	PIP Arg1:T142 Arg2:T75

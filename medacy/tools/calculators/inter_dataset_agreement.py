@@ -451,9 +451,8 @@ class MultipleEvaluator(object):
 
         for target in ('tags', 'relations'):
             # Normalization
-            for key in self.scores[target]['macro'].keys():
-                self.scores[target]['macro'][key] = \
-                    self.scores[target]['macro'][key] / len(corpora.docs)
+            for value in self.scores[target]['macro'].values():
+                value /= len(corpora.docs)
 
             measures = Measures(tp=self.scores[target]['tp'],
                                 fp=self.scores[target]['fp'],

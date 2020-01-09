@@ -3,10 +3,10 @@ import re
 
 from spacy.tokens import Token
 
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 
 
-class TableMatcherComponent(BaseComponent):
+class TableMatcherOverlayer(BaseOverlayer):
 
     name='table_matcher_component'
     dependencies=[]

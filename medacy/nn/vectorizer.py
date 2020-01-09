@@ -138,7 +138,14 @@ class Vectorizer:
         return window
 
     def one_hot(self, index_dictionary, value):
-        vector = [0] * len(index_dictionary)
+        """
+        Create a one-hot vector representation for discrete features that appear in the X_data
+        :param index_dictionary: A dictionary mapping discrete features to unique integers (ie the order
+            they appeared in the X_data; see self.create_feature_dictionary)
+        :param value: The discrete feature
+        :return: A one-hot vector for that discrete feature
+        """
+        vector = [0.0] * len(index_dictionary)
 
         if value in index_dictionary:
             index = index_dictionary[value]
@@ -212,7 +219,7 @@ class Vectorizer:
                         token_vector.extend(vector)
                 else:
                     for feature in self.other_features:
-                        vector = [0] * len(self.other_features[feature])
+                        vector = [0.0] * len(self.other_features[feature])
                         token_vector.extend(vector)
 
             tokens_vector.append(token_vector)

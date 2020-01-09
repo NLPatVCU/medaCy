@@ -1,0 +1,157 @@
+
+T1	TestArticle 40 44	ROFA
+T2	TestArticle 144 148	ROFA
+T3	TestArticle 286 290	ROFA
+T4	TestArticle 371 375	TiO2
+T5	TestArticle 444 448	ROFA
+T6	TestArticle 482 486	ROFA
+T7	TestArticle 491 495	TiO2
+T8	Vehicle 525 539	sterile saline
+T10	Sex 614 618	Male
+T11	Strain 619 633	Sprague Dawley
+T12	Species 634 638	rats
+T14	Species 1116 1120	Rats
+T15	DoseRoute 1153 1183	intraperitoneal (ip) injection
+T9	TestArticle 1229 1233	ROFA
+T13	Species 1450 1453	rat
+T16	Endpoint 1401 1442;1454 1475	endothelium-dependent arteriolar dilation spinotrapezius muscle
+T17	Species 1502 1506	Rats
+T18	GroupName 1514 1535	vehicle control group
+T19	Dose 1555 1558	300
+T20	DoseUnits 1559 1561	μL
+T21	Vehicle 1562 1576	sterile saline
+T22	DoseRoute 1541 1543	IT
+T23	DoseRoute 1211 1223	IT instilled
+T24	DoseRoute 1098 1113	IT instillation
+T25	Species 1578 1582	Rats
+T26	GroupName 1590 1612	particle control group
+T27	TestArticle 1629 1633	TiO2
+T28	Dose 1635 1638	0.1
+T29	Dose 1642 1646	0.25
+T30	DoseUnits 1647 1653	mg/rat
+T31	Species 1650 1653	rat
+T32	DoseRoute 1662 1677	IT instillation
+T33	Species 1683 1687	rats
+T35	Endpoint 1720 1729	histology
+T36	Endpoint 1734 1755	intravital microscopy
+T37	Endpoint 1784 1787;1800 1848	BAL measurement of pulmonary inflammation and damage
+T38	Species 1851 1855	Rats
+T39	Endpoint 1954 1957	BAL
+T40	Vehicle 2022 2047	phosphate-buffered saline
+T41	Endpoint 2099 2145	BAL fluid lactate dehydrogenase (LDH) activity
+T42	Endpoint 2150 2165	albumin protein
+T43	Endpoint 2175 2199;2231 2243	BAL fluid LDH activities cytotoxicity
+T44	Endpoint 2249 2271	albumin concentrations
+T45	EndpointUnitOfMeasure 2257 2271	concentrations
+T46	Endpoint 2433 2480	Alveolar macrophage (AM) chemiluminescence (CL)
+T47	Endpoint 2483 2488	AM CL
+T48	Endpoint 2608 2617;2721 2726	Histology lungs
+T49	Endpoint 2622 2642;2721 2726	immunohistochemistry lungs
+T50	Species 2732 2736	rats
+T51	Vehicle 2750 2756	saline
+T52	TestArticle 2778 2782	ROFA
+T53	Dose 2771 2774	0.1
+T54	DoseUnits 2775 2777	mg
+T55	Endpoint 2799 2810;2883 2906	Lung tissue morphologic alterations
+T57	Endpoint 2673 2695	pulmonary inflammation
+T58	Endpoint 2926 2942;2963 2984	pathology scores alveolar inflammation
+T59	Endpoint 3004 3019	pathology score
+T65	Endpoint 3061 3069;3221 3242	severity of tissue alterations
+T66	Endpoint 3125 3137;3221 3242	distribution of tissue alterations
+T72	Endpoint 3256 3271	pathology score
+T73	Endpoint 3394 3413;3435 3456	histologic analysis spinotrapezius muscle
+T74	Species 3460 3464	rats
+T75	TimeEndpointAssessed 3465 3467	24
+T76	TimeUnits 3468 3485	hr after exposure
+T77	TestArticle 3489 3493	ROFA
+T78	TestArticle 3497 3501	TiO2
+T79	Dose 3503 3506	0.1
+T80	Dose 3510 3514	0.25
+T81	DoseUnits 3515 3517	mg
+T82	Species 3575 3578	rat
+T85	Endpoint 3792 3807;3815 3836	hemoprotein MPO spinotrapezius muscle
+T86	Species 3840 3844	rats
+T87	TimeEndpointAssessed 3845 3847	24
+T89	Vehicle 3872 3878	saline
+T90	Dose 3882 3886	0.25
+T91	DoseUnits 3887 3889	mg
+T92	TestArticle 3890 3894	ROFA
+T93	Endpoint 3896 3916	immunohistochemistry
+T94	Species 4235 4239	goat
+T95	Species 4245 4251	rabbit
+T96	Endpoint 4323 4326	MPO
+T97	Endpoint 4537 4593	Reverse transcriptase–polymerase chain reaction (RT-PCR)
+T98	Endpoint 4600 4604;4615 4637;4901 4910	left spinotrapezius muscles total RNA
+T99	Endpoint 4609 4637;4901 4910	right spinotrapezius muscles total RNA
+T100	Species 4656 4660	rats
+T101	TimeEndpointAssessed 4661 4663	24
+T103	Vehicle 4688 4694	saline
+T104	Dose 4698 4702	0.25
+T105	DoseUnits 4703 4705	mg
+T106	TestArticle 4706 4710	ROFA
+T108	Species 4841 4844	rat
+T110	Endpoint 4922 4931	Total RNA
+T112	Species 5103 5107	Rats
+T114	Endpoint 5340 5357	arterial pressure
+T115	Endpoint 5363 5390;5472 5495	right spinotrapezius muscle microscopic observation
+T117	Endpoint 5724 5750	arteriolar inner diameters
+T118	Endpoint 5769 5795	venular leukocyte adhesion
+T119	Endpoint 5851 5892	Arteriolar endothelium-dependent dilation
+T120	Endpoint 6571 6587;6596 6605	passive diameter arteriole
+T121	Endpoint 6641 6666;6670 6692	arteriolar responsiveness adrenergic stimulation
+T122	Species 6772 6776	rats
+T126	TestArticle 6820 6824	ROFA
+T127	Species 7475 7479	rats
+T128	Endpoint 7418 7448;7452 7471	Adhering or rolling leukocytes first-order venules
+T129	Vehicle 7505 7511	saline
+T130	Dose 7513 7517	0.25
+T131	DoseUnits 7518 7520	mg
+T132	TestArticle 7521 7525	ROFA
+T133	Dose 7530 7533	0.1
+T134	DoseUnits 7534 7536	mg
+T135	TestArticle 7537 7541	TiO2
+T138	Endpoint 7778 7794;7802 7817	Oxidant activity arteriolar wall
+T139	Endpoint 8045 8066;8164 8174	spinotrapezius muscle microscopy
+T141	EndpointUnitOfMeasure 8632 8643	A = ln(l/l)
+T142	Endpoint 8423 8460	microvascular wall levels of formazan
+T140	Endpoint 8743 8768;8792 8817	amount of formazan formed level of oxidant activity
+T143	EndpointUnitOfMeasure 8840 8850	absorption
+T144	Endpoint 8966 8985	Arteriolar diameter
+T145	Endpoint 9039 9060	Resting vascular tone
+T146	Species 9442 9446	rats
+T147	Dose 1235 1238	0.1
+T148	Dose 1242 1246	0.25
+T149	DoseUnits 1247 1253	mg/rat
+T150	Species 1250 1253	rat
+T116	EndpointUnitOfMeasure 7722 7729	counted
+T56	DoseRoute 573 588	IT instillation
+T136	Endpoint 7574 7600	microvascular inflammation
+T137	Endpoint 3366 3392	microvascular inflammation
+T152	Endpoint 2565 2599	reactive oxygen species production
+T153	EndpointUnitOfMeasure 3014 3019	score
+T154	EndpointUnitOfMeasure 2936 2942	scores
+T155	EndpointUnitOfMeasure 3266 3271;3277 3290	score scale of 0–10
+T60	EndpointUnitOfMeasure 3071 3119	none, minimal, mild, moderate, marked, or severe
+T61	EndpointUnitOfMeasure 3139 3219	none, focal, locally extensive, multifocal, multifocal and coalescent, or severe
+T62	Endpoint 3746 3757	neutrophils
+T63	Endpoint 3762 3773	eosinophils
+T64	Endpoint 7602 7612	Leukocytes
+T67	Endpoint 7926 7954	microvascular oxidant stress
+T68	EndpointUnitOfMeasure 9104 9136	tone = [(Dpass − D)/Dpass] × 100
+T34	Vehicle 6802 6808	saline
+T69	TimeUnits 3848 3850	hr
+T70	TimeUnits 4664 4666	hr
+A1	GROUP__TestArticleGroup-2 T7
+A2	GROUP__TestArticleGroup-2 T8
+A3	GROUP__TestArticleGroup-0 T8
+A4	GROUP__TestArticleGroup-0 T6
+A5	GROUP__TestArticleGroup-1 T21
+A6	GROUP__Equiv-2 T13
+A7	GROUP__Equiv-2 T12
+A8	GROUP__Equiv-0 T23
+A9	GROUP__Equiv-0 T24
+A10	GROUP__Equiv-1 T21
+A11	GROUP__Equiv-1 T51
+A12	GROUP__Animal-0 T10
+A13	GROUP__Animal-0 T11
+A14	GROUP__Animal-0 T12

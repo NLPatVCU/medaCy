@@ -18,15 +18,6 @@ Assuming your directory looks like this (where .ann files are in `BRAT <http://b
     ├── file_two.ann
     └── file_two.txt
 
-A Dataset can be created like this:
-::
-    from medacy.data import Dataset
-
-    dataset = Dataset('/home/medacy/data')
-
-
-MedaCy **does not** alter the data you load in any way - it only reads from it.
-
 A common data work flow might look as follows.
 
 Running:
@@ -34,19 +25,22 @@ Running:
     >>> from medacy.data import Dataset
     >>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
-    >>> dataset = Dataset('/home/medacy/data')
+    >>> dataset = Dataset('/home/datasets/some_dataset')
     >>> for data_file in dataset:
     ...    (data_file.file_name, data_file.raw_path, dataset.ann_path)
     (file_one, file_one.txt, file_one.ann)
     (file_two, file_two.txt, file_two.ann)
     >>> dataset
-    ['file_one.txt', 'file_two.txt']
+    ['file_one', 'file_two']
     >>>> dataset.is_metamapped()
     False
-    >>> metamap = Metamap('/home/path/to/metamap/binary') #not necessary
-    >>> dataset.metamap(metamap) #not necessary
+    >>> metamap = MetaMap('/home/path/to/metamap/binary')
+    >>> with metamap:
+    ...     dataset.metamap(metamap)
     >>> dataset.is_metamapped()
     True
+
+MedaCy **does not** alter the data you load in any way - it only reads from it.
 
 Prediction
 ##########
@@ -57,8 +51,6 @@ meta-data for a given prediction file does not have fields for annotation_file_p
 When a directory contains **only** ann files, an instantiated Dataset object interprets this as
 a directory of files that are predictions. Useful methods for analysis include :meth:`medacy.data.dataset.Dataset.compute_confusion_matrix`,
 :meth:`medacy.data.dataset.Dataset.compute_ambiguity` and :meth:`medacy.data.dataset.Dataset.compute_counts`.
-
-
 
 External Datasets
 #################
@@ -89,11 +81,7 @@ class Dataset:
     A facilitation class for data management.
     """
 
-    def __init__(self, data_directory,
-                 raw_text_file_extension="txt",
-                 annotation_file_extension="ann",
-                 metamapped_files_directory=None,
-                 data_limit=None):
+    def __init__(self, data_directory, raw_text_file_extension="txt", metamapped_files_directory=None, data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
 
@@ -103,7 +91,6 @@ class Dataset:
 
         :param data_directory: Directory containing data for training or prediction.
         :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
-        :param annotation_file_extension: The file extension of annotation files in the data_directory (default: *.ann*)
         :param metamapped_files_directory: Location to store metamapped files (default: a sub-directory named *metamapped*)
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
@@ -122,7 +109,7 @@ class Dataset:
         raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
 
         if not raw_text_files:  # detected a prediction directory
-            ann_files = sorted([file for file in all_files_in_directory if file.endswith(annotation_file_extension)])
+            ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
             self.is_training_directory = False
 
             if data_limit is not None:
@@ -132,7 +119,7 @@ class Dataset:
 
             for file in ann_files:
                 annotation_path = os.path.join(data_directory, file)
-                file_name = file[:-len(annotation_file_extension) - 1]
+                file_name = file[:-len('.ann') - 1]
                 self.all_data_files.append(DataFile(file_name, None, annotation_path))
 
         else:  # detected a training directory (raw text files exist)
@@ -146,10 +133,9 @@ class Dataset:
                     "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
 
             # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
-                         for file in raw_text_files]
+            ann_files = [file.replace(".%s" % raw_text_file_extension, ".ann") for file in raw_text_files]
             # only a training directory if every text file has a corresponding ann_file
-            self.is_training_directory = all([os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files])
+            self.is_training_directory = all(os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files)
 
             # set all file attributes except metamap_path as it is optional.
             for file in raw_text_files:
@@ -159,7 +145,7 @@ class Dataset:
                 if self.is_training_directory:
                     annotation_path = os.path.join(
                         data_directory,
-                        file.replace(".%s" % raw_text_file_extension, ".%s" % annotation_file_extension)
+                        file.replace(".%s" % raw_text_file_extension, '.ann')
                     )
                 else:
                     annotation_path = None
@@ -231,6 +217,12 @@ class Dataset:
         failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
         More information can be found in the MetaMap documentation.
 
+        Example usage:
+        >>> metamap = MetaMap("/path/to/metamap")
+        >>> data = Dataset("/path/to/data")
+        >>> with metamap:
+        ...     data.metamap(metamap)
+
         :param metamap: an instance of MetaMap.
         :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
         :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
@@ -266,7 +258,6 @@ class Dataset:
                                                          data_file.txt_path.split(os.path.sep)[-1]
                                                          .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
 
-
     def _parallel_metamap(self, files, i):
         """
         Facilitates Metamapping in parallel by forking off processes to Metamap each file individually.
@@ -297,7 +288,7 @@ class Dataset:
                 except BaseException as e:
                     metamap_dict = None
                     max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                    logging.warning("Error Metamapping: %s with exception %s", file_path, str(e))
+                    logging.warning(f"Error Metamapping: {file_path} after raising {type(e).__name__}: {str(e)}")
 
             mapped_file.write(json.dumps(metamap_dict))
             logging.info("Successfully Metamapped: %s", file_path)
@@ -326,7 +317,11 @@ class Dataset:
         return True
 
     def __str__(self):
-        return str(self.get_data_files())
+        """
+        Prints a list-like string of the names of the Datafile objects up to the data limit
+        (can't be used if copied and pasted)
+        """
+        return str([d.file_name for d in self.get_data_files()])
 
     def compute_counts(self):
         """
@@ -448,3 +443,13 @@ class Dataset:
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.get_data_files():
             yield Annotations(file.ann_path, source_text_path=file.txt_path)
+
+    def __getitem__(self, item):
+        """
+        Creates and returns the Annotations object with the given file name, else raises FileNotFoundError;
+        useful for getting Annotations objects from parallel Datasets
+        :param item: the name of the file to be represented (not including the extension or parent directories)
+        :return: an Annotations object
+        """
+        path = os.path.join(self.data_directory, item + '.ann')
+        return Annotations(path)

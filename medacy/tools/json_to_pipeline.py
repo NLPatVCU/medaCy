@@ -1,12 +1,13 @@
 import json
 
-import spacy
 import sklearn_crfsuite
+import spacy
 
-from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
+from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapComponent
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesOverlayer
+from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
 from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
@@ -39,6 +40,8 @@ def json_to_pipeline(json_path):
 
     The following keys are optional:
     'metamap': the path to the MetaMap binary; MetaMap will only be used if this key is present
+        if 'metamap' is a key, 'semantic_types' must also be a key, with value 'all', 'none', or
+        a list of semantic type strings
     'tokenizer': 'clinical', 'systematic_review', or 'character'; defaults to the spaCy model's tokenizer
 
     :param json_path: the path to the json file
@@ -48,18 +51,14 @@ def json_to_pipeline(json_path):
     with open(json_path, 'rb') as f:
         input_json = json.load(f)
 
-    missing_keys = []
-    for key in required_keys:
-        if key not in input_json.keys():
-            missing_keys.append(key)
-
+    missing_keys = [key for key in required_keys if key not in input_json.keys()]
     if missing_keys:
         raise ValueError(f"Required key(s) '{missing_keys}' was/were not found in the json file.")
 
     class CustomPipeline(BasePipeline):
         def __init__(self):
             super().__init__(
-                "custom pipeline",
+                "custom_pipeline",
                 spacy_pipeline=spacy.load(input_json['spacy_pipeline'])
             )
 
@@ -67,26 +66,39 @@ def json_to_pipeline(json_path):
 
             self.spacy_pipeline.tokenizer = self.get_tokenizer()
 
-            self.add_component(GoldAnnotatorComponent, self.entities)
+            self.add_component(GoldAnnotatorOverlayer, self.entities)
 
             if 'metamap' in input_json.keys():
+                if 'semantic_types' not in input_json.keys():
+                    raise ValueError("'semantic_types' must be a key when 'metamap' is a key.")
+
                 metamap = MetaMap(input_json['metamap'])
-                self.add_component(MetaMapComponent, metamap)
+
+                if input_json['semantic_types'] == 'all':
+                    self.add_component(MetaMapAllTypesOverlayer, metamap)
+                elif input_json['semantic_types'] == 'none':
+                    self.add_component(MetaMapOverlayer, metamap, semantic_type_labels=[])
+                elif isinstance(input_json['semantic_types'], list):
+                    self.add_component(MetaMapOverlayer, metamap, semantic_type_labels=input_json['semantic_types'])
+                else:
+                    raise ValueError("'semantic_types' must be 'all', 'none', or a list of strings")
 
         def get_tokenizer(self):
             if 'tokenizer' not in input_json.keys():
                 return self.spacy_pipeline.tokenizer
 
             selection = input_json['tokenizer']
+            options = {
+                'clinical': ClinicalTokenizer,
+                'systematic_review': SystematicReviewTokenizer,
+                'character': CharacterTokenizer
+            }
 
-            if selection == 'clinical':
-                return ClinicalTokenizer(self.spacy_pipeline).tokenizer
-            elif selection == 'systematic_review':
-                return SystematicReviewTokenizer(self.spacy_pipeline).tokenizer
-            elif selection == 'character':
-                return CharacterTokenizer(self.spacy_pipeline).tokenizer
-            else:
-                raise ValueError(f"Tokenizer selection '{selection}' not an option, see json_to_pipeline documentation")
+            if selection not in options:
+                raise ValueError(f"Tokenizer selection '{selection}' not an option")
+
+            Tokenizer = options[selection]
+            return Tokenizer(self.spacy_pipeline).tokenizer
 
         def get_learner(self):
             learner_selection = input_json['learner']
@@ -100,6 +112,7 @@ def json_to_pipeline(json_path):
                             all_possible_transitions=True
                             )
                         )
+
             if learner_selection == 'BiLSTM':
                 for k in ['word_embeddings', 'cuda_device']:
                     if k not in input_json.keys():

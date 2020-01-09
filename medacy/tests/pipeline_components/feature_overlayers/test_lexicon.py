@@ -3,11 +3,10 @@ from unittest import TestCase
 import spacy
 from spacy.tokens import Token
 
-from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconComponent
+from medacy.pipeline_components.feature_overlayers.lexicon_component import LexiconOverlayer
 
 
 class TestLexicon(TestCase):
-
 
     @classmethod
     def setUpClass(cls):
@@ -24,19 +23,19 @@ class TestLexicon(TestCase):
         Tests initialization with lexicon passed in
         :return:
         """
-        lexicon_component = LexiconComponent(self.nlp, self.lexicon)
-        self.assertIsInstance(lexicon_component, LexiconComponent)
+        lexicon_component = LexiconOverlayer(self.nlp, self.lexicon)
+        self.assertIsInstance(lexicon_component, LexiconOverlayer)
         self.assertIsNotNone(lexicon_component.lexicon)
 
     def test_call_lexicon_component(self):
         """
         Test running a doc through the lexicon component and properly overlaying features from
         the lexicon.
-        :return:
         """
-        lexicon_component = LexiconComponent(self.nlp, self.lexicon)
-        self.assertIs(Token.has_extension('feature_is_ADE_from_lexicon'), False)
-        self.assertIs(Token.has_extension('feature_is_DRUG_from_lexicon'), False)
-        doc = lexicon_component(self.doc)
-        self.assertIs(Token.has_extension('feature_is_ADE_from_lexicon'), True)
-        self.assertIs(Token.has_extension('feature_is_DRUG_from_lexicon'), True)
+        lexicon_component = LexiconOverlayer(self.nlp, self.lexicon)
+        self.assertFalse(Token.has_extension('feature_is_ADE_from_lexicon'))
+        self.assertFalse(Token.has_extension('feature_is_DRUG_from_lexicon'))
+
+        lexicon_component(self.doc)
+        self.assertTrue(Token.has_extension('feature_is_ADE_from_lexicon'))
+        self.assertTrue(Token.has_extension('feature_is_DRUG_from_lexicon'))

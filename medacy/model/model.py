@@ -2,6 +2,7 @@ import importlib
 import logging
 import os
 import time
+from shutil import copyfile
 from statistics import mean
 
 import joblib
@@ -10,17 +11,25 @@ from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
-from medacy.model._model import construct_annotations_from_tuples, predict_document
-from medacy.model.stratified_k_fold import SequenceStratifiedKFold
+from medacy.model._model import construct_annotations_from_tuples, predict_document, create_folds
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
 class Model:
     """
-    A medaCy named entity recognition model wraps together three functionalities
+    A medaCy Model allows the fitting of a named entity recognition model to a given dataset according to the
+    configuration of a given medaCy pipeline. Once fitted, Model instances can be used to predict over documents.
+    Also included is a function for cross validating over a dataset for measuring the performance of a pipeline.
+
+    :ivar pipeline: a medaCy pipeline, must be a subclass of BasePipeline (see medacy.pipelines.base.BasePipeline)
+    :ivar model: weights, if the model has been fitted
+    :ivar n_jobs: the number of CPU cores to be used by processes of this instance, defaults to the number of CPUs on
+    the machine it's running on
+    :ivar X_data: X_data from the pipeline; primarily for internal use
+    :ivar y_data: y_data from the pipeline; primarily for internal use
     """
 
-    def __init__(self, medacy_pipeline=None, model=None, n_jobs=cpu_count()):
+    def __init__(self, medacy_pipeline, model=None, n_jobs=cpu_count()):
 
         if not isinstance(medacy_pipeline, BasePipeline):
             raise TypeError("Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline")
@@ -52,12 +61,12 @@ class Model:
             self.y_data = []
             pool = Pool(nodes=self.n_jobs)
 
-            results = [pool.apipe(self._extract_features, data_file, dataset.is_metamapped()) for data_file in dataset]
+            results = [pool.apipe(self._extract_features, data_file) for data_file in dataset]
 
             while any([i.ready() is False for i in results]):
                 time.sleep(1)
 
-            for idx, i in enumerate(results):
+            for i in results:
                 X, y = i.get()
                 self.X_data += X
                 self.y_data += y
@@ -66,8 +75,11 @@ class Model:
             logging.info('Preprocessing data synchronously...')
             self.X_data = []
             self.y_data = []
-            for data_file in dataset:
-                features, labels = self._extract_features(data_file, dataset.is_metamapped())
+            # Run all Docs through the pipeline before extracting features, allowing for pipeline components
+            # that require inter-dependent doc objects
+            docs = [self._run_through_pipeline(data_file) for data_file in dataset]
+            for doc in docs:
+                features, labels = self._extract_features(doc)
                 self.X_data += features
                 self.y_data += labels
 
@@ -101,55 +113,70 @@ class Model:
         self.model = learner
         return self.model
 
-    def predict(self, dataset, prediction_directory=None, groundtruth_directory=None):
+    def predict(self, input_data, prediction_directory=None):
         """
-        Generates predictions over a string or a dataset utilizing the pipeline equipped to the instance.
+        Generates predictions over a string or a input_data utilizing the pipeline equipped to the instance.
 
-        :param documents: A string or Dataset to predict
-        :param prediction_directory: The directory to write predictions if doing bulk prediction (default: */prediction* sub-directory of Dataset)
-        :param groundtruth_directory: The directory to write groundtruth to.
-        :return:
+        :param input_data: a string, Dataset, or directory path to predict over
+        :param prediction_directory: The directory to write predictions if doing bulk prediction
+            (default: */prediction* sub-directory of Dataset)
+        :return: if input_data is a str, returns an Annotations of the predictions;
+            if input_data is a Dataset or a valid directory path, returns a Dataset of the predictions.
+
+        Note that if input_data is supposed to be a directory path but the directory is not found, it will be predicted
+        over as a string. This can be prevented by validating inputs with os.path.isdir().
         """
 
-        if not isinstance(dataset, (Dataset, str)):
-            raise TypeError("Must pass in an instance of Dataset containing your examples to be used for prediction")
         if self.model is None:
-            raise ValueError("Must fit or load a pickled model before predicting")
+            raise RuntimeError("Must fit or load a pickled model before predicting")
 
-        model = self.model
-        medacy_pipeline = self.pipeline
-
-        if isinstance(dataset, Dataset):
-            # create directory to write predictions to
-            prediction_directory = self.create_annotation_directory(directory=prediction_directory, training_dataset=dataset, option="predictions")
-
-            # create directory to write groundtruth to
-            groundtruth_directory = self.create_annotation_directory(directory=groundtruth_directory, training_dataset=dataset, option="groundtruth")
-
-            for data_file in dataset:
-                logging.info("Predicting file: %s", data_file.file_name)
-                with open(data_file.txt_path, 'r') as raw_text:
-                    doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
-                    doc.set_extension('file_name', default=data_file.file_name, force=True)
-                    if data_file.metamapped_path is not None:
-                        doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
-
-                # run through the pipeline
-                doc = medacy_pipeline(doc, predict=True)
-
-                annotations = predict_document(model, doc, medacy_pipeline)
-                logging.debug("Writing to: %s", os.path.join(prediction_directory, data_file.file_name + ".ann"))
-                annotations.to_ann(write_location=os.path.join(prediction_directory, data_file.file_name + ".ann"))
-
-        if isinstance(dataset, str):
-            assert 'metamap_annotator' not in self.pipeline.get_components(), \
-                "Cannot currently predict on the fly when metamap_component is in pipeline."
-
-            doc = medacy_pipeline.spacy_pipeline.make_doc(dataset)
-            doc.set_extension('file_name', default="STRING_INPUT", force=True)
-            doc = medacy_pipeline(doc, predict=True)
-            annotations = predict_document(model, doc, medacy_pipeline)
+        if isinstance(input_data, str) and not os.path.isdir(input_data):
+            doc = self.pipeline.spacy_pipeline.make_doc(input_data)
+            doc.set_extension('file_name', default=None, force=True)
+            doc._.file_name = 'STRING_INPUT'
+            doc = self.pipeline(doc, predict=True)
+            annotations = predict_document(self.model, doc, self.pipeline)
             return annotations
+
+        if isinstance(input_data, Dataset):
+            input_files = [d.txt_path for d in input_data]
+            # Change input_data to point to the Dataset's directory path so that we can use it
+            # to create the prediction directory
+            input_data = input_data.data_directory
+        elif os.path.isdir(input_data):
+            input_files = [os.path.join(input_data, f) for f in os.listdir(input_data) if f.endswith('.txt')]
+        else:
+            raise ValueError(f"'input_data' must be a string (which can be a directory path) or a Dataset, but is {repr(input_data)}")
+
+        if prediction_directory is None:
+            prediction_directory = os.path.join(input_data, 'predictions')
+            if os.path.isdir(prediction_directory):
+                logging.warning("Overwriting existing predictions at %s", prediction_directory)
+            else:
+                os.mkdir(prediction_directory)
+
+        for file_path in input_files:
+            file_name = os.path.basename(file_path).strip('.txt')
+            logging.info("Predicting file: %s", file_path)
+
+            with open(file_path, 'r') as f:
+                doc = self.pipeline.spacy_pipeline.make_doc(f.read())
+
+            doc.set_extension('file_name', default=None, force=True)
+            doc._.file_name = file_name
+
+            # run through the pipeline
+            doc = self.pipeline(doc, predict=True)
+
+            # Predict, creating a new Annotations object
+            annotations = predict_document(self.model, doc, self.pipeline)
+            logging.debug("Writing to: %s", os.path.join(prediction_directory, file_name + ".ann"))
+            annotations.to_ann(write_location=os.path.join(prediction_directory, file_name + ".ann"))
+
+            # Copy the txt file so that the output will also be a Dataset
+            copyfile(file_path, os.path.join(prediction_directory, file_name + ".txt"))
+
+        return Dataset(prediction_directory)
 
     def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
@@ -178,60 +205,49 @@ class Model:
             raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
                              " Please pass the training dataset in the 'training_dataset' parameter.")
 
+        pipeline_report = self.pipeline.get_report()
+
         self.preprocess(training_dataset, asynchronous)
 
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")
 
-        X_data = self.X_data
-        Y_data = self.y_data
-
-        medacy_pipeline = self.pipeline
-
-        cv = SequenceStratifiedKFold(folds=num_folds)
-
-        tagset = set()
-        for tags in Y_data:
-            for tag in tags:
-                if tag != 'O' and tag != '':
-                    tagset.add(tag)
-        tagset = list(tagset)
-        tagset.sort()
-        medacy_pipeline.entities = tagset
-        logging.info('Tagset: %s', tagset)
+        tags = sorted(training_dataset.get_labels(as_list=True))
+        self.pipeline.entities = tags
+        logging.info('Tagset: %s', tags)
 
         eval_stats = {}
-        fold = 1
 
         # Dict for storing mapping of sequences to their corresponding file
-        groundtruth_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
-        preds_by_document = {filename: [] for filename in list(set([x[2] for x in X_data]))}
+        groundtruth_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
+        preds_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
 
-        for train_indices, test_indices in cv(X_data, Y_data):
+        folds = create_folds(self.y_data, num_folds)
+
+        for fold_num, fold_data in enumerate(folds, 1):
+            train_indices, test_indices = fold_data
             fold_statistics = {}
-            learner_name, learner = medacy_pipeline.get_learner()
+            learner_name, learner = self.pipeline.get_learner()
 
-            X_train = [X_data[index] for index in train_indices]
-            y_train = [Y_data[index] for index in train_indices]
+            X_train = [self.X_data[index] for index in train_indices]
+            y_train = [self.y_data[index] for index in train_indices]
 
-            X_test = [X_data[index] for index in test_indices]
-            y_test = [Y_data[index] for index in test_indices]
+            X_test = [self.X_data[index] for index in test_indices]
+            y_test = [self.y_data[index] for index in test_indices]
 
-            logging.info("Training Fold %i", fold)
+            logging.info("Training Fold %i", fold_num)
             train_data = [x[0] for x in X_train]
             test_data = [x[0] for x in X_test]
             learner.fit(train_data, y_train)
             y_pred = learner.predict(test_data)
 
             if groundtruth_directory is not None:
-                # Dict for storing mapping of sequences to their corresponding file
-
                 # Flattening nested structures into 2d lists
                 document_indices = []
                 span_indices = []
                 for sequence in X_test:
-                    document_indices += [sequence[2] for x in range(len(sequence[0]))]
-                    span_indices += [element for element in sequence[1]]
+                    document_indices += [sequence[2]] * len(sequence[0])
+                    span_indices += list(sequence[1])
                 groundtruth = [element for sentence in y_test for element in sentence]
 
                 # Map the predicted sequences to their corresponding documents
@@ -259,8 +275,8 @@ class Model:
                 span_indices = []
 
                 for sequence in X_test:
-                    document_indices += [sequence[2] for x in range(len(sequence[0]))]
-                    span_indices += [element for element in sequence[1]]
+                    document_indices += [sequence[2]] * len(sequence[0])
+                    span_indices += list(sequence[1])
 
                 predictions = [element for sentence in y_pred for element in sentence]
 
@@ -285,7 +301,7 @@ class Model:
                     i += 1
 
             # Write the metrics for this fold.
-            for label in tagset:
+            for label in tags:
                 fold_statistics[label] = {
                     "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=[label]),
                     "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=[label]),
@@ -294,27 +310,26 @@ class Model:
 
             # add averages
             fold_statistics['system'] = {
-                "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tagset),
-                "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tagset),
-                "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tagset)
+                "recall": metrics.flat_recall_score(y_test, y_pred, average='weighted', labels=tags),
+                "precision": metrics.flat_precision_score(y_test, y_pred, average='weighted', labels=tags),
+                "f1": metrics.flat_f1_score(y_test, y_pred, average='weighted', labels=tags)
             }
 
             table_data = [
                 [label,
-                format(fold_statistics[label]['precision'], ".3f"),
-                format(fold_statistics[label]['recall'], ".3f"),
-                format(fold_statistics[label]['f1'], ".3f")
-                ] for label in tagset + ['system']
+                 format(fold_statistics[label]['precision'], ".3f"),
+                 format(fold_statistics[label]['recall'], ".3f"),
+                 format(fold_statistics[label]['f1'], ".3f")
+                 ] for label in tags + ['system']
             ]
 
             logging.info('\n' + tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1'], tablefmt='orgtbl'))
 
-            eval_stats[fold] = fold_statistics
-            fold += 1
+            eval_stats[fold_num] = fold_statistics
 
         statistics_all_folds = {}
 
-        for label in tagset + ['system']:
+        for label in tags + ['system']:
             statistics_all_folds[label] = {
                 'precision_average': mean(eval_stats[fold][label]['precision'] for fold in eval_stats),
                 'precision_max': max(eval_stats[fold][label]['precision'] for fold in eval_stats),
@@ -326,35 +341,54 @@ class Model:
                 'f1_min': min(eval_stats[fold][label]['f1'] for fold in eval_stats),
             }
 
+        entity_counts = training_dataset.compute_counts()
+
         table_data = [
-            [label,
-            format(statistics_all_folds[label]['precision_average'], ".3f"),
-            format(statistics_all_folds[label]['recall_average'], ".3f"),
-            format(statistics_all_folds[label]['f1_average'], ".3f"),
-            format(statistics_all_folds[label]['f1_min'], ".3f"),
-            format(statistics_all_folds[label]['f1_max'], ".3f")
-            ] for label in tagset + ['system']
+            [f"{label} ({entity_counts[label]})",  # Entity (Count)
+             format(statistics_all_folds[label]['precision_average'], ".3f"),
+             format(statistics_all_folds[label]['recall_average'], ".3f"),
+             format(statistics_all_folds[label]['f1_average'], ".3f"),
+             format(statistics_all_folds[label]['f1_min'], ".3f"),
+             format(statistics_all_folds[label]['f1_max'], ".3f")
+             ] for label in tags + ['system']
         ]
 
-        logging.info("\n"+tabulate(table_data, headers=['Entity', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
-                       tablefmt='orgtbl'))
+        # Combine the pipeline report and the resulting data, then log it or print it (whichever ensures that it prints)
+
+        output_str = '\n' + pipeline_report + '\n\n' + tabulate(
+            table_data,
+            headers=['Entity (Count)', 'Precision', 'Recall', 'F1', 'F1_Min', 'F1_Max'],
+            tablefmt='orgtbl'
+        )
+
+        if logging.root.level > logging.INFO:
+            print(output_str)
+        else:
+            logging.info(output_str)
 
         if prediction_directory:
             
-            prediction_directory = training_dataset.get_data_directory() + "/predictions"
-            groundtruth_directory = training_dataset.get_data_directory() + "/groundtruth"
+            prediction_directory = os.path.join(training_dataset.data_directory, "predictions")
+            groundtruth_directory = os.path.join(training_dataset.data_directory, "groundtruth")
             
             # Write annotations generated from cross-validation
-            self.create_annotation_directory(directory=prediction_directory,training_dataset=training_dataset, option="predictions")
+            self.create_annotation_directory(
+                directory=prediction_directory,
+                training_dataset=training_dataset,
+                option="predictions"
+            )
 
             # Write medaCy ground truth generated from cross-validation
-            self.create_annotation_directory(directory=groundtruth_directory,training_dataset=training_dataset,option="groundtruth")
+            self.create_annotation_directory(
+                directory=groundtruth_directory,
+                training_dataset=training_dataset,
+                option="groundtruth"
+            )
             
             # Add predicted/known annotations to the folders containing groundtruth and predictions respectively
             self.predict_annotation_evaluation(
                 directory=groundtruth_directory,
                 training_dataset=training_dataset,
-                medacy_pipeline=medacy_pipeline,
                 preds_by_document=preds_by_document,
                 groundtruth_by_document=groundtruth_by_document,
                 option="groundtruth"
@@ -363,13 +397,12 @@ class Model:
             self.predict_annotation_evaluation(
                 directory=prediction_directory,
                 training_dataset=training_dataset,
-                medacy_pipeline= medacy_pipeline,
                 preds_by_document=preds_by_document,
                 groundtruth_by_document=groundtruth_by_document,
                 option="predictions"
             )
 
-            return Dataset(data_directory=prediction_directory)
+            return Dataset(prediction_directory)
         else:
             return statistics_all_folds
 
@@ -377,18 +410,18 @@ class Model:
         if isinstance(directory, str):
             directory = directory
         else:
-            directory = training_dataset.data_directory + "/"+option+"/"
+            directory = os.path.join(training_dataset.data_directory, option)
         if os.path.isdir(directory):
             logging.warning("Overwriting existing %s",option)
         else:
             os.makedirs(directory)
         return directory
 
-    def predict_annotation_evaluation(self, directory, training_dataset, medacy_pipeline, preds_by_document, groundtruth_by_document, option):
-        for data_file in training_dataset.get_data_files():
+    def predict_annotation_evaluation(self, directory, training_dataset, preds_by_document, groundtruth_by_document, option):
+        for data_file in training_dataset:
             logging.info("Predicting %s file: %s", option, data_file.file_name)
-            with open(data_file.raw_path, 'r') as raw_text:
-                doc = medacy_pipeline.spacy_pipeline.make_doc(raw_text.read())
+            with open(data_file.txt_path, 'r') as f:
+                doc = self.pipeline.spacy_pipeline.make_doc(f.read())
                 
             if option == "groundtruth":
                 preds = groundtruth_by_document[data_file.file_name]
@@ -398,37 +431,41 @@ class Model:
             annotations = construct_annotations_from_tuples(doc, preds)
             annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))
         
-        return annotations
+        return Dataset(directory)
 
-    def _extract_features(self, data_file, is_metamapped):
+    def _run_through_pipeline(self, data_file):
         """
-        A multi-processed method for extracting features from a given DataFile instance.
-
-        :param data_file: an instance of DataFile
-        :param is_metamapped: if the Dataset is metamapped
-        :return: Updates queue with features for this given file.
+        Runs a DataFile through the pipeline, returning the resulting Doc object
+        :param data_file: instance of DataFile
+        :return: a Doc object
         """
         nlp = self.pipeline.spacy_pipeline
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.txt_path, 'r') as raw_text:
-            doc = nlp.make_doc(raw_text.read())
-        # Link ann_path to doc
-        doc.set_extension('gold_annotation_file', default=data_file.ann_path, force=True)
-        doc.set_extension('file_name', default=data_file.file_name, force=True)
+        with open(data_file.txt_path, 'r') as f:
+            doc = nlp.make_doc(f.read())
 
-        # Link metamapped file to doc for use in MetamapComponent if exists
-        if is_metamapped:
-            doc.set_extension('metamapped_file', default=data_file.metamapped_path, force=True)
+        # Link ann_path to doc
+        doc.set_extension('gold_annotation_file', default=None, force=True)
+        doc.set_extension('file_name', default=None, force=True)
+
+        doc._.gold_annotation_file = data_file.ann_path
+        doc._.file_name = data_file.txt_path
 
         # run 'er through
-        doc = self.pipeline(doc)
+        return self.pipeline(doc)
 
-        # The document has now been run through the pipeline. All annotations are overlayed - pull features.
+    def _extract_features(self, doc):
+        """
+        Extracts features from a Doc
+        :param doc: an instance of Doc
+        :return: a tuple of the feature dict and label list
+        """
+
         feature_extractor = self.pipeline.get_feature_extractor()
-        features, labels = feature_extractor(doc, data_file.file_name)
+        features, labels = feature_extractor(doc, doc._.file_name)
 
-        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (data_file.file_name, len(labels)))
+        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (doc._.file_name, len(labels)))
         return features, labels
 
     def load(self, path):
@@ -463,37 +500,6 @@ class Model:
         else:
             joblib.dump(self.model, path)
 
-    def get_info(self, return_dict=False):
-        """
-        Retrieves information about a Model including details about the feature extraction pipeline, features utilized,
-        and learning model.
-
-        :param return_dict: Returns a raw dictionary of information as opposed to a formatted string
-        :return: Returns structured information
-        """
-        pipeline_information = self.pipeline.get_pipeline_information()
-        feature_extractor = self.pipeline.get_feature_extractor()
-        #TODO include tokenizer
-        pipeline_information['feature_extraction'] = {
-            "medacy_features": feature_extractor.all_custom_features,
-            "spacy_features": feature_extractor.spacy_features,
-            "window_size": feature_extractor.window_size
-        }
-
-        if return_dict:
-            return pipeline_information
-
-        text = ["Pipeline Name: %s" % pipeline_information['pipeline_name'],
-                "Learner Name: %s" % pipeline_information['learner_name'],
-                "Pipeline Description: %s" % pipeline_information['description'],
-                "Pipeline Components: [%s]" % ",".join(pipeline_information['components']),
-                "Spacy Features: [%s]" % ", ".join(pipeline_information['feature_extraction']['spacy_features']),
-                "Medacy Features: [%s]" % ", ".join(pipeline_information['feature_extraction']['medacy_features']).replace('feature_', ''),
-                "Window Size: (+-) %i" % pipeline_information['feature_extraction']['window_size']
-                ]
-
-        return "\n".join(text)
-
     @staticmethod
     def load_external(package_name):
         """
@@ -506,6 +512,3 @@ class Model:
         if importlib.util.find_spec(package_name) is None:
             raise ImportError("Package not installed: %s" % package_name)
         return importlib.import_module(package_name).load()
-
-    def __str__(self):
-        return self.get_info()

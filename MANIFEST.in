@@ -1,2 +1,4 @@
 include README.md
-include medacy/tests/data/end
+recursive-include medacy/tests/sample_data *.txt *.ann *.pkl
+recursive-exclude medacy/tests/sample_data/sample_dataset_1/predictions
+include config.json
