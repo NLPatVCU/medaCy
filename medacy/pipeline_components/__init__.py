@@ -1,6 +1,7 @@
 """Import pipeline components"""
 from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorComponent
 from medacy.pipeline_components.feature_extracters.discrete_feature_extractor import FeatureExtractor
+from medacy.pipeline_components.feature_extracters.text_extractor import TextExtractor
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
 from medacy.pipeline_components.learners.bert_learner import BertLearner
 from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer

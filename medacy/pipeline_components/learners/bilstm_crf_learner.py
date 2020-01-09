@@ -16,7 +16,7 @@ class BiLstmCrfLearner:
     """
     BiLSTM-CRF model class for using the network. Currently handles all vectorization as well.
 
-    :ivar device: Pytorch device to use.
+    :ivar device: PyTorch device to use.
     :ivar model: Instance of BiLstmCrfNetwork to use.
     :ivar tag_to_index: Tag to index dictionary for vectorization.
     :ivar untrained_tokens: Out of vocabulary tokens word embeddings analysis during debugging.
