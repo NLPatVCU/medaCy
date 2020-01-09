@@ -11,12 +11,10 @@ class TestingPipeline(BasePipeline):
     A pipeline for test running
     """
 
-    def __init__(self, entities):
+    def __init__(self, entities, **kwargs):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
-
-        Created by Andiy Mulyar (andriymulyar.com) of NLP@VCU
         """
 
         super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))

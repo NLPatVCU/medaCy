@@ -21,7 +21,7 @@ class ScispacyPipeline(BasePipeline):
     https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.0/en_core_sci_md-0.2.0.tar.gz
     """
 
-    def __init__(self, entities, metamap=None):
+    def __init__(self, entities, metamap=None, **kwargs):
         """
         :param entities: a list of entities
         :param metamap: an instance of MetaMap if metamap should be used, defaults to None.

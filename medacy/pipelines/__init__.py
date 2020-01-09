@@ -4,4 +4,4 @@ from medacy.pipelines.fda_nano_drug_label_pipeline import FDANanoDrugLabelPipeli
 from medacy.pipelines.lstm_systematic_review_pipeline import LstmSystematicReviewPipeline
 from medacy.pipelines.scispacy_pipeline import ScispacyPipeline
 from medacy.pipelines.systematic_review_pipeline import SystematicReviewPipeline
-
+from medacy.pipelines.bert_pipeline import BertPipeline

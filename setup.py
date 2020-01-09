@@ -61,6 +61,7 @@ setup(
         'torch==1.2.0',
         'pytorch-crf==0.7.2',
         'numpy>=1.16.1',
+        'transformers==2.3.0',
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',

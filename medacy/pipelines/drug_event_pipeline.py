@@ -16,7 +16,7 @@ class DrugEventPipeline(BasePipeline):
     Created by Corey Sutphin of NLP@VCU
     """
 
-    def __init__(self, entities, metamap=None, lexicon={}):
+    def __init__(self, entities, metamap=None, lexicon={}, **kwargs):
         """
         Init a pipeline for processing data related to identifying adverse drug events
         :param entities: a list of entities

@@ -442,7 +442,7 @@ class Model:
         nlp = self.pipeline.spacy_pipeline
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.txt_path, 'r') as f:
+        with open(data_file.txt_path, 'r', encoding='utf-8') as f:
             doc = nlp.make_doc(f.read())
 
         # Link ann_path to doc
@@ -477,7 +477,7 @@ class Model:
         """
         model_name, model = self.pipeline.get_learner()
 
-        if model_name == 'BiLSTM+CRF':
+        if model_name == 'BiLSTM+CRF' or model_name == 'BERT':
             model.load(path)
             self.model = model
         else:
@@ -495,7 +495,7 @@ class Model:
 
         model_name, _ = self.pipeline.get_learner()
 
-        if model_name == 'BiLSTM+CRF':
+        if model_name == 'BiLSTM+CRF' or model_name == 'BERT':
             self.model.save(path)
         else:
             joblib.dump(self.model, path)

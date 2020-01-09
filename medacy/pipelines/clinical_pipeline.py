@@ -17,7 +17,8 @@ class ClinicalPipeline(BasePipeline):
     Created by Andiy Mulyar (andriymulyar.com) of NLP@VCU
     """
 
-    def __init__(self, entities, metamap=None):
+
+    def __init__(self, entities, metamap=None, **kwargs):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.

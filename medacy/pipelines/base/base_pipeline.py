@@ -40,6 +40,7 @@ class BasePipeline(ABC):
         # if cuda_device >= 0:
         #     spacy.require_gpu()
 
+
     @abstractmethod
     def get_tokenizer(self):
         """Returns an instance of a tokenizer"""

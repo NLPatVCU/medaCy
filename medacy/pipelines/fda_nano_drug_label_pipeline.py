@@ -16,7 +16,7 @@ class FDANanoDrugLabelPipeline(BasePipeline):
     Created by Andriy Mulyar (andriymulyar.com) of NLP@VCU
     """
 
-    def __init__(self, entities, metamap=None):
+    def __init__(self, entities, metamap=None, **kwargs):
         """
         :param entities: a list of Entities
         :param metamap: an instance of MetaMap

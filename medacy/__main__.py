@@ -41,10 +41,16 @@ def setup(args):
         Pipeline = getattr(module, args.pipeline)
         logging.info('Using %s', args.pipeline)
 
-        if args.word_embeddings is not None:
-            pipeline = Pipeline(entities=entities, word_embeddings=args.word_embeddings, cuda_device=args.cuda)
-        else:
-            pipeline = Pipeline(entities=entities, cuda_device=args.cuda)
+        pipeline = Pipeline(
+            entities=entities,
+            cuda_device=args.cuda,
+            word_embeddings=args.word_embeddings,
+            batch_size=args.batch_size,
+            learning_rate=args.learning_rate,
+            epochs=args.epochs,
+            pretrained_model=args.pretrained_model,
+            using_crf=args.using_crf
+        )
 
         model = Model(pipeline)
 
@@ -122,6 +128,11 @@ def main():
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
+    parser.add_argument('-b', '--batch_size', type=int, default=None, help='Batch size. Only works with BERT pipeline.')
+    parser.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate. Only works with BERT pipeline.')
+    parser.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for. Only works with BERT pipeline.')
+    parser.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use for BERT')
+    parser.add_argument('-crf', '--using_crf', action='store_true', help='Use a CRF layer. Only works with BERT pipeline.')
     subparsers = parser.add_subparsers()
 
     # Train arguments
@@ -146,8 +157,13 @@ def main():
     # Parse initial args
     args = parser.parse_args()
 
+    if args.batch_size is not None:
+        if 'bert' not in args.pipeline.lower() and 'bert' not in args.custom_pipeline.lower():
+            raise NotImplementedError('Batch size only implemented for BERT pipelines')
+
     # Logging
-    logging.basicConfig(filename='medacy.log', format='%(asctime)-15s: %(message)s', level=logging.INFO)
+    device = str(args.cuda) if args.cuda >= 0 else '_cpu'
+    logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
     start_time = time.time()
