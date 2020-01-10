@@ -19,7 +19,7 @@ class TestBert(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.dataset = Dataset(os.path.join(test_dir, 'sample_dataset_1'))
+        cls.dataset = Dataset(os.path.join(test_dir, 'sample_dataset_1'), data_limit=1)
         cls.entities = cls.dataset.get_labels(as_list=True)
         cls.prediction_directory = tempfile.mkdtemp()  # Directory to store predictions
 
@@ -32,12 +32,14 @@ class TestBert(unittest.TestCase):
         """Tests that a model created with the BiLSTM+CRF can be fitted and used to predict"""
         pipeline = BertPipeline(
             entities=self.entities,
-            cuda_device=-1
+            pretrained_model='bert-base-cased',
+            cuda_device=0
         )
 
         pipeline_crf = BertPipeline(
             entities=self.entities,
-            cuda_device=-1,
+            pretrained_model='bert-base-cased',
+            cuda_device=0,
             using_crf=True
         )
 
