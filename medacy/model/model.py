@@ -463,7 +463,7 @@ class Model:
         """
 
         feature_extractor = self.pipeline.get_feature_extractor()
-        features, labels = feature_extractor(doc, doc._.file_name)
+        features, labels = feature_extractor(doc)
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (doc._.file_name, len(labels)))
         return features, labels

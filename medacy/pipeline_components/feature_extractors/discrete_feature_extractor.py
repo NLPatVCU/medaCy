@@ -22,18 +22,19 @@ class FeatureExtractor:
         self.all_custom_features = [attr for attr in list(Underscore.token_extensions.keys()) if attr.startswith('feature_')]
         self.spacy_features = spacy_features or ['pos_', 'shape_', 'prefix_', 'suffix_', 'like_num']
 
-    def __call__(self, doc, file_name):
+    def __call__(self, doc):
         """
         Extract features, labels, and corresponding spans from a document
 
-        :param doc: Annotated Spacy Doc object
-        :param file_name: Filename to associate these sequences with
+        :param doc: Annotated spaCy Doc object
         :return: List of tuples of form: [(feature dictionaries for sequence, indices of tokens in seq, document label)]
         """
 
         features = [self._sequence_to_feature_dicts(sent) for sent in doc.sents]
         labels = [self._sequence_to_labels(sent) for sent in doc.sents]
         indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
+
+        file_name = doc._.file_name
 
         features = list(zip(features, indices, cycle([file_name])))
         return features, labels
