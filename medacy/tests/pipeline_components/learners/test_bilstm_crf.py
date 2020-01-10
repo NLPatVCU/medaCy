@@ -1,7 +1,7 @@
 import os
 import shutil
 import tempfile
-from unittest import TestCase
+import unittest
 
 import pkg_resources
 
@@ -11,7 +11,7 @@ from medacy.pipelines.lstm_systematic_review_pipeline import LstmSystematicRevie
 from medacy.tests.sample_data import test_dir
 
 
-class TestBiLstmCrf(TestCase):
+class TestBiLstmCrf(unittest.TestCase):
     """Tests for the BiLSTM+CRF"""
 
     @classmethod
@@ -37,3 +37,7 @@ class TestBiLstmCrf(TestCase):
         model.fit(self.dataset)
         resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
         self.assertIsInstance(resulting_dataset, Dataset)
+
+if __name__ == '__main__':
+    unittest.main()
+

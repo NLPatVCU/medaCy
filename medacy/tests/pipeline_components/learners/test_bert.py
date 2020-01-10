@@ -33,13 +33,13 @@ class TestBert(unittest.TestCase):
         pipeline = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
-            cuda_device=0
+            cuda_device=3
         )
 
         pipeline_crf = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
-            cuda_device=0,
+            cuda_device=3,
             using_crf=True
         )
 
