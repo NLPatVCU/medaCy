@@ -2,6 +2,7 @@
 BERT Pipeline
 """
 import spacy
+
 from medacy.pipelines.base.base_pipeline import BasePipeline
 from medacy.pipeline_components import BertLearner
 from medacy.pipeline_components import TextExtractor
@@ -9,8 +10,9 @@ from medacy.pipeline_components import SystematicReviewTokenizer
 
 class BertPipeline(BasePipeline):
     """
-    A pipeline for clinical named entity recognition. A special tokenizer that breaks down a
-    clinical document to character level tokens defines this pipeline.
+    Pipeline tuned for the extraction of ADE related entities from the 2018', 'N2C2 Shared Task
+
+    Created by Jorge Vargas of NLP@VCU
     """
 
     def __init__(self, entities, **kwargs):
@@ -24,16 +26,14 @@ class BertPipeline(BasePipeline):
         :param learning_rate: Learning rate to use during training.
         :param epochs: Number of epochs to use for training.
         """
-        description = ('Pipeline tuned for the extraction of ADE related entities from the 2018',
-                       'N2C2 Shared Task')
         super().__init__(entities=entities, spacy_pipeline=spacy.load("en_core_web_sm"))
 
-        self.cuda_device = kwargs['cuda_device']
-        self.batch_size = kwargs['batch_size'] if kwargs['batch_size'] else 8
-        self.learning_rate = kwargs['learning_rate'] if kwargs['learning_rate'] else 1e-5
-        self.epochs = kwargs['epochs'] if kwargs['epochs'] else 3
-        self.pretrained_model = kwargs['pretrained_model']
-        self.using_crf = kwargs['using_crf']
+        self.cuda_device = kwargs['cuda_device'] if 'cuda_device' in kwargs else -1
+        self.batch_size = kwargs['batch_size'] if 'batch_size' in kwargs else 8
+        self.learning_rate = kwargs['learning_rate'] if 'learning_rate' in kwargs else 1e-5
+        self.epochs = kwargs['epochs'] if 'epochs' in kwargs else 3
+        self.pretrained_model = kwargs['pretrained_model'] if 'pretrained_model' in kwargs else 'bert-large-cased'
+        self.using_crf = kwargs['using_crf'] if 'using_crf' in kwargs else False
 
     def get_learner(self):
         """Get the learner object for this pipeline.
@@ -48,20 +48,18 @@ class BertPipeline(BasePipeline):
             epochs=self.epochs,
             using_crf=self.using_crf
         )
-        return ('BERT', learner)
+        return 'BERT', learner
 
     def get_tokenizer(self):
         """Get tokenizer for this pipeline.
 
         :return: Systematic review tokenizer.
         """
-        tokenizer = SystematicReviewTokenizer(self.spacy_pipeline)
-        return tokenizer
+        return SystematicReviewTokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
         """Get feature extractor for this pipeline.
 
         :return: Text only extractor.
         """
-        extractor = TextExtractor()
-        return extractor
+        return TextExtractor()
