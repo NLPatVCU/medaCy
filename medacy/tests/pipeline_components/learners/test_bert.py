@@ -22,6 +22,7 @@ class TestBert(unittest.TestCase):
         cls.dataset = Dataset(os.path.join(test_dir, 'sample_dataset_1'), data_limit=1)
         cls.entities = cls.dataset.get_labels(as_list=True)
         cls.prediction_directory = tempfile.mkdtemp()  # Directory to store predictions
+        cls.core = 3
 
     @classmethod
     def tearDownClass(cls):
@@ -29,17 +30,17 @@ class TestBert(unittest.TestCase):
         shutil.rmtree(cls.prediction_directory)
 
     def test_prediction_with_testing_pipeline(self):
-        """Tests that a model created with the BiLSTM+CRF can be fitted and used to predict"""
+        """Tests that a model created with BERT can be fitted and used to predict"""
         pipeline = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
-            cuda_device=3
+            cuda_device=self.core
         )
 
         pipeline_crf = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
-            cuda_device=3,
+            cuda_device=self.core,
             using_crf=True
         )
 
