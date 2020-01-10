@@ -130,9 +130,6 @@ class Model:
         if self.model is None:
             raise RuntimeError("Must fit or load a pickled model before predicting")
 
-        if hasattr(self.model, 'predict'):
-            return self.model.predict(input_data)
-
         if isinstance(input_data, str) and not os.path.isdir(input_data):
             doc = self.pipeline.spacy_pipeline.make_doc(input_data)
             doc.set_extension('file_name', default=None, force=True)
