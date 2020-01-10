@@ -3,8 +3,10 @@ Extracting training data for use in the BERT Learner
 """
 from itertools import cycle
 
+from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 
-class TextExtractor:
+
+class TextExtractor(FeatureExtractor):
     """Text Extractor. Only extracts the text itself so that BERT can handle the rest. Usable
     with any other class that only requires the token text for features.
     """
