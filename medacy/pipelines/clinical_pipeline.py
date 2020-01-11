@@ -46,5 +46,4 @@ class ClinicalPipeline(BasePipeline):
         return ClinicalTokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
-        extractor = FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
-        return extractor
+        return FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
