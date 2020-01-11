@@ -207,7 +207,12 @@ class Vectorizer:
             try:
                 embedding_index = self.word_vectors.vocab[token_text].index
             except KeyError:
-                embedding_index = len(self.word_vectors.vocab)
+                # The token is not in the vocabulary, so treat it as an unknown token.
+                token_text = self.unicode_to_ascii("<UNK>")
+                try:
+                    embedding_index = self.word_vectors.vocab[token_text].index
+                except KeyError:
+                    embedding_index = len(self.word_vectors.vocab)
 
                 # Only for logging untrained tokens
                 self.untrained_tokens.add(token_text)
