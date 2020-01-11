@@ -86,14 +86,11 @@ def predict(args, dataset, model):
     """
     if not args.predictions:
         args.predictions = None
-    if not args.groundtruth:
-        args.groundtruth = None
 
     model.load(args.model_path)
     model.predict(
         dataset,
-        prediction_directory=args.predictions,
-        groundtruth_directory=args.groundtruth
+        prediction_directory=args.predictions
     )
 
 
@@ -120,19 +117,27 @@ def main():
     """
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
+    # Global variables
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-cpl', '--custom_pipeline', default=None, help='Path to a json file of a custom pipeline')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
-    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
-    parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
-    parser.add_argument('-b', '--batch_size', type=int, default=None, help='Batch size. Only works with BERT pipeline.')
+
+    # GPU-specific
+    parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
+
+    # BiLSTM-specific
+    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
+
+    # BERT-specific
+    parser.add_argument('-b', '--batch_size', type=int, default=1, help='Batch size. Only works with BERT pipeline.')
     parser.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate. Only works with BERT pipeline.')
     parser.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for. Only works with BERT pipeline.')
     parser.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use for BERT')
     parser.add_argument('-crf', '--using_crf', action='store_true', help='Use a CRF layer. Only works with BERT pipeline.')
+
     subparsers = parser.add_subparsers()
 
     # Train arguments
