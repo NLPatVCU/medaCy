@@ -30,8 +30,8 @@ class TestBert(unittest.TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
-    def test_prediction_with_testing_pipeline(self):
-        """Tests that a model created with BERT can be fitted and used to predict"""
+    def test_cross_validate_fit_predict(self):
+        """Tests that a model created with BERT can be fitted and used to predict, with and without the CRF layer"""
         pipeline = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
