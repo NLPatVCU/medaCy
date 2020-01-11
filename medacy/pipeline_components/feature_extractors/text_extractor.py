@@ -7,7 +7,8 @@ from medacy.pipeline_components.feature_extractors.discrete_feature_extractor im
 
 
 class TextExtractor(FeatureExtractor):
-    """Text Extractor. Only extracts the text itself so that BERT can handle the rest. Usable
+    """
+    Text Extractor. Only extracts the text itself so that BERT can handle the rest. Usable
     with any other class that only requires the token text for features.
     """
 
@@ -30,9 +31,10 @@ class TextExtractor(FeatureExtractor):
 
     def _token_to_feature_dict(self, index, sentence):
         """
-        :param index: The index of the target word
+        :param index: Not used by this class; only retained to ensure the signature for this method is the same
         :param sentence: An iterable, subscriptable container of Tokens
-        :return: a dict of token texts in the window
+        :return: a list of token texts in the window size
         """
 
-        return [token.text for token in sentence]
+        window = list(range(-self.window_size, self.window_size + 1))
+        return [token.text for i, token in enumerate(sentence) if i in window]
