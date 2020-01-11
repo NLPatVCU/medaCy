@@ -336,30 +336,30 @@ class Dataset:
 
         return total
 
-    def compute_confusion_matrix(self, dataset, leniency=0):
+    def compute_confusion_matrix(self, other, leniency=0):
         """
         Generates a confusion matrix where this Dataset serves as the gold standard annotations and `dataset` serves
         as the predicted annotations. A typical workflow would involve creating a Dataset object with the prediction directory
         outputted by a model and then passing it into this method.
 
-        :param dataset: a Dataset object containing a predicted version of this dataset.
+        :param other: a Dataset object containing a predicted version of this dataset.
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: two element tuple containing a label array (of entity names) and a matrix where rows are gold labels and columns are predicted labels. matrix[i][j] indicates that entities[i] in this dataset was predicted as entities[j] in 'annotation' matrix[i][j] times
         """
-        if not isinstance(dataset, Dataset):
-            raise ValueError("dataset must be instance of Dataset")
+        if not isinstance(other, Dataset):
+            raise ValueError("other must be instance of Dataset")
 
         # verify files are consistent
-        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
+        diff = {d.file_name for d in self} - {d.file_name for d in other}
         if diff:
-            raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
+            raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
         #sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
-        confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
+        confusion_matrix = [[0 * len(entities)] * len(entities)]
 
         for gold_data_file in self:
-            prediction_iter = iter(dataset)
+            prediction_iter = iter(other)
             prediction_data_file = next(prediction_iter)
             while str(gold_data_file) != str(prediction_data_file):
                 prediction_data_file = next(prediction_iter)
@@ -382,16 +382,15 @@ class Dataset:
         of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
 
         :param dataset: a Dataset object containing a predicted version of this dataset.
-        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: a dictionary containing the ambiguity computations on each gold, predicted file pair
         """
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
+        diff = {d.file_name for d in self} - {d.file_name for d in dataset}
         if diff:
-            raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
+            raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
         #Dictionary storing ambiguity over dataset
         ambiguity_dict = {}
@@ -407,7 +406,6 @@ class Dataset:
 
             # compute matrix on the Annotation file level
             ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
-
 
         return ambiguity_dict
 

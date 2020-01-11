@@ -3,9 +3,12 @@ Extracting training data for use in the BERT Learner
 """
 from itertools import cycle
 
+from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 
-class TextExtractor:
-    """Text Extractor. Only extracts the text itself so that BERT can handle the rest. Usable
+
+class TextExtractor(FeatureExtractor):
+    """
+    Text Extractor. Only extracts the text itself so that BERT can handle the rest. Usable
     with any other class that only requires the token text for features.
     """
 
@@ -25,3 +28,13 @@ class TextExtractor:
 
         features = list(zip(features, indices, cycle([file_name])))
         return features, labels
+
+    def _token_to_feature_dict(self, index, sentence):
+        """
+        :param index: Not used by this class; only retained to ensure the signature for this method is the same
+        :param sentence: An iterable, subscriptable container of Tokens
+        :return: a list of token texts in the window size
+        """
+
+        window = list(range(-self.window_size, self.window_size + 1))
+        return [token.text for i, token in enumerate(sentence) if i in window]

@@ -2,7 +2,7 @@ import os
 import shutil
 import tempfile
 import logging
-from unittest import TestCase
+import unittest
 
 import pkg_resources
 
@@ -13,7 +13,7 @@ from medacy.pipelines.testing_pipeline import TestingPipeline
 from medacy.tests.sample_data import test_dir
 
 
-class TestModel(TestCase):
+class TestModel(unittest.TestCase):
     """Tests for medacy.model.model.Model"""
 
     @classmethod
@@ -135,4 +135,8 @@ class TestModel(TestCase):
         expected = sample_df.ann_path
         actual = result._.gold_annotation_file
         self.assertEqual(actual, expected)
+
+
+if __name__ == '__main__':
+    unittest.main()
 

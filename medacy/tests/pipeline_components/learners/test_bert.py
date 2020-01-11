@@ -19,30 +19,37 @@ class TestBert(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.dataset = Dataset(os.path.join(test_dir, 'sample_dataset_1'))
+        cls.dataset = Dataset(os.path.join(test_dir, 'sample_dataset_1'), data_limit=1)
         cls.entities = cls.dataset.get_labels(as_list=True)
         cls.prediction_directory = tempfile.mkdtemp()  # Directory to store predictions
+        cls.core = 3
+        cls.batch_size = 3
 
     @classmethod
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
-    def test_prediction_with_testing_pipeline(self):
-        """Tests that a model created with the BiLSTM+CRF can be fitted and used to predict"""
+    def test_cross_validate_fit_predict(self):
+        """Tests that a model created with BERT can be fitted and used to predict, with and without the CRF layer"""
         pipeline = BertPipeline(
             entities=self.entities,
-            cuda_device=-1
+            pretrained_model='bert-base-cased',
+            batch_size=self.batch_size,
+            cuda_device=self.core
         )
 
         pipeline_crf = BertPipeline(
             entities=self.entities,
-            cuda_device=-1,
+            pretrained_model='bert-base-cased',
+            batch_size=self.batch_size,
+            cuda_device=self.core,
             using_crf=True
         )
 
         for pipe in [pipeline, pipeline_crf]:
             model = Model(pipe)
+            model.cross_validate(self.dataset, 2)
             model.fit(self.dataset)
             resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
             self.assertIsInstance(resulting_dataset, Dataset)
