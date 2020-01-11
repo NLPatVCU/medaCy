@@ -151,7 +151,7 @@ class Vectorizer:
         :param tag_indices: List of tag indices.
         :return: List of tags.
         """
-        to_tag = {y:x for x, y in self.tag_to_index.items()}
+        to_tag = {y: x for x, y in self.tag_to_index.items()}
         tags = [to_tag[index] for index in tag_indices]
         return tags
 
