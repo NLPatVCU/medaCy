@@ -23,6 +23,7 @@ class TestBert(unittest.TestCase):
         cls.entities = cls.dataset.get_labels(as_list=True)
         cls.prediction_directory = tempfile.mkdtemp()  # Directory to store predictions
         cls.core = 3
+        cls.batch_size = 3
 
     @classmethod
     def tearDownClass(cls):
@@ -34,18 +35,21 @@ class TestBert(unittest.TestCase):
         pipeline = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
+            batch_size=self.batch_size,
             cuda_device=self.core
         )
 
         pipeline_crf = BertPipeline(
             entities=self.entities,
             pretrained_model='bert-base-cased',
+            batch_size=self.batch_size,
             cuda_device=self.core,
             using_crf=True
         )
 
         for pipe in [pipeline, pipeline_crf]:
             model = Model(pipe)
+            model.cross_validate(self.dataset, 2)
             model.fit(self.dataset)
             resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
             self.assertIsInstance(resulting_dataset, Dataset)
