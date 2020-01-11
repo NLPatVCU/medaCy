@@ -55,7 +55,7 @@ setup(
         'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.0'
     ],
     install_requires=[
-        'spacy==2.1.4',
+        'spacy==2.2.0',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
         'torch==1.2.0',
