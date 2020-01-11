@@ -27,3 +27,12 @@ class TextExtractor(FeatureExtractor):
 
         features = list(zip(features, indices, cycle([file_name])))
         return features, labels
+
+    def _token_to_feature_dict(self, index, sentence):
+        """
+        :param index: The index of the target word
+        :param sentence: An iterable, subscriptable container of Tokens
+        :return: a dict of token texts in the window
+        """
+
+        return [token.text for token in sentence]
