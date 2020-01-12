@@ -30,6 +30,7 @@ class TestBert(unittest.TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
+    @unittest.skip("Requires too much memory")
     def test_cross_validate_fit_predict(self):
         """Tests that a model created with BERT can be fitted and used to predict, with and without the CRF layer"""
         pipeline = BertPipeline(
