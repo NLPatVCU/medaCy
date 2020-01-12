@@ -31,10 +31,16 @@ class TextExtractor(FeatureExtractor):
 
     def _token_to_feature_dict(self, index, sentence):
         """
-        :param index: Not used by this class; only retained to ensure the signature for this method is the same
+        :param index: The position of the target token in the sentence
         :param sentence: An iterable, subscriptable container of Tokens
         :return: a list of token texts in the window size
         """
 
-        window = list(range(-self.window_size, self.window_size + 1))
-        return [token.text for i, token in enumerate(sentence) if i in window]
+        token_texts = []
+
+        for i in range(-self.window_size, self.window_size + 1):
+            # loop through our window, ignoring tokens that aren't there
+            if not 0 <= index + i < len(sentence):
+                continue
+            token = sentence[index + i]
+            token_texts.append(token.text)
