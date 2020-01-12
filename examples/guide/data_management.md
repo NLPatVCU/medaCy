@@ -132,7 +132,8 @@ A *Dataset* is utilized for two main tasks:
 To utilize a *Dataset* for training insure that the data you're loading is valid training data in a supported annotation format. After creating a *Model* with a processing *Pipeline*, simply pass the *Dataset* in for prediction. Here is an example of training an NER model for extraction of information relevant to nano-particles.
 
 ```python
-from medacy.data import Dataset
+from medacy.data.dataset import Dataset
+from medacy.model.model import Model
 from medacy.pipelines import FDANanoDrugLabelPipeline
 
 dataset = Dataset('/home/medacy/data')
@@ -150,8 +151,8 @@ model.fit(dataset)
 Once you have a trained or imported a model, pass in a Dataset object for bulk prediction of text.
 
 ```python
-from medacy.data import Dataset
-from medacy.model import Model
+from medacy.data.dataset import Dataset
+from medacy.model.model import Model
 
 dataset = Dataset('/home/medacy/data')
 model = Model.load_external('medacy_model_clinical_notes')
