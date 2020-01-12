@@ -55,7 +55,7 @@ setup(
         'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.0'
     ],
     install_requires=[
-        'spacy==2.2.0',
+        'spacy==2.2.2',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
         'torch==1.2.0',
@@ -70,7 +70,7 @@ setup(
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0',
         'gensim==3.8.0',
-        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz'
+        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz'
     ],
     tests_require=[
         "pytest",
