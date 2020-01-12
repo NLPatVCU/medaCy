@@ -30,7 +30,7 @@ class MetaMapOverlayer(BaseOverlayer):
     name = "metamap_annotator"
     dependencies = []
 
-    def __init__(self, spacy_pipeline, metamap: MetaMap, cuis=True, semantic_type_labels=['orch', 'phsu'], merge_tokens=False):
+    def __init__(self, spacy_pipeline, metamap: MetaMap, cuis=True, semantic_type_labels=None, merge_tokens=False):
         """
         Initializes a pipeline component that annotates MetaMap output onto a spacy doc object.
         :param spacy_pipeline: an instance of a spacy language pipeline.
@@ -42,7 +42,7 @@ class MetaMapOverlayer(BaseOverlayer):
         self.nlp = spacy_pipeline
         self.metamap = metamap
         self.cuis = cuis
-        self.semantic_type_labels = semantic_type_labels
+        self.semantic_type_labels = semantic_type_labels or ['orch', 'phsu']
         self.merge_tokens = merge_tokens
 
     def __call__(self, doc):
@@ -135,3 +135,8 @@ class MetaMapOverlayer(BaseOverlayer):
                             except BaseException:
                                 continue
         return doc
+
+    def get_report(self):
+        report = super().get_report() + '\n'
+        report += f"\tcuis = {self.cuis}\n\tsemantic_type_labels = {self.semantic_type_labels}\n\tmerge_tokens = {self.merge_tokens}"
+
