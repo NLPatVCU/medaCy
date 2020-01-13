@@ -126,11 +126,20 @@ class MetaMap:
         output = str(output.decode('utf-8'))
 
         xml = ""
-        for line in output.split("\n")[1:]:
+        lines = output.split('\n')
+
+        # Lines at index 1 and 2 are a header for the XML output
+        for line in lines[1:3]:
+            xml += line + '\n'
+
+        # The beginning of the metamap-specific XML is this tag
+        xml += "<metamap>\n"
+
+        for line in output.split("\n")[3:]:
             if not all(item in line for item in ['DOCTYPE', 'xml']):
-                xml += line+'\n'
-        xml = "<metamap>\n" + xml + "</metamap>"  # surround in single root tag - hacky.
-        xml = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE MMOs PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://metamap.nlm.nih.gov/DTD/MMOtoXML_v5.dtd">\n'+xml
+                xml += line + '\n'
+
+        xml += "</metamap>"  # surround in single root tag - hacky.
 
         if output is None:
             raise Exception("An error occured while using metamap: %s" % error)
