@@ -42,7 +42,7 @@ class MetaMapOverlayer(BaseOverlayer):
         self.nlp = spacy_pipeline
         self.metamap = metamap
         self.cuis = cuis
-        self.semantic_type_labels = semantic_type_labels or ['orch', 'phsu']
+        self.semantic_type_labels = semantic_type_labels or []
         self.merge_tokens = merge_tokens
 
     def __call__(self, doc):
