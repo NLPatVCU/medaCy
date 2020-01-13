@@ -29,18 +29,15 @@ class TextExtractor(FeatureExtractor):
         features = list(zip(features, indices, cycle([file_name])))
         return features, labels
 
-    def _token_to_feature_dict(self, index, sentence):
+    def get_features_with_span_indices(self, doc):
         """
-        :param index: The position of the target token in the sentence
-        :param sentence: An iterable, subscriptable container of Tokens
-        :return: a list of token texts in the window size
+        Given a document this method orchestrates the organization of features and labels for the sequences to classify.
+        Sequences for classification are determined by the sentence boundaries set by spaCy. These can be modified.
+
+        :param doc: an annotated spaCy Doc object
+        :return: Tuple of parallel lists, a list of token texts and a list of corresponding character spans
         """
 
-        token_texts = []
-
-        for i in range(-self.window_size, self.window_size + 1):
-            # loop through our window, ignoring tokens that aren't there
-            if not 0 <= index + i < len(sentence):
-                continue
-            token = sentence[index + i]
-            token_texts.append(token.text)
+        features = [token.text for token in doc]
+        indices = [(token.idx, token.idx + len(token)) for token in doc]
+        return features, indices
