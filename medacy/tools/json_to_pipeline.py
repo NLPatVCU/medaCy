@@ -4,10 +4,11 @@ import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.gold_annotator_component import GoldAnnotatorOverlayer
+from medacy.pipeline_components.feature_extractors.text_extractor import TextExtractor
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component import MetaMapAllTypesOverlayer
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
+from medacy.pipeline_components.learners.bert_learner import BertLearner
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
 from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
@@ -16,10 +17,7 @@ from medacy.pipelines.base.base_pipeline import BasePipeline
 
 required_keys = [
     'learner',
-    'entities',
     'spacy_pipeline',
-    'spacy_features',
-    'window_size',
 ]
 
 
@@ -29,11 +27,7 @@ def json_to_pipeline(json_path):
 
     The json must have the following keys:
 
-    'learner': 'CRF' or 'BiLSTM'
-        if 'learner' is 'BiLSTM', two additional keys are required:
-            'cuda_device': the GPU to use (or -1 for the CPU)
-            'word_embeddings': path to the word embeddings file
-    'entities': a list of strings
+    'learner': 'CRF', 'BiLSTM', or 'BERT'
     'spacy_pipeline': the spaCy model to use
     'spacy_features': a list of features that exist as spaCy token annotations
     'window_size': the number of words +/- the target word whose features should be used along with the target word
@@ -56,17 +50,8 @@ def json_to_pipeline(json_path):
         raise ValueError(f"Required key(s) '{missing_keys}' was/were not found in the json file.")
 
     class CustomPipeline(BasePipeline):
-        def __init__(self):
-            super().__init__(
-                "custom_pipeline",
-                spacy_pipeline=spacy.load(input_json['spacy_pipeline'])
-            )
-
-            self.entities = input_json['entities']
-
-            self.spacy_pipeline.tokenizer = self.get_tokenizer()
-
-            self.add_component(GoldAnnotatorOverlayer, self.entities)
+        def __init__(self, entities, **kwargs):
+            super().__init__(entities, spacy_pipeline=spacy.load(input_json['spacy_pipeline']))
 
             if 'metamap' in input_json.keys():
                 if 'semantic_types' not in input_json.keys():
@@ -83,9 +68,24 @@ def json_to_pipeline(json_path):
                 else:
                     raise ValueError("'semantic_types' must be 'all', 'none', or a list of strings")
 
+            # BERT values
+            self.cuda_device = kwargs['cuda_device'] if 'cuda_device' in kwargs else -1
+            self.batch_size = kwargs['batch_size'] if 'batch_size' in kwargs else 8
+            self.learning_rate = kwargs['learning_rate'] if 'learning_rate' in kwargs else 1e-5
+            self.epochs = kwargs['epochs'] if 'epochs' in kwargs else 3
+            self.pretrained_model = kwargs['pretrained_model'] if 'pretrained_model' in kwargs else 'bert-large-cased'
+            self.using_crf = kwargs['using_crf'] if 'using_crf' in kwargs else False
+
+            # BiLSTM value
+            if input_json['learner'] == 'BiLSTM':
+                if 'word_embeddings' not in kwargs:
+                    raise ValueError("BiLSTM learner requires word embeddings; use the parameter '--word_embeddings' "
+                                     "to specify an embedding path")
+            self.word_embeddings = kwargs['word_embeddings']
+
         def get_tokenizer(self):
             if 'tokenizer' not in input_json.keys():
-                return self.spacy_pipeline.tokenizer
+                return None
 
             selection = input_json['tokenizer']
             options = {
@@ -98,7 +98,7 @@ def json_to_pipeline(json_path):
                 raise ValueError(f"Tokenizer selection '{selection}' not an option")
 
             Tokenizer = options[selection]
-            return Tokenizer(self.spacy_pipeline).tokenizer
+            return Tokenizer(self.spacy_pipeline)
 
         def get_learner(self):
             learner_selection = input_json['learner']
@@ -112,19 +112,33 @@ def json_to_pipeline(json_path):
                             all_possible_transitions=True
                             )
                         )
-
             if learner_selection == 'BiLSTM':
-                for k in ['word_embeddings', 'cuda_device']:
-                    if k not in input_json.keys():
-                        raise ValueError(f"'{k}' must be specified when the learner is BiLSTM")
-                return 'BiLSTM+CRF', BiLstmCrfLearner(input_json['word_embeddings'], input_json['cuda_device'])
+                return 'BiLSTM+CRF', BiLstmCrfLearner(self.word_embeddings, self.cuda_device)
+            if learner_selection == 'BERT':
+                learner = BertLearner(
+                    self.cuda_device,
+                    pretrained_model=self.pretrained_model,
+                    batch_size=self.batch_size,
+                    learning_rate=self.learning_rate,
+                    epochs=self.epochs,
+                    using_crf=self.using_crf
+                )
+                return 'BERT', learner
             else:
-                raise ValueError(f"'learner' must be 'CRF' or 'BiLSTM")
+                raise ValueError(f"'learner' must be 'CRF', 'BiLSTM', or 'BERT'")
 
         def get_feature_extractor(self):
+            if input_json['learner'] == 'BERT':
+                return TextExtractor()
+
             return FeatureExtractor(
                 window_size=input_json['window_size'],
                 spacy_features=input_json['spacy_features']
             )
+
+        def get_report(self):
+            report = super().get_report() + '\n\n'
+            report += f"JSON path: {__file__}\n"
+            return report
 
     return CustomPipeline
