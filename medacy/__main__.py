@@ -23,37 +23,34 @@ def setup(args):
     dataset = Dataset(args.dataset)
     entities = list(dataset.get_labels())
 
-    pipeline = None
-
     if args.pipeline == 'spacy':
         logging.info('Using spacy model')
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
-    elif args.custom_pipeline is not None:
+        return dataset, model
+
+    if args.custom_pipeline is not None:
+        logging.info(f"Using custom pipeline configured at {args.custom_pipeline}")
         # Construct a pipeline class (not an instance) based on the provided json path;
         # args.custom_pipeline is that path
         Pipeline = json_to_pipeline(args.custom_pipeline)
-        # All parameters are part of the class, thus nothing needs to be set when instantiating
-        pipeline = Pipeline()
-        model = Model(pipeline)
     else:
         # Parse the argument as a class name in module medacy.pipelines
         module = importlib.import_module("medacy.pipelines")
         Pipeline = getattr(module, args.pipeline)
         logging.info('Using %s', args.pipeline)
 
-        pipeline = Pipeline(
-            entities=entities,
-            cuda_device=args.cuda,
-            word_embeddings=args.word_embeddings,
-            batch_size=args.batch_size,
-            learning_rate=args.learning_rate,
-            epochs=args.epochs,
-            pretrained_model=args.pretrained_model,
-            using_crf=args.using_crf
-        )
+    pipeline = Pipeline(
+        entities=entities,
+        cuda_device=args.cuda,
+        word_embeddings=args.word_embeddings,
+        batch_size=args.batch_size,
+        learning_rate=args.learning_rate,
+        epochs=args.epochs,
+        pretrained_model=args.pretrained_model,
+        using_crf=args.using_crf
+    )
 
-        model = Model(pipeline)
-
+    model = Model(pipeline)
     return dataset, model
 
 
@@ -116,7 +113,7 @@ def main():
     Main function where initial argument parsing happens.
     """
     # Argparse setup
-    parser = argparse.ArgumentParser(prog='medacy', description='Train and evaluate medaCy pipelines.')
+    parser = argparse.ArgumentParser(prog='medacy', description='Train, evaluate, and predict with medaCy.')
     # Global variables
     parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
@@ -129,7 +126,7 @@ def main():
     parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
 
     # BiLSTM-specific
-    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings.')
+    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings, needed for BiLSTM.')
 
     # BERT-specific
     parser.add_argument('-b', '--batch_size', type=int, default=1, help='Batch size. Only works with BERT pipeline.')
@@ -148,15 +145,14 @@ def main():
     # Predict arguments
     parser_predict = subparsers.add_parser('predict', help='Run predictions on the dataset using a trained model.')
     parser_predict.add_argument('-m', '--model_path', required=True, help='Trained model to load.')
-    parser_predict.add_argument('-gt', '--groundtruth', action='store_true', help='Use to store groundtruth files.')
-    parser_predict.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
+    parser_predict.add_argument('-pd', '--predictions', default=None, help='Directory to store prediction files.')
     parser_predict.set_defaults(func=predict)
 
     # Cross Validation arguments
     parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
     parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
-    parser_validate.add_argument('-gt', '--groundtruth', action='store_true', help='Use to store groundtruth files.')
-    parser_validate.add_argument('-pd', '--predictions', action='store_true', help='Use to store prediction files.')
+    parser_validate.add_argument('-gt', '--groundtruth', type=str, default=None, help='Directory to write groundtruth files.')
+    parser_validate.add_argument('-pd', '--predictions', type=str, default=None, help='Directory to write prediction files.')
     parser_validate.set_defaults(func=cross_validate)
 
     # Parse initial args
@@ -164,7 +160,7 @@ def main():
 
     if args.batch_size is not None:
         if 'bert' not in args.pipeline.lower() and 'bert' not in args.custom_pipeline.lower():
-            raise NotImplementedError('Batch size only implemented for BERT pipelines')
+            logging.warning('Batch size only implemented for BERT pipelines')
 
     # Logging
     device = str(args.cuda) if args.cuda >= 0 else '_cpu'

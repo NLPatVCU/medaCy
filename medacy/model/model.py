@@ -342,6 +342,7 @@ class Model:
             }
 
         entity_counts = training_dataset.compute_counts()
+        entity_counts['system'] = sum(entity_counts.values())
 
         table_data = [
             [f"{label} ({entity_counts[label]})",  # Entity (Count)
