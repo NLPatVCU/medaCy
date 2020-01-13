@@ -139,4 +139,4 @@ class MetaMapOverlayer(BaseOverlayer):
     def get_report(self):
         report = super().get_report() + '\n'
         report += f"\tcuis = {self.cuis}\n\tsemantic_type_labels = {self.semantic_type_labels}\n\tmerge_tokens = {self.merge_tokens}"
-
+        return report
