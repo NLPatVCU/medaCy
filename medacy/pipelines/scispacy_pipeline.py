@@ -26,7 +26,7 @@ class ScispacyPipeline(BasePipeline):
         :param entities: a list of entities
         :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
         """
-        super().__init__(entities, spacy_pipeline=spacy.load("en_core_sci_md"))
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_sci_md"), **kwargs)
 
         if metamap:
             metamap = MetaMap(metamap)

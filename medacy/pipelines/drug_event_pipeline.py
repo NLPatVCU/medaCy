@@ -24,7 +24,7 @@ class DrugEventPipeline(BasePipeline):
         :param entities: entities to be identified, for this pipeline adverse drug events
         :param lexicon: Dictionary with labels and their corresponding lexicons to match on
         """
-        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"), **kwargs)
 
         if metamap is not None:
             self.add_component(MetaMapOverlayer, metamap, semantic_type_labels=[

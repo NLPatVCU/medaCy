@@ -22,7 +22,7 @@ class FDANanoDrugLabelPipeline(BasePipeline):
         :param metamap: an instance of MetaMap
         """
 
-        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"), **kwargs)
 
         if metamap is not None and isinstance(metamap, MetaMap):
             self.add_component(MetaMapOverlayer, metamap)

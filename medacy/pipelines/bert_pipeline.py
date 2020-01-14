@@ -26,7 +26,7 @@ class BertPipeline(BasePipeline):
         :param learning_rate: Learning rate to use during training.
         :param epochs: Number of epochs to use for training.
         """
-        super().__init__(entities=entities, spacy_pipeline=spacy.load("en_core_web_sm"))
+        super().__init__(entities=entities, spacy_pipeline=spacy.load("en_core_web_sm"), **kwargs)
 
         self.cuda_device = kwargs['cuda_device'] if 'cuda_device' in kwargs else -1
         self.batch_size = kwargs['batch_size'] if 'batch_size' in kwargs else 8
