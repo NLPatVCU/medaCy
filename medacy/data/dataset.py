@@ -36,7 +36,7 @@ Running:
     False
     >>> metamap = MetaMap('/home/path/to/metamap/binary')
     >>> with metamap:
-    ...     dataset.metamap(metamap)
+    ...     metamap.metamap_dataset(dataset)
     >>> dataset.is_metamapped()
     True
 
@@ -62,15 +62,11 @@ object. Instructions for creating such a dataset can be found `here <https://git
 wrap them.
 """
 import importlib
-import json
 import logging
-import math
-import multiprocessing
 import os
 from collections import Counter
 
 import spacy
-from joblib import Parallel, delayed
 
 from medacy.data.annotations import Annotations
 from medacy.data.data_file import DataFile
@@ -210,88 +206,6 @@ class Dataset:
 
         subdataset.all_data_files = sub_data_files
         return subdataset
-
-    def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
-        """
-        Metamaps the files registered by a Dataset. Attempts to Metamap utilizing a max prune depth of 30, but on
-        failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
-        More information can be found in the MetaMap documentation.
-
-        Example usage:
-        >>> metamap = MetaMap("/path/to/metamap")
-        >>> data = Dataset("/path/to/data")
-        >>> with metamap:
-        ...     data.metamap(metamap)
-
-        :param metamap: an instance of MetaMap.
-        :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
-        :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
-        :return: Inside *metamapped_files_directory* or by default inside a sub-directory of your *data_directory* named *metamapped* we have that for each raw text file, *file_name*, an auxiliary metamapped version is created and stored.
-        """
-        self.metamap = metamap
-
-        if self.is_metamapped():
-            return True
-
-        # make metamap directory if it doesn't exist.
-        if not os.path.isdir(self.metamapped_files_directory):
-            os.makedirs(self.metamapped_files_directory)
-
-        # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
-        if retry_possible_corruptions:
-            # Do not metamap files that are already metamapped and above 200 bytes in size
-            already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)
-                                  if os.path.getsize(os.path.join(self.metamapped_files_directory, file)) > 200]
-        else:
-            # Do not metamap files that are already metamapped
-            already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
-
-        files_to_metamap = [data_file.txt_path for data_file in self.all_data_files if data_file.file_name not in already_metamapped]
-
-        logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
-
-        Parallel(n_jobs=n_jobs)(delayed(self._parallel_metamap)(files_to_metamap, i) for i in range(len(files_to_metamap)))
-
-        if self.is_metamapped():
-            for data_file in self.all_data_files:
-                data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                         data_file.txt_path.split(os.path.sep)[-1]
-                                                         .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
-
-    def _parallel_metamap(self, files, i):
-        """
-        Facilitates Metamapping in parallel by forking off processes to Metamap each file individually.
-
-        :param files: an array of file paths to the file to map
-        :param i: index in the array used to determine the file that the called process will be responsible for mapping
-        :return: metamapped_files_directory now contains metamapped versions of the dataset files
-        """
-        file = files[i].split(os.path.sep)[-1]
-        file_path = files[i]
-        logging.info("Attempting to Metamap: %s", file_path)
-        mapped_file_location = os.path.join(self.metamapped_files_directory, file.replace(self.raw_text_file_extension, "metamapped"))
-
-        with open(mapped_file_location, 'w') as mapped_file:
-            max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
-
-            metamap_dict = None
-            # while current prune depth causes out of memory on document
-            while metamap_dict is None or metamap_dict['metamap'] is None:
-                if max_prune_depth <= 0:
-                    logging.critical("Failed to to metamap after multiple attempts: %s", file_path)
-                    return
-                try:
-                    metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth) #attempt to metamap
-                    if metamap_dict['metamap'] is not None: #if successful
-                        break
-                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                except BaseException as e:
-                    metamap_dict = None
-                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                    logging.warning(f"Error Metamapping: {file_path} after raising {type(e).__name__}: {str(e)}")
-
-            mapped_file.write(json.dumps(metamap_dict))
-            logging.info("Successfully Metamapped: %s", file_path)
 
     def is_metamapped(self):
         """
