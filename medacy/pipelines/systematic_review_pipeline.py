@@ -1,9 +1,9 @@
-import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
+from medacy.pipeline_components.learners.crf_learner import get_crf
 from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
@@ -33,14 +33,7 @@ class SystematicReviewPipeline(BasePipeline):
             self.add_component(MetaMapOverlayer, metamap)
 
     def get_learner(self):
-        return ("CRF_l2sgd",
-                sklearn_crfsuite.CRF(
-                    algorithm='l2sgd',
-                    c2=0.1,
-                    max_iterations=100,
-                    all_possible_transitions=True
-                    )
-                )
+        return "CRF_l2sgd", get_crf()
 
     def get_tokenizer(self):
         return SystematicReviewTokenizer(self.spacy_pipeline)
