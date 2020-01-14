@@ -7,7 +7,7 @@ from spacy.tokens import Token
 from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.tests.pipeline_components.feature_overlayers.metamap import have_metamap, reason, metamap_path
-
+from medacy.tests.sample_data import sample_dataset
 
 class TestMetaMapComponent(unittest.TestCase):
     """Unit tests for medacy.pipeline_components.feature_overlayers.metamap.metamap_component.MetaMapOverlayer"""
@@ -32,7 +32,11 @@ class TestMetaMapComponent(unittest.TestCase):
     @unittest.skipUnless(have_metamap, reason)
     def test_overlays_cuis(self):
         """Tests that the MetaMapOverlayer overlays CUIs correctly given a document that hasn't been metamapped"""
-        doc = self.nlp('I took Tylenol and it gave me nausea and chest pain')
+        sample_doc = sample_dataset.all_data_files[0].txt_path
+        with open(sample_doc) as f:
+            sample_text = f.read()
+
+        doc = self.nlp(sample_text)
 
         metamap = MetaMap(metamap_path)
         metamap_component = MetaMapOverlayer(self.nlp, metamap)
@@ -48,3 +52,8 @@ class TestMetaMapComponent(unittest.TestCase):
         # Test that all features are a CUI or '-1'
         all_match = all(re.match(r'(C\d+)|(-1)', c) for c in cuis)
         self.assertTrue(all_match)
+
+
+if __name__ == '__main__':
+    unittest.main()
+

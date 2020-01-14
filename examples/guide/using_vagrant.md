@@ -1,19 +1,19 @@
-# Utilizing Vagrant
+# Using Vagrant
 
 [Vagrant](https://www.vagrantup.com/) is a command line utility for creating project-specific virtual machines (VMs).
-MedaCy implements Vagrant to enable development on different platforms, including Windows.
+MedaCy uses Vagrant to enable development on different platforms, including Windows.
 This guide will instruct you on how to use Vagrant within PyCharm or from the command line.
 
 ## Installations
 
-The only additional software you need to utilize Vagrant is VirtualBox and Vagrant itself.
+The only additional software you need to use Vagrant is VirtualBox and Vagrant itself.
 This guide assumes that if you plan to use PyCharm, you have the professional edition
 and are already familiar with how to use its base features.
 The full user guide for PyCharm can be found [here](https://www.jetbrains.com/help/pycharm/meet-pycharm.html).
  
 ### Installing VirtualBox
 
-[VirtualBox](https://www.virtualbox.org/) is an open-source program for implementing virtual machines.
+[VirtualBox](https://www.virtualbox.org/) is an open-source program for creating virtual machines.
 Vagrant will utilize it to create your medaCy virtual machine.
 You can download the version appropriate for your machine [here](https://www.virtualbox.org/wiki/Downloads)
 and follow the installation instructions that they provide.
@@ -71,10 +71,9 @@ vagrant@ubuntu-bionic:/vagrant$ ls
 ```
 
 After running the first command, you could run `ls` to see the root directory of your 
-VM, if you feel so inclined. We're interested in what's in the `/vagrant` subdirectory.
-It should look familiar, like the root directory of your medaCy project. Why is that?
-*Because it is!* The `/vagrant` directory of the VM is shared between the VM and the 
-directory on the host machine containing the Vagrantfile.
+VM, if you feel so inclined. We're interested in what's in the `/vagrant` subdirectory. 
+The `/vagrant` directory of the VM contains your copy of the medaCy repository, and is shared between the 
+VM and the directory on the host machine containing the Vagrantfile.
 
 ### So should I continue by setting up a virtual environment for medaCy?
 
@@ -83,15 +82,16 @@ No. Think of your VM as an enhanced virtual environment. When the VM was created
  In theory, you'll only be using this VM for medaCy, so there's no need to 
  create a separate environment for it.
  
+Because of how Python 3 was installed on the VM, you will need to use the command `Python3` rather than `Python`,
+and `pip3` instead of `pip`; `pip3` may require using `sudo`.
+ 
 ### What now?
 
 Now that you have a medaCy-specific Ubuntu VM with a shared folder between the VM and your machine,
 you can edit any file you'd like in whatever text editor you choose, then run it within the VM from
 the command line. You won't need to worry about whether or not medaCy is compatible with your host machine.
 
-Because of how Python 3 was installed on the VM, you will need to use the command `Python3` rather than `Python`.
-
-Something to keep in mind is that the VM has limited resources and should only be used for developing
+Keep in mind that the VM has limited resources and should only be used for developing
 medaCy itself and generating predictions. Model training requires significantly more resources and 
 should be done on a machine with a significant amount of memory.
 
@@ -142,12 +142,9 @@ icon on the right side of the dialogue box and select "add". Another dialogue bo
 Select "Vagrant" on the left side of the new box. Set the Python interpreter path to 
 `usr/bin/python3`.
 
-![Configuring the remote interpreter](./images/config_remote_interpreter.png)
-
 ## Finishing up
 
-I hope that this guide was able to clarify how to configure Vagrant for medaCy.
+We hope that this guide was able to clarify how to configure Vagrant for medaCy.
 Should you encounter any issues, please follow the links throughout the guide
 to read the documentation for Vagrant and PyCharm. If you believe the problem is 
-specific to Vagrant is configured for this project, please [open a new issue](https://github.com/NLPatVCU/medaCy/issues)
-and I will get back to you as soon as I can.
+specific to Vagrant is configured for this project, please [open a new issue](https://github.com/NLPatVCU/medaCy/issues).
