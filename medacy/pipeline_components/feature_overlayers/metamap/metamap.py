@@ -447,14 +447,14 @@ class MetaMap:
         Parallel(n_jobs=n_jobs)(
             delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
 
-        if dataset.is_metamapped():
-            for data_file in dataset:
-                data_file.metamapped_path = os.path.join(
-                    mm_dir,
-                    data_file.txt_path.split(os.path.sep)[-1].replace(
-                        ".%s" % "txt", ".metamapped"
-                    )
-                )
+        if not dataset.is_metamapped():
+            raise RuntimeError(f"MetaMapping {dataset} was unsuccessful")
+
+        for data_file in dataset:
+            data_file.metamapped_path = os.path.join(
+                mm_dir,
+                data_file.file_name + ".metamapped"
+            )
 
     def _parallel_metamap(self, file_path, mm_dir):
         """
