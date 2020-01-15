@@ -212,8 +212,7 @@ class Model:
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")
 
-        tags = sorted(training_dataset.get_labels(as_list=True))
-        self.pipeline.entities = tags
+        tags = sorted(self.pipeline.entities)
         logging.info('Tagset: %s', tags)
 
         eval_stats = {}
@@ -342,7 +341,7 @@ class Model:
             }
 
         entity_counts = training_dataset.compute_counts()
-        entity_counts['system'] = sum(entity_counts.values())
+        entity_counts['system'] = sum(v for k, v in entity_counts.items() if k in self.pipeline.entities)
 
         table_data = [
             [f"{label} ({entity_counts[label]})",  # Entity (Count)
