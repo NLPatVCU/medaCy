@@ -122,9 +122,11 @@ class Dataset:
                 if not os.path.isfile(txt_file_path):
                     logging.warning(f"No matching txt file was found for {file}")
                     continue
-                metamap_path = os.path.join(self.metamapped_files_directory, file.rstrip("ann") + "metamapped")
-                if not os.path.isfile(metamap_path):
-                    metamap_path = None
+                metamap_path = None
+                if self.metamapped_files_directory:
+                    metamap_path = os.path.join(self.metamapped_files_directory, file.rstrip("ann") + "metamapped")
+                    if not os.path.isfile(metamap_path):
+                        metamap_path = None
                 full_ann_path = os.path.join(self.data_directory, file)
                 new_datafile = DataFile(file.rstrip(".ann"), txt_file_path, full_ann_path, metamap_path)
                 self.all_data_files.append(new_datafile)

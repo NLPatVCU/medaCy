@@ -1,8 +1,8 @@
 import os
 import shutil
 import tempfile
+import unittest
 from collections import Counter
-from unittest import TestCase
 
 import pkg_resources
 
@@ -11,7 +11,7 @@ from medacy.data.annotations import Annotations
 from medacy.tests.sample_data import test_dir
 
 
-class TestDataset(TestCase):
+class TestDataset(unittest.TestCase):
     """Unit tests for Dataset"""
 
     @classmethod
@@ -66,3 +66,13 @@ class TestDataset(TestCase):
 
         with self.assertRaises(FileNotFoundError):
             ann = self.dataset['notafilepath']
+
+    def test_valid_datafiles(self):
+        """Tests that each DataFile in the Dataset is an existing file"""
+        for d in self.dataset:
+            self.assertTrue(os.path.isfile(d.txt_path))
+            self.assertTrue(os.path.isfile(d.ann_path))
+
+
+if __name__ == '__main__':
+    unittest.main()
