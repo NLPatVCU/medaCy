@@ -138,6 +138,7 @@ def sort_entities(entities):
     if not all(isinstance(e, Entity) for e in entities):
         raise ValueError("At least one item in entities is not an Entity")
 
+    entities = entities.copy()
     entities.sort(key=lambda x: (x.start, x.end))
 
     for i, e in enumerate(entities, 1):
