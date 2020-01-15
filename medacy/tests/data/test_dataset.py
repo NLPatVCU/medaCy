@@ -31,20 +31,10 @@ class TestDataset(TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
-    def test_init_training(self):
-        """Tests that the sample dataset is accurately identified as being for training"""
-        self.assertTrue(self.dataset.is_training_directory)
-
     def test_init_with_data_limit(self):
         """Tests that initializing with a data limit works"""
         dataset = Dataset(self.dataset.data_directory, data_limit=1)
         self.assertEqual(len(dataset), 1)
-
-    def test_init_prediction(self):
-        """Tests that the copy of the sample dataset with only text files is identified as being for prediction"""
-        dataset = Dataset(self.prediction_directory)
-        self.assertIsInstance(dataset, Dataset)
-        self.assertFalse(dataset.is_training_directory)
 
     def test_generate_annotations(self):
         """Tests that generate_annotations() creates Annotations objects"""
@@ -76,5 +66,3 @@ class TestDataset(TestCase):
 
         with self.assertRaises(FileNotFoundError):
             ann = self.dataset['notafilepath']
-
-
