@@ -72,6 +72,7 @@ class TestDataset(unittest.TestCase):
         for d in self.dataset:
             self.assertTrue(os.path.isfile(d.txt_path))
             self.assertTrue(os.path.isfile(d.ann_path))
+            self.assertTrue(os.path.isfile(d.metamapped_path))
 
 
 if __name__ == '__main__':
