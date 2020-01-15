@@ -77,7 +77,7 @@ class Dataset:
     A facilitation class for data management.
     """
 
-    def __init__(self, data_directory, raw_text_file_extension="txt", metamapped_files_directory=None, data_limit=None):
+    def __init__(self, data_directory, data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
 
@@ -86,74 +86,52 @@ class Dataset:
         Both text and ann files: considers a directory for training.
 
         :param data_directory: Directory containing data for training or prediction.
-        :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
-        :param metamapped_files_directory: Location to store metamapped files (default: a sub-directory named *metamapped*)
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
         self.data_directory = data_directory
-        self.raw_text_file_extension = raw_text_file_extension
         self.all_data_files = []
 
-        if metamapped_files_directory is not None:
-            self.metamapped_files_directory = metamapped_files_directory
+        metamap_dir = os.path.join(self.data_directory, 'metamapped')
+        if os.path.isdir(metamap_dir):
+            self.metamapped_files_directory = metamap_dir
         else:
-            self.metamapped_files_directory = os.path.join(self.data_directory, 'metamapped')
+            self.metamapped_files_directory = None
 
         all_files_in_directory = os.listdir(self.data_directory)
 
         # start by filtering all raw_text files, both training and prediction directories will have these
-        raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
+        txt_files = sorted([file for file in all_files_in_directory if file.endswith('.txt')])
+        ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
 
-        if not raw_text_files:  # detected a prediction directory
-            ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
-            self.is_training_directory = False
-
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(ann_files)
-
+        if ann_files and not txt_files:
+            # Directory is for ann files only
             for file in ann_files:
-                annotation_path = os.path.join(data_directory, file)
-                file_name = file[:-len('.ann') - 1]
-                self.all_data_files.append(DataFile(file_name, None, annotation_path))
+                file_name = file.rstrip(".ann")
+                ann_path = os.path.join(self.data_directory, file)
+                self.all_data_files.append(DataFile(file_name, None, ann_path))
+        elif txt_files and not ann_files:
+            # Directory is for txt files only
+            for file in txt_files:
+                file_name = file.rstrip(".txt")
+                txt_path = os.path.join(self.data_directory, file)
+                self.all_data_files.append(DataFile(txt_path, None, None))
+        else:
+            # Construct DataFiles based on what ann files exist
+            for file in ann_files:
+                txt_file_path = os.path.join(self.data_directory, file.rstrip("ann") + "txt")
+                if not os.path.isfile(txt_file_path):
+                    logging.warning(f"No matching txt file was found for {file}")
+                    continue
+                metamap_path = None
+                if self.metamapped_files_directory:
+                    metamap_path = os.path.join(self.metamapped_files_directory, file.rstrip("ann") + "metamapped")
+                    if not os.path.isfile(metamap_path):
+                        metamap_path = None
+                full_ann_path = os.path.join(self.data_directory, file)
+                new_datafile = DataFile(file.rstrip(".ann"), txt_file_path, full_ann_path, metamap_path)
+                self.all_data_files.append(new_datafile)
 
-        else:  # detected a training directory (raw text files exist)
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(raw_text_files)
-
-            if self.data_limit < 1 or self.data_limit > len(raw_text_files):
-                raise ValueError(
-                    "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
-
-            # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".ann") for file in raw_text_files]
-            # only a training directory if every text file has a corresponding ann_file
-            self.is_training_directory = all(os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files)
-
-            # set all file attributes except metamap_path as it is optional.
-            for file in raw_text_files:
-                file_name = file[:-len(raw_text_file_extension) - 1]
-                raw_text_path = os.path.join(data_directory, file)
-
-                if self.is_training_directory:
-                    annotation_path = os.path.join(
-                        data_directory,
-                        file.replace(".%s" % raw_text_file_extension, '.ann')
-                    )
-                else:
-                    annotation_path = None
-                self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
-
-            #If directory is already metamapped, use it.
-            if self.is_metamapped():
-                for data_file in self.all_data_files:
-                    data_file.metamapped_path = os.path.join(
-                        self.metamapped_files_directory,
-                        data_file.txt_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped")
-                    )
+        self.data_limit = data_limit if data_limit is not None else len(self.all_data_files)
 
     def get_data_files(self):
         """

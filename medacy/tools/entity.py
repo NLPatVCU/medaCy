@@ -39,6 +39,16 @@ class Entity:
         return f"{type(self).__name__}({self.tag}, {self.start}, {self.end}, {self.text}, {self.num})"
 
     @classmethod
+    def reset_t(cls):
+        """
+        Resest the T counter for this class to 1
+        :return: The previous value of t
+        """
+        previous = cls.t
+        cls.t = 1
+        return previous
+
+    @classmethod
     def init_from_re_match(cls, match: Match, ent_class, num=None, increment_t=False):
         """
         Creates a new Entity from a regex Match.
@@ -118,3 +128,20 @@ class Entity:
         # Lenient
         return ((self.end > other.start and self.start < other.end) or (self.start < other.end and other.start < self.end)) and self.tag == other.tag
 
+
+def sort_entities(entities):
+    """
+    Sorts a list of Entity instances, adjusting the num value of each one
+    :param entities: a list of Entities
+    :return: a sorted list; all instances have ascending num values starting at 1
+    """
+    if not all(isinstance(e, Entity) for e in entities):
+        raise ValueError("At least one item in entities is not an Entity")
+
+    entities = entities.copy()
+    entities.sort(key=lambda x: (x.start, x.end))
+
+    for i, e in enumerate(entities, 1):
+        e.num = i
+
+    return entities
