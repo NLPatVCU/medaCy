@@ -191,7 +191,7 @@ class Dataset:
 
         :return: True if all data files are metamapped, False otherwise.
         """
-        if not os.path.isdir(self.metamapped_files_directory):
+        if self.metamapped_files_directory is None or not os.path.isdir(self.metamapped_files_directory):
             return False
 
         for file in self.all_data_files:
