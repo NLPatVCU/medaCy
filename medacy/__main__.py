@@ -159,8 +159,10 @@ def main():
     args = parser.parse_args()
 
     if args.batch_size is not None:
+        """
         if 'bert' not in args.pipeline.lower() and 'bert' not in args.custom_pipeline.lower():
             logging.warning('Batch size only implemented for BERT pipelines')
+        """
 
     # Logging
     device = str(args.cuda) if args.cuda >= 0 else '_cpu'
