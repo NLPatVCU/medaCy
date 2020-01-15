@@ -235,6 +235,8 @@ class Model:
             y_test = [self.y_data[index] for index in test_indices]
 
             logging.info("Training Fold %i", fold_num)
+            while True:
+                x = 0
             train_data = [x[0] for x in X_train]
             test_data = [x[0] for x in X_test]
             learner.fit(train_data, y_train)

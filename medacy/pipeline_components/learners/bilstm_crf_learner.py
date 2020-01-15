@@ -79,8 +79,6 @@ class BiLstmCrfLearner:
         if self.device.type != 'cpu':
             logging.info('CUDA available. Moving model to GPU.')
             model = model.to(self.device)
-            while True:
-                x = 0
 
         # Setup optimizer and loss function
         optimizer = optim.SGD(model.parameters(), lr=self.learning_rate)
