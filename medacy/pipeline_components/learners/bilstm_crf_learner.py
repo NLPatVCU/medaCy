@@ -74,6 +74,8 @@ class BiLstmCrfLearner:
             len(self.vectorizer.tag_to_index),
             self.device
         )
+        while True:
+            x = 0
 
         # Move to GPU if possible
         if self.device.type != 'cpu':
