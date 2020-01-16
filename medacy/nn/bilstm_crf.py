@@ -35,13 +35,14 @@ class BiLstmCrf(nn.Module):
 
         super(BiLstmCrf, self).__init__()
 
-        while True:
-            x = 0
-
         # Setup embedding variables
         self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
+
+        while True:
+            x = 0
+
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
 
         # Setup character embedding layers
