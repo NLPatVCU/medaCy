@@ -75,6 +75,9 @@ class BiLstmCrfLearner:
             self.device
         )
 
+        while True:
+            x = 0
+
         # Move to GPU if possible
         if self.device.type != 'cpu':
             logging.info('CUDA available. Moving model to GPU.')
@@ -85,9 +88,6 @@ class BiLstmCrfLearner:
         loss_function = nn.NLLLoss()
 
         logging.info('Training BiLSTM-CRF...')
-
-        while True:
-            x = 0
 
         # Training loop
         for i in range(1, self.epochs + 1):
