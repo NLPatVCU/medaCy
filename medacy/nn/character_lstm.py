@@ -12,7 +12,6 @@ class CharacterLSTM(nn.Module):
     :ivar device: PyTorch device.
     """
     def __init__(self, embedding_dim=100, padding_idx=0, hidden_size=100):
-        import os
 
         super(CharacterLSTM, self).__init__()
 

@@ -30,6 +30,9 @@ class BiLstmCrf(nn.Module):
         """
         self.device = device
 
+        if device.type != 'cpu':
+            torch.set_default_tensor_type('torch.cuda.FloatTensor')
+
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables
