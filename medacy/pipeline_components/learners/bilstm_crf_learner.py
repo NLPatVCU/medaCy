@@ -75,26 +75,20 @@ class BiLstmCrfLearner:
             self.device
         )
 
-        import os
-        print('Before model.to device:')
-        os.system('gpustat')
-
         # Move to GPU if possible
         if self.device.type != 'cpu':
             logging.info('CUDA available. Moving model to GPU.')
             model = model.to(self.device)
-
-        print('After model.to device:')
-        os.system('gpustat')
-
-        while True:
-            x = 0
 
         # Setup optimizer and loss function
         optimizer = optim.SGD(model.parameters(), lr=self.learning_rate)
         loss_function = nn.NLLLoss()
 
         logging.info('Training BiLSTM-CRF...')
+
+        print('Here')
+        while True:
+            x = 0
 
         # Training loop
         for i in range(1, self.epochs + 1):
