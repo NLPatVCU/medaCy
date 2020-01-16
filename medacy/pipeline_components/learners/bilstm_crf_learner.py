@@ -66,6 +66,8 @@ class BiLstmCrfLearner:
             self.vectorizer.load_word_embeddings(self.word_embeddings_file)
 
         data = self.vectorizer.vectorize_dataset(x_data, y_data)
+        while True:
+            x = 0
 
         # Create network
         model = BiLstmCrf(
@@ -74,8 +76,6 @@ class BiLstmCrfLearner:
             len(self.vectorizer.tag_to_index),
             self.device
         )
-        while True:
-            x = 0
 
         # Move to GPU if possible
         if self.device.type != 'cpu':
