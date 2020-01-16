@@ -13,12 +13,8 @@ class CharacterLSTM(nn.Module):
     """
     def __init__(self, embedding_dim=100, padding_idx=0, hidden_size=100):
         import os
-        print('Before super init:')
-        os.system('gpustat')
-        super(CharacterLSTM, self).__init__()
 
-        print('After super init:')
-        os.system('gpustat')
+        super(CharacterLSTM, self).__init__()
 
         self.hidden_size = hidden_size
 
@@ -28,21 +24,12 @@ class CharacterLSTM(nn.Module):
             padding_idx=padding_idx
         )
 
-        print('After character embeddings:')
-        os.system('gpustat')
-
         self.character_lstm = nn.LSTM(
             input_size=embedding_dim,
             hidden_size=hidden_size,
             batch_first=True,
             bidirectional=True
         )
-
-        print('After character lstm:')
-        os.system('gpustat')
-
-        while True:
-            x = 0
 
     def forward(self, indices):
         # Get character embeddings based on indices

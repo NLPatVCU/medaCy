@@ -42,11 +42,17 @@ class BiLstmCrf(nn.Module):
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
         # Setup character embedding layers
-        self.character_lstm = CharacterLSTM(
+        character_lstm = CharacterLSTM(
             embedding_dim=CHARACTER_EMBEDDING_SIZE,
             padding_idx=0,
             hidden_size=CHARACTER_HIDDEN_DIM
         )
+
+        self.character_lstm = character_lstm.to(device)
+
+        print('Here')
+        while True:
+            x = 0
 
         # Setup word embedding layer
         self.word_embeddings = nn.Embedding.from_pretrained(word_vectors)
