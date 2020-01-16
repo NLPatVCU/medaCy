@@ -33,23 +33,11 @@ class BiLstmCrf(nn.Module):
         if device.type != 'cpu':
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
-        import os
-
-        print('Before init superclass:')
-        os.system('gpustat')
-        super(BiLstmCrf, self).__init__()
-        print('After')
-        os.system('gpustat')
-
         # Setup embedding variables
         self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
-        print('Made word vectors:')
-        os.system('gpustat')
-        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
-        print('Concatenated word vectors')
-        os.system('gpustat')
+        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
         while True:
             x = 0
