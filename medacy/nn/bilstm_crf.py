@@ -33,6 +33,8 @@ class BiLstmCrf(nn.Module):
         if device.type != 'cpu':
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
+        super(BiLstmCrf, self).__init__()
+
         # Setup embedding variables
         self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
