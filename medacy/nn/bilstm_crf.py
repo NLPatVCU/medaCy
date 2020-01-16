@@ -33,6 +33,9 @@ class BiLstmCrf(nn.Module):
         if device.type != 'cpu':
             torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
+        while True:
+            x = 0
+
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables
@@ -40,9 +43,6 @@ class BiLstmCrf(nn.Module):
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
-
-        while True:
-            x = 0
 
         # Setup character embedding layers
         self.character_lstm = CharacterLSTM(
