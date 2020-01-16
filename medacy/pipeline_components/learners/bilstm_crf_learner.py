@@ -86,6 +86,9 @@ class BiLstmCrfLearner:
 
         logging.info('Training BiLSTM-CRF...')
 
+        while True:
+            x = 0
+
         # Training loop
         for i in range(1, self.epochs + 1):
             random.shuffle(data)

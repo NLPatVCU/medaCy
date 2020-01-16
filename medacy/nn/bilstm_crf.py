@@ -39,9 +39,6 @@ class BiLstmCrf(nn.Module):
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
-        while True:
-            x = 0
-
         # Setup character embedding layers
         self.character_lstm = CharacterLSTM(
             embedding_dim=CHARACTER_EMBEDDING_SIZE,
