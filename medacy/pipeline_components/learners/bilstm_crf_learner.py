@@ -75,9 +75,6 @@ class BiLstmCrfLearner:
             self.device
         )
 
-        while True:
-            x = 0
-
         # Move to GPU if possible
         if self.device.type != 'cpu':
             logging.info('CUDA available. Moving model to GPU.')

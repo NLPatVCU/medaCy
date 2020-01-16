@@ -41,6 +41,11 @@ class BiLstmCrf(nn.Module):
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
         word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
+        import os
+
+        print('Before char_lstm:')
+        os.system('gpustat')
+
         # Setup character embedding layers
         self.character_lstm = CharacterLSTM(
             embedding_dim=CHARACTER_EMBEDDING_SIZE,
@@ -48,19 +53,34 @@ class BiLstmCrf(nn.Module):
             hidden_size=CHARACTER_HIDDEN_DIM
         )
 
+        print('After character lstm:')
+        os.system('gpustat')
+
         # Setup word embedding layer
         self.word_embeddings = nn.Embedding.from_pretrained(word_vectors)
+
+        print('After word embeddings:')
+        os.system('gpustat')
 
         # The LSTM takes word embeddings concatenated with character verctors as inputs and
         # outputs hidden states with dimensionality hidden_dim.
         lstm_input_size = vector_size + CHARACTER_HIDDEN_DIM*2
         self.lstm = nn.LSTM(lstm_input_size, HIDDEN_DIM, bidirectional=True)
 
+        print('After self.lstm:')
+        os.system('gpustat')
+
         # The linear layer that maps from hidden state space to tag space
         linear_input_size = HIDDEN_DIM*2 + other_features
         self.hidden2tag = nn.Linear(linear_input_size, self.tagset_size)
 
+        print('After self.h2t:')
+        os.system('gpustat')
+
         self.crf = CRF(self.tagset_size)
+
+        while True:
+            x = 0
 
     def _get_character_features(self, sentence):
         """Send each token through its own LSTM to get its character embeddings
