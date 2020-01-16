@@ -12,6 +12,10 @@ class TextExtractor(FeatureExtractor):
     with any other class that only requires the token text for features.
     """
 
+    def __init__(self):
+        self.window_size = 0
+        self.spacy_features = []
+
     def __call__(self, doc):
         """
         Extract token text from document.
