@@ -1,17 +1,11 @@
 """
 Inter-dataset agreement calculator
-
-This script came with the n2c2 dataset and was modified by the medaCy team to
-extract the entity category names directly from the dataset
 """
 
 
 import argparse
-import glob
-import os
-import logging
-from collections import defaultdict
-from xml.etree import cElementTree
+from collections import OrderedDict
+
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
@@ -130,22 +124,11 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
     system_ents = Entity.init_from_doc(ann_2)
 
     tags = {e.tag for e in gold_ents} | {e.tag for e in system_ents}
-    matches = []
     measures = {tag: Measures() for tag in tags}
 
     for s in system_ents:
-        for g in gold_ents:
-            if s.equals(g, mode=mode):
-                matches.append(s)
-
-    # These two for-loops will calculate the tp, fp, and fn scores; note that when system_ents is the
-    # outer iterator, we can use the `in` operator, because items in matches are already determined to be
-    # equal or not equal to items in system_ents according to the selected mode for this call. When gold_ents
-    # is the iterator, we must check again to see if they are equal according to the given mode
-
-    for s in system_ents:
         measure = measures[s.tag]
-        if s in matches:
+        if any(s.equals(g, mode=mode) for g in gold_ents):
             # Add a true positive when a tag in system has a gold match
             measure.tp += 1
         else:
@@ -154,8 +137,8 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
 
     for g in gold_ents:
         measure = measures[g.tag]
-        if not any(g.equals(s, mode=mode) for s in matches):
-            # Add a false negative when a tag in gold is not in matches
+        if not any(g.equals(s, mode=mode) for s in system_ents):
+            # Add a false negative when a tag in gold has no matches in system
             measure.fn += 1
 
     return measures
@@ -183,6 +166,12 @@ def measure_dataset(gold_dataset, system_dataset, mode='strict'):
 
 def _format_results(measures_dict, num_files):
 
+    # Alphabetize the dictionary, keeping system at the end
+    system_measures = measures_dict['system']
+    del measures_dict['system']
+    measures_dict = OrderedDict(sorted(measures_dict.items(), key=lambda t: t[0]))
+    measures_dict['system'] = system_measures
+
     table = [
         ['Tag', 'Prec', 'Rec', 'F1']  # , 'Prec (M)', 'Rec (M)', 'F1 (M)', 'Prec (µ)', 'Rec (µ)', 'F1 (µ)'
     ]
@@ -202,7 +191,7 @@ def main():
     parser = argparse.ArgumentParser(description='Inter-dataset agreement calculator')
     parser.add_argument('gold_directory', help='First data folder path (gold)')
     parser.add_argument('system_directory', help='Second data folder path (system)')
-    parser.add_argument('mode', default='strict', help='strict or lenient')
+    parser.add_argument('-m', '--mode', default='strict', help='strict or lenient (defaults to strict)')
     args = parser.parse_args()
 
     gold_dataset = Dataset(args.gold_directory)
