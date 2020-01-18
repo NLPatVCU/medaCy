@@ -112,7 +112,7 @@ def zip_datasets(dataset_1, dataset_2):
 
     assert len(dataset_1_ann_files) == len(dataset_2_ann_files)
 
-    yield from zip(dataset_1_ann_files, dataset_1_ann_files)
+    yield from zip(dataset_1_ann_files, dataset_2_ann_files)
 
 
 def measure_ann_file(ann_1, ann_2, mode='strict'):
@@ -173,7 +173,7 @@ def measure_dataset(gold_dataset, system_dataset, mode='strict'):
         all_file_measures.append(measure_ann_file(gold, system, mode=mode))
 
     for file_measures in all_file_measures:
-        for tag, measure in file_measures:
+        for tag, measure in file_measures.items():
             tag_measures[tag] += measure
 
     tag_measures['system'] = sum(tag_measures.values(), system_measures)
@@ -187,13 +187,13 @@ def _format_results(measures_dict, num_files):
         ['Tag', 'Prec', 'Rec', 'F1']  # , 'Prec (M)', 'Rec (M)', 'F1 (M)', 'Prec (µ)', 'Rec (µ)', 'F1 (µ)'
     ]
 
-    for tag, m in measures_dict:
-        table += [
+    for tag, m in measures_dict.items():
+        table.append([
             tag,
             m.precision(),
             m.recall(),
             m.f1()
-        ]
+        ])
 
     return tabulate(table)
 
@@ -211,7 +211,7 @@ def main():
     num_files = len({d.file_name for d in gold_dataset} & {d.file_name for d in system_dataset})
 
     result = measure_dataset(gold_dataset, system_dataset, args.mode)
-    output = format_results(result, num_files)
+    output = _format_results(result, num_files)
     print(output)
 
 
