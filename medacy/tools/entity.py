@@ -25,7 +25,7 @@ class Entity:
         self.text = text
 
     def __eq__(self, other):
-        return self.start == other.start and self.end == other.end and self.text == other.text
+        return self.start == other.start and self.end == other.end and self.tag == other.tag
 
     def __hash__(self):
         return hash((self.start, self.end, self.text))
