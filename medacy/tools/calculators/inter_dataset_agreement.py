@@ -123,23 +123,32 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
     gold_ents = Entity.init_from_doc(ann_1)
     system_ents = Entity.init_from_doc(ann_2)
 
+    unmatched_gold = gold_ents.copy()
+    unmatched_system = system_ents.copy()
+
     tags = {e.tag for e in gold_ents} | {e.tag for e in system_ents}
     measures = {tag: Measures() for tag in tags}
 
     for s in system_ents:
         measure = measures[s.tag]
-        if any(s.equals(g, mode=mode) for g in gold_ents):
-            # Add a true positive when a tag in system has a gold match
-            measure.tp += 1
-        else:
-            # Add a false positive when tag in system does not have a gold match
+        for g in gold_ents:
+            if s.equals(g, mode=mode):
+                if s not in unmatched_system:
+                    continue
+                if g in unmatched_gold:
+                    unmatched_gold.remove(g)
+                    unmatched_system.remove(s)
+                    measure.tp += 1
+                else:
+                    unmatched_system.remove(s)
+
+    for s in system_ents:
+        measure = measures[s.tag]
+        if s in unmatched_system:
             measure.fp += 1
 
-    for g in gold_ents:
-        measure = measures[g.tag]
-        if not any(g.equals(s, mode=mode) for s in system_ents):
-            # Add a false negative when a tag in gold has no matches in system
-            measure.fn += 1
+    for tag, measure in measures.items():
+        measures[tag].fn = len([e for e in gold_ents if e.tag == tag]) - measure.tp
 
     return measures
 
