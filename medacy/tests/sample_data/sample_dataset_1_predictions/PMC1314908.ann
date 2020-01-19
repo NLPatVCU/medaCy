@@ -1,0 +1,240 @@
+T1	Endpoint 25 44	imals and treatment
+T2	TestArticle 55 73	adult (60-day-old)
+T3	Strain 74 88	Sprague-Dawley
+T4	Sex 89 93	male
+T5	Sex 98 104	female
+T6	Species 105 109	rats
+T7	Species 487 491	Rats
+T8	TestArticle 526 537	rolled cond
+T9	DoseFrequency 749 759	ad libitum
+T10	Sex 761 765	Male
+T11	Sex 770 776	female
+T12	Species 777 781	rats
+T13	TimeEndpointAssessed 903 908	daily
+T14	GroupSize 944 949	eight
+T15	Sex 956 962	female
+T16	Species 963 967	rats
+T17	TestArticle 987 994	rd cond
+T18	Vehicle 1011 1025	tap water cont
+T19	Vehicle 1030 1043	g 2% Tween 80
+T20	DoseRoute 1057 1062	drink
+T21	DoseRoute 1064 1074	g solution
+T22	DoseDuration 1079 1081	30
+T23	DoseDurationUnits 1082 1086	days
+T24	GroupName 1100 1117	baseline controls
+T25	Endpoint 1232 1241	cyclicity
+T26	Species 1245 1249	rats
+T27	Sex 1256 1260	male
+T28	Sex 1264 1270	female
+T29	Endpoint 1271 1286	sexual behavior
+T30	GroupName 1299 1317	tap water controls
+T31	Sex 1400 1406	female
+T32	Species 1407 1411	rats
+T33	TestArticle 1444 1471	9,10-dihy-droxy-12-octadece
+T34	TestArticle 1473 1489	ic acid [leukoto
+T35	Endpoint 1493 1497	diol
+T36	TestArticle 1499 1504	LTX-d
+T37	TestArticle 1505 1509	ol)]
+T38	Dose 1519 1520	2
+T39	DoseUnits 1521 1526	 g/mL
+T40	DoseRoute 1535 1544	tap water
+T41	Vehicle 1545 1553	Tween 80
+T42	DoseDuration 1580 1582	30
+T43	DoseDurationUnits 1583 1587	days
+T44	TestArticle 1717 1720	ols
+T45	TimeEndpointAssessed 1795 1800	Daily
+T46	DoseDuration 1846 1848	30
+T47	DoseDurationUnits 1849 1852	day
+T48	Endpoint 1888 1897	cyclicity
+T49	Sex 1987 1993	female
+T50	Species 1994 1998	rats
+T51	GroupName 2019 2027	controls
+T52	Endpoint 2042 2056	ovarian cycles
+T53	TestArticle 2090 2095	LTX-d
+T54	GroupName 2220 2228	controls
+T55	GroupName 2232 2247	treated animals
+T56	GroupName 2285 2293	controls
+T57	Endpoint 2372 2395	male reproductive funct
+T58	DoseRoute 2395 2398	ion
+T59	GroupSize 2434 2437	six
+T60	Sex 2456 2460	male
+T61	Strain 2461 2475	Sprague-Dawley
+T62	Species 2484 2488	rats
+T63	TestArticle 2535 2541	THF-di
+T64	Sex 2608 2612	male
+T65	Species 2621 2625	rats
+T66	DoseRoute 2757 2774	drinking solution
+T67	TestArticle 2786 2791	LTX-d
+T68	TestArticle 2792 2802	ol isomers
+T69	DoseUnits 2803 2813	(2 g/mL of
+T70	DoseRoute 2814 2819	drink
+T71	DoseRoute 2821 2830	g solutio
+T72	DoseDuration 2837 2840	1 4
+T73	DoseDurationUnits 2841 2846	weeks
+T74	Endpoint 2848 2863	Sexual behavior
+T75	EndpointUnitOfMeasure 2897 2901	mber
+T76	Endpoint 2902 2911	of mounts
+T77	Endpoint 2922 2958	ions, ejaculations, ejaculation late
+T78	EndpointUnitOfMeasure 2968 2975	seconds
+T79	Endpoint 2982 2990	grooming
+T80	EndpointUnitOfMeasure 2991 2998	frequen
+T81	Sex 3056 3062	female
+T82	Strain 3168 3182	Sprague-Dawley
+T83	Sex 3183 3189	female
+T84	Species 3190 3194	rats
+T85	DoseRoute 3294 3297	ect
+T86	TestArticle 3498 3505	ic acid
+T87	TestArticle 3510 3518	m-chloro
+T88	DoseRoute 4541 4544	ect
+T89	Endpoint 4656 4666	c activity
+T90	CellLine 4670 4675	MCF-7
+T91	Endpoint 4706 4743	c effects of HPLC fractions and synth
+T92	TestArticle 4748 4753	LTX-d
+T93	TestArticle 4754 4756	ol
+T94	CellLine 4760 4765	MCF-7
+T95	Species 4766 4771	human
+T96	Endpoint 4816 4822	mitoge
+T97	CellLine 4868 4873	MCF-7
+T98	Dose 5011 5014	1 5
+T99	DoseUnits 5015 5017	 L
+T100	TestArticle 5046 5051	LTX-d
+T101	TestArticle 5053 5062	l isomers
+T102	Vehicle 5066 5085	redistilled ethanol
+T103	CellLine 5098 5103	MCF-7
+T104	Endpoint 5203 5227	ipped, sulfatase-treated
+T105	Species 5228 5238	fetal calf
+T106	Endpoint 5246 5252	Cell n
+T107	Endpoint 5255 5257	er
+T108	TimeEndpointAssessed 5273 5274	7
+T109	TimeUnits 5275 5279	days
+T110	Endpoint 5446 5452	mitoge
+T111	Endpoint 5454 5464	c activity
+T112	TestArticle 5731 5736	LTX-d
+T113	TestArticle 5744 5751	12,13-d
+T114	TestArticle 5753 5771	y-droxy-9-octadece
+T115	TestArticle 5773 5780	ic acid
+T116	TestArticle 5782 5795	iso-LTX-diol)
+T117	Vehicle 5821 5840	redistilled ethanol
+T118	Endpoint 5895 5909	GC-MS analysis
+T119	Endpoint 6469 6472	ion
+T120	TestArticle 6748 6750	ol
+T121	DoseRoute 7274 7277	ect
+T122	TestArticle 7757 7767	2-octadece
+T123	TestArticle 7776 7798	12,13-epoxy-9-octadece
+T124	TestArticle 7941 7948	ic acid
+T125	TestArticle 8334 8339	LTX-d
+T126	TestArticle 8340 8342	ol
+T127	TestArticle 8347 8356	iso-LTX-d
+T128	TestArticle 8357 8360	ol.
+T129	Endpoint 8368 8375	imately
+T130	TestArticle 8591 8596	LTX-d
+T131	TestArticle 8597 8599	ol
+T132	TestArticle 8604 8613	iso-LTX-d
+T133	TestArticle 8614 8616	ol
+T134	TestArticle 8643 8650	ic acid
+T135	TestArticle 8655 8660	THF-d
+T136	TestArticle 9132 9142	THF-diols.
+T137	TestArticle 9236 9241	LTX-d
+T138	TestArticle 9242 9244	ol
+T139	TestArticle 9249 9258	iso-LTX-d
+T140	TestArticle 9259 9262	ol.
+T141	TestArticle 9390 9398	LTX-diol
+T142	Endpoint 9452 9464	and contamin
+T143	TestArticle 9545 9550	LTX-d
+T144	TestArticle 9551 9553	ol
+T145	TestArticle 9558 9567	iso-LTX-d
+T146	TestArticle 9568 9571	ol.
+T147	Endpoint 9588 9607	biologic activities
+T148	TestArticle 9642 9647	LTX-d
+T149	TestArticle 9648 9650	ol
+T150	TestArticle 9655 9664	iso-LTX-d
+T151	TestArticle 9665 9667	ol
+T152	TestArticle 10030 10039	iso-LTX-d
+T153	TestArticle 10040 10042	ol
+T154	TestArticle 10047 10056	LTX-diol,
+T155	TestArticle 10083 10088	LTX-d
+T156	TestArticle 10089 10091	ol
+T157	TestArticle 10096 10105	iso-LTX-d
+T158	CellLine 10112 10117	MCF-7
+T159	Endpoint 10132 10150	cell proliferation
+T160	TestArticle 10157 10162	LTX-d
+T161	TestArticle 10163 10173	ol isomers
+T162	Endpoint 10310 10328	cell proliferation
+T163	CellLine 10365 10370	MCF-7
+T164	TestArticle 10431 10455	LTX-diol or iso-LTX-diol
+T165	Dose 10472 10478	0.1 10
+T166	DoseUnits 10479 10484	 g/mL
+T167	Endpoint 10491 10495	cell
+T168	EndpointUnitOfMeasure 10496 10502	number
+T169	TimeEndpointAssessed 10518 10519	7
+T170	TimeUnits 10520 10524	days
+T171	Endpoint 10628 10645	biologic activity
+T172	CellLine 10653 10658	MCF-7
+T173	Endpoint 10659 10677	cell proliferation
+T174	TestArticle 10745 10750	LTX-d
+T175	Endpoint 10750 10774	iol competition for [3H]
+T176	TestArticle 10781 10783	ol
+T177	Endpoint 10784 10830	binding to ER and type II sites in rat uterine
+T178	Endpoint 10832 10848	uclear fractions
+T179	Endpoint 10905 10917	xtracts cont
+T180	Endpoint 10928 10934	mitoge
+T181	Endpoint 10935 10946	ic activity
+T182	TestArticle 11011 11013	ol
+T183	Endpoint 11014 11019	bindi
+T184	TestArticle 11058 11060	ol
+T185	Endpoint 11061 11066	bindi
+T186	TestArticle 11137 11142	THF-d
+T187	TestArticle 11143 11145	ol
+T188	Endpoint 11209 11225	biologic effects
+T189	TestArticle 11233 11238	LTX-d
+T190	TestArticle 11239 11242	ols
+T191	Endpoint 11316 11337	nuclear type II sites
+T192	TestArticle 11350 11355	LTX-d
+T193	TestArticle 11356 11359	ols
+T194	TestArticle 11392 11402	THF-diols.
+T195	TestArticle 11457 11462	LTX-d
+T196	Endpoint 11462 11486	iol competition for [3H]
+T197	TestArticle 11493 11495	ol
+T198	Endpoint 11496 11526	binding to ER or type II sites
+T199	Sex 11577 11583	female
+T200	Strain 11584 11598	Sprague-Dawley
+T201	Species 11599 11603	rats
+T202	TestArticle 11647 11660	g estradiol-c
+T203	TimeEndpointAssessed 11782 11787	Seven
+T204	TimeUnits 11788 11792	days
+T205	Endpoint 11814 11846	uteri were removed from these an
+T206	Endpoint 11853 11892	stripped of extraneous tissues, weighed
+T207	Endpoint 11946 11988	ER competition studies, rat uterine tissue
+T208	TestArticle 12194 12199	LTX-d
+T209	TestArticle 12200 12202	ol
+T210	Endpoint 12266 12270	[3H]
+T211	TestArticle 12277 12279	ol
+T212	Endpoint 12280 12294	binding to ERs
+T213	TestArticle 12540 12545	LTX-d
+T214	TestArticle 12546 12548	ol
+T215	Endpoint 12616 12626	under cond
+T216	Endpoint 12646 12650	[3H]
+T217	TestArticle 12657 12659	ol
+T218	Endpoint 12660 12684	binding to type II sites
+T219	TestArticle 12943 12946	ol.
+T220	Endpoint 12947 12973	Radioactivity in the ethan
+T221	Endpoint 12977 12983	xtract
+T222	Endpoint 13063 13069	[3H]Es
+T223	TestArticle 13074 13076	ol
+T224	Endpoint 13077 13081	bind
+T225	Endpoint 13088 13134	the absence of competitor (controls) was appro
+T226	Endpoint 13145 13172	,000 cpm for ERs and 30,000
+T227	EndpointUnitOfMeasure 13173 13176	cpm
+T228	Endpoint 13177 13194	for type II sites
+T229	EndpointUnitOfMeasure 13226 13239	percentage of
+T230	Endpoint 13240 13244	[3H]
+T231	Endpoint 13250 13257	iol bou
+T232	Endpoint 13288 13301	ated concentr
+T233	TestArticle 13311 13316	LTX-d
+T234	Endpoint 13317 13337	ol, DES, or luteolin
+T235	EndpointUnitOfMeasure 13338 13369	relative to the vehicle control
+T236	Endpoint 13424 13442	cell proliferation
+T237	Endpoint 13456 13490	imal cycling studies (body weights
+T238	Endpoint 13492 13506	fluid consumpt
+T239	Sex 13699 13703	male
+T240	Endpoint 13704 13719	sexual behavior
