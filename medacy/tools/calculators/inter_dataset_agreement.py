@@ -21,6 +21,9 @@ class Measures:
         self.tn = tn
         self.fn = fn
 
+    def __eq__(self, other):
+        return (self.tp, self.fp, self.tn, self.fn) == (other.tp, other.fp, other.tn, other.fn)
+
     def __repr__(self):
         return f"{type(self).__name__}(tp={self.tp}, fp={self.fp}, tn={self.tn}, fn={self.fn})"
 
