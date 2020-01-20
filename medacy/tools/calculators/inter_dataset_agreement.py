@@ -1,5 +1,12 @@
 """
 Inter-dataset agreement calculator
+
+This module calculates precision, recall, and F1 scores given two parallel datasets with a strict or lenient setting.
+The strict setting will only count true positives from the predicted data if they have an exact match, span for span,
+with the same label in the gold dataset. Lenient results count at most one true positive per named entity in the gold
+dataset, so if more than one entity in the predicted data is a lenient match to a given entity in the gold data, only
+the first match counts towards the true positive score. However, subsequent lenient matches to a gold entity that has
+already been paired will not count as false positives.
 """
 
 import argparse
@@ -13,7 +20,14 @@ from medacy.tools.entity import Entity
 
 
 class Measures:
-    """Data type for agreement scores"""
+    """
+    Data type for agreement scores
+
+    :ivar tp: A number of true positives
+    :ivar fp: A number of false positives
+    :ivar tn: A number of true negatives
+    :ivar fn: A number of false negatives
+    """
 
     def __init__(self, tp=0, fp=0, tn=0, fn=0):
         self.tp = tp
@@ -56,12 +70,14 @@ class Measures:
             return 0.0
 
     def f_score(self, beta=1):
-        """Compute F1-measure score."""
+        """Compute F score given a custom beta"""
         if beta <= 0:
             raise ValueError("beta must be >= 0")
+        prec = self.precision()
+        rec = self.recall()
+        num = (1 + beta ** 2) * (prec * rec)
+        den = beta ** 2 * (prec + rec)
         try:
-            num = (1 + beta ** 2) * (self.precision() * self.recall())
-            den = beta ** 2 * (self.precision() + self.recall())
             return num / den
         except ZeroDivisionError:
             return 0.0
@@ -107,8 +123,6 @@ def zip_datasets(dataset_1, dataset_2):
     dataset_2_ann_files = [d.ann_path for d in dataset_2 if d.file_name in matching_file_names]
     dataset_2_ann_files.sort()
 
-    assert len(dataset_1_ann_files) == len(dataset_2_ann_files)
-
     yield from zip(dataset_1_ann_files, dataset_2_ann_files)
 
 
@@ -137,34 +151,50 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
         for g in gold_ents:
             if s.equals(g, mode=mode):
                 if s not in unmatched_system:
+                    # Don't do anything with system predictions that have already been paired
                     continue
                 if g in unmatched_gold:
+                    # Each gold entity can only be matched to one prediction and
+                    # can only count towards the true positive score once
                     unmatched_gold.remove(g)
                     unmatched_system.remove(s)
                     measure.tp += 1
                 else:
+                    # The entity has been matched to a gold entity, but we have
+                    # already gotten the one true positive match allowed for each gold entity;
+                    # therefore we say that the predicted entity is now matched
                     unmatched_system.remove(s)
 
-    for s in system_ents:
-        if s in unmatched_system:
-            measures[s.tag].fp += 1
+    for s in unmatched_system:
+        # All predictions that don't match any gold entity count one towards the false positive score
+        measures[s.tag].fp += 1
 
     for tag, measure in measures.items():
+        # The number of false negatives is the number of gold entities for a tag minus the number that got
+        # counted as true positives
         measures[tag].fn = len([e for e in gold_ents if e.tag == tag]) - measure.tp
 
     return measures
 
 
 def measure_dataset(gold_dataset, system_dataset, mode='strict'):
+    """
+    Measures the true positive, false positive, and false negative counts for a directory of predictions
+    :param gold_dataset: The gold version of the predicted dataset
+    :param system_dataset: The predicted dataset
+    :param mode: 'strict' or 'lenient'
+    :return: a dictionary of tag-level Measures objects
+    """
     if mode not in ['strict', 'lenient']:
         raise ValueError("mode must be 'strict' or 'lenient'")
 
     all_file_measures = []
-    tag_measures = {tag: Measures() for tag in system_dataset.get_labels()}
+    tag_measures = {tag: Measures() for tag in gold_dataset.get_labels()}
 
     for gold, system in zip_datasets(gold_dataset, system_dataset):
         all_file_measures.append(measure_ann_file(gold, system, mode=mode))
 
+    # Combine the Measures objects for each tag from each file together
     for file_measures in all_file_measures:
         for tag, measure in file_measures.items():
             tag_measures[tag] += measure
@@ -183,37 +213,35 @@ def format_results(measures_dict, num_dec=3, table_format='plain'):
     # Alphabetize the dictionary
     measures_dict = OrderedDict(sorted(measures_dict.items(), key=lambda t: t[0]))
 
-    table = [
-        ['Tag', 'Prec', 'Rec', 'F1']
-    ]
+    table = [['Tag', 'Prec', 'Rec', 'F1']]
 
-    def entry(data):
-        """Format a cell in the table to a given number of decimal places"""
+    def cell(data):
+        """Format floating point numbers to display a given number of decimal places"""
         return format(data, f".{num_dec}f")
 
     for tag, m in measures_dict.items():
         table.append([
             tag,
-            entry(m.precision()),
-            entry(m.recall()),
-            entry(m.f1())
+            cell(m.precision()),
+            cell(m.recall()),
+            cell(m.f1())
         ])
 
     table.append([
         'system (macro)',
-        entry(mean(m.precision() for m in measures_dict.values())),
-        entry(mean(m.recall() for m in measures_dict.values())),
-        entry(mean(m.f1() for m in measures_dict.values()))
+        cell(mean(m.precision() for m in measures_dict.values())),
+        cell(mean(m.recall() for m in measures_dict.values())),
+        cell(mean(m.f1() for m in measures_dict.values()))
     ])
 
     table.append([
         'system (micro)',
-        entry(sum(measures_dict.values(), Measures()).precision()),
-        entry(sum(measures_dict.values(), Measures()).recall()),
-        entry(sum(measures_dict.values(), Measures()).f1())
+        cell(sum(measures_dict.values(), Measures()).precision()),
+        cell(sum(measures_dict.values(), Measures()).recall()),
+        cell(sum(measures_dict.values(), Measures()).f1())
     ])
 
-    return tabulate(table, tablefmt=table_format)
+    return tabulate(table, headers='firstrow', tablefmt=table_format)
 
 
 def main():
