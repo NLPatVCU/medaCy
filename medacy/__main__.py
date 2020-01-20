@@ -2,6 +2,7 @@
 MedaCy CLI Setup
 """
 import argparse
+import json
 import importlib
 import logging
 import time
@@ -22,7 +23,17 @@ def setup(args):
     """
     dataset = Dataset(args.dataset)
     entities = list(dataset.get_labels())
+    if args.test_mode:
+        dataset.data_limit = 1
 
+    if args.entities is not None:
+        with open(args.entities, 'rb') as f:
+            data = json.load(f)
+        json_entities = data['entities']
+        if not set(json_entities) <= set(entities):
+            raise ValueError(f"The following entities from the json file are not in the provided dataset: {set(json_entities) - set(entities)}")
+        entities = json_entities
+        
     if args.pipeline == 'spacy':
         logging.info('Using spacy model')
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
@@ -115,25 +126,34 @@ def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train, evaluate, and predict with medaCy.')
     # Global variables
-    parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
-    parser.add_argument('-cpl', '--custom_pipeline', default=None, help='Path to a json file of a custom pipeline')
+    parser.add_argument('-cpl', '--custom_pipeline', default=None, help='Path to a json file of a custom pipeline, as an alternative to a medaCy pipeline')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
+    parser.add_argument('-ent', '--entities', default=None, help='Path to a json file containing an \"entities\" key of a list of entities to use.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
 
+    # Logging, testing variables
+    test_group = parser.add_argument_group('Logging and testing arguments')
+    test_group.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
+    test_group.add_argument('-t', '--test_mode', default=False, action='store_true', help='Specify that the action is a test (automatically uses only a single '
+                                                                                      'data file from the dataset and sets logging to debug mode)')
+
     # GPU-specific
-    parser.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
+    gpu_group = parser.add_argument_group('GPU Arguments', 'Arguments that relate to the GPU, used by the BiLSTM and BERT')
+    gpu_group.add_argument('-c', '--cuda', type=int, default=-1, help='Cuda device to use. -1 to use CPU.')
 
     # BiLSTM-specific
-    parser.add_argument('-w', '--word_embeddings', help='Path to word embeddings, needed for BiLSTM.')
+    bilstm_group = parser.add_argument_group('BiLSTM Arguments', 'Arguments for the BiLSTM learner')
+    bilstm_group.add_argument('-w', '--word_embeddings', help='Path to word embeddings, needed for BiLSTM.')
 
     # BERT-specific
-    parser.add_argument('-b', '--batch_size', type=int, default=1, help='Batch size. Only works with BERT pipeline.')
-    parser.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate. Only works with BERT pipeline.')
-    parser.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for. Only works with BERT pipeline.')
-    parser.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use for BERT')
-    parser.add_argument('-crf', '--using_crf', action='store_true', help='Use a CRF layer. Only works with BERT pipeline.')
+    bert_group = parser.add_argument_group('BERT Arguments', 'Arguments for the BERT learner')
+    bert_group.add_argument('-b', '--batch_size', type=int, default=1, help='Batch size.')
+    bert_group.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate.')
+    bert_group.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for.')
+    bert_group.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use.')
+    bert_group.add_argument('-crf', '--using_crf', action='store_true', help='Use a CRF layer.')
 
     subparsers = parser.add_subparsers()
 
@@ -158,15 +178,14 @@ def main():
     # Parse initial args
     args = parser.parse_args()
 
-    if args.batch_size is not None:
-        if 'bert' not in args.pipeline.lower() and 'bert' not in args.custom_pipeline.lower():
-            logging.warning('Batch size only implemented for BERT pipelines')
-
     # Logging
     device = str(args.cuda) if args.cuda >= 0 else '_cpu'
     logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
+    if args.test_mode:
+        logging.getLogger().setLevel(logging.DEBUG)
+        logging.info("Test mode enabled: logging set to debug")
     start_time = time.time()
     current_time = datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')
     logging.info('\n\nSTART TIME: %s', current_time)

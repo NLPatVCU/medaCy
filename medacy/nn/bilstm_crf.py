@@ -29,17 +29,13 @@ class BiLstmCrf(nn.Module):
         :param device: PyTorch device to use.
         """
         self.device = device
-
-        if device.type != 'cpu':
-            torch.set_default_tensor_type('torch.cuda.FloatTensor')
-
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables
         self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
-        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
+        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
         # Setup character embedding layers
         self.character_lstm = CharacterLSTM(

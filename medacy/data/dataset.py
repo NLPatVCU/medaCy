@@ -61,9 +61,12 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-import importlib
+
+import argparse
+import json
 import logging
 import os
+import pprint
 from collections import Counter
 
 import spacy
@@ -301,19 +304,6 @@ class Dataset:
 
         return ambiguity_dict
 
-    @staticmethod
-    def load_external(package_name):
-        """
-        Loads an external medaCy compatible dataset. Requires the dataset's associated package to be installed.
-        Alternatively, you can import the package directly and call it's .load() method.
-
-        :param package_name: the package name of the dataset
-        :return: A tuple containing a training set, evaluation set
-        """
-        if importlib.util.find_spec(package_name) is None:
-            raise ImportError("Package not installed: %s" % package_name)
-        return importlib.import_module(package_name).load()
-
     def get_labels(self, as_list=False):
         """
         Get all of the entities/labels used in the dataset.
@@ -343,3 +333,22 @@ class Dataset:
         """
         path = os.path.join(self.data_directory, item + '.ann')
         return Annotations(path)
+
+
+def main():
+    """CLI for retrieving dataset information"""
+    parser = argparse.ArgumentParser(description='Calculate data about a given data directory')
+    parser.add_argument('directory')
+    args = parser.parse_args()
+
+    dataset = Dataset(args.directory)
+
+    entities = json.dumps(dataset.get_labels(as_list=True))
+    counts = dataset.compute_counts()
+
+    print(f"Entities: {entities}")
+    pprint.pprint(counts)
+
+
+if __name__ == '__main__':
+    main()
