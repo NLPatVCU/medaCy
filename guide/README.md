@@ -3,7 +3,7 @@ This directory contains common workflows for using medaCy
 
 ## Table of contents
 1. [How medaCy Works](#how-medacy-works)
-2. [Building a medaCy Pipeline](/examples/guide)
+2. [Building a medaCy Pipeline](/guide/walkthrough)
 3. [Pre-trained Models](#utilizing-pre-trained-ner-models)
 4. [Distributing Trained Models](#sharing-your-medacy-models)
 5. [Interaction with spaCy](#how-medacy-uses-spacy)
@@ -49,13 +49,13 @@ will output:
 #### List of medaCy pre-trained models
 | Application | Dataset Trained Over | Entities |
 | :---------: | :----------------: |:-------------:|
-| [Clinical Notes](/examples/models/clinical_notes_model.md)| [N2C2 2018](https://n2c2.dbmi.hms.harvard.edu/) | Drug, Form, Route, ADE, Reason, Frequency, Duration, Dosage, Strength  |
-| [EPA Systematic Reviews](/examples/models/epa_systematic_review_model.md) | [TAC SRIE 2018](https://tac.nist.gov/2018/SRIE/) | Species, Celline, Dosage, Group, etc. |
-| [Nanomedicine Drug Labels](/examples/models/nanomedicine_drug_labels.md) | [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) | Nanoparticle, Company, Adverse Reaction, Active Ingredient, Surface Coating, etc. |
+| [Clinical Notes](/guide/models/clinical_notes_model.md)| [N2C2 2018](https://n2c2.dbmi.hms.harvard.edu/) | Drug, Form, Route, ADE, Reason, Frequency, Duration, Dosage, Strength  |
+| [EPA Systematic Reviews](/guide/models/epa_systematic_review_model.md) | [TAC SRIE 2018](https://tac.nist.gov/2018/SRIE/) | Species, Celline, Dosage, Group, etc. |
+| [Nanomedicine Drug Labels](/guide/models/nanomedicine_drug_labels.md) | [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) | Nanoparticle, Company, Adverse Reaction, Active Ingredient, Surface Coating, etc. |
 
 
 ### Sharing your medaCy models
-MedaCy models can be packaged and shared with anyone (or no one!) at ease. See [this example](/examples/guide/model_utilization.md) for details.
+MedaCy models can be packaged and shared with anyone (or no one!) at ease. See [this example](/guide/walkthrough/model_utilization.md) for details.
 
 ### How medaCy uses spaCy
 [SpaCy](https://github.com/explosion/spaCy) is an open source python package built with cython that allows for lighting fast text processing. MedaCy combines spaCy's memory efficient text processing architecture with tools, ideas and principles from both machine learning and medical computational linguistics to provide a unified framework for researchers and practioners alike to advance medical text mining.
