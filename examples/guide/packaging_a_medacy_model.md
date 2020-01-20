@@ -1,1 +1,0 @@
-# Packing a medaCy model
