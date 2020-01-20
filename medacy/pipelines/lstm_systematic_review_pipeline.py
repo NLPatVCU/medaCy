@@ -15,28 +15,28 @@ class LstmSystematicReviewPipeline(BasePipeline):
     Created by Jorge Vargas of NLP@VCU
     """
 
-    def __init__(self, entities, word_embeddings, cuda_device=-1, metamap=None):
+    def __init__(self, entities, metamap=None, **kwargs):
         """
         Create a pipeline with the name 'clinical_pipeline' utilizing
         by default spaCy's small english model.
 
         :param entities: a list of entities to be used by this pipeline
+        :param metamap: MetaMap object (optional, absence of which will not use MetaMap)
         :param word_embeddings: path to a word embeddings file
         :param cuda_device: int for which GPU to use, defaults to using the CPU
-        :param metamap: MetaMap object (optional, absence of which will not use MetaMap)
         """
 
-        super().__init__(
-            entities,
-            spacy_pipeline=spacy.load("en_core_web_sm"),
-            cuda_device=cuda_device
-        )
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"), **kwargs)
 
         if metamap:
             metamap = MetaMap(metamap)
             self.add_component(MetaMapOverlayer, metamap)
 
-        self.word_embeddings = word_embeddings
+        if not kwargs['word_embeddings']:
+            raise ValueError('This pipeline requires word embeddings.')
+
+        self.word_embeddings = kwargs['word_embeddings']
+        self.cuda_device = kwargs['cuda_device']
 
     def get_learner(self):
         learner = BiLstmCrfLearner(self.word_embeddings, self.cuda_device)

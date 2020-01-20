@@ -1,5 +1,5 @@
 """
-BiLSTM-CRF Pytorch Network
+BiLSTM-CRF PyTorch Network
 """
 import string
 
@@ -17,7 +17,7 @@ class BiLstmCrf(nn.Module):
     """
     BiLSTM and CRF pytorch layers.
 
-    :ivar device: Pytorch device.
+    :ivar device: PyTorch device.
     :ivar tagset_size: Number of labels that the network is being trained for.
     """
     def __init__(self, word_vectors, other_features, tagset_size, device):
@@ -26,7 +26,7 @@ class BiLstmCrf(nn.Module):
         :param word_vectors: Gensim word vector object to use as word embeddings.
         :param other_features: Number of other word features being used.
         :param tag_to_index: Dictionary for mapping tag/label to an index for vectorization.
-        :param device: Pytorch device to use.
+        :param device: PyTorch device to use.
         """
         self.device = device
 

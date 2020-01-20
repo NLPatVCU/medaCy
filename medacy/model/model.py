@@ -212,8 +212,7 @@ class Model:
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")
 
-        tags = sorted(training_dataset.get_labels(as_list=True))
-        self.pipeline.entities = tags
+        tags = sorted(self.pipeline.entities)
         logging.info('Tagset: %s', tags)
 
         eval_stats = {}
@@ -342,6 +341,7 @@ class Model:
             }
 
         entity_counts = training_dataset.compute_counts()
+        entity_counts['system'] = sum(v for k, v in entity_counts.items() if k in self.pipeline.entities)
 
         table_data = [
             [f"{label} ({entity_counts[label]})",  # Entity (Count)
@@ -442,7 +442,7 @@ class Model:
         nlp = self.pipeline.spacy_pipeline
         logging.info("Processing file: %s", data_file.file_name)
 
-        with open(data_file.txt_path, 'r') as f:
+        with open(data_file.txt_path, 'r', encoding='utf-8') as f:
             doc = nlp.make_doc(f.read())
 
         # Link ann_path to doc
@@ -463,7 +463,7 @@ class Model:
         """
 
         feature_extractor = self.pipeline.get_feature_extractor()
-        features, labels = feature_extractor(doc, doc._.file_name)
+        features, labels = feature_extractor(doc)
 
         logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (doc._.file_name, len(labels)))
         return features, labels
@@ -477,7 +477,7 @@ class Model:
         """
         model_name, model = self.pipeline.get_learner()
 
-        if model_name == 'BiLSTM+CRF':
+        if model_name == 'BiLSTM+CRF' or model_name == 'BERT':
             model.load(path)
             self.model = model
         else:
@@ -495,7 +495,7 @@ class Model:
 
         model_name, _ = self.pipeline.get_learner()
 
-        if model_name == 'BiLSTM+CRF':
+        if model_name == 'BiLSTM+CRF' or model_name == 'BERT':
             self.model.save(path)
         else:
             joblib.dump(self.model, path)

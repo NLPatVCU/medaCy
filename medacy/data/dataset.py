@@ -36,7 +36,7 @@ Running:
     False
     >>> metamap = MetaMap('/home/path/to/metamap/binary')
     >>> with metamap:
-    ...     dataset.metamap(metamap)
+    ...     metamap.metamap_dataset(dataset)
     >>> dataset.is_metamapped()
     True
 
@@ -62,15 +62,11 @@ object. Instructions for creating such a dataset can be found `here <https://git
 wrap them.
 """
 import importlib
-import json
 import logging
-import math
-import multiprocessing
 import os
 from collections import Counter
 
 import spacy
-from joblib import Parallel, delayed
 
 from medacy.data.annotations import Annotations
 from medacy.data.data_file import DataFile
@@ -81,7 +77,7 @@ class Dataset:
     A facilitation class for data management.
     """
 
-    def __init__(self, data_directory, raw_text_file_extension="txt", metamapped_files_directory=None, data_limit=None):
+    def __init__(self, data_directory, data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
 
@@ -90,74 +86,52 @@ class Dataset:
         Both text and ann files: considers a directory for training.
 
         :param data_directory: Directory containing data for training or prediction.
-        :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
-        :param metamapped_files_directory: Location to store metamapped files (default: a sub-directory named *metamapped*)
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
         self.data_directory = data_directory
-        self.raw_text_file_extension = raw_text_file_extension
         self.all_data_files = []
 
-        if metamapped_files_directory is not None:
-            self.metamapped_files_directory = metamapped_files_directory
+        metamap_dir = os.path.join(self.data_directory, 'metamapped')
+        if os.path.isdir(metamap_dir):
+            self.metamapped_files_directory = metamap_dir
         else:
-            self.metamapped_files_directory = os.path.join(self.data_directory, 'metamapped')
+            self.metamapped_files_directory = None
 
         all_files_in_directory = os.listdir(self.data_directory)
 
         # start by filtering all raw_text files, both training and prediction directories will have these
-        raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
+        txt_files = sorted([file for file in all_files_in_directory if file.endswith('.txt')])
+        ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
 
-        if not raw_text_files:  # detected a prediction directory
-            ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
-            self.is_training_directory = False
-
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(ann_files)
-
+        if ann_files and not txt_files:
+            # Directory is for ann files only
             for file in ann_files:
-                annotation_path = os.path.join(data_directory, file)
-                file_name = file[:-len('.ann') - 1]
-                self.all_data_files.append(DataFile(file_name, None, annotation_path))
+                file_name = file.rstrip(".ann")
+                ann_path = os.path.join(self.data_directory, file)
+                self.all_data_files.append(DataFile(file_name, None, ann_path))
+        elif txt_files and not ann_files:
+            # Directory is for txt files only
+            for file in txt_files:
+                file_name = file.rstrip(".txt")
+                txt_path = os.path.join(self.data_directory, file)
+                self.all_data_files.append(DataFile(txt_path, None, None))
+        else:
+            # Construct DataFiles based on what ann files exist
+            for file in ann_files:
+                txt_file_path = os.path.join(self.data_directory, file.rstrip("ann") + "txt")
+                if not os.path.isfile(txt_file_path):
+                    logging.warning(f"No matching txt file was found for {file}")
+                    continue
+                metamap_path = None
+                if self.metamapped_files_directory:
+                    metamap_path = os.path.join(self.metamapped_files_directory, file.rstrip("ann") + "metamapped")
+                    if not os.path.isfile(metamap_path):
+                        metamap_path = None
+                full_ann_path = os.path.join(self.data_directory, file)
+                new_datafile = DataFile(file.rstrip(".ann"), txt_file_path, full_ann_path, metamap_path)
+                self.all_data_files.append(new_datafile)
 
-        else:  # detected a training directory (raw text files exist)
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(raw_text_files)
-
-            if self.data_limit < 1 or self.data_limit > len(raw_text_files):
-                raise ValueError(
-                    "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
-
-            # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".ann") for file in raw_text_files]
-            # only a training directory if every text file has a corresponding ann_file
-            self.is_training_directory = all(os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files)
-
-            # set all file attributes except metamap_path as it is optional.
-            for file in raw_text_files:
-                file_name = file[:-len(raw_text_file_extension) - 1]
-                raw_text_path = os.path.join(data_directory, file)
-
-                if self.is_training_directory:
-                    annotation_path = os.path.join(
-                        data_directory,
-                        file.replace(".%s" % raw_text_file_extension, '.ann')
-                    )
-                else:
-                    annotation_path = None
-                self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
-
-            #If directory is already metamapped, use it.
-            if self.is_metamapped():
-                for data_file in self.all_data_files:
-                    data_file.metamapped_path = os.path.join(
-                        self.metamapped_files_directory,
-                        data_file.txt_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped")
-                    )
+        self.data_limit = data_limit if data_limit is not None else len(self.all_data_files)
 
     def get_data_files(self):
         """
@@ -211,95 +185,13 @@ class Dataset:
         subdataset.all_data_files = sub_data_files
         return subdataset
 
-    def metamap(self, metamap, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
-        """
-        Metamaps the files registered by a Dataset. Attempts to Metamap utilizing a max prune depth of 30, but on
-        failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
-        More information can be found in the MetaMap documentation.
-
-        Example usage:
-        >>> metamap = MetaMap("/path/to/metamap")
-        >>> data = Dataset("/path/to/data")
-        >>> with metamap:
-        ...     data.metamap(metamap)
-
-        :param metamap: an instance of MetaMap.
-        :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
-        :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
-        :return: Inside *metamapped_files_directory* or by default inside a sub-directory of your *data_directory* named *metamapped* we have that for each raw text file, *file_name*, an auxiliary metamapped version is created and stored.
-        """
-        self.metamap = metamap
-
-        if self.is_metamapped():
-            return True
-
-        # make metamap directory if it doesn't exist.
-        if not os.path.isdir(self.metamapped_files_directory):
-            os.makedirs(self.metamapped_files_directory)
-
-        # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
-        if retry_possible_corruptions:
-            # Do not metamap files that are already metamapped and above 200 bytes in size
-            already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)
-                                  if os.path.getsize(os.path.join(self.metamapped_files_directory, file)) > 200]
-        else:
-            # Do not metamap files that are already metamapped
-            already_metamapped = [file[:file.find('.')] for file in os.listdir(self.metamapped_files_directory)]
-
-        files_to_metamap = [data_file.txt_path for data_file in self.all_data_files if data_file.file_name not in already_metamapped]
-
-        logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
-
-        Parallel(n_jobs=n_jobs)(delayed(self._parallel_metamap)(files_to_metamap, i) for i in range(len(files_to_metamap)))
-
-        if self.is_metamapped():
-            for data_file in self.all_data_files:
-                data_file.metamapped_path = os.path.join(self.metamapped_files_directory,
-                                                         data_file.txt_path.split(os.path.sep)[-1]
-                                                         .replace(".%s" % self.raw_text_file_extension, ".metamapped"))
-
-    def _parallel_metamap(self, files, i):
-        """
-        Facilitates Metamapping in parallel by forking off processes to Metamap each file individually.
-
-        :param files: an array of file paths to the file to map
-        :param i: index in the array used to determine the file that the called process will be responsible for mapping
-        :return: metamapped_files_directory now contains metamapped versions of the dataset files
-        """
-        file = files[i].split(os.path.sep)[-1]
-        file_path = files[i]
-        logging.info("Attempting to Metamap: %s", file_path)
-        mapped_file_location = os.path.join(self.metamapped_files_directory, file.replace(self.raw_text_file_extension, "metamapped"))
-
-        with open(mapped_file_location, 'w') as mapped_file:
-            max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
-
-            metamap_dict = None
-            # while current prune depth causes out of memory on document
-            while metamap_dict is None or metamap_dict['metamap'] is None:
-                if max_prune_depth <= 0:
-                    logging.critical("Failed to to metamap after multiple attempts: %s", file_path)
-                    return
-                try:
-                    metamap_dict = self.metamap.map_file(file_path, max_prune_depth=max_prune_depth) #attempt to metamap
-                    if metamap_dict['metamap'] is not None: #if successful
-                        break
-                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                except BaseException as e:
-                    metamap_dict = None
-                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5)) #decrease prune depth by an order of magnitude
-                    logging.warning(f"Error Metamapping: {file_path} after raising {type(e).__name__}: {str(e)}")
-
-            mapped_file.write(json.dumps(metamap_dict))
-            logging.info("Successfully Metamapped: %s", file_path)
-
     def is_metamapped(self):
         """
         Verifies if all fil es in the Dataset are metamapped.
 
         :return: True if all data files are metamapped, False otherwise.
         """
-        if not os.path.isdir(self.metamapped_files_directory):
+        if self.metamapped_files_directory is None or not os.path.isdir(self.metamapped_files_directory):
             return False
 
         for file in self.all_data_files:
@@ -336,30 +228,30 @@ class Dataset:
 
         return total
 
-    def compute_confusion_matrix(self, dataset, leniency=0):
+    def compute_confusion_matrix(self, other, leniency=0):
         """
         Generates a confusion matrix where this Dataset serves as the gold standard annotations and `dataset` serves
         as the predicted annotations. A typical workflow would involve creating a Dataset object with the prediction directory
         outputted by a model and then passing it into this method.
 
-        :param dataset: a Dataset object containing a predicted version of this dataset.
+        :param other: a Dataset object containing a predicted version of this dataset.
         :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: two element tuple containing a label array (of entity names) and a matrix where rows are gold labels and columns are predicted labels. matrix[i][j] indicates that entities[i] in this dataset was predicted as entities[j] in 'annotation' matrix[i][j] times
         """
-        if not isinstance(dataset, Dataset):
-            raise ValueError("dataset must be instance of Dataset")
+        if not isinstance(other, Dataset):
+            raise ValueError("other must be instance of Dataset")
 
         # verify files are consistent
-        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
+        diff = {d.file_name for d in self} - {d.file_name for d in other}
         if diff:
-            raise ValueError("Dataset of predictions is missing the files: "+str(list(diff)))
+            raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
         #sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
-        confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
+        confusion_matrix = [[0 * len(entities)] * len(entities)]
 
         for gold_data_file in self:
-            prediction_iter = iter(dataset)
+            prediction_iter = iter(other)
             prediction_data_file = next(prediction_iter)
             while str(gold_data_file) != str(prediction_data_file):
                 prediction_data_file = next(prediction_iter)
@@ -382,16 +274,15 @@ class Dataset:
         of a model's in-ability to dis-ambiguate between entities. For a full analysis, compute a confusion matrix.
 
         :param dataset: a Dataset object containing a predicted version of this dataset.
-        :param leniency: a floating point value between [0,1] defining the leniency of the character spans to count as different. A value of zero considers only exact character matches while a positive value considers entities that differ by up to :code:`ceil(leniency * len(span)/2)` on either side.
         :return: a dictionary containing the ambiguity computations on each gold, predicted file pair
         """
         if not isinstance(dataset, Dataset):
             raise ValueError("dataset must be instance of Dataset")
 
         # verify files are consistent
-        diff = set(file.ann_path.split(os.sep)[-1] for file in self) - set(file.ann_path.split(os.sep)[-1] for file in dataset)
+        diff = {d.file_name for d in self} - {d.file_name for d in dataset}
         if diff:
-            raise ValueError("Dataset of predictions is missing the files: " + str(list(diff)))
+            raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
         #Dictionary storing ambiguity over dataset
         ambiguity_dict = {}
@@ -407,7 +298,6 @@ class Dataset:
 
             # compute matrix on the Annotation file level
             ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
-
 
         return ambiguity_dict
 

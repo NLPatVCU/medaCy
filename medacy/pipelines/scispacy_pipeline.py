@@ -1,9 +1,8 @@
-import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
+from medacy.pipeline_components.learners.crf_learner import get_crf
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
@@ -21,26 +20,18 @@ class ScispacyPipeline(BasePipeline):
     https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.0/en_core_sci_md-0.2.0.tar.gz
     """
 
-    def __init__(self, entities, metamap=None):
+    def __init__(self, entities, metamap=None, **kwargs):
         """
         :param entities: a list of entities
         :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
         """
-        super().__init__(entities, spacy_pipeline=spacy.load("en_core_sci_md"))
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_sci_md"), **kwargs)
 
         if metamap:
-            metamap = MetaMap(metamap)
             self.add_component(MetaMapOverlayer, metamap)
 
     def get_learner(self):
-        return ("CRF_l2sgd",
-                sklearn_crfsuite.CRF(
-                    algorithm='l2sgd',
-                    c2=0.1,
-                    max_iterations=100,
-                    all_possible_transitions=True
-                )
-            )
+        return "CRF_l2sgd", get_crf()
 
     def get_tokenizer(self):
         return None
