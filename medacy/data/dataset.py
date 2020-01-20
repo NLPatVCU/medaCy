@@ -61,9 +61,13 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
+
+import argparse
 import importlib
+import json
 import logging
 import os
+import pprint
 from collections import Counter
 
 import spacy
@@ -343,3 +347,22 @@ class Dataset:
         """
         path = os.path.join(self.data_directory, item + '.ann')
         return Annotations(path)
+
+
+def main():
+    """CLI for retrieving dataset information"""
+    parser = argparse.ArgumentParser(description='Calculate data about a given data directory')
+    parser.add_argument('directory')
+    args = parser.parse_args()
+
+    dataset = Dataset(args.directory)
+
+    entities = json.dumps(dataset.get_labels(as_list=True))
+    counts = dataset.compute_counts()
+
+    print(f"Entities: {entities}")
+    pprint.pprint(counts)
+
+
+if __name__ == '__main__':
+    main()
