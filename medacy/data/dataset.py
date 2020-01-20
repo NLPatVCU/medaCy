@@ -63,7 +63,6 @@ wrap them.
 """
 
 import argparse
-import importlib
 import json
 import logging
 import os
@@ -304,19 +303,6 @@ class Dataset:
             ambiguity_dict[str(gold_data_file)] = gold_annotation.compute_ambiguity(pred_annotation)
 
         return ambiguity_dict
-
-    @staticmethod
-    def load_external(package_name):
-        """
-        Loads an external medaCy compatible dataset. Requires the dataset's associated package to be installed.
-        Alternatively, you can import the package directly and call it's .load() method.
-
-        :param package_name: the package name of the dataset
-        :return: A tuple containing a training set, evaluation set
-        """
-        if importlib.util.find_spec(package_name) is None:
-            raise ImportError("Package not installed: %s" % package_name)
-        return importlib.import_module(package_name).load()
 
     def get_labels(self, as_list=False):
         """
