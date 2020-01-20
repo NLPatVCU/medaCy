@@ -2,9 +2,9 @@
 Inter-dataset agreement calculator
 """
 
-
 import argparse
 from collections import OrderedDict
+from statistics import mean
 
 from tabulate import tabulate
 
@@ -146,9 +146,8 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
                     unmatched_system.remove(s)
 
     for s in system_ents:
-        measure = measures[s.tag]
         if s in unmatched_system:
-            measure.fp += 1
+            measures[s.tag].fp += 1
 
     for tag, measure in measures.items():
         measures[tag].fn = len([e for e in gold_ents if e.tag == tag]) - measure.tp
@@ -162,7 +161,6 @@ def measure_dataset(gold_dataset, system_dataset, mode='strict'):
 
     all_file_measures = []
     tag_measures = {tag: Measures() for tag in system_dataset.get_labels()}
-    system_measures = Measures()
 
     for gold, system in zip_datasets(gold_dataset, system_dataset):
         all_file_measures.append(measure_ann_file(gold, system, mode=mode))
@@ -171,32 +169,51 @@ def measure_dataset(gold_dataset, system_dataset, mode='strict'):
         for tag, measure in file_measures.items():
             tag_measures[tag] += measure
 
-    tag_measures['system'] = sum(tag_measures.values(), system_measures)
-
     return tag_measures
 
 
-def _format_results(measures_dict, num_files):
-
-    # Alphabetize the dictionary, keeping system at the end
-    system_measures = measures_dict['system']
-    del measures_dict['system']
+def format_results(measures_dict, num_dec=3, table_format='plain'):
+    """
+    Runs calculations on Measures objects and returns a printable table (but does not print it)
+    :param measures_dict: A dictionary mapping tags (str) to Measures
+    :param num_dec: number of decimal places to round to
+    :param table_format: a tabulate module table format (see tabulate on PyPI)
+    :return: a string of tabular data
+    """
+    # Alphabetize the dictionary
     measures_dict = OrderedDict(sorted(measures_dict.items(), key=lambda t: t[0]))
-    measures_dict['system'] = system_measures
 
     table = [
-        ['Tag', 'Prec', 'Rec', 'F1']  # , 'Prec (M)', 'Rec (M)', 'F1 (M)', 'Prec (µ)', 'Rec (µ)', 'F1 (µ)'
+        ['Tag', 'Prec', 'Rec', 'F1']
     ]
+
+    def entry(data):
+        """Format a cell in the table to a given number of decimal places"""
+        return format(data, f".{num_dec}f")
 
     for tag, m in measures_dict.items():
         table.append([
             tag,
-            m.precision(),
-            m.recall(),
-            m.f1()
+            entry(m.precision()),
+            entry(m.recall()),
+            entry(m.f1())
         ])
 
-    return tabulate(table)
+    table.append([
+        'system (macro)',
+        entry(mean(m.precision() for m in measures_dict.values())),
+        entry(mean(m.recall() for m in measures_dict.values())),
+        entry(mean(m.f1() for m in measures_dict.values()))
+    ])
+
+    table.append([
+        'system (micro)',
+        entry(sum(measures_dict.values(), Measures()).precision()),
+        entry(sum(measures_dict.values(), Measures()).recall()),
+        entry(sum(measures_dict.values(), Measures()).f1())
+    ])
+
+    return tabulate(table, tablefmt=table_format)
 
 
 def main():
@@ -204,15 +221,15 @@ def main():
     parser.add_argument('gold_directory', help='First data folder path (gold)')
     parser.add_argument('system_directory', help='Second data folder path (system)')
     parser.add_argument('-m', '--mode', default='strict', help='strict or lenient (defaults to strict)')
+    parser.add_argument('-f', '--format', default='plain', help='format to print the table (options include grid, github, and latex)')
+    parser.add_argument('-d', '--decimal', type=int, default=3, help='number of decimal places to round to')
     args = parser.parse_args()
 
     gold_dataset = Dataset(args.gold_directory)
     system_dataset = Dataset(args.system_directory)
 
-    num_files = len({d.file_name for d in gold_dataset} & {d.file_name for d in system_dataset})
-
     result = measure_dataset(gold_dataset, system_dataset, args.mode)
-    output = _format_results(result, num_files)
+    output = format_results(result, num_dec=args.decimal, table_format=args.format)
     print(output)
 
 
