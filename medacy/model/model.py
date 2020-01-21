@@ -433,7 +433,7 @@ class Model:
         
         return Dataset(directory)
 
-    def _run_through_pipeline(self, data_file):
+    def _run_through_pipeline(self, data_file, predicting=False):
         """
         Runs a DataFile through the pipeline, returning the resulting Doc object
         :param data_file: instance of DataFile
@@ -453,7 +453,7 @@ class Model:
         doc._.file_name = data_file.txt_path
 
         # run 'er through
-        return self.pipeline(doc)
+        return self.pipeline(doc, predict=predicting)
 
     def _extract_features(self, doc):
         """
