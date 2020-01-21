@@ -28,7 +28,7 @@ def main():
     model, pipe, predicting_dataset, training_dataset = setup(
         predicting='./2010_data',
         training='./merged_n2c2',
-        cuda_device=2,
+        cuda_device=3,
         word_embeddings='../w2v.model'
     )
 
