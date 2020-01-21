@@ -152,7 +152,7 @@ class BiLstmCrfLearner:
 
         :param path: Path of saved model.
         """
-        saved_data = torch.load(path)
+        saved_data = torch.load(path, map_location=self.device)
 
         self.vectorizer.load_values(saved_data['vectorizer_values'])
 
