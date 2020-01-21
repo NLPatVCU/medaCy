@@ -22,6 +22,8 @@ def setup(args):
     """
     dataset = Dataset(args.dataset)
     entities = list(dataset.get_labels())
+    if args.test_mode:
+        dataset.data_limit = 1
 
     if args.entities is not None:
         with open(args.entities, 'rb') as f:
@@ -120,13 +122,18 @@ def main():
     # Argparse setup
     parser = argparse.ArgumentParser(prog='medacy', description='Train, evaluate, and predict with medaCy.')
     # Global variables
-    parser.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-cpl', '--custom_pipeline', default=None, help='Path to a json file of a custom pipeline, as an alternative to a medaCy pipeline')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-ent', '--entities', default=None, help='Path to a json file containing an \"entities\" key of a list of entities to use.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
+
+    # Logging, testing variables
+    test_group = parser.add_argument_group('Logging and testing arguments')
+    test_group.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
+    test_group.add_argument('-t', '--test_mode', default=False, action='store_true', help='Specify that the action is a test (automatically uses only a single '
+                                                                                      'data file from the dataset and sets logging to debug mode)')
 
     # GPU-specific
     gpu_group = parser.add_argument_group('GPU Arguments', 'Arguments that relate to the GPU, used by the BiLSTM and BERT')
@@ -172,6 +179,9 @@ def main():
     logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
     if args.print_logs:
         logging.getLogger().addHandler(logging.StreamHandler())
+    if args.test_mode:
+        logging.getLogger().setLevel(logging.DEBUG)
+        logging.info("Test mode enabled: logging set to debug")
     start_time = time.time()
     current_time = datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')
     logging.info('\n\nSTART TIME: %s', current_time)

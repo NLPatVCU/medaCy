@@ -178,7 +178,7 @@ class Model:
 
         return Dataset(prediction_directory)
 
-    def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
+    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -187,23 +187,16 @@ class Model:
         the prediction ambiguity with the methods present in the Dataset class to support pipeline development without
         a designated evaluation set.
 
-        :param training_dataset: Dataset that is being cross validated (optional)
-        :param num_folds: number of folds to split training data into for cross validation
+        :param training_dataset: Dataset that is being cross validated
+        :param num_folds: number of folds to split training data into for cross validation, defaults to 5
         :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
-        :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
+        :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on, or `True` for default groundtruth sub-directory
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
         """
 
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
-
-        if prediction_directory is not None and training_dataset is None:
-            raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
-                             " Please pass the training dataset in the 'training_dataset' parameter.")
-        if groundtruth_directory is not None and training_dataset is None:
-            raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
-                             " Please pass the training dataset in the 'training_dataset' parameter.")
 
         pipeline_report = self.pipeline.get_report()
 

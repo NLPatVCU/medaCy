@@ -29,7 +29,6 @@ class BiLstmCrf(nn.Module):
         :param device: PyTorch device to use.
         """
         self.device = device
-
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables

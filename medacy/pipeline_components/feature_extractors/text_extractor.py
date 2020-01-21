@@ -42,6 +42,6 @@ class TextExtractor(FeatureExtractor):
         :return: Tuple of parallel lists, a list of token texts and a list of corresponding character spans
         """
 
-        features = [token.text for token in doc]
-        indices = [(token.idx, token.idx + len(token)) for token in doc]
+        features = [[token.text for token in sent] for sent in doc.sents]
+        indices = [[(token.idx, token.idx + len(token)) for token in sent] for sent in doc.sents]
         return features, indices
