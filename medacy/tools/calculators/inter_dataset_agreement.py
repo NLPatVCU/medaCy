@@ -10,6 +10,7 @@ already been paired will not count as false positives.
 """
 
 import argparse
+import logging
 from collections import OrderedDict
 from statistics import mean
 
