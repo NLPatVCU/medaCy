@@ -188,8 +188,7 @@ class Vectorizer:
 
         return vector
 
-    def vectorize_prediction_tokens(self, predicting_tokens, training_tokens, train_y_data):
-        self.create_tag_dictionary(train_y_data)
+    def vectorize_prediction_dataset(self, predicting_tokens, training_tokens):
         self.find_other_features(training_tokens[0][0])
         self.find_window_size(training_tokens)
         for feature in self.other_features:
