@@ -114,7 +114,7 @@ class Dataset:
             for file in txt_files:
                 file_name = file.rstrip(".txt")
                 txt_path = os.path.join(self.data_directory, file)
-                self.all_data_files.append(DataFile(txt_path, None, None))
+                self.all_data_files.append(DataFile(file_name, txt_path, None))
         else:
             # Construct DataFiles based on what ann files exist
             for file in ann_files:
