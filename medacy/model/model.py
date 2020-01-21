@@ -189,8 +189,8 @@ class Model:
 
         :param training_dataset: Dataset that is being cross validated
         :param num_folds: number of folds to split training data into for cross validation, defaults to 5
-        :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
-        :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on, or `True` for default groundtruth sub-directory
+        :param prediction_directory: directory to write predictions of cross validation to
+        :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
         """
@@ -359,72 +359,21 @@ class Model:
         else:
             logging.info(output_str)
 
-        if prediction_directory:
-            
-            prediction_directory = os.path.join(training_dataset.data_directory, "predictions")
-            groundtruth_directory = os.path.join(training_dataset.data_directory, "groundtruth")
-            
-            # Write annotations generated from cross-validation
-            self.create_annotation_directory(
-                directory=prediction_directory,
-                training_dataset=training_dataset,
-                option="predictions"
-            )
+        if prediction_directory or groundtruth_directory:
+            # Write fold predictions and/or groundtruth entities to file
+            for data_file in training_dataset:
+                with open(data_file.txt_path) as f:
+                    doc = self.pipeline.spacy_pipeline.make_doc(f.read())
+                if groundtruth_directory:
+                    predictions = groundtruth_by_document[data_file.txt_path]
+                    write_path = os.path.join(groundtruth_directory, data_file.file_name + '.ann')
+                    construct_annotations_from_tuples(doc, predictions).to_ann(write_path)
+                if prediction_directory:
+                    predictions = preds_by_document[data_file.txt_path]
+                    write_path = os.path.join(prediction_directory, data_file.file_name + '.ann')
+                    construct_annotations_from_tuples(doc, predictions).to_ann(write_path)
 
-            # Write medaCy ground truth generated from cross-validation
-            self.create_annotation_directory(
-                directory=groundtruth_directory,
-                training_dataset=training_dataset,
-                option="groundtruth"
-            )
-            
-            # Add predicted/known annotations to the folders containing groundtruth and predictions respectively
-            self.predict_annotation_evaluation(
-                directory=groundtruth_directory,
-                training_dataset=training_dataset,
-                preds_by_document=preds_by_document,
-                groundtruth_by_document=groundtruth_by_document,
-                option="groundtruth"
-            )
-
-            self.predict_annotation_evaluation(
-                directory=prediction_directory,
-                training_dataset=training_dataset,
-                preds_by_document=preds_by_document,
-                groundtruth_by_document=groundtruth_by_document,
-                option="predictions"
-            )
-
-            return Dataset(prediction_directory)
-        else:
-            return statistics_all_folds
-
-    def create_annotation_directory(self, directory, training_dataset, option):
-        if isinstance(directory, str):
-            directory = directory
-        else:
-            directory = os.path.join(training_dataset.data_directory, option)
-        if os.path.isdir(directory):
-            logging.warning("Overwriting existing %s",option)
-        else:
-            os.makedirs(directory)
-        return directory
-
-    def predict_annotation_evaluation(self, directory, training_dataset, preds_by_document, groundtruth_by_document, option):
-        for data_file in training_dataset:
-            logging.info("Predicting %s file: %s", option, data_file.file_name)
-            with open(data_file.txt_path, 'r') as f:
-                doc = self.pipeline.spacy_pipeline.make_doc(f.read())
-                
-            if option == "groundtruth":
-                preds = groundtruth_by_document[data_file.file_name]
-            else:
-                preds = preds_by_document[data_file.file_name]
-
-            annotations = construct_annotations_from_tuples(doc, preds)
-            annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))
-        
-        return Dataset(directory)
+        return statistics_all_folds
 
     def _run_through_pipeline(self, data_file):
         """
