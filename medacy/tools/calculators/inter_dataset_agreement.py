@@ -144,7 +144,7 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
     unmatched_gold = gold_ents.copy()
     unmatched_system = system_ents.copy()
 
-    tags = {e.tag for e in gold_ents} | {e.tag for e in system_ents}
+    tags = {e.tag for e in gold_ents}
     measures = {tag: Measures() for tag in tags}
 
     for s in system_ents:
