@@ -160,4 +160,5 @@ class BiLstmCrfLearner:
         model.eval()
 
         self.model = model.to(self.device)
+        self.model.device = self.device
         self.vectorizer.load_word_embeddings(self.word_embeddings_file)
