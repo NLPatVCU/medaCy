@@ -97,6 +97,7 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
+        report = self.pipeline.get_report()
         self.preprocess(dataset, asynchronous)
 
         logging.info("Currently Waiting")
@@ -109,6 +110,7 @@ class Model:
         train_data = [x[0] for x in self.X_data]
         learner.fit(train_data, self.y_data)
         logging.info("Successfully Trained: %s", learner_name)
+        logging.info('\n' + report)
 
         self.model = learner
         return self.model
@@ -197,6 +199,10 @@ class Model:
 
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
+
+        for d in [groundtruth_directory, prediction_directory]:
+            if d and not os.path.isdir(d):
+                raise NotADirectoryError(f"Options groundtruth_directory and predictions_directory must be existing directories, but one is {d}")
 
         pipeline_report = self.pipeline.get_report()
 
