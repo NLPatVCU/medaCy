@@ -8,6 +8,11 @@ from medacy.pipeline_components import BertLearner
 from medacy.pipeline_components import TextExtractor
 from medacy.pipeline_components import SystematicReviewTokenizer
 
+# These default values are used here and by the CLI
+LEARNING_RATE = 1e-5
+BATCH_SIZE = 8
+EPOCHS = 3
+
 class BertPipeline(BasePipeline):
     """
     Pipeline tuned for the extraction of ADE related entities from the 2018', 'N2C2 Shared Task
@@ -29,9 +34,9 @@ class BertPipeline(BasePipeline):
         super().__init__(entities=entities, spacy_pipeline=spacy.load("en_core_web_sm"), **kwargs)
 
         self.cuda_device = kwargs['cuda_device'] if 'cuda_device' in kwargs else -1
-        self.batch_size = kwargs['batch_size'] if 'batch_size' in kwargs else 8
-        self.learning_rate = kwargs['learning_rate'] if 'learning_rate' in kwargs else 1e-5
-        self.epochs = kwargs['epochs'] if 'epochs' in kwargs else 3
+        self.batch_size = kwargs['batch_size'] if 'batch_size' in kwargs else BATCH_SIZE
+        self.learning_rate = kwargs['learning_rate'] if 'learning_rate' in kwargs else LEARNING_RATE
+        self.epochs = kwargs['epochs'] if 'epochs' in kwargs else EPOCHS
         self.pretrained_model = kwargs['pretrained_model'] if 'pretrained_model' in kwargs else 'bert-large-cased'
         self.using_crf = kwargs['using_crf'] if 'using_crf' in kwargs else False
 

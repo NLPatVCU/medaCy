@@ -157,6 +157,7 @@ class BiLstmCrfLearner:
         self.vectorizer.load_values(saved_data['vectorizer_values'])
 
         model = saved_data['model']
+        model.device = self.device
         model.eval()
 
         self.model = model.to(self.device)
