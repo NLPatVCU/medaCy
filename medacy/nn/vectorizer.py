@@ -188,6 +188,7 @@ class Vectorizer:
 
         return vector
 
+    """
     def vectorize_prediction_dataset(self, predicting_tokens, training_tokens):
         self.find_other_features(training_tokens[0][0])
         self.find_window_size(training_tokens)
@@ -200,6 +201,7 @@ class Vectorizer:
             sentences.append(tokens_vector)
 
         return sentences
+    """
 
     def vectorize_tokens(self, tokens):
         """Vectorize list of tokens.
@@ -326,4 +328,7 @@ class Vectorizer:
         self.untrained_tokens = values['untrained_tokens']
         self.character_to_index = values['character_to_index']
         self.window_size = values['window_size']
-        self.other_features = values['other_features']
+        try:
+            self.other_features = values['other_features']
+        except KeyError:
+            pass
