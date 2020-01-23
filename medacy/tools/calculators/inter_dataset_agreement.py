@@ -144,7 +144,10 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
     unmatched_gold = gold_ents.copy()
     unmatched_system = system_ents.copy()
 
-    tags = {e.tag for e in gold_ents}
+    # While we're only interested in tags used by the gold dataset, these tags are calculated
+    # at the document level, and it's possible that a tag that appears somewhere else in the gold
+    # dataset does not appear in this gold file, but is still predicted for by mistake; thus we use both
+    tags = {e.tag for e in gold_ents} | {e.tag for e in system_ents}
     measures = {tag: Measures() for tag in tags}
 
     for s in system_ents:
