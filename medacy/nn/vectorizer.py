@@ -188,21 +188,6 @@ class Vectorizer:
 
         return vector
 
-    """
-    def vectorize_prediction_dataset(self, predicting_tokens, training_tokens):
-        self.find_other_features(training_tokens[0][0])
-        self.find_window_size(training_tokens)
-        for feature in self.other_features:
-            self.other_features[feature] = self.create_feature_dictionary(feature, training_tokens)
-
-        sentences = []
-        for sentence in predicting_tokens:
-            tokens_vector = self.vectorize_tokens(sentence)
-            sentences.append(tokens_vector)
-
-        return sentences
-    """
-
     def vectorize_tokens(self, tokens):
         """Vectorize list of tokens.
 
@@ -331,4 +316,4 @@ class Vectorizer:
         try:
             self.other_features = values['other_features']
         except KeyError:
-            pass
+            raise Exception('Tried to load deprecated Medacy model')
