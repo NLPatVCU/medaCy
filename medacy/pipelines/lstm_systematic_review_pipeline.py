@@ -53,5 +53,5 @@ class LstmSystematicReviewPipeline(BasePipeline):
     def get_feature_extractor(self):
         return FeatureExtractor(
             window_size=0,
-            spacy_features=['text', 'pos', 'shape', 'prefix', 'suffix']
+            spacy_features=[]
         )
