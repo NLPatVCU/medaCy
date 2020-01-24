@@ -381,7 +381,7 @@ class Model:
 
         return statistics_all_folds
 
-    def _run_through_pipeline(self, data_file): #, predicting=False):
+    def _run_through_pipeline(self, data_file):
         """
         Runs a DataFile through the pipeline, returning the resulting Doc object
         :param data_file: instance of DataFile
@@ -401,7 +401,7 @@ class Model:
         doc._.file_name = data_file.txt_path
 
         # run 'er through
-        return self.pipeline(doc) #, predict=predicting)
+        return self.pipeline(doc)
 
     def _extract_features(self, doc):
         """
