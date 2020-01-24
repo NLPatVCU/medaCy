@@ -2,10 +2,10 @@ from spacy.matcher import Matcher
 from spacy.tokens import Span
 from spacy.tokens import Token
 
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 
 
-class TimeUnitComponent(BaseComponent):
+class TimeUnitOverlayer(BaseOverlayer):
     """
     A pipeline component that tags time units
     """

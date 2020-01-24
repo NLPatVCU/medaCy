@@ -1,5 +1,5 @@
 """
-BiLSTM-CRF Pytorch Network
+BiLSTM-CRF PyTorch Network
 """
 import string
 
@@ -17,7 +17,7 @@ class BiLstmCrf(nn.Module):
     """
     BiLSTM and CRF pytorch layers.
 
-    :ivar device: Pytorch device.
+    :ivar device: PyTorch device.
     :ivar tagset_size: Number of labels that the network is being trained for.
     """
     def __init__(self, word_vectors, other_features, tagset_size, device):
@@ -26,20 +26,16 @@ class BiLstmCrf(nn.Module):
         :param word_vectors: Gensim word vector object to use as word embeddings.
         :param other_features: Number of other word features being used.
         :param tag_to_index: Dictionary for mapping tag/label to an index for vectorization.
-        :param device: Pytorch device to use.
+        :param device: PyTorch device to use.
         """
         self.device = device
-
-        if device.type != 'cpu':
-            torch.set_default_tensor_type('torch.cuda.FloatTensor')
-
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables
         self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
-        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
+        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
         # Setup character embedding layers
         self.character_lstm = CharacterLSTM(

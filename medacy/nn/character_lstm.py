@@ -1,16 +1,15 @@
 """
-BiLSTM-CRF Pytorch Network
+BiLSTM-CRF PyTorch Network
 """
 import string
 
-import torch
 import torch.nn as nn
 
 class CharacterLSTM(nn.Module):
     """
     BiLSTM and CRF pytorch layers.
 
-    :ivar device: Pytorch device.
+    :ivar device: PyTorch device.
     """
     def __init__(self, embedding_dim=100, padding_idx=0, hidden_size=100):
         super(CharacterLSTM, self).__init__()

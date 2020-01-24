@@ -1,7 +1,9 @@
+import sys
+
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
+
 from medacy import __version__, __authors__
-import sys
 
 packages = find_packages()
 
@@ -44,19 +46,19 @@ setup(
     classifiers=[
         '( Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Natural Language :: English',
         'Topic :: Text Processing :: Linguistic',
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3',
-        'https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm-2.0.0'
+        'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.5'
     ],
     install_requires=[
-        'spacy==2.1.4',
+        'spacy==2.2.2',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
+<<<<<<< HEAD
 <<<<<<< HEAD
         'numpy>=1.16.1',
 =======
@@ -64,6 +66,12 @@ setup(
         'pytorch-crf==0.7.2',
         'numpy==1.16.1',
 >>>>>>> development
+=======
+        'torch==1.2.0',
+        'pytorch-crf==0.7.2',
+        'numpy>=1.16.1',
+        'transformers==2.3.0',
+>>>>>>> 9d56f210bdb8f638a1a8a4d0f7da86e3157b2b3b
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
@@ -72,12 +80,11 @@ setup(
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0',
         'gensim==3.8.0',
-        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm-2.1.0'
+        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz'
     ],
     tests_require=[
         "pytest",
         "pytest-cov",
-        "medacy_dataset_end==3.0.0"
     ],
     cmdclass={"pytest": PyTest},
     include_package_data=True,

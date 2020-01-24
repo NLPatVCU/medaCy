@@ -3,10 +3,10 @@ import logging
 from spacy.matcher import PhraseMatcher
 from spacy.tokens import Token, Span
 
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 
 
-class LexiconComponent(BaseComponent):
+class LexiconOverlayer(BaseOverlayer):
 
     name = "lexicon_component"
     dependencies = []

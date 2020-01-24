@@ -1,0 +1,203 @@
+T1	TestArticle 40 44	ROFA
+T2	EndpointUnitOfMeasure 122 124	mb
+T3	TestArticle 144 148	ROFA
+T4	TestArticle 286 290	ROFA
+T5	TestArticle 371 375	TiO2
+T6	TestArticle 444 448	ROFA
+T7	TestArticle 482 486	ROFA
+T8	TestArticle 491 495	TiO2
+T9	Vehicle 525 539	sterile saline
+T10	DoseRoute 573 577	IT i
+T11	DoseRoute 586 588	on
+T12	Sex 614 618	Male
+T13	Strain 619 633	Sprague Dawley
+T14	Species 634 638	rats
+T15	DoseRoute 1098 1102	IT i
+T16	DoseRoute 1111 1113	on
+T17	Species 1116 1120	Rats
+T18	DoseRoute 1153 1159	intrap
+T19	DoseRoute 1161 1183	itoneal (ip) injection
+T20	TestArticle 1204 1206	ol
+T21	DoseRoute 1211 1213	IT
+T22	DoseRoute 1218 1223	illed
+T23	TestArticle 1229 1233	ROFA
+T24	Dose 1235 1238	0.1
+T25	Dose 1242 1246	0.25
+T26	DoseUnits 1247 1250	mg/
+T27	Species 1250 1253	rat
+T28	Endpoint 1401 1407	endoth
+T29	Endpoint 1409 1441	ium-dependent arteriolar dilatio
+T30	Endpoint 1446 1457	the rat spi
+T31	Endpoint 1458 1465	otrapez
+T32	Endpoint 1466 1475	us muscle
+T33	Species 1502 1506	Rats
+T34	GroupName 1514 1535	vehicle control group
+T35	DoseRoute 1541 1543	IT
+T36	Dose 1555 1558	300
+T37	DoseUnits 1559 1561	 L
+T38	Vehicle 1562 1576	sterile saline
+T39	Species 1578 1582	Rats
+T40	GroupName 1590 1612	particle control group
+T41	TestArticle 1629 1633	TiO2
+T42	Dose 1635 1638	0.1
+T43	Dose 1642 1646	0.25
+T44	DoseUnits 1647 1650	mg/
+T45	Species 1650 1653	rat
+T46	DoseRoute 1662 1672	IT instill
+T47	Endpoint 1674 1677	ion
+T48	Species 1683 1687	rats
+T49	Endpoint 1720 1729	histology
+T50	Endpoint 1734 1738	intr
+T51	Endpoint 1742 1755	al microscopy
+T52	Endpoint 1784 1824	BAL samples for measurement of pulmonary
+T53	Endpoint 1827 1832	flamm
+T54	Endpoint 1834 1848	ion and damage
+T55	Species 1851 1855	Rats
+T56	Endpoint 1954 1957	BAL
+T57	Vehicle 2022 2036	phosphate-buff
+T58	Vehicle 2038 2047	ed saline
+T59	Endpoint 2099 2145	BAL fluid lactate dehydrogenase (LDH) activity
+T60	Endpoint 2150 2172	albumin protein assays
+T61	Endpoint 2175 2237	BAL fluid LDH activities were determined as a marker of cytoto
+T62	Endpoint 2240 2256	ity, and albumin
+T63	EndpointUnitOfMeasure 2257 2262	conce
+T64	EndpointUnitOfMeasure 2267 2271	ions
+T65	Endpoint 2433 2472	Alveolar macrophage (AM) chemiluminesce
+T66	Endpoint 2473 2480	ce (CL)
+T67	Endpoint 2483 2488	AM CL
+T68	Endpoint 2565 2580	reactive oxygen
+T69	Endpoint 2608 2632	Histology and immunohist
+T70	Endpoint 2645 2667	To more thoroughly ide
+T71	Endpoint 2671 2682	y pulmonary
+T72	Endpoint 2685 2690	flamm
+T73	Endpoint 2692 2726	ion, microscopic sections of lungs
+T74	Species 2732 2736	rats
+T75	Vehicle 2750 2756	saline
+T76	Endpoint 2763 2770	osed to
+T77	Dose 2771 2774	0.1
+T78	DoseUnits 2775 2777	mg
+T79	TestArticle 2778 2782	ROFA
+T80	Endpoint 2799 2850	Lung tissue sections were evaluated by a board-cert
+T81	Endpoint 2852 2906	ied veterinary pathologist for morphologic alterations
+T82	Endpoint 2924 2935	e pathology
+T83	EndpointUnitOfMeasure 2936 2942	scores
+T84	Endpoint 2943 2971	were calculated for alveolar
+T85	Endpoint 2975 2979	lamm
+T86	Endpoint 3004 3013	pathology
+T87	EndpointUnitOfMeasure 3014 3019	score
+T88	EndpointUnitOfMeasure 3071 3079	none, mi
+T89	EndpointUnitOfMeasure 3080 3119	imal, mild, moderate, marked, or severe
+T90	Endpoint 3119 3137	) and distribution
+T91	EndpointUnitOfMeasure 3139 3219	none, focal, locally extensive, multifocal, multifocal and coalescent, or severe
+T92	Endpoint 3219 3242	) of tissue alterations
+T93	Endpoint 3256 3265	pathology
+T94	EndpointUnitOfMeasure 3266 3290	score on a scale of 0 10
+T95	Endpoint 3366 3379	microvascular
+T96	Endpoint 3383 3387	lamm
+T97	Endpoint 3389 3392	ion
+T98	Endpoint 3394 3446	histologic analysis was performed on the spinotrapez
+T99	Endpoint 3447 3456	us muscle
+T100	Species 3460 3464	rats
+T101	TimeEndpointAssessed 3465 3467	24
+T102	TimeUnits 3468 3485	hr after exposure
+T103	TestArticle 3489 3493	ROFA
+T104	TestArticle 3497 3501	TiO2
+T105	Dose 3503 3506	0.1
+T106	Dose 3510 3514	0.25
+T107	DoseUnits 3515 3517	mg
+T108	Species 3575 3578	rat
+T109	TestArticle 3683 3692	hematoxyl
+T110	Endpoint 3692 3704	in and eosin
+T111	Endpoint 3755 3766	ls and eosi
+T112	Endpoint 3768 3770	ph
+T113	TestArticle 3770 3774	ils.
+T114	Endpoint 3792 3807	hemoprotein MPO
+T115	Endpoint 3811 3826	the spinotrapez
+T116	Endpoint 3827 3836	us muscle
+T117	Species 3840 3844	rats
+T118	TimeEndpointAssessed 3845 3847	24
+T119	TimeUnits 3848 3850	hr
+T120	Vehicle 3872 3878	saline
+T121	Dose 3882 3886	0.25
+T122	DoseUnits 3887 3889	mg
+T123	TestArticle 3890 3894	ROFA
+T124	Endpoint 3901 3906	ohist
+T125	Endpoint 3913 3916	try
+T126	Species 4245 4251	rabbit
+T127	TestArticle 4265 4270	ibody
+T128	Endpoint 4323 4326	MPO
+T129	TestArticle 4384 4389	-dole
+T130	Endpoint 4537 4551	Reverse transc
+T131	Endpoint 4552 4593	iptase polymerase chain reaction (RT-PCR)
+T132	Endpoint 4600 4626	left and right spinotrapez
+T133	Endpoint 4627 4644	us muscles were e
+T134	Endpoint 4648 4650	ed
+T135	Species 4656 4660	rats
+T136	TimeEndpointAssessed 4661 4663	24
+T137	TimeUnits 4664 4666	hr
+T138	Vehicle 4688 4694	saline
+T139	Dose 4698 4700	0.
+T140	Dose 4701 4702	5
+T141	DoseUnits 4703 4705	mg
+T142	TestArticle 4706 4710	ROFA
+T143	Endpoint 4716 4833	the microcirculation was dissected from the surrounding skeletal muscle. The pooled microvascular samples from an ind
+T144	Endpoint 4838 4840	al
+T145	Species 4841 4844	rat
+T146	Endpoint 4845 4910	were stored in RNAlater (Ambion, Austin, TX) at 4 C for total RNA
+T147	Endpoint 4922 4931	Total RNA
+T148	TestArticle 4968 4972	o-sc
+T149	Species 5103 5107	Rats
+T150	Endpoint 5253 5264	ated to ens
+T151	Endpoint 5340 5357	arterial pressure
+T152	Endpoint 5363 5380	right spinotrapez
+T153	Endpoint 5381 5405	us muscle was then exter
+T154	Endpoint 5408 5495	ized, superfused with an electrolyte solution, and prepared for microscopic observation
+T155	Endpoint 5724 5750	arteriolar inner diameters
+T156	Endpoint 5765 5795	and venular leukocyte adhesion
+T157	TestArticle 5807 5811	ied.
+T158	Endpoint 5851 5863	Arteriolar e
+T159	Endpoint 5865 5868	oth
+T160	Endpoint 5870 5892	ium-dependent dilation
+T161	Endpoint 5940 5949	+-depende
+T162	Endpoint 6571 6605	passive diameter of each arteriole
+T163	Endpoint 6641 6658	arteriolar respon
+T164	Endpoint 6660 6679	veness to adrenergi
+T165	Endpoint 6701 6703	ph
+T166	Species 6772 6776	rats
+T167	Vehicle 6802 6808	saline
+T168	Dose 6812 6814	0.
+T169	TestArticle 6820 6824	ROFA
+T170	Endpoint 7418 7471	Adhering or rolling leukocytes in first-order venules
+T171	Species 7475 7479	rats
+T172	Vehicle 7505 7511	saline
+T173	Dose 7513 7517	0.25
+T174	DoseUnits 7518 7520	mg
+T175	TestArticle 7521 7525	ROFA
+T176	Dose 7530 7533	0.1
+T177	DoseUnits 7534 7536	mg
+T178	TestArticle 7537 7541	TiO2
+T179	Endpoint 7574 7589	microvascular i
+T180	Endpoint 7590 7595	flamm
+T181	Endpoint 7602 7612	Leukocytes
+T182	EndpointUnitOfMeasure 7722 7729	counted
+T183	Endpoint 7778 7817	Oxidant activity in the arteriolar wall
+T184	Endpoint 7926 7939	microvascular
+T185	Endpoint 7942 7954	idant stress
+T186	Endpoint 8045 8056	spinotrapez
+T187	Endpoint 8057 8105	us muscle was fixed with a 10% formalin solution
+T188	Endpoint 8119 8174	The tissue was then viewed with bright-field microscopy
+T189	Endpoint 8363 8365	as
+T190	Endpoint 8423 8460	microvascular wall levels of formazan
+T191	Endpoint 8519 8534	xidant activity
+T192	EndpointUnitOfMeasure 8632 8643	A = ln(l/l)
+T193	Endpoint 8723 8725	as
+T194	Endpoint 8743 8802	amount of formazan formed is proportional to the level of o
+T195	Endpoint 8803 8817	idant activity
+T196	EndpointUnitOfMeasure 8840 8850	absorption
+T197	Endpoint 8966 8985	Arteriolar diameter
+T198	Endpoint 9039 9044	Resti
+T199	Endpoint 9045 9058	g vascular to
+T200	EndpointUnitOfMeasure 9104 9136	tone = [(Dpass - D)/Dpass]   100
+T201	EndpointUnitOfMeasure 9392 9394	mb
+T202	EndpointUnitOfMeasure 9434 9436	mb
+T203	Species 9442 9446	rats

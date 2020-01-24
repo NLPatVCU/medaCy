@@ -4,10 +4,10 @@ from spacy.matcher import Matcher
 from spacy.tokens import Span
 from spacy.tokens import Token
 
-from medacy.pipeline_components.base.base_component import BaseComponent
+from medacy.pipeline_components.feature_overlayers.base import BaseOverlayer
 
 
-class UnitComponent(BaseComponent):
+class UnitOverlayer(BaseOverlayer):
     """
     A pipeline component that tags units.
     Begins by first tagging all mass, volume, time, and form units then aggregates as necessary.

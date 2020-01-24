@@ -1,103 +1,114 @@
-"""
-A utility class to Metamap medical text documents.
-Metamap a file  and utilize it the output or manipulate stored metamap output
-"""
 import json
+import logging
+import multiprocessing
 import os
 import subprocess
 import tempfile
 import warnings
+import math
 
 import xmltodict
+from joblib import Parallel, delayed
 
 from medacy.tools.unicode_to_ascii import UNICODE_TO_ASCII
 
 
 class MetaMap:
-    """A python wrapper for metamap that includes built in caching of metamap output."""
+    """A python wrapper for MetaMap that includes built in caching of MetaMap output."""
 
     def __init__(self, metamap_path, cache_output=False, cache_directory=None, convert_ascii=True, args=""):
         """
-        :param metamap_path: The location of the metamap executable.
-                            (ex. /home/share/programs/metamap/2016/public_mm/bin/metamap)
+        :param metamap_path: The location of the MetaMap executable.
+            (ex. /home/programs/metamap/2016/public_mm/bin/metamap)
         :param cache_output: Whether to cache output as it run through metamap, will by default store in a
-                             temp directory tmp/medacy*/
+            temp directory tmp/medacy*/
         :param cache_directory: alternatively, specify a directory to cache metamapped files to
         """
 
-        if cache_output:
-            if cache_directory is None: #set cache directory to tmp directory, creating if not exists
-                tmp = tempfile.gettempdir()
-                files = [filename for filename in os.listdir(tmp) if filename.startswith("medacy")]
+        # Set cache directory to tmp directory, creating if not exists
+        if cache_output and cache_directory is None:
+            tmp = tempfile.gettempdir()
 
-                if files:
-                    cache_directory = os.path.join(tmp, files[0])
-                else:
-                    tmp_dir = tempfile.mkdtemp(prefix="medacy")
-                    cache_directory = os.path.join(tmp, tmp_dir)
+            files = [filename for filename in os.listdir(tmp) if filename.startswith("medacy")]
+            if files:
+                cache_directory = os.path.join(tmp, files[0])
+            else:
+                tmp_dir = tempfile.mkdtemp(prefix="medacy")
+                cache_directory = os.path.join(tmp, tmp_dir)
 
         self.cache_directory = cache_directory
         self.metamap_path = metamap_path
         self.convert_ascii = convert_ascii
         self.args = args
+        # Set path to the program that enables metamapping
+        self._program_name = os.path.join(os.path.dirname(self.metamap_path), 'skrmedpostctl')
+        self.recent_file = None
+        self.metamap_dict = {}
+
+    def activate(self):
+        """Activates MetaMap for metamapping files or strings"""
+        subprocess.call([self._program_name, 'start'])
+
+    def __enter__(self):
+        """Activates MetaMap for metamapping files or strings"""
+        self.activate()
+        return self
+
+    def deactivate(self):
+        """Deactivates MetaMap"""
+        subprocess.call([self._program_name, 'stop'])
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Deactivates MetaMap"""
+        self.deactivate()
 
     def map_file(self, file_to_map, max_prune_depth=10):
         """
         Maps a given document from a file_path and returns a formatted dict
-        :param file_to_map: the path of the file that will be metamapped
-        :param max_prune_depth: set to larger for better results. See metamap specs about pruning depth.
-        :return:
+        :param file_to_map: the path of the file to be metamapped
+        :param max_prune_depth: See metamap specs about pruning depth; defaults to 10; set to larger for better results.
+        :return: a dictionary of MetaMap data
         """
         self.recent_file = file_to_map
 
-        if self.cache_directory is not None: #look up file if exists, otherwise continue metamapping
+        if self.cache_directory is not None:  # Look up file if exists, otherwise continue metamapping
             cached_file_path = os.path.join(
                 self.cache_directory,
                 os.path.splitext(os.path.basename(file_to_map))[0] + ".metamapped"
             )
 
             if os.path.exists(cached_file_path):
-                print(cached_file_path)
+                logging.debug(cached_file_path)
                 return self.load(cached_file_path)
 
-        try:
-            with open(file_to_map, 'r') as file:
-                contents = file.read()
-        except:
-            raise FileNotFoundError("Error opening file while attempting to map: %s" % file_to_map)
+        with open(file_to_map, 'r') as f:
+            contents = f.read()
 
-        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth,self.args), contents)
+        metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i %s' % (max_prune_depth, self.args), contents)
 
         if self.cache_directory is not None:
             with open(cached_file_path, 'w') as mapped_file:
                 try:
-                    #print("Writing to", os.path.join(self.cache_directory, file_name))
                     mapped_file.write(json.dumps(metamap_dict))
                 except Exception as e:
-                    mapped_file.write(str(e))
+                    logging.error(str(e))
 
         return metamap_dict
 
     def map_text(self, text, max_prune_depth=10):
-        # TODO add caching here as in map_file
-        # An example of this cachine is available in the map_file
+        """
+        Runs MetaMap over str input
+        :param text: A string to run MetaMap over
+        :param max_prune_depth: defaults to 10
+        :return: a MetaMap dict
+        """
         self.metamap_dict = self._run_metamap('--XMLf --blanklines 0 --silent --prune %i' % max_prune_depth, text)
         return self.metamap_dict
 
-    def load(self, file_to_load):
+    @staticmethod
+    def load(file_to_load):
         with open(file_to_load, 'rb') as f:
             return json.load(f)
-
-    def map_corpus(self, documents, directory=None, n_job=-1):
-        """
-        Metamaps a large amount of files quickly by forking processes and utilizing multiple cores
-
-        :param documents: an array of documents to map
-        :param directory: location to map all files
-        :param n_job: number of cores to utilize at once while mapping - this may use a large amount of memory
-        :return:
-        """
-        raise NotImplementedError() #TODO implement utilizing code for parallel process mapper from n2c2
 
     def _run_metamap(self, args, document):
         """
@@ -109,17 +120,26 @@ class MetaMap:
         if self.convert_ascii:
             document, ascii_diff = self._convert_to_ascii(document)
 
-        bashCommand = 'bash %s %s' % (self.metamap_path, args)
-        process = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        bash_command = 'bash %s %s' % (self.metamap_path, args)
+        process = subprocess.Popen(bash_command, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = process.communicate(input=bytes(document, 'UTF-8'))
         output = str(output.decode('utf-8'))
 
         xml = ""
-        for line in output.split("\n")[1:]:
-            if 'DOCTYPE' not in line and 'xml' not in line:
-                xml += line+'\n'
-        xml = "<metamap>\n" + xml + "</metamap>"  # surround in single root tag - hacky.
-        xml = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE MMOs PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://metamap.nlm.nih.gov/DTD/MMOtoXML_v5.dtd">\n'+xml
+        lines = output.split('\n')
+
+        # Lines at index 1 and 2 are a header for the XML output
+        for line in lines[1:3]:
+            xml += line + '\n'
+
+        # The beginning of the metamap-specific XML is this tag
+        xml += "<metamap>\n"
+
+        for line in output.split("\n")[3:]:
+            if not all(item in line for item in ['DOCTYPE', 'xml']):
+                xml += line + '\n'
+
+        xml += "</metamap>"  # surround in single root tag - hacky.
 
         if output is None:
             raise Exception("An error occured while using metamap: %s" % error)
@@ -137,7 +157,6 @@ class MetaMap:
                 if k == lookup_key:
                     yield v
                 else:
-
                     yield from self._item_generator(v, lookup_key)
         elif isinstance(json_input, list):
             for item in json_input:
@@ -153,14 +172,9 @@ class MetaMap:
             warnings.warn("Metamap output is none for a file in the pipeline. Exiting.")
             return
 
-        utterances = metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']
-        mapped_terms = []
-
-        mapped_terms = list(self._item_generator(metamap_dict, 'Candidate'))
-
         all_terms = []
 
-        for term in mapped_terms:
+        for term in self._item_generator(metamap_dict, 'Candidate'):
             if isinstance(term, dict):
                 all_terms.append(term)
             if isinstance(term, list):
@@ -173,7 +187,7 @@ class MetaMap:
         Transforms an array of mapped_terms in a spacy annotation object. Label for each annotation
         defaults to first semantic type in semantic_type array
         :param mapped_terms: an array of mapped terms
-        :param label: the label to assign to each annotation, defaults to first semantic type of mapped_term
+        :param entity_label: the label to assign to each annotation, defaults to first semantic type of mapped_term
         :return: a annotation formatted to spacy's specifications
         """
 
@@ -181,7 +195,6 @@ class MetaMap:
 
         for term in mapped_terms:
             for span in self.get_span_by_term(term):  # if a single entity corresonds to a disjunct span
-
                 entity_start, entity_end = span
                 if entity_label is None:
                     annotations.append((entity_start, entity_end, self.get_semantic_types_by_term(term)[0]))
@@ -192,8 +205,7 @@ class MetaMap:
 
     def get_term_by_semantic_type(self, mapped_terms, include=[], exclude=None):
         """
-        Returns Metamapped utterances that all contain a given set of semantic types found in include
-
+        Returns metamapped utterances that all contain a given set of semantic types found in include
         :param mapped_terms: An array of candidate dictionaries
         :return: the dictionaries that contain a term with all the semantic types in semantic_types
         """
@@ -210,13 +222,10 @@ class MetaMap:
 
             if int(term['SemTypes']['@Count']) == 0:
                 continue
-
             if int(term['SemTypes']['@Count']) == 1:
                 found_types.append(term['SemTypes']['SemType'])
-
             if int(term['SemTypes']['@Count']) > 1:
                 found_types = term['SemTypes']['SemType']
-
             if exclude is not None and set(exclude) <= set(found_types):
                 continue
 
@@ -225,10 +234,9 @@ class MetaMap:
 
         return matches
 
-    def get_span_by_term(self,term):
+    def get_span_by_term(self, term):
         """
         Takes a given utterance dictionary (term) and extracts out the character indices of the utterance
-
         :param term: The full dictionary corresponding to a metamap term
         :return: the span of the referenced term in the document
         """
@@ -343,29 +351,29 @@ class MetaMap:
                 metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance'] = [metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']]
 
             for utterance in metamap_dict['metamap']['MMOs']['MMO']['Utterances']['Utterance']:
-                if int(utterance['Phrases']['@Count']) == 0: # Ensure this level contains something
+                if int(utterance['Phrases']['@Count']) == 0:  # Ensure this level contains something
                     continue
-                if type(utterance['Phrases']['Phrase']) is not list: # Make sure this entry is a list
+                if type(utterance['Phrases']['Phrase']) is not list:  # Make sure this entry is a list
                     utterance['Phrases']['Phrase'] = [utterance['Phrases']['Phrase']]
 
                 for phrase in utterance['Phrases']['Phrase']:
-                    if int(phrase['Mappings']['@Count']) == 0: # Ensure this level contains something
+                    if int(phrase['Mappings']['@Count']) == 0:  # Ensure this level contains something
                         continue
-                    if type(phrase['Mappings']['Mapping']) is not list: # Make sure this entry is a list
+                    if type(phrase['Mappings']['Mapping']) is not list:  # Make sure this entry is a list
                         phrase['Mappings']['Mapping'] = [phrase['Mappings']['Mapping']]
 
                     for mapping in phrase['Mappings']['Mapping']:
-                        if int(mapping['MappingCandidates']['@Total']) == 0: # Ensure this level contains something
+                        if int(mapping['MappingCandidates']['@Total']) == 0:  # Ensure this level contains something
                             continue
-                        if type(mapping['MappingCandidates']['Candidate']) is not list: # Make sure this entry is a list
+                        if type(mapping['MappingCandidates']['Candidate']) is not list:  # Make sure this entry is a list
                             mapping['MappingCandidates']['Candidate'] = [mapping['MappingCandidates']['Candidate']]
 
                         # HERE'S THE IMPORTANT PART -----------------------------------------
                         # Just accept it as iterating through every entry in the metamap_dict
                         for candidate in mapping['MappingCandidates']['Candidate']:
-                            if int(candidate['ConceptPIs']['@Count']) == 0: # Ensure this level contains something
+                            if int(candidate['ConceptPIs']['@Count']) == 0:  # Ensure this level contains something
                                 continue
-                            if type(candidate['ConceptPIs']['ConceptPI']) is not list: # Make sure this entry is a list
+                            if type(candidate['ConceptPIs']['ConceptPI']) is not list:  # Make sure this entry is a list
                                 candidate['ConceptPIs']['ConceptPI'] = [candidate['ConceptPIs']['ConceptPI']]
 
                             candidate['MatchedWords']['MatchedWord'] = []
@@ -374,23 +382,23 @@ class MetaMap:
                                 match_length = int(conceptpi['Length'])
                                 match_end = match_start + match_length-1
 
-                                if match_start == conv_start and match_end == conv_end: # If match is equal to conversion (a [conversion] and some text)
+                                if match_start == conv_start and match_end == conv_end:  # If match is equal to conversion (a [conversion] and some text)
                                     # print("Perfect match")
                                     match_length += delta
-                                elif match_start < conv_start and match_end < conv_end: # If match intersects conversion on left ([a con]version and some text)
+                                elif match_start < conv_start and match_end < conv_end:  # If match intersects conversion on left ([a con]version and some text)
                                     # print("Left intersect")
                                     match_length += delta + conv_start
-                                elif conv_start < match_start and conv_end < match_end: # If match intersects conversion on right (a conver[sion and som]e text)
+                                elif conv_start < match_start and conv_end < match_end:  # If match intersects conversion on right (a conver[sion and som]e text)
                                     # print("Right intersect ")
                                     if conv_end + delta < match_start:
                                         match_start = conv_end + delta + 1
                                         match_length = match_end - conv_end
                                     else:
                                         match_length += delta
-                                elif conv_end < match_start: # If match is totally to the right of the conversion (a conversion and a [match])
+                                elif conv_end < match_start:  # If match is totally to the right of the conversion (a conversion and a [match])
                                     # print("Full right")
                                     match_start += delta
-                                else: # If match is totally to right of conversion, no action needed (a [match] and a conversion)
+                                else:  # If match is totally to right of conversion, no action needed (a [match] and a conversion)
                                     # print("Full left")
                                     pass
 
@@ -399,3 +407,86 @@ class MetaMap:
                                 conceptpi['StartPos'] = str(match_start)
                                 conceptpi['Length'] = str(match_length)
         return text, metamap_dict
+
+    def metamap_dataset(self, dataset, n_jobs=multiprocessing.cpu_count() - 1, retry_possible_corruptions=True):
+        """
+         Metamaps the files registered by a Dataset. Attempts to Metamap utilizing a max prune depth of 30, but on
+         failure retries with lower max prune depth. A lower prune depth roughly equates to decreased MetaMap performance.
+         More information can be found in the MetaMap documentation.
+
+         :param dataset: the Dataset to MetaMap.
+         :param n_jobs: the number of processes to spawn when metamapping. Defaults to one less core than available on your machine.
+         :param retry_possible_corruptions: Re-Metamap's files that are detected as being possibly corrupt. Set to False for more control over what gets Metamapped or if you are having bugs with Metamapping. (default: True)
+         :return: None
+         """
+
+        if dataset.is_metamapped():
+            logging.info(f"The following Dataset has already been metamapped: {repr(dataset)}")
+            return
+
+        mm_dir = os.path.join(dataset.data_directory, "metamapped")
+
+        # Make MetaMap directory if it doesn't exist.
+        if not os.path.isdir(mm_dir):
+            os.makedirs(mm_dir)
+            dataset.metamapped_files_directory = mm_dir
+
+        # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
+        if retry_possible_corruptions:
+            # Do not metamap files that are already metamapped and above 200 bytes in size
+            already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)
+                                  if os.path.getsize(os.path.join(mm_dir, file)) > 200]
+        else:
+            # Do not metamap files that are already metamapped
+            already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)]
+
+        files_to_metamap = [data_file.txt_path for data_file in dataset if data_file.file_name not in already_metamapped]
+
+        logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
+
+        Parallel(n_jobs=n_jobs)(
+            delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
+
+        if not dataset.is_metamapped():
+            raise RuntimeError(f"MetaMapping {dataset} was unsuccessful")
+
+        for data_file in dataset:
+            data_file.metamapped_path = os.path.join(
+                mm_dir,
+                data_file.file_name + ".metamapped"
+            )
+
+    def _parallel_metamap(self, file_path, mm_dir):
+        """
+        Facilitates metamapping in parallel by forking off processes to MetaMap each file individually.
+
+        :param file_path: the path of the txt file to metamap
+        :return: mm_dir now contains metamapped versions of the dataset files
+        """
+        file = file_path.split(os.path.sep)[-1]
+        logging.info("Attempting to Metamap: %s", file_path)
+        mapped_file_location = os.path.join(mm_dir, file.replace('txt', "metamapped"))
+
+        with open(mapped_file_location, 'w') as mapped_file:
+            max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
+
+            metamap_dict = None
+            # while current prune depth causes out of memory on document
+            while metamap_dict is None or metamap_dict['metamap'] is None:
+                if max_prune_depth <= 0:
+                    logging.critical("Failed to to metamap after multiple attempts: %s", file_path)
+                    return
+                try:
+                    metamap_dict = self.map_file(file_path, max_prune_depth=max_prune_depth)  # attempt to metamap
+                    if metamap_dict['metamap'] is not None:  # if successful
+                        break
+                    # Decrease prune depth by an order of magnitude
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5))
+                except BaseException as e:
+                    metamap_dict = None
+                    # Decrease prune depth by an order of magnitude
+                    max_prune_depth = int(math.e ** (math.log(max_prune_depth) - .5))
+                    logging.warning(f"Error Metamapping: {file_path} after raising {type(e).__name__}: {str(e)}")
+
+            mapped_file.write(json.dumps(metamap_dict))
+            logging.info("Successfully Metamapped: %s", file_path)
