@@ -152,12 +152,14 @@ class BiLstmCrfLearner:
 
         :param path: Path of saved model.
         """
-        saved_data = torch.load(path)
+        saved_data = torch.load(path, map_location=self.device)
 
         self.vectorizer.load_values(saved_data['vectorizer_values'])
 
         model = saved_data['model']
+        model.device = self.device
         model.eval()
 
-        self.model = model
+        self.model = model.to(self.device)
+        self.model.device = self.device
         self.vectorizer.load_word_embeddings(self.word_embeddings_file)

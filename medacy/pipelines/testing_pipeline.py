@@ -2,7 +2,7 @@ import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
 from medacy.pipeline_components.learners.crf_learner import get_crf
-from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
+from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
@@ -23,7 +23,7 @@ class TestingPipeline(BasePipeline):
         return "CRF_l2sgd", get_crf()
 
     def get_tokenizer(self):
-        return ClinicalTokenizer(self.spacy_pipeline)
+        return SystematicReviewTokenizer(self.spacy_pipeline)
 
     def get_feature_extractor(self):
         return FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])

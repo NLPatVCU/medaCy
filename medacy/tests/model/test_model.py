@@ -22,13 +22,16 @@ class TestModel(unittest.TestCase):
         cls.entities = cls.dataset.get_labels(as_list=True)
         cls.prediction_directory = tempfile.mkdtemp()  # directory to store predictions
         cls.prediction_directory_2 = tempfile.mkdtemp()
+        cls.prediction_directory_3 = tempfile.mkdtemp()
+        cls.groundtruth_directory = tempfile.mkdtemp()
         cls.pipeline = TestingPipeline(entities=cls.entities)
 
     @classmethod
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
-        shutil.rmtree(cls.prediction_directory)
-        shutil.rmtree(cls.prediction_directory_2)
+        for d in [cls.prediction_directory, cls.prediction_directory_2,
+                  cls.prediction_directory_3, cls.groundtruth_directory]:
+            shutil.rmtree(d)
 
     def test_fit_predict_dump_load(self):
         """Fits a model, tests that it predicts correctly, dumps and loads it, then tests that it still predicts"""
@@ -135,6 +138,33 @@ class TestModel(unittest.TestCase):
         expected = sample_df.ann_path
         actual = result._.gold_annotation_file
         self.assertEqual(actual, expected)
+
+    def test_cross_validate_create_groundtruth_predictions(self):
+        """
+        Tests that during cross validation, the medaCy groundtruth (that is, the version of the training dataset
+        used by medaCy) is written as well as the predictions that are created for each fold
+        """
+        model = Model(self.pipeline)
+        model.cross_validate(
+            self.dataset,
+            num_folds=2,
+            prediction_directory=self.prediction_directory_3,
+            groundtruth_directory=self.groundtruth_directory
+        )
+
+        prediction_dataset = Dataset(self.prediction_directory_3)
+        groundtruth_dataset = Dataset(self.groundtruth_directory)
+
+        for d in [prediction_dataset, groundtruth_dataset]:
+            self.assertIsInstance(d, Dataset)
+
+        prediction_file_names = {d.file_name for d in prediction_dataset}
+        groundtruth_file_names = {d.file_name for d in groundtruth_dataset}
+
+        for n in [prediction_file_names, groundtruth_file_names]:
+            self.assertTrue(n, "The set of file names is empty, meaning that nothing was written to file")
+
+        self.assertSetEqual(prediction_file_names, groundtruth_file_names)
 
 
 if __name__ == '__main__':

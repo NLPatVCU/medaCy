@@ -135,7 +135,7 @@ def json_to_pipeline(json_path):
 
         def get_report(self):
             report = super().get_report() + '\n'
-            report += f"Pipeline configured from a JSON: {json.dumps(input_json)}\nJSON path: {__file__}"
+            report += f"Pipeline configured from a JSON: {json.dumps(input_json)}\nJSON path: {json_path}"
             return report
 
     return CustomPipeline

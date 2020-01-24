@@ -12,12 +12,12 @@ from medacy.data.dataset import Dataset
 from medacy.model.model import Model
 from medacy.model.spacy_model import SpacyModel
 from medacy.tools.json_to_pipeline import json_to_pipeline
+from medacy.pipelines import bert_pipeline
 
 
 def setup(args):
     """
     Sets up dataset and pipeline/model since it gets used by every command.
-
     :param args: Argparse args object.
     :return dataset, model: The dataset and model objects created.
     """
@@ -33,7 +33,7 @@ def setup(args):
         if not set(json_entities) <= set(entities):
             raise ValueError(f"The following entities from the json file are not in the provided dataset: {set(json_entities) - set(entities)}")
         entities = json_entities
-        
+
     if args.pipeline == 'spacy':
         logging.info('Using spacy model')
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
@@ -68,7 +68,6 @@ def setup(args):
 def train(args, dataset, model):
     """
     Used for training new models.
-
     :param args: Argparse args object.
     :param dataset: Dataset to use for training.
     :param model: Untrained model object to use.
@@ -87,7 +86,6 @@ def train(args, dataset, model):
 def predict(args, dataset, model):
     """
     Used for running predictions on new datasets.
-
     :param args: Argparse args object.
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
@@ -105,7 +103,6 @@ def predict(args, dataset, model):
 def cross_validate(args, dataset, model):
     """
     Used for running k-fold cross validations.
-
     :param args: Argparse args object.
     :param dataset: Dataset to use for training.
     :param model: Untrained model object to use.
@@ -149,9 +146,9 @@ def main():
 
     # BERT-specific
     bert_group = parser.add_argument_group('BERT Arguments', 'Arguments for the BERT learner')
-    bert_group.add_argument('-b', '--batch_size', type=int, default=1, help='Batch size.')
-    bert_group.add_argument('-lr', '--learning_rate', type=float, default=None, help='Learning rate for train and cross validate.')
-    bert_group.add_argument('-e', '--epochs', type=int, default=None, help='Number of epochs to train for.')
+    bert_group.add_argument('-b', '--batch_size', type=int, default=bert_pipeline.BATCH_SIZE, help='Batch size.')
+    bert_group.add_argument('-lr', '--learning_rate', type=float, default=bert_pipeline.LEARNING_RATE, help='Learning rate for train and cross validate.')
+    bert_group.add_argument('-e', '--epochs', type=int, default=bert_pipeline.EPOCHS, help='Number of epochs to train for.')
     bert_group.add_argument('-pm', '--pretrained_model', type=str, default='bert-large-cased', help='Which pretrained model to use.')
     bert_group.add_argument('-crf', '--using_crf', action='store_true', help='Use a CRF layer.')
 

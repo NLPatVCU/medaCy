@@ -117,7 +117,7 @@ class Dataset:
             for file in txt_files:
                 file_name = file.rstrip(".txt")
                 txt_path = os.path.join(self.data_directory, file)
-                self.all_data_files.append(DataFile(txt_path, None, None))
+                self.all_data_files.append(DataFile(file_name, txt_path, None))
         else:
             # Construct DataFiles based on what ann files exist
             for file in ann_files:
@@ -322,7 +322,10 @@ class Dataset:
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.get_data_files():
-            yield Annotations(file.ann_path, source_text_path=file.txt_path)
+            if file.ann_path is not None:
+                yield Annotations(file.ann_path, source_text_path=file.txt_path)
+            else:
+                yield Annotations([])
 
     def __getitem__(self, item):
         """
