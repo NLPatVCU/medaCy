@@ -12,9 +12,10 @@ def calculate_dataset_confusion_matrix(dataset_1_path, dataset_2_path, leniency=
     ents, mat = dataset_1.compute_confusion_matrix(dataset_2, leniency=leniency)
     return ents, mat
 
+
 def format_dataset_confusion_matrix(ents, mat):
-    return 
-    return tabulate.tabulate(mat, headers=ents, showindex=ents, tablefmt="orgtbl")
+    return tabulate.tabulate(mat, headers=ents, showindex=ents)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate and display the ambiguity of two datasets")
@@ -23,13 +24,15 @@ def main():
     parser.add_argument('-l', '--leniency', type=float, default=0.0, help="Leniency between 0.0 and 1.0 (default to 0.0)")
     args = parser.parse_args()
     ents, mat = calculate_dataset_confusion_matrix(args.dataset_1, args.dataset_2, leniency=args.leniency)
-    np_mat = np.matrix(mat)
 
-    # Default
-    # print(format_dataset_confusion_matrix(ents, np_mat))
+    lines = []
+    for i, ent in enumerate(ents):
+        new_line = [ent] + mat[i]
+        lines.append(new_line)
 
     # Red
-    print('\033[91m' + format_dataset_confusion_matrix(ents, np_mat) + '\033[0m')
+    print('\033[91m' + format_dataset_confusion_matrix(ents, mat) + '\033[0m')
+
 
 if __name__ == '__main__':
     main()
