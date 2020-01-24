@@ -67,7 +67,7 @@ import json
 import logging
 import os
 import pprint
-from collections import Counter
+from collections import Counter, OrderedDict
 
 import spacy
 
@@ -249,9 +249,9 @@ class Dataset:
         if diff:
             raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
-        #sort entities in ascending order by count.
+        # sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
-        confusion_matrix = [[0 * len(entities)] * len(entities)]
+        confusion_matrix = [[0] * len(entities) for _ in range(len(entities))]
 
         for gold_data_file in self:
             prediction_iter = iter(other)
@@ -262,7 +262,7 @@ class Dataset:
             gold_annotation = Annotations(gold_data_file.ann_path)
             pred_annotation = Annotations(prediction_data_file.ann_path)
 
-            #compute matrix on the Annotation file level
+            # Compute matrix on the Annotation file level
             ann_confusion_matrix = gold_annotation.compute_confusion_matrix(pred_annotation, entities, leniency=leniency)
             for i in range(len(confusion_matrix)):
                 for j in range(len(confusion_matrix)):
