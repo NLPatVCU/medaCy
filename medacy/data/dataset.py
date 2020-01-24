@@ -322,7 +322,10 @@ class Dataset:
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.get_data_files():
-            yield Annotations(file.ann_path, source_text_path=file.txt_path)
+            if file.ann_path is not None:
+                yield Annotations(file.ann_path, source_text_path=file.txt_path)
+            else:
+                yield Annotations([])
 
     def __getitem__(self, item):
         """

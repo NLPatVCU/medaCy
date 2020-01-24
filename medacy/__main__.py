@@ -22,10 +22,7 @@ def setup(args):
     :return dataset, model: The dataset and model objects created.
     """
     dataset = Dataset(args.dataset)
-    try:
-        entities = list(dataset.get_labels())
-    except TypeError:
-        entities = None
+    entities = list(dataset.get_labels())
     if args.test_mode:
         dataset.data_limit = 1
 
@@ -33,7 +30,7 @@ def setup(args):
         with open(args.entities, 'rb') as f:
             data = json.load(f)
         json_entities = data['entities']
-        if entities and not set(json_entities) <= set(entities):
+        if not set(json_entities) <= set(entities):
             raise ValueError(f"The following entities from the json file are not in the provided dataset: {set(json_entities) - set(entities)}")
         entities = json_entities
 
