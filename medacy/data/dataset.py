@@ -133,7 +133,8 @@ class Dataset:
                 full_ann_path = os.path.join(self.data_directory, file)
                 new_datafile = DataFile(file.rstrip(".ann"), txt_file_path, full_ann_path, metamap_path)
                 self.all_data_files.append(new_datafile)
-
+                
+        self.all_data_files.sort(key=lambda x: x.file_name)
         self.data_limit = data_limit if data_limit is not None else len(self.all_data_files)
 
     def get_data_files(self):
