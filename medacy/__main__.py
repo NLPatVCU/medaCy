@@ -132,10 +132,12 @@ def main():
     parser.add_argument('-ent', '--entities', default=None, help='Path to a json file containing an \"entities\" key of a list of entities to use.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
+    
 
     # Logging, testing variables
     test_group = parser.add_argument_group('Logging and testing arguments')
-    test_group.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
+    test_group.add_argument('-lc', '--log_console', action='store_true', help='Use to print logs to console.')
+    test_group.add_argument('-lf', '--log_file', default=None, help='Path at which a log file will be created')
     test_group.add_argument('-t', '--test_mode', default=False, action='store_true', help='Specify that the action is a test (automatically uses only a single '
                                                                                       'data file from the dataset and sets logging to debug mode)')
 
@@ -179,9 +181,12 @@ def main():
     args = parser.parse_args()
 
     # Logging
-    device = str(args.cuda) if args.cuda >= 0 else '_cpu'
-    logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
-    if args.print_logs:
+    if args.log_file:
+        logging.basicConfig(filename=(args.log_file), format='%(asctime)-15s: %(message)s', level=logging.INFO)
+    else:
+        device = str(args.cuda) if args.cuda >= 0 else '_cpu'
+        logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
+    if args.log_console:
         logging.getLogger().addHandler(logging.StreamHandler())
     if args.test_mode:
         logging.getLogger().setLevel(logging.DEBUG)
