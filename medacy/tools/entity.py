@@ -1,3 +1,4 @@
+import os
 from typing import Match
 
 from medacy.data.data_file import DataFile
@@ -84,10 +85,10 @@ class Entity:
         """
         if isinstance(doc, DataFile):
             ann = Annotations(doc.ann_path, doc.txt_path)
-        elif isinstance(doc, str):
+        elif isinstance(doc, (str, os.PathLike)):
             ann = Annotations(doc)
         else:
-            raise ValueError(f"'doc'' must be DataFile or str, but is '{type(doc)}'")
+            raise ValueError(f"'doc'' must be DataFile, str, or os.PathLike, but is '{type(doc)}'")
 
         entities = []
 
