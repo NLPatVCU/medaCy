@@ -31,7 +31,7 @@ def main():
     parser.add_argument('data_limit', type=int, help="The data limit to be used")
     parser.add_argument('-l', '--leniency', type=float, default=0.0, help="Leniency between 0.0 and 1.0 (default to 0.0)")
     args = parser.parse_args()
-    ents, mat = calculate_dataset_confusion_matrix(args.dataset_1, args.dataset_2, dl=data_limit leniency=args.leniency)
+    ents, mat = calculate_dataset_confusion_matrix(args.dataset_1, args.dataset_2, dl=args.data_limit, leniency=args.leniency)
 
     # Default
     print(format_dataset_confusion_matrix(ents, np_mat))
