@@ -440,7 +440,7 @@ class MetaMap:
             # Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)]
 
-        files_to_metamap = [data_file.txt_path for data_file in dataset if data_file.file_name not in already_metamapped]
+        files_to_metamap = [data_file for data_file in dataset if data_file.file_name not in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
@@ -456,16 +456,17 @@ class MetaMap:
                 data_file.file_name + ".metamapped"
             )
 
-    def _parallel_metamap(self, file_path, mm_dir):
+    def _parallel_metamap(self, data_file, mm_dir):
         """
         Facilitates metamapping in parallel by forking off processes to MetaMap each file individually.
 
-        :param file_path: the path of the txt file to metamap
-        :return: mm_dir now contains metamapped versions of the dataset files
+        :param data_file: a DataFile to metamap
+        :return: None
         """
-        file = file_path.split(os.path.sep)[-1]
+        file_name = data_file.file_name
+        file_path = data_file.txt_path
         logging.info("Attempting to Metamap: %s", file_path)
-        mapped_file_location = os.path.join(mm_dir, file.replace('txt', "metamapped"))
+        mapped_file_location = os.path.join(mm_dir, file_name + ".metamapped")
 
         with open(mapped_file_location, 'w') as mapped_file:
             max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping
