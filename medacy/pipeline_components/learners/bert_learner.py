@@ -3,15 +3,18 @@ Learner for training and predicting with a BERT model.
 """
 import logging
 import os
+
 import torch
 from torch.utils.data import RandomSampler, DataLoader, SequentialSampler
 from transformers import AdamW, BertTokenizer, BertForTokenClassification
 
-from medacy.nn import Vectorizer, SequencesDataset, BertCrfForTokenClassification
+from medacy.pipeline_components.learners.nn.bert_crf_for_token_classification import BertCrfForTokenClassification
+from medacy.pipeline_components.learners.nn.sequences_dataset import SequencesDataset
+from medacy.pipeline_components.learners.nn.vectorizer import Vectorizer
+
 
 class BertLearner:
-    """Learner for running predictions and fine tuning BERT models.
-    """
+    """Learner for running predictions and fine tuning BERT models."""
 
     def __init__(
             self,
@@ -38,8 +41,8 @@ class BertLearner:
         device_string = 'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
         self.device = torch.device(device_string)
 
-        self.model = None # Transformers/PyTorch model
-        self.tokenizer = None # Transformers tokenizer
+        self.model = None  # Transformers/PyTorch model
+        self.tokenizer = None  # Transformers tokenizer
         self.vectorizer = Vectorizer(self.device) # medaCy vectorizer
         self.pretrained_model = pretrained_model
         self.batch_size = batch_size
