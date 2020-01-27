@@ -87,6 +87,7 @@ class BiLstmCrf(nn.Module):
         :return: Output from BiLSTM.
         """
         # Create tensor of word embeddings
+
         embedding_indices = [token[0] for token in sentence]
         embedding_indices = torch.tensor(embedding_indices, device=self.device)
         word_embeddings = self.word_embeddings(embedding_indices)

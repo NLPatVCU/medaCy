@@ -18,7 +18,6 @@ from medacy.pipelines import bert_pipeline
 def setup(args):
     """
     Sets up dataset and pipeline/model since it gets used by every command.
-
     :param args: Argparse args object.
     :return dataset, model: The dataset and model objects created.
     """
@@ -34,7 +33,7 @@ def setup(args):
         if not set(json_entities) <= set(entities):
             raise ValueError(f"The following entities from the json file are not in the provided dataset: {set(json_entities) - set(entities)}")
         entities = json_entities
-        
+
     if args.pipeline == 'spacy':
         logging.info('Using spacy model')
         model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
@@ -69,7 +68,6 @@ def setup(args):
 def train(args, dataset, model):
     """
     Used for training new models.
-
     :param args: Argparse args object.
     :param dataset: Dataset to use for training.
     :param model: Untrained model object to use.
@@ -88,7 +86,6 @@ def train(args, dataset, model):
 def predict(args, dataset, model):
     """
     Used for running predictions on new datasets.
-
     :param args: Argparse args object.
     :param dataset: Dataset to run prediction over.
     :param model: Trained model to use for predictions.
@@ -106,7 +103,6 @@ def predict(args, dataset, model):
 def cross_validate(args, dataset, model):
     """
     Used for running k-fold cross validations.
-
     :param args: Argparse args object.
     :param dataset: Dataset to use for training.
     :param model: Untrained model object to use.
