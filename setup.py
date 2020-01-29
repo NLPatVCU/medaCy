@@ -58,20 +58,10 @@ setup(
         'spacy==2.2.2',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
-<<<<<<< HEAD
-<<<<<<< HEAD
-        'numpy>=1.16.1',
-=======
-        'torch==1.2.0',
-        'pytorch-crf==0.7.2',
-        'numpy==1.16.1',
->>>>>>> development
-=======
         'torch==1.2.0',
         'pytorch-crf==0.7.2',
         'numpy>=1.16.1',
         'transformers==2.3.0',
->>>>>>> 9d56f210bdb8f638a1a8a4d0f7da86e3157b2b3b
         'sklearn-crfsuite',
         'xmltodict>=0.11.0',
         'joblib>=0.12.5',
