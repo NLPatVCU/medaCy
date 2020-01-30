@@ -11,8 +11,79 @@ from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
+from medacy.data.annotations import Annotations
 from medacy.model._model import construct_annotations_from_tuples, predict_document, create_folds
 from medacy.pipelines.base.base_pipeline import BasePipeline
+
+
+def sequence_to_ann(X, y, file_names):
+    # Flattening nested structures into 2d lists
+    file_names = {x[2] for x in X}
+    print(file_names)
+    anns = {filename: Annotations([]) for filename in file_names}
+    tuples_by_doc = {filename: [] for filename in file_names}
+    document_indices = []
+    span_indices = []
+    for sequence in X:
+        document_indices += [sequence[2]] * len(sequence[0])
+        span_indices += list(sequence[1])
+    groundtruth = [element for sentence in y for element in sentence]
+
+    # Map the predicted sequences to their corresponding documents
+    i = 0
+
+    tuples = {file_name: [] for file_name in file_names}
+    while i < len(groundtruth):
+        if groundtruth[i] == 'O':
+            i += 1
+            continue
+
+        entity = groundtruth[i]
+        document = document_indices[i]
+        first_start, first_end = span_indices[i]
+        # Ensure that consecutive tokens with the same label are merged
+        while i < len(groundtruth) - 1 and groundtruth[i + 1] == entity:  # If inside entity, keep incrementing
+            i += 1
+
+        last_start, last_end = span_indices[i]
+        tuples[document].append((entity, first_start, last_end))
+        i += 1
+
+    for file_name, tups in tuples_by_doc.items():
+        ann_tups = []
+        with open(file_name) as f:
+            text = f.read()
+        for tup in tups:
+            entity, start, end = tup
+            ent_text = text[start:end]
+            new_tup = (entity, start, end, ent_text)
+            ann_tups.append(new_tup)
+        ann_tups.sort(key=lambda x: (x[1], x[2]))
+        anns[file_name].annotations = ann_tups
+
+    return anns
+
+
+def write_ann_dicts(output_dir, dict_list):
+    """
+    Merges a list of dicts of Annotations into one dict representing all the individual ann files
+    :param output_dir: Path object of the output directory (a subdirectory is made for each fold)
+    :param dict_list: a list of file_name: Annotations dictionaries
+    :return: None
+    """
+    file_names = set()
+    for d in dict_list:
+        file_names |= set(d.keys())
+
+    all_annotations_dict = {filename: Annotations([]) for filename in file_names}
+    for i, fold_dict in enumerate(dict_list, 1):
+        for file_name, ann in fold_dict.items():
+            all_annotations_dict[file_name] |= ann
+        fold_dir = output_dir / f"fold_{i}"
+        os.mkdir(fold_dir)
+        for file_name, ann in all_annotations_dict.items():
+            output_file_path = fold_dir / (os.path.basename(file_name).strip("txt") + "ann")
+            ann.to_ann(output_file_path)
 
 
 class Model:
@@ -217,8 +288,9 @@ class Model:
         eval_stats = {}
 
         # Dict for storing mapping of sequences to their corresponding file
-        groundtruth_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
-        preds_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
+        fold_groundtruth_dicts = []
+        fold_prediction_dicts = []
+        file_names = {x[2] for x in self.X_data}
 
         folds = create_folds(self.y_data, num_folds)
 
@@ -240,63 +312,12 @@ class Model:
             y_pred = learner.predict(test_data)
 
             if groundtruth_directory is not None:
-                # Flattening nested structures into 2d lists
-                document_indices = []
-                span_indices = []
-                for sequence in X_test:
-                    document_indices += [sequence[2]] * len(sequence[0])
-                    span_indices += list(sequence[1])
-                groundtruth = [element for sentence in y_test for element in sentence]
-
-                # Map the predicted sequences to their corresponding documents
-                i = 0
-
-                while i < len(groundtruth):
-                    if groundtruth[i] == 'O':
-                        i += 1
-                        continue
-
-                    entity = groundtruth[i]
-                    document = document_indices[i]
-                    first_start, first_end = span_indices[i]
-                    # Ensure that consecutive tokens with the same label are merged
-                    while i < len(groundtruth) - 1 and groundtruth[i + 1] == entity:  # If inside entity, keep incrementing
-                        i += 1
-
-                    last_start, last_end = span_indices[i]
-                    groundtruth_by_document[document].append((entity, first_start, last_end))
-                    i += 1
+                ann_dict = sequence_to_ann(X_test, y_train, file_names)
+                fold_groundtruth_dicts.append(ann_dict)
 
             if prediction_directory is not None:
-                # Flattening nested structures into 2d lists
-                document_indices = []
-                span_indices = []
-
-                for sequence in X_test:
-                    document_indices += [sequence[2]] * len(sequence[0])
-                    span_indices += list(sequence[1])
-
-                predictions = [element for sentence in y_pred for element in sentence]
-
-                # Map the predicted sequences to their corresponding documents
-                i = 0
-
-                while i < len(predictions):
-                    if predictions[i] == 'O':
-                        i += 1
-                        continue
-
-                    entity = predictions[i]
-                    document = document_indices[i]
-                    first_start, first_end = span_indices[i]
-
-                    # Ensure that consecutive tokens with the same label are merged
-                    while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
-                        i += 1
-
-                    last_start, last_end = span_indices[i]
-                    preds_by_document[document].append((entity, first_start, last_end))
-                    i += 1
+                ann_dict = sequence_to_ann(X_test, y_test, file_names)
+                fold_prediction_dicts.append(ann_dict)
 
             # Write the metrics for this fold.
             for label in tags:
@@ -365,19 +386,13 @@ class Model:
         else:
             logging.info(output_str)
 
-        if prediction_directory or groundtruth_directory:
-            # Write fold predictions and/or groundtruth entities to file
-            for data_file in training_dataset:
-                with open(data_file.txt_path) as f:
-                    doc = self.pipeline.spacy_pipeline.make_doc(f.read())
-                if groundtruth_directory:
-                    predictions = groundtruth_by_document[data_file.txt_path]
-                    write_path = os.path.join(groundtruth_directory, data_file.file_name + '.ann')
-                    construct_annotations_from_tuples(doc, predictions).to_ann(write_path)
-                if prediction_directory:
-                    predictions = preds_by_document[data_file.txt_path]
-                    write_path = os.path.join(prediction_directory, data_file.file_name + '.ann')
-                    construct_annotations_from_tuples(doc, predictions).to_ann(write_path)
+        if groundtruth_directory:
+            write_ann_dicts(groundtruth_directory, fold_groundtruth_dicts)
+        if prediction_directory:
+            write_ann_dicts(prediction_directory, fold_prediction_dicts)
+
+
+
 
         return statistics_all_folds
 

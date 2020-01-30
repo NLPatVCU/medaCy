@@ -158,13 +158,29 @@ class TestModel(unittest.TestCase):
         for d in [prediction_dataset, groundtruth_dataset]:
             self.assertIsInstance(d, Dataset)
 
+        original_file_names = {d.file_name for d in self.dataset}
         prediction_file_names = {d.file_name for d in prediction_dataset}
         groundtruth_file_names = {d.file_name for d in groundtruth_dataset}
 
         for n in [prediction_file_names, groundtruth_file_names]:
-            self.assertTrue(n, "The set of file names is empty, meaning that nothing was written to file")
+            self.assertSetEqual(n, original_file_names)
 
-        self.assertSetEqual(prediction_file_names, groundtruth_file_names)
+        # Test that fold groundtruth is written to file
+        for fold_name in ["fold_1", "fold_2"]:
+            fold_dataset = Dataset(self.dataset.data_directory / fold_name)
+            whole_fold_ann = Annotations([])
+            for d in fold_dataset:
+                fold_ann = Annotations(d.ann_path)
+                groundtruth_ann = groundtruth_dataset[d.file_name]
+                # Test that the entities in the fold groundtruth are a subset of the whole for that file
+                self.assertTrue(set(fold_ann) <= set(groundtruth_ann))
+                whole_fold_ann |= fold_ann
+
+            all_groundtruth_tuples = set()
+            for ann in groundtruth_dataset.generate_annotations():
+                all_groundtruth_tuples |= ann
+
+            self.assertSetEqual(set(whole_fold_ann), all_groundtruth_tuples)
 
 
 if __name__ == '__main__':
