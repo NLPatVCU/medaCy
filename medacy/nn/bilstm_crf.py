@@ -56,9 +56,9 @@ class BiLstmCrf(nn.Module):
         linear_input_size = HIDDEN_DIM*2 + other_features
         self.hidden2tag = nn.Linear(linear_input_size, self.tagset_size)
 
-        self.crf = CRF(self.tagset_size)
+        self.crf = CRF(self.tagset_size, batch_first=True)
 
-    def _get_character_features(self, sentence):
+    def _get_character_features(self, character_indices):
         """Send each token through its own LSTM to get its character embeddings
 
         :param sentence: List of string tokens.
@@ -66,47 +66,50 @@ class BiLstmCrf(nn.Module):
         """
 
         # Separate and pad character indices into a batch
-        longest_token_length = max([len(token[1]) for token in sentence])
-        character_indices = []
-        for token in sentence:
-            indices = [character for character in token[1]]
-            if len(indices) < longest_token_length:
-                padding = longest_token_length - len(indices)
-                indices += [0] * padding
-            character_indices.append(indices)
-        character_indices = torch.tensor(character_indices, device=self.device)
+        embeddings = self.character_lstm.character_embeddings(character_indices)
+        character_features = torch.zeros((character_indices.shape[0], character_indices.shape[1], HIDDEN_DIM))
 
-        features = self.character_lstm(character_indices)
+        for i, sequence in enumerate(embeddings):
+            features = self.character_lstm(sequence)
+            character_features[i] = features
 
-        return features
+        return character_features
 
-    def _get_lstm_features(self, sentence):
+    def _get_lstm_features(self, batch):
         """Get BiLSTM features from a list of tokens
 
         :param sentence: List of string tokens.
         :return: Output from BiLSTM.
         """
         # Create tensor of word embeddings
-        embedding_indices = [token[0] for token in sentence]
-        embedding_indices = torch.tensor(embedding_indices, device=self.device)
-        word_embeddings = self.word_embeddings(embedding_indices)
+        # embedding_indices = [token[0] for token in sentence]
+        # embedding_indices = torch.tensor(embedding_indices, device=self.device)
+        # word_embeddings = self.word_embeddings(embedding_indices)
 
-        character_vectors = self._get_character_features(sentence)
+        word_embeddings = batch[0]['token']
+        character_indices = batch[0]['char']
+        character_vectors = self._get_character_features(character_indices)
+
+        #character_vectors = self._get_character_features(sentence)
 
         # Turn rest of features into a tensor
-        other_features = [token[2:] for token in sentence]
-        other_features = torch.tensor(other_features, device=self.device)
+        # other_features = [token[2:] for token in sentence]
+        # other_features = torch.tensor(other_features, device=self.device)
+        other_features = batch[0]['other_features']
 
         # Combine into one final input vector for LSTM
-        token_vector = torch.cat((word_embeddings, character_vectors), 1)
+        token_vector = torch.cat((word_embeddings, character_vectors), 2)
 
         # Reshape because LSTM requires input of shape (seq_len, batch, input_size)
-        token_vector = token_vector.view(len(sentence), 1, -1)
+        #token_vector = token_vector.view(len(sentence), 1, -1)
+        token_vector = token_vector.permute(1, 0, 2)
         # token_vector = self.dropout(token_vector)
 
         lstm_out, _ = self.lstm(token_vector)
-        lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
-        lstm_out = torch.cat((lstm_out, other_features), 1)
+        lstm_out = lstm_out.permute(1, 0, 2)
+        lstm_out = torch.cat((lstm_out, other_features), 2)
+        # lstm_out = lstm_out.view(len(sentence), HIDDEN_DIM*2)
+        # lstm_out = torch.cat((lstm_out, other_features), 1)
 
         lstm_features = self.hidden2tag(lstm_out)
 

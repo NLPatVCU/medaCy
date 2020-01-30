@@ -29,12 +29,14 @@ class CharacterLSTM(nn.Module):
             bidirectional=True
         )
 
-    def forward(self, indices):
+    def forward(self, embeddings):
+        # def forward(self, indices):
         # Get character embeddings based on indices
-        character_embeddings = self.character_embeddings(indices)
+        #character_embeddings = self.character_embeddings(indices)
 
         # Run embeddings through character BiLSTM
-        _, (hidden_output, _) = self.character_lstm(character_embeddings)
+        #_, (hidden_output, _) = self.character_lstm(character_embeddings)
+        _, (hidden_output, _) = self.character_lstm(embeddings)
         features = hidden_output.transpose(0, 1)
         features = features.contiguous().view(-1, self.hidden_size*2)
 
