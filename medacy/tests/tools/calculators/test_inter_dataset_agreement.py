@@ -10,7 +10,7 @@ class TestDatasetAgreement(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.gold_dataset = sample_dataset
-        cls.predicted_dataset = Dataset(sample_dataset.data_directory + "_predictions")
+        cls.predicted_dataset = Dataset(str(sample_dataset.data_directory) + "_predictions")
         cls.maxDiff = None
 
     def test_agreement(self):

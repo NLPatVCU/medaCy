@@ -302,3 +302,4 @@ class BertLearner:
             path,
             num_labels=len(self.vectorizer.tag_to_index) - 1 # Ignore 'X'
         )
+        self.model = self.model.to(self.device)

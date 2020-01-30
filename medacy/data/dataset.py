@@ -68,6 +68,7 @@ import logging
 import os
 import pprint
 from collections import Counter
+from pathlib import Path
 
 import spacy
 
@@ -91,49 +92,40 @@ class Dataset:
         :param data_directory: Directory containing data for training or prediction.
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
-        self.data_directory = data_directory
+        self.data_directory = Path(data_directory)
         self.all_data_files = []
 
-        metamap_dir = os.path.join(self.data_directory, 'metamapped')
-        if os.path.isdir(metamap_dir):
+        metamap_dir = self.data_directory / 'metamapped'
+        if metamap_dir.is_dir():
             self.metamapped_files_directory = metamap_dir
         else:
             self.metamapped_files_directory = None
 
         all_files_in_directory = os.listdir(self.data_directory)
+        all_file_base_names = {f.split(".")[0] for f in all_files_in_directory}
 
-        # start by filtering all raw_text files, both training and prediction directories will have these
-        txt_files = sorted([file for file in all_files_in_directory if file.endswith('.txt')])
-        ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
+        for file_name in all_file_base_names:
+            txt_path = None
+            ann_path = None
+            metamapped_path = None
 
-        if ann_files and not txt_files:
-            # Directory is for ann files only
-            for file in ann_files:
-                file_name = file.rstrip(".ann")
-                ann_path = os.path.join(self.data_directory, file)
-                self.all_data_files.append(DataFile(file_name, None, ann_path))
-        elif txt_files and not ann_files:
-            # Directory is for txt files only
-            for file in txt_files:
-                file_name = file.rstrip(".txt")
-                txt_path = os.path.join(self.data_directory, file)
-                self.all_data_files.append(DataFile(file_name, txt_path, None))
-        else:
-            # Construct DataFiles based on what ann files exist
-            for file in ann_files:
-                txt_file_path = os.path.join(self.data_directory, file.rstrip("ann") + "txt")
-                if not os.path.isfile(txt_file_path):
-                    logging.warning(f"No matching txt file was found for {file}")
-                    continue
-                metamap_path = None
-                if self.metamapped_files_directory:
-                    metamap_path = os.path.join(self.metamapped_files_directory, file.rstrip("ann") + "metamapped")
-                    if not os.path.isfile(metamap_path):
-                        metamap_path = None
-                full_ann_path = os.path.join(self.data_directory, file)
-                new_datafile = DataFile(file.rstrip(".ann"), txt_file_path, full_ann_path, metamap_path)
-                self.all_data_files.append(new_datafile)
+            potential_txt_path = self.data_directory / (file_name + ".txt")
+            if potential_txt_path.exists():
+                txt_path = potential_txt_path
 
+            potential_ann_path = self.data_directory / (file_name + ".ann")
+            if potential_ann_path.exists():
+                ann_path = potential_ann_path
+
+            potential_mm_path = metamap_dir / (file_name + ".metamapped")
+            if potential_mm_path.exists():
+                metamapped_path = potential_mm_path
+
+            if txt_path or ann_path:
+                new_df = DataFile(file_name, txt_path, ann_path, metamapped_path)
+                self.all_data_files.append(new_df)
+
+        self.all_data_files.sort(key=lambda x: x.file_name)
         self.data_limit = data_limit if data_limit is not None else len(self.all_data_files)
 
     def get_data_files(self):
