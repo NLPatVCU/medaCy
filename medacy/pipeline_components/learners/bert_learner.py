@@ -300,5 +300,6 @@ class BertLearner:
                        else BertForTokenClassification)
         self.model = model_class.from_pretrained(
             path,
-            num_labels=len(self.vectorizer.tag_to_index) - 1 # Ignore 'X'
+            num_labels=len(self.vectorizer.tag_to_index) - 1, # Ignore 'X'
         )
+        self.model = self.model.to(self.device)
