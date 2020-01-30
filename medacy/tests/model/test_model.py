@@ -165,24 +165,28 @@ class TestModel(unittest.TestCase):
         for n in [prediction_file_names, groundtruth_file_names]:
             self.assertSetEqual(n, original_file_names)
 
+        # Container for all Annotations in all files in all folds
+        all_anns_all_folds_actual = Annotations([])
+
         # Test that fold groundtruth is written to file
         for fold_name in ["fold_1", "fold_2"]:
-            fold_dataset = Dataset(self.dataset.data_directory / fold_name)
-            whole_fold_ann = Annotations([])
+            fold_dataset = Dataset(groundtruth_dataset.data_directory / fold_name)
             for d in fold_dataset:
                 fold_ann = Annotations(d.ann_path)
                 groundtruth_ann = groundtruth_dataset[d.file_name]
                 # Test that the entities in the fold groundtruth are a subset of the whole for that file
                 self.assertTrue(set(fold_ann) <= set(groundtruth_ann))
-                whole_fold_ann |= fold_ann
+                all_anns_all_folds_actual |= fold_ann
 
-            all_groundtruth_tuples = set()
-            for ann in groundtruth_dataset.generate_annotations():
-                all_groundtruth_tuples |= ann
+        # Container for all annotations pulled directly from the groundtruth dataset
+        all_groundtruth_tuples = Annotations([])
+        for ann in groundtruth_dataset.generate_annotations():
+            all_groundtruth_tuples |= ann
 
-            self.assertSetEqual(set(whole_fold_ann), all_groundtruth_tuples)
+        expected = set(all_groundtruth_tuples)
+        actual = set(all_anns_all_folds_actual)
+        self.assertSetEqual(expected, actual)
 
 
 if __name__ == '__main__':
     unittest.main()
-

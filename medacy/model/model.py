@@ -2,6 +2,7 @@ import importlib
 import logging
 import os
 import time
+from pathlib import Path
 from shutil import copyfile
 from statistics import mean
 
@@ -17,9 +18,15 @@ from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
 def sequence_to_ann(X, y, file_names):
+    """
+    Creates a dictionary of document-level Annotations objects for a given sequence
+    :param X: A list of sentence level zipped (features, indices, document_name) tuples
+    :param y: A  list of sentence-level lists of tags
+    :param file_names: A list of file names that are used by these sequences
+    :return: A dictionary mapping txt file names (the whole path) to their Annotations objects, where the
+    Annotations are constructed from the X and y data given here.
+    """
     # Flattening nested structures into 2d lists
-    file_names = {x[2] for x in X}
-    print(file_names)
     anns = {filename: Annotations([]) for filename in file_names}
     tuples_by_doc = {filename: [] for filename in file_names}
     document_indices = []
@@ -32,7 +39,6 @@ def sequence_to_ann(X, y, file_names):
     # Map the predicted sequences to their corresponding documents
     i = 0
 
-    tuples = {file_name: [] for file_name in file_names}
     while i < len(groundtruth):
         if groundtruth[i] == 'O':
             i += 1
@@ -46,9 +52,10 @@ def sequence_to_ann(X, y, file_names):
             i += 1
 
         last_start, last_end = span_indices[i]
-        tuples[document].append((entity, first_start, last_end))
+        tuples_by_doc[document].append((entity, first_start, last_end))
         i += 1
 
+    # Create the Annotations objects
     for file_name, tups in tuples_by_doc.items():
         ann_tups = []
         with open(file_name) as f:
@@ -66,7 +73,8 @@ def sequence_to_ann(X, y, file_names):
 
 def write_ann_dicts(output_dir, dict_list):
     """
-    Merges a list of dicts of Annotations into one dict representing all the individual ann files
+    Merges a list of dicts of Annotations into one dict representing all the individual ann files and prints the
+    ann data for both the individual Annotations and the combined one.
     :param output_dir: Path object of the output directory (a subdirectory is made for each fold)
     :param dict_list: a list of file_name: Annotations dictionaries
     :return: None
@@ -77,13 +85,19 @@ def write_ann_dicts(output_dir, dict_list):
 
     all_annotations_dict = {filename: Annotations([]) for filename in file_names}
     for i, fold_dict in enumerate(dict_list, 1):
-        for file_name, ann in fold_dict.items():
-            all_annotations_dict[file_name] |= ann
         fold_dir = output_dir / f"fold_{i}"
         os.mkdir(fold_dir)
-        for file_name, ann in all_annotations_dict.items():
-            output_file_path = fold_dir / (os.path.basename(file_name).strip("txt") + "ann")
-            ann.to_ann(output_file_path)
+        for file_name, ann in fold_dict.items():
+            # Write the Annotations from the individual fold to file;
+            # Note that in this is written to the fold_dir, which is a subfolder of the output_dir
+            ann.to_ann(fold_dir / (os.path.basename(file_name).strip("txt") + "ann"))
+            # Merge the Annotations from the fold into the inter-fold Annotations
+            all_annotations_dict[file_name] |= ann
+
+    # Write the Annotations that are the combination of all folds to file
+    for file_name, ann in all_annotations_dict.items():
+        output_file_path = output_dir / (os.path.basename(file_name).strip("txt") + "ann")
+        ann.to_ann(output_file_path)
 
 
 class Model:
@@ -271,8 +285,11 @@ class Model:
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
 
+        groundtruth_directory = Path(groundtruth_directory) if groundtruth_directory else False
+        prediction_directory = Path(prediction_directory) if prediction_directory else False
+
         for d in [groundtruth_directory, prediction_directory]:
-            if d and not os.path.isdir(d):
+            if d and not d.exists():
                 raise NotADirectoryError(f"Options groundtruth_directory and predictions_directory must be existing directories, but one is {d}")
 
         pipeline_report = self.pipeline.get_report()
@@ -312,11 +329,11 @@ class Model:
             y_pred = learner.predict(test_data)
 
             if groundtruth_directory is not None:
-                ann_dict = sequence_to_ann(X_test, y_train, file_names)
+                ann_dict = sequence_to_ann(X_test, y_test, file_names)
                 fold_groundtruth_dicts.append(ann_dict)
 
             if prediction_directory is not None:
-                ann_dict = sequence_to_ann(X_test, y_test, file_names)
+                ann_dict = sequence_to_ann(X_test, y_pred, file_names)
                 fold_prediction_dicts.append(ann_dict)
 
             # Write the metrics for this fold.
@@ -386,13 +403,11 @@ class Model:
         else:
             logging.info(output_str)
 
+        # Write groundtruth and predictions to file
         if groundtruth_directory:
             write_ann_dicts(groundtruth_directory, fold_groundtruth_dicts)
         if prediction_directory:
             write_ann_dicts(prediction_directory, fold_prediction_dicts)
-
-
-
 
         return statistics_all_folds
 
