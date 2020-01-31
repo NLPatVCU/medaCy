@@ -5,12 +5,13 @@ import logging
 import random
 
 import torch
-import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.optim as optim
 
-from medacy.nn import BiLstmCrf
-from medacy.nn import Vectorizer
+from medacy.pipeline_components.learners.nn.bilstm_crf import BiLstmCrf
+from medacy.pipeline_components.learners.nn.vectorizer import Vectorizer
+
 
 class BiLstmCrfLearner:
     """
