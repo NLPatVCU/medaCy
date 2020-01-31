@@ -126,15 +126,18 @@ def main():
     parser.add_argument('-pl', '--pipeline', default='ClinicalPipeline', help='Pipeline to use for training. Write the exact name of the class.')
     parser.add_argument('-cpl', '--custom_pipeline', default=None, help='Path to a json file of a custom pipeline, as an alternative to a medaCy pipeline')
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
-    parser.add_argument('-ent', '--entities', default=None, help='Path to a json file containing an \"entities\" key of a list of entities to use.')
+    parser.add_argument('-ent', '--entities', default=None,
+                        help='Path to a json file containing an \"entities\" key of a list of entities to use; otherwise all the entities in the dataset will be used.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
     parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
 
     # Logging, testing variables
     test_group = parser.add_argument_group('Logging and testing arguments')
-    test_group.add_argument('-p', '--print_logs', action='store_true', help='Use to print logs to console.')
-    test_group.add_argument('-t', '--test_mode', default=False, action='store_true', help='Specify that the action is a test (automatically uses only a single '
-                                                                                      'data file from the dataset and sets logging to debug mode)')
+    test_group.add_argument('-lc', '--log_console', action='store_true', help='Use to print logs to console.')
+    test_group.add_argument('-lf', '--log_file', default=None, help='Specify a log file path, if something other than the default is desired')
+    test_group.add_argument('-t', '--test_mode', default=False, action='store_true',
+                            help='Specify that the action is a test (automatically uses only a single '
+                                 'data file from the dataset and sets logging to debug mode)')
 
     # GPU-specific
     gpu_group = parser.add_argument_group('GPU Arguments', 'Arguments that relate to the GPU, used by the BiLSTM and BERT')
@@ -154,6 +157,13 @@ def main():
 
     subparsers = parser.add_subparsers()
 
+    # Cross Validation arguments
+    parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
+    parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
+    parser_validate.add_argument('-gt', '--groundtruth', type=str, default=None, help='Directory to write groundtruth files.')
+    parser_validate.add_argument('-pd', '--predictions', type=str, default=None, help='Directory to write prediction files.')
+    parser_validate.set_defaults(func=cross_validate)
+
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
     parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
@@ -165,23 +175,18 @@ def main():
     parser_predict.add_argument('-pd', '--predictions', default=None, help='Directory to store prediction files.')
     parser_predict.set_defaults(func=predict)
 
-    # Cross Validation arguments
-    parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
-    parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
-    parser_validate.add_argument('-gt', '--groundtruth', type=str, default=None, help='Directory to write groundtruth files.')
-    parser_validate.add_argument('-pd', '--predictions', type=str, default=None, help='Directory to write prediction files.')
-    parser_validate.set_defaults(func=cross_validate)
-
     # Parse initial args
     args = parser.parse_args()
 
     # Logging
-    device = str(args.cuda) if args.cuda >= 0 else '_cpu'
-    logging.basicConfig(filename=('medacy%s.log' % device), format='%(asctime)-15s: %(message)s', level=logging.INFO)
-    if args.print_logs:
-        logging.getLogger().addHandler(logging.StreamHandler())
+    device = str(args.cuda) if args.cuda >= 0 else 'cpu'
+    log_file_name = args.log_file or f"medacy_{device}.log"
+    logging.basicConfig(filename=log_file_name, format='%(asctime)-15s: %(message)s', level=logging.INFO)
+    logger = logging.getLogger()
+    if args.log_console:
+        logger.addHandler(logging.StreamHandler())
     if args.test_mode:
-        logging.getLogger().setLevel(logging.DEBUG)
+        logger.setLevel(logging.DEBUG)
         logging.info("Test mode enabled: logging set to debug")
     start_time = time.time()
     current_time = datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')
