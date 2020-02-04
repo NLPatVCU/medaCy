@@ -10,7 +10,6 @@ from datetime import datetime
 
 from medacy.data.dataset import Dataset
 from medacy.model.model import Model
-from medacy.model.spacy_model import SpacyModel
 from medacy.tools.json_to_pipeline import json_to_pipeline
 from medacy.pipelines import bert_pipeline
 
@@ -33,11 +32,6 @@ def setup(args):
         if not set(json_entities) <= set(entities):
             raise ValueError(f"The following entities from the json file are not in the provided dataset: {set(json_entities) - set(entities)}")
         entities = json_entities
-
-    if args.pipeline == 'spacy':
-        logging.info('Using spacy model')
-        model = SpacyModel(spacy_model_name=args.spacy_model, cuda=args.cuda)
-        return dataset, model
 
     if args.custom_pipeline is not None:
         logging.info(f"Using custom pipeline configured at {args.custom_pipeline}")
@@ -129,7 +123,6 @@ def main():
     parser.add_argument('-ent', '--entities', default=None,
                         help='Path to a json file containing an \"entities\" key of a list of entities to use; otherwise all the entities in the dataset will be used.')
     parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
-    parser.add_argument('-sm', '--spacy_model', default=None, help='SpaCy model to use as starting point.')
 
     # Logging, testing variables
     test_group = parser.add_argument_group('Logging and testing arguments')
