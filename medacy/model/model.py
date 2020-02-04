@@ -18,46 +18,6 @@ from medacy.data.dataset import Dataset
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
 
-def predict_document(model, doc, medacy_pipeline):
-    """
-    Generates an dictionary of predictions of the given model over the corresponding document. The passed document
-    is assumed to be annotated by the same pipeline utilized when training the model.
-    :param model: A loaded medaCy NER model
-    :param doc: A spacy document
-    :param medacy_pipeline: An instance of a medacy pipeline
-    :return: an Annotations object containing the model predictions
-    """
-
-    feature_extractor = medacy_pipeline.get_feature_extractor()
-
-    features, indices = feature_extractor.get_features_with_span_indices(doc)
-    predictions = model.predict(features)
-    predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
-    span_indices = [element for sentence in indices for element in sentence] #parallel array containing indices
-    annotations = []
-
-    i = 0
-    while i < len(predictions):
-        if predictions[i] == "O":
-            i += 1
-            continue
-        entity = predictions[i]
-        first_start, first_end = span_indices[i]
-        # Ensure that consecutive tokens with the same label are merged
-        while i < len(predictions)-1 and predictions[i+1] == entity: #If inside entity, keep incrementing
-            i += 1
-        last_start, last_end = span_indices[i]
-
-        labeled_text = doc.text[first_start:last_end]
-
-        logging.debug("%s: Predicted %s at (%i, %i) %s", doc._.file_name, entity, first_start, last_end ,labeled_text.replace('\n', ''))
-
-        annotations.append((entity, first_start, last_end, labeled_text))
-        i += 1
-
-    return Annotations(annotations)
-
-
 def construct_annotations_from_tuples(doc, predictions):
     """
     Converts predictions mapped to a document into an Annotations object
@@ -310,6 +270,44 @@ class Model:
         self.model = learner
         return self.model
 
+    def _predict_document(self, doc):
+        """
+        Generates an dictionary of predictions of the given model over the corresponding document. The passed document
+        is assumed to be annotated by the same pipeline utilized when training the model.
+        :param doc: A spacy document
+        :return: an Annotations object containing the model predictions
+        """
+
+        feature_extractor = self.pipeline.get_feature_extractor()
+
+        features, indices = feature_extractor.get_features_with_span_indices(doc)
+        predictions = self.model.predict(features)
+        predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
+        span_indices = [element for sentence in indices for element in sentence]  # parallel array containing indices
+        annotations = []
+
+        i = 0
+        while i < len(predictions):
+            if predictions[i] == "O":
+                i += 1
+                continue
+            entity = predictions[i]
+            first_start, first_end = span_indices[i]
+            # Ensure that consecutive tokens with the same label are merged
+            while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
+                i += 1
+            last_start, last_end = span_indices[i]
+
+            labeled_text = doc.text[first_start:last_end]
+
+            logging.debug("%s: Predicted %s at (%i, %i) %s", doc._.file_name, entity, first_start, last_end,
+                          labeled_text.replace('\n', ''))
+
+            annotations.append((entity, first_start, last_end, labeled_text))
+            i += 1
+
+        return Annotations(annotations)
+
     def predict(self, input_data, prediction_directory=None):
         """
         Generates predictions over a string or a input_data utilizing the pipeline equipped to the instance.
@@ -332,7 +330,7 @@ class Model:
             doc.set_extension('file_name', default=None, force=True)
             doc._.file_name = 'STRING_INPUT'
             doc = self.pipeline(doc, predict=True)
-            annotations = predict_document(self.model, doc, self.pipeline)
+            annotations = self._predict_document(doc)
             return annotations
 
         if isinstance(input_data, Dataset):
@@ -366,7 +364,7 @@ class Model:
             doc = self.pipeline(doc, predict=True)
 
             # Predict, creating a new Annotations object
-            annotations = predict_document(self.model, doc, self.pipeline)
+            annotations = self._predict_document(doc)
             logging.debug("Writing to: %s", os.path.join(prediction_directory, file_name + ".ann"))
             annotations.to_ann(write_location=os.path.join(prediction_directory, file_name + ".ann"))
 
