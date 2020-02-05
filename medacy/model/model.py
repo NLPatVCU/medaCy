@@ -238,7 +238,7 @@ class Model:
                 self.X_data += features
                 self.y_data += labels
 
-    def fit(self, dataset, asynchronous=False):
+    def fit(self, dataset, asynchronous=False, groundtruth_directory=None):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
 
@@ -252,8 +252,15 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
+        groundtruth_directory = Path(groundtruth_directory) if groundtruth_directory else False
+
         report = self.pipeline.get_report()
         self.preprocess(dataset, asynchronous)
+
+        if groundtruth_directory is not None:
+            logging.info(f"Writing dataset groundtruth to {groundtruth_directory}")
+            for file_path, ann in sequence_to_ann(self.X_data, self.y_data, {x[2] for x in self.X_data}).items():
+                ann.to_ann(groundtruth_directory / (os.path.basename(file_path).strip("txt") + "ann"))
 
         logging.info("Currently Waiting")
 

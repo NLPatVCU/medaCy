@@ -43,7 +43,7 @@ class TestModel(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             model.predict('Lorem ipsum dolor sit amet.')
 
-        model.fit(self.dataset, groundtruth=self.groundtruth_2_directory)
+        model.fit(self.dataset, groundtruth_directory=self.groundtruth_2_directory)
         # Test X and y data are set
         self.assertTrue(model.X_data)
         self.assertTrue(model.y_data)
