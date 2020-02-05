@@ -184,7 +184,7 @@ class Model:
     :ivar y_data: y_data from the pipeline; primarily for internal use
     """
 
-    def __init__(self, medacy_pipeline, model=None, n_jobs=cpu_count()):
+    def __init__(self, medacy_pipeline, model=None):
 
         if not isinstance(medacy_pipeline, BasePipeline):
             raise TypeError("Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline")
@@ -195,7 +195,6 @@ class Model:
         # These arrays will store the sequences of features and sequences of corresponding labels
         self.X_data = []
         self.y_data = []
-        self.n_jobs = n_jobs
 
         # Run an initializing document through the pipeline to register all token extensions.
         # This allows the gathering of pipeline information prior to fitting with live data.
@@ -203,47 +202,25 @@ class Model:
         if doc is None:
             raise IOError("Model could not be initialized with the set pipeline.")
 
-    def preprocess(self, dataset, asynchronous=False):
+    def preprocess(self, dataset):
         """
         Preprocess dataset into a list of sequences and tags.
-
         :param dataset: Dataset object to preprocess.
-        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         """
-        if asynchronous:
-            logging.info('Preprocessing data asynchronously...')
-            self.X_data = []
-            self.y_data = []
-            pool = Pool(nodes=self.n_jobs)
+        self.X_data = []
+        self.y_data = []
+        # Run all Docs through the pipeline before extracting features, allowing for pipeline components
+        # that require inter-dependent doc objects
+        docs = [self._run_through_pipeline(data_file) for data_file in dataset]
+        for doc in docs:
+            features, labels = self._extract_features(doc)
+            self.X_data += features
+            self.y_data += labels
 
-            results = [pool.apipe(self._extract_features, data_file) for data_file in dataset]
-
-            while any([i.ready() is False for i in results]):
-                time.sleep(1)
-
-            for i in results:
-                X, y = i.get()
-                self.X_data += X
-                self.y_data += y
-
-        else:
-            logging.info('Preprocessing data synchronously...')
-            self.X_data = []
-            self.y_data = []
-            # Run all Docs through the pipeline before extracting features, allowing for pipeline components
-            # that require inter-dependent doc objects
-            docs = [self._run_through_pipeline(data_file) for data_file in dataset]
-            for doc in docs:
-                features, labels = self._extract_features(doc)
-                self.X_data += features
-                self.y_data += labels
-
-    def fit(self, dataset, asynchronous=False, groundtruth_directory=None):
+    def fit(self, dataset, groundtruth_directory=None):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
-
         :param dataset: Instance of Dataset.
-        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
@@ -255,7 +232,7 @@ class Model:
         groundtruth_directory = Path(groundtruth_directory) if groundtruth_directory else False
 
         report = self.pipeline.get_report()
-        self.preprocess(dataset, asynchronous)
+        self.preprocess(dataset)
 
         if groundtruth_directory is not None:
             logging.info(f"Writing dataset groundtruth to {groundtruth_directory}")
@@ -380,7 +357,7 @@ class Model:
 
         return Dataset(prediction_directory)
 
-    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
+    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -393,7 +370,6 @@ class Model:
         :param num_folds: number of folds to split training data into for cross validation, defaults to 5
         :param prediction_directory: directory to write predictions of cross validation to
         :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
-        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
         """
 
@@ -409,7 +385,7 @@ class Model:
 
         pipeline_report = self.pipeline.get_report()
 
-        self.preprocess(training_dataset, asynchronous)
+        self.preprocess(training_dataset)
 
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")

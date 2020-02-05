@@ -69,7 +69,7 @@ def train(args, dataset, model):
     if args.filename is None:
         response = input('No filename given. Continue without saving the model at the end? (y/n) ')
         if response.lower() == 'y':
-            model.fit(dataset, asynchronous=args.asynchronous)
+            model.fit(dataset)
         else:
             print('Cancelling. Add filename with -f or --filename.')
     else:
@@ -105,8 +105,7 @@ def cross_validate(args, dataset, model):
         num_folds=args.k_folds,
         training_dataset=dataset,
         prediction_directory=args.predictions,
-        groundtruth_directory=args.groundtruth,
-        asynchronous=args.asynchronous
+        groundtruth_directory=args.groundtruth
     )
 
 
@@ -122,7 +121,6 @@ def main():
     parser.add_argument('-d', '--dataset', required=True, help='Directory of dataset to use for training.')
     parser.add_argument('-ent', '--entities', default=None,
                         help='Path to a json file containing an \"entities\" key of a list of entities to use; otherwise all the entities in the dataset will be used.')
-    parser.add_argument('-a', '--asynchronous', action='store_true', help='Use to make the preprocessing run asynchronously. Causes GPU issues.')
 
     # Logging, testing variables
     test_group = parser.add_argument_group('Logging and testing arguments')
