@@ -67,14 +67,10 @@ def train(args, dataset, model):
     :param model: Untrained model object to use.
     """
     if args.filename is None:
-        response = input('No filename given. Continue without saving the model at the end? (y/n) ')
-        if response.lower() == 'y':
-            model.fit(dataset)
-        else:
-            print('Cancelling. Add filename with -f or --filename.')
-    else:
-        model.fit(dataset, args.asynchronous)
-        model.dump(args.filename)
+        raise RuntimeError("A file name must me specified with -f when training a model")
+
+    model.fit(dataset, groundtruth_directory=args.groundtruth)
+    model.dump(args.filename)
 
 
 def predict(args, dataset, model):
@@ -158,6 +154,7 @@ def main():
     # Train arguments
     parser_train = subparsers.add_parser('train', help='Train a new model.')
     parser_train.add_argument('-f', '--filename', help='Filename to use for saved model.')
+    parser_train.add_argument('-gt', '--groundtruth', type=str, default=None, help='Directory to write groundtruth files.')
     parser_train.set_defaults(func=train)
 
     # Predict arguments
