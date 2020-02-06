@@ -1,0 +1,137 @@
+T1	Sex 195 201	female
+T2	Strain 202 216	Sprague-Dawley
+T3	Species 217 221	rats
+T4	Species 298 302	rats
+T5	Endpoint 341 343	az
+T6	Endpoint 347 356	acepromaz
+T7	DoseRoute 390 400	lar inject
+T8	TestArticle 581 589	estrogen
+T9	GroupSize 607 612	three
+T10	SampleSize 671 673	15
+T11	Species 674 678	rats
+T12	GroupSize 695 700	three
+T13	Species 701 706	rats)
+T14	DoseRoute 712 715	inj
+T15	DoseRoute 717 729	ted subcutan
+T16	DoseRoute 733 735	ly
+T17	TestArticle 748 755	17  -E2
+T18	Dose 757 759	60
+T19	DoseUnits 760 765	 g/kg
+T20	GroupSize 767 769	12
+T21	Species 770 775	rats)
+T22	Vehicle 783 793	sesame oil
+T23	Dose 803 806	200
+T24	DoseUnits 807 809	 L
+T25	GroupSize 811 816	three
+T26	Species 817 823	rats).
+T27	TestArticle 839 848	estradiol
+T28	GroupName 848 859	-treated an
+T29	GroupName 861 864	als
+T30	Dose 916 918	40
+T31	Dose 920 923	120
+T32	Dose 929 932	400
+T33	DoseUnits 933 938	 g/kg
+T34	TestArticle 943 946	BPA
+T35	TestArticlePurity 948 953	> 99%
+T36	SampleSize 1029 1031	12
+T37	Species 1032 1036	rats
+T38	DoseRoute 1042 1045	inj
+T39	DoseRoute 1047 1059	ted subcutan
+T40	DoseRoute 1063 1065	ly
+T41	GroupSize 1067 1072	three
+T42	Species 1073 1077	rats
+T43	TestArticle 1098 1105	17  -E2
+T44	Dose 1107 1109	45
+T45	DoseUnits 1110 1115	 g/kg
+T46	TestArticle 1118 1121	BPA
+T47	Dose 1123 1126	300
+T48	DoseUnits 1127 1132	 g/kg
+T49	TestArticle 1152 1159	17  -E2
+T50	Dose 1161 1163	45
+T51	DoseUnits 1164 1169	 g/kg
+T52	TestArticle 1176 1179	BPA
+T53	Dose 1181 1184	300
+T54	DoseUnits 1185 1190	 g/kg
+T55	Vehicle 1200 1210	sesame oil
+T56	Dose 1220 1223	200
+T57	DoseUnits 1224 1226	 L
+T58	TimeUnits 1245 1255	utes after
+T59	DoseRoute 1256 1265	injection
+T60	Vehicle 1360 1366	saline
+T61	TestArticle 1834 1839	edded
+T62	EndpointUnitOfMeasure 2071 2075	mber
+T63	Endpoint 2076 2094	of pyramidal cells
+T64	Endpoint 2119 2122	xam
+T65	Endpoint 2266 2298	pyramidal cell density value (D)
+T66	EndpointUnitOfMeasure 2317 2325	D = N/sT
+T67	Endpoint 2697 2704	in PSSD
+T68	Endpoint 2902 2904	rs
+T69	EndpointUnitOfMeasure 2925 2930	Areas
+T70	Endpoint 2931 2954	of CA1 stratum radiatum
+T71	EndpointUnitOfMeasure 3061 3067	volume
+T72	Endpoint 3068 3091	of CA1 stratum radiatum
+T73	Species 3100 3103	rat
+T74	Endpoint 4508 4518	apses were
+T75	EndpointUnitOfMeasure 4519 4524	count
+T76	Endpoint 4658 4662	spin
+T77	Endpoint 4664 4666	sy
+T78	Endpoint 4667 4677	apses were
+T79	EndpointUnitOfMeasure 4678 4683	count
+T80	EndpointUnitOfMeasure 5155 5162	density
+T81	Endpoint 5163 5178	of spine synaps
+T82	EndpointUnitOfMeasure 5242 5243	n
+T83	EndpointUnitOfMeasure 5244 5248	mber
+T84	Endpoint 5249 5260	of synapses
+T85	Endpoint 5377 5382	ess t
+T86	Endpoint 5532 5536	PSSD
+T87	EndpointUnitOfMeasure 5571 5622	dividing Nv(syn) by the volume correction factor kv
+T88	Endpoint 5625 5643	Rat uterine weight
+T89	Endpoint 5662 5684	uterotrophic responses
+T90	SampleSize 5706 5708	12
+T91	Species 5709 5713	rats
+T92	GroupSize 5730 5731	3
+T93	TimeAtFirstDose 5745 5746	1
+T94	TimeUnits 5747 5751	week
+T95	TimeAtFirstDose 5752 5769	after ovariectomy
+T96	DoseRoute 5775 5782	subcuta
+T97	DoseRoute 5784 5798	ous injections
+T98	TestArticle 5802 5809	17  -E2
+T99	Dose 5811 5813	60
+T100	DoseUnits 5814 5819	 g/kg
+T101	TestArticle 5822 5825	BPA
+T102	Dose 5827 5830	400
+T103	DoseUnits 5831 5836	 g/kg
+T104	TestArticle 5861 5864	BPA
+T105	Dose 5866 5869	400
+T106	DoseUnits 5870 5875	 g/kg
+T107	TestArticle 5881 5888	17  -E2
+T108	Dose 5890 5892	60
+T109	DoseUnits 5893 5898	 g/kg
+T110	DoseFrequency 5901 5906	daily
+T111	DoseDuration 5911 5912	3
+T112	DoseDurationUnits 5913 5917	days
+T113	GroupName 5919 5929	Control an
+T114	GroupName 5931 5934	als
+T115	Vehicle 5948 5958	sesame oil
+T116	Dose 5968 5971	200
+T117	DoseUnits 5972 5978	 L/day
+T118	TimeEndpointAssessed 5989 5990	x
+T119	TimeUnits 5991 5996	hours
+T120	TimeEndpointAssessed 5997 6011	after the last
+T121	DoseRoute 6012 6021	injection
+T122	Endpoint 6058 6111	uteri were dissected free of adhering fat and connect
+T123	Endpoint 6113 6165	e tissue, drained of intraluminal fluid, and weighed
+T124	GroupSize 6262 6267	three
+T125	GroupName 6280 6295	treatment group
+T126	GroupSize 6330 6335	three
+T127	GroupName 6348 6363	treatment group
+T128	EndpointUnitOfMeasure 6576 6579	cou
+T129	Endpoint 6589 6595	synaps
+T130	GroupSize 6685 6690	three
+T131	Endpoint 6723 6727	PSSD
+T132	Endpoint 6820 6824	PSSD
+T133	Endpoint 6852 6855	ide
+T134	GroupName 7181 7197	treatment groups
+T135	GroupName 7209 7233	control versus treatment
+T136	Endpoint 7347 7355	BPA dose
+T137	Endpoint 7363 7369	e data

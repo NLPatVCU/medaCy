@@ -61,10 +61,14 @@ packages that can be hooked into medaCy or used for any other purpose - it is si
 object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
 wrap them.
 """
-import importlib
+
+import argparse
+import json
 import logging
 import os
+import pprint
 from collections import Counter
+from pathlib import Path
 
 import spacy
 
@@ -77,7 +81,7 @@ class Dataset:
     A facilitation class for data management.
     """
 
-    def __init__(self, data_directory, raw_text_file_extension="txt", metamapped_files_directory=None, data_limit=None):
+    def __init__(self, data_directory, data_limit=None):
         """
         Manages directory of training data along with other medaCy generated files.
 
@@ -86,74 +90,43 @@ class Dataset:
         Both text and ann files: considers a directory for training.
 
         :param data_directory: Directory containing data for training or prediction.
-        :param raw_text_file_extension: The file extension of raw text files in the data_directory (default: *.txt*)
-        :param metamapped_files_directory: Location to store metamapped files (default: a sub-directory named *metamapped*)
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
-        self.data_directory = data_directory
-        self.raw_text_file_extension = raw_text_file_extension
+        self.data_directory = Path(data_directory)
         self.all_data_files = []
 
-        if metamapped_files_directory is not None:
-            self.metamapped_files_directory = metamapped_files_directory
+        metamap_dir = self.data_directory / 'metamapped'
+        if metamap_dir.is_dir():
+            self.metamapped_files_directory = metamap_dir
         else:
-            self.metamapped_files_directory = os.path.join(self.data_directory, 'metamapped')
+            self.metamapped_files_directory = None
 
         all_files_in_directory = os.listdir(self.data_directory)
+        all_file_base_names = {f.split(".")[0] for f in all_files_in_directory}
 
-        # start by filtering all raw_text files, both training and prediction directories will have these
-        raw_text_files = sorted([file for file in all_files_in_directory if file.endswith(raw_text_file_extension)])
+        for file_name in all_file_base_names:
+            txt_path = None
+            ann_path = None
+            metamapped_path = None
 
-        if not raw_text_files:  # detected a prediction directory
-            ann_files = sorted([file for file in all_files_in_directory if file.endswith('.ann')])
-            self.is_training_directory = False
+            potential_txt_path = self.data_directory / (file_name + ".txt")
+            if potential_txt_path.exists():
+                txt_path = potential_txt_path
 
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(ann_files)
+            potential_ann_path = self.data_directory / (file_name + ".ann")
+            if potential_ann_path.exists():
+                ann_path = potential_ann_path
 
-            for file in ann_files:
-                annotation_path = os.path.join(data_directory, file)
-                file_name = file[:-len('.ann') - 1]
-                self.all_data_files.append(DataFile(file_name, None, annotation_path))
+            potential_mm_path = metamap_dir / (file_name + ".metamapped")
+            if potential_mm_path.exists():
+                metamapped_path = potential_mm_path
 
-        else:  # detected a training directory (raw text files exist)
-            if data_limit is not None:
-                self.data_limit = data_limit
-            else:
-                self.data_limit = len(raw_text_files)
+            if txt_path or ann_path:
+                new_df = DataFile(file_name, txt_path, ann_path, metamapped_path)
+                self.all_data_files.append(new_df)
 
-            if self.data_limit < 1 or self.data_limit > len(raw_text_files):
-                raise ValueError(
-                    "Parameter 'data_limit' must be between 1 and number of raw text files in data_directory")
-
-            # required ann files for this to be a training directory
-            ann_files = [file.replace(".%s" % raw_text_file_extension, ".ann") for file in raw_text_files]
-            # only a training directory if every text file has a corresponding ann_file
-            self.is_training_directory = all(os.path.isfile(os.path.join(data_directory, ann_file)) for ann_file in ann_files)
-
-            # set all file attributes except metamap_path as it is optional.
-            for file in raw_text_files:
-                file_name = file[:-len(raw_text_file_extension) - 1]
-                raw_text_path = os.path.join(data_directory, file)
-
-                if self.is_training_directory:
-                    annotation_path = os.path.join(
-                        data_directory,
-                        file.replace(".%s" % raw_text_file_extension, '.ann')
-                    )
-                else:
-                    annotation_path = None
-                self.all_data_files.append(DataFile(file_name, raw_text_path, annotation_path))
-
-            #If directory is already metamapped, use it.
-            if self.is_metamapped():
-                for data_file in self.all_data_files:
-                    data_file.metamapped_path = os.path.join(
-                        self.metamapped_files_directory,
-                        data_file.txt_path.split(os.path.sep)[-1].replace(".%s" % self.raw_text_file_extension, ".metamapped")
-                    )
+        self.all_data_files.sort(key=lambda x: x.file_name)
+        self.data_limit = data_limit if data_limit is not None else len(self.all_data_files)
 
     def get_data_files(self):
         """
@@ -213,7 +186,7 @@ class Dataset:
 
         :return: True if all data files are metamapped, False otherwise.
         """
-        if not os.path.isdir(self.metamapped_files_directory):
+        if self.metamapped_files_directory is None or not os.path.isdir(self.metamapped_files_directory):
             return False
 
         for file in self.all_data_files:
@@ -323,19 +296,6 @@ class Dataset:
 
         return ambiguity_dict
 
-    @staticmethod
-    def load_external(package_name):
-        """
-        Loads an external medaCy compatible dataset. Requires the dataset's associated package to be installed.
-        Alternatively, you can import the package directly and call it's .load() method.
-
-        :param package_name: the package name of the dataset
-        :return: A tuple containing a training set, evaluation set
-        """
-        if importlib.util.find_spec(package_name) is None:
-            raise ImportError("Package not installed: %s" % package_name)
-        return importlib.import_module(package_name).load()
-
     def get_labels(self, as_list=False):
         """
         Get all of the entities/labels used in the dataset.
@@ -354,7 +314,10 @@ class Dataset:
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
         for file in self.get_data_files():
-            yield Annotations(file.ann_path, source_text_path=file.txt_path)
+            if file.ann_path is not None:
+                yield Annotations(file.ann_path, source_text_path=file.txt_path)
+            else:
+                yield Annotations([])
 
     def __getitem__(self, item):
         """
@@ -365,3 +328,22 @@ class Dataset:
         """
         path = os.path.join(self.data_directory, item + '.ann')
         return Annotations(path)
+
+
+def main():
+    """CLI for retrieving dataset information"""
+    parser = argparse.ArgumentParser(description='Calculate data about a given data directory')
+    parser.add_argument('directory')
+    args = parser.parse_args()
+
+    dataset = Dataset(args.directory)
+
+    entities = json.dumps(dataset.get_labels(as_list=True))
+    counts = dataset.compute_counts()
+
+    print(f"Entities: {entities}")
+    pprint.pprint(counts)
+
+
+if __name__ == '__main__':
+    main()

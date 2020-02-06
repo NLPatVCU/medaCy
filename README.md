@@ -31,7 +31,7 @@ MedaCy can be installed for general use or for pipeline development / research p
 
 
 # :books: Power of medaCy
-After installing medaCy and [medaCy's clinical model](examples/models/clinical_notes_model.md), simply run:
+After installing medaCy and [medaCy's clinical model](guide/models/clinical_notes_model.md), simply run:
 
 ```python
 from medacy.model.model import Model
@@ -49,7 +49,7 @@ and receive instant predictions:
     ('Duration', 46, 56, 'for 5 days')
 ]
 ```
-To explore medaCy's other models or train your own, visit the [examples section](examples).
+To explore medaCy's other models or train your own, visit the [examples section](guide).
 
 Reference
 =========

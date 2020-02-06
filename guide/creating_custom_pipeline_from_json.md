@@ -20,14 +20,14 @@ that already exist in medaCy. These custom pipelines allow you to select the lea
 
 ## Options
 These keys are required:
-* `"entities"`: a list of entities (see following section for a shortcut)
-* `"spacy_pipeline"`: name of a spaCy model, see [here](https://spacy.io/usage/models) for a list of available models
-* `"spacy_features`: a list of spaCy features to use, see [here](https://spacy.io/api/token) for a complete list
-* `"window_size"`: the number of tokens before and after a given word whose features should be considered along 
-with the target word; set to `0` to only consider the target word
-* `"learner"`: `"CRF"`, `"BiLSTM"`, or `"BERT"`
+* `"spacy_pipeline"`: name of a spaCy model, see [here](https://spacy.io/usage/models) for a list of available models.
+* `"learner"`: `"CRF"`, `"BiLSTM"`, or `"BERT"`.
 
 These keys are optional, and have default behavior if the key is not present:
+* `"spacy_features"`: a list of spaCy features to use, see [here](https://spacy.io/api/token) for a complete list.
+By default, `"text"` will be a feature.
+* `"window_size"`: the number of tokens before and after a given word whose features should be considered along 
+with the target word; set to `0` to only consider the target word.
 * `"tokenizer"`: defaults to using the tokenizer from the selected spaCy pipeline; custom options are `"clinical"`,
 `"systematic_review"`, or `"character"`
 * `"metamap"`: MetaMap will only be used if this key is present; the value should be the path to the MetaMap binary file
@@ -35,6 +35,8 @@ These keys are optional, and have default behavior if the key is not present:
 Finally, `"metamap"` requires the key `"semantic_types"`, which can be `"all"` to use all semantic types found in the dataset,
 `"none"` to not use them, or a list of semantic types to use.
 
+Note that if the learner is `"BERT"`, the window size and spacy features settings will be ignored (if they are specified at all),
+ as the BERT learner has specific settings for these options.
 
 ## Usage
 The following command will run five-fold cross validation using a custom JSON pipeline:
@@ -44,3 +46,16 @@ The following command will run five-fold cross validation using a custom JSON pi
 
 The BiLSTM and BERT learners require additional command line arguments. Run `python -m medacy --help` for help with 
 the command line interface.
+
+## Specifying the Entities
+By default, medaCy will read in the specified dataset and perform fitting and cross validation with
+all the entities found in that dataset. However, you can specify a custom list of entities. One can specify
+a list of entities with the `--entities` parameter, passing the path to a JSON containing an "entities" key.
+This can be the same JSON that is used for the custom pipeline.
+
+To get a list of entities found in a given dataset, run this command:
+```bash
+(medacy_venv) $ python -m medacy.data.dataset path/to/your/dataset 
+```
+You can then copy the outputted list and remove whichever entities you do not want. MedaCy will not
+accept a list containing any entities that are not found in the specified dataset.

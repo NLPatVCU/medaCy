@@ -26,7 +26,7 @@ class LstmSystematicReviewPipeline(BasePipeline):
         :param cuda_device: int for which GPU to use, defaults to using the CPU
         """
 
-        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
+        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"), **kwargs)
 
         if metamap:
             metamap = MetaMap(metamap)

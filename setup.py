@@ -52,7 +52,7 @@ setup(
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.0'
+        'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.5'
     ],
     install_requires=[
         'spacy==2.2.2',

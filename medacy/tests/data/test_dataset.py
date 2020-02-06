@@ -1,17 +1,19 @@
 import os
 import shutil
 import tempfile
+import unittest
 from collections import Counter
-from unittest import TestCase
+from pathlib import Path
 
 import pkg_resources
 
 from medacy.data.dataset import Dataset
 from medacy.data.annotations import Annotations
+from medacy.data.data_file import DataFile
 from medacy.tests.sample_data import test_dir
 
 
-class TestDataset(TestCase):
+class TestDataset(unittest.TestCase):
     """Unit tests for Dataset"""
 
     @classmethod
@@ -26,25 +28,103 @@ class TestDataset(TestCase):
             new_file_path = os.path.join(cls.prediction_directory, data_file.file_name + '.txt')
             shutil.copyfile(data_file.txt_path, new_file_path)
 
+        # Fill a directory with just ann files
+        cls.ann_dir = tempfile.mkdtemp()
+        for data_file in cls.dataset:
+            new_ann_path = os.path.join(cls.ann_dir, data_file.file_name + '.ann')
+            shutil.copyfile(data_file.ann_path, new_ann_path)
+
     @classmethod
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
-        shutil.rmtree(cls.prediction_directory)
+        for directory in [cls.prediction_directory, cls.ann_dir]:
+            shutil.rmtree(directory)
 
-    def test_init_training(self):
-        """Tests that the sample dataset is accurately identified as being for training"""
-        self.assertTrue(self.dataset.is_training_directory)
+    def test_init(self):
+        """Tests initializing Datasets from different directories to see that they create accurate DataFiles"""
+
+        # Test both txt, ann, and metamapped
+        test_dir_path = Path(self.dataset.data_directory)
+        expected = [
+            DataFile(
+                file_name="PMC1257590",
+                raw_text_file_path=test_dir_path / "PMC1257590.txt",
+                annotation_file_path=test_dir_path / "PMC1257590.ann",
+                metamapped_path=test_dir_path / "metamapped" / "PMC1257590.metamapped"
+            ),
+            DataFile(
+                file_name="PMC1314908",
+                raw_text_file_path=test_dir_path / "PMC1314908.txt",
+                annotation_file_path=test_dir_path / "PMC1314908.ann",
+                metamapped_path=test_dir_path / "metamapped" / "PMC1314908.metamapped"
+            ),
+            DataFile(
+                file_name="PMC1392236",
+                raw_text_file_path=test_dir_path / "PMC1392236.txt",
+                annotation_file_path=test_dir_path / "PMC1392236.ann",
+                metamapped_path=test_dir_path / "metamapped" / "PMC1392236.metamapped"
+            )
+        ]
+        expected.sort(key=lambda x: x.file_name)
+        actual = list(self.dataset)
+        self.assertListEqual(actual, expected)
+
+        # Test txt only
+        test_dir_path = Path(self.prediction_directory)
+        expected = [
+            DataFile(
+                file_name="PMC1257590",
+                raw_text_file_path=test_dir_path / "PMC1257590.txt",
+                annotation_file_path=None,
+                metamapped_path=None
+            ),
+            DataFile(
+                file_name="PMC1314908",
+                raw_text_file_path=test_dir_path / "PMC1314908.txt",
+                annotation_file_path=None,
+                metamapped_path=None
+            ),
+            DataFile(
+                file_name="PMC1392236",
+                raw_text_file_path=test_dir_path / "PMC1392236.txt",
+                annotation_file_path=None,
+                metamapped_path=None
+            )
+        ]
+        expected.sort(key=lambda x: x.file_name)
+        actual = list(Dataset(self.prediction_directory))
+        self.assertListEqual(actual, expected)
+
+        # Test ann only
+        test_dir_path = Path(self.ann_dir)
+        expected = [
+            DataFile(
+                file_name="PMC1257590",
+                raw_text_file_path=None,
+                annotation_file_path=test_dir_path / "PMC1257590.ann",
+                metamapped_path=None
+            ),
+            DataFile(
+                file_name="PMC1314908",
+                raw_text_file_path=None,
+                annotation_file_path=test_dir_path / "PMC1314908.ann",
+                metamapped_path=None,
+            ),
+            DataFile(
+                file_name="PMC1392236",
+                raw_text_file_path=None,
+                annotation_file_path=test_dir_path / "PMC1392236.ann",
+                metamapped_path=None
+            )
+        ]
+        expected.sort(key=lambda x: x.file_name)
+        actual = list(Dataset(self.ann_dir))
+        self.assertListEqual(actual, expected)
 
     def test_init_with_data_limit(self):
         """Tests that initializing with a data limit works"""
         dataset = Dataset(self.dataset.data_directory, data_limit=1)
         self.assertEqual(len(dataset), 1)
-
-    def test_init_prediction(self):
-        """Tests that the copy of the sample dataset with only text files is identified as being for prediction"""
-        dataset = Dataset(self.prediction_directory)
-        self.assertIsInstance(dataset, Dataset)
-        self.assertFalse(dataset.is_training_directory)
 
     def test_generate_annotations(self):
         """Tests that generate_annotations() creates Annotations objects"""
@@ -77,4 +157,13 @@ class TestDataset(TestCase):
         with self.assertRaises(FileNotFoundError):
             ann = self.dataset['notafilepath']
 
+    def test_valid_datafiles(self):
+        """Tests that each DataFile in the Dataset is an existing file"""
+        for d in self.dataset:
+            self.assertTrue(os.path.isfile(d.txt_path))
+            self.assertTrue(os.path.isfile(d.ann_path))
+            self.assertTrue(os.path.isfile(d.metamapped_path))
 
+
+if __name__ == '__main__':
+    unittest.main()

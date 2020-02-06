@@ -5,12 +5,13 @@ import logging
 import random
 
 import torch
-import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.optim as optim
 
-from medacy.nn import BiLstmCrf
-from medacy.nn import Vectorizer
+from medacy.pipeline_components.learners.nn.bilstm_crf import BiLstmCrf
+from medacy.pipeline_components.learners.nn.vectorizer import Vectorizer
+
 
 class BiLstmCrfLearner:
     """
@@ -152,12 +153,14 @@ class BiLstmCrfLearner:
 
         :param path: Path of saved model.
         """
-        saved_data = torch.load(path)
+        saved_data = torch.load(path, map_location=self.device)
 
         self.vectorizer.load_values(saved_data['vectorizer_values'])
 
         model = saved_data['model']
+        model.device = self.device
         model.eval()
 
-        self.model = model
+        self.model = model.to(self.device)
+        self.model.device = self.device
         self.vectorizer.load_word_embeddings(self.word_embeddings_file)

@@ -1,13 +1,12 @@
 """
 BiLSTM-CRF PyTorch Network
 """
-import string
 
 import torch
 import torch.nn as nn
 from torchcrf import CRF
 
-from medacy.nn import CharacterLSTM
+from medacy.pipeline_components.learners.nn.character_lstm import CharacterLSTM
 
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
@@ -29,17 +28,13 @@ class BiLstmCrf(nn.Module):
         :param device: PyTorch device to use.
         """
         self.device = device
-
-        if device.type != 'cpu':
-            torch.set_default_tensor_type('torch.cuda.FloatTensor')
-
         super(BiLstmCrf, self).__init__()
 
         # Setup embedding variables
         self.tagset_size = tagset_size
         vector_size = word_vectors.vector_size
         word_vectors = torch.tensor(word_vectors.vectors, device=device)
-        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size)))
+        word_vectors = torch.cat((word_vectors, torch.zeros(1, vector_size, device=device)))
 
         # Setup character embedding layers
         self.character_lstm = CharacterLSTM(
@@ -91,6 +86,7 @@ class BiLstmCrf(nn.Module):
         :return: Output from BiLSTM.
         """
         # Create tensor of word embeddings
+
         embedding_indices = [token[0] for token in sentence]
         embedding_indices = torch.tensor(embedding_indices, device=self.device)
         word_embeddings = self.word_embeddings(embedding_indices)
