@@ -82,12 +82,25 @@ agreement calculator. The command for this is `python -m medacy.tools.calculator
 Inter-dataset agreement can measure how similar the groudtruth is to the original dataset, or how similar the fold predictions
 are to the groundtruth, etc.
 
+A validate command might look like one of these:
+
+```bash
+(medacy_venv) $ python -m medacy -d ~/datasets/my_dataset -cpl ./my_pipeline.json validate -k 7 -gt ./ground -pd ./pred
+(medacy_venv) $ python -m medacy -d ~/datasets/my_dataset -pl LstmSystematicReviewPipeline -c 0 -w ~/datasets/my_word_embeddings.bin validate
+```
+
 ## `train`
 
 There is little that needs to be specified here because the model, dataset, and pipeline arguments
 are specified in the first section.
 
 * `-f` specifies the location to write the model binary to.
+* `-gt` specifies a directory to write the groundtruth to, the same as for `validate`.
+
+```bash
+(medacy_venv) $ python -m medacy -d ~/datasets/my_dataset -cpl ./my_pipeline.json train -gt ./ground -f ./my_crf_model.pkl
+(medacy_venv) $ python -m medacy -d ~/datasets/my_dataset -pl LstmSystematicReviewPipeline -c 0 -w ~/datasets/my_word_embeddings.bin train -f ./my_bilstm_model.pkl
+```
 
 ## `predict`
 
@@ -96,3 +109,7 @@ When predicting, one must specify in the first section which pipeline they want 
 * `-m` specifies the path to the model binary file to use. Remember to use the same pipeline that was used to create the model binary selected here.
 * `-pd` specifies the directory to write the predictions to. 
 
+```bash
+(medacy_venv) $ python -m medacy -d ~/datasets/my_txt_files -cpl ./my_pipeline.json predict -m ./my_crf_model.pkl -pd ./crf_predictions
+(medacy_venv) $ python -m medacy -d ~/datasets/my_txt_files -pl LstmSystematicReviewPipeline -w ~/datasets/my_word_embeddings.bin predict -m ./my_bilstm_model.pkl -pd ./bilstm_predictions
+```
