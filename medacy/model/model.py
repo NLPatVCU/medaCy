@@ -234,7 +234,7 @@ class Model:
         report = self.pipeline.get_report()
         self.preprocess(dataset)
 
-        if groundtruth_directory is not None:
+        if groundtruth_directory:
             logging.info(f"Writing dataset groundtruth to {groundtruth_directory}")
             for file_path, ann in sequence_to_ann(self.X_data, self.y_data, {x[2] for x in self.X_data}).items():
                 ann.to_ann(groundtruth_directory / (os.path.basename(file_path).strip("txt") + "ann"))
