@@ -67,7 +67,13 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
         :return: the same Doc object, but it now has 'gold_label' annotations.
         """
 
-        logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+        if hasattr(doc._, 'file_name'):
+            logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+
+        if logging.getLogger().getEffectiveLevel() == logging.DEBUG:
+            # print document tokenization
+            for token in doc:
+                logging.debug(str(token))
 
         # check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):

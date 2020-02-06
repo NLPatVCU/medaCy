@@ -10,12 +10,10 @@ from medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_com
 from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
 from medacy.pipeline_components.learners.bert_learner import BertLearner
 from medacy.pipeline_components.learners.bilstm_crf_learner import BiLstmCrfLearner
-from medacy.pipeline_components.learners.crf_learner import get_crf
 from medacy.pipeline_components.tokenizers.character_tokenizer import CharacterTokenizer
 from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
 from medacy.pipeline_components.tokenizers.systematic_review_tokenizer import SystematicReviewTokenizer
 from medacy.pipelines.base.base_pipeline import BasePipeline
-
 
 required_keys = [
     'learner',
@@ -31,14 +29,14 @@ def json_to_pipeline(json_path):
 
     'learner': 'CRF', 'BiLSTM', or 'BERT'
     'spacy_pipeline': the spaCy model to use
+    'spacy_features': a list of features that exist as spaCy token annotations
+    'window_size': the number of words +/- the target word whose features should be used along with the target word
 
     The following keys are optional:
-    'spacy_features': a list of features that exist as spaCy token annotations
-    'window_size': the number of words +/- the target word whose features should be used along with the target word; defaults to 0
-    'tokenizer': 'clinical', 'systematic_review', or 'character'; defaults to the spaCy model's tokenizer
     'metamap': the path to the MetaMap binary; MetaMap will only be used if this key is present
         if 'metamap' is a key, 'semantic_types' must also be a key, with value 'all', 'none', or
         a list of semantic type strings
+    'tokenizer': 'clinical', 'systematic_review', or 'character'; defaults to the spaCy model's tokenizer
 
     :param json_path: the path to the json file
     :return: a custom pipeline class
@@ -52,8 +50,6 @@ def json_to_pipeline(json_path):
         raise ValueError(f"Required key(s) '{missing_keys}' was/were not found in the json file.")
 
     class CustomPipeline(BasePipeline):
-        """A custom pipeline configured from a JSON file"""
-
         def __init__(self, entities, **kwargs):
             super().__init__(entities, spacy_pipeline=spacy.load(input_json['spacy_pipeline']))
 
@@ -108,7 +104,14 @@ def json_to_pipeline(json_path):
             learner_selection = input_json['learner']
 
             if learner_selection == 'CRF':
-                return "CRF_l2sgd", get_crf()
+                return ("CRF_l2sgd",
+                        sklearn_crfsuite.CRF(
+                            algorithm='l2sgd',
+                            c2=0.1,
+                            max_iterations=100,
+                            all_possible_transitions=True
+                            )
+                        )
             if learner_selection == 'BiLSTM':
                 return 'BiLSTM+CRF', BiLstmCrfLearner(self.word_embeddings, self.cuda_device)
             if learner_selection == 'BERT':
@@ -129,13 +132,13 @@ def json_to_pipeline(json_path):
                 return TextExtractor()
 
             return FeatureExtractor(
-                window_size=input_json['window_size'] if 'window_size' in input_json else 0,
-                spacy_features=input_json['spacy_features'] if 'spacy_features' in input_json else ['text']
+                window_size=input_json['window_size'],
+                spacy_features=input_json['spacy_features']
             )
 
         def get_report(self):
-            report = super().get_report() + '\n'
-            report += f"Pipeline configured from a JSON: {json.dumps(input_json)}\nJSON path: {json_path}"
+            report = super().get_report() + '\n\n'
+            report += f"Pipeline configured from a JSON: {input_json}\nJSON path: {__file__}"
             return report
 
     return CustomPipeline

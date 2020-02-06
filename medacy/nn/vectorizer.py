@@ -304,8 +304,7 @@ class Vectorizer:
             'tag_to_index': self.tag_to_index,
             'character_to_index': self.character_to_index,
             'untrained_tokens': self.untrained_tokens,
-            'window_size': self.window_size,
-            'other_features': self.other_features
+            'window_size': self.window_size
         }
 
         return values
@@ -318,7 +317,3 @@ class Vectorizer:
         self.untrained_tokens = values['untrained_tokens']
         self.character_to_index = values['character_to_index']
         self.window_size = values['window_size']
-        try:
-            self.other_features = values['other_features']
-        except KeyError:
-            raise Exception('Tried to load deprecated Medacy model')

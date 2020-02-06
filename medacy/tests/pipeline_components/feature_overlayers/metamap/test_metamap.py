@@ -57,8 +57,6 @@ To correct for processing-induced changes in the volume of the tissue, we calcul
         self.assertFalse(self.dataset.is_metamapped())
         self.metamap.metamap_dataset(self.dataset, 2)
         self.assertTrue(self.dataset.is_metamapped())
-        for df in self.dataset:
-            self.assertTrue(os.path.isfile(df.metamapped_path))
 
 
 if __name__ == '__main__':

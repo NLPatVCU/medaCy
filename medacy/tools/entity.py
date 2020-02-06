@@ -1,4 +1,3 @@
-import os
 from typing import Match
 
 from medacy.data.data_file import DataFile
@@ -26,7 +25,7 @@ class Entity:
         self.text = text
 
     def __eq__(self, other):
-        return self.start == other.start and self.end == other.end and self.tag == other.tag
+        return self.start == other.start and self.end == other.end and self.text == other.text
 
     def __hash__(self):
         return hash((self.start, self.end, self.text))
@@ -38,16 +37,6 @@ class Entity:
     def __repr__(self):
         """Return the constructor in string form"""
         return f"{type(self).__name__}({self.tag}, {self.start}, {self.end}, {self.text}, {self.num})"
-
-    @classmethod
-    def reset_t(cls):
-        """
-        Resest the T counter for this class to 1
-        :return: The previous value of t
-        """
-        previous = cls.t
-        cls.t = 1
-        return previous
 
     @classmethod
     def init_from_re_match(cls, match: Match, ent_class, num=None, increment_t=False):
@@ -85,10 +74,10 @@ class Entity:
         """
         if isinstance(doc, DataFile):
             ann = Annotations(doc.ann_path, doc.txt_path)
-        elif isinstance(doc, (str, os.PathLike)):
+        elif isinstance(doc, str):
             ann = Annotations(doc)
         else:
-            raise ValueError(f"'doc'' must be DataFile, str, or os.PathLike, but is '{type(doc)}'")
+            raise ValueError(f"'doc'' must be DataFile or str, but is '{type(doc)}'")
 
         entities = []
 
@@ -129,20 +118,3 @@ class Entity:
         # Lenient
         return ((self.end > other.start and self.start < other.end) or (self.start < other.end and other.start < self.end)) and self.tag == other.tag
 
-
-def sort_entities(entities):
-    """
-    Sorts a list of Entity instances, adjusting the num value of each one
-    :param entities: a list of Entities
-    :return: a sorted list; all instances have ascending num values starting at 1
-    """
-    if not all(isinstance(e, Entity) for e in entities):
-        raise ValueError("At least one item in entities is not an Entity")
-
-    entities = entities.copy()
-    entities.sort(key=lambda x: (x.start, x.end))
-
-    for i, e in enumerate(entities, 1):
-        e.num = i
-
-    return entities

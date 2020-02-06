@@ -7,17 +7,13 @@ from medacy.pipelines.testing_pipeline import TestingPipeline
 from medacy.tests.sample_data import sample_dataset
 
 
-class TestPipeline(unittest.TestCase):
+class MyTestCase(unittest.TestCase):
     """Unit tests for medacy.pipelines.testing_pipeline.TestingPipeline"""
 
     def test_pipeline(self):
         # Get the entities, the pipeline, and an extra spaCy pipeline
         entities = sample_dataset.get_labels(as_list=True)
         pipeline = TestingPipeline(entities)
-
-        if "gold_annotator" in pipeline.spacy_pipeline.pipe_names:
-            pipeline.spacy_pipeline.remove_pipe("gold_annotator")
-
         spacy_pipeline = spacy.load('en_core_web_sm')
 
         # Create a sample Doc

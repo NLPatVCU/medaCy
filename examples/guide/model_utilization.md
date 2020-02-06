@@ -9,18 +9,16 @@ Once a CRF model has been trained and saved to disk, it can be loaded again for 
 
 ```python
 from medacy.pipelines import ClinicalPipeline
-from medacy.model.model import Model
+from medacy.ner import Model
 
 pipeline = ClinicalPipeline(metamap=None, entities=['Drug'])
 model = Model(pipeline)
 model.load('/home/medacy/trained_model.pickle')
 
-annotation = model.predict("The patient took 5 mg of aspirin.")  # Returns an Annotations object
+annotation = model.predict("The patient took 5 mg of aspirin.") #returns an Annotation object
 ```
 
-Model prediction over a string returns a medaCy `Annotations` object. 
-Useful functionalities are provided in the `Annotation` class such as the ability to see a *diff* between 
-two annotations for empirical analysis.
+Model prediction always returns a medaCy `Annotation` object. Useful functionalities are provided in the `Annotation` class such as the ability to see a *diff* between two annotations for empirical analysis.
 
 Trained CRF models are [pickled](https://docs.python.org/3/library/pickle.html) (serialized) binary files.
 
@@ -32,11 +30,15 @@ Once a model has been [packaged](packaging_a_medacy_model.md) and installed it c
 
 ```python
 import medacy_model_clinical_notes #import the python package wrapping the model
-from medacy.model.model import Model
+from medacy.ner import Model
 
 model = Model.load_external('medacy_model_clinical_notes')
 
-annotations = model.predict("The patient took 5 mg of aspirin.")
+annotations = model.predict("The patient took 5 mg of aspirin.") #returns an Annotation object
 ```
 
+
 See [Packaging a medaCy Model](packaging_a_medacy_model.md) for information on how to distribute your own trained models either internally or to the world.
+
+
+

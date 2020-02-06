@@ -424,12 +424,11 @@ class MetaMap:
             logging.info(f"The following Dataset has already been metamapped: {repr(dataset)}")
             return
 
-        mm_dir = os.path.join(dataset.data_directory, "metamapped")
+        mm_dir = dataset.metamapped_files_directory
 
         # Make MetaMap directory if it doesn't exist.
         if not os.path.isdir(mm_dir):
             os.makedirs(mm_dir)
-            dataset.metamapped_files_directory = mm_dir
 
         # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
         if retry_possible_corruptions:
@@ -440,33 +439,32 @@ class MetaMap:
             # Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)]
 
-        files_to_metamap = [data_file for data_file in dataset if data_file.file_name not in already_metamapped]
+        files_to_metamap = [data_file.txt_path for data_file in dataset if data_file.file_name not in already_metamapped]
 
         logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
 
         Parallel(n_jobs=n_jobs)(
             delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
 
-        if not dataset.is_metamapped():
-            raise RuntimeError(f"MetaMapping {dataset} was unsuccessful")
+        if dataset.is_metamapped():
+            for data_file in dataset:
+                data_file.metamapped_path = os.path.join(
+                    mm_dir,
+                    data_file.txt_path.split(os.path.sep)[-1].replace(
+                        ".%s" % dataset.raw_text_file_extension, ".metamapped"
+                    )
+                )
 
-        for data_file in dataset:
-            data_file.metamapped_path = os.path.join(
-                mm_dir,
-                data_file.file_name + ".metamapped"
-            )
-
-    def _parallel_metamap(self, data_file, mm_dir):
+    def _parallel_metamap(self, file_path, mm_dir):
         """
         Facilitates metamapping in parallel by forking off processes to MetaMap each file individually.
 
-        :param data_file: a DataFile to metamap
-        :return: None
+        :param file_path: the path of the txt file to metamap
+        :return: mm_dir now contains metamapped versions of the dataset files
         """
-        file_name = data_file.file_name
-        file_path = data_file.txt_path
+        file = file_path.split(os.path.sep)[-1]
         logging.info("Attempting to Metamap: %s", file_path)
-        mapped_file_location = os.path.join(mm_dir, file_name + ".metamapped")
+        mapped_file_location = os.path.join(mm_dir, file.replace('txt', "metamapped"))
 
         with open(mapped_file_location, 'w') as mapped_file:
             max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping

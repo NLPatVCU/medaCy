@@ -2,7 +2,6 @@ import importlib
 import logging
 import os
 import time
-from pathlib import Path
 from shutil import copyfile
 from statistics import mean
 
@@ -12,92 +11,8 @@ from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
 from medacy.data.dataset import Dataset
-from medacy.data.annotations import Annotations
 from medacy.model._model import construct_annotations_from_tuples, predict_document, create_folds
 from medacy.pipelines.base.base_pipeline import BasePipeline
-
-
-def sequence_to_ann(X, y, file_names):
-    """
-    Creates a dictionary of document-level Annotations objects for a given sequence
-    :param X: A list of sentence level zipped (features, indices, document_name) tuples
-    :param y: A  list of sentence-level lists of tags
-    :param file_names: A list of file names that are used by these sequences
-    :return: A dictionary mapping txt file names (the whole path) to their Annotations objects, where the
-    Annotations are constructed from the X and y data given here.
-    """
-    # Flattening nested structures into 2d lists
-    anns = {filename: Annotations([]) for filename in file_names}
-    tuples_by_doc = {filename: [] for filename in file_names}
-    document_indices = []
-    span_indices = []
-    for sequence in X:
-        document_indices += [sequence[2]] * len(sequence[0])
-        span_indices += list(sequence[1])
-    groundtruth = [element for sentence in y for element in sentence]
-
-    # Map the predicted sequences to their corresponding documents
-    i = 0
-
-    while i < len(groundtruth):
-        if groundtruth[i] == 'O':
-            i += 1
-            continue
-
-        entity = groundtruth[i]
-        document = document_indices[i]
-        first_start, first_end = span_indices[i]
-        # Ensure that consecutive tokens with the same label are merged
-        while i < len(groundtruth) - 1 and groundtruth[i + 1] == entity:  # If inside entity, keep incrementing
-            i += 1
-
-        last_start, last_end = span_indices[i]
-        tuples_by_doc[document].append((entity, first_start, last_end))
-        i += 1
-
-    # Create the Annotations objects
-    for file_name, tups in tuples_by_doc.items():
-        ann_tups = []
-        with open(file_name) as f:
-            text = f.read()
-        for tup in tups:
-            entity, start, end = tup
-            ent_text = text[start:end]
-            new_tup = (entity, start, end, ent_text)
-            ann_tups.append(new_tup)
-        ann_tups.sort(key=lambda x: (x[1], x[2]))
-        anns[file_name].annotations = ann_tups
-
-    return anns
-
-
-def write_ann_dicts(output_dir, dict_list):
-    """
-    Merges a list of dicts of Annotations into one dict representing all the individual ann files and prints the
-    ann data for both the individual Annotations and the combined one.
-    :param output_dir: Path object of the output directory (a subdirectory is made for each fold)
-    :param dict_list: a list of file_name: Annotations dictionaries
-    :return: None
-    """
-    file_names = set()
-    for d in dict_list:
-        file_names |= set(d.keys())
-
-    all_annotations_dict = {filename: Annotations([]) for filename in file_names}
-    for i, fold_dict in enumerate(dict_list, 1):
-        fold_dir = output_dir / f"fold_{i}"
-        os.mkdir(fold_dir)
-        for file_name, ann in fold_dict.items():
-            # Write the Annotations from the individual fold to file;
-            # Note that in this is written to the fold_dir, which is a subfolder of the output_dir
-            ann.to_ann(fold_dir / (os.path.basename(file_name).strip("txt") + "ann"))
-            # Merge the Annotations from the fold into the inter-fold Annotations
-            all_annotations_dict[file_name] |= ann
-
-    # Write the Annotations that are the combination of all folds to file
-    for file_name, ann in all_annotations_dict.items():
-        output_file_path = output_dir / (os.path.basename(file_name).strip("txt") + "ann")
-        ann.to_ann(output_file_path)
 
 
 class Model:
@@ -182,7 +97,6 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
-        report = self.pipeline.get_report()
         self.preprocess(dataset, asynchronous)
 
         logging.info("Currently Waiting")
@@ -195,7 +109,6 @@ class Model:
         train_data = [x[0] for x in self.X_data]
         learner.fit(train_data, self.y_data)
         logging.info("Successfully Trained: %s", learner_name)
-        logging.info('\n' + report)
 
         self.model = learner
         return self.model
@@ -265,7 +178,7 @@ class Model:
 
         return Dataset(prediction_directory)
 
-    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
+    def cross_validate(self, training_dataset=None, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -274,9 +187,9 @@ class Model:
         the prediction ambiguity with the methods present in the Dataset class to support pipeline development without
         a designated evaluation set.
 
-        :param training_dataset: Dataset that is being cross validated
-        :param num_folds: number of folds to split training data into for cross validation, defaults to 5
-        :param prediction_directory: directory to write predictions of cross validation to
+        :param training_dataset: Dataset that is being cross validated (optional)
+        :param num_folds: number of folds to split training data into for cross validation
+        :param prediction_directory: directory to write predictions of cross validation to or `True` for default predictions sub-directory.
         :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
         :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
@@ -285,12 +198,12 @@ class Model:
         if num_folds <= 1:
             raise ValueError("Number of folds for cross validation must be greater than 1, but is %s" % repr(num_folds))
 
-        groundtruth_directory = Path(groundtruth_directory) if groundtruth_directory else False
-        prediction_directory = Path(prediction_directory) if prediction_directory else False
-
-        for d in [groundtruth_directory, prediction_directory]:
-            if d and not d.exists():
-                raise NotADirectoryError(f"Options groundtruth_directory and predictions_directory must be existing directories, but one is {d}")
+        if prediction_directory is not None and training_dataset is None:
+            raise ValueError("Cannot generate predictions during cross validation if training dataset is not given."
+                             " Please pass the training dataset in the 'training_dataset' parameter.")
+        if groundtruth_directory is not None and training_dataset is None:
+            raise ValueError("Cannot generate groundtruth during cross validation if training dataset is not given."
+                             " Please pass the training dataset in the 'training_dataset' parameter.")
 
         pipeline_report = self.pipeline.get_report()
 
@@ -299,15 +212,15 @@ class Model:
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")
 
-        tags = sorted(self.pipeline.entities)
+        tags = sorted(training_dataset.get_labels(as_list=True))
+        self.pipeline.entities = tags
         logging.info('Tagset: %s', tags)
 
         eval_stats = {}
 
         # Dict for storing mapping of sequences to their corresponding file
-        fold_groundtruth_dicts = []
-        fold_prediction_dicts = []
-        file_names = {x[2] for x in self.X_data}
+        groundtruth_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
+        preds_by_document = {filename: [] for filename in {x[2] for x in self.X_data}}
 
         folds = create_folds(self.y_data, num_folds)
 
@@ -329,12 +242,63 @@ class Model:
             y_pred = learner.predict(test_data)
 
             if groundtruth_directory is not None:
-                ann_dict = sequence_to_ann(X_test, y_test, file_names)
-                fold_groundtruth_dicts.append(ann_dict)
+                # Flattening nested structures into 2d lists
+                document_indices = []
+                span_indices = []
+                for sequence in X_test:
+                    document_indices += [sequence[2]] * len(sequence[0])
+                    span_indices += list(sequence[1])
+                groundtruth = [element for sentence in y_test for element in sentence]
+
+                # Map the predicted sequences to their corresponding documents
+                i = 0
+
+                while i < len(groundtruth):
+                    if groundtruth[i] == 'O':
+                        i += 1
+                        continue
+
+                    entity = groundtruth[i]
+                    document = document_indices[i]
+                    first_start, first_end = span_indices[i]
+                    # Ensure that consecutive tokens with the same label are merged
+                    while i < len(groundtruth) - 1 and groundtruth[i + 1] == entity:  # If inside entity, keep incrementing
+                        i += 1
+
+                    last_start, last_end = span_indices[i]
+                    groundtruth_by_document[document].append((entity, first_start, last_end))
+                    i += 1
 
             if prediction_directory is not None:
-                ann_dict = sequence_to_ann(X_test, y_pred, file_names)
-                fold_prediction_dicts.append(ann_dict)
+                # Flattening nested structures into 2d lists
+                document_indices = []
+                span_indices = []
+
+                for sequence in X_test:
+                    document_indices += [sequence[2]] * len(sequence[0])
+                    span_indices += list(sequence[1])
+
+                predictions = [element for sentence in y_pred for element in sentence]
+
+                # Map the predicted sequences to their corresponding documents
+                i = 0
+
+                while i < len(predictions):
+                    if predictions[i] == 'O':
+                        i += 1
+                        continue
+
+                    entity = predictions[i]
+                    document = document_indices[i]
+                    first_start, first_end = span_indices[i]
+
+                    # Ensure that consecutive tokens with the same label are merged
+                    while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
+                        i += 1
+
+                    last_start, last_end = span_indices[i]
+                    preds_by_document[document].append((entity, first_start, last_end))
+                    i += 1
 
             # Write the metrics for this fold.
             for label in tags:
@@ -378,7 +342,7 @@ class Model:
             }
 
         entity_counts = training_dataset.compute_counts()
-        entity_counts['system'] = sum(v for k, v in entity_counts.items() if k in self.pipeline.entities)
+        entity_counts['system'] = sum(entity_counts.values())
 
         table_data = [
             [f"{label} ({entity_counts[label]})",  # Entity (Count)
@@ -403,13 +367,72 @@ class Model:
         else:
             logging.info(output_str)
 
-        # Write groundtruth and predictions to file
-        if groundtruth_directory:
-            write_ann_dicts(groundtruth_directory, fold_groundtruth_dicts)
         if prediction_directory:
-            write_ann_dicts(prediction_directory, fold_prediction_dicts)
+            
+            prediction_directory = os.path.join(training_dataset.data_directory, "predictions")
+            groundtruth_directory = os.path.join(training_dataset.data_directory, "groundtruth")
+            
+            # Write annotations generated from cross-validation
+            self.create_annotation_directory(
+                directory=prediction_directory,
+                training_dataset=training_dataset,
+                option="predictions"
+            )
 
-        return statistics_all_folds
+            # Write medaCy ground truth generated from cross-validation
+            self.create_annotation_directory(
+                directory=groundtruth_directory,
+                training_dataset=training_dataset,
+                option="groundtruth"
+            )
+            
+            # Add predicted/known annotations to the folders containing groundtruth and predictions respectively
+            self.predict_annotation_evaluation(
+                directory=groundtruth_directory,
+                training_dataset=training_dataset,
+                preds_by_document=preds_by_document,
+                groundtruth_by_document=groundtruth_by_document,
+                option="groundtruth"
+            )
+
+            self.predict_annotation_evaluation(
+                directory=prediction_directory,
+                training_dataset=training_dataset,
+                preds_by_document=preds_by_document,
+                groundtruth_by_document=groundtruth_by_document,
+                option="predictions"
+            )
+
+            return Dataset(prediction_directory)
+        else:
+            return statistics_all_folds
+
+    def create_annotation_directory(self, directory, training_dataset, option):
+        if isinstance(directory, str):
+            directory = directory
+        else:
+            directory = os.path.join(training_dataset.data_directory, option)
+        if os.path.isdir(directory):
+            logging.warning("Overwriting existing %s",option)
+        else:
+            os.makedirs(directory)
+        return directory
+
+    def predict_annotation_evaluation(self, directory, training_dataset, preds_by_document, groundtruth_by_document, option):
+        for data_file in training_dataset:
+            logging.info("Predicting %s file: %s", option, data_file.file_name)
+            with open(data_file.txt_path, 'r') as f:
+                doc = self.pipeline.spacy_pipeline.make_doc(f.read())
+                
+            if option == "groundtruth":
+                preds = groundtruth_by_document[data_file.file_name]
+            else:
+                preds = preds_by_document[data_file.file_name]
+
+            annotations = construct_annotations_from_tuples(doc, preds)
+            annotations.to_ann(write_location=os.path.join(directory, data_file.file_name + ".ann"))
+        
+        return Dataset(directory)
 
     def _run_through_pipeline(self, data_file):
         """

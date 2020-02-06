@@ -52,9 +52,7 @@ class DataFile:
         return self.file_name
 
     def __eq__(self, other):
-        self_attrs = (self._file_name, self._raw_path, self._ann_path, self._metamapped_path)
-        other_attrs = (other._file_name, other._raw_path, other._ann_path, other._metamapped_path)
-        return  self_attrs == other_attrs
+        return isinstance(other, DataFile) and self._file_name == other._file_name
 
     def __hash__(self):
         return hash(self._file_name)

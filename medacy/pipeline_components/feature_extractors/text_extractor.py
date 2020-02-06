@@ -12,10 +12,6 @@ class TextExtractor(FeatureExtractor):
     with any other class that only requires the token text for features.
     """
 
-    def __init__(self):
-        self.window_size = 0
-        self.spacy_features = []
-
     def __call__(self, doc):
         """
         Extract token text from document.
@@ -42,6 +38,6 @@ class TextExtractor(FeatureExtractor):
         :return: Tuple of parallel lists, a list of token texts and a list of corresponding character spans
         """
 
-        features = [[token.text for token in sent] for sent in doc.sents]
-        indices = [[(token.idx, token.idx + len(token)) for token in sent] for sent in doc.sents]
+        features = [token.text for token in doc]
+        indices = [(token.idx, token.idx + len(token)) for token in doc]
         return features, indices

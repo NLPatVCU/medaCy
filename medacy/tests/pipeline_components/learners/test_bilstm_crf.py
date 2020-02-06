@@ -9,7 +9,7 @@ from medacy.data.dataset import Dataset
 from medacy.model import Model
 from medacy.pipelines.lstm_systematic_review_pipeline import LstmSystematicReviewPipeline
 from medacy.tests.sample_data import test_dir
-from medacy.tests.pipeline_components.learners import use_cuda, cuda_device, word_embeddings
+from medacy.tests.pipeline_components.learners import use_cuda, cuda_device
 
 
 class TestBiLstmCrf(unittest.TestCase):
@@ -26,12 +26,12 @@ class TestBiLstmCrf(unittest.TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
-    @unittest.skipUnless(use_cuda and word_embeddings, "This test only runs if a cuda device and word embeddings are set in the medaCy config file")
+    @unittest.skipUnless(use_cuda, "This test only runs if a cuda device is set in the medaCy config file")
     def test_prediction_with_testing_pipeline(self):
         """Tests that a model created with the BiLSTM+CRF can be fitted and used to predict"""
         pipeline = LstmSystematicReviewPipeline(
             entities=self.entities,
-            word_embeddings=word_embeddings,
+            word_embeddings=os.path.join(test_dir, 'test_word_embeddings.txt'),
             cuda_device=cuda_device
         )
 
@@ -39,10 +39,6 @@ class TestBiLstmCrf(unittest.TestCase):
         model.fit(self.dataset)
         resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
         self.assertIsInstance(resulting_dataset, Dataset)
-        # Test that there is at least one prediction
-        any_predictions = any(resulting_dataset.generate_annotations())
-        self.assertTrue(any_predictions, "The model did not generate any predictions")
-
 
 if __name__ == '__main__':
     unittest.main()
