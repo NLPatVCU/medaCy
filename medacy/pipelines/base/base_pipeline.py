@@ -13,7 +13,7 @@ class BasePipeline(ABC):
     An abstract wrapper for a Medical NER Pipeline
     """
 
-    def __init__(self, entities, spacy_pipeline, cuda_device=-1):
+    def __init__(self, entities, spacy_pipeline, **kwargs):
         """
         Initializes a pipeline
         :param entities: a list of entities, or an empty list (or None) if the pipeline is for a model that
@@ -23,8 +23,8 @@ class BasePipeline(ABC):
         """
         self.entities = entities or []
         self.spacy_pipeline = spacy_pipeline
-        self.cuda_device = cuda_device
         self.overlayers = []  # Stores feature overlayers
+        self._kwargs = kwargs
 
         # Set tokenizer, if something other than the spaCy pipeline's tokenizer is specified in get_tokenizer()
         tokenizer = self.get_tokenizer()
@@ -120,7 +120,8 @@ class BasePipeline(ABC):
         report += f"Report created at {time.asctime()}\n\n"
         report += f"MedaCy Version: {medacy.__version__}\nSpaCy Version: {spacy.__version__}\n"
         report += f"SpaCy Model: {spacy_metadata['name']}, version {spacy_metadata['version']}\n"
-        report += f"Entities: {self.entities}\n\n"
+        report += f"Entities: {self.entities}\n"
+        report += f"Constructor arguments: {self._kwargs}\n\n"
 
         # Print data about the feature overlayers
         if self.overlayers:

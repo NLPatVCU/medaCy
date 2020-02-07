@@ -54,6 +54,9 @@ class TestBert(unittest.TestCase):
             model.fit(self.dataset)
             resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
             self.assertIsInstance(resulting_dataset, Dataset)
+            # Test that there is at least one prediction
+            any_predictions = any(resulting_dataset.generate_annotations())
+            self.assertTrue(any_predictions, "The model did not generate any predictions")
 
 
 if __name__ == '__main__':
