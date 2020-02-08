@@ -68,6 +68,15 @@ class Annotations:
 
         return annotations
 
+    @property
+    def annotations(self):
+        return self._annotations
+
+    @annotations.setter
+    def annotations(self, value):
+        """Ensures that annotations are always sorted"""
+        self._annotations = sorted(value, key=lambda x: (x[1], x[2]))
+
     def get_labels(self, as_list=False):
         """
         Get the set of labels from this collection of annotations.
@@ -120,8 +129,6 @@ class Annotations:
         """
         ann_string = ""
 
-        # Sort tuples by starting index, or end index if two have the same start
-        self.annotations.sort(key=lambda x: (x[1], x[2]))
         for num, tup in enumerate(self.annotations, 1):
             entity, first_start, last_end, labeled_text = tup
             ann_string += "T%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
