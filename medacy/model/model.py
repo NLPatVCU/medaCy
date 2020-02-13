@@ -211,7 +211,7 @@ class Model:
         self.y_data = []
         # Run all Docs through the pipeline before extracting features, allowing for pipeline components
         # that require inter-dependent doc objects
-        docs = [self._run_through_pipeline(data_file) for data_file in dataset]
+        docs = [self._run_through_pipeline(data_file) for data_file in dataset if data_file.txt_path]
         for doc in docs:
             features, labels = self._extract_features(doc)
             self.X_data += features
