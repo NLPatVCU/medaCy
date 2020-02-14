@@ -1,7 +1,6 @@
 import importlib
 import logging
 import os
-import time
 from itertools import cycle
 from pathlib import Path
 from shutil import copyfile
@@ -9,7 +8,6 @@ from statistics import mean
 
 import joblib
 import numpy as np
-from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
@@ -178,8 +176,6 @@ class Model:
 
     :ivar pipeline: a medaCy pipeline, must be a subclass of BasePipeline (see medacy.pipelines.base.BasePipeline)
     :ivar model: weights, if the model has been fitted
-    :ivar n_jobs: the number of CPU cores to be used by processes of this instance, defaults to the number of CPUs on
-    the machine it's running on
     :ivar X_data: X_data from the pipeline; primarily for internal use
     :ivar y_data: y_data from the pipeline; primarily for internal use
     """
