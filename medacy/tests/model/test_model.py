@@ -24,13 +24,14 @@ class TestModel(unittest.TestCase):
         cls.prediction_directory_2 = tempfile.mkdtemp()
         cls.prediction_directory_3 = tempfile.mkdtemp()
         cls.groundtruth_directory = tempfile.mkdtemp()
+        cls.groundtruth_2_directory = tempfile.mkdtemp()
         cls.pipeline = TestingPipeline(entities=cls.entities)
 
     @classmethod
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
         for d in [cls.prediction_directory, cls.prediction_directory_2,
-                  cls.prediction_directory_3, cls.groundtruth_directory]:
+                  cls.prediction_directory_3, cls.groundtruth_directory, cls.groundtruth_2_directory]:
             shutil.rmtree(d)
 
     def test_fit_predict_dump_load(self):
@@ -42,7 +43,7 @@ class TestModel(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             model.predict('Lorem ipsum dolor sit amet.')
 
-        model.fit(self.dataset)
+        model.fit(self.dataset, groundtruth_directory=self.groundtruth_2_directory)
         # Test X and y data are set
         self.assertTrue(model.X_data)
         self.assertTrue(model.y_data)
@@ -56,6 +57,16 @@ class TestModel(unittest.TestCase):
         resulting_dataset = model.predict(self.dataset.data_directory, prediction_directory=self.prediction_directory)
         self.assertIsInstance(resulting_dataset, Dataset)
         self.assertEqual(len(self.dataset), len(resulting_dataset))
+
+        # Test that groundtruth is written
+        groundtruth_dataset = Dataset(self.groundtruth_2_directory)
+        expected = [d.file_name for d in self.dataset]
+        actual = [d.file_name for d in groundtruth_dataset]
+        self.assertListEqual(expected, actual)
+
+        # Test that the groundtruth ann files have content
+        for ann in groundtruth_dataset.generate_annotations():
+            self.assertTrue(ann)
 
         # Test pickling a model
         pickle_path = os.path.join(self.prediction_directory, 'test.pkl')

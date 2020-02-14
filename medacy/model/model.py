@@ -2,19 +2,89 @@ import importlib
 import logging
 import os
 import time
+from itertools import cycle
 from pathlib import Path
 from shutil import copyfile
 from statistics import mean
 
 import joblib
+import numpy as np
 from pathos.multiprocessing import ProcessingPool as Pool, cpu_count
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
-from medacy.data.dataset import Dataset
 from medacy.data.annotations import Annotations
-from medacy.model._model import construct_annotations_from_tuples, predict_document, create_folds
+from medacy.data.dataset import Dataset
 from medacy.pipelines.base.base_pipeline import BasePipeline
+
+
+def construct_annotations_from_tuples(doc, predictions):
+    """
+    Converts predictions mapped to a document into an Annotations object
+    :param doc: SpaCy doc corresponding to predictions
+    :param predictions: List of tuples containing (entity, start offset, end offset)
+    :return: Annotations Object representing predicted entities for the given doc
+    """
+    predictions = sorted(predictions, key=lambda x: x[1])
+    annotations = []
+
+    for prediction in predictions:
+        if len(prediction) == 3:
+            (entity, start, end) = prediction
+            labeled_text = doc.text[start:end]
+        elif len(prediction) == 4:
+            (entity, start, end, labeled_text) = prediction
+        else:
+            raise ValueError("Incorrect prediction length.")
+
+        annotations.append((entity, start, end, labeled_text))
+
+    return Annotations(annotations)
+
+
+def create_folds(y, num_folds=5):
+    """
+    Partitions a data set of sequence labels and classifications into a number of stratified folds. Each partition
+    should have an evenly distributed representation of sequence labels. Without stratification, under-representated
+    labels may not appear in some folds. Returns an iterable [(X*,y*), ...] where each element contains the indices
+    of the train and test set for the particular testing fold.
+
+    See Dietterich, 1997 "Approximate Statistical Tests for Comparing Supervised Classification
+    Algorithms" for in-depth analysis.
+
+    :param y: a collection of sequence labels
+    :param num_folds: the number of folds (defaults to five, but must be >= 2
+    :return: an iterable
+    """
+    if not isinstance(num_folds, int) or num_folds < 2:
+        raise ValueError(f"'num_folds' must be an int >= 2, but is {repr(num_folds)}")
+
+    # labels are ordered by most examples in data
+    labels = np.unique([label for sequence in y for label in sequence])
+    np.flip(labels)
+
+    added = np.ones(len(y), dtype=bool)
+    partitions = [[] for _ in range(num_folds)]
+    partition_cycler = cycle(partitions)
+
+    for label in labels:
+        possible_sequences = [index for index, sequence in enumerate(y) if label in sequence]
+        for index in possible_sequences:
+            if added[index]:
+                partition = next(partition_cycler)
+                partition.append(index)
+                added[index] = 0
+    train_test_array = []
+
+    for i, y in enumerate(partitions):
+        X = []
+        for j, partition in enumerate(partitions):
+            if i != j:
+                X += partition
+
+        train_test_array.append((X,y))
+
+    return train_test_array
 
 
 def sequence_to_ann(X, y, file_names):
@@ -114,7 +184,7 @@ class Model:
     :ivar y_data: y_data from the pipeline; primarily for internal use
     """
 
-    def __init__(self, medacy_pipeline, model=None, n_jobs=cpu_count()):
+    def __init__(self, medacy_pipeline, model=None):
 
         if not isinstance(medacy_pipeline, BasePipeline):
             raise TypeError("Pipeline must be a medaCy pipeline that interfaces medacy.pipelines.base.BasePipeline")
@@ -125,7 +195,6 @@ class Model:
         # These arrays will store the sequences of features and sequences of corresponding labels
         self.X_data = []
         self.y_data = []
-        self.n_jobs = n_jobs
 
         # Run an initializing document through the pipeline to register all token extensions.
         # This allows the gathering of pipeline information prior to fitting with live data.
@@ -133,47 +202,25 @@ class Model:
         if doc is None:
             raise IOError("Model could not be initialized with the set pipeline.")
 
-    def preprocess(self, dataset, asynchronous=False):
+    def preprocess(self, dataset):
         """
         Preprocess dataset into a list of sequences and tags.
-
         :param dataset: Dataset object to preprocess.
-        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         """
-        if asynchronous:
-            logging.info('Preprocessing data asynchronously...')
-            self.X_data = []
-            self.y_data = []
-            pool = Pool(nodes=self.n_jobs)
+        self.X_data = []
+        self.y_data = []
+        # Run all Docs through the pipeline before extracting features, allowing for pipeline components
+        # that require inter-dependent doc objects
+        docs = [self._run_through_pipeline(data_file) for data_file in dataset if data_file.txt_path]
+        for doc in docs:
+            features, labels = self._extract_features(doc)
+            self.X_data += features
+            self.y_data += labels
 
-            results = [pool.apipe(self._extract_features, data_file) for data_file in dataset]
-
-            while any([i.ready() is False for i in results]):
-                time.sleep(1)
-
-            for i in results:
-                X, y = i.get()
-                self.X_data += X
-                self.y_data += y
-
-        else:
-            logging.info('Preprocessing data synchronously...')
-            self.X_data = []
-            self.y_data = []
-            # Run all Docs through the pipeline before extracting features, allowing for pipeline components
-            # that require inter-dependent doc objects
-            docs = [self._run_through_pipeline(data_file) for data_file in dataset]
-            for doc in docs:
-                features, labels = self._extract_features(doc)
-                self.X_data += features
-                self.y_data += labels
-
-    def fit(self, dataset, asynchronous=False):
+    def fit(self, dataset, groundtruth_directory=None):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
-
         :param dataset: Instance of Dataset.
-        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
 
@@ -182,8 +229,15 @@ class Model:
         if not isinstance(self.pipeline, BasePipeline):
             raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
+        groundtruth_directory = Path(groundtruth_directory) if groundtruth_directory else False
+
         report = self.pipeline.get_report()
-        self.preprocess(dataset, asynchronous)
+        self.preprocess(dataset)
+
+        if groundtruth_directory:
+            logging.info(f"Writing dataset groundtruth to {groundtruth_directory}")
+            for file_path, ann in sequence_to_ann(self.X_data, self.y_data, {x[2] for x in self.X_data}).items():
+                ann.to_ann(groundtruth_directory / (os.path.basename(file_path).strip("txt") + "ann"))
 
         logging.info("Currently Waiting")
 
@@ -199,6 +253,44 @@ class Model:
 
         self.model = learner
         return self.model
+
+    def _predict_document(self, doc):
+        """
+        Generates an dictionary of predictions of the given model over the corresponding document. The passed document
+        is assumed to be annotated by the same pipeline utilized when training the model.
+        :param doc: A spacy document
+        :return: an Annotations object containing the model predictions
+        """
+
+        feature_extractor = self.pipeline.get_feature_extractor()
+
+        features, indices = feature_extractor.get_features_with_span_indices(doc)
+        predictions = self.model.predict(features)
+        predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
+        span_indices = [element for sentence in indices for element in sentence]  # parallel array containing indices
+        annotations = []
+
+        i = 0
+        while i < len(predictions):
+            if predictions[i] == "O":
+                i += 1
+                continue
+            entity = predictions[i]
+            first_start, first_end = span_indices[i]
+            # Ensure that consecutive tokens with the same label are merged
+            while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
+                i += 1
+            last_start, last_end = span_indices[i]
+
+            labeled_text = doc.text[first_start:last_end]
+
+            logging.debug("%s: Predicted %s at (%i, %i) %s", doc._.file_name, entity, first_start, last_end,
+                          labeled_text.replace('\n', ''))
+
+            annotations.append((entity, first_start, last_end, labeled_text))
+            i += 1
+
+        return Annotations(annotations)
 
     def predict(self, input_data, prediction_directory=None):
         """
@@ -222,7 +314,7 @@ class Model:
             doc.set_extension('file_name', default=None, force=True)
             doc._.file_name = 'STRING_INPUT'
             doc = self.pipeline(doc, predict=True)
-            annotations = predict_document(self.model, doc, self.pipeline)
+            annotations = self._predict_document(doc)
             return annotations
 
         if isinstance(input_data, Dataset):
@@ -256,7 +348,7 @@ class Model:
             doc = self.pipeline(doc, predict=True)
 
             # Predict, creating a new Annotations object
-            annotations = predict_document(self.model, doc, self.pipeline)
+            annotations = self._predict_document(doc)
             logging.debug("Writing to: %s", os.path.join(prediction_directory, file_name + ".ann"))
             annotations.to_ann(write_location=os.path.join(prediction_directory, file_name + ".ann"))
 
@@ -265,7 +357,7 @@ class Model:
 
         return Dataset(prediction_directory)
 
-    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None, asynchronous=False):
+    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -278,7 +370,6 @@ class Model:
         :param num_folds: number of folds to split training data into for cross validation, defaults to 5
         :param prediction_directory: directory to write predictions of cross validation to
         :param groundtruth_directory: directory to write the ground truth MedaCy evaluates on
-        :param asynchronous: Boolean for whether the preprocessing should be done asynchronously.
         :return: Prints out performance metrics, if prediction_directory
         """
 
@@ -294,7 +385,7 @@ class Model:
 
         pipeline_report = self.pipeline.get_report()
 
-        self.preprocess(training_dataset, asynchronous)
+        self.preprocess(training_dataset)
 
         if not (self.X_data and self.y_data):
             raise RuntimeError("Must have features and labels extracted for cross validation")

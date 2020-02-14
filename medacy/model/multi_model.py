@@ -1,10 +1,8 @@
-import logging
 import os
 from shutil import copyfile
 
 from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
-from medacy.model._model import predict_document
 from medacy.model.model import Model
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
