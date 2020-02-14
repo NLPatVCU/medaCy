@@ -171,7 +171,7 @@ def main():
     log_file_name = args.log_file or f"medacy_{device}.log"
     logging.basicConfig(filename=log_file_name, format='%(asctime)-15s: %(message)s', level=logging.INFO)
     logger = logging.getLogger()
-    if args.log_console:
+    if args.log_console or args.test_mode:
         logger.addHandler(logging.StreamHandler())
     if args.test_mode:
         logger.setLevel(logging.DEBUG)
