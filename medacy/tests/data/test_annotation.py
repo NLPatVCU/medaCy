@@ -1,7 +1,7 @@
 import os
 import shutil
 import tempfile
-from unittest import TestCase
+import unittest
 
 import pkg_resources
 
@@ -10,7 +10,7 @@ from medacy.data.dataset import Dataset
 from medacy.tests.sample_data import test_dir
 
 
-class TestAnnotation(TestCase):
+class TestAnnotation(unittest.TestCase):
     """Tests for medacy.data.annotations.Annotations"""
 
     @classmethod
@@ -33,10 +33,15 @@ class TestAnnotation(TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.test_dir)
 
+    def _test_is_sorted(self, ann):
+        expected = sorted([e[1] for e in ann])
+        actual = [e[1] for e in ann]
+        self.assertListEqual(actual, expected)
+
     def test_init_from_ann_file(self):
         """Tests initialization from valid ann file"""
         ann = Annotations(self.ann_path_1)
-        self.assertIsNotNone(ann.annotations)
+        self._test_is_sorted(ann)
 
     def test_init_from_invalid_ann(self):
         """Tests initialization from invalid annotation file"""
@@ -131,14 +136,23 @@ class TestAnnotation(TestCase):
         ann_1 = Annotations([tup_1, tup_2], source_text_path=file_name)
         ann_2 = Annotations([tup_3])
 
+        for a in [ann_1, ann_2]:
+            self._test_is_sorted(a)
+
         # Test __or__
         result = ann_1 | ann_2
         expected = {tup_1, tup_2, tup_3}
         actual = set(result)
         self.assertSetEqual(actual, expected)
         self.assertEqual(file_name, result.source_text_path)
+        self._test_is_sorted(result)
 
         # Test __ior__
         ann_1 |= ann_2
         actual = set(ann_1)
         self.assertSetEqual(actual, expected)
+        self._test_is_sorted(ann_1)
+
+
+if __name__ == '__main__':
+    unittest.main()

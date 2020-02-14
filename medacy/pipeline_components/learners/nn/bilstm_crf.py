@@ -1,13 +1,12 @@
 """
 BiLSTM-CRF PyTorch Network
 """
-import string
 
 import torch
 import torch.nn as nn
 from torchcrf import CRF
 
-from medacy.nn import CharacterLSTM
+from medacy.pipeline_components.learners.nn.character_lstm import CharacterLSTM
 
 HIDDEN_DIM = 200
 CHARACTER_HIDDEN_DIM = 100
