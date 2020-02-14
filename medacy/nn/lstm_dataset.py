@@ -1,6 +1,5 @@
 
 from torch.utils.data import Dataset
-from gensim.models import KeyedVectors
 from torch.nn import Embedding
 import torch
 
@@ -11,17 +10,22 @@ class LstmDataset(Dataset):
     y_data = None
     masks = []
 
-    def __init__(self, data, embeddings_file, device):
+    def __init__(self, data, word_vectors, device, tag_to_index):
         sequences, labels = zip(*data)
         self.max_seq_len = max([len(seq) for seq in sequences])
         self.device = device
+        self.tag_to_index = tag_to_index
 
         self.embed = None
         self.token_to_index = {}
         self.tag_to_index = {}
         self.padding_index = None
 
-        self.load_embeddings(embeddings_file)
+        vectors = torch.tensor(word_vectors.vectors, device=self.device)
+        padding = torch.zeros((1, vectors.shape[1]), device=self.device)
+        vectors = torch.cat((vectors, padding), dim=0)
+        self.embed = Embedding.from_pretrained(vectors, padding_idx=vectors.shape[0] - 1)
+        self.padding_index = vectors.shape[0] - 1
         self.encode(sequences, labels)
 
     def __len__(self):
@@ -37,53 +41,28 @@ class LstmDataset(Dataset):
     def vectorize_sequences(self, sequences):
         all_indices = torch.zeros((len(sequences), self.max_seq_len), device=self.device, dtype=torch.long)
         for i, sequence in enumerate(sequences):
-            tokens = [token['0:text'] for token in sequence]
-            indices = []
-            for token in tokens:
-                try:
-                    indices.append(self.token_to_index[token])
-                except KeyError:
-                    indices.append(self.padding_index)
-            if len(indices) < self.max_seq_len:
-                pad = [self.padding_index] * (self.max_seq_len - len(indices))
-                indices += pad
-            all_indices[i] = (torch.tensor(indices, device=self.device))
+            token_indices = [token[0] for token in sequence]
+            if len(token_indices) < self.max_seq_len:
+                pad = [self.padding_index] * (self.max_seq_len - len(token_indices))
+                token_indices += pad
+            token_tensor = torch.tensor(token_indices, device=self.device)
+            all_indices[i] = token_tensor
 
         embedded = self.embed(all_indices)
         self.x_data = embedded
 
     def vectorize_labels(self, labels):
-        self.create_tag_dictionary(labels)
         all_labels = torch.zeros((len(labels), self.max_seq_len), device=self.device, dtype=torch.long)
         all_masks = torch.zeros((len(labels), self.max_seq_len), device=self.device, dtype=torch.long)
-        for i, label in enumerate(labels):
-            tags = [self.tag_to_index[token] for token in label]
-            mask = [1] * len(tags)
-            if len(tags) < self.max_seq_len:
-                pad = [0] * (self.max_seq_len - len(tags))
-                tags += pad
-                mask += pad
-            all_masks[i] = torch.tensor(mask, device=self.device)
-            all_labels[i] = torch.tensor(tags, device=self.device)
+        for i, tags in enumerate(labels):
+            tags = tags.to(torch.uint8)
+            mask = torch.ones(len(tags), device=self.device, dtype=torch.uint8)
+            if tags.shape[0] < self.max_seq_len:
+                pad = torch.zeros((self.max_seq_len - len(tags)), device=self.device, dtype=torch.uint8)
+                tags = torch.cat((tags, pad))
+                mask = torch.cat((mask, pad))
+            all_masks[i] = mask
+            all_labels[i] = tags
         self.y_data = all_labels
         self.masks = all_masks
 
-    def create_tag_dictionary(self, tags):
-        tag_to_index = {}
-        for sequence in tags:
-            for tag in sequence:
-                if tag not in tag_to_index:
-                    tag_to_index[tag] = len(tag_to_index)
-        self.tag_to_index = tag_to_index
-
-    def load_embeddings(self, embeddings_file):
-        is_binary = embeddings_file.endswith('.bin')
-        word_vectors = KeyedVectors.load_word2vec_format(embeddings_file, binary=is_binary)
-
-        index_to_tag = word_vectors.index2word
-        self.token_to_index = {tag: i for i, tag in enumerate(index_to_tag)}
-        vectors = torch.tensor(word_vectors.wv.vectors, device=self.device)
-        padding = torch.zeros((1, word_vectors.vector_size), device=self.device)
-        vectors = torch.cat((vectors, padding), dim=0)
-        self.embed = Embedding.from_pretrained(vectors, padding_idx=vectors.shape[0] - 1)
-        self.padding_index = vectors.shape[0] - 1
