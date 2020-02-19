@@ -27,8 +27,6 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
         )
         self.nlp = spacy_pipeline
         self.labels = labels
-        self.failed_overlay_count = 0
-        self.failed_identifying_span_count = 0
         Token.set_extension('gold_label', default="O", force=True)
 
     def find_span(self, start, end, doc):
@@ -69,6 +67,9 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
 
         logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
 
+        failed_overlay_count = 0
+        failed_identifying_span_count = 0
+
         # check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
             logging.warning("No extension doc._.gold_annotation_file is present; it will not be possible to fit a model with this Doc")
@@ -84,27 +85,26 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
             span = doc.char_span(e_start, e_end)
 
             if span is None:
-                self.failed_overlay_count += 1
-                self.failed_identifying_span_count += 1
-                logging.warning("%s: Number of failed annotation overlays with current tokenizer: %i (%i,%i,%s)",
-                                doc._.file_name, self.failed_overlay_count, e_start, e_end, e_label)
+                failed_overlay_count += 1
+                failed_identifying_span_count += 1
 
             fixed_span = self.find_span(e_start, e_end, doc)
             if fixed_span is not None:
                 if span is None:
                     logging.warning("%s: Fixed span (%i,%i,%s) into: %s",
                                     doc._.file_name, e_start, e_end, e_label, fixed_span.text)
-                    self.failed_identifying_span_count -= 1
+                    failed_identifying_span_count -= 1
                 for token in fixed_span:
                     if e_label in self.labels or not self.labels:
                         token._.set('gold_label', e_label)
 
-            else:  # annotation was not able to be fixed, it will be ignored - this is bad in evaluation.
+            else:
+                # Annotation was not able to be fixed, it will be ignored - this is bad in evaluation.
                 logging.warning("%s: Could not fix annotation: (%i,%i,%s)", doc._.file_name, e_start, e_end, e_label)
-                logging.warning("%s: Total Failed Annotations: %i", doc._.file_name, self.failed_identifying_span_count)
 
-        if self.failed_overlay_count > .3 * len(gold_annotations):
-            logging.warning("%s: Annotations may mis-aligned as more than 30 percent failed to overlay: %s",
-                            doc._.file_name, doc._.gold_annotation_file)
+        logging.warning(f"{doc._.file_name}: Number of failed annotation overlays with current tokenizer: {failed_overlay_count}")
+
+        if failed_overlay_count > .3 * len(gold_annotations):
+            logging.critical(f"{doc._.file_name}s: More than 30% of annotations failed to overlay")
 
         return doc
