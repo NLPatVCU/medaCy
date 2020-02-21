@@ -214,7 +214,28 @@ class Annotations:
 
         return ambiguity_dict
 
-    def compute_confusion_matrix(self, other, entities, leniency=0):
+    def compute_unmatched(self, other):
+        """
+        TODO: Description
+        """
+        if not isinstance(other, Annotations):
+            raise ValueError("An Annotations object is required as an argument.")
+
+        unmatched_dict = {}
+        for label, start, end, text in self.annotations:
+            if label not in unmatched_dict.keys():
+                unmatched_dict[label] = 0
+            matched = False
+            for c_label, c_start, c_end, c_text in other.annotations:
+                overlap = max(0, min(end, c_end) - max(c_start, start))
+                if overlap != 0:
+                    matched = True
+            if matched == False:
+                unmatched_dict[label] += 1
+                
+        return unmatched_dict
+
+    def compute_confusion_matrix(self, other, entities, unmatched=False, leniency=0):
         """
         Computes a confusion matrix representing span level ambiguity between this annotation and the argument annotation.
         An annotation in 'annotations' is ambiguous is it overlaps with a span in this Annotation but does not have the
@@ -248,6 +269,14 @@ class Annotations:
         for matching_annotation in intersection:
             matching_label, start, end, text = matching_annotation
             confusion_matrix[entity_encoding[matching_label]][entity_encoding[matching_label]] += 1
+
+        # Compute unmatched scores
+        if(unmatched):
+            for row in confusion_matrix:
+                row.append(0)
+            unmatched_dict = self.compute_unmatched(other)
+            for gold_label in unmatched_dict.keys():
+                confusion_matrix[entity_encoding[gold_label]][-1] = unmatched_dict[gold_label]
 
         return confusion_matrix
 

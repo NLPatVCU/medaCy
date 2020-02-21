@@ -232,7 +232,7 @@ class Dataset:
 
         return total
 
-    def compute_confusion_matrix(self, other, leniency=0):
+    def compute_confusion_matrix(self, other, unmatched=False, leniency=0):
         """
         Generates a confusion matrix where this Dataset serves as the gold standard annotations and `dataset` serves
         as the predicted annotations. A typical workflow would involve creating a Dataset object with the prediction directory
@@ -252,7 +252,10 @@ class Dataset:
 
         # sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
-        confusion_matrix = [[0] * len(entities) for _ in range(len(entities))]
+        if unmatched:
+            confusion_matrix = [[0] * (len(entities)+1) for _ in range(len(entities))]
+        else:
+            confusion_matrix = [[0] * len(entities) for _ in range(len(entities))]
 
         for gold_data_file in self:
             prediction_iter = iter(other)
@@ -264,11 +267,11 @@ class Dataset:
             pred_annotation = Annotations(prediction_data_file.ann_path)
 
             # Compute matrix on the Annotation file level
-            ann_confusion_matrix = gold_annotation.compute_confusion_matrix(pred_annotation, entities, leniency=leniency)
+            ann_confusion_matrix = gold_annotation.compute_confusion_matrix(pred_annotation, entities, unmatched=unmatched, leniency=leniency)
             for i in range(len(confusion_matrix)):
-                for j in range(len(confusion_matrix)):
+                for j in range(len(confusion_matrix) + unmatched):
                     confusion_matrix[i][j] += ann_confusion_matrix[i][j]
-
+        
         return entities, confusion_matrix
 
     def compute_ambiguity(self, dataset):
