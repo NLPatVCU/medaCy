@@ -253,9 +253,7 @@ class Dataset:
         # sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
         if unmatched:
-            confusion_matrix = [[0] * (len(entities)+1) for _ in range(len(entities))]
-        else:
-            confusion_matrix = [[0] * len(entities) for _ in range(len(entities))]
+            confusion_matrix = [[0] * (len(entities)+unmatched) for _ in range(len(entities))]
 
         for gold_data_file in self:
             prediction_iter = iter(other)
