@@ -131,16 +131,13 @@ From Tools > Vagrant, you also have the option to select Halt.
 While you're developing medaCy in PyCharm, you probably don't want to run each script from the command line.
 This section details how to set the project interpreter to be the installation of Python 3 on the VM.
 
-Select File > Settings, and then on the settings menu, select Plugins. Enable the
-Remote Interpreter plugin. 
-
-Once remote interpreters are enabled for PyCharm, you will need to configure the remote interpreter
-for this project. The plugin is already designed to work with Vagrant, so this will be easy.
-
-Again, go to File > Settings, and select Project: medacy > Project Interpreter. Select the gear
+Go to File > Settings, and select Project: medacy > Project Interpreter. Select the gear
 icon on the right side of the dialogue box and select "add". Another dialogue box will appear.
 Select "Vagrant" on the left side of the new box. Set the Python interpreter path to 
 `usr/bin/python3`.
+
+See https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-virtual-boxes.html for screenshots
+of this process.
 
 ## Finishing up
 
