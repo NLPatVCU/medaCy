@@ -4,6 +4,7 @@ PyTorch Dataset for medaCy sequences.
 import torch
 from torch.utils.data import Dataset
 
+
 class SequencesDataset(Dataset):
     """Dataset to make preprocessing and batching easier.
 
@@ -51,9 +52,9 @@ class SequencesDataset(Dataset):
 
         for sample in samples:
             sequence, labels = sample
-            labels = labels.tolist() # Convert from Tensor to list
+            labels = labels.tolist()  # Convert from Tensor to list
 
-            sequence = sequence.copy() # Clone sequence to avoid mutation
+            sequence = sequence.copy()  # Clone sequence to avoid mutation
             padding_length = max_length - len(sequence)
 
             # Create mask where item is 1 if label is not X and 0 if it is
@@ -76,4 +77,4 @@ class SequencesDataset(Dataset):
 
     def __getitem__(self, idx):
         """Return sequence with labels"""
-        return (self.sequences[idx], self.sequence_labels[idx])
+        return self.sequences[idx], self.sequence_labels[idx]
