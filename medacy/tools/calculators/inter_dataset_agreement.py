@@ -219,33 +219,29 @@ def format_results(measures_dict, num_dec=3, table_format='plain'):
 
     table = [['Tag', 'Prec', 'Rec', 'F1']]
 
-    def cell(data):
-        """Format floating point numbers to display a given number of decimal places"""
-        return format(data, f".{num_dec}f")
-
     for tag, m in measures_dict.items():
         table.append([
             tag,
-            cell(m.precision()),
-            cell(m.recall()),
-            cell(m.f1())
+            m.precision(),
+            m.recall(),
+            m.f1()
         ])
 
     table.append([
         'system (macro)',
-        cell(mean(m.precision() for m in measures_dict.values())),
-        cell(mean(m.recall() for m in measures_dict.values())),
-        cell(mean(m.f1() for m in measures_dict.values()))
+        mean(m.precision() for m in measures_dict.values()),
+        mean(m.recall() for m in measures_dict.values()),
+        mean(m.f1() for m in measures_dict.values())
     ])
 
     table.append([
         'system (micro)',
-        cell(sum(measures_dict.values(), Measures()).precision()),
-        cell(sum(measures_dict.values(), Measures()).recall()),
-        cell(sum(measures_dict.values(), Measures()).f1())
+        sum(measures_dict.values(), Measures()).precision(),
+        sum(measures_dict.values(), Measures()).recall(),
+        sum(measures_dict.values(), Measures()).f1()
     ])
 
-    return tabulate(table, headers='firstrow', tablefmt=table_format)
+    return tabulate(table, headers='firstrow', tablefmt=table_format, floatfmt=f".{num_dec}f")
 
 
 def main():
