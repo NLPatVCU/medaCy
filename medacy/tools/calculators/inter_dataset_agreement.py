@@ -12,6 +12,7 @@ already been paired will not count as false positives.
 import argparse
 import logging
 from collections import OrderedDict
+from itertools import product
 from statistics import mean
 
 from tabulate import tabulate
@@ -150,24 +151,23 @@ def measure_ann_file(ann_1, ann_2, mode='strict'):
     tags = {e.tag for e in gold_ents} | {e.tag for e in system_ents}
     measures = {tag: Measures() for tag in tags}
 
-    for s in system_ents:
-        measure = measures[s.tag]
-        for g in gold_ents:
-            if s.equals(g, mode=mode):
-                if s not in unmatched_system:
-                    # Don't do anything with system predictions that have already been paired
-                    continue
-                if g in unmatched_gold:
-                    # Each gold entity can only be matched to one prediction and
-                    # can only count towards the true positive score once
-                    unmatched_gold.remove(g)
-                    unmatched_system.remove(s)
-                    measure.tp += 1
-                else:
-                    # The entity has been matched to a gold entity, but we have
-                    # already gotten the one true positive match allowed for each gold entity;
-                    # therefore we say that the predicted entity is now matched
-                    unmatched_system.remove(s)
+    for s, g in product(system_ents, gold_ents):
+        if s.equals(g, mode=mode):
+            if s not in unmatched_system:
+                # Don't do anything with system predictions that have already been paired
+                continue
+
+            if g in unmatched_gold:
+                # Each gold entity can only be matched to one prediction and
+                # can only count towards the true positive score once
+                unmatched_gold.remove(g)
+                unmatched_system.remove(s)
+                measures[s.tag].tp += 1
+            else:
+                # The entity has been matched to a gold entity, but we have
+                # already gotten the one true positive match allowed for each gold entity;
+                # therefore we say that the predicted entity is now matched
+                unmatched_system.remove(s)
 
     for s in unmatched_system:
         # All predictions that don't match any gold entity count one towards the false positive score
