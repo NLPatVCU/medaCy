@@ -251,9 +251,9 @@ class Dataset:
             raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
         # sort entities in ascending order by count.
-        entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
-        if unmatched:
-            confusion_matrix = [[0] * (len(entities)+unmatched) for _ in range(len(entities))]
+        all_counts = self.compute_counts() + other.compute_counts()
+        entities = [key for key, _ in sorted(all_counts.items(), key=lambda x: x[1])]
+        confusion_matrix = [[0] * (len(entities)+unmatched) for _ in range(len(entities))]
 
         for gold_data_file in self:
             prediction_iter = iter(other)
