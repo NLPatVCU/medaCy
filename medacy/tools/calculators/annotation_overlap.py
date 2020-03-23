@@ -1,6 +1,7 @@
 import argparse
 from collections import Counter
 from itertools import product
+from pprint import pprint
 
 from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
@@ -49,7 +50,8 @@ def calculate_dataset_overlap(dataset):
     for d in dataset:
         total_counts += calculate_document_overlap(d)
 
-    print(f"Total overlaps: {total_counts}")
+    print(f"Total overlaps:")
+    pprint(total_counts)
 
 
 def main():
@@ -63,3 +65,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
