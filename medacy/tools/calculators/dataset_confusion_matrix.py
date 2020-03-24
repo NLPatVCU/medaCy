@@ -6,14 +6,16 @@ import numpy as np
 from medacy.data.dataset import Dataset
 
 
-def calculate_dataset_confusion_matrix(dataset_1_path, dataset_2_path, data_limit=None, unmatched=False, leniency=0.0):
-    dataset_1 = Dataset(dataset_1_path, data_limit=data_limit)
-    dataset_2 = Dataset(dataset_2_path, data_limit=data_limit)
-    ents, mat = dataset_1.compute_confusion_matrix(dataset_2, unmatched=unmatched, leniency=leniency)
+def calculate_dataset_confusion_matrix(groundtruth_dataset_path, prediction_dataset_path, data_limit=None, unmatched=False, leniency=0.0):
+    groundtruth_dataset = Dataset(groundtruth_dataset_path, data_limit=data_limit)
+    prediction_dataset = Dataset(prediction_dataset_path, data_limit=data_limit)
+    ents, mat = groundtruth_dataset.compute_confusion_matrix(prediction_dataset, unmatched=unmatched, leniency=leniency)
     return ents, mat
 
-def format_headers(entities):
+def format_headers(entities, unmatched=False):
     result = []
+    if unmatched:
+        entities.append("Unmatched")
     for string in entities:
         vertical_string = ""
         for char in string:
@@ -34,22 +36,24 @@ def format_density(mat):
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate and display the ambiguity of two datasets")
-    parser.add_argument('dataset_1', type=str, help="The first dataset path")
-    parser.add_argument('dataset_2', type=str, help="The second dataset path")
-    parser.add_argument('-dl', '--data_limit', type=int, default=None, help="The data limit to be used")
+    parser.add_argument('groundtruth_dataset', type=str, help="Path to the groundtruth dataset")
+    parser.add_argument('prediction_dataset', type=str, help="Path to the prediction dataset")
+    parser.add_argument('-l', '--leniency', type=float, default=0.0, help="Leniency to be used, must be between 0.0 and 1.0")
+    parser.add_argument('-dl', '--data_limit', type=int, default=None, help="Limits the number of data files to be used in creating each dataset")
     parser.add_argument('-d', '--density', action='store_true', help="Displays values as density")
     parser.add_argument('-u', '--unmatched', action='store_true', help="Displays unmatched counts")
-    parser.add_argument('-l', '--leniency', type=float, default=0.0, help="Leniency between 0.0 and 1.0 (default to 0.0)")
+    parser.add_argument('-r', '--red', action='store_true', help="\033[31m" + "Red?" + "\033[39m")
     args = parser.parse_args()
 
-    ents, mat = calculate_dataset_confusion_matrix(args.dataset_1, args.dataset_2, unmatched=args.unmatched, data_limit=args.data_limit, leniency=args.leniency)
+    ents, mat = calculate_dataset_confusion_matrix(args.groundtruth_dataset, args.prediction_dataset, unmatched=args.unmatched, data_limit=args.data_limit, leniency=args.leniency)
 
     if args.density:
         mat = format_density(mat)
-    if args.unmatched:
-        print(tabulate.tabulate(mat, headers=format_headers(ents + ["Unmatched"]), showindex=ents, tablefmt="plain"))
+    
+    if args.red:
+        print('\033[31m' + tabulate.tabulate(mat, headers=format_headers(ents, args.unmatched), showindex=ents, tablefmt="plain") + '\033[39m')
     else:
-        print(tabulate.tabulate(mat, headers=format_headers(ents), showindex=ents, tablefmt="plain"))
+        print(tabulate.tabulate(mat, headers=format_headers(ents, args.unmatched), showindex=ents, tablefmt="plain"))
 
 if __name__ == '__main__':
     main()
