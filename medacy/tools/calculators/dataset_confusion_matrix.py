@@ -6,13 +6,13 @@ import numpy as np
 from medacy.data.dataset import Dataset
 
 
-def calculate_dataset_confusion_matrix(groundtruth_dataset_path, prediction_dataset_path, data_limit=None, unmatched=False, leniency=0.0):
+def calculate_dataset_confusion_matrix(groundtruth_dataset_path, prediction_dataset_path, leniency=0.0, data_limit=None, density=False, heatmap=False, unmatched=False, red=False):
     groundtruth_dataset = Dataset(groundtruth_dataset_path, data_limit=data_limit)
     prediction_dataset = Dataset(prediction_dataset_path, data_limit=data_limit)
     ents, mat = groundtruth_dataset.compute_confusion_matrix(prediction_dataset, unmatched=unmatched, leniency=leniency)
-    return ents, mat
+    return (tabulate.tabulate(mat, headers=format_headers(ents, unmatched), showindex=ents, tablefmt="plain"))
 
-def format_headers(entities, unmatched=False):
+def format_headers(entities, unmatched):
     result = []
     if unmatched:
         entities.append("Unmatched")
@@ -34,6 +34,16 @@ def format_density(mat):
                 mat[row_index][col_index] /= row_total
     return mat
 
+def format_heatmap(mat, density):
+    pass
+    if(density):
+        for row_index, row in enumerate(mat):
+            pass
+    else:
+        density_mat = format_density(mat)
+
+    pass
+
 def main():
     parser = argparse.ArgumentParser(description="Calculate and display the ambiguity of two datasets")
     parser.add_argument('groundtruth_dataset', type=str, help="Path to the groundtruth dataset")
@@ -41,19 +51,12 @@ def main():
     parser.add_argument('-l', '--leniency', type=float, default=0.0, help="Leniency to be used, must be between 0.0 and 1.0")
     parser.add_argument('-dl', '--data_limit', type=int, default=None, help="Limits the number of data files to be used in creating each dataset")
     parser.add_argument('-d', '--density', action='store_true', help="Displays values as density")
+    parser.add_argument('-h', '--heatmap', action='store_true', help="Displays heatmap overlay")
     parser.add_argument('-u', '--unmatched', action='store_true', help="Displays unmatched counts")
     parser.add_argument('-r', '--red', action='store_true', help="\033[31m" + "Red?" + "\033[39m")
     args = parser.parse_args()
 
-    ents, mat = calculate_dataset_confusion_matrix(args.groundtruth_dataset, args.prediction_dataset, unmatched=args.unmatched, data_limit=args.data_limit, leniency=args.leniency)
-
-    if args.density:
-        mat = format_density(mat)
-    
-    if args.red:
-        print('\033[31m' + tabulate.tabulate(mat, headers=format_headers(ents, args.unmatched), showindex=ents, tablefmt="plain") + '\033[39m')
-    else:
-        print(tabulate.tabulate(mat, headers=format_headers(ents, args.unmatched), showindex=ents, tablefmt="plain"))
+    print(calculate_dataset_confusion_matrix(args.groundtruth_dataset, args.prediction_dataset, args.leniency, args.data_limit, args.density, args.heatmap, args.unmatched, args.red))
 
 if __name__ == '__main__':
     main()
