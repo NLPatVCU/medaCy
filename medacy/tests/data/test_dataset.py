@@ -48,20 +48,20 @@ class TestDataset(unittest.TestCase):
         expected = [
             DataFile(
                 file_name="PMC1257590",
-                raw_text_file_path=test_dir_path / "PMC1257590.txt",
-                annotation_file_path=test_dir_path / "PMC1257590.ann",
+                txt_path=test_dir_path / "PMC1257590.txt",
+                ann_path=test_dir_path / "PMC1257590.ann",
                 metamapped_path=test_dir_path / "metamapped" / "PMC1257590.metamapped"
             ),
             DataFile(
                 file_name="PMC1314908",
-                raw_text_file_path=test_dir_path / "PMC1314908.txt",
-                annotation_file_path=test_dir_path / "PMC1314908.ann",
+                txt_path=test_dir_path / "PMC1314908.txt",
+                ann_path=test_dir_path / "PMC1314908.ann",
                 metamapped_path=test_dir_path / "metamapped" / "PMC1314908.metamapped"
             ),
             DataFile(
                 file_name="PMC1392236",
-                raw_text_file_path=test_dir_path / "PMC1392236.txt",
-                annotation_file_path=test_dir_path / "PMC1392236.ann",
+                txt_path=test_dir_path / "PMC1392236.txt",
+                ann_path=test_dir_path / "PMC1392236.ann",
                 metamapped_path=test_dir_path / "metamapped" / "PMC1392236.metamapped"
             )
         ]
@@ -74,20 +74,20 @@ class TestDataset(unittest.TestCase):
         expected = [
             DataFile(
                 file_name="PMC1257590",
-                raw_text_file_path=test_dir_path / "PMC1257590.txt",
-                annotation_file_path=None,
+                txt_path=test_dir_path / "PMC1257590.txt",
+                ann_path=None,
                 metamapped_path=None
             ),
             DataFile(
                 file_name="PMC1314908",
-                raw_text_file_path=test_dir_path / "PMC1314908.txt",
-                annotation_file_path=None,
+                txt_path=test_dir_path / "PMC1314908.txt",
+                ann_path=None,
                 metamapped_path=None
             ),
             DataFile(
                 file_name="PMC1392236",
-                raw_text_file_path=test_dir_path / "PMC1392236.txt",
-                annotation_file_path=None,
+                txt_path=test_dir_path / "PMC1392236.txt",
+                ann_path=None,
                 metamapped_path=None
             )
         ]
@@ -100,20 +100,20 @@ class TestDataset(unittest.TestCase):
         expected = [
             DataFile(
                 file_name="PMC1257590",
-                raw_text_file_path=None,
-                annotation_file_path=test_dir_path / "PMC1257590.ann",
+                txt_path=None,
+                ann_path=test_dir_path / "PMC1257590.ann",
                 metamapped_path=None
             ),
             DataFile(
                 file_name="PMC1314908",
-                raw_text_file_path=None,
-                annotation_file_path=test_dir_path / "PMC1314908.ann",
+                txt_path=None,
+                ann_path=test_dir_path / "PMC1314908.ann",
                 metamapped_path=None,
             ),
             DataFile(
                 file_name="PMC1392236",
-                raw_text_file_path=None,
-                annotation_file_path=test_dir_path / "PMC1392236.ann",
+                txt_path=None,
+                ann_path=test_dir_path / "PMC1392236.ann",
                 metamapped_path=None
             )
         ]
