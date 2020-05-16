@@ -14,9 +14,8 @@ from tabulate import tabulate
 
 from medacy.data.annotations import Annotations, EntTuple
 from medacy.data.dataset import Dataset
-from medacy.pipelines.base.base_pipeline import BasePipeline
 from medacy.pipeline_components.feature_extractors import FeatureTuple
-
+from medacy.pipelines.base.base_pipeline import BasePipeline
 
 DEFAULT_NUM_FOLDS = 10
 
@@ -122,13 +121,13 @@ def sequence_to_ann(X: List[FeatureTuple], y: List[str], file_names: Iterable[st
     return anns
 
 
-def write_ann_dicts(output_dir: Path, dict_list: List[Dict[str, Annotations]]):
+def write_ann_dicts(output_dir: Path, dict_list: List[Dict[str, Annotations]]) -> Dict[str, Annotations]:
     """
     Merges a list of dicts of Annotations into one dict representing all the individual ann files and prints the
     ann data for both the individual Annotations and the combined one.
     :param output_dir: Path object of the output directory (a subdirectory is made for each fold)
     :param dict_list: a list of file_name: Annotations dictionaries
-    :return: None
+    :return: The merged Annotations dict, if wanted
     """
     file_names = set()
     for d in dict_list:
@@ -149,6 +148,8 @@ def write_ann_dicts(output_dir: Path, dict_list: List[Dict[str, Annotations]]):
     for file_name, ann in all_annotations_dict.items():
         output_file_path = output_dir / (os.path.basename(file_name).rstrip("txt") + "ann")
         ann.to_ann(output_file_path)
+
+    return all_annotations_dict
 
 
 class Model:
