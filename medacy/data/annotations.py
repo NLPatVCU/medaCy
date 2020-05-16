@@ -1,8 +1,11 @@
 import logging
 import os
 import re
-from collections import Counter
+from collections import Counter, namedtuple
 from math import ceil
+
+
+EntTuple = namedtuple('EntTuple', ['tag', 'start', 'end', 'text'])
 
 
 class Annotations:
@@ -15,6 +18,8 @@ class Annotations:
     :ivar source_text_path: path to the related .txt file
     :ivar annotations: a list of annotation tuples
     """
+
+    brat_pattern = re.compile(r'T(\d+)\t(\S+) ((\d+ \d+;)*\d+ \d+)\t(.+)')
 
     def __init__(self, annotation_data, source_text_path=None):
         """
@@ -42,29 +47,18 @@ class Annotations:
         """
         annotations = []
         with open(file_path, 'r', encoding='utf-8') as f:
-            for line in f:
-                line = line.strip()
-                if re.fullmatch(r"T\d+\t\S+ \d+ \d+\t.+('\n'|)", line, re.DOTALL):
-                    # Entity has a contiguous span
-                    line = line.split("\t")
-                    tags = line[1].split(" ")
-                    entity_name = tags[0]
-                    text = line[-1]
-                    entity_start = int(tags[1])
-                    entity_end = int(tags[-1])
-                elif re.fullmatch(r"T\d+\t\S+ (\d+ \d+;)+\d+ \d+\t.+('\n'|)", line, re.DOTALL):
-                    # Entity has a non-contiguous span
-                    split_line = line.split("\t")
-                    tags = split_line[1].split(" ")
-                    entity_name = tags[0]
-                    text = split_line[-1]
-                    # Special logic to get the beginning of the first span and the end of the last span
-                    span_indices = re.findall(r'\d+', split_line[1])
-                    entity_start = int(span_indices[0])
-                    entity_end = int(span_indices[-1])
-                else:
-                    continue
-                annotations.append((entity_name, entity_start, entity_end, text))
+            data = f.read()
+
+        for match in re.finditer(Annotations.brat_pattern, data):
+            tag = match.group(2)
+            spans = match.group(3)
+            mention = match.group(5)
+
+            spans = re.findall(r'\d+', spans)
+            start, end = int(spans[0]), int(spans[-1])
+
+            new_ent = EntTuple(tag, start, end, mention)
+            annotations.append(new_ent)
 
         return annotations
 
@@ -75,7 +69,7 @@ class Annotations:
     @annotations.setter
     def annotations(self, value):
         """Ensures that annotations are always sorted"""
-        self._annotations = sorted(value, key=lambda x: (x[1], x[2]))
+        self._annotations = sorted([EntTuple(*e) for e in value], key=lambda x: (x.start, x.end))
 
     def get_labels(self, as_list=False):
         """
@@ -89,27 +83,6 @@ class Annotations:
             return list(labels)
         return labels
 
-    def get_entity_annotations(self, format='medacy', nlp=None):
-        """
-        Returns a list of entity annotation tuples
-        :return: A list of entities or underlying dictionary of entities
-        """
-        if format not in ('medacy', 'spacy'):
-            raise ValueError("'%s' is not a valid annotation format" % format)
-        if format == 'medacy':
-            return self.annotations
-        elif format == 'spacy':
-            if not self.source_text_path:
-                raise FileNotFoundError("spaCy format requires the source text path")
-
-            with open(self.source_text_path, 'r') as f:
-                source_text = f.read()
-
-            # (start, end, tag)
-            entities = [(e[1], e[2], e[0]) for e in self.annotations]
-
-            return source_text, entities
-
     def add_entity(self, label, start, end, text=""):
         """
         Adds an entity to the Annotations
@@ -118,7 +91,7 @@ class Annotations:
         :param end: the end index in the document of the annotation you are appending
         :param text: the raw text of the annotation you are appending
         """
-        self.annotations.append((label, start, end, text))
+        self.annotations.append(EntTuple(label, start, end, text))
 
     def to_ann(self, write_location=None):
         """
@@ -130,8 +103,8 @@ class Annotations:
         ann_string = ""
 
         for num, tup in enumerate(self.annotations, 1):
-            entity, first_start, last_end, labeled_text = tup
-            ann_string += "T%s\t%s %i %i\t%s\n" % (num, entity, first_start, last_end, labeled_text.replace('\n', ' '))
+            mention = tup.text.replace('\n', ' ')
+            ann_string += f"T{num}\t{tup.tag} {tup.start} {tup.end}\t{mention}\n"
 
         if write_location is not None:
             if os.path.isfile(write_location):
@@ -191,7 +164,7 @@ class Annotations:
         for ann in self.annotations:
             label, start, end, text = ann
             window = ceil(leniency * (end - start))
-            for c_label, c_start, c_end, c_text in other.get_entity_annotations():
+            for c_label, c_start, c_end, c_text in other:
                 if label == c_label and start - window <= c_start and end + window >= c_end:
                     matches.add(ann)
                     break
@@ -239,7 +212,7 @@ class Annotations:
 
         entity_encoding = {entity: i for i, entity in enumerate(entities)}
         # Create 2-d array of len(entities) ** 2
-        confusion_matrix = [[0 for x in range(len(entities))] for x in range(len(entities))]
+        confusion_matrix = [[0 for _ in range(len(entities))] for _ in range(len(entities))]
 
         ambiguity_dict = self.compute_ambiguity(other)
         intersection = self.intersection(other, leniency=leniency)
