@@ -1,7 +1,7 @@
-from itertools import cycle
-
 from spacy.tokens import Token
 from spacy.tokens.underscore import Underscore
+
+from medacy.pipeline_components.feature_extractors import FeatureTuple
 
 
 class FeatureExtractor:
@@ -32,11 +32,11 @@ class FeatureExtractor:
 
         features = [self._sequence_to_feature_dicts(sent) for sent in doc.sents]
         labels = [self._sequence_to_labels(sent) for sent in doc.sents]
-        indices = [[(token.idx, token.idx+len(token)) for token in sent] for sent in doc.sents]
+        indices = [[(token.idx, token.idx + len(token)) for token in sent] for sent in doc.sents]
 
         file_name = doc._.file_name
+        features = [FeatureTuple(*t, file_name) for t in zip(features, indices)]
 
-        features = list(zip(features, indices, cycle([file_name])))
         return features, labels
 
     def get_features_with_span_indices(self, doc):
