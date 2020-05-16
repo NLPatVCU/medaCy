@@ -6,7 +6,7 @@ import unittest
 import pkg_resources
 
 from medacy.data.dataset import Dataset
-from medacy.model import Model
+from medacy.model.model import Model
 from medacy.pipelines.bert_pipeline import BertPipeline
 from medacy.tests.sample_data import test_dir
 from medacy.tests.pipeline_components.learners import use_cuda, cuda_device
