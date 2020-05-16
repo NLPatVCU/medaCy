@@ -94,14 +94,14 @@ class FeatureExtractor:
             token = sentence[index+i]
 
             # adds features from medacy pipeline
-            current = {'%i:%s' % (i, feature): token._.get(feature) for feature in self.all_custom_features}
+            current = {f'{i}:{feature}': token._.get(feature) for feature in self.all_custom_features}
 
             # adds features that are overlayed from spacy token attributes
             for feature in self.spacy_features:
                 if isinstance(getattr(token, feature), Token):
-                    current['%i:%s' % (i, feature)] = getattr(token, feature).text
+                    current[f'{i}:{feature}'] = getattr(token, feature).text
                 else:
-                    current['%i:%s' % (i, feature)] = getattr(token, feature)
+                    current[f'{i}:{feature}'] = getattr(token, feature)
 
             features.update(current)
 
