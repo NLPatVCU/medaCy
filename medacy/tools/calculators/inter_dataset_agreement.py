@@ -23,7 +23,7 @@ from medacy.tools.entity import Entity
 
 class Measures:
     """
-    Data type for agreement scores
+    Data type for binary classification scores scores
 
     :ivar tp: A number of true positives
     :ivar fp: A number of false positives
@@ -84,10 +84,6 @@ class Measures:
         except ZeroDivisionError:
             return 0.0
 
-    def f1(self):
-        """Compute the F1-score (beta=1)."""
-        return self.f_score(beta=1)
-
     def specificity(self):
         """Compute Specificity score."""
         try:
@@ -102,6 +98,12 @@ class Measures:
     def auc(self):
         """Compute AUC score."""
         return (self.sensitivity() + self.specificity()) / 2
+
+    def accuracy(self):
+        try:
+            return (self.tp + self.tn) / (self.tp + self.tn + self.fp + self.fn)
+        except ZeroDivisionError:
+            return 0.0
 
 
 def zip_datasets(dataset_1, dataset_2):
