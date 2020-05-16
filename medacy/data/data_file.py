@@ -1,6 +1,8 @@
 import os
+from dataclasses import dataclass
 
 
+@dataclass
 class DataFile:
     """
     DataFile wraps all relevant information needed to manage a text document and it's corresponding annotation. Specifically,
@@ -11,50 +13,7 @@ class DataFile:
     :ivar ann_path: the annotations of the text document
     :ivar metamapped_path: the metamap file
     """
-
-    def __init__(self, file_name, raw_text_file_path, annotation_file_path, metamapped_path=None):
-        """
-        Wraps a file and it's corresponding annotation in a single DataFile object
-        :param file_name: the name of the file
-        :param raw_text_file_path: the file path in memory of the raw text of the file
-        :param annotation_file_path: the file path in memory of the annotation of the file
-        """
-        self._file_name = file_name
-        self._raw_path = raw_text_file_path
-        self._ann_path = annotation_file_path
-        self._metamapped_path = metamapped_path
-
-    @property
-    def file_name(self):
-        return self._file_name
-
-    @property
-    def txt_path(self):
-        return self._raw_path
-
-    @property
-    def ann_path(self):
-        return self._ann_path
-
-    @property
-    def metamapped_path(self):
-        return self._metamapped_path
-
-    @metamapped_path.setter
-    def metamapped_path(self, path):
-        if not os.path.isfile(path): raise FileNotFoundError(f"'{path}'' is not a file")
-        self._metamapped_path = path
-
-    def __repr__(self):
-        return f"{type(self).__name__}({self._file_name}, {self._raw_path}, {self._ann_path}, {self._metamapped_path})"
-
-    def __str__(self):
-        return self.file_name
-
-    def __eq__(self, other):
-        self_attrs = (self._file_name, self._raw_path, self._ann_path, self._metamapped_path)
-        other_attrs = (other._file_name, other._raw_path, other._ann_path, other._metamapped_path)
-        return  self_attrs == other_attrs
-
-    def __hash__(self):
-        return hash(self._file_name)
+    file_name: str
+    txt_path: os.PathLike
+    ann_path: os.PathLike
+    metamapped_path: os.PathLike = None
