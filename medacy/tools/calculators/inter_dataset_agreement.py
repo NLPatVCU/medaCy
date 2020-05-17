@@ -226,21 +226,21 @@ def format_results(measures_dict, num_dec=3, table_format='plain'):
             tag,
             m.precision(),
             m.recall(),
-            m.f1()
+            m.f_score()
         ])
 
     table.append([
         'system (macro)',
         mean(m.precision() for m in measures_dict.values()),
         mean(m.recall() for m in measures_dict.values()),
-        mean(m.f1() for m in measures_dict.values())
+        mean(m.f_score() for m in measures_dict.values())
     ])
 
     table.append([
         'system (micro)',
         sum(measures_dict.values(), Measures()).precision(),
         sum(measures_dict.values(), Measures()).recall(),
-        sum(measures_dict.values(), Measures()).f1()
+        sum(measures_dict.values(), Measures()).f_score()
     ])
 
     return tabulate(table, headers='firstrow', tablefmt=table_format, floatfmt=f".{num_dec}f")
