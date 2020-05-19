@@ -190,7 +190,7 @@ def main():
 
     # Calculate/print time elapsed
     elapsed_time: dt.timedelta = end_time - start_time
-    logging.info(f'Time ELAPSED: {elapsed_time}')
+    logging.info(f'TIME ELAPSED: {elapsed_time}')
 
 
 if __name__ == '__main__':
