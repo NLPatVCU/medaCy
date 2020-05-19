@@ -1,7 +1,6 @@
 import json
 import os
 
-import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
@@ -126,7 +125,7 @@ def json_to_pipeline(json_path):
                 )
                 return 'BERT', learner
             else:
-                raise ValueError(f"'learner' must be 'CRF', 'BiLSTM', or 'BERT'")
+                raise ValueError(f"'learner' must be 'CRF', 'BiLSTM', or 'BERT', but is {learner_selection}")
 
         def get_feature_extractor(self):
             if input_json['learner'] == 'BERT':
