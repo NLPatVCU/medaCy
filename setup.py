@@ -35,18 +35,18 @@ class PyTest(TestCommand):
 setup(
     name='medacy',
     version=__version__,
+    python_requires='>=3.7',
     license='GNU GENERAL PUBLIC LICENSE',
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
     packages=packages,
     url='https://github.com/NLPatVCU/medaCy',
     author=__authors__,
-    author_email='contact@andriymulyar.com',
     keywords='natural-language-processing medical-natural-language-processing machine-learning nlp-library metamap clinical-text-processing',
     classifiers=[
-        '( Status :: 4 - Beta',
+        'Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Natural Language :: English',
         'Topic :: Text Processing :: Linguistic',
         'Intended Audience :: Science/Research'
