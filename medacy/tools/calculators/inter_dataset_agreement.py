@@ -217,7 +217,7 @@ def format_results(measures_dict, num_dec=3, table_format='plain'):
     :return: a string of tabular data
     """
     # Alphabetize the dictionary
-    measures_dict = OrderedDict(sorted(measures_dict.items(), key=lambda t: t[0]))
+    measures_dict = OrderedDict(sorted(measures_dict.items()))
 
     table = [['Tag', 'Prec', 'Rec', 'F1']]
 
@@ -236,11 +236,13 @@ def format_results(measures_dict, num_dec=3, table_format='plain'):
         mean(m.f_score() for m in measures_dict.values())
     ])
 
+    combined_measures = sum(measures_dict.values(), Measures())
+
     table.append([
         'system (micro)',
-        sum(measures_dict.values(), Measures()).precision(),
-        sum(measures_dict.values(), Measures()).recall(),
-        sum(measures_dict.values(), Measures()).f_score()
+        combined_measures.precision(),
+        combined_measures.recall(),
+        combined_measures.f_score()
     ])
 
     return tabulate(table, headers='firstrow', tablefmt=table_format, floatfmt=f".{num_dec}f")
