@@ -2,16 +2,15 @@
 MedaCy CLI Setup
 """
 import argparse
-import json
+import datetime as dt
 import importlib
+import json
 import logging
-import time
-from datetime import datetime
 
 from medacy.data.dataset import Dataset
 from medacy.model.model import Model
-from medacy.tools.json_to_pipeline import json_to_pipeline
 from medacy.pipelines import bert_pipeline
+from medacy.tools.json_to_pipeline import json_to_pipeline
 
 
 def setup(args):
@@ -176,25 +175,22 @@ def main():
     if args.test_mode:
         logger.setLevel(logging.DEBUG)
         logging.info("Test mode enabled: logging set to debug")
-    start_time = time.time()
-    current_time = datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')
-    logging.info('\n\nSTART TIME: %s', current_time)
+    start_time = dt.datetime.now()
+    start_timestamp = start_time.strftime('%Y-%m-%d %H:%M:%S')
+    logging.info(f'\n\nSTART TIME: {start_timestamp}')
 
     # Run proper function
     dataset, model = setup(args)
     args.func(args, dataset, model)
 
     # Calculate/print end time
-    end_time = time.time()
-    current_time = datetime.fromtimestamp(end_time).strftime('%Y-%m-%d %H:%M:%S')
-    logging.info('END TIME: %s', current_time)
+    end_time = dt.datetime.now()
+    end_timestamp = end_time.strftime('%Y-%m-%d %H:%M:%S')
+    logging.info(f'END TIME: {end_timestamp}')
 
     # Calculate/print time elapsed
-    seconds_elapsed = end_time - start_time
-    minutes_elapsed, seconds_elapsed = divmod(seconds_elapsed, 60)
-    hours_elapsed, minutes_elapsed = divmod(minutes_elapsed, 60)
-
-    logging.info('H:M:S ELAPSED: %d:%d:%d', hours_elapsed, minutes_elapsed, seconds_elapsed)
+    elapsed_time: dt.timedelta = end_time - start_time
+    logging.info(f'Time ELAPSED: {elapsed_time}')
 
 
 if __name__ == '__main__':
