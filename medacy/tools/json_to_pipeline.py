@@ -1,6 +1,6 @@
 import json
+import os
 
-import sklearn_crfsuite
 import spacy
 
 from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
@@ -40,12 +40,15 @@ def json_to_pipeline(json_path):
         if 'metamap' is a key, 'semantic_types' must also be a key, with value 'all', 'none', or
         a list of semantic type strings
 
-    :param json_path: the path to the json file
+    :param json_path: the path to the json file, or a dict of what that json would be
     :return: a custom pipeline class
     """
 
-    with open(json_path, 'rb') as f:
-        input_json = json.load(f)
+    if isinstance(json_path, os.PathLike):
+        with open(json_path, 'rb') as f:
+            input_json = json.load(f)
+    elif isinstance(json_path, dict):
+        input_json = json_path
 
     missing_keys = [key for key in required_keys if key not in input_json.keys()]
     if missing_keys:
@@ -122,7 +125,7 @@ def json_to_pipeline(json_path):
                 )
                 return 'BERT', learner
             else:
-                raise ValueError(f"'learner' must be 'CRF', 'BiLSTM', or 'BERT'")
+                raise ValueError(f"'learner' must be 'CRF', 'BiLSTM', or 'BERT', but is {learner_selection}")
 
         def get_feature_extractor(self):
             if input_json['learner'] == 'BERT':

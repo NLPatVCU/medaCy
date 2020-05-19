@@ -5,42 +5,22 @@ from itertools import cycle
 from pathlib import Path
 from shutil import copyfile
 from statistics import mean
+from typing import List, Tuple, Dict, Iterable
 
 import joblib
 import numpy as np
 from sklearn_crfsuite import metrics
 from tabulate import tabulate
 
-from medacy.data.annotations import Annotations
+from medacy.data.annotations import Annotations, EntTuple
 from medacy.data.dataset import Dataset
+from medacy.pipeline_components.feature_extractors import FeatureTuple
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
-
-def construct_annotations_from_tuples(doc, predictions):
-    """
-    Converts predictions mapped to a document into an Annotations object
-    :param doc: SpaCy doc corresponding to predictions
-    :param predictions: List of tuples containing (entity, start offset, end offset)
-    :return: Annotations Object representing predicted entities for the given doc
-    """
-    predictions = sorted(predictions, key=lambda x: x[1])
-    annotations = []
-
-    for prediction in predictions:
-        if len(prediction) == 3:
-            (entity, start, end) = prediction
-            labeled_text = doc.text[start:end]
-        elif len(prediction) == 4:
-            (entity, start, end, labeled_text) = prediction
-        else:
-            raise ValueError("Incorrect prediction length.")
-
-        annotations.append((entity, start, end, labeled_text))
-
-    return Annotations(annotations)
+DEFAULT_NUM_FOLDS = 10
 
 
-def create_folds(y, num_folds=5):
+def create_folds(y, num_folds=DEFAULT_NUM_FOLDS) -> List[Tuple[FeatureTuple, List]]:
     """
     Partitions a data set of sequence labels and classifications into a number of stratified folds. Each partition
     should have an evenly distributed representation of sequence labels. Without stratification, under-representated
@@ -72,6 +52,7 @@ def create_folds(y, num_folds=5):
                 partition = next(partition_cycler)
                 partition.append(index)
                 added[index] = 0
+
     train_test_array = []
 
     for i, y in enumerate(partitions):
@@ -80,12 +61,12 @@ def create_folds(y, num_folds=5):
             if i != j:
                 X += partition
 
-        train_test_array.append((X,y))
+        train_test_array.append((X, y))
 
     return train_test_array
 
 
-def sequence_to_ann(X, y, file_names):
+def sequence_to_ann(X: List[FeatureTuple], y: List[str], file_names: Iterable[str]) -> Dict[str, Annotations]:
     """
     Creates a dictionary of document-level Annotations objects for a given sequence
     :param X: A list of sentence level zipped (features, indices, document_name) tuples
@@ -99,9 +80,11 @@ def sequence_to_ann(X, y, file_names):
     tuples_by_doc = {filename: [] for filename in file_names}
     document_indices = []
     span_indices = []
+
     for sequence in X:
-        document_indices += [sequence[2]] * len(sequence[0])
-        span_indices += list(sequence[1])
+        document_indices += [sequence.file_name] * len(sequence.features)
+        span_indices.extend(sequence.indices)
+
     groundtruth = [element for sentence in y for element in sentence]
 
     # Map the predicted sequences to their corresponding documents
@@ -131,21 +114,20 @@ def sequence_to_ann(X, y, file_names):
         for tup in tups:
             entity, start, end = tup
             ent_text = text[start:end]
-            new_tup = (entity, start, end, ent_text)
+            new_tup = EntTuple(entity, start, end, ent_text)
             ann_tups.append(new_tup)
-        ann_tups.sort(key=lambda x: (x[1], x[2]))
         anns[file_name].annotations = ann_tups
 
     return anns
 
 
-def write_ann_dicts(output_dir, dict_list):
+def write_ann_dicts(output_dir: Path, dict_list: List[Dict[str, Annotations]]) -> Dict[str, Annotations]:
     """
     Merges a list of dicts of Annotations into one dict representing all the individual ann files and prints the
     ann data for both the individual Annotations and the combined one.
     :param output_dir: Path object of the output directory (a subdirectory is made for each fold)
     :param dict_list: a list of file_name: Annotations dictionaries
-    :return: None
+    :return: The merged Annotations dict, if wanted
     """
     file_names = set()
     for d in dict_list:
@@ -158,14 +140,16 @@ def write_ann_dicts(output_dir, dict_list):
         for file_name, ann in fold_dict.items():
             # Write the Annotations from the individual fold to file;
             # Note that in this is written to the fold_dir, which is a subfolder of the output_dir
-            ann.to_ann(fold_dir / (os.path.basename(file_name).strip("txt") + "ann"))
+            ann.to_ann(fold_dir / (os.path.basename(file_name).rstrip("txt") + "ann"))
             # Merge the Annotations from the fold into the inter-fold Annotations
             all_annotations_dict[file_name] |= ann
 
     # Write the Annotations that are the combination of all folds to file
     for file_name, ann in all_annotations_dict.items():
-        output_file_path = output_dir / (os.path.basename(file_name).strip("txt") + "ann")
+        output_file_path = output_dir / (os.path.basename(file_name).rstrip("txt") + "ann")
         ann.to_ann(output_file_path)
+
+    return all_annotations_dict
 
 
 class Model:
@@ -213,17 +197,12 @@ class Model:
             self.X_data += features
             self.y_data += labels
 
-    def fit(self, dataset, groundtruth_directory=None):
+    def fit(self, dataset: Dataset, groundtruth_directory: Path = None):
         """
         Runs dataset through the designated pipeline, extracts features, and fits a conditional random field.
         :param dataset: Instance of Dataset.
         :return model: a trained instance of a sklearn_crfsuite.CRF model.
         """
-
-        if not isinstance(dataset, Dataset):
-            raise TypeError("Must pass in an instance of Dataset containing your training files")
-        if not isinstance(self.pipeline, BasePipeline):
-            raise TypeError("Model object must contain a medacy pipeline to pre-process data")
 
         groundtruth_directory = Path(groundtruth_directory) if groundtruth_directory else False
 
@@ -235,17 +214,12 @@ class Model:
             for file_path, ann in sequence_to_ann(self.X_data, self.y_data, {x[2] for x in self.X_data}).items():
                 ann.to_ann(groundtruth_directory / (os.path.basename(file_path).strip("txt") + "ann"))
 
-        logging.info("Currently Waiting")
-
         learner_name, learner = self.pipeline.get_learner()
-        logging.info("Training: %s", learner_name)
-
-        assert self.X_data, "Training data is empty."
+        logging.info(f"Training: {learner_name}")
 
         train_data = [x[0] for x in self.X_data]
         learner.fit(train_data, self.y_data)
-        logging.info("Successfully Trained: %s", learner_name)
-        logging.info('\n' + report)
+        logging.info(f"Successfully Trained: {learner_name}\n{report}")
 
         self.model = learner
         return self.model
@@ -268,22 +242,24 @@ class Model:
 
         i = 0
         while i < len(predictions):
-            if predictions[i] == "O":
+            if predictions[i] == 'O':
                 i += 1
                 continue
+
             entity = predictions[i]
             first_start, first_end = span_indices[i]
+
             # Ensure that consecutive tokens with the same label are merged
             while i < len(predictions) - 1 and predictions[i + 1] == entity:  # If inside entity, keep incrementing
                 i += 1
+
             last_start, last_end = span_indices[i]
-
             labeled_text = doc.text[first_start:last_end]
+            new_ent = EntTuple(entity, first_start, last_end, labeled_text)
+            annotations.append(new_ent)
 
-            logging.debug("%s: Predicted %s at (%i, %i) %s", doc._.file_name, entity, first_start, last_end,
-                          labeled_text.replace('\n', ''))
+            logging.debug(f"{doc._.file_name}: Predicted {entity} at ({first_start}, {last_end}) {labeled_text}")
 
-            annotations.append((entity, first_start, last_end, labeled_text))
             i += 1
 
         return Annotations(annotations)
@@ -353,7 +329,7 @@ class Model:
 
         return Dataset(prediction_directory)
 
-    def cross_validate(self, training_dataset, num_folds=5, prediction_directory=None, groundtruth_directory=None):
+    def cross_validate(self, training_dataset, num_folds=DEFAULT_NUM_FOLDS, prediction_directory=None, groundtruth_directory=None):
         """
         Performs k-fold stratified cross-validation using our model and pipeline.
 
@@ -387,14 +363,14 @@ class Model:
             raise RuntimeError("Must have features and labels extracted for cross validation")
 
         tags = sorted(self.pipeline.entities)
-        logging.info('Tagset: %s', tags)
+        logging.info(f'Tagset: {tags}')
 
         eval_stats = {}
 
         # Dict for storing mapping of sequences to their corresponding file
         fold_groundtruth_dicts = []
         fold_prediction_dicts = []
-        file_names = {x[2] for x in self.X_data}
+        file_names = {x.file_name for x in self.X_data}
 
         folds = create_folds(self.y_data, num_folds)
 
@@ -530,7 +506,7 @@ class Model:
         feature_extractor = self.pipeline.get_feature_extractor()
         features, labels = feature_extractor(doc)
 
-        logging.info("%s: Feature Extraction Completed (num_sequences=%i)" % (doc._.file_name, len(labels)))
+        logging.info(f"{doc._.file_name}: Feature Extraction Completed (num_sequences={len(labels)})")
         return features, labels
 
     def load(self, path):

@@ -48,20 +48,20 @@ class TestDataset(unittest.TestCase):
         expected = [
             DataFile(
                 file_name="PMC1257590",
-                raw_text_file_path=test_dir_path / "PMC1257590.txt",
-                annotation_file_path=test_dir_path / "PMC1257590.ann",
+                txt_path=test_dir_path / "PMC1257590.txt",
+                ann_path=test_dir_path / "PMC1257590.ann",
                 metamapped_path=test_dir_path / "metamapped" / "PMC1257590.metamapped"
             ),
             DataFile(
                 file_name="PMC1314908",
-                raw_text_file_path=test_dir_path / "PMC1314908.txt",
-                annotation_file_path=test_dir_path / "PMC1314908.ann",
+                txt_path=test_dir_path / "PMC1314908.txt",
+                ann_path=test_dir_path / "PMC1314908.ann",
                 metamapped_path=test_dir_path / "metamapped" / "PMC1314908.metamapped"
             ),
             DataFile(
                 file_name="PMC1392236",
-                raw_text_file_path=test_dir_path / "PMC1392236.txt",
-                annotation_file_path=test_dir_path / "PMC1392236.ann",
+                txt_path=test_dir_path / "PMC1392236.txt",
+                ann_path=test_dir_path / "PMC1392236.ann",
                 metamapped_path=test_dir_path / "metamapped" / "PMC1392236.metamapped"
             )
         ]
@@ -74,20 +74,20 @@ class TestDataset(unittest.TestCase):
         expected = [
             DataFile(
                 file_name="PMC1257590",
-                raw_text_file_path=test_dir_path / "PMC1257590.txt",
-                annotation_file_path=None,
+                txt_path=test_dir_path / "PMC1257590.txt",
+                ann_path=None,
                 metamapped_path=None
             ),
             DataFile(
                 file_name="PMC1314908",
-                raw_text_file_path=test_dir_path / "PMC1314908.txt",
-                annotation_file_path=None,
+                txt_path=test_dir_path / "PMC1314908.txt",
+                ann_path=None,
                 metamapped_path=None
             ),
             DataFile(
                 file_name="PMC1392236",
-                raw_text_file_path=test_dir_path / "PMC1392236.txt",
-                annotation_file_path=None,
+                txt_path=test_dir_path / "PMC1392236.txt",
+                ann_path=None,
                 metamapped_path=None
             )
         ]
@@ -100,20 +100,20 @@ class TestDataset(unittest.TestCase):
         expected = [
             DataFile(
                 file_name="PMC1257590",
-                raw_text_file_path=None,
-                annotation_file_path=test_dir_path / "PMC1257590.ann",
+                txt_path=None,
+                ann_path=test_dir_path / "PMC1257590.ann",
                 metamapped_path=None
             ),
             DataFile(
                 file_name="PMC1314908",
-                raw_text_file_path=None,
-                annotation_file_path=test_dir_path / "PMC1314908.ann",
+                txt_path=None,
+                ann_path=test_dir_path / "PMC1314908.ann",
                 metamapped_path=None,
             ),
             DataFile(
                 file_name="PMC1392236",
-                raw_text_file_path=None,
-                annotation_file_path=test_dir_path / "PMC1392236.ann",
+                txt_path=None,
+                ann_path=test_dir_path / "PMC1392236.ann",
                 metamapped_path=None
             )
         ]
@@ -124,7 +124,7 @@ class TestDataset(unittest.TestCase):
     def test_init_with_data_limit(self):
         """Tests that initializing with a data limit works"""
         dataset = Dataset(self.dataset.data_directory, data_limit=1)
-        self.assertEqual(len(dataset), 1)
+        self.assertEqual(len(list(dataset)), 1)
 
     def test_generate_annotations(self):
         """Tests that generate_annotations() creates Annotations objects"""
@@ -150,7 +150,7 @@ class TestDataset(unittest.TestCase):
 
     def test_getitem(self):
         """Tests that some_dataset['filename'] returns an Annotations for 'filename.ann', or raises FileNotFoundError"""
-        some_file_name = self.dataset.all_data_files[0].file_name
+        some_file_name = self.dataset.data_files[0].file_name
         result = self.dataset[some_file_name]
         self.assertIsInstance(result, Annotations)
 
