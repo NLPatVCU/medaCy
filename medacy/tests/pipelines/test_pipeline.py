@@ -21,7 +21,7 @@ class TestPipeline(unittest.TestCase):
         spacy_pipeline = spacy.load('en_core_web_sm')
 
         # Create a sample Doc
-        sample_doc_path = sample_dataset.all_data_files[0].txt_path
+        sample_doc_path = sample_dataset.data_files[0].txt_path
         with open(sample_doc_path) as f:
             text = f.read()
 

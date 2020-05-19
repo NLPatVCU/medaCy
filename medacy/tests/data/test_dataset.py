@@ -124,7 +124,7 @@ class TestDataset(unittest.TestCase):
     def test_init_with_data_limit(self):
         """Tests that initializing with a data limit works"""
         dataset = Dataset(self.dataset.data_directory, data_limit=1)
-        self.assertEqual(len(dataset), 1)
+        self.assertEqual(len(list(dataset)), 1)
 
     def test_generate_annotations(self):
         """Tests that generate_annotations() creates Annotations objects"""
@@ -150,7 +150,7 @@ class TestDataset(unittest.TestCase):
 
     def test_getitem(self):
         """Tests that some_dataset['filename'] returns an Annotations for 'filename.ann', or raises FileNotFoundError"""
-        some_file_name = self.dataset.all_data_files[0].file_name
+        some_file_name = self.dataset.data_files[0].file_name
         result = self.dataset[some_file_name]
         self.assertIsInstance(result, Annotations)
 
