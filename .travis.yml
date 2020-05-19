@@ -6,8 +6,8 @@ dist: trusty
 group: edge
 
 python:
-   - "3.6"
    - "3.7"
+   - "3.8"
 
 os:
   - linux
