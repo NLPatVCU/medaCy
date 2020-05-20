@@ -31,11 +31,9 @@ One of medaCy's most powerful features is the ability to maintain, version and d
 Once a model has been [packaged](packaging_a_medacy_model.md) and installed it can be used as follows:
 
 ```python
-import medacy_model_clinical_notes #import the python package wrapping the model
 from medacy.model.model import Model
 
 model = Model.load_external('medacy_model_clinical_notes')
-
 annotations = model.predict("The patient took 5 mg of aspirin.")
 ```
 
