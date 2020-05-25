@@ -8,7 +8,7 @@ import json
 import logging
 
 from medacy.data.dataset import Dataset
-from medacy.model.model import Model
+from medacy.model.model import Model, DEFAULT_NUM_FOLDS
 from medacy.pipelines import bert_pipeline
 from medacy.tools.json_to_pipeline import json_to_pipeline
 
@@ -145,7 +145,7 @@ def main():
 
     # Cross Validation arguments
     parser_validate = subparsers.add_parser('validate', help='Cross validate a model on a given dataset.')
-    parser_validate.add_argument('-k', '--k_folds', default=5, type=int, help='Number of folds to use for cross-validation.')
+    parser_validate.add_argument('-k', '--k_folds', default=DEFAULT_NUM_FOLDS, type=int, help='Number of folds to use for cross-validation.')
     parser_validate.add_argument('-gt', '--groundtruth', type=str, default=None, help='Directory to write groundtruth files.')
     parser_validate.add_argument('-pd', '--predictions', type=str, default=None, help='Directory to write prediction files.')
     parser_validate.set_defaults(func=cross_validate)
