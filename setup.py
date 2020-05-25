@@ -35,30 +35,30 @@ class PyTest(TestCommand):
 setup(
     name='medacy',
     version=__version__,
+    python_requires='>=3.7',
     license='GNU GENERAL PUBLIC LICENSE',
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
     packages=packages,
     url='https://github.com/NLPatVCU/medaCy',
     author=__authors__,
-    author_email='contact@andriymulyar.com',
     keywords='natural-language-processing medical-natural-language-processing machine-learning nlp-library metamap clinical-text-processing',
     classifiers=[
-        '( Status :: 4 - Beta',
+        'Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Natural Language :: English',
         'Topic :: Text Processing :: Linguistic',
         'Intended Audience :: Science/Research'
     ],
     dependency_links=[
-        'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.0'
+        'https://github.com/explosion/spacy-models/releases//tag/en_core_web_sm-2.2.5'
     ],
     install_requires=[
-        'spacy==2.2.0',
+        'spacy==2.2.2',
         'scispacy==0.2.2',
         'scikit-learn>=0.20.0',
-        'torch==1.2.0',
+        'torch>=1.2.0',
         'pytorch-crf==0.7.2',
         'numpy>=1.16.1',
         'transformers==2.3.0',
@@ -70,7 +70,7 @@ setup(
         'msgpack>=0.3.0,<0.6',
         'msgpack-numpy<0.4.4.0',
         'gensim==3.8.0',
-        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz'
+        'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz'
     ],
     tests_require=[
         "pytest",

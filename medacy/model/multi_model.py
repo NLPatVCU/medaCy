@@ -1,10 +1,8 @@
-import logging
 import os
 from shutil import copyfile
 
 from medacy.data.annotations import Annotations
 from medacy.data.dataset import Dataset
-from medacy.model._model import predict_document
 from medacy.model.model import Model
 from medacy.pipelines.base.base_pipeline import BasePipeline
 
@@ -33,8 +31,8 @@ class MultiModel:
     >>> from medacy.pipelines.clinical_pipeline import ClinicalPipeline
     >>> from medacy.pipelines.scispacy_pipeline import ScispacyPipeline
     >>> multimodel = MultiModel()
-    >>> multimodel.add_model('path/to/model_one.pkl' ClinicalPipeline, ['Drug', 'ADE'])
-    >>> multimodel.add_model('path/to/model_two.pkl' ScispacyPipeline, ['Dose', 'Frequency'])
+    >>> multimodel.add_model('path/to/model_one.pkl', ClinicalPipeline, ['Drug', 'ADE'])
+    >>> multimodel.add_model('path/to/model_two.pkl', ScispacyPipeline, ['Dose', 'Frequency'])
     >>> for model in multimodel:
     ...     model.predict('The patient was prescribed 5mg of Tylenol and got a headache.')
     >>> predicted_data = multimodel.predict_directory('path/to/input/data', 'path/to/output/directory')

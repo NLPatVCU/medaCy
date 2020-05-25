@@ -2,7 +2,7 @@ import os
 import shutil
 import tempfile
 import logging
-from unittest import TestCase
+import unittest
 
 import pkg_resources
 
@@ -13,7 +13,7 @@ from medacy.pipelines.testing_pipeline import TestingPipeline
 from medacy.tests.sample_data import test_dir
 
 
-class TestModel(TestCase):
+class TestModel(unittest.TestCase):
     """Tests for medacy.model.model.Model"""
 
     @classmethod
@@ -22,13 +22,17 @@ class TestModel(TestCase):
         cls.entities = cls.dataset.get_labels(as_list=True)
         cls.prediction_directory = tempfile.mkdtemp()  # directory to store predictions
         cls.prediction_directory_2 = tempfile.mkdtemp()
+        cls.prediction_directory_3 = tempfile.mkdtemp()
+        cls.groundtruth_directory = tempfile.mkdtemp()
+        cls.groundtruth_2_directory = tempfile.mkdtemp()
         cls.pipeline = TestingPipeline(entities=cls.entities)
 
     @classmethod
     def tearDownClass(cls):
         pkg_resources.cleanup_resources()
-        shutil.rmtree(cls.prediction_directory)
-        shutil.rmtree(cls.prediction_directory_2)
+        for d in [cls.prediction_directory, cls.prediction_directory_2,
+                  cls.prediction_directory_3, cls.groundtruth_directory, cls.groundtruth_2_directory]:
+            shutil.rmtree(d)
 
     def test_fit_predict_dump_load(self):
         """Fits a model, tests that it predicts correctly, dumps and loads it, then tests that it still predicts"""
@@ -39,7 +43,7 @@ class TestModel(TestCase):
         with self.assertRaises(RuntimeError):
             model.predict('Lorem ipsum dolor sit amet.')
 
-        model.fit(self.dataset)
+        model.fit(self.dataset, groundtruth_directory=self.groundtruth_2_directory)
         # Test X and y data are set
         self.assertTrue(model.X_data)
         self.assertTrue(model.y_data)
@@ -53,6 +57,16 @@ class TestModel(TestCase):
         resulting_dataset = model.predict(self.dataset.data_directory, prediction_directory=self.prediction_directory)
         self.assertIsInstance(resulting_dataset, Dataset)
         self.assertEqual(len(self.dataset), len(resulting_dataset))
+
+        # Test that groundtruth is written
+        groundtruth_dataset = Dataset(self.groundtruth_2_directory)
+        expected = [d.file_name for d in self.dataset]
+        actual = [d.file_name for d in groundtruth_dataset]
+        self.assertListEqual(expected, actual)
+
+        # Test that the groundtruth ann files have content
+        for ann in groundtruth_dataset.generate_annotations():
+            self.assertTrue(ann)
 
         # Test pickling a model
         pickle_path = os.path.join(self.prediction_directory, 'test.pkl')
@@ -136,3 +150,54 @@ class TestModel(TestCase):
         actual = result._.gold_annotation_file
         self.assertEqual(actual, expected)
 
+    def test_cross_validate_create_groundtruth_predictions(self):
+        """
+        Tests that during cross validation, the medaCy groundtruth (that is, the version of the training dataset
+        used by medaCy) is written as well as the predictions that are created for each fold
+        """
+        model = Model(self.pipeline)
+        model.cross_validate(
+            self.dataset,
+            num_folds=2,
+            prediction_directory=self.prediction_directory_3,
+            groundtruth_directory=self.groundtruth_directory
+        )
+
+        prediction_dataset = Dataset(self.prediction_directory_3)
+        groundtruth_dataset = Dataset(self.groundtruth_directory)
+
+        for d in [prediction_dataset, groundtruth_dataset]:
+            self.assertIsInstance(d, Dataset)
+
+        original_file_names = {d.file_name for d in self.dataset}
+        prediction_file_names = {d.file_name for d in prediction_dataset}
+        groundtruth_file_names = {d.file_name for d in groundtruth_dataset}
+
+        for n in [prediction_file_names, groundtruth_file_names]:
+            self.assertSetEqual(n, original_file_names)
+
+        # Container for all Annotations in all files in all folds
+        all_anns_all_folds_actual = Annotations([])
+
+        # Test that fold groundtruth is written to file
+        for fold_name in ["fold_1", "fold_2"]:
+            fold_dataset = Dataset(groundtruth_dataset.data_directory / fold_name)
+            for d in fold_dataset:
+                fold_ann = Annotations(d.ann_path)
+                groundtruth_ann = groundtruth_dataset[d.file_name]
+                # Test that the entities in the fold groundtruth are a subset of the whole for that file
+                self.assertTrue(set(fold_ann) <= set(groundtruth_ann))
+                all_anns_all_folds_actual |= fold_ann
+
+        # Container for all annotations pulled directly from the groundtruth dataset
+        all_groundtruth_tuples = Annotations([])
+        for ann in groundtruth_dataset.generate_annotations():
+            all_groundtruth_tuples |= ann
+
+        expected = set(all_groundtruth_tuples)
+        actual = set(all_anns_all_folds_actual)
+        self.assertSetEqual(expected, actual)
+
+
+if __name__ == '__main__':
+    unittest.main()

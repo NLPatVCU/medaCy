@@ -126,11 +126,20 @@ class MetaMap:
         output = str(output.decode('utf-8'))
 
         xml = ""
-        for line in output.split("\n")[1:]:
+        lines = output.split('\n')
+
+        # Lines at index 1 and 2 are a header for the XML output
+        for line in lines[1:3]:
+            xml += line + '\n'
+
+        # The beginning of the metamap-specific XML is this tag
+        xml += "<metamap>\n"
+
+        for line in output.split("\n")[3:]:
             if not all(item in line for item in ['DOCTYPE', 'xml']):
-                xml += line+'\n'
-        xml = "<metamap>\n" + xml + "</metamap>"  # surround in single root tag - hacky.
-        xml = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE MMOs PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://metamap.nlm.nih.gov/DTD/MMOtoXML_v5.dtd">\n'+xml
+                xml += line + '\n'
+
+        xml += "</metamap>"  # surround in single root tag - hacky.
 
         if output is None:
             raise Exception("An error occured while using metamap: %s" % error)
@@ -415,11 +424,12 @@ class MetaMap:
             logging.info(f"The following Dataset has already been metamapped: {repr(dataset)}")
             return
 
-        mm_dir = dataset.metamapped_files_directory
+        mm_dir = dataset.data_directory / "metamapped"
 
         # Make MetaMap directory if it doesn't exist.
         if not os.path.isdir(mm_dir):
             os.makedirs(mm_dir)
+            dataset.metamapped_files_directory = mm_dir
 
         # A file that is below 200 bytes is likely corrupted output from MetaMap, these should be retried.
         if retry_possible_corruptions:
@@ -430,32 +440,32 @@ class MetaMap:
             # Do not metamap files that are already metamapped
             already_metamapped = [file[:file.find('.')] for file in os.listdir(mm_dir)]
 
-        files_to_metamap = [data_file.txt_path for data_file in dataset if data_file.file_name not in already_metamapped]
+        files_to_metamap = [data_file for data_file in dataset if data_file.file_name not in already_metamapped]
 
-        logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
+        logging.info(f"Number of files to MetaMap: {len(files_to_metamap)}")
 
-        Parallel(n_jobs=n_jobs)(
-            delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
+        Parallel(n_jobs=n_jobs)(delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
 
-        if dataset.is_metamapped():
-            for data_file in dataset:
-                data_file.metamapped_path = os.path.join(
-                    mm_dir,
-                    data_file.txt_path.split(os.path.sep)[-1].replace(
-                        ".%s" % dataset.raw_text_file_extension, ".metamapped"
-                    )
-                )
+        if not dataset.is_metamapped():
+            raise RuntimeError(f"MetaMapping {dataset} was unsuccessful")
 
-    def _parallel_metamap(self, file_path, mm_dir):
+        for data_file in dataset:
+            data_file.metamapped_path = os.path.join(
+                mm_dir,
+                data_file.file_name + ".metamapped"
+            )
+
+    def _parallel_metamap(self, data_file, mm_dir):
         """
         Facilitates metamapping in parallel by forking off processes to MetaMap each file individually.
 
-        :param file_path: the path of the txt file to metamap
-        :return: mm_dir now contains metamapped versions of the dataset files
+        :param data_file: a DataFile to metamap
+        :return: None
         """
-        file = file_path.split(os.path.sep)[-1]
+        file_name = data_file.file_name
+        file_path = data_file.txt_path
         logging.info("Attempting to Metamap: %s", file_path)
-        mapped_file_location = os.path.join(mm_dir, file.replace('txt', "metamapped"))
+        mapped_file_location = os.path.join(mm_dir, file_name + ".metamapped")
 
         with open(mapped_file_location, 'w') as mapped_file:
             max_prune_depth = 30  # this is the maximum prune depth metamap utilizes when concept mapping

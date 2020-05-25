@@ -5,12 +5,13 @@ import logging
 import random
 
 import torch
-import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.optim as optim
 
-from medacy.nn import BiLstmCrf
-from medacy.nn import Vectorizer
+from medacy.pipeline_components.learners.nn.bilstm_crf import BiLstmCrf
+from medacy.pipeline_components.learners.nn.vectorizer import Vectorizer
+
 
 class BiLstmCrfLearner:
     """
@@ -18,10 +19,6 @@ class BiLstmCrfLearner:
 
     :ivar device: PyTorch device to use.
     :ivar model: Instance of BiLstmCrfNetwork to use.
-    :ivar tag_to_index: Tag to index dictionary for vectorization.
-    :ivar untrained_tokens: Out of vocabulary tokens word embeddings analysis during debugging.
-    :ivar other_features: Names of other word features being used.
-    :ivar window_size: Range of surrounding word's features that were extracted.
     :ivar word_embeddings_file: File to load word embeddings from.
     :ivar word_vectors: Gensim word vectors object for use in configuring word embeddings.
     """
@@ -152,12 +149,14 @@ class BiLstmCrfLearner:
 
         :param path: Path of saved model.
         """
-        saved_data = torch.load(path)
+        saved_data = torch.load(path, map_location=self.device)
 
         self.vectorizer.load_values(saved_data['vectorizer_values'])
 
         model = saved_data['model']
+        model.device = self.device
         model.eval()
 
-        self.model = model
+        self.model = model.to(self.device)
+        self.model.device = self.device
         self.vectorizer.load_word_embeddings(self.word_embeddings_file)

@@ -1,11 +1,13 @@
 [![spaCy](https://img.shields.io/badge/built%20with-spaCy-09a3d5.svg)](https://spacy.io)
+
 # medaCy
 :hospital: Medical Text Mining and Information Extraction with spaCy :hospital:
 
-MedaCy is a text processing and learning framework built over [spaCy](https://spacy.io/) to support the lightning fast prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems.
+MedaCy is a text processing and learning framework built over [spaCy](https://spacy.io/) to support the lightning fast 
+prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher 
+workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems.
 
 ![alt text](https://nlp.cs.vcu.edu/images/Edit_NanomedicineDatabase.png "Nanoinformatics")
-
 
 # :star2: Features
 - Highly predictive, shared-task dominating out-of-the-box trained models for medical named entity recognition.
@@ -31,7 +33,7 @@ MedaCy can be installed for general use or for pipeline development / research p
 
 
 # :books: Power of medaCy
-After installing medaCy and [medaCy's clinical model](examples/models/clinical_notes_model.md), simply run:
+After installing medaCy and [medaCy's clinical model](guide/models/clinical_notes_model.md), simply run:
 
 ```python
 from medacy.model.model import Model
@@ -49,7 +51,10 @@ and receive instant predictions:
     ('Duration', 46, 56, 'for 5 days')
 ]
 ```
-To explore medaCy's other models or train your own, visit the [examples section](examples).
+
+MedaCy can also be used through its command line interface, documented [here](./guide/command_line_interface.md)
+
+To explore medaCy's other models or train your own, visit the [examples section](guide).
 
 Reference
 =========
@@ -69,9 +74,11 @@ This package is licensed under the GNU General Public License.
 
 Authors
 =======
-Andriy Mulyar, Jorge Vargas, Corey Sutphin, Steele Farnsworth, Bobby Best, and Bridget T. McInnes
+Current contributors: Steele Farnsworth, Anna Conte, Gabby Gurdin, Aidan Kierans, Aidan Myers, and Bridget T. McInnes
+
+Former contributors: Andriy Mulyar, Jorge Vargas, Corey Sutphin, and Bobby Best
 
 Acknowledgments
 ===============
-- [VCU Natural Language Processing Lab](https://nlp.cs.vcu.edu/)     ![alt text](https://nlp.cs.vcu.edu/images/vcu_head_logo "VCU")
+- [VCU Natural Language Processing Lab](https://nlp.cs.vcu.edu/) ![alt text](https://nlp.cs.vcu.edu/images/vcu_head_logo "VCU")
 - [Nanoinformatics Vertically Integrated Projects](https://rampages.us/nanoinformatics/)

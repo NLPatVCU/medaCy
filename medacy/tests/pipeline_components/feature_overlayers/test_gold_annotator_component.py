@@ -22,7 +22,7 @@ class TestGoldAnnotatorComponent(unittest.TestCase):
         that receive the label varies based on the tokenizer.
         """
 
-        sample_file = sample_dataset.all_data_files[0]
+        sample_file = sample_dataset.data_files[0]
         txt_file_path = sample_file.txt_path
         ann_file_path = sample_file.ann_path
 

@@ -34,7 +34,7 @@ class BaseOverlayer(ABC):
         should contain all the information needed to reconstruct the instance
         :return: str
         """
-        return f"{type(self)} at {inspect.getfile(self)}"
+        return f"{type(self)} at {inspect.getfile(type(self))}"
 
     def __repr__(self):
         return str(self)

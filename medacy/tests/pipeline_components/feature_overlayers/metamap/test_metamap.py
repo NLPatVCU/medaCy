@@ -37,7 +37,7 @@ class TestMetaMap(unittest.TestCase):
     @unittest.skipUnless(have_metamap, reason)
     def test_map_file(self):
         """Tests that mapping a file has expected output"""
-        txt_file = sample_dataset.all_data_files[0].txt_path
+        txt_file = sample_dataset.data_files[0].txt_path
         mm_output = self.metamap.map_file(txt_file)
         self.assertIsInstance(mm_output, dict)
         self.assertIn('metamap', mm_output.keys())
@@ -57,6 +57,8 @@ To correct for processing-induced changes in the volume of the tissue, we calcul
         self.assertFalse(self.dataset.is_metamapped())
         self.metamap.metamap_dataset(self.dataset, 2)
         self.assertTrue(self.dataset.is_metamapped())
+        for df in self.dataset:
+            self.assertTrue(os.path.isfile(df.metamapped_path))
 
 
 if __name__ == '__main__':
