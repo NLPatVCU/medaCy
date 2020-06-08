@@ -24,8 +24,8 @@ class TestAnnotation(unittest.TestCase):
         with open(os.path.join(cls.test_dir, "broken_ann_file.ann"), 'w') as f:
             f.write("This is clearly not a valid ann file")
 
-        cls.ann_path_1 = cls.dataset.all_data_files[0].ann_path
-        cls.ann_path_2 = cls.dataset.all_data_files[1].ann_path
+        cls.ann_path_1 = cls.dataset.data_files[0].ann_path
+        cls.ann_path_2 = cls.dataset.data_files[1].ann_path
 
     @classmethod
     def tearDownClass(cls):
@@ -106,7 +106,7 @@ class TestAnnotation(unittest.TestCase):
     def test_confusion_matrix(self):
         ann_1 = Annotations(self.ann_path_1)
         ann_2 = Annotations(self.ann_path_2)
-        ann_1.add_entity(*ann_2.get_entity_annotations()[0])
+        ann_1.add_entity(*ann_2.annotations[0])
         self.assertEqual(len(ann_1.compute_confusion_matrix(ann_2, self.entities)[0]), len(self.entities))
         self.assertEqual(len(ann_1.compute_confusion_matrix(ann_2, self.entities)), len(self.entities))
 

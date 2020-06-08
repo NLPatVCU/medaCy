@@ -424,7 +424,7 @@ class MetaMap:
             logging.info(f"The following Dataset has already been metamapped: {repr(dataset)}")
             return
 
-        mm_dir = os.path.join(dataset.data_directory, "metamapped")
+        mm_dir = dataset.data_directory / "metamapped"
 
         # Make MetaMap directory if it doesn't exist.
         if not os.path.isdir(mm_dir):
@@ -442,10 +442,9 @@ class MetaMap:
 
         files_to_metamap = [data_file for data_file in dataset if data_file.file_name not in already_metamapped]
 
-        logging.info("Number of files to MetaMap: %i" % len(files_to_metamap))
+        logging.info(f"Number of files to MetaMap: {len(files_to_metamap)}")
 
-        Parallel(n_jobs=n_jobs)(
-            delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
+        Parallel(n_jobs=n_jobs)(delayed(self._parallel_metamap)(file, mm_dir) for file in files_to_metamap)
 
         if not dataset.is_metamapped():
             raise RuntimeError(f"MetaMapping {dataset} was unsuccessful")

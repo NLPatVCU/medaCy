@@ -32,7 +32,7 @@ class TestMetaMapComponent(unittest.TestCase):
     @unittest.skipUnless(have_metamap, reason)
     def test_overlays_cuis(self):
         """Tests that the MetaMapOverlayer overlays CUIs correctly given a document that hasn't been metamapped"""
-        sample_doc = sample_dataset.all_data_files[0].txt_path
+        sample_doc = sample_dataset.data_files[0].txt_path
         with open(sample_doc) as f:
             sample_text = f.read()
 

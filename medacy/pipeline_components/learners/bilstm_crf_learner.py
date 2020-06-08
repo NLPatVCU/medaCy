@@ -19,10 +19,6 @@ class BiLstmCrfLearner:
 
     :ivar device: PyTorch device to use.
     :ivar model: Instance of BiLstmCrfNetwork to use.
-    :ivar tag_to_index: Tag to index dictionary for vectorization.
-    :ivar untrained_tokens: Out of vocabulary tokens word embeddings analysis during debugging.
-    :ivar other_features: Names of other word features being used.
-    :ivar window_size: Range of surrounding word's features that were extracted.
     :ivar word_embeddings_file: File to load word embeddings from.
     :ivar word_vectors: Gensim word vectors object for use in configuring word embeddings.
     """

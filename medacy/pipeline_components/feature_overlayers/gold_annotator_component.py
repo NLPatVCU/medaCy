@@ -27,9 +27,7 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
         )
         self.nlp = spacy_pipeline
         self.labels = labels
-        self.failed_overlay_count = 0
-        self.failed_identifying_span_count = 0
-        Token.set_extension('gold_label', default="O", force=True)
+        Token.set_extension('gold_label', default='O', force=True)
 
     def find_span(self, start, end, doc):
         """
@@ -43,17 +41,14 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
         if greedy_searched_span is not None:
             return greedy_searched_span
 
-        greedy_searched_span = doc.char_span(start, end-1) #annotation may have extended over an ending blank space
+        greedy_searched_span = doc.char_span(start, end - 1)  # annotation may have extended over an ending blank space
         if greedy_searched_span is not None:
             return greedy_searched_span
 
         # No clue - increase boundaries incrementally until a valid span is found.
         i = 0
         while greedy_searched_span is None and i <= 20:
-            if i % 2 == 0:
-                end += 1
-            else:
-                start -= 1
+            end += 1 if i % 2 == 0 else -1
             i += 1
             greedy_searched_span = doc.char_span(start, end)
 
@@ -67,44 +62,48 @@ class GoldAnnotatorOverlayer(BaseOverlayer):
         :return: the same Doc object, but it now has 'gold_label' annotations.
         """
 
-        logging.debug("%s: Called GoldAnnotator Component", doc._.file_name)
+        file_name = doc._.file_name
+        logging.debug(f"{file_name}: Called GoldAnnotator Component")
+
+        failed_overlay_count = 0
+        failed_identifying_span_count = 0
 
         # check if gold annotation file path has been set.
         if not hasattr(doc._, 'gold_annotation_file'):
-            logging.warning("No extension doc._.gold_annotation_file is present; it will not be possible to fit a model with this Doc")
+            logging.warning(f"doc._.gold_annotation_file not defined for {file_name}; "
+                            f"it will not be possible to fit a model with this Doc")
             return doc
 
         gold_annotations = Annotations(doc._.gold_annotation_file)
 
-        for e_label, e_start, e_end, _ in gold_annotations.get_entity_annotations():
-            if e_start > e_end:
-                logging.critical("%s: Broken annotation - start is greater than end: (%i,%i,%s)",
-                                 doc._.file_name, e_start, e_end, e_label)
+        for ent in gold_annotations:
+            if ent.start > ent.end:
+                logging.critical(f"{file_name}: Broken annotation - start is greater than end: {ent}")
                 continue
-            span = doc.char_span(e_start, e_end)
+
+            span = doc.char_span(ent.start, ent.end)
 
             if span is None:
-                self.failed_overlay_count += 1
-                self.failed_identifying_span_count += 1
-                logging.warning("%s: Number of failed annotation overlays with current tokenizer: %i (%i,%i,%s)",
-                                doc._.file_name, self.failed_overlay_count, e_start, e_end, e_label)
+                failed_overlay_count += 1
+                failed_identifying_span_count += 1
 
-            fixed_span = self.find_span(e_start, e_end, doc)
+            fixed_span = self.find_span(ent.start, ent.end, doc)
             if fixed_span is not None:
                 if span is None:
-                    logging.warning("%s: Fixed span (%i,%i,%s) into: %s",
-                                    doc._.file_name, e_start, e_end, e_label, fixed_span.text)
-                    self.failed_identifying_span_count -= 1
+                    logging.warning(f"{file_name}: Fixed {ent} into: {fixed_span.text}")
+                    failed_identifying_span_count -= 1
+
                 for token in fixed_span:
-                    if e_label in self.labels or not self.labels:
-                        token._.set('gold_label', e_label)
+                    if ent.tag in self.labels or not self.labels:
+                        token._.set('gold_label', ent.tag)
 
-            else:  # annotation was not able to be fixed, it will be ignored - this is bad in evaluation.
-                logging.warning("%s: Could not fix annotation: (%i,%i,%s)", doc._.file_name, e_start, e_end, e_label)
-                logging.warning("%s: Total Failed Annotations: %i", doc._.file_name, self.failed_identifying_span_count)
+            else:
+                # Annotation was not able to be fixed, it will be ignored - this is bad in evaluation.
+                logging.warning(f"{file_name}: Could not fix annotation: {ent}")
 
-        if self.failed_overlay_count > .3 * len(gold_annotations):
-            logging.warning("%s: Annotations may mis-aligned as more than 30 percent failed to overlay: %s",
-                            doc._.file_name, doc._.gold_annotation_file)
+        logging.warning(f"{file_name}: Number of failed annotation overlays with current tokenizer: {failed_overlay_count}")
+
+        if failed_overlay_count > .3 * len(gold_annotations):
+            logging.critical(f"{file_name}: More than 30% of annotations failed to overlay")
 
         return doc

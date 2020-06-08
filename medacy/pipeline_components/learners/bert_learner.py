@@ -35,15 +35,15 @@ class BertLearner:
         :param epochs: Number of epochs to train for.
         :param using_crf: Whether or not to use a CRF layer on the model.
         """
-        torch.manual_seed(1) # Seed PyTorch for consistency
+        torch.manual_seed(1)  # Seed PyTorch for consistency
 
         # Create torch.device that all tensors will be using
-        device_string = 'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
+        device_string = f'cuda:%d' % cuda_device if cuda_device >= 0 else 'cpu'
         self.device = torch.device(device_string)
 
         self.model = None  # Transformers/PyTorch model
         self.tokenizer = None  # Transformers tokenizer
-        self.vectorizer = Vectorizer(self.device) # medaCy vectorizer
+        self.vectorizer = Vectorizer(self.device)  # medaCy vectorizer
         self.pretrained_model = pretrained_model
         self.batch_size = batch_size
         self.learning_rate = learning_rate
@@ -64,16 +64,12 @@ class BertLearner:
         # If there are no labels then make all of the labels 'O' so they can still be used for
         # mapping during predictions
         if not labels:
-            labels = []
-            for sequence in sequences:
-                labels.append(['O'] * len(sequence))
+            labels = [['O'] * len(sequence) for sequence in sequences]
 
         # Use the tokenizer to encode every sequence and add in special tokens like [CLS] and [SEP]
         # Then add them to encoded_sequences
         for sequence in sequences:
-            encoded_sequence = []
-            for token in sequence:
-                encoded_sequence.append(self.tokenizer.encode(token, add_special_tokens=False))
+            encoded_sequence = [self.tokenizer.encode(token, add_special_tokens=False) for token in sequence]
             encoded_sequence = self.tokenizer.build_inputs_with_special_tokens(encoded_sequence)
             encoded_sequences.append(encoded_sequence)
 
@@ -105,7 +101,7 @@ class BertLearner:
                 for token_id in ids[1:]:
                     # Add proper token id and label to lists
                     split_sequence.append(token_id)
-                    split_labels.append('X') # 'X' marks a token we should ignore
+                    split_labels.append('X')  # 'X' marks a token we should ignore
 
             # Add the final token [SEP] with proper label/mapping
             split_sequence.append(sequence[-1])
@@ -159,13 +155,12 @@ class BertLearner:
         self.vectorizer.add_tag('X')
 
         # Decide on model class based on whether we're using a CRF layer or not
-        model_class = (BertCrfForTokenClassification if self.using_crf
-                       else BertForTokenClassification)
+        model_class = BertCrfForTokenClassification if self.using_crf else BertForTokenClassification
 
-        # Load pretrain BERT model, unfreeze layers, move it to GPU device, and create its tokenizer
+        # Load pretrained BERT model, unfreeze layers, move it to GPU device, and create its tokenizer
         self.model = model_class.from_pretrained(
             self.pretrained_model,
-            num_labels=len(self.vectorizer.tag_to_index) - 1 # Don't include 'X'
+            num_labels=len(self.vectorizer.tag_to_index) - 1  # Don't include 'X'
         )
         self.model.train()
         self.model.to(device=self.device)
@@ -212,7 +207,7 @@ class BertLearner:
 
         # Training loop
         for epoch in range(self.epochs):
-            logging.info('Epoch %d', epoch)
+            logging.info(f'Epoch {epoch}')
             training_loss = 0
             batches = 0
 
@@ -227,7 +222,7 @@ class BertLearner:
                 optimizer.step()
                 self.model.zero_grad()
 
-            logging.info('Loss: %f', (training_loss / batches))
+            logging.info(f'Loss: {training_loss / batches}')
 
     def predict(self, x_data):
         """Use model to make predictions over a given dataset.
@@ -299,10 +294,9 @@ class BertLearner:
         vectorizer_values = torch.load(path + '/vectorizer.pt')
         self.vectorizer = Vectorizer(device=self.device)
         self.vectorizer.load_values(vectorizer_values)
-        model_class = (BertCrfForTokenClassification if self.using_crf
-                       else BertForTokenClassification)
+        model_class = BertCrfForTokenClassification if self.using_crf else BertForTokenClassification
         self.model = model_class.from_pretrained(
             path,
-            num_labels=len(self.vectorizer.tag_to_index) - 1 # Ignore 'X'
+            num_labels=len(self.vectorizer.tag_to_index) - 1  # Ignore 'X'
         )
         self.model = self.model.to(self.device)

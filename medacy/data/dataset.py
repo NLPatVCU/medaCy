@@ -70,8 +70,6 @@ import pprint
 from collections import Counter
 from pathlib import Path
 
-import spacy
-
 from medacy.data.annotations import Annotations
 from medacy.data.data_file import DataFile
 
@@ -93,14 +91,15 @@ class Dataset:
         :param data_limit: A limit to the number of files to process. Must be between 1 and number of raw text files in data_directory
         """
         self.data_directory = Path(data_directory)
-        self.all_data_files = []
 
         metamap_dir = self.data_directory / 'metamapped'
-        if metamap_dir.is_dir():
-            self.metamapped_files_directory = metamap_dir
-        else:
-            self.metamapped_files_directory = None
+        self.metamapped_files_directory = metamap_dir if metamap_dir.is_dir() else None
 
+        self.data_files = self._create_data_files()
+        self.data_limit = data_limit or len(self.data_files)
+
+    def _create_data_files(self):
+        data_files = []
         all_files_in_directory = os.listdir(self.data_directory)
         all_file_base_names = {f.split(".")[0] for f in all_files_in_directory}
 
@@ -117,68 +116,22 @@ class Dataset:
             if potential_ann_path.exists():
                 ann_path = potential_ann_path
 
-            potential_mm_path = metamap_dir / (file_name + ".metamapped")
-            if potential_mm_path.exists():
-                metamapped_path = potential_mm_path
+            if self.metamapped_files_directory:
+                potential_mm_path = self.metamapped_files_directory / (file_name + ".metamapped")
+                if potential_mm_path.exists():
+                    metamapped_path = potential_mm_path
 
             if txt_path or ann_path:
                 new_df = DataFile(file_name, txt_path, ann_path, metamapped_path)
-                self.all_data_files.append(new_df)
+                data_files.append(new_df)
 
-        self.all_data_files.sort(key=lambda x: x.file_name)
-        self.data_limit = data_limit if data_limit is not None else len(self.all_data_files)
-
-    def get_data_files(self):
-        """
-        Retrieves an list containing all the files registered by a Dataset.
-
-        :return: a list of DataFile objects.
-        """
-        return self.all_data_files[0:self.data_limit]
+        return sorted(data_files, key=lambda x: x.file_name)
 
     def __iter__(self):
-        return iter(self.get_data_files())
+        return iter(self.data_files[0:self.data_limit])
 
     def __len__(self):
-        return len(self.get_data_files())
-
-    def get_training_data(self, data_format='spacy'):
-        """
-        Get training data in a specified format.
-
-        :param data_format: The specified format as a string.
-        :return: The requested data in the requested format.
-        """
-        supported_formats = ['spacy']
-
-        if data_format not in supported_formats:
-            raise TypeError("Format %s not supported" % data_format)
-
-        training_data = []
-        nlp = spacy.load('en_core_web_sm')
-
-        for ann in self.generate_annotations():
-            training_data.append(ann.get_entity_annotations(format=data_format, nlp=nlp))
-
-        return training_data
-
-    def get_subdataset(self, indices):
-        """
-        Get a subdataset of data files based on indices.
-
-        :param indices: List of ints that represent the indexes of the data files to split off.
-        :return: Dataset object with only the specified data files.
-        """
-        subdataset = Dataset(self.data_directory)
-        data_files = subdataset.get_data_files()
-        sub_data_files = []
-
-        for index, data_file in enumerate(data_files):
-            if index in indices:
-                sub_data_files.append(data_file)
-
-        subdataset.all_data_files = sub_data_files
-        return subdataset
+        return len(self.data_files)
 
     def is_metamapped(self):
         """
@@ -186,20 +139,20 @@ class Dataset:
 
         :return: True if all data files are metamapped, False otherwise.
         """
-        if self.metamapped_files_directory is None or not os.path.isdir(self.metamapped_files_directory):
+        if self.metamapped_files_directory is None or not self.metamapped_files_directory.exists():
             return False
 
-        for file in self.all_data_files:
-            potential_file_path = os.path.join(self.metamapped_files_directory, "%s.metamapped" % file.file_name)
-            if not os.path.isfile(potential_file_path):
+        for file in self.data_files:
+            potential_file_path = self.metamapped_files_directory / f"{file.file_name}.metamapped"
+            if not potential_file_path.exists():
                 return False
 
             # Metamapped file could exist, but metamapping it could have failed.
             # If the file is less than 200 bytes, log a warning.
             file_size_in_bytes = os.path.getsize(potential_file_path)
             if file_size_in_bytes < 200:
-                logging.warning("Metamapped version of %s is only %i bytes. Metamapping could have failed: %s" %
-                                (file.file_name, file_size_in_bytes, potential_file_path))
+                logging.warning(f"Metamapped version of {file.file_name} is only {file_size_in_bytes} bytes. "
+                                f"Metamapping could have failed: {potential_file_path}")
 
         return True
 
@@ -208,7 +161,7 @@ class Dataset:
         Prints a list-like string of the names of the Datafile objects up to the data limit
         (can't be used if copied and pasted)
         """
-        return str([d.file_name for d in self.get_data_files()])
+        return str([d.file_name for d in self])
 
     def compute_counts(self):
         """
@@ -241,7 +194,7 @@ class Dataset:
         if diff:
             raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
-        #sort entities in ascending order by count.
+        # sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
         confusion_matrix = [[0 * len(entities)] * len(entities)]
 
@@ -254,7 +207,7 @@ class Dataset:
             gold_annotation = Annotations(gold_data_file.ann_path)
             pred_annotation = Annotations(prediction_data_file.ann_path)
 
-            #compute matrix on the Annotation file level
+            # compute matrix on the Annotation file level
             ann_confusion_matrix = gold_annotation.compute_confusion_matrix(pred_annotation, entities, leniency=leniency)
             for i in range(len(confusion_matrix)):
                 for j in range(len(confusion_matrix)):
@@ -279,7 +232,7 @@ class Dataset:
         if diff:
             raise ValueError(f"Dataset of predictions is missing the files: {repr(diff)}")
 
-        #Dictionary storing ambiguity over dataset
+        # Dictionary storing ambiguity over dataset
         ambiguity_dict = {}
 
         for gold_data_file in self:
@@ -313,7 +266,7 @@ class Dataset:
 
     def generate_annotations(self):
         """Generates Annotation objects for all the files in this Dataset"""
-        for file in self.get_data_files():
+        for file in self:
             if file.ann_path is not None:
                 yield Annotations(file.ann_path, source_text_path=file.txt_path)
             else:
