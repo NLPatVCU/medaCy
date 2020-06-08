@@ -69,6 +69,7 @@ import os
 import pprint
 from collections import Counter
 from pathlib import Path
+from tqdm import tqdm
 
 from medacy.data.annotations import Annotations
 from medacy.data.data_file import DataFile
@@ -196,12 +197,12 @@ class Dataset:
 
         # sort entities in ascending order by count.
         entities = [key for key, _ in sorted(self.compute_counts().items(), key=lambda x: x[1])]
-        confusion_matrix = [[0 * len(entities)] * len(entities)]
+        confusion_matrix = [[0]*len(entities) for _ in range(len(entities))]
 
-        for gold_data_file in self:
+        for gold_data_file in tqdm(self):
             prediction_iter = iter(other)
             prediction_data_file = next(prediction_iter)
-            while str(gold_data_file) != str(prediction_data_file):
+            while gold_data_file.file_name != prediction_data_file.file_name:
                 prediction_data_file = next(prediction_iter)
 
             gold_annotation = Annotations(gold_data_file.ann_path)
