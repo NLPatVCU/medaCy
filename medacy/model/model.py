@@ -235,6 +235,27 @@ class Model:
         feature_extractor = self.pipeline.get_feature_extractor()
 
         features, indices = feature_extractor.get_features_with_span_indices(doc)
+        for feature, span in zip(features, indices):
+            if len(feature) > 300:
+                feature_index = features.index(feature)
+
+                assert len(feature) == len(span)
+                split_index = int(len(feature) / 2)
+
+                first_split = feature[:split_index]
+                second_split = feature[split_index:]
+
+                first_span = span[:split_index]
+                second_span = span[split_index:]
+
+                del features[feature_index]
+                del indices[feature_index]
+
+                features.insert(feature_index, second_split)
+                features.insert(feature_index, first_split)
+                indices.insert(feature_index, second_span)
+                indices.insert(feature_index, first_span)
+
         predictions = self.model.predict(features)
         predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
         span_indices = [element for sentence in indices for element in sentence]  # parallel array containing indices
