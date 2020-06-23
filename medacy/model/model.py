@@ -235,6 +235,7 @@ class Model:
         feature_extractor = self.pipeline.get_feature_extractor()
 
         features, indices = feature_extractor.get_features_with_span_indices(doc)
+        """
         for feature, span in zip(features, indices):
             if len(feature) > 300:
                 feature_index = features.index(feature)
@@ -255,6 +256,7 @@ class Model:
                 features.insert(feature_index, first_split)
                 indices.insert(feature_index, second_span)
                 indices.insert(feature_index, first_span)
+        """
 
         predictions = self.model.predict(features)
         predictions = [element for sentence in predictions for element in sentence]  # flatten 2d list
