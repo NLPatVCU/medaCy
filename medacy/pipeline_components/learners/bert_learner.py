@@ -257,7 +257,9 @@ class BertLearner:
         # Loop through batches to make predictions
         for batch in dataloader:
             sequences, attention_masks, _ = batch
+            print(sequences.shape)
 
+            """
             # Get emission scores
             scores = self.model(sequences, attention_mask=attention_masks)[0]
 
@@ -273,6 +275,7 @@ class BertLearner:
         # Decode and return final label predictions
         predictions = self.decode_labels(encoded_tag_indices, mappings)
         return predictions
+        """
 
     def save(self, path):
         """Save trained model and vectorizer.
