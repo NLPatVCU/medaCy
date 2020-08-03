@@ -64,15 +64,15 @@ The previously mentioned components make up a medaCy model. In summary training 
 
 ```python
 import os
-from medacy.data import Dataset
+from medacy.data.dataset import Dataset
 from medacy.pipelines import ClinicalPipeline
-from medacy.ner import Model
+from medacy.model.model import Model
 
 entities = ['Drug', 'Strength']
 
 training_dataset = Dataset('/home/medacy/clinical_training_data/')
 pipeline = ClinicalPipeline(metamap=None, entities=entities)
-model = Model(pipeline, n_jobs=30) #distribute documents between 30 processes during training and prediction
+model = Model(pipeline)
 
 output_file_path = '/home/medacy/clinical_model.pickle'
 # Protect against running fit() without having a valid place to save it
@@ -81,74 +81,4 @@ assert os.path.isfile(output_file_path)
 model.fit(training_dataset)
 
 model.dump(output_file_path)
-
-
 ```
-
-The `ClinicalPipeline` source looks like this:
-
-```python
-import sklearn_crfsuite
-import spacy
-
-from medacy.pipeline_components.feature_extractors.discrete_feature_extractor import FeatureExtractor
-from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
-from medacy.pipeline_components.feature_overlayers.metamap.metamap_component import MetaMapOverlayer
-from medacy.pipeline_components.tokenizers.clinical_tokenizer import ClinicalTokenizer
-from medacy.pipelines.base.base_pipeline import BasePipeline
-
-
-class ClinicalPipeline(BasePipeline):
-    """
-    A pipeline for clinical named entity recognition. A special tokenizer that breaks down a clinical document
-    to character level tokens defines this pipeline. It was created for the extraction of ADE related entities
-    from the 2018 N2C2 Shared Task.
-
-    Created by Andiy Mulyar (andriymulyar.com) of NLP@VCU
-    """
-
-
-    def __init__(self, entities, metamap=None, **kwargs):
-        """
-        Create a pipeline with the name 'clinical_pipeline' utilizing
-        by default spaCy's small english model.
-
-        :param entities: a list of entities to use in this pipeline.
-        :param metamap: an instance of MetaMap if metamap should be used, defaults to None.
-        """
-
-        super().__init__(entities, spacy_pipeline=spacy.load("en_core_web_sm"))
-
-        if isinstance(metamap, MetaMap):
-            self.add_component(MetaMapOverlayer, metamap)
-
-    def get_learner(self):
-        return ("CRF_l2sgd",
-                sklearn_crfsuite.CRF(
-                    algorithm='l2sgd',
-                    c2=0.1,
-                    max_iterations=100,
-                    all_possible_transitions=True
-                )
-            )
-
-    def get_tokenizer(self):
-        return ClinicalTokenizer(self.spacy_pipeline)
-
-    def get_feature_extractor(self):
-        return FeatureExtractor(window_size=3, spacy_features=['pos_', 'shape_', 'prefix_', 'suffix_', 'text'])
-```
-
-
-The `__init__` method defines pipeline meta-data along with initializing the sequence of components the pipeline will use to annotate custom token attributes over the document. Components are imported and initialized as part of the pipeline by calling the `add_component` method. The first paramater is a component and the subsequent parameters are any arguments that are passed to the component on initialization. Token attributes beginning with `feature_` are automically collected by the `FeatureExtractor` initialized in the `get_feature_extractor` method.  Note the instantiation of the `FeatureExtractor` allows the definition of an array of `spacy_features` to utilize - these can be any attribute of a spaCy [Token](https://spacy.io/api/token#attributes).
-
-The `get_learner` method returns a configured instance of the machine learning algorithm to utilize for training a model. Currently only CRF models wrapped by the package [sklearn-crfsuite](https://sklearn-crfsuite.readthedocs.io/en/latest/) are allowed.
-
-The `get_tokenizer` method returns a configured medaCy tokenizer. An interface for building and maintaining a tokenizer is provided and the pattern from `ClinicalTokenizer` can be followed for engineering your own.
-
-The `get_feature_extractor` method returns a configured feature extractor. This defines how and what features from annotated documents are collected to be fed into the model during training or prediction. The example configuration means that all medaCy annotated features and the specified `spacy_features` are collected in a range of three tokens to the left and three tokens to the right of every token (ie. the `window_size`).
-
-
-
-
-
