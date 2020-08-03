@@ -257,7 +257,6 @@ class BertLearner:
         # Loop through batches to make predictions
         for batch in dataloader:
             sequences, attention_masks, _ = batch
-            print(sequences.shape)
 
             # Get emission scores
             scores = self.model(sequences, attention_mask=attention_masks)[0]
