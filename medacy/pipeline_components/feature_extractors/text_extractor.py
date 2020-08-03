@@ -59,7 +59,7 @@ class TextExtractor(FeatureExtractor):
                     bert_tokenized.append(x)
                 else:
                     bert_tokenized.extend(x)
-            if len(bert_tokenized) > 500:
+            if len(bert_tokenized) > 200:
                 num_splits = (len(bert_tokenized) // 500) + 3
                 split_length = int(len(feature) / num_splits) + 1
                 feature_splits = list(chunks(feature, split_length))
