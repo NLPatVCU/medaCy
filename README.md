@@ -74,9 +74,9 @@ This package is licensed under the GNU General Public License.
 
 Authors
 =======
-Current contributors: Steele Farnsworth, Anna Conte, Gabby Gurdin, Aidan Kierans, Aidan Myers, and Bridget T. McInnes
+Current contributors: Steele Farnsworth,  Gabby Gurdin, Aidan Myers, and Bridget T. McInnes
 
-Former contributors: Andriy Mulyar, Jorge Vargas, Corey Sutphin, and Bobby Best
+Former contributors: Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, and Anna Conte
 
 Acknowledgments
 ===============
