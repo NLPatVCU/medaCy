@@ -78,7 +78,7 @@ label within medaCy. This is not guaranteed to be the same as how they appear in
 Note that the directories for `-gt` and `-pd` must already exist. If these arguments are not passed, the cross validation groundtruth and predictions will not be written anywhere.
 
 The data outputted to the `-gt` and `-pd` directories is especially useful when combined with medaCy's inter-dataset 
-agreement calculator. The command for this is `python -m medacy.tools.calculators.inter_dataset_agreement`.
+agreement calculator. The command for this is `python -m bratlib.calculators.entity_agreement ~/datasets/my_dataset predictions`.
 Inter-dataset agreement can measure how similar the groudtruth is to the original dataset, or how similar the fold predictions
 are to the groundtruth, etc.
 
