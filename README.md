@@ -58,7 +58,7 @@ To explore medaCy's other models or train your own, visit the [examples section]
 
 Reference
 =========
-```
+```bibtex
 @ARTICLE {
     author  = "Andriy Mulyar, Natassja Lewinski and Bridget McInnes",
     title   = "TAC SRIE 2018: Extracting Systematic Review Information with MedaCy",
