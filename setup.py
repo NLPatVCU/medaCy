@@ -35,7 +35,7 @@ class PyTest(TestCommand):
 setup(
     name='medacy',
     version=__version__,
-    python_requires='>=3.7',
+    python_requires='>=3.6',
     license='GNU GENERAL PUBLIC LICENSE',
     description='Medical Natural Language Processing (NLP) with spaCy',
     long_description=readme(),
@@ -72,6 +72,11 @@ setup(
         'gensim==3.8.0',
         'en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz'
     ],
+    extras_require={
+        ':python_version == "3.6"': [
+            'dataclasses',
+        ],
+    },
     tests_require=[
         "pytest",
         "pytest-cov",
