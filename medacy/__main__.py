@@ -6,7 +6,9 @@ import datetime as dt
 import importlib
 import json
 import logging
+from sys import argv
 
+from medacy import __version__
 from medacy.data.dataset import Dataset
 from medacy.model.model import Model, DEFAULT_NUM_FOLDS
 from medacy.pipelines import bert_pipeline
@@ -174,7 +176,8 @@ def main():
         logger.addHandler(logging.StreamHandler())
     if args.test_mode:
         logger.setLevel(logging.DEBUG)
-        logging.info("Test mode enabled: logging set to debug")
+        logging.info("Test mode enabled: logging set to debug") 
+    logging.info(f"medaCy v{__version__}\nCommand: python -m medacy {' '.join(argv[1:])}")
     start_time = dt.datetime.now()
     start_timestamp = start_time.strftime('%Y-%m-%d %H:%M:%S')
     logging.info(f'\n\nSTART TIME: {start_timestamp}')
