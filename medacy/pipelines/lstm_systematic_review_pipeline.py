@@ -36,7 +36,7 @@ class LstmSystematicReviewPipeline(BasePipeline):
             raise ValueError('This pipeline requires word embeddings.')
 
         self.word_embeddings = kwargs['word_embeddings']
-        self.cuda_device = kwargs['cuda_device']
+        self.cuda_device = kwargs.get('cuda_device', -1)
 
     def get_learner(self):
         learner = BiLstmCrfLearner(self.word_embeddings, self.cuda_device)
