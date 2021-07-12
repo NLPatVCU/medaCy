@@ -14,47 +14,30 @@ workflow by providing utilities for model training, prediction and organization 
 - Customizable pipelines with detailed development instructions and documentation.
 - Allows the designing of replicable NLP systems for reproducing results and encouraging the distribution of models whilst still allowing for privacy.
 - Active community development spearheaded and maintained by [NLP@VCU](https://nlp.cs.vcu.edu/).
-- Detailed [API](https://medacy.readthedocs.io/en/latest/).
-
-## :thought_balloon: Where to ask questions
-
-MedaCy is actively maintained by a team of researchers at Virginia Commonwealth University. The best way to
-receive immediate responses to any questions is to raise an issue. Make sure to first consult the 
-[API](https://medacy.readthedocs.io/en/latest/).  See how to formulate a good issue or feature request in the [Contribution Guide](CONTRIBUTING.md).
 
 ## :computer: Installation Instructions
-MedaCy can be installed for general use or for pipeline development / research purposes.
+MedaCy supports Python >= 3.6
 
 | Application | Run           |
 | ----------- |:-------------:|
 | Prediction and Model Training (stable) | `pip install git+https://github.com/NLPatVCU/medaCy.git` |
 | Prediction and Model Training (latest) | `pip install git+https://github.com/NLPatVCU/medaCy.git@development` |
-| Pipeline Development and Contribution  | [See Contribution Instructions](/CONTRIBUTING.md) |
 
+# :books: How to use medaCy
 
-# :books: Power of medaCy
-After installing medaCy and [medaCy's clinical model](guide/models/clinical_notes_model.md), simply run:
+MedaCy's components can be imported into other Python programs, but is designed primarily to be used via its command line interface.
+Once medaCy is installed, one can read the instructions at any time with this command.
 
-```python
-from medacy.model.model import Model
-
-model = Model.load_external('medacy_model_clinical_notes')
-annotation = model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
-print(annotation)
-```
-and receive instant predictions:
-```python
-[
-    ('Drug', 40, 45, 'Advil'),
-    ('Dosage', 27, 28, '1'), 
-    ('Form', 29, 36, 'capsule'),
-    ('Duration', 46, 56, 'for 5 days')
-]
+```bash
+python -m medacy --help
 ```
 
-MedaCy can also be used through its command line interface, documented [here](./guide/command_line_interface.md)
+More thorough documentation is provided [here](./guide/command_line_interface.md).
 
-To explore medaCy's other models or train your own, visit the [examples section](guide).
+## :thought_balloon: Where to Ask Questions
+
+MedaCy is actively maintained by a team of researchers at Virginia Commonwealth University. The best way to
+receive immediate responses to any questions is to open an issue in this repository.
 
 Reference
 =========
@@ -74,9 +57,9 @@ This package is licensed under the GNU General Public License.
 
 Authors
 =======
-Current contributors: Steele Farnsworth, Anna Conte, Gabby Gurdin, Aidan Kierans, Aidan Myers, and Bridget T. McInnes
+Current contributors: Steele Farnsworth, Gabby Gurdin, Aidan Myers, and Bridget T. McInnes
 
-Former contributors: Andriy Mulyar, Jorge Vargas, Corey Sutphin, and Bobby Best
+Former contributors: Andriy Mulyar, Jorge Vargas, Corey Sutphin, Bobby Best, Anna Conte, and Aidan Kierans
 
 Acknowledgments
 ===============
