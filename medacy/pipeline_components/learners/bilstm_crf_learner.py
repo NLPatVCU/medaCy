@@ -102,7 +102,7 @@ class BiLstmCrfLearner:
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-                epoch_losses.append(loss)
+                epoch_losses.append(float(loss))
 
             logging.info(f'Epoch {i} average loss: {mean(epoch_losses)}')
 
