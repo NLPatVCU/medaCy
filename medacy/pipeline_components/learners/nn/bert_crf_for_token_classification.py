@@ -4,6 +4,7 @@ BERT model for token classification with a CRF layer.
 from transformers import BertForTokenClassification
 from torchcrf import CRF
 
+
 class BertCrfForTokenClassification(BertForTokenClassification):
     """Subclass of Transformers package BERT token classifier.
     
@@ -42,19 +43,13 @@ class BertCrfForTokenClassification(BertForTokenClassification):
             labels=labels
         )
 
+        if labels is None:
+            return outputs
+
         # If labels were given, we'll want to use them to train the CRF layer as well
-        if labels is not None:
-            # Note that this mutates labels. This is only okay because we don't use reuse labels in
-            # the learner. If this ever changes you can fix this by using labels.clone()
-            for i in range(labels.shape[0]):
-                for j in range(labels.shape[1]):
-                    if labels[i][j] == self.crf.num_tags:
-                        # Change 'X' label to 'O' so crf doesn't try to access wrong index
-                        # Using a mask does not fix this.
-                        labels[i][j] = 0
+        labels = labels.clone()
+        labels[labels == self.crf.num_tags] = 0
 
-            # After 'X' labels have been removed, pass the emission scores through the CRF layer
-            outputs = (-self.crf(emissions=outputs[1], tags=labels), outputs[1])
-
+        # After 'X' labels have been removed, pass the emission scores through the CRF layer
         # Returns CRF output if there were labels or original emission scores otherwise
-        return outputs
+        return -self.crf(emissions=outputs[1], tags=labels), outputs[1]
