@@ -9,6 +9,58 @@ import unicodedata
 from gensim.models import KeyedVectors
 
 
+def _unicode_to_ascii(unicode_string):
+    """Convert unicode string to closest ASCII equivalent. Based on code found at:
+    https://stackoverflow.com/a/518232/2809427
+
+    :param unicode_string: String to convert to ASCII
+    :return: String with every character converted to most similar ASCII character.
+    """
+    unicode_string = re.sub(u"\u2013", "-", unicode_string)  # em dash
+
+    return ''.join(
+        character for character in unicodedata.normalize('NFD', unicode_string)
+        if unicodedata.category(character) != 'Mn'
+        and character in string.printable
+    )
+
+
+def _create_feature_dictionary(feature_name, sentences):
+    """Get dictionary that maps all possible values of a specific feature to ids.
+
+    :param feature_name: Name of feature.
+    :param sentences: Sentences to get feature for.
+    :return: Dictionary for given feature.
+    """
+    feature_to_index = {}
+    feature_name = '0:' + feature_name
+
+    for sentence in sentences:
+        for token in sentence:
+            feature = token[feature_name]
+            if feature not in feature_to_index:
+                feature_to_index[feature] = len(feature_to_index)
+
+    return feature_to_index
+
+
+def _one_hot(index_dictionary, value):
+    """
+    Create a one-hot vector representation for discrete features that appear in the X_data
+    :param index_dictionary: A dictionary mapping discrete features to unique integers (ie the order
+        they appeared in the X_data; see self.create_feature_dictionary)
+    :param value: The discrete feature
+    :return: A one-hot vector for that discrete feature
+    """
+    vector = [0.0] * len(index_dictionary)
+
+    if value in index_dictionary:
+        index = index_dictionary[value]
+        vector[index] = 1.0
+
+    return vector
+
+
 class Vectorizer:
     """Vectorizer for medaCy PyTorch data. Contains encoding methods and tracking encoding values.
 
@@ -41,9 +93,10 @@ class Vectorizer:
 
         :param embeddings_file: Word embeddings file to use. Can be .bin or other common formats.
         """
-        is_binary = embeddings_file.endswith('.bin')
-        word_vectors = KeyedVectors.load_word2vec_format(embeddings_file, binary=is_binary)
-        self.word_vectors = word_vectors
+        self.word_vectors = KeyedVectors.load_word2vec_format(
+            embeddings_file,
+            binary=embeddings_file.endswith('.bin')
+        )
 
     def create_tag_dictionary(self, tags):
         """Setup self.tag_to_index
@@ -65,24 +118,6 @@ class Vectorizer:
         :param tag: Tag to add.
         """
         self.tag_to_index[tag] = len(self.tag_to_index)
-
-    def create_feature_dictionary(self, feature_name, sentences):
-        """Get dictionary that maps all possible values of a specific feature to ids.
-
-        :param feature_name: Name of feature.
-        :param sentences: Sentences to get feature for.
-        :return: Dictionary for given feature.
-        """
-        feature_to_index = {}
-        feature_name = '0:' + feature_name
-
-        for sentence in sentences:
-            for token in sentence:
-                feature = token[feature_name]
-                if feature not in feature_to_index:
-                    feature_to_index[feature] = len(feature_to_index)
-
-        return feature_to_index
 
     def find_other_features(self, example):
         """Get the names of the other word features being used.
@@ -112,8 +147,7 @@ class Vectorizer:
                 longest_length = len(sentence)
                 test_token = sentence[int(longest_length/2)]
 
-        lowest = 0
-        highest = 0
+        highest, lowest = 0, 0
 
         # Loop through keys in test token to find highest and lowest window distances.
         for key in test_token:
@@ -130,30 +164,14 @@ class Vectorizer:
 
         self.window_size = highest
 
-    def unicode_to_ascii(self, unicode_string):
-        """Convert unicode string to closest ASCII equivalent. Based on code found at:
-        https://stackoverflow.com/a/518232/2809427
-
-        :param unicode_string: String to convert to ASCII
-        :return: String with every character converted to most similar ASCII character.
-        """
-        unicode_string = re.sub(u"\u2013", "-", unicode_string) # em dash
-
-        return ''.join(
-            character for character in unicodedata.normalize('NFD', unicode_string)
-            if unicodedata.category(character) != 'Mn'
-            and character in string.printable
-        )
-
     def devectorize_tag(self, tag_indices):
         """Devectorize a list of tag indices using self.tag_to_index
 
         :param tag_indices: List of tag indices.
         :return: List of tags.
         """
-        to_tag = {y:x for x, y in self.tag_to_index.items()}
-        tags = [to_tag[index] for index in tag_indices]
-        return tags
+        to_tag = {y: x for x, y in self.tag_to_index.items()}
+        return [to_tag[index] for index in tag_indices]
 
     def find_window_indices(self, token):
         """Get relative indices of window words. Avoids trying to access keys that don't exist.
@@ -161,32 +179,7 @@ class Vectorizer:
         :param token: Token the indexes are relative to.
         :return: List of indices
         """
-        window = []
-        window_range = range(-self.window_size, self.window_size + 1)
-
-        for i in window_range:
-            test_key = 'text'
-            test_key = '%d:%s' % (i, test_key)
-            if test_key in token:
-                window.append(i)
-
-        return window
-
-    def one_hot(self, index_dictionary, value):
-        """
-        Create a one-hot vector representation for discrete features that appear in the X_data
-        :param index_dictionary: A dictionary mapping discrete features to unique integers (ie the order
-            they appeared in the X_data; see self.create_feature_dictionary)
-        :param value: The discrete feature
-        :return: A one-hot vector for that discrete feature
-        """
-        vector = [0.0] * len(index_dictionary)
-
-        if value in index_dictionary:
-            index = index_dictionary[value]
-            vector[index] = 1.0
-
-        return vector
+        return [i for i in range(-self.window_size, self.window_size + 1) if f'{i}:text' in token]
 
     def vectorize_tokens(self, tokens):
         """Vectorize list of tokens.
@@ -201,7 +194,7 @@ class Vectorizer:
 
             # Add text index for looking up word embedding
             token_text = token['0:text']
-            token_text = self.unicode_to_ascii(token_text)
+            token_text = _unicode_to_ascii(token_text)
 
             # Look up word embedding index
             try:
@@ -239,7 +232,7 @@ class Vectorizer:
                     for feature_name in other_feature_names:
                         key = '%d:%s' % (i, feature_name)
                         feature = token[key]
-                        vector = self.one_hot(self.other_features[feature_name], feature)
+                        vector = _one_hot(self.other_features[feature_name], feature)
                         token_vector.extend(vector)
                 else:
                     for feature in self.other_features:
@@ -276,7 +269,7 @@ class Vectorizer:
 
         # Create feature dictionaries
         for feature in self.other_features:
-            self.other_features[feature] = self.create_feature_dictionary(feature, x_data)
+            self.other_features[feature] = _create_feature_dictionary(feature, x_data)
 
         # Vectorize data
         sentences = []
@@ -286,9 +279,8 @@ class Vectorizer:
             correct_tags_vector = self.vectorize_tags(sentence_tags)
             sentences.append(tokens_vector)
             correct_tags.append(correct_tags_vector)
-        data = list(zip(sentences, correct_tags))
 
-        return data
+        return list(zip(sentences, correct_tags))
 
     def get_values(self):
         """Get Vectorizer values so they can saved or migrated.
