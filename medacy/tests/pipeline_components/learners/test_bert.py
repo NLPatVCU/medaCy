@@ -31,33 +31,40 @@ class TestBert(unittest.TestCase):
         pkg_resources.cleanup_resources()
         shutil.rmtree(cls.prediction_directory)
 
+    def _bert_test(self, pipe):
+        model = Model(pipe)
+        model.cross_validate(self.dataset, 2)
+        model.fit(self.dataset)
+        resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
+        self.assertIsInstance(resulting_dataset, Dataset)
+        # Test that there is at least one prediction
+        if not any(resulting_dataset.generate_annotations()):
+            warn("The model did not generate any predictions")
+
     @unittest.skipUnless(use_cuda, "This test only runs if a cuda device is set in the medaCy config file")
-    def test_cross_validate_fit_predict(self):
+    def test_cross_validate_fit_predict_no_crf(self):
         """Tests that a model created with BERT can be fitted and used to predict, with and without the CRF layer"""
-        pipeline = BertPipeline(
-            entities=self.entities,
-            pretrained_model='bert-base-cased',
-            batch_size=self.batch_size,
-            cuda_device=cuda_device
-        )
+        self._bert_test(
+                BertPipeline(
+                    entities=self.entities,
+                    pretrained_model='bert-base-cased',
+                    batch_size=self.batch_size,
+                    cuda_device=cuda_device
+                )
+            )
 
-        pipeline_crf = BertPipeline(
-            entities=self.entities,
-            pretrained_model='bert-base-cased',
-            batch_size=self.batch_size,
-            cuda_device=cuda_device,
-            using_crf=True
+    @unittest.skipUnless(use_cuda, "This test only runs if a cuda device is set in the medaCy config file")
+    def test_cross_validate_fit_predict_with_crf(self):
+        """Tests that a model created with BERT can be fitted and used to predict, with and without the CRF layer"""
+        self._bert_test(
+            BertPipeline(
+                entities=self.entities,
+                pretrained_model='bert-base-cased',
+                batch_size=self.batch_size,
+                cuda_device=cuda_device,
+                using_crf=True
+            )
         )
-
-        for pipe in [pipeline, pipeline_crf]:
-            model = Model(pipe)
-            model.cross_validate(self.dataset, 2)
-            model.fit(self.dataset)
-            resulting_dataset = model.predict(self.dataset, prediction_directory=self.prediction_directory)
-            self.assertIsInstance(resulting_dataset, Dataset)
-            # Test that there is at least one prediction
-            if not any(resulting_dataset.generate_annotations()):
-                warn("The model did not generate any predictions")
 
 
 if __name__ == '__main__':
