@@ -137,7 +137,7 @@ class BertLearner:
                 if map_value != null_label:
                     remapped_labels.append(label)
 
-            # Decode list of label indices useing self.vectorizer
+            # Decode list of label indices using self.vectorizer
             decoded_labels.append(self.vectorizer.devectorize_tag(remapped_labels))
 
         return decoded_labels

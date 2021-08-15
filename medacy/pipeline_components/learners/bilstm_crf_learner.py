@@ -3,6 +3,7 @@ BiLSTM+CRF PyTorch network and model.
 """
 import logging
 import random
+from statistics import mean
 
 import torch
 import torch.nn as nn
@@ -101,10 +102,9 @@ class BiLstmCrfLearner:
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-                epoch_losses.append(loss)
+                epoch_losses.append(float(loss))
 
-            average_loss = sum(epoch_losses) / len(epoch_losses)
-            logging.info('Epoch %d average loss: %f', i, average_loss)
+            logging.info(f'Epoch {i} average loss: {mean(epoch_losses)}')
 
         self.model = model
 

@@ -44,7 +44,7 @@ def json_to_pipeline(json_path):
     :return: a custom pipeline class
     """
 
-    if isinstance(json_path, os.PathLike):
+    if isinstance(json_path, (str, os.PathLike)):
         with open(json_path, 'rb') as f:
             input_json = json.load(f)
     elif isinstance(json_path, dict):

@@ -46,15 +46,13 @@ MedaCy **does not** alter the data you load in any way - it only reads from it.
 
 A common data work flow might look like this.
 
-running:
-
-```
+```pythonstub
 >>> from medacy.data.datset import Dataset
 >>> from medacy.pipeline_components.feature_overlayers.metamap.metamap import MetaMap
 
 >>> dataset = Dataset('/home/medacy/data')
 >>> for data_file in dataset:
-...  data_file.file_name
+...     data_file.file_name
 'file_one'
 'file_two'
 >>> data
@@ -63,7 +61,7 @@ running:
 False
 >>> metamap = Metamap('/home/path/to/metamap/binary')
 >>> with metamap:
-... data.metamap(metamap)
+...     data.metamap(metamap)
 data.is_metamapped()
 True
 ```
@@ -79,47 +77,6 @@ home/medacy/data
 └── metamapped
     ├── file_one.metamapped
     └── file_two.metamapped
-```
-
-
-
-## Loading a medaCy compatible dataset
-Using a *medaCy compatible dataset* package to manage your training data insures that data is easy and efficient to access, versioned for replicability, and distributable (selectively!).
-
-A *medaCy compatible dataset* is python package wrapping data that can be hooked into medaCy. We can install a *medaCy compatible dataset* just like any python package. For instance,
-
-
-`pip install https://github.com/NanoNLP/medaCy_dataset_end/archive/v1.0.3.tar.gz#egg=medacy_dataset_end-1.0.3`
-
-will install `v1.0.03` of the [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) dataset. Alternatively,
-
-`pip install git+https://github.com/NanoNLP/medaCy_dataset_end.git`
-
-will install the latest version of the [END](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5644562/) dataset.
-
-After you have installed a *medaCy compatible dataset*, loading it returns a configured `Dataset` object alongside meta-data in a `tuple` as follows:
-
-```python
-from medacy.data import Dataset
-
-training_dataset, evaluation_dataset, meta_data = Dataset.load_external('medacy_dataset_end')
-
-```
-
-alternatively, import the datasets package and directly call the load method:
-
-```python
-import medacy_dataset_end
-
-training_dataset, evaluation_dataset, meta_data = medacy_dataset_end.load()
-
-print(meta_data['entities']) #entities this dataset annotates
-print(meta_data['relations']) #relations this dataset annotates (END has None)
-
-training_dataset = medacy_dataset_end.load_training_dataset() #access just training
-
-evaluation_dataset = medacy_dataset_end.load_evaluation_dataset() #access just evaluation
-
 ```
 
 ## Using a Dataset
@@ -139,7 +96,7 @@ from medacy.pipelines import FDANanoDrugLabelPipeline
 dataset = Dataset('/home/medacy/data')
 entities = ['Nanoparticle', 'Dose']
 pipeline = FDANanoDrugLabelPipeline(entities=entities)
-model = Model(pipeline, n_jobs=1)
+model = Model(pipeline)
 
 model.fit(dataset)
 ```
@@ -172,4 +129,3 @@ By default, this creates a sub-directory in your prediction dataset named *predi
 ```
 
 where all files under *predictions* are the trained models predictions over your test data.
-

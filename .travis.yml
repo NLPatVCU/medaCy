@@ -6,8 +6,9 @@ dist: trusty
 group: edge
 
 python:
-   - "3.7"
-   - "3.8"
+  - "3.6"
+  - "3.7"
+  - "3.8"
 
 os:
   - linux
@@ -16,7 +17,7 @@ os:
 install:
   - pip install --upgrade pip
   - pip install -e .
+  - pip install pytest
 
 script:
-  - "python setup.py test || exit 0" 
-  - "python setup.py test"
+  - "python -m pytest ./medacy/tests/ -m 'not slow'"
