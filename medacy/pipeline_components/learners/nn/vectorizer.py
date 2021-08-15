@@ -36,7 +36,7 @@ def _create_feature_dictionary(feature_name, sentences):
     """
     feature_name = f'0:{feature_name}'
     all_features = reduce(or_, ({token[feature_name] for token in sentence} for sentence in sentences))
-    return {feature: index for index, feature in enumerate(all_features, 1)}
+    return {feature: index for index, feature in enumerate(all_features)}
 
 
 def _one_hot(index_dictionary, value):
@@ -80,7 +80,7 @@ class Vectorizer:
         self.tag_to_index = {}
 
         self.character_to_index = {
-            character: index for index, character in enumerate(string.printable, 1)
+            character: index for index, character in enumerate(string.printable)
         }
 
     def load_word_embeddings(self, embeddings_file):
@@ -99,7 +99,7 @@ class Vectorizer:
         :param tags: List of list of tag names. Usually all true labels for a dataset.
         """
         tag_set = reduce(or_, (set(tag_list) for tag_list in tags))
-        self.tag_to_index = {tag: index for index, tag in enumerate(tag_set, 1)}
+        self.tag_to_index = {tag: index for index, tag in enumerate(tag_set)}
 
     def add_tag(self, tag):
         """Add tag to self.tag_to_index
