@@ -25,6 +25,12 @@ receive immediate responses to any questions is to raise an issue. Make sure to 
 ## :computer: Installation Instructions
 MedaCy can be installed for general use or for pipeline development / research purposes.
 
+For the stable or latest build of MedaCy, when in the virtual environment, first run
+```python
+pip3 install wheel
+```
+before attempting to install MedaCy.
+
 | Application | Run           |
 | ----------- |:-------------:|
 | Prediction and Model Training (stable) | `pip install git+https://github.com/NLPatVCU/medaCy.git` |
