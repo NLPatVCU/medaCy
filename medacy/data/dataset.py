@@ -58,7 +58,7 @@ External Datasets
 In the real world, datasets (regardless of domain) are evolving entities. Hence, it is essential to version them.
 A medaCy compatible dataset can be created to facilitate this versioning. A medaCy compatible dataset lives a python
 packages that can be hooked into medaCy or used for any other purpose - it is simply a loose wrapper for this Dataset
-object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/tree/master/examples/guide>`_.
+object. Instructions for creating such a dataset can be found `here <https://github.com/NLPatVCU/medaCy/blob/master/guide/creating_custom_pipeline_from_json.md>`_.
 wrap them.
 """
 
